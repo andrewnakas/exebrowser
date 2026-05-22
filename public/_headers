@@ -1,56 +1,64 @@
 # Cloudflare Pages headers. Most-specific paths first.
-# COOP/COEP are required for SharedArrayBuffer (Boxedwine WASM threads).
+# COOP/COEP/CORP all required for crossOriginIsolated = true, which gates
+# SharedArrayBuffer (Boxedwine WASM threads + audio path).
 # A blank line separates each path rule.
 
 /app.js
   Cache-Control: public, max-age=60, must-revalidate
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 /style.css
   Cache-Control: public, max-age=60, must-revalidate
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 /index.html
   Cache-Control: public, max-age=60, must-revalidate
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 /
   Cache-Control: public, max-age=60, must-revalidate
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 /*.wasm
   Content-Type: application/wasm
   Cache-Control: public, max-age=31536000, immutable
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 /boxedwine/build/default/*
   Cache-Control: public, max-age=31536000, immutable
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 # Proxied via Pages Function (functions/api/fs/[file].js) → Worker.
-# Must carry CORP so the response counts as same-origin for COEP: require-corp.
 /api/fs/*
   Cache-Control: public, max-age=3600
   Content-Type: application/zip
-  Cross-Origin-Resource-Policy: same-origin
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 /boxedwine/apps/*
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/zip
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 /*
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
