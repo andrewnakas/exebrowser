@@ -576,7 +576,13 @@
   // contains *only* files the running app wrote during this session — no
   // boilerplate Wine prefix — so zipping it gives us a clean delta.
 
-  function getWritableHomeLayer() {
+  // Boxedwine mounts two OverlayFS instances:
+  //   '/root/base'  → rootOverlay  (Wine system; writable side captures
+  //                    installer output under C:\windows, C:\Program Files, …
+  //                    because C:\ maps to /root/base/home/username/.wine/drive_c)
+  //   '/root/files' → homeOverlay (the app's working dir; user-app writes)
+  // Return both writable layers so we can zip the union and not miss either.
+  function getWritableLayers() {
     const BFS = window.BrowserFS;
     if (!BFS) throw new Error("BrowserFS not initialized — boot Wine first.");
     const fs = BFS.BFSRequire("fs");
@@ -584,13 +590,20 @@
     if (!root || !root.mntMap) throw new Error("BrowserFS root not mounted.");
     const cfg = window.__BoxedwineConfig;
     if (!cfg || !cfg.appDirPrefix) throw new Error("Config.appDirPrefix missing.");
-    const mountPoint = cfg.appDirPrefix.replace(/\/$/, "");
-    const overlay = root.mntMap[mountPoint];
-    if (!overlay || typeof overlay.getOverlayedFileSystems !== "function") {
-      throw new Error("Home overlay missing or not an OverlayFS.");
+
+    const homeMount = cfg.appDirPrefix.replace(/\/$/, "");
+    const homeOverlay = root.mntMap[homeMount];
+    const rootOverlay = root.mntMap["/root/base"];
+
+    const out = [];
+    for (const [mount, ov] of [["/root/base", rootOverlay], [homeMount, homeOverlay]]) {
+      if (ov && typeof ov.getOverlayedFileSystems === "function") {
+        const { writable } = ov.getOverlayedFileSystems();
+        if (writable) out.push({ mount, writable });
+      }
     }
-    const { writable } = overlay.getOverlayedFileSystems();
-    return writable;
+    if (out.length === 0) throw new Error("No OverlayFS layers found.");
+    return out;
   }
 
   // Walk a BrowserFS layer synchronously (sync API works on InMemory) and
@@ -621,20 +634,36 @@
 
   async function downloadWritableLayer() {
     try {
-      const writable = getWritableHomeLayer();
-      const files = collectWritableFiles(writable);
-      if (files.length === 0) {
-        log("Writable layer is empty — nothing to download.", "warn");
-        return;
-      }
+      const layers = getWritableLayers();
       const zip = new JSZip();
       let totalBytes = 0;
-      for (const f of files) {
-        // BrowserFS returns Buffer-ish objects; coerce to Uint8Array for JSZip.
-        const bytes = f.bytes.buffer ? new Uint8Array(f.bytes.buffer, f.bytes.byteOffset, f.bytes.byteLength) : new Uint8Array(f.bytes);
-        zip.file(f.path, bytes);
-        totalBytes += bytes.length;
+      let totalFiles = 0;
+      const perLayerCounts = [];
+
+      for (const { mount, writable } of layers) {
+        const files = collectWritableFiles(writable);
+        perLayerCounts.push(`${mount}: ${files.length}`);
+        // Top-level folder in the output zip mirrors the BFS mount so users
+        // can see which writes came from where. `/root/base` → "system",
+        // `/root/files` → "appdir" — friendlier than raw mount paths.
+        const folder = mount === "/root/base" ? "system" : "appdir";
+        for (const f of files) {
+          const bytes = f.bytes.buffer
+            ? new Uint8Array(f.bytes.buffer, f.bytes.byteOffset, f.bytes.byteLength)
+            : new Uint8Array(f.bytes);
+          zip.file(`${folder}/${f.path}`, bytes);
+          totalBytes += bytes.length;
+          totalFiles += 1;
+        }
       }
+
+      log(`Writable layer scan: ${perLayerCounts.join(", ")}.`);
+
+      if (totalFiles === 0) {
+        log("Writable layers are empty — nothing to download.", "warn");
+        return;
+      }
+
       const zipBytes = zip.generate({ type: "uint8array", compression: "DEFLATE" });
       const blob = new Blob([zipBytes], { type: "application/zip" });
       const url = URL.createObjectURL(blob);
@@ -645,9 +674,8 @@
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      // Defer revoke so the download has time to start.
       setTimeout(() => URL.revokeObjectURL(url), 60000);
-      log(`Downloaded ${files.length} file(s), ${formatBytes(totalBytes)} (zipped to ${formatBytes(zipBytes.length)}).`);
+      log(`Downloaded ${totalFiles} file(s), ${formatBytes(totalBytes)} (zipped to ${formatBytes(zipBytes.length)}).`);
     } catch (err) {
       log("Save failed: " + err.message, "error");
     }
