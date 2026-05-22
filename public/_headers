@@ -1,60 +1,41 @@
-# Cloudflare Pages headers. Most-specific paths first.
-# COOP/COEP/CORP all required for crossOriginIsolated = true, which gates
-# SharedArrayBuffer (Boxedwine WASM threads + audio path).
-# A blank line separates each path rule.
+# Cloudflare Pages headers.
+#
+# IMPORTANT: Cloudflare Pages MERGES headers from every matching rule.
+# Emitting Cross-Origin-Embedder-Policy more than once causes Chrome to
+# treat the policy as "unsafe-none" and disables SharedArrayBuffer.
+# Therefore: COOP/COEP/CORP live ONLY in the catch-all /* rule below.
+# Specific-path rules carry only non-overlapping headers (Cache-Control,
+# Content-Type, etc.).
 
 /app.js
   Cache-Control: public, max-age=60, must-revalidate
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
 
 /style.css
   Cache-Control: public, max-age=60, must-revalidate
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
 
 /index.html
   Cache-Control: public, max-age=60, must-revalidate
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
 
 /
   Cache-Control: public, max-age=60, must-revalidate
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
 
 /*.wasm
   Content-Type: application/wasm
   Cache-Control: public, max-age=31536000, immutable
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
 
 /boxedwine/build/default/*
   Cache-Control: public, max-age=31536000, immutable
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
 
 # Proxied via Pages Function (functions/api/fs/[file].js) → Worker.
 /api/fs/*
   Cache-Control: public, max-age=3600
   Content-Type: application/zip
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
 
 /boxedwine/apps/*
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/zip
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
 
+# Catch-all. Single source of truth for cross-origin isolation headers.
 /*
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp

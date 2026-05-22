@@ -30,13 +30,18 @@ export async function onRequest(context) {
     cf: { cacheTtl: 86400, cacheEverything: true },
   });
 
-  // Pass through body + status; rewrite a few headers so this looks
-  // same-origin and works under COEP: require-corp.
+  // Pass through body + status. COOP/COEP/CORP are applied uniformly by
+  // _headers; we DON'T set them here, otherwise Cloudflare merges them
+  // and the duplicated COEP header makes Chrome reject the policy.
   const out = new Headers(upstream.headers);
-  out.set("Cross-Origin-Resource-Policy", "same-origin");
-  out.set("Cross-Origin-Embedder-Policy", "require-corp");
-  out.set("Cross-Origin-Opener-Policy", "same-origin");
-  out.delete("Access-Control-Allow-Origin"); // not needed same-origin
+  out.delete("Cross-Origin-Resource-Policy");
+  out.delete("Cross-Origin-Embedder-Policy");
+  out.delete("Cross-Origin-Opener-Policy");
+  out.delete("Access-Control-Allow-Origin");
+  out.delete("Access-Control-Allow-Methods");
+  out.delete("Access-Control-Allow-Headers");
+  out.delete("Access-Control-Expose-Headers");
+  out.delete("Access-Control-Max-Age");
   out.delete("Vary");
 
   return new Response(upstream.body, {
