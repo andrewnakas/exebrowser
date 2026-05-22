@@ -33,6 +33,15 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 
+# Proxied via _redirects → Worker. Must carry CORP so the response
+# counts as same-origin for COEP: require-corp pages.
+/boxedwine/fs/*
+  Cache-Control: public, max-age=3600
+  Content-Type: application/zip
+  Cross-Origin-Resource-Policy: same-origin
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
 /boxedwine/apps/*
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/zip
