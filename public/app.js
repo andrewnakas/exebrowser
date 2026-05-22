@@ -243,9 +243,12 @@
     if (typeof JSZip === "undefined") {
       throw new Error("JSZip not loaded — boot Wine first.");
     }
+    // Boxedwine bundles JSZip 2.x (2014), which has a synchronous .generate()
+    // and no .generateAsync(). API: zip.file(name, data); zip.generate({type, compression}).
     const zip = new JSZip();
     zip.file(state.pickedExe.name, state.pickedExe.bytes);
-    state.appZipBlob = await zip.generateAsync({ type: "blob", compression: "STORE" });
+    const bytes = zip.generate({ type: "uint8array", compression: "STORE" });
+    state.appZipBlob = new Blob([bytes], { type: "application/zip" });
     log(`Packaged ${state.pickedExe.name} into ${formatBytes(state.appZipBlob.size)} virtual zip.`);
   }
 
