@@ -113,23 +113,29 @@
     return await r.text();
   }
 
-  // Ensure DOM elements that boxedwine-shell.js queries exist. Some are
-  // checked at parse time (status/progress/spinner/dropzone), others only
-  // inside code paths we may take (startbtn/uploadbtn/etc). Stub them all
-  // hidden so no path throws.
+  // Ensure DOM elements that boxedwine-shell.js queries exist. Checkbox-style
+  // stubs (showConsole/sound-checkbox/soundToggle) MUST be real <input
+  // type="checkbox"> nodes so reads of .checked don't throw on null/undefined.
   function ensureShellDomStubs() {
     const stubs = [
-      // [id, tag]
+      // [id, tag, extras]
       ["status", "div"], ["progress", "progress"], ["spinner", "div"],
+      ["output", "pre"],
       ["startbtn", "button"], ["uploadbtn", "button"], ["downloadbtn", "button"],
       ["inline-runbtn", "button"], ["inline", "div"], ["run-inline", "button"],
-      ["loading", "div"], ["sound-checkbox", "input"], ["soundToggle", "input"],
-      ["modalLinkExe", "a"], ["message", "div"],
+      ["loading", "div"],
+      ["showConsole", "input", { type: "checkbox" }],
+      ["sound-checkbox", "input", { type: "checkbox" }],
+      ["soundToggle", "input", { type: "checkbox" }],
+      ["message", "div"], ["modalLink", "a"], ["modalLinkExe", "a"],
+      ["openModalExeClick", "button"], ["tree", "div"], ["items", "div"],
+      ["selectedItem", "div"], ["loadStatus", "div"],
     ];
-    for (const [id, tag] of stubs) {
+    for (const [id, tag, attrs] of stubs) {
       if (!document.getElementById(id)) {
         const el = document.createElement(tag);
         el.id = id;
+        if (attrs) for (const [k, v] of Object.entries(attrs)) el[k] = v;
         el.style.display = "none";
         document.body.appendChild(el);
       }
