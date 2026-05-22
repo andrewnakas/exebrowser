@@ -19,27 +19,51 @@
 (() => {
   "use strict";
 
-  const RUNTIME_BASE = "/boxedwine/build/default/";
-  // Same-origin path proxied to the Cloudflare Worker (see functions/api/fs).
-  // browserfs.boxedwine.js originally hardcoded lazy fetches to /boxedwine/fs/;
-  // we patched that line to /api/fs/ to dodge a stale Cloudflare edge cache
-  // entry that briefly served index.html at the old path.
-  const ROOT_FS_BASE = "/api/fs/";
-  const ROOT_FS_URL = ROOT_FS_BASE + "fullWine1.7.55-v8.zip";
-
-  // Wine "variants" — only the overlay differs.
-  // - default: vanilla 50MB Wine root + small min-online overlay (fast boot).
-  // - gecko:   same root + larger overlay that pre-stages wine_gecko-2.40-x86.msi
-  //            under /share/wine/gecko/, so appwiz.cpl can install Gecko offline
-  //            instead of trying to download it over a blocked ws://8.8.8.8:53.
+  // ─── Wine variants ─────────────────────────────────────────────────────
+  // Each variant bundles a Boxedwine runtime build + a Wine root + optional
+  // overlay. Two loading modes:
+  //   ondemand : large root range-fetched lazily as DLLs are needed (the
+  //              boxedwine.org Win32 model). Requires a same-origin proxy that
+  //              honors Range requests; browserfs.boxedwine.js was patched to
+  //              hardcode fetches to /api/fs/.
+  //   inline   : whole root zip downloaded up-front (the 16-bit model + the
+  //              older 18R2 build). Smaller roots make this viable.
+  // The runtime base controls which boxedwine.js/.wasm/shell.js the page loads.
+  // Variants that need the patched browserfs use runtime "default"; others
+  // (18R2, win3x) ship their own runtime under /boxedwine/build/<name>/.
   const WINE_VARIANTS = {
     default: {
+      label: "Wine 1.7.55 — Win32 (default, range-fetched)",
+      runtimeBase: "/boxedwine/build/default/",
+      loadMode: "ondemand",
+      rootBaseUrl: "/api/fs/",
+      rootBasename: "fullWine1.7.55-v8",
       overlayBaseUrl: "/boxedwine/apps/",
       overlayBasename: "wine1.7.55-v8-min-online",
     },
     gecko: {
+      label: "Wine 1.7.55 — Win32 + Gecko MSI bundled",
+      runtimeBase: "/boxedwine/build/default/",
+      loadMode: "ondemand",
+      rootBaseUrl: "/api/fs/",
+      rootBasename: "fullWine1.7.55-v8",
       overlayBaseUrl: "/api/overlay/",
       overlayBasename: "wine1.7.55-v8-with-gecko",
+    },
+    win3x: {
+      label: "Wine 3.1 — Win3.x 16-bit only (inline, 20 MB)",
+      runtimeBase: "/boxedwine/build/default/",
+      loadMode: "inline",
+      rootBaseUrl: "/api/fs/",
+      rootBasename: "minWine31v6",
+    },
+    r18: {
+      label: "Boxedwine 18R2 (experimental, inline, 19 MB)",
+      runtimeBase: "/boxedwine/build/18r2/",
+      loadMode: "inline",
+      // 18R2's bundled root ships inside its own runtime tree.
+      rootBaseUrl: "/boxedwine/build/18r2/",
+      rootBasename: "boxedwine",
     },
   };
 
@@ -211,8 +235,20 @@
     const origGetResponseHeader = NativeXHR.prototype.getResponseHeader;
 
     NativeXHR.prototype.open = function (method, url, async, user, pass) {
-      this.__exebrowser_url = String(url);
-      return origOpen.call(this, method, url, async !== false, user, pass);
+      let u = String(url);
+      // Variant-specific URL rewrites. Inline-mode variants fetch the root
+      // zip with an empty baseUrl, so the request lands at /boxedwine.zip or
+      // /minWine31v6.zip on the page origin. Redirect to where we actually
+      // ship the assets.
+      const variant = activeVariant();
+      if (variant.loadMode === "inline") {
+        const want = variant.rootBasename + ".zip";
+        if (u === want || u.endsWith("/" + want)) {
+          u = variant.rootBaseUrl + want;
+        }
+      }
+      this.__exebrowser_url = u;
+      return origOpen.call(this, method, u, async !== false, user, pass);
     };
 
     NativeXHR.prototype.setRequestHeader = function (k, v) {
@@ -284,23 +320,38 @@
 
   // ─── boot Boxedwine ────────────────────────────────────────────────────
 
+  function activeVariant() {
+    return WINE_VARIANTS[state.selectedVariant] || WINE_VARIANTS.default;
+  }
+
   // Stage 1: load dependencies that shell.js needs (BrowserFS, JSZip).
+  // The browserfs filename + the need for the ?v= cache buster vary by variant:
+  //   - default/gecko use the patched browserfs.boxedwine.js (hardcoded path
+  //     redirected from /boxedwine/fs/ to /api/fs/), so the bust is mandatory.
+  //   - 18r2 ships its own browserfs.min.js — no patch, no cache concern.
+  //   - win3x uses default runtime so default rules apply.
   async function loadBoxedwineDeps() {
     if (state.depsLoaded) return;
     setStatus("Loading Boxedwine runtime…");
     els.bootProgress.hidden = false;
     els.bootProgress.value = 10;
 
-    await loadScript(RUNTIME_BASE + "jszip.min.js");
+    const variant = activeVariant();
+    const runtimeBase = variant.runtimeBase;
+
+    await loadScript(runtimeBase + "jszip.min.js");
     els.bootProgress.value = 25;
-    // ?v=8 forces a fresh cache entry — we patched the hardcoded
-    // /boxedwine/fs/ path to /api/fs/ inside this file.
-    await loadScript(RUNTIME_BASE + "browserfs.boxedwine.js?v=8");
+
+    if (variant.runtimeBase === "/boxedwine/build/18r2/") {
+      await loadScript(runtimeBase + "browserfs.min.js");
+    } else {
+      await loadScript(runtimeBase + "browserfs.boxedwine.js?v=8");
+    }
     els.bootProgress.value = 40;
 
     ensureShellDomStubs();
     state.depsLoaded = true;
-    log("Dependencies loaded.");
+    log("Dependencies loaded (runtime=" + runtimeBase + ").");
   }
 
   // Stage 2: build a single combined script: shell.js source + our Config
@@ -310,33 +361,24 @@
     setStatus("Configuring Wine launch…");
     els.bootProgress.value = 50;
 
-    const shellSrc = await fetchText(RUNTIME_BASE + "boxedwine-shell.js");
+    const variant = activeVariant();
+    const runtimeBase = variant.runtimeBase;
+    const shellSrc = await fetchText(runtimeBase + "boxedwine-shell.js");
     els.bootProgress.value = 60;
 
-    // Match Boxedwine demo conventions exactly:
-    //   root=<basename-no-ext>            (the OnDemand-range-fetched root zip)
-    //   inline-default-ondemand-root-overlay=<basename-no-ext>  (preloaded overlay)
-    //   ondemand=root                     (range-fetch root, preload overlay)
-    // The full root (50MB) contains all DLLs including winmm/ddraw/dsound.
-    // The overlay zip is recursiveCopy'd into the writable layer at /, so its
-    // tree mirrors the Wine prefix layout. Variants only differ in overlay.
-    const variant = WINE_VARIANTS[state.selectedVariant] || WINE_VARIANTS.default;
-    const rootBasename = ROOT_FS_URL.split("/").pop().replace(/\.zip$/, "");
+    // urlParams depends on the variant's load mode:
+    //   ondemand : range-fetch root; preload overlay; needs locateRootBaseUrl
+    //              pointing at the Range-capable proxy (/api/fs/).
+    //   inline   : root downloaded whole; no overlay; locateRootBaseUrl just
+    //              needs to serve the .zip (Range optional).
+    const rootBasename = variant.rootBasename;
     const overlayBasename = variant.overlayBasename;
-    const overlayBaseUrl = variant.overlayBaseUrl;
-    // Wine wants Windows-style separators. The path is relative to D:/userapp.
+    const overlayBaseUrl = variant.overlayBaseUrl || "/boxedwine/apps/";
     const exeName = state.pickedExe.path.replace(/\//g, "\\");
 
-    // The Config object inside shell.js is `let`-scoped, so we can only mutate
-    // it from inside the same <script> block. We append our setup at the end
-    // of the shell.js source and run the combined whole as one inline script.
-    const configCode = `
-      // ── ExeBrowser-injected configuration ──
-      Config.isRunningInline = true;
-      Config.locateRootBaseUrl  = ${JSON.stringify(ROOT_FS_BASE)};
-      Config.locateAppBaseUrl   = ${JSON.stringify("/boxedwine/apps/")};
-      Config.locateOverlayBaseUrl = ${JSON.stringify(overlayBaseUrl)};
-      Config.urlParams = ${JSON.stringify([
+    let urlParams;
+    if (variant.loadMode === "ondemand") {
+      urlParams = [
         "ondemand=root",
         "root=" + encodeURIComponent(rootBasename),
         "inline-default-ondemand-root-overlay=" + encodeURIComponent(overlayBasename),
@@ -345,7 +387,28 @@
         "auto=true",
         "sound=true",
         "bpp=32",
-      ].join("&"))};
+      ].join("&");
+    } else {
+      urlParams = [
+        "root=" + encodeURIComponent(rootBasename),
+        "app=" + encodeURIComponent(VIRTUAL_APP_ZIP),
+        "p=" + encodeURIComponent(exeName),
+        "auto=true",
+        "sound=true",
+        "bpp=32",
+      ].join("&");
+    }
+
+    // The Config object inside shell.js is `let`-scoped, so we can only mutate
+    // it from inside the same <script> block. We append our setup at the end
+    // of the shell.js source and run the combined whole as one inline script.
+    const configCode = `
+      // ── ExeBrowser-injected configuration ──
+      Config.isRunningInline = true;
+      Config.locateRootBaseUrl  = ${JSON.stringify(variant.rootBaseUrl)};
+      Config.locateAppBaseUrl   = ${JSON.stringify("/boxedwine/apps/")};
+      Config.locateOverlayBaseUrl = ${JSON.stringify(overlayBaseUrl)};
+      Config.urlParams = ${JSON.stringify(urlParams)};
 
       // shell.js declares its own var Module; reach in and add our hooks.
       var __originalPreRun = Module.preRun ? Module.preRun.slice() : [];
@@ -353,7 +416,7 @@
       Module.print = function (t) { window.__exeBrowserLog(String(t)); };
       Module.printErr = function (t) { window.__exeBrowserLog(String(t), "warn"); };
       Module.setStatus = function (t) { if (t) window.__exeBrowserStatus(t); };
-      Module.locateFile = function (path) { return ${JSON.stringify(RUNTIME_BASE)} + path; };
+      Module.locateFile = function (path) { return ${JSON.stringify(runtimeBase)} + path; };
       // Expose for our outer code to verify.
       window.__BoxedwineConfig = Config;
       window.__BoxedwineModule = Module;
@@ -365,7 +428,10 @@
       throw new Error("Combined shell+config script failed to expose Config.");
     }
 
-    log("Wine shell configured (variant=" + state.selectedVariant + ", root=" + rootBasename + ", overlay=" + overlayBasename + ", program=" + exeName + ").");
+    log("Wine shell configured (variant=" + state.selectedVariant +
+        ", root=" + rootBasename +
+        (overlayBasename ? ", overlay=" + overlayBasename : "") +
+        ", program=" + exeName + ").");
   }
 
   // Stage 3: inject the Emscripten runtime. Its preRun calls initialSetup
@@ -373,7 +439,7 @@
   async function startEmulator() {
     setStatus("Starting emulator…");
     els.bootProgress.value = 75;
-    await loadScript(RUNTIME_BASE + "boxedwine.js");
+    await loadScript(activeVariant().runtimeBase + "boxedwine.js");
     els.bootProgress.value = 100;
     installAudioReviver();
   }
@@ -588,15 +654,17 @@
     const fs = BFS.BFSRequire("fs");
     const root = fs.getRootFS && fs.getRootFS();
     if (!root || !root.mntMap) throw new Error("BrowserFS root not mounted.");
-    const cfg = window.__BoxedwineConfig;
-    if (!cfg || !cfg.appDirPrefix) throw new Error("Config.appDirPrefix missing.");
 
-    const homeMount = cfg.appDirPrefix.replace(/\/$/, "");
-    const homeOverlay = root.mntMap[homeMount];
-    const rootOverlay = root.mntMap["/root/base"];
+    // Different Boxedwine runtimes name the home overlay's mount point
+    // differently: 'default' uses Config.appDirPrefix (= "/root/files/"),
+    // 18R2 uses Config.dirPrefix. Pull whichever exists and don't crash if
+    // one is missing — we'll still get the system overlay.
+    const cfg = window.__BoxedwineConfig || {};
+    const homeMount = ((cfg.appDirPrefix || cfg.dirPrefix || "")).replace(/\/$/, "");
 
     const out = [];
-    for (const [mount, ov] of [["/root/base", rootOverlay], [homeMount, homeOverlay]]) {
+    for (const [mount, ov] of Object.entries(root.mntMap)) {
+      if (mount !== "/root/base" && mount !== homeMount) continue;
       if (ov && typeof ov.getOverlayedFileSystems === "function") {
         const { writable } = ov.getOverlayedFileSystems();
         if (writable) out.push({ mount, writable });
@@ -820,8 +888,9 @@
 
   log("ExeBrowser ready. Click 'Boot Wine' to begin.");
 
-  // Preload JSZip so the zip-upload path works before Wine has booted.
-  loadScript(RUNTIME_BASE + "jszip.min.js").catch((e) => {
+  // Preload JSZip from the default runtime so the zip-upload path works before
+  // Wine boots. JSZip is the same across all our variant runtimes.
+  loadScript("/boxedwine/build/default/jszip.min.js").catch((e) => {
     log("Warning: failed to preload JSZip — zip uploads will wait until boot.", "warn");
   });
 

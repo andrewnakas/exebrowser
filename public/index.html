@@ -22,7 +22,7 @@
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=12" />
+<link rel="stylesheet" href="/style.css?v=13" />
 
 <script type="application/ld+json">
 {
@@ -63,10 +63,19 @@
     <div class="boot-options">
       <label for="wineVariant"><strong>Wine variant:</strong></label>
       <select id="wineVariant">
-        <option value="default" selected>Default (fast, ~50 MB)</option>
-        <option value="gecko">Compatibility (with Gecko / IE — ~80 MB)</option>
+        <option value="default" selected>Wine 1.7.55 · Win32 (default, fast, ~50 MB range-fetched)</option>
+        <option value="gecko">Wine 1.7.55 · Win32 + Gecko MSI bundled (~80 MB, for IE/HTML apps)</option>
+        <option value="win3x">Wine 3.1 · Win 3.x 16-bit only (inline, ~20 MB)</option>
+        <option value="r18">Boxedwine 18R2 · alt runtime, same Wine era (experimental, ~19 MB)</option>
       </select>
-      <p class="muted small">Pick <em>Compatibility</em> for apps that show a "Wine Gecko" prompt or use embedded IE (Space Cadet Pinball, older installers).</p>
+      <p class="muted small">
+        Pick <em>Win32 default</em> for almost everything from 1995–2008.
+        <em>+ Gecko</em> adds an offline copy of the Wine Gecko MSI so apps that
+        prompt for it (Pinball, older installers) don't try to download it.
+        <em>Win 3.x</em> is for 1990–1994 16-bit Windows apps (Klotz, Lander).
+        <em>18R2</em> swaps in an older Boxedwine engine — sometimes it
+        handles things the current one chokes on.
+      </p>
     </div>
     <button id="bootBtn" class="primary">Boot Wine</button>
     <div id="bootStatus" class="status" role="status" aria-live="polite">Idle.</div>
@@ -166,6 +175,6 @@
   </p>
 </footer>
 
-<script src="/app.js?v=12"></script>
+<script src="/app.js?v=13"></script>
 </body>
 </html>

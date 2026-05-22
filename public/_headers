@@ -26,6 +26,9 @@
 /boxedwine/build/default/*
   Cache-Control: public, max-age=31536000, immutable
 
+/boxedwine/build/18r2/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Proxied via Pages Function (functions/api/fs/[file].js) → Worker.
 /api/fs/*
   Cache-Control: public, max-age=3600
