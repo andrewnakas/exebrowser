@@ -13791,7 +13791,7 @@ return /******/ (function(modules) { // webpackBootstrap
              let extra = this.extraFieldLength();
              let additional = extra == 0 ? extra : extra + 4;
              let headerLength = 30 + this.fileNameLength() + additional;
-             const fileBuffer = this.syncCall("/boxedwine/fs/" + this.zipFilename, offset, headerLength + this.compressedSize());
+             const fileBuffer = this.syncCall("/api/fs/" + this.zipFilename, offset, headerLength + this.compressedSize());
              return new FileData(new FileHeader(fileBuffer.slice(0, headerLength)), this, fileBuffer.slice(headerLength));
          }
 	 };

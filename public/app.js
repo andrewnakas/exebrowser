@@ -20,10 +20,11 @@
   "use strict";
 
   const RUNTIME_BASE = "/boxedwine/build/default/";
-  // Same-origin path that proxies to the Cloudflare Worker (see _redirects).
-  // browserfs.boxedwine.js hardcodes lazy file fetches to /boxedwine/fs/<zip>,
-  // so the root must be reachable at that path on this origin.
-  const ROOT_FS_BASE = "/boxedwine/fs/";
+  // Same-origin path proxied to the Cloudflare Worker (see functions/api/fs).
+  // browserfs.boxedwine.js originally hardcoded lazy fetches to /boxedwine/fs/;
+  // we patched that line to /api/fs/ to dodge a stale Cloudflare edge cache
+  // entry that briefly served index.html at the old path.
+  const ROOT_FS_BASE = "/api/fs/";
   const ROOT_FS_URL = ROOT_FS_BASE + "fullWine1.7.55-v8.zip";
   const OVERLAY_URL = "/boxedwine/apps/wine1.7.55-v8-min-online.zip";
   const VIRTUAL_APP_ZIP = "userapp.zip"; // the filename shell.js will request
