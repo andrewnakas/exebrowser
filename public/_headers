@@ -1,5 +1,43 @@
-# Cloudflare Pages headers — required for WASM threading + correct MIME types.
-# COOP/COEP enable SharedArrayBuffer, which Boxedwine needs for performance.
+# Cloudflare Pages headers. Most-specific paths first.
+# COOP/COEP are required for SharedArrayBuffer (Boxedwine WASM threads).
+# A blank line separates each path rule.
+
+/app.js
+  Cache-Control: public, max-age=60, must-revalidate
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/style.css
+  Cache-Control: public, max-age=60, must-revalidate
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/index.html
+  Cache-Control: public, max-age=60, must-revalidate
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/
+  Cache-Control: public, max-age=60, must-revalidate
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/*.wasm
+  Content-Type: application/wasm
+  Cache-Control: public, max-age=31536000, immutable
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/boxedwine/build/default/*
+  Cache-Control: public, max-age=31536000, immutable
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
+/boxedwine/apps/*
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/zip
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
 
 /*
   Cross-Origin-Opener-Policy: same-origin
@@ -8,30 +46,3 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
-
-# WebAssembly must be served as application/wasm or browsers refuse to stream-compile.
-/*.wasm
-  Content-Type: application/wasm
-  Cache-Control: public, max-age=31536000, immutable
-
-# Boxedwine runtime — huge, immutable, cache hard.
-/boxedwine/build/default/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Wine FS zips — also immutable.
-/boxedwine/apps/*.zip
-  Cache-Control: public, max-age=31536000, immutable
-  Content-Type: application/zip
-
-# App shell — short cache so deploys propagate fast.
-/
-  Cache-Control: public, max-age=300, must-revalidate
-
-/index.html
-  Cache-Control: public, max-age=300, must-revalidate
-
-/app.js
-  Cache-Control: public, max-age=300, must-revalidate
-
-/style.css
-  Cache-Control: public, max-age=300, must-revalidate
