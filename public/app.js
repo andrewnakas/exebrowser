@@ -257,8 +257,14 @@
     const shellSrc = await fetchText(RUNTIME_BASE + "boxedwine-shell.js");
     els.bootProgress.value = 60;
 
-    const rootFile = ROOT_FS_URL.split("/").pop();
-    const overlayFile = OVERLAY_URL.split("/").pop();
+    // Match Boxedwine demo conventions exactly:
+    //   root=<basename-no-ext>            (the OnDemand-range-fetched root zip)
+    //   inline-default-ondemand-root-overlay=<basename-no-ext>  (preloaded overlay)
+    //   ondemand=root                     (range-fetch root, preload overlay)
+    // The full root (50MB) contains all DLLs including winmm/ddraw/dsound.
+    // The min-online overlay just preloads /home/.wine for faster boot.
+    const rootBasename = ROOT_FS_URL.split("/").pop().replace(/\.zip$/, "");
+    const overlayBasename = OVERLAY_URL.split("/").pop().replace(/\.zip$/, "");
     const exeName = state.pickedExe.name;
 
     // The Config object inside shell.js is `let`-scoped, so we can only mutate
@@ -272,8 +278,8 @@
       Config.locateOverlayBaseUrl = ${JSON.stringify("/boxedwine/apps/")};
       Config.urlParams = ${JSON.stringify([
         "ondemand=root",
-        "root=" + encodeURIComponent(rootFile),
-        "overlay=" + encodeURIComponent(overlayFile),
+        "root=" + encodeURIComponent(rootBasename),
+        "inline-default-ondemand-root-overlay=" + encodeURIComponent(overlayBasename),
         "app=" + encodeURIComponent(VIRTUAL_APP_ZIP),
         "p=" + encodeURIComponent(exeName),
         "auto=true",
@@ -299,7 +305,7 @@
       throw new Error("Combined shell+config script failed to expose Config.");
     }
 
-    log("Wine shell configured (root=" + rootFile + ", overlay=" + overlayFile + ", program=" + exeName + ").");
+    log("Wine shell configured (root=" + rootBasename + ", overlay=" + overlayBasename + ", program=" + exeName + ").");
   }
 
   // Stage 3: inject the Emscripten runtime. Its preRun calls initialSetup
