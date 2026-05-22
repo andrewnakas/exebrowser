@@ -243,7 +243,9 @@
 
     await loadScript(RUNTIME_BASE + "jszip.min.js");
     els.bootProgress.value = 25;
-    await loadScript(RUNTIME_BASE + "browserfs.boxedwine.js");
+    // ?v=8 forces a fresh cache entry — we patched the hardcoded
+    // /boxedwine/fs/ path to /api/fs/ inside this file.
+    await loadScript(RUNTIME_BASE + "browserfs.boxedwine.js?v=8");
     els.bootProgress.value = 40;
 
     ensureShellDomStubs();
