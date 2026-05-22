@@ -20,7 +20,8 @@
   "use strict";
 
   const RUNTIME_BASE = "/boxedwine/build/default/";
-  const ROOT_FS_URL = "https://boxedwine-assets.exebrowser.workers.dev/fs/fullWine1.7.55-v8.zip";
+  const ROOT_FS_BASE = "https://boxedwine-assets.exebrowser.workers.dev/fs/";
+  const ROOT_FS_URL = ROOT_FS_BASE + "fullWine1.7.55-v8.zip";
   const OVERLAY_URL = "/boxedwine/apps/wine1.7.55-v8-min-online.zip";
   const VIRTUAL_APP_ZIP = "userapp.zip"; // the filename shell.js will request
 
@@ -40,7 +41,7 @@
   };
 
   const state = {
-    runtimeLoaded: false,
+    depsLoaded: false,
     pickedExe: null, // { name: "FOO.EXE", bytes: Uint8Array }
     appZipBlob: null,
     bootInFlight: false,
@@ -58,6 +59,11 @@
   function setStatus(text) {
     els.bootStatus.textContent = text;
   }
+
+  // Exposed for the inlined shell+config script (which runs in its own scope)
+  // to call back into us for logging/status.
+  window.__exeBrowserLog = log;
+  window.__exeBrowserStatus = setStatus;
 
   function sanitizeExeName(name) {
     // Wine wants an 8.3-friendly DOS-safe name; uppercase, alnum + underscore.
@@ -83,6 +89,52 @@
       s.onerror = () => reject(new Error(`Failed to load ${src}`));
       document.head.appendChild(s);
     });
+  }
+
+  // Inject inline JS code as a <script> tag and wait for it to execute.
+  function runInlineScript(code) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.textContent = code;
+      s.onerror = (e) => reject(new Error("inline script error"));
+      try {
+        document.head.appendChild(s);
+        // Inline scripts execute synchronously on append for classic scripts.
+        resolve();
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
+  async function fetchText(url) {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(`HTTP ${r.status} fetching ${url}`);
+    return await r.text();
+  }
+
+  // Ensure DOM elements that boxedwine-shell.js queries exist. Some are
+  // checked at parse time (status/progress/spinner/dropzone), others only
+  // inside code paths we may take (startbtn/uploadbtn/etc). Stub them all
+  // hidden so no path throws.
+  function ensureShellDomStubs() {
+    const stubs = [
+      // [id, tag]
+      ["status", "div"], ["progress", "progress"], ["spinner", "div"],
+      ["startbtn", "button"], ["uploadbtn", "button"], ["downloadbtn", "button"],
+      ["inline-runbtn", "button"], ["inline", "div"], ["run-inline", "button"],
+      ["loading", "div"], ["sound-checkbox", "input"], ["soundToggle", "input"],
+      ["modalLinkExe", "a"], ["message", "div"],
+    ];
+    for (const [id, tag] of stubs) {
+      if (!document.getElementById(id)) {
+        const el = document.createElement(tag);
+        el.id = id;
+        el.style.display = "none";
+        document.body.appendChild(el);
+      }
+    }
+    // shell.js calls dropzone.addEventListener; our existing #dropzone works.
   }
 
   // ─── XHR interception ──────────────────────────────────────────────────
@@ -172,8 +224,9 @@
 
   // ─── boot Boxedwine ────────────────────────────────────────────────────
 
-  async function loadBoxedwineRuntime() {
-    if (state.runtimeLoaded) return;
+  // Stage 1: load dependencies that shell.js needs (BrowserFS, JSZip).
+  async function loadBoxedwineDeps() {
+    if (state.depsLoaded) return;
     setStatus("Loading Boxedwine runtime…");
     els.bootProgress.hidden = false;
     els.bootProgress.value = 10;
@@ -181,45 +234,75 @@
     await loadScript(RUNTIME_BASE + "jszip.min.js");
     els.bootProgress.value = 25;
     await loadScript(RUNTIME_BASE + "browserfs.boxedwine.js");
-    els.bootProgress.value = 45;
-    await loadScript(RUNTIME_BASE + "boxedwine-shell.js");
-    els.bootProgress.value = 60;
+    els.bootProgress.value = 40;
 
-    state.runtimeLoaded = true;
-    log("Boxedwine shell loaded.");
+    ensureShellDomStubs();
+    state.depsLoaded = true;
+    log("Dependencies loaded.");
   }
 
-  function configureBoxedwine() {
-    if (typeof window.Config === "undefined") {
-      throw new Error("Boxedwine shell.js did not register a global Config — script load order?");
-    }
+  // Stage 2: build a single combined script: shell.js source + our Config
+  // mutations. They share scope so we can reach the `let Config` shell.js
+  // declares. Then inject boxedwine.js which triggers preRun → initialSetup.
+  async function runShellWithConfig() {
+    setStatus("Configuring Wine launch…");
+    els.bootProgress.value = 50;
 
-    // Boxedwine reads these on init.
-    window.Config.locateRootBaseUrl = ROOT_FS_URL.replace(/[^/]+$/, ""); // dirname
-    window.Config.locateAppBaseUrl = "/boxedwine/apps/";
-    window.Config.locateOverlayBaseUrl = "/boxedwine/apps/";
+    const shellSrc = await fetchText(RUNTIME_BASE + "boxedwine-shell.js");
+    els.bootProgress.value = 60;
 
     const rootFile = ROOT_FS_URL.split("/").pop();
     const overlayFile = OVERLAY_URL.split("/").pop();
+    const exeName = state.pickedExe.name;
 
-    window.Config.urlParams = [
-      `ondemand=root`,
-      `root=${encodeURIComponent(rootFile)}`,
-      `overlay=${encodeURIComponent(overlayFile)}`,
-      `app=${encodeURIComponent(VIRTUAL_APP_ZIP)}`,
-      `p=${encodeURIComponent(state.pickedExe.name)}`,
-      `auto=true`,
-      `sound=true`,
-      `bpp=32`,
-    ].join("&");
+    // The Config object inside shell.js is `let`-scoped, so we can only mutate
+    // it from inside the same <script> block. We append our setup at the end
+    // of the shell.js source and run the combined whole as one inline script.
+    const configCode = `
+      // ── ExeBrowser-injected configuration ──
+      Config.isRunningInline = true;
+      Config.locateRootBaseUrl  = ${JSON.stringify(ROOT_FS_BASE)};
+      Config.locateAppBaseUrl   = ${JSON.stringify("/boxedwine/apps/")};
+      Config.locateOverlayBaseUrl = ${JSON.stringify("/boxedwine/apps/")};
+      Config.urlParams = ${JSON.stringify([
+        "ondemand=root",
+        "root=" + encodeURIComponent(rootFile),
+        "overlay=" + encodeURIComponent(overlayFile),
+        "app=" + encodeURIComponent(VIRTUAL_APP_ZIP),
+        "p=" + encodeURIComponent(exeName),
+        "auto=true",
+        "sound=true",
+        "bpp=32",
+      ].join("&"))};
 
-    // Emscripten Module hooks
-    window.Module = window.Module || {};
-    window.Module.canvas = els.canvas;
-    window.Module.print = (t) => log(String(t));
-    window.Module.printErr = (t) => log(String(t), "warn");
-    window.Module.setStatus = (t) => { if (t) setStatus(t); };
-    window.Module.locateFile = (path) => RUNTIME_BASE + path;
+      // shell.js declares its own var Module; reach in and add our hooks.
+      var __originalPreRun = Module.preRun ? Module.preRun.slice() : [];
+      Module.canvas = document.getElementById("canvas");
+      Module.print = function (t) { window.__exeBrowserLog(String(t)); };
+      Module.printErr = function (t) { window.__exeBrowserLog(String(t), "warn"); };
+      Module.setStatus = function (t) { if (t) window.__exeBrowserStatus(t); };
+      Module.locateFile = function (path) { return ${JSON.stringify(RUNTIME_BASE)} + path; };
+      // Expose for our outer code to verify.
+      window.__BoxedwineConfig = Config;
+      window.__BoxedwineModule = Module;
+    `;
+
+    await runInlineScript(shellSrc + "\n;\n" + configCode);
+
+    if (!window.__BoxedwineConfig) {
+      throw new Error("Combined shell+config script failed to expose Config.");
+    }
+
+    log("Wine shell configured (root=" + rootFile + ", overlay=" + overlayFile + ", program=" + exeName + ").");
+  }
+
+  // Stage 3: inject the Emscripten runtime. Its preRun calls initialSetup
+  // which reads Config.urlParams and builds the filesystem.
+  async function startEmulator() {
+    setStatus("Starting emulator…");
+    els.bootProgress.value = 75;
+    await loadScript(RUNTIME_BASE + "boxedwine.js");
+    els.bootProgress.value = 100;
   }
 
   // ─── EXE handling ──────────────────────────────────────────────────────
@@ -267,18 +350,13 @@
 
     try {
       installXhrInterceptor();
-      await loadBoxedwineRuntime();
+      await loadBoxedwineDeps();
       await buildAppZip();
-      configureBoxedwine();
+      await runShellWithConfig();
 
-      setStatus("Booting Wine + emulator…");
-      els.bootProgress.value = 70;
       els.screenContainer.classList.add("has-content");
 
-      // Inject the Emscripten runtime. shell.js reads Config at script start,
-      // boxedwine.js then triggers FS construction and runtime init.
-      await loadScript(RUNTIME_BASE + "boxedwine.js");
-      els.bootProgress.value = 100;
+      await startEmulator();
       setStatus(`Running ${state.pickedExe.originalName}…`);
       log("Launch dispatched. Canvas will activate when Wine is ready.");
     } catch (err) {
