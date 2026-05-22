@@ -1,0 +1,294 @@
+:root {
+  --bg: #0e0d0b;
+  --bg-card: #1a1816;
+  --bg-elev: #232020;
+  --fg: #f1ece4;
+  --muted: #9c9183;
+  --accent: #b1281f;
+  --accent-hover: #d63326;
+  --accent-soft: rgba(177, 40, 31, 0.12);
+  --border: #2a2622;
+  --kbd-bg: #2d2722;
+  --good: #6abf6a;
+  --bad: #e57373;
+  --warn: #e6b35a;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 1.6rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  letter-spacing: -0.05em;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.tagline {
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0.75rem auto 0;
+  font-size: 1.05rem;
+}
+
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card.disabled { opacity: 0.45; pointer-events: none; }
+.card.disabled .primary { cursor: not-allowed; }
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.steps {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+.steps li { margin-bottom: 0.4rem; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  background: var(--bg-elev);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+kbd {
+  background: var(--kbd-bg);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.85em;
+}
+
+button {
+  background: var(--bg-elev);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: 0.6em 1.2em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  font-family: inherit;
+}
+button:hover:not(:disabled) { background: #2f2a25; }
+
+button.primary {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+button.primary:hover:not(:disabled) { background: var(--accent-hover); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+button.link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 0;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.status {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  background: #0a0908;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+}
+
+progress {
+  width: 100%;
+  height: 6px;
+  margin-top: 0.5rem;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 3px;
+  background: var(--bg-elev);
+  overflow: hidden;
+}
+progress::-webkit-progress-bar { background: var(--bg-elev); }
+progress::-webkit-progress-value { background: var(--accent); transition: width 0.2s; }
+progress::-moz-progress-bar { background: var(--accent); }
+
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin: 0.75rem 0;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.dropzone:hover, .dropzone:focus { border-color: var(--accent); outline: none; }
+.dropzone.hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.dropzone p { margin: 0.25rem 0; }
+
+.muted { color: var(--muted); font-size: 0.9rem; }
+.center { text-align: center; }
+
+#screen-container {
+  margin-top: 0.75rem;
+  background: black;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#screen { width: 100%; }
+#canvas {
+  display: block;
+  max-width: 100%;
+  background: black;
+}
+#canvas:focus { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+#screen-empty-state {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: #555;
+  font-style: italic;
+}
+#screen-container.has-content #screen-empty-state { display: none; }
+
+#logOutput {
+  background: #08070a;
+  color: #d4ccbe;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  max-height: 240px;
+  overflow-y: auto;
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  border: 1px solid var(--border);
+}
+
+details {
+  margin: 0.5rem 0;
+  padding: 0.6rem 0.85rem;
+  background: #100f0d;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--fg);
+  list-style: none;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: "›";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.15s ease;
+  color: var(--accent);
+}
+details[open] summary::before { transform: rotate(90deg); }
+details p, details ul { color: var(--muted); margin: 0.5rem 0 0; }
+details ul { padding-left: 1.25rem; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  padding: 2rem 1rem 2.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+@media (max-width: 540px) {
+  header { padding: 1.5rem 1rem 1rem; }
+  header h1 { font-size: 1.8rem; }
+  .card { padding: 1.1rem; }
+  h2 { font-size: 1.05rem; }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ExeBrowser — Run Windows EXE Files in Your Browser, Offline</title>
+<meta name="description" content="Run Windows .exe applications directly in your browser using WebAssembly and Wine. No installation, no upload — your file stays on your device." />
+<meta name="keywords" content="run exe in browser, wine browser, exe browser, windows emulator browser, run windows app online, wine webassembly, boxedwine" />
+<meta name="author" content="ExeBrowser" />
+<link rel="canonical" href="https://exebrowser.com/" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/" />
+<meta property="og:title" content="ExeBrowser — Run Windows EXE Files in Your Browser" />
+<meta property="og:description" content="Run Windows .exe applications directly in your browser using WebAssembly and Wine. No installation, no upload." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ExeBrowser — Run Windows EXE Files in Your Browser" />
+<meta name="twitter:description" content="WebAssembly + Wine. No install. No upload. Your EXE stays on your device." />
+<meta name="twitter:image" content="https://exebrowser.com/og.png" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ExeBrowser",
+  "url": "https://exebrowser.com/",
+  "description": "Run Windows .exe applications directly in your browser using WebAssembly and Wine. No installation, no upload required.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+</header>
+
+<main>
+  <section class="hero card">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Boot Wine</strong> — A WebAssembly build of <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> plus an x86 emulator (<a href="https://www.boxedwine.org/" target="_blank" rel="noopener">Boxedwine</a>) loads in your browser tab.</li>
+      <li><strong>Drop an EXE</strong> — Pick a Windows executable from your device. It's read locally and copied into Wine's virtual <code>C:\</code> drive in memory.</li>
+      <li><strong>Run it</strong> — Wine translates Windows API calls into POSIX; the emulator executes the x86 instructions. Output renders to a canvas.</li>
+    </ol>
+    <p class="muted"><strong>Privacy:</strong> nothing is uploaded. Your EXE stays in your browser. No analytics, no telemetry, no server-side processing.</p>
+  </section>
+
+  <section class="card" id="boot-section">
+    <h2><span class="step-num">1</span> Boot Wine</h2>
+    <p>First boot downloads ~12&nbsp;MB of runtime + on-demand Wine filesystem. Cached after that.</p>
+    <button id="bootBtn" class="primary">Boot Wine</button>
+    <div id="bootStatus" class="status" role="status" aria-live="polite">Idle.</div>
+    <progress id="bootProgress" max="100" value="0" hidden></progress>
+  </section>
+
+  <section class="card disabled" id="loader-section">
+    <h2><span class="step-num">2</span> Load an EXE</h2>
+    <p>Drop a Windows executable here (or click to choose). Older 32-bit Win32 apps work best.</p>
+    <div id="dropzone" class="dropzone" tabindex="0">
+      <input type="file" id="exeInput" accept=".exe,.EXE,application/x-msdownload" hidden />
+      <p>Drop <code>.exe</code> here, or <button id="pickBtn" type="button" class="link">choose a file</button></p>
+      <p id="fileInfo" class="muted"></p>
+    </div>
+    <button id="runBtn" class="primary" disabled>Run in Wine</button>
+  </section>
+
+  <section class="card" id="screen-section">
+    <h2><span class="step-num">3</span> Wine display</h2>
+    <p class="muted">Click the canvas to capture mouse and keyboard. Press <kbd>Esc</kbd> to release.</p>
+    <div id="screen-container">
+      <div id="screen"></div>
+      <canvas id="canvas" tabindex="0" oncontextmenu="event.preventDefault()"></canvas>
+      <div id="screen-empty-state" class="muted center">No app running yet.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Console</h2>
+    <pre id="logOutput" aria-live="polite"></pre>
+  </section>
+
+  <section class="card">
+    <h2>Will my app run?</h2>
+    <p><strong>Best chance:</strong> classic 32-bit Win32 apps (1995–2008 era). Solitaire, Notepad, AbiWord, Age of Empires, old shareware, simple installers without modern dependencies.</p>
+    <p><strong>Probably won't run:</strong></p>
+    <ul>
+      <li>64-bit apps (Wine here is 32-bit only)</li>
+      <li>Anything needing DirectX 10/11/12, Vulkan, or modern GPU features</li>
+      <li>Modern .NET (Framework 4.5+ or .NET Core/5+) — limited support</li>
+      <li>Apps with online activation, DRM, or anti-cheat</li>
+      <li>Anything calling Win32 APIs added after ~Windows 7</li>
+    </ul>
+    <p>Wine speed is roughly 10–40% of native. CPU-heavy apps will feel slow.</p>
+  </section>
+
+  <section class="card">
+    <h2>FAQ</h2>
+    <details>
+      <summary>Is my file uploaded anywhere?</summary>
+      <p>No. Everything runs in your browser tab. The EXE is read via the <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_API" target="_blank" rel="noopener">File API</a> and written into an in-memory virtual filesystem. No network request carries your file off the device.</p>
+    </details>
+    <details>
+      <summary>Why does this exist?</summary>
+      <p>To make Windows executables portable. Try an old game on a Chromebook. Run a legacy utility on iPad. Demo a Win32 tool without an installer. Recover something from an EXE archive without a Windows machine.</p>
+    </details>
+    <details>
+      <summary>Why is it slow?</summary>
+      <p>An x86 CPU is being emulated inside WebAssembly. Native CPUs run x86 directly; we have to interpret it. Expect 10–40% of native speed depending on the workload.</p>
+    </details>
+    <details>
+      <summary>My EXE shows a black screen or crashes.</summary>
+      <p>Most likely the app needs a Windows feature Wine doesn't implement, or a DLL we don't ship. Check the console below for clues. Try a simpler / older app first.</p>
+    </details>
+    <details>
+      <summary>What is this built on?</summary>
+      <p><a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> — Wine + a 32-bit x86 CPU emulator compiled to WebAssembly. Wine is a trademark of CodeWeavers. Boxedwine is licensed under GPL-2.0.</p>
+    </details>
+    <details>
+      <summary>Can I bring my own DLLs / dependencies?</summary>
+      <p>Not yet through the UI. Coming soon: drop a folder/zip alongside the EXE to populate <code>C:\</code> with extra files.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <p>
+    Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> ·
+    <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> ·
+    WebAssembly.
+    Wine is a trademark of CodeWeavers.
+    ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.
+  </p>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

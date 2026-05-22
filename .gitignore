@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+.wrangler/
+.dev.vars
+assets-too-big-for-pages/
+*.log

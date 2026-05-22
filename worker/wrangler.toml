@@ -1,0 +1,11 @@
+name = "boxedwine-assets"
+main = "index.js"
+compatibility_date = "2026-05-01"
+
+# Proxies the Wine root zip (>25MB, Cloudflare Pages can't host directly)
+# from boxedwine.org with CORS headers added. Once you move this to R2,
+# replace the upstream fetch with an R2 binding.
+
+[vars]
+UPSTREAM_BASE = "https://www.boxedwine.org/boxedwine/"
+ALLOWED_ORIGINS = "https://exebrowser.com,https://www.exebrowser.com,http://localhost:8765"

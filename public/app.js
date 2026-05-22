@@ -1,0 +1,333 @@
+// ExeBrowser — run user-supplied Windows EXE files inside Boxedwine (Wine +
+// x86 emulator) in WebAssembly. No upload; everything stays in the browser.
+//
+// How it integrates with Boxedwine's shell:
+//   1. Load boxedwine-shell.js + browserfs.boxedwine.js + jszip.min.js
+//      (these come from /boxedwine/build/default/, served same-origin).
+//   2. Configure shell.js via the global `Config` it exports:
+//        Config.locateRootBaseUrl  = where the Wine root zip lives
+//        Config.locateAppBaseUrl   = where the per-app zip lives
+//        Config.locateOverlayBaseUrl = where DLL/font overlays live
+//        Config.urlParams = "root=...&app=...&p=EXENAME.EXE&..."
+//   3. Inject boxedwine.js — Emscripten runtime that pulls boxedwine.wasm.
+//
+// For step 2, the app zip is normally a static file on the server. We don't
+// have one — the user just picked an EXE. We zip it client-side with JSZip,
+// stash the Blob URL, and intercept the XHR for that specific filename so
+// shell.js receives our blob instead of hitting the network.
+
+(() => {
+  "use strict";
+
+  const RUNTIME_BASE = "/boxedwine/build/default/";
+  const ROOT_FS_URL = "https://boxedwine-assets.exebrowser.workers.dev/fs/fullWine1.7.55-v8.zip";
+  const OVERLAY_URL = "/boxedwine/apps/wine1.7.55-v8-min-online.zip";
+  const VIRTUAL_APP_ZIP = "userapp.zip"; // the filename shell.js will request
+
+  const els = {
+    bootBtn: document.getElementById("bootBtn"),
+    bootStatus: document.getElementById("bootStatus"),
+    bootProgress: document.getElementById("bootProgress"),
+    loaderSection: document.getElementById("loader-section"),
+    dropzone: document.getElementById("dropzone"),
+    exeInput: document.getElementById("exeInput"),
+    pickBtn: document.getElementById("pickBtn"),
+    fileInfo: document.getElementById("fileInfo"),
+    runBtn: document.getElementById("runBtn"),
+    logOutput: document.getElementById("logOutput"),
+    canvas: document.getElementById("canvas"),
+    screenContainer: document.getElementById("screen-container"),
+  };
+
+  const state = {
+    runtimeLoaded: false,
+    pickedExe: null, // { name: "FOO.EXE", bytes: Uint8Array }
+    appZipBlob: null,
+    bootInFlight: false,
+  };
+
+  // ─── helpers ───────────────────────────────────────────────────────────
+
+  function log(msg, level = "info") {
+    const ts = new Date().toLocaleTimeString();
+    const prefix = level === "error" ? "[!]" : level === "warn" ? "[~]" : "[·]";
+    els.logOutput.textContent += `${ts} ${prefix} ${msg}\n`;
+    els.logOutput.scrollTop = els.logOutput.scrollHeight;
+  }
+
+  function setStatus(text) {
+    els.bootStatus.textContent = text;
+  }
+
+  function sanitizeExeName(name) {
+    // Wine wants an 8.3-friendly DOS-safe name; uppercase, alnum + underscore.
+    let base = name.replace(/^.*[\\/]/, "").replace(/\.exe$/i, "");
+    base = base.replace(/[^A-Za-z0-9_]/g, "_").toUpperCase();
+    if (base.length === 0) base = "USERAPP";
+    if (base.length > 8) base = base.slice(0, 8);
+    return base + ".EXE";
+  }
+
+  function formatBytes(n) {
+    if (n < 1024) return `${n} B`;
+    if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+    return `${(n / 1024 / 1024).toFixed(2)} MB`;
+  }
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = src;
+      s.async = false; // preserve execution order
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error(`Failed to load ${src}`));
+      document.head.appendChild(s);
+    });
+  }
+
+  // ─── XHR interception ──────────────────────────────────────────────────
+  // Boxedwine's shell.js uses XMLHttpRequest to fetch the app zip:
+  //     locateAppBaseUrl + appZipFile
+  // We monkey-patch XHR.open to detect requests for our virtual app zip,
+  // and override responses with the in-memory Blob.
+
+  function installXhrInterceptor() {
+    const NativeXHR = window.XMLHttpRequest;
+    const origOpen = NativeXHR.prototype.open;
+    const origSend = NativeXHR.prototype.send;
+    const origSetRequestHeader = NativeXHR.prototype.setRequestHeader;
+    const origGetResponseHeader = NativeXHR.prototype.getResponseHeader;
+
+    NativeXHR.prototype.open = function (method, url, async, user, pass) {
+      this.__exebrowser_url = String(url);
+      return origOpen.call(this, method, url, async !== false, user, pass);
+    };
+
+    NativeXHR.prototype.setRequestHeader = function (k, v) {
+      if (this.__exebrowser_url && this.__exebrowser_url.includes(VIRTUAL_APP_ZIP)) {
+        // Suppress — we'll handle responses ourselves.
+        this.__exebrowser_headers = this.__exebrowser_headers || {};
+        this.__exebrowser_headers[k.toLowerCase()] = v;
+        return;
+      }
+      return origSetRequestHeader.call(this, k, v);
+    };
+
+    NativeXHR.prototype.send = function (body) {
+      const url = this.__exebrowser_url || "";
+      if (!url.includes(VIRTUAL_APP_ZIP)) {
+        return origSend.call(this, body);
+      }
+
+      if (!state.appZipBlob) {
+        log("Internal: XHR for user app zip but no blob ready.", "error");
+        this.readyState = 4;
+        this.status = 500;
+        this.onreadystatechange && this.onreadystatechange();
+        return;
+      }
+
+      // Synthesize a response from the in-memory Blob, honoring Range.
+      const reader = new FileReader();
+      reader.onload = () => {
+        const bytes = new Uint8Array(reader.result);
+        const headers = this.__exebrowser_headers || {};
+        let responseBytes = bytes;
+        let status = 200;
+
+        // Honor Range: bytes=N-M (Boxedwine OnDemand mode uses this)
+        if (headers["range"]) {
+          const m = /bytes=(\d+)-(\d+)?/.exec(headers["range"]);
+          if (m) {
+            const start = parseInt(m[1], 10);
+            const end = m[2] ? Math.min(parseInt(m[2], 10) + 1, bytes.length) : bytes.length;
+            responseBytes = bytes.slice(start, end);
+            status = 206;
+          }
+        }
+
+        Object.defineProperty(this, "readyState", { value: 4, writable: true });
+        Object.defineProperty(this, "status", { value: status, writable: true });
+        // Shell uses overrideMimeType('text/plain; charset=x-user-defined') and reads .responseText
+        // as a binary-ish string. We need to reconstruct that.
+        let responseText = "";
+        for (let i = 0; i < responseBytes.length; i++) {
+          responseText += String.fromCharCode(responseBytes[i]);
+        }
+        Object.defineProperty(this, "responseText", { value: responseText, writable: true });
+        Object.defineProperty(this, "response", { value: responseBytes.buffer, writable: true });
+
+        // Override header getter for Content-Length
+        this.getResponseHeader = function (name) {
+          if (name.toLowerCase() === "content-length") return String(state.appZipBlob.size);
+          return null;
+        };
+
+        if (this.onreadystatechange) this.onreadystatechange();
+        if (this.onload) this.onload();
+      };
+      reader.readAsArrayBuffer(state.appZipBlob);
+    };
+  }
+
+  // ─── boot Boxedwine ────────────────────────────────────────────────────
+
+  async function loadBoxedwineRuntime() {
+    if (state.runtimeLoaded) return;
+    setStatus("Loading Boxedwine runtime…");
+    els.bootProgress.hidden = false;
+    els.bootProgress.value = 10;
+
+    await loadScript(RUNTIME_BASE + "jszip.min.js");
+    els.bootProgress.value = 25;
+    await loadScript(RUNTIME_BASE + "browserfs.boxedwine.js");
+    els.bootProgress.value = 45;
+    await loadScript(RUNTIME_BASE + "boxedwine-shell.js");
+    els.bootProgress.value = 60;
+
+    state.runtimeLoaded = true;
+    log("Boxedwine shell loaded.");
+  }
+
+  function configureBoxedwine() {
+    if (typeof window.Config === "undefined") {
+      throw new Error("Boxedwine shell.js did not register a global Config — script load order?");
+    }
+
+    // Boxedwine reads these on init.
+    window.Config.locateRootBaseUrl = ROOT_FS_URL.replace(/[^/]+$/, ""); // dirname
+    window.Config.locateAppBaseUrl = "/boxedwine/apps/";
+    window.Config.locateOverlayBaseUrl = "/boxedwine/apps/";
+
+    const rootFile = ROOT_FS_URL.split("/").pop();
+    const overlayFile = OVERLAY_URL.split("/").pop();
+
+    window.Config.urlParams = [
+      `ondemand=root`,
+      `root=${encodeURIComponent(rootFile)}`,
+      `overlay=${encodeURIComponent(overlayFile)}`,
+      `app=${encodeURIComponent(VIRTUAL_APP_ZIP)}`,
+      `p=${encodeURIComponent(state.pickedExe.name)}`,
+      `auto=true`,
+      `sound=true`,
+      `bpp=32`,
+    ].join("&");
+
+    // Emscripten Module hooks
+    window.Module = window.Module || {};
+    window.Module.canvas = els.canvas;
+    window.Module.print = (t) => log(String(t));
+    window.Module.printErr = (t) => log(String(t), "warn");
+    window.Module.setStatus = (t) => { if (t) setStatus(t); };
+    window.Module.locateFile = (path) => RUNTIME_BASE + path;
+  }
+
+  // ─── EXE handling ──────────────────────────────────────────────────────
+
+  async function handleFile(file) {
+    if (!file) return;
+
+    const bytes = new Uint8Array(await file.arrayBuffer());
+    if (bytes.length < 64 || bytes[0] !== 0x4d || bytes[1] !== 0x5a) {
+      log(`Warning: ${file.name} doesn't start with PE 'MZ' magic.`, "warn");
+    }
+
+    const safeName = sanitizeExeName(file.name);
+    state.pickedExe = { name: safeName, originalName: file.name, bytes };
+    els.fileInfo.textContent = `${file.name} (renamed to ${safeName} for Wine) · ${formatBytes(file.size)}`;
+    els.runBtn.disabled = false;
+    log(`Loaded ${file.name} → ${safeName} (${formatBytes(file.size)}).`);
+  }
+
+  async function buildAppZip() {
+    if (typeof JSZip === "undefined") {
+      throw new Error("JSZip not loaded — boot Wine first.");
+    }
+    const zip = new JSZip();
+    zip.file(state.pickedExe.name, state.pickedExe.bytes);
+    state.appZipBlob = await zip.generateAsync({ type: "blob", compression: "STORE" });
+    log(`Packaged ${state.pickedExe.name} into ${formatBytes(state.appZipBlob.size)} virtual zip.`);
+  }
+
+  // ─── orchestrator ──────────────────────────────────────────────────────
+
+  async function bootAndRun() {
+    if (state.bootInFlight) return;
+    if (!state.pickedExe) {
+      log("Pick an EXE first.", "error");
+      return;
+    }
+
+    state.bootInFlight = true;
+    els.runBtn.disabled = true;
+    els.bootBtn.disabled = true;
+
+    try {
+      installXhrInterceptor();
+      await loadBoxedwineRuntime();
+      await buildAppZip();
+      configureBoxedwine();
+
+      setStatus("Booting Wine + emulator…");
+      els.bootProgress.value = 70;
+      els.screenContainer.classList.add("has-content");
+
+      // Inject the Emscripten runtime. shell.js reads Config at script start,
+      // boxedwine.js then triggers FS construction and runtime init.
+      await loadScript(RUNTIME_BASE + "boxedwine.js");
+      els.bootProgress.value = 100;
+      setStatus(`Running ${state.pickedExe.originalName}…`);
+      log("Launch dispatched. Canvas will activate when Wine is ready.");
+    } catch (err) {
+      log("Boot failed: " + err.message, "error");
+      setStatus("Boot failed. See console.");
+      els.bootBtn.disabled = false;
+      els.runBtn.disabled = false;
+      state.bootInFlight = false;
+    }
+  }
+
+  // ─── wiring ────────────────────────────────────────────────────────────
+
+  els.bootBtn.addEventListener("click", () => {
+    // The "Boot Wine" button now just enables the loader section; actual boot
+    // happens on Run (we need an EXE before we know what to launch).
+    els.loaderSection.classList.remove("disabled");
+    setStatus("Pick an EXE, then click Run.");
+    els.bootBtn.disabled = true;
+    els.bootBtn.textContent = "Wine ready — load an EXE";
+    log("Wine ready to load. Drop an EXE below.");
+  });
+
+  els.pickBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    els.exeInput.click();
+  });
+  els.exeInput.addEventListener("change", (e) => handleFile(e.target.files[0]));
+  els.dropzone.addEventListener("click", () => els.exeInput.click());
+  els.dropzone.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      els.exeInput.click();
+    }
+  });
+  els.dropzone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    els.dropzone.classList.add("hover");
+  });
+  els.dropzone.addEventListener("dragleave", () => els.dropzone.classList.remove("hover"));
+  els.dropzone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    els.dropzone.classList.remove("hover");
+    if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+
+  els.runBtn.addEventListener("click", bootAndRun);
+
+  log("ExeBrowser ready. Click 'Boot Wine' to begin.");
+
+  // SharedArrayBuffer check (Boxedwine needs it for threads)
+  if (typeof SharedArrayBuffer === "undefined") {
+    log("Warning: SharedArrayBuffer is unavailable. Check that COOP/COEP headers are set. Performance will be degraded.", "warn");
+  }
+})();

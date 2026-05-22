@@ -1,0 +1,37 @@
+# Cloudflare Pages headers — required for WASM threading + correct MIME types.
+# COOP/COEP enable SharedArrayBuffer, which Boxedwine needs for performance.
+
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# WebAssembly must be served as application/wasm or browsers refuse to stream-compile.
+/*.wasm
+  Content-Type: application/wasm
+  Cache-Control: public, max-age=31536000, immutable
+
+# Boxedwine runtime — huge, immutable, cache hard.
+/boxedwine/build/default/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Wine FS zips — also immutable.
+/boxedwine/apps/*.zip
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/zip
+
+# App shell — short cache so deploys propagate fast.
+/
+  Cache-Control: public, max-age=300, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+/app.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+/style.css
+  Cache-Control: public, max-age=300, must-revalidate

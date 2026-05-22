@@ -1,0 +1,6 @@
+# Cloudflare Pages project config for exebrowser.com
+# Deploy: `wrangler pages deploy public --project-name=exebrowser`
+
+name = "exebrowser"
+pages_build_output_dir = "public"
+compatibility_date = "2026-05-01"
