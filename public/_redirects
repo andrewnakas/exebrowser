@@ -1,4 +1,1 @@
 /index.html / 301
-# Proxy the OnDemand root-zip range requests through to the Worker.
-# Boxedwine's browserfs hardcodes fetches to /boxedwine/fs/<name>.zip on the current origin.
-/boxedwine/fs/* https://boxedwine-assets.andrew-nakas.workers.dev/fs/:splat 200
