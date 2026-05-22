@@ -20,7 +20,7 @@
   "use strict";
 
   const RUNTIME_BASE = "/boxedwine/build/default/";
-  const ROOT_FS_BASE = "https://boxedwine-assets.exebrowser.workers.dev/fs/";
+  const ROOT_FS_BASE = "https://boxedwine-assets.andrew-nakas.workers.dev/fs/";
   const ROOT_FS_URL = ROOT_FS_BASE + "fullWine1.7.55-v8.zip";
   const OVERLAY_URL = "/boxedwine/apps/wine1.7.55-v8-min-online.zip";
   const VIRTUAL_APP_ZIP = "userapp.zip"; // the filename shell.js will request
