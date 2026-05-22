@@ -22,7 +22,7 @@
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=10" />
+<link rel="stylesheet" href="/style.css?v=11" />
 
 <script type="application/ld+json">
 {
@@ -75,11 +75,21 @@
 
   <section class="card disabled" id="loader-section">
     <h2><span class="step-num">2</span> Load an EXE</h2>
-    <p>Drop a Windows executable here (or click to choose). Older 32-bit Win32 apps work best.</p>
+    <p>Drop a Windows executable here (or pick a folder / zip with the app's whole tree). Older 32-bit Win32 apps work best.</p>
     <div id="dropzone" class="dropzone" tabindex="0">
       <input type="file" id="exeInput" accept=".exe,.EXE,application/x-msdownload" hidden />
-      <p>Drop <code>.exe</code> here, or <button id="pickBtn" type="button" class="link">choose a file</button></p>
+      <input type="file" id="folderInput" webkitdirectory directory multiple hidden />
+      <input type="file" id="zipInput" accept=".zip,application/zip" hidden />
+      <p>Drop files here, or pick:
+        <button id="pickBtn" type="button" class="link">a single EXE</button> ·
+        <button id="pickFolderBtn" type="button" class="link">a folder</button> ·
+        <button id="pickZipBtn" type="button" class="link">a zip</button>
+      </p>
       <p id="fileInfo" class="muted"></p>
+    </div>
+    <div id="entryPickerWrap" class="entry-picker" hidden>
+      <label for="entryPicker"><strong>Entry EXE:</strong></label>
+      <select id="entryPicker"></select>
     </div>
     <button id="runBtn" class="primary" disabled>Run in Wine</button>
   </section>
@@ -91,6 +101,10 @@
       <div id="screen"></div>
       <canvas id="canvas" tabindex="0" oncontextmenu="event.preventDefault()"></canvas>
       <div id="screen-empty-state" class="muted center">No app running yet.</div>
+    </div>
+    <div class="screen-actions">
+      <button id="saveStateBtn" type="button" disabled>Download files written by this app</button>
+      <p class="muted small">Captures everything the running app wrote to its in-memory C:\ — useful for installers, save files, generated content. Won't include the read-only Wine system files.</p>
     </div>
   </section>
 
@@ -152,6 +166,6 @@
   </p>
 </footer>
 
-<script src="/app.js?v=10"></script>
+<script src="/app.js?v=11"></script>
 </body>
 </html>

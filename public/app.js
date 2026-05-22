@@ -53,9 +53,16 @@
     loaderSection: document.getElementById("loader-section"),
     dropzone: document.getElementById("dropzone"),
     exeInput: document.getElementById("exeInput"),
+    folderInput: document.getElementById("folderInput"),
+    zipInput: document.getElementById("zipInput"),
     pickBtn: document.getElementById("pickBtn"),
+    pickFolderBtn: document.getElementById("pickFolderBtn"),
+    pickZipBtn: document.getElementById("pickZipBtn"),
+    entryPickerWrap: document.getElementById("entryPickerWrap"),
+    entryPicker: document.getElementById("entryPicker"),
     fileInfo: document.getElementById("fileInfo"),
     runBtn: document.getElementById("runBtn"),
+    saveStateBtn: document.getElementById("saveStateBtn"),
     logOutput: document.getElementById("logOutput"),
     canvas: document.getElementById("canvas"),
     screenContainer: document.getElementById("screen-container"),
@@ -63,9 +70,16 @@
 
   const state = {
     depsLoaded: false,
-    pickedExe: null, // { name: "FOO.EXE", bytes: Uint8Array }
+    // Files staged for the virtual app zip. Each: { path: "RELATIVE/IN/ZIP", bytes: Uint8Array }
+    // path uses forward slashes and is what Wine sees relative to its working dir.
+    stagedFiles: [],
+    // EXEs found among stagedFiles, populated for the entry-EXE picker.
+    candidateExes: [],
+    // The selected entry. { name: "FOO.EXE", path: "subdir/FOO.EXE", originalName: "Foo.exe" }
+    pickedExe: null,
     appZipBlob: null,
     bootInFlight: false,
+    booted: false,
     // Locked in when the user clicks Boot Wine; reused on Run.
     selectedVariant: "default",
   };
@@ -95,6 +109,23 @@
     if (base.length === 0) base = "USERAPP";
     if (base.length > 8) base = base.slice(0, 8);
     return base + ".EXE";
+  }
+
+  // Sanitize a relative path inside the virtual app zip. Splits on / and \,
+  // strips ".." segments, normalizes each segment to alnum + a few safe chars,
+  // and 8.3-truncates the final EXE basename so Wine's loader is happy.
+  function sanitizeRelPath(rel) {
+    const parts = rel.split(/[\\/]+/).filter((s) => s && s !== "." && s !== "..");
+    if (parts.length === 0) return null;
+    const out = parts.map((seg, i) => {
+      const isLast = i === parts.length - 1;
+      if (isLast && /\.exe$/i.test(seg)) return sanitizeExeName(seg);
+      // Allow letters, digits, underscore, dash, dot, parentheses for non-final segments.
+      let s = seg.replace(/[^A-Za-z0-9_.()\- ]/g, "_");
+      if (s.length === 0) s = "_";
+      return s.toUpperCase();
+    });
+    return out.join("/");
   }
 
   function formatBytes(n) {
@@ -293,7 +324,8 @@
     const rootBasename = ROOT_FS_URL.split("/").pop().replace(/\.zip$/, "");
     const overlayBasename = variant.overlayBasename;
     const overlayBaseUrl = variant.overlayBaseUrl;
-    const exeName = state.pickedExe.name;
+    // Wine wants Windows-style separators. The path is relative to D:/userapp.
+    const exeName = state.pickedExe.path.replace(/\//g, "\\");
 
     // The Config object inside shell.js is `let`-scoped, so we can only mutate
     // it from inside the same <script> block. We append our setup at the end
@@ -381,34 +413,265 @@
     window.addEventListener("keydown", onGesture, { capture: true });
   }
 
-  // ─── EXE handling ──────────────────────────────────────────────────────
+  // ─── app payload handling ──────────────────────────────────────────────
+  // The user can supply: (a) one EXE, (b) a folder with one or more EXEs +
+  // assets, or (c) a zip. We normalize all three into `state.stagedFiles`
+  // — a list of { path, bytes } — then build the virtual app zip at boot.
 
-  async function handleFile(file) {
-    if (!file) return;
+  function clearStaged() {
+    state.stagedFiles = [];
+    state.candidateExes = [];
+    state.pickedExe = null;
+    els.entryPickerWrap.hidden = true;
+    els.entryPicker.innerHTML = "";
+    els.fileInfo.textContent = "";
+    els.runBtn.disabled = true;
+  }
 
-    const bytes = new Uint8Array(await file.arrayBuffer());
-    if (bytes.length < 64 || bytes[0] !== 0x4d || bytes[1] !== 0x5a) {
-      log(`Warning: ${file.name} doesn't start with PE 'MZ' magic.`, "warn");
+  // After stagedFiles is populated, find EXEs, refresh the entry-picker, and
+  // default to the only one (or the first if multiple).
+  function refreshEntryPicker() {
+    state.candidateExes = state.stagedFiles
+      .filter((f) => /\.exe$/i.test(f.path))
+      .sort((a, b) => a.path.localeCompare(b.path));
+
+    if (state.candidateExes.length === 0) {
+      els.entryPickerWrap.hidden = true;
+      els.runBtn.disabled = true;
+      state.pickedExe = null;
+      log("No .exe found in the supplied files.", "warn");
+      return;
     }
 
-    const safeName = sanitizeExeName(file.name);
-    state.pickedExe = { name: safeName, originalName: file.name, bytes };
-    els.fileInfo.textContent = `${file.name} (renamed to ${safeName} for Wine) · ${formatBytes(file.size)}`;
+    if (state.candidateExes.length === 1) {
+      els.entryPickerWrap.hidden = true;
+      setEntry(state.candidateExes[0]);
+      return;
+    }
+
+    // Multiple EXEs — show the picker.
+    els.entryPicker.innerHTML = "";
+    for (const f of state.candidateExes) {
+      const opt = document.createElement("option");
+      opt.value = f.path;
+      opt.textContent = `${f.path} (${formatBytes(f.bytes.length)})`;
+      els.entryPicker.appendChild(opt);
+    }
+    els.entryPickerWrap.hidden = false;
+    setEntry(state.candidateExes[0]);
+  }
+
+  function setEntry(stagedFile) {
+    // Wine launch path is just the basename (we cd into the right subdir).
+    const baseName = stagedFile.path.split("/").pop();
+    state.pickedExe = {
+      path: stagedFile.path,
+      name: baseName,
+      originalName: baseName,
+      bytes: stagedFile.bytes,
+    };
+    const exeCount = state.candidateExes.length;
+    const totalSize = state.stagedFiles.reduce((n, f) => n + f.bytes.length, 0);
+    const suffix = state.stagedFiles.length > 1
+      ? ` · ${state.stagedFiles.length} files, ${formatBytes(totalSize)} total`
+      : "";
+    els.fileInfo.textContent = `Entry: ${stagedFile.path}${suffix}` +
+      (exeCount > 1 ? ` · ${exeCount} EXEs available` : "");
     els.runBtn.disabled = false;
-    log(`Loaded ${file.name} → ${safeName} (${formatBytes(file.size)}).`);
+  }
+
+  // Check PE magic on every EXE the user gives us; warn (not fail) on misses.
+  function warnIfNotPe(path, bytes) {
+    if (bytes.length < 64 || bytes[0] !== 0x4d || bytes[1] !== 0x5a) {
+      log(`Warning: ${path} doesn't start with PE 'MZ' magic.`, "warn");
+    }
+  }
+
+  async function handleSingleExe(file) {
+    if (!file) return;
+    clearStaged();
+    const bytes = new Uint8Array(await file.arrayBuffer());
+    warnIfNotPe(file.name, bytes);
+    const safe = sanitizeExeName(file.name);
+    state.stagedFiles.push({ path: safe, bytes });
+    log(`Loaded ${file.name} → ${safe} (${formatBytes(file.size)}).`);
+    refreshEntryPicker();
+  }
+
+  async function handleFolder(fileList) {
+    if (!fileList || fileList.length === 0) return;
+    clearStaged();
+
+    // webkitRelativePath looks like "MyApp/subdir/foo.dll". Drop the common
+    // top-level folder so the zip root matches the folder root.
+    const files = Array.from(fileList);
+    const firstSlash = (p) => p.indexOf("/");
+    const topLevel = files
+      .map((f) => f.webkitRelativePath || f.name)
+      .map((p) => (firstSlash(p) >= 0 ? p.slice(0, firstSlash(p)) : ""))
+      .filter(Boolean);
+    const allSameTop = topLevel.length > 0 && topLevel.every((t) => t === topLevel[0]);
+
+    for (const f of files) {
+      const raw = f.webkitRelativePath || f.name;
+      const stripped = allSameTop ? raw.slice(topLevel[0].length + 1) : raw;
+      if (!stripped) continue;
+      const safe = sanitizeRelPath(stripped);
+      if (!safe) continue;
+      const bytes = new Uint8Array(await f.arrayBuffer());
+      if (/\.exe$/i.test(safe)) warnIfNotPe(safe, bytes);
+      state.stagedFiles.push({ path: safe, bytes });
+    }
+    log(`Loaded folder: ${files.length} files staged.`);
+    refreshEntryPicker();
+  }
+
+  async function handleZip(file) {
+    if (!file) return;
+    if (typeof JSZip === "undefined") {
+      log("JSZip isn't loaded yet — try again in a moment.", "error");
+      return;
+    }
+    clearStaged();
+    const buf = await file.arrayBuffer();
+    const zip = await loadZip(buf);
+    const entries = listZipEntries(zip);
+    for (const e of entries) {
+      const safe = sanitizeRelPath(e.path);
+      if (!safe) continue;
+      const bytes = await readZipEntry(zip, e);
+      if (/\.exe$/i.test(safe)) warnIfNotPe(safe, bytes);
+      state.stagedFiles.push({ path: safe, bytes });
+    }
+    log(`Loaded zip: ${state.stagedFiles.length} files extracted.`);
+    refreshEntryPicker();
+  }
+
+  // ─── JSZip 2.x compatibility helpers ───────────────────────────────────
+  // Boxedwine bundles JSZip 2.6.x (no async API). It accepts ArrayBuffer in
+  // its constructor and returns string/Uint8Array from .asUint8Array().
+  function loadZip(arrayBuffer) {
+    // JSZip 2.x: `new JSZip(data)` or `new JSZip().load(data)`. Both sync.
+    return new JSZip(arrayBuffer);
+  }
+  function listZipEntries(zip) {
+    const out = [];
+    // JSZip 2.x exposes .files as a name->ZipObject map.
+    for (const name of Object.keys(zip.files)) {
+      const obj = zip.files[name];
+      if (obj.dir) continue;
+      out.push({ path: name, obj });
+    }
+    return out;
+  }
+  function readZipEntry(zip, e) {
+    // .asUint8Array() exists in JSZip 2.6+. Synchronous despite the function name.
+    return Promise.resolve(e.obj.asUint8Array());
+  }
+
+  // ─── save writable layer ───────────────────────────────────────────────
+  // Boxedwine's home overlay is an OverlayFS whose writable side is an
+  // InMemory BFS. We reach it via BrowserFS.BFSRequire('fs').getRootFS() and
+  // pull the writable layer out with getOverlayedFileSystems(). That layer
+  // contains *only* files the running app wrote during this session — no
+  // boilerplate Wine prefix — so zipping it gives us a clean delta.
+
+  function getWritableHomeLayer() {
+    const BFS = window.BrowserFS;
+    if (!BFS) throw new Error("BrowserFS not initialized — boot Wine first.");
+    const fs = BFS.BFSRequire("fs");
+    const root = fs.getRootFS && fs.getRootFS();
+    if (!root || !root.mntMap) throw new Error("BrowserFS root not mounted.");
+    const cfg = window.__BoxedwineConfig;
+    if (!cfg || !cfg.appDirPrefix) throw new Error("Config.appDirPrefix missing.");
+    const mountPoint = cfg.appDirPrefix.replace(/\/$/, "");
+    const overlay = root.mntMap[mountPoint];
+    if (!overlay || typeof overlay.getOverlayedFileSystems !== "function") {
+      throw new Error("Home overlay missing or not an OverlayFS.");
+    }
+    const { writable } = overlay.getOverlayedFileSystems();
+    return writable;
+  }
+
+  // Walk a BrowserFS layer synchronously (sync API works on InMemory) and
+  // collect { path, bytes } pairs. Skip /.deletedFiles.log (BFS bookkeeping).
+  function collectWritableFiles(fs, dir = "/") {
+    const out = [];
+    let entries;
+    try {
+      entries = fs.readdirSync(dir);
+    } catch (e) {
+      return out;
+    }
+    for (const name of entries) {
+      const full = dir === "/" ? "/" + name : dir + "/" + name;
+      if (full === "/.deletedFiles.log") continue;
+      let stat;
+      try { stat = fs.statSync(full); } catch (e) { continue; }
+      if (stat.isDirectory()) {
+        out.push(...collectWritableFiles(fs, full));
+      } else if (stat.isFile()) {
+        let buf;
+        try { buf = fs.readFileSync(full); } catch (e) { continue; }
+        out.push({ path: full.replace(/^\//, ""), bytes: buf });
+      }
+    }
+    return out;
+  }
+
+  async function downloadWritableLayer() {
+    try {
+      const writable = getWritableHomeLayer();
+      const files = collectWritableFiles(writable);
+      if (files.length === 0) {
+        log("Writable layer is empty — nothing to download.", "warn");
+        return;
+      }
+      const zip = new JSZip();
+      let totalBytes = 0;
+      for (const f of files) {
+        // BrowserFS returns Buffer-ish objects; coerce to Uint8Array for JSZip.
+        const bytes = f.bytes.buffer ? new Uint8Array(f.bytes.buffer, f.bytes.byteOffset, f.bytes.byteLength) : new Uint8Array(f.bytes);
+        zip.file(f.path, bytes);
+        totalBytes += bytes.length;
+      }
+      const zipBytes = zip.generate({ type: "uint8array", compression: "DEFLATE" });
+      const blob = new Blob([zipBytes], { type: "application/zip" });
+      const url = URL.createObjectURL(blob);
+      const ts = new Date().toISOString().replace(/[:.]/g, "-").replace("T", "_").slice(0, 19);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `exebrowser-output-${ts}.zip`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      // Defer revoke so the download has time to start.
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+      log(`Downloaded ${files.length} file(s), ${formatBytes(totalBytes)} (zipped to ${formatBytes(zipBytes.length)}).`);
+    } catch (err) {
+      log("Save failed: " + err.message, "error");
+    }
   }
 
   async function buildAppZip() {
     if (typeof JSZip === "undefined") {
       throw new Error("JSZip not loaded — boot Wine first.");
     }
-    // Boxedwine bundles JSZip 2.x (2014), which has a synchronous .generate()
-    // and no .generateAsync(). API: zip.file(name, data); zip.generate({type, compression}).
+    if (state.stagedFiles.length === 0 || !state.pickedExe) {
+      throw new Error("No files staged.");
+    }
+    // Boxedwine's shell.js uses the zip basename (sans .zip) as the working-dir
+    // folder name. So we wrap every staged file under `userapp/...` and that
+    // becomes `D:/userapp` at runtime — which matches our app-zip filename
+    // (userapp.zip). Entry EXE keeps its relative subpath so assets resolve.
     const zip = new JSZip();
-    zip.file(state.pickedExe.name, state.pickedExe.bytes);
+    const ROOT = "userapp/";
+    for (const f of state.stagedFiles) {
+      zip.file(ROOT + f.path, f.bytes);
+    }
     const bytes = zip.generate({ type: "uint8array", compression: "STORE" });
     state.appZipBlob = new Blob([bytes], { type: "application/zip" });
-    log(`Packaged ${state.pickedExe.name} into ${formatBytes(state.appZipBlob.size)} virtual zip.`);
+    log(`Packaged ${state.stagedFiles.length} file(s) under userapp/ into ${formatBytes(state.appZipBlob.size)} virtual zip.`);
   }
 
   // ─── orchestrator ──────────────────────────────────────────────────────
@@ -433,6 +696,8 @@
       els.screenContainer.classList.add("has-content");
 
       await startEmulator();
+      state.booted = true;
+      els.saveStateBtn.disabled = false;
       setStatus(`Running ${state.pickedExe.originalName}…`);
       log("Launch dispatched. Canvas will activate when Wine is ready.");
     } catch (err) {
@@ -466,7 +731,24 @@
     e.stopPropagation();
     els.exeInput.click();
   });
-  els.exeInput.addEventListener("change", (e) => handleFile(e.target.files[0]));
+  els.pickFolderBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    els.folderInput.click();
+  });
+  els.pickZipBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    els.zipInput.click();
+  });
+  els.exeInput.addEventListener("change", (e) => handleSingleExe(e.target.files[0]));
+  els.folderInput.addEventListener("change", (e) => handleFolder(e.target.files));
+  els.zipInput.addEventListener("change", (e) => handleZip(e.target.files[0]));
+  els.entryPicker.addEventListener("change", (e) => {
+    const f = state.candidateExes.find((c) => c.path === e.target.value);
+    if (f) setEntry(f);
+  });
+
+  // Dropzone drop: route by file shape. A single .exe → exe handler; a single
+  // .zip → zip handler; otherwise treat as a folder/files drop.
   els.dropzone.addEventListener("click", () => els.exeInput.click());
   els.dropzone.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
@@ -479,15 +761,41 @@
     els.dropzone.classList.add("hover");
   });
   els.dropzone.addEventListener("dragleave", () => els.dropzone.classList.remove("hover"));
-  els.dropzone.addEventListener("drop", (e) => {
+  els.dropzone.addEventListener("drop", async (e) => {
     e.preventDefault();
     els.dropzone.classList.remove("hover");
-    if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+    const files = Array.from(e.dataTransfer.files || []);
+    if (files.length === 0) return;
+    if (files.length === 1 && /\.exe$/i.test(files[0].name)) {
+      handleSingleExe(files[0]);
+    } else if (files.length === 1 && /\.zip$/i.test(files[0].name)) {
+      handleZip(files[0]);
+    } else {
+      // Browsers don't populate webkitRelativePath for dragged-in items unless
+      // we walk e.dataTransfer.items (which we keep deferred). For now treat
+      // dropped multi-file as flat list at zip root.
+      clearStaged();
+      for (const f of files) {
+        const safe = sanitizeRelPath(f.name);
+        if (!safe) continue;
+        const bytes = new Uint8Array(await f.arrayBuffer());
+        if (/\.exe$/i.test(safe)) warnIfNotPe(safe, bytes);
+        state.stagedFiles.push({ path: safe, bytes });
+      }
+      log(`Dropped ${state.stagedFiles.length} files (flat).`);
+      refreshEntryPicker();
+    }
   });
 
   els.runBtn.addEventListener("click", bootAndRun);
+  els.saveStateBtn.addEventListener("click", downloadWritableLayer);
 
   log("ExeBrowser ready. Click 'Boot Wine' to begin.");
+
+  // Preload JSZip so the zip-upload path works before Wine has booted.
+  loadScript(RUNTIME_BASE + "jszip.min.js").catch((e) => {
+    log("Warning: failed to preload JSZip — zip uploads will wait until boot.", "warn");
+  });
 
   // SharedArrayBuffer check (Boxedwine needs it for threads)
   if (typeof SharedArrayBuffer === "undefined") {
