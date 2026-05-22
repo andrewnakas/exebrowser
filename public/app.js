@@ -321,6 +321,42 @@
     els.bootProgress.value = 75;
     await loadScript(RUNTIME_BASE + "boxedwine.js");
     els.bootProgress.value = 100;
+    installAudioReviver();
+  }
+
+  // Chrome blocks AudioContext until a user gesture. Boxedwine creates one
+  // inside SDL_OpenAudio and never resumes it, so apps run silently. Poll
+  // for Module.SDL2.audioContext and resume on the next user interaction
+  // (or immediately, since the run-button click that brought us here counts).
+  function installAudioReviver() {
+    let resumed = false;
+    const tryResume = () => {
+      const ctx = window.Module && window.Module.SDL2 && window.Module.SDL2.audioContext;
+      if (!ctx) return false;
+      if (ctx.state === "suspended") {
+        ctx.resume().then(
+          () => { log("AudioContext resumed."); },
+          (e) => { log("AudioContext resume failed: " + e, "warn"); }
+        );
+      }
+      resumed = true;
+      return true;
+    };
+
+    // Poll for up to 30s while Wine is booting.
+    const start = Date.now();
+    const poll = setInterval(() => {
+      if (resumed || Date.now() - start > 30000) {
+        clearInterval(poll);
+        return;
+      }
+      tryResume();
+    }, 250);
+
+    // Belt + suspenders: any future click/keydown will also nudge it.
+    const onGesture = () => { tryResume(); };
+    window.addEventListener("click", onGesture, { capture: true });
+    window.addEventListener("keydown", onGesture, { capture: true });
   }
 
   // ─── EXE handling ──────────────────────────────────────────────────────
