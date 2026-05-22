@@ -277,6 +277,28 @@ details[open] summary::before { transform: rotate(90deg); }
 details p, details ul { color: var(--muted); margin: 0.5rem 0 0; }
 details ul { padding-left: 1.25rem; }
 
+.boot-options {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+.boot-options label { display: block; margin-bottom: 0.4rem; }
+.boot-options select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.boot-options select:disabled { opacity: 0.6; cursor: not-allowed; }
+.small { font-size: 0.85rem; }
+.boot-options .muted { margin: 0.5rem 0 0; }
+
 footer {
   text-align: center;
   color: var(--muted);

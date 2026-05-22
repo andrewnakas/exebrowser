@@ -26,13 +26,30 @@
   // entry that briefly served index.html at the old path.
   const ROOT_FS_BASE = "/api/fs/";
   const ROOT_FS_URL = ROOT_FS_BASE + "fullWine1.7.55-v8.zip";
-  const OVERLAY_URL = "/boxedwine/apps/wine1.7.55-v8-min-online.zip";
+
+  // Wine "variants" — only the overlay differs.
+  // - default: vanilla 50MB Wine root + small min-online overlay (fast boot).
+  // - gecko:   same root + larger overlay that pre-stages wine_gecko-2.40-x86.msi
+  //            under /share/wine/gecko/, so appwiz.cpl can install Gecko offline
+  //            instead of trying to download it over a blocked ws://8.8.8.8:53.
+  const WINE_VARIANTS = {
+    default: {
+      overlayBaseUrl: "/boxedwine/apps/",
+      overlayBasename: "wine1.7.55-v8-min-online",
+    },
+    gecko: {
+      overlayBaseUrl: "/api/overlay/",
+      overlayBasename: "wine1.7.55-v8-with-gecko",
+    },
+  };
+
   const VIRTUAL_APP_ZIP = "userapp.zip"; // the filename shell.js will request
 
   const els = {
     bootBtn: document.getElementById("bootBtn"),
     bootStatus: document.getElementById("bootStatus"),
     bootProgress: document.getElementById("bootProgress"),
+    wineVariant: document.getElementById("wineVariant"),
     loaderSection: document.getElementById("loader-section"),
     dropzone: document.getElementById("dropzone"),
     exeInput: document.getElementById("exeInput"),
@@ -49,6 +66,8 @@
     pickedExe: null, // { name: "FOO.EXE", bytes: Uint8Array }
     appZipBlob: null,
     bootInFlight: false,
+    // Locked in when the user clicks Boot Wine; reused on Run.
+    selectedVariant: "default",
   };
 
   // ─── helpers ───────────────────────────────────────────────────────────
@@ -268,9 +287,12 @@
     //   inline-default-ondemand-root-overlay=<basename-no-ext>  (preloaded overlay)
     //   ondemand=root                     (range-fetch root, preload overlay)
     // The full root (50MB) contains all DLLs including winmm/ddraw/dsound.
-    // The min-online overlay just preloads /home/.wine for faster boot.
+    // The overlay zip is recursiveCopy'd into the writable layer at /, so its
+    // tree mirrors the Wine prefix layout. Variants only differ in overlay.
+    const variant = WINE_VARIANTS[state.selectedVariant] || WINE_VARIANTS.default;
     const rootBasename = ROOT_FS_URL.split("/").pop().replace(/\.zip$/, "");
-    const overlayBasename = OVERLAY_URL.split("/").pop().replace(/\.zip$/, "");
+    const overlayBasename = variant.overlayBasename;
+    const overlayBaseUrl = variant.overlayBaseUrl;
     const exeName = state.pickedExe.name;
 
     // The Config object inside shell.js is `let`-scoped, so we can only mutate
@@ -281,7 +303,7 @@
       Config.isRunningInline = true;
       Config.locateRootBaseUrl  = ${JSON.stringify(ROOT_FS_BASE)};
       Config.locateAppBaseUrl   = ${JSON.stringify("/boxedwine/apps/")};
-      Config.locateOverlayBaseUrl = ${JSON.stringify("/boxedwine/apps/")};
+      Config.locateOverlayBaseUrl = ${JSON.stringify(overlayBaseUrl)};
       Config.urlParams = ${JSON.stringify([
         "ondemand=root",
         "root=" + encodeURIComponent(rootBasename),
@@ -311,7 +333,7 @@
       throw new Error("Combined shell+config script failed to expose Config.");
     }
 
-    log("Wine shell configured (root=" + rootBasename + ", overlay=" + overlayBasename + ", program=" + exeName + ").");
+    log("Wine shell configured (variant=" + state.selectedVariant + ", root=" + rootBasename + ", overlay=" + overlayBasename + ", program=" + exeName + ").");
   }
 
   // Stage 3: inject the Emscripten runtime. Its preRun calls initialSetup
@@ -426,12 +448,18 @@
 
   els.bootBtn.addEventListener("click", () => {
     // The "Boot Wine" button now just enables the loader section; actual boot
-    // happens on Run (we need an EXE before we know what to launch).
+    // happens on Run (we need an EXE before we know what to launch). We lock
+    // in the variant selection here so the dropdown can be disabled to make it
+    // clear the choice is committed.
+    const choice = els.wineVariant ? els.wineVariant.value : "default";
+    state.selectedVariant = WINE_VARIANTS[choice] ? choice : "default";
+    if (els.wineVariant) els.wineVariant.disabled = true;
+
     els.loaderSection.classList.remove("disabled");
     setStatus("Pick an EXE, then click Run.");
     els.bootBtn.disabled = true;
     els.bootBtn.textContent = "Wine ready — load an EXE";
-    log("Wine ready to load. Drop an EXE below.");
+    log("Wine ready to load (variant: " + state.selectedVariant + "). Drop an EXE below.");
   });
 
   els.pickBtn.addEventListener("click", (e) => {

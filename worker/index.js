@@ -3,17 +3,23 @@
 // frontend can pull it from a same-origin-like endpoint.
 //
 // Routes:
-//   GET /fs/<file>      -> proxies https://www.boxedwine.org/boxedwine/fs/<file>
-//   GET /apps/<file>    -> proxies https://www.boxedwine.org/boxedwine/apps/<file>
+//   GET /fs/<file>       -> proxies https://www.boxedwine.org/boxedwine/fs/<file>
+//   GET /apps/<file>     -> proxies https://www.boxedwine.org/boxedwine/apps/<file>
+//   GET /overlay/<file>  -> proxies https://github.com/andrewnakas/exebrowser-assets/releases/download/<tag>/<file>
 //
 // Why proxy: boxedwine.org doesn't send CORS headers, so the browser blocks
 // the XHR our embedded Boxedwine shell needs. The Wine root zip is also too
 // large to commit into Cloudflare Pages (25MB/file limit on free plan).
-//
-// Future: replace the upstream fetch with an R2 bucket binding so we don't
-// depend on boxedwine.org's uptime.
+// GitHub Releases CDN supports range + CORS but we still proxy for uniform
+// caching and same-origin appearance.
 
-const ALLOWED_PATHS = [/^\/fs\/[A-Za-z0-9._-]+\.zip$/, /^\/apps\/[A-Za-z0-9._-]+\.zip$/];
+const ALLOWED_PATHS = [
+  /^\/fs\/[A-Za-z0-9._-]+\.zip$/,
+  /^\/apps\/[A-Za-z0-9._-]+\.zip$/,
+  /^\/overlay\/[A-Za-z0-9._-]+\.zip$/,
+];
+
+const OVERLAY_RELEASE_BASE = "https://github.com/andrewnakas/exebrowser-assets/releases/download/runtime-v0.1/";
 
 function corsHeaders(origin, allowed) {
   const list = (allowed || "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -46,7 +52,12 @@ export default {
       return new Response("Not found", { status: 404, headers: cors });
     }
 
-    const upstreamUrl = (env.UPSTREAM_BASE || "https://www.boxedwine.org/boxedwine/") + url.pathname.replace(/^\//, "");
+    let upstreamUrl;
+    if (url.pathname.startsWith("/overlay/")) {
+      upstreamUrl = OVERLAY_RELEASE_BASE + url.pathname.replace("/overlay/", "");
+    } else {
+      upstreamUrl = (env.UPSTREAM_BASE || "https://www.boxedwine.org/boxedwine/") + url.pathname.replace(/^\//, "");
+    }
 
     const upstreamHeaders = new Headers();
     const range = request.headers.get("Range");

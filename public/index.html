@@ -22,7 +22,7 @@
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=9" />
+<link rel="stylesheet" href="/style.css?v=10" />
 
 <script type="application/ld+json">
 {
@@ -60,6 +60,14 @@
   <section class="card" id="boot-section">
     <h2><span class="step-num">1</span> Boot Wine</h2>
     <p>First boot downloads ~12&nbsp;MB of runtime + on-demand Wine filesystem. Cached after that.</p>
+    <div class="boot-options">
+      <label for="wineVariant"><strong>Wine variant:</strong></label>
+      <select id="wineVariant">
+        <option value="default" selected>Default (fast, ~50 MB)</option>
+        <option value="gecko">Compatibility (with Gecko / IE — ~80 MB)</option>
+      </select>
+      <p class="muted small">Pick <em>Compatibility</em> for apps that show a "Wine Gecko" prompt or use embedded IE (Space Cadet Pinball, older installers).</p>
+    </div>
     <button id="bootBtn" class="primary">Boot Wine</button>
     <div id="bootStatus" class="status" role="status" aria-live="polite">Idle.</div>
     <progress id="bootProgress" max="100" value="0" hidden></progress>
@@ -144,6 +152,6 @@
   </p>
 </footer>
 
-<script src="/app.js?v=9"></script>
+<script src="/app.js?v=10"></script>
 </body>
 </html>
