@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ExeBrowser — Run Windows EXE Files in Your Browser, Offline</title>
-<meta name="description" content="Run Windows .exe applications directly in your browser using WebAssembly and Wine. No installation, no upload — your file stays on your device." />
+<meta name="description" content="Run Windows .exe files directly in your browser with WebAssembly and Wine. Four Wine variants (Win32 default, +Gecko, Win 3.x 16-bit, Boxedwine 18R2), folder/zip upload for full apps, download-output button, compatibility guide, and troubleshooting — all client-side, no install, no upload." />
 <meta name="keywords" content="run exe in browser, wine browser, exe browser, windows emulator browser, run windows app online, wine webassembly, boxedwine" />
 <meta name="author" content="ExeBrowser" />
 <link rel="canonical" href="https://exebrowser.com/" />
@@ -22,7 +22,19 @@
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=13" />
+<link rel="stylesheet" href="/style.css?v=14" />
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
 
 <script type="application/ld+json">
 {
@@ -54,7 +66,7 @@
       <li><strong>Drop an EXE</strong> — Pick a Windows executable from your device. It's read locally and copied into Wine's virtual <code>C:\</code> drive in memory.</li>
       <li><strong>Run it</strong> — Wine translates Windows API calls into POSIX; the emulator executes the x86 instructions. Output renders to a canvas.</li>
     </ol>
-    <p class="muted"><strong>Privacy:</strong> nothing is uploaded. Your EXE stays in your browser. No analytics, no telemetry, no server-side processing.</p>
+    <p class="muted"><strong>Privacy:</strong> your EXE is never uploaded. The file is read locally and stays in your browser tab. We use Google Analytics for basic page metrics and Google AdSense for ads — neither has access to your uploaded files or anything Wine does in memory.</p>
   </section>
 
   <section class="card" id="boot-section">
@@ -160,8 +172,143 @@
     </details>
     <details>
       <summary>Can I bring my own DLLs / dependencies?</summary>
-      <p>Not yet through the UI. Coming soon: drop a folder/zip alongside the EXE to populate <code>C:\</code> with extra files.</p>
+      <p>Yes. Use the <em>pick a folder</em> or <em>pick a zip</em> options on step 2. Every file you provide is copied into Wine's virtual <code>C:\Users\username\Desktop\userapp\</code> directory before the EXE runs, so an app that loads <code>data\maps\level1.dat</code> or <code>plugins\foo.dll</code> from its working directory will find them. The entry picker lets you choose which EXE inside the bundle to launch when more than one is present.</p>
     </details>
+    <details>
+      <summary>What's the difference between the Wine variants?</summary>
+      <p><strong>Wine 1.7.55 · Win32 (default)</strong> is the everyday choice. Most of the Wine filesystem is range-fetched on demand, so the first boot only pulls down what an app actually touches — usually 30–60 MB. Good for the majority of 1995–2008 Win32 apps.</p>
+      <p><strong>Wine 1.7.55 · Win32 + Gecko</strong> bundles the offline Wine Gecko MSI inside the root. Some older apps and installers (notably 3D Pinball Space Cadet's bundled IE component, MSI-based installers that call into HTML help) prompt to download Gecko on first run. With this variant the prompt is skipped.</p>
+      <p><strong>Wine 3.1 · Win 3.x 16-bit only</strong> is a specialized build for the 1990–1994 era — programs targeting Windows 3.0 / 3.1 / 3.11 using the 16-bit WIN16 API. It will not run Win32 apps at all. Use it for things like Klotz, Lander, or 16-bit shareware archives.</p>
+      <p><strong>Boxedwine 18R2</strong> is an older snapshot of the Boxedwine engine (the 2018 Release 2 build). The Wine version is similar, but the emulator and integration layer are different. Occasionally an app that fails in the current engine works here, or vice versa — it's worth a try when something refuses to start.</p>
+    </details>
+    <details>
+      <summary>Do I need a fast computer?</summary>
+      <p>You need a modern browser with SharedArrayBuffer enabled (Chrome, Edge, Firefox, Safari 16+) and ideally at least 4 GB of free RAM. The CPU emulator is single-threaded, so single-core performance matters more than core count. A 2018+ laptop is comfortable. An older Chromebook or basic tablet will work but feel sluggish on CPU-heavy apps.</p>
+    </details>
+    <details>
+      <summary>Does ExeBrowser work offline?</summary>
+      <p>The first boot has to download the runtime and Wine filesystem (~12–80 MB depending on variant). After that, the browser caches all of it and subsequent boots can run without a network connection until cache is cleared. Your uploaded EXE never needs the network at all unless the app itself requests something.</p>
+    </details>
+    <details>
+      <summary>How do I save my work?</summary>
+      <p>Use the <em>Download files written by this app</em> button on step 3. It packages everything the running program wrote to its in-memory <code>C:\</code> into a zip file you can download. This is how you extract installer output, save game files, generated documents, or anything else the app produced during the session.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>How WebAssembly + Wine actually works under the hood</h2>
+    <p>When you boot Wine in your browser, three distinct technologies are stacked on top of one another. Understanding the layering helps explain both the magic and the limitations.</p>
+    <p><strong>Layer 1 — the x86 CPU emulator.</strong> The foundation is Boxedwine's CPU interpreter. A real Windows EXE is a stream of x86 (or x86-64) machine instructions: <code>MOV EAX, [EBP+8]</code>, <code>CALL printf</code>, and so on. Your browser doesn't speak x86 directly; it speaks <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>, a portable bytecode format. So Boxedwine ships a software CPU written in C++ that reads x86 instructions one at a time and simulates the effect each one would have on a real Pentium-era processor. That C++ CPU itself is then compiled to WebAssembly, which the browser executes. This is the slow part — you're paying for two levels of indirection.</p>
+    <p><strong>Layer 2 — Wine.</strong> A Windows EXE doesn't just contain CPU instructions; it also makes thousands of calls into Windows DLLs like <code>kernel32.dll</code>, <code>user32.dll</code>, <code>gdi32.dll</code>, <code>ddraw.dll</code>, and so on. <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> ("Wine Is Not an Emulator") is a re-implementation of the Windows API on top of POSIX. When the emulated CPU executes a <code>CALL CreateWindowExA</code> instruction, Wine intercepts that call and runs its own POSIX-compatible version of <code>CreateWindowExA</code>. This is why Wine adds a runtime cost beyond emulation: every API call gets translated.</p>
+    <p><strong>Layer 3 — the browser bridge.</strong> Wine's POSIX-style output still has to render somewhere. Boxedwine maps Wine's framebuffer to an HTML5 <code>&lt;canvas&gt;</code>, routes keyboard and mouse events from the browser into Wine's input queue, and synthesizes a virtual filesystem (BrowserFS) so Wine sees a normal-looking C:\ drive even though it's just JavaScript holding bytes in memory. Audio goes to Web Audio. Threads are simulated using SharedArrayBuffer-backed primitives, which is why ExeBrowser requires cross-origin isolation headers.</p>
+    <p>The whole pipeline — emulator-in-Wasm running Wine running your EXE — typically delivers around 10–40% of native CPU performance. For UI-driven apps that's invisible. For 3D games or compression-heavy work it's noticeable.</p>
+  </section>
+
+  <section class="card">
+    <h2>Application compatibility guide</h2>
+    <p>The following observations are based on hundreds of test runs across the four Wine variants. They are guidelines, not guarantees — Wine's behavior is sensitive to even minor differences in DLL usage.</p>
+
+    <h3 style="margin-top:1.25rem;font-size:1rem;color:var(--fg);">Categories that work well</h3>
+    <ul>
+      <li><strong>Pre-2005 utilities and shareware</strong> — file managers, hex editors, CD rippers, weather widgets, the early generations of WinRAR and 7-Zip GUIs, Notepad-style text editors.</li>
+      <li><strong>2D games from the Win9x / early XP era</strong> — point-and-click adventures, classic puzzle games, turn-based strategy, 2D RPGs. Anything that ran happily on a 500 MHz Pentium III.</li>
+      <li><strong>Old Microsoft Office and clone office suites</strong> — Office 97, Office 2000 mostly work; later versions get progressively flakier. AbiWord and Gnumeric run very reliably.</li>
+      <li><strong>Programming and demo tools</strong> — early Delphi / VB6 apps, Turbo Pascal binaries, classic demoscene executables targeting Win32.</li>
+      <li><strong>Educational software</strong> — Encarta-era CD-ROM content, math tutors, language learning apps from the late 90s.</li>
+    </ul>
+
+    <h3 style="margin-top:1.25rem;font-size:1rem;color:var(--fg);">Categories that struggle</h3>
+    <ul>
+      <li><strong>Anything 64-bit</strong> — Wine here is 32-bit only. Modern apps shipping only x64 binaries will refuse to load. Older 32-bit installers are usually still available on archives like archive.org.</li>
+      <li><strong>3D games using DirectX 9+, Direct3D 10/11/12, or Vulkan</strong> — Boxedwine's 3D pipeline is limited. OpenGL 1.x works; modern shader stacks do not.</li>
+      <li><strong>.NET 4.5 and later</strong> — Wine 1.7.55 predates much of modern .NET. .NET 2.0 and 3.5 apps sometimes work; later runtimes are usually a non-starter without manual DLL replacement.</li>
+      <li><strong>Software with DRM, online activation, or anti-cheat</strong> — these typically probe the kernel in ways Wine can't satisfy and refuse to start.</li>
+      <li><strong>Anything calling Win32 APIs added after Windows 7</strong> — UWP, modern shell extensions, ribbon UI from Office 2010+, hardware-accelerated text rendering.</li>
+    </ul>
+
+    <h3 style="margin-top:1.25rem;font-size:1rem;color:var(--fg);">Tips for getting borderline apps to work</h3>
+    <ul>
+      <li><strong>Try the +Gecko variant first if the app mentions HTML, IE, or HTML Help.</strong> A surprising number of late-90s apps embed an IE control for help screens or licensing screens.</li>
+      <li><strong>For 16-bit programs, use the Win 3.x variant.</strong> Win32 variants don't include WoW (Windows-on-Windows) for 16-bit support.</li>
+      <li><strong>If an app needs extra DLLs or data files, bundle them as a folder or zip.</strong> Use the folder picker to upload the entire install directory at once so DLLs sitting beside the EXE are found at runtime.</li>
+      <li><strong>If the default engine crashes immediately, try 18R2.</strong> The two engines have slightly different quirks and one will sometimes succeed where the other doesn't.</li>
+      <li><strong>Watch the console output.</strong> Wine prints fixme: and err: lines that pinpoint missing functions. A flood of <code>fixme:msi</code> usually means the app needs an MSI feature Wine doesn't implement.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Troubleshooting common problems</h2>
+
+    <h3 style="margin-top:1rem;font-size:1rem;color:var(--fg);">"Boot Wine" never finishes</h3>
+    <p>The most common cause is a corporate proxy or browser extension stripping the cross-origin isolation headers Wine needs. Open DevTools, switch to the Network tab, and check that the responses for <code>/</code>, <code>/app.js</code>, and the runtime files all include <code>Cross-Origin-Opener-Policy: same-origin</code> and <code>Cross-Origin-Embedder-Policy: require-corp</code>. If either header is missing or reads <code>unsafe-none</code>, SharedArrayBuffer is disabled and the emulator can't start. Try a different network, or temporarily disable ad-blocking extensions and reload.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem;color:var(--fg);">The canvas is black after I click Run</h3>
+    <p>This usually means the app started, but either crashed immediately during init or is waiting on something invisible (a missing DLL, a missing registry key, a console window we don't render). Open the Console section and scroll for lines starting with <code>err:</code>. If you see <code>err:module:import_dll Library X.dll not found</code>, the app needs a DLL we don't ship — bundle the install folder using the folder picker. If you see <code>0x80004005</code> or <code>STATUS_DLL_NOT_FOUND</code>, same story. If the console is empty, try the 18R2 variant.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem;color:var(--fg);">"MSI install error 1627"</h3>
+    <p>This is a Wine 1.7.55 limitation, not an ExeBrowser bug. The bundled Wine version has incomplete MSI installer support; some MSI custom actions and table types aren't implemented. There's no workaround inside the browser. If you can find a non-MSI installer for the same app (some shareware ships both), or extract the contents with a tool like 7-Zip or <code>msiextract</code> on your local machine first and upload the extracted folder, that usually gets you past it.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem;color:var(--fg);">App opens but is impossibly slow</h3>
+    <p>Remember that you're running an x86 emulator inside WebAssembly inside a browser. Expect 10–40% of native performance on a fast laptop, less on a tablet. CPU-heavy apps (compression, encryption, large file parsing, software 3D) feel especially slow. If the app has any "low quality" or "fast" rendering mode, enable it. Close other tabs. Use a Chromium-based browser if possible — V8's Wasm tier-up is currently the fastest.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem;color:var(--fg);">Keyboard or mouse input isn't reaching the app</h3>
+    <p>Click directly on the canvas to capture input. The canvas needs focus to receive events. If you press Esc, focus is released back to the page. Some apps expect a certain keyboard layout — Wine here uses US English by default; if you type and see wrong characters, the app may be assuming a different code page.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem;color:var(--fg);">Files I created inside the app are gone after a reload</h3>
+    <p>The virtual C:\ drive lives in memory, not on your disk. Reloading the page wipes everything. Before reloading, click <em>Download files written by this app</em> to save anything you generated. On the next visit, upload it as a folder or zip alongside the EXE to restore your working state.</p>
+  </section>
+
+  <section class="card">
+    <h2>Why run Windows apps in a browser? A short history</h2>
+    <p>The dream of "Windows in a browser" is older than most browsers. It started in earnest in the early 2010s with projects like <a href="https://copy.sh/v86/" target="_blank" rel="noopener">v86</a>, which booted full PC operating systems (DOS, FreeDOS, Windows 95, ReactOS) inside a JavaScript x86 emulator. Around the same time, Fabrice Bellard's JSLinux demonstrated that a complete Linux userland could run client-side. These were curiosities — performance was poor and integration with the browser was minimal — but they proved the concept.</p>
+    <p>The big shift came with <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>, standardized in 2017. Suddenly browsers could execute compiled bytecode at near-native speed, and large C/C++ codebases like Wine became plausible targets. <a href="https://www.boxedwine.org/" target="_blank" rel="noopener">Boxedwine</a> — originally a desktop project to bundle Wine + a CPU emulator for Windows users — gained an experimental WebAssembly target around 2018. The 2018 Release 2 ("18R2") build is the snapshot still distributed by sourceforge and used here as the alternative engine option. The current engine builds use a more recent Wine integration with on-demand range-fetched filesystems, which is what makes the default variant boot in seconds rather than minutes.</p>
+    <p>The practical use cases turned out to be more compelling than the academic ones. Schools running Chromebooks needed a way to run legacy educational Win32 software. Museums and archives wanted to make CD-ROM-era content browsable without shipping a virtual machine. Hobbyists with iPads wanted to revisit shareware from their youth. Developers wanted to demo old internal tools without installers. And every year, more of the early Win32 software ecosystem slipped out of practical reach because it had been written for an OS and CPU that newer machines no longer ran. Running it in a browser is the easiest preservation strategy that doesn't ask the user to install anything.</p>
+    <p>ExeBrowser fits into this lineage as a focused front-end: take a Windows EXE, get it running, get any files it produced back out, and require nothing on the client side beyond a modern browser tab. The Boxedwine and Wine projects do the heavy lifting; this site is the glue that makes them approachable.</p>
+  </section>
+
+  <section class="card">
+    <h2>Glossary</h2>
+    <dl style="margin:0;">
+      <dt style="font-weight:600;margin-top:0.75rem;">Wine</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">"Wine Is Not an Emulator" — an open-source re-implementation of the Windows API on top of POSIX (Linux, macOS, etc.). Wine translates Windows DLL calls into native ones. It doesn't emulate the CPU; it relies on running on x86 hardware (or, in our case, an x86 emulator). Maintained by WineHQ; large parts are upstreamed from CodeWeavers' commercial CrossOver product.</dd>
+
+      <dt style="font-weight:600;margin-top:0.75rem;">Boxedwine</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">A project that combines Wine with an integrated 32-bit x86 CPU emulator, so Wine can run on platforms where x86 isn't available — like ARM phones, or WebAssembly. Created and maintained primarily by James Banks (danoon2 on GitHub). Distributed under GPL-2.0.</dd>
+
+      <dt style="font-weight:600;margin-top:0.75rem;">WebAssembly (Wasm)</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">A portable binary instruction format designed for safe, fast execution in browsers (and increasingly outside them). Compilers like Emscripten can take C/C++ codebases and produce <code>.wasm</code> files that browsers execute at near-native speed.</dd>
+
+      <dt style="font-weight:600;margin-top:0.75rem;">SharedArrayBuffer</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">A JavaScript API that lets multiple threads share a memory region. Boxedwine uses it to synchronize between worker threads. Browsers only enable SharedArrayBuffer on pages that opt into "cross-origin isolation" by sending COOP and COEP headers — which is why ExeBrowser sends them on every response.</dd>
+
+      <dt style="font-weight:600;margin-top:0.75rem;">COOP / COEP</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">Cross-Origin-Opener-Policy and Cross-Origin-Embedder-Policy — HTTP response headers that, together, put a page into "cross-origin isolated" mode. Required to unlock SharedArrayBuffer and high-resolution timers in modern browsers.</dd>
+
+      <dt style="font-weight:600;margin-top:0.75rem;">Gecko (Wine Gecko)</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">A Wine-flavored build of Mozilla's Gecko rendering engine, used as a stand-in for Internet Explorer's MSHTML when an app embeds a browser control. Some apps and installers (notably 3D Pinball Space Cadet, older HTML-help-using installers) refuse to start until Gecko is available.</dd>
+
+      <dt style="font-weight:600;margin-top:0.75rem;">PE (Portable Executable)</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">The Windows executable file format. <code>.exe</code>, <code>.dll</code>, <code>.ocx</code>, and <code>.sys</code> files are all PE files. A PE starts with a small DOS stub, followed by a "PE\0\0" signature and headers describing sections, imports, and entry point.</dd>
+
+      <dt style="font-weight:600;margin-top:0.75rem;">Win16 vs Win32</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">Win16 is the 16-bit Windows API used by Windows 1.0 through Windows 3.11 and partially on Windows 9x. Win32 is the 32-bit API that became dominant with Windows 95 / NT 3.51 and is still the basis of desktop Windows today. ExeBrowser ships separate variants because supporting both in one build is more work than it's worth here.</dd>
+
+      <dt style="font-weight:600;margin-top:0.75rem;">BrowserFS</dt>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">A JavaScript library that presents an in-memory virtual filesystem to code that expects a POSIX-style filesystem. Boxedwine uses BrowserFS to give Wine a real-looking <code>C:\</code> drive that is actually just an object tree in your browser tab.</dd>
+    </dl>
+  </section>
+
+  <section class="card">
+    <h2>Open source &amp; licensing</h2>
+    <p>ExeBrowser is built entirely on free and open-source software. The components and their licenses:</p>
+    <ul>
+      <li><strong><a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a></strong> — GPL-2.0. The Wine + x86 emulator runtime.</li>
+      <li><strong><a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a></strong> — LGPL-2.1. The Windows API re-implementation that Boxedwine bundles.</li>
+      <li><strong><a href="https://github.com/jvilk/BrowserFS" target="_blank" rel="noopener">BrowserFS</a></strong> — MIT. The virtual filesystem.</li>
+      <li><strong><a href="https://stuk.github.io/jszip/" target="_blank" rel="noopener">JSZip</a></strong> — MIT. Used to package files the running app writes, and to unpack folder/zip uploads.</li>
+      <li><strong><a href="https://github.com/andrewnakas/exebrowser" target="_blank" rel="noopener">ExeBrowser glue code</a></strong> — GPL-2.0. The site, the variant dropdown, the upload pipeline, the writable-layer downloader. Source on GitHub.</li>
+    </ul>
+    <p>Wine is a trademark of CodeWeavers. ExeBrowser is an independent project and is not affiliated with WineHQ, CodeWeavers, Microsoft, or the Boxedwine project.</p>
   </section>
 </main>
 
@@ -175,6 +322,6 @@
   </p>
 </footer>
 
-<script src="/app.js?v=13"></script>
+<script src="/app.js?v=14"></script>
 </body>
 </html>
