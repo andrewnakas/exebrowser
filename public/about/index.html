@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About ExeBrowser — Run Windows EXE Files in Your Browser</title>
+<meta name="description" content="About ExeBrowser: a free, client-side tool that runs classic Windows .exe applications in your browser using WebAssembly and Wine. Who builds it, why it exists, and how it works." />
+<link rel="canonical" href="https://exebrowser.com/about/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/about/" />
+<meta property="og:title" content="About ExeBrowser" />
+<meta property="og:description" content="A free, client-side tool that runs classic Windows .exe applications in your browser using WebAssembly and Wine." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=14" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/" aria-current="page">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <a href="/" class="back-home">← Back to ExeBrowser</a>
+  <section class="card">
+    <h2>About ExeBrowser</h2>
+    <p>ExeBrowser is a free, open-source web tool that lets you run classic Windows <code>.exe</code> applications directly inside a browser tab — with no installation, no account, and no file upload. Everything happens locally on your own device using <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>, a build of <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a>, and an embedded x86 CPU emulator from the <a href="https://www.boxedwine.org/" target="_blank" rel="noopener">Boxedwine</a> project.</p>
+
+    <h3>What problem it solves</h3>
+    <p>A huge amount of useful and historically interesting software was written for 32-bit Windows between roughly 1995 and 2008. Much of it still works perfectly well, but the machines that ran it are disappearing. Modern laptops, Chromebooks, tablets, and phones either can't run those binaries at all or require a full virtual machine to do so. ExeBrowser removes that friction: open a webpage, drop in an EXE, and the application runs. It's the lowest-effort way we know to revisit a piece of legacy Windows software without installing anything.</p>
+
+    <h3>How it works, briefly</h3>
+    <p>Three layers are stacked on top of each other. At the bottom, a software x86 CPU emulator (compiled to WebAssembly) interprets the machine instructions inside your EXE. In the middle, Wine intercepts the Windows API calls those instructions make — things like <code>CreateWindowExA</code> or <code>ReadFile</code> — and re-implements them on a POSIX foundation. At the top, a browser bridge maps Wine's display to an HTML <code>&lt;canvas&gt;</code>, routes your keyboard and mouse into the emulated environment, and provides a virtual <code>C:\</code> drive that lives entirely in your browser's memory. For a deeper explanation, see the <a href="/guide/">compatibility and internals guide</a>.</p>
+
+    <h3>Who builds it</h3>
+    <p>ExeBrowser is an independent project maintained by a small team of developers interested in software preservation and the web platform. It is <strong>not affiliated</strong> with WineHQ, CodeWeavers, Microsoft, or the Boxedwine project. We simply package and present their excellent open-source work in a form that's approachable from any modern browser. The glue code that makes the site work — the variant selector, the upload pipeline, the writable-layer downloader — is released under GPL-2.0 and is <a href="https://github.com/andrewnakas/exebrowser" target="_blank" rel="noopener">available on GitHub</a>.</p>
+
+    <h3>Our principles</h3>
+    <ul>
+      <li><strong>Your files never leave your device.</strong> The EXE you load is read locally and written into an in-memory filesystem. No network request carries it anywhere. See our <a href="/privacy/">privacy policy</a>.</li>
+      <li><strong>Free and open.</strong> The runtime is open-source; so is our glue code. The site is supported by unobtrusive advertising so it can stay free to use.</li>
+      <li><strong>Honest about limits.</strong> Browser-based emulation is slow and incomplete. We tell you up front what works and what doesn't rather than overpromising.</li>
+    </ul>
+
+    <h3>Get in touch</h3>
+    <p>Questions, bug reports, or compatibility findings are welcome. See the <a href="/contact/">contact page</a> for how to reach us, or open an issue on the GitHub repository linked above.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+</body>
+</html>
