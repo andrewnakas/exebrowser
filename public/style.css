@@ -386,6 +386,66 @@ footer {
   margin-top: 2rem;
 }
 
+/* Link-card grid for /run/ and /blog/ hubs */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.link-card {
+  display: block;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.link-card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.link-card .lc-title { font-weight: 700; display: block; margin-bottom: 0.25rem; }
+.link-card .lc-desc { color: var(--muted); font-size: 0.88rem; }
+
+/* Verdict badges for app pages */
+.verdict {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+.verdict.good { background: rgba(106,191,106,0.15); color: var(--good); }
+.verdict.partial { background: rgba(230,179,90,0.15); color: var(--warn); }
+.verdict.bad { background: rgba(229,115,115,0.15); color: var(--bad); }
+
+.spec-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; }
+.spec-table th, .spec-table td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); }
+.spec-table th { color: var(--muted); font-weight: 600; width: 38%; vertical-align: top; }
+
+.cta-row { margin: 1.25rem 0 0; }
+.cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7em 1.3em;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.cta-btn:hover { background: var(--accent-hover); text-decoration: none; }
+
+.breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--accent); }
+
 @media (max-width: 540px) {
   header { padding: 1.5rem 1rem 1rem; }
   header h1 { font-size: 1.8rem; }

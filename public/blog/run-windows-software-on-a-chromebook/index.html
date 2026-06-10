@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to Run Windows Software on a Chromebook (4 Ways) — ExeBrowser</title>
+<meta name="description" content="Four ways to run Windows programs on a Chromebook, ranked: a browser-based Wine tool with no install, Linux + Wine, remote desktop, and full virtualization. What each is good for and their trade-offs." />
+<meta name="keywords" content="run windows software chromebook, windows apps on chromebook, chromebook exe, run windows games chromebook, wine chromebook" />
+<link rel="canonical" href="https://exebrowser.com/blog/run-windows-software-on-a-chromebook/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/blog/run-windows-software-on-a-chromebook/" />
+<meta property="og:title" content="How to Run Windows Software on a Chromebook (4 Ways)" />
+<meta property="og:description" content="Four ways to run Windows programs on a Chromebook, ranked — including the no-install browser route." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=15" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Run Windows Software on a Chromebook (4 Ways)",
+  "description": "Four ways to run Windows programs on a Chromebook, ranked, including a no-install browser route.",
+  "author": { "@type": "Organization", "name": "ExeBrowser" },
+  "publisher": { "@type": "Organization", "name": "ExeBrowser" },
+  "mainEntityOfPage": "https://exebrowser.com/blog/run-windows-software-on-a-chromebook/",
+  "image": "https://exebrowser.com/og.png",
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://exebrowser.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Run Windows software on a Chromebook", "item": "https://exebrowser.com/blog/run-windows-software-on-a-chromebook/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Run Windows software on a Chromebook</nav>
+  <section class="card">
+    <h2>How to run Windows software on a Chromebook</h2>
+    <p class="updated">Published June 9, 2026 · ~7 minute read</p>
+    <p>Chromebooks are everywhere — in schools, on budgets, as travel laptops — and they run ChromeOS, not Windows. So when you need to open one Windows <code>.exe</code> (a legacy school tool, an old utility, a classic game), you hit a wall. Here are the four realistic ways to run Windows software on a Chromebook, ordered from least to most effort, with honest notes on what each is actually good for.</p>
+
+    <h3>1. Run it in the browser, no install (easiest)</h3>
+    <p>The lowest-friction option is to not install anything at all and run the EXE inside a browser tab using a WebAssembly build of <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a>. That's exactly what <a href="/">ExeBrowser</a> does: you open a page, boot Wine, drop in your executable, and it runs locally in the tab. Nothing is uploaded, no developer mode, no Linux container, no admin rights. On a managed school Chromebook where you <em>can't</em> install anything, this is often the only path that works at all.</p>
+    <p>The trade-off is performance and scope: it emulates an x86 CPU, so it targets classic 32-bit Win32 software (roughly 1995–2008) and runs at a fraction of native speed. Perfect for an old utility, a 2D game, or recovering a file from a legacy program; not for modern 64-bit apps or 3D titles. See the <a href="/guide/">compatibility guide</a> for what runs, or the <a href="/run/">app guides</a> for specific programs.</p>
+
+    <h3>2. Enable Linux (Crostini) and install Wine</h3>
+    <p>Most modern Chromebooks can turn on a Linux container in Settings. Once you have a Linux terminal, you can install Wine natively and run Windows apps with real x86 execution (Chromebooks with Intel/AMD chips run x86 directly — much faster than browser emulation). This handles a wider range of apps, including some that the browser route can't. The cost: it requires turning on Linux (blocked on many managed school devices), some terminal comfort, and disk space. It's the best balance of power and effort if your Chromebook allows it and you're comfortable with a few commands.</p>
+
+    <h3>3. Remote desktop into a real Windows PC</h3>
+    <p>If you already have a Windows machine somewhere — at home, at work, or a cloud Windows instance — you can use Chrome Remote Desktop or RDP to control it from the Chromebook. The app runs on the real PC at full speed and compatibility; you're just viewing it. The catch is obvious: you need that Windows machine to exist and be on, plus a solid internet connection. Great for full modern apps, useless if you don't have a Windows box to connect to.</p>
+
+    <h3>4. Full virtualization or cloud Windows</h3>
+    <p>The heavyweight option: run a complete Windows VM (where the hardware and policy allow it) or rent a cloud Windows desktop. This gives you the whole OS and maximum compatibility, but it's the most setup, the most resources, and often a cost. Reserve it for when you genuinely need full, modern Windows — not for opening a single old EXE.</p>
+
+    <h3>Which should you pick?</h3>
+    <table class="spec-table">
+      <tr><th>Just one old EXE, managed Chromebook</th><td><a href="/">Browser (ExeBrowser)</a> — no install needed</td></tr>
+      <tr><th>Personal Chromebook, want broad app support</th><td>Linux + Wine</td></tr>
+      <tr><th>You own a Windows PC already</th><td>Remote desktop</td></tr>
+      <tr><th>Need full modern Windows</th><td>VM or cloud Windows</td></tr>
+    </table>
+
+    <p>For the most common case — "I have this one Windows program and a Chromebook that won't let me install anything" — start with the browser. It costs you nothing to try.</p>
+    <div class="cta-row"><a class="cta-btn" href="/">Try it now →</a></div>
+  </section>
+
+  <section class="card">
+    <h2>Keep reading</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/blog/wine-vs-emulator-explained/"><span class="lc-title">Wine vs. an emulator</span><span class="lc-desc">What the difference actually is.</span></a></li>
+      <li><a class="link-card" href="/blog/run-old-software-without-a-vm/"><span class="lc-title">Run old software without a VM</span><span class="lc-desc">When a browser tab beats a virtual machine.</span></a></li>
+      <li><a class="link-card" href="/run/"><span class="lc-title">App guides</span><span class="lc-desc">Specific programs, step by step.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+</body>
+</html>

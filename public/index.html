@@ -22,7 +22,7 @@
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=14" />
+<link rel="stylesheet" href="/style.css?v=15" />
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
@@ -48,6 +48,54 @@
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my file uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs in your browser tab. The EXE is read via the File API and written into an in-memory virtual filesystem. No network request carries your file off the device." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is running an EXE in the browser slow?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An x86 CPU is being emulated inside WebAssembly. Native CPUs run x86 directly; ExeBrowser has to interpret it. Expect 10 to 40 percent of native speed depending on the workload." }
+    },
+    {
+      "@type": "Question",
+      "name": "My EXE shows a black screen or crashes. What do I do?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most likely the app needs a Windows feature Wine does not implement, or a DLL that is not shipped. Check the console for clues, bundle the app's whole folder so its DLLs are found, or try the 18R2 variant. Start with a simpler or older app first." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ExeBrowser built on?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Boxedwine, which is Wine plus a 32-bit x86 CPU emulator compiled to WebAssembly. Wine is a trademark of CodeWeavers. Boxedwine is licensed under GPL-2.0." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bring my own DLLs and dependencies?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the pick a folder or pick a zip options to upload the whole install directory. Every file is copied into Wine's virtual C drive before the EXE runs, so an app that loads data or plugin files from its working directory will find them." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ExeBrowser work offline?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The first boot downloads the runtime and Wine filesystem, roughly 12 to 80 MB depending on the variant. After that the browser caches it and subsequent boots can run without a network connection until the cache is cleared." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I save my work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the Download files written by this app button. It packages everything the running program wrote to its in-memory C drive into a zip you can download, which is how you extract installer output, save game files, or generated documents." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I run 64-bit Windows apps?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The Wine build here is 32-bit only, so x64-only binaries will not load. Look for an older 32-bit release of the same software, which often still exists on archives like archive.org." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header>
@@ -58,11 +106,11 @@
   <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
   <nav class="site-nav" aria-label="Primary">
     <a href="/" aria-current="page">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
     <a href="/guide/">Guide</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/">Terms</a>
   </nav>
 </header>
 
@@ -140,6 +188,19 @@
   <section class="card">
     <h2>Console</h2>
     <pre id="logOutput" aria-live="polite"></pre>
+  </section>
+
+  <section class="card">
+    <h2>Popular apps people run in the browser</h2>
+    <p>Looking to run a specific program? These guides cover whether it works in ExeBrowser, which Wine variant to pick, and how to load it. <a href="/run/">See all app guides →</a></p>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The classic XP pinball game, in your browser.</span></a></li>
+      <li><a class="link-card" href="/run/winrar/"><span class="lc-title">WinRAR</span><span class="lc-desc">Open and extract RAR archives online.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; classic utilities</span><span class="lc-desc">Tiny Win32 tools that just work.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">The classic card games, no install.</span></a></li>
+      <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">Can the RTS classic run? What to expect.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Extract archives with the open-source tool.</span></a></li>
+    </ul>
   </section>
 
   <section class="card">
@@ -330,6 +391,8 @@
   </p>
   <nav class="footer-nav" aria-label="Footer">
     <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
     <a href="/guide/">Compatibility Guide</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run 7-Zip in Your Browser — Extract Archives Online — ExeBrowser</title>
+<meta name="description" content="Run 7-Zip in your browser with Wine + WebAssembly to open and extract 7z, zip, rar and other archives with no install. Which build to use, how to load it, and how to download extracted files." />
+<meta name="keywords" content="7-zip online, run 7zip in browser, extract 7z online, 7zip no install, open archive browser" />
+<link rel="canonical" href="https://exebrowser.com/run/7-zip/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/7-zip/" />
+<meta property="og:title" content="Run 7-Zip in Your Browser — Extract Archives Online" />
+<meta property="og:description" content="Open and extract archives with 7-Zip in your browser using Wine + WebAssembly. No install." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=15" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "7-Zip", "item": "https://exebrowser.com/run/7-zip/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › 7-Zip</nav>
+  <section class="card">
+    <h2>Run 7-Zip in your browser <span class="verdict good">Works well</span></h2>
+    <p>7-Zip is the free, open-source archiver that opens just about every archive format there is — <code>.7z</code>, <code>.zip</code>, <code>.rar</code>, <code>.tar</code>, <code>.gz</code>, <code>.iso</code> and more. It's a small, classic Win32 application, which makes it one of the more reliable tools to run inside ExeBrowser when you need to crack open an archive on a device where you can't install anything.</p>
+
+    <table class="spec-table">
+      <tr><th>App</th><td>7-Zip File Manager (<code>7zFM.exe</code>) / console (<code>7z.exe</code>)</td></tr>
+      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
+      <tr><th>Which build</th><td>A 32-bit release (any modern 32-bit 7-Zip is fine)</td></tr>
+      <tr><th>How to load</th><td>Upload the 7-Zip folder plus your archive together as a folder or zip</td></tr>
+      <tr><th>Getting files out</th><td>Extract inside 7-Zip, then “Download files written by this app”</td></tr>
+    </table>
+
+    <h3>Bundle the archive alongside 7-Zip</h3>
+    <p>Because ExeBrowser's <code>C:\</code> drive is in-memory, 7-Zip can only see what you upload. Put <code>7zFM.exe</code>, <code>7z.dll</code>, and the archive you want to open into a single folder on your computer, then use the <strong>pick a folder</strong> option. Inside the 7-Zip File Manager, navigate to your archive, extract to a subfolder, and use <strong>Download files written by this app</strong> to pull everything back out as a zip.</p>
+
+    <h3>Use the 32-bit build</h3>
+    <p>The Wine engine is 32-bit only, so grab a 32-bit 7-Zip rather than the x64 build. The installer is itself an EXE; if you'd rather skip installing, extract the program files with another archiver first and upload just the <code>7zFM.exe</code> and <code>7z.dll</code> pair, which is all the file manager needs.</p>
+
+    <h3>When to use it vs. a native tool</h3>
+    <p>For a single quick extract of a common format, a JavaScript-based extractor running natively in the browser will be faster than emulating x86. 7-Zip in ExeBrowser is the right call when you need its broad format support (some obscure or nested formats only it handles cleanly), want the familiar file-manager UI, or are already using ExeBrowser for other Windows tools and want one consistent environment.</p>
+
+    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+  </section>
+
+  <section class="card">
+    <h2>Related guides</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/winrar/"><span class="lc-title">WinRAR</span><span class="lc-desc">The other big archiver.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">More small Win32 tools.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+</body>
+</html>

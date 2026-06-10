@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Classic Windows Solitaire in Your Browser — ExeBrowser</title>
+<meta name="description" content="Play the classic Windows Solitaire (sol.exe) and FreeCell, Minesweeper and other bundled Windows games in your browser with Wine + WebAssembly. No install — here's how to load and run them." />
+<meta name="keywords" content="windows solitaire online, play classic solitaire browser, sol.exe online, freecell minesweeper browser, windows xp solitaire no download" />
+<link rel="canonical" href="https://exebrowser.com/run/solitaire/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/solitaire/" />
+<meta property="og:title" content="Play Classic Windows Solitaire in Your Browser" />
+<meta property="og:description" content="Run the classic bundled Windows games — Solitaire, FreeCell, Minesweeper — in your browser. No install." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=15" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Windows Solitaire", "item": "https://exebrowser.com/run/solitaire/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Windows Solitaire</nav>
+  <section class="card">
+    <h2>Play classic Windows Solitaire in your browser <span class="verdict good">Works well</span></h2>
+    <p>The Solitaire that came with Windows 3.1 through Windows 7 — <code>sol.exe</code> — is a tiny, classic Win32 game, and that makes it a near-perfect candidate for ExeBrowser. So are its siblings: <code>freecell.exe</code>, <code>winmine.exe</code> (Minesweeper), and <code>spider.exe</code>. They boot in seconds, play at full speed, and need nothing modern.</p>
+
+    <table class="spec-table">
+      <tr><th>Apps</th><td>Solitaire (<code>sol.exe</code>), FreeCell, Minesweeper, Spider Solitaire</td></tr>
+      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
+      <tr><th>Era</th><td>1990–2009 — most run on the Win32 engine</td></tr>
+      <tr><th>How to load</th><td>The EXE plus <code>cards.dll</code> (older versions) — bundle as a folder to be safe</td></tr>
+      <tr><th>Expected result</th><td>Full speed, classic look</td></tr>
+    </table>
+
+    <h3>Bring the card graphics</h3>
+    <p>Older versions of Solitaire draw their cards from <code>cards.dll</code> (later <code>cardgames.dll</code>) that lived in the Windows system folder. If you upload only <code>sol.exe</code> and it launches with broken or missing card faces, grab that DLL too and upload both together with the <strong>pick a folder</strong> option so the game finds its art beside the executable.</p>
+
+    <h3>A note on the Win 3.x version</h3>
+    <p>The original Windows 3.x Solitaire is a 16-bit program. If you specifically want that earliest version, switch to the <strong>Wine 3.1 · Win 3.x 16-bit</strong> variant, which handles WIN16 apps the Win32 variants don't. The Windows 95-and-later <code>sol.exe</code> is 32-bit and runs on the default variant.</p>
+
+    <h3>Step by step</h3>
+    <ol>
+      <li>Get <code>sol.exe</code> (and <code>cards.dll</code> if it's an older build) into a folder.</li>
+      <li>On the <a href="/">home page</a>, keep the <strong>Win32 (default)</strong> variant and click <strong>Boot Wine</strong>.</li>
+      <li>Use <strong>pick a folder</strong>, select the folder, choose <code>sol.exe</code>, and <strong>Run in Wine</strong>.</li>
+      <li>Click the canvas to capture the mouse and start dealing.</li>
+    </ol>
+
+    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and play →</a></div>
+  </section>
+
+  <section class="card">
+    <h2>Related guides</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The other classic bundled game.</span></a></li>
+      <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">A more demanding game to try.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+</body>
+</html>
