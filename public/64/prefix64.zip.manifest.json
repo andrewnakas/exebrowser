@@ -1,1 +1,1 @@
-{ "name": "prefix64.zip", "totalBytes": 18477502, "chunkBytes": 18477502, "parts": ["prefix64.zip"] }
+{ "name": "prefix64.zip", "totalBytes": 18477515, "chunkBytes": 8388608, "parts": [ "prefix64.zip.part000", "prefix64.zip.part001", "prefix64.zip.part002" ] }

@@ -1,1 +1,1 @@
-{ "name": "glibc-rootfs64.zip", "totalBytes": 9898829, "chunkBytes": 9898829, "parts": ["glibc-rootfs64.zip"] }
+{ "name": "glibc-rootfs64.zip", "totalBytes": 9901069, "chunkBytes": 8388608, "parts": [ "glibc-rootfs64.zip.part000", "glibc-rootfs64.zip.part001" ] }
