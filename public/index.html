@@ -135,6 +135,7 @@
         <option value="gecko">Wine 1.7.55 · Win32 + Gecko MSI bundled (~80 MB, for IE/HTML apps)</option>
         <option value="win3x">Wine 3.1 · Win 3.x 16-bit only (inline, ~20 MB)</option>
         <option value="r18">Boxedwine 18R2 · alt runtime, same Wine era (experimental, ~19 MB)</option>
+        <option value="x64">wine64 · 64-bit Windows (Boxedwine64, experimental, ~210 MB)</option>
       </select>
       <p class="muted small">
         Pick <em>Win32 default</em> for almost everything from 1995–2008.
@@ -143,6 +144,10 @@
         <em>Win 3.x</em> is for 1990–1994 16-bit Windows apps (Klotz, Lander).
         <em>18R2</em> swaps in an older Boxedwine engine — sometimes it
         handles things the current one chokes on.
+        <em>wine64</em> is a brand-new <strong>experimental</strong> 64-bit engine
+        (real Debian wine64 on an x86-64 emulator) — it opens a separate page with
+        its own app launcher; first boot downloads ~210 MB. Best for simple 64-bit
+        Win32/GDI apps; many things won't render yet.
       </p>
     </div>
     <button id="bootBtn" class="primary">Boot Wine</button>

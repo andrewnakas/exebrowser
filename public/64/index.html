@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Cross-origin isolation for SharedArrayBuffer. On GitHub Pages (which can't
+         set COOP/COEP response headers) this service worker injects them client-side
+         so crossOriginIsolated becomes true; on a server that already sends the
+         headers (node server.mjs) it detects isolation and no-ops. Must run before
+         the Emscripten module loads. See coi-serviceworker.js. -->
+    <script src="coi-serviceworker.js"></script>
+    <title>wine64 in the browser — Boxedwine64</title>
+    <meta name="description" content="64-bit Boxedwine: real wine64 running in WebAssembly">
+    <link rel="stylesheet" type="text/css" href="boxedwine.css">
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 0; padding: 1em; background:#1d1f21; color:#c5c8c6; }
+      h1 { font-size: 1.1em; margin: 0 0 .4em; }
+      #status { font-size:.9em; min-height:1.2em; color:#81a2be; }
+      #output { width: 100%; box-sizing:border-box; background:#101214; color:#c5c8c6;
+                border:1px solid #373b41; font-family: ui-monospace, monospace; font-size:.85em; }
+      .hint { font-size:.8em; color:#969896; margin-top:.5em; }
+      .hint code { color:#b294bb; }
+      #canvas { background:#000; }
+      #toolbar { margin:.4em 0; }
+      #toolbar button { font:inherit; font-size:.85em; color:#c5c8c6; background:#282a2e;
+                border:1px solid #373b41; border-radius:4px; padding:.3em .7em; cursor:pointer; }
+      #toolbar button:hover { background:#373b41; }
+      #toolbar .tbhint { font-size:.78em; color:#969896; margin-left:.6em; }
+      /* App launcher bar — click to swap apps in-page (no full reload). */
+      #apps { margin:.5em 0 .3em; }
+      .approw { display:flex; flex-wrap:wrap; gap:.45em; align-items:center; margin:.25em 0; }
+      .approw .applbl { font-size:.78em; color:#969896; min-width:5.5em; font-weight:600;
+                text-transform:uppercase; letter-spacing:.03em; }
+      .approw.experimental .applbl { color:#cc8866; }
+      .appbtn { font:inherit; font-size:.85em; color:#c5c8c6; background:#282a2e;
+                border:1px solid #373b41; border-radius:6px; padding:.32em .7em; cursor:pointer;
+                display:flex; align-items:center; gap:.35em; }
+      .appbtn:hover { background:#373b41; }
+      .appbtn[aria-pressed="true"] { background:#373b41; border-color:#81a2be; color:#fff; }
+      .appbtn .ico { font-size:1.05em; line-height:1; }
+      .approw.experimental .appbtn { border-style:dashed; opacity:.85; }
+      #apps .appshint { font-size:.78em; color:#969896; margin-top:.3em; }
+    </style>
+  </head>
+  <body>
+    <h1>wine64 &middot; WebAssembly (64-bit Boxedwine)</h1>
+    <div id="loading">
+      <span id="spinner" class="spinner" style="display:inline-block;width:14px;height:14px;vertical-align:middle"></span>
+      <span class="emscripten" id="status">Downloading...</span>
+      <progress value="0" max="100" id="progress" hidden></progress>
+    </div>
+    <div id="apps">
+      <!-- Buttons are wired up in the script below once the launcher is ready.
+           Clicking swaps the running app in-page (reuses the downloaded rootfs,
+           no full reload). data-prog is the wine64 program to run. All of these
+           except glcube/gltri are wine BUILTINS already inside wine64.zip, so
+           they add ZERO download — wine resolves them from system32. -->
+      <div class="approw">
+        <span class="applbl">Apps</span>
+        <button type="button" class="appbtn" data-prog="notepad.exe"><span class="ico">📝</span>Notepad</button>
+        <button type="button" class="appbtn" data-prog="wordpad.exe"><span class="ico">📄</span>WordPad</button>
+        <!-- HxD hex editor (freeware, native Win32/GDI; redistributed as the full
+             intact package per its license — see tools/rootfs64/apps/HxD). The
+             64-bit build launched from the HOME root subfolder. -->
+        <button type="button" class="appbtn" data-prog="Z:\home\username\HxD\HxD64.exe"><span class="ico">🔣</span>HxD (hex)</button>
+        <button type="button" class="appbtn" data-prog="clock.exe"><span class="ico">🕑</span>Clock</button>
+        <button type="button" class="appbtn" data-prog="winecfg.exe"><span class="ico">⚙️</span>winecfg</button>
+        <button type="button" class="appbtn" data-prog="winefile.exe"><span class="ico">🗂️</span>Files</button>
+      </div>
+      <div class="approw">
+        <span class="applbl">Graphics</span>
+        <button type="button" class="appbtn" data-prog="glcube.exe"><span class="ico">🧊</span>glcube</button>
+      </div>
+      <div class="approw">
+        <span class="applbl">Games</span>
+        <button type="button" class="appbtn" data-prog="winemine.exe"><span class="ico">💣</span>Minesweeper</button>
+        <button type="button" class="appbtn" data-prog="snake.exe"><span class="ico">🐍</span>Snake</button>
+        <button type="button" class="appbtn" data-prog="tetris.exe"><span class="ico">🟦</span>Tetris</button>
+        <!-- doomgeneric (GPLv2) + freely-redistributable shareware doom1.wad.
+             -iwad points at the WAD's absolute guest path (z: maps to /, HOME is
+             /home/username, so the WAD sits at Z:\home\username\doom1.wad). -->
+        <button type="button" class="appbtn" data-prog="doom.exe -iwad Z:\home\username\doom1.wad"><span class="ico">👹</span>DOOM</button>
+      </div>
+      <div class="approw experimental">
+        <span class="applbl" title="May not render / may crash under the emulator yet">Experimental</span>
+        <button type="button" class="appbtn" data-prog="taskmgr.exe"><span class="ico">📊</span>Task Mgr</button>
+        <button type="button" class="appbtn" data-prog="regedit.exe"><span class="ico">🧾</span>regedit</button>
+        <button type="button" class="appbtn" data-prog="control.exe"><span class="ico">🎛️</span>control</button>
+        <button type="button" class="appbtn" data-prog="explorer.exe"><span class="ico">🪟</span>explorer</button>
+        <button type="button" class="appbtn" data-prog="iexplore.exe"><span class="ico">🌐</span>IE</button>
+        <button type="button" class="appbtn" data-prog="oleview.exe"><span class="ico">🔎</span>oleview</button>
+      </div>
+      <span class="appshint">first launch downloads the rootfs once; later switches are instant (no reload). Builtins (Notepad…Minesweeper) add no download. <b>Experimental</b> apps may not render yet.</span>
+    </div>
+    <div id="toolbar">
+      <button type="button" onclick="window.downloadSavedFiles && window.downloadSavedFiles()">⤓ Download my files</button>
+      <span class="tbhint">zips your saved files (Z:\home\username + Documents/Desktop) — save from the app first</span>
+      <!-- Upload-your-own .exe: write the picked file into the sandbox and run it.
+           The hidden file input is triggered by the button; on change we hand the
+           File to window.uploadAndRunExe (wine64-launcher.js). -->
+      <input type="file" id="exeUpload" accept=".exe,application/x-msdownload,application/octet-stream" style="display:none"
+             onchange="if (this.files[0] && window.uploadAndRunExe) { window.uploadAndRunExe(this.files[0]); this.value=''; }">
+      <button type="button" onclick="document.getElementById('exeUpload').click()">⬆ Run my own .exe</button>
+      <span class="tbhint">runs a Windows .exe you choose — best with a single <b>portable</b> Win32 app (not installers, .NET, or D3D games)</span>
+      <!-- Clipboard bridge: guest copy -> browser clipboard, browser clipboard ->
+           guest paste. Buttons (not automatic) because navigator.clipboard
+           requires a user gesture. Handlers in wine64-launcher.js. -->
+      <button type="button" onclick="window.bw64CopyFromApp && window.bw64CopyFromApp()">⧉ Copy from app</button>
+      <button type="button" onclick="window.bw64PasteToApp && window.bw64PasteToApp()">⧉ Paste to app</button>
+      <span class="tbhint">bridge the app's clipboard with your computer's — copy/select in the app first, or copy on your computer then paste inside the app</span>
+    </div>
+    <div id="dropzone">
+      <div class="emscripten_border">
+        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+      </div>
+    </div>
+    <!-- Dedicated offscreen canvas for the gl64 WebGL2 bridge. A canvas can hold
+         only one context, and #canvas is owned by SDL's renderer, so the gl64
+         host context lives on its own hidden canvas. Pre-created here (not from
+         C++) so no DOM access is needed off the browser main thread. -->
+    <canvas id="gl64canvas" width="1024" height="1024" style="display:none"></canvas>
+    <div id="console">
+      <textarea class="emscripten" id="output" rows="20" readonly></textarea>
+    </div>
+    <div class="hint">
+      Default: <code>wine64 --version</code>.
+      Try <code>?boot=1</code> (wineboot --init),
+      <code>?p=notepad.exe</code> (needs GL/X11),
+      <code>?novideo=1</code> (headless).
+      Must be served cross-origin-isolated (COOP/COEP) — use <code>node server.mjs</code>.
+    </div>
+
+    <!-- Wire the app-launcher buttons BEFORE the launcher loads, so window.
+         setActiveApp exists when the launcher's first boot calls it. Each button
+         calls window.launchApp(prog). In the default persistent-session mode that
+         SPAWNS the app into the already-running wine (no page reload, prefix/GL
+         stay warm); only ?session=0 falls back to a reload. The cross-origin-
+         isolation gate and the module boot live in wine64-launcher.js (bootWine). -->
+    <script>
+      (function () {
+        // Reflect which app is active by pressing its button.
+        window.setActiveApp = function (prog) {
+          var btns = document.querySelectorAll(".appbtn");
+          for (var i = 0; i < btns.length; i++) {
+            btns[i].setAttribute("aria-pressed", btns[i].getAttribute("data-prog") === prog ? "true" : "false");
+          }
+        };
+        function wire() {
+          var btns = document.querySelectorAll(".appbtn");
+          for (var i = 0; i < btns.length; i++) {
+            (function (btn) {
+              btn.addEventListener("click", function () {
+                var prog = btn.getAttribute("data-prog");
+                if (window.launchApp) window.launchApp(prog);
+                else window.location.search = "?p=" + encodeURIComponent(prog);
+              });
+            })(btns[i]);
+          }
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", wire);
+        } else {
+          wire();
+        }
+      })();
+    </script>
+    <!-- The launcher self-boots on load (reads ?p / ?boot / ?novideo, then boots
+         the wasm module behind the COI gate). It also defines window.launchApp
+         for in-page app switching and window.downloadSavedFiles. -->
+    <script src="wine64-launcher.js"></script>
+  </body>
+</html>

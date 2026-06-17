@@ -29,6 +29,24 @@
 /boxedwine/build/18r2/*
   Cache-Control: public, max-age=31536000, immutable
 
+# 64-bit (Boxedwine64 / wine64) experimental runtime + split rootfs parts.
+# Immutable: the wasm/js and the rootfs .partNNN pieces never change in place
+# (a new build ships new filenames). Same-origin, so COEP require-corp from the
+# catch-all /* rule is satisfied without a CORP header.
+/64/*.part*
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/octet-stream
+
+/64/*.zip
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/zip
+
+/64/boxedwine64.wasm
+  Cache-Control: public, max-age=31536000, immutable
+
+/64/boxedwine64.js
+  Cache-Control: public, max-age=31536000, immutable
+
 # Proxied via Pages Function (functions/api/fs/[file].js) → Worker.
 /api/fs/*
   Cache-Control: public, max-age=3600

@@ -1,0 +1,163 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
+textarea.emscripten {
+    box-sizing: border-box;
+    color: white;
+    background-color: black;
+    display: block;
+    font-family: monospace;
+    height: 9.5rem;
+    resize: none;
+    width: 100%;
+}
+div.emscripten { text-align: center; }
+#loading {
+    flex: 0 0 auto;
+}
+#app {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+}
+#controls {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding: 4px 8px;
+}
+#dropzone {
+    align-items: center;
+    box-sizing: border-box;
+    container-type: size;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 0;
+    overflow: hidden;
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+}
+div.emscripten_border {
+    --boxedwine-canvas-width: 800;
+    --boxedwine-canvas-height: 600;
+    --boxedwine-canvas-aspect: calc(var(--boxedwine-canvas-width) / var(--boxedwine-canvas-height));
+    aspect-ratio: var(--boxedwine-canvas-width) / var(--boxedwine-canvas-height);
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: block;
+    line-height: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: min(100%, calc((100vh - 12rem) * var(--boxedwine-canvas-aspect)));
+}
+@supports (width: 1cqw) {
+    div.emscripten_border {
+        width: min(100cqw, calc(100cqh * var(--boxedwine-canvas-aspect)));
+    }
+}
+/* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+canvas.emscripten {
+    border: 0px none;
+    height: 100%;
+    width: 100%;
+}
+#console {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 100%;
+}
+#app > hr {
+    display: none;
+}
+.spinner {
+    height: 50px;
+    width: 50px;
+    margin: 0px auto;
+    -webkit-animation: rotation .8s linear infinite;
+    -moz-animation: rotation .8s linear infinite;
+    -o-animation: rotation .8s linear infinite;
+    animation: rotation 0.8s linear infinite;
+    border-left: 10px solid rgb(0,150,240);
+    border-right: 10px solid rgb(0,150,240);
+    border-bottom: 10px solid rgb(0,150,240);
+    border-top: 10px solid rgb(100,0,200);
+    border-radius: 100%;
+    background-color: rgb(200,100,250);
+}
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(360deg);}
+}
+@-o-keyframes rotation {
+    from {-o-transform: rotate(0deg);}
+    to {-o-transform: rotate(360deg);}
+}
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index:99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+.close{
+    background: #606061;
+    color: #ffffff;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover{
+    background: #00d9ff;
+}
+.scroll-style
+{
+    max-height: 250px;
+    overflow-y: scroll;
+}

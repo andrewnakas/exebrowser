@@ -813,6 +813,19 @@
     // in the variant selection here so the dropdown can be disabled to make it
     // clear the choice is committed.
     const choice = els.wineVariant ? els.wineVariant.value : "default";
+
+    // The experimental 64-bit variant is a SEPARATE, self-contained page
+    // (Boxedwine64 / wine64 wasm64-mt build at /64/). It has its own loader,
+    // rootfs (split same-origin parts), app launcher, and EXE upload — none of
+    // the 32-bit shell wiring below applies. So hand off to it instead of
+    // enabling the inline loader. ?chunked=1 tells the launcher to fetch the
+    // rootfs via its part manifests up front (we ship only the <25 MB split
+    // parts on Pages, not the whole 196 MB wine64.zip).
+    if (choice === "x64") {
+      window.location.href = "/64/?chunked=1";
+      return;
+    }
+
     state.selectedVariant = WINE_VARIANTS[choice] ? choice : "default";
     if (els.wineVariant) els.wineVariant.disabled = true;
 

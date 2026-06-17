@@ -4,3 +4,12 @@ node_modules/
 .dev.vars
 assets-too-big-for-pages/
 *.log
+
+# Experimental 64-bit (wine64) rootfs + wasm. Too big for GitHub's free LFS
+# budget, so these are NOT committed — they live on local disk and wrangler
+# uploads them straight to Cloudflare Pages at deploy time. Regenerate from the
+# Boxedwine64 build (see public/64/README.md). The small text files (html, js,
+# css, manifests) ARE committed.
+public/64/*.wasm
+public/64/*.zip
+public/64/*.part*
