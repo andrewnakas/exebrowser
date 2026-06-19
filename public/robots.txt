@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /boxedwine/
+Disallow: /64/
 
 Sitemap: https://exebrowser.com/sitemap.xml

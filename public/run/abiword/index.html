@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run AbiWord in Your Browser — Free Word Processor — ExeBrowser</title>
+<meta name="description" content="Run AbiWord, the free open-source word processor, in your browser with Wine + WebAssembly. One of the most reliable office apps for browser-based Wine — how to load it and edit a document with no install." />
+<meta name="keywords" content="abiword browser, free word processor online, open source word processor, run abiword wine, edit doc in browser no install" />
+<link rel="canonical" href="https://exebrowser.com/run/abiword/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/abiword/" />
+<meta property="og:title" content="Run AbiWord in Your Browser — Free Word Processor" />
+<meta property="og:description" content="AbiWord, the free open-source word processor, running cleanly in your browser with Wine + WebAssembly." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=16" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "AbiWord", "item": "https://exebrowser.com/run/abiword/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › AbiWord</nav>
+  <section class="card">
+    <h2>Run AbiWord in your browser <span class="verdict good">Works well</span></h2>
+    <p><em>AbiWord</em> is a free, open-source word processor that has been around since the late 1990s. It's lightweight, native Win32, and — as we note in the main <a href="/guide/">compatibility guide</a> — one of the most reliable office applications to run under browser-based Wine. If you need to open or edit a document on a Chromebook or locked-down machine, this is a great choice.</p>
+
+    <table class="spec-table">
+      <tr><th>App</th><td>AbiWord (<code>AbiWord.exe</code>)</td></tr>
+      <tr><th>License</th><td>GPL-2.0 — free and open source</td></tr>
+      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
+      <tr><th>Opens</th><td><code>.abw</code>, <code>.doc</code>, <code>.rtf</code>, <code>.txt</code>, <code>.html</code>, and more</td></tr>
+      <tr><th>Where to get it</th><td><a href="https://www.abisource.com/download/" target="_blank" rel="noopener">abisource.com/download</a> (official)</td></tr>
+    </table>
+
+    <h3>Why it runs so cleanly</h3>
+    <p>AbiWord draws a standard window with standard controls, reads and writes files, and prints to a file — it doesn't reach for modern GPU features, recent .NET, or post-Windows-7 APIs. That maps almost perfectly onto what Wine 1.7.55 implements well, which is why older AbiWord builds are among the most dependable office apps in ExeBrowser.</p>
+
+    <h3>Editing and saving a document</h3>
+    <p>Bundle the AbiWord program folder (the EXE plus its DLLs) with any document you want to edit, upload it as a folder, and open the file inside AbiWord. When you're done, save inside the app, then click <strong>Download files written by this app</strong> to pull your edited document out of the in-memory <code>C:\</code> as a zip. Remember the virtual drive is wiped on reload — download before you close the tab.</p>
+
+    <h3>A practical workflow</h3>
+    <p>AbiWord opens many <code>.doc</code> files well enough to read and lightly edit, and exports to RTF, HTML, and plain text. That makes it handy for rescuing the contents of an old Word document on a machine with no Office installed: open it, save as RTF or HTML, and download the result.</p>
+
+    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+  </section>
+
+  <section class="card">
+    <h2>Related guides</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/gnumeric/"><span class="lc-title">Gnumeric</span><span class="lc-desc">The free spreadsheet companion.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small Win32 tools.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+</body>
+</html>

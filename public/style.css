@@ -446,6 +446,27 @@ footer {
 .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
 .breadcrumb a { color: var(--accent); }
 
+/* Highlighted download callout on app-guide pages (hosted, legal freeware). */
+.download-box {
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin: 1.25rem 0;
+}
+.download-box h3 { margin-top: 0; }
+.download-box .small { font-size: 0.82rem; }
+
+/* Caution / licensing callout. */
+.warn-box {
+  border: 1px solid var(--warn);
+  background: rgba(230, 179, 90, 0.10);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin: 1.25rem 0;
+}
+.warn-box h3 { margin-top: 0; }
+
 @media (max-width: 540px) {
   header { padding: 1.5rem 1rem 1rem; }
   header h1 { font-size: 1.8rem; }

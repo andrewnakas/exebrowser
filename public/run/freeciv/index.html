@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run Freeciv in Your Browser — Free Civilization-Style Strategy — ExeBrowser</title>
+<meta name="description" content="Run Freeciv, the free open-source empire-building strategy game inspired by Civilization, in your browser with Wine + WebAssembly. Which build to use, how to load it, and realistic expectations." />
+<meta name="keywords" content="freeciv browser, play freeciv online, free civilization game, open source strategy game windows, civ game no install" />
+<link rel="canonical" href="https://exebrowser.com/run/freeciv/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/freeciv/" />
+<meta property="og:title" content="Run Freeciv in Your Browser — Free Civ-Style Strategy" />
+<meta property="og:description" content="Freeciv, the open-source empire-building game, running in your browser with Wine + WebAssembly." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=16" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Freeciv", "item": "https://exebrowser.com/run/freeciv/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Freeciv</nav>
+  <section class="card">
+    <h2>Run Freeciv in your browser <span class="verdict partial">Works (older builds)</span></h2>
+    <p><em>Freeciv</em> is a free, open-source, turn-based empire-building game openly inspired by the classic <em>Civilization</em> series. Because it's GPL software with no DRM and a long history of small 32-bit releases, it's a natural fit for browser-based Wine — with the caveat that you'll want an older, lighter build rather than the newest one.</p>
+
+    <table class="spec-table">
+      <tr><th>Game</th><td>Freeciv (GTK or SDL client, 32-bit Windows build)</td></tr>
+      <tr><th>License</th><td>GPL-2.0 — free and open source</td></tr>
+      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
+      <tr><th>How to load</th><td>Install on a PC, then upload the program folder; or use a portable build</td></tr>
+      <tr><th>Where to get it</th><td><a href="https://www.freeciv.org/download.html" target="_blank" rel="noopener">freeciv.org/download</a> (official)</td></tr>
+    </table>
+
+    <h3>Use an older, lighter build</h3>
+    <p>Modern Freeciv releases lean on newer GTK and OpenGL features that browser-based Wine 1.7.55 handles poorly. The classic 2.2–2.5-era Windows builds, especially the SDL client, are much friendlier: smaller, fewer modern dependencies, and closer to the Wine era we target. Grab one of those from the official downloads or the project's archive.</p>
+
+    <h3>How to get the files in</h3>
+    <p>Freeciv ships as an installer. The cleanest path: install it on any Windows PC (or extract a portable/zip build), then copy the whole Freeciv program directory — the client EXE plus its <code>data\</code> folder of rulesets and tilesets — into one folder and upload that with the <strong>folder picker</strong>. Freeciv reads its rulesets from disk at runtime, so the data folder must come along.</p>
+
+    <h3>What to expect</h3>
+    <p>Turn-based games are forgiving of emulation speed — there's no real-time pressure — so once it boots, play is comfortable. The risk is at startup: a modern client may fail to create its window. If that happens, drop to an older SDL-client build. The single-player game runs a local server in-process, so no network is needed.</p>
+
+    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+  </section>
+
+  <section class="card">
+    <h2>Related guides</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">Free shareware, hosted here.</span></a></li>
+      <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">A real-time strategy classic.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+</body>
+</html>
