@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Open-Source Space Cadet Pinball Online — Instant, Free, No Download — ExeBrowser</title>
+<meta name="description" content="Play a free, fully open-source Space Cadet–style pinball game in your browser. One-click instant play, no upload, no Microsoft files — original CC0 art and sounds running on the open-source SpaceCadetPinball engine compiled to WebAssembly." />
+<meta name="keywords" content="open source space cadet, free pinball browser, space cadet pinball online free, webassembly pinball, cc0 pinball, play pinball no download, 3d pinball open source" />
+<link rel="canonical" href="https://exebrowser.com/run/space-cadet-open/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/space-cadet-open/" />
+<meta property="og:title" content="Play Open-Source Space Cadet Pinball — Instant, Free" />
+<meta property="og:description" content="A fully open-source, instantly playable Space Cadet–style pinball game in your browser. Original CC0 art and sound on the open-source engine — nothing proprietary." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=17" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Open-Source Space Cadet", "item": "https://exebrowser.com/run/space-cadet-open/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Open Cadet — Space Pinball",
+  "url": "https://exebrowser.com/run/space-cadet-open/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "A free, fully open-source Space Cadet–style pinball game that runs instantly in the browser via WebAssembly. Original CC0 art and sound; no proprietary files required.",
+  "applicationCategory": "Game",
+  "genre": ["Pinball", "Arcade"],
+  "gamePlatform": ["Web browser"],
+  "operatingSystem": "Web Browser",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this the real Microsoft Space Cadet?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — and that's the point. This is an independent, fully open-source pinball game inspired by Space Cadet. It runs the open-source SpaceCadetPinball engine (MIT) with brand-new, original public-domain (CC0) artwork and sound effects created from scratch. No Microsoft files are used or required." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to upload or download anything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Everything is included and runs in your browser tab via WebAssembly. Click play and the table loads — no files to bring, no install, nothing uploaded to a server." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the controls?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Click the game to capture input. Press and hold Space to charge and launch the ball with the plunger; the flippers are Z (left) and / (right). Press Esc to release input back to the browser." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reuse the game data?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The table data (PINBALL.DAT) and all sound effects are released under CC0 (public domain). The engine is MIT licensed. You are free to host, modify, and redistribute the whole thing." }
+    }
+  ]
+}
+</script>
+<style>
+  .play-frame-wrap { margin: 1rem 0; }
+  .play-frame { width: 100%; max-width: 640px; height: 480px; border: 0;
+                display: block; margin: 0 auto; background: #000; border-radius: 6px; }
+  .play-cta { display:inline-block; margin: 0 auto 0.5rem; }
+
+  /* Mobile paddle controls — hidden by default, shown on touch devices */
+  .mobile-controls { display: none; }
+  .mobile-hint { display: none; }
+  .mobile-controls {
+    max-width: 640px; margin: 0.5rem auto 0; gap: 0.6rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .mc-btn {
+    -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    touch-action: manipulation; cursor: pointer;
+    font: 700 1.1rem/1 system-ui, sans-serif; letter-spacing: .03em;
+    color: #cfe8ff; background: linear-gradient(#1b2a44, #0d1626);
+    border: 1px solid #3a5a8a; border-radius: 10px;
+    padding: 1.1rem 0.4rem; text-align: center;
+    box-shadow: 0 2px 0 #0a1220, inset 0 1px 0 rgba(120,180,255,.15);
+  }
+  .mc-btn:active {
+    background: linear-gradient(#284064, #16243c);
+    transform: translateY(1px); box-shadow: 0 1px 0 #0a1220;
+    color: #fff;
+  }
+  .mc-launch { color: #ffe1a8; border-color: #8a6a3a; }
+  /* Show controls on touch / small screens */
+  @media (hover: none) and (pointer: coarse) {
+    .mobile-controls { display: grid; }
+    .mobile-hint { display: inline; }
+  }
+  @media (max-width: 720px) {
+    .mobile-controls { display: grid; }
+    .mobile-hint { display: inline; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Open-Source Space Cadet</nav>
+
+  <section class="card">
+    <h2>Play open-source Space Cadet pinball — instantly <span class="verdict good">Free · open source · one-click</span></h2>
+    <p>This is a <strong>fully open-source, instantly playable</strong> Space Cadet–style pinball game — no Microsoft files, no uploads, no install. It runs the open-source <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> engine (MIT) compiled to WebAssembly, with brand-new <strong>original CC0 (public-domain)</strong> artwork and sound effects built from scratch. Click below and launch the ball in seconds.</p>
+
+    <div class="play-frame-wrap">
+      <button class="button play-cta" id="boot-pinball" type="button">▶ Play Open-Source Space Cadet</button>
+      <iframe class="play-frame" id="pinball-frame" title="Open-source Space Cadet pinball"
+              loading="lazy" allow="autoplay; gamepad; fullscreen"
+              data-src="/apps/space-cadet/index.html?v=1782858225"></iframe>
+      <!-- Mobile/touch paddle controls (shown only on touch devices, below the screen) -->
+      <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
+        <button type="button" class="mc-btn mc-flip" data-key="z" aria-label="Left flipper">◀ FLIP</button>
+        <button type="button" class="mc-btn mc-launch" data-key="space" aria-label="Launch ball">● LAUNCH</button>
+        <button type="button" class="mc-btn mc-flip" data-key="slash" aria-label="Right flipper">FLIP ▶</button>
+      </div>
+    </div>
+    <p class="muted small" style="margin-top:0.5rem;">Runs entirely in your browser with WebAssembly — nothing is uploaded. Click the game to capture input; press <kbd>Esc</kbd> to release. Launch with <kbd>Space</kbd>; flippers are <kbd>Z</kbd> and <kbd>/</kbd>. <span class="mobile-hint">On mobile, use the <strong>FLIP</strong> / <strong>LAUNCH</strong> buttons below the table.</span></p>
+
+    <div class="warn-box" style="border-color:#2e7d32;">
+      <p><strong>100% original &amp; public domain.</strong> The table art, sounds, and data file are wholly original works dedicated to the public domain under <a href="/apps/space-cadet/CC0-LICENSE.txt">CC0</a>. This is not Microsoft's Space Cadet and contains none of its assets — it is an open, freely redistributable game inspired by it. The engine is MIT licensed. See the <a href="/apps/space-cadet/NOTICE.md">project notice</a> for details.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works</h2>
+    <p>Unlike most apps on ExeBrowser, this one isn't a Windows <code>.exe</code> running under Wine — it's a native WebAssembly build of an open-source pinball engine. The game's table graphics, physics geometry, and sound are packaged in a <code>PINBALL.DAT</code> data file plus a set of <code>.wav</code> sounds, all generated as original public-domain assets. Because nothing here is proprietary, the whole game can be hosted and redistributed freely.</p>
+    <h3>Why it matters</h3>
+    <p>The classic <em>3D Pinball for Windows – Space Cadet</em> is proprietary Microsoft software, so historically you had to <a href="/run/3d-pinball-space-cadet/">bring your own copy</a> to play it online. This open build removes that requirement entirely: it's a clean-room, public-domain table on a community engine — the first version you can simply click and play with nothing to supply.</p>
+    <h3>Controls</h3>
+    <ol>
+      <li>Click <strong>▶ Play Open-Source Space Cadet</strong> to load the game.</li>
+      <li>Click the table to capture keyboard input.</li>
+      <li>Hold <kbd>Space</kbd> to charge the plunger, release to launch the ball.</li>
+      <li>Flip with <kbd>Z</kbd> (left) and <kbd>/</kbd> (right). Press <kbd>Esc</kbd> to release input.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is this the real Microsoft Space Cadet?</summary>
+      <p>No — and that's the point. This is an independent, fully open-source pinball game inspired by Space Cadet. It runs the open-source SpaceCadetPinball engine (MIT) with brand-new, original public-domain (CC0) artwork and sound effects created from scratch. No Microsoft files are used or required.</p>
+    </details>
+    <details>
+      <summary>Do I need to upload or download anything?</summary>
+      <p>No. Everything is included and runs in your browser tab via WebAssembly. Click play and the table loads — no files to bring, no install, nothing uploaded to a server.</p>
+    </details>
+    <details>
+      <summary>What are the controls?</summary>
+      <p>Click the game to capture input. Press and hold <kbd>Space</kbd> to charge and launch the ball; flippers are <kbd>Z</kbd> (left) and <kbd>/</kbd> (right). Press <kbd>Esc</kbd> to release input back to the browser.</p>
+    </details>
+    <details>
+      <summary>Can I reuse the game data?</summary>
+      <p>Yes. The table data (<code>PINBALL.DAT</code>) and all sound effects are released under CC0 (public domain). The engine is MIT licensed. You are free to host, modify, and redistribute the whole thing.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>More you can play in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">Original Space Cadet</span><span class="lc-desc">Run the real Microsoft game with your own copy via Wine.</span></a></li>
+      <li><a class="link-card" href="/run/full-tilt-pinball/"><span class="lc-title">Full Tilt! Pinball</span><span class="lc-desc">The original Maxis pinball collection.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">Another classic bundled Windows game.</span></a></li>
+      <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">A fully free DOOM-engine game and IWAD.</span></a></li>
+      <li><a class="link-card" href="/run/"><span class="lc-title">All app guides</span><span class="lc-desc">Everything you can run in the browser.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>This game is built on the open-source <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> engine (MIT) with original CC0 data. ExeBrowser is not affiliated with Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Game data CC0 / public domain; engine under MIT.</p>
+</footer>
+
+<script>
+  // Lazy-boot: only load the WASM bundle when the user clicks play.
+  (function () {
+    var btn = document.getElementById('boot-pinball');
+    var frame = document.getElementById('pinball-frame');
+    btn.addEventListener('click', function () {
+      if (!frame.src) {
+        frame.src = frame.getAttribute('data-src');
+      }
+      btn.disabled = true;
+      btn.textContent = 'Loading…';
+      frame.addEventListener('load', function () {
+        btn.style.display = 'none';
+        frame.focus();
+      }, { once: true });
+    });
+
+    // ---- Mobile paddle controls ----------------------------------------
+    // Dispatch keyboard events into the same-origin game iframe so SDL's
+    // Emscripten input handler reacts. Z = left flipper, / = right flipper,
+    // Space = plunger/launch (the engine's defaults).
+    var KEYS = {
+      z:     { key: 'z',     code: 'KeyZ',   keyCode: 90 },
+      slash: { key: '/',     code: 'Slash',  keyCode: 191 },
+      space: { key: ' ',     code: 'Space',  keyCode: 32 }
+    };
+    function gameTarget() {
+      try {
+        var doc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
+        if (!doc) return null;
+        return doc.getElementById('canvas') || doc.body || doc;
+      } catch (e) { return null; }
+    }
+    function fireKey(type, spec) {
+      var win = frame.contentWindow;
+      var tgt = gameTarget();
+      if (!win || !tgt) return;
+      // resume audio on first touch as well
+      try {
+        var m = win.Module;
+        if (m && m.SDL2 && m.SDL2.audioContext && m.SDL2.audioContext.state === 'suspended')
+          m.SDL2.audioContext.resume();
+      } catch (e) {}
+      var ev = new win.KeyboardEvent(type, {
+        key: spec.key, code: spec.code, keyCode: spec.keyCode,
+        which: spec.keyCode, bubbles: true, cancelable: true
+      });
+      tgt.dispatchEvent(ev);
+    }
+    var held = {};
+    function press(name) { if (held[name]) return; held[name] = true; fireKey('keydown', KEYS[name]); }
+    function release(name) { if (!held[name]) return; held[name] = false; fireKey('keyup', KEYS[name]); }
+
+    document.querySelectorAll('#mobile-controls .mc-btn').forEach(function (b) {
+      var name = b.getAttribute('data-key');
+      var down = function (e) { e.preventDefault(); press(name); };
+      var up = function (e) { e.preventDefault(); release(name); };
+      b.addEventListener('touchstart', down, { passive: false });
+      b.addEventListener('touchend', up, { passive: false });
+      b.addEventListener('touchcancel', up, { passive: false });
+      // also support mouse for desktop testing
+      b.addEventListener('mousedown', down);
+      b.addEventListener('mouseup', up);
+      b.addEventListener('mouseleave', up);
+    });
+    // safety: release everything if the page is hidden
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) Object.keys(held).forEach(release);
+    });
+  })();
+</script>
+</body>
+</html>
