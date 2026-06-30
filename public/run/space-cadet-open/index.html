@@ -116,6 +116,47 @@
     .mobile-controls { display: grid; }
     .mobile-hint { display: inline; }
   }
+
+  /* ---- Mobile PLAY MODE: full-screen, centered, scroll-locked ----------
+     When .playing is on <body>, the game takes over the whole viewport so the
+     table + score panel are as large as possible and the page can't scroll
+     (page scrolling during play caused false paddle movements). */
+  body.playing { overflow: hidden; }
+  @media (max-width: 720px) {
+    body.playing { position: fixed; inset: 0; width: 100%; }
+    body.playing .play-overlay { display: flex; }
+  }
+  /* the overlay container that fills the screen in play mode */
+  .play-overlay { display: none; }
+  body.playing .play-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: #05080f;
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    overscroll-behavior: none; touch-action: none;
+  }
+  /* the game fills the area ABOVE the controls (flex:1), centered, keeping the
+     table+panel aspect ratio so nothing is clipped. The bundle shell scales the
+     canvas to fit (object-fit:contain) so the whole table + score show. */
+  body.playing .play-overlay .play-frame {
+    flex: 1 1 auto; width: 100vw; max-width: 100vw; height: auto; min-height: 0;
+    margin: 0; border-radius: 0;
+  }
+  /* controls pinned to the bottom, big tap targets */
+  body.playing .play-overlay .mobile-controls {
+    display: grid; width: 100%; max-width: 100%;
+    margin: 0; padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
+    gap: 0.5rem; flex: 0 0 auto;
+  }
+  body.playing .play-overlay .mc-btn { padding: 1.4rem 0.4rem; font-size: 1.25rem; }
+  /* a small exit button while in play mode */
+  .play-exit {
+    display: none; position: fixed; top: calc(6px + env(safe-area-inset-top));
+    right: 8px; z-index: 10000;
+    background: rgba(10,18,32,.8); color: #cfe8ff; border: 1px solid #3a5a8a;
+    border-radius: 8px; padding: .4rem .7rem; font: 600 .9rem system-ui; cursor: pointer;
+  }
+  body.playing .play-exit { display: block; }
 </style>
 </head>
 <body>
@@ -144,14 +185,18 @@
 
     <div class="play-frame-wrap">
       <button class="button play-cta" id="boot-pinball" type="button">▶ Play Open-Source Space Cadet</button>
-      <iframe class="play-frame" id="pinball-frame" title="Open-source Space Cadet pinball"
-              loading="lazy" allow="autoplay; gamepad; fullscreen"
-              data-src="/apps/space-cadet/index.html?v=1782858225"></iframe>
-      <!-- Mobile/touch paddle controls (shown only on touch devices, below the screen) -->
-      <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
-        <button type="button" class="mc-btn mc-flip" data-key="z" aria-label="Left flipper">◀ FLIP</button>
-        <button type="button" class="mc-btn mc-launch" data-key="space" aria-label="Launch ball">● LAUNCH</button>
-        <button type="button" class="mc-btn mc-flip" data-key="slash" aria-label="Right flipper">FLIP ▶</button>
+      <button type="button" class="play-exit" id="play-exit" aria-label="Exit full screen">✕ Exit</button>
+      <!-- play-overlay becomes full-screen on mobile while playing -->
+      <div class="play-overlay" id="play-overlay">
+        <iframe class="play-frame" id="pinball-frame" title="Open-source Space Cadet pinball"
+                loading="lazy" allow="autoplay; gamepad; fullscreen"
+                data-src="/apps/space-cadet/index.html?v=1782863692"></iframe>
+        <!-- Mobile/touch paddle controls (shown only on touch devices, below the screen) -->
+        <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
+          <button type="button" class="mc-btn mc-flip" data-key="z" aria-label="Left flipper">◀ FLIP</button>
+          <button type="button" class="mc-btn mc-launch" data-key="space" aria-label="Launch ball">● LAUNCH</button>
+          <button type="button" class="mc-btn mc-flip" data-key="slash" aria-label="Right flipper">FLIP ▶</button>
+        </div>
       </div>
     </div>
     <p class="muted small" style="margin-top:0.5rem;">Runs entirely in your browser with WebAssembly — nothing is uploaded. Click the game to capture input; press <kbd>Esc</kbd> to release. Launch with <kbd>Space</kbd>; flippers are <kbd>Z</kbd> and <kbd>/</kbd>. <span class="mobile-hint">On mobile, use the <strong>FLIP</strong> / <strong>LAUNCH</strong> buttons below the table.</span></p>
@@ -227,6 +272,30 @@
   (function () {
     var btn = document.getElementById('boot-pinball');
     var frame = document.getElementById('pinball-frame');
+    var exitBtn = document.getElementById('play-exit');
+    var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+                  || window.matchMedia('(max-width: 720px)').matches;
+
+    function enterPlayMode() {
+      // On mobile: take over the screen, lock page scroll so swipes near the
+      // flipper buttons don't scroll the page and break the paddle stroke.
+      if (!isTouch) return;
+      document.body.classList.add('playing');
+      // scroll to top + lock; prevent touchmove scrolling outside the controls
+      window.scrollTo(0, 0);
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+    }
+    function exitPlayMode() {
+      document.body.classList.remove('playing');
+      document.removeEventListener('touchmove', preventScroll, { passive: false });
+    }
+    function preventScroll(e) {
+      // allow the game canvas and the control buttons to receive touches, but
+      // stop the PAGE from scrolling (which caused false paddle movements)
+      e.preventDefault();
+    }
+    if (exitBtn) exitBtn.addEventListener('click', exitPlayMode);
+
     btn.addEventListener('click', function () {
       if (!frame.src) {
         frame.src = frame.getAttribute('data-src');
@@ -236,6 +305,7 @@
       frame.addEventListener('load', function () {
         btn.style.display = 'none';
         frame.focus();
+        enterPlayMode();
       }, { once: true });
     });
 
