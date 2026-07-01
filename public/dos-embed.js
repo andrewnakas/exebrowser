@@ -127,31 +127,45 @@
     canvas.style.outline = "none";
     canvas.addEventListener("click", () => canvas.focus());
 
-    // DOS scan codes keyed by browser keyCode
-    // Keyed by KeyboardEvent.code (layout-independent, unambiguous for specials)
+    // GLFW KBD_KEYS values — what js-dos/dosbox _addKey actually expects.
+    // Source: js-dos/dosbox include/keyboard.h (GLFW-based enum, not SDL, not DOS scan codes)
     const CODE_MAP = {
-      Escape:1, Backquote:41, Minus:12, Equal:13, Backspace:14, Tab:15,
-      KeyQ:16, KeyW:72, KeyE:18, KeyR:19, KeyT:20, KeyY:21, KeyU:22, KeyI:23, KeyO:24, KeyP:25,
-      BracketLeft:26, BracketRight:27, Enter:28, ControlLeft:29, ControlRight:29,
-      KeyA:75, KeyS:80, KeyD:77, KeyF:33, KeyG:34, KeyH:35, KeyJ:36, KeyK:37, KeyL:38,
-      Semicolon:39, Quote:40, ShiftLeft:42, Backslash:43,
-      KeyZ:44, KeyX:45, KeyC:46, KeyV:47, KeyB:48, KeyN:49, KeyM:50,
-      Comma:51, Period:52, Slash:53, ShiftRight:54, NumpadMultiply:55,
-      AltLeft:56, AltRight:56, Space:57, CapsLock:58,
-      F1:59, F2:60, F3:61, F4:62, F5:63, F6:64, F7:65, F8:66, F9:67, F10:68,
-      NumLock:69, ScrollLock:70,
-      Numpad7:71, Numpad8:72, Numpad9:73, NumpadSubtract:74,
-      Numpad4:75, Numpad5:76, Numpad6:77, NumpadAdd:78,
-      Numpad1:79, Numpad2:80, Numpad3:81, Numpad0:82, NumpadDecimal:83,
-      F11:87, F12:88,
-      // Arrow keys — extended scan codes (0xE0 prefix), DOSBox uses same values
-      ArrowUp:72, ArrowDown:80, ArrowLeft:75, ArrowRight:77,
-      Home:71, End:79, PageUp:73, PageDown:81, Insert:82, Delete:83,
-      NumpadEnter:28,
-      // Number row
-      Digit1:2, Digit2:3, Digit3:4, Digit4:5, Digit5:6,
-      Digit6:7, Digit7:8, Digit8:9, Digit9:10, Digit0:11,
+      // Digits (GLFW = ASCII)
+      Digit0:48, Digit1:49, Digit2:50, Digit3:51, Digit4:52,
+      Digit5:53, Digit6:54, Digit7:55, Digit8:56, Digit9:57,
+      // Letters (GLFW = ASCII uppercase)
+      KeyA:65, KeyB:66, KeyC:67, KeyD:68, KeyE:69, KeyF:70, KeyG:71,
+      KeyH:72, KeyI:73, KeyJ:74, KeyK:75, KeyL:76, KeyM:77, KeyN:78,
+      KeyO:79, KeyP:80, KeyQ:81, KeyR:82, KeyS:83, KeyT:84, KeyU:85,
+      KeyV:86, KeyW:87, KeyX:88, KeyY:89, KeyZ:90,
+      // Symbols (GLFW = ASCII)
+      Space:32, Quote:39, Comma:44, Minus:45, Period:46, Slash:47,
+      Semicolon:59, Equal:61, BracketLeft:91, Backslash:92, BracketRight:93, Backquote:96,
+      // Control keys
+      Escape:256, Enter:257, Tab:258, Backspace:259,
+      Insert:260, Delete:261,
+      // Arrow keys (GLFW: right=262, left=263, down=264, up=265)
+      ArrowRight:262, ArrowLeft:263, ArrowDown:264, ArrowUp:265,
+      PageUp:266, PageDown:267, Home:268, End:269,
+      CapsLock:280, ScrollLock:281, NumLock:282,
+      // Modifiers
+      ShiftLeft:340, ControlLeft:341, AltLeft:342,
+      ShiftRight:344, ControlRight:345, AltRight:346,
+      // Function keys
+      F1:290, F2:291, F3:292, F4:293, F5:294, F6:295,
+      F7:296, F8:297, F9:298, F10:299, F11:300, F12:301,
+      // Numpad
+      Numpad0:320, Numpad1:321, Numpad2:322, Numpad3:323, Numpad4:324,
+      Numpad5:325, Numpad6:326, Numpad7:327, Numpad8:328, Numpad9:329,
+      NumpadDecimal:330, NumpadDivide:331, NumpadMultiply:332,
+      NumpadSubtract:333, NumpadAdd:334, NumpadEnter:335,
     };
+
+    // WASD → arrow GLFW codes so DOOM movement works without remapping in-game
+    CODE_MAP.KeyW = 265; // KBD_up    = forward
+    CODE_MAP.KeyS = 264; // KBD_down  = back
+    CODE_MAP.KeyA = 263; // KBD_left  = turn left
+    CODE_MAP.KeyD = 262; // KBD_right = turn right
 
     const onKey = (pressed) => (e) => {
       const sc = CODE_MAP[e.code];
