@@ -22,7 +22,7 @@
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=19" />
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
@@ -123,6 +123,20 @@
       <li><strong>Run it</strong> — Wine translates Windows API calls into POSIX; the emulator executes the x86 instructions. Output renders to a canvas.</li>
     </ol>
     <p class="muted"><strong>Privacy:</strong> your EXE is never uploaded. The file is read locally and stays in your browser tab. We use Google Analytics for basic page metrics and Google AdSense for ads — neither has access to your uploaded files or anything Wine does in memory.</p>
+  </section>
+
+  <!-- ── Quick Play ── -->
+  <section class="card" id="quick-play">
+    <h2>▶ Quick Play — hosted games &amp; apps</h2>
+    <p class="muted small" style="margin-top:0;">Free, license-clean software we host for you. One click to play — no upload needed.</p>
+    <div class="ql-row">
+      <select id="ql-select" class="ql-select">
+        <option value="" disabled selected>— pick an app or game —</option>
+      </select>
+      <button id="ql-btn" class="primary ql-btn" type="button" disabled>▶ Launch in browser</button>
+    </div>
+    <p id="ql-hint" class="muted small" style="margin:.5rem 0 0;min-height:1.4em;"></p>
+    <p class="muted small" style="margin:.25rem 0 0;">🎮 = opens its own play page (DOSBox) &nbsp;·&nbsp; 🖥 = runs right here in Wine &nbsp;·&nbsp; <a href="/run/">See all 53 app guides →</a></p>
   </section>
 
   <section class="card" id="boot-section">
@@ -410,5 +424,89 @@
 </footer>
 
 <script src="/app.js?v=14"></script>
+<script>
+// Quick-launch: catalogue of hosted, license-clean apps.
+// dosPage = true  → game needs DOSBox; send user to the dedicated /run/ page.
+// dosPage = false → Wine app; stage the zip and boot in-page.
+const QL_APPS = [
+  { label: "3D Pinball Space Cadet",  dosPage: true,  href: "/run/space-cadet-open/" },
+  { label: "DOOM (shareware)",         dosPage: true,  href: "/run/doom/" },
+  { label: "Wolfenstein 3D (shareware)", dosPage: true, href: "/run/wolfenstein-3d/" },
+  { label: "Tyrian 2000 (freeware)",   dosPage: true,  href: "/run/tyrian/" },
+  { label: "Freedoom",                 dosPage: true,  href: "/run/freedoom/" },
+  { label: "Freeciv",                  dosPage: false, appUrl: "/apps/freeciv/freeciv.zip", entry: "freeciv-sdl.exe", variant: "default" },
+  { label: "7-Zip",                    dosPage: false, appUrl: "/apps/7-zip/7-zip.zip",     entry: "7zFM.exe",        variant: "default" },
+  { label: "KeePass",                  dosPage: false, appUrl: "/apps/keepass/keepass.zip", entry: "KeePass.exe",     variant: "default" },
+  { label: "Sumatra PDF",              dosPage: false, appUrl: "/apps/sumatra-pdf/sumatra-pdf.zip", entry: "SumatraPDF.exe", variant: "default" },
+  { label: "Notepad++",               dosPage: false, appUrl: "/apps/notepad-plus-plus/notepad-plus-plus.zip", entry: "notepad++.exe", variant: "default" },
+  { label: "PuTTY",                    dosPage: false, appUrl: "/apps/putty/putty.zip",     entry: "PUTTY.EXE",       variant: "default" },
+];
+
+(function () {
+  const sel  = document.getElementById("ql-select");
+  const btn  = document.getElementById("ql-btn");
+  const hint = document.getElementById("ql-hint");
+
+  function getChoice() { return QL_APPS[parseInt(sel.value, 10)]; }
+
+  function updateHint() {
+    const app = getChoice();
+    if (!app) { hint.textContent = ""; return; }
+    if (app.dosPage) {
+      hint.innerHTML = 'Runs in DOSBox — opens the <a href="' + app.href + '">dedicated play page</a>.';
+      btn.textContent = "▶ Go to game page";
+    } else {
+      hint.textContent = "Runs in Wine right here — click Launch to boot and play.";
+      btn.textContent = "▶ Launch in browser";
+    }
+  }
+
+  async function launch() {
+    const app = getChoice();
+    if (!app) return;
+    if (app.dosPage) { window.location.href = app.href; return; }
+
+    btn.disabled = true;
+    btn.textContent = "Loading…";
+    hint.textContent = "Fetching " + app.label + "…";
+
+    try {
+      // Wait for ExeBrowser engine (app.js exposes window.ExeBrowser)
+      const deadline = Date.now() + 8000;
+      while (!window.ExeBrowser) {
+        if (Date.now() > deadline) throw new Error("Engine didn't load in time.");
+        await new Promise(r => setTimeout(r, 80));
+      }
+      const EB = window.ExeBrowser;
+      EB.setVariant(app.variant || "default");
+      await EB.stageHostedZip(app.appUrl);
+      if (app.entry) EB.preferEntry(app.entry);
+      if (!EB.isReady()) throw new Error("No runnable .exe found in the package.");
+
+      hint.textContent = "Booting Wine and launching " + app.label + "…";
+      // Scroll to the screen section so the user sees it boot
+      document.getElementById("screen-section").scrollIntoView({ behavior: "smooth", block: "start" });
+      await EB.run();
+      btn.textContent = "▶ Launch in browser";
+    } catch (err) {
+      hint.textContent = "Couldn't launch: " + err.message + ". Try the Boot Wine button above and load the app yourself.";
+      btn.textContent = "▶ Launch in browser";
+    }
+    btn.disabled = false;
+  }
+
+  // Populate select
+  QL_APPS.forEach(function(app, i) {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = app.label + (app.dosPage ? " 🎮" : " 🖥");
+    sel.appendChild(opt);
+  });
+
+  sel.addEventListener("change", function() { btn.disabled = false; updateHint(); });
+  btn.addEventListener("click", launch);
+  updateHint();
+})();
+</script>
 </body>
 </html>

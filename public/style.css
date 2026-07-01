@@ -610,3 +610,36 @@ footer {
 }
 @media (hover: none) and (pointer: coarse) { .mgp-hint { display: block; } }
 @media (max-width: 720px) { .mgp-hint { display: block; } }
+
+/* ── Quick Play dropdown ── */
+.ql-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+.ql-select {
+  flex: 1 1 260px;
+  min-width: 0;
+  background: var(--bg-elev);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.55rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  appearance: auto;
+}
+.ql-select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.ql-btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.ql-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
