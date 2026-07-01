@@ -193,7 +193,7 @@
       setStatus("Starting " + cfg.appName + "…");
       overlay.style.display = "none";
 
-      const ci = await window.emulators.dosboxWorker(bundle);
+      const ci = await window.emulators.dosDirect(bundle);
 
       setupRenderer(ci);
       setupInput(ci);
