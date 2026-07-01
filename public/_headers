@@ -66,15 +66,11 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
-# Open Cadet: this game uses NO SharedArrayBuffer / threads, so it does NOT need
-# cross-origin isolation. The catch-all /* sets COOP: same-origin, which severs
-# the parent<->iframe relationship and blocks the game from loading in its embed
-# (blank frame). Relax COOP to unsafe-none on BOTH the play page and the bundle
-# so the iframe embed works.
-/run/space-cadet-open/*
-  Cross-Origin-Opener-Policy: unsafe-none
-
-# Bundle — always revalidate so updates show immediately, and relaxed COOP.
+# Open Cadet WASM bundle — always revalidate so updates show immediately.
+# NOTE: COOP is relaxed to unsafe-none for the game via Pages Functions
+# (functions/apps/space-cadet/_middleware.js and
+# functions/run/space-cadet-open/_middleware.js), NOT here — _headers only
+# MERGES headers (can't remove the catch-all's COOP: same-origin), which left a
+# conflicting double header. Functions REPLACE the header authoritatively.
 /apps/space-cadet/*
   Cache-Control: no-cache, must-revalidate
-  Cross-Origin-Opener-Policy: unsafe-none
