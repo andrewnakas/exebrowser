@@ -938,11 +938,12 @@
       }
     },
     // Prefer a specific entry EXE by basename once files are staged (e.g.
-    // "DOOM95.EXE"). No-op if not found; the default pick stands.
+    // "DOOM95.EXE"). Sanitizes the name the same way stageHostedZip does so
+    // "notepad++.exe" correctly matches the staged "NOTEPAD_.EXE".
     preferEntry(basename) {
-      const want = String(basename).toUpperCase();
+      const sanitized = sanitizeExeName(String(basename));
       const hit = state.candidateExes.find(
-        (f) => f.path.split("/").pop().toUpperCase() === want
+        (f) => f.path.split("/").pop().toUpperCase() === sanitized
       );
       if (hit) setEntry(hit);
     },
