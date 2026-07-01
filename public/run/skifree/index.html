@@ -106,15 +106,13 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play SkiFree</nav>
 
   <section class="card">
-    <h2>Play SkiFree online in your browser <span class="verdict good">Works well</span></h2>
+    <h2>Play SkiFree online in your browser <span class="verdict good">▶ Play now — no Windows files needed</span></h2>
     <p>The classic <strong>SkiFree</strong> — Chris Pirih's 1991 Windows skiing game, the one with the <strong>yeti that eats you at 2000m</strong> — running right in a browser tab. No download for the runtime, no install, no account. SkiFree is a tiny 2D game that draws with plain Windows graphics (no DirectX, no 3D, no networking), so the real Win32 build runs cleanly and at full speed on Wine + WebAssembly. Bring the author's free copy, load it above, and start dodging trees, dogs, and that snowman.</p>
 
-    <!-- No hosted payload: the Play button reveals the in-page uploader.
-         To enable true one-click play, host a license-clean zip and add
-         data-app-url (and data-entry) to the div below. -->
     <div id="exe-embed"
          data-variant="default"
-         data-entry="SKIFREE.EXE"
+         data-entry="ski32.exe"
+         data-app-url="/apps/skifree/skifree.zip"
          data-app-name="SkiFree"
          data-autoboot="false"></div>
     <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
