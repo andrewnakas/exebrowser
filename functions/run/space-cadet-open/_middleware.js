@@ -12,6 +12,9 @@ export async function onRequest(context) {
   const headers = new Headers(response.headers);
   headers.set("Cross-Origin-Opener-Policy", "unsafe-none");
   headers.delete("Cross-Origin-Embedder-Policy");
+  // Drop X-Frame-Options so this page can host the same-origin game iframe
+  // without the frame-embedding block.
+  headers.delete("X-Frame-Options");
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,

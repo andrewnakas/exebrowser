@@ -18,6 +18,11 @@ export async function onRequest(context) {
   const headers = new Headers(response.headers);
   headers.set("Cross-Origin-Opener-Policy", "unsafe-none");
   headers.delete("Cross-Origin-Embedder-Policy");
+  // The catch-all also sets X-Frame-Options: SAMEORIGIN and COEP require-corp on
+  // sub-resources; drop XFO here so the same-origin iframe embed is not blocked,
+  // and set a permissive frame-ancestors CSP for our own origin.
+  headers.delete("X-Frame-Options");
+  headers.set("Content-Security-Policy", "frame-ancestors 'self' https://exebrowser.com");
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
