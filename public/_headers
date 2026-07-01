@@ -10,6 +10,12 @@
 /app.js
   Cache-Control: public, max-age=60, must-revalidate
 
+/embed.js
+  Cache-Control: public, max-age=60, must-revalidate
+
+/dos-embed.js
+  Cache-Control: public, max-age=60, must-revalidate
+
 /style.css
   Cache-Control: public, max-age=60, must-revalidate
 
