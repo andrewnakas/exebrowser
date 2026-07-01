@@ -10125,7 +10125,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var rv = this._getFs(path$$1);
 	            args[0] = rv.path;
 	            try {
-	                return rv.fs[name].apply(rv.fs, args);
+	                if (!rv.fs) { console.error("[BFS mkdir-guard] no fs for path:", path$$1, "name:", name); throw new ApiError(ErrorCode.ENOENT, "No fs mounted for: " + path$$1); } return rv.fs[name].apply(rv.fs, args);
 	            }
 	            catch (e) {
 	                this.standardizeError(e, rv.path, path$$1);
@@ -10154,7 +10154,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    cb.apply(null, args);
 	                };
 	            }
-	            return rv.fs[name].apply(rv.fs, args);
+	            if (!rv.fs) { console.error("[BFS mkdir-guard-async] no fs for path:", path$$1, "name:", name); cb(new ApiError(ErrorCode.ENOENT, "No fs mounted for: " + path$$1)); return; } return rv.fs[name].apply(rv.fs, args);
 	        };
 	    }
 	}
