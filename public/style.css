@@ -423,7 +423,7 @@ footer {
   margin-left: 0.4rem;
   vertical-align: middle;
 }
-.verdict.good { background: rgba(106,191,106,0.15); color: var(--good); }
+.verdict.good, .verdict.works { background: rgba(106,191,106,0.15); color: var(--good); }
 .verdict.partial { background: rgba(230,179,90,0.15); color: var(--warn); }
 .verdict.bad { background: rgba(229,115,115,0.15); color: var(--bad); }
 

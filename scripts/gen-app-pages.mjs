@@ -299,7 +299,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=19" />
+<link rel="stylesheet" href="/style.css?v=20" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -390,7 +390,8 @@ for (const p of pages) {
 
 // ── regenerate the /run/ index so all pages are linked (crawlable) ─────────
 function indexCard(p) {
-  const play = (p.hostable && p.appUrl && !p.skipGenerate) ? ` <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span>` : "";
+  const verdictKind = (p.verdict && p.verdict.kind) ? p.verdict.kind : "good";
+  const play = (p.hostable && p.appUrl && !p.skipGenerate) ? ` <span class="verdict ${verdictKind}" style="margin-left:.3rem;">▶ Play now</span>` : "";
   return `      <li><a class="link-card" href="/run/${p.slug}/"><span class="lc-title">${esc(
     p.appName
   )}${play}</span><span class="lc-desc">${esc(p.verdict.text)}</span></a></li>`;
@@ -414,7 +415,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=19" />
+<link rel="stylesheet" href="/style.css?v=20" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
