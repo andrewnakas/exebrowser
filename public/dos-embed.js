@@ -128,28 +128,33 @@
     canvas.addEventListener("click", () => canvas.focus());
 
     // DOS scan codes keyed by browser keyCode
-    const KEY_MAP = {
-      27: 1,    // Esc
-      49: 2, 50: 3, 51: 4, 52: 5, 53: 6, 54: 7, 55: 8, 56: 9, 57: 10, 48: 11, // 1-9,0
-      81: 16, 87: 17, 69: 18, 82: 19, 84: 20, 89: 21, 85: 22, 73: 23, 79: 24, 80: 25, // QWERTYUIOP
-      65: 30, 83: 31, 68: 32, 70: 33, 71: 34, 72: 35, 74: 36, 75: 37, 76: 38, // ASDFGHJKL
-      90: 44, 88: 45, 67: 46, 86: 47, 66: 48, 78: 49, 77: 50, // ZXCVBNM
-      32: 57,   // Space
-      13: 28,   // Enter
-      8:  14,   // Backspace
-      9:  15,   // Tab
-      16: 42,   // Shift
-      17: 29,   // Ctrl
-      18: 56,   // Alt
-      20: 58,   // CapsLock
-      38: 72, 40: 80, 37: 75, 39: 77, // Arrow Up/Down/Left/Right
-      33: 73, 34: 81, 35: 79, 36: 71, // PgUp PgDn End Home
-      45: 82, 46: 83, // Ins Del
-      112: 59, 113: 60, 114: 61, 115: 62, 116: 63, 117: 64, 118: 65, 119: 66, 120: 67, 121: 68, 122: 87, 123: 88, // F1-F12
+    // Keyed by KeyboardEvent.code (layout-independent, unambiguous for specials)
+    const CODE_MAP = {
+      Escape:1, Backquote:41, Minus:12, Equal:13, Backspace:14, Tab:15,
+      KeyQ:16, KeyW:17, KeyE:18, KeyR:19, KeyT:20, KeyY:21, KeyU:22, KeyI:23, KeyO:24, KeyP:25,
+      BracketLeft:26, BracketRight:27, Enter:28, ControlLeft:29, ControlRight:29,
+      KeyA:30, KeyS:31, KeyD:32, KeyF:33, KeyG:34, KeyH:35, KeyJ:36, KeyK:37, KeyL:38,
+      Semicolon:39, Quote:40, ShiftLeft:42, Backslash:43,
+      KeyZ:44, KeyX:45, KeyC:46, KeyV:47, KeyB:48, KeyN:49, KeyM:50,
+      Comma:51, Period:52, Slash:53, ShiftRight:54, NumpadMultiply:55,
+      AltLeft:56, AltRight:56, Space:57, CapsLock:58,
+      F1:59, F2:60, F3:61, F4:62, F5:63, F6:64, F7:65, F8:66, F9:67, F10:68,
+      NumLock:69, ScrollLock:70,
+      Numpad7:71, Numpad8:72, Numpad9:73, NumpadSubtract:74,
+      Numpad4:75, Numpad5:76, Numpad6:77, NumpadAdd:78,
+      Numpad1:79, Numpad2:80, Numpad3:81, Numpad0:82, NumpadDecimal:83,
+      F11:87, F12:88,
+      // Arrow keys — extended scan codes (0xE0 prefix), DOSBox uses same values
+      ArrowUp:72, ArrowDown:80, ArrowLeft:75, ArrowRight:77,
+      Home:71, End:79, PageUp:73, PageDown:81, Insert:82, Delete:83,
+      NumpadEnter:28,
+      // Number row
+      Digit1:2, Digit2:3, Digit3:4, Digit4:5, Digit5:6,
+      Digit6:7, Digit7:8, Digit8:9, Digit9:10, Digit0:11,
     };
 
     const onKey = (pressed) => (e) => {
-      const sc = KEY_MAP[e.keyCode];
+      const sc = CODE_MAP[e.code];
       if (sc !== undefined) {
         ci.sendKeyEvent(sc, pressed);
         e.preventDefault();
