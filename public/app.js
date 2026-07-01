@@ -498,14 +498,19 @@
   // default to the only one (or the first if multiple).
   function refreshEntryPicker() {
     state.candidateExes = state.stagedFiles
-      .filter((f) => /\.exe$/i.test(f.path))
-      .sort((a, b) => a.path.localeCompare(b.path));
+      .filter((f) => /\.(exe|bat)$/i.test(f.path))
+      .sort((a, b) => {
+        // EXEs before BATs so default pick is still an EXE when both exist
+        const aExe = /\.exe$/i.test(a.path) ? 0 : 1;
+        const bExe = /\.exe$/i.test(b.path) ? 0 : 1;
+        return aExe - bExe || a.path.localeCompare(b.path);
+      });
 
     if (state.candidateExes.length === 0) {
       els.entryPickerWrap.hidden = true;
       els.runBtn.disabled = true;
       state.pickedExe = null;
-      log("No .exe found in the supplied files.", "warn");
+      log("No .exe or .bat found in the supplied files.", "warn");
       return;
     }
 
@@ -941,7 +946,16 @@
     // "DOOM95.EXE"). Sanitizes the name the same way stageHostedZip does so
     // "notepad++.exe" correctly matches the staged "NOTEPAD_.EXE".
     preferEntry(basename) {
-      const sanitized = sanitizeExeName(String(basename));
+      const name = String(basename);
+      // .bat files: match by exact name (case-insensitive), no sanitization
+      if (/\.bat$/i.test(name)) {
+        const hit = state.candidateExes.find(
+          (f) => f.path.split("/").pop().toUpperCase() === name.toUpperCase()
+        );
+        if (hit) { setEntry(hit); return; }
+      }
+      // .exe files: sanitize to 8.3 DOS name before comparing
+      const sanitized = sanitizeExeName(name);
       const hit = state.candidateExes.find(
         (f) => f.path.split("/").pop().toUpperCase() === sanitized
       );

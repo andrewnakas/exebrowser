@@ -869,7 +869,7 @@
       "Empire-building"
     ],
     "variant": "default",
-    "entry": "freeciv-sdl.exe",
+    "entry": "run.bat",
     "hostable": true,
     "appUrl": "/apps/freeciv/freeciv.zip",
     "author": "The Freeciv project",
