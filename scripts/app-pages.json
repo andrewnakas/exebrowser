@@ -853,13 +853,13 @@
   },
   {
     "slug": "freeciv",
-    "title": "Play Freeciv Online \u2014 Free Civ-Style Strategy in Your Browser \u2014 ExeBrowser",
-    "description": "Play Freeciv, the free open-source Civilization-style strategy game, in your browser via Wine + WebAssembly. The SDL client runs \u2014 no install, no upload.",
-    "keywords": "play freeciv online, freeciv browser, free civilization game, open source strategy game, civ game no install, freeciv in browser, turn-based empire builder, freeciv wine",
-    "ogTitle": "Play Freeciv Online \u2014 Free Civ-Style Strategy in Your Browser",
-    "ogDescription": "Freeciv, the open-source empire-building game inspired by Civilization, running in your browser with Wine + WebAssembly.",
-    "crumb": "Play Freeciv",
-    "h1": "Play Freeciv online in your browser",
+    "title": "Freeciv in Browser \u2014 Why It Won't Run and What to Try Instead \u2014 ExeBrowser",
+    "description": "Freeciv's Win32 SDL client uses setjmp which Boxedwine doesn't support \u2014 it crashes at startup. Here's what breaks and what actually works.",
+    "keywords": "freeciv browser, freeciv wine, freeciv online, freeciv windows, freeciv compatibility, run freeciv browser",
+    "ogTitle": "Freeciv in Browser \u2014 Why It Won't Run",
+    "ogDescription": "Freeciv's Win32 SDL build crashes in Boxedwine due to missing setjmp support. Honest compatibility notes and working alternatives.",
+    "crumb": "Freeciv",
+    "h1": "Can Freeciv run in your browser?",
     "appName": "Freeciv",
     "appType": "game",
     "genre": [
@@ -868,43 +868,42 @@
       "4X",
       "Empire-building"
     ],
-    "variant": "r18",
+    "variant": "default",
     "entry": "freeciv-sdl.exe",
-    "hostable": true,
-    "appUrl": "/apps/freeciv/freeciv.zip",
+    "hostable": false,
+    "appUrl": "",
     "author": "The Freeciv project",
-    "licenseReason": "Freeciv is GPL-2.0 open-source software with no DRM, so the 2.6.7 SDL build is free to host and redistribute.",
     "verdict": {
-      "kind": "partial",
-      "text": "Experimental \u2014 SDL client, may be slow or crash"
+      "kind": "bad",
+      "text": "Won't run \u2014 Boxedwine lacks setjmp support required by this EXE"
     },
-    "intro": "<p><strong>Freeciv</strong> is a free, open-source empire-building strategy game inspired by Civilization. This is the 2.6.7 SDL client running under Wine + WebAssembly via the Boxedwine 18R2 runtime. Start a single-player game: click <em>Start new game</em>, configure your options, then click <em>Start</em> to begin. Turn-based play means emulation speed barely matters once you're in a game.</p>",
+    "intro": "<p><strong>Freeciv</strong> is a free, open-source empire-building strategy game inspired by Civilization. Unfortunately the Win32 SDL 2.6.7 build can't run in ExeBrowser: the EXE uses <code>setjmp</code>/<code>longjmp</code> for exception handling, and neither Boxedwine build we host (default or 18R2) was compiled with setjmp emulation support. Boxedwine detects this at load time and aborts with \"setjmp is required for this app but it was compiled into boxedwine.\"</p>",
     "sections": [
       {
-        "h": "How it works & what to expect",
-        "html": "<p>Turn-based games are forgiving of emulation speed \u2014 there's no real-time pressure \u2014 so once Freeciv boots, play is comfortable. The single-player game runs a local server in-process, so <strong>no network connection is needed</strong> to play against the AI.</p><p>We use the <strong>Boxedwine 18R2</strong> runtime (older build that mounts the filesystem differently) combined with the full SDL dependency stack bundled into the app zip. The main risk is at startup: Wine 1.7.55 is old and SDL1's rendering path is unpredictable. If it loads a blank screen, try refreshing and clicking Play again.</p>"
+        "h": "What exactly fails",
+        "html": "<p>The failure chain: Wine loads <code>FREECIV_.EXE</code> \u2192 detects a <code>setjmp</code> call frame \u2192 Boxedwine asserts and kills the process immediately. This happens before the window even appears. It's not a DLL issue \u2014 we bundled all 40+ required DLLs from the official installer \u2014 it's a fundamental CPU emulation gap in the Boxedwine version we use.</p><p><code>setjmp</code>/<code>longjmp</code> lets C programs do non-local jumps across stack frames. Emulating it correctly requires Boxedwine to track shadow stack state, which is a compile-time option. The builds we use were compiled without it.</p>"
       },
       {
-        "h": "Bringing your own build",
-        "html": "<p>Want a different version? Freeciv ships as an installer. Install it on any Windows PC, then copy the whole program directory \u2014 EXE plus the <code>data\\</code> folder \u2014 into one folder and upload it with the <strong>folder picker</strong>. The data folder must come along or the game won't find its rules. Official builds at <a href=\"https://www.freeciv.org/download.html\" target=\"_blank\" rel=\"noopener\">freeciv.org/download</a>.</p>"
+        "h": "Alternatives",
+        "html": "<p>Freeciv's official project now ships a native web client \u2014 go to <a href=\"https://www.freeciv.org/\" target=\"_blank\" rel=\"noopener\">freeciv.org</a> to play multiplayer in plain HTML with no emulation. For strategy in the browser here, try uploading an older Freeciv 2.2-era Windows SDL build that may not use setjmp, or try <a href=\"/run/age-of-empires/\">Age of Empires</a> with your own disc files.</p>"
       }
     ],
     "faq": [
       {
         "q": "Is Freeciv free to play?",
-        "a": "Yes. Freeciv is open-source software under the GPL-2.0 license with no DRM, no paywall, and no anti-cheat. It's completely free, and because of that we can host a ready-to-run build here."
+        "a": "Yes \u2014 Freeciv is GPL-2.0 open-source, completely free. It just can't run in ExeBrowser because the Win32 build uses setjmp which our Boxedwine version doesn't support."
       },
       {
         "q": "Is Freeciv the same as Civilization?",
-        "a": "No \u2014 Freeciv is an independent, free game inspired by the Civilization series. It plays in a very similar style (found cities, research tech, build an empire) and even ships rulesets that mimic classic Civ, but it's a separate open-source project, not a Sid Meier / Firaxis product."
+        "a": "No \u2014 Freeciv is an independent open-source game inspired by Civilization. Same genre (found cities, research tech, build an empire), separate project unrelated to Sid Meier / Firaxis."
       },
       {
-        "q": "Why does it say 'experimental'?",
-        "a": "Freeciv's SDL client has a large dependency stack (SDL, libcurl, ImageMagick, Cairo, Pango) that we bundle into the app zip. Wine 1.7.55 is old software \u2014 most of it works but rendering quirks are possible. If you get a blank screen, refresh and try again."
+        "q": "Why does setjmp break it?",
+        "a": "setjmp/longjmp let C programs jump back to a saved stack frame \u2014 used for exception handling and error recovery. Emulating it requires Boxedwine to save and restore complex CPU state across calls. The Boxedwine builds we host were compiled without this support, so any EXE that calls setjmp hits an assertion and dies."
       },
       {
-        "q": "Does Freeciv need an internet connection to play?",
-        "a": "Not for single-player. Freeciv runs a local game server in-process, so you can play against AI opponents entirely offline inside the browser. Online multiplayer is not supported in this sandboxed setup."
+        "q": "Can I play Freeciv in a browser any other way?",
+        "a": "Yes \u2014 the Freeciv project ships a native web client at freeciv.org. Play multiplayer games in plain HTML with no emulation needed."
       }
     ],
     "related": [
