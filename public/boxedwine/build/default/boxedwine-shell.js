@@ -887,7 +887,7 @@
             }
         	params.push("/bin/wine");
             if(Config.Program.length > 0){
-                if (Config.Program.endsWith('.bat')) {
+                if (Config.Program.toLowerCase().endsWith('.bat')) {
                     params.push("cmd");
                     params.push("/c");
                 }

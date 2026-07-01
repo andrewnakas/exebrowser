@@ -363,7 +363,7 @@
 
     const variant = activeVariant();
     const runtimeBase = variant.runtimeBase;
-    const shellSrc = await fetchText(runtimeBase + "boxedwine-shell.js");
+    const shellSrc = await fetchText(runtimeBase + "boxedwine-shell.js?v=2");
     els.bootProgress.value = 60;
 
     // urlParams depends on the variant's load mode:

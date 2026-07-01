@@ -362,7 +362,7 @@ ${p.dosRuntime
   ? `<script src="/dos-embed.js?v=1"></script>`
   : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/embed.js?v=1"></script>
-<script src="/app.js?v=15"></script>`}
+<script src="/app.js?v=16"></script>`}
 </body>
 </html>
 `;
