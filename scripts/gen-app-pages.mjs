@@ -120,6 +120,16 @@ ${items}
 }
 
 function embedBlock(p) {
+  if (p.iframeUrl) {
+    return `
+    <div class="iframe-embed-wrap" style="position:relative;width:100%;padding-bottom:62.5%;background:#000;border-radius:4px;overflow:hidden;">
+      <iframe src="${esc(p.iframeUrl)}"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allowfullscreen
+              loading="lazy"
+              title="${esc(p.appName)}"></iframe>
+    </div>`;
+  }
   if (p.dosRuntime) {
     const attrs = [
       p.appUrl ? `data-app-url="${esc(p.appUrl)}"` : "",
@@ -335,7 +345,7 @@ ${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
     <h2>${esc(p.h1 || p.crumb)} <span class="verdict ${p.verdict.kind}">${esc(p.verdict.text)}</span></h2>
     ${p.intro}
 ${embedBlock(p)}${mobileControlsHtml(p)}
-    <p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? "Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse." : "Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse."}${licenseHtml(p) ? "" : ""}</p>${licenseHtml(p)}
+    ${p.iframeUrl ? "" : `<p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? "Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse." : "Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse."}</p>`}${licenseHtml(p)}
   </section>
 ${downloadHtml(p)}
   <section class="card">
@@ -358,9 +368,11 @@ ${downloadHtml(p)}
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-${p.dosRuntime
-  ? `<script src="/dos-embed.js?v=1"></script>`
-  : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+${p.iframeUrl
+  ? ``
+  : p.dosRuntime
+    ? `<script src="/dos-embed.js?v=1"></script>`
+    : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/embed.js?v=1"></script>
 <script src="/app.js?v=16"></script>`}
 </body>

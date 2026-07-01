@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Play Freeciv Online — Free Civ-Style Strategy in Your Browser — ExeBrowser</title>
-<meta name="description" content="Play Freeciv 2.2.7, the free open-source Civilization-style strategy game, in your browser via Wine + WebAssembly. No install, no upload needed." />
-<meta name="keywords" content="play freeciv online, freeciv browser, free civilization game, open source strategy game, civ game no install, freeciv in browser, turn-based empire builder, freeciv wine" />
+<meta name="description" content="Play Freeciv online — the free open-source Civilization-style strategy game. No install, no download. Powered by freecivweb.com." />
+<meta name="keywords" content="play freeciv online, freeciv browser, free civilization game, open source strategy game, civ game no install, freeciv in browser, turn-based empire builder" />
 <link rel="canonical" href="https://exebrowser.com/run/freeciv/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/freeciv/" />
 <meta property="og:title" content="Play Freeciv Online — Free Civ-Style Strategy in Your Browser" />
-<meta property="og:description" content="Freeciv 2.2.7, the open-source empire-building game inspired by Civilization, running in your browser with Wine + WebAssembly." />
+<meta property="og:description" content="Freeciv, the open-source empire-building game inspired by Civilization, playable in your browser. No install needed." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -42,7 +42,7 @@
   "name": "Freeciv",
   "url": "https://exebrowser.com/run/freeciv/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Play Freeciv 2.2.7, the free open-source Civilization-style strategy game, in your browser via Wine + WebAssembly. No install, no upload needed.",
+  "description": "Play Freeciv online — the free open-source Civilization-style strategy game. No install, no download. Powered by freecivweb.com.",
   "applicationCategory": "Game",
   "genre": ["Strategy", "Turn-based strategy", "4X", "Empire-building"],
   "gamePlatform": ["Web browser", "Windows"],
@@ -59,7 +59,7 @@
     {
       "@type": "Question",
       "name": "Is Freeciv free to play?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Freeciv is open-source under the GPL-2.0 license — no DRM, no paywall. We host the 2.2.7 SDL build, which is free for us to redistribute." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Freeciv is open-source under the GPL-2.0 license — no DRM, no paywall, no account needed." }
     },
     {
       "@type": "Question",
@@ -68,13 +68,13 @@
     },
     {
       "@type": "Question",
-      "name": "Why the 2.2.7 version and not newer?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Newer Freeciv builds (2.6.x+) use setjmp/longjmp for exception handling in a way Boxedwine can't emulate — they crash before the window opens. The 2.2.7 SDL client avoids that pattern and has a much simpler dependency chain that Wine 1.7.55 can handle." }
+      "name": "Does it need an account?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Single-player games launch instantly without registration. You can create a free account on freecivweb.com if you want to save games or play multiplayer." }
     },
     {
       "@type": "Question",
-      "name": "Does Freeciv need an internet connection?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Not for single-player. Freeciv runs a local game server in-process so you play against AI entirely offline in the browser. Online multiplayer is not supported in this sandboxed setup." }
+      "name": "Who runs the game server?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The game runs on freecivweb.com, the community-run Freeciv web server. ExeBrowser embeds it here for convenience; freecivweb.com is the authoritative host." }
     }
   ]
 }
@@ -101,41 +101,43 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Freeciv</nav>
 
   <section class="card">
-    <h2>Play Freeciv online in your browser <span class="verdict partial">Experimental — older SDL build, may be slow or crash</span></h2>
-    <p><strong>Freeciv</strong> is a free, open-source empire-building strategy game inspired by Civilization. We run the 2.2.7 SDL client (2011) — an older, simpler build with minimal dependencies that works under Wine + WebAssembly. Start a single-player game: click <em>Start new game</em>, configure options, then click <em>Start</em>. Turn-based play means emulation speed barely matters once you're in a game.</p>
+    <h2>Play Freeciv online in your browser <span class="verdict good">▶ Play now — full browser game</span></h2>
+    <p><strong>Freeciv</strong> is a free, open-source empire-building strategy game inspired by Civilization. Click <em>Start Game</em> in the panel above to jump straight into a single-player match against AI. Pick your nation, set the world size, and start building your empire — no download, no install, nothing to upload.</p>
 
-    <div id="exe-embed"
-         data-variant="default"
-         data-entry="run.bat"
-         data-app-url="/apps/freeciv/freeciv.zip"
-         data-app-name="Freeciv"
-         data-autoboot="false"></div>
-    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="iframe-embed-wrap" style="position:relative;width:100%;padding-bottom:62.5%;background:#000;border-radius:4px;overflow:hidden;">
+      <iframe src="https://freecivweb.com/webclient/?action=new&amp;type=singleplayer"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allowfullscreen
+              loading="lazy"
+              title="Freeciv"></iframe>
+    </div>
+    
   </section>
 
   <section class="card">
     <h2>How it works &amp; what to expect</h2>
-    <p>The 2.2.7 SDL client only needs SDL, freetype, and a handful of audio DLLs — no libcurl, no ImageMagick, no Cairo. That simplicity is why it boots here when newer builds don't. The single-player game runs a local server in-process so <strong>no network connection is needed</strong> to play against AI.</p><p>Wine 1.7.55 is old and SDL1 rendering can be unpredictable — you may see rendering glitches or a slow first boot. If you get a blank screen, refresh and try again.</p>
-    <h3>Bringing a newer build</h3>
-    <p>Want a more recent version? Install Freeciv on a Windows PC, copy the full program directory (EXE + <code>data\</code> folder) into one folder, then upload it with the <strong>folder picker</strong>. Note: builds from 2.6.x onward use <code>setjmp</code> in a way that crashes Boxedwine — stick to 2.3.x or earlier for best results. Official downloads at <a href="https://www.freeciv.org/download.html" target="_blank" rel="noopener">freeciv.org/download</a>.</p>
+    <h3>How to play</h3>
+    <p>The game loads via <a href="https://freecivweb.com" target="_blank" rel="noopener">freecivweb.com</a>, the official Freeciv web client. Once the board appears: right-click a tile to move units, left-click cities to manage production, and use the top toolbar for research and diplomacy. Turn-based — press <kbd>End Turn</kbd> when done each round.</p>
+    <h3>Want to play locally or bring your own build?</h3>
+    <p>You can also upload a Windows Freeciv installer to ExeBrowser's <a href="/">file picker</a> and run it via Wine + WebAssembly. Builds from 2.6.x onward use <code>setjmp</code> in a way Boxedwine can't emulate, so stick to 2.3.x or earlier. Downloads at <a href="https://www.freeciv.org/download.html" target="_blank" rel="noopener">freeciv.org/download</a>.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
     <details>
       <summary>Is Freeciv free to play?</summary>
-      <p>Yes. Freeciv is open-source under the GPL-2.0 license — no DRM, no paywall. We host the 2.2.7 SDL build, which is free for us to redistribute.</p>
+      <p>Yes. Freeciv is open-source under the GPL-2.0 license — no DRM, no paywall, no account needed.</p>
     </details>
     <details>
       <summary>Is Freeciv the same as Civilization?</summary>
       <p>No — Freeciv is an independent free game inspired by the Civilization series. Same style (found cities, research tech, build an empire), but a separate open-source project unrelated to Sid Meier / Firaxis.</p>
     </details>
     <details>
-      <summary>Why the 2.2.7 version and not newer?</summary>
-      <p>Newer Freeciv builds (2.6.x+) use setjmp/longjmp for exception handling in a way Boxedwine can't emulate — they crash before the window opens. The 2.2.7 SDL client avoids that pattern and has a much simpler dependency chain that Wine 1.7.55 can handle.</p>
+      <summary>Does it need an account?</summary>
+      <p>No. Single-player games launch instantly without registration. You can create a free account on freecivweb.com if you want to save games or play multiplayer.</p>
     </details>
     <details>
-      <summary>Does Freeciv need an internet connection?</summary>
-      <p>Not for single-player. Freeciv runs a local game server in-process so you play against AI entirely offline in the browser. Online multiplayer is not supported in this sandboxed setup.</p>
+      <summary>Who runs the game server?</summary>
+      <p>The game runs on freecivweb.com, the community-run Freeciv web server. ExeBrowser embeds it here for convenience; freecivweb.com is the authoritative host.</p>
     </details>
   </section>
   <section class="card">
@@ -166,8 +168,6 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/embed.js?v=1"></script>
-<script src="/app.js?v=16"></script>
+
 </body>
 </html>
