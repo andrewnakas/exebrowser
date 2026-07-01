@@ -189,7 +189,7 @@
       <!-- play-overlay becomes full-screen on mobile while playing -->
       <div class="play-overlay" id="play-overlay">
         <iframe class="play-frame" id="pinball-frame" title="Open-source Space Cadet pinball"
-                loading="lazy" allow="autoplay; gamepad; fullscreen"
+                allow="autoplay; gamepad; fullscreen"
                 data-src="/apps/space-cadet/?v=1782869574"></iframe>
         <!-- Mobile/touch paddle controls (shown only on touch devices, below the screen) -->
         <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
@@ -298,6 +298,7 @@
 
     btn.addEventListener('click', function () {
       if (!frame.src) {
+        frame.loading = 'eager';   // ensure the dynamically-set src loads now
         frame.src = frame.getAttribute('data-src');
       }
       btn.disabled = true;
