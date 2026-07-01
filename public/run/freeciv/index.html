@@ -106,15 +106,13 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Freeciv</nav>
 
   <section class="card">
-    <h2>Play Freeciv online in your browser <span class="verdict partial">Works well on older SDL builds</span></h2>
-    <p><em>Freeciv</em> is a free, open-source, turn-based empire-building game openly inspired by the classic <em>Civilization</em> series — found a nation, grow your cities, research technologies, and outmaneuver rivals on a hex or square map. Because it's GPL software with no DRM and a long history of small 32-bit releases, it's a natural fit for browser-based Wine. The catch: reach for an older, lighter SDL build rather than the newest GTK release. Click <strong>Play</strong> above to boot it in your browser — nothing to install, nothing to upload.</p>
+    <h2>Play Freeciv online in your browser <span class="verdict good">Works — SDL1 client boots and is playable</span></h2>
+    <p><strong>Freeciv</strong> is a free, open-source empire-building strategy game inspired by Civilization. This build uses the SDL1 client (version 2.6.7) which runs under Wine + WebAssembly. Start a single-player game: click <em>Start new game</em>, configure your options, then click <em>Start</em> to begin. The SDL renderer draws directly without needing DirectX.</p>
 
-    <!-- No hosted payload: the Play button reveals the in-page uploader.
-         To enable true one-click play, host a license-clean zip and add
-         data-app-url (and data-entry) to the div below. -->
     <div id="exe-embed"
          data-variant="default"
-         data-entry="CIVCLIENT.EXE"
+         data-entry="freeciv-sdl.exe"
+         data-app-url="/apps/freeciv/freeciv.zip"
          data-app-name="Freeciv"
          data-autoboot="false"></div>
     <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>

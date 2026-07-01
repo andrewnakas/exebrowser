@@ -869,17 +869,17 @@
       "Empire-building"
     ],
     "variant": "default",
-    "entry": "CIVCLIENT.EXE",
-    "hostable": false,
-    "appUrl": "",
+    "entry": "freeciv-sdl.exe",
+    "hostable": true,
+    "appUrl": "/apps/freeciv/freeciv.zip",
     "author": "The Freeciv project",
     "licenseReason": "Freeciv is GPL-2.0 open-source software with no DRM, so an older 32-bit build is free for us to host and redistribute.",
     "licenseNote": "<p class=\"muted small\">Freeciv is GPL-2.0 open-source. Windows builds ship as NSIS installers — install it on Windows first, then use <strong>Load your own copy</strong> above to run the installed client.</p>",
     "verdict": {
-      "kind": "partial",
-      "text": "Works well on older SDL builds"
+      "kind": "good",
+      "text": "Works — SDL1 client boots and is playable"
     },
-    "intro": "<p><em>Freeciv</em> is a free, open-source, turn-based empire-building game openly inspired by the classic <em>Civilization</em> series — found a nation, grow your cities, research technologies, and outmaneuver rivals on a hex or square map. Because it's GPL software with no DRM and a long history of small 32-bit releases, it's a natural fit for browser-based Wine. The catch: reach for an older, lighter SDL build rather than the newest GTK release. Click <strong>Play</strong> above to boot it in your browser — nothing to install, nothing to upload.</p>",
+    "intro": "<p><strong>Freeciv</strong> is a free, open-source empire-building strategy game inspired by Civilization. This build uses the SDL1 client (version 2.6.7) which runs under Wine + WebAssembly. Start a single-player game: click <em>Start new game</em>, configure your options, then click <em>Start</em> to begin. The SDL renderer draws directly without needing DirectX.</p>",
     "sections": [
       {
         "h": "Why an older, lighter build runs best",
