@@ -69,7 +69,7 @@
     {
       "@type": "Question",
       "name": "What are the controls for DOOM in the browser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Click the game canvas to capture input. Arrow keys move, Ctrl fires, Space opens doors and operates switches, and the number keys switch weapons. Press Esc to release the mouse back to the page." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Click the game canvas to capture input. WASD moves (W=forward, S=back, A=turn left, D=turn right), Ctrl fires, Space opens doors, and the number keys switch weapons. Arrow keys also work. Press Esc to release the mouse back to the page." }
     },
     {
       "@type": "Question",
@@ -166,9 +166,7 @@
     <h2>How it works &amp; what to expect</h2>
     <table class="spec-table"><tr><th>Game</th><td>DOOM shareware, episode 1 (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>)</td></tr><tr><th>Runtime</th><td><strong>DOSBox + WebAssembly</strong> — classic DOS binary</td></tr><tr><th>Era</th><td>1993–1996, original DOS release</td></tr><tr><th>How to load</th><td>Unzip, then drop the whole folder so the EXE finds its WAD</td></tr><tr><th>Expected result</th><td>Plays at full speed; OPL2 sound works</td></tr></table>
     <h3>Classic DOS DOOM vs. source ports</h3>
-    <p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox — the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. Controls are arrow keys to move, <kbd>Ctrl</kbd> to fire, <kbd>Space</kbd> to open doors.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. You can load a source port EXE alongside <code>DOOM1.WAD</code> using the "Load your own copy" option above.</p>
-    <h3>Classic DOS DOOM vs. source ports</h3>
-    <p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox — the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. Controls are arrow keys to move, <kbd>Ctrl</kbd> to fire, <kbd>Space</kbd> to open doors.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. You can load a source port EXE alongside <code>DOOM1.WAD</code> using the "Load your own copy" option above.</p>
+    <p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox — the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. <strong>WASD moves</strong> (remapped via DOSBox), <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors. Arrow keys also work.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. You can load a source port EXE alongside <code>DOOM1.WAD</code> using the "Load your own copy" option above.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
@@ -182,7 +180,7 @@
     </details>
     <details>
       <summary>What are the controls for DOOM in the browser?</summary>
-      <p>Click the game canvas to capture input. Arrow keys move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and operates switches, and the number keys switch weapons. Press <kbd>Esc</kbd> to release the mouse back to the page.</p>
+      <p>Click the game canvas to capture input. WASD moves (W=forward, S=back, A=turn left, D=turn right), Ctrl fires, Space opens doors, and the number keys switch weapons. Arrow keys also work. Press Esc to release the mouse back to the page.</p>
     </details>
     <details>
       <summary>Is it legal to play DOOM here?</summary>
@@ -221,6 +219,6 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<script src="/dos-embed.js?v=1"></script>
+<script src="/dos-embed.js?v=2"></script>
 </body>
 </html>

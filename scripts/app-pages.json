@@ -370,11 +370,7 @@
       },
       {
         "h": "Classic DOS DOOM vs. source ports",
-        "html": "<p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox \u2014 the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. Controls are arrow keys to move, <kbd>Ctrl</kbd> to fire, <kbd>Space</kbd> to open doors.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. You can load a source port EXE alongside <code>DOOM1.WAD</code> using the \"Load your own copy\" option above.</p>"
-      },
-      {
-        "h": "Classic DOS DOOM vs. source ports",
-        "html": "<p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox \u2014 the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. Controls are arrow keys to move, <kbd>Ctrl</kbd> to fire, <kbd>Space</kbd> to open doors.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. You can load a source port EXE alongside <code>DOOM1.WAD</code> using the \"Load your own copy\" option above.</p>"
+        "html": "<p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox \u2014 the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. <strong>WASD moves</strong> (remapped via DOSBox), <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors. Arrow keys also work.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. You can load a source port EXE alongside <code>DOOM1.WAD</code> using the \"Load your own copy\" option above.</p>"
       }
     ],
     "faq": [
@@ -388,7 +384,7 @@
       },
       {
         "q": "What are the controls for DOOM in the browser?",
-        "a": "Click the game canvas to capture input. Arrow keys move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and operates switches, and the number keys switch weapons. Press <kbd>Esc</kbd> to release the mouse back to the page."
+        "a": "Click the game canvas to capture input. WASD moves (W=forward, S=back, A=turn left, D=turn right), Ctrl fires, Space opens doors, and the number keys switch weapons. Arrow keys also work. Press Esc to release the mouse back to the page."
       },
       {
         "q": "Is it legal to play DOOM here?",
@@ -530,7 +526,7 @@
       },
       {
         "h": "Step by step",
-        "html": "<ol><li>Click <strong>\u25b6 Play Freedoom</strong> above to boot Wine on this page.</li><li>Download Freedoom from the box below and a small software-rendering port (Chocolate Doom or Crispy Doom).</li><li>Unzip both into a single folder so the <code>.EXE</code> and a <code>freedoomN.wad</code> sit side by side.</li><li>Use <strong>Load your own copy \u2192 a folder</strong> and select that folder, then click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. Arrows move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors, <kbd>1</kbd>\u2013<kbd>7</kbd> switch weapons, <kbd>Esc</kbd> releases the mouse.</li></ol>"
+        "html": "<ol><li>Click <strong>\u25b6 Play Freedoom</strong> above to boot Wine on this page.</li><li>Download Freedoom from the box below and a small software-rendering port (Chocolate Doom or Crispy Doom).</li><li>Unzip both into a single folder so the <code>.EXE</code> and a <code>freedoomN.wad</code> sit side by side.</li><li>Use <strong>Load your own copy \u2192 a folder</strong> and select that folder, then click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. WASD or arrow keys move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors, <kbd>1</kbd>\u2013<kbd>7</kbd> switch weapons, <kbd>Esc</kbd> releases the mouse.</li></ol>"
       },
       {
         "h": "What it is \u2014 and what it isn't",

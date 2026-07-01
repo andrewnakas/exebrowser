@@ -124,10 +124,10 @@
   }
 
   function setupInput(ci) {
+    canvas.style.outline = "none";
     canvas.addEventListener("click", () => canvas.focus());
 
-    // DOSBox scan codes (not KeyboardEvent.keyCode directly)
-    // sendKeyEvent takes a DOS scan code
+    // DOS scan codes keyed by browser keyCode
     const KEY_MAP = {
       27: 1,    // Esc
       49: 2, 50: 3, 51: 4, 52: 5, 53: 6, 54: 7, 55: 8, 56: 9, 57: 10, 48: 11, // 1-9,0
@@ -142,26 +142,24 @@
       17: 29,   // Ctrl
       18: 56,   // Alt
       20: 58,   // CapsLock
-      38: 72, 40: 80, 37: 75, 39: 77, // Arrow keys
+      38: 72, 40: 80, 37: 75, 39: 77, // Arrow Up/Down/Left/Right
       33: 73, 34: 81, 35: 79, 36: 71, // PgUp PgDn End Home
       45: 82, 46: 83, // Ins Del
       112: 59, 113: 60, 114: 61, 115: 62, 116: 63, 117: 64, 118: 65, 119: 66, 120: 67, 121: 68, 122: 87, 123: 88, // F1-F12
     };
 
-    window.addEventListener("keydown", e => {
+    // Use capture phase on window so we intercept before any other handler.
+    // Also prevent default to stop arrow keys from scrolling the page.
+    const onKey = (pressed) => (e) => {
       const sc = KEY_MAP[e.keyCode];
       if (sc !== undefined) {
-        ci.sendKeyEvent(sc, true);
+        ci.sendKeyEvent(sc, pressed);
         e.preventDefault();
+        e.stopPropagation();
       }
-    });
-    window.addEventListener("keyup", e => {
-      const sc = KEY_MAP[e.keyCode];
-      if (sc !== undefined) {
-        ci.sendKeyEvent(sc, false);
-        e.preventDefault();
-      }
-    });
+    };
+    window.addEventListener("keydown", onKey(true),  { capture: true });
+    window.addEventListener("keyup",   onKey(false), { capture: true });
 
     canvas.addEventListener("mousemove", e => {
       const r = canvas.getBoundingClientRect();
