@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/freedoom/" />
 <meta property="og:title" content="Play Freedoom Online — Free &amp;amp; Libre, In Your Browser" />
-<meta property="og:description" content="Freedoom is a 100% free, open-source DOOM-compatible game. Run it in your browser on Wine + WebAssembly — pair the libre WAD with a lightweight software-rendering port." />
+<meta property="og:description" content="Freedoom, the fully free DOOM-engine game, playable in your browser with DOSBox + WebAssembly. Free, legal, open source." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -107,45 +107,41 @@
 
   <section class="card">
     <h2>Play Freedoom online in your browser <span class="verdict good">Works well — pair with a software-rendering port</span></h2>
-    <p><strong>Freedoom</strong> is a completely free, open-source game built to run on the classic DOOM engine — original monsters, weapons, levels, music, and art, none of it borrowed from id Software. It is fully libre, so unlike commercial DOOM there is nothing to buy and nothing to worry about: just play. The one catch to be honest about up front: Freedoom is <em>game data</em>, not a program. It needs a DOOM engine to run, and in the browser the engine you choose matters — a lightweight software-rendering port (Chocolate Doom, Crispy Doom) runs cleanly here, while heavy modern ports like GZDoom that demand OpenGL 3.3 will not. Pair the libre WAD with the right port and you get smooth, full-speed retro FPS action in a browser tab.</p>
+    <p><strong>Freedoom</strong> is a fully free, open-source replacement for the DOOM data files — same legendary gameplay, zero proprietary content. It runs with the classic DOS <code>DOOM.EXE</code> engine in DOSBox + WebAssembly. Hit play for instant browser-based demon slaying, no download required.</p>
 
-    <div id="exe-embed"
-         data-variant="default"
-         data-entry="DOOM95.EXE"
+    <div id="dos-embed"
          data-app-url="/apps/freedoom/freedoom.zip"
          data-app-name="Freedoom"
          data-autoboot="false"></div>
   <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
     <div class="mgp-row">
       <div class="mgp-dpad">
-        <button type="button" class="mgp-btn mgp-up" data-key="ArrowUp" data-code="ArrowUp" data-keycode="38" aria-label="▲">▲</button>
-          <button type="button" class="mgp-btn mgp-left" data-key="ArrowLeft" data-code="ArrowLeft" data-keycode="37" aria-label="◀">◀</button>
-          <button type="button" class="mgp-btn mgp-right" data-key="ArrowRight" data-code="ArrowRight" data-keycode="39" aria-label="▶">▶</button>
-          <button type="button" class="mgp-btn mgp-down" data-key="ArrowDown" data-code="ArrowDown" data-keycode="40" aria-label="▼">▼</button>
+        <button type="button" class="mgp-btn mgp-up" data-doskey="72" data-code="" data-keycode="0" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-doskey="75" data-code="" data-keycode="0" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-doskey="77" data-code="" data-keycode="0" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-doskey="80" data-code="" data-keycode="0" aria-label="▼">▼</button>
       </div>
       <div class="mgp-actions">
-        <button type="button" class="mgp-btn mgp-accent" data-key="Control" data-code="ControlLeft" data-keycode="17" aria-label="FIRE">FIRE</button>
-          <button type="button" class="mgp-btn mgp-yellow" data-key=" " data-code="Space" data-keycode="32" aria-label="USE">USE</button>
-          <button type="button" class="mgp-btn " data-key="Shift" data-code="ShiftLeft" data-keycode="16" aria-label="RUN">RUN</button>
-          <button type="button" class="mgp-btn " data-key="Alt" data-code="AltLeft" data-keycode="18" aria-label="ALT">ALT</button>
-          <button type="button" class="mgp-btn " data-key="Tab" data-code="Tab" data-keycode="9" aria-label="MAP">MAP</button>
-          <button type="button" class="mgp-btn " data-key="Escape" data-code="Escape" data-keycode="27" aria-label="MENU">MENU</button>
+        <button type="button" class="mgp-btn mgp-accent" data-doskey="29" data-code="" data-keycode="0" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-doskey="57" data-code="" data-keycode="0" aria-label="USE">USE</button>
+          <button type="button" class="mgp-btn " data-doskey="42" data-code="" data-keycode="0" aria-label="RUN">RUN</button>
+          <button type="button" class="mgp-btn " data-doskey="56" data-code="" data-keycode="0" aria-label="ALT">ALT</button>
+          <button type="button" class="mgp-btn " data-doskey="15" data-code="" data-keycode="0" aria-label="MAP">MAP</button>
+          <button type="button" class="mgp-btn " data-doskey="1" data-code="" data-keycode="0" aria-label="MENU">MENU</button>
       </div>
     </div>
   </div>
-  <p class="mgp-hint">D-pad: move/turn · FIRE: shoot · USE: open doors · RUN: hold to run</p>
+  <p class="mgp-hint">D-pad: move/turn · FIRE: shoot · USE: open doors · RUN: sprint</p>
 <script>
 (function(){
   function wire(){
-    var canvas = document.getElementById("canvas");
+    var canvas = document.getElementById("dos-canvas");
     if(!canvas){ setTimeout(wire,300); return; }
-    function fire(type, key, code, keyCode){
-      canvas.dispatchEvent(new KeyboardEvent(type,{key:key,code:code,keyCode:keyCode,which:keyCode,bubbles:true,cancelable:true}));
-    }
     document.querySelectorAll(".mgp-btn").forEach(function(btn){
-      var key=btn.dataset.key, code=btn.dataset.code, kc=parseInt(btn.dataset.keycode,10);
-      function dn(e){ e.preventDefault(); fire("keydown",key,code,kc); btn.classList.add("pressed"); }
-      function up(e){ e.preventDefault(); fire("keyup",key,code,kc); btn.classList.remove("pressed"); }
+      var sc = parseInt(btn.dataset.doskey, 10);
+      if(!sc) return;
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,true); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,false); btn.classList.remove("pressed"); }
       btn.addEventListener("touchstart", dn, {passive:false});
       btn.addEventListener("touchend",   up, {passive:false});
       btn.addEventListener("touchcancel",up, {passive:false});
@@ -157,7 +153,7 @@
   wire();
 })();
 </script>
-    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
   </section>
 
   <section class="card">
@@ -227,8 +223,6 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/embed.js?v=1"></script>
-<script src="/app.js?v=15"></script>
+<script src="/dos-embed.js?v=1"></script>
 </body>
 </html>

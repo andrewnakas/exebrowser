@@ -381,6 +381,7 @@ if (!pages.length) {
 
 // ── write files + sitemap fragment ─────────────────────────────────────────
 for (const p of pages) {
+  if (p.skipGenerate) { console.log("skipped (skipGenerate)", p.slug); continue; }
   const out = resolve(ROOT, "run", p.slug, "index.html");
   mkdirSync(dirname(out), { recursive: true });
   writeFileSync(out, render(p), "utf8");
@@ -389,7 +390,7 @@ for (const p of pages) {
 
 // ── regenerate the /run/ index so all pages are linked (crawlable) ─────────
 function indexCard(p) {
-  const play = p.hostable && p.appUrl ? ` <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span>` : "";
+  const play = (p.hostable && p.appUrl && !p.skipGenerate) ? ` <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span>` : "";
   return `      <li><a class="link-card" href="/run/${p.slug}/"><span class="lc-title">${esc(
     p.appName
   )}${play}</span><span class="lc-desc">${esc(p.verdict.text)}</span></a></li>`;

@@ -91,6 +91,7 @@
 
   function setupRenderer(ci) {
     const ctx = canvas.getContext("2d");
+    let firstFrame = true;
 
     ci.events().onFrameSize((w, h) => {
       frameW = w;
@@ -115,6 +116,10 @@
         dst[j + 3] = 255;
       }
       ctx.putImageData(img, 0, 0);
+      if (firstFrame) {
+        firstFrame = false;
+        canvas.focus();
+      }
     });
   }
 
