@@ -124,11 +124,13 @@
   body.playing { overflow: hidden; }
   @media (max-width: 720px) {
     body.playing { position: fixed; inset: 0; width: 100%; }
-    body.playing .play-overlay { display: flex; }
   }
-  /* the overlay container that fills the screen in play mode */
-  .play-overlay { display: none; }
+  /* Normal (non-play) display: the overlay is just a plain container so the game
+     shows in-page on desktop. It only becomes a fixed full-screen overlay when
+     <body> has .playing (mobile play mode). */
+  .play-overlay { display: block; }
   body.playing .play-overlay {
+    display: flex;
     position: fixed; inset: 0; z-index: 9999;
     background: #05080f;
     flex-direction: column; align-items: center; justify-content: center;
