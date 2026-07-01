@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Minesweeper Online — Classic Windows winmine.exe in Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run the classic Windows Minesweeper (winmine.exe) in your browser via Wine + WebAssembly. The real XP-era game runs smoothly — bring your own copy, or try a free web clone. Honest guide inside." />
+<meta name="keywords" content="play minesweeper online, classic minesweeper browser, winmine.exe online, windows xp minesweeper browser, minesweeper no download, run minesweeper in browser, classic windows minesweeper" />
+<link rel="canonical" href="https://exebrowser.com/run/minesweeper/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/minesweeper/" />
+<meta property="og:title" content="Play Classic Minesweeper Online in Your Browser" />
+<meta property="og:description" content="The real classic Windows Minesweeper (winmine.exe), running in a browser tab via Wine + WebAssembly. It runs great — bring your own copy. Honest guide and free-clone alternatives inside." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Minesweeper", "item": "https://exebrowser.com/run/minesweeper/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Minesweeper",
+  "url": "https://exebrowser.com/run/minesweeper/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the classic Windows Minesweeper (winmine.exe) in your browser via Wine + WebAssembly. The real XP-era game runs smoothly — bring your own copy, or try a free web clone. Honest guide inside.",
+  "applicationCategory": "Game",
+  "genre": ["Puzzle", "Logic"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play classic Minesweeper online with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can play it in your browser here, but because Minesweeper is proprietary Microsoft software we can't host the file — you load your own winmine.exe (it's already on any Windows PC you own at C:\\Windows\\System32\\). If you'd rather not, free JavaScript clones recreate the game with truly nothing to download." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the real Minesweeper actually run well in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. It's one of the best-behaved apps on ExeBrowser. winmine.exe is a tiny plain-GDI program with no DirectX, .NET, or networking, so it runs at full speed and high scores save. WineHQ has rated it as running smoothly under Wine for years." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why isn't Minesweeper just available to play here directly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Licensing, not technology. Classic Minesweeper is proprietary Microsoft software that shipped bundled with Windows and was never released for free redistribution, so we legally can't host the bytes. The game runs fine; we just can't supply it. Copy it from a Windows PC you own, or use a free clone." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I legitimately get winmine.exe?",
+      "acceptedAnswer": { "@type": "Answer", "text": "From a copy of Windows you already own. On Windows 2000, XP, Vista, or 7 it lives at C:\\Windows\\System32\\winmine.exe — copy that single file. Avoid 'download winmine.exe' fix-it sites; they frequently bundle malware." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same Minesweeper from Windows XP?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If you load the XP build of winmine.exe, yes — it's the actual original executable running unmodified, not a remake. ExeBrowser runs Microsoft's real Win32 binary inside an x86 emulator and Wine, rendering to a browser canvas." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Minesweeper</nav>
+
+  <section class="card">
+    <h2>Play classic Minesweeper online in your browser <span class="verdict good">Runs great — bring your own copy</span></h2>
+    <p>The real, classic <strong>Windows Minesweeper</strong> — <code>winmine.exe</code>, the same little grid of mines that ate your lunch breaks for two decades — running right in a browser tab. No download of <em>our</em> stuff, no install, no account. ExeBrowser runs the actual Win32 executable on Wine + WebAssembly. Because Minesweeper is a tiny, plain GDI program with no DirectX, no .NET, and no networking, it's one of the best-behaved things you can run here: WineHQ rates it as running smoothly, and high scores save fine. The one catch is legal, not technical — the game is Microsoft's proprietary software, so you bring your own copy (you almost certainly already own one).</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="winmine.exe"
+         data-app-name="Minesweeper"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <h3 style="margin-top:0;">You need to bring your own copy</h3><p>Classic Windows Minesweeper (<code>winmine.exe</code>) is <strong>proprietary Microsoft software</strong>. It shipped bundled with Windows 3.1 through Windows XP/Vista/7 and was never released for free redistribution, so we can't host the file for you. That's fine — the game is a single tiny EXE you almost certainly already own.</p><p>The legitimate copy lives at <code>C:\Windows\System32\winmine.exe</code> on any Windows 2000, XP, Vista, or 7 machine you have a valid license for. Copy that file off your own PC and load it above. Don't download <code>winmine.exe</code> from random "EXE fix" sites — they're a common malware vector. If you don't have a Windows copy to hand, the free web clones below are the honest, legal alternative.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>Classic Minesweeper is about the friendliest possible workload for Boxedwine. It's a single ~100&nbsp;KB Win32 executable that draws with plain GDI calls, plays a couple of WAV beeps, and does nothing exotic — no DirectX, no 3D, no .NET runtime, no online services. That's exactly the kind of app this emulator handles well, so it runs at full speed even on modest hardware and feels indistinguishable from native. WineHQ's app database has rated the Windows 2000/XP <code>winmine.exe</code> as running smoothly under Wine for years, including the high-score table.</p><p>The version you'll most likely have is the <strong>Windows XP build</strong> (the blue-titlebar one). The older Windows 9x build works too. Either way it's the same gameplay: left-click to clear a square, right-click to flag a mine, and clear the whole board without detonating one.</p>
+    <h3>Loading your own winmine.exe</h3>
+    <ol><li>On a Windows PC you own a license for (2000, XP, Vista, or 7), copy <code>winmine.exe</code> from <code>C:\Windows\System32\</code> to a USB stick or folder you can reach.</li><li>Click <strong>▶ Play Minesweeper</strong> above to boot Wine right on this page.</li><li>Use <strong>Load your own copy</strong> and select your <code>winmine.exe</code>.</li><li>Click <strong>Run in Wine</strong>. The familiar window appears — left-click to clear, right-click to flag, click the smiley to restart.</li></ol><p>That's it. There are no extra data files to wrangle: Minesweeper is fully self-contained in the one EXE, which is part of why it's so reliable here.</p>
+    <h3>No Windows copy? Free, legal alternatives</h3>
+    <p>If you don't have a Windows machine to copy the file from, don't grab <code>winmine.exe</code> from a sketchy download site — those are a well-known malware vector. Instead, plenty of <strong>free, faithful web clones</strong> recreate the classic look and rules in pure JavaScript and run instantly with nothing to install. They aren't the original Microsoft binary, but they play identically and are completely legal to use.</p><p>You can also try an <strong>open-source desktop clone</strong> — there are GPL/MIT Win32 Minesweeper rebuilds out there. Because those are freely redistributable Win32 EXEs, they load into ExeBrowser the same way and skip the licensing headache entirely.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play classic Minesweeper online with no download?</summary>
+      <p>You can play it in your browser here, but because Minesweeper is proprietary Microsoft software we can't host the file — you load your own <code>winmine.exe</code> (it's already on any Windows PC you own at <code>C:\Windows\System32\</code>). If you'd rather not, free JavaScript clones recreate the game with truly nothing to download.</p>
+    </details>
+    <details>
+      <summary>Does the real Minesweeper actually run well in the browser?</summary>
+      <p>Yes. It's one of the best-behaved apps on ExeBrowser. <code>winmine.exe</code> is a tiny plain-GDI program with no DirectX, .NET, or networking, so it runs at full speed and high scores save. WineHQ has rated it as running smoothly under Wine for years.</p>
+    </details>
+    <details>
+      <summary>Why isn't Minesweeper just available to play here directly?</summary>
+      <p>Licensing, not technology. Classic Minesweeper is proprietary Microsoft software that shipped bundled with Windows and was never released for free redistribution, so we legally can't host the bytes. The game runs fine; we just can't supply it. Copy it from a Windows PC you own, or use a free clone.</p>
+    </details>
+    <details>
+      <summary>Where do I legitimately get winmine.exe?</summary>
+      <p>From a copy of Windows you already own. On Windows 2000, XP, Vista, or 7 it lives at <code>C:\Windows\System32\winmine.exe</code> — copy that single file. Avoid 'download winmine.exe' fix-it sites; they frequently bundle malware.</p>
+    </details>
+    <details>
+      <summary>Is this the same Minesweeper from Windows XP?</summary>
+      <p>If you load the XP build of <code>winmine.exe</code>, yes — it's the actual original executable running unmodified, not a remake. ExeBrowser runs Microsoft's real Win32 binary inside an x86 emulator and Wine, rendering to a browser canvas.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">The other classic Windows time-killer, in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/freecell/"><span class="lc-title">FreeCell</span><span class="lc-desc">The all-solvable Windows card game.</span></a></li>
+      <li><a class="link-card" href="/run/spider-solitaire/"><span class="lc-title">Spider Solitaire</span><span class="lc-desc">The two-deck patience classic.</span></a></li>
+      <li><a class="link-card" href="/run/jezzball/"><span class="lc-title">JezzBall</span><span class="lc-desc">Trap the bouncing atoms — a 90s Windows gem.</span></a></li>
+      <li><a class="link-card" href="/run/chips-challenge/"><span class="lc-title">Chip's Challenge</span><span class="lc-desc">The beloved tile-based puzzle classic.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Prince of Persia (Classic) Online — In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Want to play the classic 1989/1990 Prince of Persia in your browser? Here's the honest story: the original is a commercial DOS game (now Ubisoft), so it won't run directly under Win32 Wine — but the free open-source SDLPoP reimplementation can." />
+<meta name="keywords" content="play prince of persia online, prince of persia browser, prince of persia 1989 online, prince of persia dos in browser, sdlpop browser, classic prince of persia no download, prince of persia wine" />
+<link rel="canonical" href="https://exebrowser.com/run/prince-of-persia/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/prince-of-persia/" />
+<meta property="og:title" content="Play Prince of Persia (Classic) Online — In Your Browser" />
+<meta property="og:description" content="The honest guide to running the classic Prince of Persia in a browser tab. The original is commercial DOS; the free open-source SDLPoP port is the realistic path. Here's what works." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Prince of Persia", "item": "https://exebrowser.com/run/prince-of-persia/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Prince of Persia",
+  "url": "https://exebrowser.com/run/prince-of-persia/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Want to play the classic 1989/1990 Prince of Persia in your browser? Here's the honest story: the original is a commercial DOS game (now Ubisoft), so it won't run directly under Win32 Wine — but the free open-source SDLPoP reimplementation can.",
+  "applicationCategory": "Game",
+  "genre": ["Platformer", "Cinematic platformer", "Action"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Brøderbund / Jordan Mechner" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play the original Prince of Persia online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not the genuine 1990 DOS original — that's a commercial Ubisoft-owned game, and it's a DOS program that doesn't run under ExeBrowser's Windows engine anyway. What you can play for free and legally is SDLPoP, an open-source reimplementation that includes free game data. You download SDLPoP (one click) and load its folder here; whether it renders depends on Boxedwine's limited SDL support." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why won't the DOS PRINCE.EXE start in the browser here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because it's a DOS executable, not a Windows one. ExeBrowser runs Wine, which implements the Windows API — there's no DOS layer underneath, so a raw DOS game like the original Prince of Persia has nothing to run against. For the unmodified DOS original you'd use a DOSBox-based setup instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it legal to play Prince of Persia on ExeBrowser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Playing the free, open-source SDLPoP port is completely legal — it's GPLv3 and ships its own free data. The original commercial game is owned by Ubisoft and isn't free to copy; we don't host it, and we'd steer you to buy it on GOG or Steam rather than grab an abandonware rip." }
+    },
+    {
+      "@type": "Question",
+      "name": "Didn't Jordan Mechner release the source code? Doesn't that make it free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mechner released the original Apple II source code for people to study and learn from — and that's wonderful — but he was explicit that it does not grant any rights to make or distribute Prince of Persia itself; that's Ubisoft's franchise. The community port SDLPoP is the freely-distributable way to actually play, because it's an independent GPLv3 codebase with its own free data." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will SDLPoP definitely work in ExeBrowser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No guarantees, which is why this page is marked partial. SDLPoP uses SDL and hardware rendering, and Boxedwine's graphics support is limited and software-only, so it may launch fine, run slowly, or fail to initialize the display. It's worth trying the default variant first, then the r18 variant if that crashes. The game itself is tiny, so when it renders it's often playable." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Prince of Persia</nav>
+
+  <section class="card">
+    <h2>Play Prince of Persia (classic) in your browser <span class="verdict partial">Partial — not the DOS original; the free SDLPoP port is the realistic path</span></h2>
+    <p>Yes, you can relive the wall-running, sword-fighting, one-hour countdown of the original <strong>Prince of Persia</strong> in a browser — but let's be straight about <em>how</em>, because the obvious route doesn't work. The 1989/1990 classic is a <strong>DOS game</strong>, and ExeBrowser runs <strong>Win32</strong> programs (Wine 1.7.55 on a WebAssembly x86 emulator). A raw DOS <code>PRINCE.EXE</code> has no Windows to talk to here, so it won't simply boot. The original is also a <strong>commercial Ubisoft-owned title</strong>, so it isn't ours to hand you. The realistic, honest, fully-legal path is <strong>SDLPoP</strong> — a faithful open-source (GPLv3) reimplementation of the DOS game that ships as a Win32 EXE and includes free game data. Below we explain exactly what to expect, and why even that comes with caveats.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-app-name="Prince of Persia"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <strong>Read this before you hunt for a download.</strong> The original <strong>Prince of Persia</strong> (1989 Apple II, 1990 MS-DOS) is a <strong>commercial game</strong> published by Brøderbund; the franchise is owned today by <strong>Ubisoft</strong>. Jordan Mechner released the original <em>Apple II source code</em> for study, but that grant explicitly does <strong>not</strong> give anyone the right to copy or distribute the game itself. So we do <strong>not</strong> host the game here. If you want the genuine article, buy the legitimate re-release — it is sold on <a href="https://www.gog.com/" target="_blank" rel="noopener">GOG</a> and <a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a> (search "Prince of Persia"). The free, legal way to play the classic gameplay is the open-source <a href="https://github.com/NagyD/SDLPoP" target="_blank" rel="noopener">SDLPoP</a> reimplementation described below. Please don't grab "abandonware" rips — the game is still being sold.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why the original DOS game won't just run here</h3>
+    <p>This trips a lot of people up, so here it is plainly. The classic Prince of Persia is an <strong>MS-DOS</strong> program from 1990. ExeBrowser's engine is <strong>Wine</strong> — it implements the <em>Windows</em> API, not DOS. When you hand Wine a 16-bit DOS executable like <code>PRINCE.EXE</code>, there is no DOS environment underneath it, so it typically refuses to start or exits immediately. That's not a bug in your file; it's simply the wrong kind of program for this tool.</p><p>The right tool for the <em>unmodified</em> DOS original is a DOS emulator such as DOSBox. ExeBrowser is for Windows <code>.exe</code> files. So if your goal is the byte-for-byte 1990 release, you want a DOSBox-based setup (and a legally purchased copy from <a href="https://www.gog.com/" target="_blank" rel="noopener">GOG</a>, where it's pre-packaged with DOSBox), not this page.</p>
+    <h3>The realistic path: SDLPoP, the open-source reimplementation</h3>
+    <p><a href="https://github.com/NagyD/SDLPoP" target="_blank" rel="noopener">SDLPoP</a> is a beloved, actively-maintained, open-source (GPLv3) port built from a disassembly of the DOS game, with Jordan Mechner's blessing for the community effort. It plays exactly like the classic — same levels, same physics, same 60-minute clock — but as a modern, cross-platform program. Crucially for legality, the standard SDLPoP release <strong>bundles free game data</strong>, so it runs standalone without any commercial files. It ships a Windows build (<code>prince.exe</code>), which means it's a Win32 program ExeBrowser can <em>attempt</em> to run.</p><p>We don't host it for you (it's not our binary to redistribute pre-configured, and it updates often), but it's a one-click download from the project. Grab the Windows release, unzip the whole folder (the EXE needs its <code>data/</code> directory and SDL DLLs beside it), then use <strong>“Load your own copy → a folder”</strong> in the player above and pick that unzipped folder.</p>
+    <h3>What to expect — and the honest caveat</h3>
+    <p>Here's where we won't overpromise. SDLPoP is built on <strong>SDL</strong> and leans on hardware-accelerated rendering. Boxedwine's graphics support is limited and software-driven, so SDL-based games are hit-or-miss: some boot to a playable (if slow) window, others throw a renderer error or show a black screen. Combine that with the x86-on-WebAssembly speed penalty (~10–40% of native) and you may get choppy frames. The good news is that Prince of Persia is a tiny, low-resolution game, so when it <em>does</em> render it often stays playable.</p><p>If SDLPoP refuses to start, it's worth trying the <strong>r18</strong> Wine variant (an older Boxedwine engine that sometimes succeeds where the default crashes) before giving up. There's no guarantee — this is firmly a “try it and see” title, which is why we mark it <strong>partial</strong> rather than promising it works.</p><table class="spec-table"><tr><th>What you actually run</th><td>SDLPoP (open-source Win32 build), <em>not</em> the commercial DOS original</td></tr><tr><th>Best Wine variant</th><td><strong>default</strong>; if it crashes, try <strong>r18</strong></td></tr><tr><th>Game data</th><td>SDLPoP ships free data — no commercial files needed</td></tr><tr><th>Expected result</th><td>Hit-or-miss: SDL rendering may or may not initialize under Boxedwine</td></tr><tr><th>The DOS original</th><td>Won't run here (it's DOS, not Win32); use DOSBox + a legit copy</td></tr></table>
+    <h3>Step by step (SDLPoP)</h3>
+    <ol><li>Download the latest <strong>Windows</strong> release from the <a href="https://github.com/NagyD/SDLPoP/releases" target="_blank" rel="noopener">SDLPoP releases page</a>.</li><li>Unzip the whole archive on your computer — keep <code>prince.exe</code>, the <code>data/</code> folder, and the SDL DLLs together in one folder.</li><li>Click <strong>▶ Play</strong> above, then choose <strong>Load your own copy → a folder</strong> and select that unzipped SDLPoP folder.</li><li>The player will pick <code>prince.exe</code> as the entry point; click <strong>Run in Wine</strong>.</li><li>If it boots: arrow keys move, <kbd>Shift</kbd> grabs ledges / draws sword, <kbd>↑</kbd> jumps. If it errors or shows black, retry with the <strong>r18</strong> variant.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play the original Prince of Persia online for free with no download?</summary>
+      <p>Not the genuine 1990 DOS original — that's a commercial Ubisoft-owned game, and it's a DOS program that doesn't run under ExeBrowser's Windows engine anyway. What you <em>can</em> play for free and legally is <strong>SDLPoP</strong>, an open-source reimplementation that includes free game data. You download SDLPoP (one click) and load its folder here; whether it renders depends on Boxedwine's limited SDL support.</p>
+    </details>
+    <details>
+      <summary>Why won't the DOS PRINCE.EXE start in the browser here?</summary>
+      <p>Because it's a DOS executable, not a Windows one. ExeBrowser runs Wine, which implements the Windows API — there's no DOS layer underneath, so a raw DOS game like the original Prince of Persia has nothing to run against. For the unmodified DOS original you'd use a DOSBox-based setup instead.</p>
+    </details>
+    <details>
+      <summary>Is it legal to play Prince of Persia on ExeBrowser?</summary>
+      <p>Playing the free, open-source <strong>SDLPoP</strong> port is completely legal — it's GPLv3 and ships its own free data. The original commercial game is owned by Ubisoft and isn't free to copy; we don't host it, and we'd steer you to buy it on <a href="https://www.gog.com/" target="_blank" rel="noopener">GOG</a> or <a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a> rather than grab an abandonware rip.</p>
+    </details>
+    <details>
+      <summary>Didn't Jordan Mechner release the source code? Doesn't that make it free?</summary>
+      <p>Mechner released the original <em>Apple II source code</em> for people to study and learn from — and that's wonderful — but he was explicit that it does <strong>not</strong> grant any rights to make or distribute Prince of Persia itself; that's Ubisoft's franchise. The community port SDLPoP is the freely-distributable way to actually play, because it's an independent GPLv3 codebase with its own free data.</p>
+    </details>
+    <details>
+      <summary>Will SDLPoP definitely work in ExeBrowser?</summary>
+      <p>No guarantees, which is why this page is marked partial. SDLPoP uses SDL and hardware rendering, and Boxedwine's graphics support is limited and software-only, so it may launch fine, run slowly, or fail to initialize the display. It's worth trying the default variant first, then the r18 variant if that crashes. The game itself is tiny, so when it renders it's often playable.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/prince-of-persia/"><span class="lc-title">Prince of Persia (you're here)</span><span class="lc-desc">The honest guide to the wall-running classic in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">Play DOOM</span><span class="lc-desc">The free 1993 shareware episode, fully playable here.</span></a></li>
+      <li><a class="link-card" href="/run/commander-keen/"><span class="lc-title">Commander Keen</span><span class="lc-desc">Another DOS-era platformer classic — what to expect.</span></a></li>
+      <li><a class="link-card" href="/run/scorched-earth/"><span class="lc-title">Scorched Earth</span><span class="lc-desc">The mother of all artillery games.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The Windows pinball table, running in your browser.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">Why DOS games and SDL titles are hit-or-miss here.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

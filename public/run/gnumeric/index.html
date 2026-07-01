@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Gnumeric in Your Browser — Free Spreadsheet — ExeBrowser</title>
-<meta name="description" content="Run Gnumeric, the free open-source spreadsheet, in your browser with Wine + WebAssembly. Open and edit XLS/CSV files with no install — one of the most reliable office apps for browser-based Wine." />
-<meta name="keywords" content="gnumeric browser, free spreadsheet online, open source excel alternative, run gnumeric wine, edit xls in browser" />
+<title>Run Gnumeric Online — Free Spreadsheet in Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run Gnumeric, the free open-source spreadsheet, in your browser with Wine + WebAssembly. Open and edit XLS, CSV, and ODS files with no install — one of the most reliable office apps for browser-based Wine." />
+<meta name="keywords" content="gnumeric browser, free spreadsheet online, open source excel alternative, run gnumeric wine, edit xls in browser, csv editor online, gnumeric webassembly" />
 <link rel="canonical" href="https://exebrowser.com/run/gnumeric/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/gnumeric/" />
-<meta property="og:title" content="Run Gnumeric in Your Browser — Free Spreadsheet" />
-<meta property="og:description" content="Gnumeric, the free open-source spreadsheet, running in your browser with Wine + WebAssembly." />
+<meta property="og:title" content="Play Gnumeric Online — Free Spreadsheet in Your Browser" />
+<meta property="og:description" content="Gnumeric, the free open-source spreadsheet, running instantly in your browser with Wine + WebAssembly. Open and edit XLS, CSV, and ODS with no install." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,54 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Gnumeric", "item": "https://exebrowser.com/run/gnumeric/" }
+    { "@type": "ListItem", "position": 3, "name": "Run Gnumeric", "item": "https://exebrowser.com/run/gnumeric/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Gnumeric",
+  "url": "https://exebrowser.com/run/gnumeric/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run Gnumeric, the free open-source spreadsheet, in your browser with Wine + WebAssembly. Open and edit XLS, CSV, and ODS files with no install — one of the most reliable office apps for browser-based Wine.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "The GNOME Project" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Gnumeric free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Gnumeric is open-source software released under the GPL-2.0 by the GNOME Project, free to download, use, and redistribute. You can get the official Windows build from gnumeric.org." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Gnumeric open Excel files in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Gnumeric reads .xls and .xlsx, along with .csv, .ods, and its own .gnumeric format. Upload the workbook alongside the program folder, edit it, then save and download the result." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get my edited spreadsheet back out?",
+      "acceptedAnswer": { "@type": "Answer", "text": "After you save inside Gnumeric, click Download files written by this app to pull the saved file out as a zip before you close or reload the tab. CSV and XLS are the most portable formats to save in." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will large spreadsheets be slow?",
+      "acceptedAnswer": { "@type": "Answer", "text": "They can be. Recalculation is CPU work and ExeBrowser runs Gnumeric through a WebAssembly x86 emulator at roughly 10-40% of native speed, so very large or formula-heavy sheets will feel the tax. Everyday spreadsheets run comfortably." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why not just run LibreOffice or Excel instead?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Modern LibreOffice and Excel are 64-bit and rely on features browser-based Wine cannot provide, so they will not boot here. Gnumeric's light, 32-bit footprint is exactly what makes it the reliable spreadsheet choice in ExeBrowser." }
+    }
   ]
 }
 </script>
@@ -54,45 +101,73 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Gnumeric</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Gnumeric</nav>
+
   <section class="card">
-    <h2>Run Gnumeric in your browser <span class="verdict good">Works well</span></h2>
-    <p><em>Gnumeric</em> is a free, open-source spreadsheet — the spreadsheet counterpart to <a href="/run/abiword/">AbiWord</a> from the GNOME world. It's accurate, fast, lightweight, and runs reliably under browser-based Wine, making it a solid way to open or edit a spreadsheet on a machine where you can't install Excel or LibreOffice.</p>
+    <h2>Run Gnumeric online in your browser <span class="verdict good">Works well</span></h2>
+    <p><em>Gnumeric</em> is a free, open-source spreadsheet — the spreadsheet counterpart to <a href="/run/abiword/">AbiWord</a> from the GNOME world. It is accurate, fast, lightweight, and runs reliably under browser-based Wine, which makes it a genuinely practical way to open or edit a spreadsheet on a machine where you cannot install Excel or LibreOffice. It opens <code>.xls</code>, <code>.xlsx</code>, <code>.csv</code>, <code>.ods</code>, and its own <code>.gnumeric</code> format, and writes most of them back out — so it doubles as a no-install file converter. Just hit play and start a sheet.</p>
 
-    <table class="spec-table">
-      <tr><th>App</th><td>Gnumeric (<code>gnumeric.exe</code>)</td></tr>
-      <tr><th>License</th><td>GPL-2.0 — free and open source</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>Opens</th><td><code>.xls</code>, <code>.xlsx</code>, <code>.csv</code>, <code>.gnumeric</code>, <code>.ods</code></td></tr>
-      <tr><th>Where to get it</th><td><a href="http://www.gnumeric.org/" target="_blank" rel="noopener">gnumeric.org</a> (official)</td></tr>
-    </table>
-
-    <h3>Why a spreadsheet is a good fit</h3>
-    <p>Gnumeric is famous for the accuracy of its statistical functions and for being light on resources. It doesn't depend on modern GPU features or recent .NET, so older Windows builds run dependably in ExeBrowser. Recalculation is CPU work, so very large sheets will feel the emulation tax — but everyday spreadsheets are perfectly comfortable.</p>
-
-    <h3>Open, edit, and get your file back</h3>
-    <p>Bundle the Gnumeric program folder with the spreadsheet you want to open, upload as a folder, and edit inside the app. Save (Gnumeric can write CSV, XLS, and its own format), then click <strong>Download files written by this app</strong> to retrieve the saved file as a zip before you close the tab. This is a clean way to convert a stray <code>.xls</code> to CSV without any Office install.</p>
-
-    <h3>When Gnumeric beats a full office suite</h3>
-    <p>Modern office suites like LibreOffice are 64-bit and depend on features browser-based Wine can't provide, so they won't boot here at all. Gnumeric's small footprint is exactly what makes it the practical choice in this environment. For the everyday jobs — open a spreadsheet someone emailed you, fix a few cells, re-export it; or pull a quick total out of a <code>.csv</code> on a Chromebook — it does the job without the weight. Reserve the heavy suites for a real desktop.</p>
-
-    <h3>Step by step</h3>
-    <ol>
-      <li>On the <a href="/">home page</a>, keep <strong>Win32 (default)</strong> and click <strong>Boot Wine</strong>.</li>
-      <li>Use <strong>pick a folder</strong> and upload the Gnumeric program directory together with your spreadsheet file.</li>
-      <li>Choose <code>gnumeric.exe</code> as the entry and <strong>Run in Wine</strong>.</li>
-      <li>Edit your sheet, save it (CSV or XLS travel best), then click <strong>Download files written by this app</strong> before reloading.</li>
-    </ol>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="gnumeric.exe"
+         data-app-name="Gnumeric"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">Gnumeric is GPL-2.0 open-source. Windows builds require an NSIS installer — install it on Windows, then load the installed gnumeric.exe and its DLLs using <strong>Load your own copy</strong> above.</p>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get a Windows build of Gnumeric</h3>
+      <p>Gnumeric is free and open source (GPL-2.0). Download the official Windows build from <a href="http://www.gnumeric.org/" target="_blank" rel="noopener">gnumeric.org</a>, then upload the program folder here to run it. We may host a ready-to-run package for one-click play.</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why a spreadsheet is a good fit for browser Wine</h3>
+    <p>Gnumeric is famous for the accuracy of its statistical functions and for being light on resources. It does not depend on modern GPU features, DirectX, or recent .NET, so older Windows builds run dependably in ExeBrowser. Recalculation is CPU work, so very large sheets will feel the emulation tax — but everyday spreadsheets are perfectly comfortable. Keep <strong>Win32 (default)</strong> selected; it is the right variant here.</p>
+    <h3>Open, edit, and get your file back</h3>
+    <p>Bundle the Gnumeric program folder together with the spreadsheet you want to open, upload as a folder, and edit inside the app. Save your work (Gnumeric can write CSV, XLS, and its own format), then click <strong>Download files written by this app</strong> to retrieve the saved file as a zip before you close the tab. This is a clean way to convert a stray <code>.xls</code> to CSV with no Office install at all.</p><ol><li>Click <strong>Play</strong> above and let Wine boot with <strong>Win32 (default)</strong>.</li><li>Use <strong>pick a folder</strong> to upload the Gnumeric program directory together with your spreadsheet file.</li><li>Choose <code>gnumeric.exe</code> as the entry and run it.</li><li>Edit your sheet, save it (CSV or XLS travel best), then click <strong>Download files written by this app</strong> before reloading.</li></ol>
+    <h3>When Gnumeric beats a full office suite</h3>
+    <p>Modern office suites like LibreOffice are 64-bit and depend on features browser-based Wine cannot provide, so they will not boot here at all. Gnumeric's small footprint is exactly what makes it the practical choice in this environment. For the everyday jobs — open a spreadsheet someone emailed you, fix a few cells, re-export it; or pull a quick total out of a <code>.csv</code> on a Chromebook — it does the job without the weight. Reserve the heavy suites for a real desktop.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is Gnumeric free?</summary>
+      <p>Yes. Gnumeric is open-source software released under the GPL-2.0 by the GNOME Project, free to download, use, and redistribute. You can get the official Windows build from <a href="http://www.gnumeric.org/" target="_blank" rel="noopener">gnumeric.org</a>.</p>
+    </details>
+    <details>
+      <summary>Can Gnumeric open Excel files in the browser?</summary>
+      <p>Yes. Gnumeric reads <code>.xls</code> and <code>.xlsx</code>, along with <code>.csv</code>, <code>.ods</code>, and its own <code>.gnumeric</code> format. Upload the workbook alongside the program folder, edit it, then save and download the result.</p>
+    </details>
+    <details>
+      <summary>How do I get my edited spreadsheet back out?</summary>
+      <p>After you save inside Gnumeric, click <strong>Download files written by this app</strong> to pull the saved file out as a zip before you close or reload the tab. CSV and XLS are the most portable formats to save in.</p>
+    </details>
+    <details>
+      <summary>Will large spreadsheets be slow?</summary>
+      <p>They can be. Recalculation is CPU work and ExeBrowser runs Gnumeric through a WebAssembly x86 emulator at roughly 10-40% of native speed, so very large or formula-heavy sheets will feel the tax. Everyday spreadsheets run comfortably.</p>
+    </details>
+    <details>
+      <summary>Why not just run LibreOffice or Excel instead?</summary>
+      <p>Modern LibreOffice and Excel are 64-bit and rely on features browser-based Wine cannot provide, so they will not boot here. Gnumeric's light, 32-bit footprint is exactly what makes it the reliable spreadsheet choice in ExeBrowser.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">The free word processor.</span></a></li>
-      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Open-source archiver.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">The free, lightweight word processor — Gnumeric's GNOME sibling.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad</span><span class="lc-desc">The classic plain-text editor, instant in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/wordpad/"><span class="lc-title">WordPad</span><span class="lc-desc">Lightweight rich-text editing with no install.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Open-source archiver for zipping up your exported files.</span></a></li>
+      <li><a class="link-card" href="/run/calculator/"><span class="lc-title">Calculator</span><span class="lc-desc">Windows Calculator running in your browser.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't in browser Wine.</span></a></li>
     </ul>
   </section>
 </main>
@@ -111,5 +186,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

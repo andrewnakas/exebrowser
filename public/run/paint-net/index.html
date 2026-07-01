@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run Paint.NET (Classic) in Your Browser — What Actually Works — ExeBrowser</title>
+<meta name="description" content="Can you run Paint.NET in the browser with Wine + WebAssembly? Honest answer: not really — it needs the .NET Framework that old Wine can't provide. Here's why, and a layered editor that does work." />
+<meta name="keywords" content="paint.net browser, run paint.net online, paint.net wine, paint.net webassembly, paint.net linux wine, paint.net alternative browser, mtpaint browser, layered image editor wine" />
+<link rel="canonical" href="https://exebrowser.com/run/paint-net/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/paint-net/" />
+<meta property="og:title" content="Run Paint.NET (Classic) in Your Browser" />
+<meta property="og:description" content="The honest verdict: Paint.NET needs the .NET Framework that browser-based Wine can't supply, so it won't run. Here's why — plus a layered editor that does." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Paint.NET", "item": "https://exebrowser.com/run/paint-net/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Paint.NET",
+  "url": "https://exebrowser.com/run/paint-net/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Can you run Paint.NET in the browser with Wine + WebAssembly? Honest answer: not really — it needs the .NET Framework that old Wine can't provide. Here's why, and a layered editor that does work.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "dotPDN LLC / Rick Brewster" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I run Paint.NET in my browser with ExeBrowser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not reliably. Paint.NET depends on Microsoft's .NET Framework, which our browser-based Wine 1.7.55 runtime doesn't include and can't realistically install. The app needs the CLR to start, so it won't launch. For an in-browser image editor, use mtPaint instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Paint.NET need the .NET Framework?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Paint.NET is a managed .NET application, not a plain Win32 program. Its code runs on the .NET Common Language Runtime, which must be present before the app can start. Classic 3.x needs .NET 3.5 SP1; 4.x and 5.x require newer, heavier .NET versions. None of those ship in ExeBrowser's environment." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Paint.NET open source or free to redistribute?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Paint.NET is free to download and use, but it is not open source. It was MIT-licensed until 2007, then the source was restricted, and since version 3.5 (2009) it has been proprietary freeware. The license forbids modifying it or making derivative works, so we don't host it — get it from the official site, getpaint.net." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Paint.NET work on Linux or Wine at all?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Only with effort and lots of caveats, and not in a browser. On a full desktop Wine install you can install the .NET Framework via winetricks, but even then tools frequently crash, newer versions glitch or fail to start, and there's no official Linux support. Our browser runtime can't install .NET, so it won't run here regardless." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the best browser image editor that actually works?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For raster editing in the browser via ExeBrowser, mtPaint is the strongest pick — it's a native Win32 editor with layers, palette control, and clean export, and it runs under the default Wine variant. GrafX2 and MS Paint are good lighter options." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Paint.NET</nav>
+
+  <section class="card">
+    <h2>Run Paint.NET (classic) in your browser <span class="verdict bad">Won't run — needs the .NET Framework</span></h2>
+    <p><em>Paint.NET</em> is the much-loved free Windows image editor — layers, an undo history, plugins, and a clean interface that sits neatly between MS Paint and Photoshop. We'll be straight with you: it does <strong>not</strong> run under browser-based Wine, and the reason is structural, not a bug we can patch. Paint.NET is built on Microsoft's <strong>.NET Framework</strong> — even the old 3.x builds need .NET 3.5 SP1, and 4.x/5.x pile on more — and ExeBrowser's runtime is Wine 1.7.55 on a 32-bit x86 emulator with no .NET Framework installed and no practical way to install one. So this page is an honest "why not," plus a layered editor that genuinely <em>does</em> work in the browser.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-app-name="Paint.NET"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p style="margin:0;">We don't host Paint.NET. It's free to use but proprietary (not open source), and its license doesn't grant us redistribution rights. Download it only from the official site, <a href="https://www.getpaint.net/" target="_blank" rel="noopener">getpaint.net</a> — and note it requires a real Windows install with the .NET Framework, which this browser runtime can't provide.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why Paint.NET won't run here</h3>
+    <p>Paint.NET isn't a plain Win32 program — it's a managed .NET application. When you launch it, Windows hands control to the .NET Framework runtime (the CLR), which then JIT-compiles and runs Paint.NET's code. No .NET Framework, no Paint.NET. That single dependency is the wall:</p><ul><li><strong>The runtime isn't here.</strong> ExeBrowser ships Wine 1.7.55 with no .NET Framework. Even desktop Wine users install it the hard way with <code>winetricks dotnet35</code> or <code>dotnet48</code> — a multi-hundred-MB download plus registry plumbing that simply can't happen inside a range-fetched browser sandbox.</li><li><strong>Old Wine + .NET is notoriously fragile.</strong> Wine's .NET support improved a lot in later releases, but 1.7.55 dates to 2015 and predates most of that work. Even modern Wine struggles: community reports note Paint.NET 4.3.x "runs" but most tools crash the app, 5.1.x has heavy rendering glitches, and 5.2.x crashes on startup outright.</li><li><strong>It's a 32-bit constraint stacked on a 32-bit constraint.</strong> Newer Paint.NET is 64-bit only and uses Direct2D/GPU acceleration — neither of which exists in our 32-bit, DirectX-9-or-older environment.</li></ul><p>So even the most Wine-friendly classic 3.x build would face down a missing CLR. We'd rather tell you that up front than have you upload an installer that spins and dies.</p>
+    <h3>What to use instead — mtPaint</h3>
+    <p>If you want a real raster image editor running <em>in the browser right now</em>, reach for <strong>mtPaint</strong>. It's a small, fast, native Win32 painting program — no .NET, no DirectX — so it loads and runs under our default Wine variant. You get layers, palette and indexed-colour editing, selections, gradients, and clean PNG/GIF/JPEG export. It's not a Paint.NET clone, but for pixel art, quick edits, retouching, and format conversion it covers most of the same ground and actually works.</p><p>For freehand sketching and a slightly more modern feel, <a href="/run/grafx2/">GrafX2</a> and <a href="/run/mspaint/">MS Paint</a> are also worth a look. For anything that needs Photoshop-grade layer compositing, you're better off on a native desktop install of Paint.NET itself.</p>
+    <h3>Where to get the real Paint.NET</h3>
+    <p>If you do want Paint.NET, run it on a real Windows machine — that's where it shines. It's free to download and use, but it is <strong>not open source</strong>: it was MIT-licensed only until late 2007, the source was then restricted, and since v3.5 (2009) it has been proprietary freeware. The license permits free use and unmodified redistribution but forbids modifying or creating derivative works, so we don't host it here. Always download it from the official site, <a href="https://www.getpaint.net/" target="_blank" rel="noopener">getpaint.net</a>, to avoid the bundled-adware fakes that crowd search results.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I run Paint.NET in my browser with ExeBrowser?</summary>
+      <p>Not reliably. Paint.NET depends on Microsoft's .NET Framework, which our browser-based Wine 1.7.55 runtime doesn't include and can't realistically install. The app needs the CLR to start, so it won't launch. For an in-browser image editor, use <a href="/run/mtpaint/">mtPaint</a> instead.</p>
+    </details>
+    <details>
+      <summary>Why does Paint.NET need the .NET Framework?</summary>
+      <p>Paint.NET is a managed .NET application, not a plain Win32 program. Its code runs on the .NET Common Language Runtime, which must be present before the app can start. Classic 3.x needs .NET 3.5 SP1; 4.x and 5.x require newer, heavier .NET versions. None of those ship in ExeBrowser's environment.</p>
+    </details>
+    <details>
+      <summary>Is Paint.NET open source or free to redistribute?</summary>
+      <p>Paint.NET is free to download and use, but it is not open source. It was MIT-licensed until 2007, then the source was restricted, and since version 3.5 (2009) it has been proprietary freeware. The license forbids modifying it or making derivative works, so we don't host it — get it from the official site, getpaint.net.</p>
+    </details>
+    <details>
+      <summary>Does Paint.NET work on Linux or Wine at all?</summary>
+      <p>Only with effort and lots of caveats, and not in a browser. On a full desktop Wine install you can install the .NET Framework via winetricks, but even then tools frequently crash, newer versions glitch or fail to start, and there's no official Linux support. Our browser runtime can't install .NET, so it won't run here regardless.</p>
+    </details>
+    <details>
+      <summary>What's the best browser image editor that actually works?</summary>
+      <p>For raster editing in the browser via ExeBrowser, <a href="/run/mtpaint/">mtPaint</a> is the strongest pick — it's a native Win32 editor with layers, palette control, and clean export, and it runs under the default Wine variant. <a href="/run/grafx2/">GrafX2</a> and <a href="/run/mspaint/">MS Paint</a> are good lighter options.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/mtpaint/"><span class="lc-title">mtPaint</span><span class="lc-desc">Native Win32 image editor that actually runs in-browser.</span></a></li>
+      <li><a class="link-card" href="/run/grafx2/"><span class="lc-title">GrafX2</span><span class="lc-desc">Bitmap and pixel-art editor, no .NET needed.</span></a></li>
+      <li><a class="link-card" href="/run/mspaint/"><span class="lc-title">MS Paint</span><span class="lc-desc">The classic simple painter.</span></a></li>
+      <li><a class="link-card" href="/run/irfanview/"><span class="lc-title">IrfanView</span><span class="lc-desc">Fast image viewer and quick editor.</span></a></li>
+      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">Lightweight word processor that loads cleanly.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">Why .NET, DirectX, and 64-bit apps don't run.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

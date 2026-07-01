@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Microsoft Hearts Online in Your Browser — No Download — ExeBrowser</title>
+<meta name="description" content="Run the classic Microsoft Hearts (mshearts.exe) card game in your browser via Wine + WebAssembly. Single-player vs. three CPU opponents works great — here's what to expect and how to load it." />
+<meta name="keywords" content="microsoft hearts online, play hearts in browser, mshearts.exe online, windows hearts game, classic hearts card game browser, microsoft hearts no download" />
+<link rel="canonical" href="https://exebrowser.com/run/hearts/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/hearts/" />
+<meta property="og:title" content="Play Microsoft Hearts Online in Your Browser" />
+<meta property="og:description" content="The classic Windows Hearts card game (mshearts.exe), running in a browser tab via Wine + WebAssembly. Single-player vs. CPU works well. Bring your own Windows copy." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Microsoft Hearts", "item": "https://exebrowser.com/run/hearts/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Hearts",
+  "url": "https://exebrowser.com/run/hearts/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the classic Microsoft Hearts (mshearts.exe) card game in your browser via Wine + WebAssembly. Single-player vs. three CPU opponents works great — here's what to expect and how to load it.",
+  "applicationCategory": "Game",
+  "genre": ["Card game", "Trick-taking"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Microsoft Corporation" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play Microsoft Hearts online in my browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — ExeBrowser runs the real mshearts.exe in your browser via Wine + WebAssembly, no install needed. Because Hearts is proprietary Microsoft software we can't host the file, so you load your own copy taken from a Windows PC you own." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Microsoft Hearts actually run well under emulated Wine?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Very well. It's a tiny 32-bit GDI app with no DirectX, 3D, or .NET, so it's one of the smoothest things ExeBrowser runs. Single-player against the three CPU players plays at full speed on a modern laptop." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I download Hearts directly from this page?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hearts is part of Windows and is copyrighted by Microsoft — it isn't licensed for free redistribution, so hosting it would be piracy. You may legally copy MSHEARTS.EXE from a Windows installation you own and load it here." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the network/multiplayer mode work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The classic \"Microsoft Hearts Network\" relied on NetDDE over a LAN, and the browser sandbox has no network peers. Microsoft also removed network play in Windows XP, so single-player vs. CPU is the experience here either way." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Windows version of Hearts should I use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any of them work — the Windows 95/98/Me/2000/XP builds are all small Win32 executables that run nicely. If one build refuses to launch on the default variant, copy a different version's MSHEARTS.EXE or switch to the r18 Wine variant." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Microsoft Hearts</nav>
+
+  <section class="card">
+    <h2>Play Microsoft Hearts online in your browser <span class="verdict good">Single-player works well</span></h2>
+    <p>The classic <strong>Microsoft Hearts</strong> — the trick-taking card game (<code>mshearts.exe</code>) that shipped with Windows from 3.11 all the way through Windows 7 — running in a browser tab. It is a tiny 32-bit GDI program with no DirectX, no 3D, and no .NET, which makes it one of the most reliable things to run in ExeBrowser. Single-player against the three computer opponents plays just like it always did. The one thing that won't work is the old "Microsoft Hearts Network" LAN play, but that's no loss — Microsoft already removed network play in the Windows XP version. Note that Hearts is proprietary Microsoft software, so we can't host it for you; bring your own copy from a Windows machine you own.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="MSHEARTS.EXE"
+         data-app-name="Hearts"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>Microsoft Hearts is proprietary software</strong> — part of Windows, © Microsoft Corporation. It is <strong>not</strong> free to redistribute, so we don't host the file. To play it here, copy <code>MSHEARTS.EXE</code> (and on some versions <code>CARDS.DLL</code>) from a Windows installation you legitimately own — older retail Windows (95/98/Me/2000/XP/Vista/7) all include it under <code>C:\WINDOWS\</code> — and load that folder with "Load your own copy" above. If you just want the gameplay with no file at all, Microsoft also publishes a free, modern <a href="https://apps.microsoft.com/" target="_blank" rel="noopener">Microsoft Solitaire Collection / Casual Games</a> in the Microsoft Store for Windows 10/11. Please don't download executables from abandonware or pirate sites.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>ExeBrowser boots a real Wine 1.7.55 environment with a 32-bit x86 emulator compiled to WebAssembly, then runs the actual <code>MSHEARTS.EXE</code> binary — it is not a re-creation. Hearts is about the friendliest possible workload for this: a small, single-threaded GDI windowed app that just draws cards with the classic Windows card deck. There's no graphics acceleration to fall back from, so it renders cleanly and feels responsive even though the CPU underneath is emulated. Expect the real deal: enter your name, get dealt thirteen cards, pass three, and try to dodge the hearts and the Queen of Spades against three CPU players.</p>
+    <h3>What works and what doesn't</h3>
+    <ul><li><strong>Single-player vs. CPU — works.</strong> The full game against three computer opponents runs as designed: passing left/right/across/keep, shooting the moon, scoring to 100.</li><li><strong>Mouse and keyboard — works.</strong> It's a point-and-click card game; click a card to play it. No input capture quirks like fullscreen shooters have.</li><li><strong>Network / LAN play — does not work.</strong> The original "Microsoft Hearts Network" used NetDDE over a local network. The browser sandbox has no LAN peers, and in any case Microsoft dropped network play starting with Windows XP, so most builds you'll have are single-player only.</li><li><strong>Sound — minimal.</strong> Hearts is a near-silent app, so there's nothing meaningful to miss here.</li></ul>
+    <h3>How to load it</h3>
+    <ol><li>Locate <code>MSHEARTS.EXE</code> on a Windows PC you own — typically <code>C:\WINDOWS\MSHEARTS.EXE</code> on 95/98/Me/2000/XP, or <code>C:\Windows\</code> on Vista/7.</li><li>Copy it (and <code>CARDS.DLL</code> if your version has one) into a folder.</li><li>Click <strong>▶ Play</strong> above, then choose <strong>Load your own copy</strong> and select that folder.</li><li>The player picks <code>MSHEARTS.EXE</code> as the entry automatically — click <strong>Run in Wine</strong>.</li><li>Type a name when prompted and start passing cards. If it ever fails to launch, try the <strong>r18</strong> Wine variant from the runtime menu.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play Microsoft Hearts online in my browser?</summary>
+      <p>Yes — ExeBrowser runs the real <code>mshearts.exe</code> in your browser via Wine + WebAssembly, no install needed. Because Hearts is proprietary Microsoft software we can't host the file, so you load your own copy taken from a Windows PC you own.</p>
+    </details>
+    <details>
+      <summary>Does Microsoft Hearts actually run well under emulated Wine?</summary>
+      <p>Very well. It's a tiny 32-bit GDI app with no DirectX, 3D, or .NET, so it's one of the smoothest things ExeBrowser runs. Single-player against the three CPU players plays at full speed on a modern laptop.</p>
+    </details>
+    <details>
+      <summary>Why can't I download Hearts directly from this page?</summary>
+      <p>Hearts is part of Windows and is copyrighted by Microsoft — it isn't licensed for free redistribution, so hosting it would be piracy. You may legally copy <code>MSHEARTS.EXE</code> from a Windows installation you own and load it here.</p>
+    </details>
+    <details>
+      <summary>Does the network/multiplayer mode work?</summary>
+      <p>No. The classic "Microsoft Hearts Network" relied on NetDDE over a LAN, and the browser sandbox has no network peers. Microsoft also removed network play in Windows XP, so single-player vs. CPU is the experience here either way.</p>
+    </details>
+    <details>
+      <summary>Which Windows version of Hearts should I use?</summary>
+      <p>Any of them work — the Windows 95/98/Me/2000/XP builds are all small Win32 executables that run nicely. If one build refuses to launch on the default variant, copy a different version's <code>MSHEARTS.EXE</code> or switch to the r18 Wine variant.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">The other classic Windows card game, in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/freecell/"><span class="lc-title">FreeCell</span><span class="lc-desc">The solvable-deal solitaire built into Windows.</span></a></li>
+      <li><a class="link-card" href="/run/spider-solitaire/"><span class="lc-title">Spider Solitaire</span><span class="lc-desc">Two-deck solitaire from later Windows.</span></a></li>
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">The all-time Windows time-waster.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The beloved Windows XP pinball table.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

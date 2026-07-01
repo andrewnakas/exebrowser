@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run foobar2000 Online — Free, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run the foobar2000 audio player in your browser with Wine + WebAssembly. The classic Win32 build's UI loads, but audio is unreliable under emulation — here's the honest breakdown and how to load it." />
+<meta name="keywords" content="foobar2000 browser, run foobar2000 online, foobar2000 wine, foobar2000 web player, foobar2000 no download, play music foobar2000 browser, foobar2000 32-bit" />
+<link rel="canonical" href="https://exebrowser.com/run/foobar2000/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/foobar2000/" />
+<meta property="og:title" content="Run foobar2000 in Your Browser" />
+<meta property="og:description" content="The classic foobar2000 audio player, running in your browser via Wine + WebAssembly. The UI loads; audio is hit-or-miss. The honest details." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Run foobar2000", "item": "https://exebrowser.com/run/foobar2000/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "foobar2000",
+  "url": "https://exebrowser.com/run/foobar2000/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the foobar2000 audio player in your browser with Wine + WebAssembly. The classic Win32 build's UI loads, but audio is unreliable under emulation — here's the honest breakdown and how to load it.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Peter Pawłowski" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I really run foobar2000 in a browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can load and explore it. A legacy 32-bit foobar2000 build will boot under ExeBrowser's Wine + WebAssembly and show its real interface, playlist, and preferences. Audio playback, though, is unreliable under emulation, so think of it as a working demo of the UI rather than a dependable music player." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't the latest foobar2000 work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The current 2.x releases are built for 64-bit Windows and a modern toolchain. ExeBrowser runs Wine 1.7.55 with a 32-bit x86 emulator, so it needs an older 32-bit build — grab one from the official old versions page." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my music actually play?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sometimes, but don't count on it. foobar2000 has a long, well-documented history of audio problems under Wine — no output device listed, static, or silence — and the browser audio path is even narrower. The interface loads reliably; sound is the part that's hit-or-miss." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you host foobar2000 for me to click and play?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. foobar2000 is freeware but closed-source, and its license only allows redistributing the unmodified official installer — not the extracted program folder you'd run here. Download it yourself from the official site and upload your own copy." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a better-working media app to try in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For nostalgia, classic Winamp behaves similarly (UI yes, audio iffy). If you mainly want something that reliably runs, small Win32 utilities and the bundled classic games are a safer bet — see the compatibility guide for what holds up under emulation." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run foobar2000</nav>
+
+  <section class="card">
+    <h2>Run foobar2000 online in your browser <span class="verdict partial">Partial — UI loads, audio is unreliable</span></h2>
+    <p><em>foobar2000</em> is the famously lightweight, no-nonsense audio player that power users have loved for over two decades — tiny, fast, infinitely configurable. The catch for browser-based Wine is twofold: the current 2.x release is built for modern 64-bit Windows, and even the older 32-bit builds have a long history of audio-output trouble under Wine. The interface generally renders, so you can poke around the playlist and preferences, but treat actual music playback as unreliable rather than a daily driver. This is a "look how far emulation has come" demo more than a real listening setup.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="foobar2000.exe"
+         data-app-name="foobar2000"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p style="margin:0;">We don't host foobar2000 here. It's freeware, but not open-source — its license only permits redistributing the <em>unmodified official installer</em>, and the build you'd run in-browser is an extracted program folder, which isn't covered. Get it from the <a href="https://www.foobar2000.org/" target="_blank" rel="noopener">official foobar2000 site</a> (older 32-bit builds live at <a href="https://www.foobar2000.org/old" target="_blank" rel="noopener">foobar2000.org/old</a>), and only run a copy you obtained legitimately.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>What works, and what to expect</h3>
+    <p>Two things matter here. First, <strong>version</strong>: foobar2000 2.x targets 64-bit Windows and a modern toolchain that browser-based Wine (Wine 1.7.55, 32-bit only) can't handle. You'll want a legacy <strong>32-bit build</strong> from the 1.x series, available at <a href="https://www.foobar2000.org/old" target="_blank" rel="noopener">foobar2000.org/old</a>. Second, <strong>audio</strong>: even on full desktop Wine, foobar2000 is notorious for listing no output device, emitting static, or going silent depending on the audio driver. Boxedwine routes sound through Web Audio, which is an even narrower path, so playback is genuinely hit-or-miss.</p><p>What does tend to work is the <strong>UI</strong>: the main window, the playlist, the Preferences dialog and its dense option tree, and basic file browsing. That alone is enough to relive the interface — just don't count on hearing anything.</p>
+    <h3>How to load it</h3>
+    <p>foobar2000 ships as an installer, which won't run cleanly in-browser. The reliable approach is to install a <strong>legacy 32-bit 1.x build</strong> on a real Windows PC (or use a portable install option if the version offers one), then upload the resulting program folder — <code>foobar2000.exe</code> plus its <code>components\</code>, <code>user-components\</code>, and config files — using the <strong>folder picker</strong>. Drop a small test track (an MP3 or FLAC) into the same folder so you have something to try.</p><p>Once it's loaded, open <em>Preferences → Playback → Output</em> and try each device option (Primary / Default) — that's the single most useful knob if you get any sound at all.</p>
+    <h3>Why audio is the weak link</h3>
+    <p>foobar2000's whole design philosophy is a thin player with a pluggable output stack — and that stack is exactly what struggles under emulation. Output plugins probe for audio hardware and expect a specific driver model; Boxedwine presents an emulated path to Web Audio that those plugins weren't written for. The result, well-documented across years of WineHQ and Linux forum threads, ranges from clean playback (rare and version-dependent) to silence, stutter, or harsh static. Advanced features — ReplayGain scanning, DSP chains, visualizations, and anything touching networking or online services — are even less likely to behave.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I really run foobar2000 in a browser?</summary>
+      <p>You can load and explore it. A legacy 32-bit foobar2000 build will boot under ExeBrowser's Wine + WebAssembly and show its real interface, playlist, and preferences. Audio playback, though, is unreliable under emulation, so think of it as a working demo of the UI rather than a dependable music player.</p>
+    </details>
+    <details>
+      <summary>Why doesn't the latest foobar2000 work?</summary>
+      <p>The current 2.x releases are built for 64-bit Windows and a modern toolchain. ExeBrowser runs Wine 1.7.55 with a 32-bit x86 emulator, so it needs an older 32-bit build — grab one from the official <a href="https://www.foobar2000.org/old" target="_blank" rel="noopener">old versions</a> page.</p>
+    </details>
+    <details>
+      <summary>Will my music actually play?</summary>
+      <p>Sometimes, but don't count on it. foobar2000 has a long, well-documented history of audio problems under Wine — no output device listed, static, or silence — and the browser audio path is even narrower. The interface loads reliably; sound is the part that's hit-or-miss.</p>
+    </details>
+    <details>
+      <summary>Do you host foobar2000 for me to click and play?</summary>
+      <p>No. foobar2000 is freeware but closed-source, and its license only allows redistributing the unmodified official installer — not the extracted program folder you'd run here. Download it yourself from the <a href="https://www.foobar2000.org/" target="_blank" rel="noopener">official site</a> and upload your own copy.</p>
+    </details>
+    <details>
+      <summary>Is there a better-working media app to try in the browser?</summary>
+      <p>For nostalgia, classic Winamp behaves similarly (UI yes, audio iffy). If you mainly want something that reliably runs, small Win32 utilities and the bundled classic games are a safer bet — see the compatibility guide for what holds up under emulation.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/winamp/"><span class="lc-title">Winamp</span><span class="lc-desc">The other legendary player — same UI-yes, audio-iffy story.</span></a></li>
+      <li><a class="link-card" href="/run/foobar2000/"><span class="lc-title">foobar2000</span><span class="lc-desc">This page.</span></a></li>
+      <li><a class="link-card" href="/run/vlc-classic/"><span class="lc-title">VLC (classic)</span><span class="lc-desc">Another media player put through browser Wine.</span></a></li>
+      <li><a class="link-card" href="/run/audacity/"><span class="lc-title">Audacity</span><span class="lc-desc">Open-source audio editor under emulation.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Reliable open-source archiver that runs well.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs, what doesn't, and why audio is hard.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

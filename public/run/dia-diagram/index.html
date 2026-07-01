@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run Dia Diagram Editor Online in Your Browser — Free Visio Alternative, No Install — ExeBrowser</title>
+<meta name="description" content="Run Dia, the free open-source (GPL) diagram and flowchart editor, in your browser with Wine + WebAssembly. Honest look at how this GTK Win32 app behaves: it loads, but expect slow startup. No install." />
+<meta name="keywords" content="dia diagram editor browser, free visio alternative online, open source flowchart editor, run dia wine, dia diagram online no install, draw flowchart in browser, uml diagram tool free" />
+<link rel="canonical" href="https://exebrowser.com/run/dia-diagram/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/dia-diagram/" />
+<meta property="og:title" content="Run Dia Diagram Editor in Your Browser — Free Visio Alternative" />
+<meta property="og:description" content="Dia, the open-source GPL diagram and flowchart editor, running in your browser via Wine + WebAssembly. Honest verdict: it loads, but this GTK app is heavy — expect a slow start." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Dia Diagram Editor", "item": "https://exebrowser.com/run/dia-diagram/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Dia",
+  "url": "https://exebrowser.com/run/dia-diagram/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run Dia, the free open-source (GPL) diagram and flowchart editor, in your browser with Wine + WebAssembly. Honest look at how this GTK Win32 app behaves: it loads, but expect slow startup. No install.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "The Dia Developers (GNOME project)" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Dia free, and is it a good Visio alternative?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Dia is free and open-source under the GNU GPL-2.0, and it's the long-standing open alternative to Microsoft Visio. It handles flowcharts, UML, network diagrams, ER models, and more from a large shape library. It's not a feature-for-feature Visio clone, but for most structured-diagram needs it's plenty." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Dia actually run well in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It runs, but expect a slow start. Dia is a GTK+ application with a large runtime, and Boxedwine emulates a 32-bit x86 CPU in WebAssembly at roughly 10-40% of native speed, so the first launch is slow and the canvas can feel laggy. Small, quick diagrams are fine; large or complex ones will test your patience. That's why we rate it partial, not 'works well'." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Wine variant should I pick for Dia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Start with the default (Win32) variant — Dia is a standard 32-bit Windows app and doesn't need the bundled-Gecko or 16-bit modes. If the default build crashes on launch, try the r18 variant, which uses an older Boxedwine engine that sometimes handles finicky apps differently." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get my diagram out after I draw it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Save your work inside Dia as a .dia file, or use File → Export to write a PNG or SVG. Then click Download files written by this app to download everything the app wrote to the virtual C:\\ drive as a zip. Do this before reloading or closing the tab, because the in-memory drive is erased on reload." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is Dia slow to start in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because it's a GTK app. Before its window appears, Dia has to load dozens of GTK runtime DLLs and the GDK-Pixbuf image loaders. Even on native Windows GTK startup isn't instant, and under emulated Wine in WebAssembly that overhead is multiplied. Give it time on the first launch instead of clicking repeatedly." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Dia Diagram Editor</nav>
+
+  <section class="card">
+    <h2>Run Dia Diagram Editor online in your browser <span class="verdict partial">Partial — loads, but heavy GTK app starts slowly</span></h2>
+    <p><em>Dia</em> is a free, open-source diagram editor — the classic GPL alternative to Microsoft Visio. It draws flowcharts, network diagrams, UML, ER models, circuits, and more from a big palette of ready-made shapes. The Windows build is a 32-bit GTK+ application, which is good news for compatibility (no DirectX, no 64-bit, no modern .NET) but also a caveat: GTK apps drag a large stack of DLLs and image loaders behind them, so under browser-based Wine you should expect a <strong>slow first launch</strong> and somewhat sluggish redraws. Once it's up, basic diagramming generally works. Set this honestly: it runs, but it is not as snappy as a plain Win32 tool like Notepad.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="dia.exe"
+         data-app-name="Dia"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">Dia is GPL-2.0 open-source. The Windows build requires an NSIS installer — install it on Windows, then load the installed dia.exe and GTK DLLs using <strong>Load your own copy</strong> above.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Download Dia (portable, GPL-2.0)</h3>
+      <p>Dia is open-source under the GPL-2.0, so we host a portable build you can load straight into ExeBrowser. Unpack and upload the whole folder (the EXE needs its bundled GTK runtime beside it), then launch <code>dia.exe</code>.</p><p><a class="cta-btn" href="/apps/dia-diagram/dia-diagram.zip">Download Dia portable (.zip)</a></p><p class="muted">You can also get the official Windows build and source from <a href="https://sourceforge.net/projects/dia-installer/" target="_blank" rel="noopener">the Dia project on SourceForge</a> (look for <code>dia_0.97.2_win32.zip</code>).</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>Dia on Windows is built on the GTK+ 2.x toolkit. The portable build ships its own GTK runtime — dozens of DLLs plus the GDK-Pixbuf image loaders — all of which Boxedwine has to map and initialise before the main window appears. On native Windows that takes a moment; inside WebAssembly-emulated Wine at roughly 10-40% of native speed, the cold start can take noticeably longer, and the canvas may feel laggy when you drag shapes or scroll. Be patient on first boot and give it time to finish loading before you click around.</p><p><strong>What works:</strong> opening the app, placing shapes from the toolbox, drawing connectors, typing labels, and saving a <code>.dia</code> file. <strong>What's rough:</strong> startup speed, large diagrams, and occasional quirks in GTK's file-chooser dialog. This is why we rate it <em>partial</em> rather than "works well" — it's genuinely usable for quick diagrams, not a polished daily driver.</p>
+    <h3>Loading Dia and saving your diagram</h3>
+    <p>Dia is a folder of files, not a single self-contained EXE — it needs its <code>bin\dia.exe</code> plus the GTK <code>lib</code>/<code>etc</code>/<code>share</code> directories alongside it. Use the portable ZIP (below, or the official <code>dia_0.97.2_win32.zip</code>), unpack it, and upload the whole folder so Wine can find the runtime. Launch <code>dia.exe</code> and wait for the window to appear.</p><p>When you've drawn something, save it inside the app as a <code>.dia</code> file (or export to PNG/SVG via <strong>File → Export</strong>), then click <strong>Download files written by this app</strong> to pull your work out of the in-memory <code>C:\</code> drive as a zip. The virtual drive is wiped when you reload the tab, so always download before you close it.</p>
+    <h3>Why use Dia in the browser at all</h3>
+    <p>The honest pitch: if you're on a Chromebook, a locked-down work laptop, or any machine where you can't install software, Dia-in-the-browser lets you sketch a flowchart or network diagram and export it as an image without touching the host OS. It opens and writes the open <code>.dia</code> XML format, and exports to PNG, SVG, and EPS. For a one-off diagram that's a real win. For heavy, day-in-day-out diagramming you'll have a better time installing Dia natively — but as a no-install, zero-upload-to-a-server option, it does the job.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is Dia free, and is it a good Visio alternative?</summary>
+      <p>Yes. Dia is free and open-source under the GNU GPL-2.0, and it's the long-standing open alternative to Microsoft Visio. It handles flowcharts, UML, network diagrams, ER models, and more from a large shape library. It's not a feature-for-feature Visio clone, but for most structured-diagram needs it's plenty.</p>
+    </details>
+    <details>
+      <summary>Does Dia actually run well in the browser?</summary>
+      <p>It runs, but expect a slow start. Dia is a GTK+ application with a large runtime, and Boxedwine emulates a 32-bit x86 CPU in WebAssembly at roughly 10-40% of native speed, so the first launch is slow and the canvas can feel laggy. Small, quick diagrams are fine; large or complex ones will test your patience. That's why we rate it partial, not 'works well'.</p>
+    </details>
+    <details>
+      <summary>Which Wine variant should I pick for Dia?</summary>
+      <p>Start with the <strong>default (Win32)</strong> variant — Dia is a standard 32-bit Windows app and doesn't need the bundled-Gecko or 16-bit modes. If the default build crashes on launch, try the <strong>r18</strong> variant, which uses an older Boxedwine engine that sometimes handles finicky apps differently.</p>
+    </details>
+    <details>
+      <summary>How do I get my diagram out after I draw it?</summary>
+      <p>Save your work inside Dia as a <code>.dia</code> file, or use <strong>File → Export</strong> to write a PNG or SVG. Then click <strong>Download files written by this app</strong> to download everything the app wrote to the virtual <code>C:\</code> drive as a zip. Do this before reloading or closing the tab, because the in-memory drive is erased on reload.</p>
+    </details>
+    <details>
+      <summary>Why is Dia slow to start in the browser?</summary>
+      <p>Because it's a GTK app. Before its window appears, Dia has to load dozens of GTK runtime DLLs and the GDK-Pixbuf image loaders. Even on native Windows GTK startup isn't instant, and under emulated Wine in WebAssembly that overhead is multiplied. Give it time on the first launch instead of clicking repeatedly.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">Free open-source word processor — one of the most reliable office apps in Wine.</span></a></li>
+      <li><a class="link-card" href="/run/gnumeric/"><span class="lc-title">Gnumeric</span><span class="lc-desc">The free open-source spreadsheet companion.</span></a></li>
+      <li><a class="link-card" href="/run/mtpaint/"><span class="lc-title">mtPaint</span><span class="lc-desc">Lightweight open-source pixel and image editor.</span></a></li>
+      <li><a class="link-card" href="/run/grafx2/"><span class="lc-title">GrafX2</span><span class="lc-desc">Bitmap drawing tool for pixel artists.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small, fast Win32 tools that run cleanly.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs well, what's partial, and what won't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

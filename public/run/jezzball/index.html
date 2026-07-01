@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play JezzBall Online — In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run the classic 1992 JezzBall from the Microsoft Entertainment Pack in your browser via Wine + WebAssembly. It's a 16-bit Win 3.x game — bring your own legally-owned copy. Here's how it runs and what to expect." />
+<meta name="keywords" content="play jezzball online, jezzball in browser, jezzball no download, jezzball windows, microsoft entertainment pack jezzball, jezzball 16-bit wine, jezzball classic game browser" />
+<link rel="canonical" href="https://exebrowser.com/run/jezzball/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/jezzball/" />
+<meta property="og:title" content="Play JezzBall Online — In Your Browser, No Install" />
+<meta property="og:description" content="The classic 1992 Microsoft Entertainment Pack JezzBall, running on Wine + WebAssembly in a browser tab. A 16-bit Win 3.x game — bring your own copy." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play JezzBall", "item": "https://exebrowser.com/run/jezzball/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "JezzBall",
+  "url": "https://exebrowser.com/run/jezzball/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the classic 1992 JezzBall from the Microsoft Entertainment Pack in your browser via Wine + WebAssembly. It's a 16-bit Win 3.x game — bring your own legally-owned copy. Here's how it runs and what to expect.",
+  "applicationCategory": "Game",
+  "genre": ["Puzzle", "Arcade"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play JezzBall online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can play it in your browser with no install, but JezzBall itself is commercial Microsoft software that we don't host. You'd need to load a copy you legally own. If you want a truly free option, an open-source clone like KBounce or IceBreaker gives you the same gameplay with no licensing concerns." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why won't JezzBall run on the default Wine variant?",
+      "acceptedAnswer": { "@type": "Answer", "text": "JezzBall is a 16-bit Windows 3.x program from 1992. The default ExeBrowser runtime targets 32-bit Win32 apps and generally can't load 16-bit executables. Use the win3x variant (this page is set to it by default), which is built specifically for early-1990s Windows software." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is JezzBall legal to download from abandonware sites?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's a legal grey area we steer clear of. Microsoft has never released JezzBall as freeware and no longer sells the Entertainment Pack, so abandonware copies aren't authorized redistribution. ExeBrowser won't link to them. Load only a copy you legally own, or play a free open-source clone instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will JezzBall run at full speed in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Almost certainly, if your owned copy starts at all. It's a tiny 2D game with no 3D, DirectX, or sound-card demands, so it's one of the lightest possible loads for the emulator. The hard part is obtaining a legitimate copy, not performance." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the controls for JezzBall?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's mouse-driven. Click to start growing a wall from your pointer (it extends in both directions); the right mouse button toggles between vertical and horizontal walls. Don't let a bouncing ball touch a wall while it's still building, or you lose a life." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play JezzBall</nav>
+
+  <section class="card">
+    <h2>Play JezzBall online in your browser <span class="verdict partial">Runs in the 16-bit (win3x) runtime — bring your own copy</span></h2>
+    <p><strong>JezzBall</strong> — the maddening 1992 puzzle game from the Microsoft Entertainment Pack where you wall off bouncing balls into smaller and smaller boxes — is exactly the kind of light, mouse-driven 16-bit title that ExeBrowser's Wine + WebAssembly runtime handles well. There's no DirectX, no 3D, no networking; just a single window, a mouse pointer, and balls to trap. The one real catch: JezzBall is <em>commercial Microsoft software</em> and we can't give you the files, so you'll need to load a copy you already legally own. Here's how to run it, which Wine variant to pick, and a few free clones if you'd rather skip the licensing hassle.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="win3x"
+         data-entry="JEZZBALL.EXE"
+         data-app-name="JezzBall"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>JezzBall is commercial Microsoft software and we don't host it.</strong> It shipped in the <em>Microsoft Entertainment Pack</em> (and the <em>Best of Windows Entertainment Pack</em>), which Microsoft has long since discontinued — there is no current official store page, and Microsoft grants no right to redistribute it. ExeBrowser will <strong>not</strong> provide the game files. You may only load a copy you legally own (for example, from an original Entertainment Pack disc you purchased). If you just want the gameplay with zero legal grey area, play one of the free open-source clones listed below instead. We don't link to abandonware or cracked downloads.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>JezzBall is a <strong>16-bit Windows 3.x program</strong> from 1992. That matters here: the everyday <em>default</em> Win32 Wine variant is built for 32-bit apps and usually <strong>won't</strong> load a 16-bit executable. ExeBrowser ships a dedicated <strong>win3x</strong> variant for exactly this era of software, and that's the one this page is configured to use. When you load your own <code>JEZZBALL.EXE</code> (or the <code>WEP</code> launcher it came with), pick the win3x runtime.</p><p>Mechanically the game is trivial for the emulator: a small playfield, a couple of bouncing balls, and walls that grow when you click. No GPU, no sound-card gymnastics required. If your legally-owned copy starts at all, it generally plays at full, responsive speed — this is about as gentle a workload as Wine-in-the-browser ever sees.</p><p><strong>Honest expectation:</strong> the blocker is almost never performance — it's getting a legitimate copy in the first place, since Microsoft no longer sells the Entertainment Pack. That's why we've set this page's verdict to <em>partial</em>: the technology works, but you have to bring your own files.</p>
+    <h3>The gameplay, in 20 seconds</h3>
+    <p>You're given a rectangular room with one or more balls bouncing around it. Click to start building a wall — it grows in both directions from your pointer (vertical or horizontal, toggled with a right-click or the mouse button). When a wall reaches the edges on both ends, it seals off that section; if the sealed-off part contains no ball, it fills in and shrinks the open area.</p><ul><li>Clear <strong>75% or more</strong> of the playfield to finish a level.</li><li>If a ball hits a wall <em>while it's still growing</em>, you lose a life.</li><li>Each new level adds another ball and ramps up the speed.</li></ul><p>It's deceptively simple and genuinely tense — squeezing the last ball into a sliver of the board is the whole appeal.</p>
+    <h3>Loading your own copy</h3>
+    <ol><li>Click <strong>▶ Play JezzBall</strong> above to boot the win3x Wine runtime in this tab.</li><li>Use <strong>Load your own copy → a folder</strong> and select the directory from your legally-owned Entertainment Pack that contains <code>JEZZBALL.EXE</code>.</li><li>Make sure the runtime is set to <strong>win3x</strong> (this page defaults to it) — the 16-bit binary won't start under the default Win32 variant.</li><li>If the bundled launcher (<code>WEP.EXE</code> / a pack menu) doesn't cooperate, point the runtime straight at <code>JEZZBALL.EXE</code> instead.</li><li>Once the window appears, play with the mouse — click to lay walls, the right button flips wall orientation.</li></ol><p>If win3x crashes or hangs on launch, try the <strong>r18</strong> variant — it uses an older Boxedwine engine that sometimes handles stubborn 16-bit programs differently.</p>
+    <h3>Prefer something free? Try an open-source clone</h3>
+    <p>Because the original is proprietary and hard to obtain legally, many players just grab a faithful open-source remake — no licensing grey area, and these run natively on modern systems:</p><ul><li><strong>KBounce</strong> — the KDE clone of JezzBall, free and open-source.</li><li><strong>IceBreaker</strong> — a GPL JezzBall-style game (you trap penguins instead of balls).</li></ul><p>These aren't Windows <code>.exe</code> files we run here, but they're the clean, legal way to scratch the JezzBall itch if you don't own the original Entertainment Pack.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play JezzBall online for free with no download?</summary>
+      <p>You can play it in your browser with no install, but JezzBall itself is commercial Microsoft software that we don't host. You'd need to load a copy you legally own. If you want a truly free option, an open-source clone like KBounce or IceBreaker gives you the same gameplay with no licensing concerns.</p>
+    </details>
+    <details>
+      <summary>Why won't JezzBall run on the default Wine variant?</summary>
+      <p>JezzBall is a 16-bit Windows 3.x program from 1992. The default ExeBrowser runtime targets 32-bit Win32 apps and generally can't load 16-bit executables. Use the <strong>win3x</strong> variant (this page is set to it by default), which is built specifically for early-1990s Windows software.</p>
+    </details>
+    <details>
+      <summary>Is JezzBall legal to download from abandonware sites?</summary>
+      <p>It's a legal grey area we steer clear of. Microsoft has never released JezzBall as freeware and no longer sells the Entertainment Pack, so abandonware copies aren't authorized redistribution. ExeBrowser won't link to them. Load only a copy you legally own, or play a free open-source clone instead.</p>
+    </details>
+    <details>
+      <summary>Will JezzBall run at full speed in the browser?</summary>
+      <p>Almost certainly, if your owned copy starts at all. It's a tiny 2D game with no 3D, DirectX, or sound-card demands, so it's one of the lightest possible loads for the emulator. The hard part is obtaining a legitimate copy, not performance.</p>
+    </details>
+    <details>
+      <summary>What are the controls for JezzBall?</summary>
+      <p>It's mouse-driven. Click to start growing a wall from your pointer (it extends in both directions); the right mouse button toggles between vertical and horizontal walls. Don't let a bouncing ball touch a wall while it's still building, or you lose a life.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">The classic Windows logic puzzle in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">The timeless card game, in your browser.</span></a></li>
+      <li><a class="link-card" href="/run/skifree/"><span class="lc-title">SkiFree</span><span class="lc-desc">Outrun the yeti in this Entertainment Pack classic.</span></a></li>
+      <li><a class="link-card" href="/run/chips-challenge/"><span class="lc-title">Chip's Challenge</span><span class="lc-desc">Another beloved Microsoft tile-puzzle game.</span></a></li>
+      <li><a class="link-card" href="/run/rodents-revenge/"><span class="lc-title">Rodent's Revenge</span><span class="lc-desc">Trap cats with blocks — pure Entertainment Pack.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

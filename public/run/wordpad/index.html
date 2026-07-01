@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run WordPad Online in Your Browser — Free, No Download — ExeBrowser</title>
+<meta name="description" content="Run Microsoft WordPad (write.exe) in your browser via Wine + WebAssembly — basic rich-text editing works, but .doc opens garbled and you must bring your own copy. Plus a free open-source alternative." />
+<meta name="keywords" content="run wordpad online, wordpad in browser, wordpad online free, wordpad no download, write.exe browser, wordpad wine, rtf editor browser, wordpad alternative online" />
+<link rel="canonical" href="https://exebrowser.com/run/wordpad/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/wordpad/" />
+<meta property="og:title" content="Run WordPad Online in Your Browser — No Download" />
+<meta property="og:description" content="The classic Microsoft rich-text editor in a browser tab via Wine + WebAssembly. Basic RTF editing works; bring your own copy. Free open-source alternative inside." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Run WordPad", "item": "https://exebrowser.com/run/wordpad/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "WordPad",
+  "url": "https://exebrowser.com/run/wordpad/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run Microsoft WordPad (write.exe) in your browser via Wine + WebAssembly — basic rich-text editing works, but .doc opens garbled and you must bring your own copy. Plus a free open-source alternative.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I run WordPad online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can run it in your browser here with no install, but WordPad itself isn't a free download — it's proprietary Microsoft software bundled with Windows. You supply a wordpad.exe copied from a Windows PC you own and load it above. If you want something free with nothing to copy, use AbiWord instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I download WordPad?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There's no legitimate standalone WordPad download — Microsoft only ever shipped it inside Windows, and it was removed from Windows 11 version 24H2 (October 2024). Sites offering a \"WordPad installer\" aren't official. Copy wordpad.exe from a Windows machine you already own, or pick a free editor like AbiWord." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does WordPad open .doc files correctly in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not reliably. Basic .rtf and .txt open and save fine, but Wine's rich-text engine often shows garbled characters with lost formatting for old .doc and legacy .wri files, and saving to .doc usually falls back to RTF. For real Word documents, AbiWord handles them far better." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why was WordPad removed from Windows?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Microsoft deprecated WordPad in 2023 and removed it from all editions starting with Windows 11 version 24H2 to cut maintenance of legacy code that hadn't seen meaningful updates in years. It recommends Word for rich text and Notepad for plain text. That's exactly why running an old copy here, or switching to AbiWord, can be handy." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will WordPad run fast in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, comfortably. WordPad is a small Win32 app with no DirectX or 3D, so even at the 10–40% of native speed you get from x86-on-WebAssembly emulation, typing and formatting feel responsive on a modern laptop." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run WordPad</nav>
+
+  <section class="card">
+    <h2>Run WordPad online in your browser <span class="verdict partial">Partial — basic RTF editing works, .doc garbled</span></h2>
+    <p>The classic Microsoft <strong>WordPad</strong> — the rich-text editor that sat between Notepad and Word on every Windows PC from Windows 95 onward — running in a browser tab via Wine + WebAssembly. No install, no account. WordPad is a lightweight Win32 app, so the basics behave: typing, fonts, bold/italic, bullets, and saving <code>.rtf</code> files all work. It is <em>not</em> free to redistribute, though, so you bring your own <code>wordpad.exe</code> and load it above — and Microsoft removed it from Windows 11 24H2, so if you want something free and built-in, jump straight to <a href="/run/abiword/">AbiWord</a>.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="WORDPAD.EXE"
+         data-app-name="WordPad"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <strong>WordPad is proprietary Microsoft software.</strong> It ships as part of Windows and is not separately licensed for redistribution, so we cannot host it here — and there is no legitimate standalone download. To run it, copy <code>wordpad.exe</code> (and <code>write.exe</code>) from a Windows PC you own and load that copy with the button above. Microsoft <a href="https://learn.microsoft.com/en-us/answers/questions/5687158/why-was-wordpad-removed" target="_blank" rel="noopener">removed WordPad from Windows 11 version 24H2</a> (October 2024), so newer machines may not have it at all. If you just want a free rich-text editor with nothing to copy, use the open-source <a href="/run/abiword/">AbiWord</a> instead.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>ExeBrowser boots Wine 1.7.55 on a 32-bit x86 emulator compiled to WebAssembly, then runs the actual <code>wordpad.exe</code> binary you load — no re-implementation, no upload to a server. WordPad is tiny and makes no use of DirectX, .NET, or 64-bit code, so it starts quickly and the editing surface is responsive.</p><p><strong>What works:</strong> typing, font and size selection, bold/italic/underline, text color, bullet and number lists, paragraph alignment, and opening and saving <code>.rtf</code> and <code>.txt</code> files. That covers what most people actually use WordPad for.</p><p><strong>What's rough:</strong> Wine's rich-text engine isn't pixel-perfect. Saving to <code>.doc</code> usually falls back to RTF, and opening old <code>.doc</code> or legacy Write <code>.wri</code> files often shows garbled characters with no formatting. Treat this as a capable plain-and-rich-text scratchpad, not a Word replacement.</p>
+    <h3>Bring your own copy (and which file to load)</h3>
+    <p>WordPad isn't a free download, so there's no honest one-click version to host. To run the genuine article, copy it off a Windows PC you own:</p><ul><li><strong>Windows 10 / older Windows 11:</strong> grab <code>C:\Program Files\Windows NT\Accessories\wordpad.exe</code>. The <code>write.exe</code> launcher in <code>C:\Windows</code> just forwards to it, so copy both if you want either entry point.</li><li><strong>Windows 11 24H2 or newer:</strong> WordPad was removed entirely, so copy it from an older machine or a backup — there is no legitimate place to download it.</li></ul><p>Once you have the file, click <strong>Run WordPad</strong> above, choose <strong>Load your own copy</strong>, and select <code>wordpad.exe</code>. The player uses it as the entry point automatically.</p>
+    <h3>A free, no-copy-needed alternative</h3>
+    <p>If the licensing dance is annoying — or your PC simply doesn't have WordPad anymore — the open-source <a href="/run/abiword/">AbiWord</a> is a genuinely better fit for the browser. It's freely redistributable, reads and writes <code>.rtf</code>, <code>.doc</code>, and its own formats far more faithfully than Wine's RTF engine, and we can offer it as instant-play with nothing to copy. For plain text, <a href="/run/notepad/">Notepad</a> or the cross-platform <a href="/run/notepad-plus-plus/">Notepad++</a> load instantly too.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I run WordPad online for free with no download?</summary>
+      <p>You can run it in your browser here with no install, but WordPad itself isn't a free download — it's proprietary Microsoft software bundled with Windows. You supply a <code>wordpad.exe</code> copied from a Windows PC you own and load it above. If you want something free with nothing to copy, use <a href="/run/abiword/">AbiWord</a> instead.</p>
+    </details>
+    <details>
+      <summary>Where can I download WordPad?</summary>
+      <p>There's no legitimate standalone WordPad download — Microsoft only ever shipped it inside Windows, and it was removed from Windows 11 version 24H2 (October 2024). Sites offering a "WordPad installer" aren't official. Copy <code>wordpad.exe</code> from a Windows machine you already own, or pick a free editor like AbiWord.</p>
+    </details>
+    <details>
+      <summary>Does WordPad open .doc files correctly in the browser?</summary>
+      <p>Not reliably. Basic <code>.rtf</code> and <code>.txt</code> open and save fine, but Wine's rich-text engine often shows garbled characters with lost formatting for old <code>.doc</code> and legacy <code>.wri</code> files, and saving to <code>.doc</code> usually falls back to RTF. For real Word documents, AbiWord handles them far better.</p>
+    </details>
+    <details>
+      <summary>Why was WordPad removed from Windows?</summary>
+      <p>Microsoft deprecated WordPad in 2023 and removed it from all editions starting with Windows 11 version 24H2 to cut maintenance of legacy code that hadn't seen meaningful updates in years. It recommends Word for rich text and Notepad for plain text. That's exactly why running an old copy here, or switching to AbiWord, can be handy.</p>
+    </details>
+    <details>
+      <summary>Will WordPad run fast in the browser?</summary>
+      <p>Yes, comfortably. WordPad is a small Win32 app with no DirectX or 3D, so even at the 10–40% of native speed you get from x86-on-WebAssembly emulation, typing and formatting feel responsive on a modern laptop.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">Free, open-source word processor — the recommended WordPad alternative.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad</span><span class="lc-desc">The classic plain-text editor in a browser tab.</span></a></li>
+      <li><a class="link-card" href="/run/notepad-plus-plus/"><span class="lc-title">Notepad++</span><span class="lc-desc">Open-source code and text editor with tabs.</span></a></li>
+      <li><a class="link-card" href="/run/wordpad/"><span class="lc-title">WordPad</span><span class="lc-desc">You're here — the classic Microsoft rich-text editor.</span></a></li>
+      <li><a class="link-card" href="/run/gnumeric/"><span class="lc-title">Gnumeric</span><span class="lc-desc">Free spreadsheet app that runs cleanly in the browser.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in ExeBrowser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

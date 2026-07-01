@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play 3D Pinball Space Cadet in Your Browser — ExeBrowser</title>
-<meta name="description" content="Run the classic Windows XP game 3D Pinball for Windows – Space Cadet in your browser, no install. Which Wine variant to use (hint: +Gecko), where to find the files, how to load it, and what to expect." />
-<meta name="keywords" content="3d pinball space cadet online, play space cadet browser, 3d pinball for windows, space cadet pinball no download, pinball.exe browser" />
+<title>Play 3D Pinball Space Cadet Online — Free, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Play 3D Pinball for Windows – Space Cadet in your browser, no install. Use the Win32 + Gecko variant, upload the whole pinball folder, run PINBALL.EXE. Bring your own copy." />
+<meta name="keywords" content="3d pinball space cadet online, play space cadet browser, 3d pinball for windows, space cadet pinball no download, pinball.exe browser, windows xp pinball online" />
 <link rel="canonical" href="https://exebrowser.com/run/3d-pinball-space-cadet/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/3d-pinball-space-cadet/" />
 <meta property="og:title" content="Play 3D Pinball Space Cadet in Your Browser" />
-<meta property="og:description" content="Run the classic Windows XP pinball game in your browser with Wine + WebAssembly. No install." />
+<meta property="og:description" content="Run the classic Windows XP pinball game in your browser with Wine + WebAssembly. No install, nothing uploaded to a server." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,20 +31,56 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "3D Pinball Space Cadet", "item": "https://exebrowser.com/run/3d-pinball-space-cadet/" }
+    { "@type": "ListItem", "position": 3, "name": "Play 3D Pinball Space Cadet", "item": "https://exebrowser.com/run/3d-pinball-space-cadet/" }
   ]
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to run 3D Pinball Space Cadet in your browser",
-  "step": [
-    { "@type": "HowToStep", "name": "Get the files", "text": "Obtain the Space Cadet folder (PINBALL.EXE plus its data files) from a Windows XP machine or an archive." },
-    { "@type": "HowToStep", "name": "Boot Wine", "text": "Open ExeBrowser, choose the Win32 + Gecko variant, and click Boot Wine." },
-    { "@type": "HowToStep", "name": "Load the folder", "text": "Use the folder picker to upload the whole pinball directory so its data files are found." },
-    { "@type": "HowToStep", "name": "Run it", "text": "Select PINBALL.EXE as the entry point and click Run in Wine." }
+  "@type": "VideoGame",
+  "name": "Space Cadet",
+  "url": "https://exebrowser.com/run/3d-pinball-space-cadet/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Play 3D Pinball for Windows – Space Cadet in your browser, no install. Use the Win32 + Gecko variant, upload the whole pinball folder, run PINBALL.EXE. Bring your own copy.",
+  "applicationCategory": "Game",
+  "genre": ["Pinball", "Arcade"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is 3D Pinball Space Cadet free to download here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Space Cadet is proprietary Microsoft software and we don't host it. ExeBrowser runs the game in your browser, but you supply the files yourself — copy the Pinball folder from an old Windows XP, 2000, 98, or 95 Plus! machine or install media you legally own." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why won't it start when I only upload PINBALL.EXE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The EXE depends on data files in the same folder — PINBALL.DAT, the .MID music, and the WAVE*.WAV sounds. Upload the whole directory with the folder picker, not just the executable, or the game can't find its table." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Wine variant should I pick for Space Cadet?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use Win32 + Gecko. The game's bundled HTML help/registration component can otherwise trigger a Wine Gecko download prompt; the Gecko variant ships that offline so the game launches straight to the table." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the sound and music work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Both the MIDI music and the WAV sound effects play, as long as you uploaded the full folder so the audio files are present. Speed is a non-issue — the game is light and runs at full speed." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the controls?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Click the canvas first to capture input. Press and hold Space to charge and launch the ball; flippers are Z (left) and / (right). Press Esc to release input focus back to the browser." }
+    }
   ]
 }
 </script>
@@ -67,46 +103,69 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › 3D Pinball Space Cadet</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play 3D Pinball Space Cadet</nav>
+
   <section class="card">
-    <h2>Play 3D Pinball Space Cadet in your browser <span class="verdict good">Works well</span></h2>
-    <p><em>3D Pinball for Windows – Space Cadet</em> is one of the most-missed pieces of bundled Windows software ever — the single pinball table that shipped with Windows 95 Plus!, 98, 2000, and XP before quietly disappearing in Vista. The good news: it's a small, well-behaved 32-bit Win32 program, and it runs in ExeBrowser without much fuss.</p>
+    <h2>Play 3D Pinball Space Cadet online in your browser <span class="verdict good">Works well — full speed, sound works</span></h2>
+    <p><em>3D Pinball for Windows – Space Cadet</em> is one of the most-missed pieces of bundled Windows software ever — the single pinball table that shipped with Windows 95 Plus!, 98, 2000, and XP before quietly disappearing in Vista. The good news: it's a small, well-behaved 32-bit Win32 program, and it runs in ExeBrowser without much fuss. Pick the <strong>Win32 + Gecko</strong> variant, upload the whole pinball folder, point Wine at <code>PINBALL.EXE</code>, and you're launching the ball in seconds — full speed, working sound, nothing uploaded to a server.</p>
 
-    <table class="spec-table">
-      <tr><th>App</th><td>3D Pinball for Windows – Space Cadet (<code>PINBALL.EXE</code>)</td></tr>
-      <tr><th>Era</th><td>1995–2001, classic 32-bit Win32</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 + Gecko</strong> (the bundled help/registration screen can prompt for it)</td></tr>
-      <tr><th>How to load</th><td>Folder upload — bring the whole pinball directory, not just the EXE</td></tr>
-      <tr><th>Expected result</th><td>Plays at full speed; sound works; smooth on a 2018+ laptop</td></tr>
-    </table>
-
-    <h3>Why it needs the whole folder</h3>
-    <p>Space Cadet isn't a single self-contained EXE. <code>PINBALL.EXE</code> loads <code>PINBALL.DAT</code> (the table graphics and physics data), <code>PINBALL.MID</code> and <code>WAVE*.WAV</code> for sound, and table-string files from the same directory. If you drop only the EXE, you'll get a window that complains it can't find its table or simply shows nothing. Upload the <strong>entire folder</strong> using the folder picker so those files sit beside the executable inside Wine's virtual <code>C:\</code>.</p>
-
-    <h3>Why the +Gecko variant</h3>
-    <p>The original release includes a small HTML-based help and registration component that, under Wine, can pop a prompt to download the Wine Gecko package. Picking the <strong>Win32 + Gecko</strong> variant bundles that offline so the prompt never appears and the game launches straight into the table.</p>
-
-    <h3>Step by step</h3>
-    <ol>
-      <li>Find a copy of the Space Cadet folder. It shipped on Windows XP under <code>C:\Program Files\Windows NT\Pinball\</code>; copies of the directory are widely archived.</li>
-      <li>On the <a href="/">ExeBrowser home page</a>, set the Wine variant to <strong>Win32 + Gecko</strong> and click <strong>Boot Wine</strong>.</li>
-      <li>Use <strong>pick a folder</strong> on step 2 and select the whole pinball directory.</li>
-      <li>If an entry picker appears, choose <code>PINBALL.EXE</code>, then click <strong>Run in Wine</strong>.</li>
-      <li>Click the canvas to capture input. Launch the ball with the <kbd>Space</kbd> bar; flippers are <kbd>Z</kbd> and <kbd>/</kbd>.</li>
-    </ol>
-
-    <h3>What to expect</h3>
-    <p>Space Cadet is light on the CPU, so emulation speed isn't an issue — it plays essentially like the real thing, with working sound. If the table looks dark or input feels stuck, click directly on the canvas to make sure it has focus, and press <kbd>Esc</kbd> to release. Nothing you do is uploaded; the files stay in your browser tab.</p>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and play →</a></div>
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="gecko"
+         data-entry="PINBALL.EXE"
+         data-app-name="Space Cadet"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>Bring your own copy.</strong> <em>3D Pinball for Windows – Space Cadet</em> is proprietary Microsoft software and is not distributed by ExeBrowser. We don't host the files. If you have an old Windows XP, 2000, 98, or 95 Plus! machine (or install media) that you legally own, copy the <code>Pinball</code> folder off it — that is the legitimate way to get your <code>PINBALL.EXE</code> and its data files. ExeBrowser is not affiliated with Microsoft.</p>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why it needs the whole folder</h3>
+    <p>Space Cadet isn't a single self-contained EXE. <code>PINBALL.EXE</code> loads <code>PINBALL.DAT</code> (the table graphics and physics data), <code>PINBALL.MID</code> and <code>WAVE*.WAV</code> for sound, and table-string files from the same directory. If you drop only the EXE, you'll get a window that complains it can't find its table — or simply shows nothing. Upload the <strong>entire folder</strong> using the folder picker so those files sit beside the executable inside Wine's virtual <code>C:\</code>.</p>
+    <h3>Why the +Gecko variant</h3>
+    <p>The original release includes a small HTML-based help and registration component that, under Wine, can pop a prompt to download the Wine Gecko package. Picking the <strong>Win32 + Gecko</strong> variant bundles that offline so the prompt never appears and the game launches straight into the table. If you ever boot the plain default variant by mistake and hit a Gecko download prompt, just switch variants and reboot.</p>
+    <h3>Step by step</h3>
+    <ol><li>Find your copy of the Space Cadet folder. It shipped on Windows XP under <code>C:\Program Files\Windows NT\Pinball\</code> — copy that directory off a machine or install media you legally own (see the licensing note above).</li><li>On the ExeBrowser player, set the Wine variant to <strong>Win32 + Gecko</strong> and click <strong>Boot Wine</strong>.</li><li>Use <strong>pick a folder</strong> and select the whole pinball directory.</li><li>If an entry picker appears, choose <code>PINBALL.EXE</code>, then click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. Launch the ball with the <kbd>Space</kbd> bar; flippers are <kbd>Z</kbd> and <kbd>/</kbd>.</li></ol>
+    <h3>What to expect</h3>
+    <p>Space Cadet is light on the CPU, so emulation speed isn't an issue — it plays essentially like the real thing, with working sound, smooth on a 2018-or-newer laptop. If the table looks dark or input feels stuck, click directly on the canvas to make sure it has focus, and press <kbd>Esc</kbd> to release. Nothing you do is uploaded; the files stay in your browser tab.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is 3D Pinball Space Cadet free to download here?</summary>
+      <p>No. Space Cadet is proprietary Microsoft software and we don't host it. ExeBrowser runs the game in your browser, but you supply the files yourself — copy the <code>Pinball</code> folder from an old Windows XP, 2000, 98, or 95 Plus! machine or install media you legally own.</p>
+    </details>
+    <details>
+      <summary>Why won't it start when I only upload PINBALL.EXE?</summary>
+      <p>The EXE depends on data files in the same folder — <code>PINBALL.DAT</code>, the <code>.MID</code> music, and the <code>WAVE*.WAV</code> sounds. Upload the <strong>whole directory</strong> with the folder picker, not just the executable, or the game can't find its table.</p>
+    </details>
+    <details>
+      <summary>Which Wine variant should I pick for Space Cadet?</summary>
+      <p>Use <strong>Win32 + Gecko</strong>. The game's bundled HTML help/registration component can otherwise trigger a Wine Gecko download prompt; the Gecko variant ships that offline so the game launches straight to the table.</p>
+    </details>
+    <details>
+      <summary>Does the sound and music work?</summary>
+      <p>Yes. Both the MIDI music and the WAV sound effects play, as long as you uploaded the full folder so the audio files are present. Speed is a non-issue — the game is light and runs at full speed.</p>
+    </details>
+    <details>
+      <summary>What are the controls?</summary>
+      <p>Click the canvas first to capture input. Press and hold <kbd>Space</kbd> to charge and launch the ball; flippers are <kbd>Z</kbd> (left) and <kbd>/</kbd> (right). Press <kbd>Esc</kbd> to release input focus back to the browser.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">Another classic bundled game.</span></a></li>
-      <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">A more demanding game to try.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">Another classic bundled Windows game in your browser.</span></a></li>
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">The other desk-job classic that shipped with Windows.</span></a></li>
+      <li><a class="link-card" href="/run/freecell/"><span class="lc-title">FreeCell</span><span class="lc-desc">The solvable solitaire variant from Windows.</span></a></li>
+      <li><a class="link-card" href="/run/skifree/"><span class="lc-title">SkiFree</span><span class="lc-desc">Outrun the yeti — a beloved 90s Windows arcade game.</span></a></li>
+      <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">A more demanding classic game to put Wine to the test.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -125,5 +184,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

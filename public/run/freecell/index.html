@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play FreeCell Online — Classic Windows FreeCell in Your Browser — ExeBrowser</title>
+<meta name="description" content="Run the classic Windows FreeCell (freecell.exe) in your browser with Wine + WebAssembly — no install. It's a tiny Win32 game that plays at full speed; bring your own legal copy." />
+<meta name="keywords" content="play freecell online, classic windows freecell browser, freecell.exe online, windows xp freecell no download, old freecell in browser, freecell wine webassembly" />
+<link rel="canonical" href="https://exebrowser.com/run/freecell/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/freecell/" />
+<meta property="og:title" content="Play Classic Windows FreeCell in Your Browser" />
+<meta property="og:description" content="The classic Windows FreeCell (freecell.exe) running in a browser tab via Wine + WebAssembly. Full speed, no install — bring your own legal copy." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play FreeCell", "item": "https://exebrowser.com/run/freecell/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "FreeCell",
+  "url": "https://exebrowser.com/run/freecell/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the classic Windows FreeCell (freecell.exe) in your browser with Wine + WebAssembly — no install. It's a tiny Win32 game that plays at full speed; bring your own legal copy.",
+  "applicationCategory": "Game",
+  "genre": ["Card", "Solitaire", "Puzzle"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play classic FreeCell online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can play it in your browser here with no install, but you must supply the file yourself. FreeCell is Microsoft software bundled with Windows and isn't free to redistribute, so we don't host it. If you own a Windows PC you already own a legal copy — copy freecell.exe off it and load it above." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the old Windows FreeCell run well in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. It's a tiny pure-Win32 game with no DirectX, 3D, .NET, or networking, so it boots in seconds and plays at full speed on Wine + WebAssembly — the same as classic Solitaire and Minesweeper, which run cleanly here." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do the cards show up blank or broken?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FreeCell loads its card artwork from a system DLL — cards.dll on Windows XP and earlier, or cardgames.dll on Vista/7. Copy that DLL from C:\\Windows\\System32, put it in the same folder as freecell.exe, and load the whole folder." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I legally get the original FreeCell?",
+      "acceptedAnswer": { "@type": "Answer", "text": "From any Windows PC you own — it lives in C:\\Windows\\System32 on XP, Vista, and 7. Microsoft also offers a free, modern FreeCell in the Microsoft Solitaire Collection on Windows 10/11, but that Store app is a different build that won't run here. We never link to pirated or 'crack' copies." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Wine variant should I use for FreeCell?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the Win32 (default) variant for the XP/Vista/7 build — it's a 32-bit executable. Only switch to the Win 3.x 16-bit variant if you specifically have the original 1990 Windows Entertainment Pack version, which is a 16-bit program." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play FreeCell</nav>
+
+  <section class="card">
+    <h2>Play classic Windows FreeCell in your browser <span class="verdict good">Runs well — bring your own copy</span></h2>
+    <p>The <strong>FreeCell</strong> that shipped with Windows — the calm, all-cards-visible solitaire variant where almost every deal is winnable — is a tiny classic Win32 game, which makes it a great fit for ExeBrowser. The real <code>freecell.exe</code> boots in seconds and plays at full speed on the Wine + WebAssembly runtime, with the familiar green felt and click-to-move cards intact. The one catch is legal, not technical: FreeCell is Microsoft software bundled inside Windows, so we can't host the file — you bring your own copy from a PC you own, then load it right here.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="freecell.exe"
+         data-app-name="FreeCell"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <h3 style="margin-top:0;">Bring your own copy — FreeCell is Microsoft software</h3><p>Classic FreeCell ships <em>inside</em> Windows; it is proprietary Microsoft software and is <strong>not</strong> free to redistribute, so we don't host it here. That's fine — if you own a Windows PC (or a retired XP/Vista/7 machine), you already own a legal copy. Copy <code>freecell.exe</code> (and its card-art DLL, <code>cards.dll</code> or <code>cardgames.dll</code>) out of <code>C:\Windows\System32</code> and load that folder above.</p><p>If you'd rather not dig through an old install, Microsoft now offers FreeCell free in the modern <a href="https://www.microsoft.com/store/apps/9wzdncrfhwd2" target="_blank" rel="noopener">Microsoft Solitaire Collection</a> on Windows 10/11 — though that Store app is a different, modern build that won't run here. For an instant browser play that we <em>can</em> host, try the open-source card games linked below.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>FreeCell is almost the ideal ExeBrowser candidate: a small, pure Win32 game with no DirectX, no 3D, no networking, no .NET, and no DRM. It's the same family as the classic Windows Solitaire and Minesweeper, which we rate <em>Works well</em> — expect the same here. It boots fast and runs at full speed even though an x86 CPU is being emulated inside WebAssembly, because the game barely taxes it.</p><p>The classic XP/Vista/7-era build is the one to use. It's a 32-bit executable, so keep the <strong>Win32 (default)</strong> variant. The much older Windows 3.x FreeCell (from the 1990 Windows Entertainment Pack) is a 16-bit program — if you specifically want that earliest version, switch to the <strong>Win 3.x 16-bit</strong> variant instead.</p>
+    <h3>Bring the card graphics, too</h3>
+    <p>FreeCell doesn't draw its cards itself — it loads the artwork from a system DLL: <code>cards.dll</code> on Windows XP and earlier, or <code>cardgames.dll</code> on Vista/7. If you copy only <code>freecell.exe</code> and it launches with blank or broken card faces, that missing DLL is why. Grab it from the same <code>C:\Windows\System32</code> folder, put it <em>beside</em> the EXE, and load the whole folder so the game finds its art.</p><table class="spec-table"><tr><th>Game</th><td>Microsoft FreeCell (<code>freecell.exe</code> + <code>cards.dll</code> / <code>cardgames.dll</code>)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong> — XP/Vista/7 build; use <strong>Win 3.x 16-bit</strong> only for the 1990s version</td></tr><tr><th>Era</th><td>1995–2009 (32-bit); 1990 Win 3.x version is 16-bit</td></tr><tr><th>How to load</th><td>Bundle the EXE and its card DLL into one folder, then load the folder</td></tr><tr><th>Expected result</th><td>Boots in seconds, plays at full speed, classic look</td></tr></table>
+    <h3>Step by step</h3>
+    <ol><li>On a Windows PC you own, copy <code>freecell.exe</code> and its card DLL (<code>cards.dll</code> or <code>cardgames.dll</code>) from <code>C:\Windows\System32</code> into one folder.</li><li>Click <strong>▶ Play FreeCell</strong> above (or boot Wine from the <a href="/">home page</a>) on the <strong>Win32 (default)</strong> variant.</li><li>Use <strong>Load your own copy → pick a folder</strong> and select that folder.</li><li>Choose <code>freecell.exe</code> as the entry and click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture the mouse, then deal and start moving cards.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play classic FreeCell online for free with no download?</summary>
+      <p>You can play it in your browser here with no install, but you must supply the file yourself. FreeCell is Microsoft software bundled with Windows and isn't free to redistribute, so we don't host it. If you own a Windows PC you already own a legal copy — copy <code>freecell.exe</code> off it and load it above.</p>
+    </details>
+    <details>
+      <summary>Does the old Windows FreeCell run well in the browser?</summary>
+      <p>Yes. It's a tiny pure-Win32 game with no DirectX, 3D, .NET, or networking, so it boots in seconds and plays at full speed on Wine + WebAssembly — the same as classic Solitaire and Minesweeper, which run cleanly here.</p>
+    </details>
+    <details>
+      <summary>Why do the cards show up blank or broken?</summary>
+      <p>FreeCell loads its card artwork from a system DLL — <code>cards.dll</code> on Windows XP and earlier, or <code>cardgames.dll</code> on Vista/7. Copy that DLL from <code>C:\Windows\System32</code>, put it in the same folder as <code>freecell.exe</code>, and load the whole folder.</p>
+    </details>
+    <details>
+      <summary>Where can I legally get the original FreeCell?</summary>
+      <p>From any Windows PC you own — it lives in <code>C:\Windows\System32</code> on XP, Vista, and 7. Microsoft also offers a free, modern FreeCell in the Microsoft Solitaire Collection on Windows 10/11, but that Store app is a different build that won't run here. We never link to pirated or 'crack' copies.</p>
+    </details>
+    <details>
+      <summary>Which Wine variant should I use for FreeCell?</summary>
+      <p>Use the Win32 (default) variant for the XP/Vista/7 build — it's a 32-bit executable. Only switch to the Win 3.x 16-bit variant if you specifically have the original 1990 Windows Entertainment Pack version, which is a 16-bit program.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">The classic sol.exe card game — runs the same way.</span></a></li>
+      <li><a class="link-card" href="/run/freecell/"><span class="lc-title">Spider Solitaire</span><span class="lc-desc">Another bundled Windows card classic to try.</span></a></li>
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">The tiny Win32 puzzle that runs at full speed.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The other beloved bundled Windows game.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">More classic card games</span><span class="lc-desc">Solitaire, FreeCell, Spider and friends.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run Inkscape (Classic) in Your Browser — Free SVG Editor — ExeBrowser</title>
+<meta name="description" content="Can you run Inkscape, the free open-source SVG editor, in a browser with Wine + WebAssembly? Honestly: the classic 0.48–0.92 builds are heavy GTK apps that struggle hard. Here is what to expect and what to use instead." />
+<meta name="keywords" content="inkscape browser, run inkscape online, inkscape svg editor wine, free vector editor browser, inkscape classic 0.48 0.91 webassembly, open source vector graphics online" />
+<link rel="canonical" href="https://exebrowser.com/run/inkscape-classic/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/inkscape-classic/" />
+<meta property="og:title" content="Run Inkscape (Classic) in Your Browser — Free SVG Editor" />
+<meta property="og:description" content="Inkscape is a free, open-source vector editor — but its heavy GTK+ engine fights browser-based Wine. An honest look at the classic builds and what actually works." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Inkscape (classic)", "item": "https://exebrowser.com/run/inkscape-classic/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Inkscape",
+  "url": "https://exebrowser.com/run/inkscape-classic/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Can you run Inkscape, the free open-source SVG editor, in a browser with Wine + WebAssembly? Honestly: the classic 0.48–0.92 builds are heavy GTK apps that struggle hard. Here is what to expect and what to use instead.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Inkscape Project" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Inkscape work in the browser on ExeBrowser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not well. Inkscape is GPL open-source so it is legal to run, and the classic 32-bit 0.48–0.92 builds are the only ones that even have a chance under 32-bit Wine. In practice they are slow to start and crash-prone because of Inkscape's heavy GTK+/Cairo engine and Python layer. Consider it an experiment, not a working tool." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I run the latest Inkscape (1.x or newer)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Modern Inkscape is 64-bit only and built on GTK+ 3. ExeBrowser runs 32-bit Win32 software only via Boxedwine, so 1.0+ will not load at all. The newest version you could even attempt is the GTK+ 2-based 0.92.x line from 2017." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Inkscape free and legal to use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Inkscape is released under the GNU General Public License (GPLv2), which makes it free to download, use, and redistribute. There is nothing license-wise stopping you from running it; the limitation here is purely technical performance under emulation." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the best free vector editor I can actually use right now?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If you just need to view or tweak an SVG, open it in a regular browser tab or text editor — SVG is XML. For real drawing, install Inkscape natively on Linux, macOS, or Windows where it runs full speed. Browser-based Wine is the wrong tool for a heavyweight GTK app like this." }
+    },
+    {
+      "@type": "Question",
+      "name": "It crashes on startup — is there anything I can try?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload the complete program folder (not just inkscape.exe — it needs its lib, etc, share and python folders), give it extra time on first launch, and if the default engine crashes immediately, reload and switch to the r18 Wine variant. Even with all that, success is not guaranteed." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Inkscape (classic)</nav>
+
+  <section class="card">
+    <h2>Run Inkscape (classic) in your browser <span class="verdict bad">Heavy — GTK engine fights Wine, expect crashes</span></h2>
+    <p><em>Inkscape</em> is the best-loved free, open-source vector graphics editor — a genuine alternative to Illustrator for drawing SVGs, logos, and illustrations. The license is great news (it is GPL, so it is free to download and share), but the engineering is the catch. Inkscape is built on the heavy <strong>GTK+ toolkit</strong> with Cairo rendering and a Python scripting layer, and that is a hard target for browser-based Wine. Be warned up front: even the classic 32-bit builds are slow to start, prone to rendering glitches, and frequently crash here. Treat this as an experiment, not a daily driver.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="inkscape.exe"
+         data-app-name="Inkscape"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get Inkscape (classic, 32-bit)</h3>
+      <p>Inkscape is free and open source under the GPLv2. The classic GTK+ 2 builds with 32-bit Windows installers — your only realistic candidates here — are available from the official archive:</p><p><a href="https://inkscape.org/release/all/windows/32-bit/" target="_blank" rel="noopener">inkscape.org — all 32-bit Windows releases</a></p><p>Install a 0.48, 0.91, or 0.92.x build on a real PC, then upload the full program folder with the folder picker. Heads-up: it is very likely to run slowly or crash regardless — see the notes above before you invest time.</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Which build to even attempt</h3>
+    <p>Modern Inkscape (1.0 and later) is 64-bit only and built on GTK+ 3, so it is a non-starter — ExeBrowser runs 32-bit Win32 only. Your only realistic candidates are the <strong>classic GTK+ 2 era builds</strong>: 0.48 (2010), 0.91 (2015), or the final GTK2 release 0.92.x (2017), all of which shipped 32-bit Windows installers. These are the lightest Inkscape has ever been on Windows, which is exactly why they are the ones worth trying.</p><table class="spec-table"><tr><th>App</th><td>Inkscape classic, 32-bit (<code>inkscape.exe</code>)</td></tr><tr><th>License</th><td>GNU GPLv2 — free and open source</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong>; try <strong>r18</strong> if default crashes on launch</td></tr><tr><th>Engine</th><td>GTK+ 2.x toolkit + Cairo rendering + Python extensions</td></tr><tr><th>Where to get it</th><td><a href="https://inkscape.org/release/all/windows/32-bit/" target="_blank" rel="noopener">inkscape.org — 32-bit Windows archive</a> (official)</td></tr></table>
+    <h3>Why it struggles here</h3>
+    <p>Inkscape leans on almost everything Wine 1.7.55 finds difficult at once. The GTK+ widget set is large and draws through Cairo, which means a lot of software-rendered redraws on every pan, zoom, and dialog — painful at the ~10–40% of native speed Boxedwine delivers. The multi-window, dockable-panel interface stresses the parts of Wine that are weakest in this emulator, and the bundled Python interpreter (used for extensions and many menu actions) often fails to initialize. The practical result is long startup times, blank or half-drawn panels, sluggish canvas redraws, and a real chance the app never reaches a usable window at all.</p>
+    <h3>How to load it if you want to try anyway</h3>
+    <p>Inkscape ships as an installer (and modern ones as an MSI), which will not run well here directly. Install a classic 32-bit build on a real Windows PC, then upload the whole resulting Inkscape program folder — <code>inkscape.exe</code> plus its <code>lib\</code>, <code>etc\</code>, <code>share\</code>, and <code>python\</code> subfolders — using the <strong>folder picker</strong>. Do not upload just the EXE; without its GTK and theme files it cannot start. Give it time on first launch, and if it crashes immediately on the default engine, reload and try the <strong>r18</strong> variant. If you do get a drawing open, save inside the app and use <strong>Download files written by this app</strong> before you close the tab — the virtual <code>C:\</code> is wiped on reload.</p>
+    <h3>What to use instead</h3>
+    <p>If you actually need to view or lightly edit an SVG in the browser, you have far better options than fighting Inkscape under Wine. SVG is just XML, so for quick viewing or hand-editing nothing beats opening the file in a normal browser tab or a text editor. For real vector work on a locked-down machine, Inkscape itself runs natively and fast on Linux, macOS, and Windows — installing it directly will always beat emulating it. Within ExeBrowser, lighter open-source creative tools like the paint programs in our guide are much more dependable than a full GTK suite.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Does Inkscape work in the browser on ExeBrowser?</summary>
+      <p>Not well. Inkscape is GPL open-source so it is legal to run, and the classic 32-bit 0.48–0.92 builds are the only ones that even have a chance under 32-bit Wine. In practice they are slow to start and crash-prone because of Inkscape's heavy GTK+/Cairo engine and Python layer. Consider it an experiment, not a working tool.</p>
+    </details>
+    <details>
+      <summary>Why can't I run the latest Inkscape (1.x or newer)?</summary>
+      <p>Modern Inkscape is 64-bit only and built on GTK+ 3. ExeBrowser runs 32-bit Win32 software only via Boxedwine, so 1.0+ will not load at all. The newest version you could even attempt is the GTK+ 2-based 0.92.x line from 2017.</p>
+    </details>
+    <details>
+      <summary>Is Inkscape free and legal to use?</summary>
+      <p>Yes. Inkscape is released under the GNU General Public License (GPLv2), which makes it free to download, use, and redistribute. There is nothing license-wise stopping you from running it; the limitation here is purely technical performance under emulation.</p>
+    </details>
+    <details>
+      <summary>What's the best free vector editor I can actually use right now?</summary>
+      <p>If you just need to view or tweak an SVG, open it in a regular browser tab or text editor — SVG is XML. For real drawing, install Inkscape natively on Linux, macOS, or Windows where it runs full speed. Browser-based Wine is the wrong tool for a heavyweight GTK app like this.</p>
+    </details>
+    <details>
+      <summary>It crashes on startup — is there anything I can try?</summary>
+      <p>Upload the complete program folder (not just inkscape.exe — it needs its lib, etc, share and python folders), give it extra time on first launch, and if the default engine crashes immediately, reload and switch to the r18 Wine variant. Even with all that, success is not guaranteed.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/mtpaint/"><span class="lc-title">mtPaint</span><span class="lc-desc">A lightweight paint tool that behaves far better here.</span></a></li>
+      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">A genuinely reliable open-source office app.</span></a></li>
+      <li><a class="link-card" href="/run/gnumeric/"><span class="lc-title">Gnumeric</span><span class="lc-desc">The free spreadsheet — another solid GTK-era choice.</span></a></li>
+      <li><a class="link-card" href="/run/mspaint/"><span class="lc-title">MS Paint</span><span class="lc-desc">Simple bitmap editing, classic Windows style.</span></a></li>
+      <li><a class="link-card" href="/run/grafx2/"><span class="lc-title">GrafX2</span><span class="lc-desc">Pixel-art editor, much lighter than a full vector suite.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs well, what struggles, and why.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

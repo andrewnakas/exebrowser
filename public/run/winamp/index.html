@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Classic Winamp in Your Browser — ExeBrowser</title>
-<meta name="description" content="Run a classic Winamp (2.x / 5.x) in your browser with Wine + WebAssembly. How to load the legendary MP3 player, what works and what doesn't under browser-based Wine, and where to get it." />
-<meta name="keywords" content="winamp browser, run winamp online, classic winamp, winamp 2.95, play mp3 winamp wine, it really whips the llama" />
+<title>Play Classic Winamp Online in Your Browser — Free, No Download — ExeBrowser</title>
+<meta name="description" content="Run classic Winamp (2.x / 5.x) in your browser with Wine + WebAssembly. The skinned UI and playlist load great; audio playback is hit-or-miss. Here's what to expect." />
+<meta name="keywords" content="winamp browser, run winamp online, play winamp in browser, classic winamp 2.95, winamp wine webassembly, it really whips the llama, winamp skins online, winamp no download" />
 <link rel="canonical" href="https://exebrowser.com/run/winamp/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/winamp/" />
-<meta property="og:title" content="Run Classic Winamp in Your Browser" />
-<meta property="og:description" content="The legendary classic Winamp, running in your browser with Wine + WebAssembly. What works and what doesn't." />
+<meta property="og:title" content="Play Classic Winamp Online in Your Browser" />
+<meta property="og:description" content="The legendary classic Winamp, running in your browser with Wine + WebAssembly. The skinned UI loads beautifully; audio is the catch. Here's the honest rundown." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,54 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Winamp", "item": "https://exebrowser.com/run/winamp/" }
+    { "@type": "ListItem", "position": 3, "name": "Run Winamp", "item": "https://exebrowser.com/run/winamp/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Winamp",
+  "url": "https://exebrowser.com/run/winamp/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run classic Winamp (2.x / 5.x) in your browser with Wine + WebAssembly. The skinned UI and playlist load great; audio playback is hit-or-miss. Here's what to expect.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Nullsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Winamp actually play music in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. The interface, playlist, and equalizer load reliably, but audio output is hit-or-miss because Boxedwine has to route Winamp's output plugins through the browser's Web Audio path. You may get clean playback, stutter, or silence depending on the build and file. Treat it as a nostalgia demo rather than a dependable player." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Winamp version works best?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The classic 32-bit builds — Winamp 2.9x or an early 5.x \"Lite/Full\" — are the sweet spot. They're small native Win32 programs that render the iconic skinned window. Avoid modern 64-bit or DRM-laden builds; ExeBrowser is 32-bit Win32 only." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you host Winamp for download here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Winamp is proprietary freeware and its license doesn't grant redistribution rights, so we link to the official site instead. Download it from winamp.com or a reputable archive and run a copy you obtained legitimately." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my old Winamp skins?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — skin loading generally works. Upload the Winamp program folder with its Skins\\ subfolder included via the folder picker, then switch skins from the UI as you normally would. The classic skinned look renders correctly even when audio doesn't." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why isn't the visualizer working?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Visualization and any plugins that probe audio hardware or use the emulated sound path are unreliable here. The core skinned UI is rock-solid, but expect the visualizer, advanced output plugins, and hardware-touching add-ons to be flaky or silent." }
+    }
   ]
 }
 </script>
@@ -54,38 +101,67 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Winamp</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Winamp</nav>
+
   <section class="card">
-    <h2>Run classic Winamp in your browser <span class="verdict partial">Partial — UI yes, audio is iffy</span></h2>
-    <p><em>Winamp</em> — the player that really whipped the llama's behind — is one of the most nostalgic pieces of late-90s Windows software there is. The classic 2.x and early 5.x builds are small native Win32 programs, so the interface and skins load under browser-based Wine. Audio playback is the catch: it depends on the emulated audio path, so treat this as a fun nostalgia trip more than a reliable music player.</p>
+    <h2>Play classic Winamp online in your browser <span class="verdict partial">Partial — UI yes, audio is iffy</span></h2>
+    <p><em>Winamp</em> — the player that really whipped the llama's behind — is one of the most nostalgic pieces of late-90s Windows software there is. The classic 2.x and early 5.x builds are small native Win32 programs, so the skinned interface, playlist editor, and equalizer all load under browser-based Wine. Audio playback is the catch: it routes through the emulated Web Audio path, and Winamp's output plugins don't always cooperate. Treat this as a fun nostalgia trip more than a reliable everyday music player.</p>
 
-    <table class="spec-table">
-      <tr><th>App</th><td>Winamp, classic (2.9x or 5.x “Lite/Full”, 32-bit)</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>UI &amp; skins</th><td>Generally load — the classic skinned window renders</td></tr>
-      <tr><th>Audio</th><td>Hit-or-miss — depends on the emulated Web Audio path</td></tr>
-      <tr><th>Where to get it</th><td>The official site and reputable archives host the classic installers; this is freeware we link to rather than host.</td></tr>
-    </table>
-
-    <h3>What works, honestly</h3>
-    <p>The classic skinned Winamp window, the playlist editor, the equalizer, and skin loading all tend to render correctly — it genuinely looks like 2001 again. Where it gets shaky is actual sound output: Boxedwine routes audio to Web Audio, and Winamp's output plugins don't always cooperate with that path. You may get silence or stutter even when the UI is perfect. The visualizer and any plugins that probe hardware are also unreliable.</p>
-
-    <h3>How to load it</h3>
-    <p>Winamp ships as an installer, which won't run well here directly. Install it on a Windows PC (or extract a portable build), then upload the resulting Winamp program folder — <code>winamp.exe</code> plus its <code>Plugins\</code> and <code>Skins\</code> folders — with the <strong>folder picker</strong>. Bundle a small MP3 in the same folder if you want to test playback.</p>
-
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="winamp.exe"
+         data-app-name="Winamp"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
     <div class="warn-box">
-      <p style="margin:0;">We don't host Winamp here — it's freeware, not open-source, and its license doesn't grant redistribution rights. Download it from the official site or a reputable archive, and only run a copy you obtained legitimately.</p>
+      <p style="margin:0;">We don't host Winamp here. It's freeware, not open-source, and its license doesn't grant redistribution rights. Download it from the <a href="https://www.winamp.com/" target="_blank" rel="noopener">official Winamp site</a> or a reputable archive, and only run a copy you obtained legitimately.</p>
     </div>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>How it works &amp; what to expect</h2>
+    <h3>What works, honestly</h3>
+    <p>The classic skinned Winamp window, the playlist editor, the equalizer, and skin loading all tend to render correctly — it genuinely looks like 2001 again. Where it gets shaky is actual sound output: Boxedwine routes audio to Web Audio, and Winamp's output plugins don't always agree with that path. You may get silence or stutter even when the UI is pixel-perfect. The visualizer and any plugins that probe hardware are also unreliable.</p><table class="spec-table"><tr><th>App</th><td>Winamp, classic (2.9x or 5.x "Lite/Full", 32-bit)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>UI &amp; skins</th><td>Generally load — the classic skinned window renders</td></tr><tr><th>Audio</th><td>Hit-or-miss — depends on the emulated Web Audio path</td></tr><tr><th>Where to get it</th><td>The official site and reputable archives host the classic installers; this is freeware we link to rather than host.</td></tr></table>
+    <h3>How to load it</h3>
+    <p>Winamp ships as an installer, which won't run well here directly. Install it on a Windows PC (or extract a portable build), then upload the resulting Winamp program folder — <code>winamp.exe</code> plus its <code>Plugins\</code> and <code>Skins\</code> folders — using the <strong>folder picker</strong>. Drop a small MP3 in the same folder if you want to test playback. Stick with the <strong>Win32 (default)</strong> variant; it's the best fit for a small native player like this.</p>
+    <h3>Why audio is the weak spot</h3>
+    <p>Everything visual in Winamp is standard Win32 drawing, which Boxedwine handles well. Sound is different: Winamp uses output plugins (the classic <code>out_wave</code> / DirectSound path) that hand audio to the OS audio stack, and Boxedwine has to translate that to the browser's Web Audio API in real time inside an emulator running at roughly 10-40% native speed. That translation isn't lossless — you can hit silence, crackle, or buffer underruns. If playback fails, the UI is still worth a look for the nostalgia alone, and lightweight formats sometimes fare better than high-bitrate files.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Does Winamp actually play music in the browser?</summary>
+      <p>Sometimes. The interface, playlist, and equalizer load reliably, but audio output is hit-or-miss because Boxedwine has to route Winamp's output plugins through the browser's Web Audio path. You may get clean playback, stutter, or silence depending on the build and file. Treat it as a nostalgia demo rather than a dependable player.</p>
+    </details>
+    <details>
+      <summary>Which Winamp version works best?</summary>
+      <p>The classic 32-bit builds — Winamp 2.9x or an early 5.x "Lite/Full" — are the sweet spot. They're small native Win32 programs that render the iconic skinned window. Avoid modern 64-bit or DRM-laden builds; ExeBrowser is 32-bit Win32 only.</p>
+    </details>
+    <details>
+      <summary>Do you host Winamp for download here?</summary>
+      <p>No. Winamp is proprietary freeware and its license doesn't grant redistribution rights, so we link to the official site instead. Download it from <a href="https://www.winamp.com/" target="_blank" rel="noopener">winamp.com</a> or a reputable archive and run a copy you obtained legitimately.</p>
+    </details>
+    <details>
+      <summary>Can I use my old Winamp skins?</summary>
+      <p>Yes — skin loading generally works. Upload the Winamp program folder with its <code>Skins\</code> subfolder included via the folder picker, then switch skins from the UI as you normally would. The classic skinned look renders correctly even when audio doesn't.</p>
+    </details>
+    <details>
+      <summary>Why isn't the visualizer working?</summary>
+      <p>Visualization and any plugins that probe audio hardware or use the emulated sound path are unreliable here. The core skinned UI is rock-solid, but expect the visualizer, advanced output plugins, and hardware-touching add-ons to be flaky or silent.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">Free shareware, hosted here.</span></a></li>
-      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small Win32 tools.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/foobar2000/"><span class="lc-title">foobar2000</span><span class="lc-desc">The other beloved lightweight audio player.</span></a></li>
+      <li><a class="link-card" href="/run/vlc-classic/"><span class="lc-title">VLC (classic)</span><span class="lc-desc">Plays just about any media format.</span></a></li>
+      <li><a class="link-card" href="/run/audacity/"><span class="lc-title">Audacity</span><span class="lc-desc">Open-source audio editor and recorder.</span></a></li>
+      <li><a class="link-card" href="/run/irfanview/"><span class="lc-title">IrfanView</span><span class="lc-desc">Fast, tiny image viewer with media plugins.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">Free shareware, hosted and ready to play.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -104,5 +180,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

@@ -467,9 +467,146 @@ footer {
 }
 .warn-box h3 { margin-top: 0; }
 
+/* ─── Instant-play embed (/run/<app>/ pages) ─────────────────────────────── */
+.embed-stage { position: relative; }
+.embed-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: radial-gradient(circle at 50% 40%, rgba(26,24,22,0.55), rgba(8,7,8,0.92));
+  border-radius: 6px;
+  z-index: 2;
+}
+.embed-overlay.hidden { display: none; }
+.embed-play {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9em 1.8em;
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(177,40,31,0.4);
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+.embed-play:hover:not(:disabled) { background: var(--accent-hover); transform: translateY(-2px); }
+.embed-play:disabled { opacity: 0.7; cursor: default; box-shadow: none; }
+.embed-hint { max-width: 440px; margin: 0; }
+.embed-loader { margin-top: 1rem; }
+.embed-console-wrap { margin-top: 1rem; }
+.embed-console-wrap #logOutput { margin-top: 0.5rem; }
+
 @media (max-width: 540px) {
   header { padding: 1.5rem 1rem 1rem; }
   header h1 { font-size: 1.8rem; }
   .card { padding: 1.1rem; }
   h2 { font-size: 1.05rem; }
+  .embed-play { font-size: 1.05rem; padding: 0.8em 1.4em; }
 }
+
+/* ─── Mobile gamepad controls (/run/ instant-play pages) ─────────────────── */
+.mgp {
+  display: none;
+  max-width: 640px;
+  margin: 0.5rem auto 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+/* Show on touch/small screens */
+@media (hover: none) and (pointer: coarse) { .mgp { display: block; } }
+@media (max-width: 720px) { .mgp { display: block; } }
+
+.mgp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.mgp-dpad {
+  display: grid;
+  grid-template-areas: ". u ." "l . r" ". d .";
+  grid-template-columns: 2.8rem 2.8rem 2.8rem;
+  grid-template-rows: 2.8rem 2.8rem 2.8rem;
+  gap: 3px;
+}
+.mgp-btn {
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #1e2d47 0%, #111c2e 100%);
+  border: 1px solid #2e4470;
+  border-radius: 8px;
+  color: #9bbfe0;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #0a1220, inset 0 1px 0 rgba(120,180,255,.1);
+  transition: background 0.05s, transform 0.05s, box-shadow 0.05s;
+}
+.mgp-btn:active,
+.mgp-btn.pressed {
+  background: linear-gradient(180deg, #2a4068 0%, #1a2e50 100%);
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #0a1220;
+  color: #fff;
+}
+/* D-pad button placements */
+.mgp-up    { grid-area: u; }
+.mgp-left  { grid-area: l; }
+.mgp-right { grid-area: r; }
+.mgp-down  { grid-area: d; }
+
+/* Action buttons cluster */
+.mgp-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 2.8rem);
+  grid-template-rows: repeat(2, 2.8rem);
+  gap: 4px;
+}
+.mgp-wide {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+.mgp-accent {
+  background: linear-gradient(180deg, #7a1a14 0%, #4d0f0b 100%);
+  border-color: #b8261d;
+  color: #ffd0cc;
+  box-shadow: 0 3px 0 #300806, inset 0 1px 0 rgba(255,160,150,.15);
+}
+.mgp-accent:active, .mgp-accent.pressed {
+  background: linear-gradient(180deg, #9e231a 0%, #6a1510 100%);
+  box-shadow: 0 1px 0 #300806;
+}
+.mgp-yellow {
+  background: linear-gradient(180deg, #5a4a10 0%, #3a2e08 100%);
+  border-color: #c8a020;
+  color: #ffe080;
+  box-shadow: 0 3px 0 #1e1804, inset 0 1px 0 rgba(255,220,80,.1);
+}
+.mgp-yellow:active, .mgp-yellow.pressed {
+  background: linear-gradient(180deg, #7a6418 0%, #5a4810 100%);
+  box-shadow: 0 1px 0 #1e1804;
+}
+.mgp-hint {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+  text-align: center;
+}
+@media (hover: none) and (pointer: coarse) { .mgp-hint { display: block; } }
+@media (max-width: 720px) { .mgp-hint { display: block; } }

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Chocolate Doom Online — Free, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Play Chocolate Doom online in your browser — no download, no install. The minimalist, historically-accurate GPL Doom source port running on Wine + WebAssembly with the free shareware DOOM1.WAD." />
+<meta name="keywords" content="play chocolate doom online, chocolate doom in browser, chocolate doom no download, doom source port browser, chocolate doom shareware online, run chocolate doom wine, classic doom browser free" />
+<link rel="canonical" href="https://exebrowser.com/run/chocolate-doom/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/chocolate-doom/" />
+<meta property="og:title" content="Play Chocolate Doom Online — Free, In Your Browser, No Download" />
+<meta property="og:description" content="The minimalist, historically-accurate Doom source port (GPL), running in your browser via Wine + WebAssembly with the free shareware WAD. No install." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Chocolate Doom", "item": "https://exebrowser.com/run/chocolate-doom/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Chocolate Doom",
+  "url": "https://exebrowser.com/run/chocolate-doom/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Play Chocolate Doom online in your browser — no download, no install. The minimalist, historically-accurate GPL Doom source port running on Wine + WebAssembly with the free shareware DOOM1.WAD.",
+  "applicationCategory": "Game",
+  "genre": ["First-person shooter", "Action", "Retro"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Chocolate Doom project (Simon Howard et al.)" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Chocolate Doom free and legal to play here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Chocolate Doom itself is open-source under the GNU GPL v2, so it can be freely redistributed. The game data we load is DOOM1.WAD — the first episode, Knee-Deep in the Dead, released as free shareware in 1993 and still freely redistributable. The registered episodes and Doom II are commercial; buy those from id / Steam and load your own WAD." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Chocolate Doom and just running DOOM?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Chocolate Doom is a modern recompilation of id's open-sourced engine that intentionally preserves vanilla behavior — same 320×200 look, same limits, same quirks as the 1993 game — while being a clean 32-bit Win32 EXE that's easy to run on today's systems. Plain DOS DOOM.EXE can be fussy under Wine; Chocolate Doom sidesteps that and is the closest thing to original-accurate Doom that runs reliably in a browser tab." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Chocolate Doom need DirectX or a GPU to run?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. It draws in software through SDL and can use plain Windows GDI, so it needs neither DirectX 9+ nor a graphics card. That's exactly why it runs better here than heavier ports like GZDoom, which rely on hardware acceleration that 32-bit Wine on WebAssembly handles poorly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is there no sound, or why does it stutter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Audio is the least reliable part of emulating an x86 Win32 app inside WebAssembly. Music and sound effects may work, crackle, or stay silent depending on your browser and the build you load. It doesn't affect gameplay. The older 2.3.0 (SDL 1.2) build tends to behave best — try that first." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I play deathmatch or co-op online here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not in the browser. Chocolate Doom's networking expects real UDP sockets, which this emulated environment doesn't provide. Single-player and loading the shareware episode work; multiplayer netplay does not." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Chocolate Doom</nav>
+
+  <section class="card">
+    <h2>Play Chocolate Doom online in your browser <span class="verdict good">Works well — minimalist, no DirectX needed</span></h2>
+    <p><strong>Chocolate Doom</strong> is the source port built for one purpose: to play exactly like the 1993 original, bugs and all. It's deliberately minimalist — no fancy 3D, no DirectX 9, no launcher bloat — which is precisely why it runs cleanly here. The real Win32 build executes on Wine + WebAssembly right in this tab, loading the freely-redistributable shareware <code>DOOM1.WAD</code>. No download, no install, no account. Hit play and you're in <em>Knee-Deep in the Dead</em> with pixel-faithful, vanilla Doom.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="chocolate-doom.exe"
+         data-app-name="Chocolate Doom"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">Chocolate Doom is MIT-licensed. SDL2 rendering does not yet work under Wine + WebAssembly here — use the hosted DOOM95 build above, or try uploading <code>chocolate-doom.exe</code> with your own WAD file for experimentation.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get Chocolate Doom + the free shareware WAD</h3>
+      <p>Chocolate Doom is open-source (GPL v2) and the shareware <code>DOOM1.WAD</code> is freely redistributable, so you can grab both at no cost:</p><ul><li><a href="https://www.chocolate-doom.org/downloads/2.3.0/" target="_blank" rel="noopener">Chocolate Doom 2.3.0 (SDL 1.2) — recommended for the browser</a></li><li><a href="https://github.com/chocolate-doom/chocolate-doom/releases" target="_blank" rel="noopener">Latest releases on GitHub (3.0+, SDL2)</a></li><li><a href="https://archive.org/details/DOOM_95" target="_blank" rel="noopener">DOOM shareware (Internet Archive) — for DOOM1.WAD</a></li></ul><p class="muted small">Unzip the port, drop <code>DOOM1.WAD</code> in the same folder, then use <strong>“Load your own copy”</strong> above to run them together. Source under GPL-2.0; the registered episodes and Doom II are commercial and not included — buy those from <a href="https://store.steampowered.com/app/2280/DOOM__DOOM_II/" target="_blank" rel="noopener">id / Steam</a>.</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why Chocolate Doom runs so well here</h3>
+    <p>Most modern Doom source ports (GZDoom and friends) lean on OpenGL or DirectX hardware acceleration — exactly the things 32-bit Wine 1.7.55 inside an emulator handles worst. Chocolate Doom goes the other way on purpose. It renders the original 320×200 software framebuffer through SDL and can fall back to plain Windows GDI, with no demand for a GPU or shader pipeline. That low-tech approach is what makes it one of the friendlier games for ExeBrowser: the heavy lifting is just CPU drawing a tiny frame, which the WebAssembly x86 emulator can keep up with comfortably.</p><p>It's a 32-bit Win32 executable with no 64-bit dependency, no .NET, and no DRM, so it sits squarely inside what this environment supports.</p>
+    <h3>Which build to load (this matters)</h3>
+    <p>Chocolate Doom comes in two lineages, and the older one is the safer bet in the browser:</p><ul><li><strong>2.3.0 (SDL 1.2)</strong> — the last release before the SDL2 rewrite. It does all its drawing in software with the simplest possible video path, which tends to be the most reliable under Boxedwine. <strong>Start here.</strong></li><li><strong>3.0 and newer (SDL2)</strong> — these moved screen scaling into hardware for crisp high-resolution windows. That's great natively but asks more of the emulated graphics layer, so it can be hit-or-miss in a tab. Try it only if the 2.x build misbehaves.</li></ul><p>Whichever you load, drop the source-port EXE and <code>DOOM1.WAD</code> into the same folder so the engine finds its game data.</p>
+    <h3>What to expect — honestly</h3>
+    <p><strong>Video:</strong> the game itself is featherweight, so the picture should be smooth on a modern laptop. Older Chromebooks and tablets emulate x86 more slowly — playable, but don't expect a perfectly locked frame rate.</p><p><strong>Audio:</strong> sound is the usual wildcard under Boxedwine. Music and effects may work, stutter, or stay silent depending on your browser and the build; the gameplay is unaffected if audio drops out. The leaner 2.3.0 build is generally the better-behaved one.</p><p><strong>Setup screen:</strong> Chocolate Doom ships a separate <code>chocolate-setup.exe</code> for key bindings and options. The game runs fine with defaults, so you can skip it — but if you do open it, choose the software/GDI video options rather than anything labeled fullscreen-accelerated.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is Chocolate Doom free and legal to play here?</summary>
+      <p>Yes. Chocolate Doom itself is open-source under the GNU GPL v2, so it can be freely redistributed. The game data we load is <code>DOOM1.WAD</code> — the first episode, <em>Knee-Deep in the Dead</em>, released as free shareware in 1993 and still freely redistributable. The registered episodes and Doom II are commercial; buy those from id / Steam and load your own WAD.</p>
+    </details>
+    <details>
+      <summary>What's the difference between Chocolate Doom and just running DOOM?</summary>
+      <p>Chocolate Doom is a modern recompilation of id's open-sourced engine that intentionally preserves vanilla behavior — same 320×200 look, same limits, same quirks as the 1993 game — while being a clean 32-bit Win32 EXE that's easy to run on today's systems. Plain DOS <code>DOOM.EXE</code> can be fussy under Wine; Chocolate Doom sidesteps that and is the closest thing to original-accurate Doom that runs reliably in a browser tab.</p>
+    </details>
+    <details>
+      <summary>Does Chocolate Doom need DirectX or a GPU to run?</summary>
+      <p>No. It draws in software through SDL and can use plain Windows GDI, so it needs neither DirectX 9+ nor a graphics card. That's exactly why it runs better here than heavier ports like GZDoom, which rely on hardware acceleration that 32-bit Wine on WebAssembly handles poorly.</p>
+    </details>
+    <details>
+      <summary>Why is there no sound, or why does it stutter?</summary>
+      <p>Audio is the least reliable part of emulating an x86 Win32 app inside WebAssembly. Music and sound effects may work, crackle, or stay silent depending on your browser and the build you load. It doesn't affect gameplay. The older 2.3.0 (SDL 1.2) build tends to behave best — try that first.</p>
+    </details>
+    <details>
+      <summary>Can I play deathmatch or co-op online here?</summary>
+      <p>Not in the browser. Chocolate Doom's networking expects real UDP sockets, which this emulated environment doesn't provide. Single-player and loading the shareware episode work; multiplayer netplay does not.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM (1993)</span><span class="lc-desc">The original shareware build, playable in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">Free, GPL-friendly replacement Doom IWADs.</span></a></li>
+      <li><a class="link-card" href="/run/chocolate-doom/"><span class="lc-title">Crispy / source ports</span><span class="lc-desc">More vanilla-accurate Doom engines.</span></a></li>
+      <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id's earlier shareware FPS in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/hexen-heretic-shareware/"><span class="lc-title">Heretic &amp; Hexen</span><span class="lc-desc">Raven's GPL fantasy shooters, vanilla-style.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs well, what doesn't, and why.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

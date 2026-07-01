@@ -899,6 +899,63 @@
   els.runBtn.addEventListener("click", bootAndRun);
   els.saveStateBtn.addEventListener("click", downloadWritableLayer);
 
+  // ─── programmatic API ────────────────────────────────────────────────────
+  // Exposed so per-app instant-play pages (/run/<app>/) can drive the same
+  // engine without the user hand-picking a file: stage a hosted, license-clean
+  // app payload (a zip fetched over the network), pick the entry EXE, and boot —
+  // all the real pipeline above, just fed programmatically. Returns helpers that
+  // resolve once the launch is dispatched. Everything still runs client-side;
+  // the only difference from a manual upload is where the bytes come from.
+  async function stageHostedZip(url) {
+    if (typeof JSZip === "undefined") {
+      // JSZip is preloaded below; wait briefly if a fast click beats it.
+      await new Promise((r) => setTimeout(r, 250));
+      if (typeof JSZip === "undefined") throw new Error("JSZip not ready yet.");
+    }
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(`HTTP ${r.status} fetching ${url}`);
+    const buf = await r.arrayBuffer();
+    clearStaged();
+    const zip = await loadZip(buf);
+    const entries = listZipEntries(zip);
+    for (const e of entries) {
+      const safe = sanitizeRelPath(e.path);
+      if (!safe) continue;
+      const bytes = await readZipEntry(zip, e);
+      if (/\.exe$/i.test(safe)) warnIfNotPe(safe, bytes);
+      state.stagedFiles.push({ path: safe, bytes });
+    }
+    log(`Fetched hosted app: ${state.stagedFiles.length} files staged from ${url}.`);
+    refreshEntryPicker();
+  }
+
+  window.ExeBrowser = {
+    // Lock in a Wine variant (e.g. "gecko" for Pinball) before boot.
+    setVariant(name) {
+      if (WINE_VARIANTS[name]) {
+        state.selectedVariant = name;
+        if (els.wineVariant) els.wineVariant.value = name;
+      }
+    },
+    // Prefer a specific entry EXE by basename once files are staged (e.g.
+    // "DOOM95.EXE"). No-op if not found; the default pick stands.
+    preferEntry(basename) {
+      const want = String(basename).toUpperCase();
+      const hit = state.candidateExes.find(
+        (f) => f.path.split("/").pop().toUpperCase() === want
+      );
+      if (hit) setEntry(hit);
+    },
+    // Fetch a hosted, license-clean app zip and stage it (no user upload).
+    stageHostedZip,
+    // Boot the engine and run the staged entry EXE. Same path as the Run button.
+    run: bootAndRun,
+    // Introspection for the embed UI.
+    isReady: () => !!state.pickedExe,
+    isBooting: () => state.bootInFlight,
+  };
+  document.dispatchEvent(new Event("exebrowser:ready"));
+
   log("ExeBrowser ready. Click 'Boot Wine' to begin.");
 
   // Preload JSZip from the default runtime so the zip-upload path works before

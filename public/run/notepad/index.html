@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Notepad &amp; Classic Windows Utilities in Your Browser — ExeBrowser</title>
-<meta name="description" content="Run Notepad and other tiny classic Windows utilities in your browser with Wine + WebAssembly. These small Win32 tools are the most reliable things to run — here's how, and what else in this category works." />
-<meta name="keywords" content="run notepad in browser, windows utilities online, classic win32 tools browser, calc exe online, small windows app browser" />
+<title>Run Notepad &amp;amp; Classic Windows Utilities Online — Free, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run Notepad-style editors and tiny classic Win32 utilities in your browser with Wine + WebAssembly. Small single-purpose tools are the most reliable category — here's how, and what works." />
+<meta name="keywords" content="run notepad in browser, windows utilities online, classic win32 tools browser, text editor online no download, small windows app browser, hex editor browser, run exe utilities online" />
 <link rel="canonical" href="https://exebrowser.com/run/notepad/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/notepad/" />
-<meta property="og:title" content="Run Notepad &amp; Classic Windows Utilities in Your Browser" />
-<meta property="og:description" content="The most reliable things to run in a browser: small classic Win32 utilities. Here's how." />
+<meta property="og:title" content="Run Notepad &amp;amp; Classic Windows Utilities in Your Browser" />
+<meta property="og:description" content="The most reliable things to run in a browser: small classic Win32 utilities. Real .exe tools on Wine + WebAssembly — no install, no upload. Here's how." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,54 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Notepad &amp; utilities", "item": "https://exebrowser.com/run/notepad/" }
+    { "@type": "ListItem", "position": 3, "name": "Run Notepad &amp; utilities", "item": "https://exebrowser.com/run/notepad/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Notepad &amp; utilities",
+  "url": "https://exebrowser.com/run/notepad/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run Notepad-style editors and tiny classic Win32 utilities in your browser with Wine + WebAssembly. Small single-purpose tools are the most reliable category — here's how, and what works.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I run Notepad in my browser for free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can run a Notepad-style editor with no install, but Notepad itself (NOTEPAD.EXE) is Microsoft software we can't host. Either copy the EXE from a Windows PC you own and load it with Load your own copy, or use one of the many free open-source text editors that run just as cleanly here." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are small utilities the most reliable things to run?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tiny classic tools only use standard windows, basic controls, and file I/O — none of the modern GPU, 64-bit, recent .NET or DRM features that trip up browser Wine. That maps almost perfectly onto what Wine 1.7.55 supports, so they boot fast and rarely fail." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a file I edited back out of the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Save inside the app, then use Download files written by this app to pull the result out of the in-memory C:\\ as a zip. The virtual drive is wiped on reload, so download before you close the tab — and re-upload that zip next time to continue." }
+    },
+    {
+      "@type": "Question",
+      "name": "My utility says it's missing a DLL — what do I do?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A single EXE is usually enough, but VB6, Delphi and some other apps need runtime DLLs. Put the EXE and its DLLs in one folder on your computer, then load the whole folder instead of just the EXE so Wine can find them." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Wine variant should I pick for utilities?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the default (Win32) variant — it's the everyday choice and handles 1995–2008 utilities best. If a particular tool crashes on boot, the r18 (older engine) variant is worth a try as a fallback." }
+    }
   ]
 }
 </script>
@@ -54,42 +101,69 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Notepad &amp; utilities</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Notepad &amp;amp; utilities</nav>
+
   <section class="card">
-    <h2>Run Notepad and classic utilities in your browser <span class="verdict good">Works well</span></h2>
-    <p>If you want to <em>see</em> ExeBrowser work with the least possible friction, a tiny classic Win32 utility is the place to start. Notepad, a hex editor, a calculator, an old file manager — these are small, single-purpose, decades-old programs that barely touch the parts of Windows that Wine struggles with. They boot fast and behave.</p>
+    <h2>Run Notepad and classic Windows utilities in your browser <span class="verdict good">Works well — the most reliable category</span></h2>
+    <p>If you want to <em>see</em> ExeBrowser work with the least possible friction, a tiny classic Win32 utility is the place to start. A plain text editor, a hex editor, a small calculator, an old file manager — these are single-purpose, decades-old programs that barely touch the parts of Windows that Wine struggles with. They boot fast, behave, and almost never break. Notepad itself is Microsoft software (so bring your own copy), but the wider world of small free utilities runs beautifully here — load any one of them and watch a real <code>.exe</code> open in a browser tab.</p>
 
-    <table class="spec-table">
-      <tr><th>Apps</th><td>Notepad-style editors, hex editors, simple calculators, viewers, small file tools</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>Era</th><td>1995–2008 32-bit Win32 — the engine's sweet spot</td></tr>
-      <tr><th>How to load</th><td>Single EXE is usually enough; bundle the folder if it needs DLLs</td></tr>
-      <tr><th>Getting work out</th><td>Save inside the app, then “Download files written by this app”</td></tr>
-    </table>
-
-    <h3>Why these are the most reliable category</h3>
-    <p>The things that break apps under browser-based Wine are modern GPU features, 64-bit code, recent .NET, DRM, and Win32 APIs added after Windows 7. Small classic utilities use none of that. They draw a plain window with standard controls, read and write files, and quit. That maps almost perfectly onto what Wine 1.7.55 implements well, so the failure rate is very low. If you've never tried ExeBrowser, run one of these first to get a feel for booting Wine, capturing input on the canvas, and downloading your output.</p>
-
-    <h3>Editing and saving a file</h3>
-    <p>A text editor is a great demo of the round trip. Boot Wine, run the editor, type or open something, then use <strong>Download files written by this app</strong> to pull the saved file back out of the in-memory <code>C:\</code> as a zip. Remember that the virtual drive is wiped on reload, so download before you close the tab. To continue later, re-upload that zip alongside the EXE.</p>
-
-    <h3>Other utilities worth trying</h3>
-    <ul>
-      <li><strong>Hex editors</strong> — inspect or patch a binary on a Chromebook.</li>
-      <li><strong>Old shareware calculators and converters</strong> — single-EXE, instant.</li>
-      <li><strong>Classic file managers</strong> — browse the virtual drive, useful alongside an archiver.</li>
-      <li><strong>VB6 and Delphi mini-apps</strong> — bundle the runtime DLLs in the folder if prompted.</li>
-    </ul>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try one →</a></div>
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="NOTEPAD.EXE"
+         data-app-name="Notepad &amp;amp; utilities"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>About Notepad itself:</strong> <code>NOTEPAD.EXE</code>, Calculator, and similar built-in Windows accessories are Microsoft software and are <strong>not</strong> redistributable, so we don't host them here — bring your own copy from a Windows machine you own. The good news: this category isn't really about Microsoft's tools. The most reliable, instant things to run are the countless <em>free and open-source</em> tiny Win32 utilities — text editors, hex editors, viewers and converters — many of which are explicitly free to redistribute. Use <strong>Load your own copy</strong> above to drop in any small <code>.exe</code> you legally have.</p>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why small utilities are the most reliable category</h3>
+    <p>The things that break apps under browser-based Wine are modern GPU features, 64-bit code, recent .NET, DRM, and Win32 APIs added after Windows 7. Small classic utilities use none of that. They draw a plain window with standard controls, read and write files, and quit. That maps almost perfectly onto what Wine 1.7.55 implements well, so the failure rate is very low.</p><p>If you've never tried ExeBrowser, run one of these first to get a feel for booting Wine, capturing input on the canvas, and pulling your output back out. The 1995–2008 32-bit Win32 era is the engine's sweet spot, and tiny tools sit right in the middle of it.</p>
+    <h3>Editing and saving a file — the round trip</h3>
+    <p>A text editor is the perfect demo of getting work in and out. Boot Wine, run the editor, type or open something, then use <strong>Download files written by this app</strong> to pull the saved file back out of the in-memory <code>C:\</code> as a zip.</p><p>One thing to remember: the virtual drive is wiped on reload, so download before you close the tab. To continue later, re-upload that zip alongside the EXE. A single <code>.exe</code> is usually all you need to load; if a tool asks for DLLs, bundle the whole folder instead.</p>
+    <h3>Other utilities worth trying</h3>
+    <ul><li><strong>Hex editors</strong> — inspect or patch a binary on a Chromebook with no native tooling.</li><li><strong>Old shareware calculators and unit converters</strong> — single-EXE, instant, no setup.</li><li><strong>Classic file managers</strong> — browse the virtual drive, handy alongside an archiver like 7-Zip.</li><li><strong>VB6 and Delphi mini-apps</strong> — these run well; bundle the runtime DLLs in the folder if the app prompts for them.</li><li><strong>Plain-text editors and Notepad clones</strong> — Notepad2, metapad and similar lightweight free editors load instantly.</li></ul>
+    <h3>What about Notepad itself, and Calculator?</h3>
+    <p>Microsoft's built-in accessories — <code>NOTEPAD.EXE</code>, <code>CALC.EXE</code>, Character Map, WordPad — are proprietary and not redistributable, so we can't ship them for you. If you have a legally-owned Windows install, you can copy the EXE off it and load it here; the classic non-UWP versions are small Win32 programs and run fine. Otherwise, reach for a free open-source equivalent: it'll do the same job, run just as cleanly, and you can keep it.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I run Notepad in my browser for free?</summary>
+      <p>You can run a Notepad-style editor with no install, but Notepad itself (<code>NOTEPAD.EXE</code>) is Microsoft software we can't host. Either copy the EXE from a Windows PC you own and load it with <strong>Load your own copy</strong>, or use one of the many free open-source text editors that run just as cleanly here.</p>
+    </details>
+    <details>
+      <summary>Why are small utilities the most reliable things to run?</summary>
+      <p>Tiny classic tools only use standard windows, basic controls, and file I/O — none of the modern GPU, 64-bit, recent .NET or DRM features that trip up browser Wine. That maps almost perfectly onto what Wine 1.7.55 supports, so they boot fast and rarely fail.</p>
+    </details>
+    <details>
+      <summary>How do I get a file I edited back out of the browser?</summary>
+      <p>Save inside the app, then use <strong>Download files written by this app</strong> to pull the result out of the in-memory <code>C:\</code> as a zip. The virtual drive is wiped on reload, so download before you close the tab — and re-upload that zip next time to continue.</p>
+    </details>
+    <details>
+      <summary>My utility says it's missing a DLL — what do I do?</summary>
+      <p>A single EXE is usually enough, but VB6, Delphi and some other apps need runtime DLLs. Put the EXE and its DLLs in one folder on your computer, then load the whole folder instead of just the EXE so Wine can find them.</p>
+    </details>
+    <details>
+      <summary>Which Wine variant should I pick for utilities?</summary>
+      <p>Use the <strong>default (Win32)</strong> variant — it's the everyday choice and handles 1995–2008 utilities best. If a particular tool crashes on boot, the <strong>r18</strong> (older engine) variant is worth a try as a fallback.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Extract archives in the browser.</span></a></li>
-      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">A classic bundled game.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Extract and create archives in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/notepad-plus-plus/"><span class="lc-title">Notepad++</span><span class="lc-desc">The popular free code editor, in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/keepass/"><span class="lc-title">KeePass</span><span class="lc-desc">Open-source password manager that runs cleanly.</span></a></li>
+      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">Sumatra PDF</span><span class="lc-desc">Tiny, fast free PDF and document viewer.</span></a></li>
+      <li><a class="link-card" href="/run/calculator/"><span class="lc-title">Calculator</span><span class="lc-desc">The classic Windows calc, and free alternatives.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -108,5 +182,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

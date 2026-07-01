@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run KeePassXC in Your Browser — Why It Won't Work (and What Does) — ExeBrowser</title>
+<meta name="description" content="KeePassXC is free and open source, but it's a 64-bit Qt5 app — it won't run on ExeBrowser's 32-bit Wine 1.7.55. Here's why, plus the KeePass 1.x Classic option that actually works in the browser." />
+<meta name="keywords" content="keepassxc browser, run keepassxc online, keepassxc wine, keepassxc 32-bit, keepassxc webassembly, open source password manager browser, keepass classic browser, kdbx in browser" />
+<link rel="canonical" href="https://exebrowser.com/run/keepassxc-classic/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/keepassxc-classic/" />
+<meta property="og:title" content="Run KeePassXC in Your Browser — Why It Won't Work (and What Does)" />
+<meta property="og:description" content="KeePassXC is open source but a 64-bit Qt5 app, so it can't run on ExeBrowser's 32-bit Wine. Here's the honest verdict and the KeePass 1.x option that does work." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Run KeePassXC", "item": "https://exebrowser.com/run/keepassxc-classic/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "KeePassXC",
+  "url": "https://exebrowser.com/run/keepassxc-classic/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "KeePassXC is free and open source, but it's a 64-bit Qt5 app — it won't run on ExeBrowser's 32-bit Wine 1.7.55. Here's why, plus the KeePass 1.x Classic option that actually works in the browser.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "KeePassXC Team" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I run KeePassXC in the browser with ExeBrowser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. KeePassXC 2.7.0+ is a 64-bit Windows 10/11 application, and ExeBrowser's engine is 32-bit only. Even the last 32-bit build (2.6.6) is a Qt5 app that needs a modern Windows environment that Wine 1.7.55 doesn't provide. It will crash or show a blank window rather than open." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is KeePassXC free and safe to download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. KeePassXC is free and open source under the GPL-2.0/GPL-3.0 license, with no purchase required. Always download it from the official site at keepassxc.org/download rather than third-party mirrors — it guards your passwords, so the source matters." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between KeePass and KeePassXC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "KeePass is the original Windows project; KeePass 1.x is a native Win32 build and KeePass 2.x is .NET-based. KeePassXC is a separate cross-platform rewrite built on Qt. For running in the browser, only KeePass 1.x Classic works — see our KeePass guide." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which password manager actually works in ExeBrowser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "KeePass 1.x (Classic) — the native Win32 edition with no .NET or Qt dependencies. It opens .kdb databases and runs under the default Win32 Wine variant. KeePass 2.x (.NET) and KeePassXC (64-bit Qt) do not run." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert my KeePassXC .kdbx file to use in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On a real machine, yes — KeePass and KeePassXC can import and export between the .kdbx and older .kdb formats. To view a vault in the browser you'd export it to .kdb for KeePass 1.x first, since KeePassXC itself won't run here." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run KeePassXC</nav>
+
+  <section class="card">
+    <h2>Can you run KeePassXC in your browser? <span class="verdict bad">Won't run — 64-bit Qt5 app</span></h2>
+    <p><em>KeePassXC</em> is a superb, modern, community-driven password manager — and we'd love to tell you it runs here. It doesn't. ExeBrowser uses Boxedwine (Wine 1.7.55 on a <strong>32-bit</strong> x86 emulator), and KeePassXC is a <strong>64-bit, Qt5</strong> application that targets Windows 10/11. Those two facts don't meet in the middle. This page is the honest version: why KeePassXC can't load, and the open-source alternative — <a href="/run/keepass/">KeePass 1.x Classic</a> — that actually does work in the browser.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-app-name="KeePassXC"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <h3 style="margin-top:0;">Free software — but get it from the official source</h3><p>KeePassXC is genuinely free and open source (GPL-2.0/GPL-3.0), so there's nothing to buy and nothing shady about it. To use it on a real machine, download the official build from <a href="https://keepassxc.org/download/" target="_blank" rel="noopener">keepassxc.org/download</a>. Avoid third-party "free download" mirrors for a tool that guards your passwords — only the official site and verified package managers are trustworthy here.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>Short answer: it won't start. There are two independent reasons, and either one alone is enough to stop it.</p><ul><li><strong>It's 64-bit only.</strong> KeePassXC <strong>2.7.0 and newer</strong> ship as 64-bit Windows 10/11 builds exclusively. ExeBrowser's emulator is 32-bit x86 — a 64-bit executable simply cannot be loaded by it.</li><li><strong>It's a heavy Qt5 app.</strong> The last build that ever shipped a 32-bit binary was <strong>2.6.6</strong>, and even that is a large Qt5 application expecting Windows 7-or-later system libraries. Boxedwine's Wine 1.7.55 dates from around 2015 and emulates an older Windows environment; the modern Qt5 platform layer that KeePassXC needs to draw a single window isn't there.</li></ul><p>So the realistic outcome is a crash or a blank window on launch — not a usable password manager. We set the verdict to <strong>Won't run</strong> rather than letting you waste time on it.</p>
+    <h3>What to use instead: KeePass 1.x Classic</h3>
+    <p>Good news: the original <strong>KeePass</strong> has a native Win32 "Classic" line that does run under browser Wine. <strong>KeePass 1.x</strong> is a small, dependency-light Win32 program with no .NET and no Qt — exactly the kind of app Boxedwine handles well. It reads <code>.kdb</code> databases and gives you the core of what you want: open a vault, browse and copy entries, save changes.</p><p>Head to our <a href="/run/keepass/">KeePass in the browser</a> guide for the step-by-step. The one caveat: KeePass 1.x uses the older <code>.kdb</code> format, which is different from KeePassXC's <code>.kdbx</code>. If your vault is <code>.kdbx</code>, you'd convert or export it on a real machine first.</p>
+    <h3>A serious word on password-vault safety</h3>
+    <p>Even when something <em>does</em> run here, think hard before opening a real password database in a browser tab. ExeBrowser runs everything locally and never uploads your files — your vault doesn't leave your machine — but a password store is the single most sensitive file you own. For day-to-day use, run a password manager <strong>natively on a trusted device</strong>. Treat in-browser Wine as an emergency way to <em>view</em> a vault on a computer where you can't install anything, not as your primary manager. Always close the tab when you're done; the in-memory drive is wiped on reload.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I run KeePassXC in the browser with ExeBrowser?</summary>
+      <p>No. KeePassXC 2.7.0+ is a 64-bit Windows 10/11 application, and ExeBrowser's engine is 32-bit only. Even the last 32-bit build (2.6.6) is a Qt5 app that needs a modern Windows environment that Wine 1.7.55 doesn't provide. It will crash or show a blank window rather than open.</p>
+    </details>
+    <details>
+      <summary>Is KeePassXC free and safe to download?</summary>
+      <p>Yes. KeePassXC is free and open source under the GPL-2.0/GPL-3.0 license, with no purchase required. Always download it from the official site at <a href="https://keepassxc.org/download/" target="_blank" rel="noopener">keepassxc.org/download</a> rather than third-party mirrors — it guards your passwords, so the source matters.</p>
+    </details>
+    <details>
+      <summary>What's the difference between KeePass and KeePassXC?</summary>
+      <p>KeePass is the original Windows project; KeePass 1.x is a native Win32 build and KeePass 2.x is .NET-based. KeePassXC is a separate cross-platform rewrite built on Qt. For running in the browser, only KeePass 1.x Classic works — see our <a href="/run/keepass/">KeePass guide</a>.</p>
+    </details>
+    <details>
+      <summary>Which password manager actually works in ExeBrowser?</summary>
+      <p>KeePass 1.x (Classic) — the native Win32 edition with no .NET or Qt dependencies. It opens <code>.kdb</code> databases and runs under the default Win32 Wine variant. KeePass 2.x (.NET) and KeePassXC (64-bit Qt) do not run.</p>
+    </details>
+    <details>
+      <summary>Can I convert my KeePassXC .kdbx file to use in the browser?</summary>
+      <p>On a real machine, yes — KeePass and KeePassXC can import and export between the <code>.kdbx</code> and older <code>.kdb</code> formats. To view a vault in the browser you'd export it to <code>.kdb</code> for KeePass 1.x first, since KeePassXC itself won't run here.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/keepass/"><span class="lc-title">KeePass (Classic)</span><span class="lc-desc">The open-source password manager that actually runs — use KeePass 1.x.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Free open-source archiver that runs well in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/keepass/"><span class="lc-title">KeePass 1.x setup</span><span class="lc-desc">Step-by-step for loading a .kdb vault in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small native Win32 tools that work great.</span></a></li>
+      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">Sumatra PDF</span><span class="lc-desc">Lightweight open-source PDF reader for Wine.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs, what doesn't, and why 64-bit apps fail.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

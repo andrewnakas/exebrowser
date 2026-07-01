@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Tyrian 2000 Online — Free, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Play Tyrian 2000, the classic vertical-scrolling shmup, in your browser. The game is free (released as freeware), but it's a DOS title — here's how it runs on Wine + WebAssembly and what to expect." />
+<meta name="keywords" content="play tyrian 2000 online, tyrian in browser, tyrian 2000 free, tyrian shmup online no download, tyrian freeware, opentyrian2000 browser, play tyrian no install" />
+<link rel="canonical" href="https://exebrowser.com/run/tyrian/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/tyrian/" />
+<meta property="og:title" content="Play Tyrian 2000 Online — Free, In Your Browser" />
+<meta property="og:description" content="The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via Wine + WebAssembly. Honest setup notes inside — it's a DOS game." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Tyrian 2000", "item": "https://exebrowser.com/run/tyrian/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Tyrian 2000",
+  "url": "https://exebrowser.com/run/tyrian/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Play Tyrian 2000, the classic vertical-scrolling shmup, in your browser. The game is free (released as freeware), but it's a DOS title — here's how it runs on Wine + WebAssembly and what to expect.",
+  "applicationCategory": "Game",
+  "genre": ["Shoot 'em up", "Vertical scrolling shooter", "Arcade"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Eclipse Software / Epic MegaGames" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Tyrian 2000 really free to play?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The full game was released as freeware by the rights holder in 2004, the graphics were later put under an open-content license, and it's also given away free on GOG. There's nothing to buy and nothing shady about playing it." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I play Tyrian 2000 in the browser with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sort of — you play it in your browser via Wine + WebAssembly, with no install, but you do need to load the game files into the player. Because Tyrian is a DOS game, the smoothest route is the open-source OpenTyrian2000 Win32 port plus the freeware data files, loaded with the on-page uploader." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't the original Tyrian EXE just run?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The original Tyrian / Tyrian 2000 executable is a DOS program. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary won't start cleanly without a DOS layer. The OpenTyrian2000 source port is a native Win32 rebuild, which is why it's the recommended way to play here." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is OpenTyrian2000?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's a free, open-source (GPL) port of Tyrian 2000 that recreates the original game as a modern, native executable using the freeware Tyrian 2000 data files. It's the most reliable way to run the game inside ExeBrowser's Win32 environment." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will it run at full speed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Maybe. ExeBrowser emulates an x86 CPU inside WebAssembly at roughly 10-40% of native speed, and OpenTyrian2000 is SDL-based, which adds overhead. The game is light enough that a modern laptop often handles it fine, but expect possible slowdown on older tablets or Chromebooks." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Tyrian 2000</nav>
+
+  <section class="card">
+    <h2>Play Tyrian 2000 online in your browser <span class="verdict works">Works — free freeware classic runs via DOSBox in your browser</span></h2>
+    <p><strong>Tyrian 2000</strong> — the beloved 1995/1999 vertical-scrolling space shooter from Eclipse Software and Epic MegaGames — is genuinely free: the rights holder released the full game as freeware. And now it plays directly in your browser via DOSBox compiled to WebAssembly. Hit play — the original DOS game boots right here, no install, no port needed.</p>
+
+    <div id="dos-embed"
+         data-app-url="/apps/tyrian/tyrian.zip"
+         data-app-name="Tyrian 2000"
+         data-autoboot="false"></div>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-doskey="72" data-code="" data-keycode="0" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-doskey="75" data-code="" data-keycode="0" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-doskey="77" data-code="" data-keycode="0" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-doskey="80" data-code="" data-keycode="0" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-doskey="29" data-code="" data-keycode="0" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-doskey="56" data-code="" data-keycode="0" aria-label="BOMB">BOMB</button>
+          <button type="button" class="mgp-btn " data-doskey="1" data-code="" data-keycode="0" aria-label="PAUSE">PAUSE</button>
+          <button type="button" class="mgp-btn " data-doskey="1" data-code="" data-keycode="0" aria-label="MENU">MENU</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">D-pad: fly · FIRE: shoot · BOMB: secondary weapon · PAUSE: esc</p>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("dos-canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var sc = parseInt(btn.dataset.doskey, 10);
+      if(!sc) return;
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,true); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,false); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">Tyrian 2000 data is freeware, but the original game is a DOS executable and the Win32 source port OpenTyrian uses SDL2 which does not yet render under Wine + WebAssembly here. Check back as compatibility improves.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get Tyrian 2000 (free)</h3>
+      <div class="download-box"><h3 style="margin-top:0;">Free game, two pieces to grab</h3><p>Tyrian 2000 is freeware, but in a Win32 browser environment you need a Win32 binary plus the data. The reliable combo is the open-source <strong>OpenTyrian2000</strong> port and the freeware <strong>Tyrian 2000 data files</strong>:</p><p><a class="cta-btn" href="https://github.com/KScl/opentyrian2000" target="_blank" rel="noopener">OpenTyrian2000 (GPL source port) →</a></p><p>Then grab the freeware data (<code>tyrian2000.zip</code> — the <code>.dat</code>/<code>.shp</code>/<code>.lvl</code> files) from the project's documented source, e.g. <a href="https://www.camanis.net/tyrian/tyrian2000.zip" target="_blank" rel="noopener">camanis.net</a>. Unpack the data into a <code>data\</code> folder next to the port's EXE, then use <strong>Load your own copy</strong> above to drop the whole folder in.</p><p class="muted small">Tyrian 2000 was released as freeware by the rights holder; OpenTyrian2000 is GPL-licensed open source. The original DOS executable is a DOS program and won't run cleanly in this Win32 environment — that's why the source port is recommended. You can also get the game free on <a href="https://www.gog.com/game/tyrian_2000" target="_blank" rel="noopener">GOG</a>.</p></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>There are two layers to be honest about here: the <strong>license</strong> and the <strong>binary</strong>.</p><p><strong>The license is the easy part.</strong> Author Jason Emery released the complete Tyrian 2000 as freeware in 2004, and the artwork was later placed under an open-content license. The data files (graphics, levels, music) are freely redistributable, and the game is also offered free of charge on GOG. So there's nothing shady about playing it — no piracy, no cracks, no commercial copy required.</p><p><strong>The binary is the tricky part.</strong> The original <code>TYRIAN.EXE</code> / <code>TYRIAN2K.EXE</code> is a <em>DOS</em> executable. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary will not start cleanly without a DOS layer. That's why the verdict here is <em>partial</em>: the game is free and the gameplay is timeless, but getting it running in a browser Win32 environment takes the right approach.</p>
+    <h3>The reliable path: the OpenTyrian2000 port</h3>
+    <p>The cleanest way to run Tyrian 2000 in ExeBrowser is the open-source <strong>OpenTyrian2000</strong> source port — a faithful, native rebuild of the game that ships as a real Win32 executable rather than a DOS one. You load the port's <code>.exe</code> alongside the freeware Tyrian 2000 data files and it plays the original game, levels and all.</p><ul><li>Grab an <strong>OpenTyrian2000</strong> Windows release (it's GPL-licensed and free).</li><li>Grab the freeware <strong>Tyrian 2000 data</strong> (the <code>tyrian2000.zip</code> set of <code>.dat</code>, <code>.shp</code>, <code>.lvl</code> files).</li><li>Put the data files in a <code>data\</code> folder right next to the port's EXE, then load the whole folder above.</li></ul><p>Honesty note: OpenTyrian2000 is SDL-based, and SDL plus the Wine + WebAssembly layers can be demanding — expect it to run, but a heavy SDL2 build may be slower or fussier than a lightweight SDL1 one. If one build stutters, try another release, or the <strong>r18</strong> variant if the default crashes on launch.</p>
+    <h3>Controls &amp; tips</h3>
+    <p>Click the game canvas to capture input, then:</p><ul><li><kbd>↑↓←→</kbd> or the mouse to fly your ship</li><li><kbd>Ctrl</kbd> / <kbd>Space</kbd> to fire (and the secondary fire key for your sidekicks)</li><li><kbd>Enter</kbd> / <kbd>Esc</kbd> to navigate menus; <kbd>Esc</kbd> also releases the mouse back to the page</li></ul><p>Tyrian's whole charm is the upgrade shop between levels — spend your credits on weapons, shields and a beefier hull. Don't blow it all on guns; survivability wins the long episodes.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is Tyrian 2000 really free to play?</summary>
+      <p>Yes. The full game was released as freeware by the rights holder in 2004, the graphics were later put under an open-content license, and it's also given away free on GOG. There's nothing to buy and nothing shady about playing it.</p>
+    </details>
+    <details>
+      <summary>Can I play Tyrian 2000 in the browser with no download?</summary>
+      <p>Sort of — you play it in your browser via Wine + WebAssembly, with no install, but you do need to load the game files into the player. Because Tyrian is a DOS game, the smoothest route is the open-source OpenTyrian2000 Win32 port plus the freeware data files, loaded with the on-page uploader.</p>
+    </details>
+    <details>
+      <summary>Why doesn't the original Tyrian EXE just run?</summary>
+      <p>The original Tyrian / Tyrian 2000 executable is a DOS program. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary won't start cleanly without a DOS layer. The OpenTyrian2000 source port is a native Win32 rebuild, which is why it's the recommended way to play here.</p>
+    </details>
+    <details>
+      <summary>What is OpenTyrian2000?</summary>
+      <p>It's a free, open-source (GPL) port of Tyrian 2000 that recreates the original game as a modern, native executable using the freeware Tyrian 2000 data files. It's the most reliable way to run the game inside ExeBrowser's Win32 environment.</p>
+    </details>
+    <details>
+      <summary>Will it run at full speed?</summary>
+      <p>Maybe. ExeBrowser emulates an x86 CPU inside WebAssembly at roughly 10-40% of native speed, and OpenTyrian2000 is SDL-based, which adds overhead. The game is light enough that a modern laptop often handles it fine, but expect possible slowdown on older tablets or Chromebooks.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/raptor/"><span class="lc-title">Raptor: Call of the Shadows</span><span class="lc-desc">Another classic vertical-scrolling DOS shmup.</span></a></li>
+      <li><a class="link-card" href="/run/tyrian/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Epic MegaGames' robot-fighting classic.</span></a></li>
+      <li><a class="link-card" href="/run/jazz-jackrabbit-shareware/"><span class="lc-title">Jazz Jackrabbit (shareware)</span><span class="lc-desc">Epic's fast platformer, shareware episode.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM (shareware)</span><span class="lc-desc">The 1993 shooter, free episode in your browser.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">DOS games in the browser</span><span class="lc-desc">How DOS-era titles fare under Win32 Wine.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in ExeBrowser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script src="/dos-embed.js?v=1"></script>
+</body>
+</html>

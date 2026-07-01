@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run FileZilla Online in Your Browser — Free FTP Client (Honest Verdict) — ExeBrowser</title>
+<meta name="description" content="Can you run FileZilla, the free open-source FTP client, in your browser via Wine + WebAssembly? Honest answer: networking doesn't work in the sandbox, so it can't connect. Here's why, and what to use instead." />
+<meta name="keywords" content="filezilla online, filezilla in browser, run filezilla without install, filezilla web ftp client, filezilla wine, browser ftp client, filezilla no download" />
+<link rel="canonical" href="https://exebrowser.com/run/filezilla/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/filezilla/" />
+<meta property="og:title" content="Run FileZilla Online — Free FTP Client, In Your Browser" />
+<meta property="og:description" content="FileZilla is free GPL open-source software, but FTP/SFTP networking can't reach the internet from the browser sandbox — so it can't actually connect. Read the honest breakdown." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Run FileZilla", "item": "https://exebrowser.com/run/filezilla/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FileZilla",
+  "url": "https://exebrowser.com/run/filezilla/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Can you run FileZilla, the free open-source FTP client, in your browser via Wine + WebAssembly? Honest answer: networking doesn't work in the sandbox, so it can't connect. Here's why, and what to use instead.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "FileZilla Project (Tim Kosse)" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I run FileZilla in my browser with no install?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can sometimes get an old FileZilla window to appear, but it can't connect to anything. The browser sandbox and the Boxedwine WebAssembly build both lack real outbound networking, so FTP/SFTP/FTPS connections fail. For real use, install the free official client from filezilla-project.org." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't FileZilla's network connection work under Wine in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Two reasons. First, Boxedwine's WebAssembly socket layer is incomplete — TCP connections fail at the emulated-kernel level. Second, browsers only permit HTTP(S) and opt-in WebSocket traffic, never raw connections to arbitrary FTP/SFTP ports. FileZilla needs exactly those raw connections." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is FileZilla free and legal to use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. FileZilla Client is free, open-source software under the GNU General Public License (GPLv2 for older versions, GPLv3 since 3.70.0 in April 2026). It's completely legitimate to download and use. We just don't host a runnable copy here because it can't function in the browser." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there any browser-based FTP that actually works?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but not via a desktop FTP client. Use your web host's built-in file manager or web SFTP terminal (cPanel, Plesk, etc.), or a hosted SSH/SFTP web client that proxies the connection server-side over HTTPS. Those are built for the browser; FileZilla is not." }
+    },
+    {
+      "@type": "Question",
+      "name": "Would an older version of FileZilla work better here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A pre-3.8.1 build is more likely to match the older Windows API Wine 1.7.55 emulates, so the window has a better chance of opening. But it makes no difference to connectivity — networking is still dead, so you'd have an unusable empty client either way." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run FileZilla</nav>
+
+  <section class="card">
+    <h2>Run FileZilla online in your browser <span class="verdict bad">Can't connect — no network in the sandbox</span></h2>
+    <p>Short version: <strong>no, you can't usefully run FileZilla in the browser</strong> — and we'd rather tell you that up front than waste your time. FileZilla is a fantastic, free, open-source FTP/SFTP/FTPS client, but it exists to do exactly one thing: open network connections to remote servers. ExeBrowser runs real Win32 programs on Boxedwine (Wine 1.7.55 + a 32-bit x86 emulator compiled to WebAssembly), and that sandbox has <strong>no real outbound networking</strong>. An FTP client with no network is a window with nothing behind it.</p><p>This page exists because people <em>do</em> search for "FileZilla online" and "FileZilla without install," and you deserve a straight answer plus a working alternative — not a fake "launch" button that spins forever.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="filezilla.exe"
+         data-app-name="FileZilla"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <strong>License is fine — the tech is the problem.</strong> FileZilla Client is genuinely free, open-source software under the GNU General Public License, so there's nothing shady about it. We're <em>not</em> hosting a playable copy here because it simply can't work in the browser (see below). To use the real thing, download the official client from <a href="https://filezilla-project.org/" target="_blank" rel="noopener nofollow">filezilla-project.org</a> and run it natively on your own machine. Avoid the bundled-adware mirrors that show up in search ads — get it straight from the official site.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why it can't connect (the honest breakdown)</h3>
+    <p>Two independent walls stop FileZilla cold here:</p><ul><li><strong>The Boxedwine WebAssembly build has no working TCP sockets.</strong> The emulator's socket layer is incomplete — attempts to configure a connection fail at the kernel level (the log literally reports <code>setsockopt level 0 not implemented</code>), and TCP socket objects don't function. So even before we reach the browser, the emulated Windows networking stack can't open a connection.</li><li><strong>Browsers don't allow raw outbound connections anyway.</strong> Web pages can only talk over HTTP(S) and WebSockets to servers that opt in via CORS. There is no way for sandboxed code to dial an arbitrary FTP server on port 21, an SFTP server on port 22, or an FTPS endpoint. That's a security boundary of the web platform itself, not a Boxedwine bug.</li></ul><p>Could someone tunnel FTP over a WebSocket proxy in theory? Yes — but that would require running a relay server, and it still wouldn't be "FileZilla connecting to your host." It's not something this instant-play sandbox does.</p>
+    <h3>What about just loading the FileZilla window?</h3>
+    <p>Even getting the GUI to paint is shaky. Modern FileZilla (3.x) dropped Windows XP support back at version 3.8.1 and today targets Windows 7, 8, 10 and 11 — newer than the Windows-XP-era API surface Wine 1.7.55 emulates. It's also built on wxWidgets, a heavy UI toolkit that leans on Win32 features old Wine implements unevenly, so crashes on startup are likely. A very old FileZilla 3.8.0-or-earlier build might draw its window — but with networking dead, all you'd get is an empty site manager you can't use.</p>
+    <h3>What to actually use instead</h3>
+    <p>If you need to move files, here are real options:</p><ul><li><strong>Install the official FileZilla natively.</strong> It's free and open-source. Grab it from <a href="https://filezilla-project.org/" target="_blank" rel="noopener nofollow">filezilla-project.org</a> (avoid ad-laden mirrors) and run it on Windows, macOS or Linux.</li><li><strong>Use a web-based file manager.</strong> Most hosting control panels (cPanel, Plesk) and platforms include a browser file manager and a web SFTP/SSH terminal that work over HTTPS — those are designed for the browser and will actually connect.</li><li><strong>Try a hosted SSH/SFTP web client</strong> your provider offers, which proxies the connection server-side.</li></ul><p>For the kinds of <em>self-contained</em> Windows apps that genuinely shine on ExeBrowser — no network needed — see the related links below.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I run FileZilla in my browser with no install?</summary>
+      <p>You can sometimes get an old FileZilla window to appear, but it can't connect to anything. The browser sandbox and the Boxedwine WebAssembly build both lack real outbound networking, so FTP/SFTP/FTPS connections fail. For real use, install the free official client from filezilla-project.org.</p>
+    </details>
+    <details>
+      <summary>Why doesn't FileZilla's network connection work under Wine in the browser?</summary>
+      <p>Two reasons. First, Boxedwine's WebAssembly socket layer is incomplete — TCP connections fail at the emulated-kernel level. Second, browsers only permit HTTP(S) and opt-in WebSocket traffic, never raw connections to arbitrary FTP/SFTP ports. FileZilla needs exactly those raw connections.</p>
+    </details>
+    <details>
+      <summary>Is FileZilla free and legal to use?</summary>
+      <p>Yes. FileZilla Client is free, open-source software under the GNU General Public License (GPLv2 for older versions, GPLv3 since 3.70.0 in April 2026). It's completely legitimate to download and use. We just don't host a runnable copy here because it can't function in the browser.</p>
+    </details>
+    <details>
+      <summary>Is there any browser-based FTP that actually works?</summary>
+      <p>Yes, but not via a desktop FTP client. Use your web host's built-in file manager or web SFTP terminal (cPanel, Plesk, etc.), or a hosted SSH/SFTP web client that proxies the connection server-side over HTTPS. Those are built for the browser; FileZilla is not.</p>
+    </details>
+    <details>
+      <summary>Would an older version of FileZilla work better here?</summary>
+      <p>A pre-3.8.1 build is more likely to match the older Windows API Wine 1.7.55 emulates, so the window has a better chance of opening. But it makes no difference to connectivity — networking is still dead, so you'd have an unusable empty client either way.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/putty/"><span class="lc-title">PuTTY</span><span class="lc-desc">Another networking tool people ask about — same sandbox network limits apply.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">A self-contained archiver that works well in the browser — no network needed.</span></a></li>
+      <li><a class="link-card" href="/run/keepass/"><span class="lc-title">KeePass</span><span class="lc-desc">Offline password manager; runs locally without any connection.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad</span><span class="lc-desc">Tiny, reliable, fully offline — the kind of app that thrives here.</span></a></li>
+      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">SumatraPDF</span><span class="lc-desc">Lightweight PDF viewer that runs entirely client-side.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">ExeBrowser guide</span><span class="lc-desc">How Boxedwine works, what runs well, and the limits to expect.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

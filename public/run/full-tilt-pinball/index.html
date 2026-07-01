@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Full Tilt! Pinball Online in Your Browser — Free, No Download — ExeBrowser</title>
+<meta name="description" content="Run Full Tilt! Pinball (Cinematronics/Maxis) — the commercial parent of 3D Pinball Space Cadet — in your browser with Wine + WebAssembly. What works, the DirectDraw catch, and how to load it." />
+<meta name="keywords" content="full tilt pinball online, full tilt pinball browser, full tilt pinball no download, cadet.exe browser, maxis pinball wine, full tilt pinball space cadet, run full tilt pinball webassembly" />
+<link rel="canonical" href="https://exebrowser.com/run/full-tilt-pinball/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/full-tilt-pinball/" />
+<meta property="og:title" content="Play Full Tilt! Pinball in Your Browser" />
+<meta property="og:description" content="Full Tilt! Pinball is the commercial three-table parent of Space Cadet. Here's how it behaves under Wine + WebAssembly in ExeBrowser — and the DirectDraw catch." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Full Tilt! Pinball", "item": "https://exebrowser.com/run/full-tilt-pinball/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Full Tilt! Pinball",
+  "url": "https://exebrowser.com/run/full-tilt-pinball/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run Full Tilt! Pinball (Cinematronics/Maxis) — the commercial parent of 3D Pinball Space Cadet — in your browser with Wine + WebAssembly. What works, the DirectDraw catch, and how to load it.",
+  "applicationCategory": "Game",
+  "genre": ["Pinball", "Arcade", "Simulation"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Cinematronics / Maxis" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Full Tilt! Pinball the same as 3D Pinball Space Cadet?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not quite. Full Tilt! Pinball is the commercial 1995 retail game with three tables — Space Cadet, Skulduggery, and Dragon's Keep. Microsoft licensed only the single Space Cadet table and shipped it as the free 3D Pinball for Windows – Space Cadet with Windows 95 Plus!, 98, 2000, and XP. Same engine and same Cadet table; the retail game just has more of everything." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I play Full Tilt! Pinball free in my browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can play it in ExeBrowser if you own a copy — but the game itself is not free. It's a copyrighted Maxis/EA title that was never released as freeware, so we don't host it and won't link to cracks. If you just want free pinball in the browser, the Space Cadet table is the legitimately-free option." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does it use the Win32 + Gecko variant?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because it's the same engine as Space Cadet, whose help/registration component can pop a Wine Gecko prompt. Picking Win32 + Gecko bundles Gecko offline so that prompt never interrupts the launch. It does not enable any 3D acceleration — Full Tilt! uses pre-rendered graphics and DirectDraw, not Direct3D." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the verdict only 'partial' and not 'works well'?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Cadet table can run, but the retail game's DirectDraw launcher, intro movies, and fullscreen mode are flaky under Wine 1.7.55 — issues it has even on real modern Windows. Expect to launch individual table EXEs directly, skip movies with -nomovie, and accept the occasional black screen. For a guaranteed result, use the free Space Cadet page instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I just run the installer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Full Tilt!'s installer is 16-bit and doesn't run on NT-based Windows at all, let alone in this environment. The fix — on real PCs and here alike — is to skip the installer and launch the 32-bit Win95 table executables (CADET.EXE, DRAGON.EXE, PIRATES.EXE) directly from the game folder." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Full Tilt! Pinball</nav>
+
+  <section class="card">
+    <h2>Play Full Tilt! Pinball online in your browser <span class="verdict partial">Partial — the Cadet table can run; launcher, movies and fullscreen are flaky</span></h2>
+    <p><em>Full Tilt! Pinball</em> (1995, Cinematronics/Maxis) is the commercial three-table game — <strong>Space Cadet</strong>, <strong>Skulduggery</strong>, and <strong>Dragon's Keep</strong> — that the free Windows <a href="/run/3d-pinball-space-cadet/">Space Cadet</a> was carved out of. Same physics engine, same pre-rendered look, just two more tables and a fancier shell. Because it's built on that same well-behaved 32-bit engine, the individual table executables have a real shot under ExeBrowser — but the retail game wraps them in a DirectDraw launcher and intro movies that don't always cooperate with Wine 1.7.55, so set expectations to "fiddly but playable," not "flawless."</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="gecko"
+         data-entry="CADET.EXE"
+         data-app-name="Full Tilt! Pinball"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>Full Tilt! Pinball is commercial software.</strong> It was developed by Cinematronics and published by Maxis (now part of EA) in 1995, and it has never been released as freeware or placed in the public domain. Only the single <em>Space Cadet</em> table was ever licensed for free distribution — and that was specifically as the cut-down <a href="/run/3d-pinball-space-cadet/">3D Pinball for Windows – Space Cadet</a> bundled with Windows, not the full retail game.</p><p>ExeBrowser does not host Full Tilt! Pinball. To play it legally, use a copy you own from the original retail CD-ROM. We won't link to cracks or "free full version" downloads, and we don't endorse abandonware sites that host copyrighted material without permission.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>Full Tilt! ships two builds on the disc: a 16-bit Win 3.x version and a 32-bit Win95 version. The 32-bit build is the one to use here — but its <strong>installer is 16-bit</strong> and won't run on anything NT-based, so even on a real modern Windows machine people skip the installer and launch the table EXEs directly. Do the same in ExeBrowser.</p><p>The good news: the table engine is the same one that powers Space Cadet, which runs well in ExeBrowser. The catch is everything <em>around</em> the table — the <code>FULLTILT.EXE</code> launcher, the pre-rendered intro movies, and the DirectDraw fullscreen mode — which are the parts most likely to show a black screen, a mis-placed window, or to stall under emulation.</p><table class="spec-table"><tr><th>App</th><td>Full Tilt! Pinball (<code>CADET.EXE</code> / <code>DRAGON.EXE</code> / <code>PIRATES.EXE</code>, or <code>FULLTILT.EXE</code> launcher)</td></tr><tr><th>Era</th><td>1995, 32-bit Win95 build (skip the 16-bit installer)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 + Gecko</strong> — same engine as Space Cadet, whose help/registration screen can prompt for Gecko</td></tr><tr><th>How to load</th><td>Folder upload — bring the whole game directory so each table finds its <code>.DAT</code> and movie files</td></tr><tr><th>Expected result</th><td>The Cadet table is most likely to play; Skulduggery and Dragon's Keep are heavier and may hit DirectDraw issues; movies and fullscreen are the weak points</td></tr></table>
+    <h3>Run the tables directly, and skip the movies</h3>
+    <p>Launch a table EXE rather than the launcher whenever you can — it sidesteps the most fragile DirectDraw code. The retail build accepts a <code>-nomovie</code> switch that skips the pre-rendered intro and drops you straight onto the table, which is exactly what you want under emulation. If ExeBrowser lets you set arguments, add <code>-nomovie</code> after the EXE name; if not, just expect the intro to either play slowly or be skippable with a click or <kbd>Esc</kbd>.</p><ul><li><code>CADET.EXE</code> — the Space Cadet table (best compatibility bet; it's the engine ExeBrowser already runs well)</li><li><code>DRAGON.EXE</code> — Dragon's Keep (medieval fantasy table)</li><li><code>PIRATES.EXE</code> — Skulduggery (pirate table)</li><li><code>FULLTILT.EXE</code> — the menu launcher; prettier, but the riskiest thing to boot first</li></ul><p>Each table needs its own data file (<code>CADET.DAT</code> and friends) sitting beside the EXE, which is why you should upload the <strong>whole folder</strong>, not a lone executable.</p>
+    <h3>Step by step</h3>
+    <ol><li>Get a copy of Full Tilt! Pinball you legally own — the 32-bit Win95 build from the original retail CD-ROM. ExeBrowser does not provide the game.</li><li>On the <a href="/">ExeBrowser home page</a>, set the Wine variant to <strong>Win32 + Gecko</strong> and click <strong>Boot Wine</strong>.</li><li>Use <strong>pick a folder</strong> and upload the entire game directory so the <code>.DAT</code> table files and movie assets travel with the EXEs.</li><li>Choose <code>CADET.EXE</code> as the entry point first — it's the most reliable. If you can pass arguments, add <code>-nomovie</code>.</li><li>Click the canvas to capture input. Launch the ball with the <kbd>Space</kbd> bar; the flippers are <kbd>Z</kbd> and <kbd>/</kbd>. Press <kbd>Esc</kbd> to release the mouse.</li><li>If a table shows only black or stalls, it's almost certainly DirectDraw fullscreen — try the <strong>r18</strong> engine variant, or fall back to the lighter free <a href="/run/3d-pinball-space-cadet/">Space Cadet</a>, which uses the same table and is rock-solid here.</li></ol>
+    <h3>Why it's only &quot;partial&quot;</h3>
+    <p>Full Tilt! leans on DirectDraw for its display, and DirectDraw fullscreen is one of the rougher edges of a 1.7.55-era Wine running on a WebAssembly x86 emulator. Even on real Windows 10/11 the game is famous for loading its window half off-screen and mishandling the fullscreen background, so the bar was never high to begin with. Under ExeBrowser you may get a clean Cadet table, or you may get a black launcher, mis-placed window, or a movie that won't advance — it depends on the build and your browser. The pre-rendered tables are not real-time 3D, so the CPU load itself isn't the problem; the display path is. If you want a sure thing, the free <a href="/run/3d-pinball-space-cadet/">Space Cadet</a> extraction of the same Cadet table is the safer, fully-working route.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is Full Tilt! Pinball the same as 3D Pinball Space Cadet?</summary>
+      <p>Not quite. Full Tilt! Pinball is the commercial 1995 retail game with three tables — Space Cadet, Skulduggery, and Dragon's Keep. Microsoft licensed only the single Space Cadet table and shipped it as the free <a href="/run/3d-pinball-space-cadet/">3D Pinball for Windows – Space Cadet</a> with Windows 95 Plus!, 98, 2000, and XP. Same engine and same Cadet table; the retail game just has more of everything.</p>
+    </details>
+    <details>
+      <summary>Can I play Full Tilt! Pinball free in my browser?</summary>
+      <p>You can play it in ExeBrowser if you own a copy — but the game itself is not free. It's a copyrighted Maxis/EA title that was never released as freeware, so we don't host it and won't link to cracks. If you just want free pinball in the browser, the Space Cadet table is the legitimately-free option.</p>
+    </details>
+    <details>
+      <summary>Why does it use the Win32 + Gecko variant?</summary>
+      <p>Because it's the same engine as Space Cadet, whose help/registration component can pop a Wine Gecko prompt. Picking Win32 + Gecko bundles Gecko offline so that prompt never interrupts the launch. It does not enable any 3D acceleration — Full Tilt! uses pre-rendered graphics and DirectDraw, not Direct3D.</p>
+    </details>
+    <details>
+      <summary>Why is the verdict only 'partial' and not 'works well'?</summary>
+      <p>The Cadet table can run, but the retail game's DirectDraw launcher, intro movies, and fullscreen mode are flaky under Wine 1.7.55 — issues it has even on real modern Windows. Expect to launch individual table EXEs directly, skip movies with -nomovie, and accept the occasional black screen. For a guaranteed result, use the free Space Cadet page instead.</p>
+    </details>
+    <details>
+      <summary>Why can't I just run the installer?</summary>
+      <p>Full Tilt!'s installer is 16-bit and doesn't run on NT-based Windows at all, let alone in this environment. The fix — on real PCs and here alike — is to skip the installer and launch the 32-bit Win95 table executables (CADET.EXE, DRAGON.EXE, PIRATES.EXE) directly from the game folder.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The free, fully-working single-table cousin — the safe bet.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">Space Cadet vs Full Tilt!</span><span class="lc-desc">Same Cadet table, no DirectDraw launcher headaches.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">Another classic bundled Windows game.</span></a></li>
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">The other desk-toy that shipped with Windows.</span></a></li>
+      <li><a class="link-card" href="/run/skifree/"><span class="lc-title">SkiFree</span><span class="lc-desc">Tiny, light, and runs great in the browser.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs, what's flaky, and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

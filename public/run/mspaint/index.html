@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Classic MS Paint in Your Browser — ExeBrowser</title>
-<meta name="description" content="Run a classic Windows Paint (MSPAINT) in your browser with Wine + WebAssembly. How to load the old XP-era Paint, what works, and free open-source paint alternatives that run cleanly with no install." />
-<meta name="keywords" content="mspaint browser, run ms paint online, classic windows paint, old mspaint exe, paint program no install browser" />
+<title>Run MS Paint Online in Your Browser — Free, No Download — ExeBrowser</title>
+<meta name="description" content="Run the classic Windows Paint (MSPAINT.EXE) in your browser with Wine + WebAssembly — no install. What works, how to load it, plus free open-source paint alternatives that run cleanly." />
+<meta name="keywords" content="run ms paint online, mspaint browser, classic windows paint, old mspaint exe, paint program no install browser, ms paint web, free paint alternative" />
 <link rel="canonical" href="https://exebrowser.com/run/mspaint/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/mspaint/" />
-<meta property="og:title" content="Run Classic MS Paint in Your Browser" />
-<meta property="og:description" content="The classic Windows Paint, running in your browser with Wine + WebAssembly. Plus open-source paint alternatives." />
+<meta property="og:title" content="Run Classic MS Paint in Your Browser — No Download" />
+<meta property="og:description" content="The classic Windows Paint, running in your browser with Wine + WebAssembly. Plus free, open-source paint alternatives that run with no install." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,54 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "MS Paint", "item": "https://exebrowser.com/run/mspaint/" }
+    { "@type": "ListItem", "position": 3, "name": "Run MS Paint", "item": "https://exebrowser.com/run/mspaint/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MS Paint",
+  "url": "https://exebrowser.com/run/mspaint/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the classic Windows Paint (MSPAINT.EXE) in your browser with Wine + WebAssembly — no install. What works, how to load it, plus free open-source paint alternatives that run cleanly.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I run MS Paint online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can run the classic Win32 Paint in your browser via Wine + WebAssembly — nothing to install on our end. But MSPAINT.EXE is part of Windows and isn't ours to give out, so you supply a copy you already own. For a zero-strings option, use the free open-source mtPaint or GrafX2 instead — both run cleanly here." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why don't you host MS Paint for download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Microsoft Paint is copyrighted software bundled with Windows, and its license doesn't permit us to redistribute it. We only host software that's genuinely free to share. Bring your own copy of MSPAINT.EXE, or use the open-source paint tools we recommend." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which version of Paint works best?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Windows XP-era MSPAINT.EXE is the sweet spot — it's a self-contained Win32 program and launches with little fuss on the default variant. Very old Win95 builds work too but only save .bmp. The modern Windows 10/11 Paint is a different, heavier app and is not a good fit for browser Wine." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's a good free alternative to MS Paint that runs here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "mtPaint is the standout — a tiny GPL image and pixel-art editor that runs cleanly under browser-based Wine and feels very close to classic Paint. GrafX2 is excellent for 256-color sprite work. Both are free to download and redistribute." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I save the image I draw?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Save inside the app as usual, then click Download files written by this app to pull your image out as a zip before you close or reload the tab. Anything left only inside the emulated disk is lost on reload." }
+    }
   ]
 }
 </script>
@@ -54,49 +101,66 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › MS Paint</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run MS Paint</nav>
+
   <section class="card">
-    <h2>Run classic MS Paint in your browser <span class="verdict partial">Works (classic builds)</span></h2>
-    <p>The classic <em>Microsoft Paint</em> (<code>MSPAINT.EXE</code>) that shipped with Windows 95 through XP is a tiny, single-purpose Win32 program — exactly the kind of thing browser-based Wine handles well. If you want that pixel-perfect, no-frills painting experience without installing anything, the old Paint runs nicely in ExeBrowser.</p>
+    <h2>Run classic MS Paint in your browser <span class="verdict partial">Classic builds work — bring your own copy</span></h2>
+    <p>The classic <strong>Microsoft Paint</strong> (<code>MSPAINT.EXE</code>) that shipped with Windows 95 through XP is a tiny, single-purpose Win32 program — exactly the kind of thing browser-based Wine handles well. If you want that pixel-perfect, no-frills painting experience without installing anything, the old Paint runs nicely in ExeBrowser. Because Paint is Microsoft's property we can't host it for you, so you bring your own copy — or skip straight to the free, open-source paint tools below, which run just as well and are fully legal to share.</p>
 
-    <table class="spec-table">
-      <tr><th>App</th><td>Microsoft Paint, classic (<code>MSPAINT.EXE</code>, Win95–XP era)</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>How to load</th><td>The old XP <code>MSPAINT.EXE</code> is essentially self-contained; upload it (add <code>MFC</code> DLLs if prompted)</td></tr>
-      <tr><th>Saves</th><td><code>.bmp</code>, <code>.gif</code>, <code>.jpg</code>, <code>.png</code> (later builds)</td></tr>
-    </table>
-
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="MSPAINT.EXE"
+         data-app-name="MS Paint"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
     <div class="warn-box">
-      <h3 style="margin-top:0;">A licensing note</h3>
-      <p><code>MSPAINT.EXE</code> is part of Windows and is Microsoft's copyrighted property — we can't host it, and you should only run a copy you already own (for example, one copied from your own Windows installation). The <strong>open-source alternatives below carry no such restriction</strong> and are the easier, fully-legal route.</p>
+      <h3 style="margin-top:0;">A licensing note</h3><p><code>MSPAINT.EXE</code> is part of Windows and is Microsoft's copyrighted property — we can't host it, and you should only run a copy you already own (for example, one copied from a Windows installation you have a license for). The <strong>open-source alternatives below carry no such restriction</strong> and are the easier, fully-legal route to drawing in your browser.</p>
     </div>
-
-    <h3>Better: free, open-source paint programs</h3>
-    <p>Several classic open-source paint tools are freely distributable and run cleanly under browser-based Wine:</p>
-    <ul>
-      <li><strong>mtPaint</strong> — a tiny, fast, GPL pixel-art and image editor; a near-perfect fit for the Wine era we target. <a href="http://mtpaint.sourceforge.net/" target="_blank" rel="noopener">mtpaint.sourceforge.net</a></li>
-      <li><strong>Pinta</strong> — a Paint.NET-style editor (note: needs .NET/Mono, so it's hit-or-miss on old Wine).</li>
-      <li><strong>GrafX2</strong> — a classic 256-color pixel-art editor, very lightweight. <a href="http://grafx2.chez.com/" target="_blank" rel="noopener">grafx2 project</a></li>
-    </ul>
-    <p>Download the program folder, upload it with the folder picker, draw, save, then use <strong>Download files written by this app</strong> to get your image out as a zip.</p>
-
-    <h3>Step by step</h3>
-    <ol>
-      <li>On the <a href="/">home page</a>, keep <strong>Win32 (default)</strong> and click <strong>Boot Wine</strong>.</li>
-      <li>Use <strong>pick a folder</strong> and upload mtPaint (or your own classic <code>MSPAINT.EXE</code>) with its files.</li>
-      <li>Select the EXE entry and <strong>Run in Wine</strong>.</li>
-      <li>Draw, then save your image and click <strong>Download files written by this app</strong> before reloading.</li>
-    </ol>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>How it works &amp; what to expect</h2>
+    <p>The classic Paint is one of the lightest Win32 apps you can throw at browser-based Wine. The XP-era <code>MSPAINT.EXE</code> is essentially self-contained — drop it in and it usually launches straight away (add the <code>MFC</code> DLLs from the same Windows folder if it prompts for them). Later builds save to <code>.bmp</code>, <code>.gif</code>, <code>.jpg</code> and <code>.png</code>; very early Win95 builds are <code>.bmp</code>-only.</p><table class="spec-table"><tr><th>App</th><td>Microsoft Paint, classic (<code>MSPAINT.EXE</code>, Win95–XP era)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>How to load</th><td>The old XP <code>MSPAINT.EXE</code> is essentially self-contained; load it (add <code>MFC</code> DLLs if prompted)</td></tr><tr><th>Saves</th><td><code>.bmp</code>, <code>.gif</code>, <code>.jpg</code>, <code>.png</code> (later builds)</td></tr><tr><th>Speed</th><td>Full speed — Paint is far too light to tax the emulator</td></tr></table><p>Whatever you draw lives inside the emulated disk, so save your image and then use <strong>Download files written by this app</strong> to pull it out as a zip before you close or reload the tab.</p>
+    <h3>Better: free, open-source paint programs</h3>
+    <p>You don't need a copy of Windows to paint in your browser. Several classic open-source paint tools are freely distributable and run cleanly under browser-based Wine — and unlike <code>MSPAINT.EXE</code>, there's no licensing question to worry about:</p><ul><li><strong>mtPaint</strong> — a tiny, fast, GPL pixel-art and image editor; a near-perfect fit for the Wine era we target and arguably nicer than classic Paint. <a href="http://mtpaint.sourceforge.net/" target="_blank" rel="noopener">mtpaint.sourceforge.net</a></li><li><strong>GrafX2</strong> — a classic 256-color pixel-art editor, very lightweight and great for sprite work. <a href="http://grafx2.chez.com/" target="_blank" rel="noopener">grafx2 project</a></li><li><strong>Pinta</strong> — a Paint.NET-style editor. Note it needs .NET/Mono, so it's hit-or-miss on old Wine; treat it as experimental.</li></ul><p>Download the program folder, load it with the folder picker, draw, save, then use <strong>Download files written by this app</strong> to get your image out as a zip.</p>
+    <h3>Step by step</h3>
+    <ol><li>Keep <strong>Win32 (default)</strong> selected and click <strong>Boot Wine</strong> right on this page.</li><li>Use <strong>pick a folder</strong> and load mtPaint (or your own classic <code>MSPAINT.EXE</code>) with its files.</li><li>Select the EXE entry and click <strong>Run in Wine</strong>.</li><li>Draw, save your image, then click <strong>Download files written by this app</strong> before reloading to keep your work.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I run MS Paint online for free with no download?</summary>
+      <p>You can run the classic Win32 Paint in your browser via Wine + WebAssembly — nothing to install on our end. But <code>MSPAINT.EXE</code> is part of Windows and isn't ours to give out, so you supply a copy you already own. For a zero-strings option, use the free open-source mtPaint or GrafX2 instead — both run cleanly here.</p>
+    </details>
+    <details>
+      <summary>Why don't you host MS Paint for download?</summary>
+      <p>Microsoft Paint is copyrighted software bundled with Windows, and its license doesn't permit us to redistribute it. We only host software that's genuinely free to share. Bring your own copy of <code>MSPAINT.EXE</code>, or use the open-source paint tools we recommend.</p>
+    </details>
+    <details>
+      <summary>Which version of Paint works best?</summary>
+      <p>The Windows XP-era <code>MSPAINT.EXE</code> is the sweet spot — it's a self-contained Win32 program and launches with little fuss on the default variant. Very old Win95 builds work too but only save <code>.bmp</code>. The modern Windows 10/11 Paint is a different, heavier app and is not a good fit for browser Wine.</p>
+    </details>
+    <details>
+      <summary>What's a good free alternative to MS Paint that runs here?</summary>
+      <p>mtPaint is the standout — a tiny GPL image and pixel-art editor that runs cleanly under browser-based Wine and feels very close to classic Paint. GrafX2 is excellent for 256-color sprite work. Both are free to download and redistribute.</p>
+    </details>
+    <details>
+      <summary>How do I save the image I draw?</summary>
+      <p>Save inside the app as usual, then click <strong>Download files written by this app</strong> to pull your image out as a zip before you close or reload the tab. Anything left only inside the emulated disk is lost on reload.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small Win32 tools.</span></a></li>
-      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">Free word processor.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/mtpaint/"><span class="lc-title">mtPaint</span><span class="lc-desc">Tiny GPL paint editor — the free Paint replacement.</span></a></li>
+      <li><a class="link-card" href="/run/grafx2/"><span class="lc-title">GrafX2</span><span class="lc-desc">256-color pixel-art editor for sprite work.</span></a></li>
+      <li><a class="link-card" href="/run/paint-net/"><span class="lc-title">Paint.NET</span><span class="lc-desc">Layered image editor — what to expect on Wine.</span></a></li>
+      <li><a class="link-card" href="/run/irfanview/"><span class="lc-title">IrfanView</span><span class="lc-desc">Fast image viewer and quick editor.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small built-in Win32 tools in a tab.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -115,5 +179,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

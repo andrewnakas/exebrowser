@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run GrafX2 Online — Free 256-Color Pixel Art Editor in Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run GrafX2, the free open-source 256-color pixel-art editor, in your browser with Wine + WebAssembly. No install — load the real Win32 build, draw, and download your PNG. Honest setup notes inside." />
+<meta name="keywords" content="grafx2 browser, run grafx2 online, grafx2 no install, 256 color pixel art editor online, deluxe paint alternative browser, open source pixel art tool, grafx2 web, draw pixel art in browser" />
+<link rel="canonical" href="https://exebrowser.com/run/grafx2/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/grafx2/" />
+<meta property="og:title" content="Run GrafX2 Online — Free 256-Color Pixel Art Editor, No Download" />
+<meta property="og:description" content="GrafX2, the beloved open-source 256-color pixel-art editor, running in your browser with Wine + WebAssembly. Free, GPL, no install." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "GrafX2", "item": "https://exebrowser.com/run/grafx2/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GrafX2",
+  "url": "https://exebrowser.com/run/grafx2/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run GrafX2, the free open-source 256-color pixel-art editor, in your browser with Wine + WebAssembly. No install — load the real Win32 build, draw, and download your PNG. Honest setup notes inside.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "GrafX2 Project (originally Sunset Design)" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is GrafX2 free to use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. GrafX2 is free, open-source software released under the GPL-2.0-only license. The original MS-DOS version was developed by Sunset Design from 1996-2001 and later released as open source, and it remains actively maintained. You can download, use and redistribute it freely." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does GrafX2 actually run in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and well. It's a small SDL-based Win32 program with no DirectX, Direct3D or .NET dependency, so it runs cleanly under browser-based Wine. Use the SDL1 32-bit portable build and run it windowed for the most reliable experience." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which GrafX2 download should I use here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the SDL (version 1) 32-bit portable Windows build. Avoid the 64-bit build (this engine is 32-bit only) and prefer SDL1 over SDL2, since the older SDL stack is the most compatible with Wine 1.7.55. The portable ZIP needs no installer." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get my drawing off the page?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Save your image inside GrafX2 (PNG is easiest), then click Download files written by this app in ExeBrowser. That zips up everything the program wrote and downloads it. Do this before reloading — the sandbox is cleared on refresh." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does GrafX2 feel a bit slow sometimes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ExeBrowser emulates an x86 CPU inside WebAssembly, giving roughly 10-40% of native speed. GrafX2 is lightweight enough that ordinary pixel work is comfortable, but very large canvases, big zoom levels or heavy Lua scripts will run slower than on a real desktop." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › GrafX2</nav>
+
+  <section class="card">
+    <h2>Run GrafX2 in your browser <span class="verdict good">Works well (windowed SDL build)</span></h2>
+    <p><strong>GrafX2</strong> is the legendary free, open-source <em>256-color</em> pixel-art editor — a spiritual successor to Amiga's Deluxe Paint, beloved by demoscene and game-art folks for its palette tools, gradients, custom brushes and Lua scripting. It's a small, SDL-based Win32 program with no DirectX or .NET dependency, which makes it a genuinely good fit for browser-based Wine. Boot it below, draw in your tab, and pull your image back out as a PNG — nothing to install.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="grafx2.exe"
+         data-app-name="GrafX2"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">GrafX2 is GPL-2.0 open-source. Download the Windows binary from <a href="https://pulkomandy.tk/projects/GrafX2/" target="_blank" rel="noopener">the GrafX2 project page</a>, unzip it, then use <strong>Load your own copy</strong> above to run grafx2.exe.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get GrafX2 (free, open-source)</h3>
+      <p>GrafX2 is GPL-2.0 open-source software — free to download, use and share. The official project provides Windows builds; pick the <strong>SDL (version 1) 32-bit portable</strong> package for the best results here.</p><p><a class="cta-btn" href="https://grafx2.gitlab.io/grafx2/" target="_blank" rel="noopener">Get GrafX2 from the official project →</a></p><p class="muted small">Download the <code>grafx2-sdl-...-win32</code> portable ZIP (not the 64-bit or SDL2 build), unzip it, then use <strong>Load your own copy → a folder</strong> above and select the whole GrafX2 directory so <code>grafx2.exe</code> finds its data files. Licensed under GPL-2.0-only.</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>GrafX2 renders through <strong>SDL</strong>, not DirectX or modern Direct3D, so it sidesteps the graphics APIs that trip up browser-based Wine. The 32-bit Windows build is exactly the kind of self-contained Win32 app ExeBrowser handles best: it boots into its palette-driven UI, the tools respond, and you can paint, fill, set gradients and edit the 256-color palette as normal.</p><p>Two honest caveats. First, run it <strong>windowed</strong> — GrafX2's fullscreen mode change can be flaky under emulation, so if you hit a black screen, drop back to a window. Second, you're running an x86 CPU emulated inside WebAssembly at roughly 10-40% of native speed; GrafX2 is light enough that this is fine for normal pixel pushing, though very large canvases or heavy Lua scripts will feel slower than on the desktop.</p>
+    <h3>Get the SDL1 32-bit build for best results</h3>
+    <p>The project ships several Windows packages. For browser-Wine, prefer the <strong>SDL (version 1) 32-bit</strong> portable build over the newer SDL2 one — the older SDL1 stack is what Wine 1.7.55 understands most reliably. Grab the portable ZIP (no installer needed), unzip it, and load the whole folder so <code>grafx2.exe</code> finds its data files.</p><ul><li>Open the <strong>SDL 32-bit (win32)</strong> portable archive, not the installer or the 64-bit build (this engine is 32-bit only).</li><li>Keep the program folder intact — config, fonts and skins live alongside the EXE.</li><li>It saves in <code>.png</code>, <code>.gif</code>, <code>.bmp</code>, <code>.pcx</code> and many retro formats; PNG is the safe everyday choice.</li></ul>
+    <h3>Saving your art out of the browser</h3>
+    <p>Files you create live in the sandbox, so save your work, then use ExeBrowser's <strong>Download files written by this app</strong> button before you reload or close the tab. That zips up everything the program wrote — including your saved PNGs — and downloads it to your computer. If you skip this step, the sandbox is wiped on reload and your image is gone.</p><h3>Step by step</h3><ol><li>Click <strong>▶ Run GrafX2</strong> above to boot Wine on this page (keep <strong>Win32 (default)</strong>).</li><li>If prompted, download the GrafX2 SDL 32-bit portable ZIP and unzip it.</li><li>Use <strong>Load your own copy → a folder</strong> and select the unzipped GrafX2 directory.</li><li>Pick <code>grafx2.exe</code> and click <strong>Run in Wine</strong> (stay in windowed mode).</li><li>Draw, save your image, then click <strong>Download files written by this app</strong> to get the PNG out.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is GrafX2 free to use?</summary>
+      <p>Yes. GrafX2 is free, open-source software released under the GPL-2.0-only license. The original MS-DOS version was developed by Sunset Design from 1996-2001 and later released as open source, and it remains actively maintained. You can download, use and redistribute it freely.</p>
+    </details>
+    <details>
+      <summary>Does GrafX2 actually run in the browser?</summary>
+      <p>Yes, and well. It's a small SDL-based Win32 program with no DirectX, Direct3D or .NET dependency, so it runs cleanly under browser-based Wine. Use the SDL1 32-bit portable build and run it windowed for the most reliable experience.</p>
+    </details>
+    <details>
+      <summary>Which GrafX2 download should I use here?</summary>
+      <p>Use the <strong>SDL (version 1) 32-bit portable</strong> Windows build. Avoid the 64-bit build (this engine is 32-bit only) and prefer SDL1 over SDL2, since the older SDL stack is the most compatible with Wine 1.7.55. The portable ZIP needs no installer.</p>
+    </details>
+    <details>
+      <summary>How do I get my drawing off the page?</summary>
+      <p>Save your image inside GrafX2 (PNG is easiest), then click <strong>Download files written by this app</strong> in ExeBrowser. That zips up everything the program wrote and downloads it. Do this before reloading — the sandbox is cleared on refresh.</p>
+    </details>
+    <details>
+      <summary>Why does GrafX2 feel a bit slow sometimes?</summary>
+      <p>ExeBrowser emulates an x86 CPU inside WebAssembly, giving roughly 10-40% of native speed. GrafX2 is lightweight enough that ordinary pixel work is comfortable, but very large canvases, big zoom levels or heavy Lua scripts will run slower than on a real desktop.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/mtpaint/"><span class="lc-title">mtPaint</span><span class="lc-desc">Tiny, fast GPL pixel-art editor — another great Wine fit.</span></a></li>
+      <li><a class="link-card" href="/run/mspaint/"><span class="lc-title">Classic MS Paint</span><span class="lc-desc">The no-frills Windows paint program in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/grafx2/"><span class="lc-title">grafx2 (this page)</span><span class="lc-desc">256-color pixel art, open source.</span></a></li>
+      <li><a class="link-card" href="/run/irfanview/"><span class="lc-title">IrfanView</span><span class="lc-desc">Fast image viewer and converter.</span></a></li>
+      <li><a class="link-card" href="/run/"><span class="lc-title">All app guides</span><span class="lc-desc">Everything you can run in the browser.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs cleanly and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

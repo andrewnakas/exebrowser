@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Windows Calculator (Classic) Online — Free, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run the classic Windows calc.exe in your browser with Wine + WebAssembly. The tiny Win32 calculator is one of the most reliable things to run — here's how, and what to expect." />
+<meta name="keywords" content="windows calculator online, classic calc.exe browser, run calc.exe in browser, win32 calculator wine, windows calculator webassembly, classic windows calculator online, calc exe no download" />
+<link rel="canonical" href="https://exebrowser.com/run/calculator/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/calculator/" />
+<meta property="og:title" content="Run the Classic Windows Calculator in Your Browser" />
+<meta property="og:description" content="The old calc.exe is a tiny Win32 app — one of the most reliable things to run under browser-based Wine. Bring your own copy and it just works." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Run Windows Calculator", "item": "https://exebrowser.com/run/calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Calculator",
+  "url": "https://exebrowser.com/run/calculator/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the classic Windows calc.exe in your browser with Wine + WebAssembly. The tiny Win32 calculator is one of the most reliable things to run — here's how, and what to expect.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Microsoft Corporation" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the Windows Calculator free to download here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The classic calc.exe is proprietary Microsoft software covered by your Windows license, so we don't host or distribute it. If you own a legal copy of Windows, you already have the file in C:\\Windows\\System32\\ — copy it from there and upload it. The MIT-licensed version Microsoft released in 2019 is the modern UWP Calculator, which is a different app that won't run here." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the classic calculator actually run under browser-based Wine?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, very reliably. It's a small, standard Win32 program with no GPU, 64-bit, .NET, or networking requirements, which is exactly the kind of app Wine 1.7.55 handles best. The XP and Windows 7 era calc.exe is well-documented as running under desktop Wine, and it behaves the same way here." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the Windows 10 or Windows 11 Calculator work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The modern Calculator is a UWP app built on newer .NET and WinRT, not a Win32 EXE, so it won't run under Wine 1.7.55. On Windows 10/11 the file named calc.exe is usually just a stub that launches that UWP app. Use the older classic calculator (Windows 7 or earlier) instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I find calc.exe to upload?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On a Windows machine you're licensed to use, look in C:\\Windows\\System32\\ for calc.exe (Windows XP through 7) or win32calc.exe on some later builds. Copy that single file to your computer and upload it here. Microsoft also ships the classic calculator as an official licensed component for Windows IoT Enterprise. Please don't use cracked or dubious 'abandonware' downloads of Windows system files." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a special Wine variant for the calculator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — use the Win32 (default) variant. The classic calculator is a plain 32-bit Win32 app, so the everyday default runtime is the right choice. There's no need for the Gecko, Win 3.x, or r18 variants." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Windows Calculator</nav>
+
+  <section class="card">
+    <h2>Run the classic Windows Calculator (calc.exe) in your browser <span class="verdict good">Works well</span></h2>
+    <p>The old Windows <code>calc.exe</code> — the plain four-function-and-scientific calculator from Windows 95 through Windows 7 — is just about the perfect thing to run under browser-based Wine. It's a tiny, single-purpose Win32 program that draws a standard window, does some arithmetic, and quits. No GPU, no 64-bit code, no .NET, no networking — none of the things that trip up the emulator. It boots in seconds and behaves exactly as you remember.</p><p>One catch: it's Microsoft software, so we can't hand you the file. If you own Windows, you already have <code>calc.exe</code>; copy it across and upload it, and it runs cleanly on the everyday Win32 variant.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="CALC.EXE"
+         data-app-name="Calculator"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>Bring your own copy.</strong> The classic <code>calc.exe</code> is proprietary Microsoft software, covered by your Windows license — we can't host or distribute it, and you won't find a download link here. If you own a legal copy of Windows (XP through Windows 7 era), the file already lives in your <code>C:\Windows\System32\</code> folder as <code>calc.exe</code> (or <code>win32calc.exe</code> on later versions). Copy that file from a machine you're licensed to use, then upload it here. Microsoft also still ships the classic calculator as an official, licensed component for <a href="https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-win32calc" target="_blank" rel="noopener">Windows IoT Enterprise</a>. Don't download cracked or "abandonware" copies of Windows files.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why the classic calculator is a great first thing to run</h3>
+    <p>If you want to see ExeBrowser work with the least possible friction, the classic calculator is an ideal demo. It belongs to the most reliable category of all: small, decades-old Win32 utilities that barely touch the parts of Windows that Wine struggles with. The whole program is one small EXE that uses standard window controls and basic math libraries — exactly what Wine 1.7.55 implements well.</p><p>Boot Wine, upload your <code>calc.exe</code>, and you get the familiar grey calculator window. Switch between Standard and Scientific views from the View menu, copy and paste results, and use the keyboard or on-screen buttons. It all works as expected at near-instant speed, because there's almost nothing to emulate.</p>
+    <h3>What you can and can't run</h3>
+    <p>Be aware there are two very different "Windows Calculators," and only one of them belongs here:</p><ul><li><strong>Classic <code>calc.exe</code> (Win 95 – Windows 7, also XP-era <code>5.1</code>)</strong> — a native Win32 app. This is the one that runs well. Multiple Wine users confirm the XP/Win7-era classic calculator launches under Wine without fuss.</li><li><strong>Modern "Calculator" (Windows 10/11)</strong> — a UWP app built with newer .NET and WinRT. Microsoft open-sourced its code under the MIT License in 2019, but it is <em>not</em> a Win32 EXE and will not run under Wine 1.7.55. Don't expect the tiled, full-screen Windows 10 calculator to work.</li></ul><p>So: target the small, classic <code>calc.exe</code>. If you grab a modern Windows 10 machine's calc, you'll mostly find a tiny stub that just launches the UWP app — that stub won't do anything useful here.</p>
+    <h3>How to load it and get results out</h3>
+    <p>A single EXE is all you need. Upload <code>calc.exe</code> on its own — there are no extra DLLs to bundle for the classic version. Pick the <strong>Win32 (default)</strong> variant, which is the everyday choice and the right one here.</p><p>The calculator is stateless, so there's nothing to save. If you do want to keep a result, copy it with Ctrl+C inside the app and paste it where you need it. Remember the virtual <code>C:\</code> drive is wiped when you reload the tab — but for a calculator that doesn't matter, since there's nothing to persist.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is the Windows Calculator free to download here?</summary>
+      <p>No. The classic <code>calc.exe</code> is proprietary Microsoft software covered by your Windows license, so we don't host or distribute it. If you own a legal copy of Windows, you already have the file in <code>C:\Windows\System32\</code> — copy it from there and upload it. The MIT-licensed version Microsoft released in 2019 is the modern UWP Calculator, which is a different app that won't run here.</p>
+    </details>
+    <details>
+      <summary>Does the classic calculator actually run under browser-based Wine?</summary>
+      <p>Yes, very reliably. It's a small, standard Win32 program with no GPU, 64-bit, .NET, or networking requirements, which is exactly the kind of app Wine 1.7.55 handles best. The XP and Windows 7 era <code>calc.exe</code> is well-documented as running under desktop Wine, and it behaves the same way here.</p>
+    </details>
+    <details>
+      <summary>Will the Windows 10 or Windows 11 Calculator work?</summary>
+      <p>No. The modern Calculator is a UWP app built on newer .NET and WinRT, not a Win32 EXE, so it won't run under Wine 1.7.55. On Windows 10/11 the file named <code>calc.exe</code> is usually just a stub that launches that UWP app. Use the older classic calculator (Windows 7 or earlier) instead.</p>
+    </details>
+    <details>
+      <summary>Where do I find calc.exe to upload?</summary>
+      <p>On a Windows machine you're licensed to use, look in <code>C:\Windows\System32\</code> for <code>calc.exe</code> (Windows XP through 7) or <code>win32calc.exe</code> on some later builds. Copy that single file to your computer and upload it here. Microsoft also ships the classic calculator as an official licensed component for Windows IoT Enterprise. Please don't use cracked or dubious 'abandonware' downloads of Windows system files.</p>
+    </details>
+    <details>
+      <summary>Do I need a special Wine variant for the calculator?</summary>
+      <p>No — use the Win32 (default) variant. The classic calculator is a plain 32-bit Win32 app, so the everyday default runtime is the right choice. There's no need for the Gecko, Win 3.x, or r18 variants.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">The most reliable category to run in a browser.</span></a></li>
+      <li><a class="link-card" href="/run/mspaint/"><span class="lc-title">MS Paint</span><span class="lc-desc">Another classic bundled Windows tool.</span></a></li>
+      <li><a class="link-card" href="/run/character-map/"><span class="lc-title">Character Map</span><span class="lc-desc">Tiny built-in Windows utility, runs clean.</span></a></li>
+      <li><a class="link-card" href="/run/wordpad/"><span class="lc-title">WordPad</span><span class="lc-desc">The slightly bigger classic editor.</span></a></li>
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">Classic single-EXE Windows game.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't, explained.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

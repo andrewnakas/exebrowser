@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play DOOM in Your Browser — Free Shareware Episode — ExeBrowser</title>
-<meta name="description" content="Play the original 1993 DOOM (shareware episode “Knee-Deep in the Dead”) in your browser with Wine + WebAssembly. Free, legal shareware you can download right here, plus how to load it and what to expect." />
-<meta name="keywords" content="play doom in browser, doom online free, doom shareware, doom1.wad download, run doom no install, classic doom browser" />
+<title>Play DOOM Online — Free, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Play the original 1993 DOOM shareware episode &quot;Knee-Deep in the Dead&quot; online in your browser — no download, no install. Real Win32 DOOM on Wine + WebAssembly." />
+<meta name="keywords" content="play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online" />
 <link rel="canonical" href="https://exebrowser.com/run/doom/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/doom/" />
-<meta property="og:title" content="Play DOOM in Your Browser — Free Shareware Episode" />
-<meta property="og:description" content="The original 1993 DOOM shareware episode, running in your browser with Wine + WebAssembly. Free and legal." />
+<meta property="og:title" content="Play DOOM Online — Free, In Your Browser, No Download" />
+<meta property="og:description" content="The original 1993 DOOM shareware episode, playable in your browser with Wine + WebAssembly. Free, legal, no install." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,20 +31,56 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "DOOM", "item": "https://exebrowser.com/run/doom/" }
+    { "@type": "ListItem", "position": 3, "name": "Play DOOM", "item": "https://exebrowser.com/run/doom/" }
   ]
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to play DOOM shareware in your browser",
-  "step": [
-    { "@type": "HowToStep", "name": "Download the shareware", "text": "Download the freely redistributable DOOM shareware package from this page." },
-    { "@type": "HowToStep", "name": "Boot Wine", "text": "Open ExeBrowser, keep the Win32 default variant, and click Boot Wine." },
-    { "@type": "HowToStep", "name": "Load the folder", "text": "Unzip the package and upload the whole DOOM folder so DOOM.EXE finds DOOM1.WAD beside it." },
-    { "@type": "HowToStep", "name": "Run it", "text": "Choose the DOOM executable as the entry point and click Run in Wine." }
+  "@type": "VideoGame",
+  "name": "DOOM",
+  "url": "https://exebrowser.com/run/doom/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Play the original 1993 DOOM shareware episode \"Knee-Deep in the Dead\" online in your browser — no download, no install. Real Win32 DOOM on Wine + WebAssembly.",
+  "applicationCategory": "Game",
+  "genre": ["First-person shooter", "Action"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "id Software" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play DOOM online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real Win32 build in your browser — nothing to install." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this real DOOM or a remake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual Windows binary inside an x86 emulator and Wine, rendering to a browser canvas." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the controls for DOOM in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Click the game canvas to capture input. Arrow keys move, Ctrl fires, Space opens doors and operates switches, and the number keys switch weapons. Press Esc to release the mouse back to the page." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it legal to play DOOM here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, for the shareware episode — id distributed it to be freely copied unmodified at no charge. The registered episodes and DOOM II are commercial and aren't included; buy those from id or Steam." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why might DOOM run slowly in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. DOOM is light enough to play at full speed on most modern laptops; older tablets and Chromebooks may feel slower." }
+    }
   ]
 }
 </script>
@@ -67,50 +103,109 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › DOOM</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play DOOM</nav>
+
   <section class="card">
-    <h2>Play DOOM in your browser <span class="verdict good">Works — free &amp; legal</span></h2>
-    <p>id Software released the first episode of <em>DOOM</em> — <strong>Knee-Deep in the Dead</strong> — as shareware in 1993, and that shareware build has been freely redistributable ever since. That makes it one of the very few genuinely famous games we can host for you directly, no hunting required. Boot Wine, load the folder, and you're fragging imps in a browser tab.</p>
+    <h2>Play DOOM online in your browser <span class="verdict good">Free &amp; legal shareware</span></h2>
+    <p>The real, original <strong>DOOM</strong> — id Software's 1993 first-person shooter — running in a browser tab. No download, no install, no account. This is the freely-redistributable shareware episode (<em>Knee-Deep in the Dead</em>), the actual Win32 build executing on Wine + WebAssembly. Hit play and start fragging imps.</p>
 
-    <div class="download-box">
-      <h3 style="margin-top:0;">Get the DOOM shareware (free, legal)</h3>
-      <p>This is id Software's official shareware distribution — the complete first episode, unmodified, distributed at no charge exactly as the shareware license permits. The most reliable source is the Internet Archive's preserved copy:</p>
-      <p><a class="cta-btn" href="https://archive.org/details/DOOM_95" target="_blank" rel="noopener">Get DOOM 95 shareware (Internet Archive) →</a></p>
-      <p class="muted small">The Win95 build (<code>DOOM95.EXE</code> + <code>DOOM1.WAD</code>) is the one to grab — it's a Win32 executable that runs best here. © id Software — the shareware episode is freely redistributable unmodified and at no charge. The registered episodes (Doom II, etc.) are commercial and are <strong>not</strong> included; buy those from <a href="https://store.steampowered.com/app/2280/DOOM__DOOM_II/" target="_blank" rel="noopener">id / Steam</a>.</p>
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="DOOM95.EXE"
+         data-app-url="/apps/doom/doom.zip"
+         data-app-name="DOOM"
+         data-autoboot="false"></div>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-key="ArrowUp" data-code="ArrowUp" data-keycode="38" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-key="ArrowLeft" data-code="ArrowLeft" data-keycode="37" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-key="ArrowRight" data-code="ArrowRight" data-keycode="39" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-key="ArrowDown" data-code="ArrowDown" data-keycode="40" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-key="Control" data-code="ControlLeft" data-keycode="17" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-key=" " data-code="Space" data-keycode="32" aria-label="USE">USE</button>
+          <button type="button" class="mgp-btn " data-key="Shift" data-code="ShiftLeft" data-keycode="16" aria-label="RUN">RUN</button>
+          <button type="button" class="mgp-btn " data-key="Alt" data-code="AltLeft" data-keycode="18" aria-label="ALT">ALT</button>
+          <button type="button" class="mgp-btn " data-key="Tab" data-code="Tab" data-keycode="9" aria-label="MAP">MAP</button>
+          <button type="button" class="mgp-btn " data-key="Escape" data-code="Escape" data-keycode="27" aria-label="MENU">MENU</button>
+      </div>
     </div>
-
-    <table class="spec-table">
-      <tr><th>Game</th><td>DOOM shareware, episode 1 (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>)</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong> — use the Win95 <code>DOOM95.EXE</code> build if you have it</td></tr>
-      <tr><th>Era</th><td>1993–1996, DOS original / Windows 95 port</td></tr>
-      <tr><th>How to load</th><td>Unzip, then upload the whole folder so the EXE finds its WAD</td></tr>
-      <tr><th>Expected result</th><td>Plays at full speed; sound depends on the build</td></tr>
-    </table>
-
-    <h3>DOS DOOM vs. DOOM95</h3>
-    <p>The original <code>DOOM.EXE</code> is a DOS program. Wine here targets Win32, so the most reliable thing to run is <strong>DOOM95</strong> — the official Windows 95 port id shipped, which wraps the same game in a Win32 executable. If your download contains <code>DOOM95.EXE</code>, pick that as the entry point. A pure DOS build may not start under Wine without a DOS layer; if it refuses, grab a DOOM95 package or use a source port (below).</p>
-
-    <h3>Even better: a modern source port</h3>
-    <p>DOOM's engine was open-sourced by id in 1997, which spawned dozens of <em>source ports</em> — modernized Win32 rebuilds like Chocolate Doom and Crispy Doom that run the original shareware WAD with fixed resolutions and clean sound. These are small 32-bit Win32 EXEs and tend to run very cleanly in ExeBrowser. Put the source-port EXE and <code>DOOM1.WAD</code> in one folder and upload them together.</p>
-
-    <h3>Step by step</h3>
-    <ol>
-      <li>Download the shareware zip above and unzip it on your computer.</li>
-      <li>On the <a href="/">ExeBrowser home page</a>, keep <strong>Win32 (default)</strong> and click <strong>Boot Wine</strong>.</li>
-      <li>Use <strong>pick a folder</strong> and select the unzipped DOOM directory.</li>
-      <li>Choose the <code>.EXE</code> (prefer <code>DOOM95.EXE</code> or a source-port EXE) as the entry, then <strong>Run in Wine</strong>.</li>
-      <li>Click the canvas to capture input. Arrows move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors.</li>
-    </ol>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and play →</a></div>
+  </div>
+  <p class="mgp-hint">D-pad: move/turn · FIRE: shoot · USE: open doors · RUN: hold to run</p>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    function fire(type, key, code, keyCode){
+      canvas.dispatchEvent(new KeyboardEvent(type,{key:key,code:code,keyCode:keyCode,which:keyCode,bubbles:true,cancelable:true}));
+    }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var key=btn.dataset.key, code=btn.dataset.code, kc=parseInt(btn.dataset.keycode,10);
+      function dn(e){ e.preventDefault(); fire("keydown",key,code,kc); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); fire("keyup",key,code,kc); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get the DOOM shareware (free, legal)</h3>
+      <p>The complete first episode, unmodified, distributed at no charge exactly as the shareware license permits. The most reliable source is the Internet Archive's preserved copy:</p><p><a class="cta-btn" href="https://archive.org/details/DOOM_95" target="_blank" rel="noopener">Get DOOM 95 shareware (Internet Archive) →</a></p><p class="muted small">Grab the Win95 build (<code>DOOM95.EXE</code> + <code>DOOM1.WAD</code>) — it's a Win32 executable that runs best here. Unzip it, then use <strong>"Load your own copy"</strong> above to drop the folder in. © id Software — the shareware episode is freely redistributable unmodified and at no charge. The registered episodes and Doom II are commercial and <strong>not</strong> included; buy those from <a href="https://store.steampowered.com/app/2280/DOOM__DOOM_II/" target="_blank" rel="noopener">id / Steam</a>.</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <table class="spec-table"><tr><th>Game</th><td>DOOM shareware, episode 1 (<code>DOOM95.EXE</code> + <code>DOOM1.WAD</code>)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong> — use the Win95 <code>DOOM95.EXE</code> build</td></tr><tr><th>Era</th><td>1993–1996, DOS original / Windows 95 port</td></tr><tr><th>How to load</th><td>Unzip, then drop the whole folder so the EXE finds its WAD</td></tr><tr><th>Expected result</th><td>Plays at full speed; sound depends on the build</td></tr></table>
+    <h3>DOS DOOM vs. DOOM95</h3>
+    <p>The original <code>DOOM.EXE</code> is a DOS program. Wine here targets Win32, so the most reliable thing to run is <strong>DOOM95</strong> — the official Windows 95 port id shipped, which wraps the same game in a Win32 executable. If your download contains <code>DOOM95.EXE</code>, that's the entry point (the player above prefers it automatically). A pure DOS build may not start under Wine without a DOS layer; if it refuses, grab a DOOM95 package or use a source port (below).</p><h3>Even better: a modern source port</h3><p>DOOM's engine was open-sourced by id in 1997, which spawned dozens of <em>source ports</em> — modernized Win32 rebuilds like Chocolate Doom and Crispy Doom that run the original shareware WAD with fixed resolutions and clean sound. These are small 32-bit Win32 EXEs and tend to run very cleanly in ExeBrowser. Put the source-port EXE and <code>DOOM1.WAD</code> in one folder and load them together.</p>
+    <h3>Step by step</h3>
+    <ol><li>Click <strong>▶ Play DOOM</strong> above to boot Wine right on this page.</li><li>If prompted, download the shareware zip and unzip it on your computer.</li><li>Use <strong>Load your own copy → a folder</strong> and select the unzipped DOOM directory.</li><li>The player picks <code>DOOM95.EXE</code> as the entry automatically; click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. Arrows move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play DOOM online for free with no download?</summary>
+      <p>Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real Win32 build in your browser — nothing to install.</p>
+    </details>
+    <details>
+      <summary>Is this real DOOM or a remake?</summary>
+      <p>The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual Windows binary inside an x86 emulator and Wine, rendering to a browser canvas.</p>
+    </details>
+    <details>
+      <summary>What are the controls for DOOM in the browser?</summary>
+      <p>Click the game canvas to capture input. Arrow keys move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and operates switches, and the number keys switch weapons. Press <kbd>Esc</kbd> to release the mouse back to the page.</p>
+    </details>
+    <details>
+      <summary>Is it legal to play DOOM here?</summary>
+      <p>Yes, for the shareware episode — id distributed it to be freely copied unmodified at no charge. The registered episodes and DOOM II are commercial and aren't included; buy those from id or Steam.</p>
+    </details>
+    <details>
+      <summary>Why might DOOM run slowly in the browser?</summary>
+      <p>An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. DOOM is light enough to play at full speed on most modern laptops; older tablets and Chromebooks may feel slower.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/freeciv/"><span class="lc-title">Freeciv</span><span class="lc-desc">Open-source Civilization-style strategy.</span></a></li>
-      <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">Another classic to try.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The beloved Windows XP pinball table.</span></a></li>
+      <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id's original FPS shareware, in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">The fully free DOOM-engine game and IWAD.</span></a></li>
+      <li><a class="link-card" href="/run/chocolate-doom/"><span class="lc-title">Chocolate Doom</span><span class="lc-desc">Faithful DOOM source port, runs cleanly.</span></a></li>
+      <li><a class="link-card" href="/run/hexen-heretic-shareware/"><span class="lc-title">Heretic &amp; Hexen</span><span class="lc-desc">Raven's DOOM-engine fantasy shareware.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -129,5 +224,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

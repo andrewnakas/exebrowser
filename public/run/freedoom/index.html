@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Freedoom Online — Free, Libre, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Play Freedoom — the free, open-source DOOM-compatible game — in your browser. No download, no install. Pair the libre WAD with a software-rendering Doom port on Wine + WebAssembly." />
+<meta name="keywords" content="play freedoom online, freedoom in browser, freedoom no download, free doom game online, freedoom phase 1, freedoom phase 2, open source doom browser, libre doom online" />
+<link rel="canonical" href="https://exebrowser.com/run/freedoom/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/freedoom/" />
+<meta property="og:title" content="Play Freedoom Online — Free &amp;amp; Libre, In Your Browser" />
+<meta property="og:description" content="Freedoom is a 100% free, open-source DOOM-compatible game. Run it in your browser on Wine + WebAssembly — pair the libre WAD with a lightweight software-rendering port." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Freedoom", "item": "https://exebrowser.com/run/freedoom/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Freedoom",
+  "url": "https://exebrowser.com/run/freedoom/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Play Freedoom — the free, open-source DOOM-compatible game — in your browser. No download, no install. Pair the libre WAD with a software-rendering Doom port on Wine + WebAssembly.",
+  "applicationCategory": "Game",
+  "genre": ["First-person shooter", "Action"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "The Freedoom Project" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Freedoom really free and legal to play online?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely. Freedoom is released under a modified BSD license that explicitly allows anyone to copy, modify, and redistribute it freely. It contains no id Software assets, so there are no shareware or copyright caveats. Both the game data and the open-source engines you pair it with are free software." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Freedoom the same as DOOM?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Freedoom is an original, from-scratch game that runs on the classic DOOM engine and is compatible with DOOM-format levels and mods. It's a free replacement for id's commercial DOOM WADs — similar feel, all-original content. If you want the actual 1993 DOOM levels, see our DOOM shareware page." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I need a separate engine to play Freedoom?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Freedoom ships as WAD data files (freedoom1.wad and freedoom2.wad), not a program. A DOOM engine reads that data and runs the game. In the browser, use a lightweight software-rendering port like Chocolate Doom or Crispy Doom — both are small, free Win32 builds that run well on Wine + WebAssembly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use GZDoom for Freedoom in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not here. GZDoom and other modern hardware-accelerated ports require OpenGL 3.3, which the WebAssembly emulator doesn't provide, so they won't render. Stick to software-rendering ports (Chocolate Doom, Crispy Doom) in the browser, and save GZDoom for a native desktop install." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Freedoom Phase 1 and Phase 2?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of eight levels each — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II and works with DOOM II / Final Doom mods." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Freedoom</nav>
+
+  <section class="card">
+    <h2>Play Freedoom online in your browser <span class="verdict good">Works well — pair with a software-rendering port</span></h2>
+    <p><strong>Freedoom</strong> is a completely free, open-source game built to run on the classic DOOM engine — original monsters, weapons, levels, music, and art, none of it borrowed from id Software. It is fully libre, so unlike commercial DOOM there is nothing to buy and nothing to worry about: just play. The one catch to be honest about up front: Freedoom is <em>game data</em>, not a program. It needs a DOOM engine to run, and in the browser the engine you choose matters — a lightweight software-rendering port (Chocolate Doom, Crispy Doom) runs cleanly here, while heavy modern ports like GZDoom that demand OpenGL 3.3 will not. Pair the libre WAD with the right port and you get smooth, full-speed retro FPS action in a browser tab.</p>
+
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="DOOM95.EXE"
+         data-app-url="/apps/freedoom/freedoom.zip"
+         data-app-name="Freedoom"
+         data-autoboot="false"></div>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-key="ArrowUp" data-code="ArrowUp" data-keycode="38" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-key="ArrowLeft" data-code="ArrowLeft" data-keycode="37" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-key="ArrowRight" data-code="ArrowRight" data-keycode="39" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-key="ArrowDown" data-code="ArrowDown" data-keycode="40" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-key="Control" data-code="ControlLeft" data-keycode="17" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-key=" " data-code="Space" data-keycode="32" aria-label="USE">USE</button>
+          <button type="button" class="mgp-btn " data-key="Shift" data-code="ShiftLeft" data-keycode="16" aria-label="RUN">RUN</button>
+          <button type="button" class="mgp-btn " data-key="Alt" data-code="AltLeft" data-keycode="18" aria-label="ALT">ALT</button>
+          <button type="button" class="mgp-btn " data-key="Tab" data-code="Tab" data-keycode="9" aria-label="MAP">MAP</button>
+          <button type="button" class="mgp-btn " data-key="Escape" data-code="Escape" data-keycode="27" aria-label="MENU">MENU</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">D-pad: move/turn · FIRE: shoot · USE: open doors · RUN: hold to run</p>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    function fire(type, key, code, keyCode){
+      canvas.dispatchEvent(new KeyboardEvent(type,{key:key,code:code,keyCode:keyCode,which:keyCode,bubbles:true,cancelable:true}));
+    }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var key=btn.dataset.key, code=btn.dataset.code, kc=parseInt(btn.dataset.keycode,10);
+      function dn(e){ e.preventDefault(); fire("keydown",key,code,kc); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); fire("keyup",key,code,kc); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get Freedoom (free &amp;amp; open source)</h3>
+      <div class="download-box"><h3 style="margin-top:0;">The official, libre release</h3><p>Freedoom's game data is released under a modified BSD license — you may freely copy, modify, and redistribute it, provided the license and credit travel with it. Grab the official release from the project itself:</p><p><a class="cta-btn" href="https://freedoom.github.io/download.html" target="_blank" rel="noopener">Download Freedoom (official site) →</a></p><p class="muted small">The download contains <code>freedoom1.wad</code> (Phase 1, Ultimate-Doom-style) and <code>freedoom2.wad</code> (Phase 2, Doom-II-style). These are WAD data files, <strong>not</strong> an executable — you also need a DOOM engine. The simplest free pairing is a small Win32 software-rendering port such as <a href="https://www.chocolate-doom.org/" target="_blank" rel="noopener">Chocolate Doom</a> or Crispy Doom. Put the port's <code>.EXE</code> and a <code>freedoomN.wad</code> in one folder, then use <strong>“Load your own copy”</strong> above to drop the folder in. Everything here — game and engine — is genuinely free and open source.</p></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>ExeBrowser runs a real Win32 executable on Wine + WebAssembly. Freedoom itself isn't an executable — it's an <em>IWAD</em>, a single data file holding all the levels, graphics, sound, and music. So the page actually runs a DOOM <strong>engine</strong> (a small Win32 <code>.exe</code>) and points it at <code>freedoom1.wad</code> or <code>freedoom2.wad</code>. Pick a software-rendering port and it plays at full speed on a modern laptop, exactly like the original DOOM does here.</p>
+    <h3>Choose the right engine — this is the important part</h3>
+    <p>The engine choice decides whether it works. Be guided by this:</p><ul><li><strong>Chocolate Doom / Crispy Doom (recommended)</strong> — software-rendering, tiny Win32 builds. No 3D acceleration needed, so they run cleanly in the emulator. This is the reliable pairing.</li><li><strong>GZDoom / modern hardware ports (avoid here)</strong> — these require OpenGL 3.3 and a real GPU pipeline that Boxedwine doesn't provide. They will fail to start or render. Save those for a native desktop.</li></ul><p>To launch, put the port's <code>.EXE</code> and a Freedoom WAD in the same folder. Many ports auto-detect a WAD sitting beside them; if not, the engine reads it as the IWAD on startup. Phase 1 (<code>freedoom1.wad</code>) is the four-episode, Ultimate-Doom-style campaign; Phase 2 (<code>freedoom2.wad</code>) is a single 30-level Doom-II-style campaign.</p>
+    <h3>Step by step</h3>
+    <ol><li>Click <strong>▶ Play Freedoom</strong> above to boot Wine on this page.</li><li>Download Freedoom from the box below and a small software-rendering port (Chocolate Doom or Crispy Doom).</li><li>Unzip both into a single folder so the <code>.EXE</code> and a <code>freedoomN.wad</code> sit side by side.</li><li>Use <strong>Load your own copy → a folder</strong> and select that folder, then click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. Arrows move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors, <kbd>1</kbd>–<kbd>7</kbd> switch weapons, <kbd>Esc</kbd> releases the mouse.</li></ol>
+    <h3>What it is — and what it isn't</h3>
+    <p>Freedoom is <em>not</em> id Software's DOOM and isn't trying to be a copy of its art — it's an original, drop-in replacement for the commercial WADs, made from scratch by volunteers so the open-source engines have something completely free to play. That makes it perfect for a browser: no shareware caveats, no licensing tightrope, no "buy the full version" upsell. If you specifically want the original 1993 DOOM levels, see our DOOM shareware page instead. If you just want a free, no-strings DOOM-style shooter to blast through, Freedoom is the cleanest option there is.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is Freedoom really free and legal to play online?</summary>
+      <p>Yes — completely. Freedoom is released under a modified BSD license that explicitly allows anyone to copy, modify, and redistribute it freely. It contains no id Software assets, so there are no shareware or copyright caveats. Both the game data and the open-source engines you pair it with are free software.</p>
+    </details>
+    <details>
+      <summary>Is Freedoom the same as DOOM?</summary>
+      <p>No. Freedoom is an original, from-scratch game that runs on the classic DOOM engine and is compatible with DOOM-format levels and mods. It's a free replacement for id's commercial DOOM WADs — similar feel, all-original content. If you want the actual 1993 DOOM levels, see our DOOM shareware page.</p>
+    </details>
+    <details>
+      <summary>Why do I need a separate engine to play Freedoom?</summary>
+      <p>Freedoom ships as WAD data files (freedoom1.wad and freedoom2.wad), not a program. A DOOM engine reads that data and runs the game. In the browser, use a lightweight software-rendering port like Chocolate Doom or Crispy Doom — both are small, free Win32 builds that run well on Wine + WebAssembly.</p>
+    </details>
+    <details>
+      <summary>Can I use GZDoom for Freedoom in the browser?</summary>
+      <p>Not here. GZDoom and other modern hardware-accelerated ports require OpenGL 3.3, which the WebAssembly emulator doesn't provide, so they won't render. Stick to software-rendering ports (Chocolate Doom, Crispy Doom) in the browser, and save GZDoom for a native desktop install.</p>
+    </details>
+    <details>
+      <summary>What's the difference between Freedoom Phase 1 and Phase 2?</summary>
+      <p>Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of eight levels each — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II and works with DOOM II / Final Doom mods.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM (shareware)</span><span class="lc-desc">The real 1993 DOOM, free shareware episode.</span></a></li>
+      <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Chocolate Doom</span><span class="lc-desc">Faithful software-rendering port — pairs perfectly.</span></a></li>
+      <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id's earlier FPS — the genre's grandfather.</span></a></li>
+      <li><a class="link-card" href="/run/hexen-heretic-shareware/"><span class="lc-title">Heretic &amp;amp; Hexen</span><span class="lc-desc">Fantasy shooters on the DOOM engine.</span></a></li>
+      <li><a class="link-card" href="/run/freeciv/"><span class="lc-title">Freeciv</span><span class="lc-desc">Another fully free, open-source classic.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

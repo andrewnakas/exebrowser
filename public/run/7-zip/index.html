@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run 7-Zip in Your Browser — Extract Archives Online — ExeBrowser</title>
-<meta name="description" content="Run 7-Zip in your browser with Wine + WebAssembly to open and extract 7z, zip, rar and other archives with no install. Which build to use, how to load it, and how to download extracted files." />
-<meta name="keywords" content="7-zip online, run 7zip in browser, extract 7z online, 7zip no install, open archive browser" />
+<title>Run 7-Zip Online in Your Browser — Free, No Install — ExeBrowser</title>
+<meta name="description" content="Run 7-Zip in your browser to open and extract 7z, zip, rar, tar, iso and more — no install. Real Win32 7-Zip on Wine + WebAssembly, with how to load it and get files out." />
+<meta name="keywords" content="7-zip online, run 7zip in browser, extract 7z online, 7zip no install, open archive browser, 7-zip web, extract rar online, archive extractor browser" />
 <link rel="canonical" href="https://exebrowser.com/run/7-zip/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/7-zip/" />
-<meta property="og:title" content="Run 7-Zip in Your Browser — Extract Archives Online" />
-<meta property="og:description" content="Open and extract archives with 7-Zip in your browser using Wine + WebAssembly. No install." />
+<meta property="og:title" content="Run 7-Zip Online in Your Browser — Free, No Install" />
+<meta property="og:description" content="Open and extract 7z, zip, rar, tar and more with real 7-Zip in your browser via Wine + WebAssembly. Free, open-source, nothing to install." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,54 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "7-Zip", "item": "https://exebrowser.com/run/7-zip/" }
+    { "@type": "ListItem", "position": 3, "name": "Run 7-Zip", "item": "https://exebrowser.com/run/7-zip/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "7-Zip",
+  "url": "https://exebrowser.com/run/7-zip/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run 7-Zip in your browser to open and extract 7z, zip, rar, tar, iso and more — no install. Real Win32 7-Zip on Wine + WebAssembly, with how to load it and get files out.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Igor Pavlov" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I extract a 7z or rar file online without installing anything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. ExeBrowser runs the real 7-Zip File Manager in your browser via Wine + WebAssembly, so there's nothing to install. Bundle 7zFM.exe, 7z.dll and your archive into one folder, load them, extract, then download the results." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the real 7-Zip or a clone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's the real, unmodified 7-Zip Win32 binary running inside an x86 emulator and Wine. ExeBrowser doesn't reimplement it &mdash; it runs Igor Pavlov's actual program and renders it to a browser canvas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my files uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs locally in your browser tab. The files you load go into an in-memory C:\\ drive that exists only in your session; nothing is sent to a server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why use 7-Zip here instead of a native browser extractor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For a single common-format extract, a native JavaScript extractor will be faster. Use 7-Zip when you need its broad format support, the familiar file-manager UI, or a consistent environment alongside other Windows tools." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which 7-Zip build should I load?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A 32-bit release. The Wine engine is 32-bit only, so the x64 build won't run. Any modern 32-bit 7-Zip works; you only need 7zFM.exe and 7z.dll for the file manager." }
+    }
   ]
 }
 </script>
@@ -54,37 +101,69 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › 7-Zip</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run 7-Zip</nav>
+
   <section class="card">
-    <h2>Run 7-Zip in your browser <span class="verdict good">Works well</span></h2>
-    <p>7-Zip is the free, open-source archiver that opens just about every archive format there is — <code>.7z</code>, <code>.zip</code>, <code>.rar</code>, <code>.tar</code>, <code>.gz</code>, <code>.iso</code> and more. It's a small, classic Win32 application, which makes it one of the more reliable tools to run inside ExeBrowser when you need to crack open an archive on a device where you can't install anything.</p>
+    <h2>Run 7-Zip online in your browser <span class="verdict good">Works well</span></h2>
+    <p>The real <strong>7-Zip</strong> — Igor Pavlov's free, open-source archiver — running in a browser tab. No download, no install, no account. 7-Zip opens just about every archive format there is: <code>.7z</code>, <code>.zip</code>, <code>.rar</code>, <code>.tar</code>, <code>.gz</code>, <code>.iso</code> and more. It's a small, classic Win32 application, which makes it one of the more reliable tools to run inside ExeBrowser when you need to crack open an archive on a device where you can't install anything. Hit play, point it at your archive, and extract.</p>
 
-    <table class="spec-table">
-      <tr><th>App</th><td>7-Zip File Manager (<code>7zFM.exe</code>) / console (<code>7z.exe</code>)</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>Which build</th><td>A 32-bit release (any modern 32-bit 7-Zip is fine)</td></tr>
-      <tr><th>How to load</th><td>Upload the 7-Zip folder plus your archive together as a folder or zip</td></tr>
-      <tr><th>Getting files out</th><td>Extract inside 7-Zip, then “Download files written by this app”</td></tr>
-    </table>
-
-    <h3>Bundle the archive alongside 7-Zip</h3>
-    <p>Because ExeBrowser's <code>C:\</code> drive is in-memory, 7-Zip can only see what you upload. Put <code>7zFM.exe</code>, <code>7z.dll</code>, and the archive you want to open into a single folder on your computer, then use the <strong>pick a folder</strong> option. Inside the 7-Zip File Manager, navigate to your archive, extract to a subfolder, and use <strong>Download files written by this app</strong> to pull everything back out as a zip.</p>
-
-    <h3>Use the 32-bit build</h3>
-    <p>The Wine engine is 32-bit only, so grab a 32-bit 7-Zip rather than the x64 build. The installer is itself an EXE; if you'd rather skip installing, extract the program files with another archiver first and upload just the <code>7zFM.exe</code> and <code>7z.dll</code> pair, which is all the file manager needs.</p>
-
-    <h3>When to use it vs. a native tool</h3>
-    <p>For a single quick extract of a common format, a JavaScript-based extractor running natively in the browser will be faster than emulating x86. 7-Zip in ExeBrowser is the right call when you need its broad format support (some obscure or nested formats only it handles cleanly), want the familiar file-manager UI, or are already using ExeBrowser for other Windows tools and want one consistent environment.</p>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="7zFM.exe"
+         data-app-url="/apps/7-zip/7-zip.zip"
+         data-app-name="7-Zip"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get 7-Zip (free, open-source)</h3>
+      <p>7-Zip is free, open-source software under the GNU LGPL, distributed at no charge. Grab a <strong>32-bit</strong> release &mdash; the Wine engine here is 32-bit only, so the x64 build won't run.</p><p><a class="cta-btn" href="https://www.7-zip.org/download.html" target="_blank" rel="noopener">Download 7-Zip from 7-zip.org &rarr;</a></p><p class="muted small">Pick the 32-bit <code>.exe</code> or extract the program files and keep <code>7zFM.exe</code> + <code>7z.dll</code>. Then use <strong>Load your own copy</strong> above and drop in a folder that also contains the archive you want to open. 7-Zip &copy; Igor Pavlov, licensed under the GNU LGPL (the unRAR component has an additional restriction).</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>ExeBrowser runs the actual 7-Zip Win32 binary — the File Manager (<code>7zFM.exe</code>) backed by <code>7z.dll</code> — inside an x86 emulator and Wine, drawing to a browser canvas. It isn't a JavaScript reimplementation; it's the same program you'd run on Windows. Because everything executes locally in your tab, your archives are never uploaded to a server. The emulator runs at roughly 10–40% of native CPU speed, which is plenty for browsing and extracting; very large or heavily-compressed archives will simply take longer to unpack than they would natively.</p><table class="spec-table"><tr><th>App</th><td>7-Zip File Manager (<code>7zFM.EXE</code>) plus console (<code>7z.exe</code>)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>Which build</th><td>A 32-bit release — any modern 32-bit 7-Zip is fine</td></tr><tr><th>Formats</th><td>7z, zip, rar, tar, gz, bz2, xz, iso, cab, and more</td></tr><tr><th>Getting files out</th><td>Extract inside 7-Zip, then “Download files written by this app”</td></tr></table>
+    <h3>Bundle the archive alongside 7-Zip</h3>
+    <p>ExeBrowser's <code>C:\</code> drive is in-memory, so 7-Zip can only see what you give it. Put <code>7zFM.exe</code>, <code>7z.dll</code> and the archive you want to open into a single folder on your computer, then use <strong>Load your own copy &rarr; a folder</strong>. Inside the 7-Zip File Manager, navigate to your archive, extract it to a subfolder, and use <strong>Download files written by this app</strong> to pull everything back out as a zip.</p><ol><li>Click <strong>&#9654; Run 7-Zip</strong> above to boot Wine on this page.</li><li>Load the folder containing <code>7zFM.exe</code>, <code>7z.dll</code> and your archive.</li><li>Double-click your archive in the file manager, then hit <strong>Extract</strong>.</li><li>Use <strong>Download files written by this app</strong> to get the extracted files back.</li></ol>
+    <h3>Use the 32-bit build</h3>
+    <p>The Wine engine here is 32-bit only, so grab a 32-bit 7-Zip rather than the x64 build (64-bit binaries will not run). The installer is itself an EXE; if you'd rather skip installing, extract the program files with another archiver first and upload just the <code>7zFM.exe</code> + <code>7z.dll</code> pair, which is all the File Manager needs to open and extract archives.</p>
+    <h3>When to use it vs. a native tool</h3>
+    <p>For a single quick extract of a common format, a JavaScript-based extractor running natively in the browser will be faster than emulating x86. 7-Zip in ExeBrowser is the right call when you need its broad format support (some obscure or nested formats only it handles cleanly), want the familiar File-Manager UI, or are already using ExeBrowser for other Windows tools and want one consistent environment.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I extract a 7z or rar file online without installing anything?</summary>
+      <p>Yes. ExeBrowser runs the real 7-Zip File Manager in your browser via Wine + WebAssembly, so there's nothing to install. Bundle <code>7zFM.exe</code>, <code>7z.dll</code> and your archive into one folder, load them, extract, then download the results.</p>
+    </details>
+    <details>
+      <summary>Is this the real 7-Zip or a clone?</summary>
+      <p>It's the real, unmodified 7-Zip Win32 binary running inside an x86 emulator and Wine. ExeBrowser doesn't reimplement it &mdash; it runs Igor Pavlov's actual program and renders it to a browser canvas.</p>
+    </details>
+    <details>
+      <summary>Are my files uploaded anywhere?</summary>
+      <p>No. Everything runs locally in your browser tab. The files you load go into an in-memory <code>C:\</code> drive that exists only in your session; nothing is sent to a server.</p>
+    </details>
+    <details>
+      <summary>Why use 7-Zip here instead of a native browser extractor?</summary>
+      <p>For a single common-format extract, a native JavaScript extractor will be faster. Use 7-Zip when you need its broad format support, the familiar file-manager UI, or a consistent environment alongside other Windows tools.</p>
+    </details>
+    <details>
+      <summary>Which 7-Zip build should I load?</summary>
+      <p>A 32-bit release. The Wine engine is 32-bit only, so the x64 build won't run. Any modern 32-bit 7-Zip works; you only need <code>7zFM.exe</code> and <code>7z.dll</code> for the file manager.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/winrar/"><span class="lc-title">WinRAR</span><span class="lc-desc">The other big archiver.</span></a></li>
-      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">More small Win32 tools.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/winrar/"><span class="lc-title">WinRAR</span><span class="lc-desc">The other big archiver — what runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/filezilla/"><span class="lc-title">FileZilla</span><span class="lc-desc">Open-source FTP client in your browser.</span></a></li>
+      <li><a class="link-card" href="/run/putty/"><span class="lc-title">PuTTY</span><span class="lc-desc">The classic SSH/Telnet client, no install.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad</span><span class="lc-desc">More small Win32 utilities.</span></a></li>
+      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">Sumatra PDF</span><span class="lc-desc">Lightweight open-source PDF reader.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -103,5 +182,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

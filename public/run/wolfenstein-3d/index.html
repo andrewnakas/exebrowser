@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Wolfenstein 3D Online — Free Shareware, In Your Browser — ExeBrowser</title>
+<meta name="description" content="Play Wolfenstein 3D shareware (episode 1) in your browser — free and legal. Honest guide: it's a DOS game, so you run it via a Win32 source port on Wine + WebAssembly. Here's what works." />
+<meta name="keywords" content="play wolfenstein 3d online, wolfenstein 3d in browser, wolfenstein 3d shareware free, wolfenstein 3d no download, ecwolf browser, wolf3d shareware online, classic wolfenstein 3d browser" />
+<link rel="canonical" href="https://exebrowser.com/run/wolfenstein-3d/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/wolfenstein-3d/" />
+<meta property="og:title" content="Play Wolfenstein 3D Online — Free Shareware, In Your Browser" />
+<meta property="og:description" content="The 1992 Wolfenstein 3D shareware episode, free and legal. It's a DOS game, so you run it through a Win32 source port on Wine + WebAssembly. Honest guide to what works." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Wolfenstein 3D", "item": "https://exebrowser.com/run/wolfenstein-3d/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Wolfenstein 3D",
+  "url": "https://exebrowser.com/run/wolfenstein-3d/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Play Wolfenstein 3D shareware (episode 1) in your browser — free and legal. Honest guide: it's a DOS game, so you run it via a Win32 source port on Wine + WebAssembly. Here's what works.",
+  "applicationCategory": "Game",
+  "genre": ["First-person shooter", "Action"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "id Software" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play Wolfenstein 3D online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can play it free and legally, but not as pure zero-setup one-click. Wolfenstein 3D is a DOS game, while ExeBrowser runs Win32 software, so you load a small free source port (ECWolf or Wolf4SDL) together with the freely-redistributable shareware data files. Both pieces are free; you just drop them into the in-page loader." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Wolfenstein 3D shareware legal to play here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, for the shareware first episode. Apogee and id released episode one as shareware in 1992 to be copied at no charge, and it has been distributed freely ever since (it's preserved on the Internet Archive). The registered episodes, the Nocturnal Missions, and Spear of Destiny are commercial and are not included — buy those from id or Steam." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I just run the original WOLF3D.EXE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because it's a 16-bit DOS program and there was never an official Windows version. ExeBrowser's Wine layer runs Win32 executables, and Wine's DOS support is too thin to rely on. The fix is an open-source source port (ECWolf / Wolf4SDL) that is a real Win32 EXE and reads the same shareware .WL1 data." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the real Wolfenstein 3D or a remake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's the real game data — the actual 1992 maps, sprites, and sound from the shareware episode — played through an open-source rebuild of id's engine that id themselves released to the public. It's not a fan re-creation of the levels; it's the original content, run by a modern, faithful engine." }
+    },
+    {
+      "@type": "Question",
+      "name": "The sound isn't working or it won't start. What can I try?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Audio through SDL under this older Wine is the most fragile part — video and controls usually hold up even when sound doesn't. If the port won't launch at all, try the leaner Wolf4SDL instead of ECWolf, or switch the runtime to the r18 engine variant. Make sure the EXE and all the *.WL1 files are in the same folder." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Wolfenstein 3D</nav>
+
+  <section class="card">
+    <h2>Play Wolfenstein 3D online in your browser <span class="verdict works">Works — original DOS game runs via DOSBox in your browser</span></h2>
+    <p><strong>Wolfenstein 3D</strong> — id Software and Apogee's 1992 grandfather of the first-person shooter — and its shareware first episode is free and legal to play. ExeBrowser now runs DOS games directly via DOSBox compiled to WebAssembly, so you get the original <code>WOLF3D.EXE</code> running in your browser — no source port needed, no setup required. Hit play and you're in.</p>
+
+    <div id="dos-embed"
+         data-app-url="/apps/wolfenstein-3d/wolfenstein-3d.zip"
+         data-app-name="Wolfenstein 3D"
+         data-autoboot="false"></div>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-doskey="72" data-code="" data-keycode="0" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-doskey="75" data-code="" data-keycode="0" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-doskey="77" data-code="" data-keycode="0" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-doskey="80" data-code="" data-keycode="0" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-doskey="29" data-code="" data-keycode="0" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-doskey="57" data-code="" data-keycode="0" aria-label="OPEN">OPEN</button>
+          <button type="button" class="mgp-btn " data-doskey="42" data-code="" data-keycode="0" aria-label="RUN">RUN</button>
+          <button type="button" class="mgp-btn " data-doskey="56" data-code="" data-keycode="0" aria-label="STRAFE">STRAFE</button>
+          <button type="button" class="mgp-btn " data-doskey="9" data-code="" data-keycode="0" aria-label="MAP">MAP</button>
+          <button type="button" class="mgp-btn " data-doskey="1" data-code="" data-keycode="0" aria-label="MENU">MENU</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">D-pad: move/turn · FIRE: shoot · OPEN: doors/walls · MENU: esc</p>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("dos-canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var sc = parseInt(btn.dataset.doskey, 10);
+      if(!sc) return;
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,true); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,false); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get the Wolfenstein 3D shareware (free, legal)</h3>
+      <div class="download-box"><h3 style="margin-top:0;">The shareware episode (data files) + a Win32 source port</h3><p>You need two pieces, both free and legal:</p><ol><li><strong>The shareware data</strong> — the freely-redistributable first episode (the <code>*.WL1</code> files: <code>VSWAP.WL1</code>, <code>MAPHEAD.WL1</code>, <code>GAMEMAPS.WL1</code>, <code>VGAGRAPH.WL1</code>, <code>VGAHEAD.WL1</code>, <code>AUDIOT.WL1</code>, <code>AUDIOHED.WL1</code>). Apogee released episode one as shareware to be copied at no charge; the Internet Archive keeps preserved copies.</li><li><strong>A Win32 source port</strong> — a modern, open-source rebuild of the engine that runs natively as a Windows EXE. <a href="https://maniacsvault.net/ecwolf/download.php" target="_blank" rel="noopener">ECWolf</a> (grab the <strong>32-bit Windows</strong> build) or the leaner Wolf4SDL.</li></ol><p><a class="cta-btn" href="https://archive.org/details/wolf3dsw" target="_blank" rel="noopener">Get Wolfenstein 3D shareware (Internet Archive) →</a></p><p class="muted small">Put the source-port EXE and all the <code>*.WL1</code> files in <strong>one folder</strong>, then use <strong>“Load your own copy”</strong> above to drop the folder in. © id Software / Apogee. Only the <strong>shareware episode</strong> is free to redistribute. The registered episodes, the Nocturnal Missions, and Spear of Destiny are commercial — buy those from <a href="https://store.steampowered.com/app/2270/Wolfenstein_3D/" target="_blank" rel="noopener">id / Steam</a>.</p></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why you can't just run the original WOLF3D.EXE</h3>
+    <p>This is the single most important thing to understand. The original Wolfenstein 3D is a <strong>16-bit DOS real-mode program</strong> — there was never an official Windows (Win32) version. ExeBrowser's Wine layer (Wine 1.7.55 on the Boxedwine x86 emulator) is built to run <strong>Win32</strong> executables, not DOS ones. Wine's DOS support is thin and unreliable, so dropping in the raw <code>WOLF3D.EXE</code> will most likely refuse to start or misbehave.</p><p>The clean, fully-legal workaround is a <strong>source port</strong>: after id open-sourced the Wolfenstein 3D engine in 1995, the community built modern rebuilds — <a href="https://github.com/ECWolfEngine/ECWolf" target="_blank" rel="noopener">ECWolf</a> and Wolf4SDL — that compile to native Windows EXEs and read the very same shareware <code>.WL1</code> game data. That's a real Win32 program Wine can actually load.</p>
+    <h3>What to expect — and the caveats</h3>
+    <p>When it runs, you get the genuine 1992 game: B.J. Blazkowicz, the maze-like Nazi bunker, secret-wall pushing, and that unmistakable raycast look. The honest caveats:</p><ul><li><strong>Source ports use SDL2.</strong> ECWolf depends on SDL2/SDL2_mixer and targets Windows XP and up — heavier than DOOM's tiny Win32 EXE, so it's less of a sure thing under this older Wine. If ECWolf stalls, try the leaner <strong>Wolf4SDL</strong>, or switch the runtime to the <strong>r18</strong> engine variant.</li><li><strong>Sound is the flaky part.</strong> Music and digitized sound effects route through SDL audio under Wine, which is the most fragile path here. The video and controls are far more reliable than the audio.</li><li><strong>Speed.</strong> Wolfenstein 3D is featherweight by modern standards, so even at the emulator's 10–40% of native it generally plays at full speed on a current laptop. Older Chromebooks and tablets may chug.</li></ul><p>Net result: free, legal, and genuinely playable through a source port — but with enough setup and audio uncertainty that we rate it <strong>partial</strong> rather than a one-click classic.</p>
+    <h3>Step by step</h3>
+    <ol><li>Download the <strong>shareware data</strong> (the <code>*.WL1</code> files) and unzip them on your computer.</li><li>Download a <strong>32-bit Windows source port</strong> (ECWolf or Wolf4SDL) and unzip it into the <em>same folder</em> as the <code>.WL1</code> files.</li><li>Click <strong>▶ Play Wolfenstein 3D</strong> above to boot Wine on this page.</li><li>Use <strong>Load your own copy → a folder</strong> and pick that combined folder.</li><li>Select the source-port EXE (e.g. <code>ECWOLF.EXE</code>) as the entry and click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. Arrows move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens/pushes walls, <kbd>1</kbd>–<kbd>4</kbd> switch weapons, <kbd>Esc</kbd> for the menu and to release the mouse.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play Wolfenstein 3D online for free with no download?</summary>
+      <p>You can play it free and legally, but not as pure zero-setup one-click. Wolfenstein 3D is a DOS game, while ExeBrowser runs Win32 software, so you load a small free <strong>source port</strong> (ECWolf or Wolf4SDL) together with the freely-redistributable shareware data files. Both pieces are free; you just drop them into the in-page loader.</p>
+    </details>
+    <details>
+      <summary>Is the Wolfenstein 3D shareware legal to play here?</summary>
+      <p>Yes, for the shareware first episode. Apogee and id released episode one as shareware in 1992 to be copied at no charge, and it has been distributed freely ever since (it's preserved on the Internet Archive). The registered episodes, the Nocturnal Missions, and Spear of Destiny are commercial and are not included — buy those from id or Steam.</p>
+    </details>
+    <details>
+      <summary>Why can't I just run the original WOLF3D.EXE?</summary>
+      <p>Because it's a 16-bit DOS program and there was never an official Windows version. ExeBrowser's Wine layer runs Win32 executables, and Wine's DOS support is too thin to rely on. The fix is an open-source <strong>source port</strong> (ECWolf / Wolf4SDL) that is a real Win32 EXE and reads the same shareware .WL1 data.</p>
+    </details>
+    <details>
+      <summary>Is this the real Wolfenstein 3D or a remake?</summary>
+      <p>It's the real game data — the actual 1992 maps, sprites, and sound from the shareware episode — played through an open-source rebuild of id's engine that id themselves released to the public. It's not a fan re-creation of the levels; it's the original content, run by a modern, faithful engine.</p>
+    </details>
+    <details>
+      <summary>The sound isn't working or it won't start. What can I try?</summary>
+      <p>Audio through SDL under this older Wine is the most fragile part — video and controls usually hold up even when sound doesn't. If the port won't launch at all, try the leaner Wolf4SDL instead of ECWolf, or switch the runtime to the <strong>r18</strong> engine variant. Make sure the EXE and all the <code>*.WL1</code> files are in the same folder.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">id's 1993 shareware FPS — runs cleanly as Win32.</span></a></li>
+      <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Freedoom</span><span class="lc-desc">Free, open DOOM-engine content with a Win32 port.</span></a></li>
+      <li><a class="link-card" href="/run/hexen-heretic-shareware/"><span class="lc-title">Heretic / Hexen shareware</span><span class="lc-desc">More id-tech first-person shareware classics.</span></a></li>
+      <li><a class="link-card" href="/run/blake-stone/"><span class="lc-title">Blake Stone</span><span class="lc-desc">Apogee's Wolfenstein-engine sci-fi shooter.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The beloved Windows pinball table.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script src="/dos-embed.js?v=1"></script>
+</body>
+</html>

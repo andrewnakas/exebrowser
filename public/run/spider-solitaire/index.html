@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Spider Solitaire Online in Your Browser — No Download — ExeBrowser</title>
+<meta name="description" content="Run the classic Windows Spider Solitaire (spider.exe) in your browser via Wine + WebAssembly. The lightweight XP-era card game plays at full speed — bring your own copy. No install." />
+<meta name="keywords" content="play spider solitaire online, spider solitaire in browser, windows spider solitaire, run spider.exe browser, classic spider solitaire no download, spider solitaire wine" />
+<link rel="canonical" href="https://exebrowser.com/run/spider-solitaire/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/spider-solitaire/" />
+<meta property="og:title" content="Play Spider Solitaire Online in Your Browser — No Download" />
+<meta property="og:description" content="The classic Windows Spider Solitaire, running in a browser tab on Wine + WebAssembly. The lightweight XP-era build plays at full speed. Bring your own copy." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Spider Solitaire", "item": "https://exebrowser.com/run/spider-solitaire/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Spider Solitaire",
+  "url": "https://exebrowser.com/run/spider-solitaire/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the classic Windows Spider Solitaire (spider.exe) in your browser via Wine + WebAssembly. The lightweight XP-era card game plays at full speed — bring your own copy. No install.",
+  "applicationCategory": "Game",
+  "genre": ["Card game", "Patience / Solitaire", "Casual"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play Spider Solitaire online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can play it in your browser with no install of an emulator or Wine — that part runs entirely in the page. But Spider Solitaire is Microsoft's proprietary game and we can't legally give you the program files, so you need to bring a copy from a Windows install you own (the classic spider.exe plus cards.dll). Once you load those, it plays instantly here." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the real Windows Spider Solitaire or a clone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's the real, original spider.exe running unmodified. ExeBrowser doesn't re-create the game; it executes Microsoft's actual Windows binary inside an x86 emulator and Wine, drawing to a browser canvas. If you'd rather not source the original files, there are many free web-based Spider clones online — but those are remakes, not this." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do my cards show up blank or broken?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The classic Spider Solitaire loads all its card faces from cards.dll. If you uploaded only spider.exe, the art is missing. Copy cards.dll from the same Windows install and load both files together with the pick-a-folder option so the game finds the DLL beside the executable." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the fancy Windows 7 or Windows 10 version work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Probably not well. The Vista/7 build (by Oberon Games) uses a themed, animated interface on newer graphics APIs and is unreliable under 32-bit Wine 1.7.55 — expect rendering issues or a failure to launch. The Windows 8/10/11 Microsoft Solitaire Collection is a Store app, not a plain EXE, and can't run here at all. Use the lightweight XP-era spider.exe." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it run at full speed in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, for the classic build. An x86 CPU is emulated inside WebAssembly at roughly 10–40% of native speed, but Spider Solitaire is so light that the overhead is invisible — it boots in seconds and plays smoothly even on modest laptops and Chromebooks." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Spider Solitaire</nav>
+
+  <section class="card">
+    <h2>Play Spider Solitaire online in your browser <span class="verdict good">Classic build works well</span></h2>
+    <p><strong>Spider Solitaire</strong> — the eight-suit patience game that ate untold hours of office life from Windows XP onward — is a tiny, classic Win32 program, which makes it a great fit for ExeBrowser. The XP-era <code>spider.exe</code> draws its cards with plain Windows GDI, with no DirectX, no .NET, and no 3D, so it boots in seconds and deals at full speed in a browser tab. We can't hand you the game files (it's Microsoft's, not free to redistribute), but if you bring your own copy it runs cleanly here.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="spider.exe"
+         data-app-name="Spider Solitaire"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <div class="warn-box"><h3 style="margin-top:0;">Bring your own copy</h3><p>Spider Solitaire is <strong>proprietary Microsoft software</strong> that shipped bundled with Windows (from the Plus! pack for Windows 98 through Windows 7). It is <strong>not</strong> free to redistribute, so ExeBrowser does not host the game files. To play it here you need a copy you already own.</p><p>If you have a Windows XP, Me, or 98 PC (or a virtual machine), the classic build lives at <code>C:\WINDOWS\system32\spider.exe</code> alongside <code>cards.dll</code>. Copy those out of your own licensed install and load the folder above. Please don't download cracked or "abandonware" copies from unofficial sites — that's a Microsoft license, not ours to give away.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>ExeBrowser runs the <em>real</em> <code>spider.exe</code> — Microsoft's actual Windows binary — inside an x86 emulator and Wine, rendering to a browser canvas. It does not re-create the game; it executes the original executable unmodified. Because the classic build is a featherweight GDI app, the emulation overhead barely matters: it plays at full speed on any modern laptop, and it will feel fine on a Chromebook too.</p><table class="spec-table"><tr><th>Game</th><td>Spider Solitaire (<code>spider.exe</code> + <code>cards.dll</code>)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>Era</th><td>1998–2009 — the XP-era build is the sweet spot</td></tr><tr><th>How to load</th><td>Bundle <code>spider.exe</code> and <code>cards.dll</code> in one folder, then pick the folder</td></tr><tr><th>Expected result</th><td>Full speed, classic look, mouse-driven</td></tr></table>
+    <h3>Bring the card graphics (cards.dll)</h3>
+    <p>The classic Spider Solitaire draws every card face from <code>cards.dll</code>, which lived in the Windows system folder next to the executable. If you load only <code>spider.exe</code> and the cards come up blank or broken, copy <code>cards.dll</code> too and load <strong>both together</strong> using the <strong>pick a folder</strong> option, so the game finds its art beside the EXE. On a Windows XP install both files are in <code>C:\WINDOWS\system32</code>.</p><h3>Step by step</h3><ol><li>From your own licensed Windows install, copy <code>spider.exe</code> and <code>cards.dll</code> into one folder.</li><li>Click <strong>▶ Play Spider Solitaire</strong> above to boot Wine right on this page.</li><li>Use <strong>Load your own copy → pick a folder</strong> and select that folder.</li><li>Choose <code>spider.exe</code> as the entry and click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture the mouse, pick a difficulty, and start dealing.</li></ol>
+    <h3>Which version to use — XP good, Vista/7 iffy</h3>
+    <p>Not all Spider Solitaires are equal under Wine. There are two very different builds:</p><ul><li><strong>The classic XP / Me / 98 build (<code>spider.exe</code>)</strong> — a lightweight GDI program. This is the one that runs well here, and the one we recommend.</li><li><strong>The Windows Vista / 7 build</strong> — rewritten by Oberon Games with a glossy themed interface, animations, and the shared card engine used across Vista's bundled games. It's heavier and leans on newer Windows graphics APIs, so it is far more likely to render poorly, run slowly, or fail to launch in a 32-bit Wine 1.7.55 environment. If you have a choice, grab the older XP-style <code>spider.exe</code>.</li></ul><p>The Windows 8/10/11 "Microsoft Solitaire Collection" is a Universal Windows Platform / Store app and is <strong>not</strong> a plain EXE at all — it cannot run here. Stick to the classic desktop build.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play Spider Solitaire online for free with no download?</summary>
+      <p>You can play it in your browser with no install of an emulator or Wine — that part runs entirely in the page. But Spider Solitaire is Microsoft's proprietary game and we can't legally give you the program files, so you need to bring a copy from a Windows install you own (the classic <code>spider.exe</code> plus <code>cards.dll</code>). Once you load those, it plays instantly here.</p>
+    </details>
+    <details>
+      <summary>Is this the real Windows Spider Solitaire or a clone?</summary>
+      <p>It's the real, original <code>spider.exe</code> running unmodified. ExeBrowser doesn't re-create the game; it executes Microsoft's actual Windows binary inside an x86 emulator and Wine, drawing to a browser canvas. If you'd rather not source the original files, there are many free web-based Spider clones online — but those are remakes, not this.</p>
+    </details>
+    <details>
+      <summary>Why do my cards show up blank or broken?</summary>
+      <p>The classic Spider Solitaire loads all its card faces from <code>cards.dll</code>. If you uploaded only <code>spider.exe</code>, the art is missing. Copy <code>cards.dll</code> from the same Windows install and load both files together with the pick-a-folder option so the game finds the DLL beside the executable.</p>
+    </details>
+    <details>
+      <summary>Will the fancy Windows 7 or Windows 10 version work?</summary>
+      <p>Probably not well. The Vista/7 build (by Oberon Games) uses a themed, animated interface on newer graphics APIs and is unreliable under 32-bit Wine 1.7.55 — expect rendering issues or a failure to launch. The Windows 8/10/11 Microsoft Solitaire Collection is a Store app, not a plain EXE, and can't run here at all. Use the lightweight XP-era <code>spider.exe</code>.</p>
+    </details>
+    <details>
+      <summary>Does it run at full speed in the browser?</summary>
+      <p>Yes, for the classic build. An x86 CPU is emulated inside WebAssembly at roughly 10–40% of native speed, but Spider Solitaire is so light that the overhead is invisible — it boots in seconds and plays smoothly even on modest laptops and Chromebooks.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">The classic Klondike sol.exe and its siblings.</span></a></li>
+      <li><a class="link-card" href="/run/freecell/"><span class="lc-title">FreeCell</span><span class="lc-desc">The other beloved Windows card game.</span></a></li>
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">The classic winmine.exe time-sink.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The famous bundled Windows XP pinball table.</span></a></li>
+      <li><a class="link-card" href="/run/hearts/"><span class="lc-title">Hearts</span><span class="lc-desc">The card game that came with Windows.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

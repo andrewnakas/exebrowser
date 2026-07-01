@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Age of Empires in Your Browser — Does It Work? — ExeBrowser</title>
-<meta name="description" content="Can you run Age of Empires in your browser with Wine + WebAssembly? An honest look at whether the original 1997 RTS and AoE II run in ExeBrowser, what to expect from performance, and how to load it." />
-<meta name="keywords" content="age of empires browser, run aoe online, age of empires no install, aoe wine browser, play age of empires online" />
+<title>Play Age of Empires Online — Does the Classic RTS Run in Your Browser? — ExeBrowser</title>
+<meta name="description" content="An honest look at running the 1997 Age of Empires and AoE II in your browser via Wine + WebAssembly: what works, what stutters, and how to load your own copy correctly." />
+<meta name="keywords" content="age of empires browser, run aoe online, age of empires no install, aoe wine browser, play age of empires online, age of empires 2 browser, aoe webassembly" />
 <link rel="canonical" href="https://exebrowser.com/run/age-of-empires/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/age-of-empires/" />
-<meta property="og:title" content="Run Age of Empires in Your Browser — Does It Work?" />
+<meta property="og:title" content="Play Age of Empires Online — Does the Classic RTS Run in Your Browser?" />
 <meta property="og:description" content="An honest look at running the classic RTS Age of Empires in your browser with Wine + WebAssembly." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,56 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Age of Empires", "item": "https://exebrowser.com/run/age-of-empires/" }
+    { "@type": "ListItem", "position": 3, "name": "Play Age of Empires", "item": "https://exebrowser.com/run/age-of-empires/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Age of Empires",
+  "url": "https://exebrowser.com/run/age-of-empires/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "An honest look at running the 1997 Age of Empires and AoE II in your browser via Wine + WebAssembly: what works, what stutters, and how to load your own copy correctly.",
+  "applicationCategory": "Game",
+  "genre": ["Real-Time Strategy", "RTS", "Historical Strategy"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Microsoft / Ensemble Studios" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I really play Age of Empires in a browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. The original 1997 Age of Empires and AoE II (1999) are 32-bit Win32 games that can launch under Boxedwine, but they rely on DirectDraw and are CPU-heavy, so expect reduced speed and occasional audio stutter. Small skirmishes and campaign missions play best; large late-game battles will feel sluggish." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why won't the HD or Definitive Edition run?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The HD and Definitive Editions are modern 64-bit games built on Direct3D. ExeBrowser only runs 32-bit Win32 software without DirectX 9+, so those remasters are outside what the engine supports. Use an original disc-era install of the 1997 or 1999 game." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you host Age of Empires for me to download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Age of Empires is commercial software owned by Microsoft and we don't redistribute it. Bring your own legally-owned copy, or buy the official editions from ageofempires.com. We only host games that are free to redistribute." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I need to upload the whole folder instead of just the EXE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Age of Empires reads its data, sound, and campaign files from folders next to the executable. If you upload only EMPIRES.EXE or AGE2_X1.EXE, it can't find those assets and crashes on launch. Always upload the entire installed game directory as a folder or zip." }
+    },
+    {
+      "@type": "Question",
+      "name": "It crashes the moment it boots — what can I try?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Switch to the r18 Wine variant; its older engine sometimes starts games the default build chokes on. If you still get a black screen, open the Console and look for err: lines naming a missing DLL, then add that file to your uploaded folder." }
+    }
   ]
 }
 </script>
@@ -54,42 +103,67 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Age of Empires</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Age of Empires</nav>
+
   <section class="card">
-    <h2>Run Age of Empires in your browser <span class="verdict partial">Hit or miss</span></h2>
-    <p>Age of Empires is the test case people most want answered: can a real RTS classic run in a browser tab? The honest answer is <strong>sometimes, and not at full speed</strong>. The original 1997 <em>Age of Empires</em> and <em>Age of Empires II</em> are 32-bit Win32 games from the right era, so they're plausible — but they lean on DirectDraw and DirectSound and they're far more CPU-hungry than a card game, which is where browser-based emulation shows its limits.</p>
+    <h2>Play Age of Empires online in your browser <span class="verdict partial">Hit or miss — slow but sometimes playable</span></h2>
+    <p>Age of Empires is the test case people most want answered: can a real RTS classic run in a browser tab? The honest answer is <strong>sometimes, and not at full speed</strong>. The original 1997 <em>Age of Empires</em> and <em>Age of Empires II: The Age of Kings</em> are 32-bit Win32 games from the right era, so they're plausible — but they lean on DirectDraw and DirectSound and are far more CPU-hungry than a card game, which is where browser-based emulation shows its limits. Expect to revisit a campaign mission or a small skirmish, not run a competitive late-game match.</p>
 
-    <table class="spec-table">
-      <tr><th>Apps</th><td>Age of Empires (1997), Age of Empires II: The Age of Kings (1999)</td></tr>
-      <tr><th>Best Wine variant</th><td>Try <strong>Win32 (default)</strong> first, then <strong>18R2</strong> if it crashes on boot</td></tr>
-      <tr><th>Graphics</th><td>2D DirectDraw — within reach; the 3D HD remasters are not</td></tr>
-      <tr><th>How to load</th><td>Upload the full install folder as a folder or zip — never just the EXE</td></tr>
-      <tr><th>Expected result</th><td>May launch and play, but slowly; menus and small maps fare best</td></tr>
-    </table>
-
-    <h3>Set your expectations honestly</h3>
-    <p>You're emulating an x86 CPU inside WebAssembly, which delivers roughly 10–40% of native speed. The original AoE games ran fine on a late-90s Pentium, so a fast modern laptop has headroom — but a busy late-game map with hundreds of units doing pathfinding will feel sluggish, and audio can stutter. Small skirmishes, the campaign tutorial, and menus are the most playable. This is a "revisit it / show someone" experience, not a competitive-multiplayer one.</p>
-
-    <h3>Definitely the full install folder</h3>
-    <p>AoE is not a single EXE — it needs its data, graphics, and sound files (the <code>data</code>, <code>sound</code>, <code>campaign</code> folders and various DLLs). Use the <strong>pick a folder</strong> or <strong>pick a zip</strong> option and upload the <em>entire</em> installed game directory so the executable finds everything beside it. Dropping just <code>empires.exe</code> or <code>age2_x1.exe</code> will fail immediately.</p>
-
-    <h3>If it won't start</h3>
-    <ul>
-      <li><strong>Crash on launch?</strong> Try the <strong>18R2</strong> variant — its different engine sometimes starts games the default chokes on.</li>
-      <li><strong>Black screen?</strong> Open the Console and look for <code>err:</code> lines about a missing DLL, then add that file to your folder.</li>
-      <li><strong>Wrong resolution / tiny window?</strong> Some builds accept a <code>-1024</code> or windowed flag; the data-folder version is most forgiving.</li>
-      <li><strong>The HD / Definitive editions won't work</strong> — they're modern 64-bit, Direct3D titles outside what this engine supports. Use an original 1997/1999 disc-era install.</li>
-    </ul>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="EMPIRES.EXE"
+         data-app-name="Age of Empires"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>Bring your own legally-owned copy.</strong> Age of Empires is commercial software published by Microsoft and is not free to redistribute, so we don't host it. Use an original disc-era install you own, or buy the modern <a href="https://www.ageofempires.com/" target="_blank" rel="noopener">Definitive Editions from the official Age of Empires site</a> (note: the Definitive/HD editions are 64-bit Direct3D titles and will <em>not</em> run here). ExeBrowser is not affiliated with Microsoft or Ensemble Studios.</p>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>How it works &amp; what to expect</h2>
+    <h3>What to expect from performance</h3>
+    <p>You're emulating an x86 CPU inside WebAssembly, which delivers roughly 10–40% of native speed. The original AoE games ran fine on a late-90s Pentium, so a fast modern laptop has headroom — but a busy late-game map with hundreds of units doing pathfinding will feel sluggish, and audio can stutter. Small skirmishes, the campaign tutorial, and menus are the most playable. This is a "revisit it / show someone" experience, not a competitive-multiplayer one.</p><table><tr><th>Apps</th><td>Age of Empires (1997), Age of Empires II: The Age of Kings (1999)</td></tr><tr><th>Best Wine variant</th><td>Try Win32 (default) first, then the older r18 engine if it crashes on boot</td></tr><tr><th>Graphics</th><td>2D DirectDraw — within reach; the 3D HD/Definitive remasters are not</td></tr><tr><th>Expected result</th><td>May launch and play, but slowly; menus and small maps fare best</td></tr></table>
+    <h3>Load the full install folder, not just the EXE</h3>
+    <p>AoE is not a single EXE — it needs its data, graphics, and sound files (the <code>data</code>, <code>sound</code>, and <code>campaign</code> folders plus various DLLs). Use the <strong>pick a folder</strong> or <strong>pick a zip</strong> option and upload the <em>entire</em> installed game directory so the executable finds everything beside it. Dropping just <code>EMPIRES.EXE</code> or <code>AGE2_X1.EXE</code> on its own will fail immediately.</p>
+    <h3>If it won't start</h3>
+    <ul><li><strong>Crash on launch?</strong> Try the <strong>r18</strong> variant — its older engine sometimes starts games the default chokes on.</li><li><strong>Black screen?</strong> Open the Console and look for <code>err:</code> lines about a missing DLL, then add that file to your folder.</li><li><strong>Wrong resolution / tiny window?</strong> Some builds accept a windowed or resolution flag; the data-folder version is most forgiving.</li><li><strong>The HD / Definitive editions won't work</strong> — they're modern 64-bit Direct3D titles outside what this engine supports. Use an original 1997/1999 disc-era install instead.</li></ul>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I really play Age of Empires in a browser?</summary>
+      <p>Sometimes. The original 1997 Age of Empires and AoE II (1999) are 32-bit Win32 games that can launch under Boxedwine, but they rely on DirectDraw and are CPU-heavy, so expect reduced speed and occasional audio stutter. Small skirmishes and campaign missions play best; large late-game battles will feel sluggish.</p>
+    </details>
+    <details>
+      <summary>Why won't the HD or Definitive Edition run?</summary>
+      <p>The HD and Definitive Editions are modern 64-bit games built on Direct3D. ExeBrowser only runs 32-bit Win32 software without DirectX 9+, so those remasters are outside what the engine supports. Use an original disc-era install of the 1997 or 1999 game.</p>
+    </details>
+    <details>
+      <summary>Do you host Age of Empires for me to download?</summary>
+      <p>No. Age of Empires is commercial software owned by Microsoft and we don't redistribute it. Bring your own legally-owned copy, or buy the official editions from ageofempires.com. We only host games that are free to redistribute.</p>
+    </details>
+    <details>
+      <summary>Why do I need to upload the whole folder instead of just the EXE?</summary>
+      <p>Age of Empires reads its data, sound, and campaign files from folders next to the executable. If you upload only EMPIRES.EXE or AGE2_X1.EXE, it can't find those assets and crashes on launch. Always upload the entire installed game directory as a folder or zip.</p>
+    </details>
+    <details>
+      <summary>It crashes the moment it boots — what can I try?</summary>
+      <p>Switch to the r18 Wine variant; its older engine sometimes starts games the default build chokes on. If you still get a black screen, open the Console and look for err: lines naming a missing DLL, then add that file to your uploaded folder.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">A lighter game that runs great.</span></a></li>
-      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">Classic bundled games.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">Why 3D games struggle.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">A lighter Windows classic that runs great in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/freeciv/"><span class="lc-title">FreeCiv</span><span class="lc-desc">Open-source Civilization-style strategy that's free to play here.</span></a></li>
+      <li><a class="link-card" href="/run/scorched-earth/"><span class="lc-title">Scorched Earth</span><span class="lc-desc">The classic artillery strategy game from the DOS/Win era.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">The shareware FPS that runs smoothly in your browser.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">Classic bundled card game, fast and reliable.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">Why 3D and DirectX games struggle under WebAssembly.</span></a></li>
     </ul>
   </section>
 </main>
@@ -108,5 +182,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run PuTTY Online in Your Browser — Free SSH Client, No Download — ExeBrowser</title>
+<meta name="description" content="Run the real PuTTY SSH/telnet client in your browser — no install. The Win32 UI and config dialog launch via Wine + WebAssembly, but in-browser networking can't actually connect. Here's the honest story." />
+<meta name="keywords" content="putty online, putty in browser, run putty no download, putty ssh client browser, putty web, putty wine, free ssh client online, putty.exe browser" />
+<link rel="canonical" href="https://exebrowser.com/run/putty/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/putty/" />
+<meta property="og:title" content="Run PuTTY Online in Your Browser — Free, No Download" />
+<meta property="og:description" content="The real Win32 PuTTY SSH client running on Wine + WebAssembly. The UI launches; live SSH/telnet connections do not, because browsers block raw sockets. Honest guide inside." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Run PuTTY", "item": "https://exebrowser.com/run/putty/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PuTTY",
+  "url": "https://exebrowser.com/run/putty/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the real PuTTY SSH/telnet client in your browser — no install. The Win32 UI and config dialog launch via Wine + WebAssembly, but in-browser networking can't actually connect. Here's the honest story.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Simon Tatham" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I actually SSH into a server with PuTTY in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PuTTY's interface launches and is fully usable, but a browser tab cannot open the raw TCP socket an SSH connection needs, and Boxedwine's emulated networking is incomplete. You'll see the connection attempt fail. For real SSH, install native PuTTY on your computer." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PuTTY free and legal to run here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PuTTY is open-source software under the permissive MIT licence, which explicitly allows anyone — including companies — to use and redistribute it unmodified at no charge. That's why we can host a copy directly. You can also bring your own from the official site." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the PuTTY window open but connections time out?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Everything up to the network call runs in the emulator; the network call itself can't. Browsers only allow controlled APIs like HTTP and WebSockets, never raw TCP/IP sockets, so when PuTTY tries to reach your host the browser refuses and the attempt fails. It's a platform boundary, not a misconfiguration." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should I download the real PuTTY?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Always use the official site at chiark.greenend.org.uk/~sgtatham/putty. Many lookalike sites bundle adware or modified builds. The standalone putty.exe needs no installer — it's a single Win32 binary you can run immediately on Windows." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the point of running PuTTY here if it can't connect?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mainly to explore and demo the real interface — the configuration tree, saved sessions, terminal appearance, and SSH options — without installing anything. It's useful for screenshots, teaching, or curiosity, but it isn't a working remote terminal." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run PuTTY</nav>
+
+  <section class="card">
+    <h2>Run PuTTY online in your browser <span class="verdict partial">Partial — the UI launches, but SSH/telnet can't connect in-browser</span></h2>
+    <p><strong>PuTTY</strong> is the classic free, open-source SSH, telnet and serial client for Windows — a single tiny <code>.exe</code> with no installer. It's a clean 32-bit Win32 program, so it <em>launches</em> beautifully in ExeBrowser: you get the real configuration dialog, saved-session list, and terminal window, all running on Wine + WebAssembly with nothing to install. The honest catch is networking. A browser tab is sandboxed and cannot open raw TCP sockets, and Boxedwine's emulated socket layer is incomplete, so PuTTY can show you everything <em>up to</em> the moment it tries to reach an SSH server — and then the connection will fail. Treat this page as a way to explore the real PuTTY interface, not as a working remote terminal.</p>
+
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="PUTTY.EXE"
+         data-app-url="/apps/putty/putty.zip"
+         data-app-name="PuTTY"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Get PuTTY (free, open-source, MIT)</h3>
+      <div class="download-box"><h3 style="margin-top:0;">The official PuTTY release</h3><p>PuTTY is released under the permissive MIT licence — free to use and redistribute unmodified, even commercially. Always get it from the author's official site so you can verify the signatures and avoid the many lookalike sites that bundle adware:</p><p><a class="cta-btn" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noopener">Download PuTTY from the official site →</a></p><p class="muted small">The standalone <code>putty.exe</code> needs no installer — it's a single Win32 binary. Use <strong>“Load your own copy”</strong> above to drop it in, or hit Play to launch our hosted copy. © Simon Tatham and the PuTTY team; distributed under the MIT licence.</p></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>What actually works (and what doesn't)</h3>
+    <p>PuTTY is two things stacked together: a tidy Win32 GUI, and a network client underneath it. ExeBrowser nails the first half and can't deliver the second.</p><ul><li><strong>Launches and renders correctly.</strong> The configuration window, the category tree (Session, Terminal, Window, Connection, SSH…), saved sessions, font and colour options, and the terminal window itself all appear and respond as they do on Windows.</li><li><strong>Networking does not connect.</strong> When you enter a host and click <em>Open</em>, PuTTY tries to open a TCP socket. Inside a browser tab that's impossible — the sandbox forbids raw sockets — and Boxedwine's emulated socket support is partial, so the connection times out or errors instead of reaching your server.</li><li><strong>Serial and local features</strong> have nothing real to talk to in the browser either, since there are no host serial ports exposed to the sandbox.</li></ul><p>So: great for seeing what PuTTY looks like and how it's configured; not a substitute for a real SSH session.</p>
+    <h3>Why the browser can't open the connection</h3>
+    <p>This isn't a PuTTY bug or a Wine quirk you can configure around — it's a hard boundary of the platform. Web pages are only allowed to make network calls through high-level, permission-controlled APIs (HTTP fetches, WebSockets), never raw TCP/IP. PuTTY, like every native SSH client, expects a real socket to the outside world. ExeBrowser emulates an x86 CPU and Wine inside WebAssembly, but it can't hand the program a socket the browser refuses to create. The result is that everything <em>up to</em> the network call works, and the network call itself fails.</p><p>If you genuinely need SSH from a browser, the right tool is a server-side web SSH gateway (something the remote host or your hosting provider runs), not a desktop SSH client emulated client-side. For day-to-day use, install native PuTTY — it's a few hundred kilobytes and runs instantly on real Windows.</p>
+    <h3>How to launch it here</h3>
+    <ol><li>Click <strong>▶ Run PuTTY</strong> above to boot Wine on this page, or use <strong>Load your own copy</strong> and drop in <code>putty.exe</code> from the official download.</li><li>The <strong>default</strong> Win32 variant is correct — PuTTY is a small, well-behaved 32-bit program and needs no special engine.</li><li>The PuTTY Configuration dialog appears. Browse the categories, tweak terminal colours and fonts, set up a saved session — all of this works.</li><li>Entering a host and clicking <em>Open</em> will <em>not</em> connect, for the socket reasons above. That part is expected to fail in-browser.</li></ol><p>Because PuTTY is a single self-contained binary with no DLL dependencies or installer, it's one of the cleaner Win32 apps to launch here — the limitation is purely networking, not compatibility.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I actually SSH into a server with PuTTY in the browser?</summary>
+      <p>No. PuTTY's interface launches and is fully usable, but a browser tab cannot open the raw TCP socket an SSH connection needs, and Boxedwine's emulated networking is incomplete. You'll see the connection attempt fail. For real SSH, install native PuTTY on your computer.</p>
+    </details>
+    <details>
+      <summary>Is PuTTY free and legal to run here?</summary>
+      <p>Yes. PuTTY is open-source software under the permissive MIT licence, which explicitly allows anyone — including companies — to use and redistribute it unmodified at no charge. That's why we can host a copy directly. You can also bring your own from the official site.</p>
+    </details>
+    <details>
+      <summary>Why does the PuTTY window open but connections time out?</summary>
+      <p>Everything up to the network call runs in the emulator; the network call itself can't. Browsers only allow controlled APIs like HTTP and WebSockets, never raw TCP/IP sockets, so when PuTTY tries to reach your host the browser refuses and the attempt fails. It's a platform boundary, not a misconfiguration.</p>
+    </details>
+    <details>
+      <summary>Where should I download the real PuTTY?</summary>
+      <p>Always use the official site at chiark.greenend.org.uk/~sgtatham/putty. Many lookalike sites bundle adware or modified builds. The standalone putty.exe needs no installer — it's a single Win32 binary you can run immediately on Windows.</p>
+    </details>
+    <details>
+      <summary>What's the point of running PuTTY here if it can't connect?</summary>
+      <p>Mainly to explore and demo the real interface — the configuration tree, saved sessions, terminal appearance, and SSH options — without installing anything. It's useful for screenshots, teaching, or curiosity, but it isn't a working remote terminal.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/filezilla/"><span class="lc-title">FileZilla</span><span class="lc-desc">The open-source FTP client — same networking caveats apply.</span></a></li>
+      <li><a class="link-card" href="/run/keepass/"><span class="lc-title">KeePass</span><span class="lc-desc">Open-source password manager that runs offline and works well.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Free, open-source archiver that runs cleanly in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/notepad-plus-plus/"><span class="lc-title">Notepad++</span><span class="lc-desc">The popular free code and text editor in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">SumatraPDF</span><span class="lc-desc">Lightweight open-source PDF and ebook reader.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in ExeBrowser and what doesn't — including networking.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

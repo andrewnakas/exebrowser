@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Classic Windows Solitaire in Your Browser — ExeBrowser</title>
-<meta name="description" content="Play the classic Windows Solitaire (sol.exe) and FreeCell, Minesweeper and other bundled Windows games in your browser with Wine + WebAssembly. No install — here's how to load and run them." />
-<meta name="keywords" content="windows solitaire online, play classic solitaire browser, sol.exe online, freecell minesweeper browser, windows xp solitaire no download" />
+<title>Play Classic Windows Solitaire Online — Free, In Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run classic Windows Solitaire (sol.exe), FreeCell, Minesweeper and Spider in your browser via Wine + WebAssembly. They boot in seconds and play at full speed — no install." />
+<meta name="keywords" content="windows solitaire online, play classic solitaire browser, sol.exe online, freecell minesweeper browser, windows xp solitaire no download, classic solitaire in browser, run sol.exe wine" />
 <link rel="canonical" href="https://exebrowser.com/run/solitaire/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/solitaire/" />
 <meta property="og:title" content="Play Classic Windows Solitaire in Your Browser" />
-<meta property="og:description" content="Run the classic bundled Windows games — Solitaire, FreeCell, Minesweeper — in your browser. No install." />
+<meta property="og:description" content="Run the classic bundled Windows games — Solitaire, FreeCell, Minesweeper, Spider — in your browser. No install, full speed." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,56 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Windows Solitaire", "item": "https://exebrowser.com/run/solitaire/" }
+    { "@type": "ListItem", "position": 3, "name": "Play Solitaire", "item": "https://exebrowser.com/run/solitaire/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Solitaire",
+  "url": "https://exebrowser.com/run/solitaire/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run classic Windows Solitaire (sol.exe), FreeCell, Minesweeper and Spider in your browser via Wine + WebAssembly. They boot in seconds and play at full speed — no install.",
+  "applicationCategory": "Game",
+  "genre": ["Card game", "Casual", "Puzzle"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does classic Windows Solitaire run well in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. sol.exe is a small software-rendered Win32 game, so it boots in seconds and plays at full speed on the default Win32 variant. FreeCell, Minesweeper and Spider Solitaire behave the same way." }
+    },
+    {
+      "@type": "Question",
+      "name": "My cards show up blank or broken — how do I fix it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Older Solitaire builds load their card art from cards.dll (or cardgames.dll). Put that DLL in the same folder as sol.exe and load them together with the pick a folder option so the game can find it." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I play the original Windows 3.1 Solitaire?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but it's a 16-bit program, so switch to the Win 3.x (16-bit) variant for that earliest version. The Windows 95-and-later sol.exe is 32-bit and runs on the default variant." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I get sol.exe? Can I download it here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We don't host it — classic Windows Solitaire is Microsoft software and isn't free to redistribute. Copy sol.exe (and cards.dll) from a Windows installation you legally own, then load it here. ExeBrowser runs the file in your browser; nothing is uploaded to a server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the modern Microsoft Solitaire Collection work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The modern Solitaire Collection is a 64-bit Universal Windows app with online features and DRM, none of which run on Boxedwine's 32-bit engine. Stick to the classic sol.exe from Windows 95 through Windows 7." }
+    }
   ]
 }
 </script>
@@ -54,42 +103,68 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Windows Solitaire</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Solitaire</nav>
+
   <section class="card">
-    <h2>Play classic Windows Solitaire in your browser <span class="verdict good">Works well</span></h2>
-    <p>The Solitaire that came with Windows 3.1 through Windows 7 — <code>sol.exe</code> — is a tiny, classic Win32 game, and that makes it a near-perfect candidate for ExeBrowser. So are its siblings: <code>freecell.exe</code>, <code>winmine.exe</code> (Minesweeper), and <code>spider.exe</code>. They boot in seconds, play at full speed, and need nothing modern.</p>
+    <h2>Play classic Windows Solitaire online in your browser <span class="verdict good">Works well</span></h2>
+    <p>The Solitaire that shipped with Windows 3.1 through Windows 7 — <code>sol.exe</code> — is a tiny, classic Win32 game, which makes it a near-perfect candidate for ExeBrowser. So are its siblings: <code>freecell.exe</code>, <code>winmine.exe</code> (Minesweeper) and <code>spider.exe</code>. They boot in seconds, play at full speed, and need nothing modern — no DirectX, no .NET, just plain Win32. Bring your own copy of the EXE (it's bundled with the Windows you already own), load it on the default Win32 variant, and you're dealing cards in under a minute.</p>
 
-    <table class="spec-table">
-      <tr><th>Apps</th><td>Solitaire (<code>sol.exe</code>), FreeCell, Minesweeper, Spider Solitaire</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>Era</th><td>1990–2009 — most run on the Win32 engine</td></tr>
-      <tr><th>How to load</th><td>The EXE plus <code>cards.dll</code> (older versions) — bundle as a folder to be safe</td></tr>
-      <tr><th>Expected result</th><td>Full speed, classic look</td></tr>
-    </table>
-
-    <h3>Bring the card graphics</h3>
-    <p>Older versions of Solitaire draw their cards from <code>cards.dll</code> (later <code>cardgames.dll</code>) that lived in the Windows system folder. If you upload only <code>sol.exe</code> and it launches with broken or missing card faces, grab that DLL too and upload both together with the <strong>pick a folder</strong> option so the game finds its art beside the executable.</p>
-
-    <h3>A note on the Win 3.x version</h3>
-    <p>The original Windows 3.x Solitaire is a 16-bit program. If you specifically want that earliest version, switch to the <strong>Wine 3.1 · Win 3.x 16-bit</strong> variant, which handles WIN16 apps the Win32 variants don't. The Windows 95-and-later <code>sol.exe</code> is 32-bit and runs on the default variant.</p>
-
-    <h3>Step by step</h3>
-    <ol>
-      <li>Get <code>sol.exe</code> (and <code>cards.dll</code> if it's an older build) into a folder.</li>
-      <li>On the <a href="/">home page</a>, keep the <strong>Win32 (default)</strong> variant and click <strong>Boot Wine</strong>.</li>
-      <li>Use <strong>pick a folder</strong>, select the folder, choose <code>sol.exe</code>, and <strong>Run in Wine</strong>.</li>
-      <li>Click the canvas to capture the mouse and start dealing.</li>
-    </ol>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and play →</a></div>
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="SOL.EXE"
+         data-app-name="Solitaire"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>Bring your own copy.</strong> Classic Windows Solitaire (<code>sol.exe</code>), FreeCell, Minesweeper and Spider are Microsoft software and are not free to redistribute, so we don't host them. Copy the EXE from a Windows installation you legally own and load it here — ExeBrowser just runs it in your browser.</p>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>How it works &amp; what to expect</h2>
+    <p>Classic Solitaire and friends are about as friendly to emulation as Windows software gets. They're small, single-window, software-rendered Win32 programs, so the default range-fetched Win32 variant runs them at full native-feeling speed with their original look intact.</p><table class="spec-table"><tr><th>Apps</th><td>Solitaire (<code>SOL.EXE</code>), FreeCell, Minesweeper (<code>WINMINE.EXE</code>), Spider Solitaire (<code>SPIDER.EXE</code>)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>Era</th><td>1990–2009 — Windows 95 and later builds run on the Win32 engine</td></tr><tr><th>Expected result</th><td>Full speed, classic look, instant boot</td></tr></table>
+    <h3>Bring the card graphics</h3>
+    <p>Older versions of Solitaire draw their cards from <code>cards.dll</code> (later <code>cardgames.dll</code>) that lived in the Windows system folder. If you load only <code>sol.exe</code> and it launches with broken or missing card faces, grab that DLL too and upload both together using the <strong>pick a folder</strong> option, so the game finds its art beside the executable. Bundling the EXE and its DLLs as one folder is the safe default for any of these classic games.</p>
+    <h3>A note on the Windows 3.x version</h3>
+    <p>The original Windows 3.x Solitaire is a 16-bit program. If you specifically want that earliest version, switch to the <strong>Win 3.x (16-bit)</strong> variant, which handles WIN16 apps that the Win32 variants can't. The Windows 95-and-later <code>sol.exe</code> is 32-bit and runs on the default variant — that's the one most people remember and the one we recommend.</p>
+    <h3>Step by step</h3>
+    <ol><li>Get <code>SOL.EXE</code> (and <code>cards.dll</code> if it's an older build) into a folder. These ship with the copy of Windows you already own.</li><li>On the home page, keep the <strong>Win32 (default)</strong> variant and click <strong>Boot Wine</strong>.</li><li>Use <strong>pick a folder</strong>, select the folder, choose <code>SOL.EXE</code>, and <strong>Run in Wine</strong>.</li><li>Click the canvas to capture the mouse and start dealing.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Does classic Windows Solitaire run well in the browser?</summary>
+      <p>Yes. <code>sol.exe</code> is a small software-rendered Win32 game, so it boots in seconds and plays at full speed on the default Win32 variant. FreeCell, Minesweeper and Spider Solitaire behave the same way.</p>
+    </details>
+    <details>
+      <summary>My cards show up blank or broken — how do I fix it?</summary>
+      <p>Older Solitaire builds load their card art from <code>cards.dll</code> (or <code>cardgames.dll</code>). Put that DLL in the same folder as <code>sol.exe</code> and load them together with the <strong>pick a folder</strong> option so the game can find it.</p>
+    </details>
+    <details>
+      <summary>Can I play the original Windows 3.1 Solitaire?</summary>
+      <p>Yes, but it's a 16-bit program, so switch to the <strong>Win 3.x (16-bit)</strong> variant for that earliest version. The Windows 95-and-later <code>sol.exe</code> is 32-bit and runs on the default variant.</p>
+    </details>
+    <details>
+      <summary>Where do I get sol.exe? Can I download it here?</summary>
+      <p>We don't host it — classic Windows Solitaire is Microsoft software and isn't free to redistribute. Copy <code>sol.exe</code> (and <code>cards.dll</code>) from a Windows installation you legally own, then load it here. ExeBrowser runs the file in your browser; nothing is uploaded to a server.</p>
+    </details>
+    <details>
+      <summary>Will the modern Microsoft Solitaire Collection work?</summary>
+      <p>No. The modern Solitaire Collection is a 64-bit Universal Windows app with online features and DRM, none of which run on Boxedwine's 32-bit engine. Stick to the classic <code>sol.exe</code> from Windows 95 through Windows 7.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The other classic bundled game.</span></a></li>
-      <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">A more demanding game to try.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The other beloved bundled Windows game.</span></a></li>
+      <li><a class="link-card" href="/run/freecell/"><span class="lc-title">FreeCell</span><span class="lc-desc">The other classic Windows card game, same engine.</span></a></li>
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">Tiny, fast, and runs perfectly on the default variant.</span></a></li>
+      <li><a class="link-card" href="/run/spider-solitaire/"><span class="lc-title">Spider Solitaire</span><span class="lc-desc">Spider runs just like sol.exe in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/hearts/"><span class="lc-title">Hearts</span><span class="lc-desc">Another bundled Windows card game to try.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs in ExeBrowser and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -108,5 +183,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

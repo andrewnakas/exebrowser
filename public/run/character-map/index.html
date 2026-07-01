@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run Character Map (charmap.exe) in Your Browser — Free, No Download — ExeBrowser</title>
+<meta name="description" content="Run the classic Windows Character Map (charmap.exe) in your browser with Wine + WebAssembly. How it works, why the font list is limited under Wine, and free alternatives — no install." />
+<meta name="keywords" content="character map browser, run charmap.exe online, windows character map no install, charmap in browser, copy special characters online, unicode character map wine" />
+<link rel="canonical" href="https://exebrowser.com/run/character-map/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/character-map/" />
+<meta property="og:title" content="Run Character Map (charmap.exe) in Your Browser" />
+<meta property="og:description" content="The classic Windows Character Map, running in your browser with Wine + WebAssembly. Tiny Win32 utility, no install — with an honest note on Wine's limited fonts." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Run Character Map", "item": "https://exebrowser.com/run/character-map/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Character Map",
+  "url": "https://exebrowser.com/run/character-map/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run the classic Windows Character Map (charmap.exe) in your browser with Wine + WebAssembly. How it works, why the font list is limited under Wine, and free alternatives — no install.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Microsoft Corporation" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I run Windows Character Map in the browser for free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can run it, but you have to bring your own copy. charmap.exe is a copyrighted part of Windows, so we can't host it for you. Copy it from your own Windows PC (it's in C:\\Windows\\System32) and upload it — then it runs in the browser via Wine + WebAssembly with nothing to install." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Character Map show so few fonts here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Character Map only displays fonts that are actually installed. Real Windows ships dozens of fonts with huge Unicode coverage; a fresh browser-based Wine environment ships only a small set of substitute fonts. So the program runs fine, but the font dropdown is short and many rare symbols, CJK characters and emoji simply aren't present to browse." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is charmap.exe safe to download from a third-party site?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — don't. There's no legitimate standalone download of Character Map, and \"free charmap.exe\" files on random sites are a well-known malware lure. The only safe source is your own genuine Windows installation, where the file already exists in System32." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I even need Character Map, or is there an easier way to get special characters?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For most people there's an easier way. Your own operating system already has a character picker built in (Windows Character Map, the macOS Character Viewer, or GNOME/KDE tools on Linux), and ordinary web-based character pickers have the full Unicode set with no emulation at all. Running charmap.exe here is mainly for when you specifically want the genuine Windows utility." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will Character Map crash or need DirectX or .NET?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Character Map is a plain Win32 GUI utility with no DirectX, no 3D and no .NET dependency, so it's one of the lighter things to run in ExeBrowser and starts quickly. Its only real limitation here is the smaller set of installed fonts, not stability." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Character Map</nav>
+
+  <section class="card">
+    <h2>Run Character Map (charmap.exe) in your browser <span class="verdict partial">Runs — but fewer fonts than on Windows</span></h2>
+    <p>The classic Windows <strong>Character Map</strong> (<code>charmap.exe</code>) — the little utility you open to find an em dash, a degree sign, an accented letter, or some obscure symbol and copy it to the clipboard. It's a tiny, single-purpose Win32 GUI program with no DirectX, no 3D, no .NET and no networking, which is exactly the kind of app browser-based Wine runs well. The honest catch: Character Map is only as useful as the fonts installed alongside it, and a fresh Wine environment ships far fewer fonts than real Windows — so it launches and works, but you'll see a shorter font list and fewer exotic glyphs than you would on a full Windows install.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="charmap.exe"
+         data-app-name="Character Map"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <h3 style="margin-top:0;">A licensing note</h3><p><code>charmap.exe</code> is part of Microsoft Windows and is Microsoft's copyrighted property — we can't host it, and you should only run a copy you already own. The simplest legitimate source is your own Windows installation: it lives at <code>C:\Windows\System32\charmap.exe</code>. Copy it from a PC you own, then load it here. Don't download "free charmap.exe" files from random sites — those are a common malware vector, and you don't need them. The free, fully-legal alternatives below are the easier route.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p><code>charmap.exe</code> is one of the lightest things you can run here — a single small executable with a standard window full of glyph cells, a font dropdown, a search box and a copy button. There's no graphics acceleration or modern framework involved, so it boots quickly and the interface behaves normally: pick a font, click a character, hit <strong>Select</strong> then <strong>Copy</strong>, and paste it into another app running in the same Wine session.</p><p>The big real-world limitation is <strong>fonts</strong>. Character Map doesn't contain any characters itself — it just displays whatever fonts are installed and lets you browse their glyphs. On real Windows you have dozens of fonts (Arial, Segoe UI, the big Unicode faces), so you can find almost any symbol. Inside browser-based Wine you only get Wine's bundled substitute fonts plus anything you add, so the dropdown is short and coverage of rare scripts and emoji is thin. Common Latin punctuation, accents and basic symbols are fine; deep Unicode is not.</p><table class="spec-table"><tr><th>App</th><td>Windows Character Map (<code>charmap.exe</code>)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>How to load</th><td>Copy <code>charmap.exe</code> from your own <code>C:\Windows\System32</code> and upload it</td></tr><tr><th>What works</th><td>Launches, browses installed fonts, copies glyphs to the clipboard</td></tr><tr><th>What's limited</th><td>Font list is short; rare scripts, CJK and emoji are mostly missing</td></tr></table>
+    <h3>Better: free alternatives (and the no-app route)</h3>
+    <p>Because <code>charmap.exe</code> can't be hosted and is font-limited under Wine, for most people there are quicker, fully-legal options:</p><ul><li><strong>Your OS already has one.</strong> Windows has Character Map built in; macOS has the Character Viewer (<kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>Space</kbd>); most Linux desktops include <em>gnome-characters</em> or <em>KCharSelect</em>. No browser needed.</li><li><strong>Open-source pickers run cleanly here.</strong> Small GPL/MIT character-picker and Unicode utilities are freely redistributable and, being tiny Win32 apps, run well in ExeBrowser — and you're allowed to load them.</li><li><strong>A plain web character picker</strong> on any normal web page needs no emulation at all and has the full Unicode set behind it.</li></ul><p>If you specifically want the genuine Windows Character Map look-and-feel, copy <code>charmap.exe</code> from a PC you own and load it with the steps below.</p>
+    <h3>Step by step</h3>
+    <ol><li>On the <a href="/">home page</a>, keep <strong>Win32 (default)</strong> and click <strong>Boot Wine</strong>.</li><li>On a Windows PC you own, copy <code>charmap.exe</code> from <code>C:\Windows\System32</code>.</li><li>Use the file/folder picker here to upload it (no extra DLLs are usually needed).</li><li>Select the <code>charmap.exe</code> entry and click <strong>Run in Wine</strong>.</li><li>Choose a font, click a character, press <strong>Select</strong> then <strong>Copy</strong>, and paste it into another window in the same session.</li></ol>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I run Windows Character Map in the browser for free?</summary>
+      <p>You can run it, but you have to bring your own copy. <code>charmap.exe</code> is a copyrighted part of Windows, so we can't host it for you. Copy it from your own Windows PC (it's in <code>C:\Windows\System32</code>) and upload it — then it runs in the browser via Wine + WebAssembly with nothing to install.</p>
+    </details>
+    <details>
+      <summary>Why does Character Map show so few fonts here?</summary>
+      <p>Character Map only displays fonts that are actually installed. Real Windows ships dozens of fonts with huge Unicode coverage; a fresh browser-based Wine environment ships only a small set of substitute fonts. So the program runs fine, but the font dropdown is short and many rare symbols, CJK characters and emoji simply aren't present to browse.</p>
+    </details>
+    <details>
+      <summary>Is charmap.exe safe to download from a third-party site?</summary>
+      <p>No — don't. There's no legitimate standalone download of Character Map, and "free charmap.exe" files on random sites are a well-known malware lure. The only safe source is your own genuine Windows installation, where the file already exists in System32.</p>
+    </details>
+    <details>
+      <summary>Do I even need Character Map, or is there an easier way to get special characters?</summary>
+      <p>For most people there's an easier way. Your own operating system already has a character picker built in (Windows Character Map, the macOS Character Viewer, or GNOME/KDE tools on Linux), and ordinary web-based character pickers have the full Unicode set with no emulation at all. Running charmap.exe here is mainly for when you specifically want the genuine Windows utility.</p>
+    </details>
+    <details>
+      <summary>Will Character Map crash or need DirectX or .NET?</summary>
+      <p>No. Character Map is a plain Win32 GUI utility with no DirectX, no 3D and no .NET dependency, so it's one of the lighter things to run in ExeBrowser and starts quickly. Its only real limitation here is the smaller set of installed fonts, not stability.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad</span><span class="lc-desc">The classic tiny Win32 text editor.</span></a></li>
+      <li><a class="link-card" href="/run/character-map/"><span class="lc-title">Calculator</span><span class="lc-desc">Run the classic Windows calc utility.</span></a></li>
+      <li><a class="link-card" href="/run/mspaint/"><span class="lc-title">MS Paint</span><span class="lc-desc">The classic Windows paint program.</span></a></li>
+      <li><a class="link-card" href="/run/wordpad/"><span class="lc-title">WordPad</span><span class="lc-desc">Lightweight rich-text editing in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/keepass/"><span class="lc-title">KeePass</span><span class="lc-desc">Open-source password manager that runs well.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run AbiWord in Your Browser — Free Word Processor — ExeBrowser</title>
-<meta name="description" content="Run AbiWord, the free open-source word processor, in your browser with Wine + WebAssembly. One of the most reliable office apps for browser-based Wine — how to load it and edit a document with no install." />
-<meta name="keywords" content="abiword browser, free word processor online, open source word processor, run abiword wine, edit doc in browser no install" />
+<title>Run AbiWord Online — Free Word Processor in Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run AbiWord, the free open-source word processor, in your browser via Wine + WebAssembly. One of the most reliable office apps under browser Wine — edit .doc, .rtf and .abw files with no install." />
+<meta name="keywords" content="abiword browser, free word processor online, open source word processor, run abiword wine, edit doc in browser no install, abiword online, word processor no download" />
 <link rel="canonical" href="https://exebrowser.com/run/abiword/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/abiword/" />
-<meta property="og:title" content="Run AbiWord in Your Browser — Free Word Processor" />
-<meta property="og:description" content="AbiWord, the free open-source word processor, running cleanly in your browser with Wine + WebAssembly." />
+<meta property="og:title" content="Run AbiWord Online — Free Word Processor in Your Browser" />
+<meta property="og:description" content="AbiWord, the free open-source word processor, running cleanly in your browser with Wine + WebAssembly. No install, no upload." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,54 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "AbiWord", "item": "https://exebrowser.com/run/abiword/" }
+    { "@type": "ListItem", "position": 3, "name": "Run AbiWord", "item": "https://exebrowser.com/run/abiword/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AbiWord",
+  "url": "https://exebrowser.com/run/abiword/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run AbiWord, the free open-source word processor, in your browser via Wine + WebAssembly. One of the most reliable office apps under browser Wine — edit .doc, .rtf and .abw files with no install.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "AbiSource Community Developers (SourceGear / The AbiWord team)" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is AbiWord free to use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. AbiWord is open-source software released under the GPL-2.0 license, so it is completely free to use and redistribute. The official builds are available at abisource.com/download." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AbiWord open Microsoft Word .doc files?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, it opens many .doc and .rtf files well enough to read and lightly edit. Very complex documents with intricate layout or embedded objects may not render perfectly, but for recovering text it works well. You can then re-save as RTF, HTML, or plain text." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Wine variant should I use for AbiWord?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the default (Win32) variant. AbiWord relies only on standard Win32 windowing and file APIs that Wine 1.7.55 handles well, so there is no need for Gecko or the older r18 engine." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I save my edited document so I don't lose it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Save inside AbiWord as usual, then click Download files written by this app to export the file from the virtual C:\\ drive as a zip. The in-browser drive is wiped on reload, so download before closing the tab." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does AbiWord work on a Chromebook or locked-down PC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — that is one of its best use cases. Because it runs entirely in the browser via WebAssembly, you can edit documents on a Chromebook or any restricted machine without installing anything locally." }
+    }
   ]
 }
 </script>
@@ -54,37 +101,73 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › AbiWord</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run AbiWord</nav>
+
   <section class="card">
-    <h2>Run AbiWord in your browser <span class="verdict good">Works well</span></h2>
-    <p><em>AbiWord</em> is a free, open-source word processor that has been around since the late 1990s. It's lightweight, native Win32, and — as we note in the main <a href="/guide/">compatibility guide</a> — one of the most reliable office applications to run under browser-based Wine. If you need to open or edit a document on a Chromebook or locked-down machine, this is a great choice.</p>
+    <h2>Run AbiWord online in your browser <span class="verdict good">Works well</span></h2>
+    <p><strong>AbiWord</strong> is a free, open-source word processor that has been around since the late 1990s. It is lightweight, native Win32, and one of the most reliable office applications to run under browser-based Wine. If you need to open or edit a document on a Chromebook or a locked-down machine with no Office installed, this is a great choice — it opens and edits <code>.abw</code>, <code>.doc</code>, <code>.rtf</code>, <code>.txt</code> and <code>.html</code> files and runs cleanly on the everyday <strong>default (Win32)</strong> Wine variant.</p>
 
-    <table class="spec-table">
-      <tr><th>App</th><td>AbiWord (<code>AbiWord.exe</code>)</td></tr>
-      <tr><th>License</th><td>GPL-2.0 — free and open source</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>Opens</th><td><code>.abw</code>, <code>.doc</code>, <code>.rtf</code>, <code>.txt</code>, <code>.html</code>, and more</td></tr>
-      <tr><th>Where to get it</th><td><a href="https://www.abisource.com/download/" target="_blank" rel="noopener">abisource.com/download</a> (official)</td></tr>
-    </table>
-
-    <h3>Why it runs so cleanly</h3>
-    <p>AbiWord draws a standard window with standard controls, reads and writes files, and prints to a file — it doesn't reach for modern GPU features, recent .NET, or post-Windows-7 APIs. That maps almost perfectly onto what Wine 1.7.55 implements well, which is why older AbiWord builds are among the most dependable office apps in ExeBrowser.</p>
-
-    <h3>Editing and saving a document</h3>
-    <p>Bundle the AbiWord program folder (the EXE plus its DLLs) with any document you want to edit, upload it as a folder, and open the file inside AbiWord. When you're done, save inside the app, then click <strong>Download files written by this app</strong> to pull your edited document out of the in-memory <code>C:\</code> as a zip. Remember the virtual drive is wiped on reload — download before you close the tab.</p>
-
-    <h3>A practical workflow</h3>
-    <p>AbiWord opens many <code>.doc</code> files well enough to read and lightly edit, and exports to RTF, HTML, and plain text. That makes it handy for rescuing the contents of an old Word document on a machine with no Office installed: open it, save as RTF or HTML, and download the result.</p>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="AbiWord.exe"
+         data-app-name="AbiWord"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">AbiWord is GPL-2.0 open-source. The Windows build requires running an NSIS installer — install it on Windows, then use <strong>Load your own copy</strong> above with the installed AbiWord.exe and its DLLs.</p>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <div class="download-box">
+      <h3 style="margin-top:0;">Download AbiWord</h3>
+      <p>AbiWord is free and open source under the GPL-2.0. Grab the official Windows build from <a href="https://www.abisource.com/download/" target="_blank" rel="noopener">abisource.com/download</a>, or use the bundled copy here to launch it instantly in your browser.</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why it runs so cleanly</h3>
+    <p>AbiWord draws a standard window with standard controls, reads and writes files, and prints to a file — it does not reach for modern GPU features, recent .NET, or post-Windows-7 APIs. That maps almost perfectly onto what Wine 1.7.55 implements well, which is why older AbiWord builds are among the most dependable office apps in ExeBrowser. Stick with the <strong>default</strong> Wine variant; there is no need for Gecko or the older r18 engine here.</p><table class="spec-table"><tr><th>App</th><td>AbiWord (<code>AbiWord.exe</code>)</td></tr><tr><th>License</th><td>GPL-2.0 — free and open source</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>Opens</th><td><code>.abw</code>, <code>.doc</code>, <code>.rtf</code>, <code>.txt</code>, <code>.html</code>, and more</td></tr><tr><th>Where to get it</th><td><a href="https://www.abisource.com/download/" target="_blank" rel="noopener">abisource.com/download</a> (official)</td></tr></table>
+    <h3>Editing and saving a document</h3>
+    <p>Bundle the AbiWord program folder (the EXE plus its DLLs) with any document you want to edit, load it, and open the file inside AbiWord. When you are done, save inside the app, then use <strong>Download files written by this app</strong> to pull your edited document out of the in-memory <code>C:\</code> as a zip.</p><p>Remember the virtual drive is wiped on reload — always download your work before you close the tab.</p>
+    <h3>A practical workflow for old documents</h3>
+    <p>AbiWord opens many <code>.doc</code> files well enough to read and lightly edit, and exports to RTF, HTML, and plain text. That makes it handy for rescuing the contents of an old Word document on a machine with no Office installed: open it, save as RTF or HTML, and download the result. Complex layouts, embedded objects, and heavy tables may not survive perfectly, but for getting the text back out it is reliable.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is AbiWord free to use?</summary>
+      <p>Yes. AbiWord is open-source software released under the GPL-2.0 license, so it is completely free to use and redistribute. The official builds are available at <a href="https://www.abisource.com/download/" target="_blank" rel="noopener">abisource.com/download</a>.</p>
+    </details>
+    <details>
+      <summary>Can AbiWord open Microsoft Word .doc files?</summary>
+      <p>Yes, it opens many <code>.doc</code> and <code>.rtf</code> files well enough to read and lightly edit. Very complex documents with intricate layout or embedded objects may not render perfectly, but for recovering text it works well. You can then re-save as RTF, HTML, or plain text.</p>
+    </details>
+    <details>
+      <summary>Which Wine variant should I use for AbiWord?</summary>
+      <p>Use the <strong>default (Win32)</strong> variant. AbiWord relies only on standard Win32 windowing and file APIs that Wine 1.7.55 handles well, so there is no need for Gecko or the older r18 engine.</p>
+    </details>
+    <details>
+      <summary>How do I save my edited document so I don't lose it?</summary>
+      <p>Save inside AbiWord as usual, then click <strong>Download files written by this app</strong> to export the file from the virtual <code>C:\</code> drive as a zip. The in-browser drive is wiped on reload, so download before closing the tab.</p>
+    </details>
+    <details>
+      <summary>Does AbiWord work on a Chromebook or locked-down PC?</summary>
+      <p>Yes — that is one of its best use cases. Because it runs entirely in the browser via WebAssembly, you can edit documents on a Chromebook or any restricted machine without installing anything locally.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/gnumeric/"><span class="lc-title">Gnumeric</span><span class="lc-desc">The free spreadsheet companion.</span></a></li>
-      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small Win32 tools.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/gnumeric/"><span class="lc-title">Gnumeric</span><span class="lc-desc">The free open-source spreadsheet companion to AbiWord.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad</span><span class="lc-desc">The minimal Win32 text editor for quick edits.</span></a></li>
+      <li><a class="link-card" href="/run/wordpad/"><span class="lc-title">WordPad</span><span class="lc-desc">Lightweight rich-text editing in the browser.</span></a></li>
+      <li><a class="link-card" href="/run/notepad-plus-plus/"><span class="lc-title">Notepad++</span><span class="lc-desc">Tabbed source and text editor with syntax highlighting.</span></a></li>
+      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">Sumatra PDF</span><span class="lc-desc">Fast, lightweight PDF reader under Wine.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs well and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -103,5 +186,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

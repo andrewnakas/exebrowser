@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Chip's Challenge Online in Your Browser — No Download — ExeBrowser</title>
+<meta name="description" content="Play Chip's Challenge — the classic Microsoft Entertainment Pack tile-puzzle — in your browser via Wine + WebAssembly. How the 16-bit CHIPS.EXE runs, controls, and where to get it legally." />
+<meta name="keywords" content="play chips challenge online, chips challenge in browser, chips challenge no download, microsoft entertainment pack chips challenge, chips challenge windows 3.1, classic chips challenge browser, chip mccallahan puzzle game online" />
+<link rel="canonical" href="https://exebrowser.com/run/chips-challenge/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/chips-challenge/" />
+<meta property="og:title" content="Play Chip's Challenge Online in Your Browser — No Download" />
+<meta property="og:description" content="The classic Microsoft Entertainment Pack puzzle, Chip's Challenge, running in a browser tab via Wine + WebAssembly. Bring your own legally-obtained copy." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Chip's Challenge", "item": "https://exebrowser.com/run/chips-challenge/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Chip's Challenge",
+  "url": "https://exebrowser.com/run/chips-challenge/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Play Chip's Challenge — the classic Microsoft Entertainment Pack tile-puzzle — in your browser via Wine + WebAssembly. How the 16-bit CHIPS.EXE runs, controls, and where to get it legally.",
+  "applicationCategory": "Game",
+  "genre": ["Puzzle", "Tile-based", "Strategy"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Epyx / Microsoft" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I play Chip's Challenge online for free with no download?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can run it in your browser here with no install of the emulator — but Chip's Challenge is commercial software, so you must supply your own legally-obtained copy of the game files. We don't host them. The modern Chip's Challenge 1 on Steam is free to keep if you want a no-cost, legal copy." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the original Microsoft Entertainment Pack version?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — ExeBrowser targets the classic 16-bit CHIPS.EXE from the Microsoft Entertainment Pack (Windows 3.1), loaded through our win3x runtime. The newer 2015 Steam rebuild is a separate 32-bit version that's best played natively on a real PC." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Chip's Challenge fail to run on modern Windows but work here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Entertainment Pack build is a 16-bit program, and 64-bit Windows removed 16-bit app support entirely. A Wine compatibility layer (like the one ExeBrowser runs in WebAssembly) is one of the few ways to launch the original binary at all." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the controls?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Click the game board to capture input, then use the arrow keys to move Chip one tile at a time. Menus are mouse-driven, and Esc releases the mouse back to the page. The goal is to collect the required computer chips, then reach the exit." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my progress and high scores save?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not reliably. The game writes scores and progress to old-style config files that may not persist between browser sessions, so treat each visit as a single sitting. For permanent saves, play the native Steam version." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Chip's Challenge</nav>
+
+  <section class="card">
+    <h2>Play Chip's Challenge online in your browser <span class="verdict partial">Partial — the 16-bit classic runs on the win3x engine; quirky but playable</span></h2>
+    <p><strong>Chip's Challenge</strong> — the deviously good top-down tile puzzler that hooked a generation through the <em>Microsoft Entertainment Pack</em> — running in a browser tab. Guide Chip McCallahan through 149 grid mazes: collect computer chips, dodge fireballs and walkers, slide across ice and force-floors, and reach the exit to advance. The classic <code>CHIPS.EXE</code> is a <strong>16-bit Windows 3.1</strong> program, which is exactly what ExeBrowser's <code>win3x</code> runtime is built for. It's an honest partial: it boots and plays, but 16-bit-on-Wine has rough edges, and you'll need to bring your own legally-obtained copy — we can't host this one.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="win3x"
+         data-entry="CHIPS.EXE"
+         data-app-name="Chip's Challenge"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>Bring your own copy.</strong> Chip's Challenge is commercial software. The Microsoft Entertainment Pack version (<code>CHIPS.EXE</code>) is owned by Microsoft and Epyx, and the modern PC port is published by Niffler Ltd. — none of it is licensed for us to redistribute, so there's no download here. The good news: the modern <a href="https://store.steampowered.com/app/346850/Chips_Challenge_1/" target="_blank" rel="noopener">Chip's Challenge 1 on Steam</a> has been <strong>free to keep</strong> since 2020 (you keep it permanently, at no charge) — that's the easiest legitimate way to own the game. Please don't seek out cracked or pirated copies.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Which Chip's Challenge is this — and why it runs at all</h3>
+    <p>There are really two PC versions, and the distinction matters here:</p><ul><li><strong>The Microsoft Entertainment Pack build (<code>CHIPS.EXE</code>, 1992)</strong> — the one most people remember from Windows 3.1 / 95. It's a tiny <strong>16-bit Windows program</strong> that draws with plain GDI: no DirectX, no 3D, no networking. That simplicity is why it's a realistic target for ExeBrowser. Modern 64-bit Windows can't even run it anymore (Microsoft dropped 16-bit support), so a Wine layer is one of the few ways to play the original.</li><li><strong>The 2015 Niffler re-release (on Steam)</strong> — a modernized 32-bit rebuild. It's the version that's now free-to-keep on Steam, but it's a newer build with its own runtime expectations and is better played natively on a real PC.</li></ul><p>ExeBrowser targets the <strong>16-bit classic</strong>, loaded through the <code>win3x</code> variant — our 16-bit Windows 3.x mode, made for early-1990s apps exactly like this.</p>
+    <h3>What to expect (the honest version)</h3>
+    <p>Because Chip's Challenge is a turn-based 2D puzzle with no fancy graphics, raw speed isn't a problem — the puzzles don't care that an x86 CPU is being emulated in WebAssembly. The friction is the <em>16-bit-on-Wine</em> layer:</p><ul><li><strong>Boots and plays:</strong> the board renders, arrow-key movement works, and the level logic is intact. As a puzzle game it's very playable.</li><li><strong>Rough edges:</strong> 16-bit apps under Wine can have palette/redraw glitches, finicky menus, or the occasional refusal to launch. If it won't start cleanly on the first try, that's expected with this era of software.</li><li><strong>Sound is hit-or-miss:</strong> the old MME/PC-speaker audio path may be silent. The game is fully playable muted.</li><li><strong>No save guarantees:</strong> high scores and progress are written to <code>.ini</code>/registry-style files that may not persist between browser sessions. Treat a run as a single sitting.</li></ul><p>That's why the verdict is <em>partial</em>, not <em>works great</em> — it's a genuine, playable port of a 30-year-old 16-bit binary, warts and all.</p>
+    <h3>Controls &amp; how to load it</h3>
+    <p>Controls are simple and keyboard-driven:</p><ul><li><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> — move Chip one tile in that direction</li><li>Click the game canvas first to capture keyboard input; <kbd>Esc</kbd> releases it back to the page</li><li>Menus (new game, level password, sound) are reachable with the mouse</li></ul><p>Steps to play:</p><ol><li>Make sure the runtime above is set to the <strong>win3x (16-bit Windows 3.x)</strong> variant.</li><li>Obtain your own copy of the Entertainment Pack <code>CHIPS.EXE</code> (see the licensing box) and unzip it on your computer.</li><li>Use <strong>“Load your own copy”</strong> to drop in the whole folder so <code>CHIPS.EXE</code> finds its companion files.</li><li>Click <strong>Run in Wine</strong>, then click the board and start solving.</li><li>If it crashes on launch, try reloading once — and if it still won't go, it may simply be one of the 16-bit titles Wine 1.7.55 doesn't get along with.</li></ol>
+    <h3>If it won't run here</h3>
+    <p>16-bit games are the trickiest category in any Wine-based setup, so have a fallback in mind:</p><ul><li><strong>Easiest legit option:</strong> grab <a href="https://store.steampowered.com/app/346850/Chips_Challenge_1/" target="_blank" rel="noopener">Chip's Challenge 1 on Steam</a> — free to keep, runs natively on modern Windows, and is the official port from the rights holders.</li><li><strong>Preservation reference:</strong> the <a href="https://archive.org/details/chips_challenge_windows_3.x" target="_blank" rel="noopener">Internet Archive</a> preserves the Windows 3.x version for study; many browsers can play its in-page emulator there too.</li><li><strong>Other puzzlers that play nicely here:</strong> try <a href="/run/minesweeper/">Minesweeper</a> or <a href="/run/jezzball/">JezzBall</a> for quick GDI-era fixes that tend to behave better than 16-bit binaries.</li></ul>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I play Chip's Challenge online for free with no download?</summary>
+      <p>You can run it in your browser here with no install of the emulator — but Chip's Challenge is commercial software, so you must supply your own legally-obtained copy of the game files. We don't host them. The modern Chip's Challenge 1 on Steam is free to keep if you want a no-cost, legal copy.</p>
+    </details>
+    <details>
+      <summary>Is this the original Microsoft Entertainment Pack version?</summary>
+      <p>Yes — ExeBrowser targets the classic 16-bit <code>CHIPS.EXE</code> from the Microsoft Entertainment Pack (Windows 3.1), loaded through our win3x runtime. The newer 2015 Steam rebuild is a separate 32-bit version that's best played natively on a real PC.</p>
+    </details>
+    <details>
+      <summary>Why does Chip's Challenge fail to run on modern Windows but work here?</summary>
+      <p>The Entertainment Pack build is a 16-bit program, and 64-bit Windows removed 16-bit app support entirely. A Wine compatibility layer (like the one ExeBrowser runs in WebAssembly) is one of the few ways to launch the original binary at all.</p>
+    </details>
+    <details>
+      <summary>What are the controls?</summary>
+      <p>Click the game board to capture input, then use the arrow keys to move Chip one tile at a time. Menus are mouse-driven, and <kbd>Esc</kbd> releases the mouse back to the page. The goal is to collect the required computer chips, then reach the exit.</p>
+    </details>
+    <details>
+      <summary>Will my progress and high scores save?</summary>
+      <p>Not reliably. The game writes scores and progress to old-style config files that may not persist between browser sessions, so treat each visit as a single sitting. For permanent saves, play the native Steam version.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">The classic Windows logic puzzle in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/jezzball/"><span class="lc-title">JezzBall</span><span class="lc-desc">Trap the bouncing atoms — Entertainment Pack favorite.</span></a></li>
+      <li><a class="link-card" href="/run/rodents-revenge/"><span class="lc-title">Rodent's Revenge</span><span class="lc-desc">Another beloved Microsoft Entertainment Pack puzzler.</span></a></li>
+      <li><a class="link-card" href="/run/skifree/"><span class="lc-title">SkiFree</span><span class="lc-desc">Outrun the yeti — the 16-bit Windows classic.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">The card games everyone grew up with.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs and what doesn't in the browser.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

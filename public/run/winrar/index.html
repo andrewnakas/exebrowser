@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run WinRAR in Your Browser — Open RAR Files Online — ExeBrowser</title>
-<meta name="description" content="Run WinRAR in your browser with Wine + WebAssembly to open and extract RAR archives without installing anything. Which version works, how to load it, how to get extracted files back out, and faster alternatives." />
-<meta name="keywords" content="winrar online, open rar in browser, extract rar online, run winrar without install, winrar browser" />
+<title>Run WinRAR Online in Your Browser — Open &amp; Extract RAR Files, No Install — ExeBrowser</title>
+<meta name="description" content="Run WinRAR in your browser with Wine + WebAssembly to open and extract RAR archives without installing anything. Use a 32-bit build, bundle your archive, get files back out." />
+<meta name="keywords" content="winrar online, open rar in browser, extract rar online, run winrar without install, winrar browser, winrar no download, open rar files online" />
 <link rel="canonical" href="https://exebrowser.com/run/winrar/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/winrar/" />
-<meta property="og:title" content="Run WinRAR in Your Browser — Open RAR Files Online" />
-<meta property="og:description" content="Open and extract RAR archives in your browser with Wine + WebAssembly. No install." />
+<meta property="og:title" content="Run WinRAR Online in Your Browser — Open &amp; Extract RAR Files" />
+<meta property="og:description" content="Open and extract RAR archives in your browser with Wine + WebAssembly. No install, no upload to a server — runs entirely on your machine." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,54 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "WinRAR", "item": "https://exebrowser.com/run/winrar/" }
+    { "@type": "ListItem", "position": 3, "name": "Run WinRAR", "item": "https://exebrowser.com/run/winrar/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "WinRAR",
+  "url": "https://exebrowser.com/run/winrar/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run WinRAR in your browser with Wine + WebAssembly to open and extract RAR archives without installing anything. Use a 32-bit build, bundle your archive, get files back out.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "RARLAB (win.rar GmbH)" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I run WinRAR in a browser for free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can run the WinRAR program in your browser through ExeBrowser at no cost — the runtime is free. WinRAR itself is commercial trialware, so you must supply your own copy (download from rarlab.com). We don't host or bundle WinRAR." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why won't the latest WinRAR load?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Wine engine here is 32-bit only, and modern WinRAR installers default to the 64-bit build. Grab a 32-bit release instead — the 3.x through 5.x versions are widely available and open essentially all standard .rar files." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I open my .rar file when WinRAR can't see my disk?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ExeBrowser's filesystem lives only in your browser, so WinRAR can't reach your real drive. Put WinRAR.exe, its DLLs, and your archive in one folder, then use pick a folder to load them together. Extract inside Wine, then use Download files written by this app to get the results back." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is anything uploaded to a server?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. WinRAR and your archive run entirely inside your own browser via WebAssembly. Nothing is sent to a remote server — your files stay on your machine." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a faster way to just extract a RAR?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you only need to extract a standard archive and don't need WinRAR's interface, a native JavaScript RAR extractor or the free open-source 7-Zip will be quicker than emulating WinRAR. Use ExeBrowser when you specifically want the real WinRAR UI or a feature only it provides." }
+    }
   ]
 }
 </script>
@@ -54,46 +101,68 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › WinRAR</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run WinRAR</nav>
+
   <section class="card">
-    <h2>Run WinRAR in your browser <span class="verdict partial">Works (older builds)</span></h2>
-    <p>WinRAR is the archiver almost everyone has reached for at some point to open a <code>.rar</code> file. If you're on a Chromebook, a locked-down work laptop, or any machine where you can't install software, you can run an older 32-bit build of WinRAR inside ExeBrowser to browse and extract an archive — then download the extracted files back out.</p>
+    <h2>Run WinRAR online in your browser <span class="verdict partial">Works with older 32-bit builds</span></h2>
+    <p>WinRAR is the archiver almost everyone has reached for at some point to open a <code>.rar</code> file. If you're on a Chromebook, a locked-down work laptop, or any machine where you can't install software, you can run an older 32-bit build of WinRAR right here in ExeBrowser to browse and extract an archive — then download the extracted files back out. The whole thing runs locally in your browser via Wine + WebAssembly; nothing is uploaded to a server. WinRAR is commercial trialware, so you supply the <code>WinRAR.exe</code> yourself (see the license note below).</p>
 
-    <table class="spec-table">
-      <tr><th>App</th><td>WinRAR (<code>WinRAR.exe</code>), 32-bit builds</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>Which version</th><td>An older 32-bit release (3.x–5.x era) is most reliable; modern 64-bit-only builds won't load</td></tr>
-      <tr><th>How to load</th><td>Upload the WinRAR program folder <em>and</em> your archive together as a folder or zip</td></tr>
-      <tr><th>Getting files out</th><td>Use “Download files written by this app” after extracting</td></tr>
-    </table>
-
-    <h3>The key trick: bundle the archive with the app</h3>
-    <p>ExeBrowser's filesystem lives entirely in your browser's memory, and WinRAR can only see files that exist inside that virtual <code>C:\</code>. So you need to get <em>both</em> WinRAR and the <code>.rar</code> file you want to open into the upload. The cleanest way: put <code>WinRAR.exe</code>, its DLLs, and your archive in one folder on your computer, then use the <strong>pick a folder</strong> option. Inside Wine, extract the archive to a subfolder, then use <strong>Download files written by this app</strong> to pull the results out as a zip.</p>
-
-    <h3>Use a 32-bit build</h3>
-    <p>The Wine engine here is 32-bit only. Recent WinRAR installers default to the 64-bit build, which won't load. Grab a 32-bit release (the older 3.x through 5.x versions are plentiful and handle the vast majority of <code>.rar</code> files). If a download only offers an installer, you can often extract <code>WinRAR.exe</code> and its files with 7-Zip on your own machine first and upload just the program folder.</p>
-
-    <h3>Honest alternative</h3>
-    <p>If all you need is to <em>extract</em> a standard RAR — not run WinRAR's full UI — emulating an x86 archiver is slower than necessary. Many fully client-side, JavaScript-based RAR extractors exist that do it natively in the browser. ExeBrowser shines when you specifically want the real WinRAR interface, need a feature only it has, or are already running other Windows tools alongside it. For a quick one-off extract, a native browser tool will be faster.</p>
-
-    <h3>Step by step</h3>
-    <ol>
-      <li>Make a folder containing a 32-bit <code>WinRAR.exe</code> (plus its <code>.dll</code> files) and the archive you want to open.</li>
-      <li>On the <a href="/">home page</a>, keep the <strong>Win32 (default)</strong> variant and click <strong>Boot Wine</strong>.</li>
-      <li>Use <strong>pick a folder</strong>, select that folder, choose <code>WinRAR.exe</code> as the entry, and <strong>Run in Wine</strong>.</li>
-      <li>In WinRAR, open your archive and extract it to a folder.</li>
-      <li>Click <strong>Download files written by this app</strong> to get a zip of everything extracted.</li>
-    </ol>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="WinRAR.exe"
+         data-app-name="WinRAR"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p><strong>WinRAR is commercial trialware.</strong> ExeBrowser does not bundle or host it — you bring your own copy. Download an official build from <a href="https://www.rarlab.com/download.htm" target="_blank" rel="noopener">rarlab.com</a> (the trial keeps working past 40 days, but a license is required for continued use). Grab a <strong>32-bit</strong> release; modern 64-bit-only builds will not load. Do not use cracked or "free full version" copies.</p>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>How it works &amp; what to expect</h2>
+    <p>ExeBrowser boots a real 32-bit Windows environment in your browser through Boxedwine (Wine 1.7.55 on a WebAssembly x86 emulator). WinRAR's GUI loads and behaves like the desktop app — you can browse into an archive, preview the file list, and extract to a folder. Speed sits around 10-40% of native, which is fine for opening and extracting typical archives. The catch is the engine is <strong>32-bit only</strong>: recent WinRAR installers default to the 64-bit build, which will not load. Grab an older 32-bit release (the 3.x through 5.x era is plentiful and handles the vast majority of <code>.rar</code> files). If a download only offers an installer, you can often extract <code>WinRAR.exe</code> and its DLLs with 7-Zip on your own machine first and upload just the program folder.</p>
+    <h3>The key trick: bundle the archive with the app</h3>
+    <p>ExeBrowser's filesystem lives entirely in your browser's memory, and WinRAR can only see files that exist inside that virtual <code>C:\</code>. So you need to get <em>both</em> WinRAR and the <code>.rar</code> file you want to open into the upload. The cleanest way: put <code>WinRAR.exe</code>, its DLLs, and your archive in one folder on your computer, then use the <strong>pick a folder</strong> option. Inside Wine, extract the archive to a subfolder, then use <strong>Download files written by this app</strong> to pull the results back out as a zip.</p>
+    <h3>Step by step</h3>
+    <ol><li>Download a <strong>32-bit</strong> WinRAR from <a href="https://www.rarlab.com/download.htm" target="_blank" rel="noopener">rarlab.com</a> and make a folder containing <code>WinRAR.exe</code> (plus its <code>.dll</code> files) and the archive you want to open.</li><li>Keep the <strong>Win32 (default)</strong> variant and click <strong>Boot Wine</strong> above.</li><li>Use <strong>pick a folder</strong>, select that folder, choose <code>WinRAR.exe</code> as the entry, and <strong>Run in Wine</strong>.</li><li>In WinRAR, open your archive and extract it to a folder.</li><li>Click <strong>Download files written by this app</strong> to get a zip of everything extracted.</li></ol>
+    <h3>Honest alternative for one-off extracts</h3>
+    <p>If all you need is to <em>extract</em> a standard RAR — not run WinRAR's full UI — emulating an x86 archiver is slower than necessary. Plenty of fully client-side, JavaScript-based RAR extractors do it natively in the browser without any emulation. ExeBrowser shines when you specifically want the real WinRAR interface, need a feature only it has, or are already running other Windows tools alongside it. For a quick one-off extract, a native browser tool will be faster. The free, open-source <a href="/run/7-zip/">7-Zip</a> is also a solid choice here and is genuinely free to redistribute.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Can I run WinRAR in a browser for free?</summary>
+      <p>You can run the WinRAR <em>program</em> in your browser through ExeBrowser at no cost — the runtime is free. WinRAR itself is commercial trialware, so you must supply your own copy (download from <a href="https://www.rarlab.com/download.htm" target="_blank" rel="noopener">rarlab.com</a>). We don't host or bundle WinRAR.</p>
+    </details>
+    <details>
+      <summary>Why won't the latest WinRAR load?</summary>
+      <p>The Wine engine here is 32-bit only, and modern WinRAR installers default to the 64-bit build. Grab a 32-bit release instead — the 3.x through 5.x versions are widely available and open essentially all standard <code>.rar</code> files.</p>
+    </details>
+    <details>
+      <summary>How do I open my .rar file when WinRAR can't see my disk?</summary>
+      <p>ExeBrowser's filesystem lives only in your browser, so WinRAR can't reach your real drive. Put <code>WinRAR.exe</code>, its DLLs, and your archive in one folder, then use <strong>pick a folder</strong> to load them together. Extract inside Wine, then use <strong>Download files written by this app</strong> to get the results back.</p>
+    </details>
+    <details>
+      <summary>Is anything uploaded to a server?</summary>
+      <p>No. WinRAR and your archive run entirely inside your own browser via WebAssembly. Nothing is sent to a remote server — your files stay on your machine.</p>
+    </details>
+    <details>
+      <summary>Is there a faster way to just extract a RAR?</summary>
+      <p>Yes. If you only need to extract a standard archive and don't need WinRAR's interface, a native JavaScript RAR extractor or the free open-source <a href="/run/7-zip/">7-Zip</a> will be quicker than emulating WinRAR. Use ExeBrowser when you specifically want the real WinRAR UI or a feature only it provides.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">The free open-source archiver.</span></a></li>
-      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">More small Win32 tools.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">The free, open-source archiver — opens RAR, ZIP, 7z and more.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad</span><span class="lc-desc">Run the classic Windows text editor in your browser.</span></a></li>
+      <li><a class="link-card" href="/run/notepad-plus-plus/"><span class="lc-title">Notepad++</span><span class="lc-desc">The popular tabbed code and text editor.</span></a></li>
+      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">SumatraPDF</span><span class="lc-desc">Lightweight PDF and ebook reader for Win32.</span></a></li>
+      <li><a class="link-card" href="/run/putty/"><span class="lc-title">PuTTY</span><span class="lc-desc">The classic SSH and telnet client.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs in ExeBrowser and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -112,5 +181,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run KeePass in Your Browser — Open-Source Password Manager — ExeBrowser</title>
-<meta name="description" content="Run KeePass, the free open-source password manager, in your browser with Wine + WebAssembly. Which version works (KeePass 1.x is the safe bet), how to load your database, and important safety notes." />
-<meta name="keywords" content="keepass browser, run keepass online, open source password manager windows, keepass 1.x wine, kdbx in browser" />
+<title>Run KeePass Online — Free Open-Source Password Manager in Your Browser — ExeBrowser</title>
+<meta name="description" content="Run KeePass, the free open-source password manager, in your browser with Wine + WebAssembly. KeePass 1.x is the version that works — here's how to load a .kdb vault and the safety caveats." />
+<meta name="keywords" content="keepass browser, run keepass online, open source password manager windows, keepass 1.x wine, kdbx in browser, keepass classic, kdb password vault" />
 <link rel="canonical" href="https://exebrowser.com/run/keepass/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/keepass/" />
 <meta property="og:title" content="Run KeePass in Your Browser — Open-Source Password Manager" />
-<meta property="og:description" content="KeePass, the free open-source password manager, running in your browser with Wine + WebAssembly." />
+<meta property="og:description" content="KeePass, the free open-source password manager, running in your browser with Wine + WebAssembly. KeePass 1.x is the safe bet." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,54 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "KeePass", "item": "https://exebrowser.com/run/keepass/" }
+    { "@type": "ListItem", "position": 3, "name": "Run KeePass", "item": "https://exebrowser.com/run/keepass/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "KeePass",
+  "url": "https://exebrowser.com/run/keepass/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run KeePass, the free open-source password manager, in your browser with Wine + WebAssembly. KeePass 1.x is the version that works — here's how to load a .kdb vault and the safety caveats.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Dominik Reichl" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does KeePass really work in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — KeePass 1.x (Classic Edition) works well because it is a native Win32 program with no .NET dependency. KeePass 2.x, which relies on Microsoft .NET, usually fails to start under browser-based Wine, so stick with the 1.x build that loads here." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to open my password vault in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ExeBrowser runs entirely inside your browser tab and never uploads your files, so your passwords are not sent anywhere. Still, a vault is your most sensitive file. Use the browser as a convenience for viewing a vault on a machine where you cannot install software — for daily use, run KeePass natively on a trusted device, and always close the tab when done since the in-memory drive is wiped on reload." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I open a .kdbx file here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. KeePass 1.x opens the older .kdb format, not the .kdbx format used by KeePass 2.x. The two formats are incompatible. If your vault is .kdbx, you will need KeePass 2.x (natively) to export or convert it to .kdb first." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is KeePass free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. KeePass is free, open-source software released under the GPL-2.0 license — no purchase, no account, no activation. Because it is freely redistributable, the KeePass 1.x build is hosted here so you can launch it instantly." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I save changes I make to my database?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Save inside KeePass as usual, then use the Download files written by this app button. It bundles the updated .kdb into a zip for download. Do this before closing or reloading the tab — the emulated drive does not persist." }
+    }
   ]
 }
 </script>
@@ -54,39 +101,65 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › KeePass</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run KeePass</nav>
+
   <section class="card">
-    <h2>Run KeePass in your browser <span class="verdict partial">Works (KeePass 1.x)</span></h2>
-    <p><em>KeePass</em> is the long-running, free, open-source password manager. It's GPL software with no activation or cloud requirement, which is exactly the kind of thing that runs well under Wine — with one important version caveat and one big safety caveat.</p>
+    <h2>Run KeePass online in your browser <span class="verdict partial">Works — KeePass 1.x only</span></h2>
+    <p><em>KeePass</em> is the long-running, free, open-source password manager. It is GPL software with no activation, no account, and no cloud requirement — exactly the kind of program that runs well under browser-based Wine. There is one important version caveat (run KeePass 1.x, not 2.x) and one big safety caveat, both covered below. Because KeePass is genuinely free to redistribute, the KeePass 1.x Classic build loads here with one click — no download or install needed.</p>
 
-    <table class="spec-table">
-      <tr><th>App</th><td>KeePass Password Safe</td></tr>
-      <tr><th>License</th><td>GPL-2.0 — free and open source</td></tr>
-      <tr><th>Best version</th><td><strong>KeePass 1.x</strong> (Classic) — native Win32, no .NET needed</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>Where to get it</th><td><a href="https://keepass.info/download.html" target="_blank" rel="noopener">keepass.info/download</a> (official)</td></tr>
-    </table>
-
-    <h3>Pick KeePass 1.x, not 2.x</h3>
-    <p>There are two KeePass lines. <strong>KeePass 2.x</strong> is built on Microsoft .NET, which browser-based Wine 1.7.55 supports poorly — it usually won't start. <strong>KeePass 1.x</strong> (the “Classic Edition”) is a native Win32 program with no .NET dependency, and it's the version to run here. It opens <code>.kdb</code> databases; note that 1.x and 2.x use different database formats.</p>
-
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="KeePass.exe"
+         data-app-url="/apps/keepass/keepass.zip"
+         data-app-name="KeePass"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
     <div class="warn-box">
-      <h3 style="margin-top:0;">⚠️ A note on security</h3>
-      <p>ExeBrowser runs everything locally in your browser tab and never uploads your files — so opening a database here doesn't send your passwords anywhere. That said, a password vault is the most sensitive file you own. For day-to-day use, run KeePass natively on a trusted device. Treat the browser as a convenience for <em>viewing</em> a vault on a machine where you can't install software — not as your primary password manager. Always close the tab when done; the in-memory drive is wiped on reload.</p>
+      <h3 style="margin-top:0;">A note on security</h3><p>ExeBrowser runs everything locally in your browser tab and never uploads your files — opening a database here does not send your passwords anywhere. That said, a password vault is the most sensitive file you own. For day-to-day use, run KeePass natively on a trusted device. Treat the browser as a convenience for <em>viewing</em> a vault on a machine where you cannot install software — not as your primary password manager. Always close the tab when you are done; the in-memory drive is wiped on reload.</p>
     </div>
-
-    <h3>How to load your database</h3>
-    <p>Put <code>KeePass.exe</code> (the 1.x build) and your <code>.kdb</code> file in one folder and upload it with the <strong>folder picker</strong>, then open the database from inside KeePass. To get an edited database back out, use <strong>Download files written by this app</strong> after saving — it packages the updated <code>.kdb</code> into a zip you can download before closing the tab.</p>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Pick KeePass 1.x, not 2.x</h3>
+    <p>There are two KeePass lines, and the difference matters here. <strong>KeePass 2.x</strong> is built on Microsoft .NET, which browser-based Wine 1.7.55 supports poorly — it usually will not start at all. <strong>KeePass 1.x</strong> (the "Classic Edition") is a native Win32 program with no .NET dependency, and it is the version to run in your browser. It opens <code>.kdb</code> databases. Note that 1.x and 2.x use different, incompatible database formats: 1.x reads <code>.kdb</code>, while 2.x uses <code>.kdbx</code>. If your vault is a <code>.kdbx</code> file, you would need KeePass 2.x natively to convert or export it first.</p>
+    <h3>How to load and save your database</h3>
+    <p>The KeePass 1.x build boots automatically when you press Play. To open your own vault, put your <code>.kdb</code> file alongside it using the <strong>folder picker</strong> (drop <code>KeePass.exe</code> and your <code>.kdb</code> in one folder and upload that folder), then open the database from inside KeePass with your master password.</p><ul><li>To get an edited database back out, use <strong>Download files written by this app</strong> after you save inside KeePass — it packages the updated <code>.kdb</code> into a zip you can download before closing the tab.</li><li>The emulated drive lives only in memory. Reloading or closing the tab wipes it, so always export your changes first.</li></ul>
+    <h3>What to expect from performance</h3>
+    <p>KeePass 1.x is a small, lightweight Win32 app, so it runs comfortably at browser-Wine speeds (roughly 10-40% of native). Browsing entries, copying passwords to the clipboard, searching, and editing all feel responsive. The auto-type feature that fills credentials into other Windows programs has limited use here since you are running a single app in a sandbox, but the core vault management — viewing, adding, and editing entries — works as expected.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Does KeePass really work in the browser?</summary>
+      <p>Yes — <strong>KeePass 1.x (Classic Edition)</strong> works well because it is a native Win32 program with no .NET dependency. KeePass 2.x, which relies on Microsoft .NET, usually fails to start under browser-based Wine, so stick with the 1.x build that loads here.</p>
+    </details>
+    <details>
+      <summary>Is it safe to open my password vault in the browser?</summary>
+      <p>ExeBrowser runs entirely inside your browser tab and never uploads your files, so your passwords are not sent anywhere. Still, a vault is your most sensitive file. Use the browser as a convenience for viewing a vault on a machine where you cannot install software — for daily use, run KeePass natively on a trusted device, and always close the tab when done since the in-memory drive is wiped on reload.</p>
+    </details>
+    <details>
+      <summary>Can I open a .kdbx file here?</summary>
+      <p>No. KeePass 1.x opens the older <code>.kdb</code> format, not the <code>.kdbx</code> format used by KeePass 2.x. The two formats are incompatible. If your vault is <code>.kdbx</code>, you will need KeePass 2.x (natively) to export or convert it to <code>.kdb</code> first.</p>
+    </details>
+    <details>
+      <summary>Is KeePass free?</summary>
+      <p>Yes. KeePass is free, open-source software released under the GPL-2.0 license — no purchase, no account, no activation. Because it is freely redistributable, the KeePass 1.x build is hosted here so you can launch it instantly.</p>
+    </details>
+    <details>
+      <summary>How do I save changes I make to my database?</summary>
+      <p>Save inside KeePass as usual, then use the <strong>Download files written by this app</strong> button. It bundles the updated <code>.kdb</code> into a zip for download. Do this before closing or reloading the tab — the emulated drive does not persist.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Open-source archiver.</span></a></li>
-      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small Win32 tools.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Open-source file archiver and extractor.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad</span><span class="lc-desc">The classic lightweight Windows text editor.</span></a></li>
+      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">Sumatra PDF</span><span class="lc-desc">Fast, free open-source PDF reader.</span></a></li>
+      <li><a class="link-card" href="/run/putty/"><span class="lc-title">PuTTY</span><span class="lc-desc">Free open-source SSH and telnet client.</span></a></li>
+      <li><a class="link-card" href="/run/notepad-plus-plus/"><span class="lc-title">Notepad++</span><span class="lc-desc">Open-source code and text editor.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
     </ul>
   </section>
 </main>
@@ -105,5 +178,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>

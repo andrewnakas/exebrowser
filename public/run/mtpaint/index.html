@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run mtPaint Online — Free Pixel Art Editor in Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Run mtPaint, the free open-source pixel art and image editor, in your browser with Wine + WebAssembly. Tiny, fast, native Win32 — one of the most reliable graphics editors to run with no install." />
+<meta name="keywords" content="mtpaint browser, free pixel art editor online, mtpaint online, open source image editor, run mtpaint wine, pixel art editor no install, indexed palette editor browser" />
+<link rel="canonical" href="https://exebrowser.com/run/mtpaint/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/mtpaint/" />
+<meta property="og:title" content="Run mtPaint in Your Browser — Free Pixel Art Editor" />
+<meta property="og:description" content="mtPaint, the tiny open-source pixel art and image editor, running cleanly in your browser with Wine + WebAssembly. No install, no upload." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=18" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Run mtPaint", "item": "https://exebrowser.com/run/mtpaint/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "mtPaint",
+  "url": "https://exebrowser.com/run/mtpaint/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Run mtPaint, the free open-source pixel art and image editor, in your browser with Wine + WebAssembly. Tiny, fast, native Win32 — one of the most reliable graphics editors to run with no install.",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Web Browser",
+  "author": { "@type": "Organization", "name": "Mark Tyler / wjaguar (mtPaint project)" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is mtPaint free to use in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. mtPaint is open-source software released under the GNU General Public License (GPL), so it is completely free to use, modify, and redistribute. We host a clean copy here, and running it in your browser costs nothing." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does mtPaint run well under browser-based Wine?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It does. mtPaint is a small native Win32 program that uses standard windowing and avoids DirectX, 3D, and modern .NET, so it maps almost perfectly onto what Wine 1.7.55 implements well. Use the default (Win32) variant — it's one of the more reliable graphics editors in ExeBrowser." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I edit my own images?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Load your image files alongside the mtPaint folder, open them from inside the app, edit, save in your chosen format (PNG, GIF, BMP, JPEG, TIFF and more), then use Download files written by this app to retrieve them. Always download before reloading — the virtual drive is wiped on refresh." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is mtPaint good for pixel art?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Very much so — pixel art and icons are exactly what it was built for. The zoom, single-pixel pencil, fill, and indexed-palette tools make it a favorite for sprites, favicons, and retro-style art. It's not a layered photo editor like GIMP, but for pixel work it's hard to beat for the size." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is mtPaint so small and fast?",
+      "acceptedAnswer": { "@type": "Answer", "text": "By design. The whole program is only a few hundred kilobytes and was written to run on hardware as modest as a 200&nbsp;MHz CPU with 16&nbsp;MB of RAM. That tiny footprint is also why it boots and responds quickly inside the WebAssembly Wine sandbox." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run mtPaint</nav>
+
+  <section class="card">
+    <h2>Run mtPaint online in your browser <span class="verdict good">Works well</span></h2>
+    <p><em>mtPaint</em> (Mark Tyler's Painting Program) is a tiny, fast, open-source raster editor built for icons, pixel art, and quick photo touch-ups. The whole program is only a few hundred kilobytes and was designed to run happily on a 200&nbsp;MHz machine with 16&nbsp;MB of RAM — which is exactly the kind of lightweight, native Win32 software that runs <strong>well</strong> under browser-based Wine. If you want to push pixels, edit an indexed palette, or crop and resize an image on a Chromebook or a locked-down PC with nothing installed, mtPaint is one of the most dependable choices in ExeBrowser. Click play, let Wine boot, and you have a real paint program in a browser tab — no install, nothing uploaded to a server.</p>
+
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="mtpaint.exe"
+         data-app-name="mtPaint"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">mtPaint is GPL-licensed open-source. The current Windows build is 64-bit with GTK2 DLLs — bring your own copy using <strong>Load your own copy</strong> above, or try an older 32-bit build from the <a href="https://sourceforge.net/projects/mtpaint/files/" target="_blank" rel="noopener">SourceForge page</a>.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Download mtPaint (open source, GPL)</h3>
+      <p>mtPaint is free and open-source under the GPL. You can launch the hosted copy above instantly, or get the official Windows build and source from the project itself:</p><ul><li><a href="https://mtpaint.sourceforge.net/" target="_blank" rel="noopener">mtpaint.sourceforge.net</a> — official site and Windows downloads</li><li><a href="https://github.com/wjaguar/mtPaint" target="_blank" rel="noopener">github.com/wjaguar/mtPaint</a> — source code repository</li></ul><p>To edit your own pictures here, bundle them into the same folder you load, then use <strong>Download files written by this app</strong> to get your saved images back out.</p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <p>mtPaint is a small, self-contained Win32 application. It draws a standard window with standard toolbars, reads and writes image files on the local virtual <code>C:\</code> drive, and never reaches for DirectX, 3D acceleration, recent .NET, or post-Windows-7 APIs. That is precisely the profile Wine 1.7.55 handles cleanly, so the <strong>default (Win32)</strong> variant is all you need.</p><p>Expect a snappy, no-frills editing experience: brush, pencil, fill, shape, and selection tools; zoom for pixel-precise work; palette and channel editing; and the usual crop, resize, rotate, and flip operations. Because everything runs locally in WebAssembly at roughly 10–40% of native speed, small images feel instant. Very large photos will redraw more slowly than on a real PC, but the tiny footprint keeps things responsive for the icon-and-sprite work mtPaint is built for.</p>
+    <h3>Opening images and saving your work</h3>
+    <p>The in-browser <code>C:\</code> drive starts empty and is wiped every time you reload, so the workflow is: bundle the mtPaint program folder with any images you want to edit into one folder, load it, then open your file from inside mtPaint. (If you use the hosted copy below, it boots ready to go — just create a new canvas or drop your own images alongside it.)</p><p>When you're finished, <strong>save inside mtPaint first</strong> — it exports PNG, GIF, BMP, JPEG, TIFF and more — then click <strong>Download files written by this app</strong> to pull your saved images out of the virtual drive as a zip. The golden rule of ExeBrowser applies here: download before you close the tab, because the virtual disk does not survive a reload.</p>
+    <h3>What it's great at (and what it isn't)</h3>
+    <p>mtPaint shines at pixel art, sprite sheets, icon and favicon work, indexed-palette images (great for retro and GIF-style art), and fast crop/resize/recolor jobs. The palette editor and indexed-color tools are genuinely good and hard to find in modern editors.</p><p>It is <em>not</em> a layered photo compositor like Photoshop or GIMP — it favors a single working image and a flat, fast workflow. There's no GPU filtering, no RAW pipeline, and no plugin ecosystem. None of that is a Wine limitation; it's simply mtPaint's deliberately minimal design. For its intended job — pushing pixels quickly — it runs in the browser about as reliably as anything we host.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is mtPaint free to use in the browser?</summary>
+      <p>Yes. mtPaint is open-source software released under the GNU General Public License (GPL), so it is completely free to use, modify, and redistribute. We host a clean copy here, and running it in your browser costs nothing.</p>
+    </details>
+    <details>
+      <summary>Does mtPaint run well under browser-based Wine?</summary>
+      <p>It does. mtPaint is a small native Win32 program that uses standard windowing and avoids DirectX, 3D, and modern .NET, so it maps almost perfectly onto what Wine 1.7.55 implements well. Use the <strong>default (Win32)</strong> variant — it's one of the more reliable graphics editors in ExeBrowser.</p>
+    </details>
+    <details>
+      <summary>Can I edit my own images?</summary>
+      <p>Yes. Load your image files alongside the mtPaint folder, open them from inside the app, edit, save in your chosen format (PNG, GIF, BMP, JPEG, TIFF and more), then use <strong>Download files written by this app</strong> to retrieve them. Always download before reloading — the virtual drive is wiped on refresh.</p>
+    </details>
+    <details>
+      <summary>Is mtPaint good for pixel art?</summary>
+      <p>Very much so — pixel art and icons are exactly what it was built for. The zoom, single-pixel pencil, fill, and indexed-palette tools make it a favorite for sprites, favicons, and retro-style art. It's not a layered photo editor like GIMP, but for pixel work it's hard to beat for the size.</p>
+    </details>
+    <details>
+      <summary>Why is mtPaint so small and fast?</summary>
+      <p>By design. The whole program is only a few hundred kilobytes and was written to run on hardware as modest as a 200&nbsp;MHz CPU with 16&nbsp;MB of RAM. That tiny footprint is also why it boots and responds quickly inside the WebAssembly Wine sandbox.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/mspaint/"><span class="lc-title">MS Paint</span><span class="lc-desc">The classic Windows bitmap editor.</span></a></li>
+      <li><a class="link-card" href="/run/grafx2/"><span class="lc-title">GrafX2</span><span class="lc-desc">Another beloved pixel-art editor.</span></a></li>
+      <li><a class="link-card" href="/run/irfanview/"><span class="lc-title">IrfanView</span><span class="lc-desc">Fast image viewer and batch converter.</span></a></li>
+      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">Free open-source word processor.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; utilities</span><span class="lc-desc">Small, reliable Win32 tools.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs in the browser and what doesn't.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
+</body>
+</html>

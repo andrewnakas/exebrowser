@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Freeciv in Your Browser — Free Civilization-Style Strategy — ExeBrowser</title>
-<meta name="description" content="Run Freeciv, the free open-source empire-building strategy game inspired by Civilization, in your browser with Wine + WebAssembly. Which build to use, how to load it, and realistic expectations." />
-<meta name="keywords" content="freeciv browser, play freeciv online, free civilization game, open source strategy game windows, civ game no install" />
+<title>Play Freeciv Online — Free Civ-Style Strategy in Your Browser, No Download — ExeBrowser</title>
+<meta name="description" content="Play Freeciv, the free open-source empire-builder inspired by Civilization, in your browser via Wine + WebAssembly. Older SDL build works well — no install, no upload." />
+<meta name="keywords" content="play freeciv online, freeciv browser, free civilization game, open source strategy game, civ game no install, freeciv in browser, turn-based empire builder, freeciv wine" />
 <link rel="canonical" href="https://exebrowser.com/run/freeciv/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/freeciv/" />
-<meta property="og:title" content="Run Freeciv in Your Browser — Free Civ-Style Strategy" />
-<meta property="og:description" content="Freeciv, the open-source empire-building game, running in your browser with Wine + WebAssembly." />
+<meta property="og:title" content="Play Freeciv Online — Free Civ-Style Strategy in Your Browser" />
+<meta property="og:description" content="Freeciv, the open-source empire-building game inspired by Civilization, running in your browser with Wine + WebAssembly. Older SDL builds run comfortably." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=16" />
+<link rel="stylesheet" href="/style.css?v=18" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -31,7 +31,56 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Freeciv", "item": "https://exebrowser.com/run/freeciv/" }
+    { "@type": "ListItem", "position": 3, "name": "Play Freeciv", "item": "https://exebrowser.com/run/freeciv/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Freeciv",
+  "url": "https://exebrowser.com/run/freeciv/",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Play Freeciv, the free open-source empire-builder inspired by Civilization, in your browser via Wine + WebAssembly. Older SDL build works well — no install, no upload.",
+  "applicationCategory": "Game",
+  "genre": ["Strategy", "Turn-based strategy", "4X", "Empire-building"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "The Freeciv project" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Freeciv free to play?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Freeciv is open-source software under the GPL-2.0 license with no DRM, no paywall, and no anti-cheat. It's completely free, and because of that we can host a ready-to-run build right here in the browser." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Freeciv the same as Civilization?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — Freeciv is an independent, free game inspired by the Civilization series. It plays in a very similar style (found cities, research tech, build an empire) and even ships rulesets that mimic classic Civ, but it's a separate open-source project, not a Sid Meier / Firaxis product." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the newest version of Freeciv not work in the browser?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Modern Freeciv builds use newer GTK and OpenGL features that the browser's Wine 1.7.55 engine handles poorly, so they often fail to open a window. We host an older SDL-client build that boots reliably. If you upload your own copy, prefer a 2.2 to 2.5-era SDL build." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Freeciv need an internet connection to play?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not for single-player. Freeciv runs a local game server in-process, so you can play against AI opponents entirely offline inside the browser. Online multiplayer against other players over the network is not supported in this sandboxed setup." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it fast enough to be playable?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Browser Wine runs at roughly 10-40% of native speed, but Freeciv is turn-based with no real-time pressure, so emulation overhead barely matters once a game is underway. Startup is the only slow part." }
+    }
   ]
 }
 </script>
@@ -54,36 +103,72 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Freeciv</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Freeciv</nav>
+
   <section class="card">
-    <h2>Run Freeciv in your browser <span class="verdict partial">Works (older builds)</span></h2>
-    <p><em>Freeciv</em> is a free, open-source, turn-based empire-building game openly inspired by the classic <em>Civilization</em> series. Because it's GPL software with no DRM and a long history of small 32-bit releases, it's a natural fit for browser-based Wine — with the caveat that you'll want an older, lighter build rather than the newest one.</p>
+    <h2>Play Freeciv online in your browser <span class="verdict partial">Works well on older SDL builds</span></h2>
+    <p><em>Freeciv</em> is a free, open-source, turn-based empire-building game openly inspired by the classic <em>Civilization</em> series — found a nation, grow your cities, research technologies, and outmaneuver rivals on a hex or square map. Because it's GPL software with no DRM and a long history of small 32-bit releases, it's a natural fit for browser-based Wine. The catch: reach for an older, lighter SDL build rather than the newest GTK release. Click <strong>Play</strong> above to boot it in your browser — nothing to install, nothing to upload.</p>
 
-    <table class="spec-table">
-      <tr><th>Game</th><td>Freeciv (GTK or SDL client, 32-bit Windows build)</td></tr>
-      <tr><th>License</th><td>GPL-2.0 — free and open source</td></tr>
-      <tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr>
-      <tr><th>How to load</th><td>Install on a PC, then upload the program folder; or use a portable build</td></tr>
-      <tr><th>Where to get it</th><td><a href="https://www.freeciv.org/download.html" target="_blank" rel="noopener">freeciv.org/download</a> (official)</td></tr>
-    </table>
-
-    <h3>Use an older, lighter build</h3>
-    <p>Modern Freeciv releases lean on newer GTK and OpenGL features that browser-based Wine 1.7.55 handles poorly. The classic 2.2–2.5-era Windows builds, especially the SDL client, are much friendlier: smaller, fewer modern dependencies, and closer to the Wine era we target. Grab one of those from the official downloads or the project's archive.</p>
-
-    <h3>How to get the files in</h3>
-    <p>Freeciv ships as an installer. The cleanest path: install it on any Windows PC (or extract a portable/zip build), then copy the whole Freeciv program directory — the client EXE plus its <code>data\</code> folder of rulesets and tilesets — into one folder and upload that with the <strong>folder picker</strong>. Freeciv reads its rulesets from disk at runtime, so the data folder must come along.</p>
-
-    <h3>What to expect</h3>
-    <p>Turn-based games are forgiving of emulation speed — there's no real-time pressure — so once it boots, play is comfortable. The risk is at startup: a modern client may fail to create its window. If that happens, drop to an older SDL-client build. The single-player game runs a local server in-process, so no network is needed.</p>
-
-    <div class="cta-row"><a class="cta-btn" href="/">Boot Wine and try it →</a></div>
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-entry="CIVCLIENT.EXE"
+         data-app-name="Freeciv"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">Freeciv is GPL-2.0 open-source. Windows builds ship as NSIS installers — install it on Windows first, then use <strong>Load your own copy</strong> above to run the installed client.</p>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Related guides</h2>
+    <div class="download-box">
+      <h3 style="margin-top:0;">Download Freeciv (open source, GPL-2.0)</h3>
+      <p>Freeciv is free and open source. We host an older 32-bit SDL build tuned to run in the browser. You can also grab the latest official installers from <a href="https://www.freeciv.org/download.html" target="_blank" rel="noopener">freeciv.org/download</a>.</p><p><a class="cta-btn" href="/apps/freeciv/freeciv.zip">Download Freeciv (SDL build) →</a></p>
+    </div>
+  </section>
+  <section class="card">
+    <h2>How it works &amp; what to expect</h2>
+    <h3>Why an older, lighter build runs best</h3>
+    <p>Modern Freeciv releases lean on newer GTK and OpenGL features that browser-based Wine 1.7.55 handles poorly. The classic 2.2 to 2.5-era Windows builds — especially the <strong>SDL client</strong> — are far friendlier: smaller, fewer modern dependencies, and closer to the Wine era we target. That's the build we host here, so you get a version that actually boots and plays rather than one that hangs at the window-creation stage.</p><p>If you'd rather bring a specific newer version, you can — but expect the modern GTK client to be hit-or-miss, and fall back to an SDL build if it refuses to open a window.</p>
+    <h3>How it works &amp; what to expect</h3>
+    <p>Turn-based games are forgiving of emulation speed — there's no real-time pressure — so once Freeciv boots, play is comfortable even at 10-40% of native speed. The single-player game runs a local server in-process, so <strong>no network connection is needed</strong> to play against the AI.</p><p>The main risk is at startup: a too-modern client may fail to create its window. The hosted SDL build sidesteps that. Map scrolling, the city view, and tech tree all behave once you're in a game.</p>
+    <h3>Bringing your own build</h3>
+    <p>Want a different ruleset, tileset, or version? Freeciv ships as an installer, but it reads everything from disk at runtime. The cleanest path: install it on any Windows PC (or extract a portable/zip build), then copy the <em>whole</em> Freeciv program directory — the client EXE plus its <code>data\</code> folder of rulesets and tilesets — into one folder and upload it with the <strong>folder picker</strong>. The data folder must come along, or the game won't find its rules. Official builds live at <a href="https://www.freeciv.org/download.html" target="_blank" rel="noopener">freeciv.org/download</a>.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is Freeciv free to play?</summary>
+      <p>Yes. Freeciv is open-source software under the GPL-2.0 license with no DRM, no paywall, and no anti-cheat. It's completely free, and because of that we can host a ready-to-run build right here in the browser.</p>
+    </details>
+    <details>
+      <summary>Is Freeciv the same as Civilization?</summary>
+      <p>No — Freeciv is an independent, free game inspired by the <em>Civilization</em> series. It plays in a very similar style (found cities, research tech, build an empire) and even ships rulesets that mimic classic Civ, but it's a separate open-source project, not a Sid Meier / Firaxis product.</p>
+    </details>
+    <details>
+      <summary>Why does the newest version of Freeciv not work in the browser?</summary>
+      <p>Modern Freeciv builds use newer GTK and OpenGL features that the browser's Wine 1.7.55 engine handles poorly, so they often fail to open a window. We host an older SDL-client build that boots reliably. If you upload your own copy, prefer a 2.2 to 2.5-era SDL build.</p>
+    </details>
+    <details>
+      <summary>Does Freeciv need an internet connection to play?</summary>
+      <p>Not for single-player. Freeciv runs a local game server in-process, so you can play against AI opponents entirely offline inside the browser. Online multiplayer against other players over the network is not supported in this sandboxed setup.</p>
+    </details>
+    <details>
+      <summary>Is it fast enough to be playable?</summary>
+      <p>Yes. Browser Wine runs at roughly 10-40% of native speed, but Freeciv is turn-based with no real-time pressure, so emulation overhead barely matters once a game is underway. Startup is the only slow part.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">Free shareware, hosted here.</span></a></li>
+      <li><a class="link-card" href="/run/freeciv/"><span class="lc-title">Freeciv</span><span class="lc-desc">This page — the free Civ-style empire builder.</span></a></li>
       <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">A real-time strategy classic.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">Free shareware shooter, hosted here.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Solitaire</span><span class="lc-desc">The timeless Windows card game.</span></a></li>
+      <li><a class="link-card" href="/run/scorched-earth/"><span class="lc-title">Scorched Earth</span><span class="lc-desc">Turn-based artillery warfare.</span></a></li>
       <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
     </ul>
   </section>
@@ -103,5 +188,9 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/embed.js?v=1"></script>
+<script src="/app.js?v=15"></script>
 </body>
 </html>
