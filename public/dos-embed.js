@@ -148,8 +148,6 @@
       112: 59, 113: 60, 114: 61, 115: 62, 116: 63, 117: 64, 118: 65, 119: 66, 120: 67, 121: 68, 122: 87, 123: 88, // F1-F12
     };
 
-    // Use capture phase on window so we intercept before any other handler.
-    // Also prevent default to stop arrow keys from scrolling the page.
     const onKey = (pressed) => (e) => {
       const sc = KEY_MAP[e.keyCode];
       if (sc !== undefined) {
@@ -158,8 +156,9 @@
         e.stopPropagation();
       }
     };
-    window.addEventListener("keydown", onKey(true),  { capture: true });
-    window.addEventListener("keyup",   onKey(false), { capture: true });
+    // Attach to both document (capture) and canvas so keys are never lost.
+    document.addEventListener("keydown", onKey(true),  { capture: true });
+    document.addEventListener("keyup",   onKey(false), { capture: true });
 
     canvas.addEventListener("mousemove", e => {
       const r = canvas.getBoundingClientRect();
@@ -168,8 +167,18 @@
         (e.clientY - r.top) / r.height
       );
     });
-    canvas.addEventListener("mousedown", e => { ci.sendMouseButton(e.button, true);  e.preventDefault(); });
-    canvas.addEventListener("mouseup",   e => { ci.sendMouseButton(e.button, false); e.preventDefault(); });
+    // Keep all mouse buttons out of the browser and into DOSBox.
+    canvas.addEventListener("mousedown", e => {
+      canvas.focus();
+      ci.sendMouseButton(e.button, true);
+      e.preventDefault();
+    });
+    canvas.addEventListener("mouseup", e => {
+      ci.sendMouseButton(e.button, false);
+      e.preventDefault();
+    });
+    // Right-click default is "walk forward" in vanilla DOOM — suppress context menu.
+    canvas.addEventListener("contextmenu", e => e.preventDefault());
   }
 
   async function play() {
