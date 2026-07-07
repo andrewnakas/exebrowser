@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Classic Windows Solitaire Online — Free, In Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Run classic Windows Solitaire (sol.exe), FreeCell, Minesweeper and Spider in your browser via Wine + WebAssembly. They boot in seconds and play at full speed — no install." />
+<title>Run Classic Windows Solitaire in Your Browser — With Your Own Copy — ExeBrowser</title>
+<meta name="description" content="Load your own sol.exe, FreeCell, Minesweeper or Spider and they run client-side via Wine + WebAssembly — fast, no install. We don't host Microsoft's files." />
 <meta name="keywords" content="windows solitaire online, play classic solitaire browser, sol.exe online, freecell minesweeper browser, windows xp solitaire no download, classic solitaire in browser, run sol.exe wine" />
 <link rel="canonical" href="https://exebrowser.com/run/solitaire/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/solitaire/" />
-<meta property="og:title" content="Play Classic Windows Solitaire in Your Browser" />
-<meta property="og:description" content="Run the classic bundled Windows games — Solitaire, FreeCell, Minesweeper, Spider — in your browser. No install, full speed." />
+<meta property="og:title" content="Run Classic Windows Solitaire in Your Browser — With Your Own Copy" />
+<meta property="og:description" content="Classic Windows Solitaire, FreeCell, Minesweeper and Spider run great on Wine + WebAssembly — but Microsoft's files aren't ours to host. Load your own copy and it boots in seconds, entirely in your browser." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play Solitaire", "item": "https://exebrowser.com/run/solitaire/" }
+    { "@type": "ListItem", "position": 3, "name": "Solitaire guide", "item": "https://exebrowser.com/run/solitaire/" }
   ]
 }
 </script>
@@ -42,13 +42,13 @@
   "name": "Solitaire",
   "url": "https://exebrowser.com/run/solitaire/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run classic Windows Solitaire (sol.exe), FreeCell, Minesweeper and Spider in your browser via Wine + WebAssembly. They boot in seconds and play at full speed — no install.",
+  "description": "Load your own sol.exe, FreeCell, Minesweeper or Spider and they run client-side via Wine + WebAssembly — fast, no install. We don't host Microsoft's files.",
   "applicationCategory": "Game",
   "genre": ["Card game", "Casual", "Puzzle"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Microsoft" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -103,11 +103,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Solitaire</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Solitaire guide</nav>
 
   <section class="card">
-    <h2>Play classic Windows Solitaire online in your browser <span class="verdict good">Works well</span></h2>
-    <p>The Solitaire that shipped with Windows 3.1 through Windows 7 — <code>sol.exe</code> — is a tiny, classic Win32 game, which makes it a near-perfect candidate for ExeBrowser. So are its siblings: <code>freecell.exe</code>, <code>winmine.exe</code> (Minesweeper) and <code>spider.exe</code>. They boot in seconds, play at full speed, and need nothing modern — no DirectX, no .NET, just plain Win32. Bring your own copy of the EXE (it's bundled with the Windows you already own), load it on the default Win32 variant, and you're dealing cards in under a minute.</p>
+    <h2>Running classic Windows Solitaire in your browser — with your own copy <span class="verdict good">Works well</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p>The Solitaire that shipped with Windows 3.1 through Windows 7 — <code>sol.exe</code> — is a tiny, classic Win32 game, which makes it a near-perfect candidate for ExeBrowser. One thing to know up front: it's Microsoft software, so we don't host it — you load your own copy below and it runs entirely in your browser tab. The same goes for its siblings: <code>freecell.exe</code>, <code>winmine.exe</code> (Minesweeper) and <code>spider.exe</code>. They boot in seconds, play at full speed, and need nothing modern — no DirectX, no .NET, just plain Win32. Grab the EXE from the Windows you already own, load it on the default Win32 variant, and you're dealing cards in under a minute.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

@@ -979,8 +979,8 @@
     log("Warning: failed to preload JSZip — zip uploads will wait until boot.", "warn");
   });
 
-  // SharedArrayBuffer check (Boxedwine needs it for threads)
-  if (typeof SharedArrayBuffer === "undefined") {
-    log("Warning: SharedArrayBuffer is unavailable. Check that COOP/COEP headers are set. Performance will be degraded.", "warn");
-  }
+  // The 32-bit Boxedwine build is single-threaded and never touches
+  // SharedArrayBuffer, so no cross-origin-isolation check is needed here.
+  // (The experimental /64/ pthreads runtime does need it — its page keeps
+  // COOP/COEP headers and ships a coi-serviceworker fallback.)
 })();

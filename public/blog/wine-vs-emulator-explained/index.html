@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Wine vs. an Emulator: What's the Difference? — ExeBrowser</title>
-<meta name="description" content="Wine is famously 'not an emulator' — so what is it, and why does running Windows software in a browser need both Wine and an emulator? A clear, jargon-light explanation." />
+<meta name="description" content="Wine is famously 'not an emulator' — what that means, how it differs from DOSBox-style emulation, and why running Windows apps in a browser needs both." />
 <meta name="keywords" content="wine vs emulator, is wine an emulator, what is wine, wine windows api, boxedwine explained" />
 <link rel="canonical" href="https://exebrowser.com/blog/wine-vs-emulator-explained/" />
 <meta property="og:type" content="article" />
@@ -30,12 +30,12 @@
   "@type": "Article",
   "headline": "Wine vs. an Emulator: What's the Difference?",
   "description": "A clear explanation of why Wine is not an emulator, and why browser-based Windows software needs both.",
-  "author": { "@type": "Organization", "name": "ExeBrowser" },
+  "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" },
   "publisher": { "@type": "Organization", "name": "ExeBrowser" },
   "mainEntityOfPage": "https://exebrowser.com/blog/wine-vs-emulator-explained/",
   "image": "https://exebrowser.com/og.png",
   "datePublished": "2026-06-09",
-  "dateModified": "2026-06-09"
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -71,11 +71,12 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Wine vs. an emulator</nav>
   <section class="card">
     <h2>Wine vs. an emulator: what's the difference?</h2>
-    <p class="updated">Published June 9, 2026 · ~6 minute read</p>
+    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published June 9, 2026 · Updated July 1, 2026 · ~9 minute read</p>
     <p>If you've looked into running Windows software on a Mac, Linux, or in a browser, you've run into Wine — and the cheeky claim that "Wine Is Not an Emulator." It's a real distinction, not just a joke, and understanding it explains a lot about what works and what doesn't. Here's the plain-language version.</p>
 
     <h3>What an emulator actually does</h3>
     <p>An emulator pretends to be hardware. A CPU emulator reads the machine instructions of one processor (say x86) and simulates, step by step, what a real chip would do — updating fake registers, fake memory, fake flags. The program being emulated has no idea it isn't running on real silicon. This is powerful and universal: you can emulate an x86 PC on an ARM phone, a game console on a laptop, anything on anything. The price is speed. Simulating each instruction in software is many times slower than letting real hardware run it directly.</p>
+    <p>You've almost certainly used one. <a href="https://www.dosbox.com/" target="_blank" rel="noopener">DOSBox</a> — the program behind nearly every classic DOS game sold or re-released today — is a genuine emulator: it simulates an entire early-90s PC, including the CPU, the VGA graphics card, and a Sound Blaster, with a DOS-like environment layered on top. Console emulators do the same for a SNES or a PlayStation. Projects like <a href="https://copy.sh/v86/" target="_blank" rel="noopener">v86</a> push it further, emulating enough of a complete PC inside a browser tab to boot whole operating systems — Windows 95, FreeDOS, small Linux distributions. The common thread: the emulator recreates the <em>machine</em>, and whatever ran on the original machine runs on the recreation. Slowly, but faithfully.</p>
 
     <h3>What Wine does instead</h3>
     <p>Wine takes a completely different approach. A Windows program is two things: (1) a stream of CPU instructions, and (2) a constant series of calls into Windows system libraries — <code>kernel32.dll</code>, <code>user32.dll</code>, <code>gdi32.dll</code>, and hundreds more. Wine doesn't touch the CPU part at all. On an actual x86 Mac or Linux box, the processor is <em>already</em> x86, so those instructions run natively at full speed. What Wine does is intercept the <em>second</em> part: when the program calls a Windows function, Wine answers with its own from-scratch implementation built on Linux/macOS system calls. It's a translation layer for the Windows API, not a hardware simulator. That's why it's "not an emulator" — and why, on matching hardware, Wine is fast.</p>
@@ -85,9 +86,31 @@
       <tr><th>Wine</th><td>Re-implements the Windows API on top of POSIX. Fast on matching hardware, but not 100% complete.</td></tr>
     </table>
 
+    <h3>Thirty years of Wine, briefly</h3>
+    <p>Wine is old enough that the joke in its name has outlived several versions of Windows. The project started in 1993, when Windows 3.1 was the target, as an attempt to run Windows programs on Linux without Windows. The name is a recursive acronym — "Wine Is Not an Emulator" — chosen precisely to head off the confusion this article is about. Progress was famously slow, because the goal kept moving: reimplementing the Windows API means chasing every function Microsoft adds, and it took the project about fifteen years to declare a 1.0 release in 2008. Today it's maintained under the <a href="https://www.winehq.org/" target="_blank" rel="noopener">WineHQ</a> banner, with much of the heavy lifting funded by <a href="https://www.codeweavers.com/" target="_blank" rel="noopener">CodeWeavers</a>, the company that employs many core Wine developers and sells CrossOver, a polished, supported version of Wine for macOS, Linux, and ChromeOS.</p>
+    <p>The approach got its mainstream moment in 2018, when Valve shipped Proton — a Wine-based compatibility layer built into Steam, paired with translation for modern graphics APIs. Proton is the reason the Steam Deck, a Linux machine, plays thousands of Windows games out of the box. None of those games were recompiled or ported; their Windows calls are simply translated as they run. If you've heard someone say the Steam Deck "just runs Windows games," Wine's translation trick is the technology doing it.</p>
+
+    <h3>Why the same trick works for one app and fails for another</h3>
+    <p>API translation has a very different failure profile from emulation, and it explains Wine's famously app-by-app compatibility. A Windows program only ever uses a slice of the API. If everything it calls sits in the well-worn core — windows, menus, buttons, file access, 2D drawing — Wine's implementations are decades-mature and the app can run indistinguishably from Windows. That's why so many 90s and 2000s utilities and games work perfectly on the first try.</p>
+    <p>But translation is all-or-nothing in a way hardware emulation isn't. If an app imports a DLL Wine doesn't provide, or calls one function Wine has only stubbed out, it can fail instantly — the classic <code>err:module:import_dll Library X.dll not found</code> in the log. It doesn't matter that the other 99% of the app would have worked. The usual failure clusters are predictable: apps that need modern .NET runtimes, installers that lean on MSI custom actions, and copy protection or anti-cheat that deliberately probes deep Windows internals Wine doesn't reproduce. This is also why WineHQ maintains a per-application compatibility database rather than a simple version list — an app's fate depends on <em>which</em> calls it happens to make, not on its age or size. A full-machine emulator running real Windows sidesteps all of this, at the cost of needing an actual Windows install and being slower still.</p>
+
     <h3>So why does ExeBrowser use both?</h3>
     <p>Here's the twist. A browser doesn't run x86 — it runs <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>. So Wine alone isn't enough: there's no x86 processor underneath for those instructions to run on. That's where the emulator comes back in. <a href="https://www.boxedwine.org/" target="_blank" rel="noopener">Boxedwine</a> pairs Wine with a software x86 CPU emulator, and compiles the whole bundle to WebAssembly. The emulator handles the CPU instructions (the slow part); Wine handles the Windows API calls (the translation part). Stacked together, they let a Windows EXE run in a tab — which is exactly what <a href="/">ExeBrowser</a> does.</p>
     <p>This stacking is also why browser-based Wine is slower than Wine on a real Linux PC: on Linux, the x86 layer is free because the hardware is x86. In a browser, that layer has to be emulated, so you pay for it. The result is roughly 10–40% of native speed — invisible for a text editor, very noticeable for a 3D game.</p>
+    <!-- IMG-SLOT: simple diagram of the browser stack — Windows EXE on top, Wine API translation layer in the middle, x86 CPU emulator compiled to WebAssembly at the bottom, all inside a browser tab -->
+    <p>One practical footnote: the Wine build ExeBrowser ships is 32-bit (Wine 1.7.55), so 64-bit-only EXEs won't load on the default engine. There's an experimental 64-bit runtime, but if the software you want ever shipped a 32-bit build, that build is the safe bet.</p>
+
+    <h3>Where the other browser approaches fit</h3>
+    <p>Boxedwine's CPU-plus-Wine stack isn't the only way to run old software in a tab, and it isn't always the right one. It sits between two neighbors:</p>
+    <ul>
+      <li><strong>Full-machine emulation (v86).</strong> Emulate an entire PC — CPU, disk, graphics, everything — and boot a real operating system in the tab. Fidelity is total, because it <em>is</em> genuine Windows 95 or DOS running in there. The cost: you need an actual OS image (and the license that goes with it), you sit through a real boot, and everything runs at emulated speed. It's the right tool when an app depends on quirks of the real OS that Wine doesn't reproduce.</li>
+      <li><strong>DOS emulation (DOSBox / js-dos).</strong> For software older than Windows 95, the answer isn't Wine at all. A DOS-era program never calls the Windows API — Wine has nothing to translate — so handing a DOS EXE to Wine typically just fails. DOSBox, a true emulator of an early-90s PC, is the standard answer, and js-dos brings it to the browser via WebAssembly. This is exactly why ExeBrowser itself runs DOS games on DOSBox rather than forcing them through Wine: right era, right tool.</li>
+      <li><strong>Boxedwine (what ExeBrowser uses for Windows apps).</strong> The middle path: emulate only the CPU, let Wine stand in for the OS. No Windows license, no OS boot, seconds to start, and unmodified Win32 EXEs run directly — but you inherit Wine's incomplete corners along with its speed advantage.</li>
+    </ul>
+    <!-- IMG-SLOT: side-by-side screenshot — a DOS game running in the DOSBox engine and a Win32 utility running in the Wine engine, both in browser tabs -->
+
+    <h3>Which one do you actually need?</h3>
+    <p>A quick decision guide. If the program is from the DOS era — pre-1995, the kind you launched from a <code>C:\&gt;</code> prompt — use DOSBox, on the desktop or in a browser. If it's a classic 32-bit Windows app and you're on a Linux or Intel Mac machine, plain Wine (or CrossOver, if you want paid support) is the fastest option because there's no CPU layer to pay for. If it's a modern Windows game and you're on Linux or a Steam Deck, Proton handles it through Steam. If you need a genuine, complete old operating system — quirks, boot screen, and all — that's v86-style full-machine emulation, license and patience included. And if you just want to run a 32-bit Windows EXE in a tab with nothing installed, that's the Wine-plus-emulator stack this site is built on.</p>
 
     <h3>The takeaway</h3>
     <p>"Emulator" and "Wine" solve different halves of the same problem. An emulator gives you the CPU you don't have; Wine gives you the operating system you don't have. Run a Windows app on an x86 Linux box and you only need Wine. Run it in a browser and you need both — which is the whole trick behind running a <code>.exe</code> in a tab.</p>

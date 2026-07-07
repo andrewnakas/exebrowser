@@ -25,7 +25,9 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": []
+    "related": [],
+    "updated": "2026-07-01",
+    "screenshot": true
   },
   {
     "slug": "wolfenstein-3d",
@@ -182,7 +184,9 @@
           "cls": ""
         }
       ]
-    }
+    },
+    "updated": "2026-07-01",
+    "screenshot": true
   },
   {
     "slug": "tyrian",
@@ -330,7 +334,9 @@
           "cls": ""
         }
       ]
-    }
+    },
+    "updated": "2026-07-01",
+    "screenshot": true
   },
   {
     "slug": "doom",
@@ -483,7 +489,9 @@
         }
       ]
     },
-    "dosRuntime": true
+    "dosRuntime": true,
+    "updated": "2026-07-01",
+    "screenshot": true
   },
   {
     "slug": "freedoom",
@@ -644,17 +652,19 @@
         }
       ]
     },
-    "dosRuntime": true
+    "dosRuntime": true,
+    "updated": "2026-07-01",
+    "screenshot": true
   },
   {
     "slug": "3d-pinball-space-cadet",
-    "title": "Play 3D Pinball Space Cadet Online — Free, In Your Browser, No Download — ExeBrowser",
-    "description": "Play 3D Pinball for Windows – Space Cadet in your browser, no install. Use the Win32 + Gecko variant, upload the whole pinball folder, run PINBALL.EXE. Bring your own copy.",
+    "title": "Play 3D Pinball Space Cadet in Your Browser — With Your Own Copy — ExeBrowser",
+    "description": "Load your own Pinball folder and run PINBALL.EXE in a browser tab via Wine + WebAssembly — full speed, working sound, nothing uploaded to a server.",
     "keywords": "3d pinball space cadet online, play space cadet browser, 3d pinball for windows, space cadet pinball no download, pinball.exe browser, windows xp pinball online",
-    "ogTitle": "Play 3D Pinball Space Cadet in Your Browser",
-    "ogDescription": "Run the classic Windows XP pinball game in your browser with Wine + WebAssembly. No install, nothing uploaded to a server.",
-    "crumb": "Play 3D Pinball Space Cadet",
-    "h1": "Play 3D Pinball Space Cadet online in your browser",
+    "ogTitle": "Play 3D Pinball Space Cadet in Your Browser — With Your Own Copy",
+    "ogDescription": "A Wine compatibility guide for the Windows XP pinball classic. Load your own Pinball folder and PINBALL.EXE runs entirely in your browser — full speed, with sound.",
+    "crumb": "Space Cadet guide",
+    "h1": "Running 3D Pinball Space Cadet in your browser — with your own copy",
     "appName": "Space Cadet",
     "appType": "game",
     "author": "Microsoft",
@@ -668,11 +678,11 @@
     "appUrl": "",
     "verdict": {
       "kind": "good",
-      "text": "Works well — full speed, sound works"
+      "text": "Guide — bring your own copy (or play the open-source version instantly)"
     },
     "licenseNote": "<p><strong>Bring your own copy.</strong> <em>3D Pinball for Windows – Space Cadet</em> is proprietary Microsoft software and is not distributed by ExeBrowser. We don't host the files. If you have an old Windows XP, 2000, 98, or 95 Plus! machine (or install media) that you legally own, copy the <code>Pinball</code> folder off it — that is the legitimate way to get your <code>PINBALL.EXE</code> and its data files. ExeBrowser is not affiliated with Microsoft.</p>",
     "licenseReason": "Commercial Microsoft software bundled with old Windows releases; not licensed for redistribution, so we cannot host it.",
-    "intro": "<p><em>3D Pinball for Windows – Space Cadet</em> is one of the most-missed pieces of bundled Windows software ever — the single pinball table that shipped with Windows 95 Plus!, 98, 2000, and XP before quietly disappearing in Vista. The good news: it's a small, well-behaved 32-bit Win32 program, and it runs in ExeBrowser without much fuss. Pick the <strong>Win32 + Gecko</strong> variant, upload the whole pinball folder, point Wine at <code>PINBALL.EXE</code>, and you're launching the ball in seconds — full speed, working sound, nothing uploaded to a server.</p>",
+    "intro": "<p style=\"background:rgba(90,150,230,0.12);border-left:3px solid var(--accent);padding:0.75rem 1rem;border-radius:6px;\"><strong>Want to play right now, with nothing to install?</strong> We built <a href=\"/run/space-cadet-open/\">Open Cadet</a> — a fully open-source, public-domain remake of Space Cadet that plays instantly in your browser, no Microsoft files needed. This page is for running <em>your own</em> original copy; for instant play, <a href=\"/run/space-cadet-open/\">start Open Cadet →</a></p>\n<p><em>3D Pinball for Windows – Space Cadet</em> is one of the most-missed pieces of bundled Windows software ever — the single pinball table that shipped with Windows 95 Plus!, 98, 2000, and XP before quietly disappearing in Vista. This page is a compatibility guide: Microsoft still owns the game, so we don't host the files — you bring your own copy, and it runs entirely in your browser tab. The good news: it's a small, well-behaved 32-bit Win32 program, and it runs in ExeBrowser without much fuss. Pick the <strong>Win32 + Gecko</strong> variant, load your own pinball folder below, point Wine at <code>PINBALL.EXE</code>, and you're launching the ball in seconds — full speed, working sound, nothing uploaded to a server.</p>",
     "sections": [
       {
         "h": "Why it needs the whole folder",
@@ -715,6 +725,11 @@
     ],
     "related": [
       {
+        "href": "/run/space-cadet-open/",
+        "title": "Open Cadet (play now)",
+        "desc": "Our open-source Space Cadet remake — instant, no files needed."
+      },
+      {
         "href": "/run/solitaire/",
         "title": "Windows Solitaire",
         "desc": "Another classic bundled Windows game in your browser."
@@ -744,17 +759,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "solitaire",
-    "title": "Play Classic Windows Solitaire Online — Free, In Your Browser, No Download — ExeBrowser",
-    "description": "Run classic Windows Solitaire (sol.exe), FreeCell, Minesweeper and Spider in your browser via Wine + WebAssembly. They boot in seconds and play at full speed — no install.",
+    "title": "Run Classic Windows Solitaire in Your Browser — With Your Own Copy — ExeBrowser",
+    "description": "Load your own sol.exe, FreeCell, Minesweeper or Spider and they run client-side via Wine + WebAssembly — fast, no install. We don't host Microsoft's files.",
     "keywords": "windows solitaire online, play classic solitaire browser, sol.exe online, freecell minesweeper browser, windows xp solitaire no download, classic solitaire in browser, run sol.exe wine",
-    "ogTitle": "Play Classic Windows Solitaire in Your Browser",
-    "ogDescription": "Run the classic bundled Windows games — Solitaire, FreeCell, Minesweeper, Spider — in your browser. No install, full speed.",
-    "crumb": "Play Solitaire",
-    "h1": "Play classic Windows Solitaire online in your browser",
+    "ogTitle": "Run Classic Windows Solitaire in Your Browser — With Your Own Copy",
+    "ogDescription": "Classic Windows Solitaire, FreeCell, Minesweeper and Spider run great on Wine + WebAssembly — but Microsoft's files aren't ours to host. Load your own copy and it boots in seconds, entirely in your browser.",
+    "crumb": "Solitaire guide",
+    "h1": "Running classic Windows Solitaire in your browser — with your own copy",
     "appName": "Solitaire",
     "appType": "game",
     "author": "Microsoft",
@@ -771,7 +787,7 @@
       "kind": "good",
       "text": "Works well"
     },
-    "intro": "<p>The Solitaire that shipped with Windows 3.1 through Windows 7 — <code>sol.exe</code> — is a tiny, classic Win32 game, which makes it a near-perfect candidate for ExeBrowser. So are its siblings: <code>freecell.exe</code>, <code>winmine.exe</code> (Minesweeper) and <code>spider.exe</code>. They boot in seconds, play at full speed, and need nothing modern — no DirectX, no .NET, just plain Win32. Bring your own copy of the EXE (it's bundled with the Windows you already own), load it on the default Win32 variant, and you're dealing cards in under a minute.</p>",
+    "intro": "<p>The Solitaire that shipped with Windows 3.1 through Windows 7 — <code>sol.exe</code> — is a tiny, classic Win32 game, which makes it a near-perfect candidate for ExeBrowser. One thing to know up front: it's Microsoft software, so we don't host it — you load your own copy below and it runs entirely in your browser tab. The same goes for its siblings: <code>freecell.exe</code>, <code>winmine.exe</code> (Minesweeper) and <code>spider.exe</code>. They boot in seconds, play at full speed, and need nothing modern — no DirectX, no .NET, just plain Win32. Grab the EXE from the Windows you already own, load it on the default Win32 variant, and you're dealing cards in under a minute.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -845,7 +861,8 @@
         "title": "Full compatibility guide",
         "desc": "What runs in ExeBrowser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "freeciv",
@@ -930,17 +947,19 @@
         "title": "Full compatibility guide",
         "desc": "What runs and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01",
+    "screenshot": "screenshot.jpg"
   },
   {
     "slug": "age-of-empires",
-    "title": "Play Age of Empires Online — Does the Classic RTS Run in Your Browser? — ExeBrowser",
-    "description": "An honest look at running the 1997 Age of Empires and AoE II in your browser via Wine + WebAssembly: what works, what stutters, and how to load your own copy correctly.",
+    "title": "Can You Play Age of Empires in a Browser? Wine Compatibility Guide — ExeBrowser",
+    "description": "A compatibility guide to the 1997 Age of Empires and AoE II under browser Wine + WebAssembly: load your own copy and expect slow but sometimes playable RTS.",
     "keywords": "age of empires browser, run aoe online, age of empires no install, aoe wine browser, play age of empires online, age of empires 2 browser, aoe webassembly",
-    "ogTitle": "Play Age of Empires Online — Does the Classic RTS Run in Your Browser?",
-    "ogDescription": "An honest look at running the classic RTS Age of Empires in your browser with Wine + WebAssembly.",
-    "crumb": "Play Age of Empires",
-    "h1": "Play Age of Empires online in your browser",
+    "ogTitle": "Can You Play Age of Empires in a Browser? Wine Compatibility Guide",
+    "ogDescription": "An honest compatibility guide to the 1997 Age of Empires and AoE II under Wine + WebAssembly. We don't host the game — load your own copy and it runs client-side, slow but sometimes playable.",
+    "crumb": "Age of Empires guide",
+    "h1": "Can you play Age of Empires in your browser?",
     "appName": "Age of Empires",
     "appType": "game",
     "author": "Microsoft / Ensemble Studios",
@@ -959,7 +978,7 @@
     },
     "licenseReason": "Age of Empires is commercial software owned by Microsoft and cannot be redistributed by us.",
     "licenseNote": "<p><strong>Bring your own legally-owned copy.</strong> Age of Empires is commercial software published by Microsoft and is not free to redistribute, so we don't host it. Use an original disc-era install you own, or buy the modern <a href=\"https://www.ageofempires.com/\" target=\"_blank\" rel=\"noopener\">Definitive Editions from the official Age of Empires site</a> (note: the Definitive/HD editions are 64-bit Direct3D titles and will <em>not</em> run here). ExeBrowser is not affiliated with Microsoft or Ensemble Studios.</p>",
-    "intro": "<p>Age of Empires is the test case people most want answered: can a real RTS classic run in a browser tab? The honest answer is <strong>sometimes, and not at full speed</strong>. The original 1997 <em>Age of Empires</em> and <em>Age of Empires II: The Age of Kings</em> are 32-bit Win32 games from the right era, so they're plausible — but they lean on DirectDraw and DirectSound and are far more CPU-hungry than a card game, which is where browser-based emulation shows its limits. Expect to revisit a campaign mission or a small skirmish, not run a competitive late-game match.</p>",
+    "intro": "<p>Age of Empires is the test case people most want answered: can a real RTS classic run in a browser tab? The honest answer is <strong>sometimes, and not at full speed</strong> — and since it's commercial Microsoft software we don't host it, this page is a compatibility guide: load your own copy below and everything runs client-side in your tab. The original 1997 <em>Age of Empires</em> and <em>Age of Empires II: The Age of Kings</em> are 32-bit Win32 games from the right era, so they're plausible — but they lean on DirectDraw and DirectSound and are far more CPU-hungry than a card game, which is where browser-based emulation shows its limits. Expect to revisit a campaign mission or a small skirmish, not run a competitive late-game match.</p>",
     "sections": [
       {
         "h": "What to expect from performance",
@@ -1027,17 +1046,18 @@
         "title": "Full compatibility guide",
         "desc": "Why 3D and DirectX games struggle under WebAssembly."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "minesweeper",
-    "title": "Play Minesweeper Online — Classic Windows winmine.exe in Your Browser, No Download — ExeBrowser",
-    "description": "Run the classic Windows Minesweeper (winmine.exe) in your browser via Wine + WebAssembly. The real XP-era game runs smoothly — bring your own copy, or try a free web clone. Honest guide inside.",
+    "title": "Play Minesweeper in Your Browser — With Your Own Copy (Wine Guide) — ExeBrowser",
+    "description": "Classic Windows Minesweeper (winmine.exe) runs great in a browser tab via Wine + WebAssembly — but you load your own copy. Guide plus free clones.",
     "keywords": "play minesweeper online, classic minesweeper browser, winmine.exe online, windows xp minesweeper browser, minesweeper no download, run minesweeper in browser, classic windows minesweeper",
-    "ogTitle": "Play Classic Minesweeper Online in Your Browser",
-    "ogDescription": "The real classic Windows Minesweeper (winmine.exe), running in a browser tab via Wine + WebAssembly. It runs great — bring your own copy. Honest guide and free-clone alternatives inside.",
-    "crumb": "Play Minesweeper",
-    "h1": "Play classic Minesweeper online in your browser",
+    "ogTitle": "Play Minesweeper in Your Browser — With Your Own Copy (Wine Guide)",
+    "ogDescription": "The real winmine.exe runs smoothly under Wine + WebAssembly — you supply your own copy from a Windows install you own. Guide plus free web clones inside.",
+    "crumb": "Minesweeper guide",
+    "h1": "Play classic Minesweeper in your browser — with your own copy",
     "appName": "Minesweeper",
     "appType": "game",
     "variant": "default",
@@ -1055,7 +1075,7 @@
     },
     "licenseReason": "Classic Windows Minesweeper (winmine.exe) is proprietary Microsoft software bundled with Windows and was never released for free redistribution, so we cannot host it.",
     "licenseNote": "<h3 style=\"margin-top:0;\">You need to bring your own copy</h3><p>Classic Windows Minesweeper (<code>winmine.exe</code>) is <strong>proprietary Microsoft software</strong>. It shipped bundled with Windows 3.1 through Windows XP/Vista/7 and was never released for free redistribution, so we can't host the file for you. That's fine — the game is a single tiny EXE you almost certainly already own.</p><p>The legitimate copy lives at <code>C:\\Windows\\System32\\winmine.exe</code> on any Windows 2000, XP, Vista, or 7 machine you have a valid license for. Copy that file off your own PC and load it above. Don't download <code>winmine.exe</code> from random \"EXE fix\" sites — they're a common malware vector. If you don't have a Windows copy to hand, the free web clones below are the honest, legal alternative.</p>",
-    "intro": "<p>The real, classic <strong>Windows Minesweeper</strong> — <code>winmine.exe</code>, the same little grid of mines that ate your lunch breaks for two decades — running right in a browser tab. No download of <em>our</em> stuff, no install, no account. ExeBrowser runs the actual Win32 executable on Wine + WebAssembly. Because Minesweeper is a tiny, plain GDI program with no DirectX, no .NET, and no networking, it's one of the best-behaved things you can run here: WineHQ rates it as running smoothly, and high scores save fine. The one catch is legal, not technical — the game is Microsoft's proprietary software, so you bring your own copy (you almost certainly already own one).</p>",
+    "intro": "<p>The real, classic <strong>Windows Minesweeper</strong> — <code>winmine.exe</code>, the same little grid of mines that ate your lunch breaks for two decades — can run right in a browser tab, and this guide shows you how: we don't host Microsoft's file, so you load your own copy below and it runs entirely in your browser, no install, no account. ExeBrowser runs the actual Win32 executable on Wine + WebAssembly. Because Minesweeper is a tiny, plain GDI program with no DirectX, no .NET, and no networking, it's one of the best-behaved things you can run here: WineHQ rates it as running smoothly, and high scores save fine. The one catch is legal, not technical — the game is Microsoft's proprietary software, so you bring your own copy (you almost certainly already own one).</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -1123,17 +1143,18 @@
         "title": "Compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "freecell",
-    "title": "Play FreeCell Online — Classic Windows FreeCell in Your Browser — ExeBrowser",
-    "description": "Run the classic Windows FreeCell (freecell.exe) in your browser with Wine + WebAssembly — no install. It's a tiny Win32 game that plays at full speed; bring your own legal copy.",
+    "title": "FreeCell in Your Browser — How to Run Your Own freecell.exe — ExeBrowser",
+    "description": "The classic Windows freecell.exe runs at full speed under Wine + WebAssembly. We can't host Microsoft's file — copy it from a PC you own and load it here.",
     "keywords": "play freecell online, classic windows freecell browser, freecell.exe online, windows xp freecell no download, old freecell in browser, freecell wine webassembly",
-    "ogTitle": "Play Classic Windows FreeCell in Your Browser",
-    "ogDescription": "The classic Windows FreeCell (freecell.exe) running in a browser tab via Wine + WebAssembly. Full speed, no install — bring your own legal copy.",
-    "crumb": "Play FreeCell",
-    "h1": "Play classic Windows FreeCell in your browser",
+    "ogTitle": "FreeCell in Your Browser — How to Run Your Own freecell.exe",
+    "ogDescription": "A guide to running the real Windows FreeCell in a browser tab. Bring freecell.exe and its card DLL from a PC you own; everything runs client-side via Wine + WebAssembly.",
+    "crumb": "FreeCell guide",
+    "h1": "Can you run classic Windows FreeCell in your browser?",
     "appName": "FreeCell",
     "appType": "game",
     "author": "Microsoft",
@@ -1152,7 +1173,7 @@
     },
     "licenseReason": "Microsoft FreeCell is proprietary software bundled with Windows, not freely redistributable, so ExeBrowser cannot host the bytes — you must supply a copy from a Windows PC you own.",
     "licenseNote": "<h3 style=\"margin-top:0;\">Bring your own copy — FreeCell is Microsoft software</h3><p>Classic FreeCell ships <em>inside</em> Windows; it is proprietary Microsoft software and is <strong>not</strong> free to redistribute, so we don't host it here. That's fine — if you own a Windows PC (or a retired XP/Vista/7 machine), you already own a legal copy. Copy <code>freecell.exe</code> (and its card-art DLL, <code>cards.dll</code> or <code>cardgames.dll</code>) out of <code>C:\\Windows\\System32</code> and load that folder above.</p><p>If you'd rather not dig through an old install, Microsoft now offers FreeCell free in the modern <a href=\"https://www.microsoft.com/store/apps/9wzdncrfhwd2\" target=\"_blank\" rel=\"noopener\">Microsoft Solitaire Collection</a> on Windows 10/11 — though that Store app is a different, modern build that won't run here. For an instant browser play that we <em>can</em> host, try the open-source card games linked below.</p>",
-    "intro": "<p>The <strong>FreeCell</strong> that shipped with Windows — the calm, all-cards-visible solitaire variant where almost every deal is winnable — is a tiny classic Win32 game, which makes it a great fit for ExeBrowser. The real <code>freecell.exe</code> boots in seconds and plays at full speed on the Wine + WebAssembly runtime, with the familiar green felt and click-to-move cards intact. The one catch is legal, not technical: FreeCell is Microsoft software bundled inside Windows, so we can't host the file — you bring your own copy from a PC you own, then load it right here.</p>",
+    "intro": "<p>The <strong>FreeCell</strong> that shipped with Windows — the calm, all-cards-visible solitaire variant where almost every deal is winnable — is a tiny classic Win32 game, and this page is the guide to running it in a browser tab: we don't host Microsoft's file, but load your own copy below and it runs entirely on your machine. The real <code>freecell.exe</code> boots in seconds and plays at full speed on the Wine + WebAssembly runtime, with the familiar green felt and click-to-move cards intact. The one catch is legal, not technical: FreeCell is Microsoft software bundled inside Windows, so we can't host the file — you bring your own copy from a PC you own, then load it right here.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -1220,17 +1241,18 @@
         "title": "Compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "spider-solitaire",
-    "title": "Play Spider Solitaire Online in Your Browser — No Download — ExeBrowser",
-    "description": "Run the classic Windows Spider Solitaire (spider.exe) in your browser via Wine + WebAssembly. The lightweight XP-era card game plays at full speed — bring your own copy. No install.",
+    "title": "Spider Solitaire in Your Browser — Load Your Own Copy (Wine Guide) — ExeBrowser",
+    "description": "The XP-era spider.exe runs at full speed on Wine + WebAssembly — but you supply the copy from your own Windows install; we don't host Microsoft's game files.",
     "keywords": "play spider solitaire online, spider solitaire in browser, windows spider solitaire, run spider.exe browser, classic spider solitaire no download, spider solitaire wine",
-    "ogTitle": "Play Spider Solitaire Online in Your Browser — No Download",
-    "ogDescription": "The classic Windows Spider Solitaire, running in a browser tab on Wine + WebAssembly. The lightweight XP-era build plays at full speed. Bring your own copy.",
-    "crumb": "Play Spider Solitaire",
-    "h1": "Play Spider Solitaire online in your browser",
+    "ogTitle": "Spider Solitaire in Your Browser — Load Your Own Copy (Wine Guide)",
+    "ogDescription": "The XP-era Spider Solitaire deals at full speed in a browser tab on Wine + WebAssembly. It's Microsoft software, so you copy spider.exe and cards.dll from your own install and load them here.",
+    "crumb": "Spider Solitaire guide",
+    "h1": "Can you play Spider Solitaire in your browser?",
     "appName": "Spider Solitaire",
     "appType": "game",
     "variant": "default",
@@ -1249,7 +1271,7 @@
     "appUrl": "",
     "licenseReason": "Spider Solitaire is proprietary Microsoft software bundled with Windows, so it is not free to redistribute — users must supply a copy from a Windows install they own.",
     "licenseNote": "<div class=\"warn-box\"><h3 style=\"margin-top:0;\">Bring your own copy</h3><p>Spider Solitaire is <strong>proprietary Microsoft software</strong> that shipped bundled with Windows (from the Plus! pack for Windows 98 through Windows 7). It is <strong>not</strong> free to redistribute, so ExeBrowser does not host the game files. To play it here you need a copy you already own.</p><p>If you have a Windows XP, Me, or 98 PC (or a virtual machine), the classic build lives at <code>C:\\WINDOWS\\system32\\spider.exe</code> alongside <code>cards.dll</code>. Copy those out of your own licensed install and load the folder above. Please don't download cracked or \"abandonware\" copies from unofficial sites — that's a Microsoft license, not ours to give away.</p></div>",
-    "intro": "<p><strong>Spider Solitaire</strong> — the eight-suit patience game that ate untold hours of office life from Windows XP onward — is a tiny, classic Win32 program, which makes it a great fit for ExeBrowser. The XP-era <code>spider.exe</code> draws its cards with plain Windows GDI, with no DirectX, no .NET, and no 3D, so it boots in seconds and deals at full speed in a browser tab. We can't hand you the game files (it's Microsoft's, not free to redistribute), but if you bring your own copy it runs cleanly here.</p>",
+    "intro": "<p><strong>Spider Solitaire</strong> — the eight-suit patience game that ate untold hours of office life from Windows XP onward — runs cleanly in a browser tab, with one condition: it's Microsoft's software, not free to redistribute, so we can't hand you the game files — you load your own copy below. It's a tiny, classic Win32 program, which makes it a great fit for ExeBrowser: the XP-era <code>spider.exe</code> draws its cards with plain Windows GDI, with no DirectX, no .NET, and no 3D, so it boots in seconds and deals at full speed on Wine + WebAssembly.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -1317,17 +1339,18 @@
         "title": "Compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "hearts",
-    "title": "Play Microsoft Hearts Online in Your Browser — No Download — ExeBrowser",
-    "description": "Run the classic Microsoft Hearts (mshearts.exe) card game in your browser via Wine + WebAssembly. Single-player vs. three CPU opponents works great — here's what to expect and how to load it.",
+    "title": "Microsoft Hearts in Your Browser — How to Run Your Own Copy — ExeBrowser",
+    "description": "Copy mshearts.exe from a Windows install you own and the classic Hearts card game runs client-side via Wine + WebAssembly. Single-player works well.",
     "keywords": "microsoft hearts online, play hearts in browser, mshearts.exe online, windows hearts game, classic hearts card game browser, microsoft hearts no download",
-    "ogTitle": "Play Microsoft Hearts Online in Your Browser",
-    "ogDescription": "The classic Windows Hearts card game (mshearts.exe), running in a browser tab via Wine + WebAssembly. Single-player vs. CPU works well. Bring your own Windows copy.",
-    "crumb": "Play Microsoft Hearts",
-    "h1": "Play Microsoft Hearts online in your browser",
+    "ogTitle": "Microsoft Hearts in Your Browser — How to Run Your Own Copy",
+    "ogDescription": "The classic Windows Hearts (mshearts.exe) runs well in a browser tab via Wine + WebAssembly — but it's proprietary Microsoft software, so you bring your own copy from a Windows install you own.",
+    "crumb": "Hearts guide",
+    "h1": "Can you run Microsoft Hearts in your browser?",
     "appName": "Hearts",
     "appType": "game",
     "variant": "default",
@@ -1343,7 +1366,7 @@
       "kind": "good",
       "text": "Single-player works well"
     },
-    "intro": "<p>The classic <strong>Microsoft Hearts</strong> — the trick-taking card game (<code>mshearts.exe</code>) that shipped with Windows from 3.11 all the way through Windows 7 — running in a browser tab. It is a tiny 32-bit GDI program with no DirectX, no 3D, and no .NET, which makes it one of the most reliable things to run in ExeBrowser. Single-player against the three computer opponents plays just like it always did. The one thing that won't work is the old \"Microsoft Hearts Network\" LAN play, but that's no loss — Microsoft already removed network play in the Windows XP version. Note that Hearts is proprietary Microsoft software, so we can't host it for you; bring your own copy from a Windows machine you own.</p>",
+    "intro": "<p>The classic <strong>Microsoft Hearts</strong> — the trick-taking card game (<code>mshearts.exe</code>) that shipped with Windows from 3.11 all the way through Windows 7 — can run in a browser tab here, once you load your own copy (Hearts is proprietary Microsoft software, so we can't host the file; bring it from a Windows machine you own). It is a tiny 32-bit GDI program with no DirectX, no 3D, and no .NET, which makes it one of the most reliable things to run in ExeBrowser. Single-player against the three computer opponents plays just like it always did. The one thing that won't work is the old \"Microsoft Hearts Network\" LAN play, but that's no loss — Microsoft already removed network play in the Windows XP version.</p>",
     "licenseNote": "<p><strong>Microsoft Hearts is proprietary software</strong> — part of Windows, © Microsoft Corporation. It is <strong>not</strong> free to redistribute, so we don't host the file. To play it here, copy <code>MSHEARTS.EXE</code> (and on some versions <code>CARDS.DLL</code>) from a Windows installation you legitimately own — older retail Windows (95/98/Me/2000/XP/Vista/7) all include it under <code>C:\\WINDOWS\\</code> — and load that folder with \"Load your own copy\" above. If you just want the gameplay with no file at all, Microsoft also publishes a free, modern <a href=\"https://apps.microsoft.com/\" target=\"_blank\" rel=\"noopener\">Microsoft Solitaire Collection / Casual Games</a> in the Microsoft Store for Windows 10/11. Please don't download executables from abandonware or pirate sites.</p>",
     "sections": [
       {
@@ -1412,7 +1435,8 @@
         "title": "Compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "skifree",
@@ -1507,17 +1531,19 @@
         "title": "Compatibility guide",
         "desc": "What runs and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01",
+    "screenshot": true
   },
   {
     "slug": "jezzball",
-    "title": "Play JezzBall Online — In Your Browser, No Download — ExeBrowser",
-    "description": "Run the classic 1992 JezzBall from the Microsoft Entertainment Pack in your browser via Wine + WebAssembly. It's a 16-bit Win 3.x game — bring your own legally-owned copy. Here's how it runs and what to expect.",
+    "title": "JezzBall in the Browser: What Works and How to Load Your Copy — ExeBrowser",
+    "description": "JezzBall (1992, Microsoft Entertainment Pack) runs in the 16-bit Win 3.x runtime — if you load your own copy. Wine setup guide plus free clones.",
     "keywords": "play jezzball online, jezzball in browser, jezzball no download, jezzball windows, microsoft entertainment pack jezzball, jezzball 16-bit wine, jezzball classic game browser",
-    "ogTitle": "Play JezzBall Online — In Your Browser, No Install",
-    "ogDescription": "The classic 1992 Microsoft Entertainment Pack JezzBall, running on Wine + WebAssembly in a browser tab. A 16-bit Win 3.x game — bring your own copy.",
-    "crumb": "Play JezzBall",
-    "h1": "Play JezzBall online in your browser",
+    "ogTitle": "JezzBall in the Browser: What Works and How to Load Your Copy",
+    "ogDescription": "The 1992 Microsoft Entertainment Pack puzzler runs in ExeBrowser's 16-bit Win 3.x Wine runtime — but you must load a copy you legally own. Free open-source clones listed too.",
+    "crumb": "JezzBall guide",
+    "h1": "Running JezzBall in your browser — with your own copy",
     "appName": "JezzBall",
     "appType": "game",
     "author": "Microsoft",
@@ -1535,7 +1561,7 @@
     },
     "licenseReason": "JezzBall is proprietary Microsoft software (Microsoft Entertainment Pack); Microsoft no longer sells it and grants no redistribution rights, so we cannot host it.",
     "licenseNote": "<p><strong>JezzBall is commercial Microsoft software and we don't host it.</strong> It shipped in the <em>Microsoft Entertainment Pack</em> (and the <em>Best of Windows Entertainment Pack</em>), which Microsoft has long since discontinued — there is no current official store page, and Microsoft grants no right to redistribute it. ExeBrowser will <strong>not</strong> provide the game files. You may only load a copy you legally own (for example, from an original Entertainment Pack disc you purchased). If you just want the gameplay with zero legal grey area, play one of the free open-source clones listed below instead. We don't link to abandonware or cracked downloads.</p>",
-    "intro": "<p><strong>JezzBall</strong> — the maddening 1992 puzzle game from the Microsoft Entertainment Pack where you wall off bouncing balls into smaller and smaller boxes — is exactly the kind of light, mouse-driven 16-bit title that ExeBrowser's Wine + WebAssembly runtime handles well. There's no DirectX, no 3D, no networking; just a single window, a mouse pointer, and balls to trap. The one real catch: JezzBall is <em>commercial Microsoft software</em> and we can't give you the files, so you'll need to load a copy you already legally own. Here's how to run it, which Wine variant to pick, and a few free clones if you'd rather skip the licensing hassle.</p>",
+    "intro": "<p><strong>JezzBall</strong> — the maddening 1992 puzzle game from the Microsoft Entertainment Pack where you wall off bouncing balls into smaller and smaller boxes — is exactly the kind of light, mouse-driven 16-bit title that ExeBrowser's Wine + WebAssembly runtime handles well, and this guide shows you how to run your own copy right in a browser tab. There's no DirectX, no 3D, no networking; just a single window, a mouse pointer, and balls to trap. The one real catch: JezzBall is <em>commercial Microsoft software</em> and we can't give you the files, so you'll need to load a copy you already legally own. Here's how to run it, which Wine variant to pick, and a few free clones if you'd rather skip the licensing hassle.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -1607,17 +1633,18 @@
         "title": "Compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "chips-challenge",
-    "title": "Play Chip's Challenge Online in Your Browser — No Download — ExeBrowser",
-    "description": "Play Chip's Challenge — the classic Microsoft Entertainment Pack tile-puzzle — in your browser via Wine + WebAssembly. How the 16-bit CHIPS.EXE runs, controls, and where to get it legally.",
+    "title": "Chip's Challenge in the Browser: What Works and How to Load Your Copy — ExeBrowser",
+    "description": "How the 16-bit CHIPS.EXE runs on ExeBrowser's win3x engine — quirky but playable. Bring your own copy (Chip's Challenge 1 is free to keep on Steam).",
     "keywords": "play chips challenge online, chips challenge in browser, chips challenge no download, microsoft entertainment pack chips challenge, chips challenge windows 3.1, classic chips challenge browser, chip mccallahan puzzle game online",
-    "ogTitle": "Play Chip's Challenge Online in Your Browser — No Download",
-    "ogDescription": "The classic Microsoft Entertainment Pack puzzle, Chip's Challenge, running in a browser tab via Wine + WebAssembly. Bring your own legally-obtained copy.",
-    "crumb": "Play Chip's Challenge",
-    "h1": "Play Chip's Challenge online in your browser",
+    "ogTitle": "Chip's Challenge in the Browser: What Works and How to Load Your Copy",
+    "ogDescription": "A Wine compatibility guide for the Microsoft Entertainment Pack classic. Load your own CHIPS.EXE and the 16-bit win3x engine runs it in a browser tab — quirky but playable.",
+    "crumb": "Chip's Challenge guide",
+    "h1": "Chip's Challenge in the browser: what works and how to load your copy",
     "appName": "Chip's Challenge",
     "appType": "game",
     "variant": "win3x",
@@ -1636,7 +1663,7 @@
     },
     "licenseReason": "Chip's Challenge is commercial software (Epyx IP, now held by Bridgestone Multimedia and sublicensed to Niffler); the Microsoft Entertainment Pack build is not licensed for free redistribution, so we cannot host it.",
     "licenseNote": "<p><strong>Bring your own copy.</strong> Chip's Challenge is commercial software. The Microsoft Entertainment Pack version (<code>CHIPS.EXE</code>) is owned by Microsoft and Epyx, and the modern PC port is published by Niffler Ltd. — none of it is licensed for us to redistribute, so there's no download here. The good news: the modern <a href=\"https://store.steampowered.com/app/346850/Chips_Challenge_1/\" target=\"_blank\" rel=\"noopener\">Chip's Challenge 1 on Steam</a> has been <strong>free to keep</strong> since 2020 (you keep it permanently, at no charge) — that's the easiest legitimate way to own the game. Please don't seek out cracked or pirated copies.</p>",
-    "intro": "<p><strong>Chip's Challenge</strong> — the deviously good top-down tile puzzler that hooked a generation through the <em>Microsoft Entertainment Pack</em> — running in a browser tab. Guide Chip McCallahan through 149 grid mazes: collect computer chips, dodge fireballs and walkers, slide across ice and force-floors, and reach the exit to advance. The classic <code>CHIPS.EXE</code> is a <strong>16-bit Windows 3.1</strong> program, which is exactly what ExeBrowser's <code>win3x</code> runtime is built for. It's an honest partial: it boots and plays, but 16-bit-on-Wine has rough edges, and you'll need to bring your own legally-obtained copy — we can't host this one.</p>",
+    "intro": "<p><strong>Chip's Challenge</strong> — the deviously good top-down tile puzzler that hooked a generation through the <em>Microsoft Entertainment Pack</em> — can run in a browser tab here, with one honest condition: we can't host the game, so you load your own legally-obtained copy below. Guide Chip McCallahan through 149 grid mazes: collect computer chips, dodge fireballs and walkers, slide across ice and force-floors, and reach the exit to advance. The classic <code>CHIPS.EXE</code> is a <strong>16-bit Windows 3.1</strong> program, which is exactly what ExeBrowser's <code>win3x</code> runtime is built for. It's an honest partial: it boots and plays, but 16-bit-on-Wine has rough edges.</p>",
     "sections": [
       {
         "h": "Which Chip's Challenge is this — and why it runs at all",
@@ -1708,17 +1735,18 @@
         "title": "Compatibility guide",
         "desc": "What runs and what doesn't in the browser."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "rodents-revenge",
-    "title": "Play Rodent's Revenge Online in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Run the classic Microsoft Entertainment Pack puzzle game Rodent's Revenge in your browser via Wine + WebAssembly. It's a 16-bit Win 3.x game, so use the win3x runtime and bring your own copy.",
+    "title": "How to Run Rodent's Revenge in a Browser (With Your Own Copy) — ExeBrowser",
+    "description": "Rodent's Revenge is a 16-bit Microsoft Entertainment Pack puzzle game. Load your own copy on ExeBrowser's win3x runtime and it runs via Wine + WebAssembly.",
     "keywords": "play rodents revenge online, rodents revenge browser, rodents revenge no download, microsoft entertainment pack online, rodents revenge windows 3.1, run rodents revenge wine, 16-bit windows game browser",
-    "ogTitle": "Play Rodent's Revenge Online — Classic Microsoft Puzzle Game in Your Browser",
-    "ogDescription": "The 1991 Microsoft Entertainment Pack mouse-and-cats puzzle game, running on Wine + WebAssembly. A 16-bit Win 3.x app — use the win3x runtime and load your own copy.",
-    "crumb": "Play Rodent's Revenge",
-    "h1": "Play Rodent's Revenge online in your browser",
+    "ogTitle": "How to Run Rodent's Revenge in a Browser (With Your Own Copy)",
+    "ogDescription": "The 1991 Microsoft Entertainment Pack mouse-and-cats puzzle game is a 16-bit Win 3.x app. Load your own copy on the win3x runtime and it runs on Wine + WebAssembly.",
+    "crumb": "Rodent's Revenge guide",
+    "h1": "Running Rodent's Revenge in your browser — with your own copy",
     "appName": "Rodent's Revenge",
     "appType": "game",
     "variant": "win3x",
@@ -1734,7 +1762,7 @@
       "Puzzle",
       "Strategy"
     ],
-    "intro": "<p><strong>Rodent's Revenge</strong> is the addictive little puzzle game from <strong>Microsoft Entertainment Pack 2</strong> (1991): you're a mouse pushing blocks to corner the cats, who turn into cheese when they're trapped. It's tiny, turn-based, all 2D tile graphics — no DirectX, no 3D, no networking — which makes it a near-perfect fit for running on Wine + WebAssembly. The one catch: it's a <strong>16-bit Windows 3.x program</strong>, so it needs ExeBrowser's <code>win3x</code> runtime, and because it's a Microsoft commercial title we don't host the game files — you load your own legally-owned copy.</p>",
+    "intro": "<p><strong>Rodent's Revenge</strong> is the addictive little puzzle game from <strong>Microsoft Entertainment Pack 2</strong> (1991) — and this page is a guide to running your own copy of it in a browser tab, because it's a Microsoft commercial title and we don't host the game files. In the game you're a mouse pushing blocks to corner the cats, who turn into cheese when they're trapped. It's tiny, turn-based, all 2D tile graphics — no DirectX, no 3D, no networking — which makes it a near-perfect fit for running on Wine + WebAssembly. The one technical catch: it's a <strong>16-bit Windows 3.x program</strong>, so it needs ExeBrowser's <code>win3x</code> runtime — load your legally-owned copy below and it runs entirely in your browser.</p>",
     "licenseNote": "<p><strong>Rodent's Revenge is a Microsoft commercial title.</strong> It shipped in the paid Microsoft Entertainment Pack 2 (1991) and remains under Microsoft's copyright — despite what some sites claim, Microsoft never issued a clear public license to redistribute it freely. We therefore don't host the game files. Use a copy you legally own (for example, from an original Microsoft Entertainment Pack disk you purchased), then load it with the uploader above. If you just want something similar to play right now with no ownership question, try the open-source clone <strong>Open Rodent's Revenge</strong>, or one of the genuinely free games linked below.</p>",
     "sections": [
       {
@@ -1803,17 +1831,18 @@
         "title": "Compatibility guide",
         "desc": "What runs, what doesn't, and which runtime to pick."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "chocolate-doom",
-    "title": "Play Chocolate Doom Online — Free, In Your Browser, No Download — ExeBrowser",
-    "description": "Play Chocolate Doom online in your browser — no download, no install. The minimalist, historically-accurate GPL Doom source port running on Wine + WebAssembly with the free shareware DOOM1.WAD.",
+    "title": "Chocolate Doom in the Browser: What Works and How to Load Your Copy — ExeBrowser",
+    "description": "Guide to loading your own chocolate-doom.exe and shareware DOOM1.WAD in browser Wine + WebAssembly — plus the hosted DOOM95 one-click alternative.",
     "keywords": "play chocolate doom online, chocolate doom in browser, chocolate doom no download, doom source port browser, chocolate doom shareware online, run chocolate doom wine, classic doom browser free",
-    "ogTitle": "Play Chocolate Doom Online — Free, In Your Browser, No Download",
-    "ogDescription": "The minimalist, historically-accurate Doom source port (GPL), running in your browser via Wine + WebAssembly with the free shareware WAD. No install.",
-    "crumb": "Play Chocolate Doom",
-    "h1": "Play Chocolate Doom online in your browser",
+    "ogTitle": "Chocolate Doom in the Browser: What Works and How to Load Your Copy",
+    "ogDescription": "Chocolate Doom is the vanilla-faithful GPL Doom port. We don't host it — load your own copy with the shareware DOOM1.WAD to experiment, or use the hosted DOOM95 build for one-click Doom.",
+    "crumb": "Chocolate Doom guide",
+    "h1": "Chocolate Doom in your browser — with your own copy",
     "appName": "Chocolate Doom",
     "appType": "game",
     "author": "Chocolate Doom project (Simon Howard et al.)",
@@ -1832,7 +1861,7 @@
       "kind": "good",
       "text": "Works well — minimalist, no DirectX needed"
     },
-    "intro": "<p><strong>Chocolate Doom</strong> is the source port built for one purpose: to play exactly like the 1993 original, bugs and all. It's deliberately minimalist — no fancy 3D, no DirectX 9, no launcher bloat — which is precisely why it runs cleanly here. The real Win32 build executes on Wine + WebAssembly right in this tab, loading the freely-redistributable shareware <code>DOOM1.WAD</code>. No download, no install, no account. Hit play and you're in <em>Knee-Deep in the Dead</em> with pixel-faithful, vanilla Doom.</p>",
+    "intro": "<p><strong>Chocolate Doom</strong> is the source port built for one purpose: to play exactly like the 1993 original, bugs and all. It's deliberately minimalist — no fancy 3D, no DirectX 9, no launcher bloat — but we don't host it, so this is a bring-your-own-copy guide: load the real Win32 build with the freely-redistributable shareware <code>DOOM1.WAD</code> using the uploader below and it runs on Wine + WebAssembly entirely in this tab. Fair warning: the port's SDL2 rendering is still shaky under browser Wine, so treat it as an experiment — if you just want to be in <em>Knee-Deep in the Dead</em> right now, the hosted DOOM95 build on this page is the one-click route to pixel-faithful, vanilla Doom.</p>",
     "sections": [
       {
         "h": "Why Chocolate Doom runs so well here",
@@ -1904,17 +1933,18 @@
     "download": {
       "heading": "Get Chocolate Doom + the free shareware WAD",
       "html": "<p>Chocolate Doom is open-source (GPL v2) and the shareware <code>DOOM1.WAD</code> is freely redistributable, so you can grab both at no cost:</p><ul><li><a href=\"https://www.chocolate-doom.org/downloads/2.3.0/\" target=\"_blank\" rel=\"noopener\">Chocolate Doom 2.3.0 (SDL 1.2) — recommended for the browser</a></li><li><a href=\"https://github.com/chocolate-doom/chocolate-doom/releases\" target=\"_blank\" rel=\"noopener\">Latest releases on GitHub (3.0+, SDL2)</a></li><li><a href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">DOOM shareware (Internet Archive) — for DOOM1.WAD</a></li></ul><p class=\"muted small\">Unzip the port, drop <code>DOOM1.WAD</code> in the same folder, then use <strong>“Load your own copy”</strong> above to run them together. Source under GPL-2.0; the registered episodes and Doom II are commercial and not included — buy those from <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
-    }
+    },
+    "updated": "2026-07-01"
   },
   {
     "slug": "commander-keen",
-    "title": "Play Commander Keen Online — Free Shareware Episode 1, In Your Browser — ExeBrowser",
-    "description": "Play Commander Keen Episode 1 \"Marooned on Mars\" — the free 1990 id/Apogee shareware — in your browser. Honest take: it's a DOS game, so a Win32 source port works best. No install.",
+    "title": "How to Play Commander Keen in a Browser Tab (Source Port Guide) — ExeBrowser",
+    "description": "Commander Keen Episode 1 is free shareware, but the original is a DOS EXE. Guide to playing it via a Win32 source port you load yourself in the browser.",
     "keywords": "play commander keen online, commander keen in browser, commander keen marooned on mars free, commander keen shareware online, commander keen episode 1, keen invasion of the vorticons browser, run commander keen no download",
-    "ogTitle": "Play Commander Keen Online — Free Shareware Episode 1",
-    "ogDescription": "Commander Keen Episode 1 \"Marooned on Mars\" — the free 1990 id/Apogee shareware. It's a DOS game, so a Win32 source port runs best in the browser. Honest guide inside.",
-    "crumb": "Play Commander Keen",
-    "h1": "Play Commander Keen online in your browser",
+    "ogTitle": "How to Play Commander Keen in a Browser Tab (Source Port Guide)",
+    "ogDescription": "Episode 1 \"Marooned on Mars\" is freely redistributable shareware, but it's a DOS program and ExeBrowser runs Win32. A source port like Commander Genius, loaded with your own copy, is the way to play it here.",
+    "crumb": "Commander Keen guide",
+    "h1": "Can you play Commander Keen in your browser?",
     "appName": "Commander Keen",
     "appType": "game",
     "author": "id Software / Apogee Software",
@@ -1933,7 +1963,7 @@
       "kind": "partial",
       "text": "Partial — it's a DOS game; a Win32 source port works best"
     },
-    "intro": "<p><strong>Commander Keen: Marooned on Mars</strong> — id Software's 1990 platforming classic, the game whose smooth EGA scrolling helped launch the studio that would later make DOOM. Episode 1 was free shareware then and remains freely redistributable now, so it's legal to play and share. One honest catch up front: the original Keen is a <em>DOS</em> program, not a Windows one, and ExeBrowser runs <em>Win32</em> software. The reliable way to play it here is a small open-source <em>source port</em> that loads the original shareware data — we explain exactly how below, and we're straight about what does and doesn't boot.</p>",
+    "intro": "<p><strong>Commander Keen: Marooned on Mars</strong> — id Software's 1990 platforming classic, the game whose smooth EGA scrolling helped launch the studio that would later make DOOM. This page is a compatibility guide, with one honest catch up front: the original Keen is a <em>DOS</em> program, not a Windows one, and ExeBrowser runs <em>Win32</em> software. Episode 1 was free shareware then and remains freely redistributable now, so it's legal to play and share. The reliable way to play it here is a small open-source <em>source port</em> that loads the original shareware data — you load your copy with the uploader below and it runs entirely in your browser tab. We explain exactly how, and we're straight about what does and doesn't boot.</p>",
     "download": {
       "heading": "Get the Commander Keen shareware (free, legal)",
       "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">id Software / Apogee official shareware — Episode 1</h3><p>The complete first episode, <em>Marooned on Mars</em>, distributed at no charge exactly as the 1990 shareware license permits. The most reliable preserved copy is on the Internet Archive:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/keen-1\" target=\"_blank\" rel=\"noopener\">Get Commander Keen 1 shareware (Internet Archive) →</a></p><p class=\"muted small\">The package contains the game data — the <code>KEEN1.EXE</code> launcher and the <code>.CK1</code> / EGA data files. Because that EXE is a 16-bit DOS program, the smoothest path in the browser is to pair these data files with a Win32 <strong>source port</strong> (see below), then use <strong>“Load your own copy”</strong> above to drop the folder in. © id Software / Apogee — episode 1 is freely redistributable as shareware; <strong>episodes 2 (The Earth Explodes) and 3 (Keen Must Die!) are commercial and are not included</strong>. Buy the full collection from a legitimate store such as <a href=\"https://store.steampowered.com/app/9180/Commander_Keen_Complete_Pack/\" target=\"_blank\" rel=\"noopener\">Steam</a>.</p></div>"
@@ -2009,17 +2039,18 @@
         "title": "Compatibility guide",
         "desc": "What runs, what doesn't, and why DOS games are tricky."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "scorched-earth",
-    "title": "Play Scorched Earth Online — Why It Won't Run in Wine, and What Does — ExeBrowser",
-    "description": "Scorched Earth is a 16-bit MS-DOS artillery game, not a Windows program — so it won't run on Wine/Boxedwine. Here's the honest reason why, where to get the author's free copy, and how to actually play it in a browser via DOSBox.",
+    "title": "Why Scorched Earth Doesn't Run on Wine — And How to Play It via DOSBox — ExeBrowser",
+    "description": "Scorched Earth is a 16-bit MS-DOS game, so it won't run on ExeBrowser's Wine runtime. Why that is, where to get the author's free v1.5, and the DOSBox route.",
     "keywords": "play scorched earth online, scorched earth browser, scorched earth dos game, scorched earth wendell hicken, scorched earth free download, scorched earth dosbox, scorched earth artillery game, run scorched earth in browser",
-    "ogTitle": "Play Scorched Earth Online — The Honest Answer (It's a DOS Game)",
-    "ogDescription": "Scorched Earth is 16-bit MS-DOS, so it won't run on Wine + WebAssembly. Here's why, plus where to get the author's free copy and how to play it in a browser via DOSBox.",
-    "crumb": "Play Scorched Earth",
-    "h1": "Play Scorched Earth online — the honest answer",
+    "ogTitle": "Why Scorched Earth Doesn't Run on Wine — And How to Play It via DOSBox",
+    "ogDescription": "Scorched Earth is 16-bit MS-DOS, not Windows, so it won't boot on Wine + WebAssembly. This page explains why, and points to Wendell Hicken's free copy and a DOSBox route that works.",
+    "crumb": "Scorched Earth: won't run",
+    "h1": "Why Scorched Earth doesn't run here (and how to actually play it)",
     "appName": "Scorched Earth",
     "appType": "game",
     "variant": "default",
@@ -2114,17 +2145,18 @@
     "download": {
       "heading": "",
       "html": ""
-    }
+    },
+    "updated": "2026-07-01"
   },
   {
     "slug": "jazz-jackrabbit-shareware",
-    "title": "Play Jazz Jackrabbit (Shareware) Online in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Jazz Jackrabbit is a 1994 DOS game, so the original EXE won't boot under Win32 Wine — but the GPL OpenJazz engine plays the free shareware levels in your browser. Honest guide, controls, and what to expect.",
+    "title": "Jazz Jackrabbit in the Browser: OpenJazz Guide (Bring the Shareware) — ExeBrowser",
+    "description": "The 1994 DOS original won't boot under Win32 Wine — but the GPL OpenJazz engine can play Jazz Jackrabbit's shareware levels in a tab if you load the files.",
     "keywords": "play jazz jackrabbit online, jazz jackrabbit shareware browser, jazz jackrabbit in browser, openjazz online, jazz jackrabbit no download, jazz jackrabbit dos browser, epic megagames jazz jackrabbit",
-    "ogTitle": "Play Jazz Jackrabbit (Shareware) Online in Your Browser",
-    "ogDescription": "The 1994 Epic classic is a DOS game, so the original EXE won't run under Win32 Wine — but the open-source OpenJazz engine plays the free shareware levels in a browser tab.",
-    "crumb": "Play Jazz Jackrabbit",
-    "h1": "Play Jazz Jackrabbit (shareware) in your browser",
+    "ogTitle": "Jazz Jackrabbit in the Browser: OpenJazz Guide (Bring the Shareware)",
+    "ogDescription": "The 1994 Epic classic is a DOS game, so the original JAZZ.EXE won't run under Win32 Wine. The open-source OpenJazz engine can play the shareware levels in a tab — you supply the files.",
+    "crumb": "Jazz Jackrabbit guide",
+    "h1": "Jazz Jackrabbit in your browser: the honest OpenJazz route",
     "appName": "Jazz Jackrabbit",
     "appType": "game",
     "variant": "default",
@@ -2143,7 +2175,7 @@
     "appUrl": "",
     "licenseReason": "Epic's shareware permits redistribution only under conditions (must be labeled shareware not freeware, credit Epic, files unaltered, fee ≤ $9), so we don't self-host; OpenJazz itself is GPL but needs the original data files.",
     "licenseNote": "<strong>Bring your own copy.</strong> Jazz Jackrabbit is © Epic Games (formerly Epic MegaGames). The shareware episode is widely distributed, but Epic's license attaches conditions (it must be labeled <em>shareware</em>, not freeware or public domain; Epic must be credited; files must stay unaltered; any distribution fee is capped). Because of those conditions we don't host the files here — grab the shareware from a legitimate archive, or buy the full game on <a href=\"https://www.gog.com/en/game/jazz_jackrabbit_collection\" target=\"_blank\" rel=\"noopener\">GOG</a>. Please don't ask for cracks or \"full version free\" downloads — this page won't provide them.",
-    "intro": "<p><strong>Jazz Jackrabbit</strong> — Epic MegaGames' blisteringly fast 1994 run-and-gun platformer, the one that made a gun-toting green rabbit a DOS-era icon. Here's the honest catch up front: the original game is a <strong>DOS</strong> program (a 386 protected-mode EXE), and ExeBrowser runs <em>Windows</em> binaries on Wine + WebAssembly, not raw DOS. So the original <code>JAZZ.EXE</code> won't boot here. The good news: the open-source <strong>OpenJazz</strong> engine is a real Win32 program that loads the original Jazz data files and runs nicely in this player — so you can still play the free shareware levels in a browser tab.</p>",
+    "intro": "<p><strong>Jazz Jackrabbit</strong> — Epic MegaGames' blisteringly fast 1994 run-and-gun platformer, the one that made a gun-toting green rabbit a DOS-era icon. Here's the honest catch up front: the original game is a <strong>DOS</strong> program (a 386 protected-mode EXE), and ExeBrowser runs <em>Windows</em> binaries on Wine + WebAssembly, not raw DOS. So the original <code>JAZZ.EXE</code> won't boot here. The good news: the open-source <strong>OpenJazz</strong> engine is a real Win32 program that loads the original Jazz data files and runs nicely in this player — load it together with the shareware data below and you can play the free levels in a browser tab.</p>",
     "sections": [
       {
         "h": "Why the original EXE won't run — and what does",
@@ -2211,17 +2243,18 @@
         "title": "Compatibility guide",
         "desc": "Which apps and games actually run in the browser."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "one-must-fall",
-    "title": "Play One Must Fall 2097 Online — Free Freeware Fighting Game in Your Browser — ExeBrowser",
-    "description": "Play One Must Fall 2097, Epic's 1994 robot fighting game, in your browser. It's free freeware — here's the honest catch: it's a DOS game, so it needs DOSBox or OpenOMF, not raw Wine.",
+    "title": "Can You Play One Must Fall 2097 in a Browser? DOS Game Guide — ExeBrowser",
+    "description": "OMF 2097 is freeware but a DOS game, so raw Wine won't boot OMF.EXE in your browser. Guide to the real paths: a Win32 DOSBox build or the OpenOMF remake.",
     "keywords": "play one must fall 2097 online, omf 2097 browser, one must fall 2097 free, omf 2097 freeware, one must fall 2097 dos browser, openomf, play omf in browser no download",
-    "ogTitle": "Play One Must Fall 2097 Online — Free Freeware Fighting Game",
-    "ogDescription": "Epic's 1994 robot fighting classic, now free freeware. The honest way to run it in ExeBrowser: via DOSBox or the OpenOMF source port, since it's a DOS game.",
-    "crumb": "Play One Must Fall 2097",
-    "h1": "Play One Must Fall 2097 online in your browser",
+    "ogTitle": "Can You Play One Must Fall 2097 in a Browser? DOS Game Guide",
+    "ogDescription": "Epic's 1994 robot fighting classic is free freeware — but it's a DOS game, so it won't boot under raw Win32 Wine. The honest paths: DOSBox-in-Wine or the open-source OpenOMF remake.",
+    "crumb": "OMF 2097 guide",
+    "h1": "Can you play One Must Fall 2097 in your browser?",
     "appName": "OMF 2097",
     "appType": "game",
     "entry": "OMF.EXE",
@@ -2311,17 +2344,18 @@
         "title": "Compatibility guide",
         "desc": "Win32 vs DOS — what runs and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "raptor",
-    "title": "Play Raptor: Call of the Shadows Online — What Works in the Browser — ExeBrowser",
-    "description": "Can you play Raptor: Call of the Shadows in the browser? The free shareware is a DOS game and the Windows port needs DirectX — here's the honest verdict and the right way to play it.",
+    "title": "Raptor: Call of the Shadows in a Browser? The Honest Verdict — ExeBrowser",
+    "description": "Raptor's free shareware is a DOS4GW program and the 1999 Windows port needs DirectX 5 — a poor fit for browser Wine. What happens and where to play it.",
     "keywords": "play raptor call of the shadows online, raptor call of the shadows browser, raptor shareware, raptor dos game online, raptor apogee shmup, raptor call of the shadows free, raptor in browser no download",
-    "ogTitle": "Play Raptor: Call of the Shadows Online — The Honest Verdict",
-    "ogDescription": "Apogee's 1994 DOS shoot-'em-up. The free shareware is DOS-based and the Windows port uses DirectX 5 — here's what actually runs in the browser and how to play it properly.",
-    "crumb": "Play Raptor",
-    "h1": "Play Raptor: Call of the Shadows in your browser",
+    "ogTitle": "Raptor: Call of the Shadows in a Browser? The Honest Verdict",
+    "ogDescription": "Apogee's 1994 shoot-'em-up mostly belongs on a DOS emulator: the free episode is a DOS4GW program and the only Win32 build is a commercial DirectX 5 port that old Wine handles poorly.",
+    "crumb": "Raptor verdict",
+    "h1": "Can you play Raptor: Call of the Shadows in your browser?",
     "appName": "Raptor",
     "appType": "game",
     "variant": "default",
@@ -2408,17 +2442,18 @@
         "title": "Compatibility guide",
         "desc": "What runs in ExeBrowser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "hexen-heretic-shareware",
-    "title": "Play Heretic &amp; Hexen (Shareware) Online in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Play Raven's Heretic shareware and the Hexen demo in your browser via Wine + WebAssembly. These are DOS games, so you'll use a Win32 source port (Chocolate Heretic/Hexen) plus the WAD — honest setup guide and what actually works inside.",
+    "title": "Heretic and Hexen Shareware in a Browser — Source Port Setup Guide — ExeBrowser",
+    "description": "Run Heretic shareware and the Hexen demo in a browser via a Chocolate source port on Wine + WebAssembly. You supply the port EXE and WAD — setup guide inside.",
     "keywords": "play heretic online, heretic in browser, hexen shareware online, play hexen browser, heretic shareware no download, chocolate heretic browser, hexen demo online, doom engine games browser",
-    "ogTitle": "Play Heretic &amp; Hexen (Shareware) Online in Your Browser",
-    "ogDescription": "Raven's Heretic shareware and the Hexen demo, running in a browser tab via a Win32 source port on Wine + WebAssembly. Honest setup and what to expect.",
-    "crumb": "Play Heretic &amp; Hexen",
-    "h1": "Play Heretic &amp; Hexen (shareware) in your browser",
+    "ogTitle": "Heretic and Hexen Shareware in a Browser — Source Port Setup Guide",
+    "ogDescription": "The DOS originals won't boot here, but a small Win32 source port (Chocolate Heretic/Hexen) plus the shareware WAD runs on Wine + WebAssembly. You bring both files; this guide shows the setup.",
+    "crumb": "Heretic and Hexen guide",
+    "h1": "Heretic and Hexen shareware in your browser — a source-port setup guide",
     "appName": "Heretic &amp; Hexen",
     "appType": "game",
     "variant": "default",
@@ -2436,7 +2471,7 @@
       "text": "Partial — via a Win32 source port, not the DOS original"
     },
     "licenseNote": "<p><strong>About the game files:</strong> Heretic and Hexen are commercial games by Raven Software, published by id Software / GT Interactive. The <em>engine source code</em> was released under the GPL in 2008, which is why free, modern source ports (like Chocolate Heretic/Hexen) exist. The <em>game data</em> — the shareware/demo WAD files — remains copyrighted and was <strong>not</strong> given the same explicit \"freely redistributable\" license that id granted DOOM's first episode. So ExeBrowser does not host these WADs. Bring your own copy: get the shareware/demo from a legitimate source such as the <a href=\"https://archive.org/details/heretic-dos\" target=\"_blank\" rel=\"noopener\">Internet Archive</a>, or buy the full games on <a href=\"https://store.steampowered.com/app/2390/Heretic_Shadow_of_the_Serpent_Riders/\" target=\"_blank\" rel=\"noopener\">Steam</a>. Do not download \"cracked\" or \"full version free\" copies of the registered games.</p>",
-    "intro": "<p><strong>Heretic</strong> (Raven Software, 1994) and <strong>Hexen: Beyond Heretic</strong> (1995) are the gothic-fantasy cousins of DOOM — same lineage, same fast 2.5D engine, but with spellcasting, inventory items, and looking up and down. Here's the honest part up front: the originals are <em>DOS</em> games, and ExeBrowser runs <em>Win32</em> programs. The DOS <code>.EXE</code> will not boot here on its own. What <em>does</em> work is a small, free, modern <strong>Win32 source port</strong> — Chocolate Heretic or Chocolate Hexen — paired with the shareware/demo WAD. The engine is light software rendering with no DirectX, so a source-port EXE runs cleanly on Wine + WebAssembly. It's a two-piece setup (port + WAD), which is why we rate this <strong>partial</strong> rather than one-click.</p>",
+    "intro": "<p><strong>Heretic</strong> (Raven Software, 1994) and <strong>Hexen: Beyond Heretic</strong> (1995) are the gothic-fantasy cousins of DOOM — same lineage, same fast 2.5D engine, but with spellcasting, inventory items, and looking up and down. Here's the honest part up front: the originals are <em>DOS</em> games, and ExeBrowser runs <em>Win32</em> programs. The DOS <code>.EXE</code> will not boot here on its own. What <em>does</em> work is a small, free, modern <strong>Win32 source port</strong> — Chocolate Heretic or Chocolate Hexen — paired with the shareware/demo WAD. The engine is light software rendering with no DirectX, so a source-port EXE runs cleanly on Wine + WebAssembly. It's a two-piece setup (port + WAD) that you load yourself — we don't host the files — which is why we rate this <strong>partial</strong> rather than one-click.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -2508,17 +2543,18 @@
         "title": "Compatibility guide",
         "desc": "What runs, what doesn't, and why."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "blake-stone",
-    "title": "Play Blake Stone Online — Free Shareware FPS in Your Browser — ExeBrowser",
-    "description": "Play Blake Stone: Aliens of Gold shareware in your browser — the 1993 Wolfenstein 3D-engine FPS. It's a DOS game, so the realistic path is the free, open-source BStone port. Honest setup and what to expect.",
+    "title": "Can You Play Blake Stone in a Browser? An Honest Wine Guide — ExeBrowser",
+    "description": "Blake Stone is a 1993 DOS FPS. The Win32 BStone port needs SDL2 and currently black-screens under browser Wine — this guide explains why and what to try.",
     "keywords": "play blake stone online, blake stone aliens of gold browser, blake stone shareware, bstone source port, blake stone no download, wolfenstein 3d engine fps online, apogee blake stone",
-    "ogTitle": "Play Blake Stone Online — Free Shareware FPS in Your Browser",
-    "ogDescription": "Blake Stone: Aliens of Gold shareware episode 1 — the 1993 Wolfenstein 3D-engine FPS — in a browser tab via the free, open-source BStone port and Wine + WebAssembly. Honest about what works.",
-    "crumb": "Play Blake Stone",
-    "h1": "Play Blake Stone: Aliens of Gold in your browser",
+    "ogTitle": "Can You Play Blake Stone in a Browser? An Honest Wine Guide",
+    "ogDescription": "Episode 1 of Blake Stone: Aliens of Gold is free shareware, but the original is DOS and the Win32 BStone port hits a black screen under browser Wine (SDL2). This guide lays out the honest picture.",
+    "crumb": "Blake Stone guide",
+    "h1": "Can you play Blake Stone: Aliens of Gold in your browser?",
     "appName": "Blake Stone",
     "appType": "game",
     "variant": "default",
@@ -2535,7 +2571,7 @@
       "text": "Partial — free shareware, but the Win32 BStone port uses SDL2 (black screen under Wine)"
     },
     "licenseReason": "Episode 1 of Blake Stone: Aliens of Gold is officially free, freely-redistributable shareware (distributed by 3D Realms), and the BStone source port is open-source under GPL-2.0+, so both are legally hostable.",
-    "intro": "<p><strong>Blake Stone: Aliens of Gold</strong> — Apogee's 1993 first-person shooter built on id Software's Wolfenstein 3D engine, with floor and ceiling textures, talking informants you could shoot (or spare) and six episodes of Dr. Goldfire's alien-infested labs. Episode 1 is <strong>free, freely-redistributable shareware</strong>, so it's completely legal to play here. One honest catch: the original is a <em>DOS</em> program, and ExeBrowser runs <em>Win32</em> software, so the reliable way to play it in a tab is the free, open-source <strong>BStone</strong> source port loaded with the shareware data — not the original DOS executable.</p>",
+    "intro": "<p><strong>Blake Stone: Aliens of Gold</strong> — Apogee's 1993 first-person shooter built on id Software's Wolfenstein 3D engine, with floor and ceiling textures, talking informants you could shoot (or spare) and six episodes of Dr. Goldfire's alien-infested labs. Episode 1 is <strong>free, freely-redistributable shareware</strong>, so it's completely legal to play here. Two honest catches: the original is a <em>DOS</em> program, and ExeBrowser runs <em>Win32</em> software, so the only candidate route in a tab is the free, open-source <strong>BStone</strong> source port loaded with the shareware data — and, as the verdict above notes, the current Win32 BStone build depends on SDL2 and hits a black screen under browser Wine.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -2608,17 +2644,18 @@
       "heading": "Get Blake Stone shareware + the BStone port (free, legal)",
       "html": "<p>You need two free pieces, dropped into one folder:</p><p><strong>1. The shareware data (episode 1).</strong> The freely-redistributable shareware episode, exactly as Apogee/3D Realms distribute it:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/Bs-aog-sw1\" target=\"_blank\" rel=\"noopener\">Blake Stone: Aliens of Gold shareware (Internet Archive) →</a></p><p><strong>2. The BStone source port (open-source).</strong> The Win32 build that actually runs in your browser:</p><p><a class=\"cta-btn\" href=\"https://github.com/bibendovsky/bstone/releases/latest\" target=\"_blank\" rel=\"noopener\">BStone latest release (GitHub) →</a></p><p class=\"muted small\">Unzip both into the <em>same</em> folder (BStone EXE beside the shareware data), then use <strong>“Load your own copy”</strong> above. Episode 1 is free shareware, redistributable unmodified at no charge; episodes 2–6 are the commercial registered version — buy those from a legitimate source such as <a href=\"https://www.zoom-platform.com/product/blake-stone-aliens-of-gold\" target=\"_blank\" rel=\"noopener\">ZOOM Platform</a>. BStone is © its authors under the GPL-2.0+. Blake Stone © Apogee Software / JAM Productions.</p>"
     },
-    "licenseNote": ""
+    "licenseNote": "",
+    "updated": "2026-07-01"
   },
   {
     "slug": "prince-of-persia",
-    "title": "Play Prince of Persia (Classic) Online — In Your Browser, No Download — ExeBrowser",
-    "description": "Want to play the classic 1989/1990 Prince of Persia in your browser? Here's the honest story: the original is a commercial DOS game (now Ubisoft), so it won't run directly under Win32 Wine — but the free open-source SDLPoP reimplementation can.",
+    "title": "How to Play Classic Prince of Persia in a Browser (via SDLPoP) — ExeBrowser",
+    "description": "The 1990 DOS original won't boot under browser Wine and is still sold by Ubisoft — but SDLPoP, the open-source remake, runs. A bring-your-own-copy guide.",
     "keywords": "play prince of persia online, prince of persia browser, prince of persia 1989 online, prince of persia dos in browser, sdlpop browser, classic prince of persia no download, prince of persia wine",
-    "ogTitle": "Play Prince of Persia (Classic) Online — In Your Browser",
-    "ogDescription": "The honest guide to running the classic Prince of Persia in a browser tab. The original is commercial DOS; the free open-source SDLPoP port is the realistic path. Here's what works.",
-    "crumb": "Play Prince of Persia",
-    "h1": "Play Prince of Persia (classic) in your browser",
+    "ogTitle": "How to Play Classic Prince of Persia in a Browser (via SDLPoP)",
+    "ogDescription": "The original Prince of Persia is a commercial DOS game, so it won't simply boot here. The free, open-source SDLPoP reimplementation ships as a Win32 EXE — load your copy and it runs in your tab.",
+    "crumb": "Prince of Persia guide",
+    "h1": "Can you play the classic Prince of Persia in your browser?",
     "appName": "Prince of Persia",
     "appType": "game",
     "variant": "default",
@@ -2709,17 +2746,18 @@
         "title": "Compatibility guide",
         "desc": "Why DOS games and SDL titles are hit-or-miss here."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "full-tilt-pinball",
-    "title": "Play Full Tilt! Pinball Online in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Run Full Tilt! Pinball (Cinematronics/Maxis) — the commercial parent of 3D Pinball Space Cadet — in your browser with Wine + WebAssembly. What works, the DirectDraw catch, and how to load it.",
+    "title": "Full Tilt! Pinball in the Browser: What Works With Your Own Copy — ExeBrowser",
+    "description": "Full Tilt! Pinball under browser Wine: the Space Cadet table can run from your retail copy, but the DirectDraw launcher and intro movies are flaky.",
     "keywords": "full tilt pinball online, full tilt pinball browser, full tilt pinball no download, cadet.exe browser, maxis pinball wine, full tilt pinball space cadet, run full tilt pinball webassembly",
-    "ogTitle": "Play Full Tilt! Pinball in Your Browser",
-    "ogDescription": "Full Tilt! Pinball is the commercial three-table parent of Space Cadet. Here's how it behaves under Wine + WebAssembly in ExeBrowser — and the DirectDraw catch.",
-    "crumb": "Play Full Tilt! Pinball",
-    "h1": "Play Full Tilt! Pinball online in your browser",
+    "ogTitle": "Full Tilt! Pinball in the Browser: What Works With Your Own Copy",
+    "ogDescription": "The three-table parent of Space Cadet is commercial, so you load your own retail copy. The table EXEs have a real shot under Wine + WebAssembly; the launcher and movies are the fiddly part.",
+    "crumb": "Full Tilt! guide",
+    "h1": "Running Full Tilt! Pinball in your browser — with your own copy",
     "appName": "Full Tilt! Pinball",
     "appType": "game",
     "genre": [
@@ -2738,7 +2776,7 @@
       "kind": "partial",
       "text": "Partial — the Cadet table can run; launcher, movies and fullscreen are flaky"
     },
-    "intro": "<p><em>Full Tilt! Pinball</em> (1995, Cinematronics/Maxis) is the commercial three-table game — <strong>Space Cadet</strong>, <strong>Skulduggery</strong>, and <strong>Dragon's Keep</strong> — that the free Windows <a href=\"/run/3d-pinball-space-cadet/\">Space Cadet</a> was carved out of. Same physics engine, same pre-rendered look, just two more tables and a fancier shell. Because it's built on that same well-behaved 32-bit engine, the individual table executables have a real shot under ExeBrowser — but the retail game wraps them in a DirectDraw launcher and intro movies that don't always cooperate with Wine 1.7.55, so set expectations to \"fiddly but playable,\" not \"flawless.\"</p>",
+    "intro": "<p><em>Full Tilt! Pinball</em> (1995, Cinematronics/Maxis) is the commercial three-table game — <strong>Space Cadet</strong>, <strong>Skulduggery</strong>, and <strong>Dragon's Keep</strong> — that the free Windows <a href=\"/run/3d-pinball-space-cadet/\">Space Cadet</a> was carved out of. It's commercial software we don't host, so this is a compatibility guide: load your own retail copy below and it runs entirely in your browser tab. Same physics engine, same pre-rendered look, just two more tables and a fancier shell. Because it's built on that same well-behaved 32-bit engine, the individual table executables have a real shot under ExeBrowser — but the retail game wraps them in a DirectDraw launcher and intro movies that don't always cooperate with Wine 1.7.55, so set expectations to \"fiddly but playable,\" not \"flawless.\"</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -2810,7 +2848,8 @@
         "title": "Full compatibility guide",
         "desc": "What runs, what's flaky, and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "7-zip",
@@ -2910,17 +2949,19 @@
         "title": "Compatibility guide",
         "desc": "What runs and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01",
+    "screenshot": true
   },
   {
     "slug": "winrar",
-    "title": "Run WinRAR Online in Your Browser — Open & Extract RAR Files, No Install — ExeBrowser",
-    "description": "Run WinRAR in your browser with Wine + WebAssembly to open and extract RAR archives without installing anything. Use a 32-bit build, bundle your archive, get files back out.",
+    "title": "How to Open RAR Files in a Browser Tab with Your Own WinRAR — ExeBrowser",
+    "description": "Load your own 32-bit WinRAR.exe and extract RAR archives in a browser tab via Wine + WebAssembly — no install, nothing uploaded to a server.",
     "keywords": "winrar online, open rar in browser, extract rar online, run winrar without install, winrar browser, winrar no download, open rar files online",
-    "ogTitle": "Run WinRAR Online in Your Browser — Open & Extract RAR Files",
-    "ogDescription": "Open and extract RAR archives in your browser with Wine + WebAssembly. No install, no upload to a server — runs entirely on your machine.",
-    "crumb": "Run WinRAR",
-    "h1": "Run WinRAR online in your browser",
+    "ogTitle": "How to Open RAR Files in a Browser Tab with Your Own WinRAR",
+    "ogDescription": "A guide to running WinRAR under browser-based Wine: bring a 32-bit build from rarlab.com, bundle your archive, and extract the files entirely on your machine.",
+    "crumb": "WinRAR guide",
+    "h1": "Running WinRAR in your browser — with your own copy",
     "appName": "WinRAR",
     "appType": "app",
     "author": "RARLAB (win.rar GmbH)",
@@ -2933,7 +2974,7 @@
       "text": "Works with older 32-bit builds"
     },
     "licenseNote": "<p><strong>WinRAR is commercial trialware.</strong> ExeBrowser does not bundle or host it — you bring your own copy. Download an official build from <a href=\"https://www.rarlab.com/download.htm\" target=\"_blank\" rel=\"noopener\">rarlab.com</a> (the trial keeps working past 40 days, but a license is required for continued use). Grab a <strong>32-bit</strong> release; modern 64-bit-only builds will not load. Do not use cracked or \"free full version\" copies.</p>",
-    "intro": "<p>WinRAR is the archiver almost everyone has reached for at some point to open a <code>.rar</code> file. If you're on a Chromebook, a locked-down work laptop, or any machine where you can't install software, you can run an older 32-bit build of WinRAR right here in ExeBrowser to browse and extract an archive — then download the extracted files back out. The whole thing runs locally in your browser via Wine + WebAssembly; nothing is uploaded to a server. WinRAR is commercial trialware, so you supply the <code>WinRAR.exe</code> yourself (see the license note below).</p>",
+    "intro": "<p>WinRAR is the archiver almost everyone has reached for at some point to open a <code>.rar</code> file. This page is a bring-your-own-copy guide: WinRAR is commercial trialware, so we don't host it — but if you're on a Chromebook, a locked-down work laptop, or any machine where you can't install software, you can load an older 32-bit build of your own <code>WinRAR.exe</code> right here in ExeBrowser to browse and extract an archive, then download the extracted files back out. The whole thing runs locally in your browser via Wine + WebAssembly; nothing is uploaded to a server (see the license note below).</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -3005,17 +3046,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs in ExeBrowser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "notepad",
-    "title": "Run Notepad &amp; Classic Windows Utilities Online — Free, In Your Browser, No Download — ExeBrowser",
-    "description": "Run Notepad-style editors and tiny classic Win32 utilities in your browser with Wine + WebAssembly. Small single-purpose tools are the most reliable category — here's how, and what works.",
+    "title": "Notepad and Classic Win32 Utilities in a Browser — Load Your Own — ExeBrowser",
+    "description": "Tiny single-purpose Win32 tools are the most reliable apps on Wine + WebAssembly. Load your own editor, hex viewer or notepad.exe — it runs client-side.",
     "keywords": "run notepad in browser, windows utilities online, classic win32 tools browser, text editor online no download, small windows app browser, hex editor browser, run exe utilities online",
-    "ogTitle": "Run Notepad &amp; Classic Windows Utilities in Your Browser",
-    "ogDescription": "The most reliable things to run in a browser: small classic Win32 utilities. Real .exe tools on Wine + WebAssembly — no install, no upload. Here's how.",
-    "crumb": "Run Notepad &amp; utilities",
-    "h1": "Run Notepad and classic Windows utilities in your browser",
+    "ogTitle": "Notepad and Classic Win32 Utilities in a Browser — Load Your Own",
+    "ogDescription": "Tiny single-purpose Win32 utilities are the most reliable category under browser Wine. Load your own text editor, hex editor or notepad.exe and it runs client-side — nothing goes to a server.",
+    "crumb": "Win32 utilities guide",
+    "h1": "Running Notepad and classic Win32 utilities in your browser",
     "appName": "Notepad &amp; utilities",
     "appType": "app",
     "variant": "default",
@@ -3029,7 +3071,7 @@
     "author": "Microsoft",
     "licenseNote": "<p><strong>About Notepad itself:</strong> <code>NOTEPAD.EXE</code>, Calculator, and similar built-in Windows accessories are Microsoft software and are <strong>not</strong> redistributable, so we don't host them here — bring your own copy from a Windows machine you own. The good news: this category isn't really about Microsoft's tools. The most reliable, instant things to run are the countless <em>free and open-source</em> tiny Win32 utilities — text editors, hex editors, viewers and converters — many of which are explicitly free to redistribute. Use <strong>Load your own copy</strong> above to drop in any small <code>.exe</code> you legally have.</p>",
     "licenseReason": "Notepad and the bundled Windows accessories are proprietary Microsoft software and cannot be redistributed, so hostable=false; users must supply their own copy.",
-    "intro": "<p>If you want to <em>see</em> ExeBrowser work with the least possible friction, a tiny classic Win32 utility is the place to start. A plain text editor, a hex editor, a small calculator, an old file manager — these are single-purpose, decades-old programs that barely touch the parts of Windows that Wine struggles with. They boot fast, behave, and almost never break. Notepad itself is Microsoft software (so bring your own copy), but the wider world of small free utilities runs beautifully here — load any one of them and watch a real <code>.exe</code> open in a browser tab.</p>",
+    "intro": "<p>If you want to <em>see</em> ExeBrowser work with the least possible friction, a tiny classic Win32 utility is the place to start — load your own copy below and it runs entirely in your browser tab. A plain text editor, a hex editor, a small calculator, an old file manager — these are single-purpose, decades-old programs that barely touch the parts of Windows that Wine struggles with. They boot fast, behave, and almost never break. Notepad itself is Microsoft software (so bring your own copy), but the wider world of small free utilities runs beautifully here — load any one of them and watch a real <code>.exe</code> open in a browser tab.</p>",
     "sections": [
       {
         "h": "Why small utilities are the most reliable category",
@@ -3101,17 +3143,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "keepass",
-    "title": "Run KeePass Online — Free Open-Source Password Manager in Your Browser — ExeBrowser",
-    "description": "Run KeePass, the free open-source password manager, in your browser with Wine + WebAssembly. KeePass 1.x is the version that works — here's how to load a .kdb vault and the safety caveats.",
+    "title": "Run KeePass in Your Browser — 1.x Works, 2.x Doesn't — ExeBrowser",
+    "description": "KeePass 1.x Classic, the free GPL password manager, boots one-click here via Wine + WebAssembly. 2.x won't run — version and vault-safety caveats explained.",
     "keywords": "keepass browser, run keepass online, open source password manager windows, keepass 1.x wine, kdbx in browser, keepass classic, kdb password vault",
-    "ogTitle": "Run KeePass in Your Browser — Open-Source Password Manager",
-    "ogDescription": "KeePass, the free open-source password manager, running in your browser with Wine + WebAssembly. KeePass 1.x is the safe bet.",
+    "ogTitle": "Run KeePass in Your Browser — 1.x Works, 2.x Doesn't",
+    "ogDescription": "The KeePass 1.x Classic build loads with one click and runs in your browser via Wine + WebAssembly. KeePass 2.x won't work here — read the version and safety caveats first.",
     "crumb": "Run KeePass",
-    "h1": "Run KeePass online in your browser",
+    "h1": "KeePass in your browser: 1.x works, 2.x doesn't",
     "appName": "KeePass",
     "appType": "app",
     "variant": "default",
@@ -3125,7 +3168,7 @@
     "author": "Dominik Reichl",
     "licenseReason": "KeePass is GPL-2.0 open-source software, free to redistribute unmodified, so we can host the KeePass 1.x Classic build.",
     "licenseNote": "<h3 style=\"margin-top:0;\">A note on security</h3><p>ExeBrowser runs everything locally in your browser tab and never uploads your files — opening a database here does not send your passwords anywhere. That said, a password vault is the most sensitive file you own. For day-to-day use, run KeePass natively on a trusted device. Treat the browser as a convenience for <em>viewing</em> a vault on a machine where you cannot install software — not as your primary password manager. Always close the tab when you are done; the in-memory drive is wiped on reload.</p>",
-    "intro": "<p><em>KeePass</em> is the long-running, free, open-source password manager. It is GPL software with no activation, no account, and no cloud requirement — exactly the kind of program that runs well under browser-based Wine. There is one important version caveat (run KeePass 1.x, not 2.x) and one big safety caveat, both covered below. Because KeePass is genuinely free to redistribute, the KeePass 1.x Classic build loads here with one click — no download or install needed.</p>",
+    "intro": "<p><em>KeePass</em> is the long-running, free, open-source password manager — and because it is genuinely free to redistribute, the KeePass 1.x Classic build loads here with one click, no download or install needed. One important caveat before you start: it's KeePass 1.x that works here, not 2.x — and there is one big safety caveat too, both covered below. It is GPL software with no activation, no account, and no cloud requirement — exactly the kind of program that runs well under browser-based Wine.</p>",
     "sections": [
       {
         "h": "Pick KeePass 1.x, not 2.x",
@@ -3193,17 +3236,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "mspaint",
-    "title": "Run MS Paint Online in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Run the classic Windows Paint (MSPAINT.EXE) in your browser with Wine + WebAssembly — no install. What works, how to load it, plus free open-source paint alternatives that run cleanly.",
+    "title": "How to Run MS Paint in a Browser Tab (With Your Own Copy) — ExeBrowser",
+    "description": "Classic MSPAINT.EXE from Windows 95–XP runs well under Wine + WebAssembly — load your own copy and it runs client-side. Plus free paint alternatives.",
     "keywords": "run ms paint online, mspaint browser, classic windows paint, old mspaint exe, paint program no install browser, ms paint web, free paint alternative",
-    "ogTitle": "Run Classic MS Paint in Your Browser — No Download",
-    "ogDescription": "The classic Windows Paint, running in your browser with Wine + WebAssembly. Plus free, open-source paint alternatives that run with no install.",
-    "crumb": "Run MS Paint",
-    "h1": "Run classic MS Paint in your browser",
+    "ogTitle": "How to Run MS Paint in a Browser Tab (With Your Own Copy)",
+    "ogDescription": "The classic Microsoft Paint is a tiny Win32 program that browser-based Wine handles well — but it's Microsoft's property, so you supply your own MSPAINT.EXE. Free open-source paint tools included.",
+    "crumb": "MS Paint guide",
+    "h1": "Can you run classic MS Paint in your browser?",
     "appName": "MS Paint",
     "appType": "app",
     "author": "Microsoft",
@@ -3216,7 +3260,7 @@
       "text": "Classic builds work — bring your own copy"
     },
     "licenseNote": "<h3 style=\"margin-top:0;\">A licensing note</h3><p><code>MSPAINT.EXE</code> is part of Windows and is Microsoft's copyrighted property — we can't host it, and you should only run a copy you already own (for example, one copied from a Windows installation you have a license for). The <strong>open-source alternatives below carry no such restriction</strong> and are the easier, fully-legal route to drawing in your browser.</p>",
-    "intro": "<p>The classic <strong>Microsoft Paint</strong> (<code>MSPAINT.EXE</code>) that shipped with Windows 95 through XP is a tiny, single-purpose Win32 program — exactly the kind of thing browser-based Wine handles well. If you want that pixel-perfect, no-frills painting experience without installing anything, the old Paint runs nicely in ExeBrowser. Because Paint is Microsoft's property we can't host it for you, so you bring your own copy — or skip straight to the free, open-source paint tools below, which run just as well and are fully legal to share.</p>",
+    "intro": "<p>The classic <strong>Microsoft Paint</strong> (<code>MSPAINT.EXE</code>) that shipped with Windows 95 through XP is a tiny, single-purpose Win32 program — exactly the kind of thing browser-based Wine handles well. If you want that pixel-perfect, no-frills painting experience without installing anything, the old Paint runs nicely in ExeBrowser — load your copy below and it runs entirely in your browser tab. Because Paint is Microsoft's property we can't host it for you, so you bring your own copy — or skip straight to the free, open-source paint tools below, which run just as well and are fully legal to share.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -3284,17 +3328,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "winamp",
-    "title": "Play Classic Winamp Online in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Run classic Winamp (2.x / 5.x) in your browser with Wine + WebAssembly. The skinned UI and playlist load great; audio playback is hit-or-miss. Here's what to expect.",
+    "title": "Winamp in Your Browser: The Classic UI Loads, Audio Is Iffy (Guide) — ExeBrowser",
+    "description": "Load your own classic Winamp (2.x/5.x) and the skinned UI, playlist and EQ run under Wine + WebAssembly. Audio playback is hit-or-miss — here's what to expect.",
     "keywords": "winamp browser, run winamp online, play winamp in browser, classic winamp 2.95, winamp wine webassembly, it really whips the llama, winamp skins online, winamp no download",
-    "ogTitle": "Play Classic Winamp Online in Your Browser",
-    "ogDescription": "The legendary classic Winamp, running in your browser with Wine + WebAssembly. The skinned UI loads beautifully; audio is the catch. Here's the honest rundown.",
-    "crumb": "Run Winamp",
-    "h1": "Play classic Winamp online in your browser",
+    "ogTitle": "Winamp in Your Browser: The Classic UI Loads, Audio Is Iffy (Guide)",
+    "ogDescription": "Classic Winamp 2.x/5.x builds load their skinned UI under browser-based Wine, but audio output is unreliable. Bring your own copy — this guide sets honest expectations.",
+    "crumb": "Winamp guide",
+    "h1": "Can you run classic Winamp in your browser?",
     "appName": "Winamp",
     "appType": "app",
     "author": "Nullsoft",
@@ -3308,7 +3353,7 @@
     },
     "licenseNote": "<p style=\"margin:0;\">We don't host Winamp here. It's freeware, not open-source, and its license doesn't grant redistribution rights. Download it from the <a href=\"https://www.winamp.com/\" target=\"_blank\" rel=\"noopener\">official Winamp site</a> or a reputable archive, and only run a copy you obtained legitimately.</p>",
     "licenseReason": "Winamp is proprietary freeware; the license permits free use but does not grant redistribution rights, so we cannot host it.",
-    "intro": "<p><em>Winamp</em> — the player that really whipped the llama's behind — is one of the most nostalgic pieces of late-90s Windows software there is. The classic 2.x and early 5.x builds are small native Win32 programs, so the skinned interface, playlist editor, and equalizer all load under browser-based Wine. Audio playback is the catch: it routes through the emulated Web Audio path, and Winamp's output plugins don't always cooperate. Treat this as a fun nostalgia trip more than a reliable everyday music player.</p>",
+    "intro": "<p><em>Winamp</em> — the player that really whipped the llama's behind — is one of the most nostalgic pieces of late-90s Windows software there is, and this guide covers what happens when you load your own copy here (Winamp's freeware license doesn't let us host it). The classic 2.x and early 5.x builds are small native Win32 programs, so the skinned interface, playlist editor, and equalizer all load under browser-based Wine. Audio playback is the catch: it routes through the emulated Web Audio path, and Winamp's output plugins don't always cooperate. Treat this as a fun nostalgia trip more than a reliable everyday music player.</p>",
     "sections": [
       {
         "h": "What works, honestly",
@@ -3376,17 +3421,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "abiword",
-    "title": "Run AbiWord Online — Free Word Processor in Your Browser, No Download — ExeBrowser",
-    "description": "Run AbiWord, the free open-source word processor, in your browser via Wine + WebAssembly. One of the most reliable office apps under browser Wine — edit .doc, .rtf and .abw files with no install.",
+    "title": "How to Run AbiWord in a Browser Tab — With Your Own Install — ExeBrowser",
+    "description": "AbiWord, the free open-source word processor, runs reliably on Wine + WebAssembly. Load your installed AbiWord.exe and DLLs to edit .doc, .rtf and .abw files.",
     "keywords": "abiword browser, free word processor online, open source word processor, run abiword wine, edit doc in browser no install, abiword online, word processor no download",
-    "ogTitle": "Run AbiWord Online — Free Word Processor in Your Browser",
-    "ogDescription": "AbiWord, the free open-source word processor, running cleanly in your browser with Wine + WebAssembly. No install, no upload.",
-    "crumb": "Run AbiWord",
-    "h1": "Run AbiWord online in your browser",
+    "ogTitle": "How to Run AbiWord in a Browser Tab — With Your Own Install",
+    "ogDescription": "AbiWord is GPL open-source and one of the most reliable office apps under browser Wine. Install it on Windows, then load AbiWord.exe and its DLLs here to edit documents in a tab.",
+    "crumb": "AbiWord guide",
+    "h1": "Running AbiWord in your browser — with your own copy",
     "appName": "AbiWord",
     "appType": "app",
     "variant": "default",
@@ -3400,7 +3446,7 @@
       "kind": "good",
       "text": "Works well"
     },
-    "intro": "<p><strong>AbiWord</strong> is a free, open-source word processor that has been around since the late 1990s. It is lightweight, native Win32, and one of the most reliable office applications to run under browser-based Wine. If you need to open or edit a document on a Chromebook or a locked-down machine with no Office installed, this is a great choice — it opens and edits <code>.abw</code>, <code>.doc</code>, <code>.rtf</code>, <code>.txt</code> and <code>.html</code> files and runs cleanly on the everyday <strong>default (Win32)</strong> Wine variant.</p>",
+    "intro": "<p><strong>AbiWord</strong> is a free, open-source word processor that has been around since the late 1990s — and it's one of the most reliable office applications to run under browser-based Wine, once you load your own installed copy below. It is lightweight and native Win32. If you need to open or edit a document on a Chromebook or a locked-down machine with no Office installed, this is a great choice — it opens and edits <code>.abw</code>, <code>.doc</code>, <code>.rtf</code>, <code>.txt</code> and <code>.html</code> files and runs cleanly on the everyday <strong>default (Win32)</strong> Wine variant.</p>",
     "sections": [
       {
         "h": "Why it runs so cleanly",
@@ -3473,17 +3519,18 @@
       "heading": "Download AbiWord",
       "html": "<p>AbiWord is free and open source under the GPL-2.0. Grab the official Windows build from <a href=\"https://www.abisource.com/download/\" target=\"_blank\" rel=\"noopener\">abisource.com/download</a>, or use the bundled copy here to launch it instantly in your browser.</p>"
     },
-    "genre": []
+    "genre": [],
+    "updated": "2026-07-01"
   },
   {
     "slug": "gnumeric",
-    "title": "Run Gnumeric Online — Free Spreadsheet in Your Browser, No Download — ExeBrowser",
-    "description": "Run Gnumeric, the free open-source spreadsheet, in your browser with Wine + WebAssembly. Open and edit XLS, CSV, and ODS files with no install — one of the most reliable office apps for browser-based Wine.",
+    "title": "How to Run Gnumeric in a Browser Tab (With Your Own Copy) — ExeBrowser",
+    "description": "Gnumeric, the free GPL spreadsheet, runs well under browser Wine + WebAssembly once you load your own installed copy. Opens XLS, CSV, and ODS client-side.",
     "keywords": "gnumeric browser, free spreadsheet online, open source excel alternative, run gnumeric wine, edit xls in browser, csv editor online, gnumeric webassembly",
-    "ogTitle": "Play Gnumeric Online — Free Spreadsheet in Your Browser",
-    "ogDescription": "Gnumeric, the free open-source spreadsheet, running instantly in your browser with Wine + WebAssembly. Open and edit XLS, CSV, and ODS with no install.",
-    "crumb": "Run Gnumeric",
-    "h1": "Run Gnumeric online in your browser",
+    "ogTitle": "How to Run Gnumeric in a Browser Tab (With Your Own Copy)",
+    "ogDescription": "Gnumeric runs reliably under browser-based Wine + WebAssembly, but we don't host it — install it on Windows once, then load gnumeric.exe and its DLLs here to edit XLS, CSV, and ODS files.",
+    "crumb": "Gnumeric guide",
+    "h1": "Running Gnumeric in your browser — with your own copy",
     "appName": "Gnumeric",
     "appType": "app",
     "author": "The GNOME Project",
@@ -3497,7 +3544,7 @@
       "kind": "good",
       "text": "Works well"
     },
-    "intro": "<p><em>Gnumeric</em> is a free, open-source spreadsheet — the spreadsheet counterpart to <a href=\"/run/abiword/\">AbiWord</a> from the GNOME world. It is accurate, fast, lightweight, and runs reliably under browser-based Wine, which makes it a genuinely practical way to open or edit a spreadsheet on a machine where you cannot install Excel or LibreOffice. It opens <code>.xls</code>, <code>.xlsx</code>, <code>.csv</code>, <code>.ods</code>, and its own <code>.gnumeric</code> format, and writes most of them back out — so it doubles as a no-install file converter. Just hit play and start a sheet.</p>",
+    "intro": "<p><em>Gnumeric</em> is a free, open-source spreadsheet — the spreadsheet counterpart to <a href=\"/run/abiword/\">AbiWord</a> from the GNOME world — and this page is a guide to running your own copy of it in a browser tab. It is accurate, fast, lightweight, and runs reliably under browser-based Wine, which makes it a genuinely practical way to open or edit a spreadsheet on a machine where you cannot install Excel or LibreOffice. It opens <code>.xls</code>, <code>.xlsx</code>, <code>.csv</code>, <code>.ods</code>, and its own <code>.gnumeric</code> format, and writes most of them back out — so it doubles as a handy file converter. We can't bundle the Windows build here (it ships as an installer), so install Gnumeric on a Windows machine once, then load the installed <code>gnumeric.exe</code> and its DLLs below — everything runs client-side in your tab.</p>",
     "sections": [
       {
         "h": "Why a spreadsheet is a good fit for browser Wine",
@@ -3569,7 +3616,8 @@
     "download": {
       "heading": "Get a Windows build of Gnumeric",
       "html": "<p>Gnumeric is free and open source (GPL-2.0). Download the official Windows build from <a href=\"http://www.gnumeric.org/\" target=\"_blank\" rel=\"noopener\">gnumeric.org</a>, then upload the program folder here to run it. We may host a ready-to-run package for one-click play.</p>"
-    }
+    },
+    "updated": "2026-07-01"
   },
   {
     "slug": "sumatra-pdf",
@@ -3670,17 +3718,19 @@
     "download": {
       "heading": "Download Sumatra PDF (open-source, GPLv3)",
       "html": "<p>Sumatra PDF is free, open-source software. Grab the official 32-bit <strong>portable</strong> build (a single standalone <code>.exe</code>) from the official site, then upload it here alongside your document. We host a ready-to-run copy below for convenience; the original source and license files are at the project's home.</p><ul><li><a href=\"https://www.sumatrapdfreader.org/download-free-pdf-viewer\" target=\"_blank\" rel=\"noopener\">Official Sumatra PDF download page</a> (pick the 32-bit portable build)</li><li><a href=\"https://github.com/sumatrapdfreader/sumatrapdf\" target=\"_blank\" rel=\"noopener\">Source code & license (GitHub)</a></li></ul><p>Distributed under the GPLv3 (with some BSD-licensed components). The AUTHORS, COPYING and COPYING.BSD files are included with the redistributed copy.</p>"
-    }
+    },
+    "updated": "2026-07-01",
+    "screenshot": true
   },
   {
     "slug": "notepad-plus-plus",
-    "title": "Play Notepad++ Online in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Run the open-source Notepad++ code editor in your browser with Wine + WebAssembly. Core editing and syntax highlighting work; some dialogs are flaky. Which build to use and how.",
+    "title": "Try Notepad++ in Your Browser — Editing Works, Some Dialogs Crash — ExeBrowser",
+    "description": "Notepad++ boots one-click in your browser via Wine + WebAssembly. Tabs, editing and syntax highlighting work; the Preferences and Style dialogs can crash.",
     "keywords": "notepad++ online, run notepad plus plus in browser, notepad++ no download, notepad++ web editor, notepad++ wine, open source code editor browser",
-    "ogTitle": "Run Notepad++ in Your Browser — Free Code Editor, No Install",
-    "ogDescription": "Notepad++ is open-source (GPL), so we can host it. Core editing and syntax highlighting run under browser-based Wine — with a few rough edges. Here's how.",
+    "ogTitle": "Try Notepad++ in Your Browser — Editing Works, Some Dialogs Crash",
+    "ogDescription": "The open-source editor launches one-click under browser-based Wine. Core editing, tabs and syntax highlighting work; heavy dialogs like Preferences can crash — a capable scratchpad, not a daily driver.",
     "crumb": "Run Notepad++",
-    "h1": "Run Notepad++ online in your browser",
+    "h1": "Notepad++ in your browser — editing works, some dialogs crash",
     "appName": "Notepad++",
     "appType": "app",
     "author": "Notepad++ (Don Ho)",
@@ -3694,7 +3744,7 @@
       "kind": "partial",
       "text": "Partial — editing works, some dialogs crash"
     },
-    "intro": "<p>Notepad++ is the much-loved free, open-source code editor — tabbed editing, syntax highlighting for dozens of languages, find-and-replace with regex, and a lightweight footprint. It's written in pure Win32 and C++ on top of the Scintilla component, with no .NET and no GPU dependency, so a surprising amount of it runs inside ExeBrowser. The honest caveat: Notepad++ is a much bigger, busier program than classic Notepad, and the browser-based Wine engine is an older build (Wine 1.7.55). Core editing, tabs and syntax highlighting generally work, but a few heavy dialogs — most notably <strong>Settings → Preferences</strong> and the <strong>Style Configurator</strong> — are known to throw access-violation crashes even on far newer Wine, so treat this as a capable scratchpad rather than your daily driver.</p>",
+    "intro": "<p>Notepad++ is the much-loved free, open-source code editor — tabbed editing, syntax highlighting for dozens of languages, find-and-replace with regex, and a lightweight footprint — and it genuinely launches one click in your browser here, with the honest caveat that a few heavy dialogs crash. It's written in pure Win32 and C++ on top of the Scintilla component, with no .NET and no GPU dependency, so a surprising amount of it runs inside ExeBrowser. Notepad++ is a much bigger, busier program than classic Notepad, though, and the browser-based Wine engine is an older build (Wine 1.7.55). Core editing, tabs and syntax highlighting generally work, but a few heavy dialogs — most notably <strong>Settings → Preferences</strong> and the <strong>Style Configurator</strong> — are known to throw access-violation crashes even on far newer Wine, so treat this as a capable scratchpad rather than your daily driver.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -3771,17 +3821,18 @@
       "heading": "Get a 32-bit Notepad++ build",
       "html": "<p>Notepad++ is GPL open-source, so it's free to download and redistribute. For the best chance of a clean boot under the browser engine, use a <strong>32-bit portable (zip)</strong> build — an older 7.9.x-era release that still targeted Windows XP tends to behave best. Grab official downloads from <a href=\"https://notepad-plus-plus.org/downloads/\" target=\"_blank\" rel=\"noopener\">notepad-plus-plus.org</a>, extract the zip, and upload the folder to ExeBrowser.</p>"
     },
-    "genre": []
+    "genre": [],
+    "updated": "2026-07-01"
   },
   {
     "slug": "irfanview",
-    "title": "Run IrfanView Online — Free Image Viewer in Your Browser, No Download — ExeBrowser",
-    "description": "Run IrfanView in your browser with Wine + WebAssembly to view, convert, and batch-process images without installing anything. Which build works, how to load your photos, and what to expect.",
+    "title": "IrfanView in the Browser: What Works When You Load Your Own Copy — ExeBrowser",
+    "description": "Bring your own IrfanView and view, convert, and resize images in a browser tab via Wine + WebAssembly. Core viewing works; plugins and video are iffy.",
     "keywords": "irfanview online, run irfanview in browser, irfanview no download, view images in browser, irfanview wine, image viewer online, batch convert images browser",
-    "ogTitle": "Run IrfanView Online — Free Image Viewer in Your Browser",
-    "ogDescription": "View, convert, and batch-process images with the real IrfanView, running in your browser via Wine + WebAssembly. No install.",
-    "crumb": "Run IrfanView",
-    "h1": "Run IrfanView online in your browser",
+    "ogTitle": "IrfanView in the Browser: What Works When You Load Your Own Copy",
+    "ogDescription": "A Wine compatibility guide for IrfanView: load your own copy plus some images and the real viewer runs in your tab. Everyday viewing and conversion work; the plugin pack and video playback are hit-or-miss.",
+    "crumb": "IrfanView guide",
+    "h1": "IrfanView in your browser — with your own copy",
     "appName": "IrfanView",
     "appType": "app",
     "author": "Irfan Skiljan",
@@ -3793,7 +3844,7 @@
       "kind": "partial",
       "text": "Viewer works; plugins & video iffy"
     },
-    "intro": "<p>IrfanView is the fast, tiny image viewer a whole generation grew up using — flick through a folder of photos, convert a batch of files from one format to another, crop and resize, all in a window that opens before you've let go of the mouse. Because it's a small, classic 32-bit Win32 app built on plain Windows graphics (not DirectX or .NET), it's a genuinely good fit for ExeBrowser. You can boot Wine in the browser, load your own copy of IrfanView along with some images, and use the real interface — no install on the machine you're sitting at. The honest caveat: core viewing and conversion work nicely, but IrfanView's optional plugin pack, video/animation playback, and its installer can be hit-or-miss under the emulated engine, so this is a \"works for the everyday stuff\" page, not a \"100% of features\" one.</p>",
+    "intro": "<p>IrfanView is the fast, tiny image viewer a whole generation grew up using — flick through a folder of photos, convert a batch of files from one format to another, crop and resize, all in a window that opens before you've let go of the mouse. This page is a compatibility guide, and IrfanView passes it well: because it's a small, classic 32-bit Win32 app built on plain Windows graphics (not DirectX or .NET), you can boot Wine in the browser, load your own copy of IrfanView along with some images, and use the real interface — no install on the machine you're sitting at. The honest caveat: core viewing and conversion work nicely, but IrfanView's optional plugin pack, video/animation playback, and its installer can be hit-or-miss under the emulated engine, so this is a \"works for the everyday stuff\" page, not a \"100% of features\" one.</p>",
     "licenseNote": "<p><strong>IrfanView is freeware, but not ours to hand out.</strong> It's free for personal, educational, and charity use, but its license explicitly forbids redistribution without the author's written permission — so ExeBrowser can't host the program for you, and you'll need to bring your own copy. Download it from the official site, <a href=\"https://www.irfanview.com/\" target=\"_blank\" rel=\"noopener\">irfanview.com</a>. If you use IrfanView at work or for commercial purposes, the license requires a paid registration. We never link to cracks, \"free full version\" repacks, or dubious abandonware mirrors.</p>",
     "sections": [
       {
@@ -3862,17 +3913,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs in the browser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "putty",
-    "title": "Run PuTTY Online in Your Browser — Free SSH Client, No Download — ExeBrowser",
-    "description": "Run the real PuTTY SSH/telnet client in your browser — no install. The Win32 UI and config dialog launch via Wine + WebAssembly, but in-browser networking can't actually connect. Here's the honest story.",
+    "title": "Try PuTTY in Your Browser — The UI Runs, SSH Can't Connect — ExeBrowser",
+    "description": "Launch the real PuTTY one-click via Wine + WebAssembly. The Win32 UI and config dialog work, but browsers block raw sockets — SSH and telnet can't connect.",
     "keywords": "putty online, putty in browser, run putty no download, putty ssh client browser, putty web, putty wine, free ssh client online, putty.exe browser",
-    "ogTitle": "Run PuTTY Online in Your Browser — Free, No Download",
-    "ogDescription": "The real Win32 PuTTY SSH client running on Wine + WebAssembly. The UI launches; live SSH/telnet connections do not, because browsers block raw sockets. Honest guide inside.",
+    "ogTitle": "Try PuTTY in Your Browser — The UI Runs, SSH Can't Connect",
+    "ogDescription": "The real Win32 PuTTY launches one-click on Wine + WebAssembly: config dialog, saved sessions, terminal window. Live SSH/telnet fails because browser tabs can't open raw TCP sockets.",
     "crumb": "Run PuTTY",
-    "h1": "Run PuTTY online in your browser",
+    "h1": "PuTTY in your browser: the UI runs, SSH can't connect",
     "appName": "PuTTY",
     "appType": "app",
     "author": "Simon Tatham",
@@ -3887,7 +3939,7 @@
       "text": "Partial — the UI launches, but SSH/telnet can't connect in-browser"
     },
     "genre": [],
-    "intro": "<p><strong>PuTTY</strong> is the classic free, open-source SSH, telnet and serial client for Windows — a single tiny <code>.exe</code> with no installer. It's a clean 32-bit Win32 program, so it <em>launches</em> beautifully in ExeBrowser: you get the real configuration dialog, saved-session list, and terminal window, all running on Wine + WebAssembly with nothing to install. The honest catch is networking. A browser tab is sandboxed and cannot open raw TCP sockets, and Boxedwine's emulated socket layer is incomplete, so PuTTY can show you everything <em>up to</em> the moment it tries to reach an SSH server — and then the connection will fail. Treat this page as a way to explore the real PuTTY interface, not as a working remote terminal.</p>",
+    "intro": "<p><strong>PuTTY</strong> is the classic free, open-source SSH, telnet and serial client for Windows — a single tiny <code>.exe</code> with no installer — and it launches here in one click, with one big caveat: the UI runs, but live SSH and telnet connections can't be made from a browser tab. As a clean 32-bit Win32 program it <em>launches</em> beautifully in ExeBrowser: you get the real configuration dialog, saved-session list, and terminal window, all running on Wine + WebAssembly with nothing to install. The honest catch is networking. A browser tab is sandboxed and cannot open raw TCP sockets, and Boxedwine's emulated socket layer is incomplete, so PuTTY can show you everything <em>up to</em> the moment it tries to reach an SSH server — and then the connection will fail. Treat this page as a way to explore the real PuTTY interface, not as a working remote terminal.</p>",
     "download": {
       "heading": "Get PuTTY (free, open-source, MIT)",
       "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">The official PuTTY release</h3><p>PuTTY is released under the permissive MIT licence — free to use and redistribute unmodified, even commercially. Always get it from the author's official site so you can verify the signatures and avoid the many lookalike sites that bundle adware:</p><p><a class=\"cta-btn\" href=\"https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html\" target=\"_blank\" rel=\"noopener\">Download PuTTY from the official site →</a></p><p class=\"muted small\">The standalone <code>putty.exe</code> needs no installer — it's a single Win32 binary. Use <strong>“Load your own copy”</strong> above to drop it in, or hit Play to launch our hosted copy. © Simon Tatham and the PuTTY team; distributed under the MIT licence.</p></div>"
@@ -3959,17 +4011,18 @@
         "title": "Compatibility guide",
         "desc": "What runs in ExeBrowser and what doesn't — including networking."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "filezilla",
-    "title": "Run FileZilla Online in Your Browser — Free FTP Client (Honest Verdict) — ExeBrowser",
-    "description": "Can you run FileZilla, the free open-source FTP client, in your browser via Wine + WebAssembly? Honest answer: networking doesn't work in the sandbox, so it can't connect. Here's why, and what to use instead.",
+    "title": "Why FileZilla Can't Connect in a Browser — And What to Use Instead — ExeBrowser",
+    "description": "FileZilla can't work in a browser — the Wine + WebAssembly sandbox has no outbound networking, so FTP and SFTP can't connect. Here's why, plus alternatives.",
     "keywords": "filezilla online, filezilla in browser, run filezilla without install, filezilla web ftp client, filezilla wine, browser ftp client, filezilla no download",
-    "ogTitle": "Run FileZilla Online — Free FTP Client, In Your Browser",
-    "ogDescription": "FileZilla is free GPL open-source software, but FTP/SFTP networking can't reach the internet from the browser sandbox — so it can't actually connect. Read the honest breakdown.",
-    "crumb": "Run FileZilla",
-    "h1": "Run FileZilla online in your browser",
+    "ogTitle": "Why FileZilla Can't Connect in a Browser — And What to Use Instead",
+    "ogDescription": "FileZilla is great free software, but an FTP/SFTP client needs real network access — and the browser Wine sandbox has none. We explain why it can't connect and what to use instead.",
+    "crumb": "FileZilla: can't connect",
+    "h1": "Why FileZilla doesn't work in a browser (and what to use instead)",
     "appName": "FileZilla",
     "appType": "app",
     "author": "FileZilla Project (Tim Kosse)",
@@ -4051,17 +4104,18 @@
         "title": "ExeBrowser guide",
         "desc": "How Boxedwine works, what runs well, and the limits to expect."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "audacity",
-    "title": "Play Audacity Online — Run the Free Audio Editor in Your Browser, No Download — ExeBrowser",
-    "description": "Run Audacity, the free open-source audio editor, in your browser with Wine + WebAssembly. Honest take: only the legacy 32-bit 2.x builds can even start, recording is unreliable, editing is the realistic use.",
+    "title": "Can You Run Audacity in Your Browser? Only Old 32-bit 2.x Builds — ExeBrowser",
+    "description": "Modern Audacity is 64-bit only and won't start in browser Wine. Load your own legacy 32-bit 2.x build (up to 2.4.2) for editing; recording is unreliable.",
     "keywords": "audacity browser, run audacity online, audacity wine, audacity webassembly, free audio editor browser, audacity 2.4.2 32-bit, edit audio in browser, audacity no download",
-    "ogTitle": "Run Audacity in Your Browser — Free Open-Source Audio Editor",
-    "ogDescription": "The free open-source audio editor, running in browser-based Wine. What actually works (and why you need the old 32-bit 2.x build).",
-    "crumb": "Play Audacity",
-    "h1": "Run Audacity in your browser",
+    "ogTitle": "Can You Run Audacity in Your Browser? Only Old 32-bit 2.x Builds",
+    "ogDescription": "Audacity 3.x is 64-bit only, so it won't start on ExeBrowser's 32-bit engine. Legacy 2.x builds you load yourself can run for light editing — audio playback and recording are iffy.",
+    "crumb": "Audacity guide",
+    "h1": "Can you run Audacity in your browser?",
     "appName": "Audacity",
     "appType": "app",
     "author": "The Audacity Team / Muse Group",
@@ -4074,7 +4128,7 @@
       "text": "Partial — old 2.x editing only, audio iffy"
     },
     "licenseReason": "Audacity is open source under the GPL, so it is freely redistributable — but only the legacy 32-bit 2.x builds stand any chance under 32-bit Wine, and we link to the official source rather than re-host an old version.",
-    "intro": "<p><em>Audacity</em> is the free, open-source audio editor that millions of people use to trim podcasts, clean up recordings, and chop up tracks. It is genuinely free software (GPL), so redistribution is allowed — but there is one big catch for browser-based Wine: <strong>modern Audacity is 64-bit only</strong>. From version 3.0 onward there is no 32-bit Windows build, and ExeBrowser runs a 32-bit x86 engine, so 3.x simply will not start. The only versions that even have a shot here are the <strong>legacy 2.x builds</strong> (the last being 2.4.2 from 2020), which still shipped a 32-bit installer. Treat this as \"load an old version and poke at the editor,\" not \"set up a recording studio in a tab.\"</p>",
+    "intro": "<p><em>Audacity</em> is the free, open-source audio editor that millions of people use to trim podcasts, clean up recordings, and chop up tracks — and this page is a compatibility guide for running a copy you load yourself in a browser tab. It is genuinely free software (GPL), so redistribution is allowed — but there is one big catch for browser-based Wine: <strong>modern Audacity is 64-bit only</strong>. From version 3.0 onward there is no 32-bit Windows build, and ExeBrowser runs a 32-bit x86 engine, so 3.x simply will not start. The only versions that even have a shot here are the <strong>legacy 2.x builds</strong> (the last being 2.4.2 from 2020), which still shipped a 32-bit installer. Treat this as \"load an old version and poke at the editor,\" not \"set up a recording studio in a tab.\"</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -4148,17 +4202,18 @@
       "html": "<p>Audacity is free and open source (GPL), so you're welcome to grab it and run it. For ExeBrowser you specifically need a <strong>32-bit 2.x build</strong> — modern 3.x releases are 64-bit only and won't start here. Download from the <a href=\"https://www.audacityteam.org/\" target=\"_blank\" rel=\"noopener\">official Audacity site</a> or its <a href=\"https://github.com/audacity/audacity\" target=\"_blank\" rel=\"noopener\">source on GitHub</a>, install the old 2.x version on a real PC, then upload the program folder here with the folder picker. We don't re-host an old version, so you always get a clean, unmodified copy.</p>"
     },
     "licenseNote": "",
-    "genre": []
+    "genre": [],
+    "updated": "2026-07-01"
   },
   {
     "slug": "paint-net",
-    "title": "Run Paint.NET (Classic) in Your Browser — What Actually Works — ExeBrowser",
-    "description": "Can you run Paint.NET in the browser with Wine + WebAssembly? Honest answer: not really — it needs the .NET Framework that old Wine can't provide. Here's why, and a layered editor that does work.",
+    "title": "Why Paint.NET Won't Run in a Browser — And What to Use Instead — ExeBrowser",
+    "description": "Paint.NET needs the .NET Framework, which browser-based Wine 1.7.55 can't provide — so it won't run here. Here's why, plus a layered editor that does work.",
     "keywords": "paint.net browser, run paint.net online, paint.net wine, paint.net webassembly, paint.net linux wine, paint.net alternative browser, mtpaint browser, layered image editor wine",
-    "ogTitle": "Run Paint.NET (Classic) in Your Browser",
-    "ogDescription": "The honest verdict: Paint.NET needs the .NET Framework that browser-based Wine can't supply, so it won't run. Here's why — plus a layered editor that does.",
-    "crumb": "Paint.NET",
-    "h1": "Run Paint.NET (classic) in your browser",
+    "ogTitle": "Why Paint.NET Won't Run in a Browser — And What to Use Instead",
+    "ogDescription": "Paint.NET is built on Microsoft's .NET Framework, which ExeBrowser's 32-bit Wine runtime can't supply. Here's the structural reason it fails, plus a layered image editor that genuinely works in a tab.",
+    "crumb": "Paint.NET: won't run",
+    "h1": "Why Paint.NET doesn't run in a browser (and what to use instead)",
     "appName": "Paint.NET",
     "appType": "app",
     "author": "dotPDN LLC / Rick Brewster",
@@ -4240,17 +4295,18 @@
         "title": "Full compatibility guide",
         "desc": "Why .NET, DirectX, and 64-bit apps don't run."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "mtpaint",
-    "title": "Run mtPaint Online — Free Pixel Art Editor in Your Browser, No Download — ExeBrowser",
-    "description": "Run mtPaint, the free open-source pixel art and image editor, in your browser with Wine + WebAssembly. Tiny, fast, native Win32 — one of the most reliable graphics editors to run with no install.",
+    "title": "mtPaint in the Browser: What Works and How to Load Your Copy — ExeBrowser",
+    "description": "mtPaint, the tiny GPL pixel-art editor, is ideal for browser Wine — load your own copy (32-bit builds work best) and it runs client-side via WebAssembly.",
     "keywords": "mtpaint browser, free pixel art editor online, mtpaint online, open source image editor, run mtpaint wine, pixel art editor no install, indexed palette editor browser",
-    "ogTitle": "Run mtPaint in Your Browser — Free Pixel Art Editor",
-    "ogDescription": "mtPaint, the tiny open-source pixel art and image editor, running cleanly in your browser with Wine + WebAssembly. No install, no upload.",
-    "crumb": "Run mtPaint",
-    "h1": "Run mtPaint online in your browser",
+    "ogTitle": "mtPaint in the Browser: What Works and How to Load Your Copy",
+    "ogDescription": "mtPaint, the tiny open-source pixel-art editor, is exactly the kind of lightweight Win32 app that runs well under browser Wine. Load your own copy and it runs entirely client-side.",
+    "crumb": "mtPaint guide",
+    "h1": "Running mtPaint in your browser — with your own copy",
     "appName": "mtPaint",
     "appType": "app",
     "variant": "default",
@@ -4265,7 +4321,7 @@
       "text": "Works well"
     },
     "genre": [],
-    "intro": "<p><em>mtPaint</em> (Mark Tyler's Painting Program) is a tiny, fast, open-source raster editor built for icons, pixel art, and quick photo touch-ups. The whole program is only a few hundred kilobytes and was designed to run happily on a 200&nbsp;MHz machine with 16&nbsp;MB of RAM — which is exactly the kind of lightweight, native Win32 software that runs <strong>well</strong> under browser-based Wine. If you want to push pixels, edit an indexed palette, or crop and resize an image on a Chromebook or a locked-down PC with nothing installed, mtPaint is one of the most dependable choices in ExeBrowser. Click play, let Wine boot, and you have a real paint program in a browser tab — no install, nothing uploaded to a server.</p>",
+    "intro": "<p><em>mtPaint</em> (Mark Tyler's Painting Program) is a tiny, fast, open-source raster editor built for icons, pixel art, and quick photo touch-ups — and this guide covers running your own copy of it in a browser tab. The whole program is only a few hundred kilobytes and was designed to run happily on a 200&nbsp;MHz machine with 16&nbsp;MB of RAM — which is exactly the kind of lightweight, native Win32 software that runs <strong>well</strong> under browser-based Wine. If you want to push pixels, edit an indexed palette, or crop and resize an image on a Chromebook or a locked-down PC with nothing installed, mtPaint is one of the most dependable choices in ExeBrowser. Load your copy below, let Wine boot, and you have a real paint program in a browser tab — nothing installed, nothing uploaded to a server.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -4337,17 +4393,18 @@
     "download": {
       "heading": "Download mtPaint (open source, GPL)",
       "html": "<p>mtPaint is free and open-source under the GPL. You can launch the hosted copy above instantly, or get the official Windows build and source from the project itself:</p><ul><li><a href=\"https://mtpaint.sourceforge.net/\" target=\"_blank\" rel=\"noopener\">mtpaint.sourceforge.net</a> — official site and Windows downloads</li><li><a href=\"https://github.com/wjaguar/mtPaint\" target=\"_blank\" rel=\"noopener\">github.com/wjaguar/mtPaint</a> — source code repository</li></ul><p>To edit your own pictures here, bundle them into the same folder you load, then use <strong>Download files written by this app</strong> to get your saved images back out.</p>"
-    }
+    },
+    "updated": "2026-07-01"
   },
   {
     "slug": "grafx2",
-    "title": "Run GrafX2 Online — Free 256-Color Pixel Art Editor in Your Browser, No Download — ExeBrowser",
-    "description": "Run GrafX2, the free open-source 256-color pixel-art editor, in your browser with Wine + WebAssembly. No install — load the real Win32 build, draw, and download your PNG. Honest setup notes inside.",
+    "title": "GrafX2 in the Browser: Free Pixel Art Editor, Load Your Own Copy — ExeBrowser",
+    "description": "GrafX2, the GPL 256-color pixel-art editor, runs well under browser Wine + WebAssembly. Grab the free Win32 build, load grafx2.exe here, and draw client-side.",
     "keywords": "grafx2 browser, run grafx2 online, grafx2 no install, 256 color pixel art editor online, deluxe paint alternative browser, open source pixel art tool, grafx2 web, draw pixel art in browser",
-    "ogTitle": "Run GrafX2 Online — Free 256-Color Pixel Art Editor, No Download",
-    "ogDescription": "GrafX2, the beloved open-source 256-color pixel-art editor, running in your browser with Wine + WebAssembly. Free, GPL, no install.",
-    "crumb": "GrafX2",
-    "h1": "Run GrafX2 in your browser",
+    "ogTitle": "GrafX2 in the Browser: Free Pixel Art Editor, Load Your Own Copy",
+    "ogDescription": "GrafX2, the beloved open-source 256-color pixel-art editor, runs well under browser Wine + WebAssembly. We don't bundle it — download the free Win32 build and load grafx2.exe here.",
+    "crumb": "GrafX2 guide",
+    "h1": "Running GrafX2 in your browser — with your own copy",
     "appName": "GrafX2",
     "appType": "app",
     "variant": "default",
@@ -4361,7 +4418,7 @@
       "kind": "good",
       "text": "Works well (windowed SDL build)"
     },
-    "intro": "<p><strong>GrafX2</strong> is the legendary free, open-source <em>256-color</em> pixel-art editor — a spiritual successor to Amiga's Deluxe Paint, beloved by demoscene and game-art folks for its palette tools, gradients, custom brushes and Lua scripting. It's a small, SDL-based Win32 program with no DirectX or .NET dependency, which makes it a genuinely good fit for browser-based Wine. Boot it below, draw in your tab, and pull your image back out as a PNG — nothing to install.</p>",
+    "intro": "<p><strong>GrafX2</strong> is the legendary free, open-source <em>256-color</em> pixel-art editor — a spiritual successor to Amiga's Deluxe Paint, beloved by demoscene and game-art folks for its palette tools, gradients, custom brushes and Lua scripting. It's a small, SDL-based Win32 program with no DirectX or .NET dependency, which makes it a genuinely good fit for browser-based Wine. We don't bundle it here, but it's free (GPL) and easy to get: grab the Win32 build from the project page, load <code>grafx2.exe</code> with the uploader below, and it runs entirely in your tab — draw, then pull your image back out as a PNG without installing anything.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -4434,17 +4491,18 @@
       "heading": "Get GrafX2 (free, open-source)",
       "html": "<p>GrafX2 is GPL-2.0 open-source software — free to download, use and share. The official project provides Windows builds; pick the <strong>SDL (version 1) 32-bit portable</strong> package for the best results here.</p><p><a class=\"cta-btn\" href=\"https://grafx2.gitlab.io/grafx2/\" target=\"_blank\" rel=\"noopener\">Get GrafX2 from the official project →</a></p><p class=\"muted small\">Download the <code>grafx2-sdl-...-win32</code> portable ZIP (not the 64-bit or SDL2 build), unzip it, then use <strong>Load your own copy → a folder</strong> above and select the whole GrafX2 directory so <code>grafx2.exe</code> finds its data files. Licensed under GPL-2.0-only.</p>"
     },
-    "genre": []
+    "genre": [],
+    "updated": "2026-07-01"
   },
   {
     "slug": "foobar2000",
-    "title": "Run foobar2000 Online — Free, In Your Browser, No Download — ExeBrowser",
-    "description": "Run the foobar2000 audio player in your browser with Wine + WebAssembly. The classic Win32 build's UI loads, but audio is unreliable under emulation — here's the honest breakdown and how to load it.",
+    "title": "foobar2000 in the Browser: UI Loads, Audio Is Unreliable (Wine Guide) — ExeBrowser",
+    "description": "Load your own copy of foobar2000 and the classic 32-bit UI renders under Wine + WebAssembly — but music playback is hit-or-miss. The honest breakdown.",
     "keywords": "foobar2000 browser, run foobar2000 online, foobar2000 wine, foobar2000 web player, foobar2000 no download, play music foobar2000 browser, foobar2000 32-bit",
-    "ogTitle": "Run foobar2000 in Your Browser",
-    "ogDescription": "The classic foobar2000 audio player, running in your browser via Wine + WebAssembly. The UI loads; audio is hit-or-miss. The honest details.",
-    "crumb": "Run foobar2000",
-    "h1": "Run foobar2000 online in your browser",
+    "ogTitle": "foobar2000 in the Browser: UI Loads, Audio Is Unreliable (Wine Guide)",
+    "ogDescription": "foobar2000's freeware license means we can't host an extracted build, so you load your own copy. The playlist and preferences UI render; actual audio output is unreliable under emulation.",
+    "crumb": "foobar2000 guide",
+    "h1": "Running foobar2000 in your browser — with your own copy",
     "appName": "foobar2000",
     "appType": "app",
     "author": "Peter Pawłowski",
@@ -4458,7 +4516,7 @@
     },
     "licenseReason": "foobar2000 is closed-source freeware whose license only permits redistributing the unmodified official installer, so we link to it rather than host it.",
     "licenseNote": "<p style=\"margin:0;\">We don't host foobar2000 here. It's freeware, but not open-source — its license only permits redistributing the <em>unmodified official installer</em>, and the build you'd run in-browser is an extracted program folder, which isn't covered. Get it from the <a href=\"https://www.foobar2000.org/\" target=\"_blank\" rel=\"noopener\">official foobar2000 site</a> (older 32-bit builds live at <a href=\"https://www.foobar2000.org/old\" target=\"_blank\" rel=\"noopener\">foobar2000.org/old</a>), and only run a copy you obtained legitimately.</p>",
-    "intro": "<p><em>foobar2000</em> is the famously lightweight, no-nonsense audio player that power users have loved for over two decades — tiny, fast, infinitely configurable. The catch for browser-based Wine is twofold: the current 2.x release is built for modern 64-bit Windows, and even the older 32-bit builds have a long history of audio-output trouble under Wine. The interface generally renders, so you can poke around the playlist and preferences, but treat actual music playback as unreliable rather than a daily driver. This is a \"look how far emulation has come\" demo more than a real listening setup.</p>",
+    "intro": "<p><em>foobar2000</em> is the famously lightweight, no-nonsense audio player that power users have loved for over two decades — tiny, fast, infinitely configurable. This is a bring-your-own-copy compatibility guide: foobar2000's license doesn't let us host an extracted build, so you load your own copy below and it runs client-side. The catch for browser-based Wine is twofold: the current 2.x release is built for modern 64-bit Windows, and even the older 32-bit builds have a long history of audio-output trouble under Wine. The interface generally renders, so you can poke around the playlist and preferences, but treat actual music playback as unreliable rather than a daily driver. This is a \"look how far emulation has come\" demo more than a real listening setup.</p>",
     "sections": [
       {
         "h": "What works, and what to expect",
@@ -4526,17 +4584,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs, what doesn't, and why audio is hard."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "vlc-classic",
-    "title": "Run VLC (classic) in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Can you run VLC media player in the browser via Wine + WebAssembly? Honestly: the UI may load, but video playback does not work well in emulated 32-bit Wine. Here's what to expect and what to use instead.",
+    "title": "VLC in a Browser Tab? Why Playback Fails Under Emulated Wine — ExeBrowser",
+    "description": "VLC's UI may open under browser-based Wine, but with no GPU acceleration playback stutters or fails. Why the emulator can't keep up — and what to use instead.",
     "keywords": "vlc in browser, run vlc online, vlc media player wine, vlc webassembly, vlc browser no download, classic vlc 32-bit, vlc emulator browser",
-    "ogTitle": "Run VLC (classic) in Your Browser — What Actually Works",
-    "ogDescription": "VLC is open-source and free, but under emulated 32-bit Wine the interface may open while video playback stutters or fails. An honest look at running classic VLC in ExeBrowser.",
-    "crumb": "Run VLC (classic)",
-    "h1": "Run VLC (classic) in your browser",
+    "ogTitle": "VLC in a Browser Tab? Why Playback Fails Under Emulated Wine",
+    "ogDescription": "VLC is free and open-source, but ExeBrowser emulates a 32-bit CPU with no GPU video acceleration — the interface may load, yet playback stutters or fails. An honest verdict plus better options.",
+    "crumb": "VLC: playback fails",
+    "h1": "Why VLC doesn't work well in a browser (and what to use instead)",
     "appName": "VLC",
     "appType": "app",
     "author": "VideoLAN",
@@ -4618,17 +4677,18 @@
         "desc": "What runs in browser-Wine and what doesn't."
       }
     ],
-    "licenseNote": "<p><strong>Bring your own copy.</strong> VLC is free and open-source, but its installer isn't bundled here yet. Download it at no cost from the official source — <a href=\"https://www.videolan.org/vlc/\" target=\"_blank\" rel=\"noopener\">videolan.org</a> — and for the best chance of the interface loading, pick a 32-bit (<code>win32</code>) build. Heads up: even then, video playback is not expected to work well in the emulator.</p>"
+    "licenseNote": "<p><strong>Bring your own copy.</strong> VLC is free and open-source, but its installer isn't bundled here yet. Download it at no cost from the official source — <a href=\"https://www.videolan.org/vlc/\" target=\"_blank\" rel=\"noopener\">videolan.org</a> — and for the best chance of the interface loading, pick a 32-bit (<code>win32</code>) build. Heads up: even then, video playback is not expected to work well in the emulator.</p>",
+    "updated": "2026-07-01"
   },
   {
     "slug": "wordpad",
-    "title": "Run WordPad Online in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Run Microsoft WordPad (write.exe) in your browser via Wine + WebAssembly — basic rich-text editing works, but .doc opens garbled and you must bring your own copy. Plus a free open-source alternative.",
+    "title": "WordPad in Your Browser: RTF Editing Works — With Your Own Copy — ExeBrowser",
+    "description": "Load your own wordpad.exe and basic rich-text editing runs via Wine + WebAssembly — though .doc files open garbled. Includes a free open-source alternative.",
     "keywords": "run wordpad online, wordpad in browser, wordpad online free, wordpad no download, write.exe browser, wordpad wine, rtf editor browser, wordpad alternative online",
-    "ogTitle": "Run WordPad Online in Your Browser — No Download",
-    "ogDescription": "The classic Microsoft rich-text editor in a browser tab via Wine + WebAssembly. Basic RTF editing works; bring your own copy. Free open-source alternative inside.",
-    "crumb": "Run WordPad",
-    "h1": "Run WordPad online in your browser",
+    "ogTitle": "WordPad in Your Browser: RTF Editing Works — With Your Own Copy",
+    "ogDescription": "The classic Microsoft rich-text editor works for basic RTF editing under Wine + WebAssembly, but .doc opens garbled — and you must bring your own wordpad.exe. Free alternative: AbiWord.",
+    "crumb": "WordPad guide",
+    "h1": "Running WordPad in your browser — with your own copy",
     "appName": "WordPad",
     "appType": "app",
     "author": "Microsoft",
@@ -4642,7 +4702,7 @@
     },
     "licenseReason": "WordPad is proprietary Microsoft software bundled with Windows and was never separately licensed for free redistribution, so we cannot host it.",
     "licenseNote": "<strong>WordPad is proprietary Microsoft software.</strong> It ships as part of Windows and is not separately licensed for redistribution, so we cannot host it here — and there is no legitimate standalone download. To run it, copy <code>wordpad.exe</code> (and <code>write.exe</code>) from a Windows PC you own and load that copy with the button above. Microsoft <a href=\"https://learn.microsoft.com/en-us/answers/questions/5687158/why-was-wordpad-removed\" target=\"_blank\" rel=\"noopener\">removed WordPad from Windows 11 version 24H2</a> (October 2024), so newer machines may not have it at all. If you just want a free rich-text editor with nothing to copy, use the open-source <a href=\"/run/abiword/\">AbiWord</a> instead.",
-    "intro": "<p>The classic Microsoft <strong>WordPad</strong> — the rich-text editor that sat between Notepad and Word on every Windows PC from Windows 95 onward — running in a browser tab via Wine + WebAssembly. No install, no account. WordPad is a lightweight Win32 app, so the basics behave: typing, fonts, bold/italic, bullets, and saving <code>.rtf</code> files all work. It is <em>not</em> free to redistribute, though, so you bring your own <code>wordpad.exe</code> and load it above — and Microsoft removed it from Windows 11 24H2, so if you want something free and built-in, jump straight to <a href=\"/run/abiword/\">AbiWord</a>.</p>",
+    "intro": "<p>The classic Microsoft <strong>WordPad</strong> — the rich-text editor that sat between Notepad and Word on every Windows PC from Windows 95 onward — can run in a browser tab via Wine + WebAssembly, provided you load your own copy: it is <em>not</em> free to redistribute, so we don't host it. WordPad is a lightweight Win32 app, so the basics behave: typing, fonts, bold/italic, bullets, and saving <code>.rtf</code> files all work. Bring your own <code>wordpad.exe</code> from a Windows PC you own and load it above — and note that Microsoft removed WordPad from Windows 11 24H2, so if you want something free and built-in, jump straight to <a href=\"/run/abiword/\">AbiWord</a>.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -4710,17 +4770,18 @@
         "title": "Compatibility guide",
         "desc": "What runs in ExeBrowser and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "calculator",
-    "title": "Play Windows Calculator (Classic) Online — Free, In Your Browser, No Download — ExeBrowser",
-    "description": "Run the classic Windows calc.exe in your browser with Wine + WebAssembly. The tiny Win32 calculator is one of the most reliable things to run — here's how, and what to expect.",
+    "title": "Classic Windows Calculator in Your Browser — With Your Own calc.exe — ExeBrowser",
+    "description": "The old Win32 calc.exe is one of the most reliable things to run under browser Wine + WebAssembly. Copy it from a Windows install you own and load it here.",
     "keywords": "windows calculator online, classic calc.exe browser, run calc.exe in browser, win32 calculator wine, windows calculator webassembly, classic windows calculator online, calc exe no download",
-    "ogTitle": "Run the Classic Windows Calculator in Your Browser",
-    "ogDescription": "The old calc.exe is a tiny Win32 app — one of the most reliable things to run under browser-based Wine. Bring your own copy and it just works.",
-    "crumb": "Run Windows Calculator",
-    "h1": "Run the classic Windows Calculator (calc.exe) in your browser",
+    "ogTitle": "Classic Windows Calculator in Your Browser — With Your Own calc.exe",
+    "ogDescription": "The classic calc.exe from Windows 95 through 7 runs cleanly under browser-based Wine. It's Microsoft software, so we can't host it — bring your own copy and it just works.",
+    "crumb": "calc.exe guide",
+    "h1": "Can you run the classic calc.exe in your browser?",
     "appName": "Calculator",
     "appType": "app",
     "author": "Microsoft Corporation",
@@ -4802,17 +4863,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs and what doesn't, explained."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "character-map",
-    "title": "Run Character Map (charmap.exe) in Your Browser — Free, No Download — ExeBrowser",
-    "description": "Run the classic Windows Character Map (charmap.exe) in your browser with Wine + WebAssembly. How it works, why the font list is limited under Wine, and free alternatives — no install.",
+    "title": "Character Map in Your Browser — Load Your Own charmap.exe (Guide) — ExeBrowser",
+    "description": "Windows Character Map (charmap.exe) runs under Wine + WebAssembly if you load your own copy — with fewer fonts than real Windows. Guide plus free alternatives.",
     "keywords": "character map browser, run charmap.exe online, windows character map no install, charmap in browser, copy special characters online, unicode character map wine",
-    "ogTitle": "Run Character Map (charmap.exe) in Your Browser",
-    "ogDescription": "The classic Windows Character Map, running in your browser with Wine + WebAssembly. Tiny Win32 utility, no install — with an honest note on Wine's limited fonts.",
-    "crumb": "Run Character Map",
-    "h1": "Run Character Map (charmap.exe) in your browser",
+    "ogTitle": "Character Map in Your Browser — Load Your Own charmap.exe (Guide)",
+    "ogDescription": "The classic symbol-picker is a tiny Win32 utility that runs well in browser Wine — but you supply charmap.exe from your own Windows install, and Wine's font list is shorter.",
+    "crumb": "Character Map guide",
+    "h1": "Running Character Map in your browser — with your own copy",
     "appName": "Character Map",
     "appType": "app",
     "variant": "default",
@@ -4826,7 +4888,7 @@
     },
     "licenseReason": "charmap.exe is a copyrighted Microsoft Windows component (all rights reserved), so it is not freely redistributable and we cannot host it.",
     "licenseNote": "<h3 style=\"margin-top:0;\">A licensing note</h3><p><code>charmap.exe</code> is part of Microsoft Windows and is Microsoft's copyrighted property — we can't host it, and you should only run a copy you already own. The simplest legitimate source is your own Windows installation: it lives at <code>C:\\Windows\\System32\\charmap.exe</code>. Copy it from a PC you own, then load it here. Don't download \"free charmap.exe\" files from random sites — those are a common malware vector, and you don't need them. The free, fully-legal alternatives below are the easier route.</p>",
-    "intro": "<p>The classic Windows <strong>Character Map</strong> (<code>charmap.exe</code>) — the little utility you open to find an em dash, a degree sign, an accented letter, or some obscure symbol and copy it to the clipboard. It's a tiny, single-purpose Win32 GUI program with no DirectX, no 3D, no .NET and no networking, which is exactly the kind of app browser-based Wine runs well. The honest catch: Character Map is only as useful as the fonts installed alongside it, and a fresh Wine environment ships far fewer fonts than real Windows — so it launches and works, but you'll see a shorter font list and fewer exotic glyphs than you would on a full Windows install.</p>",
+    "intro": "<p>The classic Windows <strong>Character Map</strong> (<code>charmap.exe</code>) — the little utility you open to find an em dash, a degree sign, an accented letter, or some obscure symbol and copy it to the clipboard. It's a tiny, single-purpose Win32 GUI program with no DirectX, no 3D, no .NET and no networking, which is exactly the kind of app browser-based Wine runs well — though since it's Microsoft's file we can't host it, you load your own copy below and it runs entirely in your browser tab. The honest catch: Character Map is only as useful as the fonts installed alongside it, and a fresh Wine environment ships far fewer fonts than real Windows — so it launches and works, but you'll see a shorter font list and fewer exotic glyphs than you would on a full Windows install.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -4894,17 +4956,18 @@
         "title": "Compatibility guide",
         "desc": "What runs and what doesn't."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "keepassxc-classic",
-    "title": "Run KeePassXC in Your Browser — Why It Won't Work (and What Does) — ExeBrowser",
-    "description": "KeePassXC is free and open source, but it's a 64-bit Qt5 app — it won't run on ExeBrowser's 32-bit Wine 1.7.55. Here's why, plus the KeePass 1.x Classic option that actually works in the browser.",
+    "title": "Why KeePassXC Won't Run in a Browser — And the KeePass 1.x That Does — ExeBrowser",
+    "description": "KeePassXC is a 64-bit Qt5 app, so it can't load on ExeBrowser's 32-bit Wine 1.7.55. Here's why — and how KeePass 1.x Classic works in the browser instead.",
     "keywords": "keepassxc browser, run keepassxc online, keepassxc wine, keepassxc 32-bit, keepassxc webassembly, open source password manager browser, keepass classic browser, kdbx in browser",
-    "ogTitle": "Run KeePassXC in Your Browser — Why It Won't Work (and What Does)",
-    "ogDescription": "KeePassXC is open source but a 64-bit Qt5 app, so it can't run on ExeBrowser's 32-bit Wine. Here's the honest verdict and the KeePass 1.x option that does work.",
-    "crumb": "Run KeePassXC",
-    "h1": "Can you run KeePassXC in your browser?",
+    "ogTitle": "Why KeePassXC Won't Run in a Browser — And the KeePass 1.x That Does",
+    "ogDescription": "KeePassXC targets 64-bit Windows with Qt5, which Boxedwine's 32-bit Wine can't run. This page explains the mismatch and points to KeePass 1.x Classic, which does work in a tab.",
+    "crumb": "KeePassXC: won't run",
+    "h1": "Why KeePassXC won't run in a browser (and what does)",
     "appName": "KeePassXC",
     "appType": "app",
     "variant": "default",
@@ -4987,17 +5050,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs, what doesn't, and why 64-bit apps fail."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "dia-diagram",
-    "title": "Run Dia Diagram Editor Online in Your Browser — Free Visio Alternative, No Install — ExeBrowser",
-    "description": "Run Dia, the free open-source (GPL) diagram and flowchart editor, in your browser with Wine + WebAssembly. Honest look at how this GTK Win32 app behaves: it loads, but expect slow startup. No install.",
+    "title": "Can You Run Dia in a Browser? Wine Guide (Free Visio Alternative) — ExeBrowser",
+    "description": "Dia, the GPL flowchart editor, loads under browser Wine when you supply your installed dia.exe and GTK DLLs — expect a slow start from the heavy GTK stack.",
     "keywords": "dia diagram editor browser, free visio alternative online, open source flowchart editor, run dia wine, dia diagram online no install, draw flowchart in browser, uml diagram tool free",
-    "ogTitle": "Run Dia Diagram Editor in Your Browser — Free Visio Alternative",
-    "ogDescription": "Dia, the open-source GPL diagram and flowchart editor, running in your browser via Wine + WebAssembly. Honest verdict: it loads, but this GTK app is heavy — expect a slow start.",
-    "crumb": "Dia Diagram Editor",
-    "h1": "Run Dia Diagram Editor online in your browser",
+    "ogTitle": "Can You Run Dia in a Browser? Wine Guide (Free Visio Alternative)",
+    "ogDescription": "Dia, the open-source GPL diagram and flowchart editor, loads in a browser tab if you supply your installed copy. Honest verdict: it runs, but the heavy GTK stack means a slow start.",
+    "crumb": "Dia guide",
+    "h1": "Can you run Dia Diagram Editor in your browser?",
     "appName": "Dia",
     "appType": "app",
     "variant": "default",
@@ -5010,7 +5074,7 @@
       "kind": "partial",
       "text": "Partial — loads, but heavy GTK app starts slowly"
     },
-    "intro": "<p><em>Dia</em> is a free, open-source diagram editor — the classic GPL alternative to Microsoft Visio. It draws flowcharts, network diagrams, UML, ER models, circuits, and more from a big palette of ready-made shapes. The Windows build is a 32-bit GTK+ application, which is good news for compatibility (no DirectX, no 64-bit, no modern .NET) but also a caveat: GTK apps drag a large stack of DLLs and image loaders behind them, so under browser-based Wine you should expect a <strong>slow first launch</strong> and somewhat sluggish redraws. Once it's up, basic diagramming generally works. Set this honestly: it runs, but it is not as snappy as a plain Win32 tool like Notepad.</p>",
+    "intro": "<p><em>Dia</em> is a free, open-source diagram editor — the classic GPL alternative to Microsoft Visio — and this guide covers loading your own installed copy and running it in a browser tab. It draws flowcharts, network diagrams, UML, ER models, circuits, and more from a big palette of ready-made shapes. The Windows build is a 32-bit GTK+ application, which is good news for compatibility (no DirectX, no 64-bit, no modern .NET) but also a caveat: GTK apps drag a large stack of DLLs and image loaders behind them, so under browser-based Wine you should expect a <strong>slow first launch</strong> and somewhat sluggish redraws. Once it's up, basic diagramming generally works. Set this honestly: it runs, but it is not as snappy as a plain Win32 tool like Notepad.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -5083,17 +5147,18 @@
         "desc": "What runs well, what's partial, and what won't."
       }
     ],
-    "licenseNote": "<p class=\"muted small\">Dia is GPL-2.0 open-source. The Windows build requires an NSIS installer — install it on Windows, then load the installed dia.exe and GTK DLLs using <strong>Load your own copy</strong> above.</p>"
+    "licenseNote": "<p class=\"muted small\">Dia is GPL-2.0 open-source. The Windows build requires an NSIS installer — install it on Windows, then load the installed dia.exe and GTK DLLs using <strong>Load your own copy</strong> above.</p>",
+    "updated": "2026-07-01"
   },
   {
     "slug": "inkscape-classic",
-    "title": "Run Inkscape (Classic) in Your Browser — Free SVG Editor — ExeBrowser",
-    "description": "Can you run Inkscape, the free open-source SVG editor, in a browser with Wine + WebAssembly? Honestly: the classic 0.48–0.92 builds are heavy GTK apps that struggle hard. Here is what to expect and what to use instead.",
+    "title": "Why Inkscape Won't Run Well in a Browser — And What to Use Instead — ExeBrowser",
+    "description": "Inkscape's heavy GTK+ and Cairo engine fights browser-based Wine — even classic 0.48–0.92 builds crash. Why the free SVG editor fails here, and what to try.",
     "keywords": "inkscape browser, run inkscape online, inkscape svg editor wine, free vector editor browser, inkscape classic 0.48 0.91 webassembly, open source vector graphics online",
-    "ogTitle": "Run Inkscape (Classic) in Your Browser — Free SVG Editor",
-    "ogDescription": "Inkscape is a free, open-source vector editor — but its heavy GTK+ engine fights browser-based Wine. An honest look at the classic builds and what actually works.",
-    "crumb": "Inkscape (classic)",
-    "h1": "Run Inkscape (classic) in your browser",
+    "ogTitle": "Why Inkscape Won't Run Well in a Browser — And What to Use Instead",
+    "ogDescription": "Inkscape is free GPL software, but its heavy GTK+ engine is a hard target for browser-based Wine — expect slow starts, glitches, and crashes. Here's why, and better options.",
+    "crumb": "Inkscape: won't run",
+    "h1": "Why Inkscape (classic) doesn't run well in a browser",
     "appName": "Inkscape",
     "appType": "app",
     "author": "Inkscape Project",
@@ -5183,17 +5248,18 @@
         "title": "Full compatibility guide",
         "desc": "What runs well, what struggles, and why."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   },
   {
     "slug": "blender-classic",
-    "title": "Run Blender (classic) in Your Browser — Honest Test, Free &amp; Open Source — ExeBrowser",
-    "description": "Can you run classic Blender (2.49b and older) in the browser via Wine + WebAssembly? Honest answer: the GPL app loads but the 3D viewport needs hardware OpenGL, which browser-Wine lacks. Here's what really happens and what to do instead.",
+    "title": "Why Blender Doesn't Run in a Browser — And What to Do Instead — ExeBrowser",
+    "description": "Classic Blender (2.49b) won't work in browser Wine: its OpenGL-drawn UI has no hardware 3D under WebAssembly. Why it fails and what to use instead.",
     "keywords": "run blender in browser, blender online no download, blender wine webassembly, blender 2.49b portable, classic blender browser, blender opengl wine not working, blender free open source",
-    "ogTitle": "Run Blender (classic) in Your Browser — The Honest Test",
-    "ogDescription": "Classic Blender is free and open source (GPL), but its 3D viewport needs hardware OpenGL that browser-Wine can't provide. Here's exactly what happens and the realistic way to run it.",
-    "crumb": "Run Blender (classic)",
-    "h1": "Run classic Blender in your browser — the honest test",
+    "ogTitle": "Why Blender Doesn't Run in a Browser — And What to Do Instead",
+    "ogDescription": "Blender's entire interface is drawn with OpenGL, and ExeBrowser's Wine + WebAssembly runtime has no hardware 3D acceleration — even classic 2.49b fails. Here's why, and the realistic ways to use Blender.",
+    "crumb": "Blender: won't run",
+    "h1": "Why Blender doesn't run in a browser (and what to use instead)",
     "appName": "Blender (classic)",
     "appType": "app",
     "variant": "default",
@@ -5279,6 +5345,7 @@
         "title": "Compatibility guide",
         "desc": "What runs in the browser and what doesn't, and why."
       }
-    ]
+    ],
+    "updated": "2026-07-01"
   }
 ]

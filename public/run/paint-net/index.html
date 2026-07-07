@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Paint.NET (Classic) in Your Browser — What Actually Works — ExeBrowser</title>
-<meta name="description" content="Can you run Paint.NET in the browser with Wine + WebAssembly? Honest answer: not really — it needs the .NET Framework that old Wine can't provide. Here's why, and a layered editor that does work." />
+<title>Why Paint.NET Won't Run in a Browser — And What to Use Instead — ExeBrowser</title>
+<meta name="description" content="Paint.NET needs the .NET Framework, which browser-based Wine 1.7.55 can't provide — so it won't run here. Here's why, plus a layered editor that does work." />
 <meta name="keywords" content="paint.net browser, run paint.net online, paint.net wine, paint.net webassembly, paint.net linux wine, paint.net alternative browser, mtpaint browser, layered image editor wine" />
 <link rel="canonical" href="https://exebrowser.com/run/paint-net/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/paint-net/" />
-<meta property="og:title" content="Run Paint.NET (Classic) in Your Browser" />
-<meta property="og:description" content="The honest verdict: Paint.NET needs the .NET Framework that browser-based Wine can't supply, so it won't run. Here's why — plus a layered editor that does." />
+<meta property="og:title" content="Why Paint.NET Won't Run in a Browser — And What to Use Instead" />
+<meta property="og:description" content="Paint.NET is built on Microsoft's .NET Framework, which ExeBrowser's 32-bit Wine runtime can't supply. Here's the structural reason it fails, plus a layered image editor that genuinely works in a tab." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Paint.NET", "item": "https://exebrowser.com/run/paint-net/" }
+    { "@type": "ListItem", "position": 3, "name": "Paint.NET: won't run", "item": "https://exebrowser.com/run/paint-net/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "Paint.NET",
   "url": "https://exebrowser.com/run/paint-net/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Can you run Paint.NET in the browser with Wine + WebAssembly? Honest answer: not really — it needs the .NET Framework that old Wine can't provide. Here's why, and a layered editor that does work.",
+  "description": "Paint.NET needs the .NET Framework, which browser-based Wine 1.7.55 can't provide — so it won't run here. Here's why, plus a layered editor that does work.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "dotPDN LLC / Rick Brewster" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,10 +101,11 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Paint.NET</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Paint.NET: won't run</nav>
 
   <section class="card">
-    <h2>Run Paint.NET (classic) in your browser <span class="verdict bad">Won't run — needs the .NET Framework</span></h2>
+    <h2>Why Paint.NET doesn't run in a browser (and what to use instead) <span class="verdict bad">Won't run — needs the .NET Framework</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Tested with Wine 1.7.55 (Win32) + WebAssembly</p>
     <p><em>Paint.NET</em> is the much-loved free Windows image editor — layers, an undo history, plugins, and a clean interface that sits neatly between MS Paint and Photoshop. We'll be straight with you: it does <strong>not</strong> run under browser-based Wine, and the reason is structural, not a bug we can patch. Paint.NET is built on Microsoft's <strong>.NET Framework</strong> — even the old 3.x builds need .NET 3.5 SP1, and 4.x/5.x pile on more — and ExeBrowser's runtime is Wine 1.7.55 on a 32-bit x86 emulator with no .NET Framework installed and no practical way to install one. So this page is an honest "why not," plus a layered editor that genuinely <em>does</em> work in the browser.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.

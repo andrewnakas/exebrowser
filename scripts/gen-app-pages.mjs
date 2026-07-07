@@ -35,14 +35,83 @@
 //   download     optional { heading, html } rendered in a .download-box
 //   licenseNote  optional warn-box HTML for licensing caveats
 
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
 const ROOT = resolve(process.cwd(), "public");
+
+// Read intrinsic pixel dimensions from a PNG or JPEG header so <img> gets
+// correct width/height (no layout shift). Returns null if unreadable.
+function imageSize(absPath) {
+  try {
+    const b = readFileSync(absPath);
+    // PNG: 8-byte signature, then IHDR chunk with width/height at bytes 16..24.
+    if (b.length > 24 && b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) {
+      return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+    }
+    // JPEG: scan for a Start-Of-Frame marker (0xFFC0..0xFFCF, excluding C4/C8/CC).
+    if (b.length > 4 && b[0] === 0xff && b[1] === 0xd8) {
+      let i = 2;
+      while (i < b.length) {
+        if (b[i] !== 0xff) { i++; continue; }
+        const marker = b[i + 1];
+        if (marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc) {
+          return { h: b.readUInt16BE(i + 5), w: b.readUInt16BE(i + 7) };
+        }
+        i += 2 + b.readUInt16BE(i + 2); // skip this segment
+      }
+    }
+  } catch {}
+  return null;
+}
 const SITE = "https://exebrowser.com";
 
 const esc = (s) =>
   String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+// A page may only promise instant play when we actually host a payload.
+const isPlayable = (p) => !!(p.appUrl || p.iframeUrl);
+
+// A captured screenshot of the app running in-browser. `screenshot: true` uses
+// the conventional /run/<slug>/screenshot.png; a string overrides the filename.
+// Returns null when no screenshot is set (pages fall back to the site og.png).
+const screenshotFile = (p) =>
+  p.screenshot ? (typeof p.screenshot === "string" ? p.screenshot : "screenshot.png") : null;
+const screenshotUrl = (p) => {
+  const f = screenshotFile(p);
+  return f ? `${SITE}/run/${p.slug}/${f}` : null;
+};
+const ogImage = (p) => screenshotUrl(p) || `${SITE}/og.png`;
+// A <figure> showing the screenshot, placed under the embed on pages that have one.
+const figureHtml = (p) => {
+  const f = screenshotFile(p);
+  if (!f) return "";
+  const alt = esc(`${p.appName || p.crumb} running in a browser tab via ExeBrowser`);
+  const cap = esc(`${p.appName || p.crumb} running in the browser — no install, no upload.`);
+  const dim = imageSize(resolve(ROOT, "run", p.slug, f)) || { w: 1200, h: 750 };
+  return `
+    <figure class="app-shot">
+      <img src="/run/${p.slug}/${f}" width="${dim.w}" height="${dim.h}" loading="lazy" alt="${alt}" />
+      <figcaption>${cap}</figcaption>
+    </figure>`;
+};
+
+const RUNTIME_LABELS = {
+  default: "Wine 1.7.55 (Win32) + WebAssembly",
+  gecko: "Wine 1.7.55 + Gecko (Win32) + WebAssembly",
+  win3x: "Wine 3.1 (Win 3.x, 16-bit) + WebAssembly",
+  r18: "Boxedwine 18R2 + WebAssembly",
+};
+const runtimeLabel = (p) => {
+  if (p.iframeUrl || p.slug === "space-cadet-open") return "WebAssembly (native port)";
+  if (p.dosRuntime) return "DOSBox + WebAssembly";
+  return RUNTIME_LABELS[p.variant || "default"] || RUNTIME_LABELS.default;
+};
+const monthYear = (iso) => {
+  const [y, m] = String(iso).split("-").map(Number);
+  const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  return m >= 1 && m <= 12 ? `${MONTHS[m - 1]} ${y}` : String(iso);
+};
 // For JSON-LD string values: strip tags, collapse whitespace, JSON-encode.
 const jsonText = (s) => JSON.stringify(String(s).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim());
 
@@ -70,14 +139,15 @@ function appLd(p) {
   "@type": "VideoGame",
   "name": ${jsonText(p.appName)},
   "url": "${url}",
-  "image": "${SITE}/og.png",
+  "image": "${ogImage(p)}",
   "description": ${jsonText(p.description)},
   "applicationCategory": "Game",
   "genre": [${genre}],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser"${p.author ? `,
-  "publisher": { "@type": "Organization", "name": ${JSON.stringify(p.author)} }` : ""},
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "publisher": { "@type": "Organization", "name": ${JSON.stringify(p.author)} }` : ""}${p.updated ? `,
+  "dateModified": ${JSON.stringify(p.updated)}` : ""}${isPlayable(p) ? `,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }` : ""}
 }
 </script>`;
   }
@@ -87,12 +157,13 @@ function appLd(p) {
   "@type": "SoftwareApplication",
   "name": ${jsonText(p.appName)},
   "url": "${url}",
-  "image": "${SITE}/og.png",
+  "image": "${ogImage(p)}",
   "description": ${jsonText(p.description)},
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser"${p.author ? `,
-  "author": { "@type": "Organization", "name": ${JSON.stringify(p.author)} }` : ""},
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "author": { "@type": "Organization", "name": ${JSON.stringify(p.author)} }` : ""}${p.updated ? `,
+  "dateModified": ${JSON.stringify(p.updated)}` : ""}${isPlayable(p) ? `,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }` : ""}
 }
 </script>`;
 }
@@ -305,7 +376,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta property="og:url" content="${SITE}/run/${p.slug}/" />
 <meta property="og:title" content="${esc(p.ogTitle)}" />
 <meta property="og:description" content="${esc(p.ogDescription)}" />
-<meta property="og:image" content="${SITE}/og.png" />
+<meta property="og:image" content="${ogImage(p)}" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -342,9 +413,10 @@ ${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › ${esc(p.crumb)}</nav>
 
   <section class="card">
-    <h2>${esc(p.h1 || p.crumb)} <span class="verdict ${p.verdict.kind}">${esc(p.verdict.text)}</span></h2>
+    <h2>${esc(p.h1 || p.crumb)} <span class="verdict ${p.verdict.kind}">${esc(p.verdict.text)}</span></h2>${p.updated ? `
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated ${esc(monthYear(p.updated))} · ${p.verdict.kind === "bad" ? "Tested with" : "Runs via"} ${esc(runtimeLabel(p))}${isPlayable(p) || p.verdict.kind === "bad" ? "" : " · Requires your own copy"}</p>` : ""}
     ${p.intro}
-${embedBlock(p)}${mobileControlsHtml(p)}
+${embedBlock(p)}${mobileControlsHtml(p)}${figureHtml(p)}
     ${p.iframeUrl ? "" : `<p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? "Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse." : "Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse."}</p>`}${licenseHtml(p)}
   </section>
 ${downloadHtml(p)}
@@ -382,7 +454,6 @@ ${p.iframeUrl
 // ── page definitions ───────────────────────────────────────────────────────
 // Populated from data/app-pages.json (authored by the page-build workflow) so
 // this generator stays the template and the content stays data.
-import { readFileSync, existsSync } from "node:fs";
 const DATA = resolve(process.cwd(), "scripts", "app-pages.json");
 const pages = existsSync(DATA) ? JSON.parse(readFileSync(DATA, "utf8")) : [];
 
@@ -401,22 +472,26 @@ for (const p of pages) {
 }
 
 // ── regenerate the /run/ index so all pages are linked (crawlable) ─────────
+// Honest grouping: pages that boot one-click (hosted payload) are presented as
+// playable; everything else is presented as a compatibility guide so the hub
+// never promises play-online for software we don't host.
 function indexCard(p) {
   const verdictKind = (p.verdict && p.verdict.kind) ? p.verdict.kind : "good";
-  const play = (p.hostable && p.appUrl && !p.skipGenerate) ? ` <span class="verdict ${verdictKind}" style="margin-left:.3rem;">▶ Play now</span>` : "";
+  const play = isPlayable(p) ? ` <span class="verdict ${verdictKind}" style="margin-left:.3rem;">▶ Play now</span>` : "";
   return `      <li><a class="link-card" href="/run/${p.slug}/"><span class="lc-title">${esc(
     p.appName
   )}${play}</span><span class="lc-desc">${esc(p.verdict.text)}</span></a></li>`;
 }
-const games = pages.filter((p) => p.appType === "game");
-const apps = pages.filter((p) => p.appType === "app");
+const playNow = pages.filter((p) => isPlayable(p));
+const games = pages.filter((p) => !isPlayable(p) && p.appType === "game");
+const apps = pages.filter((p) => !isPlayable(p) && p.appType === "app");
 const indexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Run Windows Apps &amp; Games in Your Browser — ${pages.length} App Guides — ExeBrowser</title>
-<meta name="description" content="Play and run ${pages.length} classic Windows programs in your browser with Wine + WebAssembly — DOOM, 3D Pinball, Solitaire, 7-Zip, and more. No install. Many run with one click; the rest take your own copy." />
+<meta name="description" content="${playNow.length} free classic Windows programs you can play in your browser with one click, plus ${games.length + apps.length} honest Wine + WebAssembly compatibility guides for running your own copies — DOOM, 3D Pinball, Solitaire, 7-Zip, and more." />
 <meta name="keywords" content="run windows apps in browser, play windows games online, run exe online, wine app compatibility, classic windows games browser" />
 <link rel="canonical" href="${SITE}/run/" />
 <meta property="og:type" content="website" />
@@ -468,12 +543,16 @@ const indexHtml = `<!DOCTYPE html>
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › App guides</nav>
   <section class="card">
     <h2>Run specific Windows apps &amp; games in your browser</h2>
-    <p>Click into any guide to run that program right on the page — many boot with a single <strong>▶ Play now</strong> click (free, license-clean software we host for you); the rest show you exactly how to load your own copy. Every guide is honest about whether it works, which Wine variant to use, and what to expect.</p>
-    <h3 style="margin-top:0;">Games</h3>
+    <p>Two kinds of pages live here, and we keep them honest. <strong>▶ Play now</strong> entries are free, license-clean software we host — one click boots it in your tab. Everything else is a <strong>compatibility guide</strong>: we can't redistribute that software, so the guide tells you whether your own copy runs, which Wine variant to pick, and how to load it right on the page.</p>
+    <h3 style="margin-top:0;">▶ Play now — free, hosted here</h3>
+    <ul class="card-grid">
+${playNow.map(indexCard).join("\n")}
+    </ul>
+    <h3>Game compatibility guides — bring your own copy</h3>
     <ul class="card-grid">
 ${games.map(indexCard).join("\n")}
     </ul>
-    <h3>Apps &amp; utilities</h3>
+    <h3>App &amp; utility compatibility guides — bring your own copy</h3>
     <ul class="card-grid">
 ${apps.map(indexCard).join("\n")}
     </ul>
@@ -503,23 +582,31 @@ console.log("wrote", resolve(ROOT, "run", "index.html"), `(${games.length} games
 
 // Emit the COMPLETE sitemap.xml: static URLs + every generated /run page. Making
 // the sitemap a generated artifact keeps it from drifting as pages are added.
+// lastmod: real content-change dates. Run pages carry their own `updated`
+// field; static pages are dated here — bump these when the page content
+// actually changes (new blog posts must also be added to this list).
 const STATIC_URLS = [
-  { loc: "/", freq: "weekly", pri: "1.0" },
-  { loc: "/run/", freq: "weekly", pri: "0.9" },
-  { loc: "/blog/", freq: "weekly", pri: "0.8" },
-  { loc: "/blog/run-windows-software-on-a-chromebook/", freq: "monthly", pri: "0.8" },
-  { loc: "/blog/wine-vs-emulator-explained/", freq: "monthly", pri: "0.7" },
-  { loc: "/blog/run-old-software-without-a-vm/", freq: "monthly", pri: "0.7" },
-  { loc: "/guide/", freq: "monthly", pri: "0.9" },
-  { loc: "/about/", freq: "monthly", pri: "0.6" },
-  { loc: "/contact/", freq: "yearly", pri: "0.5" },
-  { loc: "/privacy/", freq: "yearly", pri: "0.4" },
-  { loc: "/terms/", freq: "yearly", pri: "0.4" },
+  { loc: "/", freq: "weekly", pri: "1.0", mod: "2026-07-01" },
+  { loc: "/run/", freq: "weekly", pri: "0.9", mod: "2026-07-01" },
+  { loc: "/blog/", freq: "weekly", pri: "0.8", mod: "2026-07-01" },
+  { loc: "/blog/run-windows-software-on-a-chromebook/", freq: "monthly", pri: "0.8", mod: "2026-07-01" },
+  { loc: "/blog/wine-vs-emulator-explained/", freq: "monthly", pri: "0.7", mod: "2026-07-01" },
+  { loc: "/blog/run-old-software-without-a-vm/", freq: "monthly", pri: "0.7", mod: "2026-07-01" },
+  { loc: "/blog/we-tested-53-windows-apps-in-the-browser/", freq: "monthly", pri: "0.8", mod: "2026-07-01" },
+  { loc: "/blog/extract-files-from-an-old-installer/", freq: "monthly", pri: "0.7", mod: "2026-07-01" },
+  { loc: "/blog/run-16-bit-windows-3x-software/", freq: "monthly", pri: "0.7", mod: "2026-07-01" },
+  { loc: "/blog/legally-get-classic-windows-games/", freq: "monthly", pri: "0.7", mod: "2026-07-01" },
+  { loc: "/blog/open-cadet-open-source-space-cadet/", freq: "monthly", pri: "0.8", mod: "2026-07-01" },
+  { loc: "/guide/", freq: "monthly", pri: "0.9", mod: "2026-07-01" },
+  { loc: "/about/", freq: "monthly", pri: "0.6", mod: "2026-07-01" },
+  { loc: "/contact/", freq: "yearly", pri: "0.5", mod: "2026-07-01" },
+  { loc: "/privacy/", freq: "yearly", pri: "0.4", mod: "2026-06-08" },
+  { loc: "/terms/", freq: "yearly", pri: "0.4", mod: "2026-06-08" },
 ];
-const urlEl = (loc, freq, pri) =>
-  `  <url>\n    <loc>${SITE}${loc}</loc>\n    <changefreq>${freq}</changefreq>\n    <priority>${pri}</priority>\n  </url>`;
-const runUrls = pages.map((p) => urlEl(`/run/${p.slug}/`, "monthly", "0.7"));
-const staticUrls = STATIC_URLS.map((u) => urlEl(u.loc, u.freq, u.pri));
+const urlEl = (loc, freq, pri, mod) =>
+  `  <url>\n    <loc>${SITE}${loc}</loc>${mod ? `\n    <lastmod>${mod}</lastmod>` : ""}\n    <changefreq>${freq}</changefreq>\n    <priority>${pri}</priority>\n  </url>`;
+const runUrls = pages.map((p) => urlEl(`/run/${p.slug}/`, "monthly", "0.7", p.updated));
+const staticUrls = STATIC_URLS.map((u) => urlEl(u.loc, u.freq, u.pri, u.mod));
 // Order: home, /run/, then all run pages, then the rest of the static set.
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Character Map (charmap.exe) in Your Browser — Free, No Download — ExeBrowser</title>
-<meta name="description" content="Run the classic Windows Character Map (charmap.exe) in your browser with Wine + WebAssembly. How it works, why the font list is limited under Wine, and free alternatives — no install." />
+<title>Character Map in Your Browser — Load Your Own charmap.exe (Guide) — ExeBrowser</title>
+<meta name="description" content="Windows Character Map (charmap.exe) runs under Wine + WebAssembly if you load your own copy — with fewer fonts than real Windows. Guide plus free alternatives." />
 <meta name="keywords" content="character map browser, run charmap.exe online, windows character map no install, charmap in browser, copy special characters online, unicode character map wine" />
 <link rel="canonical" href="https://exebrowser.com/run/character-map/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/character-map/" />
-<meta property="og:title" content="Run Character Map (charmap.exe) in Your Browser" />
-<meta property="og:description" content="The classic Windows Character Map, running in your browser with Wine + WebAssembly. Tiny Win32 utility, no install — with an honest note on Wine's limited fonts." />
+<meta property="og:title" content="Character Map in Your Browser — Load Your Own charmap.exe (Guide)" />
+<meta property="og:description" content="The classic symbol-picker is a tiny Win32 utility that runs well in browser Wine — but you supply charmap.exe from your own Windows install, and Wine's font list is shorter." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run Character Map", "item": "https://exebrowser.com/run/character-map/" }
+    { "@type": "ListItem", "position": 3, "name": "Character Map guide", "item": "https://exebrowser.com/run/character-map/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "Character Map",
   "url": "https://exebrowser.com/run/character-map/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run the classic Windows Character Map (charmap.exe) in your browser with Wine + WebAssembly. How it works, why the font list is limited under Wine, and free alternatives — no install.",
+  "description": "Windows Character Map (charmap.exe) runs under Wine + WebAssembly if you load your own copy — with fewer fonts than real Windows. Guide plus free alternatives.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Microsoft Corporation" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Character Map</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Character Map guide</nav>
 
   <section class="card">
-    <h2>Run Character Map (charmap.exe) in your browser <span class="verdict partial">Runs — but fewer fonts than on Windows</span></h2>
-    <p>The classic Windows <strong>Character Map</strong> (<code>charmap.exe</code>) — the little utility you open to find an em dash, a degree sign, an accented letter, or some obscure symbol and copy it to the clipboard. It's a tiny, single-purpose Win32 GUI program with no DirectX, no 3D, no .NET and no networking, which is exactly the kind of app browser-based Wine runs well. The honest catch: Character Map is only as useful as the fonts installed alongside it, and a fresh Wine environment ships far fewer fonts than real Windows — so it launches and works, but you'll see a shorter font list and fewer exotic glyphs than you would on a full Windows install.</p>
+    <h2>Running Character Map in your browser — with your own copy <span class="verdict partial">Runs — but fewer fonts than on Windows</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p>The classic Windows <strong>Character Map</strong> (<code>charmap.exe</code>) — the little utility you open to find an em dash, a degree sign, an accented letter, or some obscure symbol and copy it to the clipboard. It's a tiny, single-purpose Win32 GUI program with no DirectX, no 3D, no .NET and no networking, which is exactly the kind of app browser-based Wine runs well — though since it's Microsoft's file we can't host it, you load your own copy below and it runs entirely in your browser tab. The honest catch: Character Map is only as useful as the fonts installed alongside it, and a fresh Wine environment ships far fewer fonts than real Windows — so it launches and works, but you'll see a shorter font list and fewer exotic glyphs than you would on a full Windows install.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

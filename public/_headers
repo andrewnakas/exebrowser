@@ -3,9 +3,13 @@
 # IMPORTANT: Cloudflare Pages MERGES headers from every matching rule.
 # Emitting Cross-Origin-Embedder-Policy more than once causes Chrome to
 # treat the policy as "unsafe-none" and disables SharedArrayBuffer.
-# Therefore: COOP/COEP/CORP live ONLY in the catch-all /* rule below.
-# Specific-path rules carry only non-overlapping headers (Cache-Control,
-# Content-Type, etc.).
+#
+# COOP/COEP/CORP (2026-07): removed from the catch-all. The 32-bit Boxedwine
+# and DOSBox runtimes are single-threaded — no SharedArrayBuffer anywhere in
+# their JS glue — so cross-origin isolation buys nothing there, while
+# COEP: require-corp blocks AdSense/third-party iframes on every page.
+# Only the experimental /64/ pthreads runtime needs isolation; it keeps
+# COOP/COEP via its own rule below (plus its coi-serviceworker fallback).
 
 /app.js
   Cache-Control: public, max-age=60, must-revalidate
@@ -38,7 +42,7 @@
 # 64-bit (Boxedwine64 / wine64) experimental runtime + split rootfs parts.
 # Immutable: the wasm/js and the rootfs .partNNN pieces never change in place
 # (a new build ships new filenames). Same-origin, so COEP require-corp from the
-# catch-all /* rule is satisfied without a CORP header.
+# /64/* isolation rule below is satisfied without a CORP header.
 /64/*.part*
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/octet-stream
@@ -62,15 +66,20 @@
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/zip
 
-# Catch-all. Single source of truth for cross-origin isolation headers.
+# Catch-all: baseline security headers only (no cross-origin isolation — see
+# the COOP/COEP note at the top of this file).
 /*
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# The 64-bit runtime is a pthreads build: it genuinely needs SharedArrayBuffer,
+# so its pages keep full cross-origin isolation. No ads are served under /64/.
+/64/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
 
 # Open Cadet WASM bundle — always revalidate so updates show immediately.
 # NOTE: COOP is relaxed to unsafe-none for the game via Pages Functions

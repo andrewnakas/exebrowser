@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Notepad++ Online in Your Browser — Free, No Download — ExeBrowser</title>
-<meta name="description" content="Run the open-source Notepad++ code editor in your browser with Wine + WebAssembly. Core editing and syntax highlighting work; some dialogs are flaky. Which build to use and how." />
+<title>Try Notepad++ in Your Browser — Editing Works, Some Dialogs Crash — ExeBrowser</title>
+<meta name="description" content="Notepad++ boots one-click in your browser via Wine + WebAssembly. Tabs, editing and syntax highlighting work; the Preferences and Style dialogs can crash." />
 <meta name="keywords" content="notepad++ online, run notepad plus plus in browser, notepad++ no download, notepad++ web editor, notepad++ wine, open source code editor browser" />
 <link rel="canonical" href="https://exebrowser.com/run/notepad-plus-plus/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/notepad-plus-plus/" />
-<meta property="og:title" content="Run Notepad++ in Your Browser — Free Code Editor, No Install" />
-<meta property="og:description" content="Notepad++ is open-source (GPL), so we can host it. Core editing and syntax highlighting run under browser-based Wine — with a few rough edges. Here's how." />
+<meta property="og:title" content="Try Notepad++ in Your Browser — Editing Works, Some Dialogs Crash" />
+<meta property="og:description" content="The open-source editor launches one-click under browser-based Wine. Core editing, tabs and syntax highlighting work; heavy dialogs like Preferences can crash — a capable scratchpad, not a daily driver." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -42,10 +42,11 @@
   "name": "Notepad++",
   "url": "https://exebrowser.com/run/notepad-plus-plus/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run the open-source Notepad++ code editor in your browser with Wine + WebAssembly. Core editing and syntax highlighting work; some dialogs are flaky. Which build to use and how.",
+  "description": "Notepad++ boots one-click in your browser via Wine + WebAssembly. Tabs, editing and syntax highlighting work; the Preferences and Style dialogs can crash.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Notepad++ (Don Ho)" },
+  "dateModified": "2026-07-01",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -104,8 +105,9 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Notepad++</nav>
 
   <section class="card">
-    <h2>Run Notepad++ online in your browser <span class="verdict partial">Partial — editing works, some dialogs crash</span></h2>
-    <p>Notepad++ is the much-loved free, open-source code editor — tabbed editing, syntax highlighting for dozens of languages, find-and-replace with regex, and a lightweight footprint. It's written in pure Win32 and C++ on top of the Scintilla component, with no .NET and no GPU dependency, so a surprising amount of it runs inside ExeBrowser. The honest caveat: Notepad++ is a much bigger, busier program than classic Notepad, and the browser-based Wine engine is an older build (Wine 1.7.55). Core editing, tabs and syntax highlighting generally work, but a few heavy dialogs — most notably <strong>Settings → Preferences</strong> and the <strong>Style Configurator</strong> — are known to throw access-violation crashes even on far newer Wine, so treat this as a capable scratchpad rather than your daily driver.</p>
+    <h2>Notepad++ in your browser — editing works, some dialogs crash <span class="verdict partial">Partial — editing works, some dialogs crash</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly</p>
+    <p>Notepad++ is the much-loved free, open-source code editor — tabbed editing, syntax highlighting for dozens of languages, find-and-replace with regex, and a lightweight footprint — and it genuinely launches one click in your browser here, with the honest caveat that a few heavy dialogs crash. It's written in pure Win32 and C++ on top of the Scintilla component, with no .NET and no GPU dependency, so a surprising amount of it runs inside ExeBrowser. Notepad++ is a much bigger, busier program than classic Notepad, though, and the browser-based Wine engine is an older build (Wine 1.7.55). Core editing, tabs and syntax highlighting generally work, but a few heavy dialogs — most notably <strong>Settings → Preferences</strong> and the <strong>Style Configurator</strong> — are known to throw access-violation crashes even on far newer Wine, so treat this as a capable scratchpad rather than your daily driver.</p>
 
     <div id="exe-embed"
          data-variant="default"

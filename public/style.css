@@ -431,6 +431,19 @@ footer {
 .spec-table th, .spec-table td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); }
 .spec-table th { color: var(--muted); font-weight: 600; width: 38%; vertical-align: top; }
 
+/* Screenshot of an app running in the browser (app-guide pages + blog posts). */
+.app-shot { margin: 1.25rem 0; }
+.app-shot img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); background: #000; }
+.app-shot figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 0.4rem; text-align: center; }
+
+/* Full-width multi-column compatibility table (blog round-ups). */
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.compat-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.compat-table th, .compat-table td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.compat-table th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.compat-table td:nth-child(2), .compat-table td:nth-child(3) { white-space: nowrap; }
+.compat-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
 .cta-row { margin: 1.25rem 0 0; }
 .cta-btn {
   display: inline-block;

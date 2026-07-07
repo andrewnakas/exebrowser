@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run GrafX2 Online — Free 256-Color Pixel Art Editor in Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Run GrafX2, the free open-source 256-color pixel-art editor, in your browser with Wine + WebAssembly. No install — load the real Win32 build, draw, and download your PNG. Honest setup notes inside." />
+<title>GrafX2 in the Browser: Free Pixel Art Editor, Load Your Own Copy — ExeBrowser</title>
+<meta name="description" content="GrafX2, the GPL 256-color pixel-art editor, runs well under browser Wine + WebAssembly. Grab the free Win32 build, load grafx2.exe here, and draw client-side." />
 <meta name="keywords" content="grafx2 browser, run grafx2 online, grafx2 no install, 256 color pixel art editor online, deluxe paint alternative browser, open source pixel art tool, grafx2 web, draw pixel art in browser" />
 <link rel="canonical" href="https://exebrowser.com/run/grafx2/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/grafx2/" />
-<meta property="og:title" content="Run GrafX2 Online — Free 256-Color Pixel Art Editor, No Download" />
-<meta property="og:description" content="GrafX2, the beloved open-source 256-color pixel-art editor, running in your browser with Wine + WebAssembly. Free, GPL, no install." />
+<meta property="og:title" content="GrafX2 in the Browser: Free Pixel Art Editor, Load Your Own Copy" />
+<meta property="og:description" content="GrafX2, the beloved open-source 256-color pixel-art editor, runs well under browser Wine + WebAssembly. We don't bundle it — download the free Win32 build and load grafx2.exe here." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "GrafX2", "item": "https://exebrowser.com/run/grafx2/" }
+    { "@type": "ListItem", "position": 3, "name": "GrafX2 guide", "item": "https://exebrowser.com/run/grafx2/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "GrafX2",
   "url": "https://exebrowser.com/run/grafx2/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run GrafX2, the free open-source 256-color pixel-art editor, in your browser with Wine + WebAssembly. No install — load the real Win32 build, draw, and download your PNG. Honest setup notes inside.",
+  "description": "GrafX2, the GPL 256-color pixel-art editor, runs well under browser Wine + WebAssembly. Grab the free Win32 build, load grafx2.exe here, and draw client-side.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "GrafX2 Project (originally Sunset Design)" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › GrafX2</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › GrafX2 guide</nav>
 
   <section class="card">
-    <h2>Run GrafX2 in your browser <span class="verdict good">Works well (windowed SDL build)</span></h2>
-    <p><strong>GrafX2</strong> is the legendary free, open-source <em>256-color</em> pixel-art editor — a spiritual successor to Amiga's Deluxe Paint, beloved by demoscene and game-art folks for its palette tools, gradients, custom brushes and Lua scripting. It's a small, SDL-based Win32 program with no DirectX or .NET dependency, which makes it a genuinely good fit for browser-based Wine. Boot it below, draw in your tab, and pull your image back out as a PNG — nothing to install.</p>
+    <h2>Running GrafX2 in your browser — with your own copy <span class="verdict good">Works well (windowed SDL build)</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><strong>GrafX2</strong> is the legendary free, open-source <em>256-color</em> pixel-art editor — a spiritual successor to Amiga's Deluxe Paint, beloved by demoscene and game-art folks for its palette tools, gradients, custom brushes and Lua scripting. It's a small, SDL-based Win32 program with no DirectX or .NET dependency, which makes it a genuinely good fit for browser-based Wine. We don't bundle it here, but it's free (GPL) and easy to get: grab the Win32 build from the project page, load <code>grafx2.exe</code> with the uploader below, and it runs entirely in your tab — draw, then pull your image back out as a PNG without installing anything.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

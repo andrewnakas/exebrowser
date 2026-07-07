@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Dia Diagram Editor Online in Your Browser — Free Visio Alternative, No Install — ExeBrowser</title>
-<meta name="description" content="Run Dia, the free open-source (GPL) diagram and flowchart editor, in your browser with Wine + WebAssembly. Honest look at how this GTK Win32 app behaves: it loads, but expect slow startup. No install." />
+<title>Can You Run Dia in a Browser? Wine Guide (Free Visio Alternative) — ExeBrowser</title>
+<meta name="description" content="Dia, the GPL flowchart editor, loads under browser Wine when you supply your installed dia.exe and GTK DLLs — expect a slow start from the heavy GTK stack." />
 <meta name="keywords" content="dia diagram editor browser, free visio alternative online, open source flowchart editor, run dia wine, dia diagram online no install, draw flowchart in browser, uml diagram tool free" />
 <link rel="canonical" href="https://exebrowser.com/run/dia-diagram/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/dia-diagram/" />
-<meta property="og:title" content="Run Dia Diagram Editor in Your Browser — Free Visio Alternative" />
-<meta property="og:description" content="Dia, the open-source GPL diagram and flowchart editor, running in your browser via Wine + WebAssembly. Honest verdict: it loads, but this GTK app is heavy — expect a slow start." />
+<meta property="og:title" content="Can You Run Dia in a Browser? Wine Guide (Free Visio Alternative)" />
+<meta property="og:description" content="Dia, the open-source GPL diagram and flowchart editor, loads in a browser tab if you supply your installed copy. Honest verdict: it runs, but the heavy GTK stack means a slow start." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Dia Diagram Editor", "item": "https://exebrowser.com/run/dia-diagram/" }
+    { "@type": "ListItem", "position": 3, "name": "Dia guide", "item": "https://exebrowser.com/run/dia-diagram/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "Dia",
   "url": "https://exebrowser.com/run/dia-diagram/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run Dia, the free open-source (GPL) diagram and flowchart editor, in your browser with Wine + WebAssembly. Honest look at how this GTK Win32 app behaves: it loads, but expect slow startup. No install.",
+  "description": "Dia, the GPL flowchart editor, loads under browser Wine when you supply your installed dia.exe and GTK DLLs — expect a slow start from the heavy GTK stack.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "The Dia Developers (GNOME project)" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Dia Diagram Editor</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Dia guide</nav>
 
   <section class="card">
-    <h2>Run Dia Diagram Editor online in your browser <span class="verdict partial">Partial — loads, but heavy GTK app starts slowly</span></h2>
-    <p><em>Dia</em> is a free, open-source diagram editor — the classic GPL alternative to Microsoft Visio. It draws flowcharts, network diagrams, UML, ER models, circuits, and more from a big palette of ready-made shapes. The Windows build is a 32-bit GTK+ application, which is good news for compatibility (no DirectX, no 64-bit, no modern .NET) but also a caveat: GTK apps drag a large stack of DLLs and image loaders behind them, so under browser-based Wine you should expect a <strong>slow first launch</strong> and somewhat sluggish redraws. Once it's up, basic diagramming generally works. Set this honestly: it runs, but it is not as snappy as a plain Win32 tool like Notepad.</p>
+    <h2>Can you run Dia Diagram Editor in your browser? <span class="verdict partial">Partial — loads, but heavy GTK app starts slowly</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><em>Dia</em> is a free, open-source diagram editor — the classic GPL alternative to Microsoft Visio — and this guide covers loading your own installed copy and running it in a browser tab. It draws flowcharts, network diagrams, UML, ER models, circuits, and more from a big palette of ready-made shapes. The Windows build is a 32-bit GTK+ application, which is good news for compatibility (no DirectX, no 64-bit, no modern .NET) but also a caveat: GTK apps drag a large stack of DLLs and image loaders behind them, so under browser-based Wine you should expect a <strong>slow first launch</strong> and somewhat sluggish redraws. Once it's up, basic diagramming generally works. Set this honestly: it runs, but it is not as snappy as a plain Win32 tool like Notepad.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://exebrowser.com/run/tyrian/" />
 <meta property="og:title" content="Play Tyrian 2000 Online — Free, In Your Browser" />
 <meta property="og:description" content="The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via Wine + WebAssembly. Honest setup notes inside — it's a DOS game." />
-<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta property="og:image" content="https://exebrowser.com/run/tyrian/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -41,13 +41,14 @@
   "@type": "VideoGame",
   "name": "Tyrian 2000",
   "url": "https://exebrowser.com/run/tyrian/",
-  "image": "https://exebrowser.com/og.png",
+  "image": "https://exebrowser.com/run/tyrian/screenshot.png",
   "description": "Play Tyrian 2000, the classic vertical-scrolling shmup, in your browser. The game is free (released as freeware), but it's a DOS title — here's how it runs on Wine + WebAssembly and what to expect.",
   "applicationCategory": "Game",
   "genre": ["Shoot 'em up", "Vertical scrolling shooter", "Arcade"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Eclipse Software / Epic MegaGames" },
+  "dateModified": "2026-07-01",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -107,6 +108,7 @@
 
   <section class="card">
     <h2>Play Tyrian 2000 online in your browser <span class="verdict good">Works — free freeware classic runs via DOSBox in your browser</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via DOSBox + WebAssembly</p>
     <p><strong>Tyrian 2000</strong> — Jason Emery's legendary vertical shoot-'em-up, released as freeware in 2004 — runs in your browser via DOSBox + WebAssembly. All five episodes, no download, no install. Use the arrow keys or gamepad to fly and shoot your way through the campaign.</p>
 
     <div id="dos-embed"
@@ -151,6 +153,10 @@
   wire();
 })();
 </script>
+    <figure class="app-shot">
+      <img src="/run/tyrian/screenshot.png" width="640" height="480" loading="lazy" alt="Tyrian 2000 running in a browser tab via ExeBrowser" />
+      <figcaption>Tyrian 2000 running in the browser — no install, no upload.</figcaption>
+    </figure>
     <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
     <div class="warn-box">
       <p class="muted small">Tyrian 2000 data is freeware, but the original game is a DOS executable and the Win32 source port OpenTyrian uses SDL2 which does not yet render under Wine + WebAssembly here. Check back as compatibility improves.</p>

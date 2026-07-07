@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run WordPad Online in Your Browser — Free, No Download — ExeBrowser</title>
-<meta name="description" content="Run Microsoft WordPad (write.exe) in your browser via Wine + WebAssembly — basic rich-text editing works, but .doc opens garbled and you must bring your own copy. Plus a free open-source alternative." />
+<title>WordPad in Your Browser: RTF Editing Works — With Your Own Copy — ExeBrowser</title>
+<meta name="description" content="Load your own wordpad.exe and basic rich-text editing runs via Wine + WebAssembly — though .doc files open garbled. Includes a free open-source alternative." />
 <meta name="keywords" content="run wordpad online, wordpad in browser, wordpad online free, wordpad no download, write.exe browser, wordpad wine, rtf editor browser, wordpad alternative online" />
 <link rel="canonical" href="https://exebrowser.com/run/wordpad/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/wordpad/" />
-<meta property="og:title" content="Run WordPad Online in Your Browser — No Download" />
-<meta property="og:description" content="The classic Microsoft rich-text editor in a browser tab via Wine + WebAssembly. Basic RTF editing works; bring your own copy. Free open-source alternative inside." />
+<meta property="og:title" content="WordPad in Your Browser: RTF Editing Works — With Your Own Copy" />
+<meta property="og:description" content="The classic Microsoft rich-text editor works for basic RTF editing under Wine + WebAssembly, but .doc opens garbled — and you must bring your own wordpad.exe. Free alternative: AbiWord." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run WordPad", "item": "https://exebrowser.com/run/wordpad/" }
+    { "@type": "ListItem", "position": 3, "name": "WordPad guide", "item": "https://exebrowser.com/run/wordpad/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "WordPad",
   "url": "https://exebrowser.com/run/wordpad/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run Microsoft WordPad (write.exe) in your browser via Wine + WebAssembly — basic rich-text editing works, but .doc opens garbled and you must bring your own copy. Plus a free open-source alternative.",
+  "description": "Load your own wordpad.exe and basic rich-text editing runs via Wine + WebAssembly — though .doc files open garbled. Includes a free open-source alternative.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Microsoft" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run WordPad</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › WordPad guide</nav>
 
   <section class="card">
-    <h2>Run WordPad online in your browser <span class="verdict partial">Partial — basic RTF editing works, .doc garbled</span></h2>
-    <p>The classic Microsoft <strong>WordPad</strong> — the rich-text editor that sat between Notepad and Word on every Windows PC from Windows 95 onward — running in a browser tab via Wine + WebAssembly. No install, no account. WordPad is a lightweight Win32 app, so the basics behave: typing, fonts, bold/italic, bullets, and saving <code>.rtf</code> files all work. It is <em>not</em> free to redistribute, though, so you bring your own <code>wordpad.exe</code> and load it above — and Microsoft removed it from Windows 11 24H2, so if you want something free and built-in, jump straight to <a href="/run/abiword/">AbiWord</a>.</p>
+    <h2>Running WordPad in your browser — with your own copy <span class="verdict partial">Partial — basic RTF editing works, .doc garbled</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p>The classic Microsoft <strong>WordPad</strong> — the rich-text editor that sat between Notepad and Word on every Windows PC from Windows 95 onward — can run in a browser tab via Wine + WebAssembly, provided you load your own copy: it is <em>not</em> free to redistribute, so we don't host it. WordPad is a lightweight Win32 app, so the basics behave: typing, fonts, bold/italic, bullets, and saving <code>.rtf</code> files all work. Bring your own <code>wordpad.exe</code> from a Windows PC you own and load it above — and note that Microsoft removed WordPad from Windows 11 24H2, so if you want something free and built-in, jump straight to <a href="/run/abiword/">AbiWord</a>.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

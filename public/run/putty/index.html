@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run PuTTY Online in Your Browser — Free SSH Client, No Download — ExeBrowser</title>
-<meta name="description" content="Run the real PuTTY SSH/telnet client in your browser — no install. The Win32 UI and config dialog launch via Wine + WebAssembly, but in-browser networking can't actually connect. Here's the honest story." />
+<title>Try PuTTY in Your Browser — The UI Runs, SSH Can't Connect — ExeBrowser</title>
+<meta name="description" content="Launch the real PuTTY one-click via Wine + WebAssembly. The Win32 UI and config dialog work, but browsers block raw sockets — SSH and telnet can't connect." />
 <meta name="keywords" content="putty online, putty in browser, run putty no download, putty ssh client browser, putty web, putty wine, free ssh client online, putty.exe browser" />
 <link rel="canonical" href="https://exebrowser.com/run/putty/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/putty/" />
-<meta property="og:title" content="Run PuTTY Online in Your Browser — Free, No Download" />
-<meta property="og:description" content="The real Win32 PuTTY SSH client running on Wine + WebAssembly. The UI launches; live SSH/telnet connections do not, because browsers block raw sockets. Honest guide inside." />
+<meta property="og:title" content="Try PuTTY in Your Browser — The UI Runs, SSH Can't Connect" />
+<meta property="og:description" content="The real Win32 PuTTY launches one-click on Wine + WebAssembly: config dialog, saved sessions, terminal window. Live SSH/telnet fails because browser tabs can't open raw TCP sockets." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -42,10 +42,11 @@
   "name": "PuTTY",
   "url": "https://exebrowser.com/run/putty/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run the real PuTTY SSH/telnet client in your browser — no install. The Win32 UI and config dialog launch via Wine + WebAssembly, but in-browser networking can't actually connect. Here's the honest story.",
+  "description": "Launch the real PuTTY one-click via Wine + WebAssembly. The Win32 UI and config dialog work, but browsers block raw sockets — SSH and telnet can't connect.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Simon Tatham" },
+  "dateModified": "2026-07-01",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -104,8 +105,9 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run PuTTY</nav>
 
   <section class="card">
-    <h2>Run PuTTY online in your browser <span class="verdict partial">Partial — the UI launches, but SSH/telnet can't connect in-browser</span></h2>
-    <p><strong>PuTTY</strong> is the classic free, open-source SSH, telnet and serial client for Windows — a single tiny <code>.exe</code> with no installer. It's a clean 32-bit Win32 program, so it <em>launches</em> beautifully in ExeBrowser: you get the real configuration dialog, saved-session list, and terminal window, all running on Wine + WebAssembly with nothing to install. The honest catch is networking. A browser tab is sandboxed and cannot open raw TCP sockets, and Boxedwine's emulated socket layer is incomplete, so PuTTY can show you everything <em>up to</em> the moment it tries to reach an SSH server — and then the connection will fail. Treat this page as a way to explore the real PuTTY interface, not as a working remote terminal.</p>
+    <h2>PuTTY in your browser: the UI runs, SSH can't connect <span class="verdict partial">Partial — the UI launches, but SSH/telnet can't connect in-browser</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly</p>
+    <p><strong>PuTTY</strong> is the classic free, open-source SSH, telnet and serial client for Windows — a single tiny <code>.exe</code> with no installer — and it launches here in one click, with one big caveat: the UI runs, but live SSH and telnet connections can't be made from a browser tab. As a clean 32-bit Win32 program it <em>launches</em> beautifully in ExeBrowser: you get the real configuration dialog, saved-session list, and terminal window, all running on Wine + WebAssembly with nothing to install. The honest catch is networking. A browser tab is sandboxed and cannot open raw TCP sockets, and Boxedwine's emulated socket layer is incomplete, so PuTTY can show you everything <em>up to</em> the moment it tries to reach an SSH server — and then the connection will fail. Treat this page as a way to explore the real PuTTY interface, not as a working remote terminal.</p>
 
     <div id="exe-embed"
          data-variant="default"

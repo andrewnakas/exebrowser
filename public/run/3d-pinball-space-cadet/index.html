@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play 3D Pinball Space Cadet Online — Free, In Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Play 3D Pinball for Windows – Space Cadet in your browser, no install. Use the Win32 + Gecko variant, upload the whole pinball folder, run PINBALL.EXE. Bring your own copy." />
+<title>Play 3D Pinball Space Cadet in Your Browser — With Your Own Copy — ExeBrowser</title>
+<meta name="description" content="Load your own Pinball folder and run PINBALL.EXE in a browser tab via Wine + WebAssembly — full speed, working sound, nothing uploaded to a server." />
 <meta name="keywords" content="3d pinball space cadet online, play space cadet browser, 3d pinball for windows, space cadet pinball no download, pinball.exe browser, windows xp pinball online" />
 <link rel="canonical" href="https://exebrowser.com/run/3d-pinball-space-cadet/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/3d-pinball-space-cadet/" />
-<meta property="og:title" content="Play 3D Pinball Space Cadet in Your Browser" />
-<meta property="og:description" content="Run the classic Windows XP pinball game in your browser with Wine + WebAssembly. No install, nothing uploaded to a server." />
+<meta property="og:title" content="Play 3D Pinball Space Cadet in Your Browser — With Your Own Copy" />
+<meta property="og:description" content="A Wine compatibility guide for the Windows XP pinball classic. Load your own Pinball folder and PINBALL.EXE runs entirely in your browser — full speed, with sound." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play 3D Pinball Space Cadet", "item": "https://exebrowser.com/run/3d-pinball-space-cadet/" }
+    { "@type": "ListItem", "position": 3, "name": "Space Cadet guide", "item": "https://exebrowser.com/run/3d-pinball-space-cadet/" }
   ]
 }
 </script>
@@ -42,13 +42,13 @@
   "name": "Space Cadet",
   "url": "https://exebrowser.com/run/3d-pinball-space-cadet/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Play 3D Pinball for Windows – Space Cadet in your browser, no install. Use the Win32 + Gecko variant, upload the whole pinball folder, run PINBALL.EXE. Bring your own copy.",
+  "description": "Load your own Pinball folder and run PINBALL.EXE in a browser tab via Wine + WebAssembly — full speed, working sound, nothing uploaded to a server.",
   "applicationCategory": "Game",
   "genre": ["Pinball", "Arcade"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Microsoft" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -103,11 +103,13 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play 3D Pinball Space Cadet</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Space Cadet guide</nav>
 
   <section class="card">
-    <h2>Play 3D Pinball Space Cadet online in your browser <span class="verdict good">Works well — full speed, sound works</span></h2>
-    <p><em>3D Pinball for Windows – Space Cadet</em> is one of the most-missed pieces of bundled Windows software ever — the single pinball table that shipped with Windows 95 Plus!, 98, 2000, and XP before quietly disappearing in Vista. The good news: it's a small, well-behaved 32-bit Win32 program, and it runs in ExeBrowser without much fuss. Pick the <strong>Win32 + Gecko</strong> variant, upload the whole pinball folder, point Wine at <code>PINBALL.EXE</code>, and you're launching the ball in seconds — full speed, working sound, nothing uploaded to a server.</p>
+    <h2>Running 3D Pinball Space Cadet in your browser — with your own copy <span class="verdict good">Guide — bring your own copy (or play the open-source version instantly)</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 + Gecko (Win32) + WebAssembly · Requires your own copy</p>
+    <p style="background:rgba(90,150,230,0.12);border-left:3px solid var(--accent);padding:0.75rem 1rem;border-radius:6px;"><strong>Want to play right now, with nothing to install?</strong> We built <a href="/run/space-cadet-open/">Open Cadet</a> — a fully open-source, public-domain remake of Space Cadet that plays instantly in your browser, no Microsoft files needed. This page is for running <em>your own</em> original copy; for instant play, <a href="/run/space-cadet-open/">start Open Cadet →</a></p>
+<p><em>3D Pinball for Windows – Space Cadet</em> is one of the most-missed pieces of bundled Windows software ever — the single pinball table that shipped with Windows 95 Plus!, 98, 2000, and XP before quietly disappearing in Vista. This page is a compatibility guide: Microsoft still owns the game, so we don't host the files — you bring your own copy, and it runs entirely in your browser tab. The good news: it's a small, well-behaved 32-bit Win32 program, and it runs in ExeBrowser without much fuss. Pick the <strong>Win32 + Gecko</strong> variant, load your own pinball folder below, point Wine at <code>PINBALL.EXE</code>, and you're launching the ball in seconds — full speed, working sound, nothing uploaded to a server.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add
@@ -160,6 +162,7 @@
   <section class="card">
     <h2>More you can run in your browser</h2>
     <ul class="card-grid">
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">Open Cadet (play now)</span><span class="lc-desc">Our open-source Space Cadet remake — instant, no files needed.</span></a></li>
       <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">Another classic bundled Windows game in your browser.</span></a></li>
       <li><a class="link-card" href="/run/minesweeper/"><span class="lc-title">Minesweeper</span><span class="lc-desc">The other desk-job classic that shipped with Windows.</span></a></li>
       <li><a class="link-card" href="/run/freecell/"><span class="lc-title">FreeCell</span><span class="lc-desc">The solvable solitaire variant from Windows.</span></a></li>

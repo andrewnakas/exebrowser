@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run KeePass Online — Free Open-Source Password Manager in Your Browser — ExeBrowser</title>
-<meta name="description" content="Run KeePass, the free open-source password manager, in your browser with Wine + WebAssembly. KeePass 1.x is the version that works — here's how to load a .kdb vault and the safety caveats." />
+<title>Run KeePass in Your Browser — 1.x Works, 2.x Doesn't — ExeBrowser</title>
+<meta name="description" content="KeePass 1.x Classic, the free GPL password manager, boots one-click here via Wine + WebAssembly. 2.x won't run — version and vault-safety caveats explained." />
 <meta name="keywords" content="keepass browser, run keepass online, open source password manager windows, keepass 1.x wine, kdbx in browser, keepass classic, kdb password vault" />
 <link rel="canonical" href="https://exebrowser.com/run/keepass/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/keepass/" />
-<meta property="og:title" content="Run KeePass in Your Browser — Open-Source Password Manager" />
-<meta property="og:description" content="KeePass, the free open-source password manager, running in your browser with Wine + WebAssembly. KeePass 1.x is the safe bet." />
+<meta property="og:title" content="Run KeePass in Your Browser — 1.x Works, 2.x Doesn't" />
+<meta property="og:description" content="The KeePass 1.x Classic build loads with one click and runs in your browser via Wine + WebAssembly. KeePass 2.x won't work here — read the version and safety caveats first." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -42,10 +42,11 @@
   "name": "KeePass",
   "url": "https://exebrowser.com/run/keepass/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run KeePass, the free open-source password manager, in your browser with Wine + WebAssembly. KeePass 1.x is the version that works — here's how to load a .kdb vault and the safety caveats.",
+  "description": "KeePass 1.x Classic, the free GPL password manager, boots one-click here via Wine + WebAssembly. 2.x won't run — version and vault-safety caveats explained.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Dominik Reichl" },
+  "dateModified": "2026-07-01",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -104,8 +105,9 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run KeePass</nav>
 
   <section class="card">
-    <h2>Run KeePass online in your browser <span class="verdict partial">Works — KeePass 1.x only</span></h2>
-    <p><em>KeePass</em> is the long-running, free, open-source password manager. It is GPL software with no activation, no account, and no cloud requirement — exactly the kind of program that runs well under browser-based Wine. There is one important version caveat (run KeePass 1.x, not 2.x) and one big safety caveat, both covered below. Because KeePass is genuinely free to redistribute, the KeePass 1.x Classic build loads here with one click — no download or install needed.</p>
+    <h2>KeePass in your browser: 1.x works, 2.x doesn't <span class="verdict partial">Works — KeePass 1.x only</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly</p>
+    <p><em>KeePass</em> is the long-running, free, open-source password manager — and because it is genuinely free to redistribute, the KeePass 1.x Classic build loads here with one click, no download or install needed. One important caveat before you start: it's KeePass 1.x that works here, not 2.x — and there is one big safety caveat too, both covered below. It is GPL software with no activation, no account, and no cloud requirement — exactly the kind of program that runs well under browser-based Wine.</p>
 
     <div id="exe-embed"
          data-variant="default"

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Microsoft Hearts Online in Your Browser — No Download — ExeBrowser</title>
-<meta name="description" content="Run the classic Microsoft Hearts (mshearts.exe) card game in your browser via Wine + WebAssembly. Single-player vs. three CPU opponents works great — here's what to expect and how to load it." />
+<title>Microsoft Hearts in Your Browser — How to Run Your Own Copy — ExeBrowser</title>
+<meta name="description" content="Copy mshearts.exe from a Windows install you own and the classic Hearts card game runs client-side via Wine + WebAssembly. Single-player works well." />
 <meta name="keywords" content="microsoft hearts online, play hearts in browser, mshearts.exe online, windows hearts game, classic hearts card game browser, microsoft hearts no download" />
 <link rel="canonical" href="https://exebrowser.com/run/hearts/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/hearts/" />
-<meta property="og:title" content="Play Microsoft Hearts Online in Your Browser" />
-<meta property="og:description" content="The classic Windows Hearts card game (mshearts.exe), running in a browser tab via Wine + WebAssembly. Single-player vs. CPU works well. Bring your own Windows copy." />
+<meta property="og:title" content="Microsoft Hearts in Your Browser — How to Run Your Own Copy" />
+<meta property="og:description" content="The classic Windows Hearts (mshearts.exe) runs well in a browser tab via Wine + WebAssembly — but it's proprietary Microsoft software, so you bring your own copy from a Windows install you own." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play Microsoft Hearts", "item": "https://exebrowser.com/run/hearts/" }
+    { "@type": "ListItem", "position": 3, "name": "Hearts guide", "item": "https://exebrowser.com/run/hearts/" }
   ]
 }
 </script>
@@ -42,13 +42,13 @@
   "name": "Hearts",
   "url": "https://exebrowser.com/run/hearts/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run the classic Microsoft Hearts (mshearts.exe) card game in your browser via Wine + WebAssembly. Single-player vs. three CPU opponents works great — here's what to expect and how to load it.",
+  "description": "Copy mshearts.exe from a Windows install you own and the classic Hearts card game runs client-side via Wine + WebAssembly. Single-player works well.",
   "applicationCategory": "Game",
   "genre": ["Card game", "Trick-taking"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Microsoft Corporation" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -103,11 +103,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Microsoft Hearts</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Hearts guide</nav>
 
   <section class="card">
-    <h2>Play Microsoft Hearts online in your browser <span class="verdict good">Single-player works well</span></h2>
-    <p>The classic <strong>Microsoft Hearts</strong> — the trick-taking card game (<code>mshearts.exe</code>) that shipped with Windows from 3.11 all the way through Windows 7 — running in a browser tab. It is a tiny 32-bit GDI program with no DirectX, no 3D, and no .NET, which makes it one of the most reliable things to run in ExeBrowser. Single-player against the three computer opponents plays just like it always did. The one thing that won't work is the old "Microsoft Hearts Network" LAN play, but that's no loss — Microsoft already removed network play in the Windows XP version. Note that Hearts is proprietary Microsoft software, so we can't host it for you; bring your own copy from a Windows machine you own.</p>
+    <h2>Can you run Microsoft Hearts in your browser? <span class="verdict good">Single-player works well</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p>The classic <strong>Microsoft Hearts</strong> — the trick-taking card game (<code>mshearts.exe</code>) that shipped with Windows from 3.11 all the way through Windows 7 — can run in a browser tab here, once you load your own copy (Hearts is proprietary Microsoft software, so we can't host the file; bring it from a Windows machine you own). It is a tiny 32-bit GDI program with no DirectX, no 3D, and no .NET, which makes it one of the most reliable things to run in ExeBrowser. Single-player against the three computer opponents plays just like it always did. The one thing that won't work is the old "Microsoft Hearts Network" LAN play, but that's no loss — Microsoft already removed network play in the Windows XP version.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

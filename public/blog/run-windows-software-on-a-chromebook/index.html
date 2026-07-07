@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>How to Run Windows Software on a Chromebook (4 Ways) — ExeBrowser</title>
-<meta name="description" content="Four ways to run Windows programs on a Chromebook, ranked: a browser-based Wine tool with no install, Linux + Wine, remote desktop, and full virtualization. What each is good for and their trade-offs." />
+<meta name="description" content="Four realistic ways to run Windows programs on a Chromebook, ranked by effort: a no-install browser tool, Linux + Wine, remote desktop, and cloud Windows." />
 <meta name="keywords" content="run windows software chromebook, windows apps on chromebook, chromebook exe, run windows games chromebook, wine chromebook" />
 <link rel="canonical" href="https://exebrowser.com/blog/run-windows-software-on-a-chromebook/" />
 <meta property="og:type" content="article" />
@@ -30,12 +30,12 @@
   "@type": "Article",
   "headline": "How to Run Windows Software on a Chromebook (4 Ways)",
   "description": "Four ways to run Windows programs on a Chromebook, ranked, including a no-install browser route.",
-  "author": { "@type": "Organization", "name": "ExeBrowser" },
+  "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" },
   "publisher": { "@type": "Organization", "name": "ExeBrowser" },
   "mainEntityOfPage": "https://exebrowser.com/blog/run-windows-software-on-a-chromebook/",
   "image": "https://exebrowser.com/og.png",
   "datePublished": "2026-06-09",
-  "dateModified": "2026-06-09"
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -71,29 +71,79 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Run Windows software on a Chromebook</nav>
   <section class="card">
     <h2>How to run Windows software on a Chromebook</h2>
-    <p class="updated">Published June 9, 2026 · ~7 minute read</p>
-    <p>Chromebooks are everywhere — in schools, on budgets, as travel laptops — and they run ChromeOS, not Windows. So when you need to open one Windows <code>.exe</code> (a legacy school tool, an old utility, a classic game), you hit a wall. Here are the four realistic ways to run Windows software on a Chromebook, ordered from least to most effort, with honest notes on what each is actually good for.</p>
+    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published June 9, 2026 · Updated July 1, 2026 · ~7 minute read</p>
+    <p>Chromebooks are everywhere — in schools, on budgets, as travel laptops — and they run ChromeOS, not Windows. So when you need to open one Windows <code>.exe</code> (a legacy school tool, an old utility, a classic game), you hit a wall. Here are the four realistic ways to run Windows software on a Chromebook, ordered from least to most effort, with honest notes on what each is actually good for. For each method you get the actual steps, not just the concept — plus a comparison table, the fine print, and a decision guide at the end.</p>
 
     <h3>1. Run it in the browser, no install (easiest)</h3>
     <p>The lowest-friction option is to not install anything at all and run the EXE inside a browser tab using a WebAssembly build of <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a>. That's exactly what <a href="/">ExeBrowser</a> does: you open a page, boot Wine, drop in your executable, and it runs locally in the tab. Nothing is uploaded, no developer mode, no Linux container, no admin rights. On a managed school Chromebook where you <em>can't</em> install anything, this is often the only path that works at all.</p>
-    <p>The trade-off is performance and scope: it emulates an x86 CPU, so it targets classic 32-bit Win32 software (roughly 1995–2008) and runs at a fraction of native speed. Perfect for an old utility, a 2D game, or recovering a file from a legacy program; not for modern 64-bit apps or 3D titles. See the <a href="/guide/">compatibility guide</a> for what runs, or the <a href="/run/">app guides</a> for specific programs.</p>
+    <p>The whole process, start to finish:</p>
+    <ol>
+      <li>Open <a href="/">exebrowser.com</a> in a normal browser tab. No extension, no sign-up, no permission prompts.</li>
+      <li>Click <strong>Boot Wine</strong> and wait for the runtime to download. The filesystem is fetched on demand, so a first boot typically pulls around 30–60 MB.</li>
+      <li>Add your program. A single self-contained EXE can be dropped in as-is; if the program normally lives in a folder with DLLs and data files, upload the whole folder (or a zip of it) so those files come along.</li>
+      <li>Click <strong>Run</strong>. The app draws into a canvas inside the tab; click the canvas to give it your keyboard and mouse.</li>
+      <li>Before you close or reload the tab, use <strong>"Download files written by this app."</strong> The virtual <code>C:\</code> drive lives in memory and is wiped on reload, so that zip is how you keep saves and output.</li>
+    </ol>
+    <!-- IMG-SLOT: a classic Win32 program running inside a browser tab on a Chromebook -->
+    <p>The trade-off is performance and scope: it emulates an x86 CPU, so it targets classic 32-bit Win32 software (roughly 1995–2008) and runs at roughly 10–40% of native speed. Perfect for an old utility, a 2D game, or recovering a file from a legacy program; not for modern 64-bit apps (an experimental 64-bit runtime exists, but the stable engine is 32-bit only) or anything built on a modern DirectX 3D pipeline. One quiet advantage: because the CPU is emulated anyway, this route works the same on ARM Chromebooks — something none of the Wine-on-Linux options below can claim. See the <a href="/guide/">compatibility guide</a> for what runs, or the <a href="/run/">app guides</a> for specific programs.</p>
 
     <h3>2. Enable Linux (Crostini) and install Wine</h3>
     <p>Most modern Chromebooks can turn on a Linux container in Settings. Once you have a Linux terminal, you can install Wine natively and run Windows apps with real x86 execution (Chromebooks with Intel/AMD chips run x86 directly — much faster than browser emulation). This handles a wider range of apps, including some that the browser route can't. The cost: it requires turning on Linux (blocked on many managed school devices), some terminal comfort, and disk space. It's the best balance of power and effort if your Chromebook allows it and you're comfortable with a few commands.</p>
+    <p>Setting it up looks like this:</p>
+    <ol>
+      <li>Open <strong>Settings</strong>, search for "Linux," and turn on the <strong>Linux development environment</strong>. If the option isn't there, your device is either too old or — more often — managed by an administrator who has disabled it. In that case, use method 1 or 3 instead.</li>
+      <li>Give the container as much disk space as you can spare; the Debian-based container plus Wine will want several gigabytes.</li>
+      <li>In the Terminal that appears, enable 32-bit packages and install Wine: <code>sudo dpkg --add-architecture i386</code>, then <code>sudo apt update</code>, then <code>sudo apt install wine wine32</code>. (Most classic Windows software is 32-bit, so <code>wine32</code> matters.)</li>
+      <li>Copy your program into the <strong>Linux files</strong> folder using the Files app, then launch it from the terminal: <code>wine ./yourprogram.exe</code>.</li>
+    </ol>
+    <p>The big caveat is CPU architecture. Wine is a compatibility layer, not an emulator — it can only run x86 Windows binaries on an x86 processor. On the growing number of ARM-based Chromebooks, plain Wine won't run your EXE at all without a separate x86 emulation layer, which is fiddly territory well beyond a quick setup. Check <strong>Settings → About ChromeOS</strong> to confirm what chip you have before investing time here.</p>
+
+    <h4>The paid variant: CrossOver on ChromeOS</h4>
+    <p>CrossOver is the commercial, supported version of Wine from CodeWeavers, the company that leads Wine development. There was once a dedicated CrossOver app for ChromeOS; these days the practical path is installing the CrossOver Linux build inside the same Crostini container from the steps above. What the license fee buys you: a graphical installer instead of terminal commands, per-application configuration profiles, a searchable database of officially supported programs, and actual support staff when something breaks. Underneath it is still Wine on x86, with the same architecture limits. It makes sense when one specific Windows app really matters to you, CodeWeavers lists it as supported, and you'd rather pay than tinker.</p>
 
     <h3>3. Remote desktop into a real Windows PC</h3>
     <p>If you already have a Windows machine somewhere — at home, at work, or a cloud Windows instance — you can use Chrome Remote Desktop or RDP to control it from the Chromebook. The app runs on the real PC at full speed and compatibility; you're just viewing it. The catch is obvious: you need that Windows machine to exist and be on, plus a solid internet connection. Great for full modern apps, useless if you don't have a Windows box to connect to.</p>
+    <p>With Chrome Remote Desktop (free, and browser-based on the Chromebook side):</p>
+    <ol>
+      <li>On the Windows PC, open <code>remotedesktop.google.com/access</code> in Chrome, sign in with your Google account, and install the remote-access host when prompted.</li>
+      <li>Name the computer and set a PIN.</li>
+      <li>Adjust the PC's power settings so it doesn't go to sleep — a sleeping PC is unreachable.</li>
+      <li>On the Chromebook, open the same site with the same account, click your PC in the list, and enter the PIN.</li>
+    </ol>
+    <p>Everything runs at native speed because it literally runs natively; your Chromebook only streams video and sends input. That also means everything is at the mercy of your connection — fine for documents and desktop applications, frustrating for fast-paced games where latency shows.</p>
 
     <h3>4. Full virtualization or cloud Windows</h3>
     <p>The heavyweight option: run a complete Windows VM (where the hardware and policy allow it) or rent a cloud Windows desktop. This gives you the whole OS and maximum compatibility, but it's the most setup, the most resources, and often a cost. Reserve it for when you genuinely need full, modern Windows — not for opening a single old EXE.</p>
+    <p>Two flavors exist. Local Windows VMs on ChromeOS are sold as an enterprise feature, so for an individual the realistic version of this option is the cloud: services that rent you a real Windows machine in a data center, reachable from the Chromebook's browser. In practice it behaves like method 3, except you're renting the PC instead of owning it — full compatibility, a monthly subscription, and the same dependence on your internet connection.</p>
+
+    <!-- IMG-SLOT: side-by-side comparison chart of the four methods -->
+    <h3>The honest comparison</h3>
+    <table class="spec-table">
+      <tr><th>Method</th><th>Setup effort</th><th>What runs</th><th>Performance</th><th>Cost</th><th>School-managed device?</th></tr>
+      <tr><th>Browser (ExeBrowser)</th><td>None — open a tab</td><td>32-bit Win32 apps, roughly 1995–2008</td><td>~10–40% of native (emulated CPU)</td><td>Free</td><td>Usually works — it's just a website</td></tr>
+      <tr><th>Linux + Wine</th><td>Moderate — enable Linux, a few terminal commands</td><td>A much wider range of Win32 software</td><td>Near-native on Intel/AMD; x86 apps won't run on ARM</td><td>Free</td><td>Usually blocked by admins</td></tr>
+      <tr><th>CrossOver (in Linux)</th><td>Moderate — Linux container plus a guided installer</td><td>Similar to Wine, with officially supported titles</td><td>Near-native on Intel/AMD; same ARM limits</td><td>Paid license</td><td>Usually blocked (needs Linux)</td></tr>
+      <tr><th>Remote desktop</th><td>Low — if you already own a Windows PC</td><td>Anything that PC runs, including modern 64-bit apps</td><td>Full speed, plus network latency</td><td>Free (you supply the PC)</td><td>Often works — browser-based, unless filtered</td></tr>
+      <tr><th>Cloud Windows</th><td>Low to moderate — sign up and subscribe</td><td>Anything modern Windows runs</td><td>Full speed, plus network latency</td><td>Monthly subscription</td><td>Depends on network filtering</td></tr>
+    </table>
+
+    <h3>The fine print: limitations worth knowing up front</h3>
+    <ul>
+      <li><strong>Managed Chromebooks block most of this.</strong> School and work administrators commonly disable the Linux environment entirely, and there is no legitimate way around that policy. On a managed device your realistic options are the browser route and — if the network filter allows it — remote desktop.</li>
+      <li><strong>ARM changes the math.</strong> Wine and CrossOver need an x86 processor to run x86 Windows programs. On ARM Chromebooks, method 2 and the CrossOver variant are effectively off the table, while the browser, remote, and cloud routes are unaffected.</li>
+      <li><strong>Storage is tight on cheap Chromebooks.</strong> The Linux container plus Wine consumes several gigabytes, which stings on a device with 32 or 64 GB total. The browser route stores nothing permanently — which cuts both ways: zero disk used, but you must download your files before closing the tab.</li>
+      <li><strong>Nothing here supplies the software.</strong> Every method runs copies you already have the right to use. ExeBrowser in particular is strictly bring-your-own-EXE — it executes your files locally in the tab; it doesn't distribute programs.</li>
+    </ul>
 
     <h3>Which should you pick?</h3>
     <table class="spec-table">
       <tr><th>Just one old EXE, managed Chromebook</th><td><a href="/">Browser (ExeBrowser)</a> — no install needed</td></tr>
       <tr><th>Personal Chromebook, want broad app support</th><td>Linux + Wine</td></tr>
+      <tr><th>One important app, want official support</th><td>CrossOver inside Linux</td></tr>
       <tr><th>You own a Windows PC already</th><td>Remote desktop</td></tr>
       <tr><th>Need full modern Windows</th><td>VM or cloud Windows</td></tr>
     </table>
+    <p>Put differently: the browser route wins whenever friction is the enemy — a locked-down device, a one-off task, an old 32-bit program. Crostini plus Wine wins when you're on your own x86 Chromebook and expect to run Windows software regularly. CrossOver is the same bet with a support contract attached. Remote desktop wins the moment a Windows PC you own is sitting idle somewhere. And cloud Windows is for the case where a modern, 64-bit, Windows-only application is genuinely part of your working life and nothing lighter will do.</p>
 
     <p>For the most common case — "I have this one Windows program and a Chromebook that won't let me install anything" — start with the browser. It costs you nothing to try.</p>
     <div class="cta-row"><a class="cta-btn" href="/">Try it now →</a></div>

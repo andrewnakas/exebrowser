@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to Extract Files From an Old Installer (Without Installing It) — ExeBrowser</title>
+<meta name="description" content="Old setup.exe won't run, but you just need the files inside? Here's how to unpack a legacy Windows installer — with 7-Zip, innoextract, cabextract, msiextract, or a browser sandbox — without a full install." />
+<meta name="keywords" content="extract files from installer, unpack setup.exe, extract exe without installing, innoextract, cabextract, msiextract, open installer with 7-zip" />
+<link rel="canonical" href="https://exebrowser.com/blog/extract-files-from-an-old-installer/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/blog/extract-files-from-an-old-installer/" />
+<meta property="og:title" content="How to Extract Files From an Old Installer (Without Installing It)" />
+<meta property="og:description" content="Unpack a legacy Windows installer with 7-Zip, innoextract, cabextract, msiextract, or a browser sandbox — no full install required." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=20" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Extract Files From an Old Installer (Without Installing It)",
+  "description": "Practical ways to unpack a legacy Windows installer — 7-Zip, innoextract, cabextract, msiextract, and a browser sandbox — when the setup program won't run but you only need the files inside.",
+  "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" },
+  "publisher": { "@type": "Organization", "name": "ExeBrowser" },
+  "mainEntityOfPage": "https://exebrowser.com/blog/extract-files-from-an-old-installer/",
+  "image": "https://exebrowser.com/og.png",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://exebrowser.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Extract files from an old installer", "item": "https://exebrowser.com/blog/extract-files-from-an-old-installer/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Extract files from an old installer</nav>
+  <section class="card">
+    <h2>How to extract files from an old installer (without installing it)</h2>
+    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published July 1, 2026 · Updated July 1, 2026 · ~9 minute read</p>
+
+    <figure class="app-shot">
+      <img src="/run/7-zip/screenshot.png" width="798" height="599" loading="lazy" alt="The 7-Zip File Manager running in a browser tab, ready to open an installer as an archive" />
+      <figcaption>7-Zip's File Manager — the fastest way to peek inside an old installer. It runs right here in the browser.</figcaption>
+    </figure>
+
+    <p>You've got an old <code>setup.exe</code> — a driver, a font pack, a decade-old utility — and you don't actually want to <em>install</em> it. You want the files that live inside it: a DLL, an icon, a handful of data files, or just the real program so you can run it without the setup wizard. On a modern machine the installer may refuse to run at all, or demand admin rights, or target a Windows version you no longer have. Good news: an installer is almost always just an archive with a wrapper around it, and there are several ways to reach inside without letting it install anything.</p>
+    <p>This guide walks through the options roughly in order of "try this first," and ends with the one that's actually running on this site: a browser sandbox that runs the installer, then hands you back the files it produced.</p>
+
+    <h3>First, understand what an installer <em>is</em></h3>
+    <p>A Windows installer is a small program bolted onto a compressed payload. The wrapper's job is to unpack that payload, drop files into the right folders, and poke the registry. But the payload is the part you care about, and it's usually stored in one of a few well-known formats:</p>
+    <ul>
+      <li><strong>InstallShield / self-extracting archives</strong> — often just a Zip, CAB, or 7-Zip stream with an <code>.exe</code> header in front.</li>
+      <li><strong>NSIS</strong> (the Nullsoft installer, used by a lot of open-source apps) — a custom archive that common tools can read.</li>
+      <li><strong>Inno Setup</strong> — another hugely popular installer, unpackable with a dedicated tool.</li>
+      <li><strong>Windows Installer (<code>.msi</code>)</strong> — a structured database of files and instructions, not a plain archive.</li>
+      <li><strong>Microsoft cabinet files (<code>.cab</code>)</strong> — the classic container behind drivers, updates, and many <code>.msi</code> payloads.</li>
+    </ul>
+    <p>Which method works depends on which of these you're holding — so the practical approach is to try the general-purpose opener first, and reach for a format-specific tool only when that fails.</p>
+
+    <h3>Method 1: Open it with 7-Zip (try this first)</h3>
+    <p><a href="/run/7-zip/">7-Zip</a> is the single most useful tool here, because it treats a huge range of installers as browsable archives. You don't run the installer — you right-click it and choose <em>7-Zip → Open archive</em>, and if 7-Zip understands the format you get a file listing you can extract from directly.</p>
+    <p>It handles self-extracting <code>.exe</code>s, NSIS installers, Zip and 7z streams, and — importantly — CAB files and the internals of many MSIs. For a large share of old installers this is the whole job: open, look inside, drag the files out, done. 7-Zip is free and open-source, and you can even <a href="/run/7-zip/">run it here in the browser</a> to peek inside a small installer without installing 7-Zip itself.</p>
+    <p>If 7-Zip opens the file but shows only a stub or a single blob, the payload is in a format it doesn't unpack — move on to the specific tool below.</p>
+
+    <h3>Method 2: Inno Setup installers → innoextract</h3>
+    <p>A lot of indie games and utilities from the 2000s onward use <a href="https://jrsoftware.org/isinfo.php" target="_blank" rel="noopener">Inno Setup</a>. 7-Zip usually can't read these, but <a href="https://constexpr.org/innoextract/" target="_blank" rel="noopener">innoextract</a> is built exactly for the job. It's a small command-line tool available on Windows, macOS, and Linux:</p>
+    <pre><code>innoextract setup.exe</code></pre>
+    <p>That drops the payload into an <code>app/</code> folder next to the installer, folder structure intact — no install, no registry changes. Add <code>--list</code> to preview the contents first, or <code>--gog</code> if it's a GOG installer with extra data. It's the reliable answer whenever an installer shows the familiar Inno Setup wizard.</p>
+
+    <h3>Method 3: Cabinet files → cabextract</h3>
+    <p>Drivers, Windows components, and the inside of many MSIs are packed as <code>.cab</code> cabinet files. If you've extracted an MSI or a driver package and hit <code>.cab</code> files you still can't read, <a href="https://www.cabextract.org.uk/" target="_blank" rel="noopener">cabextract</a> unpacks them anywhere:</p>
+    <pre><code>cabextract driver.cab</code></pre>
+    <p>It's cross-platform and handles the older MSZIP and LZX compression that occasionally trips up other tools. (7-Zip reads most CABs too, so try that first — cabextract is the fallback for the stubborn ones.)</p>
+
+    <h3>Method 4: MSI packages → msiextract or lessmsi</h3>
+    <p>An <code>.msi</code> isn't an archive — it's a small relational database describing files, folders, and install logic. You can still pull the files out without running it:</p>
+    <ul>
+      <li>On Linux/macOS, <strong>msiextract</strong> (part of the <a href="https://wiki.gnome.org/msitools" target="_blank" rel="noopener">msitools</a> package) dumps the file tree: <code>msiextract package.msi</code>.</li>
+      <li>On Windows, <a href="https://lessmsi.activescott.com/" target="_blank" rel="noopener">lessmsi</a> gives you a GUI to browse and extract, or you can use the built-in administrative install to a folder: <code>msiexec /a package.msi /qn TARGETDIR=C:\out</code> — this copies the files out without actually installing the product.</li>
+    </ul>
+    <p>MSIs sometimes store their payload in embedded CAB streams, which is why cabextract and msiextract often get used together.</p>
+
+    <h3>Method 5: Run it in a sandbox and grab the output</h3>
+    <p>Sometimes none of the above works — the payload is encrypted, the installer generates files on the fly, or it's a format nothing wants to read. In that case the pragmatic move is to <em>let the installer run</em>, but in a throwaway environment where it can't touch your real system, and then collect what it wrote.</p>
+    <p>That's exactly what the runtime on this site does. When you load an installer into <a href="/">ExeBrowser</a>, it runs inside a WebAssembly sandbox — a self-contained fake Windows that exists only in the browser tab. The installer does its thing, writing to <code>C:\Program Files</code>, <code>C:\Windows</code>, and so on, but that "disk" is virtual and vanishes when you close the tab. Nothing reaches your actual machine.</p>
+    <p>The useful part: once the installer finishes, the <strong>"Download files written by this app"</strong> button becomes active. Click it and the sandbox zips up everything the installer created — the program files, DLLs, data folders — into a single <code>exebrowser-output-*.zip</code> you can save. In effect you've run the installer, discarded the mess, and kept only the files. No admin rights, no software installed on your computer, and nothing to uninstall afterward. It's the "when everything else fails" option, and often the fastest one for a small legacy installer.</p>
+
+    <h3>When it fails: MSI error 1627 and friends</h3>
+    <p>A few failure modes are common enough to name:</p>
+    <ul>
+      <li><strong>MSI error 1627 ("function failed during execution").</strong> This usually means the MSI's install <em>logic</em> hit something it couldn't do in the sandbox — a service it can't register, a system component it can't touch. The files themselves are still fine; switch to <code>msiextract</code> or an administrative install (<code>msiexec /a</code>) to pull them out instead of running the full installer.</li>
+      <li><strong>7-Zip opens the <code>.exe</code> but shows garbage.</strong> The wrapper isn't a format it recognizes. Identify the installer type (an Inno Setup or NSIS splash screen is a giveaway) and use the matching tool.</li>
+      <li><strong>Extracted files exist but the program won't launch.</strong> Extraction and execution are different problems — you may have the files but be missing a runtime the installer would normally have set up. Our <a href="/blog/we-tested-53-windows-apps-in-the-browser/">compatibility round-up</a> covers what actually runs once you've got the files.</li>
+    </ul>
+
+    <h3>Quick decision guide</h3>
+    <div class="table-wrap">
+    <table class="compat-table">
+      <thead>
+        <tr><th>What you have</th><th>Try this</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Any <code>setup.exe</code>, unsure of type</td><td><a href="/run/7-zip/">7-Zip</a> → Open archive</td></tr>
+        <tr><td>Inno Setup wizard</td><td>innoextract</td></tr>
+        <tr><td><code>.cab</code> file</td><td>cabextract (or 7-Zip)</td></tr>
+        <tr><td><code>.msi</code> package</td><td>msiextract / lessmsi / <code>msiexec /a</code></td></tr>
+        <tr><td>Nothing reads it</td><td>Run in the <a href="/">browser sandbox</a>, then "Download files written by this app"</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Between an archive tool, a couple of format-specific extractors, and a sandbox you can run in a browser tab, there's almost no legacy installer you can't get the files out of — without ever installing it on your real machine.</p>
+    <div class="cta-row"><a class="cta-btn" href="/run/7-zip/">Open 7-Zip in your browser →</a></div>
+  </section>
+
+  <section class="card">
+    <h2>Keep reading</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/blog/we-tested-53-windows-apps-in-the-browser/"><span class="lc-title">What actually runs in the browser</span><span class="lc-desc">50+ apps, tested.</span></a></li>
+      <li><a class="link-card" href="/blog/run-old-software-without-a-vm/"><span class="lc-title">Run old software without a VM</span><span class="lc-desc">When a tab is enough.</span></a></li>
+      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip in the browser</span><span class="lc-desc">Open an installer as an archive.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+</body>
+</html>

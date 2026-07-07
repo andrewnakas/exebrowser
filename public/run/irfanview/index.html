@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run IrfanView Online — Free Image Viewer in Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Run IrfanView in your browser with Wine + WebAssembly to view, convert, and batch-process images without installing anything. Which build works, how to load your photos, and what to expect." />
+<title>IrfanView in the Browser: What Works When You Load Your Own Copy — ExeBrowser</title>
+<meta name="description" content="Bring your own IrfanView and view, convert, and resize images in a browser tab via Wine + WebAssembly. Core viewing works; plugins and video are iffy." />
 <meta name="keywords" content="irfanview online, run irfanview in browser, irfanview no download, view images in browser, irfanview wine, image viewer online, batch convert images browser" />
 <link rel="canonical" href="https://exebrowser.com/run/irfanview/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/irfanview/" />
-<meta property="og:title" content="Run IrfanView Online — Free Image Viewer in Your Browser" />
-<meta property="og:description" content="View, convert, and batch-process images with the real IrfanView, running in your browser via Wine + WebAssembly. No install." />
+<meta property="og:title" content="IrfanView in the Browser: What Works When You Load Your Own Copy" />
+<meta property="og:description" content="A Wine compatibility guide for IrfanView: load your own copy plus some images and the real viewer runs in your tab. Everyday viewing and conversion work; the plugin pack and video playback are hit-or-miss." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run IrfanView", "item": "https://exebrowser.com/run/irfanview/" }
+    { "@type": "ListItem", "position": 3, "name": "IrfanView guide", "item": "https://exebrowser.com/run/irfanview/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "IrfanView",
   "url": "https://exebrowser.com/run/irfanview/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run IrfanView in your browser with Wine + WebAssembly to view, convert, and batch-process images without installing anything. Which build works, how to load your photos, and what to expect.",
+  "description": "Bring your own IrfanView and view, convert, and resize images in a browser tab via Wine + WebAssembly. Core viewing works; plugins and video are iffy.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Irfan Skiljan" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run IrfanView</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › IrfanView guide</nav>
 
   <section class="card">
-    <h2>Run IrfanView online in your browser <span class="verdict partial">Viewer works; plugins &amp; video iffy</span></h2>
-    <p>IrfanView is the fast, tiny image viewer a whole generation grew up using — flick through a folder of photos, convert a batch of files from one format to another, crop and resize, all in a window that opens before you've let go of the mouse. Because it's a small, classic 32-bit Win32 app built on plain Windows graphics (not DirectX or .NET), it's a genuinely good fit for ExeBrowser. You can boot Wine in the browser, load your own copy of IrfanView along with some images, and use the real interface — no install on the machine you're sitting at. The honest caveat: core viewing and conversion work nicely, but IrfanView's optional plugin pack, video/animation playback, and its installer can be hit-or-miss under the emulated engine, so this is a "works for the everyday stuff" page, not a "100% of features" one.</p>
+    <h2>IrfanView in your browser — with your own copy <span class="verdict partial">Viewer works; plugins &amp; video iffy</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p>IrfanView is the fast, tiny image viewer a whole generation grew up using — flick through a folder of photos, convert a batch of files from one format to another, crop and resize, all in a window that opens before you've let go of the mouse. This page is a compatibility guide, and IrfanView passes it well: because it's a small, classic 32-bit Win32 app built on plain Windows graphics (not DirectX or .NET), you can boot Wine in the browser, load your own copy of IrfanView along with some images, and use the real interface — no install on the machine you're sitting at. The honest caveat: core viewing and conversion work nicely, but IrfanView's optional plugin pack, video/animation playback, and its installer can be hit-or-miss under the emulated engine, so this is a "works for the everyday stuff" page, not a "100% of features" one.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

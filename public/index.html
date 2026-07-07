@@ -214,11 +214,11 @@
     <p>Looking to run a specific program? These guides cover whether it works in ExeBrowser, which Wine variant to pick, and how to load it. <a href="/run/">See all app guides →</a></p>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM (free shareware)</span><span class="lc-desc">The 1993 classic — free, legal, hosted here.</span></a></li>
-      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The classic XP pinball game, in your browser.</span></a></li>
-      <li><a class="link-card" href="/run/winrar/"><span class="lc-title">WinRAR</span><span class="lc-desc">Open and extract RAR archives online.</span></a></li>
-      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; classic utilities</span><span class="lc-desc">Tiny Win32 tools that just work.</span></a></li>
-      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">The classic card games, no install.</span></a></li>
-      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">Free word processor — edit docs in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">Play the open-source port free — instant, hosted here.</span></a></li>
+      <li><a class="link-card" href="/run/winrar/"><span class="lc-title">WinRAR</span><span class="lc-desc">Guide: load your own copy — see what works in Wine.</span></a></li>
+      <li><a class="link-card" href="/run/notepad/"><span class="lc-title">Notepad &amp; classic utilities</span><span class="lc-desc">Guide: tiny Win32 tools run great with your own copy.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows Solitaire</span><span class="lc-desc">Guide: runs well via Wine — bring your Windows copy.</span></a></li>
+      <li><a class="link-card" href="/run/abiword/"><span class="lc-title">AbiWord</span><span class="lc-desc">Guide: the free word processor runs well — load your copy.</span></a></li>
       <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">Can the RTS classic run? What to expect.</span></a></li>
       <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">Extract archives with the open-source tool.</span></a></li>
     </ul>
@@ -273,7 +273,7 @@
     </details>
     <details>
       <summary>Do I need a fast computer?</summary>
-      <p>You need a modern browser with SharedArrayBuffer enabled (Chrome, Edge, Firefox, Safari 16+) and ideally at least 4 GB of free RAM. The CPU emulator is single-threaded, so single-core performance matters more than core count. A 2018+ laptop is comfortable. An older Chromebook or basic tablet will work but feel sluggish on CPU-heavy apps.</p>
+      <p>Any modern browser works (Chrome, Edge, Firefox, Safari) and ideally at least 4 GB of free RAM. The CPU emulator is single-threaded, so single-core performance matters more than core count. A 2018+ laptop is comfortable. An older Chromebook or basic tablet will work but feel sluggish on CPU-heavy apps.</p>
     </details>
     <details>
       <summary>Does ExeBrowser work offline?</summary>
@@ -290,7 +290,7 @@
     <p>When you boot Wine in your browser, three distinct technologies are stacked on top of one another. Understanding the layering helps explain both the magic and the limitations.</p>
     <p><strong>Layer 1 — the x86 CPU emulator.</strong> The foundation is Boxedwine's CPU interpreter. A real Windows EXE is a stream of x86 (or x86-64) machine instructions: <code>MOV EAX, [EBP+8]</code>, <code>CALL printf</code>, and so on. Your browser doesn't speak x86 directly; it speaks <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>, a portable bytecode format. So Boxedwine ships a software CPU written in C++ that reads x86 instructions one at a time and simulates the effect each one would have on a real Pentium-era processor. That C++ CPU itself is then compiled to WebAssembly, which the browser executes. This is the slow part — you're paying for two levels of indirection.</p>
     <p><strong>Layer 2 — Wine.</strong> A Windows EXE doesn't just contain CPU instructions; it also makes thousands of calls into Windows DLLs like <code>kernel32.dll</code>, <code>user32.dll</code>, <code>gdi32.dll</code>, <code>ddraw.dll</code>, and so on. <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> ("Wine Is Not an Emulator") is a re-implementation of the Windows API on top of POSIX. When the emulated CPU executes a <code>CALL CreateWindowExA</code> instruction, Wine intercepts that call and runs its own POSIX-compatible version of <code>CreateWindowExA</code>. This is why Wine adds a runtime cost beyond emulation: every API call gets translated.</p>
-    <p><strong>Layer 3 — the browser bridge.</strong> Wine's POSIX-style output still has to render somewhere. Boxedwine maps Wine's framebuffer to an HTML5 <code>&lt;canvas&gt;</code>, routes keyboard and mouse events from the browser into Wine's input queue, and synthesizes a virtual filesystem (BrowserFS) so Wine sees a normal-looking C:\ drive even though it's just JavaScript holding bytes in memory. Audio goes to Web Audio. Threads are simulated using SharedArrayBuffer-backed primitives, which is why ExeBrowser requires cross-origin isolation headers.</p>
+    <p><strong>Layer 3 — the browser bridge.</strong> Wine's POSIX-style output still has to render somewhere. Boxedwine maps Wine's framebuffer to an HTML5 <code>&lt;canvas&gt;</code>, routes keyboard and mouse events from the browser into Wine's input queue, and synthesizes a virtual filesystem (BrowserFS) so Wine sees a normal-looking C:\ drive even though it's just JavaScript holding bytes in memory. Audio goes to Web Audio. The whole pipeline runs single-threaded on the page's WebAssembly instance, so it needs no special browser flags or headers.</p>
     <p>The whole pipeline — emulator-in-Wasm running Wine running your EXE — typically delivers around 10–40% of native CPU performance. For UI-driven apps that's invisible. For 3D games or compression-heavy work it's noticeable.</p>
   </section>
 
@@ -330,7 +330,7 @@
     <h2>Troubleshooting common problems</h2>
 
     <h3 style="margin-top:1rem;font-size:1rem;color:var(--fg);">"Boot Wine" never finishes</h3>
-    <p>The most common cause is a corporate proxy or browser extension stripping the cross-origin isolation headers Wine needs. Open DevTools, switch to the Network tab, and check that the responses for <code>/</code>, <code>/app.js</code>, and the runtime files all include <code>Cross-Origin-Opener-Policy: same-origin</code> and <code>Cross-Origin-Embedder-Policy: require-corp</code>. If either header is missing or reads <code>unsafe-none</code>, SharedArrayBuffer is disabled and the emulator can't start. Try a different network, or temporarily disable ad-blocking extensions and reload.</p>
+    <p>The most common cause is a blocked or stalled download of the runtime files — a corporate proxy, firewall, or aggressive browser extension interfering with the multi-megabyte <code>.wasm</code> and filesystem fetches. Open DevTools, switch to the Network tab, and check whether requests under <code>/boxedwine/</code> are failing or hanging. Try a different network, or temporarily disable ad-blocking extensions and reload.</p>
 
     <h3 style="margin-top:1rem;font-size:1rem;color:var(--fg);">The canvas is black after I click Run</h3>
     <p>This usually means the app started, but either crashed immediately during init or is waiting on something invisible (a missing DLL, a missing registry key, a console window we don't render). Open the Console section and scroll for lines starting with <code>err:</code>. If you see <code>err:module:import_dll Library X.dll not found</code>, the app needs a DLL we don't ship — bundle the install folder using the folder picker. If you see <code>0x80004005</code> or <code>STATUS_DLL_NOT_FOUND</code>, same story. If the console is empty, try the 18R2 variant.</p>
@@ -369,10 +369,10 @@
       <dd style="margin:0.2rem 0 0;color:var(--muted);">A portable binary instruction format designed for safe, fast execution in browsers (and increasingly outside them). Compilers like Emscripten can take C/C++ codebases and produce <code>.wasm</code> files that browsers execute at near-native speed.</dd>
 
       <dt style="font-weight:600;margin-top:0.75rem;">SharedArrayBuffer</dt>
-      <dd style="margin:0.2rem 0 0;color:var(--muted);">A JavaScript API that lets multiple threads share a memory region. Boxedwine uses it to synchronize between worker threads. Browsers only enable SharedArrayBuffer on pages that opt into "cross-origin isolation" by sending COOP and COEP headers — which is why ExeBrowser sends them on every response.</dd>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">A JavaScript API that lets multiple threads share a memory region. The standard 32-bit runtime here is single-threaded and doesn't use it; only the experimental 64-bit (wine64) runtime relies on it for its thread support, which is why that runtime lives on its own cross-origin-isolated page.</dd>
 
       <dt style="font-weight:600;margin-top:0.75rem;">COOP / COEP</dt>
-      <dd style="margin:0.2rem 0 0;color:var(--muted);">Cross-Origin-Opener-Policy and Cross-Origin-Embedder-Policy — HTTP response headers that, together, put a page into "cross-origin isolated" mode. Required to unlock SharedArrayBuffer and high-resolution timers in modern browsers.</dd>
+      <dd style="margin:0.2rem 0 0;color:var(--muted);">Cross-Origin-Opener-Policy and Cross-Origin-Embedder-Policy — HTTP response headers that, together, put a page into "cross-origin isolated" mode, unlocking SharedArrayBuffer and high-resolution timers. Only the experimental 64-bit runtime pages send them here.</dd>
 
       <dt style="font-weight:600;margin-top:0.75rem;">Gecko (Wine Gecko)</dt>
       <dd style="margin:0.2rem 0 0;color:var(--muted);">A Wine-flavored build of Mozilla's Gecko rendering engine, used as a stand-in for Internet Explorer's MSHTML when an app embeds a browser control. Some apps and installers (notably 3D Pinball Space Cadet, older HTML-help-using installers) refuse to start until Gecko is available.</dd>

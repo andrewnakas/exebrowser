@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run foobar2000 Online — Free, In Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Run the foobar2000 audio player in your browser with Wine + WebAssembly. The classic Win32 build's UI loads, but audio is unreliable under emulation — here's the honest breakdown and how to load it." />
+<title>foobar2000 in the Browser: UI Loads, Audio Is Unreliable (Wine Guide) — ExeBrowser</title>
+<meta name="description" content="Load your own copy of foobar2000 and the classic 32-bit UI renders under Wine + WebAssembly — but music playback is hit-or-miss. The honest breakdown." />
 <meta name="keywords" content="foobar2000 browser, run foobar2000 online, foobar2000 wine, foobar2000 web player, foobar2000 no download, play music foobar2000 browser, foobar2000 32-bit" />
 <link rel="canonical" href="https://exebrowser.com/run/foobar2000/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/foobar2000/" />
-<meta property="og:title" content="Run foobar2000 in Your Browser" />
-<meta property="og:description" content="The classic foobar2000 audio player, running in your browser via Wine + WebAssembly. The UI loads; audio is hit-or-miss. The honest details." />
+<meta property="og:title" content="foobar2000 in the Browser: UI Loads, Audio Is Unreliable (Wine Guide)" />
+<meta property="og:description" content="foobar2000's freeware license means we can't host an extracted build, so you load your own copy. The playlist and preferences UI render; actual audio output is unreliable under emulation." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run foobar2000", "item": "https://exebrowser.com/run/foobar2000/" }
+    { "@type": "ListItem", "position": 3, "name": "foobar2000 guide", "item": "https://exebrowser.com/run/foobar2000/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "foobar2000",
   "url": "https://exebrowser.com/run/foobar2000/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run the foobar2000 audio player in your browser with Wine + WebAssembly. The classic Win32 build's UI loads, but audio is unreliable under emulation — here's the honest breakdown and how to load it.",
+  "description": "Load your own copy of foobar2000 and the classic 32-bit UI renders under Wine + WebAssembly — but music playback is hit-or-miss. The honest breakdown.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Peter Pawłowski" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run foobar2000</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › foobar2000 guide</nav>
 
   <section class="card">
-    <h2>Run foobar2000 online in your browser <span class="verdict partial">Partial — UI loads, audio is unreliable</span></h2>
-    <p><em>foobar2000</em> is the famously lightweight, no-nonsense audio player that power users have loved for over two decades — tiny, fast, infinitely configurable. The catch for browser-based Wine is twofold: the current 2.x release is built for modern 64-bit Windows, and even the older 32-bit builds have a long history of audio-output trouble under Wine. The interface generally renders, so you can poke around the playlist and preferences, but treat actual music playback as unreliable rather than a daily driver. This is a "look how far emulation has come" demo more than a real listening setup.</p>
+    <h2>Running foobar2000 in your browser — with your own copy <span class="verdict partial">Partial — UI loads, audio is unreliable</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><em>foobar2000</em> is the famously lightweight, no-nonsense audio player that power users have loved for over two decades — tiny, fast, infinitely configurable. This is a bring-your-own-copy compatibility guide: foobar2000's license doesn't let us host an extracted build, so you load your own copy below and it runs client-side. The catch for browser-based Wine is twofold: the current 2.x release is built for modern 64-bit Windows, and even the older 32-bit builds have a long history of audio-output trouble under Wine. The interface generally renders, so you can poke around the playlist and preferences, but treat actual music playback as unreliable rather than a daily driver. This is a "look how far emulation has come" demo more than a real listening setup.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

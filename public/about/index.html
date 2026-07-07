@@ -22,6 +22,20 @@
   gtag('js', new Date());
   gtag('config', 'G-C8C4TZC5F1');
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://exebrowser.com/about/",
+  "name": "About ExeBrowser",
+  "mainEntity": {
+    "@type": "WebApplication",
+    "name": "ExeBrowser",
+    "url": "https://exebrowser.com/",
+    "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" }
+  }
+}
+</script>
 </head>
 <body>
 <header>
@@ -53,7 +67,7 @@
     <p>Three layers are stacked on top of each other. At the bottom, a software x86 CPU emulator (compiled to WebAssembly) interprets the machine instructions inside your EXE. In the middle, Wine intercepts the Windows API calls those instructions make — things like <code>CreateWindowExA</code> or <code>ReadFile</code> — and re-implements them on a POSIX foundation. At the top, a browser bridge maps Wine's display to an HTML <code>&lt;canvas&gt;</code>, routes your keyboard and mouse into the emulated environment, and provides a virtual <code>C:\</code> drive that lives entirely in your browser's memory. For a deeper explanation, see the <a href="/guide/">compatibility and internals guide</a>.</p>
 
     <h3>Who builds it</h3>
-    <p>ExeBrowser is an independent project maintained by a small team of developers interested in software preservation and the web platform. It is <strong>not affiliated</strong> with WineHQ, CodeWeavers, Microsoft, or the Boxedwine project. We simply package and present their excellent open-source work in a form that's approachable from any modern browser. The glue code that makes the site work — the variant selector, the upload pipeline, the writable-layer downloader — is released under GPL-2.0 and is <a href="https://github.com/andrewnakas/exebrowser" target="_blank" rel="noopener">available on GitHub</a>.</p>
+    <p>ExeBrowser is built and maintained by <strong>Andrew Nakas</strong>, a software developer with a long-running interest in software preservation, emulation, and the web platform. Every compatibility verdict on the <a href="/run/">app guide pages</a> comes from hands-on testing in the actual browser runtime — booting the app, poking at its menus, and writing down what worked and what didn't. The project is independent: it is <strong>not affiliated</strong> with WineHQ, CodeWeavers, Microsoft, or the Boxedwine project. ExeBrowser packages and presents their excellent open-source work in a form that's approachable from any modern browser. The glue code that makes the site work — the variant selector, the upload pipeline, the writable-layer downloader — is released under GPL-2.0 and is <a href="https://github.com/andrewnakas/exebrowser" target="_blank" rel="noopener">available on GitHub</a>. You can reach Andrew directly via the <a href="/contact/">contact page</a>.</p>
 
     <h3>Our principles</h3>
     <ul>

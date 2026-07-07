@@ -38,6 +38,19 @@
     autoboot: host.dataset.autoboot === "true",
   };
 
+  // Honest CTA: only pages with a hosted payload may promise one-click play.
+  // Without one, the button's job is to reveal the load-your-own-copy flow.
+  const hosted = !!cfg.appUrl;
+  const playLabel = hosted
+    ? `▶ Play ${escapeHtml(cfg.appName)}`
+    : `Load your copy of ${escapeHtml(cfg.appName)}`;
+  const emptyState = hosted
+    ? `Press play to boot ${escapeHtml(cfg.appName)} in your browser.`
+    : `${escapeHtml(cfg.appName)} isn't hosted here — load your own copy below and it runs right on this page.`;
+  const hint = hosted
+    ? `Runs entirely in your browser tab with WebAssembly + Wine. Nothing is uploaded. First boot fetches the runtime (~30–60&nbsp;MB), then it's cached.`
+    : `We can't redistribute ${escapeHtml(cfg.appName)}, so nothing is hosted here. Your own copy runs entirely in your browser tab with WebAssembly + Wine — nothing is uploaded. First boot fetches the runtime (~30–60&nbsp;MB), then it's cached.`;
+
   // The engine in app.js queries these exact IDs. We render real, hidden-where-
   // appropriate controls so binding succeeds; the boot/loader sections are the
   // ones the user actually sees once they choose to load their own file.
@@ -46,11 +59,11 @@
       <div id="screen-container">
         <div id="screen"></div>
         <canvas id="canvas" tabindex="0" oncontextmenu="event.preventDefault()"></canvas>
-        <div id="screen-empty-state" class="muted center">Press play to boot ${escapeHtml(cfg.appName)} in your browser.</div>
+        <div id="screen-empty-state" class="muted center">${emptyState}</div>
       </div>
       <div class="embed-overlay" id="embed-overlay">
-        <button id="embed-play" class="embed-play" type="button">▶ Play ${escapeHtml(cfg.appName)}</button>
-        <p class="embed-hint muted small">Runs entirely in your browser tab with WebAssembly + Wine. Nothing is uploaded. First boot fetches the runtime (~30–60&nbsp;MB), then it's cached.</p>
+        <button id="embed-play" class="embed-play" type="button">${playLabel}</button>
+        <p class="embed-hint muted small">${hint}</p>
       </div>
     </div>
 
@@ -120,7 +133,7 @@
 
   async function play() {
     playBtn.disabled = true;
-    playBtn.textContent = "Booting…";
+    if (hosted) playBtn.textContent = "Booting…";
     showStatus();
     try {
       const EB = await waitForEngine();
@@ -148,7 +161,7 @@
       if (loader) loader.hidden = false;
       overlay.classList.remove("hidden");
       playBtn.disabled = false;
-      playBtn.textContent = "▶ Play " + cfg.appName;
+      playBtn.textContent = hosted ? "▶ Play " + cfg.appName : "Load your copy of " + cfg.appName;
     }
   }
 

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Heretic &amp;amp; Hexen (Shareware) Online in Your Browser — Free, No Download — ExeBrowser</title>
-<meta name="description" content="Play Raven's Heretic shareware and the Hexen demo in your browser via Wine + WebAssembly. These are DOS games, so you'll use a Win32 source port (Chocolate Heretic/Hexen) plus the WAD — honest setup guide and what actually works inside." />
+<title>Heretic and Hexen Shareware in a Browser — Source Port Setup Guide — ExeBrowser</title>
+<meta name="description" content="Run Heretic shareware and the Hexen demo in a browser via a Chocolate source port on Wine + WebAssembly. You supply the port EXE and WAD — setup guide inside." />
 <meta name="keywords" content="play heretic online, heretic in browser, hexen shareware online, play hexen browser, heretic shareware no download, chocolate heretic browser, hexen demo online, doom engine games browser" />
 <link rel="canonical" href="https://exebrowser.com/run/hexen-heretic-shareware/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/hexen-heretic-shareware/" />
-<meta property="og:title" content="Play Heretic &amp;amp; Hexen (Shareware) Online in Your Browser" />
-<meta property="og:description" content="Raven's Heretic shareware and the Hexen demo, running in a browser tab via a Win32 source port on Wine + WebAssembly. Honest setup and what to expect." />
+<meta property="og:title" content="Heretic and Hexen Shareware in a Browser — Source Port Setup Guide" />
+<meta property="og:description" content="The DOS originals won't boot here, but a small Win32 source port (Chocolate Heretic/Hexen) plus the shareware WAD runs on Wine + WebAssembly. You bring both files; this guide shows the setup." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play Heretic &amp; Hexen", "item": "https://exebrowser.com/run/hexen-heretic-shareware/" }
+    { "@type": "ListItem", "position": 3, "name": "Heretic and Hexen guide", "item": "https://exebrowser.com/run/hexen-heretic-shareware/" }
   ]
 }
 </script>
@@ -42,13 +42,13 @@
   "name": "Heretic &amp; Hexen",
   "url": "https://exebrowser.com/run/hexen-heretic-shareware/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Play Raven's Heretic shareware and the Hexen demo in your browser via Wine + WebAssembly. These are DOS games, so you'll use a Win32 source port (Chocolate Heretic/Hexen) plus the WAD — honest setup guide and what actually works inside.",
+  "description": "Run Heretic shareware and the Hexen demo in a browser via a Chocolate source port on Wine + WebAssembly. You supply the port EXE and WAD — setup guide inside.",
   "applicationCategory": "Game",
   "genre": ["First-person shooter", "Action", "Fantasy"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Raven Software / id Software" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -103,11 +103,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Heretic &amp;amp; Hexen</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Heretic and Hexen guide</nav>
 
   <section class="card">
-    <h2>Play Heretic &amp;amp; Hexen (shareware) in your browser <span class="verdict partial">Partial — via a Win32 source port, not the DOS original</span></h2>
-    <p><strong>Heretic</strong> (Raven Software, 1994) and <strong>Hexen: Beyond Heretic</strong> (1995) are the gothic-fantasy cousins of DOOM — same lineage, same fast 2.5D engine, but with spellcasting, inventory items, and looking up and down. Here's the honest part up front: the originals are <em>DOS</em> games, and ExeBrowser runs <em>Win32</em> programs. The DOS <code>.EXE</code> will not boot here on its own. What <em>does</em> work is a small, free, modern <strong>Win32 source port</strong> — Chocolate Heretic or Chocolate Hexen — paired with the shareware/demo WAD. The engine is light software rendering with no DirectX, so a source-port EXE runs cleanly on Wine + WebAssembly. It's a two-piece setup (port + WAD), which is why we rate this <strong>partial</strong> rather than one-click.</p>
+    <h2>Heretic and Hexen shareware in your browser — a source-port setup guide <span class="verdict partial">Partial — via a Win32 source port, not the DOS original</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><strong>Heretic</strong> (Raven Software, 1994) and <strong>Hexen: Beyond Heretic</strong> (1995) are the gothic-fantasy cousins of DOOM — same lineage, same fast 2.5D engine, but with spellcasting, inventory items, and looking up and down. Here's the honest part up front: the originals are <em>DOS</em> games, and ExeBrowser runs <em>Win32</em> programs. The DOS <code>.EXE</code> will not boot here on its own. What <em>does</em> work is a small, free, modern <strong>Win32 source port</strong> — Chocolate Heretic or Chocolate Hexen — paired with the shareware/demo WAD. The engine is light software rendering with no DirectX, so a source-port EXE runs cleanly on Wine + WebAssembly. It's a two-piece setup (port + WAD) that you load yourself — we don't host the files — which is why we rate this <strong>partial</strong> rather than one-click.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

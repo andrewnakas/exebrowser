@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Chocolate Doom Online — Free, In Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Play Chocolate Doom online in your browser — no download, no install. The minimalist, historically-accurate GPL Doom source port running on Wine + WebAssembly with the free shareware DOOM1.WAD." />
+<title>Chocolate Doom in the Browser: What Works and How to Load Your Copy — ExeBrowser</title>
+<meta name="description" content="Guide to loading your own chocolate-doom.exe and shareware DOOM1.WAD in browser Wine + WebAssembly — plus the hosted DOOM95 one-click alternative." />
 <meta name="keywords" content="play chocolate doom online, chocolate doom in browser, chocolate doom no download, doom source port browser, chocolate doom shareware online, run chocolate doom wine, classic doom browser free" />
 <link rel="canonical" href="https://exebrowser.com/run/chocolate-doom/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/chocolate-doom/" />
-<meta property="og:title" content="Play Chocolate Doom Online — Free, In Your Browser, No Download" />
-<meta property="og:description" content="The minimalist, historically-accurate Doom source port (GPL), running in your browser via Wine + WebAssembly with the free shareware WAD. No install." />
+<meta property="og:title" content="Chocolate Doom in the Browser: What Works and How to Load Your Copy" />
+<meta property="og:description" content="Chocolate Doom is the vanilla-faithful GPL Doom port. We don't host it — load your own copy with the shareware DOOM1.WAD to experiment, or use the hosted DOOM95 build for one-click Doom." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play Chocolate Doom", "item": "https://exebrowser.com/run/chocolate-doom/" }
+    { "@type": "ListItem", "position": 3, "name": "Chocolate Doom guide", "item": "https://exebrowser.com/run/chocolate-doom/" }
   ]
 }
 </script>
@@ -42,13 +42,13 @@
   "name": "Chocolate Doom",
   "url": "https://exebrowser.com/run/chocolate-doom/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Play Chocolate Doom online in your browser — no download, no install. The minimalist, historically-accurate GPL Doom source port running on Wine + WebAssembly with the free shareware DOOM1.WAD.",
+  "description": "Guide to loading your own chocolate-doom.exe and shareware DOOM1.WAD in browser Wine + WebAssembly — plus the hosted DOOM95 one-click alternative.",
   "applicationCategory": "Game",
   "genre": ["First-person shooter", "Action", "Retro"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Chocolate Doom project (Simon Howard et al.)" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -103,11 +103,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Chocolate Doom</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Chocolate Doom guide</nav>
 
   <section class="card">
-    <h2>Play Chocolate Doom online in your browser <span class="verdict good">Works well — minimalist, no DirectX needed</span></h2>
-    <p><strong>Chocolate Doom</strong> is the source port built for one purpose: to play exactly like the 1993 original, bugs and all. It's deliberately minimalist — no fancy 3D, no DirectX 9, no launcher bloat — which is precisely why it runs cleanly here. The real Win32 build executes on Wine + WebAssembly right in this tab, loading the freely-redistributable shareware <code>DOOM1.WAD</code>. No download, no install, no account. Hit play and you're in <em>Knee-Deep in the Dead</em> with pixel-faithful, vanilla Doom.</p>
+    <h2>Chocolate Doom in your browser — with your own copy <span class="verdict good">Works well — minimalist, no DirectX needed</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><strong>Chocolate Doom</strong> is the source port built for one purpose: to play exactly like the 1993 original, bugs and all. It's deliberately minimalist — no fancy 3D, no DirectX 9, no launcher bloat — but we don't host it, so this is a bring-your-own-copy guide: load the real Win32 build with the freely-redistributable shareware <code>DOOM1.WAD</code> using the uploader below and it runs on Wine + WebAssembly entirely in this tab. Fair warning: the port's SDL2 rendering is still shaky under browser Wine, so treat it as an experiment — if you just want to be in <em>Knee-Deep in the Dead</em> right now, the hosted DOOM95 build on this page is the one-click route to pixel-faithful, vanilla Doom.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

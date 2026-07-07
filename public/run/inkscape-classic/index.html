@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Inkscape (Classic) in Your Browser — Free SVG Editor — ExeBrowser</title>
-<meta name="description" content="Can you run Inkscape, the free open-source SVG editor, in a browser with Wine + WebAssembly? Honestly: the classic 0.48–0.92 builds are heavy GTK apps that struggle hard. Here is what to expect and what to use instead." />
+<title>Why Inkscape Won't Run Well in a Browser — And What to Use Instead — ExeBrowser</title>
+<meta name="description" content="Inkscape's heavy GTK+ and Cairo engine fights browser-based Wine — even classic 0.48–0.92 builds crash. Why the free SVG editor fails here, and what to try." />
 <meta name="keywords" content="inkscape browser, run inkscape online, inkscape svg editor wine, free vector editor browser, inkscape classic 0.48 0.91 webassembly, open source vector graphics online" />
 <link rel="canonical" href="https://exebrowser.com/run/inkscape-classic/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/inkscape-classic/" />
-<meta property="og:title" content="Run Inkscape (Classic) in Your Browser — Free SVG Editor" />
-<meta property="og:description" content="Inkscape is a free, open-source vector editor — but its heavy GTK+ engine fights browser-based Wine. An honest look at the classic builds and what actually works." />
+<meta property="og:title" content="Why Inkscape Won't Run Well in a Browser — And What to Use Instead" />
+<meta property="og:description" content="Inkscape is free GPL software, but its heavy GTK+ engine is a hard target for browser-based Wine — expect slow starts, glitches, and crashes. Here's why, and better options." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Inkscape (classic)", "item": "https://exebrowser.com/run/inkscape-classic/" }
+    { "@type": "ListItem", "position": 3, "name": "Inkscape: won't run", "item": "https://exebrowser.com/run/inkscape-classic/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "Inkscape",
   "url": "https://exebrowser.com/run/inkscape-classic/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Can you run Inkscape, the free open-source SVG editor, in a browser with Wine + WebAssembly? Honestly: the classic 0.48–0.92 builds are heavy GTK apps that struggle hard. Here is what to expect and what to use instead.",
+  "description": "Inkscape's heavy GTK+ and Cairo engine fights browser-based Wine — even classic 0.48–0.92 builds crash. Why the free SVG editor fails here, and what to try.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Inkscape Project" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,10 +101,11 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Inkscape (classic)</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Inkscape: won't run</nav>
 
   <section class="card">
-    <h2>Run Inkscape (classic) in your browser <span class="verdict bad">Heavy — GTK engine fights Wine, expect crashes</span></h2>
+    <h2>Why Inkscape (classic) doesn't run well in a browser <span class="verdict bad">Heavy — GTK engine fights Wine, expect crashes</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Tested with Wine 1.7.55 (Win32) + WebAssembly</p>
     <p><em>Inkscape</em> is the best-loved free, open-source vector graphics editor — a genuine alternative to Illustrator for drawing SVGs, logos, and illustrations. The license is great news (it is GPL, so it is free to download and share), but the engineering is the catch. Inkscape is built on the heavy <strong>GTK+ toolkit</strong> with Cairo rendering and a Python scripting layer, and that is a hard target for browser-based Wine. Be warned up front: even the classic 32-bit builds are slow to start, prone to rendering glitches, and frequently crash here. Treat this as an experiment, not a daily driver.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run MS Paint Online in Your Browser — Free, No Download — ExeBrowser</title>
-<meta name="description" content="Run the classic Windows Paint (MSPAINT.EXE) in your browser with Wine + WebAssembly — no install. What works, how to load it, plus free open-source paint alternatives that run cleanly." />
+<title>How to Run MS Paint in a Browser Tab (With Your Own Copy) — ExeBrowser</title>
+<meta name="description" content="Classic MSPAINT.EXE from Windows 95–XP runs well under Wine + WebAssembly — load your own copy and it runs client-side. Plus free paint alternatives." />
 <meta name="keywords" content="run ms paint online, mspaint browser, classic windows paint, old mspaint exe, paint program no install browser, ms paint web, free paint alternative" />
 <link rel="canonical" href="https://exebrowser.com/run/mspaint/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/mspaint/" />
-<meta property="og:title" content="Run Classic MS Paint in Your Browser — No Download" />
-<meta property="og:description" content="The classic Windows Paint, running in your browser with Wine + WebAssembly. Plus free, open-source paint alternatives that run with no install." />
+<meta property="og:title" content="How to Run MS Paint in a Browser Tab (With Your Own Copy)" />
+<meta property="og:description" content="The classic Microsoft Paint is a tiny Win32 program that browser-based Wine handles well — but it's Microsoft's property, so you supply your own MSPAINT.EXE. Free open-source paint tools included." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run MS Paint", "item": "https://exebrowser.com/run/mspaint/" }
+    { "@type": "ListItem", "position": 3, "name": "MS Paint guide", "item": "https://exebrowser.com/run/mspaint/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "MS Paint",
   "url": "https://exebrowser.com/run/mspaint/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run the classic Windows Paint (MSPAINT.EXE) in your browser with Wine + WebAssembly — no install. What works, how to load it, plus free open-source paint alternatives that run cleanly.",
+  "description": "Classic MSPAINT.EXE from Windows 95–XP runs well under Wine + WebAssembly — load your own copy and it runs client-side. Plus free paint alternatives.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Microsoft" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run MS Paint</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › MS Paint guide</nav>
 
   <section class="card">
-    <h2>Run classic MS Paint in your browser <span class="verdict partial">Classic builds work — bring your own copy</span></h2>
-    <p>The classic <strong>Microsoft Paint</strong> (<code>MSPAINT.EXE</code>) that shipped with Windows 95 through XP is a tiny, single-purpose Win32 program — exactly the kind of thing browser-based Wine handles well. If you want that pixel-perfect, no-frills painting experience without installing anything, the old Paint runs nicely in ExeBrowser. Because Paint is Microsoft's property we can't host it for you, so you bring your own copy — or skip straight to the free, open-source paint tools below, which run just as well and are fully legal to share.</p>
+    <h2>Can you run classic MS Paint in your browser? <span class="verdict partial">Classic builds work — bring your own copy</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p>The classic <strong>Microsoft Paint</strong> (<code>MSPAINT.EXE</code>) that shipped with Windows 95 through XP is a tiny, single-purpose Win32 program — exactly the kind of thing browser-based Wine handles well. If you want that pixel-perfect, no-frills painting experience without installing anything, the old Paint runs nicely in ExeBrowser — load your copy below and it runs entirely in your browser tab. Because Paint is Microsoft's property we can't host it for you, so you bring your own copy — or skip straight to the free, open-source paint tools below, which run just as well and are fully legal to share.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

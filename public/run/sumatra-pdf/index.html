@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://exebrowser.com/run/sumatra-pdf/" />
 <meta property="og:title" content="Run Sumatra PDF in Your Browser — Tiny, Fast, Open-Source PDF Reader" />
 <meta property="og:description" content="Open PDF, ePub, MOBI, XPS, DjVu and comic-book files with Sumatra PDF in your browser using Wine + WebAssembly. Open-source, no install, files never leave your machine." />
-<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta property="og:image" content="https://exebrowser.com/run/sumatra-pdf/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -41,11 +41,12 @@
   "@type": "SoftwareApplication",
   "name": "Sumatra PDF",
   "url": "https://exebrowser.com/run/sumatra-pdf/",
-  "image": "https://exebrowser.com/og.png",
+  "image": "https://exebrowser.com/run/sumatra-pdf/screenshot.png",
   "description": "Run Sumatra PDF, the tiny open-source Windows PDF reader, in your browser with Wine + WebAssembly. Open PDF, ePub, MOBI, XPS, DjVu, CBZ and CBR files with no install and no upload to a server.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Krzysztof Kowalczyk" },
+  "dateModified": "2026-07-01",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -105,6 +106,7 @@
 
   <section class="card">
     <h2>Run Sumatra PDF online in your browser <span class="verdict good">Works well — fast, native Win32 viewer</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly</p>
     <p>Sumatra PDF is the famously tiny, fast, open-source document reader for Windows. It opens PDFs plus a pile of other formats — ePub, MOBI, XPS, DjVu, CHM and comic-book archives (CBZ/CBR) — in a stripped-down, single-window viewer that loads almost instantly. Because it's a small, well-behaved <strong>32-bit native Win32</strong> program with no DirectX, no .NET and no online dependencies, it's one of the more reliable apps to run inside ExeBrowser.</p><p>That makes it a genuinely useful trick: you're on a locked-down or borrowed machine with no PDF viewer installed, and you just need to <em>read a document</em>. Boot Wine here, load Sumatra plus your file, and you have a real reader in the browser — and your PDF never leaves your computer, since ExeBrowser's drive lives in your own browser tab, not on a server.</p>
 
     <div id="exe-embed"
@@ -113,6 +115,10 @@
          data-app-url="/apps/sumatra-pdf/sumatra-pdf.zip"
          data-app-name="Sumatra PDF"
          data-autoboot="false"></div>
+    <figure class="app-shot">
+      <img src="/run/sumatra-pdf/screenshot.png" width="798" height="599" loading="lazy" alt="Sumatra PDF running in a browser tab via ExeBrowser" />
+      <figcaption>Sumatra PDF running in the browser — no install, no upload.</figcaption>
+    </figure>
     <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
   </section>
 

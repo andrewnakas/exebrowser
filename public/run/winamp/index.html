@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Classic Winamp Online in Your Browser — Free, No Download — ExeBrowser</title>
-<meta name="description" content="Run classic Winamp (2.x / 5.x) in your browser with Wine + WebAssembly. The skinned UI and playlist load great; audio playback is hit-or-miss. Here's what to expect." />
+<title>Winamp in Your Browser: The Classic UI Loads, Audio Is Iffy (Guide) — ExeBrowser</title>
+<meta name="description" content="Load your own classic Winamp (2.x/5.x) and the skinned UI, playlist and EQ run under Wine + WebAssembly. Audio playback is hit-or-miss — here's what to expect." />
 <meta name="keywords" content="winamp browser, run winamp online, play winamp in browser, classic winamp 2.95, winamp wine webassembly, it really whips the llama, winamp skins online, winamp no download" />
 <link rel="canonical" href="https://exebrowser.com/run/winamp/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/winamp/" />
-<meta property="og:title" content="Play Classic Winamp Online in Your Browser" />
-<meta property="og:description" content="The legendary classic Winamp, running in your browser with Wine + WebAssembly. The skinned UI loads beautifully; audio is the catch. Here's the honest rundown." />
+<meta property="og:title" content="Winamp in Your Browser: The Classic UI Loads, Audio Is Iffy (Guide)" />
+<meta property="og:description" content="Classic Winamp 2.x/5.x builds load their skinned UI under browser-based Wine, but audio output is unreliable. Bring your own copy — this guide sets honest expectations." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run Winamp", "item": "https://exebrowser.com/run/winamp/" }
+    { "@type": "ListItem", "position": 3, "name": "Winamp guide", "item": "https://exebrowser.com/run/winamp/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "Winamp",
   "url": "https://exebrowser.com/run/winamp/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run classic Winamp (2.x / 5.x) in your browser with Wine + WebAssembly. The skinned UI and playlist load great; audio playback is hit-or-miss. Here's what to expect.",
+  "description": "Load your own classic Winamp (2.x/5.x) and the skinned UI, playlist and EQ run under Wine + WebAssembly. Audio playback is hit-or-miss — here's what to expect.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Nullsoft" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Winamp</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Winamp guide</nav>
 
   <section class="card">
-    <h2>Play classic Winamp online in your browser <span class="verdict partial">Partial — UI yes, audio is iffy</span></h2>
-    <p><em>Winamp</em> — the player that really whipped the llama's behind — is one of the most nostalgic pieces of late-90s Windows software there is. The classic 2.x and early 5.x builds are small native Win32 programs, so the skinned interface, playlist editor, and equalizer all load under browser-based Wine. Audio playback is the catch: it routes through the emulated Web Audio path, and Winamp's output plugins don't always cooperate. Treat this as a fun nostalgia trip more than a reliable everyday music player.</p>
+    <h2>Can you run classic Winamp in your browser? <span class="verdict partial">Partial — UI yes, audio is iffy</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><em>Winamp</em> — the player that really whipped the llama's behind — is one of the most nostalgic pieces of late-90s Windows software there is, and this guide covers what happens when you load your own copy here (Winamp's freeware license doesn't let us host it). The classic 2.x and early 5.x builds are small native Win32 programs, so the skinned interface, playlist editor, and equalizer all load under browser-based Wine. Audio playback is the catch: it routes through the emulated Web Audio path, and Winamp's output plugins don't always cooperate. Treat this as a fun nostalgia trip more than a reliable everyday music player.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

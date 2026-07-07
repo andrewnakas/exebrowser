@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Scorched Earth Online — Why It Won't Run in Wine, and What Does — ExeBrowser</title>
-<meta name="description" content="Scorched Earth is a 16-bit MS-DOS artillery game, not a Windows program — so it won't run on Wine/Boxedwine. Here's the honest reason why, where to get the author's free copy, and how to actually play it in a browser via DOSBox." />
+<title>Why Scorched Earth Doesn't Run on Wine — And How to Play It via DOSBox — ExeBrowser</title>
+<meta name="description" content="Scorched Earth is a 16-bit MS-DOS game, so it won't run on ExeBrowser's Wine runtime. Why that is, where to get the author's free v1.5, and the DOSBox route." />
 <meta name="keywords" content="play scorched earth online, scorched earth browser, scorched earth dos game, scorched earth wendell hicken, scorched earth free download, scorched earth dosbox, scorched earth artillery game, run scorched earth in browser" />
 <link rel="canonical" href="https://exebrowser.com/run/scorched-earth/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/scorched-earth/" />
-<meta property="og:title" content="Play Scorched Earth Online — The Honest Answer (It's a DOS Game)" />
-<meta property="og:description" content="Scorched Earth is 16-bit MS-DOS, so it won't run on Wine + WebAssembly. Here's why, plus where to get the author's free copy and how to play it in a browser via DOSBox." />
+<meta property="og:title" content="Why Scorched Earth Doesn't Run on Wine — And How to Play It via DOSBox" />
+<meta property="og:description" content="Scorched Earth is 16-bit MS-DOS, not Windows, so it won't boot on Wine + WebAssembly. This page explains why, and points to Wendell Hicken's free copy and a DOSBox route that works." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play Scorched Earth", "item": "https://exebrowser.com/run/scorched-earth/" }
+    { "@type": "ListItem", "position": 3, "name": "Scorched Earth: won't run", "item": "https://exebrowser.com/run/scorched-earth/" }
   ]
 }
 </script>
@@ -42,13 +42,13 @@
   "name": "Scorched Earth",
   "url": "https://exebrowser.com/run/scorched-earth/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Scorched Earth is a 16-bit MS-DOS artillery game, not a Windows program — so it won't run on Wine/Boxedwine. Here's the honest reason why, where to get the author's free copy, and how to actually play it in a browser via DOSBox.",
+  "description": "Scorched Earth is a 16-bit MS-DOS game, so it won't run on ExeBrowser's Wine runtime. Why that is, where to get the author's free v1.5, and the DOSBox route.",
   "applicationCategory": "Game",
   "genre": ["Artillery", "Strategy", "Turn-based"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Wendell Hicken" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -103,10 +103,11 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Scorched Earth</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Scorched Earth: won't run</nav>
 
   <section class="card">
-    <h2>Play Scorched Earth online — the honest answer <span class="verdict bad">Won't run here — it's a DOS game, not Windows</span></h2>
+    <h2>Why Scorched Earth doesn't run here (and how to actually play it) <span class="verdict bad">Won't run here — it's a DOS game, not Windows</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Tested with Wine 1.7.55 (Win32) + WebAssembly</p>
     <p>Straight answer first: <strong>Scorched Earth will not run on ExeBrowser</strong>, and we'd rather tell you that up front than waste your time. The legendary "Mother of All Games" — Wendell Hicken's 1991 tank-artillery classic where you lob nukes and Death's Heads across destructible terrain — is a <strong>16-bit MS-DOS program</strong> (<code>SCORCH.EXE</code>). ExeBrowser runs <em>Windows</em> <code>.exe</code> files through Wine, and Wine doesn't execute raw DOS binaries — that's a job for DOSBox. So there's no play button here that would actually work. Below is the honest why, where to grab the author's free copy, and the route that <em>does</em> get you playing Scorched Earth in a browser today.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Windows Calculator (Classic) Online — Free, In Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Run the classic Windows calc.exe in your browser with Wine + WebAssembly. The tiny Win32 calculator is one of the most reliable things to run — here's how, and what to expect." />
+<title>Classic Windows Calculator in Your Browser — With Your Own calc.exe — ExeBrowser</title>
+<meta name="description" content="The old Win32 calc.exe is one of the most reliable things to run under browser Wine + WebAssembly. Copy it from a Windows install you own and load it here." />
 <meta name="keywords" content="windows calculator online, classic calc.exe browser, run calc.exe in browser, win32 calculator wine, windows calculator webassembly, classic windows calculator online, calc exe no download" />
 <link rel="canonical" href="https://exebrowser.com/run/calculator/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/calculator/" />
-<meta property="og:title" content="Run the Classic Windows Calculator in Your Browser" />
-<meta property="og:description" content="The old calc.exe is a tiny Win32 app — one of the most reliable things to run under browser-based Wine. Bring your own copy and it just works." />
+<meta property="og:title" content="Classic Windows Calculator in Your Browser — With Your Own calc.exe" />
+<meta property="og:description" content="The classic calc.exe from Windows 95 through 7 runs cleanly under browser-based Wine. It's Microsoft software, so we can't host it — bring your own copy and it just works." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run Windows Calculator", "item": "https://exebrowser.com/run/calculator/" }
+    { "@type": "ListItem", "position": 3, "name": "calc.exe guide", "item": "https://exebrowser.com/run/calculator/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "Calculator",
   "url": "https://exebrowser.com/run/calculator/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run the classic Windows calc.exe in your browser with Wine + WebAssembly. The tiny Win32 calculator is one of the most reliable things to run — here's how, and what to expect.",
+  "description": "The old Win32 calc.exe is one of the most reliable things to run under browser Wine + WebAssembly. Copy it from a Windows install you own and load it here.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Microsoft Corporation" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,10 +101,11 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run Windows Calculator</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › calc.exe guide</nav>
 
   <section class="card">
-    <h2>Run the classic Windows Calculator (calc.exe) in your browser <span class="verdict good">Works well</span></h2>
+    <h2>Can you run the classic calc.exe in your browser? <span class="verdict good">Works well</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
     <p>The old Windows <code>calc.exe</code> — the plain four-function-and-scientific calculator from Windows 95 through Windows 7 — is just about the perfect thing to run under browser-based Wine. It's a tiny, single-purpose Win32 program that draws a standard window, does some arithmetic, and quits. No GPU, no 64-bit code, no .NET, no networking — none of the things that trip up the emulator. It boots in seconds and behaves exactly as you remember.</p><p>One catch: it's Microsoft software, so we can't hand you the file. If you own Windows, you already have <code>calc.exe</code>; copy it across and upload it, and it runs cleanly on the everyday Win32 variant.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.

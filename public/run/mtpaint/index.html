@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run mtPaint Online — Free Pixel Art Editor in Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Run mtPaint, the free open-source pixel art and image editor, in your browser with Wine + WebAssembly. Tiny, fast, native Win32 — one of the most reliable graphics editors to run with no install." />
+<title>mtPaint in the Browser: What Works and How to Load Your Copy — ExeBrowser</title>
+<meta name="description" content="mtPaint, the tiny GPL pixel-art editor, is ideal for browser Wine — load your own copy (32-bit builds work best) and it runs client-side via WebAssembly." />
 <meta name="keywords" content="mtpaint browser, free pixel art editor online, mtpaint online, open source image editor, run mtpaint wine, pixel art editor no install, indexed palette editor browser" />
 <link rel="canonical" href="https://exebrowser.com/run/mtpaint/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/mtpaint/" />
-<meta property="og:title" content="Run mtPaint in Your Browser — Free Pixel Art Editor" />
-<meta property="og:description" content="mtPaint, the tiny open-source pixel art and image editor, running cleanly in your browser with Wine + WebAssembly. No install, no upload." />
+<meta property="og:title" content="mtPaint in the Browser: What Works and How to Load Your Copy" />
+<meta property="og:description" content="mtPaint, the tiny open-source pixel-art editor, is exactly the kind of lightweight Win32 app that runs well under browser Wine. Load your own copy and it runs entirely client-side." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run mtPaint", "item": "https://exebrowser.com/run/mtpaint/" }
+    { "@type": "ListItem", "position": 3, "name": "mtPaint guide", "item": "https://exebrowser.com/run/mtpaint/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "mtPaint",
   "url": "https://exebrowser.com/run/mtpaint/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run mtPaint, the free open-source pixel art and image editor, in your browser with Wine + WebAssembly. Tiny, fast, native Win32 — one of the most reliable graphics editors to run with no install.",
+  "description": "mtPaint, the tiny GPL pixel-art editor, is ideal for browser Wine — load your own copy (32-bit builds work best) and it runs client-side via WebAssembly.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Mark Tyler / wjaguar (mtPaint project)" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run mtPaint</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › mtPaint guide</nav>
 
   <section class="card">
-    <h2>Run mtPaint online in your browser <span class="verdict good">Works well</span></h2>
-    <p><em>mtPaint</em> (Mark Tyler's Painting Program) is a tiny, fast, open-source raster editor built for icons, pixel art, and quick photo touch-ups. The whole program is only a few hundred kilobytes and was designed to run happily on a 200&nbsp;MHz machine with 16&nbsp;MB of RAM — which is exactly the kind of lightweight, native Win32 software that runs <strong>well</strong> under browser-based Wine. If you want to push pixels, edit an indexed palette, or crop and resize an image on a Chromebook or a locked-down PC with nothing installed, mtPaint is one of the most dependable choices in ExeBrowser. Click play, let Wine boot, and you have a real paint program in a browser tab — no install, nothing uploaded to a server.</p>
+    <h2>Running mtPaint in your browser — with your own copy <span class="verdict good">Works well</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><em>mtPaint</em> (Mark Tyler's Painting Program) is a tiny, fast, open-source raster editor built for icons, pixel art, and quick photo touch-ups — and this guide covers running your own copy of it in a browser tab. The whole program is only a few hundred kilobytes and was designed to run happily on a 200&nbsp;MHz machine with 16&nbsp;MB of RAM — which is exactly the kind of lightweight, native Win32 software that runs <strong>well</strong> under browser-based Wine. If you want to push pixels, edit an indexed palette, or crop and resize an image on a Chromebook or a locked-down PC with nothing installed, mtPaint is one of the most dependable choices in ExeBrowser. Load your copy below, let Wine boot, and you have a real paint program in a browser tab — nothing installed, nothing uploaded to a server.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

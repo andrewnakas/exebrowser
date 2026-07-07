@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run VLC (classic) in Your Browser — Free, No Download — ExeBrowser</title>
-<meta name="description" content="Can you run VLC media player in the browser via Wine + WebAssembly? Honestly: the UI may load, but video playback does not work well in emulated 32-bit Wine. Here's what to expect and what to use instead." />
+<title>VLC in a Browser Tab? Why Playback Fails Under Emulated Wine — ExeBrowser</title>
+<meta name="description" content="VLC's UI may open under browser-based Wine, but with no GPU acceleration playback stutters or fails. Why the emulator can't keep up — and what to use instead." />
 <meta name="keywords" content="vlc in browser, run vlc online, vlc media player wine, vlc webassembly, vlc browser no download, classic vlc 32-bit, vlc emulator browser" />
 <link rel="canonical" href="https://exebrowser.com/run/vlc-classic/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/vlc-classic/" />
-<meta property="og:title" content="Run VLC (classic) in Your Browser — What Actually Works" />
-<meta property="og:description" content="VLC is open-source and free, but under emulated 32-bit Wine the interface may open while video playback stutters or fails. An honest look at running classic VLC in ExeBrowser." />
+<meta property="og:title" content="VLC in a Browser Tab? Why Playback Fails Under Emulated Wine" />
+<meta property="og:description" content="VLC is free and open-source, but ExeBrowser emulates a 32-bit CPU with no GPU video acceleration — the interface may load, yet playback stutters or fails. An honest verdict plus better options." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Run VLC (classic)", "item": "https://exebrowser.com/run/vlc-classic/" }
+    { "@type": "ListItem", "position": 3, "name": "VLC: playback fails", "item": "https://exebrowser.com/run/vlc-classic/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "VLC",
   "url": "https://exebrowser.com/run/vlc-classic/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Can you run VLC media player in the browser via Wine + WebAssembly? Honestly: the UI may load, but video playback does not work well in emulated 32-bit Wine. Here's what to expect and what to use instead.",
+  "description": "VLC's UI may open under browser-based Wine, but with no GPU acceleration playback stutters or fails. Why the emulator can't keep up — and what to use instead.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "VideoLAN" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,10 +101,11 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Run VLC (classic)</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › VLC: playback fails</nav>
 
   <section class="card">
-    <h2>Run VLC (classic) in your browser <span class="verdict bad">Open-source &amp; legal, but video playback won't work well</span></h2>
+    <h2>Why VLC doesn't work well in a browser (and what to use instead) <span class="verdict bad">Open-source &amp; legal, but video playback won't work well</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Tested with Wine 1.7.55 (Win32) + WebAssembly</p>
     <p><strong>VLC media player</strong> is the legendary open-source player that opens almost any video or audio file. It's free, GPL-licensed, and completely legal to run anywhere — but here's the honest part: ExeBrowser emulates a 32-bit x86 CPU inside WebAssembly at roughly 10–40% of native speed, with <em>no</em> GPU video acceleration. VLC is built to decode and push pixels fast, so even when the interface loads, actual playback tends to stutter, tear, or fail outright. This page exists to set expectations truthfully and point you at what really works.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.

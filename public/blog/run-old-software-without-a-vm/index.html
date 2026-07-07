@@ -71,15 +71,37 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Run old software without a VM</nav>
   <section class="card">
     <h2>How to run old Windows software without a virtual machine</h2>
-    <p class="updated">Published June 9, 2026 · ~6 minute read</p>
-    <p>The reflex, when you need to run an old Windows program on a non-Windows machine, is to spin up a virtual machine: install VirtualBox, find a Windows ISO, sit through setup, and finally run your one little EXE inside it. That works — but for a lot of cases it's wildly more effort than the task deserves. Here's how to tell when you can skip the VM entirely.</p>
+    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published June 9, 2026 · Updated July 1, 2026 · ~7 minute read</p>
+    <p>The reflex, when you need to run an old Windows program on a non-Windows machine, is to spin up a virtual machine: install VirtualBox, find a Windows ISO, sit through setup, and finally run your one little EXE inside it. That works — but for a lot of cases it's wildly more effort than the task deserves. Here's how to tell when you can skip the VM entirely, what the lighter path actually looks like step by step, and — honestly — when the VM is still the right tool.</p>
 
     <h3>What a VM costs you</h3>
     <p>A full virtual machine gives you a complete, isolated Windows. The price: several gigabytes of disk, a Windows license, a chunk of RAM dedicated while it runs, and a real time investment to set up and maintain. If your goal is "run this 1999 utility once to recover a file," you've built an entire operating system to do it. That's the mismatch worth noticing.</p>
+    <p>It's worth itemizing that price, because each line hides its own friction:</p>
+    <ul>
+      <li><strong>The license problem.</strong> Old software often behaves best on an old Windows — 98, 2000, XP — and Microsoft stopped selling those years ago. A legitimate install means digging out a retail key you still own; in practice, plenty of people end up hunting ISOs and keys of murky provenance instead. Go the other way, with a modern Windows 10/11 guest, and you're paying for a license just to run one free 4&nbsp;MB utility from 2001.</li>
+      <li><strong>The disk image.</strong> A Windows guest wants tens of gigabytes of disk before you've installed anything of your own. That image then lives on your drive permanently — and needs backing up, if you'd mind losing it.</li>
+      <li><strong>RAM while it runs.</strong> A comfortable guest takes a couple of gigabytes away from your host machine the entire time it's open, which you will feel on an 8&nbsp;GB laptop.</li>
+      <li><strong>Maintenance.</strong> Hypervisor updates, guest additions that break after a host OS upgrade, snapshots to manage, and an old, unpatched guest you now have to think twice about connecting to a network. A VM is a pet: it needs feeding.</li>
+    </ul>
+    <p>None of that is wasted if you use the VM constantly. Nearly all of it is wasted if the VM exists to run one small program, occasionally.</p>
 
     <h3>The lighter option: a browser tab</h3>
     <p>For classic 32-bit Windows software — roughly the 1995–2008 era — you often don't need Windows at all. A WebAssembly build of <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> can run the EXE directly in a browser. <a href="/">ExeBrowser</a> is exactly this: open a page, boot Wine, drop the EXE, and it runs locally in the tab with nothing installed and nothing uploaded. No ISO, no license, no setup. For an old game, a small utility, or pulling data out of a legacy program, it's minutes instead of an afternoon.</p>
     <p>It works because Wine re-implements the Windows API rather than booting Windows, and a bundled x86 emulator supplies the CPU the browser doesn't have. (We unpack that in <a href="/blog/wine-vs-emulator-explained/">Wine vs. an emulator</a>.)</p>
+    <p>Two limits to be upfront about. Speed: the CPU-emulation layer lands you at roughly 10–40% of native speed — invisible in a menu-driven utility, very visible in anything CPU-hungry. Persistence: the virtual <code>C:\</code> drive lives in memory and is wiped when the tab reloads, so anything the program writes has to be downloaded before you close it. Both come up in the walkthrough below.</p>
+    <!-- IMG-SLOT: a classic 32-bit Windows program running on the ExeBrowser canvas inside an ordinary browser tab -->
+
+    <h3>What this looks like in practice</h3>
+    <p>Here's the whole workflow for a typical old program, end to end:</p>
+    <ol>
+      <li><strong>Boot Wine.</strong> Open <a href="/">ExeBrowser</a> and click Boot Wine. The runtime's filesystem is fetched on demand, so the first boot only pulls what the session actually needs rather than a full disk image.</li>
+      <li><strong>Load the whole folder (or a zip of it), not just the EXE.</strong> Old programs rarely travel alone — they expect DLLs, data files, and configuration sitting next to them in their install directory. Uploading the folder brings all of that along, and everything is copied into Wine's virtual <code>C:\</code> drive before launch so relative paths still resolve. Dropping the lone EXE is the single most common cause of "it just won't start."</li>
+      <li><strong>Pick the entry EXE.</strong> If the bundle contains more than one executable — <code>setup.exe</code>, the app itself, an uninstaller — a picker asks which one to launch. Choose the program, or the installer if it needs installing first.</li>
+      <li><strong>Use it.</strong> Click the canvas to capture your keyboard and mouse; press Esc to release them. The program is running locally in the tab — nothing was uploaded anywhere.</li>
+      <li><strong>Download your output.</strong> Before you close or reload the tab, use "Download files written by this app." It packages everything the program wrote — converted files, documents, game saves — into a zip. This step isn't optional if you care about the output: the in-memory drive is wiped on reload. On your next visit, re-upload that zip to pick up where you left off.</li>
+    </ol>
+    <!-- IMG-SLOT: the entry-EXE picker shown after loading a folder that contains multiple executables -->
+    <p>That's the entire lifecycle. No ISO, no snapshots, no guest additions — and also no persistence you didn't explicitly ask for, which is a feature or a limitation depending on the task.</p>
 
     <h3>When the browser route is the right call</h3>
     <ul>

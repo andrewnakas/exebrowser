@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Audacity Online — Run the Free Audio Editor in Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Run Audacity, the free open-source audio editor, in your browser with Wine + WebAssembly. Honest take: only the legacy 32-bit 2.x builds can even start, recording is unreliable, editing is the realistic use." />
+<title>Can You Run Audacity in Your Browser? Only Old 32-bit 2.x Builds — ExeBrowser</title>
+<meta name="description" content="Modern Audacity is 64-bit only and won't start in browser Wine. Load your own legacy 32-bit 2.x build (up to 2.4.2) for editing; recording is unreliable." />
 <meta name="keywords" content="audacity browser, run audacity online, audacity wine, audacity webassembly, free audio editor browser, audacity 2.4.2 32-bit, edit audio in browser, audacity no download" />
 <link rel="canonical" href="https://exebrowser.com/run/audacity/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/audacity/" />
-<meta property="og:title" content="Run Audacity in Your Browser — Free Open-Source Audio Editor" />
-<meta property="og:description" content="The free open-source audio editor, running in browser-based Wine. What actually works (and why you need the old 32-bit 2.x build)." />
+<meta property="og:title" content="Can You Run Audacity in Your Browser? Only Old 32-bit 2.x Builds" />
+<meta property="og:description" content="Audacity 3.x is 64-bit only, so it won't start on ExeBrowser's 32-bit engine. Legacy 2.x builds you load yourself can run for light editing — audio playback and recording are iffy." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play Audacity", "item": "https://exebrowser.com/run/audacity/" }
+    { "@type": "ListItem", "position": 3, "name": "Audacity guide", "item": "https://exebrowser.com/run/audacity/" }
   ]
 }
 </script>
@@ -42,11 +42,11 @@
   "name": "Audacity",
   "url": "https://exebrowser.com/run/audacity/",
   "image": "https://exebrowser.com/og.png",
-  "description": "Run Audacity, the free open-source audio editor, in your browser with Wine + WebAssembly. Honest take: only the legacy 32-bit 2.x builds can even start, recording is unreliable, editing is the realistic use.",
+  "description": "Modern Audacity is 64-bit only and won't start in browser Wine. Load your own legacy 32-bit 2.x build (up to 2.4.2) for editing; recording is unreliable.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "The Audacity Team / Muse Group" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -101,11 +101,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Audacity</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Audacity guide</nav>
 
   <section class="card">
-    <h2>Run Audacity in your browser <span class="verdict partial">Partial — old 2.x editing only, audio iffy</span></h2>
-    <p><em>Audacity</em> is the free, open-source audio editor that millions of people use to trim podcasts, clean up recordings, and chop up tracks. It is genuinely free software (GPL), so redistribution is allowed — but there is one big catch for browser-based Wine: <strong>modern Audacity is 64-bit only</strong>. From version 3.0 onward there is no 32-bit Windows build, and ExeBrowser runs a 32-bit x86 engine, so 3.x simply will not start. The only versions that even have a shot here are the <strong>legacy 2.x builds</strong> (the last being 2.4.2 from 2020), which still shipped a 32-bit installer. Treat this as "load an old version and poke at the editor," not "set up a recording studio in a tab."</p>
+    <h2>Can you run Audacity in your browser? <span class="verdict partial">Partial — old 2.x editing only, audio iffy</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><em>Audacity</em> is the free, open-source audio editor that millions of people use to trim podcasts, clean up recordings, and chop up tracks — and this page is a compatibility guide for running a copy you load yourself in a browser tab. It is genuinely free software (GPL), so redistribution is allowed — but there is one big catch for browser-based Wine: <strong>modern Audacity is 64-bit only</strong>. From version 3.0 onward there is no 32-bit Windows build, and ExeBrowser runs a 32-bit x86 engine, so 3.x simply will not start. The only versions that even have a shot here are the <strong>legacy 2.x builds</strong> (the last being 2.4.2 from 2020), which still shipped a 32-bit installer. Treat this as "load an old version and poke at the editor," not "set up a recording studio in a tab."</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add

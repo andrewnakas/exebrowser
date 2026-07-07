@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Age of Empires Online — Does the Classic RTS Run in Your Browser? — ExeBrowser</title>
-<meta name="description" content="An honest look at running the 1997 Age of Empires and AoE II in your browser via Wine + WebAssembly: what works, what stutters, and how to load your own copy correctly." />
+<title>Can You Play Age of Empires in a Browser? Wine Compatibility Guide — ExeBrowser</title>
+<meta name="description" content="A compatibility guide to the 1997 Age of Empires and AoE II under browser Wine + WebAssembly: load your own copy and expect slow but sometimes playable RTS." />
 <meta name="keywords" content="age of empires browser, run aoe online, age of empires no install, aoe wine browser, play age of empires online, age of empires 2 browser, aoe webassembly" />
 <link rel="canonical" href="https://exebrowser.com/run/age-of-empires/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/age-of-empires/" />
-<meta property="og:title" content="Play Age of Empires Online — Does the Classic RTS Run in Your Browser?" />
-<meta property="og:description" content="An honest look at running the classic RTS Age of Empires in your browser with Wine + WebAssembly." />
+<meta property="og:title" content="Can You Play Age of Empires in a Browser? Wine Compatibility Guide" />
+<meta property="og:description" content="An honest compatibility guide to the 1997 Age of Empires and AoE II under Wine + WebAssembly. We don't host the game — load your own copy and it runs client-side, slow but sometimes playable." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play Age of Empires", "item": "https://exebrowser.com/run/age-of-empires/" }
+    { "@type": "ListItem", "position": 3, "name": "Age of Empires guide", "item": "https://exebrowser.com/run/age-of-empires/" }
   ]
 }
 </script>
@@ -42,13 +42,13 @@
   "name": "Age of Empires",
   "url": "https://exebrowser.com/run/age-of-empires/",
   "image": "https://exebrowser.com/og.png",
-  "description": "An honest look at running the 1997 Age of Empires and AoE II in your browser via Wine + WebAssembly: what works, what stutters, and how to load your own copy correctly.",
+  "description": "A compatibility guide to the 1997 Age of Empires and AoE II under browser Wine + WebAssembly: load your own copy and expect slow but sometimes playable RTS.",
   "applicationCategory": "Game",
   "genre": ["Real-Time Strategy", "RTS", "Historical Strategy"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Microsoft / Ensemble Studios" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-01"
 }
 </script>
 <script type="application/ld+json">
@@ -103,11 +103,12 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Age of Empires</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Age of Empires guide</nav>
 
   <section class="card">
-    <h2>Play Age of Empires online in your browser <span class="verdict partial">Hit or miss — slow but sometimes playable</span></h2>
-    <p>Age of Empires is the test case people most want answered: can a real RTS classic run in a browser tab? The honest answer is <strong>sometimes, and not at full speed</strong>. The original 1997 <em>Age of Empires</em> and <em>Age of Empires II: The Age of Kings</em> are 32-bit Win32 games from the right era, so they're plausible — but they lean on DirectDraw and DirectSound and are far more CPU-hungry than a card game, which is where browser-based emulation shows its limits. Expect to revisit a campaign mission or a small skirmish, not run a competitive late-game match.</p>
+    <h2>Can you play Age of Empires in your browser? <span class="verdict partial">Hit or miss — slow but sometimes playable</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p>Age of Empires is the test case people most want answered: can a real RTS classic run in a browser tab? The honest answer is <strong>sometimes, and not at full speed</strong> — and since it's commercial Microsoft software we don't host it, this page is a compatibility guide: load your own copy below and everything runs client-side in your tab. The original 1997 <em>Age of Empires</em> and <em>Age of Empires II: The Age of Kings</em> are 32-bit Win32 games from the right era, so they're plausible — but they lean on DirectDraw and DirectSound and are far more CPU-hungry than a card game, which is where browser-based emulation shows its limits. Expect to revisit a campaign mission or a small skirmish, not run a competitive late-game match.</p>
 
     <!-- No hosted payload: the Play button reveals the in-page uploader.
          To enable true one-click play, host a license-clean zip and add
