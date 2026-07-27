@@ -10,6 +10,37 @@
     autoboot: host.dataset.autoboot === "true",
   };
 
+  const slug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || location.pathname;
+
+  function track(name, params) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, Object.assign({ app_slug: slug, runtime: "dosbox" }, params || {}));
+    }
+  }
+
+  // Playtime heartbeat: one event per minute while the game runs, partial flush on tab-hide.
+  let hbTimer = null, lastBeat = 0;
+  function startHeartbeat() {
+    if (hbTimer) return;
+    lastBeat = performance.now();
+    hbTimer = setInterval(() => {
+      lastBeat = performance.now();
+      track("playtime_heartbeat", { seconds: 60 });
+    }, 60000);
+  }
+  function stopHeartbeat() {
+    clearInterval(hbTimer);
+    hbTimer = null;
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState !== "hidden" || !hbTimer) return;
+    const partial = Math.round((performance.now() - lastBeat) / 1000);
+    if (partial >= 5) {
+      lastBeat = performance.now();
+      track("playtime_heartbeat", { seconds: partial });
+    }
+  });
+
   function esc(s) {
     return String(s).replace(/[&<>"']/g, c =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
@@ -203,6 +234,8 @@
   async function play() {
     playBtn.disabled = true;
     playBtn.textContent = "Loading…";
+    track("play_click");
+    const t0 = performance.now();
     try {
       setStatus("Loading DOSBox runtime…");
       await loadEmulators();
@@ -222,6 +255,7 @@
 
       ci.events().onStdout(msg => log(msg));
       ci.events().onExit(() => {
+        stopHeartbeat();
         setStatus(cfg.appName + " exited.");
         overlay.style.display = "flex";
         playBtn.disabled = false;
@@ -230,6 +264,8 @@
 
       setStatus("");
       canvas.focus();
+      track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
+      startHeartbeat();
 
     } catch (err) {
       setStatus("Could not start: " + err.message);
@@ -237,6 +273,7 @@
       playBtn.disabled = false;
       playBtn.textContent = "▶ Play " + cfg.appName;
       log("Error: " + err.message);
+      track("boot_error", { error_message: String(err.message).slice(0, 120) });
     }
   }
 

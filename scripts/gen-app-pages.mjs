@@ -34,6 +34,24 @@
 //   related      array of { href, title, desc } link cards
 //   download     optional { heading, html } rendered in a .download-box
 //   licenseNote  optional warn-box HTML for licensing caveats
+//   dosRuntime   true → page uses the DOSBox embed (dos-embed.js) instead of
+//                Wine. REQUIRED for DOS-era games: Boxedwine vm86-faults on DOS
+//                exes. The zip needs .jsdos/dosbox.conf (autoexec picks the
+//                entry EXE — the `entry` field is ignored for DOS pages).
+//   iframeUrl    external playable iframe (e.g. freeciv) — replaces both runtimes
+//   hostable     informational only; the honest "is playable" signal is a
+//                non-empty appUrl/iframeUrl (isPlayable() below)
+//   skipGenerate true → entry appears in the /run/ hub + sitemap but its page
+//                HTML is HAND-MAINTAINED (e.g. space-cadet-open, dragon-keep) —
+//                the generator won't overwrite it
+//   mobileControls  { type, hint, buttons:[{label, dosKey|key, area?, cls?}] }
+//                touch overlay. type MUST contain "dos" on DOS pages so buttons
+//                emit GLFW dosKey codes via window.__dosEmitKey (not KeyboardEvents)
+//   screenshot   true → /run/<slug>/screenshot.png (string = custom filename);
+//                drives og:image, JSON-LD image, and the <figure> under the embed
+//   updated      "YYYY-MM-DD" — sitemap <lastmod> + "Guide updated" line
+//   licenseReason  prose note (why hosting is legal); NOTICE.md in the app dir
+//                is the canonical provenance record
 
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -443,10 +461,10 @@ ${downloadHtml(p)}
 ${p.iframeUrl
   ? ``
   : p.dosRuntime
-    ? `<script src="/dos-embed.js?v=7"></script>`
+    ? `<script src="/dos-embed.js?v=8"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/embed.js?v=1"></script>
-<script src="/app.js?v=16"></script>`}
+<script src="/embed.js?v=2"></script>
+<script src="/app.js?v=17"></script>`}
 </body>
 </html>
 `;

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Dragon's Keep Pinball Online Free — Open-Source Table — ExeBrowser</title>
+<meta name="description" content="Play Dragon's Keep, an original medieval-fantasy pinball table, free in your browser. Open-source engine, CC0 artwork, no download, no install. Works on Windows, Mac, Linux, Chromebook." />
+<meta name="keywords" content="dragons keep pinball online, play pinball online free, open source pinball browser, full tilt dragons keep, medieval pinball game, pinball no download, browser pinball webassembly" />
+<link rel="canonical" href="https://exebrowser.com/run/dragon-keep/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/dragon-keep/" />
+<meta property="og:title" content="Play Dragon's Keep Pinball Online Free — Open-Source Table" />
+<meta property="og:description" content="An original medieval-fantasy pinball table in your browser — free, instant, no download. Built on the open-source SpaceCadetPinball engine with CC0 artwork." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://exebrowser.com/og.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=20" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Dragon's Keep Pinball Online", "item": "https://exebrowser.com/run/dragon-keep/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Dragon's Keep Pinball (Open-Source Browser Table)",
+  "url": "https://exebrowser.com/run/dragon-keep/",
+  "description": "Play Dragon's Keep, an original medieval-fantasy pinball table, free in your browser. Open-source WebAssembly engine with CC0 public-domain artwork — no download, no install.",
+  "applicationCategory": "Game",
+  "genre": ["Pinball", "Arcade"],
+  "gamePlatform": ["Web browser", "Windows", "Mac", "Linux", "Chromebook"],
+  "operatingSystem": "Web Browser",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need any Windows files to play?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Dragon's Keep uses fully original CC0 (public domain) artwork and sounds on the MIT-licensed open-source SpaceCadetPinball engine. Just click Play and it loads instantly in your browser." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the Dragon's Keep table from Full Tilt! Pinball?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It is an independent open-source recreation inspired by that classic table. The table geometry and physics values are factual measurements; every bitmap, palette, sound, and text string is original CC0 work. In this Phase 1 release the missions and scoring still use the engine's classic Cadet ruleset — table-specific missions are planned for Phase 2." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the controls?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hold Space to charge the plunger and release to launch. Z is the left flipper, / (forward slash) is the right flipper. F2 starts a new game. Mouse users: left-click = left flipper, right-click = right flipper. On mobile, use the on-screen FLIP and LAUNCH buttons." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on Chromebook or mobile?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. It runs in any modern browser via WebAssembly with no downloads or plugins, and has built-in touch controls for phones and tablets." }
+    }
+  ]
+}
+</script>
+<style>
+  .play-frame-wrap { margin: 1rem 0; }
+  .play-frame { width: 100%; max-width: 640px; height: 480px; border: 0;
+                display: block; margin: 0 auto; background: #000; border-radius: 6px; }
+  .play-cta { display:inline-block; margin: 0 auto 0.5rem; }
+
+  .mobile-controls { display: none; }
+  .mobile-hint { display: none; }
+  .mobile-controls {
+    max-width: 640px; margin: 0.5rem auto 0; gap: 0.6rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .mc-btn {
+    -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    touch-action: manipulation; cursor: pointer;
+    font: 700 1.1rem/1 system-ui, sans-serif; letter-spacing: .03em;
+    color: #ffe3c2; background: linear-gradient(#3a2415, #1c0f07);
+    border: 1px solid #8a5a3a; border-radius: 10px;
+    padding: 1.1rem 0.4rem; text-align: center;
+    box-shadow: 0 2px 0 #140a04, inset 0 1px 0 rgba(255,190,120,.15);
+  }
+  .mc-btn:active {
+    background: linear-gradient(#5a3820, #2c180a);
+    transform: translateY(1px); box-shadow: 0 1px 0 #140a04;
+    color: #fff;
+  }
+  .mc-launch { color: #ffd78a; border-color: #a8783a; }
+  @media (hover: none) and (pointer: coarse) {
+    .mobile-controls { display: grid; }
+    .mobile-hint { display: inline; }
+  }
+  @media (max-width: 720px) {
+    .mobile-controls { display: grid; }
+    .mobile-hint { display: inline; }
+  }
+
+  body.playing { overflow: hidden; }
+  @media (max-width: 720px) {
+    body.playing { position: fixed; inset: 0; width: 100%; }
+  }
+  .play-overlay { display: block; }
+  body.playing .play-overlay {
+    display: flex;
+    position: fixed; inset: 0; z-index: 9999;
+    background: #0f0805;
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    overscroll-behavior: none; touch-action: none;
+  }
+  body.playing .play-overlay .play-frame {
+    flex: 1 1 auto; width: 100vw; max-width: 100vw; height: auto; min-height: 0;
+    margin: 0; border-radius: 0;
+  }
+  body.playing .play-overlay .mobile-controls {
+    display: grid; width: 100%; max-width: 100%;
+    margin: 0; padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
+    gap: 0.5rem; flex: 0 0 auto;
+  }
+  body.playing .play-overlay .mc-btn { padding: 1.4rem 0.4rem; font-size: 1.25rem; }
+  .play-exit {
+    display: none; position: fixed; top: calc(6px + env(safe-area-inset-top));
+    right: 8px; z-index: 10000;
+    background: rgba(28,15,7,.85); color: #ffe3c2; border: 1px solid #8a5a3a;
+    border-radius: 8px; padding: .4rem .7rem; font: 600 .9rem system-ui; cursor: pointer;
+  }
+  body.playing .play-exit { display: block; }
+
+  .rank-table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .75rem 0; }
+  .rank-table th { background: #402a1a; color: #ffe3c2; padding: .4rem .6rem; text-align: left; }
+  .rank-table td { padding: .35rem .6rem; border-bottom: 1px solid #47301e; }
+  .rank-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Dragon's Keep Pinball Online</nav>
+
+  <section class="card">
+    <h2>Play Dragon's Keep pinball — free, instant, no download <span class="verdict good">Works · no files needed</span></h2>
+    <p><strong>Dragon's Keep</strong> is an original medieval-fantasy pinball table you can play right now in your browser — <strong>no download, no install, no Windows files required</strong>. It runs on the open-source <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> engine compiled to WebAssembly, with all-new CC0 (public domain) castle-and-dragon artwork, palette, and synthesized audio built for this release.</p>
+
+    <div class="play-frame-wrap">
+      <button class="button play-cta" id="boot-pinball" type="button">&#9654; Play Dragon's Keep Pinball — Free &amp; Instant</button>
+      <button type="button" class="play-exit" id="play-exit" aria-label="Exit full screen">&#10005; Exit</button>
+      <div class="play-overlay" id="play-overlay">
+        <iframe class="play-frame" id="pinball-frame" title="Dragon's Keep Pinball — open-source browser table"
+                allow="autoplay; gamepad; fullscreen"
+                data-src="/apps/dragon-keep/"></iframe>
+        <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
+          <button type="button" class="mc-btn mc-flip" data-key="z" aria-label="Left flipper">&#9664; FLIP</button>
+          <button type="button" class="mc-btn mc-launch" data-key="space" aria-label="Launch ball">&#9679; LAUNCH</button>
+          <button type="button" class="mc-btn mc-flip" data-key="slash" aria-label="Right flipper">FLIP &#9654;</button>
+        </div>
+      </div>
+    </div>
+    <p class="muted small" style="margin-top:0.5rem;">Runs entirely in your browser — nothing uploaded, nothing installed. Click the game to capture input. <strong>Launch:</strong> hold &amp; release <kbd>Space</kbd>. <strong>Flippers:</strong> <kbd>Z</kbd> left, <kbd>/</kbd> right. <strong>New game:</strong> <kbd>F2</kbd>. <strong>Mouse:</strong> left-click = left flipper, right-click = right flipper. <kbd>Esc</kbd> releases input. <span class="mobile-hint">On mobile use the <strong>FLIP</strong> / <strong>LAUNCH</strong> buttons below the table.</span></p>
+
+    <div class="warn-box" style="border-color:#8a5a3a;">
+      <p><strong>Phase 1 — honest note.</strong> This release ships the complete new table art and audio, but the missions and scoring still use the engine's classic <em>Cadet</em> ruleset as a placeholder. Table-specific missions and scoring are planned for Phase 2. All data is original CC0 work on the MIT-licensed engine — <a href="/apps/dragon-keep/CC0-LICENSE.txt">CC0 license</a> · <a href="/apps/dragon-keep/NOTICE.md">Project notice</a>.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Controls — keyboard &amp; mouse</h2>
+    <table class="rank-table" aria-label="Game controls">
+      <thead><tr><th>Action</th><th>Keyboard</th><th>Mouse / Touch</th></tr></thead>
+      <tbody>
+        <tr><td>Left flipper</td><td><kbd>Z</kbd></td><td>Left-click · Left tap</td></tr>
+        <tr><td>Right flipper</td><td><kbd>/</kbd> (forward slash)</td><td>Right-click · Right tap</td></tr>
+        <tr><td>Launch (plunger)</td><td>Hold then release <kbd>Space</kbd></td><td>Center-tap (mobile)</td></tr>
+        <tr><td>New game</td><td><kbd>F2</kbd></td><td>—</td></tr>
+        <tr><td>Pause</td><td><kbd>F3</kbd></td><td>—</td></tr>
+        <tr><td>Release mouse</td><td><kbd>Esc</kbd></td><td>—</td></tr>
+      </tbody>
+    </table>
+    <p class="muted small"><strong>Non-QWERTY keyboards:</strong> if <kbd>/</kbd> doesn't register, use right-click as the right flipper instead.</p>
+  </section>
+
+  <section class="card">
+    <h2>What Dragon's Keep is — and what it isn't</h2>
+    <p>Full Tilt! Pinball (1995, Cinematronics/Maxis) shipped three tables: Space Cadet — which Microsoft bundled with Windows — plus two tables most people never got to play, <em>Skulduggery</em> and <em>Dragon's Keep</em>. The original Dragon's Keep data remains proprietary, so it can't legally be hosted anywhere.</p>
+    <p>This version is an <strong>independent open-source recreation</strong>: the table geometry, collision physics, and component positions are retained as factual measurements (facts aren't copyrightable), while every bitmap, palette, sound effect, and text string is wholly original work released to the public domain (CC0). The result is the first Dragon's Keep-style table that anyone can host, share, or modify freely.</p>
+    <p><strong>Phase 1 status:</strong> the visuals and audio are complete; missions and scoring currently reuse the engine's Cadet rule implementation. Phase 2 will bring table-specific missions. If you want the fully mission-faithful experience today, play <a href="/run/space-cadet-open/">Open Cadet</a> — same engine, complete ruleset.</p>
+  </section>
+
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details open>
+      <summary>Do I need any Windows or Full Tilt files to play?</summary>
+      <p>No. All artwork, audio, and text in this build are original CC0 public-domain works on the MIT-licensed open-source engine. Nothing proprietary is included or required.</p>
+    </details>
+    <details>
+      <summary>Is this the real Full Tilt! Dragon's Keep table?</summary>
+      <p>No — it's an independent recreation inspired by it. Table layout and physics are factual measurements; all creative assets are new. In Phase 1 the missions and scoring still follow the classic Cadet ruleset.</p>
+    </details>
+    <details>
+      <summary>Can I play it on mobile or Chromebook?</summary>
+      <p>Yes. It runs in any modern browser via WebAssembly, with built-in touch controls — tap left/right for flippers and use the LAUNCH button to fire the plunger.</p>
+    </details>
+    <details>
+      <summary>Is it really free? What's the license?</summary>
+      <p>Yes. The engine is MIT-licensed and the entire data package (art, sounds, text) is CC0 — public domain. You can play, copy, host, or modify it without asking anyone.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>More you can play in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D Pinball Space Cadet (Open Cadet)</span><span class="lc-desc">The classic XP pinball — full missions and ranks, open-source build.</span></a></li>
+      <li><a class="link-card" href="/run/full-tilt-pinball/"><span class="lc-title">Full Tilt! Pinball</span><span class="lc-desc">The original Maxis/Cinematronics collection this table hails from.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM (shareware)</span><span class="lc-desc">The 1993 classic — free shareware episode, instant play.</span></a></li>
+      <li><a class="link-card" href="/run/tyrian/"><span class="lc-title">Tyrian 2000</span><span class="lc-desc">Freeware vertical shooter — plays instantly via DOSBox.</span></a></li>
+      <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id Software's 1992 FPS classic, runs via DOSBox.</span></a></li>
+      <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">A fully free DOOM-engine game — no files needed.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on the open-source <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> engine (MIT licensed) with original CC0/public-domain data. ExeBrowser is not affiliated with Microsoft, Maxis, or Cinematronics.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Game data CC0 / public domain; engine under MIT.</p>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('boot-pinball');
+    var frame = document.getElementById('pinball-frame');
+    var exitBtn = document.getElementById('play-exit');
+    var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+                  || window.matchMedia('(max-width: 720px)').matches;
+
+    function track(name, params) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, Object.assign({ app_slug: 'dragon-keep', runtime: 'wasm' }, params || {}));
+      }
+    }
+
+    function enterPlayMode() {
+      if (!isTouch) return;
+      document.body.classList.add('playing');
+      window.scrollTo(0, 0);
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+    }
+    function exitPlayMode() {
+      document.body.classList.remove('playing');
+      document.removeEventListener('touchmove', preventScroll, { passive: false });
+    }
+    function preventScroll(e) { e.preventDefault(); }
+    if (exitBtn) exitBtn.addEventListener('click', exitPlayMode);
+
+    btn.addEventListener('click', function () {
+      track('play_click');
+      var t0 = performance.now();
+      if (!frame.src) {
+        frame.loading = 'eager';
+        frame.src = frame.getAttribute('data-src');
+      }
+      btn.disabled = true;
+      btn.textContent = 'Loading…';
+      frame.addEventListener('load', function () {
+        btn.style.display = 'none';
+        frame.focus();
+        enterPlayMode();
+        track('boot_success', { boot_ms: Math.round(performance.now() - t0) });
+      }, { once: true });
+    });
+
+    var KEYS = {
+      z:     { key: 'z',  code: 'KeyZ',  keyCode: 90 },
+      slash: { key: '/',  code: 'Slash', keyCode: 191 },
+      space: { key: ' ',  code: 'Space', keyCode: 32 }
+    };
+    function gameTarget() {
+      try {
+        var doc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
+        if (!doc) return null;
+        return doc.getElementById('canvas') || doc.body || doc;
+      } catch (e) { return null; }
+    }
+    function fireKey(type, spec) {
+      var win = frame.contentWindow;
+      var tgt = gameTarget();
+      if (!win || !tgt) return;
+      try {
+        var m = win.Module;
+        if (m && m.SDL2 && m.SDL2.audioContext && m.SDL2.audioContext.state === 'suspended')
+          m.SDL2.audioContext.resume();
+      } catch (e) {}
+      var ev = new win.KeyboardEvent(type, {
+        key: spec.key, code: spec.code, keyCode: spec.keyCode,
+        which: spec.keyCode, bubbles: true, cancelable: true
+      });
+      tgt.dispatchEvent(ev);
+    }
+    var held = {};
+    function press(name)   { if (held[name]) return; held[name] = true;  fireKey('keydown', KEYS[name]); }
+    function release(name) { if (!held[name]) return; held[name] = false; fireKey('keyup',   KEYS[name]); }
+
+    document.querySelectorAll('#mobile-controls .mc-btn').forEach(function (b) {
+      var name = b.getAttribute('data-key');
+      var down = function (e) { e.preventDefault(); press(name); };
+      var up   = function (e) { e.preventDefault(); release(name); };
+      b.addEventListener('touchstart',  down, { passive: false });
+      b.addEventListener('touchend',    up,   { passive: false });
+      b.addEventListener('touchcancel', up,   { passive: false });
+      b.addEventListener('mousedown', down);
+      b.addEventListener('mouseup',   up);
+      b.addEventListener('mouseleave', up);
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) Object.keys(held).forEach(release);
+    });
+  })();
+</script>
+</body>
+</html>

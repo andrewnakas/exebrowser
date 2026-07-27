@@ -1,0 +1,10 @@
+CC0 1.0 Universal (Public Domain Dedication)
+
+The original artwork, palette, text, and synthesized audio in this package are
+dedicated to the public domain under CC0 1.0 Universal, to the extent permitted
+by law. You may copy, modify, distribute, and perform this original expression
+without asking permission.
+
+Full legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The work is provided as-is, without warranty.

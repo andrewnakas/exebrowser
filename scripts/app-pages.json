@@ -30,6 +30,36 @@
     "screenshot": true
   },
   {
+    "slug": "dragon-keep",
+    "skipGenerate": true,
+    "title": "Play Dragon's Keep Pinball Online Free — Open-Source Table — ExeBrowser",
+    "description": "Play Dragon's Keep, an original medieval-fantasy pinball table, free in your browser. Open-source engine, CC0 artwork, no download.",
+    "keywords": "dragons keep pinball online, play pinball online free, open source pinball browser",
+    "ogTitle": "Play Dragon's Keep Pinball Online Free — Open-Source Table",
+    "ogDescription": "An original medieval-fantasy pinball table in your browser — free, instant, no download. Phase 1: new art on the classic Cadet ruleset.",
+    "crumb": "Play Dragon's Keep Pinball",
+    "h1": "Play Dragon's Keep pinball — free, instant",
+    "appName": "Dragon's Keep Pinball",
+    "appType": "game",
+    "author": "ExeBrowser original CC0 data / k4zmu2a engine (MIT)",
+    "genre": [
+      "Pinball",
+      "Arcade"
+    ],
+    "hostable": true,
+    "appUrl": "/apps/dragon-keep/",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — original table, no Windows files needed"
+    },
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-07-27",
+    "screenshot": false
+  },
+  {
     "slug": "wolfenstein-3d",
     "title": "Play Wolfenstein 3D Online — Free Shareware, In Your Browser — ExeBrowser",
     "description": "Play Wolfenstein 3D shareware (episode 1) in your browser — free and legal. Honest guide: it's a DOS game, so you run it via a Win32 source port on Wine + WebAssembly. Here's what works.",
@@ -730,6 +760,11 @@
         "desc": "Our open-source Space Cadet remake — instant, no files needed."
       },
       {
+        "href": "/run/dragon-keep/",
+        "title": "Dragon's Keep Pinball",
+        "desc": "Original medieval-fantasy table on the same open-source engine — play free, instantly."
+      },
+      {
         "href": "/run/solitaire/",
         "title": "Windows Solitaire",
         "desc": "Another classic bundled Windows game in your browser."
@@ -760,7 +795,7 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-27"
   },
   {
     "slug": "solitaire",
@@ -1938,19 +1973,19 @@
   },
   {
     "slug": "commander-keen",
-    "title": "How to Play Commander Keen in a Browser Tab (Source Port Guide) — ExeBrowser",
-    "description": "Commander Keen Episode 1 is free shareware, but the original is a DOS EXE. Guide to playing it via a Win32 source port you load yourself in the browser.",
-    "keywords": "play commander keen online, commander keen in browser, commander keen marooned on mars free, commander keen shareware online, commander keen episode 1, keen invasion of the vorticons browser, run commander keen no download",
-    "ogTitle": "How to Play Commander Keen in a Browser Tab (Source Port Guide)",
-    "ogDescription": "Episode 1 \"Marooned on Mars\" is freely redistributable shareware, but it's a DOS program and ExeBrowser runs Win32. A source port like Commander Genius, loaded with your own copy, is the way to play it here.",
-    "crumb": "Commander Keen guide",
-    "h1": "Can you play Commander Keen in your browser?",
+    "title": "Play Commander Keen 1 Online — Marooned on Mars, Free Shareware — ExeBrowser",
+    "description": "Play Commander Keen: Marooned on Mars in your browser — the complete free shareware Episode 1, instant, no download, via DOSBox + WebAssembly.",
+    "keywords": "play commander keen online, commander keen 1 browser, marooned on mars online, commander keen shareware, commander keen no download",
+    "ogTitle": "Play Commander Keen 1 Online — Marooned on Mars, Free Shareware",
+    "ogDescription": "id Software's 1990 platforming classic in your browser — the complete free shareware episode, no download or install. Runs via DOSBox + WebAssembly.",
+    "crumb": "Play Commander Keen",
+    "h1": "Play Commander Keen: Marooned on Mars online — free shareware episode",
     "appName": "Commander Keen",
     "appType": "game",
     "author": "id Software / Apogee Software",
     "variant": "default",
-    "hostable": false,
-    "appUrl": "",
+    "hostable": true,
+    "appUrl": "/apps/commander-keen/commander-keen.zip",
     "entry": "KEEN1.EXE",
     "genre": [
       "Platformer",
@@ -1958,54 +1993,50 @@
       "Action"
     ],
     "licenseReason": "Episode 1 \"Marooned on Mars\" was released by id Software and Apogee as freely-redistributable shareware in 1990, so the first episode (and its data files) can be hosted and shared; episodes 2 and 3 are commercial and are not included.",
-    "licenseNote": "<p class=\"muted small\">Commander Keen ep1 is freely redistributable shareware, but the original is a DOS executable which requires a DOS layer Wine here does not support. Use a source port like Commander Genius for the best browser experience — bring your own copy above.</p>",
+    "licenseNote": "<p class=\"muted small\">Episode 1 \"Marooned on Mars\" is officially freely-redistributable shareware (id Software / Apogee, 1990). Episodes 2–3 are commercial and not hosted here. Provenance: <a href=\"/apps/commander-keen/NOTICE.md\">/apps/commander-keen/NOTICE.md</a>.</p>",
     "verdict": {
-      "kind": "partial",
-      "text": "Partial — it's a DOS game; a Win32 source port works best"
+      "kind": "good",
+      "text": "Works — shareware Episode 1 runs via DOSBox in your browser"
     },
-    "intro": "<p><strong>Commander Keen: Marooned on Mars</strong> — id Software's 1990 platforming classic, the game whose smooth EGA scrolling helped launch the studio that would later make DOOM. This page is a compatibility guide, with one honest catch up front: the original Keen is a <em>DOS</em> program, not a Windows one, and ExeBrowser runs <em>Win32</em> software. Episode 1 was free shareware then and remains freely redistributable now, so it's legal to play and share. The reliable way to play it here is a small open-source <em>source port</em> that loads the original shareware data — you load your copy with the uploader below and it runs entirely in your browser tab. We explain exactly how, and we're straight about what does and doesn't boot.</p>",
+    "intro": "<p><strong>Commander Keen: Marooned on Mars</strong> — id Software's 1990 platforming classic, the game whose smooth EGA scrolling helped launch the studio that would later make DOOM. The complete <strong>shareware Episode 1</strong> (all 16 Mars levels) is hosted right here: click Play and the original <code>KEEN1.EXE</code> boots in your browser via DOSBox + WebAssembly. Eight-year-old genius Billy Blaze has to recover the four stolen parts of his Bean-with-Bacon Megarocket before the Vorticons blow up Earth.</p>",
     "download": {
-      "heading": "Get the Commander Keen shareware (free, legal)",
-      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">id Software / Apogee official shareware — Episode 1</h3><p>The complete first episode, <em>Marooned on Mars</em>, distributed at no charge exactly as the 1990 shareware license permits. The most reliable preserved copy is on the Internet Archive:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/keen-1\" target=\"_blank\" rel=\"noopener\">Get Commander Keen 1 shareware (Internet Archive) →</a></p><p class=\"muted small\">The package contains the game data — the <code>KEEN1.EXE</code> launcher and the <code>.CK1</code> / EGA data files. Because that EXE is a 16-bit DOS program, the smoothest path in the browser is to pair these data files with a Win32 <strong>source port</strong> (see below), then use <strong>“Load your own copy”</strong> above to drop the folder in. © id Software / Apogee — episode 1 is freely redistributable as shareware; <strong>episodes 2 (The Earth Explodes) and 3 (Keen Must Die!) are commercial and are not included</strong>. Buy the full collection from a legitimate store such as <a href=\"https://store.steampowered.com/app/9180/Commander_Keen_Complete_Pack/\" target=\"_blank\" rel=\"noopener\">Steam</a>.</p></div>"
+      "heading": "Get the whole trilogy",
+      "html": "<div class=\"download-box\"><p><strong>Play Episode 1 here free</strong> — it's the complete shareware episode. Want Episodes 2 and 3, or Keen 4–6?</p><p><a class=\"button\" href=\"https://store.steampowered.com/app/9180/Commander_Keen_Complete_Pack/\" target=\"_blank\" rel=\"noopener\">Commander Keen Complete Pack on Steam →</a></p><p class=\"muted small\">For a modern native experience with the same data files, the open-source <a href=\"https://github.com/gerstrong/Commander-Genius\" target=\"_blank\" rel=\"noopener\">Commander Genius</a> engine plays all the Keen episodes.</p></div>"
     },
     "sections": [
       {
         "h": "How it works & what to expect",
-        "html": "<p>ExeBrowser boots a real copy of Wine on top of a 32-bit x86 emulator compiled to WebAssembly, then runs an actual Windows <code>.exe</code>. That's perfect for Win32 software — but the 1990 Commander Keen was written for <strong>MS-DOS</strong>, in 16-bit real mode, talking directly to EGA video and the PC speaker. Wine targets Win32, and the Wine 1.7.55 engine here has only thin DOS-machine support (older Wine historically shelled out to DOSBox for DOS programs, a path that isn't reliable in this WebAssembly build). So if you drop the raw <code>KEEN1.EXE</code> in and hit run, it will most likely refuse to start or exit immediately. That's expected, and it's why this page is marked <em>partial</em> rather than a green “just works.”</p>"
-      },
-      {
-        "h": "The reliable way: a Win32 source port",
-        "html": "<p>The good news: Keen's community keeps the game alive with open-source <strong>source ports</strong> — modern rebuilds of the engine that read the original shareware data files and run as ordinary 32-bit Windows programs. <a href=\"https://clonekeen.sourceforge.net/\" target=\"_blank\" rel=\"noopener\">Commander Genius</a> is the best-known, an open-source reimplementation that plays the real <em>Marooned on Mars</em> levels. Because a source port is a Win32 EXE, it runs in ExeBrowser the way DOOM source ports do.</p><ol><li>Download the free episode 1 shareware from the box above and unzip it.</li><li>Grab a Win32 build of an open-source Keen source port (Commander Genius) and unzip it next to the Keen data files.</li><li>Use <strong>Load your own copy → a folder</strong> above and select that combined folder.</li><li>Pick the source-port <code>.exe</code> as the entry and click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input, then play with the arrow keys and <kbd>Ctrl</kbd>/<kbd>Alt</kbd>.</li></ol><p>Keen is a tiny, light game, so when it does run it plays at full speed even with the emulation overhead.</p>"
+        "html": "<p>This is the original 1990 DOS shareware release (v1.31 data, real <code>KEEN1.EXE</code>) running inside a WebAssembly build of DOSBox — not a remake or source port. The package is tiny (~150 KB), so it boots in a couple of seconds. The title loop cycles through the story and high scores on its own; press <kbd>Enter</kbd> to bring up the menu and choose <em>New Game</em>.</p>"
       },
       {
         "h": "Controls",
-        "html": "<p>Classic Keen controls (a source port lets you remap them):</p><ul><li><kbd>←</kbd> <kbd>→</kbd> — walk left/right</li><li><kbd>Ctrl</kbd> — jump</li><li><kbd>Alt</kbd> — use the pogo stick</li><li><kbd>Ctrl</kbd> + direction — fire the raygun (once you find it)</li><li><kbd>Esc</kbd> — menu / release the mouse back to the page</li></ul><p>If a port uses different defaults, check its in-game options menu.</p>"
+        "html": "<p><strong>Arrow keys</strong> (or <kbd>A</kbd>/<kbd>D</kbd>, mapped to the arrows on this page) move Keen, <kbd>Ctrl</kbd> jumps, and <kbd>Alt</kbd> fires the pogo stick — the pogo is essential for high ledges and is the most beloved mechanic in the game. On the Mars overworld, walk onto a level to enter it. Collect the raygun to shoot, and remember: yorps are harmless if you just walk past them.</p>"
       },
       {
-        "h": "Honest bottom line",
-        "html": "<p>You <em>can</em> play <em>Marooned on Mars</em> in your browser here, legally and for free — but plan to run it through an open-source source port rather than the original DOS <code>KEEN1.EXE</code>, which is unlikely to boot under Win32 Wine. If you'd rather run the genuine DOS binary unchanged, a dedicated DOS layer like DOSBox (or a browser DOS emulator) is the right tool; ExeBrowser is built for Windows executables. Either way, the shareware data is the same and the levels are the real thing.</p>"
+        "h": "Shareware episode — and the rest of the trilogy",
+        "html": "<p>Marooned on Mars is Episode 1 of the <em>Invasion of the Vorticons</em> trilogy, released free under Apogee's shareware model — sharing it was literally the marketing plan. Episodes 2 and 3 (<em>The Earth Explodes</em>, <em>Keen Must Die!</em>) are still commercial and are not hosted here; the whole series is sold cheaply on Steam as the Commander Keen Complete Pack.</p>"
       }
     ],
     "faq": [
       {
-        "q": "Can I play Commander Keen online for free with no download?",
-        "a": "Yes — Episode 1, <em>Marooned on Mars</em>, was released as free shareware by id Software and Apogee in 1990 and is still freely redistributable. You'll get the best result here by running its data through an open-source Win32 source port; the original DOS launcher is unlikely to boot under Wine."
-      },
-      {
-        "q": "Why won't the original KEEN1.EXE run in the browser?",
-        "a": "Because Commander Keen is a 16-bit MS-DOS program, not a Windows one. ExeBrowser runs Win32 executables on Wine + WebAssembly, and this Wine build has only minimal DOS support. The fix is to use a Win32 source port (like Commander Genius) that reads the same shareware levels."
-      },
-      {
         "q": "Is it legal to play Commander Keen here?",
-        "a": "Yes, for episode 1 only. id/Apogee distributed <em>Marooned on Mars</em> as shareware meant to be freely copied at no charge. Episodes 2 and 3 of <em>Invasion of the Vorticons</em> are commercial and are not included — buy the full collection from a legitimate store such as Steam."
+        "a": "Yes. Episode 1 was released by id Software and Apogee as freely-redistributable shareware in 1990, and that license still stands. Episodes 2 and 3 are commercial and not included — buy the Complete Pack on Steam for those."
       },
       {
-        "q": "Is this the real Commander Keen or a remake?",
-        "a": "The levels, art, and game data are the genuine 1990 shareware files. To make them run in a Windows-only environment we recommend an open-source source port that re-implements the engine; it plays the original <em>Marooned on Mars</em> maps faithfully rather than re-creating them from scratch."
+        "q": "Is this the original game or a remake?",
+        "a": "The original — the real 1990 KEEN1.EXE and game data (v1.31) running in DOSBox compiled to WebAssembly, right in your browser tab. Nothing is uploaded or installed."
       },
       {
-        "q": "What's the easiest way to play the original DOS Commander Keen?",
-        "a": "If you specifically want the untouched DOS binary, use a DOS emulator such as DOSBox or a browser-based DOS player. ExeBrowser is purpose-built for Windows <code>.exe</code> files, so for Keen here, a Win32 source port is the smoother route."
+        "q": "How do I use the pogo stick?",
+        "a": "Press Alt to toggle the pogo once you've collected it in a level (one early level hides it). Hold jump (Ctrl) while bouncing to bounce higher. Half the game's secrets need pogo bounces to reach."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "The in-game save option works during your session, but saves don't yet survive closing the tab. Episode 1 levels are short — most players clear several in one sitting."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes — a touch pad with a d-pad, JUMP, and POGO buttons appears under the game on touch devices, though a keyboard is the classic way to play."
       }
     ],
     "related": [
@@ -2040,7 +2071,55 @@
         "desc": "What runs, what doesn't, and why DOS games are tricky."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-27",
+    "dosRuntime": true,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: Ctrl · POGO: Alt · ENTER/ESC: menus",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "POGO",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
   },
   {
     "slug": "scorched-earth",
@@ -2548,64 +2627,64 @@
   },
   {
     "slug": "blake-stone",
-    "title": "Can You Play Blake Stone in a Browser? An Honest Wine Guide — ExeBrowser",
-    "description": "Blake Stone is a 1993 DOS FPS. The Win32 BStone port needs SDL2 and currently black-screens under browser Wine — this guide explains why and what to try.",
-    "keywords": "play blake stone online, blake stone aliens of gold browser, blake stone shareware, bstone source port, blake stone no download, wolfenstein 3d engine fps online, apogee blake stone",
-    "ogTitle": "Can You Play Blake Stone in a Browser? An Honest Wine Guide",
-    "ogDescription": "Episode 1 of Blake Stone: Aliens of Gold is free shareware, but the original is DOS and the Win32 BStone port hits a black screen under browser Wine (SDL2). This guide lays out the honest picture.",
-    "crumb": "Blake Stone guide",
-    "h1": "Can you play Blake Stone: Aliens of Gold in your browser?",
+    "title": "Play Blake Stone: Aliens of Gold Online — Free Shareware Episode — ExeBrowser",
+    "description": "Play the free shareware episode of Blake Stone: Aliens of Gold in your browser — instant, no download, runs via DOSBox + WebAssembly. Episode 1 is legally free.",
+    "keywords": "play blake stone online, blake stone aliens of gold browser, blake stone shareware, blake stone dosbox online, blake stone no download",
+    "ogTitle": "Play Blake Stone: Aliens of Gold Online — Free Shareware Episode",
+    "ogDescription": "Apogee's 1993 sci-fi FPS in your browser — the complete free shareware episode, no download or install. Runs via DOSBox + WebAssembly.",
+    "crumb": "Play Blake Stone",
+    "h1": "Play Blake Stone: Aliens of Gold online — free shareware episode",
     "appName": "Blake Stone",
     "appType": "game",
     "variant": "default",
-    "hostable": false,
-    "appUrl": "",
-    "entry": "BSTONE.EXE",
+    "hostable": true,
+    "appUrl": "/apps/blake-stone/blake-stone.zip",
+    "entry": "BS_AOG.EXE",
     "author": "Apogee Software",
     "genre": [
       "First-person shooter",
       "Action"
     ],
     "verdict": {
-      "kind": "partial",
-      "text": "Partial — free shareware, but the Win32 BStone port uses SDL2 (black screen under Wine)"
+      "kind": "good",
+      "text": "Works — shareware Episode 1 runs via DOSBox in your browser"
     },
     "licenseReason": "Episode 1 of Blake Stone: Aliens of Gold is officially free, freely-redistributable shareware (distributed by 3D Realms), and the BStone source port is open-source under GPL-2.0+, so both are legally hostable.",
-    "intro": "<p><strong>Blake Stone: Aliens of Gold</strong> — Apogee's 1993 first-person shooter built on id Software's Wolfenstein 3D engine, with floor and ceiling textures, talking informants you could shoot (or spare) and six episodes of Dr. Goldfire's alien-infested labs. Episode 1 is <strong>free, freely-redistributable shareware</strong>, so it's completely legal to play here. Two honest catches: the original is a <em>DOS</em> program, and ExeBrowser runs <em>Win32</em> software, so the only candidate route in a tab is the free, open-source <strong>BStone</strong> source port loaded with the shareware data — and, as the verdict above notes, the current Win32 BStone build depends on SDL2 and hits a black screen under browser Wine.</p>",
+    "intro": "<p><strong>Blake Stone: Aliens of Gold</strong> — Apogee's 1993 first-person shooter built on id Software's Wolfenstein 3D engine, with floor and ceiling textures, talking informants you could shoot (or spare), and Dr. Goldfire's alien-infested labs. The complete <strong>shareware Episode 1 (\"Star Institute\", 11 floors)</strong> is hosted right here — click Play and the original DOS game boots in your browser via DOSBox + WebAssembly. Nothing to download or install; the full six-episode game is still sold by the rights holder (link below).</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
-        "html": "<p>ExeBrowser runs real 32-bit <strong>Windows</strong> executables on Wine + WebAssembly. The 1993 Blake Stone shipped as a <strong>DOS</strong> game (it wanted a 386 and ran in real/protected mode), and DOS binaries do not reliably boot under Wine in the browser — there's no DOS/V86 layer here. So pointing the player at the original <code>BSTONE.EXE</code> from the shareware archive will usually fail.</p><p>The practical route is <strong>BStone</strong>, the excellent open-source (GPL-2.0+) source port by Boris Bendovsky. It rebuilds the Blake Stone engine as a modern Win32/SDL2 program that reads the original shareware data files. Drop the BStone Windows build and the shareware data in one folder, load that folder, and you're running the actual game logic — just through a modern, browser-friendly executable.</p><table class=\"spec-table\"><tr><th>Game</th><td>Blake Stone: Aliens of Gold — shareware episode 1 (1993, Apogee / JAM Productions)</td></tr><tr><th>Engine</th><td>Wolfenstein 3D engine (raycaster), via the BStone source port</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong>; if BStone crashes on boot, try the <strong>18R2</strong> variant</td></tr><tr><th>How to load</th><td>Upload the whole folder (BStone EXE + shareware <code>.BS1</code>/<code>.SOD</code> data) — never just the EXE</td></tr><tr><th>Expected result</th><td>Partial — a light raycaster, so when BStone boots it should feel responsive; SDL2 video/audio under Boxedwine is the wild card</td></tr></table>"
+        "html": "<p>This is the original 1994 DOS release (v3.0 game data with the real <code>BS_AOG.EXE</code>), not a port — it runs inside a WebAssembly build of DOSBox on this page. Boot takes a few seconds on first load while the ~1.3 MB game package downloads; after that it's cached. Sound (Sound Blaster + AdLib music) is preconfigured, and the demo attract loop starts on its own — press <kbd>Esc</kbd> to bring up the menu and pick <em>New Mission</em>.</p>"
       },
       {
-        "h": "Why the verdict is \"partial\"",
-        "html": "<p>Two honest reasons, neither about the game being heavy:</p><ul><li><strong>The original is DOS.</strong> You can't just run the 1993 <code>BSTONE.EXE</code> here the way you'd run a Win32 app. A source port is required, which is an extra step.</li><li><strong>The source port is modern SDL2.</strong> BStone is a clean, lightweight raycaster — exactly the kind of game that <em>should</em> run well at ExeBrowser's 10–40% of native speed — but modern SDL2 builds lean on Windows graphics and audio paths that are hit-or-miss under Boxedwine. It may launch and play smoothly, or it may stumble on video init or sound. That uncertainty is why this is \"partial\" rather than \"works well.\"</li></ul><p>The good news: the game itself is trivially light for a modern CPU, so if BStone initializes at all, gameplay won't be the bottleneck. Older 320×200-style render settings tend to be the most forgiving.</p>"
+        "h": "Controls",
+        "html": "<p><strong>Arrow keys</strong> (or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, which this page maps to the arrows) move and turn. <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and operates elevators, <kbd>Shift</kbd> runs, <kbd>Alt</kbd> strafes, <kbd>Tab</kbd>+key shows the auto-map, and number keys switch weapons. Talk to informants instead of shooting them — some hand out food tokens and hints. On phones and tablets a touch gamepad appears under the game.</p>"
       },
       {
-        "h": "Step by step",
-        "html": "<ol><li>Grab the <strong>BStone</strong> Windows build (open-source, see the download box below) and the <strong>free shareware data</strong> for Aliens of Gold.</li><li>Unzip both into a <em>single</em> folder so the BStone EXE sits next to the shareware data files.</li><li>Click <strong>▶ Play Blake Stone</strong> above, then use <strong>Load your own copy → a folder</strong> and pick that folder.</li><li>Set the entry to the BStone executable (e.g. <code>bstone.exe</code>) and click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. <kbd>↑↓←→</kbd> move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and uses switches, <kbd>1</kbd>–<kbd>5</kbd> pick weapons, <kbd>Esc</kbd> releases the mouse.</li><li>If it won't start on the default variant, retry with <strong>18R2</strong> and check the Console for <code>err:</code> lines.</li></ol>"
+        "h": "Shareware episode — and the full game",
+        "html": "<p>Episode 1 is the complete 11-floor <em>Star Institute</em> mission, distributed free under Apogee's shareware model (the same arrangement as the DOOM and Wolfenstein 3D shareware episodes hosted here). Episodes 2–6 and the sequel <em>Planet Strike</em> are still commercial — the full game is sold as <em>Blake Stone: Aliens of Gold</em> on Steam and GOG. If you enjoy the episode, buying the full game supports the rights holder.</p>"
       }
     ],
     "faq": [
       {
-        "q": "Is Blake Stone free to play?",
-        "a": "Episode 1 of Blake Stone: Aliens of Gold is free, officially-distributed shareware that may be redistributed unmodified at no charge (3D Realms hosts the v3.0 shareware episode). The remaining five episodes are the commercial registered version — buy those from a legitimate storefront. The BStone source port used to run it is free, open-source software under the GPL."
+        "q": "Is it legal to play Blake Stone here?",
+        "a": "Yes. Episode 1 is the official freely-redistributable shareware episode, distributed exactly as Apogee/3D Realms released it (data v3.0, 1994). The commercial episodes are not included — the full game is still sold on Steam and GOG."
       },
       {
-        "q": "Can I just run the original Blake Stone .exe in the browser?",
-        "a": "Usually not. The 1993 game is a DOS program, and ExeBrowser runs 32-bit Windows software via Wine — there's no DOS/V86 layer, so the original BSTONE.EXE typically won't boot. The reliable path is the BStone source port, a modern Win32 rebuild that reads the same shareware data."
+        "q": "Is this the original DOS game or a remake?",
+        "a": "The original. The page boots the real 1994 <code>BS_AOG.EXE</code> and game data inside DOSBox compiled to WebAssembly. No files are uploaded anywhere — everything runs in your browser tab."
       },
       {
-        "q": "What is BStone and is it safe/legal?",
-        "a": "BStone is a free, open-source (GPL-2.0+) source port by Boris Bendovsky that re-implements the Blake Stone engine for Windows, Linux and macOS. It contains no game assets itself — it loads the data files from your shareware (or registered) copy. It's a legitimate, widely-used preservation project, not a crack or a pirated build."
+        "q": "Does sound work?",
+        "a": "Yes — Sound Blaster digital effects and AdLib music are preconfigured. If you hear nothing, click the game screen once (browsers require a user gesture before audio starts)."
       },
       {
-        "q": "Does Blake Stone need DirectX or a 3D card?",
-        "a": "No. It's a Wolfenstein 3D-style raycaster from 1993 with no hardware-3D requirement, so the game is extremely light. The only real compatibility question here is whether the BStone port's SDL2 video and audio initialize cleanly under Boxedwine — the rendering itself is well within range."
+        "q": "Does my progress save?",
+        "a": "The in-game save menu works during your session, but saves don't yet survive closing the tab. Finish a mission in one sitting, or leave the tab open."
       },
       {
-        "q": "Why might Blake Stone not run well in ExeBrowser?",
-        "a": "Performance won't be the issue — the engine is tiny by modern standards. The risk is startup: a modern SDL2 source port can stumble on graphics or sound init inside the emulated environment. If the default Wine variant crashes on launch, try the 18R2 variant and watch the Console for missing-DLL or video errors."
+        "q": "Can I play on a phone or tablet?",
+        "a": "Yes — a touch gamepad with move, fire, and open buttons appears below the game on touch devices. A keyboard is still the best way to play."
       }
     ],
     "related": [
@@ -2641,11 +2720,69 @@
       }
     ],
     "download": {
-      "heading": "Get Blake Stone shareware + the BStone port (free, legal)",
-      "html": "<p>You need two free pieces, dropped into one folder:</p><p><strong>1. The shareware data (episode 1).</strong> The freely-redistributable shareware episode, exactly as Apogee/3D Realms distribute it:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/Bs-aog-sw1\" target=\"_blank\" rel=\"noopener\">Blake Stone: Aliens of Gold shareware (Internet Archive) →</a></p><p><strong>2. The BStone source port (open-source).</strong> The Win32 build that actually runs in your browser:</p><p><a class=\"cta-btn\" href=\"https://github.com/bibendovsky/bstone/releases/latest\" target=\"_blank\" rel=\"noopener\">BStone latest release (GitHub) →</a></p><p class=\"muted small\">Unzip both into the <em>same</em> folder (BStone EXE beside the shareware data), then use <strong>“Load your own copy”</strong> above. Episode 1 is free shareware, redistributable unmodified at no charge; episodes 2–6 are the commercial registered version — buy those from a legitimate source such as <a href=\"https://www.zoom-platform.com/product/blake-stone-aliens-of-gold\" target=\"_blank\" rel=\"noopener\">ZOOM Platform</a>. BStone is © its authors under the GPL-2.0+. Blake Stone © Apogee Software / JAM Productions.</p>"
+      "heading": "Get Blake Stone for keeps",
+      "html": "<div class=\"download-box\"><p><strong>Play it here first</strong> — the shareware episode above is the real game. Want it on your own machine, or the other five episodes?</p><p><a class=\"button\" href=\"https://store.steampowered.com/app/358190/Blake_Stone_Aliens_of_Gold/\" target=\"_blank\" rel=\"noopener\">Blake Stone on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/game/blake_stone_aliens_of_gold\" target=\"_blank\" rel=\"noopener\">Blake Stone on GOG →</a></p><p class=\"muted small\">The open-source <a href=\"https://github.com/bibendovsky/bstone\" target=\"_blank\" rel=\"noopener\">BStone</a> source port is the best way to play the full game natively on modern machines.</p></div>"
     },
-    "licenseNote": "",
-    "updated": "2026-07-01"
+    "licenseNote": "<p class=\"muted small\">Episode 1 of Blake Stone: Aliens of Gold is officially free, freely-redistributable shareware. Episodes 2–6 are commercial and are not hosted here — buy the full game on Steam or GOG. See the provenance notice at <a href=\"/apps/blake-stone/NOTICE.md\">/apps/blake-stone/NOTICE.md</a>.</p>",
+    "updated": "2026-07-27",
+    "dosRuntime": true,
+    "mobileControls": {
+      "type": "fps-dos",
+      "hint": "D-pad: move/turn · FIRE: shoot · OPEN: doors/walls · MENU: esc",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "OPEN",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "RUN",
+          "dosKey": 340,
+          "cls": ""
+        },
+        {
+          "label": "STRAFE",
+          "dosKey": 342,
+          "cls": ""
+        },
+        {
+          "label": "MAP",
+          "dosKey": 258,
+          "cls": ""
+        },
+        {
+          "label": "MENU",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
   },
   {
     "slug": "prince-of-persia",

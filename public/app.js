@@ -777,6 +777,32 @@
 
   // ─── orchestrator ──────────────────────────────────────────────────────
 
+  function track(name, params) {
+    if (typeof window.gtag === "function") {
+      const slug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || "home";
+      window.gtag("event", name, Object.assign({ app_slug: slug, runtime: "boxedwine" }, params || {}));
+    }
+  }
+
+  // Playtime heartbeat: one event per minute while an app runs, partial flush on tab-hide.
+  let hbTimer = null, lastBeat = 0;
+  function startHeartbeat() {
+    if (hbTimer) return;
+    lastBeat = performance.now();
+    hbTimer = setInterval(() => {
+      lastBeat = performance.now();
+      track("playtime_heartbeat", { seconds: 60 });
+    }, 60000);
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState !== "hidden" || !hbTimer) return;
+    const partial = Math.round((performance.now() - lastBeat) / 1000);
+    if (partial >= 5) {
+      lastBeat = performance.now();
+      track("playtime_heartbeat", { seconds: partial });
+    }
+  });
+
   async function bootAndRun() {
     if (state.bootInFlight) return;
     if (!state.pickedExe) {
@@ -787,6 +813,7 @@
     state.bootInFlight = true;
     els.runBtn.disabled = true;
     els.bootBtn.disabled = true;
+    const t0 = performance.now();
 
     try {
       installXhrInterceptor();
@@ -801,7 +828,10 @@
       els.saveStateBtn.disabled = false;
       setStatus(`Running ${state.pickedExe.originalName}…`);
       log("Launch dispatched. Canvas will activate when Wine is ready.");
+      track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
+      startHeartbeat();
     } catch (err) {
+      track("boot_error", { error_message: String(err.message).slice(0, 120) });
       log("Boot failed: " + err.message, "error");
       setStatus("Boot failed. See console.");
       els.bootBtn.disabled = false;

@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Can You Play Blake Stone in a Browser? An Honest Wine Guide — ExeBrowser</title>
-<meta name="description" content="Blake Stone is a 1993 DOS FPS. The Win32 BStone port needs SDL2 and currently black-screens under browser Wine — this guide explains why and what to try." />
-<meta name="keywords" content="play blake stone online, blake stone aliens of gold browser, blake stone shareware, bstone source port, blake stone no download, wolfenstein 3d engine fps online, apogee blake stone" />
+<title>Play Blake Stone: Aliens of Gold Online — Free Shareware Episode — ExeBrowser</title>
+<meta name="description" content="Play the free shareware episode of Blake Stone: Aliens of Gold in your browser — instant, no download, runs via DOSBox + WebAssembly. Episode 1 is legally free." />
+<meta name="keywords" content="play blake stone online, blake stone aliens of gold browser, blake stone shareware, blake stone dosbox online, blake stone no download" />
 <link rel="canonical" href="https://exebrowser.com/run/blake-stone/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/blake-stone/" />
-<meta property="og:title" content="Can You Play Blake Stone in a Browser? An Honest Wine Guide" />
-<meta property="og:description" content="Episode 1 of Blake Stone: Aliens of Gold is free shareware, but the original is DOS and the Win32 BStone port hits a black screen under browser Wine (SDL2). This guide lays out the honest picture." />
-<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta property="og:title" content="Play Blake Stone: Aliens of Gold Online — Free Shareware Episode" />
+<meta property="og:description" content="Apogee's 1993 sci-fi FPS in your browser — the complete free shareware episode, no download or install. Runs via DOSBox + WebAssembly." />
+<meta property="og:image" content="https://exebrowser.com/run/blake-stone/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Blake Stone guide", "item": "https://exebrowser.com/run/blake-stone/" }
+    { "@type": "ListItem", "position": 3, "name": "Play Blake Stone", "item": "https://exebrowser.com/run/blake-stone/" }
   ]
 }
 </script>
@@ -41,14 +41,15 @@
   "@type": "VideoGame",
   "name": "Blake Stone",
   "url": "https://exebrowser.com/run/blake-stone/",
-  "image": "https://exebrowser.com/og.png",
-  "description": "Blake Stone is a 1993 DOS FPS. The Win32 BStone port needs SDL2 and currently black-screens under browser Wine — this guide explains why and what to try.",
+  "image": "https://exebrowser.com/run/blake-stone/screenshot.png",
+  "description": "Play the free shareware episode of Blake Stone: Aliens of Gold in your browser — instant, no download, runs via DOSBox + WebAssembly. Episode 1 is legally free.",
   "applicationCategory": "Game",
   "genre": ["First-person shooter", "Action"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Apogee Software" },
-  "dateModified": "2026-07-01"
+  "dateModified": "2026-07-27",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
 <script type="application/ld+json">
@@ -58,28 +59,28 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is Blake Stone free to play?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Episode 1 of Blake Stone: Aliens of Gold is free, officially-distributed shareware that may be redistributed unmodified at no charge (3D Realms hosts the v3.0 shareware episode). The remaining five episodes are the commercial registered version — buy those from a legitimate storefront. The BStone source port used to run it is free, open-source software under the GPL." }
+      "name": "Is it legal to play Blake Stone here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Episode 1 is the official freely-redistributable shareware episode, distributed exactly as Apogee/3D Realms released it (data v3.0, 1994). The commercial episodes are not included — the full game is still sold on Steam and GOG." }
     },
     {
       "@type": "Question",
-      "name": "Can I just run the original Blake Stone .exe in the browser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Usually not. The 1993 game is a DOS program, and ExeBrowser runs 32-bit Windows software via Wine — there's no DOS/V86 layer, so the original BSTONE.EXE typically won't boot. The reliable path is the BStone source port, a modern Win32 rebuild that reads the same shareware data." }
+      "name": "Is this the original DOS game or a remake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The original. The page boots the real 1994 BS_AOG.EXE and game data inside DOSBox compiled to WebAssembly. No files are uploaded anywhere — everything runs in your browser tab." }
     },
     {
       "@type": "Question",
-      "name": "What is BStone and is it safe/legal?",
-      "acceptedAnswer": { "@type": "Answer", "text": "BStone is a free, open-source (GPL-2.0+) source port by Boris Bendovsky that re-implements the Blake Stone engine for Windows, Linux and macOS. It contains no game assets itself — it loads the data files from your shareware (or registered) copy. It's a legitimate, widely-used preservation project, not a crack or a pirated build." }
+      "name": "Does sound work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — Sound Blaster digital effects and AdLib music are preconfigured. If you hear nothing, click the game screen once (browsers require a user gesture before audio starts)." }
     },
     {
       "@type": "Question",
-      "name": "Does Blake Stone need DirectX or a 3D card?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. It's a Wolfenstein 3D-style raycaster from 1993 with no hardware-3D requirement, so the game is extremely light. The only real compatibility question here is whether the BStone port's SDL2 video and audio initialize cleanly under Boxedwine — the rendering itself is well within range." }
+      "name": "Does my progress save?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The in-game save menu works during your session, but saves don't yet survive closing the tab. Finish a mission in one sitting, or leave the tab open." }
     },
     {
       "@type": "Question",
-      "name": "Why might Blake Stone not run well in ExeBrowser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Performance won't be the issue — the engine is tiny by modern standards. The risk is startup: a modern SDL2 source port can stumble on graphics or sound init inside the emulated environment. If the default Wine variant crashes on launch, try the 18R2 variant and watch the Console for missing-DLL or video errors." }
+      "name": "Can I play on a phone or tablet?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — a touch gamepad with move, fire, and open buttons appears below the game on touch devices. A keyboard is still the best way to play." }
     }
   ]
 }
@@ -103,59 +104,102 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Blake Stone guide</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Blake Stone</nav>
 
   <section class="card">
-    <h2>Can you play Blake Stone: Aliens of Gold in your browser? <span class="verdict partial">Partial — free shareware, but the Win32 BStone port uses SDL2 (black screen under Wine)</span></h2>
-    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
-    <p><strong>Blake Stone: Aliens of Gold</strong> — Apogee's 1993 first-person shooter built on id Software's Wolfenstein 3D engine, with floor and ceiling textures, talking informants you could shoot (or spare) and six episodes of Dr. Goldfire's alien-infested labs. Episode 1 is <strong>free, freely-redistributable shareware</strong>, so it's completely legal to play here. Two honest catches: the original is a <em>DOS</em> program, and ExeBrowser runs <em>Win32</em> software, so the only candidate route in a tab is the free, open-source <strong>BStone</strong> source port loaded with the shareware data — and, as the verdict above notes, the current Win32 BStone build depends on SDL2 and hits a black screen under browser Wine.</p>
+    <h2>Play Blake Stone: Aliens of Gold online — free shareware episode <span class="verdict good">Works — shareware Episode 1 runs via DOSBox in your browser</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via DOSBox + WebAssembly</p>
+    <p><strong>Blake Stone: Aliens of Gold</strong> — Apogee's 1993 first-person shooter built on id Software's Wolfenstein 3D engine, with floor and ceiling textures, talking informants you could shoot (or spare), and Dr. Goldfire's alien-infested labs. The complete <strong>shareware Episode 1 ("Star Institute", 11 floors)</strong> is hosted right here — click Play and the original DOS game boots in your browser via DOSBox + WebAssembly. Nothing to download or install; the full six-episode game is still sold by the rights holder (link below).</p>
 
-    <!-- No hosted payload: the Play button reveals the in-page uploader.
-         To enable true one-click play, host a license-clean zip and add
-         data-app-url (and data-entry) to the div below. -->
-    <div id="exe-embed"
-         data-variant="default"
-         data-entry="BSTONE.EXE"
+    <div id="dos-embed"
+         data-app-url="/apps/blake-stone/blake-stone.zip"
          data-app-name="Blake Stone"
          data-autoboot="false"></div>
-    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-doskey="265" data-code="" data-keycode="0" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-doskey="263" data-code="" data-keycode="0" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-doskey="262" data-code="" data-keycode="0" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-doskey="264" data-code="" data-keycode="0" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-doskey="341" data-code="" data-keycode="0" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-doskey="32" data-code="" data-keycode="0" aria-label="OPEN">OPEN</button>
+          <button type="button" class="mgp-btn " data-doskey="340" data-code="" data-keycode="0" aria-label="RUN">RUN</button>
+          <button type="button" class="mgp-btn " data-doskey="342" data-code="" data-keycode="0" aria-label="STRAFE">STRAFE</button>
+          <button type="button" class="mgp-btn " data-doskey="258" data-code="" data-keycode="0" aria-label="MAP">MAP</button>
+          <button type="button" class="mgp-btn " data-doskey="256" data-code="" data-keycode="0" aria-label="MENU">MENU</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">D-pad: move/turn · FIRE: shoot · OPEN: doors/walls · MENU: esc</p>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("dos-canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var sc = parseInt(btn.dataset.doskey, 10);
+      if(!sc) return;
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,true); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,false); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <figure class="app-shot">
+      <img src="/run/blake-stone/screenshot.png" width="700" height="524" loading="lazy" alt="Blake Stone running in a browser tab via ExeBrowser" />
+      <figcaption>Blake Stone running in the browser — no install, no upload.</figcaption>
+    </figure>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">Episode 1 of Blake Stone: Aliens of Gold is officially free, freely-redistributable shareware. Episodes 2–6 are commercial and are not hosted here — buy the full game on Steam or GOG. See the provenance notice at <a href="/apps/blake-stone/NOTICE.md">/apps/blake-stone/NOTICE.md</a>.</p>
+    </div>
   </section>
 
   <section class="card">
     <div class="download-box">
-      <h3 style="margin-top:0;">Get Blake Stone shareware + the BStone port (free, legal)</h3>
-      <p>You need two free pieces, dropped into one folder:</p><p><strong>1. The shareware data (episode 1).</strong> The freely-redistributable shareware episode, exactly as Apogee/3D Realms distribute it:</p><p><a class="cta-btn" href="https://archive.org/details/Bs-aog-sw1" target="_blank" rel="noopener">Blake Stone: Aliens of Gold shareware (Internet Archive) →</a></p><p><strong>2. The BStone source port (open-source).</strong> The Win32 build that actually runs in your browser:</p><p><a class="cta-btn" href="https://github.com/bibendovsky/bstone/releases/latest" target="_blank" rel="noopener">BStone latest release (GitHub) →</a></p><p class="muted small">Unzip both into the <em>same</em> folder (BStone EXE beside the shareware data), then use <strong>“Load your own copy”</strong> above. Episode 1 is free shareware, redistributable unmodified at no charge; episodes 2–6 are the commercial registered version — buy those from a legitimate source such as <a href="https://www.zoom-platform.com/product/blake-stone-aliens-of-gold" target="_blank" rel="noopener">ZOOM Platform</a>. BStone is © its authors under the GPL-2.0+. Blake Stone © Apogee Software / JAM Productions.</p>
+      <h3 style="margin-top:0;">Get Blake Stone for keeps</h3>
+      <div class="download-box"><p><strong>Play it here first</strong> — the shareware episode above is the real game. Want it on your own machine, or the other five episodes?</p><p><a class="button" href="https://store.steampowered.com/app/358190/Blake_Stone_Aliens_of_Gold/" target="_blank" rel="noopener">Blake Stone on Steam →</a> <a class="button" href="https://www.gog.com/game/blake_stone_aliens_of_gold" target="_blank" rel="noopener">Blake Stone on GOG →</a></p><p class="muted small">The open-source <a href="https://github.com/bibendovsky/bstone" target="_blank" rel="noopener">BStone</a> source port is the best way to play the full game natively on modern machines.</p></div>
     </div>
   </section>
   <section class="card">
     <h2>How it works &amp; what to expect</h2>
-    <p>ExeBrowser runs real 32-bit <strong>Windows</strong> executables on Wine + WebAssembly. The 1993 Blake Stone shipped as a <strong>DOS</strong> game (it wanted a 386 and ran in real/protected mode), and DOS binaries do not reliably boot under Wine in the browser — there's no DOS/V86 layer here. So pointing the player at the original <code>BSTONE.EXE</code> from the shareware archive will usually fail.</p><p>The practical route is <strong>BStone</strong>, the excellent open-source (GPL-2.0+) source port by Boris Bendovsky. It rebuilds the Blake Stone engine as a modern Win32/SDL2 program that reads the original shareware data files. Drop the BStone Windows build and the shareware data in one folder, load that folder, and you're running the actual game logic — just through a modern, browser-friendly executable.</p><table class="spec-table"><tr><th>Game</th><td>Blake Stone: Aliens of Gold — shareware episode 1 (1993, Apogee / JAM Productions)</td></tr><tr><th>Engine</th><td>Wolfenstein 3D engine (raycaster), via the BStone source port</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong>; if BStone crashes on boot, try the <strong>18R2</strong> variant</td></tr><tr><th>How to load</th><td>Upload the whole folder (BStone EXE + shareware <code>.BS1</code>/<code>.SOD</code> data) — never just the EXE</td></tr><tr><th>Expected result</th><td>Partial — a light raycaster, so when BStone boots it should feel responsive; SDL2 video/audio under Boxedwine is the wild card</td></tr></table>
-    <h3>Why the verdict is &quot;partial&quot;</h3>
-    <p>Two honest reasons, neither about the game being heavy:</p><ul><li><strong>The original is DOS.</strong> You can't just run the 1993 <code>BSTONE.EXE</code> here the way you'd run a Win32 app. A source port is required, which is an extra step.</li><li><strong>The source port is modern SDL2.</strong> BStone is a clean, lightweight raycaster — exactly the kind of game that <em>should</em> run well at ExeBrowser's 10–40% of native speed — but modern SDL2 builds lean on Windows graphics and audio paths that are hit-or-miss under Boxedwine. It may launch and play smoothly, or it may stumble on video init or sound. That uncertainty is why this is "partial" rather than "works well."</li></ul><p>The good news: the game itself is trivially light for a modern CPU, so if BStone initializes at all, gameplay won't be the bottleneck. Older 320×200-style render settings tend to be the most forgiving.</p>
-    <h3>Step by step</h3>
-    <ol><li>Grab the <strong>BStone</strong> Windows build (open-source, see the download box below) and the <strong>free shareware data</strong> for Aliens of Gold.</li><li>Unzip both into a <em>single</em> folder so the BStone EXE sits next to the shareware data files.</li><li>Click <strong>▶ Play Blake Stone</strong> above, then use <strong>Load your own copy → a folder</strong> and pick that folder.</li><li>Set the entry to the BStone executable (e.g. <code>bstone.exe</code>) and click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. <kbd>↑↓←→</kbd> move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and uses switches, <kbd>1</kbd>–<kbd>5</kbd> pick weapons, <kbd>Esc</kbd> releases the mouse.</li><li>If it won't start on the default variant, retry with <strong>18R2</strong> and check the Console for <code>err:</code> lines.</li></ol>
+    <p>This is the original 1994 DOS release (v3.0 game data with the real <code>BS_AOG.EXE</code>), not a port — it runs inside a WebAssembly build of DOSBox on this page. Boot takes a few seconds on first load while the ~1.3 MB game package downloads; after that it's cached. Sound (Sound Blaster + AdLib music) is preconfigured, and the demo attract loop starts on its own — press <kbd>Esc</kbd> to bring up the menu and pick <em>New Mission</em>.</p>
+    <h3>Controls</h3>
+    <p><strong>Arrow keys</strong> (or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, which this page maps to the arrows) move and turn. <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and operates elevators, <kbd>Shift</kbd> runs, <kbd>Alt</kbd> strafes, <kbd>Tab</kbd>+key shows the auto-map, and number keys switch weapons. Talk to informants instead of shooting them — some hand out food tokens and hints. On phones and tablets a touch gamepad appears under the game.</p>
+    <h3>Shareware episode — and the full game</h3>
+    <p>Episode 1 is the complete 11-floor <em>Star Institute</em> mission, distributed free under Apogee's shareware model (the same arrangement as the DOOM and Wolfenstein 3D shareware episodes hosted here). Episodes 2–6 and the sequel <em>Planet Strike</em> are still commercial — the full game is sold as <em>Blake Stone: Aliens of Gold</em> on Steam and GOG. If you enjoy the episode, buying the full game supports the rights holder.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
     <details>
-      <summary>Is Blake Stone free to play?</summary>
-      <p>Episode 1 of Blake Stone: Aliens of Gold is free, officially-distributed shareware that may be redistributed unmodified at no charge (3D Realms hosts the v3.0 shareware episode). The remaining five episodes are the commercial registered version — buy those from a legitimate storefront. The BStone source port used to run it is free, open-source software under the GPL.</p>
+      <summary>Is it legal to play Blake Stone here?</summary>
+      <p>Yes. Episode 1 is the official freely-redistributable shareware episode, distributed exactly as Apogee/3D Realms released it (data v3.0, 1994). The commercial episodes are not included — the full game is still sold on Steam and GOG.</p>
     </details>
     <details>
-      <summary>Can I just run the original Blake Stone .exe in the browser?</summary>
-      <p>Usually not. The 1993 game is a DOS program, and ExeBrowser runs 32-bit Windows software via Wine — there's no DOS/V86 layer, so the original BSTONE.EXE typically won't boot. The reliable path is the BStone source port, a modern Win32 rebuild that reads the same shareware data.</p>
+      <summary>Is this the original DOS game or a remake?</summary>
+      <p>The original. The page boots the real 1994 <code>BS_AOG.EXE</code> and game data inside DOSBox compiled to WebAssembly. No files are uploaded anywhere — everything runs in your browser tab.</p>
     </details>
     <details>
-      <summary>What is BStone and is it safe/legal?</summary>
-      <p>BStone is a free, open-source (GPL-2.0+) source port by Boris Bendovsky that re-implements the Blake Stone engine for Windows, Linux and macOS. It contains no game assets itself — it loads the data files from your shareware (or registered) copy. It's a legitimate, widely-used preservation project, not a crack or a pirated build.</p>
+      <summary>Does sound work?</summary>
+      <p>Yes — Sound Blaster digital effects and AdLib music are preconfigured. If you hear nothing, click the game screen once (browsers require a user gesture before audio starts).</p>
     </details>
     <details>
-      <summary>Does Blake Stone need DirectX or a 3D card?</summary>
-      <p>No. It's a Wolfenstein 3D-style raycaster from 1993 with no hardware-3D requirement, so the game is extremely light. The only real compatibility question here is whether the BStone port's SDL2 video and audio initialize cleanly under Boxedwine — the rendering itself is well within range.</p>
+      <summary>Does my progress save?</summary>
+      <p>The in-game save menu works during your session, but saves don't yet survive closing the tab. Finish a mission in one sitting, or leave the tab open.</p>
     </details>
     <details>
-      <summary>Why might Blake Stone not run well in ExeBrowser?</summary>
-      <p>Performance won't be the issue — the engine is tiny by modern standards. The risk is startup: a modern SDL2 source port can stumble on graphics or sound init inside the emulated environment. If the default Wine variant crashes on launch, try the 18R2 variant and watch the Console for missing-DLL or video errors.</p>
+      <summary>Can I play on a phone or tablet?</summary>
+      <p>Yes — a touch gamepad with move, fire, and open buttons appears below the game on touch devices. A keyboard is still the best way to play.</p>
     </details>
   </section>
   <section class="card">
@@ -186,8 +230,6 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/embed.js?v=1"></script>
-<script src="/app.js?v=16"></script>
+<script src="/dos-embed.js?v=8"></script>
 </body>
 </html>

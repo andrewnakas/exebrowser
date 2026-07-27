@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>How to Play Commander Keen in a Browser Tab (Source Port Guide) — ExeBrowser</title>
-<meta name="description" content="Commander Keen Episode 1 is free shareware, but the original is a DOS EXE. Guide to playing it via a Win32 source port you load yourself in the browser." />
-<meta name="keywords" content="play commander keen online, commander keen in browser, commander keen marooned on mars free, commander keen shareware online, commander keen episode 1, keen invasion of the vorticons browser, run commander keen no download" />
+<title>Play Commander Keen 1 Online — Marooned on Mars, Free Shareware — ExeBrowser</title>
+<meta name="description" content="Play Commander Keen: Marooned on Mars in your browser — the complete free shareware Episode 1, instant, no download, via DOSBox + WebAssembly." />
+<meta name="keywords" content="play commander keen online, commander keen 1 browser, marooned on mars online, commander keen shareware, commander keen no download" />
 <link rel="canonical" href="https://exebrowser.com/run/commander-keen/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/commander-keen/" />
-<meta property="og:title" content="How to Play Commander Keen in a Browser Tab (Source Port Guide)" />
-<meta property="og:description" content="Episode 1 &quot;Marooned on Mars&quot; is freely redistributable shareware, but it's a DOS program and ExeBrowser runs Win32. A source port like Commander Genius, loaded with your own copy, is the way to play it here." />
-<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta property="og:title" content="Play Commander Keen 1 Online — Marooned on Mars, Free Shareware" />
+<meta property="og:description" content="id Software's 1990 platforming classic in your browser — the complete free shareware episode, no download or install. Runs via DOSBox + WebAssembly." />
+<meta property="og:image" content="https://exebrowser.com/run/commander-keen/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Commander Keen guide", "item": "https://exebrowser.com/run/commander-keen/" }
+    { "@type": "ListItem", "position": 3, "name": "Play Commander Keen", "item": "https://exebrowser.com/run/commander-keen/" }
   ]
 }
 </script>
@@ -41,14 +41,15 @@
   "@type": "VideoGame",
   "name": "Commander Keen",
   "url": "https://exebrowser.com/run/commander-keen/",
-  "image": "https://exebrowser.com/og.png",
-  "description": "Commander Keen Episode 1 is free shareware, but the original is a DOS EXE. Guide to playing it via a Win32 source port you load yourself in the browser.",
+  "image": "https://exebrowser.com/run/commander-keen/screenshot.png",
+  "description": "Play Commander Keen: Marooned on Mars in your browser — the complete free shareware Episode 1, instant, no download, via DOSBox + WebAssembly.",
   "applicationCategory": "Game",
   "genre": ["Platformer", "Side-scroller", "Action"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "id Software / Apogee Software" },
-  "dateModified": "2026-07-01"
+  "dateModified": "2026-07-27",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
 <script type="application/ld+json">
@@ -58,28 +59,28 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I play Commander Keen online for free with no download?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes — Episode 1, Marooned on Mars, was released as free shareware by id Software and Apogee in 1990 and is still freely redistributable. You'll get the best result here by running its data through an open-source Win32 source port; the original DOS launcher is unlikely to boot under Wine." }
-    },
-    {
-      "@type": "Question",
-      "name": "Why won't the original KEEN1.EXE run in the browser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because Commander Keen is a 16-bit MS-DOS program, not a Windows one. ExeBrowser runs Win32 executables on Wine + WebAssembly, and this Wine build has only minimal DOS support. The fix is to use a Win32 source port (like Commander Genius) that reads the same shareware levels." }
-    },
-    {
-      "@type": "Question",
       "name": "Is it legal to play Commander Keen here?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, for episode 1 only. id/Apogee distributed Marooned on Mars as shareware meant to be freely copied at no charge. Episodes 2 and 3 of Invasion of the Vorticons are commercial and are not included — buy the full collection from a legitimate store such as Steam." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Episode 1 was released by id Software and Apogee as freely-redistributable shareware in 1990, and that license still stands. Episodes 2 and 3 are commercial and not included — buy the Complete Pack on Steam for those." }
     },
     {
       "@type": "Question",
-      "name": "Is this the real Commander Keen or a remake?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The levels, art, and game data are the genuine 1990 shareware files. To make them run in a Windows-only environment we recommend an open-source source port that re-implements the engine; it plays the original Marooned on Mars maps faithfully rather than re-creating them from scratch." }
+      "name": "Is this the original game or a remake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The original — the real 1990 KEEN1.EXE and game data (v1.31) running in DOSBox compiled to WebAssembly, right in your browser tab. Nothing is uploaded or installed." }
     },
     {
       "@type": "Question",
-      "name": "What's the easiest way to play the original DOS Commander Keen?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If you specifically want the untouched DOS binary, use a DOS emulator such as DOSBox or a browser-based DOS player. ExeBrowser is purpose-built for Windows .exe files, so for Keen here, a Win32 source port is the smoother route." }
+      "name": "How do I use the pogo stick?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Press Alt to toggle the pogo once you've collected it in a level (one early level hides it). Hold jump (Ctrl) while bouncing to bounce higher. Half the game's secrets need pogo bounces to reach." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my progress save?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The in-game save option works during your session, but saves don't yet survive closing the tab. Episode 1 levels are short — most players clear several in one sitting." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I play on a phone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — a touch pad with a d-pad, JUMP, and POGO buttons appears under the game on touch devices, though a keyboard is the classic way to play." }
     }
   ]
 }
@@ -103,64 +104,100 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Commander Keen guide</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Commander Keen</nav>
 
   <section class="card">
-    <h2>Can you play Commander Keen in your browser? <span class="verdict partial">Partial — it's a DOS game; a Win32 source port works best</span></h2>
-    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
-    <p><strong>Commander Keen: Marooned on Mars</strong> — id Software's 1990 platforming classic, the game whose smooth EGA scrolling helped launch the studio that would later make DOOM. This page is a compatibility guide, with one honest catch up front: the original Keen is a <em>DOS</em> program, not a Windows one, and ExeBrowser runs <em>Win32</em> software. Episode 1 was free shareware then and remains freely redistributable now, so it's legal to play and share. The reliable way to play it here is a small open-source <em>source port</em> that loads the original shareware data — you load your copy with the uploader below and it runs entirely in your browser tab. We explain exactly how, and we're straight about what does and doesn't boot.</p>
+    <h2>Play Commander Keen: Marooned on Mars online — free shareware episode <span class="verdict good">Works — shareware Episode 1 runs via DOSBox in your browser</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via DOSBox + WebAssembly</p>
+    <p><strong>Commander Keen: Marooned on Mars</strong> — id Software's 1990 platforming classic, the game whose smooth EGA scrolling helped launch the studio that would later make DOOM. The complete <strong>shareware Episode 1</strong> (all 16 Mars levels) is hosted right here: click Play and the original <code>KEEN1.EXE</code> boots in your browser via DOSBox + WebAssembly. Eight-year-old genius Billy Blaze has to recover the four stolen parts of his Bean-with-Bacon Megarocket before the Vorticons blow up Earth.</p>
 
-    <!-- No hosted payload: the Play button reveals the in-page uploader.
-         To enable true one-click play, host a license-clean zip and add
-         data-app-url (and data-entry) to the div below. -->
-    <div id="exe-embed"
-         data-variant="default"
-         data-entry="KEEN1.EXE"
+    <div id="dos-embed"
+         data-app-url="/apps/commander-keen/commander-keen.zip"
          data-app-name="Commander Keen"
          data-autoboot="false"></div>
-    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-doskey="265" data-code="" data-keycode="0" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-doskey="263" data-code="" data-keycode="0" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-doskey="262" data-code="" data-keycode="0" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-doskey="264" data-code="" data-keycode="0" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-doskey="341" data-code="" data-keycode="0" aria-label="JUMP">JUMP</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-doskey="342" data-code="" data-keycode="0" aria-label="POGO">POGO</button>
+          <button type="button" class="mgp-btn " data-doskey="257" data-code="" data-keycode="0" aria-label="ENTER">ENTER</button>
+          <button type="button" class="mgp-btn " data-doskey="256" data-code="" data-keycode="0" aria-label="ESC">ESC</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">D-pad: move · JUMP: Ctrl · POGO: Alt · ENTER/ESC: menus</p>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("dos-canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var sc = parseInt(btn.dataset.doskey, 10);
+      if(!sc) return;
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,true); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,false); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <figure class="app-shot">
+      <img src="/run/commander-keen/screenshot.png" width="936" height="695" loading="lazy" alt="Commander Keen running in a browser tab via ExeBrowser" />
+      <figcaption>Commander Keen running in the browser — no install, no upload.</figcaption>
+    </figure>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
     <div class="warn-box">
-      <p class="muted small">Commander Keen ep1 is freely redistributable shareware, but the original is a DOS executable which requires a DOS layer Wine here does not support. Use a source port like Commander Genius for the best browser experience — bring your own copy above.</p>
+      <p class="muted small">Episode 1 "Marooned on Mars" is officially freely-redistributable shareware (id Software / Apogee, 1990). Episodes 2–3 are commercial and not hosted here. Provenance: <a href="/apps/commander-keen/NOTICE.md">/apps/commander-keen/NOTICE.md</a>.</p>
     </div>
   </section>
 
   <section class="card">
     <div class="download-box">
-      <h3 style="margin-top:0;">Get the Commander Keen shareware (free, legal)</h3>
-      <div class="download-box"><h3 style="margin-top:0;">id Software / Apogee official shareware — Episode 1</h3><p>The complete first episode, <em>Marooned on Mars</em>, distributed at no charge exactly as the 1990 shareware license permits. The most reliable preserved copy is on the Internet Archive:</p><p><a class="cta-btn" href="https://archive.org/details/keen-1" target="_blank" rel="noopener">Get Commander Keen 1 shareware (Internet Archive) →</a></p><p class="muted small">The package contains the game data — the <code>KEEN1.EXE</code> launcher and the <code>.CK1</code> / EGA data files. Because that EXE is a 16-bit DOS program, the smoothest path in the browser is to pair these data files with a Win32 <strong>source port</strong> (see below), then use <strong>“Load your own copy”</strong> above to drop the folder in. © id Software / Apogee — episode 1 is freely redistributable as shareware; <strong>episodes 2 (The Earth Explodes) and 3 (Keen Must Die!) are commercial and are not included</strong>. Buy the full collection from a legitimate store such as <a href="https://store.steampowered.com/app/9180/Commander_Keen_Complete_Pack/" target="_blank" rel="noopener">Steam</a>.</p></div>
+      <h3 style="margin-top:0;">Get the whole trilogy</h3>
+      <div class="download-box"><p><strong>Play Episode 1 here free</strong> — it's the complete shareware episode. Want Episodes 2 and 3, or Keen 4–6?</p><p><a class="button" href="https://store.steampowered.com/app/9180/Commander_Keen_Complete_Pack/" target="_blank" rel="noopener">Commander Keen Complete Pack on Steam →</a></p><p class="muted small">For a modern native experience with the same data files, the open-source <a href="https://github.com/gerstrong/Commander-Genius" target="_blank" rel="noopener">Commander Genius</a> engine plays all the Keen episodes.</p></div>
     </div>
   </section>
   <section class="card">
     <h2>How it works &amp; what to expect</h2>
-    <p>ExeBrowser boots a real copy of Wine on top of a 32-bit x86 emulator compiled to WebAssembly, then runs an actual Windows <code>.exe</code>. That's perfect for Win32 software — but the 1990 Commander Keen was written for <strong>MS-DOS</strong>, in 16-bit real mode, talking directly to EGA video and the PC speaker. Wine targets Win32, and the Wine 1.7.55 engine here has only thin DOS-machine support (older Wine historically shelled out to DOSBox for DOS programs, a path that isn't reliable in this WebAssembly build). So if you drop the raw <code>KEEN1.EXE</code> in and hit run, it will most likely refuse to start or exit immediately. That's expected, and it's why this page is marked <em>partial</em> rather than a green “just works.”</p>
-    <h3>The reliable way: a Win32 source port</h3>
-    <p>The good news: Keen's community keeps the game alive with open-source <strong>source ports</strong> — modern rebuilds of the engine that read the original shareware data files and run as ordinary 32-bit Windows programs. <a href="https://clonekeen.sourceforge.net/" target="_blank" rel="noopener">Commander Genius</a> is the best-known, an open-source reimplementation that plays the real <em>Marooned on Mars</em> levels. Because a source port is a Win32 EXE, it runs in ExeBrowser the way DOOM source ports do.</p><ol><li>Download the free episode 1 shareware from the box above and unzip it.</li><li>Grab a Win32 build of an open-source Keen source port (Commander Genius) and unzip it next to the Keen data files.</li><li>Use <strong>Load your own copy → a folder</strong> above and select that combined folder.</li><li>Pick the source-port <code>.exe</code> as the entry and click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input, then play with the arrow keys and <kbd>Ctrl</kbd>/<kbd>Alt</kbd>.</li></ol><p>Keen is a tiny, light game, so when it does run it plays at full speed even with the emulation overhead.</p>
+    <p>This is the original 1990 DOS shareware release (v1.31 data, real <code>KEEN1.EXE</code>) running inside a WebAssembly build of DOSBox — not a remake or source port. The package is tiny (~150 KB), so it boots in a couple of seconds. The title loop cycles through the story and high scores on its own; press <kbd>Enter</kbd> to bring up the menu and choose <em>New Game</em>.</p>
     <h3>Controls</h3>
-    <p>Classic Keen controls (a source port lets you remap them):</p><ul><li><kbd>←</kbd> <kbd>→</kbd> — walk left/right</li><li><kbd>Ctrl</kbd> — jump</li><li><kbd>Alt</kbd> — use the pogo stick</li><li><kbd>Ctrl</kbd> + direction — fire the raygun (once you find it)</li><li><kbd>Esc</kbd> — menu / release the mouse back to the page</li></ul><p>If a port uses different defaults, check its in-game options menu.</p>
-    <h3>Honest bottom line</h3>
-    <p>You <em>can</em> play <em>Marooned on Mars</em> in your browser here, legally and for free — but plan to run it through an open-source source port rather than the original DOS <code>KEEN1.EXE</code>, which is unlikely to boot under Win32 Wine. If you'd rather run the genuine DOS binary unchanged, a dedicated DOS layer like DOSBox (or a browser DOS emulator) is the right tool; ExeBrowser is built for Windows executables. Either way, the shareware data is the same and the levels are the real thing.</p>
+    <p><strong>Arrow keys</strong> (or <kbd>A</kbd>/<kbd>D</kbd>, mapped to the arrows on this page) move Keen, <kbd>Ctrl</kbd> jumps, and <kbd>Alt</kbd> fires the pogo stick — the pogo is essential for high ledges and is the most beloved mechanic in the game. On the Mars overworld, walk onto a level to enter it. Collect the raygun to shoot, and remember: yorps are harmless if you just walk past them.</p>
+    <h3>Shareware episode — and the rest of the trilogy</h3>
+    <p>Marooned on Mars is Episode 1 of the <em>Invasion of the Vorticons</em> trilogy, released free under Apogee's shareware model — sharing it was literally the marketing plan. Episodes 2 and 3 (<em>The Earth Explodes</em>, <em>Keen Must Die!</em>) are still commercial and are not hosted here; the whole series is sold cheaply on Steam as the Commander Keen Complete Pack.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
     <details>
-      <summary>Can I play Commander Keen online for free with no download?</summary>
-      <p>Yes — Episode 1, <em>Marooned on Mars</em>, was released as free shareware by id Software and Apogee in 1990 and is still freely redistributable. You'll get the best result here by running its data through an open-source Win32 source port; the original DOS launcher is unlikely to boot under Wine.</p>
-    </details>
-    <details>
-      <summary>Why won't the original KEEN1.EXE run in the browser?</summary>
-      <p>Because Commander Keen is a 16-bit MS-DOS program, not a Windows one. ExeBrowser runs Win32 executables on Wine + WebAssembly, and this Wine build has only minimal DOS support. The fix is to use a Win32 source port (like Commander Genius) that reads the same shareware levels.</p>
-    </details>
-    <details>
       <summary>Is it legal to play Commander Keen here?</summary>
-      <p>Yes, for episode 1 only. id/Apogee distributed <em>Marooned on Mars</em> as shareware meant to be freely copied at no charge. Episodes 2 and 3 of <em>Invasion of the Vorticons</em> are commercial and are not included — buy the full collection from a legitimate store such as Steam.</p>
+      <p>Yes. Episode 1 was released by id Software and Apogee as freely-redistributable shareware in 1990, and that license still stands. Episodes 2 and 3 are commercial and not included — buy the Complete Pack on Steam for those.</p>
     </details>
     <details>
-      <summary>Is this the real Commander Keen or a remake?</summary>
-      <p>The levels, art, and game data are the genuine 1990 shareware files. To make them run in a Windows-only environment we recommend an open-source source port that re-implements the engine; it plays the original <em>Marooned on Mars</em> maps faithfully rather than re-creating them from scratch.</p>
+      <summary>Is this the original game or a remake?</summary>
+      <p>The original — the real 1990 KEEN1.EXE and game data (v1.31) running in DOSBox compiled to WebAssembly, right in your browser tab. Nothing is uploaded or installed.</p>
     </details>
     <details>
-      <summary>What's the easiest way to play the original DOS Commander Keen?</summary>
-      <p>If you specifically want the untouched DOS binary, use a DOS emulator such as DOSBox or a browser-based DOS player. ExeBrowser is purpose-built for Windows <code>.exe</code> files, so for Keen here, a Win32 source port is the smoother route.</p>
+      <summary>How do I use the pogo stick?</summary>
+      <p>Press Alt to toggle the pogo once you've collected it in a level (one early level hides it). Hold jump (Ctrl) while bouncing to bounce higher. Half the game's secrets need pogo bounces to reach.</p>
+    </details>
+    <details>
+      <summary>Does my progress save?</summary>
+      <p>The in-game save option works during your session, but saves don't yet survive closing the tab. Episode 1 levels are short — most players clear several in one sitting.</p>
+    </details>
+    <details>
+      <summary>Can I play on a phone?</summary>
+      <p>Yes — a touch pad with a d-pad, JUMP, and POGO buttons appears under the game on touch devices, though a keyboard is the classic way to play.</p>
     </details>
   </section>
   <section class="card">
@@ -191,8 +228,6 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/embed.js?v=1"></script>
-<script src="/app.js?v=16"></script>
+<script src="/dos-embed.js?v=8"></script>
 </body>
 </html>

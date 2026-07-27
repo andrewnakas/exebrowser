@@ -131,10 +131,18 @@
     return window.ExeBrowser;
   }
 
+  const slug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || location.pathname;
+  function track(name, params) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, Object.assign({ app_slug: slug, runtime: "boxedwine" }, params || {}));
+    }
+  }
+
   async function play() {
     playBtn.disabled = true;
     if (hosted) playBtn.textContent = "Booting…";
     showStatus();
+    track("play_click", { hosted: hosted ? 1 : 0 });
     try {
       const EB = await waitForEngine();
       EB.setVariant(cfg.variant);
@@ -147,7 +155,7 @@
         if (cfg.entry) EB.preferEntry(cfg.entry);
         if (!EB.isReady()) throw new Error("No runnable .exe found in the hosted package.");
         overlay.classList.add("hidden");
-        await EB.run();
+        await EB.run(); // boot_success/boot_error are tracked inside app.js (bootAndRun owns the outcome)
       } else {
         // No hosted asset (commercial app, or we can't redistribute it). Reveal
         // the in-page uploader — still no trip to the home page.
@@ -157,6 +165,7 @@
         loader.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
     } catch (err) {
+      track("boot_error", { error_message: String(err.message).slice(0, 120) });
       status.textContent = "Couldn't start: " + err.message + " — you can still load your own copy below.";
       if (loader) loader.hidden = false;
       overlay.classList.remove("hidden");
