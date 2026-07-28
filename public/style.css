@@ -780,3 +780,37 @@ body.dos-playing { overflow: hidden; }
   letter-spacing: .04em;
   vertical-align: middle;
 }
+
+/* ── Mobile key palette: menus & name entry in DOS games ─────────────── */
+.mgp-keys {
+  display: none;
+  max-width: 640px;
+  margin: .5rem auto 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .35rem .5rem;
+}
+.mgp-keys summary { color: var(--muted); font-size: .85rem; cursor: pointer; }
+.mgp-keygrid { margin-top: .5rem; display: flex; flex-direction: column; gap: .3rem; }
+.mgp-keyrow { display: flex; gap: .3rem; justify-content: center; }
+.mgp-key {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: .55rem .2rem;
+  font: 600 .8rem/1 system-ui, sans-serif;
+  color: #cfe8ff;
+  background: linear-gradient(#1b2a44, #0d1626);
+  border: 1px solid #3a5a8a;
+  border-radius: 6px;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.mgp-key.pressed, .mgp-key:active {
+  background: linear-gradient(#284064, #16243c);
+  color: #fff;
+}
+.mgp-key-wide { flex: 1.8 1 0; font-size: .7rem; }
+@media (hover: none) and (pointer: coarse) { .mgp-keys { display: block; } }
+@media (max-width: 720px) { .mgp-keys { display: block; } }

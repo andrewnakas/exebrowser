@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=27" />
+<link rel="stylesheet" href="/style.css?v=28" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -48,7 +48,7 @@
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Chris Pirih" },
-  "dateModified": "2026-07-01",
+  "dateModified": "2026-07-27",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -117,6 +117,44 @@
          data-app-url="/apps/skifree/skifree.zip"
          data-app-name="SkiFree"
          data-autoboot="false"></div>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-key="ArrowUp" data-code="ArrowUp" data-keycode="38" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-key="ArrowLeft" data-code="ArrowLeft" data-keycode="37" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-key="ArrowRight" data-code="ArrowRight" data-keycode="39" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-key="ArrowDown" data-code="ArrowDown" data-keycode="40" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-key="f" data-code="KeyF" data-keycode="70" aria-label="JUMP">JUMP</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-key="3" data-code="Digit3" data-keycode="51" aria-label="FAST">FAST</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">Arrows: steer &amp; speed · F: jump · Tap the slope to aim</p>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    function fire(type, key, code, keyCode){
+      canvas.dispatchEvent(new KeyboardEvent(type,{key:key,code:code,keyCode:keyCode,which:keyCode,bubbles:true,cancelable:true}));
+    }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var key=btn.dataset.key, code=btn.dataset.code, kc=parseInt(btn.dataset.keycode,10);
+      function dn(e){ e.preventDefault(); fire("keydown",key,code,kc); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); fire("keyup",key,code,kc); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
     <figure class="app-shot">
       <img src="/run/skifree/screenshot.png" width="798" height="599" loading="lazy" alt="SkiFree running in a browser tab via ExeBrowser" />
       <figcaption>SkiFree running in the browser — no install, no upload.</figcaption>

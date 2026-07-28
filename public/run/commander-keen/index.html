@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=27" />
+<link rel="stylesheet" href="/style.css?v=28" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -132,6 +132,44 @@
     </div>
   </div>
   <p class="mgp-hint">D-pad: move · JUMP: Ctrl · POGO: Alt · ENTER/ESC: menus</p>
+  <details class="mgp-keys">
+    <summary>⌨ Keyboard — for menus &amp; name entry</summary>
+    <div class="mgp-keygrid" id="mgp-keygrid"></div>
+  </details>
+<script>
+(function(){
+  // GLFW key codes, matching the map in dos-embed.js.
+  var ROWS = [
+    [["1",49],["2",50],["3",51],["4",52],["5",53],["6",54],["7",55],["8",56],["9",57],["0",48]],
+    [["Q",81],["W",87],["E",69],["R",82],["T",84],["Y",89],["U",85],["I",73],["O",79],["P",80]],
+    [["A",65],["S",83],["D",68],["F",70],["G",71],["H",72],["J",74],["K",75],["L",76]],
+    [["Z",90],["X",88],["C",67],["V",86],["B",66],["N",78],["M",77]],
+    [["SPACE",32],["ENTER",257],["ESC",256],["⌫",259],["Y",89],["N",78]]
+  ];
+  var grid = document.getElementById("mgp-keygrid");
+  if(!grid) return;
+  ROWS.forEach(function(row){
+    var r = document.createElement("div");
+    r.className = "mgp-keyrow";
+    row.forEach(function(pair){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "mgp-key" + (pair[0].length > 1 ? " mgp-key-wide" : "");
+      b.textContent = pair[0];
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(pair[1], true); b.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(pair[1], false); b.classList.remove("pressed"); }
+      b.addEventListener("touchstart", dn, {passive:false});
+      b.addEventListener("touchend", up, {passive:false});
+      b.addEventListener("touchcancel", up, {passive:false});
+      b.addEventListener("mousedown", dn);
+      b.addEventListener("mouseup", up);
+      b.addEventListener("mouseleave", up);
+      r.appendChild(b);
+    });
+    grid.appendChild(r);
+  });
+})();
+</script>
 <script>
 (function(){
   function wire(){

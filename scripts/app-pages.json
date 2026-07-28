@@ -1568,8 +1568,56 @@
         "desc": "What runs and what doesn't."
       }
     ],
-    "updated": "2026-07-01",
-    "screenshot": true
+    "updated": "2026-07-27",
+    "screenshot": true,
+    "mobileControls": {
+      "type": "arrows-wine",
+      "hint": "Arrows: steer & speed · F: jump · Tap the slope to aim",
+      "buttons": [
+        {
+          "label": "▲",
+          "key": "ArrowUp",
+          "code": "ArrowUp",
+          "keyCode": 38,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "key": "ArrowLeft",
+          "code": "ArrowLeft",
+          "keyCode": 37,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "key": "ArrowRight",
+          "code": "ArrowRight",
+          "keyCode": 39,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "key": "ArrowDown",
+          "code": "ArrowDown",
+          "keyCode": 40,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "key": "f",
+          "code": "KeyF",
+          "keyCode": 70,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FAST",
+          "key": "3",
+          "code": "Digit3",
+          "keyCode": 51,
+          "cls": "mgp-yellow"
+        }
+      ]
+    }
   },
   {
     "slug": "jezzball",
