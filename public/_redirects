@@ -1,1 +1,13 @@
 /index.html / 301
+
+# Games that were staged then withdrawn before launch. Cloudflare Pages keeps
+# files from previous deploys, so these URLs would otherwise linger as orphans
+# serving stale "boot test pending" pages. Point them at the hub instead.
+# epic-pinball / jazz-jackrabbit: never booted (no frame ever delivered);
+# major-stryker: its own startup screen says it is not redistributable.
+/run/epic-pinball/* /run/ 301
+/run/jazz-jackrabbit/* /run/ 301
+/run/major-stryker/* /run/ 301
+/apps/epic-pinball/* /run/ 301
+/apps/jazz-jackrabbit/* /run/ 301
+/apps/major-stryker/* /run/ 301
