@@ -56,6 +56,9 @@
 //                Lock API and motion is fed to the game as raw deltas. Needed
 //                by any game that draws its own cursor (Scorched Earth), since
 //                absolute positioning desynchronises the two cursors.
+//   fullyFree    prose reason this title is free in full (engine AND assets,
+//                no shareware split). Drives the FREE badge, the "Free &
+//                complete" filter chip, and a note under the game.
 //   clickKey     GLFW key code a left-click also sends (e.g. 341 = Ctrl/fire).
 //                For DOS games that ship with the mouse disabled and give no
 //                in-game way to enable it, so a click still does the obvious
@@ -272,6 +275,14 @@ function embedBlock(p) {
 // prose further down the page. Rendered for every device: the touch pad above
 // only appears on small screens, and desktop players previously had to hunt
 // through the article to find out which key fires.
+// Say plainly when a title is free in full, since most "free" retro games
+// online are a shareware episode with the rest behind a purchase.
+function freeNoteHtml(p) {
+  if (!p.fullyFree) return "";
+  return `
+    <p class="free-note"><span class="badge-free">FREE</span> <strong>This is the complete game, free.</strong> ${esc(p.fullyFree)}</p>`;
+}
+
 function controlsPanelHtml(p) {
   const rows = p.controls;
   if (!rows || !rows.length) return "";
@@ -503,7 +514,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=32" />
+<link rel="stylesheet" href="/style.css?v=33" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -539,7 +550,7 @@ ${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
     <h2>${esc(p.h1 || p.crumb)} <span class="verdict ${p.verdict.kind}">${esc(p.verdict.text)}</span></h2>${p.updated ? `
     <p class="muted small" style="margin-top:0.25rem;">Guide updated ${esc(monthYear(p.updated))} · ${p.verdict.kind === "bad" ? "Tested with" : "Runs via"} ${esc(runtimeLabel(p))}${isPlayable(p) || p.verdict.kind === "bad" ? "" : " · Requires your own copy"}</p>` : ""}
     ${p.intro}
-${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p)}${figureHtml(p)}
+${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p)}${freeNoteHtml(p)}${figureHtml(p)}
     ${p.iframeUrl ? "" : `<p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? "Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse." : "Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse."}</p>`}${licenseHtml(p)}
   </section>
 ${downloadHtml(p)}
@@ -612,6 +623,10 @@ function indexCard(p) {
 // badge on the hub and homepage. Dates are plain YYYY-MM-DD in app-pages.json.
 const NEW_DAYS = 14;
 const NEW_BADGE = ` <span class="badge-new">NEW</span>`;
+// Titles whose engine *and* assets are freely licensed — no shareware episode,
+// no bring-your-own-copy. Worth calling out: it's the difference between "try
+// the first three levels" and "this is the whole game, free".
+const FREE_BADGE = ` <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span>`;
 function isNew(p) {
   if (!p.addedDate) return false;
   const added = Date.parse(p.addedDate + "T00:00:00Z");
@@ -629,12 +644,13 @@ function posterCard(p) {
   // Categories and a search haystack ride on the <li> so filtering is a pure
   // client-side attribute match — no data duplicated into a JS blob, and the
   // grid stays fully populated for crawlers with JS off.
-  const cats = (p.categories || []).join("|");
-  const hay = [p.appName, p.author, ...(p.genre || []), ...(p.categories || [])]
+  const cats = ((p.categories || []).concat(p.fullyFree ? ["Free & complete"] : [])).join("|");
+  const hay = [p.appName, p.author, ...(p.genre || []), ...(p.categories || []),
+    p.fullyFree ? "free complete open source freeware" : ""]
     .filter(Boolean).join(" ").toLowerCase();
   return `        <li class="pc-item" data-cats="${esc(cats)}" data-search="${esc(hay)}"><a class="poster-card" href="/run/${p.slug}/">
           ${art}
-          <span class="pc-body"><span class="pc-title">${esc(p.appName)}${isNew(p) ? NEW_BADGE : ""}</span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">${esc(p.appName)}${isNew(p) ? NEW_BADGE : ""}${p.fullyFree ? FREE_BADGE : ""}</span><span class="pc-play">▶ Play free</span></span>
         </a></li>`;
 }
 
@@ -643,9 +659,12 @@ function posterCard(p) {
 // the full grid.
 function gridFilterHtml(pages) {
   const counts = new Map();
-  for (const p of pages) for (const c of p.categories || []) counts.set(c, (counts.get(c) || 0) + 1);
+  for (const p of pages) {
+    for (const c of p.categories || []) counts.set(c, (counts.get(c) || 0) + 1);
+    if (p.fullyFree) counts.set("Free & complete", (counts.get("Free & complete") || 0) + 1);
+  }
   if (counts.size < 3) return "";
-  const order = ["Shooters", "Platformers", "Action", "Puzzle & strategy", "Racing & sports", "Pinball", "Apps & tools"];
+  const order = ["Free & complete", "Shooters", "Platformers", "Action", "Puzzle & strategy", "Racing & sports", "Pinball", "Apps & tools"];
   const chips = order
     .filter((c) => counts.has(c))
     .map((c) => `<button type="button" class="chip" data-cat="${esc(c)}">${esc(c)} <span class="chip-n">${counts.get(c)}</span></button>`)
@@ -683,7 +702,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=32" />
+<link rel="stylesheet" href="/style.css?v=33" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>

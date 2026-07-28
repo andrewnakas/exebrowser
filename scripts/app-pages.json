@@ -63,7 +63,8 @@
     "categories": [
       "Action",
       "Pinball"
-    ]
+    ],
+    "fullyFree": "MIT-licensed engine with wholly original CC0 public-domain art, sound and table data."
   },
   {
     "slug": "dragon-keep",
@@ -489,7 +490,8 @@
       "Shooters",
       "Action"
     ],
-    "pointerLock": true
+    "pointerLock": true,
+    "fullyFree": "Declared freeware by rights holder Jason Emery in 2004 — the complete game, not an episode."
   },
   {
     "slug": "doom",
@@ -904,7 +906,8 @@
     "categories": [
       "Shooters",
       "Action"
-    ]
+    ],
+    "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine."
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -3586,7 +3589,8 @@
     "screenshot": true,
     "categories": [
       "Apps & tools"
-    ]
+    ],
+    "fullyFree": "LGPL open-source software, free to use and redistribute."
   },
   {
     "slug": "winrar",
@@ -3875,7 +3879,8 @@
     "updated": "2026-07-01",
     "categories": [
       "Apps & tools"
-    ]
+    ],
+    "fullyFree": "GPL open-source software, free to use and redistribute."
   },
   {
     "slug": "mspaint",
@@ -4361,7 +4366,8 @@
     "screenshot": true,
     "categories": [
       "Apps & tools"
-    ]
+    ],
+    "fullyFree": "GPL open-source software, free to use and redistribute."
   },
   {
     "slug": "notepad-plus-plus",
@@ -4640,7 +4646,8 @@
     "screenshot": true,
     "categories": [
       "Apps & tools"
-    ]
+    ],
+    "fullyFree": "MIT-licensed open-source software."
   },
   {
     "slug": "filezilla",
@@ -6119,7 +6126,8 @@
     "categories": [
       "Puzzle & strategy",
       "Racing & sports"
-    ]
+    ],
+    "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game."
   },
   {
     "slug": "jetpack",
@@ -6260,7 +6268,8 @@
     "categories": [
       "Platformers",
       "Puzzle & strategy"
-    ]
+    ],
+    "fullyFree": "Author released the full 400-level registered version as freeware in 1998."
   },
   {
     "slug": "god-of-thunder",
@@ -6406,7 +6415,8 @@
     "categories": [
       "Action",
       "Puzzle & strategy"
-    ]
+    ],
+    "fullyFree": "Released as freeware by the author, who later put the source in the public domain."
   },
   {
     "slug": "one-must-fall-2097",
@@ -6570,7 +6580,8 @@
     ],
     "categories": [
       "Action"
-    ]
+    ],
+    "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game."
   },
   {
     "slug": "xargon",
@@ -6725,7 +6736,8 @@
     "categories": [
       "Platformers",
       "Action"
-    ]
+    ],
+    "fullyFree": "Author released the full trilogy under a written freeware licence in 2008."
   },
   {
     "slug": "bio-menace",
@@ -6880,7 +6892,8 @@
     "categories": [
       "Shooters",
       "Platformers"
-    ]
+    ],
+    "fullyFree": "Released as freeware by 3D Realms in 2005."
   },
   {
     "slug": "alien-carnage",
@@ -7030,7 +7043,8 @@
     "categories": [
       "Shooters",
       "Platformers"
-    ]
+    ],
+    "fullyFree": "Released as freeware in 2007 by Apogee with the original author."
   },
   {
     "slug": "keen4",
@@ -7246,6 +7260,7 @@
         "mouse": "Click Next hand"
       }
     ],
-    "screenshot": true
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play."
   }
 ]
