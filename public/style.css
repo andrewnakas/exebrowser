@@ -879,3 +879,14 @@ body.dos-playing { overflow: hidden; }
   .controls-table th[scope="row"] { white-space: normal; }
   .controls-table { font-size: .85rem; }
 }
+
+/* ── Mobile: hide desktop-only embed chrome ───────────────────────────── */
+/* On a phone the Fullscreen button, the mouse-capture hint and the console
+   box are all meaningless, and together they sit between the game and the
+   touch pad — pushing the d-pad below the fold. Hiding them puts the pad
+   directly under the canvas without reordering anything. */
+@media (hover: none) and (pointer: coarse), (max-width: 720px) {
+  #dos-fullscreen,
+  #dos-mouse-hint,
+  #dos-console { display: none; }
+}
