@@ -461,7 +461,7 @@ ${downloadHtml(p)}
 ${p.iframeUrl
   ? ``
   : p.dosRuntime
-    ? `<script src="/dos-embed.js?v=8"></script>`
+    ? `<script src="/dos-embed.js?v=10"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/embed.js?v=2"></script>
 <script src="/app.js?v=17"></script>`}

@@ -218,13 +218,30 @@
       );
     });
     // Keep all mouse buttons out of the browser and into DOSBox.
+    // JS MouseEvent.button: 0=left, 1=middle, 2=right. DOSBox: 0=left, 1=right, 2=middle.
+    const DOS_BTN = { 0: 0, 1: 2, 2: 1 };
+    // A real click's press and release can land inside one emulated frame, which
+    // DOS games poll right past — they never see the button held. Keep every
+    // press down for at least MIN_HOLD_MS of wall clock before releasing.
+    const MIN_HOLD_MS = 90;
+    const pressedAt = new Map();
+
     canvas.addEventListener("mousedown", e => {
       canvas.focus();
-      ci.sendMouseButton(e.button, true);
+      const btn = DOS_BTN[e.button] ?? 0;
+      pressedAt.set(btn, performance.now());
+      ci.sendMouseButton(btn, true);
       e.preventDefault();
     });
     canvas.addEventListener("mouseup", e => {
-      ci.sendMouseButton(e.button, false);
+      const btn = DOS_BTN[e.button] ?? 0;
+      const held = performance.now() - (pressedAt.get(btn) ?? 0);
+      pressedAt.delete(btn);
+      if (held >= MIN_HOLD_MS) {
+        ci.sendMouseButton(btn, false);
+      } else {
+        setTimeout(() => ci.sendMouseButton(btn, false), MIN_HOLD_MS - held);
+      }
       e.preventDefault();
     });
     // Right-click default is "walk forward" in vanilla DOOM — suppress context menu.
@@ -252,6 +269,7 @@
 
       // Expose for mobile gamepad buttons injected by gen-app-pages.mjs
       window.__dosEmitKey = (scanCode, pressed) => ci.sendKeyEvent(scanCode, pressed);
+      window.__dosCi = ci; // debugging handle
 
       ci.events().onStdout(msg => log(msg));
       ci.events().onExit(() => {
