@@ -371,9 +371,13 @@
     return saving;
   }
 
+  // The overlay is re-rendered when a boot fails, so the play button must be
+  // looked up when it's used rather than captured once at startup.
+  const currentPlayBtn = () => document.getElementById("dos-play");
+
   async function play() {
-    playBtn.disabled = true;
-    playBtn.textContent = "Loading…";
+    const btn = currentPlayBtn();
+    if (btn) { btn.disabled = true; btn.textContent = "Loading…"; }
     track("play_click");
     const t0 = performance.now();
     try {
@@ -435,8 +439,8 @@
         stopHeartbeat();
         setStatus(cfg.appName + " exited.");
         overlay.style.display = "flex";
-        playBtn.disabled = false;
-        playBtn.textContent = "▶ Play " + cfg.appName;
+        const b = currentPlayBtn();
+        if (b) { b.disabled = false; b.textContent = "▶ Play " + cfg.appName; }
       });
 
       setStatus("");
@@ -447,12 +451,61 @@
       startHeartbeat();
 
     } catch (err) {
-      setStatus("Could not start: " + err.message);
-      overlay.style.display = "flex";
-      playBtn.disabled = false;
-      playBtn.textContent = "▶ Play " + cfg.appName;
+      showFailure(err);
       log("Error: " + err.message);
       track("boot_error", { error_message: String(err.message).slice(0, 120) });
+    }
+  }
+
+  // A failed boot used to surface the raw exception ("HTTP 404 fetching
+  // /apps/…"), which tells a player nothing they can act on. Explain the
+  // likely cause in plain language and always leave a way forward.
+  function explainFailure(err) {
+    const m = String(err && err.message || "");
+    if (/HTTP 4\d\d/.test(m)) {
+      return "We couldn't find this game's files on the server. That's our bug, not yours — it should be fixed shortly.";
+    }
+    if (/HTTP 5\d\d/.test(m)) {
+      return "The server had a problem sending this game. Trying again usually works.";
+    }
+    if (/NetworkError|Failed to fetch|network|ERR_/i.test(m)) {
+      return "The download didn't finish — this is usually a dropped connection. Check your network and try again.";
+    }
+    if (/WebAssembly|wasm|SharedArrayBuffer|compile/i.test(m)) {
+      return "Your browser couldn't start the emulator. This needs a current version of Chrome, Firefox, Edge or Safari.";
+    }
+    if (/emulators\.js|Failed to load/i.test(m)) {
+      return "The emulator itself failed to load. A reload usually clears this.";
+    }
+    return "Something went wrong starting the game.";
+  }
+
+  function showFailure(err) {
+    stopHeartbeat();
+    overlay.style.display = "flex";
+    overlay.innerHTML = `
+      <p style="margin:0 0 .75rem;text-align:center;padding:0 1.25rem;max-width:34rem;">${esc(explainFailure(err))}</p>
+      <p style="margin:0;display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;">
+        <button id="dos-retry" class="embed-play" type="button">Try again</button>
+        <a class="button" href="/run/">Browse other games</a>
+      </p>
+      <details style="margin-top:.9rem;max-width:34rem;">
+        <summary class="muted small" style="text-align:center;cursor:pointer;">Technical details</summary>
+        <p class="muted small" style="margin:.4rem 0 0;word-break:break-word;">${esc(String(err && err.message || err))}</p>
+      </details>`;
+    const retry = document.getElementById("dos-retry");
+    if (retry) {
+      retry.addEventListener("click", () => {
+        // Restore the original overlay so a retry looks like a fresh start.
+        overlay.innerHTML = `
+          <button id="dos-play" class="embed-play" type="button">&#9654; Play ${esc(cfg.appName)}</button>
+          <p class="muted small" style="margin-top:.75rem;text-align:center;padding:0 1rem;">Runs in your browser with DOSBox + WebAssembly.<br>Nothing is uploaded. Runtime (~1.4 MB) is cached after first load.</p>`;
+        const fresh = document.getElementById("dos-play");
+        fresh.addEventListener("click", play);
+        setStatus("");
+        track("boot_retry");
+        fresh.click();
+      });
     }
   }
 

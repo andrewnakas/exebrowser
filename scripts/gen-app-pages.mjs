@@ -562,10 +562,10 @@ ${p.iframeUrl
   ? ``
   : p.dosRuntime
     ? `<script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=17"></script>`
+<script src="/dos-embed.js?v=18"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/recent.js?v=1"></script>
-<script src="/embed.js?v=4"></script>
+<script src="/embed.js?v=5"></script>
 <script src="/app.js?v=18"></script>`}
 </body>
 </html>

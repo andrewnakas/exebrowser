@@ -139,6 +139,20 @@
     }
   }
 
+  // Raw exception text ("HTTP 404 fetching /apps/…") tells a visitor nothing
+  // they can act on. Say what likely went wrong instead; the uploader below
+  // stays the recovery path either way.
+  function explainFailure(err) {
+    const m = String(err && err.message || "");
+    if (/HTTP 4\d\d/.test(m)) return "We couldn't find this app's files on the server — that's our bug, not yours.";
+    if (/HTTP 5\d\d/.test(m)) return "The server had a problem sending this app; trying again usually works.";
+    if (/NetworkError|Failed to fetch|network|ERR_/i.test(m)) return "The download didn't finish — usually a dropped connection.";
+    if (/WebAssembly|wasm|SharedArrayBuffer|compile/i.test(m)) return "Your browser couldn't start the Wine runtime. This needs a current Chrome, Firefox, Edge or Safari.";
+    if (/Engine failed to load/i.test(m)) return "The Wine engine didn't load. A reload usually clears this.";
+    if (/No runnable/i.test(m)) return "We couldn't find a runnable program inside this package.";
+    return "Something went wrong starting this app.";
+  }
+
   async function play() {
     playBtn.disabled = true;
     if (hosted) playBtn.textContent = "Booting…";
@@ -168,7 +182,7 @@
       }
     } catch (err) {
       track("boot_error", { error_message: String(err.message).slice(0, 120) });
-      status.textContent = "Couldn't start: " + err.message + " — you can still load your own copy below.";
+      status.textContent = explainFailure(err) + " You can still load your own copy below.";
       if (loader) loader.hidden = false;
       overlay.classList.remove("hidden");
       playBtn.disabled = false;
