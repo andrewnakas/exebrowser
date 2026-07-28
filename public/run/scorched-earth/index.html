@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Why Scorched Earth Doesn't Run on Wine — And How to Play It via DOSBox — ExeBrowser</title>
-<meta name="description" content="Scorched Earth is a 16-bit MS-DOS game, so it won't run on ExeBrowser's Wine runtime. Why that is, where to get the author's free v1.5, and the DOSBox route." />
-<meta name="keywords" content="play scorched earth online, scorched earth browser, scorched earth dos game, scorched earth wendell hicken, scorched earth free download, scorched earth dosbox, scorched earth artillery game, run scorched earth in browser" />
+<title>Play Scorched Earth Online — Free Shareware — ExeBrowser</title>
+<meta name="description" content="Play Scorched Earth in your browser — the 1991 artillery classic, 'the mother of all games'. Shareware, no download, runs via DOSBox + WebAssembly." />
+<meta name="keywords" content="play scorched earth online, scorched earth dos game, scorched earth browser, artillery game online" />
 <link rel="canonical" href="https://exebrowser.com/run/scorched-earth/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/scorched-earth/" />
-<meta property="og:title" content="Why Scorched Earth Doesn't Run on Wine — And How to Play It via DOSBox" />
-<meta property="og:description" content="Scorched Earth is 16-bit MS-DOS, not Windows, so it won't boot on Wine + WebAssembly. This page explains why, and points to Wendell Hicken's free copy and a DOSBox route that works." />
-<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta property="og:title" content="Play Scorched Earth Online — Free Shareware" />
+<meta property="og:description" content="Play Scorched Earth in your browser — the 1991 artillery classic, 'the mother of all games'. Shareware, no download, runs via DOSBox + WebAssembly." />
+<meta property="og:image" content="https://exebrowser.com/run/scorched-earth/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Scorched Earth: won't run", "item": "https://exebrowser.com/run/scorched-earth/" }
+    { "@type": "ListItem", "position": 3, "name": "Play Scorched Earth", "item": "https://exebrowser.com/run/scorched-earth/" }
   ]
 }
 </script>
@@ -41,14 +41,14 @@
   "@type": "VideoGame",
   "name": "Scorched Earth",
   "url": "https://exebrowser.com/run/scorched-earth/",
-  "image": "https://exebrowser.com/og.png",
-  "description": "Scorched Earth is a 16-bit MS-DOS game, so it won't run on ExeBrowser's Wine runtime. Why that is, where to get the author's free v1.5, and the DOSBox route.",
+  "image": "https://exebrowser.com/run/scorched-earth/screenshot.png",
+  "description": "Play Scorched Earth in your browser — the 1991 artillery classic, 'the mother of all games'. Shareware, no download, runs via DOSBox + WebAssembly.",
   "applicationCategory": "Game",
-  "genre": ["Artillery", "Strategy", "Turn-based"],
+  "genre": ["Artillery", "Strategy"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Wendell Hicken" },
-  "dateModified": "2026-07-01",
+  "dateModified": "2026-07-28",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -59,28 +59,23 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I play Scorched Earth online in my browser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes — but not through ExeBrowser/Wine. Scorched Earth is a DOS game, so it needs a DOS emulator. Browser builds at dos.zone and retrogames.cz run it in DOSBox-on-WebAssembly with no install." }
+      "name": "Is Scorched Earth free to play here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's the shareware release, distributed freely by its author for over thirty years. The in-game registration prompts are the author's original ones." }
     },
     {
       "@type": "Question",
-      "name": "Why doesn't Scorched Earth work on ExeBrowser when other classics do?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because it isn't a Windows program. ExeBrowser runs Win32 (and some 16-bit Windows 3.x) executables through Wine. Scorched Earth is a 16-bit MS-DOS binary (SCORCH.EXE), and Wine doesn't execute DOS programs — it relies on DOSBox for that, which ExeBrowser doesn't include." }
+      "name": "What are the controls?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Left/Right aim, Up/Down set power, Space fires, Tab cycles weapons, Esc opens the menu. Watch the wind indicator — it changes every round." }
     },
     {
       "@type": "Question",
-      "name": "Is Scorched Earth free, and is it legal to download?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It's free to download from the author. Wendell Hicken offers version 1.5 at no cost on his official site (whicken.com/scorch) with a pay-what-you-want option. That's the legitimate source — skip random abandonware mirrors and get it straight from him." }
+      "name": "How many players can play?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Up to ten tanks per battle, in any mix of humans and computer opponents. Hotseat multiplayer works on one keyboard." }
     },
     {
       "@type": "Question",
-      "name": "What's the difference between Scorched Earth and Worms?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scorched Earth (1991) came first and is a turn-based artillery game with stationary tanks, destructible terrain, and a between-rounds weapons shop. Worms (1995) took that template, added walking units and slapstick. If you like Worms, the DOS original is well worth a DOSBox session." }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I run Scorched Earth on a modern PC?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Download scorch15.zip from the author, install DOSBox (or DOSBox-X), mount the game folder, and type SCORCH. Or just use a browser DOSBox build like dos.zone for zero setup." }
+      "name": "Does my progress save?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Settings and scores persist in this browser between visits, best-effort." }
     }
   ]
 }
@@ -104,18 +99,97 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Scorched Earth: won't run</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Scorched Earth</nav>
 
   <section class="card">
-    <h2>Why Scorched Earth doesn't run here (and how to actually play it) <span class="verdict bad">Won't run here — it's a DOS game, not Windows</span></h2>
-    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Tested with DOSBox + WebAssembly</p>
-    <p>Straight answer first: <strong>Scorched Earth will not run on ExeBrowser</strong>, and we'd rather tell you that up front than waste your time. The legendary "Mother of All Games" — Wendell Hicken's 1991 tank-artillery classic where you lob nukes and Death's Heads across destructible terrain — is a <strong>16-bit MS-DOS program</strong> (<code>SCORCH.EXE</code>). ExeBrowser runs <em>Windows</em> <code>.exe</code> files through Wine, and Wine doesn't execute raw DOS binaries — that's a job for DOSBox. So there's no play button here that would actually work. Below is the honest why, where to grab the author's free copy, and the route that <em>does</em> get you playing Scorched Earth in a browser today.</p>
+    <h2>Play Scorched Earth online — free, instant <span class="verdict good">Works — shareware release runs via DOSBox in your browser</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via DOSBox + WebAssembly</p>
+    <p><strong>Scorched Earth</strong> — Wendell Hicken's 1991 artillery game, self-described as "the mother of all games" and the direct ancestor of Worms and every turn-based tank game since. Up to ten tanks trade shots across a destructible landscape, buying increasingly ridiculous weapons between rounds. The shareware release is hosted here — click Play and it boots in your browser.</p>
 
     <div id="dos-embed"
          data-app-url="/apps/scorched-earth/scorched-earth.zip"
          data-app-name="Scorched Earth"
          data-click-key="32"
          data-autoboot="false"></div>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-doskey="265" data-code="" data-keycode="0" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-doskey="263" data-code="" data-keycode="0" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-doskey="262" data-code="" data-keycode="0" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-doskey="264" data-code="" data-keycode="0" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-doskey="32" data-code="" data-keycode="0" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-doskey="258" data-code="" data-keycode="0" aria-label="WEAPON">WEAPON</button>
+          <button type="button" class="mgp-btn " data-doskey="256" data-code="" data-keycode="0" aria-label="ESC">ESC</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">D-pad: aim &amp; power · FIRE: space · TAB: weapons</p>
+  <details class="mgp-keys">
+    <summary>⌨ Keyboard — for menus &amp; name entry</summary>
+    <div class="mgp-keygrid" id="mgp-keygrid"></div>
+  </details>
+<script>
+(function(){
+  // GLFW key codes, matching the map in dos-embed.js.
+  var ROWS = [
+    [["1",49],["2",50],["3",51],["4",52],["5",53],["6",54],["7",55],["8",56],["9",57],["0",48]],
+    [["Q",81],["W",87],["E",69],["R",82],["T",84],["Y",89],["U",85],["I",73],["O",79],["P",80]],
+    [["A",65],["S",83],["D",68],["F",70],["G",71],["H",72],["J",74],["K",75],["L",76]],
+    [["Z",90],["X",88],["C",67],["V",86],["B",66],["N",78],["M",77]],
+    [["SPACE",32],["ENTER",257],["ESC",256],["⌫",259],["Y",89],["N",78]]
+  ];
+  var grid = document.getElementById("mgp-keygrid");
+  if(!grid) return;
+  ROWS.forEach(function(row){
+    var r = document.createElement("div");
+    r.className = "mgp-keyrow";
+    row.forEach(function(pair){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "mgp-key" + (pair[0].length > 1 ? " mgp-key-wide" : "");
+      b.textContent = pair[0];
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(pair[1], true); b.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(pair[1], false); b.classList.remove("pressed"); }
+      b.addEventListener("touchstart", dn, {passive:false});
+      b.addEventListener("touchend", up, {passive:false});
+      b.addEventListener("touchcancel", up, {passive:false});
+      b.addEventListener("mousedown", dn);
+      b.addEventListener("mouseup", up);
+      b.addEventListener("mouseleave", up);
+      r.appendChild(b);
+    });
+    grid.appendChild(r);
+  });
+})();
+</script>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("dos-canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var sc = parseInt(btn.dataset.doskey, 10);
+      if(!sc) return;
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,true); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,false); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <figure class="app-shot">
+      <img src="/run/scorched-earth/screenshot.png" width="848" height="480" loading="lazy" alt="Scorched Earth running in a browser tab via ExeBrowser" />
+      <figcaption>Scorched Earth running in the browser — no install, no upload.</figcaption>
+    </figure>
     <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
     <div class="warn-box">
       <strong>Heads up:</strong> Scorched Earth is the work of Wendell Hicken. He offers version 1.5 as a free download (pay-what-you-want) on his <a href="https://www.whicken.com/scorch/" target="_blank" rel="noopener">official site, whicken.com/scorch</a> — please get it there and consider tossing him a few dollars. We don't host the game because ExeBrowser can't run DOS programs anyway (see below). Avoid sketchy "abandonware" mirrors; the author's own site is the right source.
@@ -124,47 +198,38 @@
 
   <section class="card">
     <h2>How it works &amp; what to expect</h2>
-    <h3>Why it won't run in ExeBrowser</h3>
-    <p>ExeBrowser is Boxedwine — Wine 1.7.55 plus a 32-bit x86 emulator compiled to WebAssembly. It runs <strong>Windows</strong> programs: Win32 executables, and to a limited degree old 16-bit <em>Windows 3.x</em> apps. Scorched Earth is none of those. It is a pure <strong>MS-DOS</strong> game, written in Borland C++ and Turbo Assembler in 1991 to talk directly to DOS and a VGA card. There was never a Windows version.</p><p>Wine famously "is not an emulator" — it translates Windows API calls. It has no DOS layer of its own; when handed a DOS executable, real Wine simply hands it off to DOSBox. Inside ExeBrowser there is no DOSBox to hand off to, so <code>SCORCH.EXE</code> just won't start. This isn't a slowness or compatibility quirk we can flag as "partial" — it's the wrong kind of executable for this engine entirely. That's why the verdict here is a clean <strong>no</strong>.</p>
-    <h3>How to actually play Scorched Earth in a browser (DOSBox, not Wine)</h3>
-    <p>The good news: Scorched Earth plays beautifully in a browser — just through a <strong>DOS</strong> emulator instead of Wine. Several sites wrap the game in <a href="https://js-dos.com/" target="_blank" rel="noopener">js-dos / DOSBox</a> compiled to WebAssembly, which is the correct tool for a DOS title:</p><ul><li><a href="https://dos.zone/scorched-earth/" target="_blank" rel="noopener">dos.zone — Scorched Earth</a> — instant in-browser DOSBox play.</li><li><a href="https://www.retrogames.cz/play_498-DOS.php" target="_blank" rel="noopener">retrogames.cz — Scorched Earth (DOS)</a> — another browser-based DOSBox build.</li></ul><p>Prefer to run it yourself? Download version 1.5 from the author and run it under desktop <a href="https://www.dosbox.com/" target="_blank" rel="noopener">DOSBox</a> (or DOSBox-X). Mount the folder, type <code>SCORCH</code>, and you're in the menu.</p>
-    <h3>Where to get the game — and pay the author if you can</h3>
-    <p>Scorched Earth started as classic $10-by-mail shareware. Today its creator, Wendell Hicken, posts the final release (<strong>v1.5</strong>, <code>scorch15.zip</code>) for free on his own site, with a pay-what-you-want option and a "Totally Scorched" bundle of older versions:</p><p><a class="cta-btn" href="https://www.whicken.com/scorch/" target="_blank" rel="noopener">Get Scorched Earth 1.5 from the author →</a></p><p>This is the legitimate source. The game is free to download there, and if you loved it back in the day, the donate button is a nice way to say thanks to the person who made one of the most influential artillery games ever. We deliberately don't mirror the bytes here — partly because ExeBrowser can't run them, and partly because the author's own page is simply the right place to get it.</p>
-    <h3>What you're missing (so you know it's worth the DOSBox detour)</h3>
-    <p>Scorched Earth is a turn-based artillery duel for up to 10 tanks on a single 2D battlefield. You set angle and power, fire, and watch the terrain crater away. Between rounds you spend winnings in a shop on absurd ordnance — Funky Bombs, MIRVs, Napalm, Death's Heads, Tracers, parachutes, shields, and the gloriously dumb Riot Charges. It popularized destructible terrain and the "buy weapons between turns" loop that later defined Worms, Pocket Tanks, Gunbound and a thousand others.</p><p>It's a tiny, fast, mouse-and-keyboard game that runs perfectly under DOSBox on any modern machine. The only thing it can't do is run on Wine — and now you know exactly why.</p>
+    <p>The original DOS release runs in a WebAssembly DOSBox build on this page. Set the number of players and computer opponents on the first screen — the AI difficulty levels have real personality, and "Cyborg" will punish you. Between rounds you spend winnings in the shop, which is where the game really opens up.</p>
+    <h3>Controls</h3>
+    <p><strong>Left/Right arrows</strong> aim your turret, <strong>Up/Down</strong> set power, and <strong>Space</strong> fires. Use <kbd>Tab</kbd> to cycle weapons and <kbd>Esc</kbd> for the menu. Wind is shown top-right and matters enormously — most of the skill is learning to read it.</p>
+<p class="muted small"><strong>Mouse:</strong> left-click fires.</p>
+    <h3>Shareware — and buying it</h3>
+    <p>Scorched Earth was distributed as shareware, and author Wendell Hicken's site whicken.com has hosted it for decades. If you enjoy it, the registration the game asks about is the author's own.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
     <details>
-      <summary>Can I play Scorched Earth online in my browser?</summary>
-      <p>Yes — but not through ExeBrowser/Wine. Scorched Earth is a DOS game, so it needs a DOS emulator. Browser builds at <a href="https://dos.zone/scorched-earth/" target="_blank" rel="noopener">dos.zone</a> and <a href="https://www.retrogames.cz/play_498-DOS.php" target="_blank" rel="noopener">retrogames.cz</a> run it in DOSBox-on-WebAssembly with no install.</p>
+      <summary>Is Scorched Earth free to play here?</summary>
+      <p>It's the shareware release, distributed freely by its author for over thirty years. The in-game registration prompts are the author's original ones.</p>
     </details>
     <details>
-      <summary>Why doesn't Scorched Earth work on ExeBrowser when other classics do?</summary>
-      <p>Because it isn't a Windows program. ExeBrowser runs Win32 (and some 16-bit Windows 3.x) executables through Wine. Scorched Earth is a 16-bit MS-DOS binary (SCORCH.EXE), and Wine doesn't execute DOS programs — it relies on DOSBox for that, which ExeBrowser doesn't include.</p>
+      <summary>What are the controls?</summary>
+      <p>Left/Right aim, Up/Down set power, Space fires, Tab cycles weapons, Esc opens the menu. Watch the wind indicator — it changes every round.</p>
     </details>
     <details>
-      <summary>Is Scorched Earth free, and is it legal to download?</summary>
-      <p>It's free to download from the author. Wendell Hicken offers version 1.5 at no cost on his official site (whicken.com/scorch) with a pay-what-you-want option. That's the legitimate source — skip random abandonware mirrors and get it straight from him.</p>
+      <summary>How many players can play?</summary>
+      <p>Up to ten tanks per battle, in any mix of humans and computer opponents. Hotseat multiplayer works on one keyboard.</p>
     </details>
     <details>
-      <summary>What's the difference between Scorched Earth and Worms?</summary>
-      <p>Scorched Earth (1991) came first and is a turn-based artillery game with stationary tanks, destructible terrain, and a between-rounds weapons shop. Worms (1995) took that template, added walking units and slapstick. If you like Worms, the DOS original is well worth a DOSBox session.</p>
-    </details>
-    <details>
-      <summary>How do I run Scorched Earth on a modern PC?</summary>
-      <p>Download scorch15.zip from the author, install DOSBox (or DOSBox-X), mount the game folder, and type SCORCH. Or just use a browser DOSBox build like dos.zone for zero setup.</p>
+      <summary>Does my progress save?</summary>
+      <p>Settings and scores persist in this browser between visits, best-effort.</p>
     </details>
   </section>
   <section class="card">
     <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/guide/"><span class="lc-title">DOS games in the browser</span><span class="lc-desc">How DOS classics actually run online.</span></a></li>
-      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">The Win32 shareware build that does run here.</span></a></li>
-      <li><a class="link-card" href="/run/prince-of-persia/"><span class="lc-title">Prince of Persia</span><span class="lc-desc">Another DOS-era classic — what to expect.</span></a></li>
-      <li><a class="link-card" href="/run/freeciv/"><span class="lc-title">Freeciv</span><span class="lc-desc">Open-source strategy that runs cleanly in Wine.</span></a></li>
-      <li><a class="link-card" href="/run/"><span class="lc-title">All app guides</span><span class="lc-desc">Everything you can run in the browser.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs, what doesn't, and why.</span></a></li>
+      <li><a class="link-card" href="/run/raptor/"><span class="lc-title">Raptor: Call of the Shadows</span><span class="lc-desc">Apogee's shareware vertical shooter — instant play.</span></a></li>
+      <li><a class="link-card" href="/run/one-must-fall-2097/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Epic's freeware robot fighter.</span></a></li>
+      <li><a class="link-card" href="/run/skyroads/"><span class="lc-title">SkyRoads</span><span class="lc-desc">Freeware space-racing puzzler.</span></a></li>
     </ul>
   </section>
 </main>

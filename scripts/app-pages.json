@@ -2109,6 +2109,11 @@
     ],
     "related": [
       {
+        "href": "/run/keen4/",
+        "title": "Commander Keen 4",
+        "desc": "Secret of the Oracle — the shareware episode of Goodbye Galaxy."
+      },
+      {
         "href": "/run/bio-menace/",
         "title": "Bio Menace",
         "desc": "Apogee run-and-gun on the same engine — freeware."
@@ -2199,112 +2204,130 @@
   },
   {
     "slug": "scorched-earth",
-    "title": "Why Scorched Earth Doesn't Run on Wine — And How to Play It via DOSBox — ExeBrowser",
-    "description": "Scorched Earth is a 16-bit MS-DOS game, so it won't run on ExeBrowser's Wine runtime. Why that is, where to get the author's free v1.5, and the DOSBox route.",
-    "keywords": "play scorched earth online, scorched earth browser, scorched earth dos game, scorched earth wendell hicken, scorched earth free download, scorched earth dosbox, scorched earth artillery game, run scorched earth in browser",
-    "ogTitle": "Why Scorched Earth Doesn't Run on Wine — And How to Play It via DOSBox",
-    "ogDescription": "Scorched Earth is 16-bit MS-DOS, not Windows, so it won't boot on Wine + WebAssembly. This page explains why, and points to Wendell Hicken's free copy and a DOSBox route that works.",
-    "crumb": "Scorched Earth: won't run",
-    "h1": "Why Scorched Earth doesn't run here (and how to actually play it)",
+    "title": "Play Scorched Earth Online — Free Shareware — ExeBrowser",
+    "description": "Play Scorched Earth in your browser — the 1991 artillery classic, 'the mother of all games'. Shareware, no download, runs via DOSBox + WebAssembly.",
+    "keywords": "play scorched earth online, scorched earth dos game, scorched earth browser, artillery game online",
+    "ogTitle": "Play Scorched Earth Online — Free Shareware",
+    "ogDescription": "Play Scorched Earth in your browser — the 1991 artillery classic, 'the mother of all games'. Shareware, no download, runs via DOSBox + WebAssembly.",
+    "crumb": "Play Scorched Earth",
+    "h1": "Play Scorched Earth online — free, instant",
     "appName": "Scorched Earth",
     "appType": "game",
     "variant": "default",
     "genre": [
       "Artillery",
-      "Strategy",
-      "Turn-based"
+      "Strategy"
     ],
     "author": "Wendell Hicken",
     "hostable": true,
     "appUrl": "/apps/scorched-earth/scorched-earth.zip",
     "entry": "SCORCH.EXE",
     "verdict": {
-      "kind": "bad",
-      "text": "Won't run here — it's a DOS game, not Windows"
+      "kind": "good",
+      "text": "Works — shareware release runs via DOSBox in your browser"
     },
     "licenseReason": "Scorched Earth 1.5 is offered free by its author Wendell Hicken on his official site (pay-what-you-want), but it's a 16-bit MS-DOS program ExeBrowser cannot run, so there is nothing to host.",
     "licenseNote": "<strong>Heads up:</strong> Scorched Earth is the work of Wendell Hicken. He offers version 1.5 as a free download (pay-what-you-want) on his <a href=\"https://www.whicken.com/scorch/\" target=\"_blank\" rel=\"noopener\">official site, whicken.com/scorch</a> — please get it there and consider tossing him a few dollars. We don't host the game because ExeBrowser can't run DOS programs anyway (see below). Avoid sketchy \"abandonware\" mirrors; the author's own site is the right source.",
-    "intro": "<p>Straight answer first: <strong>Scorched Earth will not run on ExeBrowser</strong>, and we'd rather tell you that up front than waste your time. The legendary \"Mother of All Games\" — Wendell Hicken's 1991 tank-artillery classic where you lob nukes and Death's Heads across destructible terrain — is a <strong>16-bit MS-DOS program</strong> (<code>SCORCH.EXE</code>). ExeBrowser runs <em>Windows</em> <code>.exe</code> files through Wine, and Wine doesn't execute raw DOS binaries — that's a job for DOSBox. So there's no play button here that would actually work. Below is the honest why, where to grab the author's free copy, and the route that <em>does</em> get you playing Scorched Earth in a browser today.</p>",
+    "intro": "<p><strong>Scorched Earth</strong> — Wendell Hicken's 1991 artillery game, self-described as \"the mother of all games\" and the direct ancestor of Worms and every turn-based tank game since. Up to ten tanks trade shots across a destructible landscape, buying increasingly ridiculous weapons between rounds. The shareware release is hosted here — click Play and it boots in your browser.</p>",
     "sections": [
       {
-        "h": "Why it won't run in ExeBrowser",
-        "html": "<p>ExeBrowser is Boxedwine — Wine 1.7.55 plus a 32-bit x86 emulator compiled to WebAssembly. It runs <strong>Windows</strong> programs: Win32 executables, and to a limited degree old 16-bit <em>Windows 3.x</em> apps. Scorched Earth is none of those. It is a pure <strong>MS-DOS</strong> game, written in Borland C++ and Turbo Assembler in 1991 to talk directly to DOS and a VGA card. There was never a Windows version.</p><p>Wine famously \"is not an emulator\" — it translates Windows API calls. It has no DOS layer of its own; when handed a DOS executable, real Wine simply hands it off to DOSBox. Inside ExeBrowser there is no DOSBox to hand off to, so <code>SCORCH.EXE</code> just won't start. This isn't a slowness or compatibility quirk we can flag as \"partial\" — it's the wrong kind of executable for this engine entirely. That's why the verdict here is a clean <strong>no</strong>.</p>"
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release runs in a WebAssembly DOSBox build on this page. Set the number of players and computer opponents on the first screen — the AI difficulty levels have real personality, and \"Cyborg\" will punish you. Between rounds you spend winnings in the shop, which is where the game really opens up.</p>"
       },
       {
-        "h": "How to actually play Scorched Earth in a browser (DOSBox, not Wine)",
-        "html": "<p>The good news: Scorched Earth plays beautifully in a browser — just through a <strong>DOS</strong> emulator instead of Wine. Several sites wrap the game in <a href=\"https://js-dos.com/\" target=\"_blank\" rel=\"noopener\">js-dos / DOSBox</a> compiled to WebAssembly, which is the correct tool for a DOS title:</p><ul><li><a href=\"https://dos.zone/scorched-earth/\" target=\"_blank\" rel=\"noopener\">dos.zone — Scorched Earth</a> — instant in-browser DOSBox play.</li><li><a href=\"https://www.retrogames.cz/play_498-DOS.php\" target=\"_blank\" rel=\"noopener\">retrogames.cz — Scorched Earth (DOS)</a> — another browser-based DOSBox build.</li></ul><p>Prefer to run it yourself? Download version 1.5 from the author and run it under desktop <a href=\"https://www.dosbox.com/\" target=\"_blank\" rel=\"noopener\">DOSBox</a> (or DOSBox-X). Mount the folder, type <code>SCORCH</code>, and you're in the menu.</p>"
+        "h": "Controls",
+        "html": "<p><strong>Left/Right arrows</strong> aim your turret, <strong>Up/Down</strong> set power, and <strong>Space</strong> fires. Use <kbd>Tab</kbd> to cycle weapons and <kbd>Esc</kbd> for the menu. Wind is shown top-right and matters enormously — most of the skill is learning to read it.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click fires.</p>"
       },
       {
-        "h": "Where to get the game — and pay the author if you can",
-        "html": "<p>Scorched Earth started as classic $10-by-mail shareware. Today its creator, Wendell Hicken, posts the final release (<strong>v1.5</strong>, <code>scorch15.zip</code>) for free on his own site, with a pay-what-you-want option and a \"Totally Scorched\" bundle of older versions:</p><p><a class=\"cta-btn\" href=\"https://www.whicken.com/scorch/\" target=\"_blank\" rel=\"noopener\">Get Scorched Earth 1.5 from the author →</a></p><p>This is the legitimate source. The game is free to download there, and if you loved it back in the day, the donate button is a nice way to say thanks to the person who made one of the most influential artillery games ever. We deliberately don't mirror the bytes here — partly because ExeBrowser can't run them, and partly because the author's own page is simply the right place to get it.</p>"
-      },
-      {
-        "h": "What you're missing (so you know it's worth the DOSBox detour)",
-        "html": "<p>Scorched Earth is a turn-based artillery duel for up to 10 tanks on a single 2D battlefield. You set angle and power, fire, and watch the terrain crater away. Between rounds you spend winnings in a shop on absurd ordnance — Funky Bombs, MIRVs, Napalm, Death's Heads, Tracers, parachutes, shields, and the gloriously dumb Riot Charges. It popularized destructible terrain and the \"buy weapons between turns\" loop that later defined Worms, Pocket Tanks, Gunbound and a thousand others.</p><p>It's a tiny, fast, mouse-and-keyboard game that runs perfectly under DOSBox on any modern machine. The only thing it can't do is run on Wine — and now you know exactly why.</p>"
+        "h": "Shareware — and buying it",
+        "html": "<p>Scorched Earth was distributed as shareware, and author Wendell Hicken's site whicken.com has hosted it for decades. If you enjoy it, the registration the game asks about is the author's own.</p>"
       }
     ],
     "faq": [
       {
-        "q": "Can I play Scorched Earth online in my browser?",
-        "a": "Yes — but not through ExeBrowser/Wine. Scorched Earth is a DOS game, so it needs a DOS emulator. Browser builds at <a href=\"https://dos.zone/scorched-earth/\" target=\"_blank\" rel=\"noopener\">dos.zone</a> and <a href=\"https://www.retrogames.cz/play_498-DOS.php\" target=\"_blank\" rel=\"noopener\">retrogames.cz</a> run it in DOSBox-on-WebAssembly with no install."
+        "q": "Is Scorched Earth free to play here?",
+        "a": "It's the shareware release, distributed freely by its author for over thirty years. The in-game registration prompts are the author's original ones."
       },
       {
-        "q": "Why doesn't Scorched Earth work on ExeBrowser when other classics do?",
-        "a": "Because it isn't a Windows program. ExeBrowser runs Win32 (and some 16-bit Windows 3.x) executables through Wine. Scorched Earth is a 16-bit MS-DOS binary (SCORCH.EXE), and Wine doesn't execute DOS programs — it relies on DOSBox for that, which ExeBrowser doesn't include."
+        "q": "What are the controls?",
+        "a": "Left/Right aim, Up/Down set power, Space fires, Tab cycles weapons, Esc opens the menu. Watch the wind indicator — it changes every round."
       },
       {
-        "q": "Is Scorched Earth free, and is it legal to download?",
-        "a": "It's free to download from the author. Wendell Hicken offers version 1.5 at no cost on his official site (whicken.com/scorch) with a pay-what-you-want option. That's the legitimate source — skip random abandonware mirrors and get it straight from him."
+        "q": "How many players can play?",
+        "a": "Up to ten tanks per battle, in any mix of humans and computer opponents. Hotseat multiplayer works on one keyboard."
       },
       {
-        "q": "What's the difference between Scorched Earth and Worms?",
-        "a": "Scorched Earth (1991) came first and is a turn-based artillery game with stationary tanks, destructible terrain, and a between-rounds weapons shop. Worms (1995) took that template, added walking units and slapstick. If you like Worms, the DOS original is well worth a DOSBox session."
-      },
-      {
-        "q": "How do I run Scorched Earth on a modern PC?",
-        "a": "Download scorch15.zip from the author, install DOSBox (or DOSBox-X), mount the game folder, and type SCORCH. Or just use a browser DOSBox build like dos.zone for zero setup."
+        "q": "Does my progress save?",
+        "a": "Settings and scores persist in this browser between visits, best-effort."
       }
     ],
     "related": [
       {
-        "href": "/guide/",
-        "title": "DOS games in the browser",
-        "desc": "How DOS classics actually run online."
+        "href": "/run/raptor/",
+        "title": "Raptor: Call of the Shadows",
+        "desc": "Apogee's shareware vertical shooter — instant play."
       },
       {
-        "href": "/run/doom/",
-        "title": "DOOM",
-        "desc": "The Win32 shareware build that does run here."
+        "href": "/run/one-must-fall-2097/",
+        "title": "One Must Fall 2097",
+        "desc": "Epic's freeware robot fighter."
       },
       {
-        "href": "/run/prince-of-persia/",
-        "title": "Prince of Persia",
-        "desc": "Another DOS-era classic — what to expect."
-      },
-      {
-        "href": "/run/freeciv/",
-        "title": "Freeciv",
-        "desc": "Open-source strategy that runs cleanly in Wine."
-      },
-      {
-        "href": "/run/",
-        "title": "All app guides",
-        "desc": "Everything you can run in the browser."
-      },
-      {
-        "href": "/guide/",
-        "title": "Compatibility guide",
-        "desc": "What runs, what doesn't, and why."
+        "href": "/run/skyroads/",
+        "title": "SkyRoads",
+        "desc": "Freeware space-racing puzzler."
       }
     ],
     "download": {
       "heading": "",
       "html": ""
     },
-    "updated": "2026-07-01",
+    "updated": "2026-07-28",
     "dosRuntime": true,
     "addedDate": "2026-07-28",
-    "clickKey": 32
+    "clickKey": 32,
+    "mobileControls": {
+      "type": "artillery-dos",
+      "hint": "D-pad: aim & power · FIRE: space · TAB: weapons",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 32,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "WEAPON",
+          "dosKey": 258,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -2507,105 +2530,131 @@
   },
   {
     "slug": "raptor",
-    "title": "Raptor: Call of the Shadows in a Browser? The Honest Verdict — ExeBrowser",
-    "description": "Raptor's free shareware is a DOS4GW program and the 1999 Windows port needs DirectX 5 — a poor fit for browser Wine. What happens and where to play it.",
-    "keywords": "play raptor call of the shadows online, raptor call of the shadows browser, raptor shareware, raptor dos game online, raptor apogee shmup, raptor call of the shadows free, raptor in browser no download",
-    "ogTitle": "Raptor: Call of the Shadows in a Browser? The Honest Verdict",
-    "ogDescription": "Apogee's 1994 shoot-'em-up mostly belongs on a DOS emulator: the free episode is a DOS4GW program and the only Win32 build is a commercial DirectX 5 port that old Wine handles poorly.",
-    "crumb": "Raptor verdict",
-    "h1": "Can you play Raptor: Call of the Shadows in your browser?",
+    "title": "Play Raptor: Call of the Shadows Online — Free Shareware Episode — ExeBrowser",
+    "description": "Play Raptor: Call of the Shadows shareware episode free in your browser — Apogee's 1994 vertical shooter. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play raptor call of the shadows online, raptor dos game, raptor shareware, apogee raptor browser",
+    "ogTitle": "Play Raptor: Call of the Shadows Online — Free Shareware Episode",
+    "ogDescription": "Play Raptor: Call of the Shadows shareware episode free in your browser — Apogee's 1994 vertical shooter. No download, runs via DOSBox + WebAssembly.",
+    "crumb": "Play Raptor",
+    "h1": "Play Raptor: Call of the Shadows online — free shareware episode",
     "appName": "Raptor",
     "appType": "game",
     "variant": "default",
     "genre": [
       "Shoot 'em up",
-      "Vertical scroller",
       "Arcade"
     ],
-    "author": "Apogee Software",
+    "author": "Cygnus Studios / Apogee Software",
     "hostable": true,
     "appUrl": "/apps/raptor/raptor.zip",
     "entry": "",
     "verdict": {
-      "kind": "partial",
-      "text": "Tricky — free version is DOS, Windows port needs DirectX"
+      "kind": "good",
+      "text": "Works — shareware Episode 1 runs via DOSBox in your browser"
     },
     "licenseReason": "The shareware Episode 1 is freely redistributable, but it is a DOS program (not a Win32 .exe), and the only Win32 build is the commercial 1999 DirectX port — so there is no license-clean, Wine-compatible binary for us to host.",
     "licenseNote": "<p><strong>About the versions and the licensing.</strong> The classic <strong>Episode 1 \"Bravo Sector\"</strong> was distributed by Apogee as free shareware and may still be shared freely — but it is an <strong>MS-DOS</strong> program (it uses the DOS4GW extender), not a Windows <code>.exe</code>. ExeBrowser runs <em>Win32</em> binaries on Wine, so the DOS shareware will not boot here directly. The only native-Windows build is the <strong>1999 Mountain King re-release</strong>, which is <strong>commercial</strong> (sold for around $15) and is built on <strong>DirectX 5</strong> — exactly the kind of thing Boxedwine's old Wine struggles with. Please don't look for \"cracked\" or \"abandonware\" copies of the paid versions. If you want the full game, buy it from a legitimate source such as <a href=\"https://store.steampowered.com/app/336060/Raptor_Call_of_The_Shadows__2015_Edition/\" target=\"_blank\" rel=\"noopener\">Steam (2015 Edition)</a> or <a href=\"https://www.gog.com/\" target=\"_blank\" rel=\"noopener\">GOG</a>.</p>",
-    "intro": "<p><strong>Raptor: Call of the Shadows</strong> is Apogee's gloriously over-the-top 1994 vertical shoot-'em-up — buy bigger guns, blow up everything, repeat. It's a fantastic game, but it's an awkward fit for ExeBrowser, and we'd rather tell you straight than waste your time. The short version: the famous <strong>free shareware episode is a DOS game</strong>, and ExeBrowser runs <em>Windows</em> programs on Wine + WebAssembly, not DOS. The only Win32 version is a <strong>commercial DirectX 5 port</strong> that this old Wine engine handles poorly. So Raptor mostly belongs on a DOS emulator, not here — but read on for exactly what happens and the right way to play it.</p>",
+    "intro": "<p><strong>Raptor: Call of the Shadows</strong> — Cygnus Studios and Apogee's 1994 vertical shooter, and one of the best-looking DOS games of its year. You fly mercenary missions, then spend the payout in a between-missions shop on absurd weaponry. The <strong>shareware episode (Bravo Sector)</strong> is hosted here; the full three-sector game is still sold commercially.</p>",
     "sections": [
       {
-        "h": "Why Raptor is a poor fit for ExeBrowser",
-        "html": "<p>ExeBrowser is a <strong>Windows</strong> runtime: it runs real Win32 <code>.exe</code> files inside Wine 1.7.55 on an emulated 32-bit x86 CPU. Raptor's problem is that its two relevant builds both fall outside that sweet spot:</p><ul><li><strong>The 1994 original (and the free shareware) is pure MS-DOS.</strong> It boots through the DOS4GW protected-mode extender and talks straight to VGA Mode-X hardware. That's a DOS program, not a Windows one — Wine has no DOS layer here, so it won't start. This is a job for a DOS emulator like DOSBox, not for Wine.</li><li><strong>The 1999 Windows re-release is Win32, but built on DirectX 5.</strong> Boxedwine's bundled Wine is from the 1.7.55 era and its DirectDraw/Direct3D support is weak and incomplete, so DirectX games frequently show a black screen, garbled video, or simply refuse to start. On top of that, this version is commercial — we can't host it, and you'd need your own legally-bought copy.</li></ul><p>That's why our verdict is <strong>partial at best</strong>. There's no free, Win32, Wine-friendly Raptor binary that lines up with all three constraints at once.</p>"
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release runs in a WebAssembly DOSBox build on this page. It's a protected-mode game, so it gets extra memory configured automatically. Buy shields and a second weapon before mission three — the difficulty ramp is steep, and the shop is the whole strategy layer.</p>"
       },
       {
-        "h": "The right way to actually play Raptor",
-        "html": "<p>Because the freely-shareable version is DOS, the best experience is a <strong>DOS emulator</strong>, not Wine:</p><ol><li><strong>Play the shareware in a DOS-in-browser player.</strong> The Internet Archive and other preservation sites host the freely-redistributable Episode 1 running in an in-browser DOSBox/EM-DOSBOX emulator — that's purpose-built for DOS4GW games like Raptor and runs it cleanly.</li><li><strong>Buy the full game for modern systems.</strong> The <a href=\"https://store.steampowered.com/app/336060/Raptor_Call_of_The_Shadows__2015_Edition/\" target=\"_blank\" rel=\"noopener\">Raptor 2015 Edition on Steam</a> and the DRM-free editions on <a href=\"https://www.gog.com/\" target=\"_blank\" rel=\"noopener\">GOG</a> bundle a configured emulator and run all three episodes (Bravo Sector, Tango Sector, Outer Regions) on Windows, often with cloud saves and achievements.</li></ol><p>If you specifically want a <em>Win32</em> shoot-'em-up that genuinely runs well in ExeBrowser, the shareware Apogee/Epic shmups built for Windows are a far better bet — see Tyrian and Jazz Jackrabbit below.</p>"
+        "h": "Controls",
+        "html": "<p><strong>Arrow keys</strong> fly, <strong>Ctrl</strong> fires your main gun and <strong>Space</strong> launches the special weapon you bought. <kbd>Esc</kbd> opens the menu. The mouse also flies the ship, which many players prefer for the tighter dodging.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click fires, right-click launches the special weapon.</p>"
       },
       {
-        "h": "If you want to try it here anyway",
-        "html": "<p>You can experiment — ExeBrowser lets you load your own folder — but go in with eyes open:</p><ul><li>A <strong>DOS</strong> <code>RAPTOR.EXE</code> will not boot under Wine; expect it to bail out immediately or hang. This is expected, not a bug in your copy.</li><li>If you own the <strong>1999 Windows port</strong>, you can load it via <em>“Load your own copy”</em> and try the <strong>default</strong> Win32 variant, then the <strong>r18</strong> variant if it crashes. Be prepared for DirectX-related black screens or missing sound. We can't promise it'll get past the title screen.</li><li>There is also a fan-made open-source <em>source port</em> that re-implements the engine — but it still needs the original game's data files, so it doesn't change the licensing picture, and it isn't a drop-in Win32 build for this runtime.</li></ul><p>None of this involves cracks or pirated copies — bring your own legally-owned files or stick to the free shareware on a proper DOS player.</p>"
+        "h": "Shareware episode — and the full game",
+        "html": "<p>Bravo Sector is the complete free shareware episode, distributed under Apogee's original model. Tango and Outer Regions sectors are commercial — Raptor is still sold on Steam and GOG as <em>Raptor: Call of the Shadows (1994 Classic Edition)</em>.</p>"
       }
     ],
     "faq": [
       {
-        "q": "Can I play Raptor: Call of the Shadows free online with no download?",
-        "a": "Yes — but not here. The free shareware (Episode 1, \"Bravo Sector\") is a DOS game, so the no-download way to play it is an in-browser DOSBox player like the one on the Internet Archive. ExeBrowser runs Windows programs on Wine, not DOS games, so the shareware won't boot in this engine."
+        "q": "Is Raptor legal to play here?",
+        "a": "Yes — this is the official shareware episode Apogee distributed freely. The remaining two sectors are commercial and are not included; the full game is sold on Steam and GOG."
       },
       {
-        "q": "Why won't Raptor run in ExeBrowser?",
-        "a": "The freely-redistributable version is a DOS program (it uses the DOS4GW extender and VGA Mode-X), and Wine here has no DOS layer to run it. The only Windows-native build is the commercial 1999 re-release, which uses DirectX 5 — and Boxedwine's old Wine handles DirectX poorly, so it usually shows a black screen or fails to start."
+        "q": "What are the controls?",
+        "a": "Arrows fly, Ctrl fires, Space launches your special weapon, Esc opens the menu. The mouse flies the ship too, which helps with tight dodging."
       },
       {
-        "q": "Is the Raptor shareware legal to share and play?",
-        "a": "Yes. Apogee released Episode 1 \"Bravo Sector\" as free shareware that may be copied and shared at no charge. The other two episodes (Tango Sector and Outer Regions) and the modern re-releases are commercial — buy those from Steam or GOG. Don't use cracked or \"abandonware\" copies of the paid content."
+        "q": "How do I get better weapons?",
+        "a": "Between missions you spend mission payouts in the shop. Shields and a second gun before mission three make a big difference."
       },
       {
-        "q": "What's the best way to play the full Raptor on a modern PC?",
-        "a": "Buy the Raptor: Call of the Shadows 2015 Edition on Steam or a DRM-free edition on GOG. Both bundle a pre-configured emulator and run all three episodes on modern Windows, often with cloud saves and achievements — no fiddling required."
+        "q": "Does my progress save?",
+        "a": "Yes — saved pilots and purchases persist in this browser between visits, best-effort."
       },
       {
-        "q": "Is there a Windows shoot-'em-up that actually runs well in the browser here?",
-        "a": "Yes. Shareware shmups that were built for Windows (rather than DOS) tend to run far better in ExeBrowser. Tyrian and Jazz Jackrabbit are great places to start — see the related links below."
+        "q": "Can I play on a phone?",
+        "a": "Yes, a d-pad with FIRE and SPECIAL appears on touch devices."
       }
     ],
     "related": [
       {
         "href": "/run/tyrian/",
-        "title": "Tyrian",
-        "desc": "The legendary shareware shmup — a better browser fit."
+        "title": "Tyrian 2000",
+        "desc": "The other great DOS vertical shooter — freeware."
       },
       {
-        "href": "/run/jazz-jackrabbit-shareware/",
-        "title": "Jazz Jackrabbit",
-        "desc": "Epic's fast shareware platformer-shooter."
+        "href": "/run/scorched-earth/",
+        "title": "Scorched Earth",
+        "desc": "The mother of all artillery games."
       },
       {
-        "href": "/run/raptor/",
-        "title": "Commander Keen",
-        "desc": "Apogee's classic shareware platformer."
-      },
-      {
-        "href": "/guide/",
-        "title": "DOS games in the browser",
-        "desc": "How DOS-era titles like Raptor are best played."
-      },
-      {
-        "href": "/run/doom/",
-        "title": "DOOM",
-        "desc": "The free Win32 shareware FPS, running cleanly here."
-      },
-      {
-        "href": "/guide/",
-        "title": "Compatibility guide",
-        "desc": "What runs in ExeBrowser and what doesn't."
+        "href": "/run/alien-carnage/",
+        "title": "Alien Carnage",
+        "desc": "Apogee run-and-gun, freeware."
       }
     ],
-    "updated": "2026-07-01",
+    "updated": "2026-07-28",
     "dosRuntime": true,
     "addedDate": "2026-07-28",
     "clickKey": 341,
-    "clickKeyRight": 32
+    "clickKeyRight": 32,
+    "mobileControls": {
+      "type": "shmup-dos",
+      "hint": "D-pad: fly · FIRE: ctrl · SPECIAL: space · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "SPECIAL",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -6427,96 +6476,127 @@
     "clickKeyRight": 341
   },
   {
-    "slug": "epic-pinball",
-    "title": "Play Epic Pinball — ExeBrowser",
-    "description": "Epic Pinball boot test pending.",
-    "keywords": "epic-pinball",
-    "ogTitle": "Epic Pinball",
-    "ogDescription": "Epic Pinball",
-    "crumb": "Play Epic Pinball",
-    "h1": "Play Epic Pinball",
-    "appName": "Epic Pinball",
-    "appType": "game",
-    "author": "Digital Extremes / Epic MegaGames",
-    "genre": [
-      "Pinball"
-    ],
-    "dosRuntime": true,
-    "hostable": true,
-    "appUrl": "/apps/epic-pinball/epic-pinball.zip",
-    "verdict": {
-      "kind": "good",
-      "text": "Boot test pending"
-    },
-    "intro": "<p><strong>Epic Pinball</strong> — boot test pending.</p>",
-    "sections": [],
-    "faq": [],
-    "related": [],
-    "updated": "2026-07-28",
-    "addedDate": "2026-07-28",
-    "clickKey": 341,
-    "clickKeyRight": 342
-  },
-  {
-    "slug": "jazz-jackrabbit",
-    "title": "Play Jazz Jackrabbit — ExeBrowser",
-    "description": "Jazz Jackrabbit boot test pending.",
-    "keywords": "jazz-jackrabbit",
-    "ogTitle": "Jazz Jackrabbit",
-    "ogDescription": "Jazz Jackrabbit",
-    "crumb": "Play Jazz Jackrabbit",
-    "h1": "Play Jazz Jackrabbit",
-    "appName": "Jazz Jackrabbit",
-    "appType": "game",
-    "author": "Epic MegaGames",
-    "genre": [
-      "Platformer"
-    ],
-    "dosRuntime": true,
-    "hostable": true,
-    "appUrl": "/apps/jazz-jackrabbit/jazz-jackrabbit.zip",
-    "verdict": {
-      "kind": "good",
-      "text": "Boot test pending"
-    },
-    "intro": "<p><strong>Jazz Jackrabbit</strong> — boot test pending.</p>",
-    "sections": [],
-    "faq": [],
-    "related": [],
-    "updated": "2026-07-28",
-    "addedDate": "2026-07-28",
-    "clickKey": 341,
-    "clickKeyRight": 342
-  },
-  {
     "slug": "keen4",
-    "title": "Play Commander Keen 4: Secret of the Oracle — ExeBrowser",
-    "description": "Commander Keen 4: Secret of the Oracle boot test pending.",
-    "keywords": "keen4",
-    "ogTitle": "Commander Keen 4: Secret of the Oracle",
-    "ogDescription": "Commander Keen 4: Secret of the Oracle",
-    "crumb": "Play Commander Keen 4: Secret of the Oracle",
-    "h1": "Play Commander Keen 4: Secret of the Oracle",
+    "title": "Play Commander Keen 4 Online — Secret of the Oracle Shareware — ExeBrowser",
+    "description": "Play Commander Keen 4: Secret of the Oracle free in your browser — the shareware episode of Goodbye Galaxy. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play commander keen 4 online, secret of the oracle browser, keen 4 shareware, goodbye galaxy dos",
+    "ogTitle": "Play Commander Keen 4 Online — Secret of the Oracle Shareware",
+    "ogDescription": "Play Commander Keen 4: Secret of the Oracle free in your browser — the shareware episode of Goodbye Galaxy. No download, runs via DOSBox + WebAssembly",
+    "crumb": "Play Commander Keen 4",
+    "h1": "Play Commander Keen 4: Secret of the Oracle online — free shareware episode",
     "appName": "Commander Keen 4: Secret of the Oracle",
     "appType": "game",
     "author": "id Software / Apogee Software",
     "genre": [
-      "Platformer"
+      "Platformer",
+      "Action"
     ],
     "dosRuntime": true,
     "hostable": true,
     "appUrl": "/apps/keen4/keen4.zip",
     "verdict": {
       "kind": "good",
-      "text": "Boot test pending"
+      "text": "Works — shareware episode runs via DOSBox in your browser"
     },
-    "intro": "<p><strong>Commander Keen 4: Secret of the Oracle</strong> — boot test pending.</p>",
-    "sections": [],
-    "faq": [],
-    "related": [],
+    "intro": "<p><strong>Commander Keen 4: Secret of the Oracle</strong> — the shareware episode of <em>Goodbye Galaxy</em> (1991), and the game where the Keen series hit its stride: bigger levels, the pogo stick as a genuine movement system, and the Shikadi looming over everything. id Software's smooth EGA scrolling at its best. The complete shareware episode is hosted here.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release runs in a WebAssembly DOSBox build on this page. Keen 4 is noticeably larger and more forgiving than Keen 1 — there's a proper world map, a save system, and secret levels that reward exploring. Press <kbd>F1</kbd> in game for the built-in help.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p><strong>Arrow keys</strong> move, <strong>Ctrl</strong> jumps and <strong>Alt</strong> uses the pogo stick. Hold Ctrl while pogoing to bounce higher — most of the secret areas need that combination. <kbd>Esc</kbd> opens the menu, where you can save.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click jumps, right-click uses the pogo.</p>"
+      },
+      {
+        "h": "Shareware episode — and the rest",
+        "html": "<p>Secret of the Oracle was the free shareware episode of the Goodbye Galaxy pair. Episode 5, <em>The Armageddon Machine</em>, and Keen 6 are commercial — the whole series is sold as the Commander Keen Complete Pack on Steam.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Commander Keen 4 free to play here?",
+        "a": "This is the official shareware episode, which id Software and Apogee distributed free. Episodes 5 and 6 are commercial and not included — buy the Complete Pack on Steam for those."
+      },
+      {
+        "q": "How does the pogo stick work?",
+        "a": "Press Alt to pogo, and hold Ctrl while bouncing to jump much higher. Most secret areas are only reachable with a high pogo bounce."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrows move, Ctrl jumps, Alt pogos, Esc opens the menu, F1 shows in-game help."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — Keen 4 has a proper save system and saves persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "How is this different from Commander Keen 1?",
+        "a": "Keen 4 is bigger and more polished: a world map, a save system, better level design, and the pogo stick as a core mechanic rather than a curiosity."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen 1",
+        "desc": "Where the series started — shareware Episode 1."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Same engine, more shooting — freeware."
+      },
+      {
+        "href": "/run/xargon/",
+        "title": "Xargon",
+        "desc": "Freeware platform-adventure trilogy."
+      }
+    ],
     "updated": "2026-07-28",
     "addedDate": "2026-07-28",
     "clickKey": 341,
-    "clickKeyRight": 342
+    "clickKeyRight": 342,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: ctrl · POGO: alt · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "POGO",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
   }
 ]
