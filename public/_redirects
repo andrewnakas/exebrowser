@@ -11,3 +11,8 @@
 /apps/epic-pinball/* /run/ 301
 /apps/jazz-jackrabbit/* /run/ 301
 /apps/major-stryker/* /run/ 301
+
+# freeciv is played through an external iframe; its 24 MB local payload was
+# never referenced and has been removed. Pages keeps prior-deploy files, so
+# retire the URL explicitly.
+/apps/freeciv/* /run/freeciv/ 301
