@@ -1086,6 +1086,11 @@
     "licenseReason": "Proprietary Microsoft software bundled with Windows; not licensed for redistribution, so it cannot be hosted.",
     "related": [
       {
+        "href": "/run/hearts-open/",
+        "title": "Play Hearts free (instant)",
+        "desc": "Trick-taking card game you can play right now — no download."
+      },
+      {
         "href": "/run/3d-pinball-space-cadet/",
         "title": "3D Pinball Space Cadet",
         "desc": "The other beloved bundled Windows game."
@@ -1116,7 +1121,7 @@
         "desc": "What runs in ExeBrowser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28"
   },
   {
     "slug": "freeciv",
@@ -1469,6 +1474,11 @@
     ],
     "related": [
       {
+        "href": "/run/hearts-open/",
+        "title": "Play Hearts free (instant)",
+        "desc": "Trick-taking card game you can play right now — no download."
+      },
+      {
         "href": "/run/solitaire/",
         "title": "Windows Solitaire",
         "desc": "The classic sol.exe card game — runs the same way."
@@ -1499,7 +1509,7 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28"
   },
   {
     "slug": "spider-solitaire",
@@ -1567,6 +1577,11 @@
     ],
     "related": [
       {
+        "href": "/run/hearts-open/",
+        "title": "Play Hearts free (instant)",
+        "desc": "Trick-taking card game you can play right now — no download."
+      },
+      {
         "href": "/run/solitaire/",
         "title": "Windows Solitaire",
         "desc": "The classic Klondike sol.exe and its siblings."
@@ -1597,7 +1612,7 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28"
   },
   {
     "slug": "hearts",
@@ -1623,7 +1638,7 @@
       "kind": "good",
       "text": "Single-player works well"
     },
-    "intro": "<p>The classic <strong>Microsoft Hearts</strong> — the trick-taking card game (<code>mshearts.exe</code>) that shipped with Windows from 3.11 all the way through Windows 7 — can run in a browser tab here, once you load your own copy (Hearts is proprietary Microsoft software, so we can't host the file; bring it from a Windows machine you own). It is a tiny 32-bit GDI program with no DirectX, no 3D, and no .NET, which makes it one of the most reliable things to run in ExeBrowser. Single-player against the three computer opponents plays just like it always did. The one thing that won't work is the old \"Microsoft Hearts Network\" LAN play, but that's no loss — Microsoft already removed network play in the Windows XP version.</p>",
+    "intro": "<div class=\"warn-box\" style=\"border-color:#2e7d32;\"><p><strong>Want to play Hearts right now?</strong> Microsoft Hearts is proprietary so we can't host it — but we wrote a free <a href=\"/run/hearts-open/\">Hearts you can play instantly</a>, same rules, no download and no sign-up. This page covers running your own copy of the Microsoft version.</p></div>\n<p>The classic <strong>Microsoft Hearts</strong> — the trick-taking card game (<code>mshearts.exe</code>) that shipped with Windows from 3.11 all the way through Windows 7 — can run in a browser tab here, once you load your own copy (Hearts is proprietary Microsoft software, so we can't host the file; bring it from a Windows machine you own). It is a tiny 32-bit GDI program with no DirectX, no 3D, and no .NET, which makes it one of the most reliable things to run in ExeBrowser. Single-player against the three computer opponents plays just like it always did. The one thing that won't work is the old \"Microsoft Hearts Network\" LAN play, but that's no loss — Microsoft already removed network play in the Windows XP version.</p>",
     "licenseNote": "<p><strong>Microsoft Hearts is proprietary software</strong> — part of Windows, © Microsoft Corporation. It is <strong>not</strong> free to redistribute, so we don't host the file. To play it here, copy <code>MSHEARTS.EXE</code> (and on some versions <code>CARDS.DLL</code>) from a Windows installation you legitimately own — older retail Windows (95/98/Me/2000/XP/Vista/7) all include it under <code>C:\\WINDOWS\\</code> — and load that folder with \"Load your own copy\" above. If you just want the gameplay with no file at all, Microsoft also publishes a free, modern <a href=\"https://apps.microsoft.com/\" target=\"_blank\" rel=\"noopener\">Microsoft Solitaire Collection / Casual Games</a> in the Microsoft Store for Windows 10/11. Please don't download executables from abandonware or pirate sites.</p>",
     "sections": [
       {
@@ -1663,6 +1678,11 @@
     ],
     "related": [
       {
+        "href": "/run/hearts-open/",
+        "title": "Play Hearts free (instant)",
+        "desc": "Our own Hearts — same rules, plays instantly, no files needed."
+      },
+      {
         "href": "/run/solitaire/",
         "title": "Windows Solitaire",
         "desc": "The other classic Windows card game, in a tab."
@@ -1693,7 +1713,7 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28"
   },
   {
     "slug": "skifree",
@@ -7187,5 +7207,56 @@
       "Platformers",
       "Action"
     ]
+  },
+  {
+    "slug": "hearts-open",
+    "skipGenerate": true,
+    "title": "Play Hearts Online Free — No Download, No Sign-up — ExeBrowser",
+    "description": "Play Hearts free in your browser against three computer opponents. Full rules: passing, shooting the moon, the queen of spades. No download, no account, works on mobile.",
+    "keywords": "play hearts online, hearts card game free, hearts online no download, microsoft hearts alternative, hearts game browser",
+    "ogTitle": "Play Hearts Online Free — No Download, No Sign-up",
+    "ogDescription": "The classic trick-taking card game in your browser — three computer opponents, full rules, instant play.",
+    "crumb": "Play Hearts",
+    "h1": "Play Hearts online — free, instant",
+    "appName": "Hearts",
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Card game",
+      "Strategy"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "appUrl": "/apps/hearts-open/",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "controls": [
+      {
+        "action": "Select / play a card",
+        "keyboard": "—",
+        "mouse": "Click a card"
+      },
+      {
+        "action": "Pass 3 cards",
+        "keyboard": "—",
+        "mouse": "Click 3, then Pass"
+      },
+      {
+        "action": "Next hand",
+        "keyboard": "—",
+        "mouse": "Click Next hand"
+      }
+    ],
+    "screenshot": true
   }
 ]

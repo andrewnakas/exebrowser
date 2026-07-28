@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://exebrowser.com/run/solitaire/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -80,19 +80,19 @@
   </url>
   <url>
     <loc>https://exebrowser.com/run/freecell/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://exebrowser.com/run/spider-solitaire/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://exebrowser.com/run/hearts/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -380,6 +380,12 @@
   </url>
   <url>
     <loc>https://exebrowser.com/run/keen4/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/run/hearts-open/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

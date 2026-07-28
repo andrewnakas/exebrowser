@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Hearts — free card game</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .75rem;
+    font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #0d3b21; color: #eef4ef;
+    display: flex; flex-direction: column; gap: .5rem;
+    min-height: 100vh;
+  }
+  .board {
+    flex: 1 1 auto;
+    display: flex; flex-direction: column; gap: .5rem;
+    max-width: 720px; width: 100%; margin: 0 auto;
+  }
+  .seats { display: flex; justify-content: space-between; gap: .5rem; font-size: .85rem; }
+  .seat { text-align: center; opacity: .9; }
+  .seat-name { font-weight: 600; display: block; }
+  .seat-count { opacity: .7; font-size: .8rem; }
+
+  #trick {
+    flex: 1 1 auto; min-height: 132px;
+    display: flex; align-items: center; justify-content: center;
+    gap: .5rem; flex-wrap: wrap;
+    background: rgba(0,0,0,.18); border-radius: 10px; padding: .6rem;
+  }
+  .played { display: flex; flex-direction: column; align-items: center; gap: .2rem; }
+  .played-who { font-size: .7rem; opacity: .7; }
+
+  #scores { display: flex; gap: .9rem; flex-wrap: wrap; justify-content: center; font-size: .85rem; }
+  .sc { opacity: .85; } .sc.me { opacity: 1; font-weight: 600; }
+  .sc b { font-variant-numeric: tabular-nums; }
+
+  #status { text-align: center; min-height: 1.4em; font-size: .9rem; }
+  #action { text-align: center; min-height: 2.2em; }
+
+  #hand { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: center; }
+  .card {
+    width: 46px; height: 64px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: #fdfdf7; color: #16181d;
+    border: 1px solid #b9bfc6; border-radius: 6px;
+    font: 600 15px/1 system-ui, sans-serif;
+    cursor: pointer; padding: 0;
+    transition: transform .08s ease, box-shadow .08s ease;
+  }
+  .card.red { color: #c0392b; }
+  .card .c-s { font-size: 17px; margin-top: 2px; }
+  .card:not(.dim):hover { transform: translateY(-4px); box-shadow: 0 3px 10px rgba(0,0,0,.4); }
+  .card.sel { transform: translateY(-8px); box-shadow: 0 0 0 3px #f1c40f; }
+  .card.dim { cursor: default; background: #d9dcd6; color: #5b6169; }
+  .card.dim.red { color: #a2635c; }
+  /* Cards already played sit face-up on the table and should read clearly. */
+  .played .card, .played .card.dim { background: #fdfdf7; color: #16181d; opacity: 1; }
+  .played .card.red, .played .card.dim.red { color: #c0392b; }
+
+  .button {
+    font: inherit; font-size: .9rem; padding: .45rem .9rem;
+    border-radius: 8px; border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08); color: inherit; cursor: pointer;
+  }
+  .button.primary { background: #c0392b; border-color: #c0392b; color: #fff; font-weight: 600; }
+  .button:disabled { opacity: .45; cursor: default; }
+
+  @media (max-width: 420px) {
+    .card { width: 38px; height: 54px; font-size: 13px; }
+    .card .c-s { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+  <div class="board">
+    <div class="seats">
+      <div class="seat" id="seat1"><span class="seat-name">West</span><span class="seat-count">13 cards</span></div>
+      <div class="seat" id="seat2"><span class="seat-name">North</span><span class="seat-count">13 cards</span></div>
+      <div class="seat" id="seat3"><span class="seat-name">East</span><span class="seat-count">13 cards</span></div>
+    </div>
+
+    <div id="trick" aria-live="polite"></div>
+
+    <div id="scores"></div>
+    <p id="status" aria-live="polite"></p>
+    <div id="action"></div>
+    <div id="hand" aria-label="Your hand"></div>
+  </div>
+<script src="hearts.js"></script>
+</body>
+</html>
