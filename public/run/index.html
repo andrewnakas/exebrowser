@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=31" />
+<link rel="stylesheet" href="/style.css?v=32" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -62,100 +62,118 @@
       <ul class="poster-grid" id="continue-grid"></ul>
     </div>
     <h3 style="margin-top:0;">▶ Play now — free, hosted here</h3>
+
+    <div class="grid-filter" data-grid-filter>
+      <label class="gf-search">
+        <span class="visually-hidden">Search games</span>
+        <input type="search" placeholder="Search 24 titles…" autocomplete="off" data-grid-search />
+      </label>
+      <div class="gf-chips">
+        <button type="button" class="chip is-on" data-cat="">All <span class="chip-n">24</span></button>
+        <button type="button" class="chip" data-cat="Shooters">Shooters <span class="chip-n">8</span></button>
+        <button type="button" class="chip" data-cat="Platformers">Platformers <span class="chip-n">6</span></button>
+        <button type="button" class="chip" data-cat="Action">Action <span class="chip-n">13</span></button>
+        <button type="button" class="chip" data-cat="Puzzle &amp; strategy">Puzzle &amp; strategy <span class="chip-n">5</span></button>
+        <button type="button" class="chip" data-cat="Racing &amp; sports">Racing &amp; sports <span class="chip-n">2</span></button>
+        <button type="button" class="chip" data-cat="Pinball">Pinball <span class="chip-n">1</span></button>
+        <button type="button" class="chip" data-cat="Apps &amp; tools">Apps &amp; tools <span class="chip-n">5</span></button>
+      </div>
+      <p class="gf-empty" hidden>No titles match — <button type="button" class="link" data-grid-reset>show everything</button>.</p>
+    </div>
     <ul class="poster-grid">
-        <li><a class="poster-card" href="/run/space-cadet-open/">
+        <li class="pc-item" data-cats="Action|Pinball" data-search="3d pinball space cadet cinematronics / k4zmu2a (open source port) pinball arcade action pinball"><a class="poster-card" href="/run/space-cadet-open/">
           <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
           <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/wolfenstein-3d/">
+        <li class="pc-item" data-cats="Shooters|Action" data-search="wolfenstein 3d id software first-person shooter action shooters action"><a class="poster-card" href="/run/wolfenstein-3d/">
           <img class="pc-shot" src="/run/wolfenstein-3d/screenshot.png" width="320" height="240" loading="lazy" alt="Wolfenstein 3D running in the browser" />
           <span class="pc-body"><span class="pc-title">Wolfenstein 3D</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/tyrian/">
+        <li class="pc-item" data-cats="Shooters|Action" data-search="tyrian 2000 eclipse software / epic megagames shoot 'em up vertical scrolling shooter arcade shooters action"><a class="poster-card" href="/run/tyrian/">
           <img class="pc-shot" src="/run/tyrian/screenshot.png" width="320" height="240" loading="lazy" alt="Tyrian 2000 running in the browser" />
           <span class="pc-body"><span class="pc-title">Tyrian 2000</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/doom/">
+        <li class="pc-item" data-cats="Shooters|Action" data-search="doom id software first-person shooter action shooters action"><a class="poster-card" href="/run/doom/">
           <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM running in the browser" />
           <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/freedoom/">
+        <li class="pc-item" data-cats="Shooters|Action" data-search="freedoom the freedoom project first-person shooter action shooters action"><a class="poster-card" href="/run/freedoom/">
           <img class="pc-shot" src="/run/freedoom/screenshot.png" width="320" height="240" loading="lazy" alt="Freedoom running in the browser" />
           <span class="pc-body"><span class="pc-title">Freedoom</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/freeciv/">
+        <li class="pc-item" data-cats="Puzzle &amp; strategy" data-search="freeciv the freeciv project strategy turn-based strategy 4x empire-building puzzle &amp; strategy"><a class="poster-card" href="/run/freeciv/">
           <img class="pc-shot" src="/run/freeciv/screenshot.jpg" width="320" height="240" loading="lazy" alt="Freeciv running in the browser" />
           <span class="pc-body"><span class="pc-title">Freeciv</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/skifree/">
+        <li class="pc-item" data-cats="Action|Racing &amp; sports" data-search="skifree chris pirih sports arcade casual action racing &amp; sports"><a class="poster-card" href="/run/skifree/">
           <img class="pc-shot" src="/run/skifree/screenshot.png" width="320" height="240" loading="lazy" alt="SkiFree running in the browser" />
           <span class="pc-body"><span class="pc-title">SkiFree</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/commander-keen/">
+        <li class="pc-item" data-cats="Platformers|Action" data-search="commander keen id software / apogee software platformer side-scroller action platformers action"><a class="poster-card" href="/run/commander-keen/">
           <img class="pc-shot" src="/run/commander-keen/screenshot.png" width="320" height="240" loading="lazy" alt="Commander Keen running in the browser" />
           <span class="pc-body"><span class="pc-title">Commander Keen <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/scorched-earth/">
+        <li class="pc-item" data-cats="Puzzle &amp; strategy" data-search="scorched earth wendell hicken artillery strategy puzzle &amp; strategy"><a class="poster-card" href="/run/scorched-earth/">
           <img class="pc-shot" src="/run/scorched-earth/screenshot.png" width="320" height="240" loading="lazy" alt="Scorched Earth running in the browser" />
           <span class="pc-body"><span class="pc-title">Scorched Earth <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/raptor/">
+        <li class="pc-item" data-cats="Shooters|Action" data-search="raptor cygnus studios / apogee software shoot 'em up arcade shooters action"><a class="poster-card" href="/run/raptor/">
           <img class="pc-shot" src="/run/raptor/screenshot.png" width="320" height="240" loading="lazy" alt="Raptor running in the browser" />
           <span class="pc-body"><span class="pc-title">Raptor <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/blake-stone/">
+        <li class="pc-item" data-cats="Shooters|Action" data-search="blake stone apogee software first-person shooter action shooters action"><a class="poster-card" href="/run/blake-stone/">
           <img class="pc-shot" src="/run/blake-stone/screenshot.png" width="320" height="240" loading="lazy" alt="Blake Stone running in the browser" />
           <span class="pc-body"><span class="pc-title">Blake Stone <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/7-zip/">
+        <li class="pc-item" data-cats="Apps &amp; tools" data-search="7-zip igor pavlov apps &amp; tools"><a class="poster-card" href="/run/7-zip/">
           <img class="pc-shot" src="/run/7-zip/screenshot.png" width="320" height="240" loading="lazy" alt="7-Zip running in the browser" />
           <span class="pc-body"><span class="pc-title">7-Zip</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/keepass/">
+        <li class="pc-item" data-cats="Apps &amp; tools" data-search="keepass dominik reichl apps &amp; tools"><a class="poster-card" href="/run/keepass/">
           <span class="pc-shot pc-placeholder" aria-hidden="true">K</span>
           <span class="pc-body"><span class="pc-title">KeePass</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/sumatra-pdf/">
+        <li class="pc-item" data-cats="Apps &amp; tools" data-search="sumatra pdf krzysztof kowalczyk apps &amp; tools"><a class="poster-card" href="/run/sumatra-pdf/">
           <img class="pc-shot" src="/run/sumatra-pdf/screenshot.png" width="320" height="240" loading="lazy" alt="Sumatra PDF running in the browser" />
           <span class="pc-body"><span class="pc-title">Sumatra PDF</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/notepad-plus-plus/">
+        <li class="pc-item" data-cats="Apps &amp; tools" data-search="notepad++ notepad++ (don ho) apps &amp; tools"><a class="poster-card" href="/run/notepad-plus-plus/">
           <span class="pc-shot pc-placeholder" aria-hidden="true">N</span>
           <span class="pc-body"><span class="pc-title">Notepad++</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/putty/">
+        <li class="pc-item" data-cats="Apps &amp; tools" data-search="putty simon tatham apps &amp; tools"><a class="poster-card" href="/run/putty/">
           <img class="pc-shot" src="/run/putty/screenshot.png" width="320" height="240" loading="lazy" alt="PuTTY running in the browser" />
           <span class="pc-body"><span class="pc-title">PuTTY</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/skyroads/">
+        <li class="pc-item" data-cats="Puzzle &amp; strategy|Racing &amp; sports" data-search="skyroads bluemoon interactive racing puzzle puzzle &amp; strategy racing &amp; sports"><a class="poster-card" href="/run/skyroads/">
           <img class="pc-shot" src="/run/skyroads/screenshot.png" width="320" height="240" loading="lazy" alt="SkyRoads running in the browser" />
           <span class="pc-body"><span class="pc-title">SkyRoads <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/jetpack/">
+        <li class="pc-item" data-cats="Platformers|Puzzle &amp; strategy" data-search="jetpack adept software platformer puzzle platformers puzzle &amp; strategy"><a class="poster-card" href="/run/jetpack/">
           <img class="pc-shot" src="/run/jetpack/screenshot.png" width="320" height="240" loading="lazy" alt="Jetpack running in the browser" />
           <span class="pc-body"><span class="pc-title">Jetpack <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/god-of-thunder/">
+        <li class="pc-item" data-cats="Action|Puzzle &amp; strategy" data-search="god of thunder ron davis / adept software action-adventure puzzle action puzzle &amp; strategy"><a class="poster-card" href="/run/god-of-thunder/">
           <img class="pc-shot" src="/run/god-of-thunder/screenshot.png" width="320" height="240" loading="lazy" alt="God of Thunder running in the browser" />
           <span class="pc-body"><span class="pc-title">God of Thunder <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/one-must-fall-2097/">
+        <li class="pc-item" data-cats="Action" data-search="one must fall 2097 diversions entertainment / epic megagames fighting arcade action"><a class="poster-card" href="/run/one-must-fall-2097/">
           <img class="pc-shot" src="/run/one-must-fall-2097/screenshot.png" width="320" height="240" loading="lazy" alt="One Must Fall 2097 running in the browser" />
           <span class="pc-body"><span class="pc-title">One Must Fall 2097 <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/xargon/">
+        <li class="pc-item" data-cats="Platformers|Action" data-search="xargon allen pilgrim / epic megagames platformer action platformers action"><a class="poster-card" href="/run/xargon/">
           <img class="pc-shot" src="/run/xargon/screenshot.png" width="320" height="240" loading="lazy" alt="Xargon running in the browser" />
           <span class="pc-body"><span class="pc-title">Xargon <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/bio-menace/">
+        <li class="pc-item" data-cats="Shooters|Platformers" data-search="bio menace jim norwood / apogee software run and gun platformer shooters platformers"><a class="poster-card" href="/run/bio-menace/">
           <img class="pc-shot" src="/run/bio-menace/screenshot.png" width="320" height="240" loading="lazy" alt="Bio Menace running in the browser" />
           <span class="pc-body"><span class="pc-title">Bio Menace <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/alien-carnage/">
+        <li class="pc-item" data-cats="Shooters|Platformers" data-search="alien carnage subzero software / apogee software run and gun platformer shooters platformers"><a class="poster-card" href="/run/alien-carnage/">
           <img class="pc-shot" src="/run/alien-carnage/screenshot.png" width="320" height="240" loading="lazy" alt="Alien Carnage running in the browser" />
           <span class="pc-body"><span class="pc-title">Alien Carnage <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li><a class="poster-card" href="/run/keen4/">
+        <li class="pc-item" data-cats="Platformers|Action" data-search="commander keen 4: secret of the oracle id software / apogee software platformer action platformers action"><a class="poster-card" href="/run/keen4/">
           <img class="pc-shot" src="/run/keen4/screenshot.png" width="320" height="240" loading="lazy" alt="Commander Keen 4: Secret of the Oracle running in the browser" />
           <span class="pc-body"><span class="pc-title">Commander Keen 4: Secret of the Oracle <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
@@ -223,6 +241,7 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 <script src="/recent.js?v=1"></script>
+<script src="/filter.js?v=1"></script>
 <script>window.renderContinue && renderContinue("continue-playing", "continue-grid");</script>
 </body>
 </html>

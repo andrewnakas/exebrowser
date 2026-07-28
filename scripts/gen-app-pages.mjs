@@ -498,7 +498,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=31" />
+<link rel="stylesheet" href="/style.css?v=32" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -621,13 +621,42 @@ function posterCard(p) {
   const art = shot
     ? `<img class="pc-shot" src="/run/${p.slug}/${shot}" width="320" height="240" loading="lazy" alt="${esc(p.appName)} running in the browser" />`
     : `<span class="pc-shot pc-placeholder" aria-hidden="true">${esc((p.appName || "?").trim().charAt(0))}</span>`;
-  const href = p.slug === "space-cadet-open" || p.slug === "dragon-keep"
-    ? `/run/${p.slug}/`
-    : `/run/${p.slug}/`;
-  return `        <li><a class="poster-card" href="${href}">
+  // Categories and a search haystack ride on the <li> so filtering is a pure
+  // client-side attribute match — no data duplicated into a JS blob, and the
+  // grid stays fully populated for crawlers with JS off.
+  const cats = (p.categories || []).join("|");
+  const hay = [p.appName, p.author, ...(p.genre || []), ...(p.categories || [])]
+    .filter(Boolean).join(" ").toLowerCase();
+  return `        <li class="pc-item" data-cats="${esc(cats)}" data-search="${esc(hay)}"><a class="poster-card" href="/run/${p.slug}/">
           ${art}
           <span class="pc-body"><span class="pc-title">${esc(p.appName)}${isNew(p) ? NEW_BADGE : ""}</span><span class="pc-play">▶ Play free</span></span>
         </a></li>`;
+}
+
+// Filter chips + search box shown above a poster grid. Progressive enhancement:
+// the markup is inert until filter.js wires it, so a no-JS visitor just sees
+// the full grid.
+function gridFilterHtml(pages) {
+  const counts = new Map();
+  for (const p of pages) for (const c of p.categories || []) counts.set(c, (counts.get(c) || 0) + 1);
+  if (counts.size < 3) return "";
+  const order = ["Shooters", "Platformers", "Action", "Puzzle & strategy", "Racing & sports", "Pinball", "Apps & tools"];
+  const chips = order
+    .filter((c) => counts.has(c))
+    .map((c) => `<button type="button" class="chip" data-cat="${esc(c)}">${esc(c)} <span class="chip-n">${counts.get(c)}</span></button>`)
+    .join("\n        ");
+  return `
+    <div class="grid-filter" data-grid-filter>
+      <label class="gf-search">
+        <span class="visually-hidden">Search games</span>
+        <input type="search" placeholder="Search ${pages.length} titles…" autocomplete="off" data-grid-search />
+      </label>
+      <div class="gf-chips">
+        <button type="button" class="chip is-on" data-cat="">All <span class="chip-n">${pages.length}</span></button>
+        ${chips}
+      </div>
+      <p class="gf-empty" hidden>No titles match — <button type="button" class="link" data-grid-reset>show everything</button>.</p>
+    </div>`;
 }
 const playNow = pages.filter((p) => isPlayable(p));
 const games = pages.filter((p) => !isPlayable(p) && p.appType === "game");
@@ -649,7 +678,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=31" />
+<link rel="stylesheet" href="/style.css?v=32" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -696,6 +725,7 @@ const indexHtml = `<!DOCTYPE html>
       <ul class="poster-grid" id="continue-grid"></ul>
     </div>
     <h3 style="margin-top:0;">▶ Play now — free, hosted here</h3>
+${gridFilterHtml(playNow)}
     <ul class="poster-grid">
 ${playNow.map(posterCard).join("\n")}
     </ul>
@@ -726,6 +756,7 @@ ${apps.map(indexCard).join("\n")}
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 <script src="/recent.js?v=1"></script>
+<script src="/filter.js?v=1"></script>
 <script>window.renderContinue && renderContinue("continue-playing", "continue-grid");</script>
 </body>
 </html>

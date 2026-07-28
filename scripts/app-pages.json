@@ -59,6 +59,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Action",
+      "Pinball"
     ]
   },
   {
@@ -292,6 +296,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
     ]
   },
   {
@@ -476,6 +484,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
     ]
   },
   {
@@ -678,6 +690,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
     ]
   },
   {
@@ -883,6 +899,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
     ]
   },
   {
@@ -1183,7 +1203,10 @@
       }
     ],
     "updated": "2026-07-01",
-    "screenshot": "screenshot.jpg"
+    "screenshot": "screenshot.jpg",
+    "categories": [
+      "Puzzle & strategy"
+    ]
   },
   {
     "slug": "age-of-empires",
@@ -1832,6 +1855,10 @@
         "keyboard": "number keys 1–9",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Action",
+      "Racing & sports"
     ]
   },
   {
@@ -2423,6 +2450,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Platformers",
+      "Action"
     ]
   },
   {
@@ -2577,6 +2608,9 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Puzzle & strategy"
     ]
   },
   {
@@ -2926,6 +2960,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
     ]
   },
   {
@@ -3226,6 +3264,10 @@
         "keyboard": "Esc, then arrows + Enter",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
     ]
   },
   {
@@ -3532,7 +3574,10 @@
       }
     ],
     "updated": "2026-07-01",
-    "screenshot": true
+    "screenshot": true,
+    "categories": [
+      "Apps & tools"
+    ]
   },
   {
     "slug": "winrar",
@@ -3818,7 +3863,10 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-01",
+    "categories": [
+      "Apps & tools"
+    ]
   },
   {
     "slug": "mspaint",
@@ -4301,7 +4349,10 @@
       "html": "<p>Sumatra PDF is free, open-source software. Grab the official 32-bit <strong>portable</strong> build (a single standalone <code>.exe</code>) from the official site, then upload it here alongside your document. We host a ready-to-run copy below for convenience; the original source and license files are at the project's home.</p><ul><li><a href=\"https://www.sumatrapdfreader.org/download-free-pdf-viewer\" target=\"_blank\" rel=\"noopener\">Official Sumatra PDF download page</a> (pick the 32-bit portable build)</li><li><a href=\"https://github.com/sumatrapdfreader/sumatrapdf\" target=\"_blank\" rel=\"noopener\">Source code & license (GitHub)</a></li></ul><p>Distributed under the GPLv3 (with some BSD-licensed components). The AUTHORS, COPYING and COPYING.BSD files are included with the redistributed copy.</p>"
     },
     "updated": "2026-07-01",
-    "screenshot": true
+    "screenshot": true,
+    "categories": [
+      "Apps & tools"
+    ]
   },
   {
     "slug": "notepad-plus-plus",
@@ -4383,7 +4434,10 @@
       "html": "<p>Notepad++ is GPL open-source, so it's free to download and redistribute. For the best chance of a clean boot under the browser engine, use a <strong>32-bit portable (zip)</strong> build — an older 7.9.x-era release that still targeted Windows XP tends to behave best. Grab official downloads from <a href=\"https://notepad-plus-plus.org/downloads/\" target=\"_blank\" rel=\"noopener\">notepad-plus-plus.org</a>, extract the zip, and upload the folder to ExeBrowser.</p>"
     },
     "genre": [],
-    "updated": "2026-07-28"
+    "updated": "2026-07-28",
+    "categories": [
+      "Apps & tools"
+    ]
   },
   {
     "slug": "irfanview",
@@ -4574,7 +4628,10 @@
       }
     ],
     "updated": "2026-07-28",
-    "screenshot": true
+    "screenshot": true,
+    "categories": [
+      "Apps & tools"
+    ]
   },
   {
     "slug": "filezilla",
@@ -6049,6 +6106,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Puzzle & strategy",
+      "Racing & sports"
     ]
   },
   {
@@ -6186,6 +6247,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Platformers",
+      "Puzzle & strategy"
     ]
   },
   {
@@ -6328,6 +6393,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Action",
+      "Puzzle & strategy"
     ]
   },
   {
@@ -6489,6 +6558,9 @@
         "keyboard": "in-game Setup menu",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Action"
     ]
   },
   {
@@ -6640,6 +6712,10 @@
         "keyboard": "press Y",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Platformers",
+      "Action"
     ]
   },
   {
@@ -6791,6 +6867,10 @@
         "keyboard": "F1",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Shooters",
+      "Platformers"
     ]
   },
   {
@@ -6937,6 +7017,10 @@
         "keyboard": "Esc",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Shooters",
+      "Platformers"
     ]
   },
   {
@@ -7098,6 +7182,10 @@
         "keyboard": "F1",
         "mouse": "—"
       }
+    ],
+    "categories": [
+      "Platformers",
+      "Action"
     ]
   }
 ]
