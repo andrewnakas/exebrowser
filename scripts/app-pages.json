@@ -130,6 +130,11 @@
     ],
     "related": [
       {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's freeware run-and-gun platformer."
+      },
+      {
         "href": "/run/doom/",
         "title": "DOOM",
         "desc": "id's 1993 shareware FPS — runs cleanly as Win32."
@@ -216,7 +221,7 @@
         }
       ]
     },
-    "updated": "2026-07-01",
+    "updated": "2026-07-28",
     "screenshot": true
   },
   {
@@ -284,6 +289,11 @@
       }
     ],
     "related": [
+      {
+        "href": "/run/one-must-fall-2097/",
+        "title": "One Must Fall 2097",
+        "desc": "Epic's freeware robot fighter — full game, free."
+      },
       {
         "href": "/run/raptor/",
         "title": "Raptor: Call of the Shadows",
@@ -366,7 +376,7 @@
         }
       ]
     },
-    "updated": "2026-07-01",
+    "updated": "2026-07-28",
     "screenshot": true
   },
   {
@@ -433,6 +443,11 @@
       }
     ],
     "related": [
+      {
+        "href": "/run/alien-carnage/",
+        "title": "Alien Carnage",
+        "desc": "Apogee's freeware run-and-gun with a jetpack."
+      },
       {
         "href": "/run/3d-pinball-space-cadet/",
         "title": "3D Pinball Space Cadet",
@@ -521,7 +536,7 @@
       ]
     },
     "dosRuntime": true,
-    "updated": "2026-07-01",
+    "updated": "2026-07-28",
     "screenshot": true
   },
   {
@@ -2090,6 +2105,11 @@
     ],
     "related": [
       {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee run-and-gun on the same engine — freeware."
+      },
+      {
         "href": "/run/doom/",
         "title": "DOOM",
         "desc": "id Software's 1993 shooter — free shareware episode, in your browser."
@@ -2120,7 +2140,7 @@
         "desc": "What runs, what doesn't, and why DOS games are tricky."
       }
     ],
-    "updated": "2026-07-27",
+    "updated": "2026-07-28",
     "dosRuntime": true,
     "mobileControls": {
       "type": "platformer-dos",
@@ -2739,6 +2759,11 @@
     ],
     "related": [
       {
+        "href": "/run/alien-carnage/",
+        "title": "Alien Carnage",
+        "desc": "Another Apogee classic — free and instant."
+      },
+      {
         "href": "/run/doom/",
         "title": "DOOM",
         "desc": "The free 1993 shareware FPS — and it runs great."
@@ -2774,7 +2799,7 @@
       "html": "<div class=\"download-box\"><p><strong>Play it here first</strong> — the shareware episode above is the real game. Want it on your own machine, or the other five episodes?</p><p><a class=\"button\" href=\"https://store.steampowered.com/app/358190/Blake_Stone_Aliens_of_Gold/\" target=\"_blank\" rel=\"noopener\">Blake Stone on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/game/blake_stone_aliens_of_gold\" target=\"_blank\" rel=\"noopener\">Blake Stone on GOG →</a></p><p class=\"muted small\">The open-source <a href=\"https://github.com/bibendovsky/bstone\" target=\"_blank\" rel=\"noopener\">BStone</a> source port is the best way to play the full game natively on modern machines.</p></div>"
     },
     "licenseNote": "<p class=\"muted small\">Episode 1 of Blake Stone: Aliens of Gold is officially free, freely-redistributable shareware. Episodes 2–6 are commercial and are not hosted here — buy the full game on Steam or GOG. See the provenance notice at <a href=\"/apps/blake-stone/NOTICE.md\">/apps/blake-stone/NOTICE.md</a>.</p>",
-    "updated": "2026-07-27",
+    "updated": "2026-07-28",
     "dosRuntime": true,
     "mobileControls": {
       "type": "fps-dos",
@@ -5535,5 +5560,842 @@
       }
     ],
     "updated": "2026-07-01"
+  },
+  {
+    "slug": "skyroads",
+    "title": "Play SkyRoads Online — Free Freeware Classic — ExeBrowser",
+    "description": "Play SkyRoads free in your browser — the 1993 Estonian space-racing puzzle classic, released as freeware. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play skyroads online, skyroads browser, skyroads free, skyroads dos game, bluemoon skyroads",
+    "ogTitle": "Play SkyRoads Online — Free Freeware Classic",
+    "ogDescription": "Play SkyRoads free in your browser — the 1993 Estonian space-racing puzzle classic, released as freeware. No download, runs via DOSBox + WebAssembly.",
+    "crumb": "Play SkyRoads",
+    "h1": "Play SkyRoads online — free, instant",
+    "appName": "SkyRoads",
+    "appType": "game",
+    "author": "Bluemoon Interactive",
+    "genre": [
+      "Racing",
+      "Puzzle"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/skyroads/skyroads.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — official freeware release runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>SkyRoads</strong> — Bluemoon Interactive's 1993 cult classic from Estonia, where you drive a small spacecraft along narrow suspended roads through 30 levels of alien skies. Part racer, part precision-jumping puzzle, and famous for being brutally hard in the friendliest possible way. Bluemoon released it as <strong>freeware</strong>, so the complete game is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>This is the original DOS release running in a WebAssembly build of DOSBox. The package is small (~600 KB), so it boots in seconds. Levels are short and restart instantly, which is just as well — you will crash a lot. Fuel and oxygen both drain as you drive, so hesitation costs as much as recklessness.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p><strong>Left/Right arrows</strong> steer between lanes, <strong>Up</strong> accelerates and <strong>Down</strong> brakes, and <strong>Space</strong> jumps. The trick the game never tells you: your jump distance depends on your speed at takeoff, so most puzzles are really about setting up the right approach speed rather than reacting quickly. <kbd>Esc</kbd> returns to the menu.</p>"
+      },
+      {
+        "h": "Why it's free",
+        "html": "<p>Bluemoon Interactive released SkyRoads (and the Christmas Special) as freeware, and it has been distributed at no charge ever since. There's no shareware episode split here — what you're playing is the full game.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is SkyRoads really free?",
+        "a": "Yes. Bluemoon Interactive released it as freeware, so the complete game is legal to host, play and share. Nothing is held back behind a purchase."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Left and Right steer, Up accelerates, Down brakes, and Space jumps. Jump distance scales with your speed, so approach speed matters more than reflexes on most levels."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — high scores and settings persist in this browser between visits. It's best-effort: clearing site data will reset them."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a touch d-pad with JUMP and BRAKE appears under the game on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/tyrian/",
+        "title": "Tyrian 2000",
+        "desc": "Freeware vertical shooter — plays instantly."
+      },
+      {
+        "href": "/run/jetpack/",
+        "title": "Jetpack",
+        "desc": "Author-released puzzle-platformer, full 400 levels."
+      },
+      {
+        "href": "/run/one-must-fall-2097/",
+        "title": "One Must Fall 2097",
+        "desc": "Epic's robot fighter, freeware since 1999."
+      }
+    ],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "mobileControls": {
+      "type": "racer-dos",
+      "hint": "D-pad: steer & speed · JUMP: Space · BRAKE: down",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 32,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
+  },
+  {
+    "slug": "jetpack",
+    "title": "Play Jetpack Online — Free Full Version — ExeBrowser",
+    "description": "Play Jetpack free in your browser — Adept Software's 1993 puzzle-platformer, released free by its author. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play jetpack online, jetpack dos game, jetpack adept software, jetpack free full version",
+    "ogTitle": "Play Jetpack Online — Free Full Version",
+    "ogDescription": "Play Jetpack free in your browser — Adept Software's 1993 puzzle-platformer, released free by its author. No download, runs via DOSBox + WebAssembly.",
+    "crumb": "Play Jetpack",
+    "h1": "Play Jetpack online — free, instant",
+    "appName": "Jetpack",
+    "appType": "game",
+    "author": "Adept Software",
+    "genre": [
+      "Platformer",
+      "Puzzle"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/jetpack/jetpack.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — author-released freeware runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Jetpack</strong> — Adept Software's 1993 puzzle-platformer where you fly a jetpack through collapsing rooms, collecting gems while dodging robots, lasers and your own bad decisions. Author Adam Pedersen released the <strong>full 400-level version free</strong> in 1998, and still hosts it himself — so the whole game is here, not a demo.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS build runs in a WebAssembly DOSBox on this page. It's tiny (~500 KB) and boots almost instantly. Jetpack ships a level editor too, and its community built thousands of custom levels over the years.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p><strong>Arrow keys</strong> move and thrust — hold Up to fly, and remember momentum carries. <strong>Space</strong> fires when you have a weapon, <kbd>Esc</kbd> opens the menu. The jetpack has no hover: you're always either climbing or falling, which is the entire game in one sentence.</p>"
+      },
+      {
+        "h": "Why it's free",
+        "html": "<p>Adam Pedersen released the complete registered version of Jetpack as freeware in December 1998, and adeptsoftware.com has hosted it ever since. This is the full 400-level game.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is this the full game or a demo?",
+        "a": "The full 400-level version. The author released the complete registered game as freeware in 1998."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrows to move and thrust (hold Up to fly), Space to fire, Esc for the menu. There's no hovering — you're always climbing or falling."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, progress and high scores persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes — a touch d-pad plus FIRE appears below the game on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/skyroads/",
+        "title": "SkyRoads",
+        "desc": "Freeware space-racing puzzler from Estonia."
+      },
+      {
+        "href": "/run/xargon/",
+        "title": "Xargon",
+        "desc": "Author-released platform-adventure trilogy."
+      },
+      {
+        "href": "/run/god-of-thunder/",
+        "title": "God of Thunder",
+        "desc": "Norse action-adventure, freeware."
+      }
+    ],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: fly & move · FIRE: space · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 32,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
+  },
+  {
+    "slug": "god-of-thunder",
+    "title": "Play God of Thunder Online — Free Freeware — ExeBrowser",
+    "description": "Play God of Thunder free in your browser — the 1993 Norse action-adventure, released as freeware. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play god of thunder online, god of thunder dos game, god of thunder freeware, thor dos game",
+    "ogTitle": "Play God of Thunder Online — Free Freeware",
+    "ogDescription": "Play God of Thunder free in your browser — the 1993 Norse action-adventure, released as freeware. No download, runs via DOSBox + WebAssembly.",
+    "crumb": "Play God of Thunder",
+    "h1": "Play God of Thunder online — free, instant",
+    "appName": "God of Thunder",
+    "appType": "game",
+    "author": "Ron Davis / Adept Software",
+    "genre": [
+      "Action-adventure",
+      "Puzzle"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/god-of-thunder/god-of-thunder.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — official freeware release runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>God of Thunder</strong> — a 1993 action-adventure where you play Thor, working through three chapters of Norse-flavoured puzzle rooms with a hammer and a lot of block-pushing. Often described as DOS's answer to Zelda. Ron Davis released it as <strong>freeware</strong>, and later put the source code in the public domain, so the complete game is hosted here.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release runs in a WebAssembly DOSBox build on this page. Each screen is a small self-contained puzzle: kill the enemies, move the blocks, find the switch. Progress saves between rooms, and the game is generous with checkpoints.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p><strong>Arrow keys</strong> move Thor, <strong>Ctrl</strong> throws the hammer, and <strong>Space</strong> uses the selected item. <kbd>Esc</kbd> opens the menu where you can change items and save. Hammer throws bounce off walls — a lot of puzzles depend on that.</p>"
+      },
+      {
+        "h": "Why it's free",
+        "html": "<p>Author Ron Davis released God of Thunder as freeware, and in March 2020 released the source code into the public domain. All three chapters are included.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is God of Thunder free to play here?",
+        "a": "Yes. The author released it as freeware and later made the source public domain, so all three chapters are legal to host and play."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrows move, Ctrl throws your hammer, Space uses the selected item, Esc opens the menu. Hammer throws bounce off walls, which many puzzles rely on."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — in-game saves persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a d-pad with HAMMER and ITEM buttons appears on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/xargon/",
+        "title": "Xargon",
+        "desc": "Platform-adventure with a lot of hidden rooms."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee run-and-gun on the Keen engine."
+      },
+      {
+        "href": "/run/jetpack/",
+        "title": "Jetpack",
+        "desc": "Puzzle-platformer, full version free."
+      }
+    ],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "mobileControls": {
+      "type": "adventure-dos",
+      "hint": "D-pad: move · HAMMER: ctrl · ITEM: space · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "HAMMER",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ITEM",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
+  },
+  {
+    "slug": "one-must-fall-2097",
+    "title": "Play One Must Fall 2097 Online — Free Freeware — ExeBrowser",
+    "description": "Play One Must Fall 2097 free in your browser — Epic's 1994 robot fighting classic, released as freeware. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play one must fall 2097 online, omf 2097 browser, one must fall free, omf2097 dos",
+    "ogTitle": "Play One Must Fall 2097 Online — Free Freeware",
+    "ogDescription": "Play One Must Fall 2097 free in your browser — Epic's 1994 robot fighting classic, released as freeware. No download, runs via DOSBox + WebAssembly.",
+    "crumb": "Play One Must Fall 2097",
+    "h1": "Play One Must Fall 2097 online — free, instant",
+    "appName": "One Must Fall 2097",
+    "appType": "game",
+    "author": "Diversions Entertainment / Epic MegaGames",
+    "genre": [
+      "Fighting",
+      "Arcade"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/one-must-fall-2097/one-must-fall-2097.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — official freeware release runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>One Must Fall: 2097</strong> — Diversions Entertainment and Epic MegaGames' 1994 robot fighter, and for many DOS players <em>the</em> fighting game. Eleven pilots, ten upgradeable HAR mechs, a tournament mode with money and stat upgrades, and a soundtrack people still track down today. Declared <strong>freeware in 1999</strong>, so the full game is hosted here.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>This is the original DOS release (a DOS4GW protected-mode game) running in WebAssembly DOSBox. It's the largest payload we host at ~6 MB, so first boot takes a few seconds; after that it's cached. Tournament mode is the heart of the game — win matches, buy upgrades, and rebuild your pilot between fights.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p>Player 1 uses the <strong>arrow keys</strong> to move and jump, with <strong>Ctrl</strong>, <strong>Alt</strong> and <strong>Space</strong> as the attack buttons. Specials are quarter-circle and charge motions, exactly as you'd expect from the era. The in-game setup menu lets you rebind everything if the defaults fight your keyboard.</p>"
+      },
+      {
+        "h": "Why it's free",
+        "html": "<p>Diversions Entertainment declared One Must Fall: 2097 freeware in February 1999, and it has been freely distributed ever since. The sequel, One Must Fall: Battlegrounds, remains commercial.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is One Must Fall 2097 legal to play here?",
+        "a": "Yes. Diversions Entertainment declared it freeware in 1999, so the complete game is legal to host, play and share."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrows move and jump; Ctrl, Alt and Space attack. Specials use quarter-circle and charge motions. You can rebind everything in the in-game setup menu."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — tournament progress and saved pilots persist in this browser between visits, best-effort. Clearing site data resets them."
+      },
+      {
+        "q": "Why does it take longer to load than other games?",
+        "a": "It's our biggest payload at about 6 MB because OMF ships a lot of animation data. First boot fetches it once, then it's cached."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "There's a touch d-pad with three attack buttons, though a fighting game genuinely plays better on a keyboard."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/tyrian/",
+        "title": "Tyrian 2000",
+        "desc": "The other great Epic freeware release."
+      },
+      {
+        "href": "/run/skyroads/",
+        "title": "SkyRoads",
+        "desc": "Freeware racer — short, brutal levels."
+      },
+      {
+        "href": "/run/alien-carnage/",
+        "title": "Alien Carnage",
+        "desc": "Apogee run-and-gun, freeware."
+      }
+    ],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "mobileControls": {
+      "type": "fighter-dos",
+      "hint": "D-pad: move & jump · PUNCH/KICK/THROW: ctrl / alt / space",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "PUNCH",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "KICK",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "THROW",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
+  },
+  {
+    "slug": "xargon",
+    "title": "Play Xargon Online — Free Freeware Trilogy — ExeBrowser",
+    "description": "Play Xargon free in your browser — Allen Pilgrim's 1993 platformer, released free by its author. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play xargon online, xargon dos game, xargon freeware, epic megagames xargon",
+    "ogTitle": "Play Xargon Online — Free Freeware Trilogy",
+    "ogDescription": "Play Xargon free in your browser — Allen Pilgrim's 1993 platformer, released free by its author. No download, runs via DOSBox + WebAssembly.",
+    "crumb": "Play Xargon",
+    "h1": "Play Xargon online — free, instant",
+    "appName": "Xargon",
+    "appType": "game",
+    "author": "Allen Pilgrim / Epic MegaGames",
+    "genre": [
+      "Platformer",
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/xargon/xargon.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — author-released freeware runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Xargon</strong> — Allen Pilgrim's 1993 platform-adventure for Epic MegaGames, often called the thinking player's Commander Keen: bigger levels, more exploration, and a fondness for hidden rooms. Pilgrim released the <strong>whole trilogy as freeware in 2008</strong> under an explicit written licence, so it's fully legal to host and play here.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release runs in a WebAssembly DOSBox on this page. On first boot Xargon asks whether you want digital sound — answer <kbd>Y</kbd> and it configures itself. Levels reward poking at scenery; a lot of the map is optional and hidden.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p><strong>Arrow keys</strong> move, <strong>Ctrl</strong> jumps and <strong>Alt</strong> fires. <kbd>Esc</kbd> opens the menu. Look for breakable blocks and false walls — Xargon hides a great deal behind them, and the secret areas are where the interesting items live.</p>"
+      },
+      {
+        "h": "Why it's free",
+        "html": "<p>Author Allen Pilgrim released Xargon under a written freeware licence in August 2008, alongside the source code. All three episodes are included.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Xargon free?",
+        "a": "Yes. Author Allen Pilgrim released the full trilogy as freeware in 2008 under an explicit written licence, and also released the source code."
+      },
+      {
+        "q": "It's asking about digital sound on startup — what do I pick?",
+        "a": "Press Y for digital sound through Sound Blaster. If audio misbehaves, reload and answer N to fall back to simpler sound."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrows move, Ctrl jumps, Alt fires, Esc opens the menu. Search for breakable blocks and false walls — much of each level is hidden."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, saved games persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes — a d-pad with JUMP and FIRE appears on touch devices, plus a keyboard palette for the setup prompts."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "The shareware platformer Xargon is often compared to."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Same engine lineage, more shooting."
+      },
+      {
+        "href": "/run/god-of-thunder/",
+        "title": "God of Thunder",
+        "desc": "Puzzle-heavy action-adventure."
+      }
+    ],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: ctrl · FIRE: alt · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
+  },
+  {
+    "slug": "bio-menace",
+    "title": "Play Bio Menace Online — Free Freeware Episode One — ExeBrowser",
+    "description": "Play Bio Menace free in your browser — Apogee's 1993 run-and-gun platformer, released as freeware by 3D Realms. No download, runs via DOSBox.",
+    "keywords": "play bio menace online, bio menace dos game, bio menace freeware, apogee bio menace",
+    "ogTitle": "Play Bio Menace Online — Free Freeware Episode One",
+    "ogDescription": "Play Bio Menace free in your browser — Apogee's 1993 run-and-gun platformer, released as freeware by 3D Realms. No download, runs via DOSBox.",
+    "crumb": "Play Bio Menace",
+    "h1": "Play Bio Menace online — free, instant",
+    "appName": "Bio Menace",
+    "appType": "game",
+    "author": "Jim Norwood / Apogee Software",
+    "genre": [
+      "Run and gun",
+      "Platformer"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/bio-menace/bio-menace.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — official 3D Realms freeware release runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Bio Menace</strong> — Jim Norwood's 1993 run-and-gun platformer for Apogee, built on the Commander Keen engine but aimed squarely at players who wanted more shooting. You're CIA agent Snake Logan, dropped into a city overrun by mutants. <strong>3D Realms released it as freeware in 2005</strong>, so it's legal to host and play right here.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release runs in a WebAssembly DOSBox build on this page. The title sequence leads into a menu — press <kbd>Esc</kbd> if you land in the ordering-info screens, which is easy to do by mashing Enter. Episode One, <em>Dr. Mangle's Lab</em>, is included.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p><strong>Arrow keys</strong> move and duck, <strong>Ctrl</strong> jumps, <strong>Alt</strong> fires. Hold Down to crouch and shoot low, which you'll need constantly. <kbd>Esc</kbd> opens the menu; F1 lists in-game help.</p>"
+      },
+      {
+        "h": "Why it's free",
+        "html": "<p>3D Realms released Bio Menace as freeware in December 2005 as part of a batch of legacy Apogee titles. It's the same complete game they distributed, not a cut-down demo.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Bio Menace legal to play here?",
+        "a": "Yes. 3D Realms released it as freeware in 2005, so this build is legal to host, play and share."
+      },
+      {
+        "q": "I ended up in an ordering-info screen — how do I get out?",
+        "a": "Press Esc. The title sequence sits close to the order pages, and pressing Enter repeatedly walks into them."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrows move and duck, Ctrl jumps, Alt fires. Crouching while shooting is essential against low enemies."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a d-pad with JUMP and FIRE appears on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "Same engine, gentler game."
+      },
+      {
+        "href": "/run/alien-carnage/",
+        "title": "Alien Carnage",
+        "desc": "Apogee's other freeware run-and-gun."
+      },
+      {
+        "href": "/run/xargon/",
+        "title": "Xargon",
+        "desc": "Platform-adventure freeware trilogy."
+      }
+    ],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move & duck · JUMP: ctrl · FIRE: alt · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
+  },
+  {
+    "slug": "alien-carnage",
+    "title": "Play Alien Carnage Online — Free Freeware — ExeBrowser",
+    "description": "Play Alien Carnage (Halloween Harry) free in your browser — the 1993 Apogee run-and-gun, released as freeware. No download, runs via DOSBox.",
+    "keywords": "play alien carnage online, halloween harry dos, alien carnage freeware, apogee alien carnage",
+    "ogTitle": "Play Alien Carnage Online — Free Freeware",
+    "ogDescription": "Play Alien Carnage (Halloween Harry) free in your browser — the 1993 Apogee run-and-gun, released as freeware. No download, runs via DOSBox.",
+    "crumb": "Play Alien Carnage",
+    "h1": "Play Alien Carnage online — free, instant",
+    "appName": "Alien Carnage",
+    "appType": "game",
+    "author": "SubZero Software / Apogee Software",
+    "genre": [
+      "Run and gun",
+      "Platformer"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/alien-carnage/alien-carnage.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — official freeware release runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Alien Carnage</strong> (originally <em>Halloween Harry</em>) — SubZero Software and Apogee's 1993 run-and-gun, where you drop into alien-infested buildings with a jetpack and a flamethrower to rescue hostages. Fast, loud, and unusually smooth-scrolling for its year. Released as <strong>freeware in 2007</strong> with the author's blessing, so the full game is hosted here.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release runs in a WebAssembly DOSBox build on this page. Levels are rescue missions: find every hostage, then reach the exit. The jetpack has limited fuel that refills from pickups, so hovering is a resource, not a default.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p><strong>Arrow keys</strong> move, <strong>Ctrl</strong> jumps (hold to use the jetpack), <strong>Alt</strong> fires the flamethrower. <kbd>Esc</kbd> opens the menu. Burning aliens is the fun part; conserving jetpack fuel is the skill part.</p>"
+      },
+      {
+        "h": "Why it's free",
+        "html": "<p>Apogee released Alien Carnage as freeware in May 2007, jointly with original author John Passfield. This is the complete game.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Alien Carnage free?",
+        "a": "Yes. Apogee released it as freeware in 2007 together with original author John Passfield, so it's legal to host and play in full."
+      },
+      {
+        "q": "Is this the same game as Halloween Harry?",
+        "a": "Yes. It was originally released as Halloween Harry and later renamed Alien Carnage for the Apogee release."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrows move, Ctrl jumps and holds for the jetpack, Alt fires the flamethrower. Jetpack fuel is limited and refills from pickups."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a d-pad with JET and FIRE buttons appears on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee run-and-gun, also freeware."
+      },
+      {
+        "href": "/run/doom/",
+        "title": "DOOM",
+        "desc": "The 1993 shareware classic, instant play."
+      },
+      {
+        "href": "/run/one-must-fall-2097/",
+        "title": "One Must Fall 2097",
+        "desc": "Epic's freeware robot fighter."
+      }
+    ],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JET: ctrl (hold) · FIRE: alt · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JET",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "screenshot": true
   }
 ]
