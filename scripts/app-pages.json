@@ -222,7 +222,9 @@
       ]
     },
     "updated": "2026-07-28",
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 341,
+    "clickKeyRight": 32
   },
   {
     "slug": "tyrian",
@@ -263,7 +265,7 @@
       },
       {
         "h": "Controls & tips",
-        "html": "<p>Click the game canvas to capture input, then:</p><ul><li><kbd>↑↓←→</kbd> or the mouse to fly your ship</li><li><kbd>Ctrl</kbd> / <kbd>Space</kbd> to fire (and the secondary fire key for your sidekicks)</li><li><kbd>Enter</kbd> / <kbd>Esc</kbd> to navigate menus; <kbd>Esc</kbd> also releases the mouse back to the page</li></ul><p>Tyrian's whole charm is the upgrade shop between levels — spend your credits on weapons, shields and a beefier hull. Don't blow it all on guns; survivability wins the long episodes.</p>"
+        "html": "<p>Click the game canvas to capture input, then:</p><ul><li><kbd>↑↓←→</kbd> or the mouse to fly your ship</li><li><kbd>Ctrl</kbd> / <kbd>Space</kbd> to fire (and the secondary fire key for your sidekicks)</li><li><kbd>Enter</kbd> / <kbd>Esc</kbd> to navigate menus; <kbd>Esc</kbd> also releases the mouse back to the page</li></ul><p>Tyrian's whole charm is the upgrade shop between levels — spend your credits on weapons, shields and a beefier hull. Don't blow it all on guns; survivability wins the long episodes.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click fires, right-click triggers your sidekick weapon.</p>"
       }
     ],
     "faq": [
@@ -377,7 +379,9 @@
       ]
     },
     "updated": "2026-07-28",
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 341,
+    "clickKeyRight": 342
   },
   {
     "slug": "doom",
@@ -2074,7 +2078,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p><strong>Arrow keys</strong> (or <kbd>A</kbd>/<kbd>D</kbd>, mapped to the arrows on this page) move Keen, <kbd>Ctrl</kbd> jumps, and <kbd>Alt</kbd> fires the pogo stick — the pogo is essential for high ledges and is the most beloved mechanic in the game. On the Mars overworld, walk onto a level to enter it. Collect the raygun to shoot, and remember: yorps are harmless if you just walk past them.</p>"
+        "html": "<p><strong>Arrow keys</strong> (or <kbd>A</kbd>/<kbd>D</kbd>, mapped to the arrows on this page) move Keen, <kbd>Ctrl</kbd> jumps, and <kbd>Alt</kbd> fires the pogo stick — the pogo is essential for high ledges and is the most beloved mechanic in the game. On the Mars overworld, walk onto a level to enter it. Collect the raygun to shoot, and remember: yorps are harmless if you just walk past them.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click jumps, right-click uses the pogo. Menus and the Mars overworld are keyboard-driven.</p>"
       },
       {
         "h": "Shareware episode — and the rest of the trilogy",
@@ -2189,7 +2193,9 @@
       ]
     },
     "screenshot": true,
-    "addedDate": "2026-07-27"
+    "addedDate": "2026-07-27",
+    "clickKey": 341,
+    "clickKeyRight": 342
   },
   {
     "slug": "scorched-earth",
@@ -2209,8 +2215,8 @@
       "Turn-based"
     ],
     "author": "Wendell Hicken",
-    "hostable": false,
-    "appUrl": "",
+    "hostable": true,
+    "appUrl": "/apps/scorched-earth/scorched-earth.zip",
     "entry": "SCORCH.EXE",
     "verdict": {
       "kind": "bad",
@@ -2295,7 +2301,10 @@
       "heading": "",
       "html": ""
     },
-    "updated": "2026-07-01"
+    "updated": "2026-07-01",
+    "dosRuntime": true,
+    "addedDate": "2026-07-28",
+    "clickKey": 32
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -2514,8 +2523,8 @@
       "Arcade"
     ],
     "author": "Apogee Software",
-    "hostable": false,
-    "appUrl": "",
+    "hostable": true,
+    "appUrl": "/apps/raptor/raptor.zip",
     "entry": "",
     "verdict": {
       "kind": "partial",
@@ -2592,7 +2601,11 @@
         "desc": "What runs in ExeBrowser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-01",
+    "dosRuntime": true,
+    "addedDate": "2026-07-28",
+    "clickKey": 341,
+    "clickKeyRight": 32
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -2728,7 +2741,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p><strong>Arrow keys</strong> (or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, which this page maps to the arrows) move and turn. <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and operates elevators, <kbd>Shift</kbd> runs, <kbd>Alt</kbd> strafes, <kbd>Tab</kbd>+key shows the auto-map, and number keys switch weapons. Talk to informants instead of shooting them — some hand out food tokens and hints. On phones and tablets a touch gamepad appears under the game.</p>"
+        "html": "<p><strong>Arrow keys</strong> (or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, which this page maps to the arrows) move and turn. <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and operates elevators, <kbd>Shift</kbd> runs, <kbd>Alt</kbd> strafes, <kbd>Tab</kbd>+key shows the auto-map, and number keys switch weapons. Talk to informants instead of shooting them — some hand out food tokens and hints. On phones and tablets a touch gamepad appears under the game.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click fires and right-click opens doors. Blake Stone's own menus are keyboard-only (arrows + Enter), so use the keyboard to navigate menus.</p>"
       },
       {
         "h": "Shareware episode — and the full game",
@@ -2858,7 +2871,9 @@
       ]
     },
     "screenshot": true,
-    "addedDate": "2026-07-27"
+    "addedDate": "2026-07-27",
+    "clickKey": 341,
+    "clickKeyRight": 32
   },
   {
     "slug": "prince-of-persia",
@@ -5592,7 +5607,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p><strong>Left/Right arrows</strong> steer between lanes, <strong>Up</strong> accelerates and <strong>Down</strong> brakes, and <strong>Space</strong> jumps. The trick the game never tells you: your jump distance depends on your speed at takeoff, so most puzzles are really about setting up the right approach speed rather than reacting quickly. <kbd>Esc</kbd> returns to the menu.</p>"
+        "html": "<p><strong>Left/Right arrows</strong> steer between lanes, <strong>Up</strong> accelerates and <strong>Down</strong> brakes, and <strong>Space</strong> jumps. The trick the game never tells you: your jump distance depends on your speed at takeoff, so most puzzles are really about setting up the right approach speed rather than reacting quickly. <kbd>Esc</kbd> returns to the menu.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click jumps.</p>"
       },
       {
         "h": "Why it's free",
@@ -5672,7 +5687,8 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 32
   },
   {
     "slug": "jetpack",
@@ -5705,7 +5721,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p><strong>Arrow keys</strong> move and thrust — hold Up to fly, and remember momentum carries. <strong>Space</strong> fires when you have a weapon, <kbd>Esc</kbd> opens the menu. The jetpack has no hover: you're always either climbing or falling, which is the entire game in one sentence.</p>"
+        "html": "<p><strong>Arrow keys</strong> move and thrust — hold Up to fly, and remember momentum carries. <strong>Space</strong> fires when you have a weapon, <kbd>Esc</kbd> opens the menu. The jetpack has no hover: you're always either climbing or falling, which is the entire game in one sentence.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click fires.</p>"
       },
       {
         "h": "Why it's free",
@@ -5785,7 +5801,9 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 32,
+    "clickKeyRight": 341
   },
   {
     "slug": "god-of-thunder",
@@ -5818,7 +5836,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p><strong>Arrow keys</strong> move Thor, <strong>Ctrl</strong> throws the hammer, and <strong>Space</strong> uses the selected item. <kbd>Esc</kbd> opens the menu where you can change items and save. Hammer throws bounce off walls — a lot of puzzles depend on that.</p>"
+        "html": "<p><strong>Arrow keys</strong> move Thor, <strong>Ctrl</strong> throws the hammer, and <strong>Space</strong> uses the selected item. <kbd>Esc</kbd> opens the menu where you can change items and save. Hammer throws bounce off walls — a lot of puzzles depend on that.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click throws the hammer, right-click uses the selected item.</p>"
       },
       {
         "h": "Why it's free",
@@ -5903,7 +5921,9 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 341,
+    "clickKeyRight": 32
   },
   {
     "slug": "one-must-fall-2097",
@@ -5936,7 +5956,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p>Player 1 uses the <strong>arrow keys</strong> to move and jump, with <strong>Ctrl</strong>, <strong>Alt</strong> and <strong>Space</strong> as the attack buttons. Specials are quarter-circle and charge motions, exactly as you'd expect from the era. The in-game setup menu lets you rebind everything if the defaults fight your keyboard.</p>"
+        "html": "<p>Player 1 uses the <strong>arrow keys</strong> to move and jump, with <strong>Ctrl</strong>, <strong>Alt</strong> and <strong>Space</strong> as the attack buttons. Specials are quarter-circle and charge motions, exactly as you'd expect from the era. The in-game setup menu lets you rebind everything if the defaults fight your keyboard.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click punches, right-click kicks.</p>"
       },
       {
         "h": "Why it's free",
@@ -6030,7 +6050,9 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 341,
+    "clickKeyRight": 342
   },
   {
     "slug": "xargon",
@@ -6063,7 +6085,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p><strong>Arrow keys</strong> move, <strong>Ctrl</strong> jumps and <strong>Alt</strong> fires. <kbd>Esc</kbd> opens the menu. Look for breakable blocks and false walls — Xargon hides a great deal behind them, and the secret areas are where the interesting items live.</p>"
+        "html": "<p><strong>Arrow keys</strong> move, <strong>Ctrl</strong> jumps and <strong>Alt</strong> fires. <kbd>Esc</kbd> opens the menu. Look for breakable blocks and false walls — Xargon hides a great deal behind them, and the secret areas are where the interesting items live.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click fires, right-click jumps.</p>"
       },
       {
         "h": "Why it's free",
@@ -6152,7 +6174,9 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 342,
+    "clickKeyRight": 341
   },
   {
     "slug": "bio-menace",
@@ -6185,7 +6209,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p><strong>Arrow keys</strong> move and duck, <strong>Ctrl</strong> jumps, <strong>Alt</strong> fires. Hold Down to crouch and shoot low, which you'll need constantly. <kbd>Esc</kbd> opens the menu; F1 lists in-game help.</p>"
+        "html": "<p><strong>Arrow keys</strong> move and duck, <strong>Ctrl</strong> jumps, <strong>Alt</strong> fires. Hold Down to crouch and shoot low, which you'll need constantly. <kbd>Esc</kbd> opens the menu; F1 lists in-game help.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click fires, right-click jumps.</p>"
       },
       {
         "h": "Why it's free",
@@ -6274,7 +6298,9 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 342,
+    "clickKeyRight": 341
   },
   {
     "slug": "alien-carnage",
@@ -6307,7 +6333,7 @@
       },
       {
         "h": "Controls",
-        "html": "<p><strong>Arrow keys</strong> move, <strong>Ctrl</strong> jumps (hold to use the jetpack), <strong>Alt</strong> fires the flamethrower. <kbd>Esc</kbd> opens the menu. Burning aliens is the fun part; conserving jetpack fuel is the skill part.</p>"
+        "html": "<p><strong>Arrow keys</strong> move, <strong>Ctrl</strong> jumps (hold to use the jetpack), <strong>Alt</strong> fires the flamethrower. <kbd>Esc</kbd> opens the menu. Burning aliens is the fun part; conserving jetpack fuel is the skill part.</p>\n<p class=\"muted small\"><strong>Mouse:</strong> left-click fires the flamethrower, right-click uses the jetpack.</p>"
       },
       {
         "h": "Why it's free",
@@ -6396,6 +6422,101 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "clickKey": 342,
+    "clickKeyRight": 341
+  },
+  {
+    "slug": "epic-pinball",
+    "title": "Play Epic Pinball — ExeBrowser",
+    "description": "Epic Pinball boot test pending.",
+    "keywords": "epic-pinball",
+    "ogTitle": "Epic Pinball",
+    "ogDescription": "Epic Pinball",
+    "crumb": "Play Epic Pinball",
+    "h1": "Play Epic Pinball",
+    "appName": "Epic Pinball",
+    "appType": "game",
+    "author": "Digital Extremes / Epic MegaGames",
+    "genre": [
+      "Pinball"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/epic-pinball/epic-pinball.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Boot test pending"
+    },
+    "intro": "<p><strong>Epic Pinball</strong> — boot test pending.</p>",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "clickKey": 341,
+    "clickKeyRight": 342
+  },
+  {
+    "slug": "jazz-jackrabbit",
+    "title": "Play Jazz Jackrabbit — ExeBrowser",
+    "description": "Jazz Jackrabbit boot test pending.",
+    "keywords": "jazz-jackrabbit",
+    "ogTitle": "Jazz Jackrabbit",
+    "ogDescription": "Jazz Jackrabbit",
+    "crumb": "Play Jazz Jackrabbit",
+    "h1": "Play Jazz Jackrabbit",
+    "appName": "Jazz Jackrabbit",
+    "appType": "game",
+    "author": "Epic MegaGames",
+    "genre": [
+      "Platformer"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/jazz-jackrabbit/jazz-jackrabbit.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Boot test pending"
+    },
+    "intro": "<p><strong>Jazz Jackrabbit</strong> — boot test pending.</p>",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "clickKey": 341,
+    "clickKeyRight": 342
+  },
+  {
+    "slug": "keen4",
+    "title": "Play Commander Keen 4: Secret of the Oracle — ExeBrowser",
+    "description": "Commander Keen 4: Secret of the Oracle boot test pending.",
+    "keywords": "keen4",
+    "ogTitle": "Commander Keen 4: Secret of the Oracle",
+    "ogDescription": "Commander Keen 4: Secret of the Oracle",
+    "crumb": "Play Commander Keen 4: Secret of the Oracle",
+    "h1": "Play Commander Keen 4: Secret of the Oracle",
+    "appName": "Commander Keen 4: Secret of the Oracle",
+    "appType": "game",
+    "author": "id Software / Apogee Software",
+    "genre": [
+      "Platformer"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/keen4/keen4.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Boot test pending"
+    },
+    "intro": "<p><strong>Commander Keen 4: Secret of the Oracle</strong> — boot test pending.</p>",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-07-28",
+    "addedDate": "2026-07-28",
+    "clickKey": 341,
+    "clickKeyRight": 342
   }
 ]

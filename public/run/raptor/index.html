@@ -48,7 +48,8 @@
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Apogee Software" },
-  "dateModified": "2026-07-01"
+  "dateModified": "2026-07-01",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
 <script type="application/ld+json">
@@ -107,17 +108,16 @@
 
   <section class="card">
     <h2>Can you play Raptor: Call of the Shadows in your browser? <span class="verdict partial">Tricky — free version is DOS, Windows port needs DirectX</span></h2>
-    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via DOSBox + WebAssembly</p>
     <p><strong>Raptor: Call of the Shadows</strong> is Apogee's gloriously over-the-top 1994 vertical shoot-'em-up — buy bigger guns, blow up everything, repeat. It's a fantastic game, but it's an awkward fit for ExeBrowser, and we'd rather tell you straight than waste your time. The short version: the famous <strong>free shareware episode is a DOS game</strong>, and ExeBrowser runs <em>Windows</em> programs on Wine + WebAssembly, not DOS. The only Win32 version is a <strong>commercial DirectX 5 port</strong> that this old Wine engine handles poorly. So Raptor mostly belongs on a DOS emulator, not here — but read on for exactly what happens and the right way to play it.</p>
 
-    <!-- No hosted payload: the Play button reveals the in-page uploader.
-         To enable true one-click play, host a license-clean zip and add
-         data-app-url (and data-entry) to the div below. -->
-    <div id="exe-embed"
-         data-variant="default"
+    <div id="dos-embed"
+         data-app-url="/apps/raptor/raptor.zip"
          data-app-name="Raptor"
+         data-click-key="341"
+         data-click-key-right="32"
          data-autoboot="false"></div>
-    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
     <div class="warn-box">
       <p><strong>About the versions and the licensing.</strong> The classic <strong>Episode 1 "Bravo Sector"</strong> was distributed by Apogee as free shareware and may still be shared freely — but it is an <strong>MS-DOS</strong> program (it uses the DOS4GW extender), not a Windows <code>.exe</code>. ExeBrowser runs <em>Win32</em> binaries on Wine, so the DOS shareware will not boot here directly. The only native-Windows build is the <strong>1999 Mountain King re-release</strong>, which is <strong>commercial</strong> (sold for around $15) and is built on <strong>DirectX 5</strong> — exactly the kind of thing Boxedwine's old Wine struggles with. Please don't look for "cracked" or "abandonware" copies of the paid versions. If you want the full game, buy it from a legitimate source such as <a href="https://store.steampowered.com/app/336060/Raptor_Call_of_The_Shadows__2015_Edition/" target="_blank" rel="noopener">Steam (2015 Edition)</a> or <a href="https://www.gog.com/" target="_blank" rel="noopener">GOG</a>.</p>
     </div>
@@ -183,9 +183,7 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/recent.js?v=1"></script>
-<script src="/embed.js?v=3"></script>
-<script src="/app.js?v=17"></script>
+<script src="/dos-embed.js?v=15"></script>
 </body>
 </html>

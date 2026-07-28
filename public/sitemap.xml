@@ -379,6 +379,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/run/epic-pinball/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/run/jazz-jackrabbit/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/run/keen4/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/blog/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>

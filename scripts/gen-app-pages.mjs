@@ -52,6 +52,10 @@
 //   updated      "YYYY-MM-DD" — sitemap <lastmod> + "Guide updated" line
 //   licenseReason  prose note (why hosting is legal); NOTICE.md in the app dir
 //                is the canonical provenance record
+//   clickKey     GLFW key code a left-click also sends (e.g. 341 = Ctrl/fire).
+//                For DOS games that ship with the mouse disabled and give no
+//                in-game way to enable it, so a click still does the obvious
+//                thing. clickKeyRight does the same for right-click.
 //   addedDate    "YYYY-MM-DD" the title went live — drives the NEW badge on the
 //                hub + homepage grids for NEW_DAYS (14) days. Distinct from
 //                `updated`, which is about the page copy, not the title.
@@ -226,6 +230,10 @@ function embedBlock(p) {
     const attrs = [
       p.appUrl ? `data-app-url="${esc(p.appUrl)}"` : "",
       `data-app-name="${esc(p.appName)}"`,
+      // Games whose own mouse support is off/absent map a click to a key so
+      // clicking still shoots. Omit for games that read the mouse natively.
+      p.clickKey ? `data-click-key="${p.clickKey}"` : "",
+      p.clickKeyRight ? `data-click-key-right="${p.clickKeyRight}"` : "",
       `data-autoboot="false"`,
     ]
       .filter(Boolean)
@@ -507,7 +515,7 @@ ${p.iframeUrl
   ? ``
   : p.dosRuntime
     ? `<script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=14"></script>`
+<script src="/dos-embed.js?v=15"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/recent.js?v=1"></script>
 <script src="/embed.js?v=3"></script>

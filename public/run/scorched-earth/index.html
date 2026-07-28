@@ -48,7 +48,8 @@
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "Wendell Hicken" },
-  "dateModified": "2026-07-01"
+  "dateModified": "2026-07-01",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
 <script type="application/ld+json">
@@ -107,18 +108,15 @@
 
   <section class="card">
     <h2>Why Scorched Earth doesn't run here (and how to actually play it) <span class="verdict bad">Won't run here — it's a DOS game, not Windows</span></h2>
-    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Tested with Wine 1.7.55 (Win32) + WebAssembly</p>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Tested with DOSBox + WebAssembly</p>
     <p>Straight answer first: <strong>Scorched Earth will not run on ExeBrowser</strong>, and we'd rather tell you that up front than waste your time. The legendary "Mother of All Games" — Wendell Hicken's 1991 tank-artillery classic where you lob nukes and Death's Heads across destructible terrain — is a <strong>16-bit MS-DOS program</strong> (<code>SCORCH.EXE</code>). ExeBrowser runs <em>Windows</em> <code>.exe</code> files through Wine, and Wine doesn't execute raw DOS binaries — that's a job for DOSBox. So there's no play button here that would actually work. Below is the honest why, where to grab the author's free copy, and the route that <em>does</em> get you playing Scorched Earth in a browser today.</p>
 
-    <!-- No hosted payload: the Play button reveals the in-page uploader.
-         To enable true one-click play, host a license-clean zip and add
-         data-app-url (and data-entry) to the div below. -->
-    <div id="exe-embed"
-         data-variant="default"
-         data-entry="SCORCH.EXE"
+    <div id="dos-embed"
+         data-app-url="/apps/scorched-earth/scorched-earth.zip"
          data-app-name="Scorched Earth"
+         data-click-key="32"
          data-autoboot="false"></div>
-    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
     <div class="warn-box">
       <strong>Heads up:</strong> Scorched Earth is the work of Wendell Hicken. He offers version 1.5 as a free download (pay-what-you-want) on his <a href="https://www.whicken.com/scorch/" target="_blank" rel="noopener">official site, whicken.com/scorch</a> — please get it there and consider tossing him a few dollars. We don't host the game because ExeBrowser can't run DOS programs anyway (see below). Avoid sketchy "abandonware" mirrors; the author's own site is the right source.
     </div>
@@ -186,9 +184,7 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/recent.js?v=1"></script>
-<script src="/embed.js?v=3"></script>
-<script src="/app.js?v=17"></script>
+<script src="/dos-embed.js?v=15"></script>
 </body>
 </html>

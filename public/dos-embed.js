@@ -295,6 +295,23 @@
         (e.clientY - r.top) / r.height
       );
     });
+
+    // Click-to-key. Most DOS games of this era ship with the mouse disabled and
+    // offer no way to turn it on (Blake Stone's menus are explicitly
+    // keyboard-only), so a click lands in the emulator and nothing happens —
+    // which reads as broken. Where a page declares data-click-key, a click on
+    // the canvas also sends that key, so clicking does the obvious thing: shoot.
+    // Pages whose game genuinely reads the mouse (DOOM, Freedoom) omit it.
+    const CLICK_KEYS = {
+      left:  parseInt(host.dataset.clickKey || "", 10) || 0,
+      right: parseInt(host.dataset.clickKeyRight || "", 10) || 0,
+    };
+    function clickKeyFor(button) {
+      if (button === 0) return CLICK_KEYS.left;
+      if (button === 2) return CLICK_KEYS.right;
+      return 0;
+    }
+
     // Keep all mouse buttons out of the browser and into DOSBox.
     // JS MouseEvent.button: 0=left, 1=middle, 2=right. DOSBox: 0=left, 1=right, 2=middle.
     const DOS_BTN = { 0: 0, 1: 2, 2: 1 };
@@ -309,17 +326,21 @@
       const btn = DOS_BTN[e.button] ?? 0;
       pressedAt.set(btn, performance.now());
       ci.sendMouseButton(btn, true);
+      const key = clickKeyFor(e.button);
+      if (key) ci.sendKeyEvent(key, true);
       e.preventDefault();
     });
     canvas.addEventListener("mouseup", e => {
       const btn = DOS_BTN[e.button] ?? 0;
       const held = performance.now() - (pressedAt.get(btn) ?? 0);
+      const key = clickKeyFor(e.button);
       pressedAt.delete(btn);
-      if (held >= MIN_HOLD_MS) {
+      const release = () => {
         ci.sendMouseButton(btn, false);
-      } else {
-        setTimeout(() => ci.sendMouseButton(btn, false), MIN_HOLD_MS - held);
-      }
+        if (key) ci.sendKeyEvent(key, false);
+      };
+      if (held >= MIN_HOLD_MS) release();
+      else setTimeout(release, MIN_HOLD_MS - held);
       e.preventDefault();
     });
     // Right-click default is "walk forward" in vanilla DOOM — suppress context menu.
