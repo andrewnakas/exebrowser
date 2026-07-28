@@ -710,3 +710,73 @@ footer {
   aspect-ratio: 4 / 3;
 }
 body.dos-playing { overflow: hidden; }
+
+/* ── Poster grid: visual game cards with screenshots ──────────────────── */
+.poster-grid {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.poster-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--card, #12161d);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.poster-card:hover,
+.poster-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent, #c0392b);
+}
+.pc-shot {
+  display: block;
+  width: 100%;
+  /* 16:10-ish tile keeps rows compact while still showing whole frames. */
+  aspect-ratio: 8 / 5;
+  /* contain, not cover: these are game screenshots and cropping them cuts
+     off HUDs and titles. Letterbox against black instead. */
+  object-fit: contain;
+  background: #000;
+  image-rendering: pixelated;
+}
+.pc-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 8 / 5;
+  font: 700 2.5rem/1 system-ui, sans-serif;
+  
+  color: #566;
+  background: linear-gradient(140deg, #1b2330, #0e131a);
+}
+.pc-body {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .6rem .7rem .7rem;
+}
+.pc-title { font-weight: 600; line-height: 1.25; }
+.pc-play { color: var(--muted); font-size: .85rem; }
+.poster-card:hover .pc-play { color: var(--accent, #c0392b); }
+
+.badge-new {
+  display: inline-block;
+  margin-left: .35rem;
+  padding: .05rem .35rem;
+  border-radius: 4px;
+  background: #1f7a3d;
+  color: #eafff0;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  vertical-align: middle;
+}

@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=24" />
+<link rel="stylesheet" href="/style.css?v=27" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -57,23 +57,72 @@
   <section class="card">
     <h2>Run specific Windows apps &amp; games in your browser</h2>
     <p>Two kinds of pages live here, and we keep them honest. <strong>▶ Play now</strong> entries are free, license-clean software we host — one click boots it in your tab. Everything else is a <strong>compatibility guide</strong>: we can't redistribute that software, so the guide tells you whether your own copy runs, which Wine variant to pick, and how to load it right on the page.</p>
+    <div id="continue-playing" hidden>
+      <h3 style="margin-top:0;">Continue playing</h3>
+      <ul class="poster-grid" id="continue-grid"></ul>
+    </div>
     <h3 style="margin-top:0;">▶ Play now — free, hosted here</h3>
-    <ul class="card-grid">
-      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D Pinball Space Cadet <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">▶ Play now — no Windows files needed</span></a></li>
-      <li><a class="link-card" href="/run/dragon-keep/"><span class="lc-title">Dragon's Keep Pinball <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">▶ Play now — original table, no Windows files needed</span></a></li>
-      <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D <span class="verdict works" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Works — original DOS game runs via DOSBox in your browser</span></a></li>
-      <li><a class="link-card" href="/run/tyrian/"><span class="lc-title">Tyrian 2000 <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Works — free freeware classic runs via DOSBox in your browser</span></a></li>
-      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Free &amp; legal shareware</span></a></li>
-      <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Works well — pair with a software-rendering port</span></a></li>
-      <li><a class="link-card" href="/run/freeciv/"><span class="lc-title">Freeciv <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">▶ Play now — full browser game</span></a></li>
-      <li><a class="link-card" href="/run/skifree/"><span class="lc-title">SkiFree <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">▶ Play now — no Windows files needed</span></a></li>
-      <li><a class="link-card" href="/run/commander-keen/"><span class="lc-title">Commander Keen <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Works — shareware Episode 1 runs via DOSBox in your browser</span></a></li>
-      <li><a class="link-card" href="/run/blake-stone/"><span class="lc-title">Blake Stone <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Works — shareware Episode 1 runs via DOSBox in your browser</span></a></li>
-      <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Works well</span></a></li>
-      <li><a class="link-card" href="/run/keepass/"><span class="lc-title">KeePass <span class="verdict partial" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Works — KeePass 1.x only</span></a></li>
-      <li><a class="link-card" href="/run/sumatra-pdf/"><span class="lc-title">Sumatra PDF <span class="verdict good" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Works well — fast, native Win32 viewer</span></a></li>
-      <li><a class="link-card" href="/run/notepad-plus-plus/"><span class="lc-title">Notepad++ <span class="verdict partial" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Partial — editing works, some dialogs crash</span></a></li>
-      <li><a class="link-card" href="/run/putty/"><span class="lc-title">PuTTY <span class="verdict partial" style="margin-left:.3rem;">▶ Play now</span></span><span class="lc-desc">Partial — the UI launches, but SSH/telnet can't connect in-browser</span></a></li>
+    <ul class="poster-grid">
+        <li><a class="poster-card" href="/run/space-cadet-open/">
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/dragon-keep/">
+          <span class="pc-shot pc-placeholder" aria-hidden="true">D</span>
+          <span class="pc-body"><span class="pc-title">Dragon's Keep Pinball <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/wolfenstein-3d/">
+          <img class="pc-shot" src="/run/wolfenstein-3d/screenshot.png" width="320" height="240" loading="lazy" alt="Wolfenstein 3D running in the browser" />
+          <span class="pc-body"><span class="pc-title">Wolfenstein 3D</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/tyrian/">
+          <img class="pc-shot" src="/run/tyrian/screenshot.png" width="320" height="240" loading="lazy" alt="Tyrian 2000 running in the browser" />
+          <span class="pc-body"><span class="pc-title">Tyrian 2000</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/doom/">
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM running in the browser" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/freedoom/">
+          <img class="pc-shot" src="/run/freedoom/screenshot.png" width="320" height="240" loading="lazy" alt="Freedoom running in the browser" />
+          <span class="pc-body"><span class="pc-title">Freedoom</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/freeciv/">
+          <img class="pc-shot" src="/run/freeciv/screenshot.jpg" width="320" height="240" loading="lazy" alt="Freeciv running in the browser" />
+          <span class="pc-body"><span class="pc-title">Freeciv</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/skifree/">
+          <img class="pc-shot" src="/run/skifree/screenshot.png" width="320" height="240" loading="lazy" alt="SkiFree running in the browser" />
+          <span class="pc-body"><span class="pc-title">SkiFree</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/commander-keen/">
+          <img class="pc-shot" src="/run/commander-keen/screenshot.png" width="320" height="240" loading="lazy" alt="Commander Keen running in the browser" />
+          <span class="pc-body"><span class="pc-title">Commander Keen <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/blake-stone/">
+          <img class="pc-shot" src="/run/blake-stone/screenshot.png" width="320" height="240" loading="lazy" alt="Blake Stone running in the browser" />
+          <span class="pc-body"><span class="pc-title">Blake Stone <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/7-zip/">
+          <img class="pc-shot" src="/run/7-zip/screenshot.png" width="320" height="240" loading="lazy" alt="7-Zip running in the browser" />
+          <span class="pc-body"><span class="pc-title">7-Zip</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/keepass/">
+          <span class="pc-shot pc-placeholder" aria-hidden="true">K</span>
+          <span class="pc-body"><span class="pc-title">KeePass</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/sumatra-pdf/">
+          <img class="pc-shot" src="/run/sumatra-pdf/screenshot.png" width="320" height="240" loading="lazy" alt="Sumatra PDF running in the browser" />
+          <span class="pc-body"><span class="pc-title">Sumatra PDF</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/notepad-plus-plus/">
+          <span class="pc-shot pc-placeholder" aria-hidden="true">N</span>
+          <span class="pc-body"><span class="pc-title">Notepad++</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li><a class="poster-card" href="/run/putty/">
+          <span class="pc-shot pc-placeholder" aria-hidden="true">P</span>
+          <span class="pc-body"><span class="pc-title">PuTTY</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
     </ul>
     <h3>Game compatibility guides — bring your own copy</h3>
     <ul class="card-grid">
@@ -138,5 +187,7 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+<script src="/recent.js?v=1"></script>
+<script>window.renderContinue && renderContinue("continue-playing", "continue-grid");</script>
 </body>
 </html>

@@ -420,6 +420,7 @@
       setStatus("");
       canvas.focus();
       fsBtn.hidden = false;
+      window.rememberPlayed?.(slug, cfg.appName);
       track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
       startHeartbeat();
 

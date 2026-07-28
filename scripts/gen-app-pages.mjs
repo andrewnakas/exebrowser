@@ -52,6 +52,9 @@
 //   updated      "YYYY-MM-DD" — sitemap <lastmod> + "Guide updated" line
 //   licenseReason  prose note (why hosting is legal); NOTICE.md in the app dir
 //                is the canonical provenance record
+//   addedDate    "YYYY-MM-DD" the title went live — drives the NEW badge on the
+//                hub + homepage grids for NEW_DAYS (14) days. Distinct from
+//                `updated`, which is about the page copy, not the title.
 
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -398,7 +401,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=24" />
+<link rel="stylesheet" href="/style.css?v=27" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -461,9 +464,11 @@ ${downloadHtml(p)}
 ${p.iframeUrl
   ? ``
   : p.dosRuntime
-    ? `<script src="/dos-embed.js?v=13"></script>`
+    ? `<script src="/recent.js?v=1"></script>
+<script src="/dos-embed.js?v=14"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/embed.js?v=2"></script>
+<script src="/recent.js?v=1"></script>
+<script src="/embed.js?v=3"></script>
 <script src="/app.js?v=17"></script>`}
 </body>
 </html>
@@ -498,7 +503,34 @@ function indexCard(p) {
   const play = isPlayable(p) ? ` <span class="verdict ${verdictKind}" style="margin-left:.3rem;">▶ Play now</span>` : "";
   return `      <li><a class="link-card" href="/run/${p.slug}/"><span class="lc-title">${esc(
     p.appName
-  )}${play}</span><span class="lc-desc">${esc(p.verdict.text)}</span></a></li>`;
+  )}${play}${isNew(p) ? NEW_BADGE : ""}</span><span class="lc-desc">${esc(p.verdict.text)}</span></a></li>`;
+}
+
+// A game counts as "new" for two weeks after its addedDate, which drives the
+// badge on the hub and homepage. Dates are plain YYYY-MM-DD in app-pages.json.
+const NEW_DAYS = 14;
+const NEW_BADGE = ` <span class="badge-new">NEW</span>`;
+function isNew(p) {
+  if (!p.addedDate) return false;
+  const added = Date.parse(p.addedDate + "T00:00:00Z");
+  if (Number.isNaN(added)) return false;
+  return (Date.now() - added) / 86400000 < NEW_DAYS;
+}
+
+// Poster-style card for the visual grids: real screenshot when we have one,
+// otherwise a lettered placeholder tile so the grid never looks broken.
+function posterCard(p) {
+  const shot = screenshotFile(p);
+  const art = shot
+    ? `<img class="pc-shot" src="/run/${p.slug}/${shot}" width="320" height="240" loading="lazy" alt="${esc(p.appName)} running in the browser" />`
+    : `<span class="pc-shot pc-placeholder" aria-hidden="true">${esc((p.appName || "?").trim().charAt(0))}</span>`;
+  const href = p.slug === "space-cadet-open" || p.slug === "dragon-keep"
+    ? `/run/${p.slug}/`
+    : `/run/${p.slug}/`;
+  return `        <li><a class="poster-card" href="${href}">
+          ${art}
+          <span class="pc-body"><span class="pc-title">${esc(p.appName)}${isNew(p) ? NEW_BADGE : ""}</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>`;
 }
 const playNow = pages.filter((p) => isPlayable(p));
 const games = pages.filter((p) => !isPlayable(p) && p.appType === "game");
@@ -520,7 +552,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=24" />
+<link rel="stylesheet" href="/style.css?v=27" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -562,9 +594,13 @@ const indexHtml = `<!DOCTYPE html>
   <section class="card">
     <h2>Run specific Windows apps &amp; games in your browser</h2>
     <p>Two kinds of pages live here, and we keep them honest. <strong>▶ Play now</strong> entries are free, license-clean software we host — one click boots it in your tab. Everything else is a <strong>compatibility guide</strong>: we can't redistribute that software, so the guide tells you whether your own copy runs, which Wine variant to pick, and how to load it right on the page.</p>
+    <div id="continue-playing" hidden>
+      <h3 style="margin-top:0;">Continue playing</h3>
+      <ul class="poster-grid" id="continue-grid"></ul>
+    </div>
     <h3 style="margin-top:0;">▶ Play now — free, hosted here</h3>
-    <ul class="card-grid">
-${playNow.map(indexCard).join("\n")}
+    <ul class="poster-grid">
+${playNow.map(posterCard).join("\n")}
     </ul>
     <h3>Game compatibility guides — bring your own copy</h3>
     <ul class="card-grid">
@@ -592,6 +628,8 @@ ${apps.map(indexCard).join("\n")}
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+<script src="/recent.js?v=1"></script>
+<script>window.renderContinue && renderContinue("continue-playing", "continue-grid");</script>
 </body>
 </html>
 `;

@@ -57,7 +57,8 @@
     "faq": [],
     "related": [],
     "updated": "2026-07-27",
-    "screenshot": false
+    "screenshot": false,
+    "addedDate": "2026-07-27"
   },
   {
     "slug": "wolfenstein-3d",
@@ -2119,7 +2120,8 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "addedDate": "2026-07-27"
   },
   {
     "slug": "scorched-earth",
@@ -2782,7 +2784,8 @@
         }
       ]
     },
-    "screenshot": true
+    "screenshot": true,
+    "addedDate": "2026-07-27"
   },
   {
     "slug": "prince-of-persia",

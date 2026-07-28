@@ -156,6 +156,7 @@
         if (!EB.isReady()) throw new Error("No runnable .exe found in the hosted package.");
         overlay.classList.add("hidden");
         await EB.run(); // boot_success/boot_error are tracked inside app.js (bootAndRun owns the outcome)
+        window.rememberPlayed?.(slug, cfg.appName);
       } else {
         // No hosted asset (commercial app, or we can't redistribute it). Reveal
         // the in-page uploader — still no trip to the home page.
