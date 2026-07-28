@@ -4000,13 +4000,13 @@
   },
   {
     "slug": "notepad-plus-plus",
-    "title": "Try Notepad++ in Your Browser — Editing Works, Some Dialogs Crash — ExeBrowser",
-    "description": "Notepad++ boots one-click in your browser via Wine + WebAssembly. Tabs, editing and syntax highlighting work; the Preferences and Style dialogs can crash.",
+    "title": "Can You Run Notepad++ in a Browser? An Honest Wine Report — ExeBrowser",
+    "description": "Notepad++ under browser Wine stops at a \"Load langs.xml failed\" dialog and never opens an editor window. Here's what we tried and what to use instead.",
     "keywords": "notepad++ online, run notepad plus plus in browser, notepad++ no download, notepad++ web editor, notepad++ wine, open source code editor browser",
-    "ogTitle": "Try Notepad++ in Your Browser — Editing Works, Some Dialogs Crash",
+    "ogTitle": "Can You Run Notepad++ in a Browser? An Honest Wine Report",
     "ogDescription": "The open-source editor launches one-click under browser-based Wine. Core editing, tabs and syntax highlighting work; heavy dialogs like Preferences can crash — a capable scratchpad, not a daily driver.",
-    "crumb": "Run Notepad++",
-    "h1": "Notepad++ in your browser — editing works, some dialogs crash",
+    "crumb": "Notepad++ guide",
+    "h1": "Can you run Notepad++ in your browser?",
     "appName": "Notepad++",
     "appType": "app",
     "author": "Notepad++ (Don Ho)",
@@ -4017,48 +4017,28 @@
     "licenseReason": "Notepad++ is free and open-source software under the GNU GPL v3, which explicitly permits free, unmodified redistribution, so we can host the 32-bit build.",
     "licenseNote": "",
     "verdict": {
-      "kind": "partial",
-      "text": "Partial — editing works, some dialogs crash"
+      "kind": "bad",
+      "text": "Doesn't start — fails at \"Load langs.xml failed\" under browser Wine"
     },
-    "intro": "<p>Notepad++ is the much-loved free, open-source code editor — tabbed editing, syntax highlighting for dozens of languages, find-and-replace with regex, and a lightweight footprint — and it genuinely launches one click in your browser here, with the honest caveat that a few heavy dialogs crash. It's written in pure Win32 and C++ on top of the Scintilla component, with no .NET and no GPU dependency, so a surprising amount of it runs inside ExeBrowser. Notepad++ is a much bigger, busier program than classic Notepad, though, and the browser-based Wine engine is an older build (Wine 1.7.55). Core editing, tabs and syntax highlighting generally work, but a few heavy dialogs — most notably <strong>Settings → Preferences</strong> and the <strong>Style Configurator</strong> — are known to throw access-violation crashes even on far newer Wine, so treat this as a capable scratchpad rather than your daily driver.</p>",
+    "intro": "<p><strong>Notepad++</strong> is the much-loved free, open-source code editor — tabbed editing, syntax highlighting for dozens of languages, regex find-and-replace. We host a copy so you can try it, but we'll be straight with you: <strong>it does not currently start here</strong>. Wine boots it, the plugins load, and then it stops at a <em>\"Load langs.xml failed!\"</em> dialog with no editor window behind it.</p><p>We shipped the config files it asks for (<code>langs.xml</code> and <code>stylers.xml</code>, taken from the matching 7.9.5 source tag) directly alongside the executable, and the dialog still appears — Notepad++ resolves those paths in a way this Wine build doesn't satisfy. If you want a code editor in a browser tab today, use a native web editor; if you want Notepad++ specifically, run it on a real Windows machine.</p>",
     "sections": [
       {
-        "h": "How it works & what to expect",
-        "html": "<p>When it boots, you get the familiar Notepad++ window: a tabbed editor with line numbers, a language menu, and the toolbar. Typing, opening files, multi-tab editing, find/replace, and syntax highlighting for common languages all behave normally — this is the part Notepad++ does in pure Win32 with Scintilla, and it maps well onto what Wine implements reliably. Speed is roughly 10–40% of native, which is fine for editing text; you'll notice it more when the app first loads than while you type.</p><p>Where it gets rough is the deeper configuration UI. The <strong>Settings → Preferences</strong> dialog and the <strong>Style Configurator</strong> (theme editor) are documented to crash with an access violation under Wine, and the older engine here is no kinder. Plugins, the plugin admin, and anything touching live network access are also unreliable. If you stay in the editor and avoid those menus, you'll have a stable session.</p><table class=\"spec-table\"><tr><th>App</th><td>Notepad++ (<code>notepad++.exe</code>)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>Which build</th><td>A 32-bit release — an older one (e.g. the 7.9.2 era) tends to behave best on the older engine</td></tr><tr><th>License</th><td>GPL v3 — free and open-source, redistributable</td></tr><tr><th>Getting work out</th><td>Save inside the app, then “Download files written by this app”</td></tr></table>"
-      },
-      {
-        "h": "Use a 32-bit build — and consider an older one",
-        "html": "<p>The Wine engine here is 32-bit only, so always grab the 32-bit Notepad++ download, never the x64 build. There's a second reason to reach for an older release: recent Notepad++ versions dropped Windows XP support and lean on newer Win32 APIs, and Notepad++ 7.9.2 was the last version that ran on XP. That older-API target is a closer match for Wine 1.7.55, so a 7.9.x-era 32-bit build is your best shot at a clean boot. The portable (zip) distribution is ideal — extract it and upload the folder rather than running the installer.</p>"
-      },
-      {
-        "h": "Saving your work before you close the tab",
-        "html": "<p>ExeBrowser's <code>C:\\</code> drive lives entirely in memory and is wiped when you reload or close the tab. So the round trip is: edit your file, hit <strong>Save</strong> inside Notepad++, then use the <strong>Download files written by this app</strong> button to pull your saved files out as a zip. Do this <em>before</em> closing — there's no autosave to disk surviving a refresh. To continue later, re-upload that zip alongside the Notepad++ folder. For a quick edit this is fine; for a long coding session, a native editor is the saner choice.</p>"
-      },
-      {
-        "h": "Notepad++ vs. lighter options",
-        "html": "<p>If all you need is to view or tweak a plain text or config file, classic Notepad (or any tiny Win32 editor) boots faster and is rock-solid in ExeBrowser — Notepad++ is heavier and brings the dialog crashes above. Reach for Notepad++ here when you specifically want its syntax highlighting, multi-tab view, or regex find-and-replace and you're on a locked-down machine where you can't install anything. For serious editing on your own computer, install Notepad++ natively from the official site instead — it's free.</p>"
+        "h": "What we tried",
+        "html": "<p>The hosted payload originally contained only <code>notepad++.exe</code> and <code>SciLexer.dll</code>, so the missing XML was an obvious first suspect. Adding <code>langs.xml</code>, <code>stylers.xml</code>, <code>shortcuts.xml</code> and <code>contextMenu.xml</code> beside the executable did not change the outcome, which points at path resolution rather than missing files. The 64-bit builds aren't an option either — the Wine here is 32-bit only.</p>"
       }
     ],
     "faq": [
       {
-        "q": "Is Notepad++ free to use and redistribute?",
-        "a": "Yes. Notepad++ is free and open-source software released under the GNU General Public License (GPL v3). You can use it for any purpose, including commercially, and redistribute it freely. That's why we're able to host the 32-bit build directly here."
+        "q": "Does Notepad++ work in the browser here?",
+        "a": "No. It boots and loads its plugins, then stops at a \"Load langs.xml failed!\" dialog without opening an editor. We're documenting that rather than pretending otherwise."
       },
       {
-        "q": "Does Notepad++ actually work in the browser?",
-        "a": "Partially. The core editor — typing, tabs, opening and saving files, syntax highlighting, find/replace — works under browser-based Wine. But the <strong>Preferences</strong> and <strong>Style Configurator</strong> dialogs are known to crash, and plugins and networking are unreliable. It's a solid scratch editor, not a full daily-driver setup."
+        "q": "Did you try shipping the missing XML files?",
+        "a": "Yes — langs.xml and stylers.xml from the matching 7.9.5 source tag, placed beside the executable. The dialog still appears, so the problem is where Notepad++ looks for them under this Wine build, not whether they exist."
       },
       {
-        "q": "Why does Notepad++ crash when I open Settings or Preferences?",
-        "a": "Those dialogs trigger an access-violation crash that's well documented even on modern Wine, and the older engine ExeBrowser uses (Wine 1.7.55) is no better. Avoid the Settings → Preferences and Style Configurator menus and stick to the editor for a stable session."
-      },
-      {
-        "q": "Which version of Notepad++ should I load?",
-        "a": "A 32-bit build, since the engine is 32-bit only. An older release such as the 7.9.x era (the last to support Windows XP) targets the older Win32 APIs that Wine 1.7.55 implements best, so it tends to boot more reliably than the very latest version. Use the portable zip and upload the folder."
-      },
-      {
-        "q": "How do I keep the files I edited?",
-        "a": "The virtual <code>C:\\</code> drive is wiped on reload, so save inside Notepad++ and then click <strong>Download files written by this app</strong> to export your work as a zip before you close the tab."
+        "q": "What should I use instead?",
+        "a": "For editing text in a browser tab, a native web-based editor will serve you far better than emulated Wine. For Notepad++ specifically, run it on Windows — it's free and lightweight there."
       }
     ],
     "related": [
@@ -4098,7 +4078,7 @@
       "html": "<p>Notepad++ is GPL open-source, so it's free to download and redistribute. For the best chance of a clean boot under the browser engine, use a <strong>32-bit portable (zip)</strong> build — an older 7.9.x-era release that still targeted Windows XP tends to behave best. Grab official downloads from <a href=\"https://notepad-plus-plus.org/downloads/\" target=\"_blank\" rel=\"noopener\">notepad-plus-plus.org</a>, extract the zip, and upload the folder to ExeBrowser.</p>"
     },
     "genre": [],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28"
   },
   {
     "slug": "irfanview",
@@ -4288,7 +4268,8 @@
         "desc": "What runs in ExeBrowser and what doesn't — including networking."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28",
+    "screenshot": true
   },
   {
     "slug": "filezilla",

@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://exebrowser.com/run/putty/" />
 <meta property="og:title" content="Try PuTTY in Your Browser — The UI Runs, SSH Can't Connect" />
 <meta property="og:description" content="The real Win32 PuTTY launches one-click on Wine + WebAssembly: config dialog, saved sessions, terminal window. Live SSH/telnet fails because browser tabs can't open raw TCP sockets." />
-<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta property="og:image" content="https://exebrowser.com/run/putty/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -41,12 +41,12 @@
   "@type": "SoftwareApplication",
   "name": "PuTTY",
   "url": "https://exebrowser.com/run/putty/",
-  "image": "https://exebrowser.com/og.png",
+  "image": "https://exebrowser.com/run/putty/screenshot.png",
   "description": "Launch the real PuTTY one-click via Wine + WebAssembly. The Win32 UI and config dialog work, but browsers block raw sockets — SSH and telnet can't connect.",
   "applicationCategory": "Utility",
   "operatingSystem": "Web Browser",
   "author": { "@type": "Organization", "name": "Simon Tatham" },
-  "dateModified": "2026-07-01",
+  "dateModified": "2026-07-28",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -115,6 +115,10 @@
          data-app-url="/apps/putty/putty.zip"
          data-app-name="PuTTY"
          data-autoboot="false"></div>
+    <figure class="app-shot">
+      <img src="/run/putty/screenshot.png" width="798" height="599" loading="lazy" alt="PuTTY running in a browser tab via ExeBrowser" />
+      <figcaption>PuTTY running in the browser — no install, no upload.</figcaption>
+    </figure>
     <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
   </section>
 
