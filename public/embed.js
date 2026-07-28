@@ -72,6 +72,7 @@
 
     <div class="screen-actions">
       <button id="saveStateBtn" type="button" disabled>Download files written by this app</button>
+      <p class="muted small" style="margin:.4rem 0 0;">Files this app saves are kept in this browser and restored next time you open this page. Use the download button for a copy you keep.</p>
       <p class="muted small">Captures save files / generated content the app wrote to its in-memory C:\\ drive.</p>
     </div>
 

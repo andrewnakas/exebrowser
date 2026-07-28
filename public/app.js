@@ -681,28 +681,189 @@
 
   // Walk a BrowserFS layer synchronously (sync API works on InMemory) and
   // collect { path, bytes } pairs. Skip /.deletedFiles.log (BFS bookkeeping).
-  function collectWritableFiles(fs, dir = "/") {
+  //
+  // `layer` is the raw writable backend — fine for readdir/stat, but its
+  // readFileSync takes (path, encoding, flag) and throws "Cannot read
+  // properties of undefined" on the Node-style call. So we enumerate on the
+  // layer and read through the mounted fs façade at `mount`, which builds the
+  // FileFlag for us. Reading the layer directly silently yielded zero files,
+  // which is why the download button produced empty zips.
+  function collectWritableFiles(layer, mount = "", dir = "/") {
     const out = [];
     let entries;
     try {
-      entries = fs.readdirSync(dir);
+      entries = layer.readdirSync(dir);
     } catch (e) {
       return out;
     }
+    const rootFs = mount ? window.BrowserFS.BFSRequire("fs") : null;
     for (const name of entries) {
       const full = dir === "/" ? "/" + name : dir + "/" + name;
       if (full === "/.deletedFiles.log") continue;
       let stat;
-      try { stat = fs.statSync(full); } catch (e) { continue; }
+      try { stat = layer.statSync(full); } catch (e) { continue; }
       if (stat.isDirectory()) {
-        out.push(...collectWritableFiles(fs, full));
+        out.push(...collectWritableFiles(layer, mount, full));
       } else if (stat.isFile()) {
         let buf;
-        try { buf = fs.readFileSync(full); } catch (e) { continue; }
+        try {
+          buf = rootFs ? rootFs.readFileSync(mount + full) : layer.readFileSync(full);
+        } catch (e) { continue; }
         out.push({ path: full.replace(/^\//, ""), bytes: buf });
       }
     }
     return out;
+  }
+
+  // ─── persist writable layer across visits ──────────────────────────────
+  // Same idea as the DOS save layer: the writable side of each OverlayFS
+  // holds only what the running app wrote, so it's a clean delta to store.
+  // Keyed per app slug so KeePass databases don't leak into PuTTY's session
+  // list. Best-effort — browsers evict IndexedDB, and the copy shipped here
+  // is a convenience, not a backup (downloadWritableLayer stays the export).
+  const WINE_PERSIST_ON = new URLSearchParams(location.search).get("persist") !== "0";
+  const WINE_DB = "wineSaves";
+  const WINE_STORE = "layers";
+  const WINE_MAX_BYTES = 16 * 1024 * 1024;
+  const wineSlug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || "home";
+
+  function wineIdb() {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(WINE_DB, 1);
+      req.onupgradeneeded = () => {
+        if (!req.result.objectStoreNames.contains(WINE_STORE)) req.result.createObjectStore(WINE_STORE);
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+  function wineIdbGet(key) {
+    return wineIdb().then(db => new Promise((res, rej) => {
+      const r = db.transaction(WINE_STORE, "readonly").objectStore(WINE_STORE).get(key);
+      r.onsuccess = () => res(r.result || null);
+      r.onerror = () => rej(r.error);
+    }));
+  }
+  function wineIdbPut(key, val) {
+    return wineIdb().then(db => new Promise((res, rej) => {
+      const r = db.transaction(WINE_STORE, "readwrite").objectStore(WINE_STORE).put(val, key);
+      r.onsuccess = () => res();
+      r.onerror = () => rej(r.error);
+    }));
+  }
+
+  // Which writable-layer paths are worth carrying between visits. Wine's own
+  // prefix scaffolding is rebuilt on every boot, so we keep the user's home
+  // and documents, the app's own working directory, and the registry hives
+  // that hold app settings — and skip symlink stubs and .keep placeholders.
+  function isUserData(path) {
+    if (/\.link$/.test(path) || /(^|\/)\.keep$/.test(path)) return false;
+    if (/(^|\/)\.deletedFiles\.log$/.test(path)) return false;
+    // Booting Wine copies its own runtime into the writable layer — lib/,
+    // usr/, bin/, share/ hold ~20 MB of .so files that are identical on every
+    // boot. Allow-list the two places user state actually lives instead of
+    // trying to name everything to exclude.
+    const home = path.match(/^home\/[^/]+\/\.wine\/(.*)$/);
+    if (!home) {
+      // Anything outside home/ is either Wine's runtime (system layer) or the
+      // app's own working directory (/root/files layer). The latter has no
+      // home/ prefix at all, so keep only paths that aren't system trees.
+      return !/^(lib|usr|bin|etc|share|dev|proc|mnt|tmp|var|sbin|opt)(\/|$)/.test(path);
+    }
+    const rest = home[1];
+    // Registry hives carry app settings and are small.
+    if (/^(user|system|userdef)\.reg$/.test(rest)) return true;
+    const drivec = rest.match(/^drive_c\/(.*)$/);
+    if (!drivec) return false;
+    const inC = drivec[1];
+    if (/^windows\//i.test(inC)) return false;                          // Wine-generated
+    if (/^users\/[^/]+\/Local Settings\/Temp\//i.test(inC)) return false; // scratch
+    return true;                                                         // documents, app data, installs
+  }
+
+  // Snapshot every writable layer into a plain {mount: {path: bytes}} map.
+  let winePersistInFlight = null;
+  function persistWineLayers(reason) {
+    if (!WINE_PERSIST_ON || !state.booted || winePersistInFlight) return winePersistInFlight || Promise.resolve();
+    winePersistInFlight = (async () => {
+      try {
+        const snapshot = {};
+        let total = 0;
+        for (const { mount, writable } of getWritableLayers()) {
+          const files = {};
+          for (const f of collectWritableFiles(writable, mount)) {
+            // Booting Wine writes ~26 MB of prefix boilerplate into the
+            // writable layer — font links, .keep placeholders, the default
+            // registry. That's regenerated on every boot, so persisting it
+            // would blow the size cap and save nothing anyone cares about.
+            // Keep the parts that represent user state instead.
+            if (!isUserData(f.path)) continue;
+            const bytes = f.bytes.buffer
+              ? new Uint8Array(f.bytes.buffer, f.bytes.byteOffset, f.bytes.byteLength)
+              : new Uint8Array(f.bytes);
+            total += bytes.length;
+            if (total > WINE_MAX_BYTES) throw new Error("saved files exceed " + (WINE_MAX_BYTES / 1048576) + " MB");
+            files[f.path] = bytes;
+          }
+          if (Object.keys(files).length) snapshot[mount] = files;
+        }
+        if (!total) { log("Nothing new to save yet.", "warn"); return; }
+        await wineIdbPut(wineSlug, snapshot);
+        log(`Saved ${formatBytes(total)} of your files in this browser.`);
+        track("persist_save", { bytes: total, reason });
+      } catch (err) {
+        log("Could not save your files: " + err.message, "warn");
+      } finally {
+        winePersistInFlight = null;
+      }
+    })();
+    return winePersistInFlight;
+  }
+
+  // Write a stored snapshot back into the fresh overlays after boot.
+  async function restoreWineLayers() {
+    if (!WINE_PERSIST_ON) return 0;
+    let snapshot;
+    try { snapshot = await wineIdbGet(wineSlug); } catch { return 0; }
+    if (!snapshot) return 0;
+    let restored = 0;
+    try {
+      // Write through the mounted fs façade rather than the raw layer: the
+      // backend's own writeFileSync takes (path, data, encoding, flag, mode)
+      // and throws on the friendlier Node signature. Going through the mount
+      // point also lets OverlayFS route the write to the writable side.
+      const fs = window.BrowserFS.BFSRequire("fs");
+      const Buffer = window.BrowserFS.BFSRequire("buffer").Buffer;
+      for (const { mount } of getWritableLayers()) {
+        const files = snapshot[mount];
+        if (!files) continue;
+        for (const [path, bytes] of Object.entries(files)) {
+          const full = mount + "/" + path;
+          try {
+            mkdirpSync(fs, full.slice(0, full.lastIndexOf("/")));
+            fs.writeFileSync(full, Buffer.from(bytes));
+            restored++;
+          } catch { /* one bad file shouldn't sink the restore */ }
+        }
+      }
+    } catch (err) {
+      log("Could not restore your files: " + err.message, "warn");
+      return 0;
+    }
+    if (restored) {
+      log(`Restored ${restored} file(s) you saved here previously.`);
+      track("persist_restore", { files: restored });
+    }
+    return restored;
+  }
+
+  function mkdirpSync(fs, dir) {
+    const parts = dir.split("/").filter(Boolean);
+    let cur = "";
+    for (const p of parts) {
+      cur += "/" + p;
+      try { fs.mkdirSync(cur); } catch { /* already exists */ }
+    }
   }
 
   async function downloadWritableLayer() {
@@ -714,7 +875,7 @@
       const perLayerCounts = [];
 
       for (const { mount, writable } of layers) {
-        const files = collectWritableFiles(writable);
+        const files = collectWritableFiles(writable, mount);
         perLayerCounts.push(`${mount}: ${files.length}`);
         // Top-level folder in the output zip mirrors the BFS mount so users
         // can see which writes came from where. `/root/base` → "system",
@@ -830,6 +991,19 @@
       log("Launch dispatched. Canvas will activate when Wine is ready.");
       track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
       startHeartbeat();
+
+      if (WINE_PERSIST_ON) {
+        // Overlays only exist once the emulator is up; give Wine a moment to
+        // finish mounting before writing anything back into them.
+        setTimeout(() => { restoreWineLayers().catch(() => {}); }, 4000);
+        navigator.storage?.persist?.().catch(() => {});
+        const winePersistTimer = setInterval(() => persistWineLayers("interval"), 30000);
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "hidden") persistWineLayers("hidden");
+        });
+        window.addEventListener("pagehide", () => persistWineLayers("pagehide"));
+        window.addEventListener("beforeunload", () => clearInterval(winePersistTimer));
+      }
     } catch (err) {
       track("boot_error", { error_message: String(err.message).slice(0, 120) });
       log("Boot failed: " + err.message, "error");
@@ -995,6 +1169,7 @@
     stageHostedZip,
     // Boot the engine and run the staged entry EXE. Same path as the Run button.
     run: bootAndRun,
+    saveFiles: () => persistWineLayers("manual"),
     // Introspection for the embed UI.
     isReady: () => !!state.pickedExe,
     isBooting: () => state.bootInFlight,
