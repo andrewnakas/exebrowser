@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=28" />
+<link rel="stylesheet" href="/style.css?v=30" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -195,6 +195,22 @@
   wire();
 })();
 </script>
+    <details class="controls-panel" open>
+      <summary><strong>Controls</strong> — what does what</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">Move / turn</th><td><kbd>Arrow keys</kbd> or <kbd>W A S D</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Fire</th><td><kbd>Ctrl</kbd></td><td><kbd>Left-click</kbd></td></tr>
+        <tr><th scope="row">Open doors / use</th><td><kbd>Space</kbd></td><td><kbd>Right-click</kbd></td></tr>
+        <tr><th scope="row">Run</th><td>hold <kbd>Shift</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Weapons 1–6</th><td><kbd>number keys</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Menu (keyboard only)</th><td><kbd>Esc</kbd>, then arrows + <kbd>Enter</kbd></td><td><span class="muted">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
     <figure class="app-shot">
       <img src="/run/blake-stone/screenshot.png" width="700" height="519" loading="lazy" alt="Blake Stone running in a browser tab via ExeBrowser" />
       <figcaption>Blake Stone running in the browser — no install, no upload.</figcaption>
@@ -214,9 +230,8 @@
   <section class="card">
     <h2>How it works &amp; what to expect</h2>
     <p>This is the original 1994 DOS release (v3.0 game data with the real <code>BS_AOG.EXE</code>), not a port — it runs inside a WebAssembly build of DOSBox on this page. Boot takes a few seconds on first load while the ~1.3 MB game package downloads; after that it's cached. Sound (Sound Blaster + AdLib music) is preconfigured, and the demo attract loop starts on its own — press <kbd>Esc</kbd> to bring up the menu and pick <em>New Mission</em>.</p>
-    <h3>Controls</h3>
-    <p><strong>Arrow keys</strong> (or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, which this page maps to the arrows) move and turn. <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors and operates elevators, <kbd>Shift</kbd> runs, <kbd>Alt</kbd> strafes, <kbd>Tab</kbd>+key shows the auto-map, and number keys switch weapons. Talk to informants instead of shooting them — some hand out food tokens and hints. On phones and tablets a touch gamepad appears under the game.</p>
-<p class="muted small"><strong>Mouse:</strong> left-click fires and right-click opens doors. Blake Stone's own menus are keyboard-only (arrows + Enter), so use the keyboard to navigate menus.</p>
+    <h3>Playing tips</h3>
+    <p>Talk to informants instead of shooting them — some hand out food tokens and hints, and shooting a friendly one costs you points. Elevators need a key card and a <kbd>Space</kbd> press at the panel. The auto-map (<kbd>Tab</kbd>) is worth checking often; Star Institute's floors loop back on themselves.</p>
     <h3>Shareware episode — and the full game</h3>
     <p>Episode 1 is the complete 11-floor <em>Star Institute</em> mission, distributed free under Apogee's shareware model (the same arrangement as the DOOM and Wolfenstein 3D shareware episodes hosted here). Episodes 2–6 and the sequel <em>Planet Strike</em> are still commercial — the full game is sold as <em>Blake Stone: Aliens of Gold</em> on Steam and GOG. If you enjoy the episode, buying the full game supports the rights holder.</p>
   </section>
@@ -273,6 +288,6 @@
 </footer>
 
 <script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=15"></script>
+<script src="/dos-embed.js?v=16"></script>
 </body>
 </html>

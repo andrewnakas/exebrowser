@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=28" />
+<link rel="stylesheet" href="/style.css?v=30" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -193,6 +193,21 @@
   wire();
 })();
 </script>
+    <details class="controls-panel" open>
+      <summary><strong>Controls</strong> — what does what</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">Fly</th><td><kbd>Arrow keys</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Fire</th><td><kbd>Ctrl</kbd></td><td><kbd>Left-click</kbd></td></tr>
+        <tr><th scope="row">Sidekick weapon</th><td><kbd>Alt</kbd></td><td><kbd>Right-click</kbd></td></tr>
+        <tr><th scope="row">Change weapon mode</th><td><kbd>Space</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Pause / menu</th><td><kbd>Esc</kbd></td><td><span class="muted">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
     <figure class="app-shot">
       <img src="/run/tyrian/screenshot.png" width="640" height="479" loading="lazy" alt="Tyrian 2000 running in a browser tab via ExeBrowser" />
       <figcaption>Tyrian 2000 running in the browser — no install, no upload.</figcaption>
@@ -214,9 +229,8 @@
     <p>There are two layers to be honest about here: the <strong>license</strong> and the <strong>binary</strong>.</p><p><strong>The license is the easy part.</strong> Author Jason Emery released the complete Tyrian 2000 as freeware in 2004, and the artwork was later placed under an open-content license. The data files (graphics, levels, music) are freely redistributable, and the game is also offered free of charge on GOG. So there's nothing shady about playing it — no piracy, no cracks, no commercial copy required.</p><p><strong>The binary is the tricky part.</strong> The original <code>TYRIAN.EXE</code> / <code>TYRIAN2K.EXE</code> is a <em>DOS</em> executable. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary will not start cleanly without a DOS layer. That's why the verdict here is <em>partial</em>: the game is free and the gameplay is timeless, but getting it running in a browser Win32 environment takes the right approach.</p>
     <h3>How it plays here: the freeware game via DOSBox</h3>
     <p>Tyrian 2000 is a DOS game, and it plays in ExeBrowser through a <strong>DOSBox WebAssembly runtime</strong> — the same approach behind DOOM and Wolfenstein 3D here. Click play and the freeware game boots straight to its title screen and menu in a few seconds; no files to find, no upload, nothing installed. Because Tyrian 2000 was released as freeware, the complete game data ships with the runtime.</p><p>Prefer a native rebuild? The open-source <strong><a href="https://github.com/KScl/opentyrian2000" target="_blank" rel="noopener">OpenTyrian2000</a></strong> port (GPL) recreates the game as a modern executable for desktop play. It is SDL-based, so it targets a real desktop rather than this browser sandbox — but it is the best way to play Tyrian natively on a modern machine.</p>
-    <h3>Controls &amp; tips</h3>
-    <p>Click the game canvas to capture input, then:</p><ul><li><kbd>↑↓←→</kbd> or the mouse to fly your ship</li><li><kbd>Ctrl</kbd> / <kbd>Space</kbd> to fire (and the secondary fire key for your sidekicks)</li><li><kbd>Enter</kbd> / <kbd>Esc</kbd> to navigate menus; <kbd>Esc</kbd> also releases the mouse back to the page</li></ul><p>Tyrian's whole charm is the upgrade shop between levels — spend your credits on weapons, shields and a beefier hull. Don't blow it all on guns; survivability wins the long episodes.</p>
-<p class="muted small"><strong>Mouse:</strong> left-click fires, right-click triggers your sidekick weapon.</p>
+    <h3>Playing tips</h3>
+    <p>Spend generously in the upgrade shop between levels — a better shield and generator matter more than raw firepower early on. The sidekick weapons on <kbd>Alt</kbd> recharge, so use them freely rather than saving them.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
@@ -271,6 +285,6 @@
 </footer>
 
 <script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=15"></script>
+<script src="/dos-embed.js?v=16"></script>
 </body>
 </html>

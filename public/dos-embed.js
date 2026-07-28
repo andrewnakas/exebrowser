@@ -110,7 +110,7 @@
     <p class="muted small" style="margin:.25rem 0 0;">Click the game screen to capture keyboard &amp; mouse. Press <kbd>Ctrl+F10</kbd> to release mouse.
       <span id="dos-save-info" hidden> · <span id="dos-save-state">Progress saves in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></span>
     </p>
-    <details style="margin-top:.5rem;">
+    <details id="dos-console" style="margin-top:.5rem;" hidden>
       <summary class="muted small">Console output</summary>
       <pre id="dos-log" style="font-size:.7rem;max-height:8rem;overflow:auto;background:#111;padding:.5rem;"></pre>
     </details>
@@ -155,6 +155,8 @@
   function log(msg) {
     logEl.textContent += msg + "\n";
     logEl.scrollTop = logEl.scrollHeight;
+    const box = document.getElementById("dos-console");
+    if (box) box.hidden = false;
   }
 
   function setStatus(msg) {

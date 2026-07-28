@@ -263,6 +263,53 @@ function embedBlock(p) {
          ${attrs}></div>`;
 }
 
+// The controls a player needs, directly under the game rather than buried in
+// prose further down the page. Rendered for every device: the touch pad above
+// only appears on small screens, and desktop players previously had to hunt
+// through the article to find out which key fires.
+function controlsPanelHtml(p) {
+  const rows = p.controls;
+  if (!rows || !rows.length) return "";
+  const anyMouse = rows.some((r) => r.mouse && r.mouse !== "—");
+  const body = rows
+    .map(
+      (r) => `        <tr><th scope="row">${esc(r.action)}</th><td>${kbd(r.keyboard)}</td>${
+        anyMouse ? `<td>${r.mouse && r.mouse !== "—" ? kbd(r.mouse) : '<span class="muted">—</span>'}</td>` : ""
+      }</tr>`
+    )
+    .join("\n");
+  return `
+    <details class="controls-panel" open>
+      <summary><strong>Controls</strong> — what does what</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th>${
+            anyMouse ? `<th scope="col">Mouse</th>` : ""
+          }</tr></thead>
+          <tbody>
+${body}
+          </tbody>
+        </table>
+      </div>
+    </details>`;
+}
+
+// Mark up the key names inside a control description, leaving the connecting
+// words ("hold", "or", "then") as plain text. Anything that isn't a recognised
+// key — "in-game Setup menu" — passes through untouched.
+const KEY_WORDS = /\b(Arrow keys|number keys(?: \d–\d)?|Left-click|Right-click|Ctrl|Alt|Shift|Space|Esc|Tab|Enter|F1|F2|F3|W A S D|Y|Z|[0-9]|\/ \(forward slash\))\b/g;
+function kbd(text) {
+  const s = String(text);
+  if (!s || s === "—") return esc(s);
+  let out = "";
+  let last = 0;
+  for (const m of s.matchAll(KEY_WORDS)) {
+    out += esc(s.slice(last, m.index)) + `<kbd>${esc(m[0])}</kbd>`;
+    last = m.index + m[0].length;
+  }
+  return out + esc(s.slice(last));
+}
+
 function mobileControlsHtml(p) {
   const mc = p.mobileControls;
   if (!mc) return "";
@@ -451,7 +498,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=28" />
+<link rel="stylesheet" href="/style.css?v=30" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -487,7 +534,7 @@ ${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
     <h2>${esc(p.h1 || p.crumb)} <span class="verdict ${p.verdict.kind}">${esc(p.verdict.text)}</span></h2>${p.updated ? `
     <p class="muted small" style="margin-top:0.25rem;">Guide updated ${esc(monthYear(p.updated))} · ${p.verdict.kind === "bad" ? "Tested with" : "Runs via"} ${esc(runtimeLabel(p))}${isPlayable(p) || p.verdict.kind === "bad" ? "" : " · Requires your own copy"}</p>` : ""}
     ${p.intro}
-${embedBlock(p)}${mobileControlsHtml(p)}${figureHtml(p)}
+${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p)}${figureHtml(p)}
     ${p.iframeUrl ? "" : `<p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? "Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse." : "Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse."}</p>`}${licenseHtml(p)}
   </section>
 ${downloadHtml(p)}
@@ -515,7 +562,7 @@ ${p.iframeUrl
   ? ``
   : p.dosRuntime
     ? `<script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=15"></script>`
+<script src="/dos-embed.js?v=16"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/recent.js?v=1"></script>
 <script src="/embed.js?v=4"></script>
@@ -602,7 +649,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=28" />
+<link rel="stylesheet" href="/style.css?v=30" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>

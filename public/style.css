@@ -814,3 +814,68 @@ body.dos-playing { overflow: hidden; }
 .mgp-key-wide { flex: 1.8 1 0; font-size: .7rem; }
 @media (hover: none) and (pointer: coarse) { .mgp-keys { display: block; } }
 @media (max-width: 720px) { .mgp-keys { display: block; } }
+
+/* ── Controls panel: sits directly under the game ─────────────────────── */
+.controls-panel {
+  max-width: 640px;
+  margin: .75rem auto 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .015);
+}
+.controls-panel > summary {
+  cursor: pointer;
+  padding: .55rem .75rem;
+  font-size: .95rem;
+  list-style: none;
+}
+.controls-panel > summary::-webkit-details-marker { display: none; }
+.controls-panel > summary::before {
+  content: "▸ ";
+  color: var(--muted);
+}
+.controls-panel[open] > summary::before { content: "▾ "; }
+.controls-panel > summary strong { font-weight: 600; }
+.controls-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+.controls-table th[scope="col"] {
+  text-align: left;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  font-weight: 600;
+  padding: .3rem .75rem;
+  border-bottom: 1px solid var(--border);
+}
+.controls-table th[scope="row"] {
+  text-align: left;
+  font-weight: 500;
+  padding: .35rem .75rem;
+  white-space: nowrap;
+}
+.controls-table td {
+  padding: .35rem .75rem;
+  color: var(--muted);
+}
+.controls-table tbody tr + tr th,
+.controls-table tbody tr + tr td { border-top: 1px solid rgba(255,255,255,.05); }
+.controls-table kbd {
+  display: inline-block;
+  margin: 0 .1rem;
+  padding: .05rem .3rem;
+  font-size: .8em;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: rgba(255,255,255,.05);
+  color: var(--fg, #e6edf3);
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .controls-table th[scope="row"] { white-space: normal; }
+  .controls-table { font-size: .85rem; }
+}
