@@ -46,19 +46,18 @@
       "Pinball",
       "Arcade"
     ],
-    "hostable": true,
-    "appUrl": "/apps/dragon-keep/",
+    "hostable": false,
+    "appUrl": "",
     "verdict": {
-      "kind": "good",
-      "text": "▶ Play now — original table, no Windows files needed"
+      "kind": "bad",
+      "text": "Temporarily offline — the Phase 1 build crashes on load"
     },
     "intro": "",
     "sections": [],
     "faq": [],
     "related": [],
-    "updated": "2026-07-27",
-    "screenshot": false,
-    "addedDate": "2026-07-27"
+    "updated": "2026-07-28",
+    "screenshot": false
   },
   {
     "slug": "wolfenstein-3d",

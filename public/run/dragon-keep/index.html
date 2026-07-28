@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Dragon's Keep Pinball Online Free — Open-Source Table — ExeBrowser</title>
-<meta name="description" content="Play Dragon's Keep, an original medieval-fantasy pinball table, free in your browser. Open-source engine, CC0 artwork, no download, no install. Works on Windows, Mac, Linux, Chromebook." />
+<title>Dragon's Keep Pinball — Open-Source Table (Temporarily Offline) — ExeBrowser</title>
+<meta name="description" content="Dragon's Keep is an original CC0 medieval-fantasy pinball table for the open-source SpaceCadetPinball engine. The Phase 1 build currently crashes on load and is offline while we fix it." />
 <meta name="keywords" content="dragons keep pinball online, play pinball online free, open source pinball browser, full tilt dragons keep, medieval pinball game, pinball no download, browser pinball webassembly" />
 <link rel="canonical" href="https://exebrowser.com/run/dragon-keep/" />
 <meta property="og:type" content="article" />
@@ -47,8 +47,7 @@
   "genre": ["Pinball", "Arcade"],
   "gamePlatform": ["Web browser", "Windows", "Mac", "Linux", "Chromebook"],
   "operatingSystem": "Web Browser",
-  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/"
 }
 </script>
 <script type="application/ld+json">
@@ -68,8 +67,8 @@
     },
     {
       "@type": "Question",
-      "name": "What are the controls?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Hold Space to charge the plunger and release to launch. Z is the left flipper, / (forward slash) is the right flipper. F2 starts a new game. Mouse users: left-click = left flipper, right-click = right flipper. On mobile, use the on-screen FLIP and LAUNCH buttons." }
+      "name": "When will Dragon's Keep be playable?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Phase 1 WebAssembly build hits a memory fault on load, so the table is offline until that is fixed. Open Cadet runs the same engine with a complete working table in the meantime." }
     },
     {
       "@type": "Question",
@@ -176,19 +175,10 @@
     <h2>Play Dragon's Keep pinball — free, instant, no download <span class="verdict good">Works · no files needed</span></h2>
     <p><strong>Dragon's Keep</strong> is an original medieval-fantasy pinball table you can play right now in your browser — <strong>no download, no install, no Windows files required</strong>. It runs on the open-source <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> engine compiled to WebAssembly, with all-new CC0 (public domain) castle-and-dragon artwork, palette, and synthesized audio built for this release.</p>
 
-    <div class="play-frame-wrap">
-      <button class="button play-cta" id="boot-pinball" type="button">&#9654; Play Dragon's Keep Pinball — Free &amp; Instant</button>
-      <button type="button" class="play-exit" id="play-exit" aria-label="Exit full screen">&#10005; Exit</button>
-      <div class="play-overlay" id="play-overlay">
-        <iframe class="play-frame" id="pinball-frame" title="Dragon's Keep Pinball — open-source browser table"
-                allow="autoplay; gamepad; fullscreen"
-                data-src="/apps/dragon-keep/"></iframe>
-        <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
-          <button type="button" class="mc-btn mc-flip" data-key="z" aria-label="Left flipper">&#9664; FLIP</button>
-          <button type="button" class="mc-btn mc-launch" data-key="space" aria-label="Launch ball">&#9679; LAUNCH</button>
-          <button type="button" class="mc-btn mc-flip" data-key="slash" aria-label="Right flipper">FLIP &#9654;</button>
-        </div>
-      </div>
+    <div class="warn-box" style="border-color:#8a5a3a;">
+      <p><strong>Temporarily offline.</strong> The Phase 1 build crashes on load — its WebAssembly module hits a memory fault before the table renders. Rather than leave a black screen behind a Play button, we've taken it down until the build is fixed.</p>
+      <p style="margin-bottom:0;">In the meantime, <a href="/run/space-cadet-open/">Open Cadet</a> runs the same engine with a complete, working table — full missions and ranks, free and instant.</p>
+    </div>
     </div>
     <p class="muted small" style="margin-top:0.5rem;">Runs entirely in your browser — nothing uploaded, nothing installed. Click the game to capture input. <strong>Launch:</strong> hold &amp; release <kbd>Space</kbd>. <strong>Flippers:</strong> <kbd>Z</kbd> left, <kbd>/</kbd> right. <strong>New game:</strong> <kbd>F2</kbd>. <strong>Mouse:</strong> left-click = left flipper, right-click = right flipper. <kbd>Esc</kbd> releases input. <span class="mobile-hint">On mobile use the <strong>FLIP</strong> / <strong>LAUNCH</strong> buttons below the table.</span></p>
 
@@ -268,96 +258,6 @@
   <p>© 2026 ExeBrowser. Game data CC0 / public domain; engine under MIT.</p>
 </footer>
 
-<script>
-  (function () {
-    var btn = document.getElementById('boot-pinball');
-    var frame = document.getElementById('pinball-frame');
-    var exitBtn = document.getElementById('play-exit');
-    var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
-                  || window.matchMedia('(max-width: 720px)').matches;
 
-    function track(name, params) {
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', name, Object.assign({ app_slug: 'dragon-keep', runtime: 'wasm' }, params || {}));
-      }
-    }
-
-    function enterPlayMode() {
-      if (!isTouch) return;
-      document.body.classList.add('playing');
-      window.scrollTo(0, 0);
-      document.addEventListener('touchmove', preventScroll, { passive: false });
-    }
-    function exitPlayMode() {
-      document.body.classList.remove('playing');
-      document.removeEventListener('touchmove', preventScroll, { passive: false });
-    }
-    function preventScroll(e) { e.preventDefault(); }
-    if (exitBtn) exitBtn.addEventListener('click', exitPlayMode);
-
-    btn.addEventListener('click', function () {
-      track('play_click');
-      var t0 = performance.now();
-      if (!frame.src) {
-        frame.loading = 'eager';
-        frame.src = frame.getAttribute('data-src');
-      }
-      btn.disabled = true;
-      btn.textContent = 'Loading…';
-      frame.addEventListener('load', function () {
-        btn.style.display = 'none';
-        frame.focus();
-        enterPlayMode();
-        track('boot_success', { boot_ms: Math.round(performance.now() - t0) });
-      }, { once: true });
-    });
-
-    var KEYS = {
-      z:     { key: 'z',  code: 'KeyZ',  keyCode: 90 },
-      slash: { key: '/',  code: 'Slash', keyCode: 191 },
-      space: { key: ' ',  code: 'Space', keyCode: 32 }
-    };
-    function gameTarget() {
-      try {
-        var doc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
-        if (!doc) return null;
-        return doc.getElementById('canvas') || doc.body || doc;
-      } catch (e) { return null; }
-    }
-    function fireKey(type, spec) {
-      var win = frame.contentWindow;
-      var tgt = gameTarget();
-      if (!win || !tgt) return;
-      try {
-        var m = win.Module;
-        if (m && m.SDL2 && m.SDL2.audioContext && m.SDL2.audioContext.state === 'suspended')
-          m.SDL2.audioContext.resume();
-      } catch (e) {}
-      var ev = new win.KeyboardEvent(type, {
-        key: spec.key, code: spec.code, keyCode: spec.keyCode,
-        which: spec.keyCode, bubbles: true, cancelable: true
-      });
-      tgt.dispatchEvent(ev);
-    }
-    var held = {};
-    function press(name)   { if (held[name]) return; held[name] = true;  fireKey('keydown', KEYS[name]); }
-    function release(name) { if (!held[name]) return; held[name] = false; fireKey('keyup',   KEYS[name]); }
-
-    document.querySelectorAll('#mobile-controls .mc-btn').forEach(function (b) {
-      var name = b.getAttribute('data-key');
-      var down = function (e) { e.preventDefault(); press(name); };
-      var up   = function (e) { e.preventDefault(); release(name); };
-      b.addEventListener('touchstart',  down, { passive: false });
-      b.addEventListener('touchend',    up,   { passive: false });
-      b.addEventListener('touchcancel', up,   { passive: false });
-      b.addEventListener('mousedown', down);
-      b.addEventListener('mouseup',   up);
-      b.addEventListener('mouseleave', up);
-    });
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) Object.keys(held).forEach(release);
-    });
-  })();
-</script>
 </body>
 </html>
