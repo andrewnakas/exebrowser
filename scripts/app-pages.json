@@ -6104,9 +6104,9 @@
     "appUrl": "/apps/xargon/xargon.zip",
     "verdict": {
       "kind": "good",
-      "text": "Works — author-released freeware runs via DOSBox in your browser"
+      "text": "Works — press Y at the sound prompt, then it runs via DOSBox"
     },
-    "intro": "<p><strong>Xargon</strong> — Allen Pilgrim's 1993 platform-adventure for Epic MegaGames, often called the thinking player's Commander Keen: bigger levels, more exploration, and a fondness for hidden rooms. Pilgrim released the <strong>whole trilogy as freeware in 2008</strong> under an explicit written licence, so it's fully legal to host and play here.</p>",
+    "intro": "<p><strong>Xargon</strong> — Allen Pilgrim's 1993 platform-adventure for Epic MegaGames, often called the thinking player's Commander Keen: bigger levels, more exploration, and a fondness for hidden rooms. Pilgrim released the <strong>whole trilogy as freeware in 2008</strong> under an explicit written licence, so it's fully legal to host and play here. <strong>On first boot Xargon asks \"Do you want digital sound?\" — press <kbd>Y</kbd> to continue into the game.</strong></p>",
     "sections": [
       {
         "h": "How it works & what to expect",
