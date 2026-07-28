@@ -488,7 +488,8 @@
     "categories": [
       "Shooters",
       "Action"
-    ]
+    ],
+    "pointerLock": true
   },
   {
     "slug": "doom",
@@ -2631,7 +2632,8 @@
     ],
     "categories": [
       "Puzzle & strategy"
-    ]
+    ],
+    "pointerLock": true
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -2984,7 +2986,8 @@
     "categories": [
       "Shooters",
       "Action"
-    ]
+    ],
+    "pointerLock": true
   },
   {
     "slug": "hexen-heretic-shareware",

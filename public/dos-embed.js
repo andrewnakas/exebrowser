@@ -125,6 +125,12 @@
   const saveState = document.getElementById("dos-save-state");
   const saveReset = document.getElementById("dos-save-reset");
   const fsBtn    = document.getElementById("dos-fullscreen");
+  const mouseHint = document.getElementById("dos-mouse-hint");
+
+  // Only games that actually use the mouse should grab the pointer — locking
+  // it in a keyboard-only game would hide the cursor for no reason. Pages opt
+  // in with data-pointer-lock="true".
+  const WANTS_POINTER_LOCK = host.dataset.pointerLock === "true";
 
   // Fullscreen. iOS Safari has no Fullscreen API for arbitrary elements, so
   // fall back to a fixed-position "maximise" class that fills the viewport.
@@ -289,12 +295,45 @@
     document.addEventListener("keydown", onKey(true),  { capture: true });
     document.addEventListener("keyup",   onKey(false), { capture: true });
 
+    // Mouse motion.
+    //
+    // Mouse-driven DOS games run their own cursor: they read *movement* from
+    // the driver and apply their own sensitivity and acceleration on top. Feed
+    // them an absolute position and the two cursors disagree — measured on
+    // Scorched Earth, sending 1.0 (far edge) moved its cursor only a third of
+    // the way across, and the error grew with distance. There is no single
+    // scale factor that fixes this, because each game scales differently.
+    //
+    // Pointer lock is the correct primitive: the browser hides the system
+    // cursor and hands us raw deltas, so the game's cursor becomes *the*
+    // cursor and can't disagree with anything. Clicking the screen engages it;
+    // Esc releases, which is the same convention every browser game uses.
+    let pointerLocked = false;
+    document.addEventListener("pointerlockchange", () => {
+      pointerLocked = document.pointerLockElement === canvas;
+      if (mouseHint) {
+        mouseHint.textContent = pointerLocked
+          ? "Mouse captured — press Esc to release it."
+          : "Click the game screen to capture keyboard & mouse.";
+      }
+    });
+
     canvas.addEventListener("mousemove", e => {
+      if (pointerLocked) {
+        // movementX/Y are already in device pixels; DOSBox wants emulated ones.
+        const r = canvas.getBoundingClientRect();
+        const sx = r.width ? canvas.width / r.width : 1;
+        const sy = r.height ? canvas.height / r.height : 1;
+        const dx = (e.movementX || 0) * sx;
+        const dy = (e.movementY || 0) * sy;
+        if (dx || dy) ci.sendMouseRelativeMotion(dx, dy);
+        return;
+      }
+      // Before capture, absolute positioning at least lets the cursor track
+      // roughly, so menus are usable without locking first.
       const r = canvas.getBoundingClientRect();
-      ci.sendMouseMotion(
-        (e.clientX - r.left) / r.width,
-        (e.clientY - r.top) / r.height
-      );
+      if (!r.width || !r.height) return;
+      ci.sendMouseMotion((e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height);
     });
 
     // Click-to-key. Most DOS games of this era ship with the mouse disabled and
@@ -324,6 +363,10 @@
 
     canvas.addEventListener("mousedown", e => {
       canvas.focus();
+      // Games that use the mouse need pointer lock to track it correctly.
+      if (WANTS_POINTER_LOCK && !pointerLocked && canvas.requestPointerLock) {
+        canvas.requestPointerLock();
+      }
       const btn = DOS_BTN[e.button] ?? 0;
       pressedAt.set(btn, performance.now());
       ci.sendMouseButton(btn, true);

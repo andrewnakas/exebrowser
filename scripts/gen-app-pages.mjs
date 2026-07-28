@@ -52,6 +52,10 @@
 //   updated      "YYYY-MM-DD" — sitemap <lastmod> + "Guide updated" line
 //   licenseReason  prose note (why hosting is legal); NOTICE.md in the app dir
 //                is the canonical provenance record
+//   pointerLock  true → clicking the screen captures the mouse via the Pointer
+//                Lock API and motion is fed to the game as raw deltas. Needed
+//                by any game that draws its own cursor (Scorched Earth), since
+//                absolute positioning desynchronises the two cursors.
 //   clickKey     GLFW key code a left-click also sends (e.g. 341 = Ctrl/fire).
 //                For DOS games that ship with the mouse disabled and give no
 //                in-game way to enable it, so a click still does the obvious
@@ -233,6 +237,7 @@ function embedBlock(p) {
       // Games whose own mouse support is off/absent map a click to a key so
       // clicking still shoots. Omit for games that read the mouse natively.
       p.clickKey ? `data-click-key="${p.clickKey}"` : "",
+      p.pointerLock ? `data-pointer-lock="true"` : "",
       p.clickKeyRight ? `data-click-key-right="${p.clickKeyRight}"` : "",
       `data-autoboot="false"`,
     ]
@@ -562,7 +567,7 @@ ${p.iframeUrl
   ? ``
   : p.dosRuntime
     ? `<script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=18"></script>`
+<script src="/dos-embed.js?v=20"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/recent.js?v=1"></script>
 <script src="/embed.js?v=5"></script>
