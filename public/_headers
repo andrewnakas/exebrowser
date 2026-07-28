@@ -29,8 +29,16 @@
 /
   Cache-Control: public, max-age=60, must-revalidate
 
+# Content-Type only. Cache policy is set per-directory below, because _headers
+# MERGES rules: a blanket immutable here collided with the space-cadet
+# no-cache rule and emitted "immutable, no-cache" on the same response.
 /*.wasm
   Content-Type: application/wasm
+
+/boxedwine/*.wasm
+  Cache-Control: public, max-age=31536000, immutable
+
+/dosbox/*.wasm
   Cache-Control: public, max-age=31536000, immutable
 
 /boxedwine/build/default/*
@@ -65,6 +73,27 @@
 /boxedwine/apps/*
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/zip
+
+# DOSBox runtime JS (js-dos emulators.js + wdosbox.js). Vendored at a pinned
+# version and only replaced wholesale, so a repeat visitor should never
+# re-download them — the biggest win for return-visit boot time.
+# Scoped to *.js on purpose: wdosbox.wasm is already covered by the /*.wasm
+# rule above, and _headers MERGES matching rules rather than overriding, so a
+# second immutable rule would emit the directive twice.
+/dosbox/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Hosted game payloads. Not immutable — we do rebuild these in place when a
+# payload turns out to be broken (Tyrian, Blake Stone, Keen all shipped fixes),
+# so cap at a day and let revalidation pick up a repaired zip.
+/apps/*.zip
+  Cache-Control: public, max-age=86400
+  Content-Type: application/zip
+
+# Recently-played helper: same short TTL as the other first-party scripts so a
+# fix reaches users quickly.
+/recent.js
+  Cache-Control: public, max-age=60, must-revalidate
 
 # Catch-all: baseline security headers only (no cross-origin isolation — see
 # the COOP/COEP note at the top of this file).
