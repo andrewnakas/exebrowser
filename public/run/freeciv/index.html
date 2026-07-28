@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Freeciv Online — Free Civ-Style Strategy in Your Browser — ExeBrowser</title>
-<meta name="description" content="Play Freeciv online — the free open-source Civilization-style strategy game. No install, no download. Powered by freecivweb.com." />
+<title>Play Freeciv Online Free — Open-Source Civilization — ExeBrowser</title>
+<meta name="description" content="Freeciv is a free, open-source empire-building strategy game inspired by Civilization, playable in your browser at freecivweb.com. Here's how to start a single-player game." />
 <meta name="keywords" content="play freeciv online, freeciv browser, free civilization game, open source strategy game, civ game no install, freeciv in browser, turn-based empire builder" />
 <link rel="canonical" href="https://exebrowser.com/run/freeciv/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/freeciv/" />
-<meta property="og:title" content="Play Freeciv Online — Free Civ-Style Strategy in Your Browser" />
+<meta property="og:title" content="Play Freeciv Online Free — Open-Source Civilization" />
 <meta property="og:description" content="Freeciv, the open-source empire-building game inspired by Civilization, playable in your browser. No install needed." />
-<meta property="og:image" content="https://exebrowser.com/run/freeciv/screenshot.jpg" />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play Freeciv", "item": "https://exebrowser.com/run/freeciv/" }
+    { "@type": "ListItem", "position": 3, "name": "Freeciv", "item": "https://exebrowser.com/run/freeciv/" }
   ]
 }
 </script>
@@ -41,15 +41,14 @@
   "@type": "VideoGame",
   "name": "Freeciv",
   "url": "https://exebrowser.com/run/freeciv/",
-  "image": "https://exebrowser.com/run/freeciv/screenshot.jpg",
-  "description": "Play Freeciv online — the free open-source Civilization-style strategy game. No install, no download. Powered by freecivweb.com.",
+  "image": "https://exebrowser.com/og.png",
+  "description": "Freeciv is a free, open-source empire-building strategy game inspired by Civilization, playable in your browser at freecivweb.com. Here's how to start a single-player game.",
   "applicationCategory": "Game",
   "genre": ["Strategy", "Turn-based strategy", "4X", "Empire-building"],
   "gamePlatform": ["Web browser", "Windows"],
   "operatingSystem": "Web Browser",
   "publisher": { "@type": "Organization", "name": "The Freeciv project" },
-  "dateModified": "2026-07-01",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-07-28"
 }
 </script>
 <script type="application/ld+json">
@@ -59,23 +58,23 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is Freeciv free to play?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Freeciv is open-source under the GPL-2.0 license — no DRM, no paywall, no account needed." }
+      "name": "Why can't I start a game on this page any more?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We removed the embed because it was broken. Browsers block third-party storage inside frames, so Freeciv-web couldn't create a session and showed a \"please enter a name to join the game\" prompt instead of starting a single-player match. On its own site it works correctly, so we link there." }
     },
     {
       "@type": "Question",
-      "name": "Is Freeciv the same as Civilization?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No — Freeciv is an independent free game inspired by the Civilization series. Same style (found cities, research tech, build an empire), but a separate open-source project unrelated to Sid Meier / Firaxis." }
+      "name": "Is Freeciv free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — it's open source under the GPL, and Freeciv-web is free to play in any modern browser with no account required. An account is only needed if you want to save games." }
     },
     {
       "@type": "Question",
-      "name": "Does it need an account?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Single-player games launch instantly without registration. You can create a free account on freecivweb.com if you want to save games or play multiplayer." }
+      "name": "Do I need to download anything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Freeciv-web runs entirely in the browser. The desktop version is a separate download if you prefer a native client." }
     },
     {
       "@type": "Question",
-      "name": "Who runs the game server?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The game runs on freecivweb.com, the community-run Freeciv web server. ExeBrowser embeds it here for convenience; freecivweb.com is the authoritative host." }
+      "name": "How do I pick a nation or change the map?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use SETUP before pressing START to choose the ruleset, map size, and how many AI players you face. NATION lets you pick your civilisation." }
     }
   ]
 }
@@ -99,62 +98,57 @@
 </header>
 
 <main class="prose">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Freeciv</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Freeciv</nav>
 
   <section class="card">
-    <h2>Play Freeciv online in your browser <span class="verdict good">▶ Play now — full browser game</span></h2>
-    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via WebAssembly (native port)</p>
-    <p><strong>Freeciv</strong> is a free, open-source empire-building strategy game inspired by Civilization. Click <em>Start Game</em> in the panel above to jump straight into a single-player match against AI. Pick your nation, set the world size, and start building your empire — no download, no install, nothing to upload.</p>
+    <h2>Play Freeciv online — free, open source <span class="verdict partial">Plays great — but on Freeciv's own site, not embedded here</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via Wine 1.7.55 (Win32) + WebAssembly · Requires your own copy</p>
+    <p><strong>Freeciv</strong> is a free, open-source empire-building strategy game inspired by Civilization — and there is an excellent browser version, <a href="https://freecivweb.com/" target="_blank" rel="noopener">Freeciv-web</a>, that needs no download at all.</p><div class="warn-box" style="border-color:#8a5a3a;"><p><strong>We link to it rather than embedding it.</strong> We used to run Freeciv-web inside a frame on this page, but browsers block third-party storage inside frames, so the game could not create a session — instead of a single-player match you got a "please enter a name to join the game" prompt with no way forward. Opened directly it works properly, so that is where we send you.</p><p style="margin-bottom:0;"><a class="button" href="https://freecivweb.com/webclient/?action=new&amp;type=singleplayer" target="_blank" rel="noopener">▶ Play Freeciv on freecivweb.com →</a></p></div>
 
-    <div class="iframe-embed-wrap" style="position:relative;width:100%;padding-bottom:62.5%;background:#000;border-radius:4px;overflow:hidden;">
-      <iframe src="https://freecivweb.com/webclient/?action=new&amp;type=singleplayer"
-              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-              allowfullscreen
-              loading="lazy"
-              title="Freeciv"></iframe>
-    </div>
-    <figure class="app-shot">
-      <img src="/run/freeciv/screenshot.jpg" width="798" height="500" loading="lazy" alt="Freeciv running in a browser tab via ExeBrowser" />
-      <figcaption>Freeciv running in the browser — no install, no upload.</figcaption>
-    </figure>
-    
+    <!-- No hosted payload: the Play button reveals the in-page uploader.
+         To enable true one-click play, host a license-clean zip and add
+         data-app-url (and data-entry) to the div below. -->
+    <div id="exe-embed"
+         data-variant="default"
+         data-app-name="Freeciv"
+         data-autoboot="false"></div>
+    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
   </section>
 
   <section class="card">
     <h2>How it works &amp; what to expect</h2>
-    <h3>How to play</h3>
-    <p>The game loads via <a href="https://freecivweb.com" target="_blank" rel="noopener">freecivweb.com</a>, the official Freeciv web client. Once the board appears: right-click a tile to move units, left-click cities to manage production, and use the top toolbar for research and diplomacy. Turn-based — press <kbd>End Turn</kbd> when done each round.</p>
-    <h3>Want to play locally or bring your own build?</h3>
-    <p>You can also upload a Windows Freeciv installer to ExeBrowser's <a href="/">file picker</a> and run it via Wine + WebAssembly. Builds from 2.6.x onward use <code>setjmp</code> in a way Boxedwine can't emulate, so stick to 2.3.x or earlier. Downloads at <a href="https://www.freeciv.org/download.html" target="_blank" rel="noopener">freeciv.org/download</a>.</p>
+    <h3>How to start a single-player game</h3>
+    <p>Open <a href="https://freecivweb.com/webclient/?action=new&amp;type=singleplayer" target="_blank" rel="noopener">Freeciv-web</a>, type any player name when prompted (creating an account is optional — it's only needed to save games), then press <strong>START</strong> in the toolbar. <strong>SETUP</strong> lets you change the ruleset, map size and number of AI opponents first.</p>
+    <h3>What Freeciv is</h3>
+    <p>Freeciv began in 1996 as an open-source take on Civilization and is still actively developed. You build cities, research technologies, negotiate or fight with AI nations, and try to win by conquest, space race or score. The web client runs the same rulesets as the desktop game, including a Civ2-style "Classic+" default.</p>
+    <h3>Prefer something that plays right here?</h3>
+    <p>If you want strategy without leaving this tab, <a href="/run/scorched-earth/">Scorched Earth</a> is a turn-based artillery game hosted here, and <a href="/run/hearts-open/">Hearts</a> is a trick-taking card game with three AI opponents. Both start instantly.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
     <details>
-      <summary>Is Freeciv free to play?</summary>
-      <p>Yes. Freeciv is open-source under the GPL-2.0 license — no DRM, no paywall, no account needed.</p>
+      <summary>Why can't I start a game on this page any more?</summary>
+      <p>We removed the embed because it was broken. Browsers block third-party storage inside frames, so Freeciv-web couldn't create a session and showed a "please enter a name to join the game" prompt instead of starting a single-player match. On its own site it works correctly, so we link there.</p>
     </details>
     <details>
-      <summary>Is Freeciv the same as Civilization?</summary>
-      <p>No — Freeciv is an independent free game inspired by the Civilization series. Same style (found cities, research tech, build an empire), but a separate open-source project unrelated to Sid Meier / Firaxis.</p>
+      <summary>Is Freeciv free?</summary>
+      <p>Yes — it's open source under the GPL, and Freeciv-web is free to play in any modern browser with no account required. An account is only needed if you want to save games.</p>
     </details>
     <details>
-      <summary>Does it need an account?</summary>
-      <p>No. Single-player games launch instantly without registration. You can create a free account on freecivweb.com if you want to save games or play multiplayer.</p>
+      <summary>Do I need to download anything?</summary>
+      <p>No. Freeciv-web runs entirely in the browser. The desktop version is a separate download if you prefer a native client.</p>
     </details>
     <details>
-      <summary>Who runs the game server?</summary>
-      <p>The game runs on freecivweb.com, the community-run Freeciv web server. ExeBrowser embeds it here for convenience; freecivweb.com is the authoritative host.</p>
+      <summary>How do I pick a nation or change the map?</summary>
+      <p>Use SETUP before pressing START to choose the ruleset, map size, and how many AI players you face. NATION lets you pick your civilisation.</p>
     </details>
   </section>
   <section class="card">
     <h2>More you can run in your browser</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/freeciv/"><span class="lc-title">Freeciv</span><span class="lc-desc">This page — the free Civ-style empire builder.</span></a></li>
-      <li><a class="link-card" href="/run/age-of-empires/"><span class="lc-title">Age of Empires</span><span class="lc-desc">A real-time strategy classic.</span></a></li>
-      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">Free shareware shooter, hosted here.</span></a></li>
-      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Solitaire</span><span class="lc-desc">The timeless Windows card game.</span></a></li>
-      <li><a class="link-card" href="/run/scorched-earth/"><span class="lc-title">Scorched Earth</span><span class="lc-desc">Turn-based artillery warfare.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Full compatibility guide</span><span class="lc-desc">What runs and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/scorched-earth/"><span class="lc-title">Scorched Earth</span><span class="lc-desc">Turn-based artillery strategy — plays instantly here.</span></a></li>
+      <li><a class="link-card" href="/run/hearts-open/"><span class="lc-title">Hearts</span><span class="lc-desc">Trick-taking card game against three AI opponents.</span></a></li>
+      <li><a class="link-card" href="/run/one-must-fall-2097/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Epic's freeware robot fighter with a tournament mode.</span></a></li>
     </ul>
   </section>
 </main>
@@ -174,6 +168,9 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-
+<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
+<script src="/recent.js?v=1"></script>
+<script src="/embed.js?v=5"></script>
+<script src="/app.js?v=18"></script>
 </body>
 </html>
