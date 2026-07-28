@@ -398,7 +398,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=20" />
+<link rel="stylesheet" href="/style.css?v=24" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -461,7 +461,7 @@ ${downloadHtml(p)}
 ${p.iframeUrl
   ? ``
   : p.dosRuntime
-    ? `<script src="/dos-embed.js?v=10"></script>`
+    ? `<script src="/dos-embed.js?v=13"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/embed.js?v=2"></script>
 <script src="/app.js?v=17"></script>`}
@@ -520,7 +520,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=20" />
+<link rel="stylesheet" href="/style.css?v=24" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>

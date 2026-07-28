@@ -656,3 +656,57 @@ footer {
   opacity: 0.45;
   cursor: default;
 }
+
+/* ── DOS embed: stage & fullscreen ────────────────────────────────────── */
+/* Base stage geometry lives here (not inline) so the fullscreen/maximise
+   rules below can actually override it — inline styles would always win. */
+#dos-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+#dos-stage {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background: #000;
+  aspect-ratio: 4 / 3;
+}
+/* The stage is normally capped at 640px; both fullscreen paths lift that cap
+   and letterbox the 4:3 canvas inside the available space. */
+#dos-stage:fullscreen {
+  max-width: none;
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#dos-stage:fullscreen #dos-canvas {
+  width: min(100vw, 133.333vh);
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+/* iOS Safari fallback — no element Fullscreen API there. */
+#dos-stage.dos-maximised {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  max-width: none;
+  width: 100vw;
+  height: 100dvh;
+  aspect-ratio: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+}
+#dos-stage.dos-maximised #dos-canvas {
+  width: min(100vw, 133.333dvh);
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+body.dos-playing { overflow: hidden; }

@@ -2032,7 +2032,7 @@
       },
       {
         "q": "Does my progress save?",
-        "a": "The in-game save option works during your session, but saves don't yet survive closing the tab. Episode 1 levels are short — most players clear several in one sitting."
+        "a": "Yes — progress now persists. Saved games and high scores are kept in your browser and restored automatically next time you open this page. It's per-browser and best-effort: clearing site data, or a long gap on iOS, can drop it. Use the “reset saved progress” link under the game to start over deliberately."
       },
       {
         "q": "Can I play on a phone?",
@@ -2680,7 +2680,7 @@
       },
       {
         "q": "Does my progress save?",
-        "a": "The in-game save menu works during your session, but saves don't yet survive closing the tab. Finish a mission in one sitting, or leave the tab open."
+        "a": "Yes — progress now persists. Anything the game writes (saved missions, high scores, settings) is stored in your browser and restored automatically the next time you open this page. It's per-browser and best-effort: clearing site data, or a long gap on iOS, can drop it. Use the “reset saved progress” link under the game to wipe it deliberately."
       },
       {
         "q": "Can I play on a phone or tablet?",
