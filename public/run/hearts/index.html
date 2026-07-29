@@ -126,6 +126,12 @@
   </section>
 
   <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Where to find mshearts.exe</h3>
+      <div class="download-box"><p><strong>On a Windows PC:</strong> Windows 3.11 through Windows 7 ship it as <code>C:\Windows\System32\mshearts.exe</code> (Windows 7: <code>C:\Program Files\Microsoft Games\Hearts\Hearts.exe</code>). Bring <code>cards.dll</code> from <code>System32</code> too.</p><p><strong>On Windows 8 or later:</strong> removed — you'd need an older machine.</p><p><strong>Or skip the hunt:</strong> our own <a href="/run/hearts-open/">Hearts</a> plays the same game by the same rules, free and instantly, with nothing to download.</p></div>
+    </div>
+  </section>
+  <section class="card">
     <h2>How it works &amp; what to expect</h2>
     <p>ExeBrowser boots a real Wine 1.7.55 environment with a 32-bit x86 emulator compiled to WebAssembly, then runs the actual <code>MSHEARTS.EXE</code> binary — it is not a re-creation. Hearts is about the friendliest possible workload for this: a small, single-threaded GDI windowed app that just draws cards with the classic Windows card deck. There's no graphics acceleration to fall back from, so it renders cleanly and feels responsive even though the CPU underneath is emulated. Expect the real deal: enter your name, get dealt thirteen cards, pass three, and try to dodge the hearts and the Queen of Spades against three CPU players.</p>
     <h3>What works and what doesn't</h3>

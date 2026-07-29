@@ -125,6 +125,12 @@
   </section>
 
   <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Where to find freecell.exe</h3>
+      <div class="download-box"><p><strong>On a Windows PC:</strong> Windows XP and earlier keep it at <code>C:\Windows\System32\freecell.exe</code>; Windows 7 uses <code>C:\Program Files\Microsoft Games\FreeCell\FreeCell.exe</code>. Bring <code>cards.dll</code> from <code>System32</code> too, or the cards won't draw.</p><p><strong>On Windows 8 or later:</strong> not present — you'd need a copy from an older PC.</p><p><strong>No copy available?</strong> <a href="/run/hearts-open/">Hearts</a> is a free card game that plays here instantly, with no files needed.</p></div>
+    </div>
+  </section>
+  <section class="card">
     <h2>How it works &amp; what to expect</h2>
     <p>FreeCell is almost the ideal ExeBrowser candidate: a small, pure Win32 game with no DirectX, no 3D, no networking, no .NET, and no DRM. It's the same family as the classic Windows Solitaire and Minesweeper, which we rate <em>Works well</em> — expect the same here. It boots fast and runs at full speed even though an x86 CPU is being emulated inside WebAssembly, because the game barely taxes it.</p><p>The classic XP/Vista/7-era build is the one to use. It's a 32-bit executable, so keep the <strong>Win32 (default)</strong> variant. The much older Windows 3.x FreeCell (from the 1990 Windows Entertainment Pack) is a 16-bit program — if you specifically want that earliest version, switch to the <strong>Win 3.x 16-bit</strong> variant instead.</p>
     <h3>Bring the card graphics, too</h3>

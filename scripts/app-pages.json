@@ -1018,7 +1018,11 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-27"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find PINBALL.EXE",
+      "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows XP ships it at <code>C:\\Program Files\\Windows NT\\Pinball\\</code>. You need the whole folder — <code>PINBALL.EXE</code>, <code>PINBALL.DAT</code> and the <code>SOUND</code> directory — not just the executable.</p><p><strong>On Vista or later:</strong> Microsoft dropped it, so it won't be present.</p><p><strong>Skip all that:</strong> <a href=\"/run/space-cadet-open/\">Open Cadet</a> is the same game on an open-source engine with original CC0 artwork — it plays instantly here and needs no Microsoft files at all.</p></div>"
+    }
   },
   {
     "slug": "solitaire",
@@ -1125,7 +1129,11 @@
         "desc": "What runs in ExeBrowser and what doesn't."
       }
     ],
-    "updated": "2026-07-28"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find sol.exe",
+      "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows 7 and earlier ship it at <code>C:\\Windows\\System32\\sol.exe</code>. Copy that file — plus <code>cards.dll</code> from the same folder, which holds the card graphics — onto the device you're browsing from, then load both here.</p><p><strong>On Windows 8 or later:</strong> Microsoft removed it. The files aren't on your machine at all, so you'd need a copy from an older PC.</p><p><strong>No old PC to hand?</strong> Solitaire is proprietary and we can't host it — but <a href=\"/run/hearts-open/\">Hearts</a> and <a href=\"/run/space-cadet-open/\">3D Pinball Space Cadet</a> are free, play instantly here, and scratch much the same itch.</p></div>"
+    }
   },
   {
     "slug": "freeciv",
@@ -1396,7 +1404,11 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find winmine.exe",
+      "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows XP through Windows 7 ship it as <code>C:\\Windows\\System32\\winmine.exe</code> (Windows 7 calls it <code>MineSweeper.exe</code> and keeps it under <code>C:\\Program Files\\Microsoft Games\\Minesweeper\\</code>). It's a single self-contained file — copy it across and load it here.</p><p><strong>On Windows 8 or later:</strong> removed from Windows; you'd need an older machine.</p><p><strong>Want something free right now?</strong> Minesweeper is Microsoft's and we can't host it, but <a href=\"/run/hearts-open/\">Hearts</a> and <a href=\"/run/scorched-earth/\">Scorched Earth</a> start instantly and cost nothing.</p></div>"
+    }
   },
   {
     "slug": "freecell",
@@ -1499,7 +1511,11 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-28"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find freecell.exe",
+      "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows XP and earlier keep it at <code>C:\\Windows\\System32\\freecell.exe</code>; Windows 7 uses <code>C:\\Program Files\\Microsoft Games\\FreeCell\\FreeCell.exe</code>. Bring <code>cards.dll</code> from <code>System32</code> too, or the cards won't draw.</p><p><strong>On Windows 8 or later:</strong> not present — you'd need a copy from an older PC.</p><p><strong>No copy available?</strong> <a href=\"/run/hearts-open/\">Hearts</a> is a free card game that plays here instantly, with no files needed.</p></div>"
+    }
   },
   {
     "slug": "spider-solitaire",
@@ -1602,7 +1618,11 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-28"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find spider.exe",
+      "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows XP ships <code>C:\\Windows\\System32\\spider.exe</code>; Windows 7 uses <code>C:\\Program Files\\Microsoft Games\\Spider Solitaire\\SpiderSolitaire.exe</code>. Copy <code>cards.dll</code> from <code>System32</code> as well for the card graphics.</p><p><strong>On Windows 8 or later:</strong> removed from Windows.</p><p><strong>Prefer something free and instant?</strong> <a href=\"/run/hearts-open/\">Hearts</a> needs no files at all.</p></div>"
+    }
   },
   {
     "slug": "hearts",
@@ -1703,7 +1723,11 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-28"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find mshearts.exe",
+      "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows 3.11 through Windows 7 ship it as <code>C:\\Windows\\System32\\mshearts.exe</code> (Windows 7: <code>C:\\Program Files\\Microsoft Games\\Hearts\\Hearts.exe</code>). Bring <code>cards.dll</code> from <code>System32</code> too.</p><p><strong>On Windows 8 or later:</strong> removed — you'd need an older machine.</p><p><strong>Or skip the hunt:</strong> our own <a href=\"/run/hearts-open/\">Hearts</a> plays the same game by the same rules, free and instantly, with nothing to download.</p></div>"
+    }
   },
   {
     "slug": "skifree",
@@ -2168,7 +2192,11 @@
         "desc": "What runs, what doesn't, and which runtime to pick."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find Rodent's Revenge",
+      "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> it shipped in the Microsoft Entertainment Pack, not with Windows itself, so it won't be on a stock install. If you have the Best of Microsoft Entertainment Pack on an old machine, the file is <code>ROD.EXE</code> or <code>RODENT.EXE</code> in the install folder.</p><p><strong>Otherwise:</strong> it's proprietary Microsoft software we can't host. <a href=\"/run/god-of-thunder/\">God of Thunder</a> is a free puzzle-action game with a similar block-pushing feel that plays here instantly.</p></div>"
+    }
   },
   {
     "slug": "chocolate-doom",
@@ -3783,7 +3811,11 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find notepad.exe",
+      "html": "<div class=\"download-box\"><p><strong>On any Windows PC:</strong> <code>C:\\Windows\\notepad.exe</code> (also <code>C:\\Windows\\System32\\notepad.exe</code>). It's still shipped in Windows 11, so this one is easy to obtain — it's a single small file with no dependencies.</p><p><strong>On Mac or Linux:</strong> Notepad is Windows-only and we can't host it. Any browser-based text editor will serve you better than an emulated one.</p></div>"
+    }
   },
   {
     "slug": "keepass",
@@ -5499,7 +5531,11 @@
         "desc": "What runs and what doesn't, explained."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-28",
+    "download": {
+      "heading": "Where to find calc.exe",
+      "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows 7 and earlier ship the classic Win32 calculator at <code>C:\\Windows\\System32\\calc.exe</code> — a single self-contained file.</p><p><strong>On Windows 10 or 11:</strong> <code>calc.exe</code> is now a stub that launches a Store app, so copying it won't work. You'd need the file from Windows 7 or earlier.</p></div>"
+    }
   },
   {
     "slug": "character-map",

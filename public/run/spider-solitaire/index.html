@@ -125,6 +125,12 @@
   </section>
 
   <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Where to find spider.exe</h3>
+      <div class="download-box"><p><strong>On a Windows PC:</strong> Windows XP ships <code>C:\Windows\System32\spider.exe</code>; Windows 7 uses <code>C:\Program Files\Microsoft Games\Spider Solitaire\SpiderSolitaire.exe</code>. Copy <code>cards.dll</code> from <code>System32</code> as well for the card graphics.</p><p><strong>On Windows 8 or later:</strong> removed from Windows.</p><p><strong>Prefer something free and instant?</strong> <a href="/run/hearts-open/">Hearts</a> needs no files at all.</p></div>
+    </div>
+  </section>
+  <section class="card">
     <h2>How it works &amp; what to expect</h2>
     <p>ExeBrowser runs the <em>real</em> <code>spider.exe</code> — Microsoft's actual Windows binary — inside an x86 emulator and Wine, rendering to a browser canvas. It does not re-create the game; it executes the original executable unmodified. Because the classic build is a featherweight GDI app, the emulation overhead barely matters: it plays at full speed on any modern laptop, and it will feel fine on a Chromebook too.</p><table class="spec-table"><tr><th>Game</th><td>Spider Solitaire (<code>spider.exe</code> + <code>cards.dll</code>)</td></tr><tr><th>Best Wine variant</th><td><strong>Win32 (default)</strong></td></tr><tr><th>Era</th><td>1998–2009 — the XP-era build is the sweet spot</td></tr><tr><th>How to load</th><td>Bundle <code>spider.exe</code> and <code>cards.dll</code> in one folder, then pick the folder</td></tr><tr><th>Expected result</th><td>Full speed, classic look, mouse-driven</td></tr></table>
     <h3>Bring the card graphics (cards.dll)</h3>
