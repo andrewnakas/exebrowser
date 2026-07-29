@@ -2752,13 +2752,13 @@
   },
   {
     "slug": "one-must-fall",
-    "title": "Can You Play One Must Fall 2097 in a Browser? DOS Game Guide — ExeBrowser",
-    "description": "OMF 2097 is freeware but a DOS game, so raw Wine won't boot OMF.EXE in your browser. Guide to the real paths: a Win32 DOSBox build or the OpenOMF remake.",
+    "title": "Play One Must Fall 2097 Online — Free, No Download — ExeBrowser",
+    "description": "One Must Fall 2097 is freeware and plays free in your browser here — no download, no DOSBox setup. Epic's 1994 robot fighter, running via DOSBox + WebAssembly.",
     "keywords": "play one must fall 2097 online, omf 2097 browser, one must fall 2097 free, omf 2097 freeware, one must fall 2097 dos browser, openomf, play omf in browser no download",
-    "ogTitle": "Can You Play One Must Fall 2097 in a Browser? DOS Game Guide",
+    "ogTitle": "Play One Must Fall 2097 Online — Free, No Download",
     "ogDescription": "Epic's 1994 robot fighting classic is free freeware — but it's a DOS game, so it won't boot under raw Win32 Wine. The honest paths: DOSBox-in-Wine or the open-source OpenOMF remake.",
-    "crumb": "OMF 2097 guide",
-    "h1": "Can you play One Must Fall 2097 in your browser?",
+    "crumb": "One Must Fall 2097",
+    "h1": "One Must Fall 2097 in your browser",
     "appName": "OMF 2097",
     "appType": "game",
     "entry": "OMF.EXE",
@@ -2772,84 +2772,74 @@
     ],
     "licenseReason": "Diversions Entertainment and Epic MegaGames declared OMF 2097 freeware in February 1999 with allowance for non-commercial redistribution, so the original game files are free to share.",
     "verdict": {
-      "kind": "partial",
-      "text": "Partial — it's a DOS game; run it via DOSBox-in-Wine or OpenOMF, not raw Wine"
+      "kind": "good",
+      "text": "Playable here — we host it, it runs instantly"
     },
-    "intro": "<p><strong>One Must Fall 2097</strong> — Epic MegaGames' 1994 robot-pilot fighting game, where Human-Assisted Robots (HARs) trade combos in a single-elimination tournament — is genuinely <strong>free freeware</strong> today, declared so by its developers in 1999. Great news. Here's the honest catch you won't get everywhere: <strong>OMF 2097 is a DOS game, not a Windows program.</strong> ExeBrowser runs <em>Win32</em> <code>.exe</code> files on Wine + WebAssembly, and a raw DOS executable like <code>OMF.EXE</code> won't boot directly under Wine without a DOS layer. So the realistic ways to play it here are (1) through a Win32 build of <strong>DOSBox</strong> loaded into Wine, or (2) using <strong>OpenOMF</strong>, the open-source modern rebuild — both covered below. No piracy, no download required to read on.</p>",
+    "intro": "<div class=\"warn-box\" style=\"border-color:#2e7d32;\"><p><strong>You can play it right now.</strong> We host One Must Fall 2097 and it boots in your browser in about a second — no download, no DOSBox to configure, nothing to install.</p><p style=\"margin-bottom:0;\"><a class=\"button\" href=\"/run/one-must-fall-2097/\">▶ Play One Must Fall 2097 →</a></p></div><p><strong>One Must Fall: 2097</strong> — Epic MegaGames' 1994 robot-pilot fighting game, where Human-Assisted Robots trade combos through a single-elimination tournament — was <strong>declared freeware by Diversions Entertainment in 1999</strong>, so the complete game is free and legal to play and share.</p><p>This page used to explain the workarounds needed to run a DOS game in a Windows-only runtime. That advice is obsolete: we now run DOS games directly via DOSBox compiled to WebAssembly, so OMF plays here the same way DOOM and Tyrian do.</p>",
     "licenseNote": "<p class=\"muted small\">One Must Fall 2097 is officially freeware but was a DOS game — it requires a DOS layer that Wine here does not support. Bring your own Win32 copy or source port above if you have one.</p>",
     "download": {
-      "heading": "Get One Must Fall 2097 (free, legal freeware)",
-      "html": "<h3 style=\"margin-top:0;\">The original game — freeware since 1999</h3><p>Diversions Entertainment and Epic MegaGames released OMF 2097 as freeware on 10 February 1999, with allowance for free non-commercial redistribution. The most reliable preserved copy is on the Internet Archive:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/omf-2097\" target=\"_blank\" rel=\"noopener\">Get OMF 2097 freeware (Internet Archive) →</a></p><p class=\"muted small\">This is the <strong>DOS</strong> game (<code>OMF.EXE</code> + data files). It will <strong>not</strong> run as a plain Windows program under Wine on its own — pair it with a Win32 DOSBox build (see below) and point DOSBox at the OMF folder. © Epic MegaGames / Diversions Entertainment; redistributed under the developers' freeware terms.</p><h3>Easier: OpenOMF (open-source rebuild)</h3><p>If you just want to fight, <a href=\"https://openomf.org/\" target=\"_blank\" rel=\"noopener\">OpenOMF</a> is a free, open-source re-implementation of the engine. It still needs the original freeware data files (above) but is a modern build with windowed mode, gamepad and netplay support.</p>"
+      "heading": "Get it for your own machine",
+      "html": "<div class=\"download-box\"><p>You don't need any of this to play here — <a href=\"/run/one-must-fall-2097/\">the browser version</a> is the complete game. But if you want it locally:</p><p><strong>The freeware release</strong> is distributed openly and includes everything. <strong><a href=\"https://github.com/omf2097/openomf\" target=\"_blank\" rel=\"noopener\">OpenOMF</a></strong> is an open-source engine re-implementation that plays the same data files natively on Windows, macOS and Linux.</p></div>"
     },
     "sections": [
       {
-        "h": "How it works & what to expect",
-        "html": "<p>Be clear-eyed about this one. ExeBrowser's engine is <strong>Boxedwine</strong> — Wine 1.7.55 plus a 32-bit x86 emulator, which runs <em>Windows</em> 32-bit programs. OMF 2097 predates that world: it's a 1994 <strong>MS-DOS</strong> title that talks straight to DOS, VGA and a Sound Blaster, with no Windows API underneath. Hand Wine a raw DOS <code>.exe</code> and it generally won't start, because there's no DOS environment to host it. So the path to playing OMF here is to run a program that <em>is</em> Win32 and that, in turn, knows how to run DOS games: <strong>DOSBox</strong>.</p>"
-      },
-      {
-        "h": "The realistic ways to play it here",
-        "html": "<ol><li><strong>DOSBox-in-Wine (emulation on emulation).</strong> Load a 32-bit Win32 build of DOSBox into ExeBrowser, then point it at your unzipped OMF folder and run <code>OMF.EXE</code>. This works in principle but stacks an x86 emulator (Boxedwine) under a DOS emulator (DOSBox), so expect it to be heavy and possibly slow — fine for a curiosity, not ideal for tight fighting-game inputs.</li><li><strong>OpenOMF (recommended for actually playing).</strong> The open-source rebuild is a real modern app with clean rendering and proper controls. Its native desktop builds are typically 64-bit, which ExeBrowser can't run — but it's the right pick on a normal desktop, and it only needs the freeware data files.</li><li><strong>OMF on the original DOS metal, elsewhere.</strong> On a real machine, DOSBox runs the freeware files perfectly at full speed. ExeBrowser shines for Win32 apps; for a pure DOS fighter, plain DOSBox on your desktop is the smoothest route.</li></ol><p>Bottom line: the game is free and legal, and you can tinker with it in the browser, but it is not a one-click instant-play title the way a native Win32 game is. We'd rather tell you that than have it fail silently.</p>"
+        "h": "How it runs here",
+        "html": "<p>OMF is a DOS game, not a Windows one — it needs a DOS4GW protected-mode extender that Wine alone can't provide. That's why it needs DOSBox rather than the Wine runtime, and why this page once said it couldn't run. Our DOS games now boot in a WebAssembly build of DOSBox, which handles the extender natively. It's our largest payload at about 6&nbsp;MB, so the first boot takes a few seconds; after that it's cached.</p>"
       },
       {
         "h": "About the game",
-        "html": "<p>OMF 2097 is a one-on-one fighter set in 2097, where corporate-sponsored pilots climb a tournament ladder in giant Human-Assisted Robots. It's remembered for its tournament mode with upgradable robots and pilot stats — an RPG-ish layer rare for the genre — plus a thumping soundtrack and surprisingly deep move sets. It runs on a keyboard fine (the original was built for it), so you don't strictly need a gamepad.</p>"
+        "html": "<p>Eleven pilots, ten upgradeable HAR mechs, and a tournament mode where prize money buys stat upgrades between fights — that progression is what people still remember it for, along with a soundtrack players hunt down to this day. Specials use quarter-circle and charge motions, and everything is rebindable in the in-game setup menu.</p>"
+      },
+      {
+        "h": "Want it on your own machine?",
+        "html": "<p>The freeware release is still distributed openly, and <a href=\"https://github.com/omf2097/openomf\" target=\"_blank\" rel=\"noopener\">OpenOMF</a> is an open-source re-implementation of the engine that runs natively on modern systems using the same original data files. Both are worth a look if you want it outside a browser tab; neither is needed to play here.</p>"
       }
     ],
     "faq": [
       {
+        "q": "Can I play One Must Fall 2097 in the browser with no download?",
+        "a": "Yes. <a href=\"/run/one-must-fall-2097/\">Play it here</a> — it boots in about a second via DOSBox compiled to WebAssembly. Nothing to install and nothing is uploaded."
+      },
+      {
         "q": "Is One Must Fall 2097 really free?",
-        "a": "Yes. Diversions Entertainment and Epic MegaGames declared it freeware on 10 February 1999, with allowance for free non-commercial redistribution. You can legally download and play the original game files at no cost."
+        "a": "Yes. Diversions Entertainment declared it freeware in February 1999, so the complete game is legal to play, share and host. The sequel, One Must Fall: Battlegrounds, is a separate commercial release."
       },
       {
-        "q": "Can I play OMF 2097 in the browser with no download?",
-        "a": "Not as a true one-click title. OMF 2097 is a DOS game, and ExeBrowser runs 32-bit Windows programs, so the raw <code>OMF.EXE</code> won't boot directly under Wine. You can run it indirectly through a Win32 build of DOSBox loaded into ExeBrowser, but it's a workaround rather than instant play."
+        "q": "Why did this page used to say it wouldn't run?",
+        "a": "Because it wouldn't, at the time. OMF is a DOS program and ExeBrowser originally ran only Win32 software through Wine. We've since added a DOSBox runtime for DOS games, so the old workarounds — DOSBox-in-Wine, or a source port — are no longer needed."
       },
       {
-        "q": "Why won't One Must Fall 2097 just run in ExeBrowser like DOOM95?",
-        "a": "DOOM95 is a Windows 95 (Win32) port, which is exactly what Wine runs. OMF 2097 never got a Windows port — it's a pure MS-DOS game. Wine has no DOS environment, so it needs a DOS emulator like DOSBox (a Win32 program) in between, which adds overhead."
-      },
-      {
-        "q": "What's the best way to actually play OMF 2097 today?",
-        "a": "On a normal desktop, run the freeware files in DOSBox (full speed), or use OpenOMF, the free open-source rebuild with windowed mode, gamepad and netplay. Both use the same legally-free data files. In the browser, DOSBox-in-Wine works but expect it to be slow."
+        "q": "What are the controls?",
+        "a": "Arrows move and jump; Ctrl, Alt and Space attack. Specials use quarter-circle and charge motions. The in-game Setup menu rebinds everything, and the play page lists the full control table under the game."
       },
       {
         "q": "What is OpenOMF?",
-        "a": "OpenOMF is a free, open-source re-implementation of the OMF 2097 engine for modern systems. It plays the original freeware data files with modern conveniences like windowed/widescreen modes, gamepad support and TCP/IP multiplayer."
+        "a": "An open-source re-implementation of the OMF 2097 engine that runs natively on modern systems using the original freeware data files. Useful if you want the game outside a browser; not required to play it here."
       }
     ],
     "related": [
       {
-        "href": "/run/doom/",
-        "title": "DOOM",
-        "desc": "Free shareware FPS — and it actually runs instantly."
-      },
-      {
-        "href": "/run/prince-of-persia/",
-        "title": "Prince of Persia",
-        "desc": "Another DOS-era classic — see what to expect."
+        "href": "/run/one-must-fall-2097/",
+        "title": "▶ Play One Must Fall 2097",
+        "desc": "The game itself — free, instant, no download."
       },
       {
         "href": "/run/tyrian/",
-        "title": "Tyrian",
-        "desc": "Freeware shoot-'em-up from the same era."
+        "title": "Tyrian 2000",
+        "desc": "The other great Epic freeware release — plays instantly."
+      },
+      {
+        "href": "/run/raptor/",
+        "title": "Raptor: Call of the Shadows",
+        "desc": "Apogee's shareware vertical shooter."
       },
       {
         "href": "/run/scorched-earth/",
         "title": "Scorched Earth",
         "desc": "The mother of all artillery games."
-      },
-      {
-        "href": "/run/",
-        "title": "All app guides →",
-        "desc": "Everything you can run in the browser."
-      },
-      {
-        "href": "/guide/",
-        "title": "Compatibility guide",
-        "desc": "Win32 vs DOS — what runs and what doesn't."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-29"
   },
   {
     "slug": "raptor",
