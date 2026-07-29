@@ -11,6 +11,11 @@
 // a page means editing its entry in the `pages` array below and re-running:
 //   node scripts/gen-app-pages.mjs
 //
+// Then check nothing has drifted out of sync (missing payloads, dead /run/
+// links, blog verdicts that no longer match their pages, hosted games whose
+// copy still says they can't be played here):
+//   node scripts/check-consistency.mjs
+//
 // ── Per-page data contract ────────────────────────────────────────────────
 //   slug         URL slug (folder under /run/)
 //   title        <title> — lead with the transactional query ("Play X Online…")

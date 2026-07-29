@@ -30,6 +30,33 @@ python3 -m http.server 8765 --directory public
 
 For local testing without the Worker, edit `public/app.js` and change `ROOT_FS_URL` to point at a local copy.
 
+## Adding or changing a game
+
+Every `/run/<slug>/` page is generated from `scripts/app-pages.json` — never
+hand-edit the HTML, it gets overwritten.
+
+```bash
+# regenerate all pages + the hub + sitemap
+node scripts/gen-app-pages.mjs
+
+# check nothing drifted out of sync
+node scripts/check-consistency.mjs
+```
+
+The consistency check exists because the same class of bug kept recurring:
+a page states something that was true when written and quietly stopped being
+true when a game was added or a payload rebuilt. It verifies that hosted
+payloads exist and fit the 25 MB Cloudflare Pages limit, that declared
+screenshots are on disk, that every internal `/run/` link resolves, that the
+blog compatibility table matches the live verdicts, that no hosted game still
+claims it can't be played here, and that guides link to the playable version
+of the game they describe. It exits non-zero, so it can gate a deploy.
+
+**Always boot-test a new payload before writing "play online" copy** — judge
+the canvas buffer, not a screenshot of the page around it, and check the DOS
+banner in the console output to confirm which edition of an engine you're
+actually running.
+
 ## Deploy
 
 ### Worker (one-time)
