@@ -181,24 +181,64 @@
     window.emulators.pathPrefix = "/dosbox/";
   }
 
+  const fmtMB = (n) => (n / 1048576).toFixed(1) + " MB";
+
+  // Progress shown inside the overlay, where the visitor is already looking.
+  // Falls back to an indeterminate message when the server doesn't send
+  // content-length (our local dev server doesn't, production does).
+  function showProgress(received, total, startedAt) {
+    const bar = document.getElementById("dos-progress-bar");
+    const label = document.getElementById("dos-progress-label");
+    if (!bar || !label) return;
+    if (total > 0) {
+      const pct = Math.min(100, Math.round((received / total) * 100));
+      bar.style.width = pct + "%";
+      bar.parentElement.setAttribute("aria-valuenow", String(pct));
+      // Only estimate once there's enough of a sample to not be nonsense.
+      const secs = (performance.now() - startedAt) / 1000;
+      let eta = "";
+      if (secs > 2.5 && received > 0) {
+        const remaining = Math.round(((total - received) / (received / secs)));
+        if (remaining > 3) {
+          eta = remaining > 90
+            ? ` · about ${Math.ceil(remaining / 60)} min left`
+            : ` · about ${remaining}s left`;
+        }
+      }
+      label.textContent = `${pct}% — ${fmtMB(received)} of ${fmtMB(total)}${eta}`;
+    } else {
+      bar.style.width = "100%";
+      bar.parentElement.classList.add("indeterminate");
+      label.textContent = `Downloading… ${fmtMB(received)} so far`;
+    }
+  }
+
   async function fetchBundle(url) {
     setStatus("Downloading " + cfg.appName + "…");
+    showLoadingOverlay();
+    const startedAt = performance.now();
     const resp = await fetch(url);
     if (!resp.ok) throw new Error("HTTP " + resp.status + " fetching " + url);
     const total = parseInt(resp.headers.get("content-length") || "0", 10);
     const reader = resp.body.getReader();
     const chunks = [];
     let received = 0;
+    let lastPaint = 0;
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
       chunks.push(value);
       received += value.length;
-      if (total > 0) {
-        const pct = Math.round(received / total * 100);
-        setStatus("Downloading " + cfg.appName + "… " + pct + "%");
+      // Repaint at most ~8x/sec; the read loop fires far more often than that.
+      if (performance.now() - lastPaint > 120) {
+        lastPaint = performance.now();
+        showProgress(received, total, startedAt);
+        if (total > 0) {
+          setStatus("Downloading " + cfg.appName + "… " + Math.round(received / total * 100) + "%");
+        }
       }
     }
+    showProgress(received, total || received, startedAt);
     const out = new Uint8Array(received);
     let off = 0;
     for (const c of chunks) { out.set(c, off); off += c.length; }
@@ -417,6 +457,20 @@
   // The overlay is re-rendered when a boot fails, so the play button must be
   // looked up when it's used rather than captured once at startup.
   const currentPlayBtn = () => document.getElementById("dos-play");
+
+  // Swap the play button for a progress bar. Doing this in the overlay (rather
+  // than only in the status line below) means the play area stops looking
+  // frozen during a multi-megabyte fetch.
+  function showLoadingOverlay() {
+    overlay.style.display = "flex";
+    overlay.innerHTML = `
+      <p style="margin:0 0 .6rem;font-weight:600;">Loading ${esc(cfg.appName)}…</p>
+      <div class="dos-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="dos-progress-bar" class="dos-progress-fill"></div>
+      </div>
+      <p id="dos-progress-label" class="muted small" style="margin:.5rem 0 0;">Starting…</p>
+      <p class="muted small" style="margin:.35rem 0 0;text-align:center;padding:0 1rem;">Cached after the first load, so next time is instant.</p>`;
+  }
 
   async function play() {
     const btn = currentPlayBtn();

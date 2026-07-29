@@ -956,3 +956,31 @@ body.dos-playing { overflow: hidden; }
   color: var(--muted);
 }
 .free-note strong { color: inherit; }
+
+/* ── Download progress inside the play overlay ────────────────────────── */
+/* Large payloads (Freedoom is ~10 MB) can take minutes on a phone. The bar
+   lives in the overlay so the play area never looks frozen. */
+.dos-progress {
+  width: min(78%, 20rem);
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .14);
+  overflow: hidden;
+}
+.dos-progress-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent, #c0392b);
+  transition: width .18s linear;
+}
+/* When the server sends no content-length there's no percentage to show, so
+   sweep instead of implying a position we don't know. */
+.dos-progress.indeterminate .dos-progress-fill {
+  width: 40% !important;
+  animation: dos-sweep 1.1s ease-in-out infinite;
+}
+@keyframes dos-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
