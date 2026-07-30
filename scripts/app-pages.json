@@ -7374,6 +7374,16 @@
         "desc": "The shareware platformer Cosmo is often compared to."
       },
       {
+        "href": "/run/crystal-caves/",
+        "title": "Crystal Caves",
+        "desc": "Apogee's crystal-collecting mine platformer."
+      },
+      {
+        "href": "/run/monster-bash/",
+        "title": "Monster Bash",
+        "desc": "Apogee's gothic monster-hunting platformer."
+      },
+      {
         "href": "/run/hocus-pocus/",
         "title": "Hocus Pocus",
         "desc": "Apogee's wizard platformer — shareware episode, instant play."
@@ -7548,6 +7558,16 @@
         "desc": "Apogee platformer — shareware episode, instant play."
       },
       {
+        "href": "/run/crystal-caves/",
+        "title": "Crystal Caves",
+        "desc": "Apogee's crystal-collecting mine platformer."
+      },
+      {
+        "href": "/run/monster-bash/",
+        "title": "Monster Bash",
+        "desc": "Apogee's gothic monster-hunting platformer."
+      },
+      {
         "href": "/run/xargon/",
         "title": "Xargon",
         "desc": "Freeware platform-adventure trilogy."
@@ -7640,6 +7660,334 @@
       "html": "<div class=\"download-box\"><p><strong>Episode 1 plays here free.</strong> Episodes 2–4 were the commercial release:</p><p><a class=\"button\" href=\"https://store.steampowered.com/app/358250/\" target=\"_blank\" rel=\"noopener\">Hocus Pocus on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/game/hocus_pocus\" target=\"_blank\" rel=\"noopener\">Hocus Pocus on GOG →</a></p></div>"
     },
     "licenseNote": "<p class=\"muted small\">Episode 1 of Hocus Pocus is Apogee's freely-distributable shareware episode. Episodes 2–4 are commercial and not hosted here. Provenance: <a href=\"/apps/hocus-pocus/NOTICE.md\">/apps/hocus-pocus/NOTICE.md</a>.</p>",
+    "screenshot": true
+  },
+  {
+    "slug": "crystal-caves",
+    "title": "Play Crystal Caves Online — Free Shareware Episode — ExeBrowser",
+    "description": "Play Crystal Caves free in your browser — Apogee's 1991 platformer, the complete shareware episode. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play crystal caves online, crystal caves dos game, crystal caves apogee, crystal caves browser free",
+    "ogTitle": "Play Crystal Caves Online — Free Shareware Episode",
+    "ogDescription": "Apogee's 1991 platformer in your browser — the complete shareware episode, no download or install.",
+    "crumb": "Play Crystal Caves",
+    "h1": "Play Crystal Caves online — free shareware episode",
+    "appName": "Crystal Caves",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Platformer",
+      "Action"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/crystal-caves/crystal-caves.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware Episode 1 runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Crystal Caves</strong> — Apogee's 1991 platformer, in which intergalactic prospector Mylo Steamwitz descends into a series of mines to collect enough crystals to fund his next business venture. Each level is a self-contained puzzle box: find every crystal, avoid the hazards, get out. The <strong>complete shareware Episode 1, \"Troubles with Twibbles\"</strong>, is hosted here — click Play and the original DOS game boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original 1991 DOS release, running in a WebAssembly build of DOSBox. It's tiny — under 200&nbsp;KB — so it boots almost instantly. There's a story intro before the menu (Mylo's ship steering fails again); press <kbd>Space</kbd> through it to reach the level select.</p>"
+      },
+      {
+        "h": "Playing tips",
+        "html": "<p>Every crystal on a level must be collected before the exit will let you leave, so sweep the whole map rather than heading for the door. Your pistol has unlimited ammo but a slow rate of fire — shoot from a distance and keep moving. The floating platforms and conveyor floors carry you, so use them rather than fighting them, and watch for the stalactites that drop when you walk underneath.</p>"
+      },
+      {
+        "h": "Shareware episode — and the full trilogy",
+        "html": "<p>Episode 1 is the free shareware episode Apogee distributed. Its VENDOR.DOC permits sharing that episode and forbids distributing any registered version, so only Episode 1 is here. The full trilogy is still sold — look for <em>Crystal Caves</em> on Steam or GOG.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Crystal Caves legal to play here?",
+        "a": "Yes. This is the official shareware Episode 1, distributed freely by Apogee under its shareware model — the same basis as the Commander Keen, Cosmo and Hocus Pocus episodes we host. Episodes 2 and 3 are commercial and are not included."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move, Ctrl jumps, Alt fires your pistol. Esc opens the menu. The full control table is under the game."
+      },
+      {
+        "q": "Why won't the exit work?",
+        "a": "You need every crystal on the level first. If the exit seems inert, there's at least one crystal you haven't reached — often behind a conveyor or up a set of floating platforms."
+      },
+      {
+        "q": "There's a long intro before the menu — is it stuck?",
+        "a": "No, that's the game's story sequence. Press Space a few times to skip through it to the level select."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games and high scores persist in this browser between visits, best-effort."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee platformer with suction-cup climbing."
+      },
+      {
+        "href": "/run/hocus-pocus/",
+        "title": "Hocus Pocus",
+        "desc": "Apogee's wizard platformer — shareware episode."
+      },
+      {
+        "href": "/run/monster-bash/",
+        "title": "Monster Bash",
+        "desc": "Apogee's gothic monster-hunting platformer."
+      },
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "The shareware platformer that started it all."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee run-and-gun — freeware."
+      }
+    ],
+    "updated": "2026-07-29",
+    "addedDate": "2026-07-29",
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: ctrl · FIRE: alt · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Ctrl",
+        "mouse": "Right-click"
+      },
+      {
+        "action": "Fire pistol",
+        "keyboard": "Alt",
+        "mouse": "Left-click"
+      },
+      {
+        "action": "Skip the intro",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      }
+    ],
+    "clickKey": 342,
+    "clickKeyRight": 341,
+    "download": {
+      "heading": "Get the full trilogy",
+      "html": "<div class=\"download-box\"><p><strong>Episode 1 plays here free.</strong> Episodes 2 and 3 were the commercial release:</p><p><a class=\"button\" href=\"https://store.steampowered.com/app/358210/\" target=\"_blank\" rel=\"noopener\">Crystal Caves on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/game/crystal_caves\" target=\"_blank\" rel=\"noopener\">Crystal Caves on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Episode 1 of Crystal Caves is Apogee's freely-distributable shareware episode. Episodes 2–3 are commercial and not hosted here. Provenance: <a href=\"/apps/crystal-caves/NOTICE.md\">/apps/crystal-caves/NOTICE.md</a>.</p>",
+    "screenshot": true
+  },
+  {
+    "slug": "monster-bash",
+    "title": "Play Monster Bash Online — Free Shareware Episode — ExeBrowser",
+    "description": "Play Monster Bash free in your browser — Apogee's 1993 monster-hunting platformer. The complete shareware episode, no download, runs via DOSBox.",
+    "keywords": "play monster bash online, monster bash dos game, monster bash apogee, johnny dash game",
+    "ogTitle": "Play Monster Bash Online — Free Shareware Episode",
+    "ogDescription": "Apogee's 1993 monster-hunting platformer in your browser — the complete shareware episode.",
+    "crumb": "Play Monster Bash",
+    "h1": "Play Monster Bash online — free shareware episode",
+    "appName": "Monster Bash",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Platformer",
+      "Action"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/monster-bash/monster-bash.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware Episode 1 runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Monster Bash</strong> — Apogee's 1993 platformer, in which Johnny Dash goes after Count Chuck's monster army to rescue every kidnapped pet in the neighbourhood. It's the best-looking of Apogee's EGA platformers, with a genuinely gothic art style and a slingshot instead of a gun. The <strong>complete shareware Episode 1</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original 1993 DOS release running in a WebAssembly build of DOSBox. Rescuing pets is the actual objective — they're caged around each level and the exit doesn't care whether you've found them, so completion is on you. Johnny's slingshot has unlimited ammo but a slow arc, so lead your shots.</p>"
+      },
+      {
+        "h": "Playing tips",
+        "html": "<p>Cages need one hit to open, and the pet then follows you until it reaches safety — don't lead it back through the monsters you just dodged. Candles light dark rooms permanently, so grab them before exploring. Watch for false floors in the crypt levels; they drop you a screen and cost health.</p>"
+      },
+      {
+        "h": "Shareware episode — and the full game",
+        "html": "<p>Episode 1 is the free shareware episode Apogee distributed; its VENDOR.DOC permits sharing that episode and forbids distributing any registered version, so only Episode 1 is here. The full three-episode game is still sold — look for <em>Monster Bash</em> on Steam or GOG.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Monster Bash legal to play here?",
+        "a": "Yes. This is the official shareware Episode 1, distributed freely by Apogee under its shareware model — the same basis as the Commander Keen, Cosmo, Crystal Caves and Hocus Pocus episodes we host. Episodes 2 and 3 are commercial and are not included."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move, Ctrl jumps, Alt fires your slingshot. Esc opens the menu. The full control table is under the game."
+      },
+      {
+        "q": "What am I actually meant to do?",
+        "a": "Rescue the caged pets scattered through each level. One hit opens a cage and the pet follows you to safety. The exit will let you leave regardless, so finding them all is the real challenge."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games and high scores persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a touch d-pad with JUMP and FIRE buttons appears below the game on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/crystal-caves/",
+        "title": "Crystal Caves",
+        "desc": "Apogee's crystal-collecting mine platformer."
+      },
+      {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee platformer with suction-cup climbing."
+      },
+      {
+        "href": "/run/hocus-pocus/",
+        "title": "Hocus Pocus",
+        "desc": "Apogee's wizard platformer."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee run-and-gun — freeware."
+      }
+    ],
+    "updated": "2026-07-29",
+    "addedDate": "2026-07-29",
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: ctrl · FIRE: alt · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Ctrl",
+        "mouse": "Right-click"
+      },
+      {
+        "action": "Fire slingshot",
+        "keyboard": "Alt",
+        "mouse": "Left-click"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      }
+    ],
+    "clickKey": 342,
+    "clickKeyRight": 341,
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>Episode 1 plays here free.</strong> Episodes 2 and 3 were the commercial release:</p><p><a class=\"button\" href=\"https://store.steampowered.com/app/358230/\" target=\"_blank\" rel=\"noopener\">Monster Bash on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/game/monster_bash\" target=\"_blank\" rel=\"noopener\">Monster Bash on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Episode 1 of Monster Bash is Apogee's freely-distributable shareware episode. Episodes 2–3 are commercial and not hosted here. Provenance: <a href=\"/apps/monster-bash/NOTICE.md\">/apps/monster-bash/NOTICE.md</a>.</p>",
     "screenshot": true
   }
 ]

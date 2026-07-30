@@ -403,6 +403,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/run/crystal-caves/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/run/monster-bash/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/blog/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
