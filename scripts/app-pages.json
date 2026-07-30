@@ -2370,6 +2370,11 @@
     ],
     "related": [
       {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee platformer with suction-cup climbing — plays instantly."
+      },
+      {
         "href": "/run/keen4/",
         "title": "Commander Keen 4",
         "desc": "Secret of the Oracle — the shareware episode of Goodbye Galaxy."
@@ -2410,7 +2415,7 @@
         "desc": "What runs, what doesn't, and why DOS games are tricky."
       }
     ],
-    "updated": "2026-07-28",
+    "updated": "2026-07-29",
     "dosRuntime": true,
     "mobileControls": {
       "type": "platformer-dos",
@@ -6671,6 +6676,11 @@
     ],
     "related": [
       {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee platformer with suction-cup climbing — plays instantly."
+      },
+      {
         "href": "/run/commander-keen/",
         "title": "Commander Keen",
         "desc": "The shareware platformer Xargon is often compared to."
@@ -6686,7 +6696,7 @@
         "desc": "Puzzle-heavy action-adventure."
       }
     ],
-    "updated": "2026-07-28",
+    "updated": "2026-07-29",
     "addedDate": "2026-07-28",
     "mobileControls": {
       "type": "platformer-dos",
@@ -6827,6 +6837,11 @@
     ],
     "related": [
       {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee platformer with suction-cup climbing — plays instantly."
+      },
+      {
         "href": "/run/commander-keen/",
         "title": "Commander Keen",
         "desc": "Same engine, gentler game."
@@ -6842,7 +6857,7 @@
         "desc": "Platform-adventure freeware trilogy."
       }
     ],
-    "updated": "2026-07-28",
+    "updated": "2026-07-29",
     "addedDate": "2026-07-28",
     "mobileControls": {
       "type": "platformer-dos",
@@ -7288,5 +7303,343 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play."
+  },
+  {
+    "slug": "cosmo",
+    "title": "Play Cosmo's Cosmic Adventure Online — Free Shareware Episode — ExeBrowser",
+    "description": "Play Cosmo's Cosmic Adventure free in your browser — Apogee's 1992 platformer, the complete shareware episode. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play cosmo's cosmic adventure online, cosmo cosmic adventure browser, apogee cosmo, cosmo dos game free",
+    "ogTitle": "Play Cosmo's Cosmic Adventure Online — Free Shareware Episode",
+    "ogDescription": "Apogee's 1992 platformer in your browser — the complete shareware episode, no download or install.",
+    "crumb": "Play Cosmo's Cosmic Adventure",
+    "h1": "Play Cosmo's Cosmic Adventure online — free shareware episode",
+    "appName": "Cosmo's Cosmic Adventure",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Platformer",
+      "Action"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/cosmo/cosmo.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware Episode 1 runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Cosmo's Cosmic Adventure</strong> — Apogee's 1992 platformer, in which a small green alien crash-lands on an unknown planet while looking for his parents and has to climb his way out using nothing but his own suction-cup hands. The <strong>complete shareware Episode 1, \"Forbidden Planet\"</strong>, is hosted here: click Play and the original DOS game boots in your browser via DOSBox + WebAssembly.</p><p>It's remembered for one genuinely clever mechanic — Cosmo can't shoot, so climbing walls and dropping bombs is your entire toolkit, and the level design is built around that constraint.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>This is the original 1992 DOS release running in a WebAssembly build of DOSBox. The package is tiny (under 500&nbsp;KB), so it boots almost instantly. Cosmo's suction hands grab any wall you jump into — hold the direction to cling, then climb. Bombs are limited and mainly for clearing blocked routes rather than enemies.</p>"
+      },
+      {
+        "h": "Playing tips",
+        "html": "<p>Jumping onto an enemy's head is your main attack, and bouncing off one gains you extra height — several routes need that. Cling to a wall and wait when something is patrolling below; patience beats speed in most rooms. The green bars in the HUD are health, and stars are the score pickups worth detouring for.</p>"
+      },
+      {
+        "h": "Shareware episode — and the full trilogy",
+        "html": "<p>Episode 1 is the complete free shareware episode Apogee distributed. Episodes 2 and 3 were the commercial purchase, and the trilogy is still sold — you'll find it on Steam and GOG as <em>Cosmo's Cosmic Adventure</em>. If you enjoy the episode, buying the full set supports the rights holder.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Cosmo's Cosmic Adventure legal to play here?",
+        "a": "Yes. This is the official shareware Episode 1, which Apogee distributed freely under its shareware model — the same basis as the Commander Keen and Blake Stone episodes we host. Episodes 2 and 3 are commercial and are not included."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move, Ctrl jumps, Alt drops a bomb. Jump into a wall to cling with Cosmo's suction hands, then hold a direction to climb. The full control table is under the game."
+      },
+      {
+        "q": "Why can't Cosmo shoot?",
+        "a": "By design — he has no weapon. Jumping on enemies and climbing walls is the whole moveset, and the levels are built around that limitation. It's what makes the game feel different from Keen or Duke."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games and high scores persist in this browser between visits, best-effort. Clearing site data resets them."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a touch d-pad with JUMP and BOMB buttons appears below the game on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "The shareware platformer Cosmo is often compared to."
+      },
+      {
+        "href": "/run/hocus-pocus/",
+        "title": "Hocus Pocus",
+        "desc": "Apogee's wizard platformer — shareware episode, instant play."
+      },
+      {
+        "href": "/run/xargon/",
+        "title": "Xargon",
+        "desc": "Freeware platform-adventure trilogy — plays instantly."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee run-and-gun on the Keen engine — freeware."
+      },
+      {
+        "href": "/run/god-of-thunder/",
+        "title": "God of Thunder",
+        "desc": "Freeware puzzle-action adventure."
+      }
+    ],
+    "updated": "2026-07-29",
+    "addedDate": "2026-07-29",
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move & climb · JUMP: ctrl · BOMB: alt · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "BOMB",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move / climb",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Ctrl",
+        "mouse": "Left-click"
+      },
+      {
+        "action": "Drop a bomb",
+        "keyboard": "Alt",
+        "mouse": "Right-click"
+      },
+      {
+        "action": "Cling to a wall",
+        "keyboard": "jump into it, then hold a direction",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "In-game help",
+        "keyboard": "F1",
+        "mouse": "—"
+      }
+    ],
+    "clickKey": 341,
+    "clickKeyRight": 342,
+    "download": {
+      "heading": "Get the full trilogy",
+      "html": "<div class=\"download-box\"><p><strong>Episode 1 plays here free</strong> — it's the complete shareware episode. Episodes 2 and 3 were the commercial release:</p><p><a class=\"button\" href=\"https://store.steampowered.com/app/358190/\" target=\"_blank\" rel=\"noopener\">Cosmo on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/game/cosmos_cosmic_adventure\" target=\"_blank\" rel=\"noopener\">Cosmo on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Episode 1 of Cosmo's Cosmic Adventure is Apogee's freely-distributable shareware episode. Episodes 2–3 are commercial and not hosted here. Provenance: <a href=\"/apps/cosmo/NOTICE.md\">/apps/cosmo/NOTICE.md</a>.</p>",
+    "screenshot": true
+  },
+  {
+    "slug": "hocus-pocus",
+    "title": "Play Hocus Pocus Online — Free Shareware Episode — ExeBrowser",
+    "description": "Play Hocus Pocus free in your browser — Apogee's 1994 wizard platformer, the complete shareware episode. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "play hocus pocus online, hocus pocus dos game, hocus pocus apogee, hocus pocus browser free",
+    "ogTitle": "Play Hocus Pocus Online — Free Shareware Episode",
+    "ogDescription": "Apogee's 1994 wizard platformer in your browser — the complete shareware episode, no download.",
+    "crumb": "Play Hocus Pocus",
+    "h1": "Play Hocus Pocus online — free shareware episode",
+    "appName": "Hocus Pocus",
+    "appType": "game",
+    "author": "Moonlite Software / Apogee Software",
+    "genre": [
+      "Platformer",
+      "Action"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/hocus-pocus/hocus-pocus.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware Episode 1 runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Hocus Pocus</strong> — Moonlite Software and Apogee's 1994 platformer, where an apprentice wizard blasts his way through four fantasy worlds to prove himself worthy of the Council of Wizards. Bright VGA parallax backdrops, a proper magic-bolt attack, and crystals to collect on every level. The <strong>complete shareware Episode 1</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original 1994 DOS release, running in a WebAssembly build of DOSBox. It's a small package (under 800&nbsp;KB) so it boots in a second or two. Each level wants you to find every crystal before the exit opens — the HUD tracks them as <em>CRYSTALS 0/5</em> — so exploring beats rushing.</p>"
+      },
+      {
+        "h": "Playing tips",
+        "html": "<p>Your magic bolt is unlimited, so keep firing ahead of you into blind corners. Keys open the coloured doors blocking the back half of most levels, and the teleport pads are two-way — remember where you came in. Health potions are common enough that trading a little damage for a crystal is usually the right call.</p>"
+      },
+      {
+        "h": "Shareware episode — and the full game",
+        "html": "<p>Episode 1 is the free shareware episode Apogee distributed; its VENDOR.DOC explicitly permits sharing that episode and forbids distributing any registered version, so only Episode 1 is here. The complete four-episode game is still sold — look for <em>Hocus Pocus</em> on Steam or GOG.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Hocus Pocus legal to play here?",
+        "a": "Yes. This is the official shareware Episode 1, which Apogee distributed freely — the same basis as the Commander Keen, Cosmo and Blake Stone episodes we host. Episodes 2 to 4 are commercial and are not included."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move, Ctrl jumps, Alt fires your magic bolt. Esc opens the menu and F1 shows in-game help. The full control table is under the game."
+      },
+      {
+        "q": "Why won't the exit open?",
+        "a": "Most levels need every crystal collected first — the HUD shows your count. If the exit looks inert, there's a crystal you've missed, often behind a coloured door that needs a key."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games and high scores persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a touch d-pad with JUMP and FIRE buttons appears below the game on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee platformer — shareware episode, instant play."
+      },
+      {
+        "href": "/run/xargon/",
+        "title": "Xargon",
+        "desc": "Freeware platform-adventure trilogy."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee run-and-gun — freeware."
+      },
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "The shareware platformer that started it all."
+      }
+    ],
+    "updated": "2026-07-29",
+    "addedDate": "2026-07-29",
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: ctrl · FIRE: alt · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Ctrl",
+        "mouse": "Right-click"
+      },
+      {
+        "action": "Fire magic bolt",
+        "keyboard": "Alt",
+        "mouse": "Left-click"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "In-game help",
+        "keyboard": "F1",
+        "mouse": "—"
+      }
+    ],
+    "clickKey": 342,
+    "clickKeyRight": 341,
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>Episode 1 plays here free.</strong> Episodes 2–4 were the commercial release:</p><p><a class=\"button\" href=\"https://store.steampowered.com/app/358250/\" target=\"_blank\" rel=\"noopener\">Hocus Pocus on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/game/hocus_pocus\" target=\"_blank\" rel=\"noopener\">Hocus Pocus on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Episode 1 of Hocus Pocus is Apogee's freely-distributable shareware episode. Episodes 2–4 are commercial and not hosted here. Provenance: <a href=\"/apps/hocus-pocus/NOTICE.md\">/apps/hocus-pocus/NOTICE.md</a>.</p>",
+    "screenshot": true
   }
 ]
