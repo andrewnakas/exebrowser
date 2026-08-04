@@ -107,6 +107,7 @@
     </div>
     <p id="dos-status" class="muted small" style="margin:.5rem 0 0;" hidden></p>
     <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
+    <p id="dos-mouse-speed" class="muted small" style="margin:.4rem 0 0;" hidden><label for="dos-speed">Mouse speed</label> <input type="range" id="dos-speed" min="0.5" max="2.5" step="0.1" value="1" style="vertical-align:middle;width:9rem;"> <span id="dos-speed-val">1.0&times;</span></p>
     <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to capture keyboard &amp; mouse. Press <kbd>Ctrl+F10</kbd> to release mouse.</p>
     <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">Progress saves in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></p>
     <details id="dos-console" style="margin-top:.5rem;" hidden>
@@ -127,11 +128,43 @@
   const fsBtn    = document.getElementById("dos-fullscreen");
   const soundBtn = document.getElementById("dos-sound");
   const mouseHint = document.getElementById("dos-mouse-hint");
+  const speedWrap = document.getElementById("dos-mouse-speed");
+  const speedInput = document.getElementById("dos-speed");
+  const speedVal = document.getElementById("dos-speed-val");
 
   // Only games that actually use the mouse should grab the pointer — locking
   // it in a keyboard-only game would hide the cursor for no reason. Pages opt
   // in with data-pointer-lock="true".
   const WANTS_POINTER_LOCK = host.dataset.pointerLock === "true";
+
+  // How far DOSBox moves the emulated cursor per unit of relative motion we
+  // send. Measured, not guessed: stepping the Scorched Earth cursor from the
+  // left wall in +50 unit increments put it at emulated columns 26, 52, 78,
+  // 104 and 130 — a flat 0.52 px per unit. Cancelling this is what makes hand
+  // movement and cursor movement agree.
+  const DOSBOX_GAIN = 0.52;
+  // User-facing multiplier on top of 1:1. Some games run their own
+  // acceleration, so one number can't feel right everywhere; this is the knob.
+  const SPEED_KEY = "exe_mouse_speed";
+  const readSpeed = () => {
+    try {
+      const v = parseFloat(localStorage.getItem(SPEED_KEY));
+      return v >= 0.25 && v <= 4 ? v : 1;
+    } catch { return 1; }
+  };
+  let MOUSE_SPEED = readSpeed();
+
+  // Only mouse-driven games get the slider; it would mean nothing elsewhere.
+  if (WANTS_POINTER_LOCK && speedWrap && speedInput && speedVal) {
+    speedWrap.hidden = false;
+    speedInput.value = String(MOUSE_SPEED);
+    speedVal.textContent = MOUSE_SPEED.toFixed(1) + "×";
+    speedInput.addEventListener("input", () => {
+      MOUSE_SPEED = parseFloat(speedInput.value) || 1;
+      speedVal.textContent = MOUSE_SPEED.toFixed(1) + "×";
+      try { localStorage.setItem(SPEED_KEY, String(MOUSE_SPEED)); } catch { /* private mode */ }
+    });
+  }
 
   // Fullscreen. iOS Safari has no Fullscreen API for arbitrary elements, so
   // fall back to a fixed-position "maximise" class that fills the viewport.
@@ -504,12 +537,9 @@
     // cursor and can't disagree with anything. Clicking the screen engages it;
     // Esc releases, which is the same convention every browser game uses.
     let pointerLocked = false;
-    // Sub-pixel carry. Scaled deltas are fractional, and DOSBox truncates each
-    // one as it arrives — throw the remainder away every event and the cursor
-    // travels systematically short, with the error growing over a long sweep.
-    // That under-travel is what previously looked like per-game "sensitivity".
-    // Carrying the remainder forward makes a slow drag cover the same ground as
-    // a fast one.
+    // Sub-pixel carry for the fractional deltas trackpads report. DOSBox
+    // truncates whatever it is handed, so dropping the remainder every event
+    // makes the cursor travel short, with the error growing over a long sweep.
     let accX = 0, accY = 0;
     document.addEventListener("pointerlockchange", () => {
       const wasLocked = pointerLocked;
@@ -534,16 +564,33 @@
 
     canvas.addEventListener("mousemove", e => {
       if (pointerLocked) {
-        // movementX/Y are CSS pixels; DOSBox wants emulated ones. Scale both
-        // axes by the SAME factor: the canvas backing store is the emulated
-        // frame (320x200) but CSS stretches it into a 4/3 stage, so deriving
-        // sx and sy independently gives 0.500 across and 0.417 down — a 20%
-        // axis mismatch that skews every diagonal. The horizontal ratio is the
-        // honest one, since that axis isn't stretched by the aspect correction.
+        // Move the in-game pointer as far as the hand actually moved.
+        //
+        // Getting here took measuring rather than reasoning. DOSBox does not
+        // treat one unit as one pixel: driving the Scorched Earth cursor from
+        // the left wall in +50 unit steps landed it at emulated columns
+        // 26, 52, 78, 104, 130 — a steady 26 px per 50 units, so the emulator
+        // applies its own ~0.52 gain. On top of that the emulated frame is
+        // scaled to fit the stage (720 px wide shown in 640, so 0.889 css px
+        // per emulated px).
+        //
+        // Multiply those and the old code delivered ~0.52 css px of cursor
+        // travel per css px of hand movement — the cursor moved at half speed,
+        // which is exactly the "crawling across multiple screens" complaint.
+        // Cancelling both terms is what makes it 1:1.
+        //
+        // No devicePixelRatio anywhere: movementX is already in css pixels, so
+        // a Retina display must not double it.
         const r = canvas.getBoundingClientRect();
-        const scale = r.width ? canvas.width / r.width : 1;
+        // css px per emulated px, i.e. how much the frame is zoomed to fit.
+        const zoom = canvas.width && r.width ? r.width / canvas.width : 1;
+        // Undo the emulator's gain and the zoom, then apply the user's taste.
+        const scale = MOUSE_SPEED / (DOSBOX_GAIN * zoom);
         accX += (e.movementX || 0) * scale;
         accY += (e.movementY || 0) * scale;
+        // Carry the sub-pixel remainder: trackpads report fractional deltas and
+        // DOSBox truncates whatever it is handed, so dropping the remainder
+        // every event makes a slow drag cover less ground than a fast one.
         const dx = Math.trunc(accX);
         const dy = Math.trunc(accY);
         accX -= dx;
