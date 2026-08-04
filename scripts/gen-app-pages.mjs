@@ -532,7 +532,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=34" />
+<link rel="stylesheet" href="/style.css?v=35" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -596,7 +596,7 @@ ${p.iframeUrl
   ? ``
   : p.dosRuntime
     ? `<script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=26"></script>`
+<script src="/dos-embed.js?v=27"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/recent.js?v=1"></script>
 <script src="/embed.js?v=5"></script>
@@ -731,7 +731,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=34" />
+<link rel="stylesheet" href="/style.css?v=35" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>

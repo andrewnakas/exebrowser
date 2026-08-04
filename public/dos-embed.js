@@ -109,6 +109,12 @@
     <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
     <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to give it your keyboard.</p>
     <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">Progress saves in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></p>
+    <details id="dos-keys" style="margin-top:.5rem;" hidden>
+      <summary class="muted small">Keyboard — remap any key</summary>
+      <p class="muted small" style="margin:.5rem 0;">Click a key below, then press the key you'd rather use. Saved in this browser, per game.</p>
+      <div id="dos-keys-list" class="dos-keys-list"></div>
+      <p style="margin:.5rem 0 0;"><button type="button" class="button" id="dos-keys-reset">Reset to defaults</button></p>
+    </details>
     <details id="dos-console" style="margin-top:.5rem;" hidden>
       <summary class="muted small">Console output</summary>
       <pre id="dos-log" style="font-size:.7rem;max-height:8rem;overflow:auto;background:#111;padding:.5rem;"></pre>
@@ -476,17 +482,173 @@
     CODE_MAP.KeyA = 263; // KBD_left  = turn left
     CODE_MAP.KeyD = 262; // KBD_right = turn right
 
+    // Per-game remapping, layered over the defaults above. Stored as
+    // { "KeyW": 265, … } under one key per game, so rebinding Cosmo doesn't
+    // change DOOM.
+    const BIND_KEY = "exe_binds_" + slug;
+    function loadBinds() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(BIND_KEY) || "{}");
+        const out = {};
+        // Trust nothing from storage: only known key names mapping to numbers.
+        for (const [code, sc] of Object.entries(raw)) {
+          if (code in CODE_MAP && typeof sc === "number" && sc >= 0 && sc <= 400) out[code] = sc;
+        }
+        return out;
+      } catch { return {}; }
+    }
+    let binds = loadBinds();
+    // Declared up here because onKey closes over it and is attached before the
+    // rebinding UI below is built.
+    let capturing = null;   // the game key awaiting a replacement keypress
+    function saveBinds() {
+      try { localStorage.setItem(BIND_KEY, JSON.stringify(binds)); } catch { /* private mode */ }
+    }
+    // The map actually consulted at keypress time.
+    const effective = () => Object.assign({}, CODE_MAP, binds);
+    let ACTIVE = effective();
+
+    // Keys the browser and the OS want for themselves. Letting these through
+    // means Cmd+W closes the tab mid-game and Ctrl+A selects the page behind
+    // the canvas — so while the game has focus we swallow them, except for the
+    // few a person genuinely needs (reload, devtools, tab switching, quit).
+    const OS_SAFE = new Set(["KeyR", "KeyT", "KeyW", "KeyQ", "KeyN", "KeyI", "KeyJ"]);
+
     const onKey = (pressed) => (e) => {
-      const sc = CODE_MAP[e.code];
+      // Never fight the browser when the game doesn't have focus, or when the
+      // person is typing into the rebinding UI.
+      if (!gameHasFocus()) return;
+
+      if (capturing) { if (pressed) captureKey(e); e.preventDefault(); e.stopPropagation(); return; }
+
+      const sc = ACTIVE[e.code];
+
+      // Modifier combinations. A DOS game wants plain Ctrl as a fire button,
+      // but Cmd+W and Ctrl+W are the browser's. Pass the bare modifier through
+      // to the game and swallow the combination, so holding Ctrl to shoot
+      // never trips a shortcut — unless it's one of the few we deliberately
+      // leave alone so the tab stays escapable.
+      if (e.metaKey || e.ctrlKey || e.altKey) {
+        const isBareModifier = /^(Control|Shift|Alt|Meta)(Left|Right)$/.test(e.code);
+        if (isBareModifier) {
+          if (sc !== undefined) ci.sendKeyEvent(sc, pressed);
+          // Don't preventDefault a lone modifier: on macOS that can wedge the
+          // key's own state in the browser.
+          return;
+        }
+        if (e.metaKey && OS_SAFE.has(e.code)) return;   // let Cmd+R, Cmd+W, … work
+        if (sc !== undefined) ci.sendKeyEvent(sc, pressed);
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
+
       if (sc !== undefined) {
         ci.sendKeyEvent(sc, pressed);
         e.preventDefault();
         e.stopPropagation();
       }
     };
+
+    // Only claim the keyboard when the game is the thing being used. Without
+    // this the capture-phase listener would eat keystrokes meant for the page.
+    function gameHasFocus() {
+      const a = document.activeElement;
+      if (a === canvas) return true;
+      // Treat the whole embed as "the game" so the fullscreen and sound
+      // buttons don't drop keyboard control the moment they're clicked.
+      return !!(a && host.contains(a) && a.tagName !== "INPUT" && a.tagName !== "SELECT");
+    }
+
     // Attach to both document (capture) and canvas so keys are never lost.
     document.addEventListener("keydown", onKey(true),  { capture: true });
     document.addEventListener("keyup",   onKey(false), { capture: true });
+
+    // ── Rebinding UI ──────────────────────────────────────────────────────
+    //
+    // The keys worth offering are the ones DOS games actually use. Pages
+    // describe their controls in prose ("Arrow keys", "Ctrl"), which isn't
+    // machine-readable, so rather than parse that we expose a fixed set that
+    // covers every game the same way. Rebinding "Ctrl" here means "when I
+    // press this key on my keyboard, send Ctrl to the game".
+    const REBINDABLE = [
+      ["ArrowUp", "Up"], ["ArrowDown", "Down"], ["ArrowLeft", "Left"], ["ArrowRight", "Right"],
+      ["ControlLeft", "Ctrl"], ["AltLeft", "Alt"], ["ShiftLeft", "Shift"], ["Space", "Space"],
+      ["Enter", "Enter"], ["Escape", "Esc"], ["Tab", "Tab"],
+    ];
+    const keysPanel = document.getElementById("dos-keys");
+    const keysList = document.getElementById("dos-keys-list");
+    // Which physical key currently drives a given game key. With no override
+    // that's the key itself; a rebind points some other physical key at it.
+    function physicalFor(target) {
+      const want = CODE_MAP[target];
+      for (const [code, sc] of Object.entries(binds)) if (sc === want) return code;
+      return binds[target] === undefined ? target : null;
+    }
+
+    const PRETTY = {
+      ArrowUp: "↑", ArrowDown: "↓", ArrowLeft: "←", ArrowRight: "→",
+      ControlLeft: "Ctrl", ControlRight: "Right Ctrl", AltLeft: "Alt", AltRight: "Right Alt",
+      ShiftLeft: "Shift", ShiftRight: "Right Shift", Space: "Space", Enter: "Enter",
+      Escape: "Esc", Tab: "Tab", Backspace: "Backspace",
+    };
+    const pretty = (code) =>
+      PRETTY[code] || (code || "").replace(/^Key|^Digit|^Numpad/, "") || "—";
+
+    function renderKeys() {
+      if (!keysList) return;
+      keysList.innerHTML = "";
+      for (const [target, label] of REBINDABLE) {
+        const row = document.createElement("div");
+        row.className = "dos-key-row";
+        const name = document.createElement("span");
+        name.textContent = label;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "button dos-key-btn";
+        const phys = physicalFor(target);
+        btn.textContent = capturing === target ? "press a key…" : pretty(phys);
+        btn.setAttribute("aria-label", `Change the key for ${label}`);
+        btn.addEventListener("click", () => {
+          capturing = capturing === target ? null : target;
+          renderKeys();
+          canvas.focus();   // so the next keypress is ours to catch
+        });
+        row.append(name, btn);
+        keysList.appendChild(row);
+      }
+    }
+
+    // Called from onKey while a slot is armed.
+    function captureKey(e) {
+      const target = capturing;
+      capturing = null;
+      if (!target) return;
+      if (e.code === "Escape") { renderKeys(); return; }   // Esc cancels
+      if (!(e.code in CODE_MAP)) { renderKeys(); return; } // unknown key, ignore
+      // Clear any previous binding that pointed at this game key, then point
+      // the newly pressed physical key at it.
+      const want = CODE_MAP[target];
+      for (const [code, sc] of Object.entries(binds)) if (sc === want) delete binds[code];
+      if (e.code !== target) binds[e.code] = want;
+      // If the pressed key had its own meaning, it now sends this instead —
+      // that is the point of a rebind, so don't try to preserve both.
+      saveBinds();
+      ACTIVE = effective();
+      renderKeys();
+    }
+
+    if (keysPanel) {
+      keysPanel.hidden = false;
+      renderKeys();
+      document.getElementById("dos-keys-reset").addEventListener("click", () => {
+        binds = {};
+        saveBinds();
+        ACTIVE = effective();
+        capturing = null;
+        renderKeys();
+      });
+    }
 
     // Mouse motion.
     //
