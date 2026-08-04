@@ -107,8 +107,7 @@
     </div>
     <p id="dos-status" class="muted small" style="margin:.5rem 0 0;" hidden></p>
     <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
-    <p id="dos-mouse-speed" class="muted small" style="margin:.4rem 0 0;" hidden><label for="dos-speed">Mouse speed</label> <input type="range" id="dos-speed" min="0.3" max="3" step="0.1" value="1" style="vertical-align:middle;width:9rem;"> <span id="dos-speed-val">1.0&times;</span></p>
-    <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to capture keyboard &amp; mouse. Press <kbd>Ctrl+F10</kbd> to release mouse.</p>
+    <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to give it your keyboard.</p>
     <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">Progress saves in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></p>
     <details id="dos-console" style="margin-top:.5rem;" hidden>
       <summary class="muted small">Console output</summary>
@@ -128,54 +127,17 @@
   const fsBtn    = document.getElementById("dos-fullscreen");
   const soundBtn = document.getElementById("dos-sound");
   const mouseHint = document.getElementById("dos-mouse-hint");
-  const speedWrap = document.getElementById("dos-mouse-speed");
-  const speedInput = document.getElementById("dos-speed");
-  const speedVal = document.getElementById("dos-speed-val");
 
-  // Only games that actually use the mouse should grab the pointer — locking
-  // it in a keyboard-only game would hide the cursor for no reason. Pages opt
-  // in with data-pointer-lock="true".
-  const WANTS_POINTER_LOCK = host.dataset.pointerLock === "true";
+  // Which games actually read the mouse. Pages still declare this with
+  // data-pointer-lock="true" — the name is now historical, but the meaning it
+  // encodes ("this game is mouse-driven") is still the useful bit, and it is
+  // set on exactly the right pages.
+  const MOUSE_GAME = host.dataset.pointerLock === "true";
 
-  // Base multiplier applied to raw pointer-lock deltas before they reach the
-  // emulator.
-  //
-  // There is no single correct number here, and it took measuring to be sure.
-  // Stepping a cursor from the left wall in +50 unit increments and watching
-  // which emulated column it lands on gives a per-game gain: Scorched Earth
-  // (720x480 frame) moved a flat 26 px per 50 units, i.e. 0.52 px/unit, while
-  // 320x200 titles moved several times faster for the same input. The gain
-  // depends on the game's own mouse handling — most DOS games apply their own
-  // sensitivity and acceleration to driver movement — so no constant we bake in
-  // can be right everywhere.
-  //
-  // So: pick a base that makes the slowest common case feel natural rather than
-  // sluggish, cancel the one term we CAN compute exactly (how much the emulated
-  // frame is zoomed to fit the stage), and let the player trim the rest with a
-  // slider that remembers their choice. 2.0 was chosen against the measured
-  // 0.52 case — the previous build shipped an effective ~0.5x and read as
-  // "dragging across multiple screens".
-  const BASE_SPEED = 2.0;
-  const SPEED_KEY = "exe_mouse_speed";
-  const readSpeed = () => {
-    try {
-      const v = parseFloat(localStorage.getItem(SPEED_KEY));
-      return v >= 0.25 && v <= 4 ? v : 1;
-    } catch { return 1; }
-  };
-  let MOUSE_SPEED = readSpeed();
-
-  // Only mouse-driven games get the slider; it would mean nothing elsewhere.
-  if (WANTS_POINTER_LOCK && speedWrap && speedInput && speedVal) {
-    speedWrap.hidden = false;
-    speedInput.value = String(MOUSE_SPEED);
-    speedVal.textContent = MOUSE_SPEED.toFixed(1) + "×";
-    speedInput.addEventListener("input", () => {
-      MOUSE_SPEED = parseFloat(speedInput.value) || 1;
-      speedVal.textContent = MOUSE_SPEED.toFixed(1) + "×";
-      try { localStorage.setItem(SPEED_KEY, String(MOUSE_SPEED)); } catch { /* private mode */ }
-    });
-  }
+  // No sensitivity slider any more. It existed because raw deltas had to be
+  // scaled by a per-game factor nobody could pin down; now the emulated cursor
+  // is steered to the real one, so speed isn't a setting — the pointer is
+  // wherever you put it.
 
   // Fullscreen. iOS Safari has no Fullscreen API for arbitrary elements, so
   // fall back to a fixed-position "maximise" class that fills the viewport.
@@ -188,15 +150,7 @@
       stage.classList.toggle("dos-maximised");
       document.body.classList.toggle("dos-playing");
     }
-    // Entering or leaving fullscreen drops any pointer lock and resizes the
-    // canvas. Re-acquire it once the new layout has settled, so a mouse game
-    // doesn't silently lose its cursor on the way into fullscreen.
-    setTimeout(() => {
-      canvas.focus();
-      if (WANTS_POINTER_LOCK && !document.pointerLockElement && canvas.requestPointerLock) {
-        try { canvas.requestPointerLock(); } catch { /* needs a fresh gesture */ }
-      }
-    }, 50);
+    setTimeout(() => canvas.focus(), 50);
   }
   fsBtn.addEventListener("click", toggleFullscreen);
   document.addEventListener("keydown", e => {
@@ -536,78 +490,114 @@
 
     // Mouse motion.
     //
-    // Mouse-driven DOS games run their own cursor: they read *movement* from
-    // the driver and apply their own sensitivity and acceleration on top. Feed
-    // them an absolute position and the two cursors disagree — measured on
-    // Scorched Earth, sending 1.0 (far edge) moved its cursor only a third of
-    // the way across, and the error grew with distance. There is no single
-    // scale factor that fixes this, because each game scales differently.
+    // This used to hide the system cursor with Pointer Lock and feed the game
+    // raw deltas, on the theory that one cursor can't disagree with itself.
+    // It worked, but it never felt right: with nothing on screen to aim with,
+    // any mismatch between hand movement and cursor movement reads as the
+    // game being sluggish or slippery, and no single sensitivity fixed it
+    // because every DOS game scales driver input differently.
     //
-    // Pointer lock is the correct primitive: the browser hides the system
-    // cursor and hands us raw deltas, so the game's cursor becomes *the*
-    // cursor and can't disagree with anything. Clicking the screen engages it;
-    // Esc releases, which is the same convention every browser game uses.
-    let pointerLocked = false;
-    // Sub-pixel carry for the fractional deltas trackpads report. DOSBox
-    // truncates whatever it is handed, so dropping the remainder every event
-    // makes the cursor travel short, with the error growing over a long sweep.
-    let accX = 0, accY = 0;
-    document.addEventListener("pointerlockchange", () => {
-      const wasLocked = pointerLocked;
-      pointerLocked = document.pointerLockElement === canvas;
-      if (pointerLocked !== wasLocked) accX = accY = 0;
-      // Re-seat the emulated cursor on capture, so it starts from a known
-      // position instead of wherever it drifted to before the lock.
-      if (pointerLocked && ci.sendMouseSync) ci.sendMouseSync();
-      if (mouseHint) {
-        mouseHint.textContent = pointerLocked
-          ? "Mouse captured — press Esc to release it."
-          : "Click the game screen to capture keyboard & mouse.";
-      }
-    });
-    // If the browser refuses the lock (user gesture rules, an exiting
-    // fullscreen transition), fall back to absolute positioning rather than
-    // leaving the game with no motion at all.
-    document.addEventListener("pointerlockerror", () => {
-      pointerLocked = false;
-      accX = accY = 0;
-    });
+    // Keeping the real cursor visible and making the game's cursor meet it is
+    // both simpler and self-correcting. You aim with the pointer you can see.
+    if (mouseHint) {
+      mouseHint.textContent = "Click the game screen to give it your keyboard.";
+    }
+
+    // Drive the game's cursor to sit under the real one.
+    //
+    // The system cursor stays visible and is the thing you aim with; the
+    // emulated cursor is steered to meet it. That removes the whole class of
+    // "the two cursors disagree" problems, because there is only one cursor
+    // you're actually looking at and the other one chases it.
+    //
+    // Why not absolute positioning, which is exactly this in one call?
+    // Because sendMouseMotion doesn't land where you ask. Measured on Scorched
+    // Earth: asking for x=0.9 (648 px into a 720 px frame) put the cursor at
+    // column 292, about 45% of the way. DOS games apply their own scaling to
+    // whatever the driver reports, so the absolute position is re-scaled on
+    // arrival and the request is only ever a suggestion.
+    //
+    // So: track where the emulated cursor actually is by dead reckoning — we
+    // know how far each relative delta moves it, because we measured the gain —
+    // and each frame send the delta that closes the gap between there and the
+    // real pointer. Errors self-correct rather than accumulating: any drift
+    // just becomes part of the next correction.
+    let emuX = null, emuY = null;   // believed cursor position, in emulated px
+    let wantX = 0, wantY = 0;       // where the real pointer is, in emulated px
+    let haveTarget = false;
+
+    // Emulated pixels the cursor travels per unit of relative motion we send.
+    // Measured by stepping the cursor from a wall in +50 unit increments and
+    // watching which column it landed on. It varies by game, so treat it as a
+    // starting estimate that the closed loop can tolerate being wrong about.
+    const GAIN = 0.52;
+
+    function pointerToEmulated(e) {
+      const r = canvas.getBoundingClientRect();
+      if (!r.width || !r.height) return null;
+      const fx = (e.clientX - r.left) / r.width;
+      const fy = (e.clientY - r.top) / r.height;
+      return [fx * canvas.width, fy * canvas.height];
+    }
 
     canvas.addEventListener("mousemove", e => {
-      if (pointerLocked) {
-        // Move the in-game pointer as far as the hand actually moved.
-        //
-        // The only factor we can compute exactly is how much the emulated frame
-        // is zoomed to fit the stage: a 320-wide frame shown in a 640-wide
-        // stage is 2x, so a delta of 1 would move the cursor 2 css px and feel
-        // twice as fast as the hand. Dividing by the zoom cancels that, which
-        // is what keeps the feel consistent between a 320x200 game and a
-        // 720x480 one. Everything after that is BASE_SPEED and the player's
-        // slider — see the note on BASE_SPEED for why it can't be derived.
-        //
-        // No devicePixelRatio anywhere: movementX is already in css pixels, so
-        // a Retina display must not double it.
-        const r = canvas.getBoundingClientRect();
-        const zoom = canvas.width && r.width ? r.width / canvas.width : 1;
-        const scale = (BASE_SPEED * MOUSE_SPEED) / zoom;
-        accX += (e.movementX || 0) * scale;
-        accY += (e.movementY || 0) * scale;
-        // Carry the sub-pixel remainder: trackpads report fractional deltas and
-        // DOSBox truncates whatever it is handed, so dropping the remainder
-        // every event makes a slow drag cover less ground than a fast one.
-        const dx = Math.trunc(accX);
-        const dy = Math.trunc(accY);
-        accX -= dx;
-        accY -= dy;
-        if (dx || dy) ci.sendMouseRelativeMotion(dx, dy);
-        return;
+      const p = pointerToEmulated(e);
+      if (!p) return;
+      wantX = p[0];
+      wantY = p[1];
+      haveTarget = true;
+      // Seed the belief at the middle of the screen, which is where a DOS mouse
+      // driver parks its cursor at startup. Seeding it at the pointer instead
+      // would make the loop think it had already arrived and never move.
+      if (emuX === null) {
+        emuX = canvas.width / 2;
+        emuY = canvas.height / 2;
       }
-      // Before capture, absolute positioning at least lets the cursor track
-      // roughly, so menus are usable without locking first.
-      const r = canvas.getBoundingClientRect();
-      if (!r.width || !r.height) return;
-      ci.sendMouseMotion((e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height);
     });
+
+    // Correct on a timer rather than per mousemove. A fast sweep fires dozens
+    // of events between frames, and answering each one floods the emulator with
+    // deltas it hasn't applied yet — which is what made the cursor lag behind
+    // and overshoot. One correction per frame keeps it locked on.
+    let chasing = false;
+    function chase() {
+      if (!haveTarget || emuX === null) return;
+      const errX = wantX - emuX;
+      const errY = wantY - emuY;
+      // Sub-pixel error isn't worth a message; DOSBox would truncate it anyway.
+      if (Math.abs(errX) < 0.5 && Math.abs(errY) < 0.5) return;
+      const dx = Math.round(errX / GAIN);
+      const dy = Math.round(errY / GAIN);
+      if (!dx && !dy) return;
+      ci.sendMouseRelativeMotion(dx, dy);
+      // Dead reckoning: assume it moved as far as we asked. If the real gain
+      // differs the next tick simply sees a smaller error and corrects again.
+      emuX += dx * GAIN;
+      emuY += dy * GAIN;
+      // The game clamps its cursor at the screen edge. Clamp our belief the
+      // same way, or pushing into a corner would run the estimate off past the
+      // boundary and leave it wrong by however far it overshot.
+      emuX = Math.max(0, Math.min(canvas.width, emuX));
+      emuY = Math.max(0, Math.min(canvas.height, emuY));
+    }
+    function startChasing() {
+      if (chasing) return;
+      chasing = true;
+      const tick = () => {
+        if (!chasing) return;
+        chase();
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+    // Only for games that read the mouse. Steering a cursor a keyboard-only
+    // game never draws would just be a stream of pointless messages.
+    if (MOUSE_GAME) startChasing();
+
+    // A game that repaints can move its own cursor (menus, mode switches), and
+    // a resize changes the mapping. Re-seat the belief so the loop doesn't
+    // spend a second dragging from a stale position.
+    window.addEventListener("resize", () => { emuX = wantX; emuY = wantY; });
 
     // Click-to-key. Most DOS games of this era ship with the mouse disabled and
     // offer no way to turn it on (Blake Stone's menus are explicitly
@@ -636,10 +626,6 @@
 
     canvas.addEventListener("mousedown", e => {
       canvas.focus();
-      // Games that use the mouse need pointer lock to track it correctly.
-      if (WANTS_POINTER_LOCK && !pointerLocked && canvas.requestPointerLock) {
-        canvas.requestPointerLock();
-      }
       const btn = DOS_BTN[e.button] ?? 0;
       pressedAt.set(btn, performance.now());
       ci.sendMouseButton(btn, true);
