@@ -64,7 +64,8 @@
       "Action",
       "Pinball"
     ],
-    "fullyFree": "MIT-licensed engine with wholly original CC0 public-domain art, sound and table data."
+    "fullyFree": "MIT-licensed engine with wholly original CC0 public-domain art, sound and table data.",
+    "rank": 1
   },
   {
     "slug": "dragon-keep",
@@ -296,12 +297,18 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Shooters",
       "Action"
-    ]
+    ],
+    "rank": 4
   },
   {
     "slug": "tyrian",
@@ -484,6 +491,11 @@
         "action": "Pause / menu",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
@@ -491,7 +503,8 @@
       "Action"
     ],
     "pointerLock": true,
-    "fullyFree": "Declared freeware by rights holder Jason Emery in 2004 — the complete game, not an episode."
+    "fullyFree": "Declared freeware by rights holder Jason Emery in 2004 — the complete game, not an episode.",
+    "rank": 6
   },
   {
     "slug": "doom",
@@ -692,12 +705,18 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Shooters",
       "Action"
-    ]
+    ],
+    "rank": 2
   },
   {
     "slug": "freedoom",
@@ -901,13 +920,19 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Shooters",
       "Action"
     ],
-    "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine."
+    "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
+    "rank": 9
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1094,6 +1119,11 @@
     "licenseReason": "Proprietary Microsoft software bundled with Windows; not licensed for redistribution, so it cannot be hosted.",
     "related": [
       {
+        "href": "/run/solitaire-open/",
+        "title": "Play Solitaire online (free)",
+        "desc": "Classic Klondike, playable right now — no emulator, no download."
+      },
+      {
         "href": "/run/hearts-open/",
         "title": "Play Hearts free (instant)",
         "desc": "Trick-taking card game you can play right now — no download."
@@ -1134,6 +1164,65 @@
       "heading": "Where to find sol.exe",
       "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows 7 and earlier ship it at <code>C:\\Windows\\System32\\sol.exe</code>. Copy that file — plus <code>cards.dll</code> from the same folder, which holds the card graphics — onto the device you're browsing from, then load both here.</p><p><strong>On Windows 8 or later:</strong> Microsoft removed it. The files aren't on your machine at all, so you'd need a copy from an older PC.</p><p><strong>No old PC to hand?</strong> Solitaire is proprietary and we can't host it — but <a href=\"/run/hearts-open/\">Hearts</a> and <a href=\"/run/space-cadet-open/\">3D Pinball Space Cadet</a> are free, play instantly here, and scratch much the same itch.</p></div>"
     }
+  },
+  {
+    "slug": "solitaire-open",
+    "skipGenerate": true,
+    "title": "Play Solitaire Online Free — Classic Klondike, No Download — ExeBrowser",
+    "description": "Play classic Klondike Solitaire free in your browser — draw 1 or draw 3, Standard and Vegas scoring, undo, and the bouncing win cascade. No download, no account, works on mobile.",
+    "keywords": "play solitaire online, klondike solitaire free, solitaire no download, windows solitaire browser, classic solitaire game, solitaire unblocked, draw 3 solitaire",
+    "ogTitle": "Play Solitaire Online Free — Classic Klondike, No Download",
+    "ogDescription": "The Klondike Solitaire you know, in your browser — draw 1 or 3, Standard and Vegas scoring, and the bouncing cards when you win.",
+    "crumb": "Play Solitaire",
+    "h1": "Play Solitaire online — free, instant",
+    "appName": "Solitaire (Klondike)",
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Card game",
+      "Puzzle",
+      "Patience"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "appUrl": "/apps/solitaire-open/",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-03",
+    "addedDate": "2026-08-03",
+    "controls": [
+      {
+        "action": "Move a card",
+        "keyboard": "—",
+        "mouse": "Drag it (mouse or touch)"
+      },
+      {
+        "action": "Send to foundation",
+        "keyboard": "—",
+        "mouse": "Tap or double-click"
+      },
+      {
+        "action": "Turn the stock",
+        "keyboard": "—",
+        "mouse": "Click the face-down pile"
+      },
+      {
+        "action": "Undo",
+        "keyboard": "—",
+        "mouse": "Click Undo"
+      }
+    ],
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "rank": 3
   },
   {
     "slug": "freeciv",
@@ -1476,6 +1565,11 @@
     ],
     "related": [
       {
+        "href": "/run/solitaire-open/",
+        "title": "Play Solitaire online (free)",
+        "desc": "Classic Klondike, playable right now — no emulator, no download."
+      },
+      {
         "href": "/run/hearts-open/",
         "title": "Play Hearts free (instant)",
         "desc": "Trick-taking card game you can play right now — no download."
@@ -1582,6 +1676,11 @@
       }
     ],
     "related": [
+      {
+        "href": "/run/solitaire-open/",
+        "title": "Play Solitaire online (free)",
+        "desc": "Classic Klondike, playable right now — no emulator, no download."
+      },
       {
         "href": "/run/hearts-open/",
         "title": "Play Hearts free (instant)",
@@ -1893,7 +1992,8 @@
     "categories": [
       "Action",
       "Racing & sports"
-    ]
+    ],
+    "rank": 5
   },
   {
     "slug": "jezzball",
@@ -2492,12 +2592,18 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Platformers",
       "Action"
-    ]
+    ],
+    "rank": 8
   },
   {
     "slug": "scorched-earth",
@@ -2650,12 +2756,18 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Puzzle & strategy"
     ],
-    "pointerLock": true
+    "pointerLock": true,
+    "rank": 10
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -2993,13 +3105,19 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Shooters",
       "Action"
     ],
-    "pointerLock": true
+    "pointerLock": true,
+    "rank": 11
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3298,12 +3416,18 @@
         "action": "Menu (keyboard only)",
         "keyboard": "Esc, then arrows + Enter",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Shooters",
       "Action"
-    ]
+    ],
+    "rank": 15
   },
   {
     "slug": "prince-of-persia",
@@ -3405,7 +3529,8 @@
         "desc": "Why DOS games and SDL titles are hit-or-miss here."
       }
     ],
-    "updated": "2026-07-01"
+    "updated": "2026-07-01",
+    "rank": 12
   },
   {
     "slug": "full-tilt-pinball",
@@ -6152,13 +6277,19 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Puzzle & strategy",
       "Racing & sports"
     ],
-    "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game."
+    "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
+    "rank": 16
   },
   {
     "slug": "jetpack",
@@ -6294,13 +6425,19 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Platformers",
       "Puzzle & strategy"
     ],
-    "fullyFree": "Author released the full 400-level registered version as freeware in 1998."
+    "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
+    "rank": 17
   },
   {
     "slug": "god-of-thunder",
@@ -6441,6 +6578,11 @@
         "action": "Menu / inventory / save",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
@@ -6607,12 +6749,18 @@
         "action": "Rebind keys",
         "keyboard": "in-game Setup menu",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Action"
     ],
-    "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game."
+    "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
+    "rank": 13
   },
   {
     "slug": "xargon",
@@ -6767,6 +6915,11 @@
         "action": "Sound prompt on first boot",
         "keyboard": "press Y",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
@@ -6928,6 +7081,11 @@
         "action": "In-game help",
         "keyboard": "F1",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
@@ -7079,6 +7237,11 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
@@ -7245,12 +7408,18 @@
         "action": "In-game help",
         "keyboard": "F1",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "categories": [
       "Platformers",
       "Action"
-    ]
+    ],
+    "rank": 14
   },
   {
     "slug": "hearts-open",
@@ -7281,7 +7450,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/solitaire-open/",
+        "title": "Play Solitaire online (free)",
+        "desc": "Classic Klondike, playable right now — no emulator, no download."
+      }
+    ],
     "updated": "2026-07-28",
     "addedDate": "2026-07-28",
     "controls": [
@@ -7302,7 +7477,8 @@
       }
     ],
     "screenshot": true,
-    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play."
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "rank": 7
   },
   {
     "slug": "cosmo",
@@ -7477,6 +7653,11 @@
         "action": "In-game help",
         "keyboard": "F1",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "clickKey": 341,
@@ -7651,6 +7832,11 @@
         "action": "In-game help",
         "keyboard": "F1",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "clickKey": 342,
@@ -7820,6 +8006,11 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "clickKey": 342,
@@ -7979,6 +8170,11 @@
         "action": "Menu / back",
         "keyboard": "Esc",
         "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
       }
     ],
     "clickKey": 342,

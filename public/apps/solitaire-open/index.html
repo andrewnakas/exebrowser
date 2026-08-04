@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Solitaire — free Klondike card game</title>
+<style>
+  :root {
+    color-scheme: light;
+    /* One card width drives the whole board; the script rewrites it to fit
+       narrow screens, so every pile, gap and font below scales with it.
+       0.7 is the real playing-card ratio Windows used. */
+    --cw: 71px;
+    --ch: calc(var(--cw) / 0.7);
+    --gap: calc(var(--cw) * 0.14);
+    --fan: calc(var(--cw) * 0.30);
+    --fan-down: calc(var(--cw) * 0.11);
+    --felt: #008000;          /* the actual Windows Solitaire table green */
+    --felt-dark: #006b00;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .55rem;
+    font: 13px/1.35 "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+    background: var(--felt); color: #fff;
+    display: flex; flex-direction: column;
+    min-height: 100vh;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+  .board { width: 100%; max-width: 780px; margin: 0 auto; position: relative; }
+
+  /* Toolbar styled as a thin menu strip, the way the original framed the game. */
+  .toolbar {
+    display: flex; align-items: center; gap: .4rem; flex-wrap: wrap;
+    margin-bottom: .6rem;
+  }
+  .toolbar .spacer { flex: 1 1 auto; }
+  .stat {
+    font-size: .8rem; font-variant-numeric: tabular-nums;
+    background: rgba(0,0,0,.22); padding: .22rem .55rem; border-radius: 4px;
+  }
+  .stat b { font-weight: 600; }
+
+  .button {
+    font: inherit; font-size: .8rem; padding: .3rem .7rem;
+    border-radius: 4px; border: 1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.14); color: #fff; cursor: pointer;
+  }
+  .button:hover:not(:disabled) { background: rgba(255,255,255,.26); }
+  .button.primary { background: #fff; border-color: #fff; color: #046104; font-weight: 600; }
+  .button:disabled { opacity: .4; cursor: default; }
+
+  /* ── piles ─────────────────────────────────────────────────────────── */
+  .row { display: flex; gap: var(--gap); }
+  .row.top { margin-bottom: calc(var(--gap) * 1.7); }
+  .top-right { margin-left: auto; display: flex; gap: var(--gap); }
+
+  .pile {
+    width: var(--cw); height: var(--ch);
+    border-radius: calc(var(--cw) * 0.07);
+    position: relative; flex: 0 0 auto;
+  }
+  /* Empty slots are the classic inset outline on the felt. */
+  .pile.slot, .col.slot {
+    border: 1px solid rgba(0,0,0,.28);
+    background: rgba(0,0,0,.07);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.18);
+  }
+  .pile.slot.foundation::after {
+    content: attr(data-suit);
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: calc(var(--cw) * 0.44); color: rgba(0,0,0,.22);
+  }
+  #tableau { align-items: flex-start; }
+  .col { width: var(--cw); flex: 0 0 auto; position: relative; min-height: var(--ch); }
+
+  /* ── cards ─────────────────────────────────────────────────────────── */
+  .card {
+    position: absolute; left: 0; top: 0;
+    width: var(--cw); height: var(--ch);
+    border-radius: calc(var(--cw) * 0.07);
+    background: #fff; color: #000;
+    border: 1px solid #808080;
+    font: 700 calc(var(--cw) * 0.235)/1 "Segoe UI", Tahoma, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+    overflow: hidden;
+  }
+  .card.red { color: #d40000; }
+  /* Rank+suit in opposite corners, the second rotated — as on a real card. */
+  .corner {
+    position: absolute; display: flex; flex-direction: column;
+    align-items: center; line-height: .95;
+  }
+  .corner.tl { top: calc(var(--cw) * 0.055); left: calc(var(--cw) * 0.06); }
+  .corner.br {
+    bottom: calc(var(--cw) * 0.055); right: calc(var(--cw) * 0.06);
+    transform: rotate(180deg);
+  }
+  .corner .cs { font-size: calc(var(--cw) * 0.22); }
+  .center {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(var(--cw) * 0.42);
+  }
+  /* Court cards get a framed panel instead of a lone pip. */
+  .card.court .center {
+    width: calc(var(--cw) * 0.52); height: calc(var(--ch) * 0.46);
+    border: 1px solid currentColor; border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: calc(var(--cw) * 0.34); opacity: .85;
+  }
+
+  /* Face-down: the blue crosshatch back the original shipped with. */
+  .card.down {
+    background:
+      repeating-linear-gradient(45deg, transparent 0 3px, rgba(255,255,255,.5) 3px 4px),
+      repeating-linear-gradient(-45deg, transparent 0 3px, rgba(255,255,255,.5) 3px 4px),
+      #1f4e9c;
+    border-color: #fff;
+    box-shadow: inset 0 0 0 2px #fff, 0 1px 2px rgba(0,0,0,.3);
+  }
+  .card.down > * { visibility: hidden; }
+
+  .card.dragging { pointer-events: none; z-index: 500; box-shadow: 0 8px 20px rgba(0,0,0,.45); }
+  .pile.hint, .col.hint::before {
+    outline: 2px solid #ffe14d; outline-offset: 1px;
+    border-radius: calc(var(--cw) * 0.07);
+  }
+  .col.hint::before {
+    content: ""; position: absolute; left: 0; top: 0;
+    width: var(--cw); height: var(--ch);
+  }
+
+  /* The waste needs room for a draw-3 fan without overlapping the foundations,
+     so it is wider than one card while its drop area stays card-sized. */
+  #waste { width: calc(var(--cw) + var(--fan-down) * 2); overflow: visible; }
+  #waste.slot { width: var(--cw); }
+
+  #stock { cursor: pointer; }
+  #stock.empty::after {
+    content: "↻"; position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: calc(var(--cw) * 0.5); color: rgba(0,0,0,.32);
+  }
+  #stock.empty.dead::after { color: rgba(0,0,0,.12); }
+
+  #status { text-align: center; min-height: 1.3em; font-size: .82rem; margin: .55rem 0 0; opacity: .95; }
+
+  /* The win cascade draws here, over the whole board. */
+  #cascade {
+    position: fixed; inset: 0; pointer-events: none; z-index: 800;
+    display: none;
+  }
+  #cascade.on { display: block; }
+
+  #win {
+    position: fixed; inset: 0; display: none;
+    align-items: center; justify-content: center;
+    background: rgba(0,0,0,.55); z-index: 900; padding: 1rem;
+  }
+  #win.on { display: flex; }
+  /* A plain grey dialog, the way the original announced a win. */
+  .win-card {
+    background: #ececec; color: #111;
+    border: 1px solid #8a8a8a;
+    box-shadow: 0 6px 24px rgba(0,0,0,.45);
+    border-radius: 5px; padding: 1.2rem 1.4rem; text-align: center; max-width: 320px;
+  }
+  .win-card h2 { margin: 0 0 .4rem; font-size: 1.15rem; }
+  .win-card p { margin: 0 0 1rem; font-size: .85rem; color: #333; }
+  .win-card .button { border-color: #767676; background: #fdfdfd; color: #111; }
+  .win-card .button.primary { background: #046104; border-color: #046104; color: #fff; }
+
+  /* Phones: the board is the point, so the chrome gets out of the way. The
+     top row (stock + waste + four foundations) is wider than the seven
+     columns once the waste fans, so let it shrink rather than overflow. */
+  @media (max-width: 560px) {
+    body { padding: .4rem; }
+    .toolbar { gap: .3rem; margin-bottom: .45rem; }
+    .toolbar .button { padding: .3rem .5rem; font-size: .75rem; }
+    .stat { font-size: .7rem; padding: .18rem .4rem; }
+    .toolbar .spacer { flex-basis: 100%; height: 0; }
+    #waste { width: calc(var(--cw) + var(--fan-down)); }
+    .top-right { gap: calc(var(--gap) * 0.6); }
+  }
+</style>
+</head>
+<body>
+  <div class="board">
+    <div class="toolbar">
+      <button type="button" class="button primary" id="deal">New game</button>
+      <button type="button" class="button" id="undo" disabled>Undo</button>
+      <button type="button" class="button" id="draw-mode">Draw 3</button>
+      <button type="button" class="button" id="score-mode">Standard</button>
+      <span class="spacer"></span>
+      <span class="stat">Score <b id="score">0</b></span>
+      <span class="stat">Moves <b id="moves">0</b></span>
+      <span class="stat">Time <b id="clock">0:00</b></span>
+    </div>
+
+    <div class="row top">
+      <div class="pile slot" id="stock" aria-label="Stock"></div>
+      <div class="pile" id="waste" aria-label="Waste"></div>
+      <div class="top-right">
+        <div class="pile slot foundation" id="f-S" data-suit="♠" data-pile="f:S"></div>
+        <div class="pile slot foundation" id="f-H" data-suit="♥" data-pile="f:H"></div>
+        <div class="pile slot foundation" id="f-D" data-suit="♦" data-pile="f:D"></div>
+        <div class="pile slot foundation" id="f-C" data-suit="♣" data-pile="f:C"></div>
+      </div>
+    </div>
+
+    <div class="row" id="tableau"></div>
+    <p id="status" aria-live="polite"></p>
+  </div>
+
+  <canvas id="cascade"></canvas>
+
+  <div id="win">
+    <div class="win-card">
+      <h2>Congratulations!</h2>
+      <p id="win-detail"></p>
+      <button type="button" class="button primary" id="win-again">Deal again</button>
+    </div>
+  </div>
+<script src="solitaire.js"></script>
+</body>
+</html>

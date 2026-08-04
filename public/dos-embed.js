@@ -106,7 +106,7 @@
       </div>
     </div>
     <p id="dos-status" class="muted small" style="margin:.5rem 0 0;" hidden></p>
-    <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button></p>
+    <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
     <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to capture keyboard &amp; mouse. Press <kbd>Ctrl+F10</kbd> to release mouse.</p>
     <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">Progress saves in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></p>
     <details id="dos-console" style="margin-top:.5rem;" hidden>
@@ -125,6 +125,7 @@
   const saveState = document.getElementById("dos-save-state");
   const saveReset = document.getElementById("dos-save-reset");
   const fsBtn    = document.getElementById("dos-fullscreen");
+  const soundBtn = document.getElementById("dos-sound");
   const mouseHint = document.getElementById("dos-mouse-hint");
 
   // Only games that actually use the mouse should grab the pointer — locking
@@ -143,7 +144,15 @@
       stage.classList.toggle("dos-maximised");
       document.body.classList.toggle("dos-playing");
     }
-    setTimeout(() => canvas.focus(), 50);
+    // Entering or leaving fullscreen drops any pointer lock and resizes the
+    // canvas. Re-acquire it once the new layout has settled, so a mouse game
+    // doesn't silently lose its cursor on the way into fullscreen.
+    setTimeout(() => {
+      canvas.focus();
+      if (WANTS_POINTER_LOCK && !document.pointerLockElement && canvas.requestPointerLock) {
+        try { canvas.requestPointerLock(); } catch { /* needs a fresh gesture */ }
+      }
+    }, 50);
   }
   fsBtn.addEventListener("click", toggleFullscreen);
   document.addEventListener("keydown", e => {
@@ -243,6 +252,152 @@
     let off = 0;
     for (const c of chunks) { out.set(c, off); off += c.length; }
     return out;
+  }
+
+  // ─── Audio ────────────────────────────────────────────────────────────
+  //
+  // DOSBox has been generating sound all along — the wasm calls
+  // emsc_ws_client_sound_push on every audio block. Where those samples go
+  // depends on whether an "audio port" exists: with one they're posted
+  // straight to an AudioWorklet, without one they fall back to a
+  // ws-sound-push message that lands in an empty consumer list and is
+  // discarded. We never passed the option that creates the port, so every
+  // game ran silently.
+  //
+  // js-dos can build that port itself (dosDirect's `audioWorklet` option), but
+  // we deliberately don't use it, for two reasons. It is hard-pinned to
+  // 44100 Hz — on a device that won't give it that rate it logs an error,
+  // returns undefined, and you get silence with no exception, and plenty of
+  // hardware defaults to 48000. And it hands back a bare MessagePort with no
+  // reference to its AudioContext, so there is nothing to attach a volume
+  // control to. Driving the samples ourselves off onSoundPush costs a few
+  // lines and gives us any sample rate plus a real mute.
+  const SOUND_KEY = "exe_sound_on";
+  const soundPref = () => {
+    try { return localStorage.getItem(SOUND_KEY) !== "0"; } catch { return true; }
+  };
+  const setSoundPref = (on) => {
+    try { localStorage.setItem(SOUND_KEY, on ? "1" : "0"); } catch { /* private mode */ }
+  };
+
+  // Pull samples off js-dos's event bus and push them through a
+  // ScriptProcessor. ScriptProcessor rather than an AudioWorklet because it
+  // accepts whatever rate the device runs at and needs no separate module
+  // file; it's deprecated but universally supported, and this is one mono
+  // stream, not a mixing graph.
+  function startAudio(ci) {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    // DOSBox's mixer runs at 44100 (js-dos's own default config sets
+    // `[mixer] rate=44100`), and soundFrequency() isn't populated until the
+    // emulator sends its sound-init message, which hasn't happened yet at
+    // boot. So ask for 44100 up front. A ScriptProcessor does no resampling
+    // of its own, so if the device insists on another rate — 48000 is common
+    // — we have to convert in the drain loop or everything plays sharp.
+    const SRC_RATE = 44100;
+    let ctx;
+    try {
+      ctx = new AC({ sampleRate: SRC_RATE });
+    } catch {
+      ctx = new AC();   // some browsers reject an explicit rate outright
+    }
+
+    // Ring buffer. Sized well above one processor block so normal jitter
+    // never underruns, and capped so a stalled tab can't grow it forever.
+    const CAP = 32768;
+    const ring = new Float32Array(CAP);
+    let writeAt = 0, readAt = 0, queued = 0;
+
+    ci.events().onSoundPush((samples) => {
+      // Past a couple of blocks of backlog the emulator is ahead of the
+      // clock; dropping is better than growing latency, which is what
+      // js-dos's own worklet does too.
+      if (queued > 8192) { readAt = writeAt; queued = 0; }
+      for (let i = 0; i < samples.length; i++) {
+        ring[writeAt] = samples[i];
+        writeAt = (writeAt + 1) % CAP;
+        if (queued < CAP) queued++;
+        else readAt = (readAt + 1) % CAP;
+      }
+    });
+
+    const node = ctx.createScriptProcessor(1024, 0, 1);
+    const gain = ctx.createGain();
+    // Samples to consume per output frame. 1 when the device gave us 44100;
+    // ~1.088 when it runs at 48000, which we cover by stepping through the
+    // ring fractionally and interpolating.
+    const step = SRC_RATE / ctx.sampleRate;
+    let frac = 0;
+
+    const take = () => {
+      const v = ring[readAt];
+      readAt = (readAt + 1) % CAP;
+      queued--;
+      return v;
+    };
+
+    node.onaudioprocess = (e) => {
+      const out = e.outputBuffer.getChannelData(0);
+      if (step === 1) {
+        for (let i = 0; i < out.length; i++) {
+          out[i] = queued > 0 ? take() : 0;
+        }
+        return;
+      }
+      // Fractional read: advance by `step` source samples per output sample,
+      // dropping whole samples and holding the current one in between. Linear
+      // interpolation would need a lookahead the ring can't cheaply give us,
+      // and at ~8% the audible difference here is negligible.
+      let cur = 0;
+      for (let i = 0; i < out.length; i++) {
+        if (queued <= 0) { out[i] = 0; continue; }
+        cur = take();
+        frac += step - 1;
+        while (frac >= 1 && queued > 0) { cur = take(); frac -= 1; }
+        out[i] = cur;
+      }
+    };
+    // Honour a remembered mute from the start, so a muted visitor never hears
+    // a burst of sound before the toggle gets wired up.
+    gain.gain.value = soundPref() ? 1 : 0;
+    node.connect(gain);
+    gain.connect(ctx.destination);
+
+    const resume = () => { if (ctx.state === "suspended") ctx.resume().catch(() => {}); };
+    resume();
+    document.addEventListener("pointerdown", resume, { capture: true });
+    document.addEventListener("keydown", resume, { capture: true });
+
+    log(`Audio: ${Math.round(ctx.sampleRate)} Hz.`);
+    return { ctx, gain };
+  }
+
+  // Wire the mute button to the gain node, and remember the choice: a visitor
+  // who muted once shouldn't have to mute again on the next game.
+  function setupSoundToggle(audio) {
+    if (!soundBtn || !audio) return;
+    let on = soundPref();
+
+    // Show the control straight away. Several games are legitimately silent
+    // until you press a key past their title screen — waiting for a non-zero
+    // sample before offering a mute button would leave it missing exactly when
+    // someone wants to pre-emptively mute.
+    soundBtn.hidden = false;
+
+    const apply = () => {
+      audio.gain.gain.value = on ? 1 : 0;
+      if (on) audio.ctx.resume().catch(() => {});
+      soundBtn.textContent = on ? "\u{1F50A} Sound on" : "\u{1F507} Sound off";
+      soundBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    };
+
+    apply();
+    soundBtn.addEventListener("click", () => {
+      on = !on;
+      setSoundPref(on);
+      apply();
+      track("sound_toggle", { on: on ? 1 : 0 });
+    });
   }
 
   function setupRenderer(ci) {
@@ -349,23 +504,50 @@
     // cursor and can't disagree with anything. Clicking the screen engages it;
     // Esc releases, which is the same convention every browser game uses.
     let pointerLocked = false;
+    // Sub-pixel carry. Scaled deltas are fractional, and DOSBox truncates each
+    // one as it arrives — throw the remainder away every event and the cursor
+    // travels systematically short, with the error growing over a long sweep.
+    // That under-travel is what previously looked like per-game "sensitivity".
+    // Carrying the remainder forward makes a slow drag cover the same ground as
+    // a fast one.
+    let accX = 0, accY = 0;
     document.addEventListener("pointerlockchange", () => {
+      const wasLocked = pointerLocked;
       pointerLocked = document.pointerLockElement === canvas;
+      if (pointerLocked !== wasLocked) accX = accY = 0;
+      // Re-seat the emulated cursor on capture, so it starts from a known
+      // position instead of wherever it drifted to before the lock.
+      if (pointerLocked && ci.sendMouseSync) ci.sendMouseSync();
       if (mouseHint) {
         mouseHint.textContent = pointerLocked
           ? "Mouse captured — press Esc to release it."
           : "Click the game screen to capture keyboard & mouse.";
       }
     });
+    // If the browser refuses the lock (user gesture rules, an exiting
+    // fullscreen transition), fall back to absolute positioning rather than
+    // leaving the game with no motion at all.
+    document.addEventListener("pointerlockerror", () => {
+      pointerLocked = false;
+      accX = accY = 0;
+    });
 
     canvas.addEventListener("mousemove", e => {
       if (pointerLocked) {
-        // movementX/Y are already in device pixels; DOSBox wants emulated ones.
+        // movementX/Y are CSS pixels; DOSBox wants emulated ones. Scale both
+        // axes by the SAME factor: the canvas backing store is the emulated
+        // frame (320x200) but CSS stretches it into a 4/3 stage, so deriving
+        // sx and sy independently gives 0.500 across and 0.417 down — a 20%
+        // axis mismatch that skews every diagonal. The horizontal ratio is the
+        // honest one, since that axis isn't stretched by the aspect correction.
         const r = canvas.getBoundingClientRect();
-        const sx = r.width ? canvas.width / r.width : 1;
-        const sy = r.height ? canvas.height / r.height : 1;
-        const dx = (e.movementX || 0) * sx;
-        const dy = (e.movementY || 0) * sy;
+        const scale = r.width ? canvas.width / r.width : 1;
+        accX += (e.movementX || 0) * scale;
+        accY += (e.movementY || 0) * scale;
+        const dx = Math.trunc(accX);
+        const dy = Math.trunc(accY);
+        accX -= dx;
+        accY -= dy;
         if (dx || dy) ci.sendMouseRelativeMotion(dx, dy);
         return;
       }
@@ -496,11 +678,22 @@
       setStatus("Starting " + cfg.appName + "…");
       overlay.style.display = "none";
 
+      // Boot without the `audioWorklet` option on purpose — see startAudio.
       const ci = await window.emulators.dosDirect(saved ? [bundle, saved] : bundle);
       if (saved) track("persist_restore", { bytes: saved.length });
 
       setupRenderer(ci);
       setupInput(ci);
+      try {
+        // Attach the sound consumer before the game gets far enough to make
+        // any: pushes that arrive with no consumer are dropped, not buffered.
+        const audio = startAudio(ci);
+        setupSoundToggle(audio);
+        if (audio) track("audio_start", { rate: Math.round(audio.ctx.sampleRate) });
+      } catch (err) {
+        // Sound is a nicety — never let it stop a game from booting.
+        log("Audio unavailable: " + err.message);
+      }
 
       // Expose for mobile gamepad buttons injected by gen-app-pages.mjs
       window.__dosEmitKey = (scanCode, pressed) => ci.sendKeyEvent(scanCode, pressed);

@@ -71,6 +71,19 @@
 //   addedDate    "YYYY-MM-DD" the title went live — drives the NEW badge on the
 //                hub + homepage grids for NEW_DAYS (14) days. Distinct from
 //                `updated`, which is about the page copy, not the title.
+//   rank         integer, lower sorts earlier. Hand-assigned running order for
+//                the "Play now" grids on / and /run/, so the best-known titles
+//                lead. Unranked entries sort after every ranked one, keeping
+//                their previous relative order. Explicit because the old
+//                screenshot/NEW-badge sort decayed into raw JSON order once
+//                every addedDate aged out of the 14-day window.
+//   categories   array from the closed set used by the filter chips: Shooters,
+//                Platformers, Action, Puzzle & strategy, Racing & sports,
+//                Pinball, Apps & tools. ("Free & complete" is derived from
+//                `fullyFree`, not written here.) Chip order lives in two
+//                places — this file and gen-home-grid.mjs — and must match.
+//   h1           the on-page <h1>, when it should differ from `title` (which is
+//                the <title>/SEO string and is usually far longer).
 
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -583,7 +596,7 @@ ${p.iframeUrl
   ? ``
   : p.dosRuntime
     ? `<script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=21"></script>`
+<script src="/dos-embed.js?v=23"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/recent.js?v=1"></script>
 <script src="/embed.js?v=5"></script>
@@ -687,7 +700,18 @@ function gridFilterHtml(pages) {
       <p class="gf-empty" hidden>No titles match — <button type="button" class="link" data-grid-reset>show everything</button>.</p>
     </div>`;
 }
-const playNow = pages.filter((p) => isPlayable(p));
+// Same shelf order as the homepage grid (gen-home-grid.mjs): hand-assigned
+// `rank` first so the best-known titles lead, then real art, then newest. The
+// two listings must agree — a visitor who sees DOOM first on the homepage
+// should see it first here too.
+const rankOf = (p) => (typeof p.rank === "number" ? p.rank : Infinity);
+const playNow = pages.filter((p) => isPlayable(p)).sort((a, b) => {
+  const r = rankOf(a) - rankOf(b);
+  if (r) return r;
+  const s = (screenshotFile(b) ? 1 : 0) - (screenshotFile(a) ? 1 : 0);
+  if (s) return s;
+  return (isNew(b) ? 1 : 0) - (isNew(a) ? 1 : 0);
+});
 const games = pages.filter((p) => !isPlayable(p) && p.appType === "game");
 const apps = pages.filter((p) => !isPlayable(p) && p.appType === "app");
 const indexHtml = `<!DOCTYPE html>

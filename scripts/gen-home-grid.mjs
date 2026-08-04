@@ -19,8 +19,16 @@ const isPlayable = (p) => !!(p.appUrl || p.iframeUrl);
 const shotFile = (p) => (p.screenshot ? (typeof p.screenshot === "string" ? p.screenshot : "screenshot.png") : null);
 const isNew = (p) => p.addedDate && (Date.now() - Date.parse(p.addedDate + "T00:00:00Z")) / 86400000 < 14;
 
-// Titles with real art first, then newest — the grid should read as a shelf.
+// Best-known titles first, then real art, then newest — the grid should read
+// as a shelf, and the famous names are what a first-time visitor is looking
+// for. `rank` is an explicit hand-assigned order (lower = earlier); the two
+// derived keys only break ties among unranked titles. Ranking has to be
+// explicit because the old screenshot/new-badge pair silently decayed into raw
+// JSON order once every addedDate aged past the 14-day NEW window.
+const rankOf = (p) => (typeof p.rank === "number" ? p.rank : Infinity);
 const playable = pages.filter(isPlayable).sort((a, b) => {
+  const r = rankOf(a) - rankOf(b);
+  if (r) return r;
   const s = (shotFile(b) ? 1 : 0) - (shotFile(a) ? 1 : 0);
   if (s) return s;
   return (isNew(b) ? 1 : 0) - (isNew(a) ? 1 : 0);
