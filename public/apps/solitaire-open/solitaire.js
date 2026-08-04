@@ -542,9 +542,12 @@
   // phone and desktop paths can't drift apart.
   let drag = null;
   let hinted = null;
+  // True while a card is gliding back after an illegal drop. Input is ignored
+  // until it lands, so a fresh grab can't collide with the tidy-up.
+  let animating = false;
 
   function onPointerDown(e) {
-    if (won) return;
+    if (won || animating) return;
     const cardNode = e.target.closest(".card");
     if (cardNode && stockEl.contains(cardNode)) { drawFromStock(); return; }
     if (!cardNode || !cardNode.dataset.src) {
@@ -561,23 +564,50 @@
     drag = {
       src, count, cards,
       startX: e.clientX, startY: e.clientY,
+      // Grab offset, so the card stays under the exact point you grabbed it by
+      // rather than snapping its corner to the cursor.
       dx: e.clientX - rect.left, dy: e.clientY - rect.top,
+      originX: rect.left, originY: rect.top,
       moved: false, ghost: null,
+      // The nodes we hide while the cards are "in hand". Windows lifts them off
+      // the pile — leaving them drawn underneath reads as a duplicated card.
+      lifted: liftedNodes(cardNode),
     };
+    try { cardNode.setPointerCapture(e.pointerId); } catch { /* not critical */ }
     e.preventDefault();
+  }
+
+  // The grabbed card and everything stacked on top of it travel together.
+  function liftedNodes(cardNode) {
+    const parent = cardNode.parentNode;
+    if (!parent) return [];
+    const kids = [...parent.children];
+    return kids.slice(kids.indexOf(cardNode));
+  }
+
+  function beginDrag() {
+    drag.moved = true;
+    drag.ghost = buildGhost(drag.cards);
+    document.body.appendChild(drag.ghost);
+    // Hide the originals only once the drag really starts, so a plain click
+    // never makes the pile flicker.
+    for (const n of drag.lifted) n.style.visibility = "hidden";
+    moveGhost(drag.startX, drag.startY);
+  }
+
+  function moveGhost(x, y) {
+    drag.ghost.style.left = `${x - drag.dx}px`;
+    drag.ghost.style.top = `${y - drag.dy}px`;
   }
 
   function onPointerMove(e) {
     if (!drag) return;
-    if (!drag.moved && Math.hypot(e.clientX - drag.startX, e.clientY - drag.startY) < 5) return;
-    if (!drag.moved) {
-      drag.moved = true;
-      drag.ghost = buildGhost(drag.cards);
-      document.body.appendChild(drag.ghost);
-    }
-    drag.ghost.style.left = `${e.clientX - drag.dx}px`;
-    drag.ghost.style.top = `${e.clientY - drag.dy}px`;
-    highlight(dropTargetAt(e.clientX, e.clientY));
+    // Small threshold so a click that wobbles by a pixel still counts as a
+    // click, but low enough that dragging feels immediate.
+    if (!drag.moved && Math.hypot(e.clientX - drag.startX, e.clientY - drag.startY) < 3) return;
+    if (!drag.moved) beginDrag();
+    moveGhost(e.clientX, e.clientY);
+    highlight(bestTarget());
   }
 
   function buildGhost(cards) {
@@ -593,21 +623,39 @@
     return wrap;
   }
 
-  function dropTargetAt(x, y) {
-    if (drag && drag.ghost) drag.ghost.style.visibility = "hidden";
-    const node = document.elementFromPoint(x, y);
-    if (drag && drag.ghost) drag.ghost.style.visibility = "";
-    if (!node) return null;
-    const pileNode = node.closest("[data-pile]");
-    if (pileNode) return { ref: parsePile(pileNode.dataset.pile), node: pileNode };
-    // Dropped onto a card: resolve to the pile that card belongs to.
-    const card = node.closest(".card");
-    if (!card || wasteEl.contains(card)) return null;
-    const col = card.closest(".col");
-    if (col) return { ref: parsePile(col.dataset.pile), node: col };
-    const pile = card.closest(".pile");
-    if (pile && pile.dataset.pile) return { ref: parsePile(pile.dataset.pile), node: pile };
-    return null;
+  // Windows picks the pile the dragged CARD overlaps most, not the one under
+  // the mouse pointer. That's why dropping there feels forgiving: you line the
+  // card up with the target, and the cursor can be anywhere on the card.
+  function bestTarget() {
+    if (!drag || !drag.ghost) return null;
+    const head = drag.ghost.firstChild;
+    if (!head) return null;
+    const r = head.getBoundingClientRect();
+
+    let best = null, bestArea = 0;
+    for (const node of document.querySelectorAll("[data-pile]")) {
+      const ref = parsePile(node.dataset.pile);
+      if (!ref) continue;
+      // Measure against the top card of a stacked column, not the whole
+      // column box — otherwise a long column wins on area every time.
+      const box = targetBox(node, ref);
+      const ov = Math.max(0, Math.min(r.right, box.right) - Math.max(r.left, box.left))
+               * Math.max(0, Math.min(r.bottom, box.bottom) - Math.max(r.top, box.top));
+      if (ov > bestArea) { bestArea = ov; best = { ref, node }; }
+    }
+    // Require a real overlap (a quarter of a card) so a card dropped in open
+    // space snaps back instead of jumping to whatever it barely grazed.
+    const min = (r.width * r.height) * 0.25;
+    return bestArea >= min ? best : null;
+  }
+
+  function targetBox(node, ref) {
+    if (ref.kind === "col") {
+      const cards = node.querySelectorAll(".card");
+      const last = cards[cards.length - 1];
+      if (last) return last.getBoundingClientRect();
+    }
+    return node.getBoundingClientRect();
   }
 
   function highlight(target) {
@@ -621,12 +669,14 @@
   function onPointerUp(e) {
     if (!drag) return;
     const d = drag;
-    drag = null;
     if (hinted) { hinted.classList.remove("hint"); hinted = null; }
-    if (d.ghost) d.ghost.remove();
 
     if (!d.moved) {
-      // A tap, not a drag: auto-place a single card.
+      // A click, not a drag. Windows sends a card home on double-click; a
+      // single tap doing the same is what makes this playable on a phone.
+      drag = null;
+      if (d.ghost) d.ghost.remove();
+      restoreLifted(d);
       if (d.count === 1) {
         if (!autoPlace(d.src, d.cards[0])) say("No move for that card.");
       } else {
@@ -634,18 +684,57 @@
       }
       return;
     }
-    const target = dropTargetAt(e.clientX, e.clientY);
-    if (target && target.ref && legalDrop(d.cards, target.ref)) applyMove(d.src, target.ref, d.count);
-    else render();   // snap back
+
+    const target = bestTarget();
+    drag = null;
+    if (target && target.ref && legalDrop(d.cards, target.ref)) {
+      d.ghost.remove();
+      restoreLifted(d);
+      applyMove(d.src, target.ref, d.count);
+    } else {
+      // Illegal drop: glide back where it came from, the way Windows does,
+      // instead of vanishing and reappearing.
+      snapBack(d);
+    }
+  }
+
+  function restoreLifted(d) {
+    for (const n of d.lifted || []) n.style.visibility = "";
+  }
+
+  // Animate the ghost home, then drop it and repaint. `animating` blocks input
+  // for the duration so a second grab can't race the tidy-up.
+  function snapBack(d) {
+    const g = d.ghost;
+    if (!g) { restoreLifted(d); render(); return; }
+    animating = true;
+    g.style.transition = "left .18s ease-out, top .18s ease-out";
+    g.style.left = `${d.originX}px`;
+    g.style.top = `${d.originY}px`;
+    // transitionend and the timeout can both fire; only the first should run.
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      g.remove();
+      restoreLifted(d);
+      animating = false;
+      render();
+    };
+    g.addEventListener("transitionend", finish, { once: true });
+    setTimeout(finish, 260);   // in case the transition never fires
   }
 
   document.addEventListener("pointerdown", onPointerDown);
   document.addEventListener("pointermove", onPointerMove, { passive: true });
   document.addEventListener("pointerup", onPointerUp);
   document.addEventListener("pointercancel", () => {
-    if (drag && drag.ghost) drag.ghost.remove();
-    if (hinted) { hinted.classList.remove("hint"); hinted = null; }
+    if (!drag) return;
+    const d = drag;
     drag = null;
+    if (hinted) { hinted.classList.remove("hint"); hinted = null; }
+    if (d.ghost) d.ghost.remove();
+    restoreLifted(d);
     render();
   });
 
