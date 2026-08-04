@@ -63,6 +63,11 @@
     <p class="updated">Last updated: June 8, 2026 · ~12 minute read</p>
     <p>Running a Windows program inside a web browser sounds like it shouldn't be possible. There's no Windows underneath, no x86 processor guaranteed, no installer — just a tab. Yet it works, and this guide explains both <em>how</em> it works and, more usefully, <em>how to get the most out of it</em>. Whether you're trying to revive an old shareware game, recover a document from a legacy utility, or just satisfy your curiosity, this is the practical manual.</p>
 
+    <div class="warn-box" style="border-color:#2e7d32;">
+      <p style="margin-top:0;"><strong>You can run your own software here.</strong> This guide is about <em>your</em> files — a Windows <code>.exe</code> from your own drive, an app folder, or a zip of one. It runs inside your browser tab: <strong>nothing is uploaded to a server</strong>, the file is read locally and written into an in-memory <code>C:\</code> that disappears when you close the tab.</p>
+      <p style="margin-bottom:0;"><a class="button" href="/#byo">🖥 Load your own EXE, folder or zip →</a> &nbsp; <span class="muted small">Free, no account. Best with 32-bit Windows software from 1995–2008.</span></p>
+    </div>
+
     <h3>1. Why would anyone run an EXE in a browser?</h3>
     <p>The honest answer is friction. The classic 32-bit Windows era — roughly 1995 to 2008 — produced an enormous catalog of software: utilities, games, educational CD-ROM titles, business tools, demoscene productions. A great deal of it still functions, but the hardware and operating systems it was built for are vanishing. If you own a Chromebook, an iPad, a modern Mac, or a Linux box, running a 1999 Windows installer is a chore: you need a virtual machine, a Windows license, and patience.</p>
     <p>Browser-based execution collapses that. The application logic travels to wherever a modern browser runs, which is essentially everywhere. Common motivations include:</p>

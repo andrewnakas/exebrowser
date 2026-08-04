@@ -107,7 +107,7 @@
     </div>
     <p id="dos-status" class="muted small" style="margin:.5rem 0 0;" hidden></p>
     <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
-    <p id="dos-mouse-speed" class="muted small" style="margin:.4rem 0 0;" hidden><label for="dos-speed">Mouse speed</label> <input type="range" id="dos-speed" min="0.5" max="2.5" step="0.1" value="1" style="vertical-align:middle;width:9rem;"> <span id="dos-speed-val">1.0&times;</span></p>
+    <p id="dos-mouse-speed" class="muted small" style="margin:.4rem 0 0;" hidden><label for="dos-speed">Mouse speed</label> <input type="range" id="dos-speed" min="0.3" max="3" step="0.1" value="1" style="vertical-align:middle;width:9rem;"> <span id="dos-speed-val">1.0&times;</span></p>
     <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to capture keyboard &amp; mouse. Press <kbd>Ctrl+F10</kbd> to release mouse.</p>
     <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">Progress saves in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></p>
     <details id="dos-console" style="margin-top:.5rem;" hidden>
@@ -137,14 +137,25 @@
   // in with data-pointer-lock="true".
   const WANTS_POINTER_LOCK = host.dataset.pointerLock === "true";
 
-  // How far DOSBox moves the emulated cursor per unit of relative motion we
-  // send. Measured, not guessed: stepping the Scorched Earth cursor from the
-  // left wall in +50 unit increments put it at emulated columns 26, 52, 78,
-  // 104 and 130 — a flat 0.52 px per unit. Cancelling this is what makes hand
-  // movement and cursor movement agree.
-  const DOSBOX_GAIN = 0.52;
-  // User-facing multiplier on top of 1:1. Some games run their own
-  // acceleration, so one number can't feel right everywhere; this is the knob.
+  // Base multiplier applied to raw pointer-lock deltas before they reach the
+  // emulator.
+  //
+  // There is no single correct number here, and it took measuring to be sure.
+  // Stepping a cursor from the left wall in +50 unit increments and watching
+  // which emulated column it lands on gives a per-game gain: Scorched Earth
+  // (720x480 frame) moved a flat 26 px per 50 units, i.e. 0.52 px/unit, while
+  // 320x200 titles moved several times faster for the same input. The gain
+  // depends on the game's own mouse handling — most DOS games apply their own
+  // sensitivity and acceleration to driver movement — so no constant we bake in
+  // can be right everywhere.
+  //
+  // So: pick a base that makes the slowest common case feel natural rather than
+  // sluggish, cancel the one term we CAN compute exactly (how much the emulated
+  // frame is zoomed to fit the stage), and let the player trim the rest with a
+  // slider that remembers their choice. 2.0 was chosen against the measured
+  // 0.52 case — the previous build shipped an effective ~0.5x and read as
+  // "dragging across multiple screens".
+  const BASE_SPEED = 2.0;
   const SPEED_KEY = "exe_mouse_speed";
   const readSpeed = () => {
     try {
@@ -566,26 +577,19 @@
       if (pointerLocked) {
         // Move the in-game pointer as far as the hand actually moved.
         //
-        // Getting here took measuring rather than reasoning. DOSBox does not
-        // treat one unit as one pixel: driving the Scorched Earth cursor from
-        // the left wall in +50 unit steps landed it at emulated columns
-        // 26, 52, 78, 104, 130 — a steady 26 px per 50 units, so the emulator
-        // applies its own ~0.52 gain. On top of that the emulated frame is
-        // scaled to fit the stage (720 px wide shown in 640, so 0.889 css px
-        // per emulated px).
-        //
-        // Multiply those and the old code delivered ~0.52 css px of cursor
-        // travel per css px of hand movement — the cursor moved at half speed,
-        // which is exactly the "crawling across multiple screens" complaint.
-        // Cancelling both terms is what makes it 1:1.
+        // The only factor we can compute exactly is how much the emulated frame
+        // is zoomed to fit the stage: a 320-wide frame shown in a 640-wide
+        // stage is 2x, so a delta of 1 would move the cursor 2 css px and feel
+        // twice as fast as the hand. Dividing by the zoom cancels that, which
+        // is what keeps the feel consistent between a 320x200 game and a
+        // 720x480 one. Everything after that is BASE_SPEED and the player's
+        // slider — see the note on BASE_SPEED for why it can't be derived.
         //
         // No devicePixelRatio anywhere: movementX is already in css pixels, so
         // a Retina display must not double it.
         const r = canvas.getBoundingClientRect();
-        // css px per emulated px, i.e. how much the frame is zoomed to fit.
         const zoom = canvas.width && r.width ? r.width / canvas.width : 1;
-        // Undo the emulator's gain and the zoom, then apply the user's taste.
-        const scale = MOUSE_SPEED / (DOSBOX_GAIN * zoom);
+        const scale = (BASE_SPEED * MOUSE_SPEED) / zoom;
         accX += (e.movementX || 0) * scale;
         accY += (e.movementY || 0) * scale;
         // Carry the sub-pixel remainder: trackpads report fractional deltas and

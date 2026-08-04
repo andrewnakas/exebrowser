@@ -115,7 +115,26 @@
 </header>
 
 <main>
-  <!-- ── Play now: the games shelf leads the page ── -->
+  <!-- ── Bring your own EXE. The whole point of the site, and it used to be
+       buried under the games shelf at step 2 of 3. This is a shortcut, not a
+       second loader: it hands off to the real one below so there is only ever
+       one file-handling path to maintain. ── -->
+  <section class="card" id="byo">
+    <h2>🖥 Run your own Windows program</h2>
+    <p style="margin-top:0;">Have an old <code>.exe</code> sitting on your drive? Drop it here and it runs in this tab — <strong>no upload, no install, no account</strong>. Your file is read locally and never leaves your device.</p>
+    <div id="byo-drop" class="dropzone" tabindex="0" role="button" aria-label="Choose a Windows program to run">
+      <p style="font-size:1.05rem;margin:.1rem 0 .45rem;"><strong>Drop a Windows <code>.exe</code> here</strong></p>
+      <p class="muted small" style="margin:0 0 .5rem;">or choose
+        <button id="byo-exe" type="button" class="link">a single EXE</button> ·
+        <button id="byo-folder" type="button" class="link">a folder</button> ·
+        <button id="byo-zip" type="button" class="link">a zip</button>
+      </p>
+      <p class="muted small" style="margin:0;">Works best with 32-bit Windows software from 1995–2008. Bring the whole folder if the app has DLLs or data files beside it.</p>
+    </div>
+    <p class="muted small" style="margin:.6rem 0 0;">Not sure it'll run? Read the <a href="/guide/">compatibility guide</a> — it's honest about what works and what doesn't. Or just <a href="#play-now">play something we host</a> instead.</p>
+  </section>
+
+  <!-- ── Play now: the games shelf ── -->
   <section class="card" id="play-now">
     <h2>▶ Play free classic games &amp; apps — right now, in this tab</h2>
     <p class="muted small" style="margin-top:0;">Free, license-clean software we host for you. No download, no install, no account — click a title and it boots in your browser. Your progress in DOS games is saved in this browser.</p>
@@ -573,6 +592,53 @@
 <script src="/recent.js?v=1"></script>
 <script src="/filter.js?v=1"></script>
 <script>window.renderContinue && renderContinue("continue-playing", "continue-grid");</script>
+<script>
+// The top "Run your own program" card is a shortcut into the real loader
+// further down the page — it deliberately owns no file-handling logic of its
+// own, so there is exactly one code path that reads a user's files. It just
+// forwards clicks to the existing hidden inputs and re-dispatches drops onto
+// the real dropzone, then scrolls there so the person can see what happened.
+(function () {
+  const drop = document.getElementById("byo-drop");
+  if (!drop) return;
+  const realZone = document.getElementById("dropzone");
+  const go = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.click();
+  };
+  document.getElementById("byo-exe").addEventListener("click", (e) => { e.stopPropagation(); go("exeInput"); });
+  document.getElementById("byo-folder").addEventListener("click", (e) => { e.stopPropagation(); go("folderInput"); });
+  document.getElementById("byo-zip").addEventListener("click", (e) => { e.stopPropagation(); go("zipInput"); });
+  drop.addEventListener("click", () => go("exeInput"));
+  drop.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go("exeInput"); }
+  });
+
+  drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("hover"); });
+  drop.addEventListener("dragleave", () => drop.classList.remove("hover"));
+  drop.addEventListener("drop", (e) => {
+    e.preventDefault();
+    drop.classList.remove("hover");
+    if (!realZone) return;
+    // Hand the same DataTransfer to the loader's own drop handler rather than
+    // re-reading the files here.
+    const ev = new DragEvent("drop", { dataTransfer: e.dataTransfer, bubbles: true, cancelable: true });
+    realZone.dispatchEvent(ev);
+    document.getElementById("boot-section").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Once a file is staged the action moves down the page; take the person with
+  // it so they aren't left looking at a card that appears to have done nothing.
+  for (const id of ["exeInput", "folderInput", "zipInput"]) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("change", () => {
+      if (el.files && el.files.length) {
+        document.getElementById("boot-section").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+})();
+</script>
 <script src="/app.js?v=18"></script>
 <script>
 // Quick-launch: catalogue of hosted, license-clean apps.
