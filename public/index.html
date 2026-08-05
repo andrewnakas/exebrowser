@@ -115,26 +115,18 @@
 </header>
 
 <main>
-  <!-- ── Bring your own EXE. The whole point of the site, and it used to be
-       buried under the games shelf at step 2 of 3. This is a shortcut, not a
-       second loader: it hands off to the real one below so there is only ever
-       one file-handling path to maintain. ── -->
-  <section class="card" id="byo">
-    <h2>🖥 Run your own Windows program</h2>
-    <p style="margin-top:0;">Have an old <code>.exe</code> sitting on your drive? Drop it here and it runs in this tab — <strong>no upload, no install, no account</strong>. Your file is read locally and never leaves your device.</p>
-    <div id="byo-drop" class="dropzone" tabindex="0" role="button" aria-label="Choose a Windows program to run">
-      <p style="font-size:1.05rem;margin:.1rem 0 .45rem;"><strong>Drop a Windows <code>.exe</code> here</strong></p>
-      <p class="muted small" style="margin:0 0 .5rem;">or choose
-        <button id="byo-exe" type="button" class="link">a single EXE</button> ·
-        <button id="byo-folder" type="button" class="link">a folder</button> ·
-        <button id="byo-zip" type="button" class="link">a zip</button>
-      </p>
-      <p class="muted small" style="margin:0;">Works best with 32-bit Windows software from 1995–2008. Bring the whole folder if the app has DLLs or data files beside it.</p>
-    </div>
-    <p class="muted small" style="margin:.6rem 0 0;">Not sure it'll run? Read the <a href="/guide/">compatibility guide</a> — it's honest about what works and what doesn't. Or just <a href="#play-now">play something we host</a> instead.</p>
-  </section>
+  <!-- ── Bring your own EXE.
+       This sat first for a while, on the reasoning that running your own
+       program is the premise of the site. Analytics disagreed: the homepage
+       held people 28 seconds while the game pages held them close to two
+       minutes. Most arrivals don't have an EXE to hand — they came to play
+       something. So the shelf leads and this stays right beneath it, compact,
+       for the people who did come with a file.
 
-  <!-- ── Play now: the games shelf ── -->
+       It is a shortcut, not a second loader: it hands off to the real one
+       further down, so there is only ever one file-handling path. ── -->
+
+  <!-- ── Play now: the games shelf leads the page ── -->
   <section class="card" id="play-now">
     <h2>▶ Play free classic games &amp; apps — right now, in this tab</h2>
     <p class="muted small" style="margin-top:0;">Free, license-clean software we host for you. No download, no install, no account — click a title and it boots in your browser. Your progress in DOS games is saved in this browser.</p>
@@ -296,6 +288,21 @@
         </a></li>
     </ul>
     <p class="muted small" style="margin:1rem 0 0;"><a href="/run/">See all app guides →</a> — including honest compatibility notes for software we can't host, which you can load from your own device below.</p>
+  </section>
+
+  <section class="card" id="byo">
+    <h2>🖥 Or run your own Windows program</h2>
+    <p style="margin-top:0;">Have an old <code>.exe</code> on your drive? Drop it here and it runs in this tab — <strong>no upload, no install, no account</strong>. Your file is read locally and never leaves your device.</p>
+    <div id="byo-drop" class="dropzone" tabindex="0" role="button" aria-label="Choose a Windows program to run">
+      <p style="font-size:1.05rem;margin:.1rem 0 .45rem;"><strong>Drop a Windows <code>.exe</code> here</strong></p>
+      <p class="muted small" style="margin:0 0 .5rem;">or choose
+        <button id="byo-exe" type="button" class="link">a single EXE</button> ·
+        <button id="byo-folder" type="button" class="link">a folder</button> ·
+        <button id="byo-zip" type="button" class="link">a zip</button>
+      </p>
+      <p class="muted small" style="margin:0;">Works best with 32-bit Windows software from 1995–2008. Bring the whole folder if the app has DLLs or data files beside it.</p>
+    </div>
+    <p class="muted small" style="margin:.6rem 0 0;">Not sure it'll run? Read the <a href="/guide/">compatibility guide</a> — it's honest about what works and what doesn't.</p>
   </section>
 
   <section class="hero card">
