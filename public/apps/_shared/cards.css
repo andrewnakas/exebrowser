@@ -1,0 +1,134 @@
+/* Shared card-table chrome for the ExeBrowser native card games.
+   Matches the look Solitaire established: the real Windows table green, the
+   blue crosshatch card back, and rank+suit in both corners of a card whose
+   proportions are the real 0.7 playing-card ratio. */
+:root {
+  color-scheme: light;
+  --cw: 71px;
+  --ch: calc(var(--cw) / 0.7);
+  --gap: calc(var(--cw) * 0.14);
+  /* Fan by a fraction of the card HEIGHT. Deriving it from the width overlaps
+     the cards so far that only the rank letter is visible. */
+  --fan: calc(var(--ch) * 0.30);
+  --fan-down: calc(var(--cw) * 0.11);
+  --felt: #008000;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: .55rem;
+  font: 13px/1.35 "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+  background: var(--felt); color: #fff;
+  display: flex; flex-direction: column;
+  min-height: 100vh;
+  -webkit-user-select: none; user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+.board { width: 100%; max-width: 820px; margin: 0 auto; position: relative; }
+
+.toolbar { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: .6rem; }
+.toolbar .spacer { flex: 1 1 auto; }
+.stat {
+  font-size: .8rem; font-variant-numeric: tabular-nums;
+  background: rgba(0,0,0,.22); padding: .22rem .55rem; border-radius: 4px;
+}
+.stat b { font-weight: 600; }
+.button {
+  font: inherit; font-size: .8rem; padding: .3rem .7rem;
+  border-radius: 4px; border: 1px solid rgba(255,255,255,.45);
+  background: rgba(255,255,255,.14); color: #fff; cursor: pointer;
+}
+.button:hover:not(:disabled) { background: rgba(255,255,255,.26); }
+.button.primary { background: #fff; border-color: #fff; color: #046104; font-weight: 600; }
+.button.on { background: #fff; border-color: #fff; color: #046104; font-weight: 600; }
+.button:disabled { opacity: .4; cursor: default; }
+
+.row { display: flex; gap: var(--gap); }
+.row.top { margin-bottom: calc(var(--gap) * 1.7); }
+.spread { margin-left: auto; display: flex; gap: var(--gap); }
+
+.pile {
+  width: var(--cw); height: var(--ch);
+  border-radius: calc(var(--cw) * 0.07);
+  position: relative; flex: 0 0 auto;
+}
+.pile.slot, .col.slot {
+  border: 1px solid rgba(0,0,0,.28);
+  background: rgba(0,0,0,.07);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.18);
+}
+.pile.slot.foundation::after {
+  content: attr(data-suit);
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: calc(var(--cw) * 0.44); color: rgba(0,0,0,.22);
+}
+#tableau { align-items: flex-start; }
+.col { width: var(--cw); flex: 0 0 auto; position: relative; min-height: var(--ch); }
+
+.card {
+  position: absolute; left: 0; top: 0;
+  width: var(--cw); height: var(--ch);
+  border-radius: calc(var(--cw) * 0.07);
+  background: #fff; color: #000;
+  border: 1px solid #808080;
+  font: 700 calc(var(--cw) * 0.235)/1 "Segoe UI", Tahoma, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  overflow: hidden;
+}
+.card.red { color: #d40000; }
+.corner { position: absolute; display: flex; flex-direction: column; align-items: center; line-height: .95; }
+.corner.tl { top: calc(var(--cw) * 0.055); left: calc(var(--cw) * 0.06); }
+.corner.br { bottom: calc(var(--cw) * 0.055); right: calc(var(--cw) * 0.06); transform: rotate(180deg); }
+.corner .cs { font-size: calc(var(--cw) * 0.22); }
+.center {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(var(--cw) * 0.42);
+}
+.card.court .center {
+  width: calc(var(--cw) * 0.52); height: calc(var(--ch) * 0.46);
+  border: 1px solid currentColor; border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: calc(var(--cw) * 0.34); opacity: .85;
+}
+/* The blue crosshatch back Windows shipped with. */
+.card.down {
+  background:
+    repeating-linear-gradient(45deg, transparent 0 3px, rgba(255,255,255,.5) 3px 4px),
+    repeating-linear-gradient(-45deg, transparent 0 3px, rgba(255,255,255,.5) 3px 4px),
+    #1f4e9c;
+  border-color: #fff;
+  box-shadow: inset 0 0 0 2px #fff, 0 1px 2px rgba(0,0,0,.3);
+}
+.card.down > * { visibility: hidden; }
+.card.dragging { pointer-events: none; z-index: 500; box-shadow: 0 8px 20px rgba(0,0,0,.45); }
+.pile.hint, .col.hint::before {
+  outline: 2px solid #ffe14d; outline-offset: 1px;
+  border-radius: calc(var(--cw) * 0.07);
+}
+.col.hint::before { content: ""; position: absolute; left: 0; top: 0; width: var(--cw); height: var(--ch); }
+
+#status { text-align: center; min-height: 1.3em; font-size: .82rem; margin: .55rem 0 0; opacity: .95; }
+
+#win { position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+       background: rgba(0,0,0,.55); z-index: 900; padding: 1rem; }
+#win.on { display: flex; }
+.win-card {
+  background: #ececec; color: #111;
+  border: 1px solid #8a8a8a; box-shadow: 0 6px 24px rgba(0,0,0,.45);
+  border-radius: 5px; padding: 1.2rem 1.4rem; text-align: center; max-width: 320px;
+}
+.win-card h2 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.win-card p { margin: 0 0 1rem; font-size: .85rem; color: #333; }
+.win-card .button { border-color: #767676; background: #fdfdfd; color: #111; }
+.win-card .button.primary { background: #046104; border-color: #046104; color: #fff; }
+
+@media (max-width: 560px) {
+  body { padding: .4rem; }
+  .toolbar { gap: .3rem; margin-bottom: .45rem; }
+  .toolbar .button { padding: .3rem .5rem; font-size: .75rem; }
+  .stat { font-size: .7rem; padding: .18rem .4rem; }
+  .toolbar .spacer { flex-basis: 100%; height: 0; }
+}

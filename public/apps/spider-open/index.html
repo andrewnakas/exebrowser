@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Spider Solitaire — free classic card game</title>
+<link rel="stylesheet" href="/apps/_shared/cards.css?v=1" />
+<style>
+  /* Spider deals ten columns from two decks, so the board is wider and the
+     stock sits as a stack of face-down deals in the corner. */
+  .board { max-width: 900px; }
+  /* Wide enough for five fanned backs, so the remaining deals are countable
+     at a glance the way they are in the original. */
+  #stock { cursor: pointer; position: relative; width: calc(var(--cw) * 1.55); }
+  #stock .card { position: absolute; }
+  .done-row { display: flex; gap: calc(var(--gap) * 0.5); margin-left: auto; }
+  .done-row .card { position: relative; }
+</style>
+</head>
+<body>
+  <div class="board">
+    <div class="toolbar">
+      <button type="button" class="button primary" id="deal">New game</button>
+      <button type="button" class="button" id="undo" disabled>Undo</button>
+      <button type="button" class="button on" data-suits="1">1 suit</button>
+      <button type="button" class="button" data-suits="2">2 suits</button>
+      <button type="button" class="button" data-suits="4">4 suits</button>
+      <span class="spacer"></span>
+      <span class="stat">Score <b id="score">500</b></span>
+      <span class="stat">Moves <b id="moves">0</b></span>
+      <span class="stat">Time <b id="clock">0:00</b></span>
+    </div>
+
+    <div class="row top">
+      <div class="pile" id="stock" aria-label="Stock — click to deal a row"></div>
+      <div class="done-row" id="done" aria-label="Completed runs"></div>
+    </div>
+
+    <div class="row" id="tableau"></div>
+    <p id="status" aria-live="polite"></p>
+  </div>
+
+  <div id="win">
+    <div class="win-card">
+      <h2>Congratulations!</h2>
+      <p id="win-detail"></p>
+      <button type="button" class="button primary" id="win-again">Deal again</button>
+    </div>
+  </div>
+<script src="/apps/_shared/cards.js?v=1"></script>
+<script src="spider.js?v=1"></script>
+</body>
+</html>

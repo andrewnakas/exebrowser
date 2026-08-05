@@ -922,7 +922,7 @@
       "Action"
     ],
     "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
-    "rank": 10
+    "rank": 13
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1195,6 +1195,21 @@
         "href": "/run/minesweeper-open/",
         "title": "Play Minesweeper online (free)",
         "desc": "The classic puzzle, playable right now — no emulator, no download."
+      },
+      {
+        "href": "/run/freecell-open/",
+        "title": "Play FreeCell online (free)",
+        "desc": "Same deal numbers as Windows — nearly every deal winnable."
+      },
+      {
+        "href": "/run/spider-open/",
+        "title": "Play Spider Solitaire online (free)",
+        "desc": "One, two or four suits — instant play, no download."
+      },
+      {
+        "href": "/run/jezzball-open/",
+        "title": "Play JezzBall online (free)",
+        "desc": "Trap the balls, capture the field — the Entertainment Pack classic."
       }
     ],
     "updated": "2026-08-03",
@@ -1530,7 +1545,23 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/freecell-open/",
+        "title": "Play FreeCell online (free)",
+        "desc": "Same deal numbers as Windows — nearly every deal winnable."
+      },
+      {
+        "href": "/run/spider-open/",
+        "title": "Play Spider Solitaire online (free)",
+        "desc": "One, two or four suits — instant play, no download."
+      },
+      {
+        "href": "/run/jezzball-open/",
+        "title": "Play JezzBall online (free)",
+        "desc": "Trap the balls, capture the field — the Entertainment Pack classic."
+      }
+    ],
     "updated": "2026-08-04",
     "addedDate": "2026-08-04",
     "controls": [
@@ -1625,6 +1656,11 @@
     ],
     "related": [
       {
+        "href": "/run/freecell-open/",
+        "title": "Play FreeCell online (free)",
+        "desc": "Same deal numbers as Windows — nearly every deal winnable."
+      },
+      {
         "href": "/run/minesweeper-open/",
         "title": "Play Minesweeper online (free)",
         "desc": "The classic puzzle, playable right now — no emulator, no download."
@@ -1675,6 +1711,65 @@
       "heading": "Where to find freecell.exe",
       "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows XP and earlier keep it at <code>C:\\Windows\\System32\\freecell.exe</code>; Windows 7 uses <code>C:\\Program Files\\Microsoft Games\\FreeCell\\FreeCell.exe</code>. Bring <code>cards.dll</code> from <code>System32</code> too, or the cards won't draw.</p><p><strong>On Windows 8 or later:</strong> not present — you'd need a copy from an older PC.</p><p><strong>No copy available?</strong> <a href=\"/run/hearts-open/\">Hearts</a> is a free card game that plays here instantly, with no files needed.</p></div>"
     }
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-05",
+    "addedDate": "2026-08-05",
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "slug": "freecell-open",
+    "appName": "FreeCell",
+    "title": "Play FreeCell Online Free — Classic Windows Card Game, No Download — ExeBrowser",
+    "description": "Play classic FreeCell free in your browser — Microsoft deal numbers, supermoves, unlimited undo and a timer. Nearly every deal is winnable. No download, no account.",
+    "keywords": "play freecell online, freecell free, freecell no download, windows freecell browser, freecell deal number, classic freecell, freecell unblocked",
+    "ogTitle": "Play FreeCell Online Free — Classic Windows Card Game",
+    "ogDescription": "The FreeCell you remember — same deal numbers as Windows, supermoves, unlimited undo.",
+    "crumb": "Play FreeCell",
+    "h1": "Play FreeCell online — free, instant",
+    "genre": [
+      "Card game",
+      "Puzzle",
+      "Patience"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/freecell-open/",
+    "rank": 8,
+    "controls": [
+      {
+        "action": "Move a card",
+        "keyboard": "—",
+        "mouse": "Drag it (mouse or touch)"
+      },
+      {
+        "action": "Send home",
+        "keyboard": "—",
+        "mouse": "Tap or double-click"
+      },
+      {
+        "action": "Pick a deal",
+        "keyboard": "Type a number",
+        "mouse": "Press Go"
+      },
+      {
+        "action": "Undo",
+        "keyboard": "—",
+        "mouse": "Click Undo"
+      }
+    ]
   },
   {
     "slug": "spider-solitaire",
@@ -1742,6 +1837,11 @@
     ],
     "related": [
       {
+        "href": "/run/spider-open/",
+        "title": "Play Spider Solitaire online (free)",
+        "desc": "One, two or four suits — instant play, no download."
+      },
+      {
         "href": "/run/minesweeper-open/",
         "title": "Play Minesweeper online (free)",
         "desc": "The classic puzzle, playable right now — no emulator, no download."
@@ -1792,6 +1892,65 @@
       "heading": "Where to find spider.exe",
       "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows XP ships <code>C:\\Windows\\System32\\spider.exe</code>; Windows 7 uses <code>C:\\Program Files\\Microsoft Games\\Spider Solitaire\\SpiderSolitaire.exe</code>. Copy <code>cards.dll</code> from <code>System32</code> as well for the card graphics.</p><p><strong>On Windows 8 or later:</strong> removed from Windows.</p><p><strong>Prefer something free and instant?</strong> <a href=\"/run/hearts-open/\">Hearts</a> needs no files at all.</p></div>"
     }
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-05",
+    "addedDate": "2026-08-05",
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "slug": "spider-open",
+    "appName": "Spider Solitaire",
+    "title": "Play Spider Solitaire Online Free — 1, 2 or 4 Suits, No Download — ExeBrowser",
+    "description": "Play Spider Solitaire free in your browser — one, two or four suits, two full decks, unlimited undo and Windows scoring. No download, no account, works on mobile.",
+    "keywords": "play spider solitaire online, spider solitaire free, spider solitaire no download, spider solitaire 1 suit, spider solitaire 2 suits, windows spider solitaire",
+    "ogTitle": "Play Spider Solitaire Online Free — 1, 2 or 4 Suits",
+    "ogDescription": "The Spider Solitaire you remember — pick your difficulty, two decks, unlimited undo.",
+    "crumb": "Play Spider Solitaire",
+    "h1": "Play Spider Solitaire online — free, instant",
+    "genre": [
+      "Card game",
+      "Puzzle",
+      "Patience"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/spider-open/",
+    "rank": 9,
+    "controls": [
+      {
+        "action": "Move a card",
+        "keyboard": "—",
+        "mouse": "Drag it (mouse or touch)"
+      },
+      {
+        "action": "Move a run",
+        "keyboard": "—",
+        "mouse": "Drag a same-suit sequence"
+      },
+      {
+        "action": "Deal a row",
+        "keyboard": "—",
+        "mouse": "Click the stock"
+      },
+      {
+        "action": "Undo",
+        "keyboard": "—",
+        "mouse": "Click Undo"
+      }
+    ]
   },
   {
     "slug": "hearts",
@@ -2134,6 +2293,11 @@
     ],
     "related": [
       {
+        "href": "/run/jezzball-open/",
+        "title": "Play JezzBall online (free)",
+        "desc": "Trap the balls, capture the field — the Entertainment Pack classic."
+      },
+      {
         "href": "/run/minesweeper/",
         "title": "Minesweeper",
         "desc": "The classic Windows logic puzzle in a tab."
@@ -2165,6 +2329,61 @@
       }
     ],
     "updated": "2026-07-01"
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-05",
+    "addedDate": "2026-08-05",
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "slug": "jezzball-open",
+    "appName": "JezzBall",
+    "title": "Play JezzBall Online Free — The Classic Windows Game, No Download — ExeBrowser",
+    "description": "Play JezzBall free in your browser — build walls, trap the bouncing balls, capture 75% of the field to advance. The Microsoft Entertainment Pack classic, no download or account.",
+    "keywords": "play jezzball online, jezzball free, jezzball no download, jezzball browser, microsoft entertainment pack, jezzball windows game, jezzball unblocked",
+    "ogTitle": "Play JezzBall Online Free — The Classic Windows Game",
+    "ogDescription": "Build walls, trap the balls, clear 75% of the field. The Entertainment Pack classic.",
+    "crumb": "Play JezzBall",
+    "h1": "Play JezzBall online — free, instant",
+    "genre": [
+      "Puzzle",
+      "Action",
+      "Arcade"
+    ],
+    "categories": [
+      "Puzzle & strategy",
+      "Action"
+    ],
+    "appUrl": "/apps/jezzball-open/",
+    "rank": 10,
+    "controls": [
+      {
+        "action": "Build a wall",
+        "keyboard": "—",
+        "mouse": "Click the field"
+      },
+      {
+        "action": "Change direction",
+        "keyboard": "Space",
+        "mouse": "Right-click"
+      },
+      {
+        "action": "New game",
+        "keyboard": "—",
+        "mouse": "Click New game"
+      }
+    ]
   },
   {
     "slug": "chips-challenge",
@@ -2673,7 +2892,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 9
+    "rank": 12
   },
   {
     "slug": "scorched-earth",
@@ -2837,7 +3056,7 @@
       "Puzzle & strategy"
     ],
     "pointerLock": true,
-    "rank": 11
+    "rank": 14
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -3187,7 +3406,7 @@
       "Action"
     ],
     "pointerLock": true,
-    "rank": 12
+    "rank": 15
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3497,7 +3716,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 16
+    "rank": 19
   },
   {
     "slug": "prince-of-persia",
@@ -3600,7 +3819,7 @@
       }
     ],
     "updated": "2026-07-01",
-    "rank": 13
+    "rank": 16
   },
   {
     "slug": "full-tilt-pinball",
@@ -6359,7 +6578,7 @@
       "Racing & sports"
     ],
     "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
-    "rank": 17
+    "rank": 20
   },
   {
     "slug": "jetpack",
@@ -6507,7 +6726,7 @@
       "Puzzle & strategy"
     ],
     "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
-    "rank": 18
+    "rank": 21
   },
   {
     "slug": "god-of-thunder",
@@ -6830,7 +7049,7 @@
       "Action"
     ],
     "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
-    "rank": 14
+    "rank": 17
   },
   {
     "slug": "xargon",
@@ -7489,7 +7708,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 15
+    "rank": 18
   },
   {
     "slug": "hearts-open",
@@ -7530,6 +7749,21 @@
         "href": "/run/solitaire-open/",
         "title": "Play Solitaire online (free)",
         "desc": "Classic Klondike, playable right now — no emulator, no download."
+      },
+      {
+        "href": "/run/freecell-open/",
+        "title": "Play FreeCell online (free)",
+        "desc": "Same deal numbers as Windows — nearly every deal winnable."
+      },
+      {
+        "href": "/run/spider-open/",
+        "title": "Play Spider Solitaire online (free)",
+        "desc": "One, two or four suits — instant play, no download."
+      },
+      {
+        "href": "/run/jezzball-open/",
+        "title": "Play JezzBall online (free)",
+        "desc": "Trap the balls, capture the field — the Entertainment Pack classic."
       }
     ],
     "updated": "2026-07-28",
@@ -7553,7 +7787,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 8
+    "rank": 11
   },
   {
     "slug": "cosmo",

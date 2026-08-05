@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open FreeCell — free classic card game</title>
+<link rel="stylesheet" href="/apps/_shared/cards.css?v=1" />
+<style>
+  /* FreeCell needs eight columns rather than seven, so the board runs a touch
+     wider and the free cells sit opposite the foundations along the top. */
+  .board { max-width: 860px; }
+  #cells .pile.slot::after {
+    content: "";
+  }
+  .deal-input {
+    width: 5.5rem; font: inherit; font-size: .8rem; padding: .25rem .4rem;
+    border-radius: 4px; border: 1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.14); color: #fff;
+  }
+  .deal-input::-webkit-outer-spin-button,
+  .deal-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="board">
+    <div class="toolbar">
+      <button type="button" class="button primary" id="deal">New game</button>
+      <button type="button" class="button" id="undo" disabled>Undo</button>
+      <label class="stat" style="display:flex;align-items:center;gap:.35rem;">
+        Deal <input type="number" class="deal-input" id="dealno" min="1" max="1000000" value="1" aria-label="Deal number" />
+      </label>
+      <button type="button" class="button" id="godeal">Go</button>
+      <span class="spacer"></span>
+      <span class="stat">Moves <b id="moves">0</b></span>
+      <span class="stat">Time <b id="clock">0:00</b></span>
+    </div>
+
+    <div class="row top">
+      <div class="pile slot" id="c-0" data-pile="c:0" aria-label="Free cell 1"></div>
+      <div class="pile slot" id="c-1" data-pile="c:1" aria-label="Free cell 2"></div>
+      <div class="pile slot" id="c-2" data-pile="c:2" aria-label="Free cell 3"></div>
+      <div class="pile slot" id="c-3" data-pile="c:3" aria-label="Free cell 4"></div>
+      <div class="spread">
+        <div class="pile slot foundation" id="f-S" data-suit="♠" data-pile="f:S"></div>
+        <div class="pile slot foundation" id="f-H" data-suit="♥" data-pile="f:H"></div>
+        <div class="pile slot foundation" id="f-D" data-suit="♦" data-pile="f:D"></div>
+        <div class="pile slot foundation" id="f-C" data-suit="♣" data-pile="f:C"></div>
+      </div>
+    </div>
+
+    <div class="row" id="tableau"></div>
+    <p id="status" aria-live="polite"></p>
+  </div>
+
+  <div id="win">
+    <div class="win-card">
+      <h2>Congratulations!</h2>
+      <p id="win-detail"></p>
+      <button type="button" class="button primary" id="win-again">Deal again</button>
+    </div>
+  </div>
+<script src="/apps/_shared/cards.js?v=1"></script>
+<script src="freecell.js?v=1"></script>
+</body>
+</html>
