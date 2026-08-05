@@ -507,11 +507,26 @@ function relatedHtml(related) {
 // one. Hand-authored `related` lists were also drifting toward guides for
 // software we don't host, which spends a click and goes nowhere.
 function alsoPlayHtml(current, allPages) {
-  const others = allPages
+  const pool = allPages
     .filter((p) => isPlayable(p) && p.slug !== current.slug && p.appType === "game")
-    .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity))
-    .slice(0, 6);
-  if (others.length < 3) return "";
+    .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
+  if (pool.length < 3) return "";
+
+  // Four marquee titles plus two rotated ones. Showing the same top six on
+  // every page meant everything outside that six got no inbound links at all —
+  // JezzBall had three for the whole site. The rotation is keyed off the page's
+  // own slug so it's stable between builds (no diff churn) while still spreading
+  // link equity across the catalogue.
+  const head = pool.slice(0, 4);
+  const tail = pool.slice(4);
+  const others = head.slice();
+  if (tail.length) {
+    let seed = 0;
+    for (const ch of current.slug) seed = (seed * 31 + ch.charCodeAt(0)) % 100000;
+    for (let i = 0; i < 2 && i < tail.length; i++) {
+      others.push(tail[(seed + i * 7) % tail.length]);
+    }
+  }
   const cards = others
     .map((p) => {
       const shot = screenshotFile(p);
@@ -709,7 +724,7 @@ function gridFilterHtml(pages) {
     if (p.fullyFree) counts.set("Free & complete", (counts.get("Free & complete") || 0) + 1);
   }
   if (counts.size < 3) return "";
-  const order = ["Free & complete", "Shooters", "Platformers", "Action", "Puzzle & strategy", "Racing & sports", "Pinball", "Apps & tools"];
+  const order = ["Free & complete", "Windows classics", "Shooters", "Platformers", "Action", "Puzzle & strategy", "Racing & sports", "Pinball", "Apps & tools"];
   const chips = order
     .filter((c) => counts.has(c))
     .map((c) => `<button type="button" class="chip" data-cat="${esc(c)}">${esc(c)} <span class="chip-n">${counts.get(c)}</span></button>`)

@@ -53,7 +53,7 @@ for (const p of playable) {
   for (const c of p.categories || []) counts.set(c, (counts.get(c) || 0) + 1);
   if (p.fullyFree) counts.set("Free & complete", (counts.get("Free & complete") || 0) + 1);
 }
-const ORDER = ["Free & complete", "Shooters", "Platformers", "Action", "Puzzle & strategy", "Racing & sports", "Pinball", "Apps & tools"];
+const ORDER = ["Free & complete", "Windows classics", "Shooters", "Platformers", "Action", "Puzzle & strategy", "Racing & sports", "Pinball", "Apps & tools"];
 const chips = ORDER.filter((c) => counts.has(c))
   .map((c) => `<button type="button" class="chip" data-cat="${esc(c)}">${esc(c)} <span class="chip-n">${counts.get(c)}</span></button>`)
   .join("\n        ");
