@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Minesweeper — free classic puzzle</title>
+<style>
+  :root {
+    color-scheme: light;
+    --cell: 24px;                 /* rewritten by the script to fit the screen */
+    --face: #c0c0c0;              /* the Windows 3D grey everything was made of */
+    --hi: #ffffff;
+    --lo: #808080;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .6rem;
+    font: 13px/1.35 "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+    background: #008080;          /* the Windows teal desktop */
+    color: #000;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* The classic chiselled bevel: light on top-left, dark on bottom-right. */
+  .out { border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi); }
+  .in  { border: 2px solid; border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+
+  .frame { background: var(--face); padding: 5px; }
+
+  .status {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--face); padding: 4px 5px; margin-bottom: 5px;
+  }
+  /* Seven-segment style counters, red on black, as in the original. */
+  .lcd {
+    background: #000; color: #f00; font: 700 20px/1 "DSEG7", "Courier New", monospace;
+    padding: 2px 4px; letter-spacing: 1px; min-width: 52px; text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .face {
+    width: 30px; height: 30px; font-size: 17px; line-height: 1;
+    background: var(--face); cursor: pointer; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .face:active { border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+
+  #grid { display: grid; gap: 0; background: var(--face); touch-action: manipulation; }
+  .cell {
+    width: var(--cell); height: var(--cell);
+    font: 700 calc(var(--cell) * 0.62)/1 "Segoe UI", Tahoma, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--face); cursor: pointer; padding: 0;
+    border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi);
+  }
+  /* A revealed cell loses its bevel and gets a hairline grid instead. */
+  .cell.open {
+    border: 1px solid #a0a0a0;
+    background: var(--face);
+    cursor: default;
+  }
+  .cell.mine { background: #f00; }
+  .cell.wrong { background: #f00; }
+  /* The canonical Minesweeper number colours. */
+  .n1 { color: #0000ff; } .n2 { color: #008000; } .n3 { color: #ff0000; }
+  .n4 { color: #000080; } .n5 { color: #800000; } .n6 { color: #008080; }
+  .n7 { color: #000000; } .n8 { color: #808080; }
+
+  .toolbar { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .button {
+    font: inherit; font-size: .8rem; padding: .3rem .7rem; cursor: pointer;
+    background: var(--face); color: #000;
+    border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi);
+  }
+  .button:active { border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+  .button.on { border-color: var(--lo) var(--hi) var(--hi) var(--lo); font-weight: 600; }
+  #msg { min-height: 1.3em; font-size: .85rem; color: #fff; text-align: center; }
+  .hint { font-size: .75rem; color: #cfe9e9; text-align: center; max-width: 30rem; }
+</style>
+</head>
+<body>
+  <div class="toolbar">
+    <button type="button" class="button" data-level="beginner">Beginner</button>
+    <button type="button" class="button" data-level="intermediate">Intermediate</button>
+    <button type="button" class="button" data-level="expert">Expert</button>
+    <button type="button" class="button" id="flagmode" aria-pressed="false">🚩 Flag mode</button>
+  </div>
+
+  <div class="frame out">
+    <div class="status in">
+      <span class="lcd" id="mines">010</span>
+      <button type="button" class="face out" id="face" aria-label="New game">🙂</button>
+      <span class="lcd" id="clock">000</span>
+    </div>
+    <div id="grid" class="in"></div>
+  </div>
+
+  <p id="msg" aria-live="polite"></p>
+  <p class="hint">Left-click to open · right-click to flag · click a number with the right count of flags around it to open its neighbours. On a phone, use <strong>Flag mode</strong> to place flags.</p>
+<script src="minesweeper.js?v=1"></script>
+</body>
+</html>

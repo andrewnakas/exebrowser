@@ -500,6 +500,33 @@ function relatedHtml(related) {
   return `\n  <section class="card">\n    <h2>More you can run in your browser</h2>\n    <ul class="card-grid">\n${cards}\n    </ul>\n  </section>`;
 }
 
+// A poster strip of other playable titles, appended to every page that has a
+// game on it. Analytics showed the problem this solves: the DOOM page holds
+// people for nearly two minutes but averages 1.36 views per visitor — they
+// play one game and leave, because nothing on the page shows them a second
+// one. Hand-authored `related` lists were also drifting toward guides for
+// software we don't host, which spends a click and goes nowhere.
+function alsoPlayHtml(current, allPages) {
+  const others = allPages
+    .filter((p) => isPlayable(p) && p.slug !== current.slug && p.appType === "game")
+    .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity))
+    .slice(0, 6);
+  if (others.length < 3) return "";
+  const cards = others
+    .map((p) => {
+      const shot = screenshotFile(p);
+      const art = shot
+        ? `<img class="pc-shot" src="/run/${p.slug}/${shot}" width="320" height="240" loading="lazy" alt="${esc(p.appName)} running in the browser" />`
+        : `<span class="pc-shot pc-placeholder" aria-hidden="true">${esc((p.appName || "?").trim().charAt(0))}</span>`;
+      return `        <li class="pc-item"><a class="poster-card" href="/run/${p.slug}/">
+          ${art}
+          <span class="pc-body"><span class="pc-title">${esc(p.appName)}</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>`;
+    })
+    .join("\n");
+  return `\n  <section class="card">\n    <h2>Play another one — free, no download</h2>\n    <ul class="poster-grid">\n${cards}\n    </ul>\n    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all ${allPages.filter(isPlayable).length} titles you can play here →</a></p>\n  </section>`;
+}
+
 function downloadHtml(p) {
   if (!p.download || !p.download.heading) return "";
   // The template emits download.heading as the box's <h3>, so drop a leading
@@ -574,7 +601,7 @@ ${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p)}${freeNoteHtml(p)
 ${downloadHtml(p)}
   <section class="card">
     <h2>How it works &amp; what to expect</h2>${sectionsHtml(p.sections)}
-  </section>${faqHtml(p)}${relatedHtml(p.related)}
+  </section>${faqHtml(p)}${isPlayable(p) ? alsoPlayHtml(p, pages) : ""}${relatedHtml(p.related)}
 </main>
 
 <footer>
@@ -719,7 +746,13 @@ const indexHtml = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Run Windows Apps &amp; Games in Your Browser — ${pages.length} App Guides — ExeBrowser</title>
+<!-- The title deliberately carries NO page count. It used to interpolate
+     pages.length, so every game we added silently retitled this URL — analytics
+     shows it ranking as five different pages (53, 54, 63, 67, 68 App Guides),
+     each rename throwing away whatever authority the previous title had earned.
+     A stable, query-led title accumulates instead of resetting. Counts still
+     appear in the description, where churn is harmless. -->
+<title>Play Classic Windows &amp; DOS Games Online Free — No Download — ExeBrowser</title>
 <meta name="description" content="${playNow.length} free classic Windows programs you can play in your browser with one click, plus ${games.length + apps.length} honest Wine + WebAssembly compatibility guides for running your own copies — DOOM, 3D Pinball, Solitaire, 7-Zip, and more." />
 <meta name="keywords" content="run windows apps in browser, play windows games online, run exe online, wine app compatibility, classic windows games browser" />
 <link rel="canonical" href="${SITE}/run/" />

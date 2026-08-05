@@ -192,9 +192,9 @@
         "desc": "Apogee's Wolfenstein-engine sci-fi shooter."
       },
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The beloved Windows pinball table."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/guide/",
@@ -504,7 +504,7 @@
     ],
     "pointerLock": true,
     "fullyFree": "Declared freeware by rights holder Jason Emery in 2004 — the complete game, not an episode.",
-    "rank": 6
+    "rank": 7
   },
   {
     "slug": "doom",
@@ -571,39 +571,34 @@
     ],
     "related": [
       {
-        "href": "/run/alien-carnage/",
-        "title": "Alien Carnage",
-        "desc": "Apogee's freeware run-and-gun with a jetpack."
-      },
-      {
-        "href": "/run/3d-pinball-space-cadet/",
-        "title": "3D Pinball Space Cadet",
-        "desc": "The beloved Windows XP pinball table."
+        "href": "/run/freedoom/",
+        "title": "Freedoom",
+        "desc": "The free, complete DOOM-compatible game — all levels, no shareware split."
       },
       {
         "href": "/run/wolfenstein-3d/",
         "title": "Wolfenstein 3D",
-        "desc": "id's original FPS shareware, in a tab."
+        "desc": "id's 1992 shooter — the shareware episode, playable here."
       },
       {
-        "href": "/run/freedoom/",
-        "title": "Freedoom",
-        "desc": "The fully free DOOM-engine game and IWAD."
+        "href": "/run/blake-stone/",
+        "title": "Blake Stone",
+        "desc": "Apogee's Wolfenstein-engine shooter — episode 1, instant play."
       },
       {
-        "href": "/run/chocolate-doom/",
-        "title": "Chocolate Doom",
-        "desc": "Faithful DOOM source port, runs cleanly."
+        "href": "/run/raptor/",
+        "title": "Raptor",
+        "desc": "Apogee's vertical shooter — instant play, no download."
       },
       {
-        "href": "/run/hexen-heretic-shareware/",
-        "title": "Heretic & Hexen",
-        "desc": "Raven's DOOM-engine fantasy shareware."
+        "href": "/run/scorched-earth/",
+        "title": "Scorched Earth",
+        "desc": "The mother of all artillery games — instant play."
       },
       {
-        "href": "/guide/",
-        "title": "Compatibility guide",
-        "desc": "What runs and what doesn't."
+        "href": "/run/",
+        "title": "All games & apps",
+        "desc": "Everything you can play or run here."
       }
     ],
     "mobileControls": {
@@ -791,33 +786,28 @@
     "related": [
       {
         "href": "/run/doom/",
-        "title": "DOOM (shareware)",
-        "desc": "The real 1993 DOOM, free shareware episode."
-      },
-      {
-        "href": "/run/freedoom/",
-        "title": "Chocolate Doom",
-        "desc": "Faithful software-rendering port — pairs perfectly."
+        "title": "DOOM",
+        "desc": "The 1993 original's shareware episode, playable in your browser."
       },
       {
         "href": "/run/wolfenstein-3d/",
         "title": "Wolfenstein 3D",
-        "desc": "id's earlier FPS — the genre's grandfather."
+        "desc": "The shooter that started it — shareware episode, instant play."
       },
       {
-        "href": "/run/hexen-heretic-shareware/",
-        "title": "Heretic &amp; Hexen",
-        "desc": "Fantasy shooters on the DOOM engine."
+        "href": "/run/blake-stone/",
+        "title": "Blake Stone",
+        "desc": "Aliens of Gold episode 1 — Wolfenstein engine, plays instantly."
       },
       {
-        "href": "/run/freeciv/",
-        "title": "Freeciv",
-        "desc": "Another fully free, open-source classic."
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's run-and-gun platformer — freeware, complete."
       },
       {
-        "href": "/guide/",
-        "title": "Compatibility guide",
-        "desc": "What runs in the browser and what doesn't."
+        "href": "/run/",
+        "title": "All games & apps",
+        "desc": "Everything you can play or run here."
       }
     ],
     "licenseNote": "",
@@ -932,7 +922,7 @@
       "Action"
     ],
     "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
-    "rank": 9
+    "rank": 10
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1013,9 +1003,9 @@
         "desc": "Original medieval-fantasy table on the same open-source engine — play free, instantly."
       },
       {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "Another classic bundled Windows game in your browser."
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike — playable right now, no download."
       },
       {
         "href": "/run/minesweeper/",
@@ -1119,6 +1109,11 @@
     "licenseReason": "Proprietary Microsoft software bundled with Windows; not licensed for redistribution, so it cannot be hosted.",
     "related": [
       {
+        "href": "/run/minesweeper-open/",
+        "title": "Play Minesweeper online (free)",
+        "desc": "The classic puzzle, playable right now — no emulator, no download."
+      },
+      {
         "href": "/run/solitaire-open/",
         "title": "Play Solitaire online (free)",
         "desc": "Classic Klondike, playable right now — no emulator, no download."
@@ -1129,9 +1124,9 @@
         "desc": "Trick-taking card game you can play right now — no download."
       },
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The other beloved bundled Windows game."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/run/freecell/",
@@ -1195,7 +1190,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/minesweeper-open/",
+        "title": "Play Minesweeper online (free)",
+        "desc": "The classic puzzle, playable right now — no emulator, no download."
+      }
+    ],
     "updated": "2026-08-03",
     "addedDate": "2026-08-03",
     "controls": [
@@ -1366,34 +1367,29 @@
     ],
     "related": [
       {
-        "href": "/run/3d-pinball-space-cadet/",
-        "title": "3D Pinball Space Cadet",
-        "desc": "A lighter Windows classic that runs great in the browser."
-      },
-      {
-        "href": "/run/freeciv/",
-        "title": "FreeCiv",
-        "desc": "Open-source Civilization-style strategy that's free to play here."
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike, playable right now — no emulator, no download."
       },
       {
         "href": "/run/scorched-earth/",
         "title": "Scorched Earth",
-        "desc": "The classic artillery strategy game from the DOS/Win era."
+        "desc": "Turn-based artillery — the strategy classic, instant play."
+      },
+      {
+        "href": "/run/one-must-fall-2097/",
+        "title": "One Must Fall 2097",
+        "desc": "Robot fighting with a full tournament mode — freeware, complete."
       },
       {
         "href": "/run/doom/",
         "title": "DOOM",
-        "desc": "The shareware FPS that runs smoothly in your browser."
-      },
-      {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "Classic bundled card game, fast and reliable."
+        "desc": "The 1993 shareware episode, playable in your browser."
       },
       {
         "href": "/guide/",
-        "title": "Full compatibility guide",
-        "desc": "Why 3D and DirectX games struggle under WebAssembly."
+        "title": "Compatibility guide",
+        "desc": "What runs in the browser, and what doesn't."
       }
     ],
     "updated": "2026-07-01"
@@ -1463,9 +1459,14 @@
     ],
     "related": [
       {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "The other classic Windows time-killer, in a tab."
+        "href": "/run/minesweeper-open/",
+        "title": "Play Minesweeper online (free)",
+        "desc": "The classic puzzle, playable right now — no emulator, no download."
+      },
+      {
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike — playable right now, no download."
       },
       {
         "href": "/run/freecell/",
@@ -1498,6 +1499,65 @@
       "heading": "Where to find winmine.exe",
       "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows XP through Windows 7 ship it as <code>C:\\Windows\\System32\\winmine.exe</code> (Windows 7 calls it <code>MineSweeper.exe</code> and keeps it under <code>C:\\Program Files\\Microsoft Games\\Minesweeper\\</code>). It's a single self-contained file — copy it across and load it here.</p><p><strong>On Windows 8 or later:</strong> removed from Windows; you'd need an older machine.</p><p><strong>Want something free right now?</strong> Minesweeper is Microsoft's and we can't host it, but <a href=\"/run/hearts-open/\">Hearts</a> and <a href=\"/run/scorched-earth/\">Scorched Earth</a> start instantly and cost nothing.</p></div>"
     }
+  },
+  {
+    "slug": "minesweeper-open",
+    "skipGenerate": true,
+    "title": "Play Minesweeper Online Free — Classic Windows Game, No Download — ExeBrowser",
+    "description": "Play classic Minesweeper free in your browser — Beginner, Intermediate and Expert boards, chording, first-click safety and a timer. No download, no account, works on mobile.",
+    "keywords": "play minesweeper online, minesweeper free, minesweeper no download, classic windows minesweeper, minesweeper browser game, minesweeper expert, minesweeper unblocked",
+    "ogTitle": "Play Minesweeper Online Free — Classic Windows Game, No Download",
+    "ogDescription": "The Minesweeper you remember — three board sizes, chording, first click always safe. Instant play in your browser.",
+    "crumb": "Play Minesweeper",
+    "h1": "Play Minesweeper online — free, instant",
+    "appName": "Minesweeper",
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Puzzle",
+      "Logic",
+      "Strategy"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "appUrl": "/apps/minesweeper-open/",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-04",
+    "addedDate": "2026-08-04",
+    "controls": [
+      {
+        "action": "Open a square",
+        "keyboard": "—",
+        "mouse": "Left-click or tap"
+      },
+      {
+        "action": "Flag a mine",
+        "keyboard": "—",
+        "mouse": "Right-click, long-press, or Flag mode"
+      },
+      {
+        "action": "Chord",
+        "keyboard": "—",
+        "mouse": "Click a satisfied number"
+      },
+      {
+        "action": "New game",
+        "keyboard": "—",
+        "mouse": "Click the face"
+      }
+    ],
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "rank": 6
   },
   {
     "slug": "freecell",
@@ -1565,6 +1625,11 @@
     ],
     "related": [
       {
+        "href": "/run/minesweeper-open/",
+        "title": "Play Minesweeper online (free)",
+        "desc": "The classic puzzle, playable right now — no emulator, no download."
+      },
+      {
         "href": "/run/solitaire-open/",
         "title": "Play Solitaire online (free)",
         "desc": "Classic Klondike, playable right now — no emulator, no download."
@@ -1590,9 +1655,9 @@
         "desc": "The tiny Win32 puzzle that runs at full speed."
       },
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The other beloved bundled Windows game."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/run/solitaire/",
@@ -1677,6 +1742,11 @@
     ],
     "related": [
       {
+        "href": "/run/minesweeper-open/",
+        "title": "Play Minesweeper online (free)",
+        "desc": "The classic puzzle, playable right now — no emulator, no download."
+      },
+      {
         "href": "/run/solitaire-open/",
         "title": "Play Solitaire online (free)",
         "desc": "Classic Klondike, playable right now — no emulator, no download."
@@ -1702,9 +1772,9 @@
         "desc": "The classic winmine.exe time-sink."
       },
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The famous bundled Windows XP pinball table."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/run/hearts/",
@@ -1792,9 +1862,9 @@
         "desc": "Our own Hearts — same rules, plays instantly, no files needed."
       },
       {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "The other classic Windows card game, in a tab."
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike — playable right now, no download."
       },
       {
         "href": "/run/freecell/",
@@ -1812,9 +1882,9 @@
         "desc": "The all-time Windows time-waster."
       },
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The beloved Windows XP pinball table."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/guide/",
@@ -1892,9 +1962,9 @@
     ],
     "related": [
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The beloved Windows pinball table."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/run/chips-challenge/",
@@ -1912,9 +1982,9 @@
         "desc": "The Windows mine-clearing classic."
       },
       {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "The classic card games in a tab."
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike — playable right now, no download."
       },
       {
         "href": "/guide/",
@@ -2069,9 +2139,9 @@
         "desc": "The classic Windows logic puzzle in a tab."
       },
       {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "The timeless card game, in your browser."
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike — playable right now, no download."
       },
       {
         "href": "/run/skifree/",
@@ -2186,9 +2256,9 @@
         "desc": "Outrun the yeti — the 16-bit Windows classic."
       },
       {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "The card games everyone grew up with."
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike — playable right now, no download."
       },
       {
         "href": "/guide/",
@@ -2282,9 +2352,9 @@
         "desc": "The all-time Windows desk-job puzzle."
       },
       {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "The classic card games in a tab."
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike — playable right now, no download."
       },
       {
         "href": "/guide/",
@@ -2505,9 +2575,9 @@
         "desc": "Open-source Civilization-style strategy that runs cleanly."
       },
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The beloved Windows pinball table in a tab."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/guide/",
@@ -2603,7 +2673,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 8
+    "rank": 9
   },
   {
     "slug": "scorched-earth",
@@ -2767,7 +2837,7 @@
       "Puzzle & strategy"
     ],
     "pointerLock": true,
-    "rank": 10
+    "rank": 11
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -3117,7 +3187,7 @@
       "Action"
     ],
     "pointerLock": true,
-    "rank": 11
+    "rank": 12
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3427,7 +3497,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 15
+    "rank": 16
   },
   {
     "slug": "prince-of-persia",
@@ -3519,9 +3589,9 @@
         "desc": "The mother of all artillery games."
       },
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The Windows pinball table, running in your browser."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/guide/",
@@ -3530,7 +3600,7 @@
       }
     ],
     "updated": "2026-07-01",
-    "rank": 12
+    "rank": 13
   },
   {
     "slug": "full-tilt-pinball",
@@ -3602,9 +3672,9 @@
     ],
     "related": [
       {
-        "href": "/run/3d-pinball-space-cadet/",
+        "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
-        "desc": "The free, fully-working single-table cousin — the safe bet."
+        "desc": "The classic XP table — open-source build, instant play."
       },
       {
         "href": "/run/3d-pinball-space-cadet/",
@@ -3612,9 +3682,9 @@
         "desc": "Same Cadet table, no DirectDraw launcher headaches."
       },
       {
-        "href": "/run/solitaire/",
-        "title": "Windows Solitaire",
-        "desc": "Another classic bundled Windows game."
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike — playable right now, no download."
       },
       {
         "href": "/run/minesweeper/",
@@ -6289,7 +6359,7 @@
       "Racing & sports"
     ],
     "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
-    "rank": 16
+    "rank": 17
   },
   {
     "slug": "jetpack",
@@ -6437,7 +6507,7 @@
       "Puzzle & strategy"
     ],
     "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
-    "rank": 17
+    "rank": 18
   },
   {
     "slug": "god-of-thunder",
@@ -6760,7 +6830,7 @@
       "Action"
     ],
     "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
-    "rank": 13
+    "rank": 14
   },
   {
     "slug": "xargon",
@@ -7419,7 +7489,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 14
+    "rank": 15
   },
   {
     "slug": "hearts-open",
@@ -7452,6 +7522,11 @@
     "faq": [],
     "related": [
       {
+        "href": "/run/minesweeper-open/",
+        "title": "Play Minesweeper online (free)",
+        "desc": "The classic puzzle, playable right now — no emulator, no download."
+      },
+      {
         "href": "/run/solitaire-open/",
         "title": "Play Solitaire online (free)",
         "desc": "Classic Klondike, playable right now — no emulator, no download."
@@ -7478,7 +7553,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 7
+    "rank": 8
   },
   {
     "slug": "cosmo",
