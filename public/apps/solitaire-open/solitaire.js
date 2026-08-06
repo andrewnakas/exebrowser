@@ -272,15 +272,24 @@
 
   // Double-click / tap shortcut: send a card to its foundation if it will go,
   // else to a tableau column that accepts it.
-  function autoPlace(src, card) {
+  function autoPlace(src, card, srcNode) {
+    let dst = null;
     for (const suit of SUITS) {
-      if (canStackFoundation(card, suit)) return applyMove(src, { kind: "found", suit }, 1);
+      if (canStackFoundation(card, suit)) { dst = { kind: "found", suit }; break; }
     }
-    for (let i = 0; i < 7; i++) {
-      if (src.kind === "col" && src.i === i) continue;
-      if (canStackTableau(card, board.cols[i])) return applyMove(src, { kind: "col", i }, 1);
+    if (!dst) {
+      for (let i = 0; i < 7; i++) {
+        if (src.kind === "col" && src.i === i) continue;
+        if (canStackTableau(card, board.cols[i])) { dst = { kind: "col", i }; break; }
+      }
     }
-    return false;
+    if (!dst) return false;
+    // Fly the card there rather than teleporting it. The move is applied when
+    // the flight lands, so the board state and what you can see never disagree.
+    const to = nodeForRef(dst);
+    if (srcNode && to) flyCard(srcNode, to, [card], () => applyMove(src, dst, 1));
+    else applyMove(src, dst, 1);
+    return true;
   }
 
   function checkWin() {
@@ -678,7 +687,8 @@
       if (d.ghost) d.ghost.remove();
       restoreLifted(d);
       if (d.count === 1) {
-        if (!autoPlace(d.src, d.cards[0])) say("No move for that card.");
+        // d.lifted[0] is the card node itself — the flight starts from there.
+        if (!autoPlace(d.src, d.cards[0], (d.lifted || [])[0])) say("No move for that card.");
       } else {
         say("Drag the run to move it.");
       }
@@ -725,6 +735,71 @@
     setTimeout(finish, 260);   // in case the transition never fires
   }
 
+  // Fly a card from where it is to where it's going, then apply the move.
+  //
+  // Dragging already animates itself — you're holding the card. Every other
+  // way a card moves (tapping it home, double-click, the auto-finish) used to
+  // teleport, which makes the board feel like it's jumping rather than
+  // playing. This routes those through the same ghost the drag uses, so one
+  // mechanism covers both and the motion matches.
+  function flyCard(fromNode, toNode, cards, done) {
+    if (!fromNode || !toNode || prefersReducedMotion()) { done(); return; }
+    const a = fromNode.getBoundingClientRect();
+    const b = toNode.getBoundingClientRect();
+    // A foundation or column already holding cards should receive the flight
+    // on top of its stack, not at the pile's origin.
+    const last = toNode.querySelectorAll(".card");
+    const target = last.length ? last[last.length - 1].getBoundingClientRect() : b;
+
+    const ghost = document.createElement("div");
+    ghost.className = "card dragging";
+    ghost.style.cssText += ";position:fixed;background:transparent;border:0;box-shadow:none;height:auto;";
+    cards.forEach((c, i) => {
+      const d = cardEl(c, true);
+      d.style.position = "absolute";
+      d.style.top = `calc(var(--fan) * ${i})`;
+      ghost.appendChild(d);
+    });
+    ghost.style.left = `${a.left}px`;
+    ghost.style.top = `${a.top}px`;
+    document.body.appendChild(ghost);
+    fromNode.style.visibility = "hidden";
+
+    animating = true;
+    // Force a reflow so the browser treats the next change as a transition
+    // rather than folding it into the initial paint.
+    void ghost.offsetWidth;
+    ghost.style.transition = "left .2s cubic-bezier(.25,.8,.4,1), top .2s cubic-bezier(.25,.8,.4,1)";
+    ghost.style.left = `${target.left}px`;
+    ghost.style.top = `${target.top}px`;
+
+    let fired = false;
+    const finish = () => {
+      if (fired) return;
+      fired = true;
+      ghost.remove();
+      fromNode.style.visibility = "";
+      animating = false;
+      done();
+    };
+    ghost.addEventListener("transitionend", finish, { once: true });
+    setTimeout(finish, 300);
+  }
+
+  // Respect the OS setting — a card game that flings things around is exactly
+  // what this preference exists for.
+  const prefersReducedMotion = () =>
+    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Where a destination ref lives on screen, so flyCard knows where to aim.
+  function nodeForRef(ref) {
+    if (!ref) return null;
+    if (ref.kind === "found") return el(`f-${ref.suit}`);
+    if (ref.kind === "col") return tableauEl.children[ref.i] || null;
+    if (ref.kind === "waste") return wasteEl;
+    return null;
+  }
+
   document.addEventListener("pointerdown", onPointerDown);
   document.addEventListener("pointermove", onPointerMove, { passive: true });
   document.addEventListener("pointerup", onPointerUp);
@@ -740,12 +815,12 @@
 
   // Double-click also auto-places, matching the desktop convention.
   document.addEventListener("dblclick", (e) => {
-    if (won) return;
+    if (won || animating) return;
     const cardNode = e.target.closest(".card");
     if (!cardNode || !cardNode.dataset.src) return;
     const src = parseRef(cardNode.dataset.src);
     const cards = peek(src, 1);
-    if (src && cards.length) autoPlace(src, cards[0]);
+    if (src && cards.length) autoPlace(src, cards[0], cardNode);
   });
 
   el("deal").addEventListener("click", deal);
