@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Snake — free classic arcade game</title>
+<style>
+  :root {
+    color-scheme: light;
+    --face: #c0c0c0;
+    --hi: #ffffff;
+    --lo: #808080;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .6rem;
+    font: 13px/1.35 "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+    background: #008080; color: #000;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+  }
+  .out { border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi); }
+  .in  { border: 2px solid; border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+  .frame { background: var(--face); padding: 5px; }
+  .status {
+    display: flex; align-items: center; gap: .7rem; justify-content: space-between;
+    background: var(--face); padding: 5px 7px; margin-bottom: 5px; flex-wrap: wrap;
+  }
+  .lcd {
+    background: #000; color: #f00; font: 700 16px/1 "Courier New", monospace;
+    padding: 3px 6px; font-variant-numeric: tabular-nums; min-width: 56px; text-align: right;
+  }
+  .lbl { font-size: .72rem; }
+  .button {
+    font: inherit; font-size: .78rem; padding: .28rem .6rem; cursor: pointer;
+    background: var(--face); color: #000;
+    border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi);
+  }
+  .button:active, .button.on { border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+  /* The classic monochrome LCD look — dark pixels on a green backlight. */
+  canvas { display: block; background: #9ead86; }
+  #msg { min-height: 1.3em; font-size: .85rem; color: #fff; text-align: center; }
+  .hint { font-size: .75rem; color: #cfe9e9; text-align: center; max-width: 32rem; }
+  .pad { display: grid; grid-template-columns: repeat(3, 56px); gap: 4px; justify-content: center; }
+  .pad .button { height: 40px; font-size: 1rem; }
+  .pad .sp { visibility: hidden; }
+  @media (min-width: 700px) { .pad { display: none; } }
+</style>
+</head>
+<body>
+  <div class="frame out">
+    <div class="status in">
+      <span class="lbl">Score <span class="lcd" id="score">0</span></span>
+      <span class="lbl">Best <span class="lcd" id="best">0</span></span>
+      <button type="button" class="button on" data-speed="slow">Slow</button>
+      <button type="button" class="button" data-speed="fast">Fast</button>
+      <button type="button" class="button" id="walls">Walls: on</button>
+      <button type="button" class="button" id="newgame">New game</button>
+    </div>
+    <canvas id="c" class="in" width="480" height="360"></canvas>
+  </div>
+  <p id="msg" aria-live="polite"></p>
+  <div class="pad">
+    <span class="button sp"></span><button type="button" class="button" data-dir="up">▲</button><span class="button sp"></span>
+    <button type="button" class="button" data-dir="left">◀</button><span class="button sp"></span><button type="button" class="button" data-dir="right">▶</button>
+    <span class="button sp"></span><button type="button" class="button" data-dir="down">▼</button><span class="button sp"></span>
+  </div>
+  <p class="hint">Arrow keys, <kbd>WASD</kbd>, or swipe. Eat the food to grow — every five pieces you speed up. Turn <strong>Walls</strong> off to wrap around the edges instead of crashing. <kbd>P</kbd> pauses.</p>
+<script src="snake.js?v=1"></script>
+</body>
+</html>

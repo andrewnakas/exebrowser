@@ -923,7 +923,7 @@
       "Action"
     ],
     "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
-    "rank": 15
+    "rank": 17
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1583,6 +1583,16 @@
         "href": "/run/blockdrop-open/",
         "title": "Play Block Drop (free)",
         "desc": "A falling-block puzzle — clear four rows at once."
+      },
+      {
+        "href": "/run/snake-open/",
+        "title": "Play Snake online (free)",
+        "desc": "Eat, grow, don't crash — the arcade classic."
+      },
+      {
+        "href": "/run/2048-open/",
+        "title": "Play 2048 online (free)",
+        "desc": "Slide and merge tiles up to 2048."
       }
     ],
     "updated": "2026-08-04",
@@ -2374,6 +2384,16 @@
         "href": "/run/blockdrop-open/",
         "title": "Play Block Drop (free)",
         "desc": "A falling-block puzzle — clear four rows at once."
+      },
+      {
+        "href": "/run/snake-open/",
+        "title": "Play Snake online (free)",
+        "desc": "Eat, grow, don't crash — the arcade classic."
+      },
+      {
+        "href": "/run/2048-open/",
+        "title": "Play 2048 online (free)",
+        "desc": "Slide and merge tiles up to 2048."
       }
     ],
     "updated": "2026-08-05",
@@ -2935,7 +2955,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 14
+    "rank": 16
   },
   {
     "slug": "scorched-earth",
@@ -3099,7 +3119,7 @@
       "Puzzle & strategy"
     ],
     "pointerLock": true,
-    "rank": 16
+    "rank": 18
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -3449,7 +3469,7 @@
       "Action"
     ],
     "pointerLock": true,
-    "rank": 17
+    "rank": 19
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3759,7 +3779,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 21
+    "rank": 23
   },
   {
     "slug": "prince-of-persia",
@@ -3862,7 +3882,7 @@
       }
     ],
     "updated": "2026-07-01",
-    "rank": 18
+    "rank": 20
   },
   {
     "slug": "full-tilt-pinball",
@@ -6621,7 +6641,7 @@
       "Racing & sports"
     ],
     "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
-    "rank": 22
+    "rank": 24
   },
   {
     "slug": "jetpack",
@@ -6769,7 +6789,7 @@
       "Puzzle & strategy"
     ],
     "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
-    "rank": 23
+    "rank": 25
   },
   {
     "slug": "god-of-thunder",
@@ -7092,7 +7112,7 @@
       "Action"
     ],
     "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
-    "rank": 19
+    "rank": 21
   },
   {
     "slug": "xargon",
@@ -7751,7 +7771,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 20
+    "rank": 22
   },
   {
     "slug": "hearts-open",
@@ -7831,7 +7851,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 13
+    "rank": 15
   },
   {
     "slug": "cosmo",
@@ -8547,7 +8567,18 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/snake-open/",
+        "title": "Play Snake online (free)",
+        "desc": "Eat, grow, don't crash — the arcade classic."
+      },
+      {
+        "href": "/run/2048-open/",
+        "title": "Play 2048 online (free)",
+        "desc": "Slide and merge tiles up to 2048."
+      }
+    ],
     "updated": "2026-08-05",
     "addedDate": "2026-08-05",
     "screenshot": true,
@@ -8602,7 +8633,18 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/snake-open/",
+        "title": "Play Snake online (free)",
+        "desc": "Eat, grow, don't crash — the arcade classic."
+      },
+      {
+        "href": "/run/2048-open/",
+        "title": "Play 2048 online (free)",
+        "desc": "Slide and merge tiles up to 2048."
+      }
+    ],
     "updated": "2026-08-05",
     "addedDate": "2026-08-05",
     "screenshot": true,
@@ -8649,6 +8691,114 @@
         "action": "Pause",
         "keyboard": "P",
         "mouse": "Pause button"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-05",
+    "addedDate": "2026-08-05",
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "slug": "snake-open",
+    "appName": "Snake",
+    "title": "Play Snake Online Free — Classic Arcade Game, No Download — ExeBrowser",
+    "description": "Play the classic Snake game free in your browser — eat the food, grow longer, don't crash. Wrap-around walls option, two speeds and a saved best score. No download, works on mobile.",
+    "keywords": "play snake online, snake game free, snake no download, classic snake game, nokia snake browser, snake game unblocked, retro snake",
+    "ogTitle": "Play Snake Online Free — Classic Arcade Game",
+    "ogDescription": "Eat, grow, don't crash. The arcade classic with wrap-around walls and two speeds.",
+    "crumb": "Play Snake",
+    "h1": "Play Snake online — free, instant",
+    "genre": [
+      "Arcade",
+      "Action",
+      "Puzzle"
+    ],
+    "categories": [
+      "Action",
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/snake-open/",
+    "rank": 13,
+    "controls": [
+      {
+        "action": "Steer",
+        "keyboard": "Arrows or WASD",
+        "mouse": "Swipe on mobile"
+      },
+      {
+        "action": "Pause",
+        "keyboard": "P",
+        "mouse": "—"
+      },
+      {
+        "action": "Wrap edges",
+        "keyboard": "—",
+        "mouse": "Walls button"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-05",
+    "addedDate": "2026-08-05",
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "slug": "2048-open",
+    "appName": "2048",
+    "title": "Play 2048 Online Free — Tile Merging Puzzle, No Download — ExeBrowser",
+    "description": "Play 2048 free in your browser — slide the tiles, merge matching numbers and build up to 2048. Undo, saved best score, swipe controls. No download, no account, works on mobile.",
+    "keywords": "play 2048 online, 2048 game free, 2048 no download, 2048 puzzle browser, tile merging game, 2048 unblocked",
+    "ogTitle": "Play 2048 Online Free — Tile Merging Puzzle",
+    "ogDescription": "Slide, merge, and build to 2048. Undo, best score and swipe controls.",
+    "crumb": "Play 2048",
+    "h1": "Play 2048 online — free, instant",
+    "genre": [
+      "Puzzle",
+      "Strategy"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/2048-open/",
+    "rank": 14,
+    "controls": [
+      {
+        "action": "Slide tiles",
+        "keyboard": "Arrows or WASD",
+        "mouse": "Swipe on mobile"
+      },
+      {
+        "action": "Undo",
+        "keyboard": "—",
+        "mouse": "Click Undo"
+      },
+      {
+        "action": "New game",
+        "keyboard": "—",
+        "mouse": "Click New game"
       }
     ]
   }

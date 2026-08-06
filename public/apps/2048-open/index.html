@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2048 — free tile-merging puzzle</title>
+<style>
+  :root {
+    color-scheme: light;
+    --face: #c0c0c0;
+    --hi: #ffffff;
+    --lo: #808080;
+    --gap: 10px;
+    --tile: 88px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .6rem;
+    font: 13px/1.35 "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+    background: #008080; color: #000;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+  }
+  .out { border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi); }
+  .in  { border: 2px solid; border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+  .frame { background: var(--face); padding: 6px; }
+  .status {
+    display: flex; align-items: center; gap: .6rem; justify-content: space-between;
+    background: var(--face); padding: 5px 7px; margin-bottom: 6px;
+  }
+  .lcd {
+    background: #000; color: #f00; font: 700 16px/1 "Courier New", monospace;
+    padding: 3px 6px; font-variant-numeric: tabular-nums; min-width: 68px; text-align: right;
+  }
+  .lbl { font-size: .72rem; }
+  .button {
+    font: inherit; font-size: .78rem; padding: .28rem .6rem; cursor: pointer;
+    background: var(--face); color: #000;
+    border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi);
+  }
+  .button:active { border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+
+  /* The board itself keeps the familiar warm palette of the original — that
+     look is the genre's convention, not anyone's trademark. */
+  #board {
+    position: relative;
+    width: calc(var(--tile) * 4 + var(--gap) * 5);
+    height: calc(var(--tile) * 4 + var(--gap) * 5);
+    background: #bbada0; padding: var(--gap);
+  }
+  .cellbg {
+    position: absolute; width: var(--tile); height: var(--tile);
+    background: rgba(238,228,218,.35); border-radius: 3px;
+  }
+  .tile {
+    position: absolute; width: var(--tile); height: var(--tile);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; border-radius: 3px;
+    background: #eee4da; color: #776e65;
+    transition: transform .1s ease-out;
+    font-size: calc(var(--tile) * 0.42);
+  }
+  .tile.t4    { background:#ede0c8; }
+  .tile.t8    { background:#f2b179; color:#f9f6f2; }
+  .tile.t16   { background:#f59563; color:#f9f6f2; }
+  .tile.t32   { background:#f67c5f; color:#f9f6f2; }
+  .tile.t64   { background:#f65e3b; color:#f9f6f2; }
+  .tile.t128  { background:#edcf72; color:#f9f6f2; font-size:calc(var(--tile)*0.34); }
+  .tile.t256  { background:#edcc61; color:#f9f6f2; font-size:calc(var(--tile)*0.34); }
+  .tile.t512  { background:#edc850; color:#f9f6f2; font-size:calc(var(--tile)*0.34); }
+  .tile.t1024 { background:#edc53f; color:#f9f6f2; font-size:calc(var(--tile)*0.27); }
+  .tile.t2048 { background:#edc22e; color:#f9f6f2; font-size:calc(var(--tile)*0.27);
+                box-shadow:0 0 22px rgba(243,215,116,.85); }
+  .tile.big   { background:#3c3a32; color:#f9f6f2; font-size:calc(var(--tile)*0.24); }
+  .tile.new   { animation: pop .12s ease-out; }
+  .tile.merged { animation: bump .12s ease-out; }
+  @keyframes pop  { from { transform: scale(.2); } to { transform: scale(1); } }
+  @keyframes bump { 0% { transform: scale(1); } 50% { transform: scale(1.16); } 100% { transform: scale(1); } }
+
+  #msg { min-height: 1.3em; font-size: .85rem; color: #fff; text-align: center; }
+  .hint { font-size: .75rem; color: #cfe9e9; text-align: center; max-width: 32rem; }
+  .pad { display: grid; grid-template-columns: repeat(3, 56px); gap: 4px; justify-content: center; }
+  .pad .button { height: 40px; font-size: 1rem; }
+  .pad .sp { visibility: hidden; }
+  @media (min-width: 700px) { .pad { display: none; } }
+</style>
+</head>
+<body>
+  <div class="frame out">
+    <div class="status in">
+      <span class="lbl">Score <span class="lcd" id="score">0</span></span>
+      <span class="lbl">Best <span class="lcd" id="best">0</span></span>
+      <button type="button" class="button" id="undo" disabled>Undo</button>
+      <button type="button" class="button" id="newgame">New game</button>
+    </div>
+    <div id="board" class="in"></div>
+  </div>
+  <p id="msg" aria-live="polite"></p>
+  <div class="pad">
+    <span class="button sp"></span><button type="button" class="button" data-dir="up">▲</button><span class="button sp"></span>
+    <button type="button" class="button" data-dir="left">◀</button><span class="button sp"></span><button type="button" class="button" data-dir="right">▶</button>
+    <span class="button sp"></span><button type="button" class="button" data-dir="down">▼</button><span class="button sp"></span>
+  </div>
+  <p class="hint">Arrow keys or <kbd>WASD</kbd> — or swipe on a phone. Every move slides all the tiles; two of the same number merge into their sum. Get a tile to <strong>2048</strong> to win, then keep going for a higher score.</p>
+<script src="2048.js?v=1"></script>
+</body>
+</html>
