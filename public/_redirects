@@ -16,3 +16,9 @@
 # never referenced and has been removed. Pages keeps prior-deploy files, so
 # retire the URL explicitly.
 /apps/freeciv/* /run/freeciv/ 301
+
+# pipes-open: built, never worked (the flow loop never advanced), and removed
+# before launch. Pages keeps files from previous deploys, so retire the URLs
+# explicitly rather than leaving them to the SPA fallback.
+/run/pipes-open/* /run/ 301
+/apps/pipes-open/* /run/ 301
