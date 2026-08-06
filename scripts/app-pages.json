@@ -923,7 +923,7 @@
       "Action"
     ],
     "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
-    "rank": 17
+    "rank": 18
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1593,6 +1593,11 @@
         "href": "/run/2048-open/",
         "title": "Play 2048 online (free)",
         "desc": "Slide and merge tiles up to 2048."
+      },
+      {
+        "href": "/run/pipes-open/",
+        "title": "Play Pipe Panic (free)",
+        "desc": "Lay pipe and stay ahead of the water."
       }
     ],
     "updated": "2026-08-04",
@@ -2394,6 +2399,11 @@
         "href": "/run/2048-open/",
         "title": "Play 2048 online (free)",
         "desc": "Slide and merge tiles up to 2048."
+      },
+      {
+        "href": "/run/pipes-open/",
+        "title": "Play Pipe Panic (free)",
+        "desc": "Lay pipe and stay ahead of the water."
       }
     ],
     "updated": "2026-08-05",
@@ -2955,7 +2965,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 16
+    "rank": 17
   },
   {
     "slug": "scorched-earth",
@@ -3119,7 +3129,7 @@
       "Puzzle & strategy"
     ],
     "pointerLock": true,
-    "rank": 18
+    "rank": 19
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -3469,7 +3479,7 @@
       "Action"
     ],
     "pointerLock": true,
-    "rank": 19
+    "rank": 20
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3779,7 +3789,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 23
+    "rank": 24
   },
   {
     "slug": "prince-of-persia",
@@ -3882,7 +3892,7 @@
       }
     ],
     "updated": "2026-07-01",
-    "rank": 20
+    "rank": 21
   },
   {
     "slug": "full-tilt-pinball",
@@ -6641,7 +6651,7 @@
       "Racing & sports"
     ],
     "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
-    "rank": 24
+    "rank": 25
   },
   {
     "slug": "jetpack",
@@ -6789,7 +6799,7 @@
       "Puzzle & strategy"
     ],
     "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
-    "rank": 25
+    "rank": 26
   },
   {
     "slug": "god-of-thunder",
@@ -7112,7 +7122,7 @@
       "Action"
     ],
     "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
-    "rank": 21
+    "rank": 22
   },
   {
     "slug": "xargon",
@@ -7771,7 +7781,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 22
+    "rank": 23
   },
   {
     "slug": "hearts-open",
@@ -7851,7 +7861,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 15
+    "rank": 16
   },
   {
     "slug": "cosmo",
@@ -8643,6 +8653,11 @@
         "href": "/run/2048-open/",
         "title": "Play 2048 online (free)",
         "desc": "Slide and merge tiles up to 2048."
+      },
+      {
+        "href": "/run/pipes-open/",
+        "title": "Play Pipe Panic (free)",
+        "desc": "Lay pipe and stay ahead of the water."
       }
     ],
     "updated": "2026-08-05",
@@ -8757,7 +8772,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/pipes-open/",
+        "title": "Play Pipe Panic (free)",
+        "desc": "Lay pipe and stay ahead of the water."
+      }
+    ],
     "updated": "2026-08-05",
     "addedDate": "2026-08-05",
     "screenshot": true,
@@ -8799,6 +8820,59 @@
         "action": "New game",
         "keyboard": "—",
         "mouse": "Click New game"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-05",
+    "addedDate": "2026-08-05",
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "slug": "pipes-open",
+    "appName": "Pipe Panic",
+    "title": "Play Pipe Panic Online Free — Pipe-Laying Puzzle, No Download — ExeBrowser",
+    "description": "Play Pipe Panic free in your browser — lay pipe from a queue and keep ahead of the flowing water. A pipe-laying puzzle in the classic style. No download, no account.",
+    "keywords": "pipe laying puzzle online, pipe game free, pipe puzzle browser, water flow puzzle game, plumbing puzzle game, pipe game no download",
+    "ogTitle": "Play Pipe Panic Online Free — Pipe-Laying Puzzle",
+    "ogDescription": "Lay pipe from a queue you can't reorder and stay ahead of the water.",
+    "crumb": "Play Pipe Panic",
+    "h1": "Play Pipe Panic online — free, instant",
+    "genre": [
+      "Puzzle",
+      "Strategy"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/pipes-open/",
+    "rank": 15,
+    "controls": [
+      {
+        "action": "Lay a pipe",
+        "keyboard": "—",
+        "mouse": "Click a square"
+      },
+      {
+        "action": "Replace a pipe",
+        "keyboard": "—",
+        "mouse": "Click one the water hasn't reached"
+      },
+      {
+        "action": "Start early",
+        "keyboard": "—",
+        "mouse": "Start flow button"
       }
     ]
   }
