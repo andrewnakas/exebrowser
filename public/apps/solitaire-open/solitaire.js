@@ -621,8 +621,10 @@
   // up trailing the cursor. A transform is composited — the card follows the
   // pointer exactly, the way it does in the Windows game.
   function moveGhost(x, y) {
+    // Sub-pixel positions are kept: rounding to whole pixels made the card
+    // step rather than glide under a slowly-moving cursor.
     drag.ghost.style.transform =
-      `translate3d(${Math.round(x - drag.dx - drag.baseX)}px, ${Math.round(y - drag.dy - drag.baseY)}px, 0)`;
+      `translate3d(${x - drag.dx - drag.baseX}px, ${y - drag.dy - drag.baseY}px, 0)`;
   }
 
   // The expensive part of a drag isn't moving the card, it's working out what
@@ -636,12 +638,36 @@
     if (!drag.moved && Math.hypot(e.clientX - drag.startX, e.clientY - drag.startY) < 3) return;
     if (!drag.moved) beginDrag();
     // Move the card now — this is cheap and must not wait for a frame.
-    moveGhost(e.clientX, e.clientY);
+    //
+    // The browser may hand us one pointermove that stands for several real
+    // ones. getPredictedEvents() is the pointer's own extrapolation of where
+    // it is heading; using its last entry cancels most of the perceived lag
+    // between the cursor and the card, which is what makes the Windows game
+    // feel like the card is stuck to the mouse.
+    let px = e.clientX, py = e.clientY;
+    const pred = e.getPredictedEvents ? e.getPredictedEvents() : null;
+    if (pred && pred.length) {
+      const p = pred[pred.length - 1];
+      // Trust the prediction only up to a card's width. Predictions overshoot
+      // when the pointer changes direction, and an unclamped one throws the
+      // card past the cursor — worse than the lag it is meant to hide.
+      const lim = drag.ghost.offsetWidth || 71;
+      const ox = p.clientX - e.clientX, oy = p.clientY - e.clientY;
+      const d = Math.hypot(ox, oy);
+      const k = d > lim ? lim / d : 1;
+      px = e.clientX + ox * k;
+      py = e.clientY + oy * k;
+    }
+    moveGhost(px, py);
     pendingMove = [e.clientX, e.clientY];
     if (!moveRaf) {
       moveRaf = requestAnimationFrame(() => {
         moveRaf = 0;
-        if (drag && pendingMove) highlight(bestTarget());
+        if (!drag || !pendingMove) return;
+        // Settle on the pointer's real position. Without this the card keeps
+        // whatever offset the last prediction had once the pointer stops.
+        moveGhost(pendingMove[0], pendingMove[1]);
+        highlight(bestTarget());
       });
     }
   }
@@ -649,7 +675,15 @@
   function buildGhost(cards) {
     const wrap = document.createElement("div");
     wrap.className = "card dragging";
-    wrap.style.cssText += ";position:fixed;background:transparent;border:0;box-shadow:none;height:auto;";
+    // The wrapper must have real dimensions. Its children are absolutely
+    // positioned, so height:auto collapsed it to zero — the cards then painted
+    // outside their own container's box, which defeats the compositor layer we
+    // promote below and makes the stack visibly trail the pointer.
+    // Height is the fan offset for each card behind the last, plus one full card.
+    const h = `calc(var(--fan) * ${cards.length - 1} + var(--ch))`;
+    wrap.style.cssText +=
+      ";position:fixed;background:transparent;border:0;box-shadow:none" +
+      `;height:${h};will-change:transform;transform:translateZ(0)`;
     cards.forEach((c, i) => {
       const d = cardEl(c, true);
       d.style.position = "absolute";
