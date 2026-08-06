@@ -923,7 +923,7 @@
       "Action"
     ],
     "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
-    "rank": 13
+    "rank": 15
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1212,6 +1212,16 @@
         "href": "/run/jezzball-open/",
         "title": "Play JezzBall online (free)",
         "desc": "Trap the balls, capture the field — the Entertainment Pack classic."
+      },
+      {
+        "href": "/run/rodents-open/",
+        "title": "Play Rodent's Revenge online (free)",
+        "desc": "Push blocks, trap the cats — the Entertainment Pack classic."
+      },
+      {
+        "href": "/run/blockdrop-open/",
+        "title": "Play Block Drop (free)",
+        "desc": "A falling-block puzzle — clear four rows at once."
       }
     ],
     "updated": "2026-08-03",
@@ -1563,6 +1573,16 @@
         "href": "/run/jezzball-open/",
         "title": "Play JezzBall online (free)",
         "desc": "Trap the balls, capture the field — the Entertainment Pack classic."
+      },
+      {
+        "href": "/run/rodents-open/",
+        "title": "Play Rodent's Revenge online (free)",
+        "desc": "Push blocks, trap the cats — the Entertainment Pack classic."
+      },
+      {
+        "href": "/run/blockdrop-open/",
+        "title": "Play Block Drop (free)",
+        "desc": "A falling-block puzzle — clear four rows at once."
       }
     ],
     "updated": "2026-08-04",
@@ -2344,7 +2364,18 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/rodents-open/",
+        "title": "Play Rodent's Revenge online (free)",
+        "desc": "Push blocks, trap the cats — the Entertainment Pack classic."
+      },
+      {
+        "href": "/run/blockdrop-open/",
+        "title": "Play Block Drop (free)",
+        "desc": "A falling-block puzzle — clear four rows at once."
+      }
+    ],
     "updated": "2026-08-05",
     "addedDate": "2026-08-05",
     "screenshot": true,
@@ -2557,6 +2588,11 @@
       }
     ],
     "related": [
+      {
+        "href": "/run/rodents-open/",
+        "title": "Play Rodent's Revenge online (free)",
+        "desc": "Push blocks, trap the cats — the Entertainment Pack classic."
+      },
       {
         "href": "/run/jezzball/",
         "title": "JezzBall",
@@ -2899,7 +2935,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 12
+    "rank": 14
   },
   {
     "slug": "scorched-earth",
@@ -3063,7 +3099,7 @@
       "Puzzle & strategy"
     ],
     "pointerLock": true,
-    "rank": 14
+    "rank": 16
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -3413,7 +3449,7 @@
       "Action"
     ],
     "pointerLock": true,
-    "rank": 15
+    "rank": 17
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3723,7 +3759,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 19
+    "rank": 21
   },
   {
     "slug": "prince-of-persia",
@@ -3826,7 +3862,7 @@
       }
     ],
     "updated": "2026-07-01",
-    "rank": 16
+    "rank": 18
   },
   {
     "slug": "full-tilt-pinball",
@@ -6585,7 +6621,7 @@
       "Racing & sports"
     ],
     "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
-    "rank": 20
+    "rank": 22
   },
   {
     "slug": "jetpack",
@@ -6733,7 +6769,7 @@
       "Puzzle & strategy"
     ],
     "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
-    "rank": 21
+    "rank": 23
   },
   {
     "slug": "god-of-thunder",
@@ -7056,7 +7092,7 @@
       "Action"
     ],
     "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
-    "rank": 17
+    "rank": 19
   },
   {
     "slug": "xargon",
@@ -7715,7 +7751,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 18
+    "rank": 20
   },
   {
     "slug": "hearts-open",
@@ -7795,7 +7831,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 11
+    "rank": 13
   },
   {
     "slug": "cosmo",
@@ -8502,5 +8538,118 @@
     },
     "licenseNote": "<p class=\"muted small\">Episode 1 of Monster Bash is Apogee's freely-distributable shareware episode. Episodes 2–3 are commercial and not hosted here. Provenance: <a href=\"/apps/monster-bash/NOTICE.md\">/apps/monster-bash/NOTICE.md</a>.</p>",
     "screenshot": true
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-05",
+    "addedDate": "2026-08-05",
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "slug": "rodents-open",
+    "appName": "Rodent's Revenge",
+    "title": "Play Rodent's Revenge Online Free — Classic Windows Game, No Download — ExeBrowser",
+    "description": "Play Rodent's Revenge free in your browser — push blocks to trap the cats, eat the cheese, clear every level. The Microsoft Entertainment Pack classic, no download or account.",
+    "keywords": "play rodents revenge online, rodents revenge free, rodents revenge no download, microsoft entertainment pack, rodents revenge browser, cat and mouse puzzle game",
+    "ogTitle": "Play Rodent's Revenge Online Free — Classic Windows Game",
+    "ogDescription": "Push blocks, trap the cats, eat the cheese. The Entertainment Pack classic.",
+    "crumb": "Play Rodent's Revenge",
+    "h1": "Play Rodent's Revenge online — free, instant",
+    "genre": [
+      "Puzzle",
+      "Strategy",
+      "Arcade"
+    ],
+    "categories": [
+      "Windows classics",
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/rodents-open/",
+    "rank": 11,
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrows or WASD",
+        "mouse": "D-pad on mobile"
+      },
+      {
+        "action": "Push blocks",
+        "keyboard": "Walk into them",
+        "mouse": "—"
+      },
+      {
+        "action": "Trap a cat",
+        "keyboard": "Seal it in",
+        "mouse": "—"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-05",
+    "addedDate": "2026-08-05",
+    "screenshot": true,
+    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "slug": "blockdrop-open",
+    "appName": "Block Drop",
+    "title": "Play Block Drop Online Free — Falling Block Puzzle, No Download — ExeBrowser",
+    "description": "Play Block Drop free in your browser — a falling-block puzzle with seven shapes, ghost piece, next-piece preview and rising speed. No download, no account, works on mobile.",
+    "keywords": "falling block puzzle online, block puzzle game free, block drop game, stacking blocks puzzle browser, free puzzle game no download, block game unblocked",
+    "ogTitle": "Play Block Drop Online Free — Falling Block Puzzle",
+    "ogDescription": "Seven shapes, a ten-wide well, and a four-row clear worth eight times a single.",
+    "crumb": "Play Block Drop",
+    "h1": "Play Block Drop online — free, instant",
+    "genre": [
+      "Puzzle",
+      "Arcade"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/blockdrop-open/",
+    "rank": 12,
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Left / Right",
+        "mouse": "Buttons on mobile"
+      },
+      {
+        "action": "Rotate",
+        "keyboard": "Up",
+        "mouse": "↻ button"
+      },
+      {
+        "action": "Hard drop",
+        "keyboard": "Space",
+        "mouse": "▼▼ button"
+      },
+      {
+        "action": "Pause",
+        "keyboard": "P",
+        "mouse": "Pause button"
+      }
+    ]
   }
 ]

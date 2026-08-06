@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Rodent's Revenge — free classic Windows puzzle</title>
+<style>
+  :root {
+    color-scheme: light;
+    --face: #c0c0c0;
+    --hi: #ffffff;
+    --lo: #808080;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .6rem;
+    font: 13px/1.35 "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+    background: #008080; color: #000;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .out { border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi); }
+  .in  { border: 2px solid; border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+  .frame { background: var(--face); padding: 5px; }
+  .status {
+    display: flex; align-items: center; gap: .75rem; justify-content: space-between;
+    background: var(--face); padding: 5px 7px; margin-bottom: 5px; flex-wrap: wrap;
+  }
+  .lcd {
+    background: #000; color: #f00; font: 700 17px/1 "Courier New", monospace;
+    padding: 2px 6px; letter-spacing: 1px; font-variant-numeric: tabular-nums;
+  }
+  .lbl { font-size: .75rem; }
+  .button {
+    font: inherit; font-size: .78rem; padding: .25rem .6rem; cursor: pointer;
+    background: var(--face); color: #000;
+    border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi);
+  }
+  .button:active { border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+  canvas { display: block; background: #008080; }
+  #msg { min-height: 1.3em; font-size: .85rem; color: #fff; text-align: center; }
+  .hint { font-size: .75rem; color: #cfe9e9; text-align: center; max-width: 34rem; }
+  /* Touch d-pad — the game is grid-based, so four buttons are enough. */
+  .pad { display: grid; grid-template-columns: repeat(3, 46px); gap: 4px; justify-content: center; }
+  .pad .button { height: 40px; font-size: 1rem; }
+  .pad .sp { visibility: hidden; }
+  @media (min-width: 700px) { .pad { display: none; } }
+</style>
+</head>
+<body>
+  <div class="frame out">
+    <div class="status in">
+      <span class="lbl">Level <span class="lcd" id="level">1</span></span>
+      <span class="lbl">Lives <span class="lcd" id="lives">3</span></span>
+      <span class="lbl">Cats <span class="lcd" id="cats">0</span></span>
+      <span class="lbl">Score <span class="lcd" id="score">0</span></span>
+      <button type="button" class="button" id="newgame">New game</button>
+    </div>
+    <canvas id="c" class="in" width="512" height="384"></canvas>
+  </div>
+  <p id="msg" aria-live="polite"></p>
+  <div class="pad">
+    <span class="button sp"></span><button type="button" class="button" data-dir="up">▲</button><span class="button sp"></span>
+    <button type="button" class="button" data-dir="left">◀</button><span class="button sp"></span><button type="button" class="button" data-dir="right">▶</button>
+    <span class="button sp"></span><button type="button" class="button" data-dir="down">▼</button><span class="button sp"></span>
+  </div>
+  <p class="hint">You're the mouse. Push blocks to box the cats in — a cat with no way out turns to cheese. Eat cheese for points. Touch a cat and you lose a life. Arrow keys or <kbd>WASD</kbd>.</p>
+<script src="rodents.js?v=1"></script>
+</body>
+</html>

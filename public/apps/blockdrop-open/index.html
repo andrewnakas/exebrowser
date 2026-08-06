@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Block Drop — free falling-block puzzle</title>
+<style>
+  :root {
+    color-scheme: light;
+    --face: #c0c0c0;
+    --hi: #ffffff;
+    --lo: #808080;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .6rem;
+    font: 13px/1.35 "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+    background: #008080; color: #000;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .out { border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi); }
+  .in  { border: 2px solid; border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+  .frame { background: var(--face); padding: 5px; display: flex; gap: 6px; }
+  .side { display: flex; flex-direction: column; gap: 6px; min-width: 92px; }
+  .panel { background: var(--face); padding: 5px; }
+  .lcd {
+    background: #000; color: #f00; font: 700 16px/1 "Courier New", monospace;
+    padding: 3px 5px; text-align: right; font-variant-numeric: tabular-nums;
+  }
+  .lbl { font-size: .7rem; display: block; margin-bottom: 2px; }
+  .button {
+    font: inherit; font-size: .75rem; padding: .25rem .5rem; cursor: pointer;
+    background: var(--face); color: #000; width: 100%;
+    border: 2px solid; border-color: var(--hi) var(--lo) var(--lo) var(--hi);
+  }
+  .button:active { border-color: var(--lo) var(--hi) var(--hi) var(--lo); }
+  canvas { display: block; background: #000; }
+  #msg { min-height: 1.3em; font-size: .85rem; color: #fff; text-align: center; }
+  .hint { font-size: .75rem; color: #cfe9e9; text-align: center; max-width: 34rem; }
+  .pad { display: grid; grid-template-columns: repeat(4, 58px); gap: 4px; justify-content: center; }
+  .pad .button { height: 42px; font-size: 1rem; }
+  @media (min-width: 700px) { .pad { display: none; } }
+</style>
+</head>
+<body>
+  <div class="frame out">
+    <canvas id="c" class="in" width="240" height="480"></canvas>
+    <div class="side">
+      <div class="panel in">
+        <span class="lbl">Next</span>
+        <canvas id="next" width="76" height="60"></canvas>
+      </div>
+      <div class="panel in"><span class="lbl">Score</span><div class="lcd" id="score">0</div></div>
+      <div class="panel in"><span class="lbl">Lines</span><div class="lcd" id="lines">0</div></div>
+      <div class="panel in"><span class="lbl">Level</span><div class="lcd" id="level">1</div></div>
+      <button type="button" class="button" id="pause">Pause</button>
+      <button type="button" class="button" id="newgame">New game</button>
+    </div>
+  </div>
+  <p id="msg" aria-live="polite"></p>
+  <div class="pad">
+    <button type="button" class="button" data-act="left">◀</button>
+    <button type="button" class="button" data-act="rot">↻</button>
+    <button type="button" class="button" data-act="right">▶</button>
+    <button type="button" class="button" data-act="drop">▼▼</button>
+  </div>
+  <p class="hint">Arrow keys to move, <kbd>↑</kbd> to rotate, <kbd>↓</kbd> to soft-drop, <kbd>Space</kbd> to hard-drop, <kbd>P</kbd> to pause. Fill a full row to clear it — clear four at once for the big score.</p>
+<script src="blockdrop.js?v=1"></script>
+</body>
+</html>
