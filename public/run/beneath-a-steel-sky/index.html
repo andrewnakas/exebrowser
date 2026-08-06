@@ -117,7 +117,12 @@
     <p><strong>Beneath a Steel Sky</strong> — Revolution Software&#39;s 1994 cyberpunk classic, with artwork by <strong>Watchmen</strong> co-creator <strong>Dave Gibbons</strong> — playable right now. <strong>No download, no sign-up, nothing to install.</strong> Two more freeware adventures are installed alongside it: <strong>Lure of the Temptress</strong> and <strong>Sołtys</strong>.</p>
     <p class="muted small">Revolution released this game as freeware in 2003 specifically so it could be played with ScummVM. This is that release, running in your browser.</p>
 
-    <iframe class="game-frame" src="/apps/scummvm/scummvm.html#--auto-detect%20--path=/data/games/bass%20--output-rate=22050%20--no-filtering%20--no-aspect-ratio" title="ScummVM — Beneath a Steel Sky and other freeware adventures" loading="eager"></iframe>
+    <!-- Args reach ScummVM only through the URL hash: the compiled pre-js sets
+         Module["arguments"] itself, so a Module override in the shell can never
+         win. Audio settings live in /apps/scummvm/scummvm.ini instead — the
+         mixer's buffer size is config-only and cannot be passed here, and
+         --output-rate would shrink that buffer rather than help it. -->
+    <iframe class="game-frame" src="/apps/scummvm/scummvm.html#--auto-detect%20--path=/data/games/bass%20--no-filtering%20--no-aspect-ratio" title="ScummVM — Beneath a Steel Sky and other freeware adventures" loading="eager"></iframe>
 
     <details class="controls-panel" open>
       <summary><strong>Controls</strong> — what does what</summary>
