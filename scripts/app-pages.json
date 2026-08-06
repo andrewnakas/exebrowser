@@ -30,6 +30,11 @@
         "href": "/run/beneath-a-steel-sky/",
         "title": "Beneath a Steel Sky (free)",
         "desc": "Revolution's cyberpunk classic — freeware, instant play."
+      },
+      {
+        "href": "/run/openttd/",
+        "title": "OpenTTD (free)",
+        "desc": "Transport Tycoon, open source — build an empire, instant play."
       }
     ],
     "updated": "2026-07-28",
@@ -315,7 +320,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 4
+    "rank": 5
   },
   {
     "slug": "tyrian",
@@ -511,7 +516,7 @@
     ],
     "pointerLock": true,
     "fullyFree": "Declared freeware by rights holder Jason Emery in 2004 — the complete game, not an episode.",
-    "rank": 8
+    "rank": 9
   },
   {
     "slug": "doom",
@@ -934,7 +939,7 @@
       "Action"
     ],
     "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
-    "rank": 19
+    "rank": 20
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1642,7 +1647,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 7
+    "rank": 8
   },
   {
     "slug": "freecell",
@@ -1802,7 +1807,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/freecell-open/",
-    "rank": 9,
+    "rank": 10,
     "controls": [
       {
         "action": "Move a card",
@@ -1984,7 +1989,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/spider-open/",
-    "rank": 10,
+    "rank": 11,
     "controls": [
       {
         "action": "Move a card",
@@ -2279,7 +2284,7 @@
       "Action",
       "Racing & sports"
     ],
-    "rank": 6
+    "rank": 7
   },
   {
     "slug": "jezzball",
@@ -2450,7 +2455,7 @@
       "Action"
     ],
     "appUrl": "/apps/jezzball-open/",
-    "rank": 11,
+    "rank": 12,
     "controls": [
       {
         "action": "Build a wall",
@@ -2981,7 +2986,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 18
+    "rank": 19
   },
   {
     "slug": "scorched-earth",
@@ -3057,6 +3062,11 @@
         "href": "/run/skyroads/",
         "title": "SkyRoads",
         "desc": "Freeware space-racing puzzler."
+      },
+      {
+        "href": "/run/openttd/",
+        "title": "OpenTTD (free)",
+        "desc": "Transport Tycoon, open source — build an empire, instant play."
       }
     ],
     "download": {
@@ -3145,7 +3155,7 @@
       "Puzzle & strategy"
     ],
     "pointerLock": true,
-    "rank": 20
+    "rank": 21
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -3495,7 +3505,7 @@
       "Action"
     ],
     "pointerLock": true,
-    "rank": 21
+    "rank": 22
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3805,7 +3815,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 25
+    "rank": 26
   },
   {
     "slug": "prince-of-persia",
@@ -3908,7 +3918,7 @@
       }
     ],
     "updated": "2026-07-01",
-    "rank": 22
+    "rank": 23
   },
   {
     "slug": "full-tilt-pinball",
@@ -6667,7 +6677,7 @@
       "Racing & sports"
     ],
     "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
-    "rank": 26
+    "rank": 27
   },
   {
     "slug": "jetpack",
@@ -6815,7 +6825,7 @@
       "Puzzle & strategy"
     ],
     "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
-    "rank": 27
+    "rank": 28
   },
   {
     "slug": "god-of-thunder",
@@ -7049,6 +7059,11 @@
         "href": "/run/alien-carnage/",
         "title": "Alien Carnage",
         "desc": "Apogee run-and-gun, freeware."
+      },
+      {
+        "href": "/run/openttd/",
+        "title": "OpenTTD (free)",
+        "desc": "Transport Tycoon, open source — build an empire, instant play."
       }
     ],
     "updated": "2026-07-28",
@@ -7143,7 +7158,7 @@
       "Action"
     ],
     "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
-    "rank": 23
+    "rank": 24
   },
   {
     "slug": "xargon",
@@ -7802,7 +7817,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 24
+    "rank": 25
   },
   {
     "slug": "hearts-open",
@@ -7882,7 +7897,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 17
+    "rank": 18
   },
   {
     "slug": "cosmo",
@@ -8637,7 +8652,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/rodents-open/",
-    "rank": 12,
+    "rank": 13,
     "controls": [
       {
         "action": "Move",
@@ -8706,7 +8721,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/blockdrop-open/",
-    "rank": 13,
+    "rank": 14,
     "controls": [
       {
         "action": "Move",
@@ -8766,7 +8781,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/snake-open/",
-    "rank": 14,
+    "rank": 15,
     "controls": [
       {
         "action": "Steer",
@@ -8825,7 +8840,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/2048-open/",
-    "rank": 15,
+    "rank": 16,
     "controls": [
       {
         "action": "Slide tiles",
@@ -8878,7 +8893,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/pipes-open/",
-    "rank": 16,
+    "rank": 17,
     "controls": [
       {
         "action": "Lay a pipe",
@@ -8905,7 +8920,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/openttd/",
+        "title": "OpenTTD (free)",
+        "desc": "Transport Tycoon, open source — build an empire, instant play."
+      }
+    ],
     "updated": "2026-08-06",
     "addedDate": "2026-08-06",
     "screenshot": true,
@@ -8932,7 +8953,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/scummvm/",
-    "rank": 5,
+    "rank": 6,
     "controls": [
       {
         "action": "Start a game",
@@ -8948,6 +8969,65 @@
         "action": "ScummVM menu",
         "keyboard": "Ctrl+F5",
         "mouse": "—"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "The OpenTTD team",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-06",
+    "addedDate": "2026-08-06",
+    "screenshot": true,
+    "fullyFree": "Open-source engine (GPL-2.0) with free community-made graphics and music — no original Transport Tycoon files needed.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — open-source engine, no original files needed"
+    },
+    "slug": "openttd",
+    "appName": "OpenTTD",
+    "title": "Play OpenTTD Online Free — Transport Tycoon in Your Browser, No Download — ExeBrowser",
+    "description": "Play OpenTTD free in your browser — the open-source Transport Tycoon Deluxe. Build railways, roads and airports and run a transport empire. No download, no original game files needed.",
+    "keywords": "play openttd online, openttd browser, transport tycoon online free, openttd no download, transport tycoon deluxe browser, open source transport game, tycoon game free",
+    "ogTitle": "Play OpenTTD Online Free — Transport Tycoon in Your Browser",
+    "ogDescription": "Build railways, roads and airports and run a transport empire. Free and instant.",
+    "crumb": "Play OpenTTD",
+    "h1": "Play OpenTTD online — free, instant",
+    "genre": [
+      "Simulation",
+      "Strategy",
+      "Business"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/openttd/",
+    "rank": 4,
+    "controls": [
+      {
+        "action": "Start a game",
+        "keyboard": "—",
+        "mouse": "New Game, pick map size"
+      },
+      {
+        "action": "Build",
+        "keyboard": "—",
+        "mouse": "Toolbar: rail, road, dock, airport"
+      },
+      {
+        "action": "Scroll",
+        "keyboard": "—",
+        "mouse": "Right-drag or edge-push"
+      },
+      {
+        "action": "Zoom",
+        "keyboard": "—",
+        "mouse": "Mouse wheel"
       }
     ]
   }
