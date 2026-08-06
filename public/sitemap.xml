@@ -475,6 +475,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/run/beneath-a-steel-sky/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/blog/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>

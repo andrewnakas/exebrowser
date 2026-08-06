@@ -25,7 +25,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky (free)",
+        "desc": "Revolution's cyberpunk classic — freeware, instant play."
+      }
+    ],
     "updated": "2026-07-28",
     "screenshot": true,
     "controls": [
@@ -505,7 +511,7 @@
     ],
     "pointerLock": true,
     "fullyFree": "Declared freeware by rights holder Jason Emery in 2004 — the complete game, not an episode.",
-    "rank": 7
+    "rank": 8
   },
   {
     "slug": "doom",
@@ -600,6 +606,11 @@
         "href": "/run/",
         "title": "All games & apps",
         "desc": "Everything you can play or run here."
+      },
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky (free)",
+        "desc": "Revolution's cyberpunk classic — freeware, instant play."
       }
     ],
     "mobileControls": {
@@ -923,7 +934,7 @@
       "Action"
     ],
     "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
-    "rank": 18
+    "rank": 19
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1222,6 +1233,11 @@
         "href": "/run/blockdrop-open/",
         "title": "Play Block Drop (free)",
         "desc": "A falling-block puzzle — clear four rows at once."
+      },
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky (free)",
+        "desc": "Revolution's cyberpunk classic — freeware, instant play."
       }
     ],
     "updated": "2026-08-03",
@@ -1626,7 +1642,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 6
+    "rank": 7
   },
   {
     "slug": "freecell",
@@ -1786,7 +1802,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/freecell-open/",
-    "rank": 8,
+    "rank": 9,
     "controls": [
       {
         "action": "Move a card",
@@ -1968,7 +1984,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/spider-open/",
-    "rank": 9,
+    "rank": 10,
     "controls": [
       {
         "action": "Move a card",
@@ -2263,7 +2279,7 @@
       "Action",
       "Racing & sports"
     ],
-    "rank": 5
+    "rank": 6
   },
   {
     "slug": "jezzball",
@@ -2434,7 +2450,7 @@
       "Action"
     ],
     "appUrl": "/apps/jezzball-open/",
-    "rank": 10,
+    "rank": 11,
     "controls": [
       {
         "action": "Build a wall",
@@ -2965,7 +2981,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 17
+    "rank": 18
   },
   {
     "slug": "scorched-earth",
@@ -3129,7 +3145,7 @@
       "Puzzle & strategy"
     ],
     "pointerLock": true,
-    "rank": 19
+    "rank": 20
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -3479,7 +3495,7 @@
       "Action"
     ],
     "pointerLock": true,
-    "rank": 20
+    "rank": 21
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3789,7 +3805,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 24
+    "rank": 25
   },
   {
     "slug": "prince-of-persia",
@@ -3892,7 +3908,7 @@
       }
     ],
     "updated": "2026-07-01",
-    "rank": 21
+    "rank": 22
   },
   {
     "slug": "full-tilt-pinball",
@@ -6651,7 +6667,7 @@
       "Racing & sports"
     ],
     "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
-    "rank": 25
+    "rank": 26
   },
   {
     "slug": "jetpack",
@@ -6799,7 +6815,7 @@
       "Puzzle & strategy"
     ],
     "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
-    "rank": 26
+    "rank": 27
   },
   {
     "slug": "god-of-thunder",
@@ -6872,6 +6888,11 @@
         "href": "/run/jetpack/",
         "title": "Jetpack",
         "desc": "Puzzle-platformer, full version free."
+      },
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky (free)",
+        "desc": "Revolution's cyberpunk classic — freeware, instant play."
       }
     ],
     "updated": "2026-07-28",
@@ -7122,7 +7143,7 @@
       "Action"
     ],
     "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
-    "rank": 22
+    "rank": 23
   },
   {
     "slug": "xargon",
@@ -7781,7 +7802,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 23
+    "rank": 24
   },
   {
     "slug": "hearts-open",
@@ -7861,7 +7882,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 16
+    "rank": 17
   },
   {
     "slug": "cosmo",
@@ -8616,7 +8637,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/rodents-open/",
-    "rank": 11,
+    "rank": 12,
     "controls": [
       {
         "action": "Move",
@@ -8685,7 +8706,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/blockdrop-open/",
-    "rank": 12,
+    "rank": 13,
     "controls": [
       {
         "action": "Move",
@@ -8745,7 +8766,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/snake-open/",
-    "rank": 13,
+    "rank": 14,
     "controls": [
       {
         "action": "Steer",
@@ -8804,7 +8825,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/2048-open/",
-    "rank": 14,
+    "rank": 15,
     "controls": [
       {
         "action": "Slide tiles",
@@ -8857,7 +8878,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/pipes-open/",
-    "rank": 15,
+    "rank": 16,
     "controls": [
       {
         "action": "Lay a pipe",
@@ -8873,6 +8894,60 @@
         "action": "Start early",
         "keyboard": "—",
         "mouse": "Start flow button"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "Revolution Software",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": [],
+    "updated": "2026-08-06",
+    "addedDate": "2026-08-06",
+    "screenshot": true,
+    "fullyFree": "Released as freeware by Revolution Software in 2003, specifically for use with ScummVM — source code included.",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively via ScummVM, no emulator"
+    },
+    "slug": "beneath-a-steel-sky",
+    "appName": "Beneath a Steel Sky",
+    "title": "Play Beneath a Steel Sky Online Free — Classic Adventure, No Download — ExeBrowser",
+    "description": "Play Beneath a Steel Sky free in your browser — Revolution Software's cyberpunk classic with Dave Gibbons artwork, released as freeware by its creators. Plus Lure of the Temptress and Soltys. No download.",
+    "keywords": "play beneath a steel sky online, beneath a steel sky free, scummvm browser, lure of the temptress online, point and click adventure free, dave gibbons game, classic adventure game no download",
+    "ogTitle": "Play Beneath a Steel Sky Online Free — Classic Adventure",
+    "ogDescription": "Revolution's cyberpunk classic with Dave Gibbons art, free and instant.",
+    "crumb": "Play Beneath a Steel Sky",
+    "h1": "Play Beneath a Steel Sky online — free, instant",
+    "genre": [
+      "Adventure",
+      "Point-and-click",
+      "Science fiction"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/scummvm/",
+    "rank": 5,
+    "controls": [
+      {
+        "action": "Start a game",
+        "keyboard": "—",
+        "mouse": "Pick from the list, click Start"
+      },
+      {
+        "action": "Play",
+        "keyboard": "—",
+        "mouse": "Left-click to use, right-click to look"
+      },
+      {
+        "action": "ScummVM menu",
+        "keyboard": "Ctrl+F5",
+        "mouse": "—"
       }
     ]
   }
