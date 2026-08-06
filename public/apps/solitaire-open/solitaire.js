@@ -597,6 +597,16 @@
   function beginDrag() {
     drag.moved = true;
     drag.ghost = buildGhost(drag.cards);
+    // Pin the ghost at the card's own position and move it with a transform
+    // from there, so translate3d values stay small and there is no layout
+    // work per frame.
+    drag.baseX = drag.originX;
+    drag.baseY = drag.originY;
+    drag.ghost.style.left = `${drag.baseX}px`;
+    drag.ghost.style.top = `${drag.baseY}px`;
+    // A dragged card is its own compositor layer; without this the browser
+    // may re-rasterise it on every move.
+    drag.ghost.style.willChange = "transform";
     document.body.appendChild(drag.ghost);
     // Hide the originals only once the drag really starts, so a plain click
     // never makes the pile flicker.
@@ -604,19 +614,36 @@
     moveGhost(drag.startX, drag.startY);
   }
 
+  // Position the ghost with a transform, not left/top.
+  //
+  // left/top are layout properties: setting them on every pointermove forces
+  // the browser to re-lay-out the page before it can paint, and the card ends
+  // up trailing the cursor. A transform is composited — the card follows the
+  // pointer exactly, the way it does in the Windows game.
   function moveGhost(x, y) {
-    drag.ghost.style.left = `${x - drag.dx}px`;
-    drag.ghost.style.top = `${y - drag.dy}px`;
+    drag.ghost.style.transform =
+      `translate3d(${Math.round(x - drag.dx - drag.baseX)}px, ${Math.round(y - drag.dy - drag.baseY)}px, 0)`;
   }
 
+  // The expensive part of a drag isn't moving the card, it's working out what
+  // it's over: bestTarget() measures every pile. Doing that per pointermove
+  // (which can fire well above 60Hz) was the actual source of the lag, so the
+  // pointer position is recorded immediately and the hit-testing is done at
+  // most once per animation frame.
+  let pendingMove = null, moveRaf = 0;
   function onPointerMove(e) {
     if (!drag) return;
-    // Small threshold so a click that wobbles by a pixel still counts as a
-    // click, but low enough that dragging feels immediate.
     if (!drag.moved && Math.hypot(e.clientX - drag.startX, e.clientY - drag.startY) < 3) return;
     if (!drag.moved) beginDrag();
+    // Move the card now — this is cheap and must not wait for a frame.
     moveGhost(e.clientX, e.clientY);
-    highlight(bestTarget());
+    pendingMove = [e.clientX, e.clientY];
+    if (!moveRaf) {
+      moveRaf = requestAnimationFrame(() => {
+        moveRaf = 0;
+        if (drag && pendingMove) highlight(bestTarget());
+      });
+    }
   }
 
   function buildGhost(cards) {
@@ -677,6 +704,9 @@
 
   function onPointerUp(e) {
     if (!drag) return;
+    // Drop any queued hit-test so it can't run against a finished drag.
+    if (moveRaf) { cancelAnimationFrame(moveRaf); moveRaf = 0; }
+    pendingMove = null;
     const d = drag;
     if (hinted) { hinted.classList.remove("hint"); hinted = null; }
 
@@ -718,9 +748,11 @@
     const g = d.ghost;
     if (!g) { restoreLifted(d); render(); return; }
     animating = true;
-    g.style.transition = "left .18s ease-out, top .18s ease-out";
-    g.style.left = `${d.originX}px`;
-    g.style.top = `${d.originY}px`;
+    // The ghost is positioned by transform during the drag, so glide the
+    // transform back to zero — animating left/top here would fight it and the
+    // card would jump before it slid.
+    g.style.transition = "transform .18s ease-out";
+    g.style.transform = "translate3d(0,0,0)";
     // transitionend and the timeout can both fire; only the first should run.
     let done = false;
     const finish = () => {
