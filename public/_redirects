@@ -16,11 +16,3 @@
 # never referenced and has been removed. Pages keeps prior-deploy files, so
 # retire the URL explicitly.
 /apps/freeciv/* /run/freeciv/ 301
-
-# ScummVM's Emscripten filesystem fetches its data by ABSOLUTE path: the C++
-# backend sets the URL to DATA_PATH itself ("/data"), so it requests
-# /data/index.json regardless of where the app is served from. Our build lives
-# under /apps/scummvm/, so those requests fell through to the SPA fallback and
-# ScummVM parsed the homepage HTML as JSON — an empty launcher on a black
-# screen. Rewrite (200, not 301) so each file is served in one hop.
-/data/* /apps/scummvm/data/:splat 200
