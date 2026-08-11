@@ -33,7 +33,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-C8C4TZC5F1');
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
 </script>
 
 <script type="application/ld+json">
@@ -115,6 +117,26 @@
 </header>
 
 <main>
+  <p class="resume-bar" id="resume-bar" hidden></p>
+
+  <!-- ── Instant play.
+       The funnel said this plainly: 57% of all views land here, but only about
+       a fifth of visitors ever reach a game. Every one of them had to click a
+       poster, wait for a page, then find the play button. This is the same
+       DOSBox embed the game pages use, hoisted to the top of the homepage so
+       arriving and playing are one click apart. The shelf still follows for
+       people who want to choose. ── -->
+  <section class="card" id="hero-play">
+    <h2 id="hero-title">▶ Play DOOM right now — no download, no account</h2>
+    <p class="muted small" style="margin-top:0;">The original 1993 shareware episode, running in this tab via DOSBox + WebAssembly. Pick another title from the shelf below any time.</p>
+    <div id="dos-embed"
+         data-app-url="/apps/doom/doom.zip"
+         data-app-name="DOOM"
+         data-slug="doom"
+         data-autoboot="false"></div>
+    <p class="muted small hero-controls">Arrow keys move · <kbd>Ctrl</kbd> fire · <kbd>Space</kbd> open doors · <kbd>Esc</kbd> menu — <a href="/run/doom/">full controls &amp; guide</a></p>
+  </section>
+
   <!-- ── Bring your own EXE.
        This sat first for a while, on the reasoning that running your own
        program is the premise of the site. Analytics disagreed: the homepage
@@ -641,9 +663,13 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<script src="/recent.js?v=1"></script>
+<script src="/recent.js?v=2"></script>
 <script src="/filter.js?v=1"></script>
-<script>window.renderContinue && renderContinue("continue-playing", "continue-grid");</script>
+<script src="/dos-embed.js?v=28"></script>
+<script>
+  window.renderContinue && renderContinue("continue-playing", "continue-grid");
+  window.renderResumeBar && renderResumeBar("resume-bar");
+</script>
 <script>
 // The top "Run your own program" card is a shortcut into the real loader
 // further down the page — it deliberately owns no file-handling logic of its

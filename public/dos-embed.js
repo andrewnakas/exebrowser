@@ -10,7 +10,13 @@
     autoboot: host.dataset.autoboot === "true",
   };
 
-  const slug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || location.pathname;
+  // The slug keys saved progress in IndexedDB, so an embed that lives outside
+  // /run/<slug>/ (the homepage hero) has to name its game explicitly — otherwise
+  // it would save under "/" and a player's homepage progress and game-page
+  // progress would be two separate, silently diverging worlds.
+  const slug = host.dataset.slug
+    || (location.pathname.match(/\/run\/([^/]+)/) || [])[1]
+    || location.pathname;
 
   function track(name, params) {
     if (typeof window.gtag === "function") {

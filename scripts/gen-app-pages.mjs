@@ -542,6 +542,31 @@ function alsoPlayHtml(current, allPages) {
   return `\n  <section class="card">\n    <h2>Play another one — free, no download</h2>\n    <ul class="poster-grid">\n${cards}\n    </ul>\n    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all ${allPages.filter(isPlayable).length} titles you can play here →</a></p>\n  </section>`;
 }
 
+// A one-line "what to play next" rail, sitting directly under the game rather
+// than in the full card further down the page. The poster grid below the FAQ is
+// the thorough version; most people stop scrolling long before it, and a player
+// who has just finished a game is exactly the person who wants another one.
+// Same rotation as alsoPlayHtml so link equity still spreads across the catalogue.
+function nextUpHtml(current, allPages) {
+  const pool = allPages
+    .filter((p) => isPlayable(p) && p.slug !== current.slug && p.appType === "game")
+    .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
+  if (pool.length < 3) return "";
+
+  let seed = 0;
+  for (const ch of current.slug) seed = (seed * 31 + ch.charCodeAt(0)) % 100000;
+  const picks = [];
+  for (let i = 0; picks.length < 4 && i < pool.length; i++) {
+    const cand = pool[(seed + i * 13) % pool.length];
+    if (!picks.includes(cand)) picks.push(cand);
+  }
+
+  const links = picks
+    .map((p) => `<a href="/run/${p.slug}/">${esc(p.appName)}</a>`)
+    .join("\n      ");
+  return `\n    <p class="next-up"><span class="next-up-label">Play next:</span>\n      ${links}\n      <a class="next-up-all" href="/run/">all ${allPages.filter(isPlayable).length} games →</a>\n    </p>`;
+}
+
 function downloadHtml(p) {
   if (!p.download || !p.download.heading) return "";
   // The template emits download.heading as the box's <h3>, so drop a leading
@@ -581,7 +606,9 @@ const render = (p) => `<!DOCTYPE html>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-C8C4TZC5F1');
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
 </script>
 ${breadcrumbLd(p)}
 ${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
@@ -604,13 +631,14 @@ ${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
 </header>
 
 <main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › ${esc(p.crumb)}</nav>
 
   <section class="card">
     <h2>${esc(p.h1 || p.crumb)} <span class="verdict ${p.verdict.kind}">${esc(p.verdict.text)}</span></h2>${p.updated ? `
     <p class="muted small" style="margin-top:0.25rem;">Guide updated ${esc(monthYear(p.updated))} · ${p.verdict.kind === "bad" ? "Tested with" : "Runs via"} ${esc(runtimeLabel(p))}${isPlayable(p) || p.verdict.kind === "bad" ? "" : " · Requires your own copy"}</p>` : ""}
     ${p.intro}
-${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p)}${freeNoteHtml(p)}${figureHtml(p)}
+${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p)}${isPlayable(p) ? nextUpHtml(p, pages) : ""}${freeNoteHtml(p)}${figureHtml(p)}
     ${p.iframeUrl ? "" : `<p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? "Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse." : "Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse."}</p>`}${licenseHtml(p)}
   </section>
 ${downloadHtml(p)}
@@ -635,14 +663,15 @@ ${downloadHtml(p)}
 </footer>
 
 ${p.iframeUrl
-  ? ``
+  ? `<script src="/recent.js?v=2"></script>`
   : p.dosRuntime
-    ? `<script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=27"></script>`
+    ? `<script src="/recent.js?v=2"></script>
+<script src="/dos-embed.js?v=28"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/recent.js?v=1"></script>
+<script src="/recent.js?v=2"></script>
 <script src="/embed.js?v=5"></script>
 <script src="/app.js?v=18"></script>`}
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>
 `;
@@ -786,7 +815,9 @@ const indexHtml = `<!DOCTYPE html>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-C8C4TZC5F1');
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
 </script>
 <script type="application/ld+json">
 {
@@ -817,6 +848,7 @@ const indexHtml = `<!DOCTYPE html>
 </header>
 
 <main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › App guides</nav>
   <section class="card">
     <h2>Run specific Windows apps &amp; games in your browser</h2>
@@ -856,9 +888,12 @@ ${apps.map(indexCard).join("\n")}
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/recent.js?v=1"></script>
+<script src="/recent.js?v=2"></script>
 <script src="/filter.js?v=1"></script>
-<script>window.renderContinue && renderContinue("continue-playing", "continue-grid");</script>
+<script>
+  window.renderContinue && renderContinue("continue-playing", "continue-grid");
+  window.renderResumeBar && renderResumeBar("resume-bar");
+</script>
 </body>
 </html>
 `;
@@ -903,4 +938,46 @@ ${staticUrls.slice(2).join("\n")}
 `;
 writeFileSync(resolve(ROOT, "sitemap.xml"), sitemap, "utf8");
 
-console.log(`\nGenerated ${pages.length} pages + sitemap.xml (${pages.length + STATIC_URLS.length} URLs).`);
+// ── llms.txt ───────────────────────────────────────────────────────────────
+// ChatGPT is already the third-largest referrer here, ahead of every social
+// network, and those visits engage. Assistants recommending the site do better
+// with a plain list of what can actually be played than with a crawl of 79
+// pages, most of which are "bring your own copy" guides. Generated from the
+// same data as the pages so it can't drift into claiming a game we don't host.
+const playable = pages.filter(isPlayable);
+const guides = pages.filter((p) => !isPlayable(p));
+const catalogue = (list) =>
+  list
+    .map((p) => `- [${p.appName}](${SITE}/run/${p.slug}/): ${p.oneLiner || p.ogDescription || p.description}`)
+    .join("\n");
+
+const llms = `# ExeBrowser
+
+> Play classic DOS and Windows games free in your browser. No download, no
+> install, no account, nothing uploaded. Games run client-side via DOSBox or
+> Wine compiled to WebAssembly, and DOS save games persist in the browser.
+
+${playable.length} titles are hosted and playable instantly. Everything hosted here is
+open-source, freeware, or shareware whose licence permits free redistribution;
+commercial titles are compatibility guides only, where you supply your own copy.
+
+## Playable now (free, instant, no download)
+
+${catalogue(playable)}
+
+## Compatibility guides (bring your own copy)
+
+${catalogue(guides)}
+
+## About
+
+- [Homepage](${SITE}/): plays DOOM directly, plus the full catalogue
+- [All games and guides](${SITE}/run/)
+- [Compatibility guide](${SITE}/guide/): which categories of Windows software run well
+- [Blog](${SITE}/blog/): how the runtimes work, licensing, and preservation write-ups
+- Runtimes: DOSBox (DOS titles) and Boxedwine — Wine plus a 32-bit x86 CPU
+  emulator — in WebAssembly. 32-bit only; 64-bit Windows binaries will not load.
+`;
+writeFileSync(resolve(ROOT, "llms.txt"), llms, "utf8");
+
+console.log(`\nGenerated ${pages.length} pages + sitemap.xml (${pages.length + STATIC_URLS.length} URLs) + llms.txt (${playable.length} playable).`);

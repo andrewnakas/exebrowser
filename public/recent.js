@@ -12,6 +12,7 @@
 
   const KEY = "exe_recent";
   const MAX = 8;
+  const DAY = 86400000;
 
   function read() {
     try {
@@ -34,9 +35,17 @@
   // Most recent first, one entry per game.
   window.rememberPlayed = function rememberPlayed(slug, name) {
     if (!slug) return;
-    const list = read().filter(e => e.slug !== slug);
-    list.unshift({ slug, name: name || slug, ts: Date.now() });
-    write(list);
+    const list = read();
+
+    // A returning player is someone whose history predates today. GA's own
+    // returning-user metric can't see this — it's cookie-scoped and the site has
+    // no login — so the play history is the only honest signal we have.
+    const priorDay = list.some(e => e.ts && Date.now() - e.ts > DAY);
+    if (priorDay && typeof window.gtag === "function") {
+      window.gtag("event", "return_play", { app_slug: slug, prior_games: list.length });
+    }
+
+    write([{ slug, name: name || slug, ts: Date.now() }, ...list.filter(e => e.slug !== slug)]);
   };
 
   window.getRecentlyPlayed = read;
@@ -69,5 +78,34 @@
       if (added >= 4) break;
     }
     if (added) wrap.hidden = false;
+  };
+
+  // A returning player's saved game is the single most valuable thing on the
+  // page, and until now it was only reachable by scrolling to the Continue
+  // strip. This puts it at the top of any page that opts in with #resume-bar.
+  // Deliberately not shown on the game's own page — you're already there.
+  window.renderResumeBar = function renderResumeBar(barId) {
+    const bar = document.getElementById(barId);
+    if (!bar) return;
+
+    const last = read()[0];
+    if (!last || !last.slug) return;
+    const href = `/run/${last.slug}/`;
+    if (location.pathname === href) return;
+
+    const link = document.createElement("a");
+    link.href = href;
+    link.className = "resume-link";
+    link.textContent = `▶ Resume ${last.name}`;
+    link.addEventListener("click", () => {
+      window.gtag?.("event", "resume_click", { app_slug: last.slug });
+    });
+
+    const label = document.createElement("span");
+    label.className = "resume-label";
+    label.textContent = "Welcome back —";
+
+    bar.append(label, link);
+    bar.hidden = false;
   };
 })();

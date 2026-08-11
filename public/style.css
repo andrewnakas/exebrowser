@@ -1000,3 +1000,37 @@ body.dos-playing { overflow: hidden; }
   min-width: 6.5rem; font-size: .8rem;
   padding: .25rem .5rem; font-variant-numeric: tabular-nums;
 }
+
+/* Resume bar — a returning player's saved game, hoisted above everything else.
+   Hidden until recent.js finds a history entry, so first-timers never see it. */
+.resume-bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .5rem;
+  margin: 0 0 1rem; padding: .6rem .9rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: .95rem;
+}
+.resume-bar[hidden] { display: none; }
+.resume-label { color: var(--muted); }
+.resume-link { font-weight: 600; }
+
+/* Homepage instant-play hero. Sizes itself the same way the game pages do;
+   the controls hint below it is desktop-only, matching the mobile pad rules. */
+#hero-play { margin-bottom: 1.5rem; }
+#hero-play h2 { margin-top: 0; }
+.hero-controls { margin-bottom: 0; }
+@media (hover: none), (max-width: 720px) {
+  .hero-controls { display: none; }
+}
+
+/* "Play next" rail directly under a game. Text links, not posters — it has to
+   fit in one line right below the canvas without pushing the game off-screen. */
+.next-up {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem .75rem;
+  margin: .85rem 0 0; font-size: .9rem;
+}
+.next-up-label { color: var(--muted); }
+.next-up a { border-bottom: 1px solid transparent; }
+.next-up a:hover { border-bottom-color: var(--accent); }
+.next-up-all { color: var(--muted); }

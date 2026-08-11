@@ -22,7 +22,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-C8C4TZC5F1');
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
 </script>
 <script type="application/ld+json">
 {
@@ -92,6 +94,7 @@
 </header>
 
 <main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Notepad++ guide</nav>
 
   <section class="card">
@@ -105,6 +108,13 @@
          data-app-url="/apps/notepad-plus-plus/notepad-plus-plus.zip"
          data-app-name="Notepad++"
          data-autoboot="false"></div>
+    <p class="next-up"><span class="next-up-label">Play next:</span>
+      <a href="/run/pipes-open/">Pipe Panic</a>
+      <a href="/run/bio-menace/">Bio Menace</a>
+      <a href="/run/minesweeper-open/">Minesweeper</a>
+      <a href="/run/scorched-earth/">Scorched Earth</a>
+      <a class="next-up-all" href="/run/">all 40 games →</a>
+    </p>
     <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse.</p>
   </section>
 
@@ -193,8 +203,9 @@
 </footer>
 
 <!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/recent.js?v=1"></script>
+<script src="/recent.js?v=2"></script>
 <script src="/embed.js?v=5"></script>
 <script src="/app.js?v=18"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

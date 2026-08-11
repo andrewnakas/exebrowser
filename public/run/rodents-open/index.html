@@ -23,7 +23,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-C8C4TZC5F1');
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
 </script>
 <script type="application/ld+json">
 {
@@ -110,6 +112,7 @@
 </header>
 
 <main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Rodent&#39;s Revenge Online</nav>
 
   <section class="card">
@@ -211,7 +214,8 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/recent.js?v=1"></script>
+<script src="/recent.js?v=2"></script>
 <script>window.rememberPlayed && rememberPlayed("rodents-open", "Rodent's Revenge");</script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

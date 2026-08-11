@@ -3,4 +3,6 @@ Allow: /
 Disallow: /boxedwine/
 Disallow: /64/
 
+# Assistants are welcome — ChatGPT is already one of this site's largest
+# referrers. /llms.txt is the short version of what's playable here.
 Sitemap: https://exebrowser.com/sitemap.xml

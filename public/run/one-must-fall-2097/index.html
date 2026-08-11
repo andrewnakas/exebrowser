@@ -22,7 +22,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-C8C4TZC5F1');
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
 </script>
 <script type="application/ld+json">
 {
@@ -104,6 +106,7 @@
 </header>
 
 <main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play One Must Fall 2097</nav>
 
   <section class="card">
@@ -210,6 +213,13 @@
         </table>
       </div>
     </details>
+    <p class="next-up"><span class="next-up-label">Play next:</span>
+      <a href="/run/blake-stone/">Blake Stone</a>
+      <a href="/run/solitaire-open/">Solitaire (Klondike)</a>
+      <a href="/run/2048-open/">2048</a>
+      <a href="/run/bio-menace/">Bio Menace</a>
+      <a class="next-up-all" href="/run/">all 40 games →</a>
+    </p>
     <p class="free-note"><span class="badge-free">FREE</span> <strong>This is the complete game, free.</strong> Declared freeware by Diversions Entertainment in 1999 — the complete game.</p>
     <figure class="app-shot">
       <img src="/run/one-must-fall-2097/screenshot.png" width="848" height="480" loading="lazy" alt="One Must Fall 2097 running in a browser tab via ExeBrowser" />
@@ -305,7 +315,8 @@
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<script src="/recent.js?v=1"></script>
-<script src="/dos-embed.js?v=27"></script>
+<script src="/recent.js?v=2"></script>
+<script src="/dos-embed.js?v=28"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

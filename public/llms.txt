@@ -1,0 +1,103 @@
+# ExeBrowser
+
+> Play classic DOS and Windows games free in your browser. No download, no
+> install, no account, nothing uploaded. Games run client-side via DOSBox or
+> Wine compiled to WebAssembly, and DOS save games persist in the browser.
+
+40 titles are hosted and playable instantly. Everything hosted here is
+open-source, freeware, or shareware whose licence permits free redistribution;
+commercial titles are compatibility guides only, where you supply your own copy.
+
+## Playable now (free, instant, no download)
+
+- [3D Pinball Space Cadet](https://exebrowser.com/run/space-cadet-open/): The classic Windows XP pinball game in your browser — free, instant, no download. Open-source WebAssembly build.
+- [Wolfenstein 3D](https://exebrowser.com/run/wolfenstein-3d/): The 1992 Wolfenstein 3D shareware episode, free and legal. It's a DOS game, so you run it through a Win32 source port on Wine + WebAssembly. Honest guide to what works.
+- [Tyrian 2000](https://exebrowser.com/run/tyrian/): The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via Wine + WebAssembly. Honest setup notes inside — it's a DOS game.
+- [DOOM](https://exebrowser.com/run/doom/): The original 1993 DOOM shareware episode, playable in your browser with DOSBox + WebAssembly. Free, legal, no install.
+- [Freedoom](https://exebrowser.com/run/freedoom/): Freedoom, the fully free DOOM-engine game, playable in your browser with DOSBox + WebAssembly. Free, legal, open source.
+- [Solitaire (Klondike)](https://exebrowser.com/run/solitaire-open/): The Klondike Solitaire you know, in your browser — draw 1 or 3, Standard and Vegas scoring, and the bouncing cards when you win.
+- [Minesweeper](https://exebrowser.com/run/minesweeper-open/): The Minesweeper you remember — three board sizes, chording, first click always safe. Instant play in your browser.
+- [FreeCell](https://exebrowser.com/run/freecell-open/): The FreeCell you remember — same deal numbers as Windows, supermoves, unlimited undo.
+- [Spider Solitaire](https://exebrowser.com/run/spider-open/): The Spider Solitaire you remember — pick your difficulty, two decks, unlimited undo.
+- [SkiFree](https://exebrowser.com/run/skifree/): The classic SkiFree yeti game running in your browser with Wine + WebAssembly. Real Win32, one-click play — no install, no account.
+- [JezzBall](https://exebrowser.com/run/jezzball-open/): Build walls, trap the balls, clear 75% of the field. The Entertainment Pack classic.
+- [Commander Keen](https://exebrowser.com/run/commander-keen/): id Software's 1990 platforming classic in your browser — the complete free shareware episode, no download or install. Runs via DOSBox + WebAssembly.
+- [Scorched Earth](https://exebrowser.com/run/scorched-earth/): Play Scorched Earth in your browser — the 1991 artillery classic, 'the mother of all games'. Shareware, no download, runs via DOSBox + WebAssembly.
+- [Raptor](https://exebrowser.com/run/raptor/): Play Raptor: Call of the Shadows shareware episode free in your browser — Apogee's 1994 vertical shooter. No download, runs via DOSBox + WebAssembly.
+- [Blake Stone](https://exebrowser.com/run/blake-stone/): Apogee's 1993 sci-fi FPS in your browser — the complete free shareware episode, no download or install. Runs via DOSBox + WebAssembly.
+- [7-Zip](https://exebrowser.com/run/7-zip/): Open and extract 7z, zip, rar, tar and more with real 7-Zip in your browser via Wine + WebAssembly. Free, open-source, nothing to install.
+- [KeePass](https://exebrowser.com/run/keepass/): The KeePass 1.x Classic build loads with one click and runs in your browser via Wine + WebAssembly. KeePass 2.x won't work here — read the version and safety caveats first.
+- [Sumatra PDF](https://exebrowser.com/run/sumatra-pdf/): Open PDF, ePub, MOBI, XPS, DjVu and comic-book files with Sumatra PDF in your browser using Wine + WebAssembly. Open-source, no install, files never leave your machine.
+- [Notepad++](https://exebrowser.com/run/notepad-plus-plus/): The open-source editor launches one-click under browser-based Wine. Core editing, tabs and syntax highlighting work; heavy dialogs like Preferences can crash — a capable scratchpad, not a daily driver.
+- [PuTTY](https://exebrowser.com/run/putty/): The real Win32 PuTTY launches one-click on Wine + WebAssembly: config dialog, saved sessions, terminal window. Live SSH/telnet fails because browser tabs can't open raw TCP sockets.
+- [SkyRoads](https://exebrowser.com/run/skyroads/): Play SkyRoads free in your browser — the 1993 Estonian space-racing puzzle classic, released as freeware. No download, runs via DOSBox + WebAssembly.
+- [Jetpack](https://exebrowser.com/run/jetpack/): Play Jetpack free in your browser — Adept Software's 1993 puzzle-platformer, released free by its author. No download, runs via DOSBox + WebAssembly.
+- [God of Thunder](https://exebrowser.com/run/god-of-thunder/): Play God of Thunder free in your browser — the 1993 Norse action-adventure, released as freeware. No download, runs via DOSBox + WebAssembly.
+- [One Must Fall 2097](https://exebrowser.com/run/one-must-fall-2097/): Play One Must Fall 2097 free in your browser — Epic's 1994 robot fighting classic, released as freeware. No download, runs via DOSBox + WebAssembly.
+- [Xargon](https://exebrowser.com/run/xargon/): Play Xargon free in your browser — Allen Pilgrim's 1993 platformer, released free by its author. No download, runs via DOSBox + WebAssembly.
+- [Bio Menace](https://exebrowser.com/run/bio-menace/): Play Bio Menace free in your browser — Apogee's 1993 run-and-gun platformer, released as freeware by 3D Realms. No download, runs via DOSBox.
+- [Alien Carnage](https://exebrowser.com/run/alien-carnage/): Play Alien Carnage (Halloween Harry) free in your browser — the 1993 Apogee run-and-gun, released as freeware. No download, runs via DOSBox.
+- [Commander Keen 4: Secret of the Oracle](https://exebrowser.com/run/keen4/): Play Commander Keen 4: Secret of the Oracle free in your browser — the shareware episode of Goodbye Galaxy. No download, runs via DOSBox + WebAssembly
+- [Hearts](https://exebrowser.com/run/hearts-open/): The classic trick-taking card game in your browser — three computer opponents, full rules, instant play.
+- [Cosmo's Cosmic Adventure](https://exebrowser.com/run/cosmo/): Apogee's 1992 platformer in your browser — the complete shareware episode, no download or install.
+- [Hocus Pocus](https://exebrowser.com/run/hocus-pocus/): Apogee's 1994 wizard platformer in your browser — the complete shareware episode, no download.
+- [Crystal Caves](https://exebrowser.com/run/crystal-caves/): Apogee's 1991 platformer in your browser — the complete shareware episode, no download or install.
+- [Monster Bash](https://exebrowser.com/run/monster-bash/): Apogee's 1993 monster-hunting platformer in your browser — the complete shareware episode.
+- [Rodent's Revenge](https://exebrowser.com/run/rodents-open/): Push blocks, trap the cats, eat the cheese. The Entertainment Pack classic.
+- [Block Drop](https://exebrowser.com/run/blockdrop-open/): Seven shapes, a ten-wide well, and a four-row clear worth eight times a single.
+- [Snake](https://exebrowser.com/run/snake-open/): Eat, grow, don't crash. The arcade classic with wrap-around walls and two speeds.
+- [2048](https://exebrowser.com/run/2048-open/): Slide, merge, and build to 2048. Undo, best score and swipe controls.
+- [Pipe Panic](https://exebrowser.com/run/pipes-open/): Lay pipe from a queue you can't reorder and stay ahead of the water.
+- [Beneath a Steel Sky](https://exebrowser.com/run/beneath-a-steel-sky/): Revolution's cyberpunk classic with Dave Gibbons art, free and instant.
+- [OpenTTD](https://exebrowser.com/run/openttd/): Build railways, roads and airports and run a transport empire. Free and instant.
+
+## Compatibility guides (bring your own copy)
+
+- [Dragon's Keep Pinball](https://exebrowser.com/run/dragon-keep/): An original medieval-fantasy pinball table in your browser — free, instant, no download. Phase 1: new art on the classic Cadet ruleset.
+- [Space Cadet](https://exebrowser.com/run/3d-pinball-space-cadet/): A Wine compatibility guide for the Windows XP pinball classic. Load your own Pinball folder and PINBALL.EXE runs entirely in your browser — full speed, with sound.
+- [Solitaire](https://exebrowser.com/run/solitaire/): Classic Windows Solitaire, FreeCell, Minesweeper and Spider run great on Wine + WebAssembly — but Microsoft's files aren't ours to host. Load your own copy and it boots in seconds, entirely in your browser.
+- [Freeciv](https://exebrowser.com/run/freeciv/): Freeciv, the open-source empire-building game inspired by Civilization, playable in your browser. No install needed.
+- [Age of Empires](https://exebrowser.com/run/age-of-empires/): An honest compatibility guide to the 1997 Age of Empires and AoE II under Wine + WebAssembly. We don't host the game — load your own copy and it runs client-side, slow but sometimes playable.
+- [Minesweeper](https://exebrowser.com/run/minesweeper/): The real winmine.exe runs smoothly under Wine + WebAssembly — you supply your own copy from a Windows install you own. Guide plus free web clones inside.
+- [FreeCell](https://exebrowser.com/run/freecell/): A guide to running the real Windows FreeCell in a browser tab. Bring freecell.exe and its card DLL from a PC you own; everything runs client-side via Wine + WebAssembly.
+- [Spider Solitaire](https://exebrowser.com/run/spider-solitaire/): The XP-era Spider Solitaire deals at full speed in a browser tab on Wine + WebAssembly. It's Microsoft software, so you copy spider.exe and cards.dll from your own install and load them here.
+- [Hearts](https://exebrowser.com/run/hearts/): The classic Windows Hearts (mshearts.exe) runs well in a browser tab via Wine + WebAssembly — but it's proprietary Microsoft software, so you bring your own copy from a Windows install you own.
+- [JezzBall](https://exebrowser.com/run/jezzball/): The 1992 Microsoft Entertainment Pack puzzler runs in ExeBrowser's 16-bit Win 3.x Wine runtime — but you must load a copy you legally own. Free open-source clones listed too.
+- [Chip's Challenge](https://exebrowser.com/run/chips-challenge/): A Wine compatibility guide for the Microsoft Entertainment Pack classic. Load your own CHIPS.EXE and the 16-bit win3x engine runs it in a browser tab — quirky but playable.
+- [Rodent's Revenge](https://exebrowser.com/run/rodents-revenge/): The 1991 Microsoft Entertainment Pack mouse-and-cats puzzle game is a 16-bit Win 3.x app. Load your own copy on the win3x runtime and it runs on Wine + WebAssembly.
+- [Chocolate Doom](https://exebrowser.com/run/chocolate-doom/): Chocolate Doom is the vanilla-faithful GPL Doom port. We don't host it — load your own copy with the shareware DOOM1.WAD to experiment, or use the hosted DOOM95 build for one-click Doom.
+- [Jazz Jackrabbit](https://exebrowser.com/run/jazz-jackrabbit-shareware/): The 1994 Epic classic is a DOS game, so the original JAZZ.EXE won't run under Win32 Wine. The open-source OpenJazz engine can play the shareware levels in a tab — you supply the files.
+- [OMF 2097](https://exebrowser.com/run/one-must-fall/): Epic's 1994 robot fighting classic is free freeware — but it's a DOS game, so it won't boot under raw Win32 Wine. The honest paths: DOSBox-in-Wine or the open-source OpenOMF remake.
+- [Heretic &amp; Hexen](https://exebrowser.com/run/hexen-heretic-shareware/): The DOS originals won't boot here, but a small Win32 source port (Chocolate Heretic/Hexen) plus the shareware WAD runs on Wine + WebAssembly. You bring both files; this guide shows the setup.
+- [Prince of Persia](https://exebrowser.com/run/prince-of-persia/): The original Prince of Persia is a commercial DOS game, so it won't simply boot here. The free, open-source SDLPoP reimplementation ships as a Win32 EXE — load your copy and it runs in your tab.
+- [Full Tilt! Pinball](https://exebrowser.com/run/full-tilt-pinball/): The three-table parent of Space Cadet is commercial, so you load your own retail copy. The table EXEs have a real shot under Wine + WebAssembly; the launcher and movies are the fiddly part.
+- [WinRAR](https://exebrowser.com/run/winrar/): A guide to running WinRAR under browser-based Wine: bring a 32-bit build from rarlab.com, bundle your archive, and extract the files entirely on your machine.
+- [Notepad &amp; utilities](https://exebrowser.com/run/notepad/): Tiny single-purpose Win32 utilities are the most reliable category under browser Wine. Load your own text editor, hex editor or notepad.exe and it runs client-side — nothing goes to a server.
+- [MS Paint](https://exebrowser.com/run/mspaint/): The classic Microsoft Paint is a tiny Win32 program that browser-based Wine handles well — but it's Microsoft's property, so you supply your own MSPAINT.EXE. Free open-source paint tools included.
+- [Winamp](https://exebrowser.com/run/winamp/): Classic Winamp 2.x/5.x builds load their skinned UI under browser-based Wine, but audio output is unreliable. Bring your own copy — this guide sets honest expectations.
+- [AbiWord](https://exebrowser.com/run/abiword/): AbiWord is GPL open-source and one of the most reliable office apps under browser Wine. Install it on Windows, then load AbiWord.exe and its DLLs here to edit documents in a tab.
+- [Gnumeric](https://exebrowser.com/run/gnumeric/): Gnumeric runs reliably under browser-based Wine + WebAssembly, but we don't host it — install it on Windows once, then load gnumeric.exe and its DLLs here to edit XLS, CSV, and ODS files.
+- [IrfanView](https://exebrowser.com/run/irfanview/): A Wine compatibility guide for IrfanView: load your own copy plus some images and the real viewer runs in your tab. Everyday viewing and conversion work; the plugin pack and video playback are hit-or-miss.
+- [FileZilla](https://exebrowser.com/run/filezilla/): FileZilla is great free software, but an FTP/SFTP client needs real network access — and the browser Wine sandbox has none. We explain why it can't connect and what to use instead.
+- [Audacity](https://exebrowser.com/run/audacity/): Audacity 3.x is 64-bit only, so it won't start on ExeBrowser's 32-bit engine. Legacy 2.x builds you load yourself can run for light editing — audio playback and recording are iffy.
+- [Paint.NET](https://exebrowser.com/run/paint-net/): Paint.NET is built on Microsoft's .NET Framework, which ExeBrowser's 32-bit Wine runtime can't supply. Here's the structural reason it fails, plus a layered image editor that genuinely works in a tab.
+- [mtPaint](https://exebrowser.com/run/mtpaint/): mtPaint, the tiny open-source pixel-art editor, is exactly the kind of lightweight Win32 app that runs well under browser Wine. Load your own copy and it runs entirely client-side.
+- [GrafX2](https://exebrowser.com/run/grafx2/): GrafX2, the beloved open-source 256-color pixel-art editor, runs well under browser Wine + WebAssembly. We don't bundle it — download the free Win32 build and load grafx2.exe here.
+- [foobar2000](https://exebrowser.com/run/foobar2000/): foobar2000's freeware license means we can't host an extracted build, so you load your own copy. The playlist and preferences UI render; actual audio output is unreliable under emulation.
+- [VLC](https://exebrowser.com/run/vlc-classic/): VLC is free and open-source, but ExeBrowser emulates a 32-bit CPU with no GPU video acceleration — the interface may load, yet playback stutters or fails. An honest verdict plus better options.
+- [WordPad](https://exebrowser.com/run/wordpad/): The classic Microsoft rich-text editor works for basic RTF editing under Wine + WebAssembly, but .doc opens garbled — and you must bring your own wordpad.exe. Free alternative: AbiWord.
+- [Calculator](https://exebrowser.com/run/calculator/): The classic calc.exe from Windows 95 through 7 runs cleanly under browser-based Wine. It's Microsoft software, so we can't host it — bring your own copy and it just works.
+- [Character Map](https://exebrowser.com/run/character-map/): The classic symbol-picker is a tiny Win32 utility that runs well in browser Wine — but you supply charmap.exe from your own Windows install, and Wine's font list is shorter.
+- [KeePassXC](https://exebrowser.com/run/keepassxc-classic/): KeePassXC targets 64-bit Windows with Qt5, which Boxedwine's 32-bit Wine can't run. This page explains the mismatch and points to KeePass 1.x Classic, which does work in a tab.
+- [Dia](https://exebrowser.com/run/dia-diagram/): Dia, the open-source GPL diagram and flowchart editor, loads in a browser tab if you supply your installed copy. Honest verdict: it runs, but the heavy GTK stack means a slow start.
+- [Inkscape](https://exebrowser.com/run/inkscape-classic/): Inkscape is free GPL software, but its heavy GTK+ engine is a hard target for browser-based Wine — expect slow starts, glitches, and crashes. Here's why, and better options.
+- [Blender (classic)](https://exebrowser.com/run/blender-classic/): Blender's entire interface is drawn with OpenGL, and ExeBrowser's Wine + WebAssembly runtime has no hardware 3D acceleration — even classic 2.49b fails. Here's why, and the realistic ways to use Blender.
+
+## About
+
+- [Homepage](https://exebrowser.com/): plays DOOM directly, plus the full catalogue
+- [All games and guides](https://exebrowser.com/run/)
+- [Compatibility guide](https://exebrowser.com/guide/): which categories of Windows software run well
+- [Blog](https://exebrowser.com/blog/): how the runtimes work, licensing, and preservation write-ups
+- Runtimes: DOSBox (DOS titles) and Boxedwine — Wine plus a 32-bit x86 CPU
+  emulator — in WebAssembly. 32-bit only; 64-bit Windows binaries will not load.

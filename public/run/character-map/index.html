@@ -22,7 +22,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-C8C4TZC5F1');
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
 </script>
 <script type="application/ld+json">
 {
@@ -101,6 +103,7 @@
 </header>
 
 <main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Character Map guide</nav>
 
   <section class="card">
@@ -182,8 +185,9 @@
 </footer>
 
 <!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/recent.js?v=1"></script>
+<script src="/recent.js?v=2"></script>
 <script src="/embed.js?v=5"></script>
 <script src="/app.js?v=18"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>
