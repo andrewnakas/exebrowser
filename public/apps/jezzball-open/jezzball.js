@@ -47,8 +47,35 @@
 
   function newGame() {
     level = 1; lives = 3; score = 0;
+    save?.clear();
     startLevel();
   }
+
+  // ── resume ─────────────────────────────────────────────────────────────────
+  //
+  // The grid is a Uint8Array, which JSON turns into an object of index keys, so
+  // it goes over as a plain array and comes back typed. `building` is dropped:
+  // a half-grown wall resuming with the balls in new positions would either
+  // finish itself or cost a life before you'd touched anything.
+  const save = window.GameSave?.attach({
+    key: "jezzball",
+    version: 1,
+    serialize: () =>
+      dead ? null : { g: Array.from(grid), b: balls, lv: level, li: lives, sc: score, p: pct, v: vertical, c: COLS, r: ROWS },
+    restore: (s) => {
+      if (!s || !Array.isArray(s.g) || !Array.isArray(s.b) || s.g.length !== s.c * s.r) return false;
+      COLS = s.c; ROWS = s.r;
+      cv.width = COLS * CELL;
+      cv.height = ROWS * CELL;
+      grid = Uint8Array.from(s.g);
+      balls = s.b;
+      level = s.lv; lives = s.li; score = s.sc; pct = s.p;
+      vertical = s.v;
+      building = null;
+      dead = false;
+      return true;
+    },
+  });
 
   function startLevel() {
     sizeBoard();
@@ -71,6 +98,7 @@
     pct = 0;
     say(`Level ${level} — trap ${n} ball${n > 1 ? "s" : ""}.`);
     updateHud();
+    save?.mark();
     if (!running) { running = true; loop(); }
   }
 
@@ -145,6 +173,7 @@
     building = null;
     lives--;
     updateHud();
+    save?.mark();
     if (lives <= 0) {
       dead = true;
       say(`Game over — level ${level}, score ${score}. Click New game.`);
@@ -184,6 +213,9 @@
     pct = Math.round((filled / grid.length) * 100);
     if (pct > before) score += (pct - before) * level * 10;
     updateHud();
+    // A committed wall is the only thing that changes the field; the balls just
+    // move around inside it.
+    save?.mark();
     if (pct >= 75) nextLevel();
   }
 
@@ -310,5 +342,12 @@
     if (!running) sizeBoard();
   });
 
-  newGame();
+  if (save?.restored) {
+    el("dir").textContent = vertical ? "Wall: vertical ↕" : "Wall: horizontal ↔";
+    updateHud();
+    say(`Resumed level ${level}.`);
+    running = true; loop();
+  } else {
+    newGame();
+  }
 })();

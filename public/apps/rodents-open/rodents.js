@@ -42,7 +42,32 @@
     cv.height = ROWS * CELL;
   }
 
-  function newGame() { level = 1; lives = 3; score = 0; startLevel(); }
+  function newGame() { level = 1; lives = 3; score = 0; save?.clear(); startLevel(); }
+
+  // ── resume ─────────────────────────────────────────────────────────────────
+  //
+  // Turn-based under the animation loop, so there is no mid-frame to land in:
+  // the board between two keypresses is the whole state. The grid is a
+  // Uint8Array and travels as a plain array. `busy` is dropped — it only ever
+  // guards a timeout that no longer exists.
+  const save = window.GameSave?.attach({
+    key: "rodents",
+    version: 1,
+    serialize: () =>
+      dead ? null : { g: Array.from(grid), m: mouse, ca: cats, lv: level, li: lives, sc: score, t: tick, c: COLS, r: ROWS },
+    restore: (s) => {
+      if (!s || !Array.isArray(s.g) || !s.m || !Array.isArray(s.ca) || s.g.length !== s.c * s.r) return false;
+      COLS = s.c; ROWS = s.r;
+      cv.width = COLS * CELL;
+      cv.height = ROWS * CELL;
+      grid = Uint8Array.from(s.g);
+      mouse = s.m;
+      cats = s.ca;
+      level = s.lv; lives = s.li; score = s.sc; tick = s.t || 0;
+      dead = false; busy = false;
+      return true;
+    },
+  });
 
   function startLevel() {
     sizeBoard();
@@ -73,6 +98,7 @@
     dead = false; busy = false; tick = 0;
     say(`Level ${level} — trap ${cats.length} cat${cats.length > 1 ? "s" : ""}.`);
     hud();
+    save?.mark();
     if (!raf) loop();
   }
 
@@ -118,6 +144,8 @@
     catTurn();
     checkTrapped();
     hud();
+    // Nothing moves here except on a keypress, so one move is one state change.
+    save?.mark();
   }
 
   // Cats step toward the mouse, preferring the axis they are furthest off on,
@@ -293,5 +321,11 @@
   el("newgame").addEventListener("click", newGame);
   window.addEventListener("resize", () => { if (dead) sizeBoard(); });
 
-  newGame();
+  if (save?.restored) {
+    hud();
+    say(`Resumed level ${level}.`);
+    loop();
+  } else {
+    newGame();
+  }
 })();

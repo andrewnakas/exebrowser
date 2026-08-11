@@ -137,6 +137,27 @@
   const saveState = document.getElementById("dos-save-state");
   const saveReset = document.getElementById("dos-save-reset");
   const fsBtn    = document.getElementById("dos-fullscreen");
+
+  // Someone coming back to a game they have progress in shouldn't have to guess
+  // whether it survived. DOSBox can't snapshot a running game — what we keep is
+  // the game's own save files — so the promise here is deliberately "your saved
+  // games are here", not "you'll land exactly where you left off".
+  if (PERSIST_ON) {
+    idbGet(slug)
+      .then(saved => {
+        // A path->bytes map. Byte arrays are the old broken format — treat them
+        // as nothing, since they never contained a usable save.
+        const count = saved && !ArrayBuffer.isView(saved) ? Object.keys(saved).length : 0;
+        if (!count || !playBtn.isConnected) return;
+        playBtn.innerHTML = "&#9654; Continue " + esc(cfg.appName);
+        const note = playBtn.parentElement?.querySelector("p");
+        if (note) {
+          note.innerHTML =
+            "Your saved games from last time are loaded with it.<br>Load them from the game's own menu.";
+        }
+      })
+      .catch(() => { /* no IndexedDB (private mode) — the plain button is fine */ });
+  }
   const soundBtn = document.getElementById("dos-sound");
   const mouseHint = document.getElementById("dos-mouse-hint");
 
@@ -818,27 +839,95 @@
     canvas.addEventListener("contextmenu", e => e.preventDefault());
   }
 
-  // Pull the changes bundle out of the running game and stash it. Serialised
-  // through `saving` so an interval tick can't overlap a visibilitychange flush
-  // (persist() would return the same in-flight promise and we'd double-write).
+  // Walk the emulated filesystem and pull out the files the game wrote.
+  //
+  // This used to call `ci.persist(true)`, on the assumption that the argument
+  // asked for a changes-only bundle. It does not: this js-dos build returns
+  // **null** for persist(true) and a full ~5 MB filesystem image for
+  // persist(false). Null failed the `!bytes.length` guard, so every DOS save
+  // silently did nothing — the interval fired, the code took the early return,
+  // and no one saw an error.
+  //
+  // Enumerating instead is better than storing the 5 MB image anyway: a save
+  // is a handful of small files, and the game's own data (DOOM1.WAD alone is
+  // 4 MB) is already on the server. We keep files that appear or change after
+  // boot, which is exactly savegames, configs and high-score tables.
+  const SKIP_DIRS = ["/.jsdos/"];
+  const baselineSizes = new Map();
+
+  function flattenTree(node, path, out) {
+    if (!node) return out;
+    const here = path + "/" + (node.name || "");
+    if (node.nodes) node.nodes.forEach(child => flattenTree(child, here, out));
+    // A trailing "/." from the tree root would break fsReadFile's path lookup.
+    else out.push({ path: here.replace(/^\/\.\//, "/"), size: node.size || 0 });
+    return out;
+  }
+
+  async function listFiles(ci) {
+    const files = flattenTree(await ci.fsTree(), "", []);
+    return files.filter(f => !SKIP_DIRS.some(d => f.path.includes(d)));
+  }
+
+  // Everything present at boot is base game data, so anything that appears
+  // later — or changes size — is the player's.
+  async function recordBaseline(ci) {
+    baselineSizes.clear();
+    try {
+      for (const f of await listFiles(ci)) baselineSizes.set(f.path, f.size);
+    } catch (err) {
+      log("Could not index game files: " + err.message);
+    }
+  }
+
   let saving = null;
   function saveProgress(ci, reason) {
     if (!PERSIST_ON || saving) return saving || Promise.resolve();
-    saving = ci.persist(true)
-      .then(bytes => {
-        if (!bytes || !bytes.length) return;
-        if (bytes.length > MAX_SAVE_BYTES) {
-          log(`Save skipped: ${Math.round(bytes.length / 1048576)} MB exceeds the ${MAX_SAVE_BYTES / 1048576} MB limit.`);
+    saving = (async () => {
+      const changed = (await listFiles(ci)).filter(
+        f => !baselineSizes.has(f.path) || baselineSizes.get(f.path) !== f.size
+      );
+      if (!changed.length) return;
+
+      const files = {};
+      let total = 0;
+      for (const f of changed) {
+        const bytes = await ci.fsReadFile(f.path);
+        if (!bytes || !bytes.length) continue;
+        total += bytes.length;
+        if (total > MAX_SAVE_BYTES) {
+          log(`Save skipped: over the ${MAX_SAVE_BYTES / 1048576} MB limit.`);
           return;
         }
-        return idbPut(slug, bytes).then(() => {
-          if (saveState) saveState.textContent = "Progress saved in this browser";
-          track("persist_save", { bytes: bytes.length, reason });
-        });
-      })
+        files[f.path] = bytes;
+      }
+      if (!Object.keys(files).length) return;
+
+      await idbPut(slug, files);
+      // Re-baseline so an unchanged file isn't re-read every 15 seconds.
+      for (const f of changed) baselineSizes.set(f.path, f.size);
+      if (saveState) saveState.textContent = "Progress saved in this browser";
+      track("persist_save", { bytes: total, files: Object.keys(files).length, reason });
+    })()
       .catch(err => log("Save failed: " + err.message))
       .finally(() => { saving = null; });
     return saving;
+  }
+
+  // Write stored files back into the booted game. Done after boot rather than
+  // layered into dosDirect because what we store is now a path->bytes map, not
+  // a bundle the loader understands.
+  async function restoreProgress(ci, files) {
+    let restored = 0;
+    for (const [path, bytes] of Object.entries(files || {})) {
+      try {
+        await ci.fsWriteFile(path, bytes);
+        restored++;
+      } catch (err) {
+        log(`Could not restore ${path}: ${err.message}`);
+      }
+    }
+    return restored;
   }
 
   // The overlay is re-rendered when a boot fails, so the play button must be
@@ -884,8 +973,26 @@
       overlay.style.display = "none";
 
       // Boot without the `audioWorklet` option on purpose — see startAudio.
-      const ci = await window.emulators.dosDirect(saved ? [bundle, saved] : bundle);
-      if (saved) track("persist_restore", { bytes: saved.length });
+      const ci = await window.emulators.dosDirect(bundle);
+
+      // Index the untouched filesystem before writing anything into it, so the
+      // baseline is the base game and not the base game plus the restore.
+      if (PERSIST_ON) await recordBaseline(ci);
+
+      // Saved files are written in after boot rather than layered into
+      // dosDirect: what we store is a path->bytes map, not a bundle the loader
+      // knows how to merge. Older saves are raw byte arrays from the previous
+      // (broken) format and are ignored — there is nothing recoverable in them.
+      let restoredCount = 0;
+      if (saved && typeof saved === "object" && !ArrayBuffer.isView(saved)) {
+        restoredCount = await restoreProgress(ci, saved);
+        if (restoredCount) {
+          // Re-index, or every restored file would read as "changed" on the
+          // next tick and be written straight back out.
+          await recordBaseline(ci);
+          track("persist_restore", { files: restoredCount });
+        }
+      }
 
       setupRenderer(ci);
       setupInput(ci);
@@ -908,7 +1015,10 @@
         // Ask for durable storage so the browser is less eager to evict us.
         navigator.storage?.persist?.().catch(() => {});
         saveInfo.hidden = false;
-        if (saved) saveState.textContent = "Progress restored from this browser";
+        if (restoredCount) {
+          saveState.textContent =
+            `Restored ${restoredCount} saved file${restoredCount === 1 ? "" : "s"} — load from the game's own menu`;
+        }
 
         const saveTimer = setInterval(() => saveProgress(ci, "interval"), SAVE_INTERVAL_MS);
         document.addEventListener("visibilitychange", () => {

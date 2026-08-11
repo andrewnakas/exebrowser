@@ -98,10 +98,52 @@
     startAt = performance.now() + Math.max(3000, 8000 - level * 700);
     lastFlow = 0;
     say(`Level ${level} — get the water through ${game.need} pipes.`);
+    save?.mark();
     hud(); drawQueue();
   }
 
-  function newGame() { level = 1; totalScore = 0; startLevel(); }
+  function newGame() { level = 1; totalScore = 0; save?.clear(); startLevel(); }
+
+  // ── resume ─────────────────────────────────────────────────────────────────
+  //
+  // Only the pre-flow board is worth storing. Once the water is running the
+  // state is a timed animation halfway between two squares, and there is no
+  // honest place to put you back — so a game in flow saves nothing and you get
+  // the level fresh. The stored state is plain data: `game` also carries its
+  // own rule closures and a Set, so restore rebuilds a game and overwrites the
+  // fields rather than trying to revive the object.
+  const save = window.GameSave?.attach({
+    key: "pipes",
+    version: 1,
+    serialize: () =>
+      !game || game.over || flowing
+        ? null
+        : { g: game.grid, q: game.queue, s: game.source, h: game.head, n: game.need, sc: game.score, lv: level, ts: totalScore },
+    restore: (s) => {
+      if (!s || !Array.isArray(s.g) || s.g.length !== COLS * ROWS || !s.s) return false;
+      level = s.lv; totalScore = s.ts;
+      game = makeGame();
+      game.grid = s.g;
+      game.queue = s.q;
+      game.source = s.s;
+      game.head = s.h;
+      game.need = s.n;
+      game.score = s.sc;
+      // makeGame() picked a fresh source; place() closes over the original
+      // coordinates, so re-point it at the restored one.
+      game.place = (x, y) => {
+        if (game.over || !game.inB(x, y)) return false;
+        if (x === game.source.x && y === game.source.y) return false;
+        if (game.flooded.has(game.idx(x, y))) return false;
+        if (game.grid[game.idx(x, y)]) game.score = Math.max(0, game.score - 5);
+        game.grid[game.idx(x, y)] = game.queue.shift();
+        game.queue.push(PIECES[rnd(PIECES.length)]);
+        return true;
+      };
+      flowing = false;
+      return true;
+    },
+  });
 
   function tick(now) {
     if (game && !game.over) {
@@ -217,7 +259,7 @@
     const r = cv.getBoundingClientRect();
     const x = Math.floor((e.clientX - r.left) / (r.width / COLS));
     const y = Math.floor((e.clientY - r.top) / (r.height / ROWS));
-    if (game.place(x, y)) { drawQueue(); hud(); }
+    if (game.place(x, y)) { save?.mark(); drawQueue(); hud(); }
     else say("Can't build there.");
   });
 
@@ -238,6 +280,16 @@
   // Expose the rules for the boot test; the page itself never uses this.
   window.__pipes = () => game;
 
-  newGame();
+  if (save?.restored) {
+    fit();
+    // The countdown restarts in full rather than resuming where it stood — the
+    // stored clock would have run out while the tab was closed.
+    startAt = performance.now() + Math.max(3000, 8000 - level * 700);
+    lastFlow = 0;
+    say(`Resumed level ${level}.`);
+    hud(); drawQueue();
+  } else {
+    newGame();
+  }
   raf = requestAnimationFrame(tick);
 })();

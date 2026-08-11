@@ -53,8 +53,36 @@
     startedAt = Date.now();
     startClock();
     say("");
+    save?.clear();
     fit(); render();
   }
+
+  // ── resume ───────────────────────────────────────────────────────────────
+  //
+  // `board` plus a few scalars is the entire game, so that's what gets stored,
+  // `history` included — an undo stack you can't use after reopening isn't much
+  // of an undo stack. The clock is a duration rather than a start time, so time
+  // doesn't accrue while the tab is closed.
+
+  const save = window.GameSave?.attach({
+    key: "spider",
+    version: 1,
+    serialize: () =>
+      won ? null : { b: board, su: suits, m: moves, sc: score, h: history, el: elapsed() },
+    restore: (s) => {
+      if (!s || !s.b || !Array.isArray(s.b.cols) || s.b.cols.length !== 10) return false;
+      board.cols = s.b.cols;
+      board.stock = s.b.stock;
+      board.done = s.b.done;
+      suits = s.su || 1;
+      moves = s.m;
+      score = s.sc;
+      history = Array.isArray(s.h) ? s.h : [];
+      won = false;
+      startedAt = Date.now() - (s.el || 0) * 1000;
+      return true;
+    },
+  });
 
   // ── clock ────────────────────────────────────────────────────────────────
   function startClock() { if (timer) clearInterval(timer); timer = setInterval(tick, 1000); tick(); }
@@ -67,6 +95,9 @@
     history.push(JSON.stringify({ b: board, m: moves, s: score }));
     if (history.length > 500) history.shift();
     undoBtn.disabled = false;
+    // Both the moves and the stock deal snapshot first, which makes this the
+    // one place that reliably means "the game changed".
+    save?.mark();
   }
   function undo() {
     const prev = history.pop();
@@ -76,6 +107,7 @@
     moves = st.m; score = st.s; won = false;
     el("win").classList.remove("on");
     undoBtn.disabled = history.length === 0;
+    save?.mark();
     say(""); render();
   }
 
@@ -262,5 +294,16 @@
   }
   window.addEventListener("resize", () => { fit(); render(); });
 
-  deal(1);
+  if (save?.restored) {
+    // Mid-game from a previous visit: pick it up rather than dealing over it.
+    // The suit buttons are markup, so re-point the highlight at the saved game.
+    for (const b of document.querySelectorAll("[data-suits]")) {
+      b.classList.toggle("on", +b.dataset.suits === suits);
+    }
+    startClock();
+    say("Resumed your game");
+    fit(); render();
+  } else {
+    deal(1);
+  }
 })();

@@ -79,10 +79,36 @@
     score = 0; lines = 0; level = 1;
     bag = []; nextPiece = null; over = false; paused = false;
     dropAcc = 0; lastT = performance.now();
+    save?.clear();
     spawn();
     hud(); say("");
     if (!raf) loop(lastT);
   }
+
+  // ── resume ─────────────────────────────────────────────────────────────────
+  //
+  // The well, the piece in the air and the bag are the whole game. The drop
+  // accumulator is not stored: resuming with a partly-elapsed drop tick would
+  // yank the piece down the instant the page loads.
+  const save = window.GameSave?.attach({
+    key: "blockdrop",
+    version: 1,
+    serialize: () =>
+      over ? null : { g: grid, p: piece, n: nextPiece, b: bag, sc: score, li: lines, lv: level },
+    restore: (s) => {
+      if (!s || !Array.isArray(s.g) || s.g.length !== COLS * ROWS || !s.p) return false;
+      grid = s.g;
+      piece = s.p;
+      nextPiece = s.n;
+      bag = Array.isArray(s.b) ? s.b : [];
+      score = s.sc; lines = s.li; level = s.lv;
+      over = false;
+      // Come back paused: a falling piece resuming under a hand that isn't on
+      // the keyboard yet is a free line of damage.
+      paused = true;
+      return true;
+    },
+  });
 
   const say = (m) => { el("msg").textContent = m || ""; };
   function hud() {
@@ -140,6 +166,9 @@
     clearLines();
     spawn();
     hud();
+    // A locked piece is the game's only irreversible event, which makes it the
+    // one place worth flagging — the frames in between are all recoverable.
+    save?.mark();
   }
 
   function clearLines() {
@@ -300,5 +329,13 @@
   window.addEventListener("resize", fit);
 
   fit();
-  newGame();
+  if (save?.restored) {
+    lastT = performance.now();
+    el("pause").textContent = "Resume";
+    hud(); drawNext();
+    say("Resumed your game — press P to play.");
+    loop(lastT);
+  } else {
+    newGame();
+  }
 })();

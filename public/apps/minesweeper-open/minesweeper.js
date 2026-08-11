@@ -63,7 +63,17 @@
     setFace("🙂");
     say("");
     fitCells();
+    save?.clear();
 
+    buildGrid();
+    for (let i = 0; i < W * H; i++) {
+      cells.push({ mine: false, open: false, flag: false, n: 0, node: gridEl.children[i] });
+    }
+  }
+
+  // The buttons only, in reading order — the cell records are attached by
+  // whoever calls this, because a resumed board brings its own.
+  function buildGrid() {
     gridEl.innerHTML = "";
     gridEl.style.gridTemplateColumns = `repeat(${W}, var(--cell))`;
     for (let y = 0; y < H; y++) {
@@ -73,10 +83,47 @@
         b.className = "cell";
         b.dataset.x = x; b.dataset.y = y;
         gridEl.appendChild(b);
-        cells.push({ mine: false, open: false, flag: false, n: 0, node: b });
       }
     }
   }
+
+  // ── resume ───────────────────────────────────────────────────────────────
+  //
+  // Each cell carries the button that draws it, which is neither serialisable
+  // nor worth storing — the grid is rebuilt from W/H on the way back in and the
+  // nodes reattached. The clock is stored as the seconds already elapsed, so it
+  // doesn't run on while the tab is closed.
+
+  const save = window.GameSave?.attach({
+    key: "minesweeper",
+    version: 1,
+    serialize: () => {
+      // A board that's over, or that hasn't been clicked yet, has nothing worth
+      // coming back to — the untouched one has no mines laid.
+      if (over || !started) return null;
+      return {
+        lv: level,
+        c: cells.map((c) => (c.mine ? 1 : 0) | (c.open ? 2 : 0) | (c.flag ? 4 : 0) | (c.n << 3)),
+        o: opened, f: flags, s: secs,
+      };
+    },
+    restore: (s) => {
+      const cfg = s && LEVELS[s.lv];
+      if (!cfg || !Array.isArray(s.c) || s.c.length !== cfg.w * cfg.h) return false;
+      level = s.lv;
+      W = cfg.w; H = cfg.h; MINES = cfg.mines;
+      started = true;
+      over = false;
+      opened = s.o; flags = s.f; secs = s.s;
+      fitCells();
+      buildGrid();
+      cells = s.c.map((v, i) => ({
+        mine: !!(v & 1), open: !!(v & 2), flag: !!(v & 4), n: v >> 3,
+        node: gridEl.children[i],
+      }));
+      return true;
+    },
+  });
 
   // Mines are placed after the first click so that click can never lose, and
   // its whole zero-region is guaranteed open — the modern Windows behaviour,
@@ -145,6 +192,7 @@
         if (!nc.open && !nc.flag && !nc.mine) stack.push([nx, ny]);
       }
     }
+    save?.mark();
     checkWin();
   }
 
@@ -183,6 +231,7 @@
     flags += c.flag ? 1 : -1;
     minesEl.textContent = pad3(MINES - flags);
     paint(x, y);
+    save?.mark();
     checkWin();
   }
 
@@ -290,6 +339,17 @@
   }
   window.addEventListener("resize", () => { fitCells(); });
 
-  document.querySelector('[data-level="beginner"]').classList.add("on");
-  newGame("beginner");
+  if (save?.restored) {
+    // Mid-game from a previous visit: the grid is built but blank, so paint
+    // every square from the state it came back with and restart the clock.
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) paint(x, y);
+    minesEl.textContent = pad3(MINES - flags);
+    clockEl.textContent = pad3(secs);
+    setFace("🙂");
+    startClock();
+    say("Resumed your game");
+  } else {
+    newGame("beginner");
+  }
+  document.querySelector(`[data-level="${level}"]`).classList.add("on");
 })();

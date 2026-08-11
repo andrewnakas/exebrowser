@@ -64,9 +64,36 @@
     startedAt = Date.now();
     startClock();
     say("");
+    save?.clear();
     fit();
     render();
   }
+
+  // ── resume ───────────────────────────────────────────────────────────────
+  //
+  // The game is `board` plus a few scalars, so that's the whole stored state.
+  // `history` travels with it — an undo stack you can't use after reopening
+  // isn't much of an undo stack. The clock is stored as a duration rather than
+  // a start time, so time doesn't accrue while the tab is closed.
+
+  const save = window.GameSave?.attach({
+    key: "freecell",
+    version: 1,
+    serialize: () =>
+      won ? null : { b: board, m: moves, h: history, n: dealNo, el: elapsed() },
+    restore: (s) => {
+      if (!s || !s.b || !Array.isArray(s.b.cols) || s.b.cols.length !== 8) return false;
+      board.cells = s.b.cells;
+      board.found = s.b.found;
+      board.cols = s.b.cols;
+      moves = s.m;
+      history = Array.isArray(s.h) ? s.h : [];
+      dealNo = s.n || 1;
+      won = false;
+      startedAt = Date.now() - (s.el || 0) * 1000;
+      return true;
+    },
+  });
 
   // ── clock ────────────────────────────────────────────────────────────────
   function startClock() {
@@ -83,6 +110,9 @@
     history.push(JSON.stringify({ b: board, m: moves }));
     if (history.length > 500) history.shift();
     undoBtn.disabled = false;
+    // Every move snapshots first, which makes this the one place that reliably
+    // means "the game changed".
+    save?.mark();
   }
   function undo() {
     const prev = history.pop();
@@ -92,6 +122,7 @@
     moves = s.m; won = false;
     el("win").classList.remove("on");
     undoBtn.disabled = history.length === 0;
+    save?.mark();
     say(""); render();
   }
 
@@ -304,5 +335,14 @@
   dealNoEl.addEventListener("keydown", (e) => { if (e.key === "Enter") deal(parseInt(dealNoEl.value, 10)); });
   window.addEventListener("resize", () => { fit(); render(); });
 
-  deal(1);
+  if (save?.restored) {
+    // Mid-game from a previous visit: pick it up rather than dealing over it.
+    if (dealNoEl) dealNoEl.value = String(dealNo);
+    startClock();
+    say("Resumed your game");
+    fit();
+    render();
+  } else {
+    deal(1);
+  }
 })();

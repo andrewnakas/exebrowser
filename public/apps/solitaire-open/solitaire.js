@@ -107,8 +107,39 @@
     startedAt = Date.now();
     startClock();
     say("");
+    save?.clear();
     render();
   }
+
+  // ── resume ───────────────────────────────────────────────────────────────
+  //
+  // The whole game is `board` plus a handful of scalars, so the stored state is
+  // just those. `history` comes along too — an undo stack you can't use after
+  // reopening isn't much of an undo stack. The elapsed clock is stored as a
+  // duration rather than a start time, so time doesn't accrue while closed.
+
+  const save = window.GameSave?.attach({
+    key: "solitaire",
+    version: 1,
+    serialize: () =>
+      won ? null : { b: board, d3: draw3, vg: vegas, m: moves, sc: score, h: history, p: passes, el: elapsed() },
+    restore: (s) => {
+      if (!s || !s.b || !Array.isArray(s.b.cols) || s.b.cols.length !== 7) return false;
+      board.stock = s.b.stock;
+      board.waste = s.b.waste;
+      board.found = s.b.found;
+      board.cols = s.b.cols;
+      draw3 = s.d3;
+      vegas = s.vg;
+      moves = s.m;
+      score = s.sc;
+      history = Array.isArray(s.h) ? s.h : [];
+      passes = s.p || 0;
+      won = false;
+      startedAt = Date.now() - (s.el || 0) * 1000;
+      return true;
+    },
+  });
 
   // ── clock ────────────────────────────────────────────────────────────────
 
@@ -151,6 +182,9 @@
     history.push(JSON.stringify({ b: board, m: moves, s: score, p: passes }));
     if (history.length > 400) history.shift();
     undoBtn.disabled = false;
+    // Every move goes through here, which makes it the one place that reliably
+    // means "the game changed" — cheap to flag, written out on hide/close.
+    save?.mark();
   }
 
   function undo() {
@@ -169,6 +203,7 @@
     el("win").classList.remove("on");
     undoBtn.disabled = history.length === 0;
     say("");
+    save?.mark();
     render();
   }
 
@@ -900,5 +935,13 @@
   window.addEventListener("resize", () => { fitBoard(); render(); });
 
   fitBoard();
-  deal();
+  if (save?.restored) {
+    // Mid-game from a previous visit: pick it up rather than dealing over it.
+    // render() re-syncs the mode labels and the undo button from the state.
+    startClock();
+    say("Resumed your game");
+    render();
+  } else {
+    deal();
+  }
 })();

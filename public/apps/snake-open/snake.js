@@ -46,10 +46,41 @@
     queue = [];
     alive = true; paused = false; score = 0;
     stepMs = baseMs; acc = 0; last = performance.now();
+    save?.clear();
     placeFood();
     hud(); say("");
     if (!raf) loop(last);
   }
+
+  // ── resume ─────────────────────────────────────────────────────────────────
+  //
+  // The board is sized from the viewport, so the stored dimensions come along
+  // and are re-applied — a snake laid out for 40 columns makes no sense on a
+  // board that came back 30 wide. `best` is not stored here; it already has its
+  // own key and is not part of a single game. The queued turns are dropped:
+  // they were pressed before you left.
+  const save = window.GameSave?.attach({
+    key: "snake",
+    version: 1,
+    serialize: () =>
+      alive ? { s: snake, f: food, d: dir, sc: score, ms: stepMs, bm: baseMs, w: walls, c: COLS, r: ROWS } : null,
+    restore: (s) => {
+      if (!s || !Array.isArray(s.s) || !s.s.length || !Array.isArray(s.d)) return false;
+      COLS = s.c; ROWS = s.r;
+      cv.width = COLS * CELL;
+      cv.height = ROWS * CELL;
+      snake = s.s;
+      food = s.f;
+      dir = s.d;
+      queue = [];
+      score = s.sc; stepMs = s.ms; baseMs = s.bm; walls = s.w;
+      alive = true;
+      // Snake never stops moving, so hand it back paused rather than a step
+      // away from a wall you didn't see coming.
+      paused = true;
+      return true;
+    },
+  });
 
   function placeFood() {
     const taken = new Set(snake.map(([x, y]) => y * COLS + x));
@@ -68,6 +99,9 @@
     if (queue.length) {
       const d = queue.shift();
       if (d[0] !== -dir[0] || d[1] !== -dir[1]) dir = d;
+      // A turn is the other discrete thing you do here, and it's what makes a
+      // run with no food eaten yet still worth storing.
+      save?.mark();
     }
 
     let [hx, hy] = snake[0];
@@ -99,6 +133,9 @@
       }
       placeFood();
       hud();
+      // Eating is the only step that changes anything you'd miss; the rest is
+      // the snake sliding along.
+      save?.mark();
     } else {
       snake.pop();
     }
@@ -222,5 +259,15 @@
   }
   window.addEventListener("resize", () => { if (!alive) sizeBoard(); });
 
-  newGame();
+  if (save?.restored) {
+    el("walls").textContent = "Walls: " + (walls ? "on" : "off");
+    for (const b of document.querySelectorAll("[data-speed]"))
+      b.classList.toggle("on", (b.dataset.speed === "fast") === (baseMs === 80));
+    last = performance.now(); acc = 0;
+    hud();
+    say("Resumed your game — press P to play.");
+    loop(last);
+  } else {
+    newGame();
+  }
 })();

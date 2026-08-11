@@ -48,8 +48,33 @@
     tileNodes.clear();
     drawCellBackgrounds();
     addRandom(); addRandom();
+    save?.clear();
     say(""); render(); hud();
   }
+
+  // ── resume ─────────────────────────────────────────────────────────────────
+  //
+  // Only the grid, the undo snapshot and the counters are stored. `tileNodes`
+  // is a map of live DOM nodes and must never go near the save — render()
+  // rebuilds it from the grid on the way back. `best` keeps its own key.
+  const save = window.GameSave?.attach({
+    key: "2048",
+    version: 1,
+    serialize: () => (over ? null : { g: grid, sc: score, w: won, p: prev, id: nextId }),
+    restore: (s) => {
+      if (!s || !Array.isArray(s.g) || s.g.length !== SIZE) return false;
+      grid = s.g;
+      score = s.sc;
+      won = !!s.w;
+      prev = s.p || null;
+      nextId = s.id || 1;
+      over = false;
+      // The stored tiles already appeared; replaying their spawn animation on
+      // load makes a resumed board look like a fresh deal.
+      for (const row of grid) for (const c of row) if (c) { c.isNew = false; c.merged = false; }
+      return true;
+    },
+  });
 
   function drawCellBackgrounds() {
     const cs = getComputedStyle(document.documentElement);
@@ -123,6 +148,7 @@
     prev = snapshot;
     undoBtn.disabled = false;
     addRandom();
+    save?.mark();
     render(); hud();
     checkState();
     return true;
@@ -172,6 +198,7 @@
     grid = prev.g; score = prev.s;
     prev = null; over = false;
     undoBtn.disabled = true;
+    save?.mark();
     say(""); render(); hud();
   }
 
@@ -258,5 +285,12 @@
   window.addEventListener("resize", fit);
 
   fit();
-  newGame();
+  if (save?.restored) {
+    // fit() has already rebuilt the backgrounds and rendered the stored grid;
+    // all that's left is the chrome that reads off state rather than the board.
+    undoBtn.disabled = !prev;
+    say("Resumed your game"); hud();
+  } else {
+    newGame();
+  }
 })();

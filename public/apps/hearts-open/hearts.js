@@ -40,6 +40,60 @@
     roundPoints: [0, 0, 0, 0],   // points taken in the current hand only
   };
 
+  // ─── resume ────────────────────────────────────────────────────────────
+  //
+  // Hearts is only safe to store when nothing is in flight. A bot turn and a
+  // finished trick are both pending setTimeout calls that live nowhere but in
+  // the running page: storing a state mid-bot-turn would resume a hand where
+  // three seats are waiting on a timer that no longer exists, and the game
+  // would sit there forever. So we save only at the two points where the game
+  // is genuinely parked on the human — choosing a pass, or holding the turn —
+  // plus the between-hands screen, and serialize null everywhere else. Losing
+  // one trick to a mid-animation close beats resuming into a dead hand.
+  //
+  // `selected` is a Set, which JSON drops, so it travels as an array.
+
+  const resumable = () =>
+    state.phase === "passing" ||
+    state.phase === "handover" ||
+    (state.phase === "playing" && state.turn === 0 && state.trick.length < 4);
+
+  const save = window.GameSave?.attach({
+    key: "hearts",
+    version: 1,
+    serialize: () => {
+      if (!resumable()) return null;
+      return {
+        h: state.hands, sc: state.scores, tr: state.trick, ld: state.leader,
+        tn: state.turn, hb: state.heartsBroken, hn: state.handNo, pd: state.passDir,
+        sel: [...state.selected], ph: state.phase, tc: state.trickCount,
+        tg: state.target, rp: state.roundPoints, lh: state.lastHand || null,
+      };
+    },
+    restore: (s) => {
+      if (!s || !Array.isArray(s.h) || s.h.length !== 4) return false;
+      // Only the phases the serializer vets are safe to come back into; a save
+      // from an older build could hold anything.
+      if (s.ph !== "passing" && s.ph !== "handover" &&
+          !(s.ph === "playing" && s.tn === 0)) return false;
+      state.hands = s.h;
+      state.scores = s.sc;
+      state.trick = s.tr || [];
+      state.leader = s.ld;
+      state.turn = s.tn;
+      state.heartsBroken = !!s.hb;
+      state.handNo = s.hn;
+      state.passDir = s.pd;
+      state.selected = new Set(s.sel || []);
+      state.phase = s.ph;
+      state.trickCount = s.tc;
+      state.target = s.tg || 100;
+      state.roundPoints = s.rp || [0, 0, 0, 0];
+      state.lastHand = s.lh;
+      return true;
+    },
+  });
+
   function newDeck() {
     const d = [];
     for (const s of SUITS) for (const r of RANKS) d.push({ s, r });
@@ -318,6 +372,13 @@
       }
     }
     renderStatus();
+    // Every state change ends in a render, so this is the one hook needed.
+    // Leaving a resumable position drops the stored save rather than keeping
+    // it: the moment a bot is on the clock, that save describes a position a
+    // trick behind the live one, and coming back to it would silently rewind
+    // the hand. Better no resume than the wrong one.
+    if (resumable()) save?.mark();
+    else save?.clear();
   }
 
   function renderStatus() {
@@ -388,9 +449,18 @@
     state.roundPoints = [0, 0, 0, 0];
     state.lastHand = null;
     state.handNo = 0;
+    save?.clear();
     deal();
   }
 
   window.OpenHearts = { newGame };
-  newGame();
+  if (save?.restored) {
+    // Mid-hand from a previous visit. Every resumable phase waits on a click,
+    // so rendering is the whole job — there is no timer to restart.
+    render();
+    const s = el("status");
+    if (s) s.textContent = "Resumed your game — " + s.textContent;
+  } else {
+    newGame();
+  }
 })();
