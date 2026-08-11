@@ -1034,3 +1034,22 @@ body.dos-playing { overflow: hidden; }
 .next-up a { border-bottom: 1px solid transparent; }
 .next-up a:hover { border-bottom-color: var(--accent); }
 .next-up-all { color: var(--muted); }
+
+/* Newsletter signup. One field — the only way this site can reach a visitor
+   again, since there are no accounts and almost everyone is a first-timer. */
+.newsletter-form {
+  display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0 0;
+}
+.newsletter-form input[type="email"] {
+  flex: 1 1 16rem; min-width: 0;
+  padding: .55rem .7rem;
+  background: var(--bg-elev); color: var(--fg);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  font: inherit;
+}
+.newsletter-form input[type="email"]:focus {
+  outline: none; border-color: var(--accent);
+}
+
+/* Sits under a self-saving game's frame. */
+.resume-note { margin: .5rem 0 0; }

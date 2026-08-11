@@ -114,7 +114,7 @@
     <p id="dos-status" class="muted small" style="margin:.5rem 0 0;" hidden></p>
     <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
     <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to give it your keyboard.</p>
-    <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">Progress saves in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></p>
+    <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">Save inside the game and it's kept in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></p>
     <details id="dos-keys" style="margin-top:.5rem;" hidden>
       <summary class="muted small">Keyboard — remap any key</summary>
       <p class="muted small" style="margin:.5rem 0;">Click a key below, then press the key you'd rather use. Saved in this browser, per game.</p>

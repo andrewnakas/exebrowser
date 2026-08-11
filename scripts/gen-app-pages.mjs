@@ -116,6 +116,12 @@ function imageSize(absPath) {
 }
 const SITE = "https://exebrowser.com";
 
+// Newsletter provider endpoint (Buttondown, Mailchimp, Listmonk — any host that
+// accepts a plain POSTed form). Empty means the signup block is not rendered at
+// all: an email box that silently drops addresses is worse than none, and this
+// is the only place to change to turn the feature on across every page.
+const NEWSLETTER_ACTION = "";
+
 const esc = (s) =>
   String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -567,6 +573,23 @@ function nextUpHtml(current, allPages) {
   return `\n    <p class="next-up"><span class="next-up-label">Play next:</span>\n      ${links}\n      <a class="next-up-all" href="/run/">all ${allPages.filter(isPlayable).length} games →</a>\n    </p>`;
 }
 
+// The site has no way to reach a visitor again — no account, no login, and
+// 98.6% of users are first-timers. One email field is the whole mechanism.
+// Rendered only when NEWSLETTER_ACTION is set, so it can't collect addresses
+// before there is somewhere for them to go.
+function newsletterHtml() {
+  if (!NEWSLETTER_ACTION) return "";
+  return `\n  <section class="card newsletter">
+    <h2>One new retro game in your inbox each week</h2>
+    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
+    <form class="newsletter-form" action="${esc(NEWSLETTER_ACTION)}" method="post" target="_blank" data-newsletter>
+      <label class="visually-hidden" for="nl-email">Email address</label>
+      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+      <button type="submit" class="button primary">Subscribe</button>
+    </form>
+  </section>`;
+}
+
 function downloadHtml(p) {
   if (!p.download || !p.download.heading) return "";
   // The template emits download.heading as the box's <h3>, so drop a leading
@@ -599,7 +622,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=35" />
+<link rel="stylesheet" href="/style.css?v=36" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -644,7 +667,7 @@ ${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p)}${isPlayable(p) ?
 ${downloadHtml(p)}
   <section class="card">
     <h2>How it works &amp; what to expect</h2>${sectionsHtml(p.sections)}
-  </section>${faqHtml(p)}${isPlayable(p) ? alsoPlayHtml(p, pages) : ""}${relatedHtml(p.related)}
+  </section>${faqHtml(p)}${isPlayable(p) ? alsoPlayHtml(p, pages) : ""}${newsletterHtml()}${relatedHtml(p.related)}
 </main>
 
 <footer>
@@ -671,7 +694,7 @@ ${p.iframeUrl
 <script src="/recent.js?v=2"></script>
 <script src="/embed.js?v=5"></script>
 <script src="/app.js?v=18"></script>`}
-<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>${NEWSLETTER_ACTION ? '\n<script src="/newsletter.js?v=1"></script>' : ""}
 </body>
 </html>
 `;
@@ -808,7 +831,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=35" />
+<link rel="stylesheet" href="/style.css?v=36" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -871,7 +894,7 @@ ${games.map(indexCard).join("\n")}
 ${apps.map(indexCard).join("\n")}
     </ul>
     <p style="margin-top:1.25rem;">Don't see your app? The general <a href="/guide/">compatibility guide</a> explains which categories run well and which struggle. Most classic 32-bit Windows software from 1995–2008 is worth a try.</p>
-  </section>
+  </section>${newsletterHtml()}
 </main>
 
 <footer>
@@ -893,7 +916,7 @@ ${apps.map(indexCard).join("\n")}
 <script>
   window.renderContinue && renderContinue("continue-playing", "continue-grid");
   window.renderResumeBar && renderResumeBar("resume-bar");
-</script>
+</script>${NEWSLETTER_ACTION ? '\n<script src="/newsletter.js?v=1"></script>' : ""}
 </body>
 </html>
 `;
