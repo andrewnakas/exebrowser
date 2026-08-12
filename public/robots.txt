@@ -1,8 +1,26 @@
+# Everything here is meant to be found. The only closed paths are runtime
+# internals with no readable content of their own.
 User-agent: *
 Allow: /
 Disallow: /boxedwine/
 Disallow: /64/
 
-# Assistants are welcome — ChatGPT is already one of this site's largest
-# referrers. /llms.txt is the short version of what's playable here.
+# Assistants are explicitly welcome — people asking one where to play a DOS
+# game in a browser is already among this site's largest referral sources.
+# /llms.txt is the short version of what is playable here.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /boxedwine/
+Disallow: /64/
+
 Sitemap: https://exebrowser.com/sitemap.xml
