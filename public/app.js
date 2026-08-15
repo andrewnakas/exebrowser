@@ -725,7 +725,29 @@
   const WINE_DB = "wineSaves";
   const WINE_STORE = "layers";
   const WINE_MAX_BYTES = 16 * 1024 * 1024;
-  const wineSlug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || "home";
+  // On a game page the slug is the game. Off one — the homepage's bring-your-
+  // own-EXE loader — there is no slug, and everything used to share the single
+  // key "home": upload KeePass, then upload PuTTY, and PuTTY booted with
+  // KeePass's files layered over it. Key on the executable instead.
+  const wineSlugBase = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || "";
+  let wineSlug = wineSlugBase || "home";
+
+  function shortHash(s) {
+    let h = 0x811c9dc5;
+    for (let i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i) & 0xff;
+      h = (h + ((h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24))) >>> 0;
+    }
+    return h.toString(36);
+  }
+
+  // Called once the chosen executable is known, before the first save.
+  function resolveWineSlug() {
+    if (wineSlugBase) return wineSlug;
+    const name = state.pickedExe?.originalName || "";
+    wineSlug = name ? "byo-" + shortHash(name.toLowerCase()) : "home";
+    return wineSlug;
+  }
 
   function wineIdb() {
     return new Promise((resolve, reject) => {
@@ -808,8 +830,30 @@
           if (Object.keys(files).length) snapshot[mount] = files;
         }
         if (!total) { log("Nothing new to save yet.", "warn"); return; }
-        await wineIdbPut(wineSlug, snapshot);
+        const key = resolveWineSlug();
+        await wineIdbPut(key, snapshot);
         log(`Saved ${formatBytes(total)} of your files in this browser.`);
+
+        window.SaveCore?.note({
+          slug: key,
+          // On a game page the title people recognise is the page's, not the
+          // executable's — nobody is looking for "SKI32.EXE" in a resume card.
+          // An uploaded EXE has no page, so there the filename is all there is.
+          name: (wineSlugBase && document.getElementById("exe-embed")?.dataset.appName)
+            || state.pickedExe?.originalName
+            || key,
+          runtime: "wine",
+          kind: "files",
+          payload: { db: WINE_DB, store: WINE_STORE, key },
+          bytes: total,
+          // Boxedwine draws through Emscripten's Browser.createContext, which
+          // may hand back a WebGL context with no preserveDrawingBuffer — that
+          // reads back blank. thumbFromCanvas returns null rather than a black
+          // rectangle, and the card falls back to the game's poster art. Not
+          // worth the per-frame cost of forcing a readable buffer for a
+          // thumbnail on something like PuTTY.
+          thumb: window.SaveCore.thumbFromCanvas(document.getElementById("canvas")),
+        });
         track("persist_save", { bytes: total, reason });
       } catch (err) {
         log("Could not save your files: " + err.message, "warn");
@@ -820,11 +864,40 @@
     return winePersistInFlight;
   }
 
+  // Poll for the exact state restoreWineLayers needs: both overlays mounted,
+  // and Wine's own prefix copy finished. That second part matters — the mounts
+  // appear well before Wine has populated them, and restoring into a prefix
+  // that's still being written gets the files overwritten a moment later.
+  // A non-empty writable layer is the cheapest available proof it's done.
+  async function waitForOverlays(timeoutMs = 30000) {
+    const deadline = Date.now() + timeoutMs;
+    while (Date.now() < deadline) {
+      try {
+        const layers = getWritableLayers();
+        const populated = layers.some(({ writable }) => {
+          try { return writable.readdirSync("/").length > 0; } catch { return false; }
+        });
+        if (populated) return true;
+      } catch {
+        // Not mounted yet — getWritableLayers throws with a precise reason.
+      }
+      await new Promise(r => setTimeout(r, 250));
+    }
+    log("Wine's filesystem never finished mounting — skipping the restore.", "warn");
+    return false;
+  }
+
   // Write a stored snapshot back into the fresh overlays after boot.
   async function restoreWineLayers() {
     if (!WINE_PERSIST_ON) return 0;
     let snapshot;
-    try { snapshot = await wineIdbGet(wineSlug); } catch { return 0; }
+    try {
+      snapshot = await wineIdbGet(resolveWineSlug());
+      // Everything uploaded on the homepage used to land under "home". Read it
+      // once so an existing save isn't stranded by the new per-EXE key; the
+      // next save writes it back under the key it should have had.
+      if (!snapshot && !wineSlugBase) snapshot = await wineIdbGet("home");
+    } catch { return 0; }
     if (!snapshot) return 0;
     let restored = 0;
     try {
@@ -993,16 +1066,32 @@
       startHeartbeat();
 
       if (WINE_PERSIST_ON) {
-        // Overlays only exist once the emulator is up; give Wine a moment to
-        // finish mounting before writing anything back into them.
-        setTimeout(() => { restoreWineLayers().catch(() => {}); }, 4000);
+        // The overlays only exist once Wine has finished mounting, and how
+        // long that takes depends on the connection and the machine. Four
+        // seconds was a guess, and on a slow boot it fired into nothing —
+        // silently, because there was no save to restore *yet*. Wait for the
+        // condition instead of the clock.
+        waitForOverlays()
+          .then(ready => (ready ? restoreWineLayers() : 0))
+          .catch(() => {});
         navigator.storage?.persist?.().catch(() => {});
-        const winePersistTimer = setInterval(() => persistWineLayers("interval"), 30000);
-        document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "hidden") persistWineLayers("hidden");
-        });
-        window.addEventListener("pagehide", () => persistWineLayers("pagehide"));
-        window.addEventListener("beforeunload", () => clearInterval(winePersistTimer));
+
+        const flusher = window.SaveCore
+          ? window.SaveCore.schedule({
+              intervalMs: 30000,
+              flush: (reason) => persistWineLayers(reason),
+            })
+          : null;
+        if (!flusher) {
+          setInterval(() => persistWineLayers("interval"), 30000);
+          document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") persistWineLayers("hidden");
+          });
+          window.addEventListener("pagehide", () => persistWineLayers("pagehide"));
+        }
+        // Deliberately no `beforeunload` handler clearing the timer: on Safari
+        // that could tear the flusher down before the pagehide write ran,
+        // which is the one write that matters most.
       }
     } catch (err) {
       track("boot_error", { error_message: String(err.message).slice(0, 120) });

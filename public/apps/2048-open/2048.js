@@ -59,6 +59,8 @@
   // rebuilds it from the grid on the way back. `best` keeps its own key.
   const save = window.GameSave?.attach({
     key: "2048",
+    slug: "2048-open",
+    name: "2048",
     version: 1,
     serialize: () => (over ? null : { g: grid, sc: score, w: won, p: prev, id: nextId }),
     restore: (s) => {

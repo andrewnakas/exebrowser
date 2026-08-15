@@ -261,6 +261,9 @@ function embedBlock(p) {
     const attrs = [
       p.appUrl ? `data-app-url="${esc(p.appUrl)}"` : "",
       `data-app-name="${esc(p.appName)}"`,
+      // The embed can derive this from the URL, but saying it outright means
+      // the storage key is a property of the page rather than of its path.
+      `data-slug="${esc(p.slug)}"`,
       // Games whose own mouse support is off/absent map a click to a key so
       // clicking still shoots. Omit for games that read the mouse natively.
       p.clickKey ? `data-click-key="${p.clickKey}"` : "",
@@ -622,7 +625,7 @@ const render = (p) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=36" />
+<link rel="stylesheet" href="/style.css?v=37" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -679,6 +682,7 @@ ${downloadHtml(p)}
     <a href="/guide/">Compatibility Guide</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
@@ -686,14 +690,18 @@ ${downloadHtml(p)}
 </footer>
 
 ${p.iframeUrl
-  ? `<script src="/recent.js?v=2"></script>`
+  ? `<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>`
   : p.dosRuntime
-    ? `<script src="/recent.js?v=2"></script>
-<script src="/dos-embed.js?v=28"></script>`
+    ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
+<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>
+<script src="/dos-embed.js?v=30"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/recent.js?v=2"></script>
-<script src="/embed.js?v=5"></script>
-<script src="/app.js?v=18"></script>`}
+<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>
+<script src="/embed.js?v=6"></script>
+<script src="/app.js?v=19"></script>`}
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>${NEWSLETTER_ACTION ? '\n<script src="/newsletter.js?v=1"></script>' : ""}
 </body>
 </html>
@@ -831,7 +839,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=36" />
+<link rel="stylesheet" href="/style.css?v=37" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -906,12 +914,14 @@ ${apps.map(indexCard).join("\n")}
     <a href="/guide/">Compatibility Guide</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/recent.js?v=2"></script>
+<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>
 <script src="/filter.js?v=1"></script>
 <script>
   window.renderContinue && renderContinue("continue-playing", "continue-grid");

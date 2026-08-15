@@ -96,6 +96,8 @@
 
   const save = window.GameSave?.attach({
     key: "minesweeper",
+    slug: "minesweeper-open",
+    name: "Minesweeper",
     version: 1,
     serialize: () => {
       // A board that's over, or that hasn't been clicked yet, has nothing worth

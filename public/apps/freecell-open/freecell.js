@@ -78,6 +78,8 @@
 
   const save = window.GameSave?.attach({
     key: "freecell",
+    slug: "freecell-open",
+    name: "FreeCell",
     version: 1,
     serialize: () =>
       won ? null : { b: board, m: moves, h: history, n: dealNo, el: elapsed() },

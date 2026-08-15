@@ -59,6 +59,8 @@
   // finish itself or cost a life before you'd touched anything.
   const save = window.GameSave?.attach({
     key: "jezzball",
+    slug: "jezzball-open",
+    name: "JezzBall",
     version: 1,
     serialize: () =>
       dead ? null : { g: Array.from(grid), b: balls, lv: level, li: lives, sc: score, p: pct, v: vertical, c: COLS, r: ROWS },

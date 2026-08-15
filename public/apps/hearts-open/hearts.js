@@ -60,6 +60,8 @@
 
   const save = window.GameSave?.attach({
     key: "hearts",
+    slug: "hearts-open",
+    name: "Hearts",
     version: 1,
     serialize: () => {
       if (!resumable()) return null;

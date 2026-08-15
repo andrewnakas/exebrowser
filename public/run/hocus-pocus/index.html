@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=36" />
+<link rel="stylesheet" href="/style.css?v=37" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -117,6 +117,7 @@
     <div id="dos-embed"
          data-app-url="/apps/hocus-pocus/hocus-pocus.zip"
          data-app-name="Hocus Pocus"
+         data-slug="hocus-pocus"
          data-click-key="342"
          data-click-key-right="341"
          data-autoboot="false"></div>
@@ -317,14 +318,17 @@
     <a href="/guide/">Compatibility Guide</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<script src="/recent.js?v=2"></script>
-<script src="/dos-embed.js?v=28"></script>
+<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
+<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>
+<script src="/dos-embed.js?v=30"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

@@ -92,6 +92,8 @@
   // yank the piece down the instant the page loads.
   const save = window.GameSave?.attach({
     key: "blockdrop",
+    slug: "blockdrop-open",
+    name: "Block Drop",
     version: 1,
     serialize: () =>
       over ? null : { g: grid, p: piece, n: nextPiece, b: bag, sc: score, li: lines, lv: level },

@@ -120,6 +120,8 @@
 
   const save = window.GameSave?.attach({
     key: "solitaire",
+    slug: "solitaire-open",
+    name: "Solitaire (Klondike)",
     version: 1,
     serialize: () =>
       won ? null : { b: board, d3: draw3, vg: vegas, m: moves, sc: score, h: history, p: passes, el: elapsed() },

@@ -61,6 +61,8 @@
   // they were pressed before you left.
   const save = window.GameSave?.attach({
     key: "snake",
+    slug: "snake-open",
+    name: "Snake",
     version: 1,
     serialize: () =>
       alive ? { s: snake, f: food, d: dir, sc: score, ms: stepMs, bm: baseMs, w: walls, c: COLS, r: ROWS } : null,

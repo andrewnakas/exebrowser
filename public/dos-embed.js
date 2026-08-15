@@ -63,6 +63,31 @@
   // Best-effort by design: browsers evict IndexedDB (iOS drops it after ~7
   // days unused), so the UI never promises saves are permanent.
   const PERSIST_ON = new URLSearchParams(location.search).get("persist") !== "0";
+
+  // Which titles have been verified to resume mid-game end to end. Declared up
+  // here because the resume card, which renders during first paint, needs it —
+  // and because a game with no snapshot support should never pay for fetching
+  // the snapshot module at all.
+  const SNAPSHOT_SLUGS = new Set([
+    "doom",
+    "keen4",
+    "cosmo",
+    "scorched-earth",
+    "wolfenstein-3d",
+    "tyrian",
+    "freedoom",
+    "commander-keen",
+    "raptor",
+    "blake-stone",
+    "skyroads",
+    "jetpack",
+    "one-must-fall-2097",
+    "xargon",
+    "bio-menace",
+  ]);
+  const snapshotParam = new URLSearchParams(location.search).get("snapshot");
+  const SNAPSHOT_POSSIBLE =
+    snapshotParam !== "0" && (SNAPSHOT_SLUGS.has(slug) || snapshotParam === "1");
   const DB_NAME = "dosSaves";
   const STORE = "bundles";
   const MAX_SAVE_BYTES = 16 * 1024 * 1024; // guard against a runaway write loop
@@ -139,24 +164,101 @@
   const fsBtn    = document.getElementById("dos-fullscreen");
 
   // Someone coming back to a game they have progress in shouldn't have to guess
-  // whether it survived. DOSBox can't snapshot a running game — what we keep is
-  // the game's own save files — so the promise here is deliberately "your saved
+  // whether it survived — so show them the frame they left on and let them
+  // click it. DOSBox can't snapshot a running game yet, so what comes back is
+  // the game's own save files: the promise here is deliberately "your saved
   // games are here", not "you'll land exactly where you left off".
+  //
+  // Read from the shared index rather than IndexedDB, because this has to
+  // render during first paint. The old code awaited an IndexedDB open before
+  // it could even decide what the button said.
   if (PERSIST_ON) {
-    idbGet(slug)
-      .then(saved => {
-        // A path->bytes map. Byte arrays are the old broken format — treat them
-        // as nothing, since they never contained a usable save.
-        const count = saved && !ArrayBuffer.isView(saved) ? Object.keys(saved).length : 0;
-        if (!count || !playBtn.isConnected) return;
-        playBtn.innerHTML = "&#9654; Continue " + esc(cfg.appName);
-        const note = playBtn.parentElement?.querySelector("p");
-        if (note) {
-          note.innerHTML =
-            "Your saved games from last time are loaded with it.<br>Load them from the game's own menu.";
-        }
-      })
-      .catch(() => { /* no IndexedDB (private mode) — the plain button is fine */ });
+    const rec = window.SaveCore?.get(slug);
+    if (rec && rec.updatedAt) showResumeOverlay(rec);
+  }
+
+  function showResumeOverlay(rec) {
+    const btn = document.getElementById("dos-play");
+    if (!btn) return;
+    const art = rec.thumb || `/run/${slug}/screenshot.png`;
+    btn.classList.add("embed-play-resume");
+    btn.innerHTML =
+      `<img src="${esc(art)}" alt="" class="resume-shot" onerror="this.remove()">` +
+      `<span>&#9654; Resume ${esc(cfg.appName)}</span>`;
+    const note = btn.parentElement?.querySelector("p");
+    if (!note) return;
+
+    const FILES_COPY =
+      `Your saved games are loaded with it —<br>load them from the game's own menu.`;
+    const SNAPSHOT_COPY =
+      `You'll pick up exactly where you left off,<br>mid-game.`;
+
+    function render(body) {
+      note.innerHTML =
+        `Saved ${esc(relativeTime(rec.updatedAt))}. ${body} ` +
+        `<a href="#" id="dos-start-over">Start over</a>`;
+      note.querySelector("#dos-start-over").addEventListener("click", async e => {
+        e.preventDefault();
+        if (!confirm(`Delete your saved progress in ${cfg.appName}?`)) return;
+        await window.SaveCore?.drop(slug);
+        await dropSnapshotRecord(slug);
+        location.reload();
+      });
+    }
+
+    render(FILES_COPY);
+
+    // A full mid-game snapshot justifies a much stronger promise than "your
+    // save files are here". Whether one exists is an IndexedDB question, so the
+    // card renders on the weaker copy immediately and upgrades when the answer
+    // arrives rather than making first paint wait.
+    if (SNAPSHOT_POSSIBLE) {
+      hasSnapshotRecord(slug)
+        .then(yes => { if (yes && note.isConnected) render(SNAPSHOT_COPY); })
+        .catch(() => {});
+    }
+  }
+
+  // Straight at the snapshot store, so the resume card can ask its question
+  // without pulling in the whole snapshot module before anyone clicks play.
+  function snapshotStore(mode) {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open("exeSaves", 1);
+      req.onupgradeneeded = () => {
+        if (!req.result.objectStoreNames.contains("snapshots")) req.result.createObjectStore("snapshots");
+      };
+      req.onsuccess = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains("snapshots")) return reject(new Error("no store"));
+        resolve(db.transaction("snapshots", mode).objectStore("snapshots"));
+      };
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  function hasSnapshotRecord(key) {
+    return snapshotStore("readonly").then(store => new Promise((resolve, reject) => {
+      const req = store.getKey(key);
+      req.onsuccess = () => resolve(req.result !== undefined);
+      req.onerror = () => reject(req.error);
+    })).catch(() => false);
+  }
+
+  function dropSnapshotRecord(key) {
+    return snapshotStore("readwrite").then(store => new Promise((resolve) => {
+      const req = store.delete(key);
+      req.onsuccess = req.onerror = () => resolve();
+    })).catch(() => {});
+  }
+
+  function relativeTime(ts) {
+    const mins = Math.round((Date.now() - ts) / 60000);
+    if (mins < 2) return "just now";
+    if (mins < 60) return mins + " minutes ago";
+    const hours = Math.round(mins / 60);
+    if (hours < 24) return hours === 1 ? "an hour ago" : hours + " hours ago";
+    const days = Math.round(hours / 24);
+    return days === 1 ? "yesterday" : days + " days ago";
   }
   const soundBtn = document.getElementById("dos-sound");
   const mouseHint = document.getElementById("dos-mouse-hint");
@@ -209,16 +311,35 @@
     statusEl.textContent = msg;
   }
 
-  async function loadEmulators() {
-    if (window.emulators) return;
-    await new Promise((resolve, reject) => {
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
       const s = document.createElement("script");
-      s.src = "/dosbox/emulators.js";
+      s.src = src;
       s.onload = resolve;
-      s.onerror = () => reject(new Error("Failed to load emulators.js"));
+      s.onerror = () => reject(new Error("Failed to load " + src));
       document.head.appendChild(s);
     });
-    window.emulators.pathPrefix = "/dosbox/";
+  }
+
+  // The experimental mid-game savestate. Nothing is fetched, and no page pays
+  // for it, unless ?snapshot=1 is set on an allowlisted game.
+  let snapshotOn = false;
+
+  async function loadSnapshotModule() {
+    if (!SNAPSHOT_POSSIBLE) return false;
+    if (!window.DosSnapshot) {
+      try { await loadScript("/dos-snapshot.js?v=2"); }
+      catch (err) { log("Snapshot module unavailable: " + err.message); return false; }
+    }
+    return !!window.DosSnapshot?.enabled(slug);
+  }
+
+  async function loadEmulators() {
+    if (window.emulators) return;
+    await loadScript("/dosbox/emulators.js");
+    // Same emulators.js either way; only the DOSBox glue differs, and the
+    // patched copy shares the (immutable, already-cached) wasm with /dosbox/.
+    window.emulators.pathPrefix = snapshotOn ? window.DosSnapshot.pathPrefix : "/dosbox/";
   }
 
   const fmtMB = (n) => (n / 1048576).toFixed(1) + " MB";
@@ -852,8 +973,26 @@
   // is a handful of small files, and the game's own data (DOOM1.WAD alone is
   // 4 MB) is already on the server. We keep files that appear or change after
   // boot, which is exactly savegames, configs and high-score tables.
+  // There are two ways to do the walk.
+  //
+  // The fast one goes straight at the Emscripten Module behind the
+  // CommandInterface — `dosDirect` keeps it on the transport — and stats files
+  // synchronously. MEMFS stamps `mtime` on every write, so a pass costs
+  // nothing when nothing changed, and no file is read that didn't change.
+  //
+  // The slow one is the public fsTree/fsReadFile API, kept for any build where
+  // the Module isn't reachable (a worker transport, a future js-dos). There the
+  // tree reports only a size, and **a savegame written over in place is almost
+  // always the same size as before** — which is exactly what the old code
+  // compared. Saving over slot 1 a second time was invisible to it and never
+  // persisted. So the fallback hashes the bytes of small files instead.
   const SKIP_DIRS = ["/.jsdos/"];
-  const baselineSizes = new Map();
+  const FS_HOME = "/home/web_user";
+  const HASH_MAX_BYTES = 2 * 1024 * 1024; // savegames are small; game data isn't ours to store
+  const baselineSig = new Map();
+
+  const moduleOf = (ci) => ci && ci.transport && ci.transport.module;
+  const fsOf = (ci) => moduleOf(ci)?.FS || null;
 
   function flattenTree(node, path, out) {
     if (!node) return out;
@@ -864,64 +1003,165 @@
     return out;
   }
 
+  // Change detection without reading: mtime alone would miss two writes inside
+  // the same millisecond, size alone misses an in-place overwrite. Together
+  // they're what the 64-bit launcher already uses for the same job.
+  function walkFS(fs, dir, out) {
+    let names;
+    try { names = fs.readdir(dir); } catch { return out; }
+    for (const name of names) {
+      if (name === "." || name === "..") continue;
+      const full = dir + "/" + name;
+      let st;
+      try { st = fs.stat(full); } catch { continue; }
+      const rel = full.slice(FS_HOME.length);
+      if (fs.isDir(st.mode)) {
+        if (!SKIP_DIRS.some(d => (rel + "/").includes(d))) walkFS(fs, full, out);
+      } else if (fs.isFile(st.mode)) {
+        if (SKIP_DIRS.some(d => rel.includes(d))) continue;
+        const mtime = st.mtime instanceof Date ? st.mtime.getTime() : Number(st.mtime) || 0;
+        out.push({ path: rel, sig: mtime + ":" + st.size });
+      }
+    }
+    return out;
+  }
+
+  // Not a cryptographic hash and doesn't need to be — the only question is
+  // "are these bytes the ones I saw last time".
+  function fnv1a(bytes) {
+    let h = 0x811c9dc5;
+    for (let i = 0; i < bytes.length; i++) {
+      h ^= bytes[i];
+      h = (h + ((h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24))) >>> 0;
+    }
+    return h.toString(36);
+  }
+
   async function listFiles(ci) {
-    const files = flattenTree(await ci.fsTree(), "", []);
-    return files.filter(f => !SKIP_DIRS.some(d => f.path.includes(d)));
+    const fs = fsOf(ci);
+    if (fs) return walkFS(fs, FS_HOME, []);
+
+    const files = flattenTree(await ci.fsTree(), "", [])
+      .filter(f => !SKIP_DIRS.some(d => f.path.includes(d)));
+    for (const f of files) {
+      if (f.size > HASH_MAX_BYTES) { f.sig = "big:" + f.size; continue; }
+      try {
+        const bytes = await ci.fsReadFile(f.path);
+        f.bytes = bytes;
+        f.sig = f.size + ":" + fnv1a(bytes || new Uint8Array(0));
+      } catch {
+        f.sig = "err:" + f.size;
+      }
+    }
+    return files;
+  }
+
+  function readFile(ci, path) {
+    const fs = fsOf(ci);
+    if (fs) return fs.readFile(FS_HOME + path, { encoding: "binary" });
+    return ci.fsReadFile(path);
   }
 
   // Everything present at boot is base game data, so anything that appears
-  // later — or changes size — is the player's.
+  // later — or changes — is the player's.
   async function recordBaseline(ci) {
-    baselineSizes.clear();
+    baselineSig.clear();
     try {
-      for (const f of await listFiles(ci)) baselineSizes.set(f.path, f.size);
+      for (const f of await listFiles(ci)) baselineSig.set(f.path, f.sig);
     } catch (err) {
       log("Could not index game files: " + err.message);
     }
   }
 
+  // Everything we've written for this slug so far this session, keyed by path.
+  // This has to be cumulative: each save writes the *whole* record, so building
+  // it from only the files that changed since the last save would drop every
+  // file saved before it — an earlier savegame would quietly disappear the
+  // first time the game touched its config file.
+  let storedFiles = {};
+
+  // True once this session has resumed mid-game from a snapshot, which changes
+  // what the save line is allowed to say.
+  let resumedFromSnapshot = false;
+
   let saving = null;
   function saveProgress(ci, reason) {
     if (!PERSIST_ON || saving) return saving || Promise.resolve();
     saving = (async () => {
-      const changed = (await listFiles(ci)).filter(
-        f => !baselineSizes.has(f.path) || baselineSizes.get(f.path) !== f.size
-      );
+      const changed = [];
+      for (const f of await listFiles(ci)) {
+        if (baselineSig.get(f.path) === f.sig) continue;
+        const bytes = f.bytes || await readFile(ci, f.path);
+        if (!bytes || !bytes.length) continue;
+        changed.push({ path: f.path, sig: f.sig, bytes });
+      }
       if (!changed.length) return;
 
-      const files = {};
-      let total = 0;
-      for (const f of changed) {
-        const bytes = await ci.fsReadFile(f.path);
-        if (!bytes || !bytes.length) continue;
-        total += bytes.length;
-        if (total > MAX_SAVE_BYTES) {
-          log(`Save skipped: over the ${MAX_SAVE_BYTES / 1048576} MB limit.`);
-          return;
-        }
-        files[f.path] = bytes;
-      }
-      if (!Object.keys(files).length) return;
+      const merged = Object.assign({}, storedFiles);
+      for (const f of changed) merged[f.path] = f.bytes;
 
-      await idbPut(slug, files);
+      let total = 0;
+      for (const bytes of Object.values(merged)) total += bytes.length;
+      if (total > MAX_SAVE_BYTES) {
+        log(`Save skipped: over the ${MAX_SAVE_BYTES / 1048576} MB limit.`);
+        return;
+      }
+
+      await idbPut(slug, merged);
+      storedFiles = merged;
       // Re-baseline so an unchanged file isn't re-read every 15 seconds.
-      for (const f of changed) baselineSizes.set(f.path, f.size);
-      if (saveState) saveState.textContent = "Progress saved in this browser";
-      track("persist_save", { bytes: total, files: Object.keys(files).length, reason });
+      for (const f of changed) baselineSig.set(f.path, f.sig);
+      // Don't talk over the stronger promise: if this session resumed from a
+      // snapshot, "progress saved" is a downgrade of what the player was told.
+      if (saveState && !resumedFromSnapshot) saveState.textContent = "Progress saved in this browser";
+
+      window.SaveCore?.note({
+        slug,
+        name: cfg.appName,
+        runtime: "dosbox",
+        kind: "files",
+        payload: { db: DB_NAME, store: STORE, key: slug },
+        bytes: total,
+        thumb: window.SaveCore.thumbFromCanvas(canvas),
+      });
+      track("persist_save", { bytes: total, files: changed.length, reason });
     })()
       .catch(err => log("Save failed: " + err.message))
       .finally(() => { saving = null; });
     return saving;
   }
 
+  // If save-core.js didn't load (a stale cached page, a hand-written embed),
+  // fall back to the flush policy this file used to carry itself. Saving is
+  // more important than saving *tidily*.
+  function legacyFlusher(ci) {
+    const timer = setInterval(() => saveProgress(ci, "interval"), SAVE_INTERVAL_MS);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") saveProgress(ci, "hidden");
+    });
+    window.addEventListener("pagehide", () => saveProgress(ci, "pagehide"));
+    return {
+      flushNow: (reason) => saveProgress(ci, reason),
+      stop: () => clearInterval(timer),
+    };
+  }
+
   // Write stored files back into the booted game. Done after boot rather than
-  // layered into dosDirect because what we store is now a path->bytes map, not
-  // a bundle the loader understands.
+  // layered into dosDirect because what we store is a path->bytes map, not a
+  // bundle the loader understands.
   async function restoreProgress(ci, files) {
+    const fs = fsOf(ci);
     let restored = 0;
     for (const [path, bytes] of Object.entries(files || {})) {
       try {
-        await ci.fsWriteFile(path, bytes);
+        if (fs) {
+          const full = FS_HOME + path;
+          const dir = full.slice(0, full.lastIndexOf("/"));
+          try { fs.mkdirTree(dir); } catch { /* already there */ }
+          fs.writeFile(full, bytes);
+        } else {
+          await ci.fsWriteFile(path, bytes);
+        }
         restored++;
       } catch (err) {
         log(`Could not restore ${path}: ${err.message}`);
@@ -955,6 +1195,7 @@
     const t0 = performance.now();
     try {
       setStatus("Loading DOSBox runtime…");
+      snapshotOn = await loadSnapshotModule();
       await loadEmulators();
 
       const bundle = await fetchBundle(cfg.appUrl);
@@ -984,7 +1225,37 @@
       // knows how to merge. Older saves are raw byte arrays from the previous
       // (broken) format and are ignored — there is nothing recoverable in them.
       let restoredCount = 0;
-      if (saved && typeof saved === "object" && !ArrayBuffer.isView(saved)) {
+      resumedFromSnapshot = false;
+
+      // A snapshot supersedes the file restore: it already contains the files,
+      // and layering the saved ones on top would contradict the heap.
+      if (snapshotOn) {
+        window.DosSnapshot.recordBaseline(ci);
+        if (await window.DosSnapshot.has(slug)) {
+          try {
+            setStatus("Restoring where you left off…");
+            await window.DosSnapshot.restore(ci, slug);
+            resumedFromSnapshot = true;
+          } catch (err) {
+            // Do not carry on with this instance: a failed restore leaves a
+            // half-overwritten heap, and a game that runs and is subtly wrong
+            // is worse than one that plainly starts again. Stand down for the
+            // session and reload into the ordinary boot.
+            log("Snapshot restore failed: " + err.message);
+            track("snapshot_restore_fallback", { error_message: String(err.message).slice(0, 120) });
+            window.DosSnapshot.standDown(slug);
+            await window.DosSnapshot.drop(slug).catch(() => {});
+            try { ci.exit(); } catch { /* already gone */ }
+            location.reload();
+            return;
+          }
+        }
+      }
+
+      if (!resumedFromSnapshot && saved && typeof saved === "object" && !ArrayBuffer.isView(saved)) {
+        // Seed the cumulative map with what was already on disk, so the next
+        // save writes these back out alongside whatever changes next.
+        storedFiles = saved;
         restoredCount = await restoreProgress(ci, saved);
         if (restoredCount) {
           // Re-index, or every restored file would read as "changed" on the
@@ -996,6 +1267,10 @@
 
       setupRenderer(ci);
       setupInput(ci);
+
+      // The renderer only exists now, so this is the first moment the restored
+      // picture can actually reach the canvas.
+      if (resumedFromSnapshot) window.DosSnapshot.present(ci);
       try {
         // Attach the sound consumer before the game gets far enough to make
         // any: pushes that arrive with no consumer are dropped, not buffered.
@@ -1020,23 +1295,101 @@
             `Restored ${restoredCount} saved file${restoredCount === 1 ? "" : "s"} — load from the game's own menu`;
         }
 
-        const saveTimer = setInterval(() => saveProgress(ci, "interval"), SAVE_INTERVAL_MS);
-        document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "hidden") saveProgress(ci, "hidden");
+        const flusher = window.SaveCore
+          ? window.SaveCore.schedule({
+              intervalMs: SAVE_INTERVAL_MS,
+              flush: (reason) => saveProgress(ci, reason),
+            })
+          : legacyFlusher(ci);
+
+        // Quitting to the DOS prompt is the one moment a player is most likely
+        // to have just saved, and it was the one moment we didn't write: the
+        // old handler cleared the timer and nothing else. Flushing first is
+        // safe — onExit fires from `ws-exit`, and the filesystem isn't torn
+        // down until a later `wc-exit`.
+        ci.events().onExit(() => {
+          flusher.flushNow("exit").finally(() => flusher.stop());
         });
-        window.addEventListener("pagehide", () => saveProgress(ci, "pagehide"));
-        ci.events().onExit(() => clearInterval(saveTimer));
 
         saveReset.addEventListener("click", async e => {
           e.preventDefault();
           try {
-            await idbDel(slug);
+            await (window.SaveCore ? window.SaveCore.drop(slug) : idbDel(slug));
+            // Resetting has to take the snapshot too, or "start fresh" would
+            // drop the save files and then resume straight back into the game.
+            await dropSnapshotRecord(slug);
+            storedFiles = {};
             saveState.textContent = "Saved progress cleared — reload to start fresh";
             track("persist_reset");
           } catch (err) {
             log("Could not clear saved progress: " + err.message);
           }
         });
+      }
+
+      if (snapshotOn) {
+        // Taking a snapshot holds the emulator still for ~200ms, which is a
+        // visible hitch if it happens while someone is playing. So the real
+        // trigger is leaving — SaveCore.schedule fires this on
+        // visibilitychange-hidden and pagehide, which is exactly the moment
+        // worth capturing, and a pause nobody is looking at costs nothing. The
+        // interval is only a backstop for a tab that dies without warning.
+        // The file-level save keeps running at its usual pace alongside, and
+        // is what the player falls back on if any of this misbehaves.
+        const snapFlusher = window.SaveCore.schedule({
+          intervalMs: 300000,
+          flush: async (reason) => {
+            try {
+              const r = await window.DosSnapshot.capture(ci, slug, reason);
+              if (r) {
+                log(`Snapshot: ${(r.bytes / 1048576).toFixed(1)} MB (${reason})`);
+                // Register it, or a game whose only save is a snapshot never
+                // shows a resume card: the card reads the shared index, and
+                // until now only the file-level save wrote to it.
+                window.SaveCore?.note({
+                  slug,
+                  name: cfg.appName,
+                  runtime: "dosbox",
+                  kind: "snapshot",
+                  payload: { db: "exeSaves", store: "snapshots", key: slug },
+                  bytes: r.bytes,
+                  thumb: window.SaveCore.thumbFromCanvas(canvas),
+                });
+                track("snapshot_save", { bytes: r.bytes, files: r.files, reason });
+              }
+            } catch (err) {
+              log("Snapshot failed: " + err.message);
+              track("snapshot_save_error", { error_message: String(err.message).slice(0, 120) });
+            }
+          },
+        });
+        ci.events().onExit(() => snapFlusher.stop());
+
+        if (resumedFromSnapshot) {
+          saveState.textContent = "Resumed exactly where you left off";
+          // Prove it kept running. Two false starts here, both worth naming:
+          // counting *colours* rejects Commander Keen's five-colour EGA screen,
+          // and counting *frames* rejects Scorched Earth, which emits none at
+          // all while running normally because its screen is static and DOSBox
+          // only sends scanlines that changed. What actually distinguishes a
+          // live emulator from a wedged one is whether it is still executing.
+          const progress0 = window.DosSnapshot.progress(ci);
+          let framesSeen = 0;
+          ci.events().onFrame(() => { framesSeen++; });
+          setTimeout(() => {
+            const advanced = window.DosSnapshot.progress(ci) > progress0;
+            if (advanced || framesSeen > 0) {
+              track("snapshot_restore_ok", { boot_ms: Math.round(performance.now() - t0), frames: framesSeen });
+              return;
+            }
+            log("Snapshot resumed but the emulator stopped executing — falling back.");
+            track("snapshot_restore_fallback", { error_message: "no progress" });
+            window.DosSnapshot.standDown(slug);
+            window.DosSnapshot.drop(slug).catch(() => {});
+            try { ci.exit(); } catch { /* already gone */ }
+            location.reload();
+          }, 1500);
+        }
       }
 
       ci.events().onStdout(msg => log(msg));
@@ -1051,6 +1404,7 @@
       setStatus("");
       canvas.focus();
       fsBtn.hidden = false;
+      window.SaveCore?.markPlayed(slug, cfg.appName, "dosbox");
       window.rememberPlayed?.(slug, cfg.appName);
       track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
       startHeartbeat();

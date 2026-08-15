@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your saved games — ExeBrowser</title>
+<meta name="description" content="Every game you've saved on ExeBrowser, kept in this browser. Resume where you left off, see how much space each save uses, or delete them." />
+<link rel="canonical" href="https://exebrowser.com/saves/" />
+<meta name="robots" content="noindex, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/saves/" />
+<meta property="og:title" content="Your saved games — ExeBrowser" />
+<meta property="og:description" content="Every game you've saved on ExeBrowser, kept in this browser." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=37" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <a href="/" class="back-home">← Back to ExeBrowser</a>
+  <section class="card">
+    <h2>Your saved games</h2>
+    <p class="muted small" style="margin-top:0;">Everything below is stored <strong>in this browser, on this device</strong>. Nothing was uploaded and there is no account behind it, so these saves don't follow you to another browser or another machine.</p>
+
+    <p id="saves-usage" class="muted small"></p>
+    <div id="saves-empty" hidden>
+      <p>No saved games yet. Saves appear here once you've played something — <a href="/run/">pick a game</a> and they'll show up.</p>
+    </div>
+
+    <ul class="poster-grid saves-list" id="saves-grid"></ul>
+
+    <p id="saves-actions" style="margin-top:1.25rem;" hidden>
+      <button type="button" class="button" id="saves-clear-all">Delete every save</button>
+    </p>
+
+    <h3>How long these last</h3>
+    <p class="muted small" id="saves-durability">Browsers reclaim storage on their own schedule. iOS Safari in particular deletes site storage after about seven days without a visit, and any browser may clear it when disk space runs low or when you clear browsing data. Treat these as a convenience, not a backup.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/saves/" aria-current="page">Saved games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>
+<script>
+(() => {
+  "use strict";
+  const grid = document.getElementById("saves-grid");
+  const usage = document.getElementById("saves-usage");
+  const empty = document.getElementById("saves-empty");
+  const actions = document.getElementById("saves-actions");
+
+  const RUNTIME_LABEL = {
+    dosbox: "DOS game",
+    wine: "Windows app",
+    native: "Browser game",
+    emscripten: "Ported game",
+    unknown: "Game",
+  };
+
+  function fmtBytes(n) {
+    if (!n) return "—";
+    if (n < 1024) return n + " B";
+    if (n < 1048576) return (n / 1024).toFixed(0) + " KB";
+    return (n / 1048576).toFixed(1) + " MB";
+  }
+
+  function fmtDate(ts) {
+    try {
+      return new Date(ts).toLocaleString(undefined, {
+        dateStyle: "medium", timeStyle: "short",
+      });
+    } catch {
+      return new Date(ts).toDateString();
+    }
+  }
+
+  function render() {
+    grid.innerHTML = "";
+    const list = window.SaveCore ? window.SaveCore.saves() : [];
+    const stats = window.SaveCore ? window.SaveCore.usage() : { bytes: 0, count: 0, budget: 0 };
+
+    empty.hidden = list.length > 0;
+    actions.hidden = list.length === 0;
+
+    usage.textContent = list.length
+      ? `${list.length} saved game${list.length === 1 ? "" : "s"}, using ${fmtBytes(stats.bytes)} of about ${fmtBytes(stats.budget)}. Past that, the oldest save is dropped to make room.`
+      : "";
+
+    for (const rec of list) {
+      const li = document.createElement("li");
+      const card = window.renderResumeCard(rec);
+      li.appendChild(card);
+
+      const meta = document.createElement("p");
+      meta.className = "muted small";
+      meta.style.margin = ".4rem 0 0";
+      meta.textContent = `${RUNTIME_LABEL[rec.runtime] || RUNTIME_LABEL.unknown} · ${fmtBytes(rec.bytes)} · saved ${fmtDate(rec.updatedAt)}`;
+      li.appendChild(meta);
+
+      const del = document.createElement("button");
+      del.type = "button";
+      del.className = "link";
+      del.textContent = "Delete this save";
+      del.addEventListener("click", async () => {
+        if (!confirm(`Delete your saved progress in ${rec.name}? This can't be undone.`)) return;
+        del.disabled = true;
+        await window.SaveCore.drop(rec.slug);
+        render();
+      });
+      li.appendChild(del);
+
+      grid.appendChild(li);
+    }
+  }
+
+  document.getElementById("saves-clear-all").addEventListener("click", async (e) => {
+    if (!confirm("Delete every saved game in this browser? This can't be undone.")) return;
+    e.target.disabled = true;
+    for (const rec of window.SaveCore.saves()) await window.SaveCore.drop(rec.slug);
+    e.target.disabled = false;
+    render();
+  });
+
+  // Whether the browser has agreed to treat our storage as durable. Worth
+  // saying out loud here rather than in a footnote under every game.
+  if (navigator.storage && navigator.storage.persisted) {
+    navigator.storage.persisted().then(ok => {
+      const el = document.getElementById("saves-durability");
+      el.textContent = (ok
+        ? "This browser has marked ExeBrowser's storage as persistent, so it won't be cleared automatically to reclaim space. "
+        : "This browser has not marked ExeBrowser's storage as persistent, so it may be cleared to reclaim space. ")
+        + el.textContent;
+    }).catch(() => {});
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>

@@ -123,6 +123,32 @@
 
   function showStatus() { status.hidden = false; progress.hidden = false; }
 
+  // Same affordance as the DOS embed: if there's something to come back to,
+  // show the frame they left on and let them click it. Wine can't snapshot a
+  // running program either, so the promise stays "your files are here".
+  if (hosted) {
+    const rec = window.SaveCore?.get((location.pathname.match(/\/run\/([^/]+)/) || [])[1] || "");
+    if (rec && rec.updatedAt) {
+      const art = rec.thumb || `/run/${rec.slug}/screenshot.png`;
+      playBtn.classList.add("embed-play-resume");
+      playBtn.innerHTML =
+        `<img src="${escapeHtml(art)}" alt="" class="resume-shot" onerror="this.remove()">` +
+        `<span>▶ Resume ${escapeHtml(cfg.appName)}</span>`;
+      const note = document.querySelector("#embed-overlay .embed-hint");
+      if (note) {
+        note.innerHTML =
+          `The files you saved last time are restored when it boots. ` +
+          `<a href="#" id="embed-start-over">Start over</a>`;
+        note.querySelector("#embed-start-over")?.addEventListener("click", async e => {
+          e.preventDefault();
+          if (!confirm(`Delete the files ${cfg.appName} saved in this browser?`)) return;
+          await window.SaveCore?.drop(rec.slug);
+          location.reload();
+        });
+      }
+    }
+  }
+
   async function waitForEngine(timeoutMs = 8000) {
     const start = Date.now();
     while (!window.ExeBrowser) {
@@ -171,6 +197,7 @@
         if (!EB.isReady()) throw new Error("No runnable .exe found in the hosted package.");
         overlay.classList.add("hidden");
         await EB.run(); // boot_success/boot_error are tracked inside app.js (bootAndRun owns the outcome)
+        window.SaveCore?.markPlayed(slug, cfg.appName, "wine");
         window.rememberPlayed?.(slug, cfg.appName);
       } else {
         // No hosted asset (commercial app, or we can't redistribute it). Reveal

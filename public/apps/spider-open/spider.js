@@ -66,6 +66,8 @@
 
   const save = window.GameSave?.attach({
     key: "spider",
+    slug: "spider-open",
+    name: "Spider Solitaire",
     version: 1,
     serialize: () =>
       won ? null : { b: board, su: suits, m: moves, sc: score, h: history, el: elapsed() },

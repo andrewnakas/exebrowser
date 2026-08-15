@@ -114,6 +114,8 @@
   // fields rather than trying to revive the object.
   const save = window.GameSave?.attach({
     key: "pipes",
+    slug: "pipes-open",
+    name: "Pipe Panic",
     version: 1,
     serialize: () =>
       !game || game.over || flowing

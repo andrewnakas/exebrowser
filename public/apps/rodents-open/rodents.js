@@ -52,6 +52,8 @@
   // guards a timeout that no longer exists.
   const save = window.GameSave?.attach({
     key: "rodents",
+    slug: "rodents-open",
+    name: "Rodent's Revenge",
     version: 1,
     serialize: () =>
       dead ? null : { g: Array.from(grid), m: mouse, ca: cats, lv: level, li: lives, sc: score, t: tick, c: COLS, r: ROWS },

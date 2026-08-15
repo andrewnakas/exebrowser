@@ -28,24 +28,56 @@
   const MAX_BYTES = 512 * 1024;
 
   function attach(cfg) {
-    const { key, serialize, restore, version = 1 } = cfg;
+    const { key, serialize, restore, version = 1, slug, name } = cfg;
     if (!key || typeof serialize !== "function") {
       throw new Error("GameSave.attach needs a key and a serialize function");
     }
     const storeKey = PREFIX + key;
     let dirty = false;
 
+    // These games run in a same-origin iframe, so the shared index in the
+    // parent frame is directly reachable — no postMessage needed. `slug` is
+    // the page ("solitaire-open"), which is not the storage `key`
+    // ("solitaire"); changing the key would orphan every existing save.
+    const core = () => window.SaveCore || parent.SaveCore;
+
+    function shot() {
+      try {
+        const canvas = document.querySelector("canvas");
+        return canvas ? core()?.thumbFromCanvas(canvas) : null;
+      } catch {
+        return null; // cross-origin parent, or no canvas — poster art it is
+      }
+    }
+
     function write() {
       if (!dirty) return;
       dirty = false;
       try {
         const state = serialize();
-        if (state == null) return void localStorage.removeItem(storeKey);
+        if (state == null) {
+          localStorage.removeItem(storeKey);
+          if (slug) try { core()?.drop(slug); } catch { /* index is optional */ }
+          return;
+        }
         const body = JSON.stringify({ v: version, t: Date.now(), s: state });
         // A state this big means a bug (an unbounded history array, usually).
         // Dropping it is better than poisoning storage the player can't clear.
         if (body.length > MAX_BYTES) return;
         localStorage.setItem(storeKey, body);
+        if (slug) {
+          try {
+            core()?.note({
+              slug,
+              name: name || slug,
+              runtime: "native",
+              kind: "state",
+              payload: { local: storeKey },
+              bytes: body.length,
+              thumb: shot(),
+            });
+          } catch { /* the save landed; the index entry is a nicety */ }
+        }
       } catch {
         /* private mode, quota, or an unserialisable state — resume is a nicety */
       }
@@ -70,6 +102,7 @@
     function clear() {
       dirty = false;
       try { localStorage.removeItem(storeKey); } catch { /* nothing to do */ }
+      if (slug) try { core()?.drop(slug); } catch { /* index is optional */ }
     }
 
     // pagehide is the only close-the-tab signal that fires reliably across
@@ -84,8 +117,18 @@
     // (OOM kill, crash, force-quit) — none of the events above fire then.
     setInterval(write, 10000);
 
+    let announced = false;
     const api = {
-      mark() { dirty = true; },
+      mark() {
+        dirty = true;
+        // First real state change is the honest moment to call this "played".
+        // The pages used to announce it on load, so a game you opened and
+        // never touched still showed up as one to continue.
+        if (slug && !announced) {
+          announced = true;
+          try { core()?.markPlayed(slug, name || slug, "native"); } catch { /* optional */ }
+        }
+      },
       save() { dirty = true; write(); },
       clear,
       load: read,
