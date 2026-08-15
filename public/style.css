@@ -1015,13 +1015,56 @@ body.dos-playing { overflow: hidden; }
 .resume-label { color: var(--muted); }
 .resume-link { font-weight: 600; }
 
-/* Homepage instant-play hero. Sizes itself the same way the game pages do;
-   the controls hint below it is desktop-only, matching the mobile pad rules. */
-#hero-play { margin-bottom: 1.5rem; }
-#hero-play h2 { margin-top: 0; }
-.hero-controls { margin-bottom: 0; }
-@media (hover: none), (max-width: 720px) {
-  .hero-controls { display: none; }
+/* The resume affordance: a picture of where you actually left off, because a
+   thumbnail of your own game says "this is yours, click it" in a way no label
+   does. Everything below degrades to text if the shot is missing — a save made
+   before thumbnails existed, or a WebGL canvas that reads back blank. */
+.resume-bar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  vertical-align: middle;
+}
+.resume-bar-shot {
+  width: 64px;
+  height: 40px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 4px;
+  image-rendering: pixelated;
+  flex: none;
+}
+.resume-card .pc-when { display: block; }
+.resume-card .pc-play { color: var(--accent, #c0392b); }
+
+/* The saves page hangs metadata and a delete control under each card, so its
+   rows size to content rather than stretching every card to the tallest one. */
+.saves-list { align-items: start; }
+.saves-list > li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3rem;
+}
+.saves-list .poster-card { height: auto; width: 100%; }
+
+/* The play button on a game page, once it has a save behind it. */
+.embed-play-resume {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem .55rem .7rem;
+}
+.embed-play-resume .resume-shot {
+  display: block;
+  width: 240px;
+  max-width: 60vw;
+  aspect-ratio: 8 / 5;
+  object-fit: contain;
+  background: #000;
+  border-radius: 4px;
+  image-rendering: pixelated;
 }
 
 /* "Play next" rail directly under a game. Text links, not posters — it has to

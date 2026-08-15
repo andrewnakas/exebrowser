@@ -22,7 +22,7 @@
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=36" />
+<link rel="stylesheet" href="/style.css?v=37" />
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
@@ -119,23 +119,11 @@
 <main>
   <p class="resume-bar" id="resume-bar" hidden></p>
 
-  <!-- ── Instant play.
-       The funnel said this plainly: 57% of all views land here, but only about
-       a fifth of visitors ever reach a game. Every one of them had to click a
-       poster, wait for a page, then find the play button. This is the same
-       DOSBox embed the game pages use, hoisted to the top of the homepage so
-       arriving and playing are one click apart. The shelf still follows for
-       people who want to choose. ── -->
-  <section class="card" id="hero-play">
-    <h2 id="hero-title">▶ Play DOOM right now — no download, no account</h2>
-    <p class="muted small" style="margin-top:0;">The original 1993 shareware episode, running in this tab via DOSBox + WebAssembly. Pick another title from the shelf below any time.</p>
-    <div id="dos-embed"
-         data-app-url="/apps/doom/doom.zip"
-         data-app-name="DOOM"
-         data-slug="doom"
-         data-autoboot="false"></div>
-    <p class="muted small hero-controls">Arrow keys move · <kbd>Ctrl</kbd> fire · <kbd>Space</kbd> open doors · <kbd>Esc</kbd> menu — <a href="/run/doom/">full controls &amp; guide</a></p>
-  </section>
+  <!-- ── There used to be a DOOM embed hoisted to the top of this page, on the
+       funnel argument that only about a fifth of arrivals ever reached a game.
+       It's gone: leading with one title made the homepage that title's page,
+       and the shelf below is what actually says what this site is. The resume
+       bar above covers the returning player the hero was really serving. ── -->
 
   <!-- ── Bring your own EXE.
        This sat first for a while, on the reasoning that running your own
@@ -246,11 +234,11 @@
         </a></li>
         <li class="pc-item" data-cats="Windows classics|Puzzle &amp; strategy|Free &amp; complete" data-search="hearts exebrowser (original implementation) card game strategy windows classics puzzle &amp; strategy free complete open source freeware"><a class="poster-card" href="/run/hearts-open/">
           <img class="pc-shot" src="/run/hearts-open/screenshot.png" width="320" height="240" loading="lazy" alt="Hearts running in the browser" />
-          <span class="pc-body"><span class="pc-title">Hearts <span class="badge-new">NEW</span> <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">Hearts <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Platformers|Action" data-search="commander keen id software / apogee software platformer side-scroller action platformers action"><a class="poster-card" href="/run/commander-keen/">
           <img class="pc-shot" src="/run/commander-keen/screenshot.png" width="320" height="240" loading="lazy" alt="Commander Keen running in the browser" />
-          <span class="pc-body"><span class="pc-title">Commander Keen <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">Commander Keen</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Shooters|Action|Free &amp; complete" data-search="freedoom the freedoom project first-person shooter action shooters action free complete open source freeware"><a class="poster-card" href="/run/freedoom/">
           <img class="pc-shot" src="/run/freedoom/screenshot.png" width="320" height="240" loading="lazy" alt="Freedoom running in the browser" />
@@ -258,63 +246,31 @@
         </a></li>
         <li class="pc-item" data-cats="Puzzle &amp; strategy" data-search="scorched earth wendell hicken artillery strategy puzzle &amp; strategy"><a class="poster-card" href="/run/scorched-earth/">
           <img class="pc-shot" src="/run/scorched-earth/screenshot.png" width="320" height="240" loading="lazy" alt="Scorched Earth running in the browser" />
-          <span class="pc-body"><span class="pc-title">Scorched Earth <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">Scorched Earth</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Shooters|Action" data-search="raptor cygnus studios / apogee software shoot 'em up arcade shooters action"><a class="poster-card" href="/run/raptor/">
           <img class="pc-shot" src="/run/raptor/screenshot.png" width="320" height="240" loading="lazy" alt="Raptor running in the browser" />
-          <span class="pc-body"><span class="pc-title">Raptor <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">Raptor</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Action|Free &amp; complete" data-search="one must fall 2097 diversions entertainment / epic megagames fighting arcade action free complete open source freeware"><a class="poster-card" href="/run/one-must-fall-2097/">
           <img class="pc-shot" src="/run/one-must-fall-2097/screenshot.png" width="320" height="240" loading="lazy" alt="One Must Fall 2097 running in the browser" />
-          <span class="pc-body"><span class="pc-title">One Must Fall 2097 <span class="badge-new">NEW</span> <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">One Must Fall 2097 <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Platformers|Action" data-search="commander keen 4: secret of the oracle id software / apogee software platformer action platformers action"><a class="poster-card" href="/run/keen4/">
           <img class="pc-shot" src="/run/keen4/screenshot.png" width="320" height="240" loading="lazy" alt="Commander Keen 4: Secret of the Oracle running in the browser" />
-          <span class="pc-body"><span class="pc-title">Commander Keen 4: Secret of the Oracle <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">Commander Keen 4: Secret of the Oracle</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Shooters|Action" data-search="blake stone apogee software first-person shooter action shooters action"><a class="poster-card" href="/run/blake-stone/">
           <img class="pc-shot" src="/run/blake-stone/screenshot.png" width="320" height="240" loading="lazy" alt="Blake Stone running in the browser" />
-          <span class="pc-body"><span class="pc-title">Blake Stone <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">Blake Stone</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Puzzle &amp; strategy|Racing &amp; sports|Free &amp; complete" data-search="skyroads bluemoon interactive racing puzzle puzzle &amp; strategy racing &amp; sports free complete open source freeware"><a class="poster-card" href="/run/skyroads/">
           <img class="pc-shot" src="/run/skyroads/screenshot.png" width="320" height="240" loading="lazy" alt="SkyRoads running in the browser" />
-          <span class="pc-body"><span class="pc-title">SkyRoads <span class="badge-new">NEW</span> <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">SkyRoads <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Platformers|Puzzle &amp; strategy|Free &amp; complete" data-search="jetpack adept software platformer puzzle platformers puzzle &amp; strategy free complete open source freeware"><a class="poster-card" href="/run/jetpack/">
           <img class="pc-shot" src="/run/jetpack/screenshot.png" width="320" height="240" loading="lazy" alt="Jetpack running in the browser" />
-          <span class="pc-body"><span class="pc-title">Jetpack <span class="badge-new">NEW</span> <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
-        </a></li>
-        <li class="pc-item" data-cats="Action|Puzzle &amp; strategy|Free &amp; complete" data-search="god of thunder ron davis / adept software action-adventure puzzle action puzzle &amp; strategy free complete open source freeware"><a class="poster-card" href="/run/god-of-thunder/">
-          <img class="pc-shot" src="/run/god-of-thunder/screenshot.png" width="320" height="240" loading="lazy" alt="God of Thunder running in the browser" />
-          <span class="pc-body"><span class="pc-title">God of Thunder <span class="badge-new">NEW</span> <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
-        </a></li>
-        <li class="pc-item" data-cats="Platformers|Action|Free &amp; complete" data-search="xargon allen pilgrim / epic megagames platformer action platformers action free complete open source freeware"><a class="poster-card" href="/run/xargon/">
-          <img class="pc-shot" src="/run/xargon/screenshot.png" width="320" height="240" loading="lazy" alt="Xargon running in the browser" />
-          <span class="pc-body"><span class="pc-title">Xargon <span class="badge-new">NEW</span> <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
-        </a></li>
-        <li class="pc-item" data-cats="Shooters|Platformers|Free &amp; complete" data-search="bio menace jim norwood / apogee software run and gun platformer shooters platformers free complete open source freeware"><a class="poster-card" href="/run/bio-menace/">
-          <img class="pc-shot" src="/run/bio-menace/screenshot.png" width="320" height="240" loading="lazy" alt="Bio Menace running in the browser" />
-          <span class="pc-body"><span class="pc-title">Bio Menace <span class="badge-new">NEW</span> <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
-        </a></li>
-        <li class="pc-item" data-cats="Shooters|Platformers|Free &amp; complete" data-search="alien carnage subzero software / apogee software run and gun platformer shooters platformers free complete open source freeware"><a class="poster-card" href="/run/alien-carnage/">
-          <img class="pc-shot" src="/run/alien-carnage/screenshot.png" width="320" height="240" loading="lazy" alt="Alien Carnage running in the browser" />
-          <span class="pc-body"><span class="pc-title">Alien Carnage <span class="badge-new">NEW</span> <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
-        </a></li>
-        <li class="pc-item" data-cats="Platformers" data-search="cosmo's cosmic adventure apogee software platformer action platformers"><a class="poster-card" href="/run/cosmo/">
-          <img class="pc-shot" src="/run/cosmo/screenshot.png" width="320" height="240" loading="lazy" alt="Cosmo's Cosmic Adventure running in the browser" />
-          <span class="pc-body"><span class="pc-title">Cosmo's Cosmic Adventure <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
-        </a></li>
-        <li class="pc-item" data-cats="Platformers" data-search="hocus pocus moonlite software / apogee software platformer action platformers"><a class="poster-card" href="/run/hocus-pocus/">
-          <img class="pc-shot" src="/run/hocus-pocus/screenshot.png" width="320" height="240" loading="lazy" alt="Hocus Pocus running in the browser" />
-          <span class="pc-body"><span class="pc-title">Hocus Pocus <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
-        </a></li>
-        <li class="pc-item" data-cats="Platformers" data-search="crystal caves apogee software platformer action platformers"><a class="poster-card" href="/run/crystal-caves/">
-          <img class="pc-shot" src="/run/crystal-caves/screenshot.png" width="320" height="240" loading="lazy" alt="Crystal Caves running in the browser" />
-          <span class="pc-body"><span class="pc-title">Crystal Caves <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
-        </a></li>
-        <li class="pc-item" data-cats="Platformers" data-search="monster bash apogee software platformer action platformers"><a class="poster-card" href="/run/monster-bash/">
-          <img class="pc-shot" src="/run/monster-bash/screenshot.png" width="320" height="240" loading="lazy" alt="Monster Bash running in the browser" />
-          <span class="pc-body"><span class="pc-title">Monster Bash <span class="badge-new">NEW</span></span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">Jetpack <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Apps &amp; tools|Free &amp; complete" data-search="7-zip igor pavlov apps &amp; tools free complete open source freeware"><a class="poster-card" href="/run/7-zip/">
           <img class="pc-shot" src="/run/7-zip/screenshot.png" width="320" height="240" loading="lazy" alt="7-Zip running in the browser" />
@@ -327,6 +283,38 @@
         <li class="pc-item" data-cats="Apps &amp; tools|Free &amp; complete" data-search="putty simon tatham apps &amp; tools free complete open source freeware"><a class="poster-card" href="/run/putty/">
           <img class="pc-shot" src="/run/putty/screenshot.png" width="320" height="240" loading="lazy" alt="PuTTY running in the browser" />
           <span class="pc-body"><span class="pc-title">PuTTY <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item" data-cats="Action|Puzzle &amp; strategy|Free &amp; complete" data-search="god of thunder ron davis / adept software action-adventure puzzle action puzzle &amp; strategy free complete open source freeware"><a class="poster-card" href="/run/god-of-thunder/">
+          <img class="pc-shot" src="/run/god-of-thunder/screenshot.png" width="320" height="240" loading="lazy" alt="God of Thunder running in the browser" />
+          <span class="pc-body"><span class="pc-title">God of Thunder <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item" data-cats="Platformers|Action|Free &amp; complete" data-search="xargon allen pilgrim / epic megagames platformer action platformers action free complete open source freeware"><a class="poster-card" href="/run/xargon/">
+          <img class="pc-shot" src="/run/xargon/screenshot.png" width="320" height="240" loading="lazy" alt="Xargon running in the browser" />
+          <span class="pc-body"><span class="pc-title">Xargon <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item" data-cats="Shooters|Platformers|Free &amp; complete" data-search="bio menace jim norwood / apogee software run and gun platformer shooters platformers free complete open source freeware"><a class="poster-card" href="/run/bio-menace/">
+          <img class="pc-shot" src="/run/bio-menace/screenshot.png" width="320" height="240" loading="lazy" alt="Bio Menace running in the browser" />
+          <span class="pc-body"><span class="pc-title">Bio Menace <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item" data-cats="Shooters|Platformers|Free &amp; complete" data-search="alien carnage subzero software / apogee software run and gun platformer shooters platformers free complete open source freeware"><a class="poster-card" href="/run/alien-carnage/">
+          <img class="pc-shot" src="/run/alien-carnage/screenshot.png" width="320" height="240" loading="lazy" alt="Alien Carnage running in the browser" />
+          <span class="pc-body"><span class="pc-title">Alien Carnage <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item" data-cats="Platformers" data-search="cosmo's cosmic adventure apogee software platformer action platformers"><a class="poster-card" href="/run/cosmo/">
+          <img class="pc-shot" src="/run/cosmo/screenshot.png" width="320" height="240" loading="lazy" alt="Cosmo's Cosmic Adventure running in the browser" />
+          <span class="pc-body"><span class="pc-title">Cosmo's Cosmic Adventure</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item" data-cats="Platformers" data-search="hocus pocus moonlite software / apogee software platformer action platformers"><a class="poster-card" href="/run/hocus-pocus/">
+          <img class="pc-shot" src="/run/hocus-pocus/screenshot.png" width="320" height="240" loading="lazy" alt="Hocus Pocus running in the browser" />
+          <span class="pc-body"><span class="pc-title">Hocus Pocus</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item" data-cats="Platformers" data-search="crystal caves apogee software platformer action platformers"><a class="poster-card" href="/run/crystal-caves/">
+          <img class="pc-shot" src="/run/crystal-caves/screenshot.png" width="320" height="240" loading="lazy" alt="Crystal Caves running in the browser" />
+          <span class="pc-body"><span class="pc-title">Crystal Caves</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item" data-cats="Platformers" data-search="monster bash apogee software platformer action platformers"><a class="poster-card" href="/run/monster-bash/">
+          <img class="pc-shot" src="/run/monster-bash/screenshot.png" width="320" height="240" loading="lazy" alt="Monster Bash running in the browser" />
+          <span class="pc-body"><span class="pc-title">Monster Bash</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item" data-cats="Apps &amp; tools|Free &amp; complete" data-search="keepass dominik reichl apps &amp; tools free complete open source freeware"><a class="poster-card" href="/run/keepass/">
           <span class="pc-shot pc-placeholder" aria-hidden="true">K</span>
@@ -657,15 +645,16 @@
     <a href="/guide/">Compatibility Guide</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 
-<script src="/recent.js?v=2"></script>
+<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>
 <script src="/filter.js?v=1"></script>
-<script src="/dos-embed.js?v=28"></script>
 <script>
   window.renderContinue && renderContinue("continue-playing", "continue-grid");
   window.renderResumeBar && renderResumeBar("resume-bar");
@@ -717,7 +706,7 @@
   }
 })();
 </script>
-<script src="/app.js?v=18"></script>
+<script src="/app.js?v=19"></script>
 <script>
 // Quick-launch: catalogue of hosted, license-clean apps.
 // dosPage = true  → the title has its own play page (DOSBox, or a native JS
