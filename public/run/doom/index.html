@@ -7,6 +7,9 @@
 <meta name="description" content="Play the original 1993 DOOM shareware episode &quot;Knee-Deep in the Dead&quot; online in your browser — no download, no install. Classic DOS DOOM running in DOSBox + WebAssembly." />
 <meta name="keywords" content="play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online" />
 <link rel="canonical" href="https://exebrowser.com/run/doom/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/doom/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/doom/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/doom/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/doom/" />
 <meta property="og:title" content="Play DOOM Online — Free, In Your Browser, No Download" />
@@ -15,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=37" />
+<link rel="stylesheet" href="/style.css?v=38" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -62,12 +65,12 @@
     {
       "@type": "Question",
       "name": "Can I play DOOM online for free with no download?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real Win32 build in your browser — nothing to install." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real DOS build in your browser — nothing to install." }
     },
     {
       "@type": "Question",
       "name": "Is this real DOOM or a remake?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual Windows binary inside an x86 emulator and Wine, rendering to a browser canvas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual DOS binary inside DOSBox compiled to WebAssembly, rendering to a browser canvas." }
     },
     {
       "@type": "Question",
@@ -103,6 +106,7 @@
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
   </nav>
+  <nav class="lang-switcher" aria-label="Language"><span class="lang-current" aria-current="true">English</span> · <a href="/es/run/doom/" hreflang="es">Español</a></nav>
 </header>
 
 <main class="prose">
@@ -201,7 +205,7 @@
       <summary><strong>Controls</strong> — what does what</summary>
       <div class="table-wrap">
         <table class="controls-table">
-          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse</th></tr></thead>
+          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse / touch</th></tr></thead>
           <tbody>
         <tr><th scope="row">Move / turn</th><td><kbd>Arrow keys</kbd> or <kbd>W A S D</kbd></td><td>Move mouse to turn</td></tr>
         <tr><th scope="row">Fire</th><td><kbd>Ctrl</kbd></td><td><kbd>Left-click</kbd></td></tr>
@@ -217,11 +221,11 @@
       </div>
     </details>
     <p class="next-up"><span class="next-up-label">Play next:</span>
-      <a href="/run/wolfenstein-3d/">Wolfenstein 3D</a>
-      <a href="/run/hearts-open/">Hearts</a>
-      <a href="/run/alien-carnage/">Alien Carnage</a>
-      <a href="/run/freecell-open/">FreeCell</a>
-      <a class="next-up-all" href="/run/">all 40 games →</a>
+      <a href="/run/solitaire-open/">Solitaire (Klondike)</a>
+      <a href="/run/snake-open/">Snake</a>
+      <a href="/run/god-of-thunder/">God of Thunder</a>
+      <a href="/run/skifree/">SkiFree</a>
+      <a class="next-up-all" href="/run/">all 41 games →</a>
     </p>
     <figure class="app-shot">
       <img src="/run/doom/screenshot.png" width="798" height="539" loading="lazy" alt="DOOM running in a browser tab via ExeBrowser" />
@@ -233,24 +237,24 @@
   <section class="card">
     <div class="download-box">
       <h3 style="margin-top:0;">Get the DOOM shareware (free, legal)</h3>
-      <p>The complete first episode, unmodified, distributed at no charge exactly as the shareware license permits. The most reliable source is the Internet Archive's preserved copy:</p><p><a class="cta-btn" href="https://archive.org/details/DOOM_95" target="_blank" rel="noopener">Get DOOM shareware (Internet Archive) →</a></p><p class="muted small">Grab the DOS build (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). Unzip it, then use <strong>"Load your own copy"</strong> above to drop the folder in. © id Software — the shareware episode is freely redistributable unmodified and at no charge. The registered episodes and Doom II are commercial and <strong>not</strong> included; buy those from <a href="https://store.steampowered.com/app/2280/DOOM__DOOM_II/" target="_blank" rel="noopener">id / Steam</a>.</p>
+      <p>The complete first episode, unmodified, distributed at no charge exactly as the shareware license permits. The most reliable source is the Internet Archive's preserved copy:</p><p><a class="cta-btn" href="https://archive.org/details/DOOM_95" target="_blank" rel="noopener">Get DOOM shareware (Internet Archive) →</a></p><p class="muted small">Grab the DOS build (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). You don't need it to play here — this page already runs the shareware episode — but it's the copy to keep if you want it on your own machine. © id Software — the shareware episode is freely redistributable unmodified and at no charge. The registered episodes and Doom II are commercial and <strong>not</strong> included; buy those from <a href="https://store.steampowered.com/app/2280/DOOM__DOOM_II/" target="_blank" rel="noopener">id / Steam</a>.</p>
     </div>
   </section>
   <section class="card">
     <h2>How it works &amp; what to expect</h2>
     <table class="spec-table"><tr><th>Game</th><td>DOOM shareware, episode 1 (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>)</td></tr><tr><th>Runtime</th><td><strong>DOSBox + WebAssembly</strong> — classic DOS binary</td></tr><tr><th>Era</th><td>1993–1996, original DOS release</td></tr><tr><th>How to load</th><td>Unzip, then drop the whole folder so the EXE finds its WAD</td></tr><tr><th>Expected result</th><td>Plays at full speed; OPL2 sound works</td></tr></table>
     <h3>Classic DOS DOOM vs. source ports</h3>
-    <p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox — the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. <strong>WASD moves</strong> (remapped via DOSBox), <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors. Arrow keys also work.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. You can load a source port EXE alongside <code>DOOM1.WAD</code> using the "Load your own copy" option above.</p>
+    <p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox — the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. <strong>WASD moves</strong> (remapped via DOSBox), <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors. Arrow keys also work.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. Those are desktop programs, though — this page runs the original DOS build, which is the version that needs no setup at all.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
     <details>
       <summary>Can I play DOOM online for free with no download?</summary>
-      <p>Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real Win32 build in your browser — nothing to install.</p>
+      <p>Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real DOS build in your browser — nothing to install.</p>
     </details>
     <details>
       <summary>Is this real DOOM or a remake?</summary>
-      <p>The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual Windows binary inside an x86 emulator and Wine, rendering to a browser canvas.</p>
+      <p>The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual DOS binary inside DOSBox compiled to WebAssembly, rendering to a browser canvas.</p>
     </details>
     <details>
       <summary>What are the controls for DOOM in the browser?</summary>
@@ -266,7 +270,7 @@
     </details>
   </section>
   <section class="card">
-    <h2>Play another one — free, no download</h2>
+    <h2>More you can play in your browser</h2>
     <ul class="poster-grid">
         <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
           <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
@@ -276,27 +280,27 @@
           <img class="pc-shot" src="/run/solitaire-open/screenshot.png" width="320" height="240" loading="lazy" alt="Solitaire (Klondike) running in the browser" />
           <span class="pc-body"><span class="pc-title">Solitaire (Klondike)</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/openttd/">
-          <img class="pc-shot" src="/run/openttd/screenshot.png" width="320" height="240" loading="lazy" alt="OpenTTD running in the browser" />
-          <span class="pc-body"><span class="pc-title">OpenTTD</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/micropolis/">
+          <img class="pc-shot" src="/run/micropolis/screenshot.png" width="320" height="240" loading="lazy" alt="Micropolis running in the browser" />
+          <span class="pc-body"><span class="pc-title">Micropolis</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/run/wolfenstein-3d/">
           <img class="pc-shot" src="/run/wolfenstein-3d/screenshot.png" width="320" height="240" loading="lazy" alt="Wolfenstein 3D running in the browser" />
           <span class="pc-body"><span class="pc-title">Wolfenstein 3D</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/pipes-open/">
-          <img class="pc-shot" src="/run/pipes-open/screenshot.png" width="320" height="240" loading="lazy" alt="Pipe Panic running in the browser" />
-          <span class="pc-body"><span class="pc-title">Pipe Panic</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/snake-open/">
+          <img class="pc-shot" src="/run/snake-open/screenshot.png" width="320" height="240" loading="lazy" alt="Snake running in the browser" />
+          <span class="pc-body"><span class="pc-title">Snake</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/keen4/">
-          <img class="pc-shot" src="/run/keen4/screenshot.png" width="320" height="240" loading="lazy" alt="Commander Keen 4: Secret of the Oracle running in the browser" />
-          <span class="pc-body"><span class="pc-title">Commander Keen 4: Secret of the Oracle</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/raptor/">
+          <img class="pc-shot" src="/run/raptor/screenshot.png" width="320" height="240" loading="lazy" alt="Raptor running in the browser" />
+          <span class="pc-body"><span class="pc-title">Raptor</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
     </ul>
-    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 40 titles you can play here →</a></p>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 41 titles you can play here →</a></p>
   </section>
   <section class="card">
-    <h2>More you can run in your browser</h2>
+    <h2>Related guides</h2>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">The free, complete DOOM-compatible game — all levels, no shareware split.</span></a></li>
       <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id's 1992 shooter — the shareware episode, playable here.</span></a></li>
@@ -328,7 +332,7 @@
 <!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=30"></script>
+<script src="/dos-embed.js?v=31"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

@@ -53,6 +53,16 @@
     );
   }
 
+  // Localised strings for the handful of things this file puts on screen. The
+  // generator injects window.__I18N on translated pages only; everywhere else
+  // the English default passed in here is what shows, so this file keeps
+  // working unchanged on every existing page.
+  function T(key, fallback, vars) {
+    let s = (window.__I18N && window.__I18N[key]) || fallback;
+    if (vars) for (const [k, v] of Object.entries(vars)) s = s.split("{" + k + "}").join(v);
+    return s;
+  }
+
   // ─── save persistence ──────────────────────────────────────────────────
   //
   // js-dos can hand back a "changes bundle": a zip of everything the game
@@ -132,14 +142,14 @@
     <div id="dos-stage">
       <canvas id="dos-canvas" tabindex="0" oncontextmenu="return false;"></canvas>
       <div id="dos-overlay" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.85);">
-        <button id="dos-play" class="embed-play" type="button">&#9654; Play ${esc(cfg.appName)}</button>
+        <button id="dos-play" class="embed-play" type="button">${esc(T("play", "▶ Play {name}", { name: cfg.appName }))}</button>
         <p class="muted small" style="margin-top:.75rem;text-align:center;padding:0 1rem;">Runs in your browser with DOSBox + WebAssembly.<br>Nothing is uploaded. Runtime (~1.4 MB) is cached after first load.</p>
       </div>
     </div>
     <p id="dos-status" class="muted small" style="margin:.5rem 0 0;" hidden></p>
     <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
     <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to give it your keyboard.</p>
-    <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">Save inside the game and it's kept in this browser</span> · <a href="#" id="dos-save-reset">reset saved progress</a></p>
+    <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">${esc(T("saveHint", "Save inside the game and it's kept in this browser"))}</span> · <a href="#" id="dos-save-reset">${esc(T("resetSaves", "reset saved progress"))}</a></p>
     <details id="dos-keys" style="margin-top:.5rem;" hidden>
       <summary class="muted small">Keyboard — remap any key</summary>
       <p class="muted small" style="margin:.5rem 0;">Click a key below, then press the key you'd rather use. Saved in this browser, per game.</p>
@@ -184,22 +194,20 @@
     btn.classList.add("embed-play-resume");
     btn.innerHTML =
       `<img src="${esc(art)}" alt="" class="resume-shot" onerror="this.remove()">` +
-      `<span>&#9654; Resume ${esc(cfg.appName)}</span>`;
+      `<span>${esc(T("resume", "▶ Resume {name}", { name: cfg.appName }))}</span>`;
     const note = btn.parentElement?.querySelector("p");
     if (!note) return;
 
-    const FILES_COPY =
-      `Your saved games are loaded with it —<br>load them from the game's own menu.`;
-    const SNAPSHOT_COPY =
-      `You'll pick up exactly where you left off,<br>mid-game.`;
+    const FILES_COPY = esc(T("filesRestored", "Your saved games are loaded with it — load them from the game's own menu."));
+    const SNAPSHOT_COPY = esc(T("snapshotResume", "You'll pick up exactly where you left off, mid-game."));
 
     function render(body) {
       note.innerHTML =
-        `Saved ${esc(relativeTime(rec.updatedAt))}. ${body} ` +
-        `<a href="#" id="dos-start-over">Start over</a>`;
+        `${esc(T("savedAgo", "Saved {when}.", { when: relativeTime(rec.updatedAt) }))} ${body} ` +
+        `<a href="#" id="dos-start-over">${esc(T("startOver", "Start over"))}</a>`;
       note.querySelector("#dos-start-over").addEventListener("click", async e => {
         e.preventDefault();
-        if (!confirm(`Delete your saved progress in ${cfg.appName}?`)) return;
+        if (!confirm(T("confirmDelete", "Delete your saved progress in {name}?", { name: cfg.appName }))) return;
         await window.SaveCore?.drop(slug);
         await dropSnapshotRecord(slug);
         location.reload();
@@ -253,12 +261,12 @@
 
   function relativeTime(ts) {
     const mins = Math.round((Date.now() - ts) / 60000);
-    if (mins < 2) return "just now";
-    if (mins < 60) return mins + " minutes ago";
+    if (mins < 2) return T("justNow", "just now");
+    if (mins < 60) return T("minutesAgo", "{n} minutes ago", { n: mins });
     const hours = Math.round(mins / 60);
-    if (hours < 24) return hours === 1 ? "an hour ago" : hours + " hours ago";
+    if (hours < 24) return hours === 1 ? T("anHourAgo", "an hour ago") : T("hoursAgo", "{n} hours ago", { n: hours });
     const days = Math.round(hours / 24);
-    return days === 1 ? "yesterday" : days + " days ago";
+    return days === 1 ? T("yesterday", "yesterday") : T("daysAgo", "{n} days ago", { n: days });
   }
   const soundBtn = document.getElementById("dos-sound");
   const mouseHint = document.getElementById("dos-mouse-hint");
@@ -1113,7 +1121,7 @@
       for (const f of changed) baselineSig.set(f.path, f.sig);
       // Don't talk over the stronger promise: if this session resumed from a
       // snapshot, "progress saved" is a downgrade of what the player was told.
-      if (saveState && !resumedFromSnapshot) saveState.textContent = "Progress saved in this browser";
+      if (saveState && !resumedFromSnapshot) saveState.textContent = T("progressSaved", "Progress saved in this browser");
 
       window.SaveCore?.note({
         slug,
@@ -1190,7 +1198,7 @@
 
   async function play() {
     const btn = currentPlayBtn();
-    if (btn) { btn.disabled = true; btn.textContent = "Loading…"; }
+    if (btn) { btn.disabled = true; btn.textContent = T("loading", "Loading…"); }
     track("play_click");
     const t0 = performance.now();
     try {
@@ -1319,7 +1327,7 @@
             // drop the save files and then resume straight back into the game.
             await dropSnapshotRecord(slug);
             storedFiles = {};
-            saveState.textContent = "Saved progress cleared — reload to start fresh";
+            saveState.textContent = T("savesCleared", "Saved progress cleared — reload to start fresh");
             track("persist_reset");
           } catch (err) {
             log("Could not clear saved progress: " + err.message);
@@ -1366,7 +1374,7 @@
         ci.events().onExit(() => snapFlusher.stop());
 
         if (resumedFromSnapshot) {
-          saveState.textContent = "Resumed exactly where you left off";
+          saveState.textContent = T("resumedExactly", "Resumed exactly where you left off");
           // Prove it kept running. Two false starts here, both worth naming:
           // counting *colours* rejects Commander Keen's five-colour EGA screen,
           // and counting *frames* rejects Scorched Earth, which emits none at
@@ -1398,7 +1406,7 @@
         setStatus(cfg.appName + " exited.");
         overlay.style.display = "flex";
         const b = currentPlayBtn();
-        if (b) { b.disabled = false; b.textContent = "▶ Play " + cfg.appName; }
+        if (b) { b.disabled = false; b.textContent = T("play", "▶ Play {name}", { name: cfg.appName }); }
       });
 
       setStatus("");
@@ -1457,7 +1465,7 @@
       retry.addEventListener("click", () => {
         // Restore the original overlay so a retry looks like a fresh start.
         overlay.innerHTML = `
-          <button id="dos-play" class="embed-play" type="button">&#9654; Play ${esc(cfg.appName)}</button>
+          <button id="dos-play" class="embed-play" type="button">${esc(T("play", "▶ Play {name}", { name: cfg.appName }))}</button>
           <p class="muted small" style="margin-top:.75rem;text-align:center;padding:0 1rem;">Runs in your browser with DOSBox + WebAssembly.<br>Nothing is uploaded. Runtime (~1.4 MB) is cached after first load.</p>`;
         const fresh = document.getElementById("dos-play");
         fresh.addEventListener("click", play);

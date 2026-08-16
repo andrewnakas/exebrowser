@@ -87,6 +87,7 @@
 
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
+import { LANGS, LOCALES, languagesFor, translatedEntry, translatedSlugs, prefixOf, hasTranslation } from "./i18n/locales.mjs";
 
 const ROOT = resolve(process.cwd(), "public");
 
@@ -163,10 +164,18 @@ const runtimeLabel = (p) => {
   if (p.dosRuntime) return "DOSBox + WebAssembly";
   return RUNTIME_LABELS[p.variant || "default"] || RUNTIME_LABELS.default;
 };
-const monthYear = (iso) => {
+const monthYear = (iso, L = EN) => {
   const [y, m] = String(iso).split("-").map(Number);
-  const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  return m >= 1 && m <= 12 ? `${MONTHS[m - 1]} ${y}` : String(iso);
+  if (!(m >= 1 && m <= 12)) return String(iso);
+  // Intl gives the month name in the visitor's language for free, and gets the
+  // ordering right too — German wants "August 2026", Spanish "agosto de 2026".
+  try {
+    return new Intl.DateTimeFormat(L.htmlLang, { month: "long", year: "numeric", timeZone: "UTC" })
+      .format(new Date(Date.UTC(y, m - 1, 1)));
+  } catch {
+    const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    return `${MONTHS[m - 1]} ${y}`;
+  }
 };
 // For JSON-LD string values: strip tags, collapse whitespace, JSON-encode.
 const jsonText = (s) => JSON.stringify(String(s).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim());
@@ -310,7 +319,7 @@ function freeNoteHtml(p) {
     <p class="free-note"><span class="badge-free">FREE</span> <strong>This is the complete game, free.</strong> ${esc(p.fullyFree)}</p>`;
 }
 
-function controlsPanelHtml(p) {
+function controlsPanelHtml(p, L = EN) {
   const rows = p.controls;
   if (!rows || !rows.length) return "";
   const anyMouse = rows.some((r) => r.mouse && r.mouse !== "—");
@@ -323,11 +332,11 @@ function controlsPanelHtml(p) {
     .join("\n");
   return `
     <details class="controls-panel" open>
-      <summary><strong>Controls</strong> — what does what</summary>
+      <summary><strong>${esc(L.t("controls.summary"))}</strong> — ${esc(L.t("controls.summaryTail"))}</summary>
       <div class="table-wrap">
         <table class="controls-table">
-          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th>${
-            anyMouse ? `<th scope="col">Mouse</th>` : ""
+          <thead><tr><th scope="col">${esc(L.t("controls.action"))}</th><th scope="col">${esc(L.t("controls.keyboard"))}</th>${
+            anyMouse ? `<th scope="col">${esc(L.t("controls.mouse"))}</th>` : ""
           }</tr></thead>
           <tbody>
 ${body}
@@ -489,24 +498,34 @@ function sectionsHtml(sections) {
   return list.map((s) => `\n    <h3>${esc(s.h)}</h3>\n    ${s.html}`).join("");
 }
 
-function faqHtml(p) {
+function faqHtml(p, L = EN) {
   if (!p.faq || !p.faq.length) return "";
   const items = p.faq
     .map((f) => `    <details>\n      <summary>${esc(f.q)}</summary>\n      <p>${f.a}</p>\n    </details>`)
     .join("\n");
-  return `\n  <section class="card">\n    <h2>Frequently asked questions</h2>\n${items}\n  </section>`;
+  return `\n  <section class="card">\n    <h2>${esc(L.t("faq.heading"))}</h2>\n${items}\n  </section>`;
 }
 
-function relatedHtml(related) {
+
+// Authored links in `related` are written as plain /run/<slug>/ (or, if someone
+// hand-wrote one, /es/run/<slug>/). Either way they get resolved here to the
+// right URL for this locale, so a translator can't accidentally link a page
+// into a language it doesn't exist in.
+function resolveHref(L, href) {
+  const m = String(href || "").match(/^\/(?:[a-zA-Z-]+\/)?run\/([^/]+)\/$/);
+  if (!m) return href;
+  return linkFor(L, m[1]);
+}
+function relatedHtml(related, L = EN) {
   const cards = (related || [])
     .map(
       (r) =>
-        `      <li><a class="link-card" href="${r.href}"><span class="lc-title">${esc(
+        `      <li><a class="link-card" href="${resolveHref(L, r.href)}"><span class="lc-title">${esc(
           r.title
         )}</span><span class="lc-desc">${esc(r.desc)}</span></a></li>`
     )
     .join("\n");
-  return `\n  <section class="card">\n    <h2>More you can run in your browser</h2>\n    <ul class="card-grid">\n${cards}\n    </ul>\n  </section>`;
+  return `\n  <section class="card">\n    <h2>${esc(L.t("related.heading"))}</h2>\n    <ul class="card-grid">\n${cards}\n    </ul>\n  </section>`;
 }
 
 // A poster strip of other playable titles, appended to every page that has a
@@ -515,7 +534,7 @@ function relatedHtml(related) {
 // play one game and leave, because nothing on the page shows them a second
 // one. Hand-authored `related` lists were also drifting toward guides for
 // software we don't host, which spends a click and goes nowhere.
-function alsoPlayHtml(current, allPages) {
+function alsoPlayHtml(current, allPages, L = EN) {
   const pool = allPages
     .filter((p) => isPlayable(p) && p.slug !== current.slug && p.appType === "game")
     .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
@@ -542,13 +561,13 @@ function alsoPlayHtml(current, allPages) {
       const art = shot
         ? `<img class="pc-shot" src="/run/${p.slug}/${shot}" width="320" height="240" loading="lazy" alt="${esc(p.appName)} running in the browser" />`
         : `<span class="pc-shot pc-placeholder" aria-hidden="true">${esc((p.appName || "?").trim().charAt(0))}</span>`;
-      return `        <li class="pc-item"><a class="poster-card" href="/run/${p.slug}/">
+      return `        <li class="pc-item"><a class="poster-card" href="${linkFor(L, p.slug)}">
           ${art}
           <span class="pc-body"><span class="pc-title">${esc(p.appName)}</span><span class="pc-play">▶ Play free</span></span>
         </a></li>`;
     })
     .join("\n");
-  return `\n  <section class="card">\n    <h2>Play another one — free, no download</h2>\n    <ul class="poster-grid">\n${cards}\n    </ul>\n    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all ${allPages.filter(isPlayable).length} titles you can play here →</a></p>\n  </section>`;
+  return `\n  <section class="card">\n    <h2>${esc(L.t("alsoPlay.heading"))}</h2>\n    <ul class="poster-grid">\n${cards}\n    </ul>\n    <p class="muted small" style="margin:.75rem 0 0;"><a href="${L.path("/run/")}">See all ${allPages.filter(isPlayable).length} titles you can play here →</a></p>\n  </section>`;
 }
 
 // A one-line "what to play next" rail, sitting directly under the game rather
@@ -556,7 +575,7 @@ function alsoPlayHtml(current, allPages) {
 // the thorough version; most people stop scrolling long before it, and a player
 // who has just finished a game is exactly the person who wants another one.
 // Same rotation as alsoPlayHtml so link equity still spreads across the catalogue.
-function nextUpHtml(current, allPages) {
+function nextUpHtml(current, allPages, L = EN) {
   const pool = allPages
     .filter((p) => isPlayable(p) && p.slug !== current.slug && p.appType === "game")
     .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
@@ -571,9 +590,9 @@ function nextUpHtml(current, allPages) {
   }
 
   const links = picks
-    .map((p) => `<a href="/run/${p.slug}/">${esc(p.appName)}</a>`)
+    .map((p) => `<a href="${linkFor(L, p.slug)}">${esc(p.appName)}</a>`)
     .join("\n      ");
-  return `\n    <p class="next-up"><span class="next-up-label">Play next:</span>\n      ${links}\n      <a class="next-up-all" href="/run/">all ${allPages.filter(isPlayable).length} games →</a>\n    </p>`;
+  return `\n    <p class="next-up"><span class="next-up-label">${esc(L.t("nextUp.heading"))}:</span>\n      ${links}\n      <a class="next-up-all" href="${L.path("/run/")}">all ${allPages.filter(isPlayable).length} games →</a>\n    </p>`;
 }
 
 // The site has no way to reach a visitor again — no account, no login, and
@@ -608,24 +627,102 @@ function licenseHtml(p) {
   return `\n    <div class="warn-box">\n      ${p.licenseNote}\n    </div>`;
 }
 
-const render = (p) => `<!DOCTYPE html>
-<html lang="en">
+// ── localisation ───────────────────────────────────────────────────────────
+// English keeps the bare paths; other languages get a prefix. hreflang is
+// emitted for every language a slug actually exists in, plus x-default →
+// English, which is what tells a search engine these are the same page in
+// different languages rather than duplicates of each other.
+const EN = LOCALES.en;
+
+// Cross-links from a localised page. A game that has been translated gets the
+// reader's own language; everything else points at the English page, which
+// exists. Linking to /es/run/<slug>/ unconditionally is a 404 generator — most
+// of the catalogue is untranslated at any given moment.
+const linkFor = (L, slug) => (hasTranslation(L.code, slug) ? L.path(`/run/${slug}/`) : `/run/${slug}/`);
+
+const langsWithContent = () => LANGS.filter((c) => c === "en" || translatedSlugs(c).length);
+
+function hreflangHtml(pathAfterPrefix, slug) {
+  const langs = slug ? languagesFor(slug) : langsWithContent();
+  if (langs.length < 2) return "";
+  const rows = langs.map(
+    (c) => `<link rel="alternate" hreflang="${LOCALES[c].htmlLang}" href="${SITE}${prefixOf(c)}${pathAfterPrefix}" />`
+  );
+  rows.push(`<link rel="alternate" hreflang="x-default" href="${SITE}${pathAfterPrefix}" />`);
+  return "\n" + rows.join("\n");
+}
+
+// Rendered in the header so a visitor who landed on the wrong language can
+// leave. Only lists languages this page actually exists in.
+function langSwitcherHtml(L, pathAfterPrefix, slug) {
+  const langs = slug ? languagesFor(slug) : langsWithContent();
+  if (langs.length < 2) return "";
+  const links = langs.map((c) =>
+    c === L.code
+      ? `<span class="lang-current" aria-current="true">${esc(LOCALES[c].name)}</span>`
+      : `<a href="${prefixOf(c)}${pathAfterPrefix}" hreflang="${LOCALES[c].htmlLang}">${esc(LOCALES[c].name)}</a>`
+  );
+  return `\n  <nav class="lang-switcher" aria-label="${esc(L.t("nav.language"))}">${links.join(" · ")}</nav>`;
+}
+
+const siteNavHtml = (L) => `<nav class="site-nav" aria-label="Primary">
+    <a href="${L.path("/")}">${esc(L.t("nav.home"))}</a>
+    <a href="${L.path("/run/")}">${esc(L.t("nav.guides"))}</a>
+    <a href="/blog/">${esc(L.t("nav.blog"))}</a>
+    <a href="/guide/">${esc(L.t("nav.guide"))}</a>
+    <a href="/about/">${esc(L.t("nav.about"))}</a>
+    <a href="/contact/">${esc(L.t("nav.contact"))}</a>
+  </nav>`;
+
+const footerHtml = (L) => `<footer>
+  <p>${L.t("footer.builtOn")}</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="${L.path("/")}">${esc(L.t("nav.home"))}</a>
+    <a href="${L.path("/run/")}">${esc(L.t("nav.guides"))}</a>
+    <a href="/blog/">${esc(L.t("nav.blog"))}</a>
+    <a href="/guide/">${esc(L.t("footer.compat"))}</a>
+    <a href="/about/">${esc(L.t("nav.about"))}</a>
+    <a href="/contact/">${esc(L.t("nav.contact"))}</a>
+    <a href="/saves/">${esc(L.t("footer.saves"))}</a>
+    <a href="/privacy/">${esc(L.t("footer.privacy"))}</a>
+    <a href="/terms/">${esc(L.t("footer.terms"))}</a>
+  </nav>
+  <p>${esc(L.t("footer.copyright"))}</p>
+</footer>`;
+
+
+// The client scripts (dos-embed, recent, save-core) own a handful of visible
+// strings — the play button, the resume card, the save line. They can't read
+// ui.json, so the js.* keys ride along in a small inline object. English pages
+// emit nothing: those scripts already default to English.
+function clientStringsHtml(L) {
+  if (L.isDefault) return "";
+  const keys = ["js.play","js.resume","js.loading","js.startOver","js.savedAgo","js.filesRestored",
+    "js.snapshotResume","js.progressSaved","js.resumedExactly","js.confirmDelete","js.justNow",
+    "js.minutesAgo","js.anHourAgo","js.hoursAgo","js.yesterday","js.daysAgo",
+    "js.saveHint","js.resetSaves","js.savesCleared","js.restoredFiles"];
+  const obj = Object.fromEntries(keys.map((k) => [k.slice(3), L.t(k)]));
+  return `\n<script>window.__I18N=${JSON.stringify(obj)};</script>`;
+}
+
+const render = (p, L = EN) => `<!DOCTYPE html>
+<html lang="${L.htmlLang}">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${esc(p.title)}</title>
 <meta name="description" content="${esc(p.description)}" />
 <meta name="keywords" content="${esc(p.keywords)}" />
-<link rel="canonical" href="${SITE}/run/${p.slug}/" />
+<link rel="canonical" href="${SITE}${L.prefix}/run/${p.slug}/" />${hreflangHtml(`/run/${p.slug}/`, p.slug)}
 <meta property="og:type" content="article" />
-<meta property="og:url" content="${SITE}/run/${p.slug}/" />
+<meta property="og:url" content="${SITE}${L.prefix}/run/${p.slug}/" />
 <meta property="og:title" content="${esc(p.ogTitle)}" />
 <meta property="og:description" content="${esc(p.ogDescription)}" />
 <meta property="og:image" content="${ogImage(p)}" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=37" />
+<link rel="stylesheet" href="/style.css?v=38" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -645,58 +742,37 @@ ${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
     <span class="logo" aria-hidden="true">▶_</span>
     <h1>ExeBrowser</h1>
   </div>
-  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
-  <nav class="site-nav" aria-label="Primary">
-    <a href="/">Home</a>
-    <a href="/run/">App guides</a>
-    <a href="/blog/">Blog</a>
-    <a href="/guide/">Guide</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-  </nav>
+  <p class="tagline">${L.t("brand.tagline")}</p>
+  ${siteNavHtml(L)}${langSwitcherHtml(L, `/run/${p.slug}/`, p.slug)}
 </header>
 
 <main class="prose">
   <p class="resume-bar" id="resume-bar" hidden></p>
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › ${esc(p.crumb)}</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="${L.path("/")}">${esc(L.t("crumb.home"))}</a> › <a href="${L.path("/run/")}">${esc(L.t("crumb.guides"))}</a> › ${esc(p.crumb)}</nav>
 
   <section class="card">
     <h2>${esc(p.h1 || p.crumb)} <span class="verdict ${p.verdict.kind}">${esc(p.verdict.text)}</span></h2>${p.updated ? `
-    <p class="muted small" style="margin-top:0.25rem;">Guide updated ${esc(monthYear(p.updated))} · ${p.verdict.kind === "bad" ? "Tested with" : "Runs via"} ${esc(runtimeLabel(p))}${isPlayable(p) || p.verdict.kind === "bad" ? "" : " · Requires your own copy"}</p>` : ""}
+    <p class="muted small" style="margin-top:0.25rem;">${esc(L.t("page.updated"))} ${esc(monthYear(p.updated, L))} · ${esc(p.verdict.kind === "bad" ? L.t("page.testedWith") : L.t("page.runsVia"))} ${esc(runtimeLabel(p))}${isPlayable(p) || p.verdict.kind === "bad" ? "" : " · " + esc(L.t("page.requiresOwnCopy"))}</p>` : ""}
     ${p.intro}
-${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p)}${isPlayable(p) ? nextUpHtml(p, pages) : ""}${freeNoteHtml(p)}${figureHtml(p)}
-    ${p.iframeUrl ? "" : `<p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? "Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse." : "Runs in your browser tab with WebAssembly + Wine — nothing is uploaded. Click the screen to capture input; press <kbd>Esc</kbd> to release the mouse."}</p>`}${licenseHtml(p)}
+${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p, L)}${isPlayable(p) ? nextUpHtml(p, pages, L) : ""}${freeNoteHtml(p)}${figureHtml(p)}
+    ${p.iframeUrl ? "" : `<p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? L.t("embed.noteDos") : L.t("embed.noteWine")}</p>`}${licenseHtml(p)}
   </section>
 ${downloadHtml(p)}
   <section class="card">
-    <h2>How it works &amp; what to expect</h2>${sectionsHtml(p.sections)}
-  </section>${faqHtml(p)}${isPlayable(p) ? alsoPlayHtml(p, pages) : ""}${newsletterHtml()}${relatedHtml(p.related)}
+    <h2>${esc((p.sections && p.sections[0] && p.sections[0].h) || "How it works & what to expect")}</h2>${sectionsHtml(p.sections)}
+  </section>${faqHtml(p, L)}${isPlayable(p) ? alsoPlayHtml(p, pages, L) : ""}${newsletterHtml()}${relatedHtml(p.related, L)}
 </main>
 
-<footer>
-  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
-  <nav class="footer-nav" aria-label="Footer">
-    <a href="/">Home</a>
-    <a href="/run/">App guides</a>
-    <a href="/blog/">Blog</a>
-    <a href="/guide/">Compatibility Guide</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-    <a href="/saves/">Saved games</a>
-    <a href="/privacy/">Privacy Policy</a>
-    <a href="/terms/">Terms of Use</a>
-  </nav>
-  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
-</footer>
+${footerHtml(L)}
 
-${p.iframeUrl
+${clientStringsHtml(L)}${p.iframeUrl
   ? `<script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>`
   : p.dosRuntime
     ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=30"></script>`
+<script src="/dos-embed.js?v=31"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
@@ -725,6 +801,20 @@ for (const p of pages) {
   mkdirSync(dirname(out), { recursive: true });
   writeFileSync(out, render(p), "utf8");
   console.log("wrote", out);
+
+  // Localised siblings, but only where a real translation exists. A slug with
+  // no entry in pages.<lang>.json produces no localised URL at all — see the
+  // note in i18n/locales.mjs about why there is deliberately no English
+  // fallback wearing a /es/ path.
+  for (const code of LANGS) {
+    if (code === "en") continue;
+    const translated = translatedEntry(code, p);
+    if (!translated) continue;
+    const lout = resolve(ROOT, code, "run", p.slug, "index.html");
+    mkdirSync(dirname(lout), { recursive: true });
+    writeFileSync(lout, render(translated, LOCALES[code]), "utf8");
+    console.log("wrote", lout);
+  }
 }
 
 // ── regenerate the /run/ index so all pages are linked (crawlable) ─────────
@@ -839,7 +929,7 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=37" />
+<link rel="stylesheet" href="/style.css?v=38" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -933,6 +1023,104 @@ ${apps.map(indexCard).join("\n")}
 writeFileSync(resolve(ROOT, "run", "index.html"), indexHtml, "utf8");
 console.log("wrote", resolve(ROOT, "run", "index.html"), `(${games.length} games + ${apps.length} apps)`);
 
+
+// ── localised hub + home ───────────────────────────────────────────────────
+// Purpose-built rather than a translation of the English hub. With a handful of
+// titles translated, a faithful copy of the 41-card English page would be
+// mostly empty chrome; this lists what genuinely exists in the language and
+// then says plainly that the rest of the catalogue is in English, with a link.
+// Useful to a Spanish reader, and honest to a crawler.
+function localisedListing(L, isHome) {
+  const items = translatedSlugs(L.code)
+    .map((slug) => pages.find((x) => x.slug === slug))
+    .filter(Boolean)
+    .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
+
+  const cards = items
+    .map((p) => {
+      const t = translatedEntry(L.code, p) || p;
+      const shot = screenshotFile(p);
+      const art = shot
+        ? `<img class="pc-shot" src="/run/${p.slug}/${shot}" width="320" height="240" loading="lazy" alt="${esc(p.appName)}" />`
+        : `<span class="pc-shot pc-placeholder" aria-hidden="true">${esc((p.appName || "?").trim().charAt(0))}</span>`;
+      return `        <li class="pc-item"><a class="poster-card" href="${linkFor(L, p.slug)}">
+          ${art}
+          <span class="pc-body"><span class="pc-title">${esc(p.appName)}</span><span class="pc-play">${esc(t.crumb || p.crumb)}</span></span>
+        </a></li>`;
+    })
+    .join("\n");
+
+  const path = isHome ? "/" : "/run/";
+  const titleKey = isHome ? "home.title" : "hub.metaTitle";
+  const descKey = isHome ? "home.description" : "hub.description";
+  return `<!DOCTYPE html>
+<html lang="${L.htmlLang}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${esc(L.t(titleKey))}</title>
+<meta name="description" content="${esc(L.t(descKey))}" />
+<link rel="canonical" href="${SITE}${L.prefix}${path}" />${hreflangHtml(path, null)}
+<meta property="og:type" content="website" />
+<meta property="og:url" content="${SITE}${L.prefix}${path}" />
+<meta property="og:title" content="${esc(L.t(titleKey))}" />
+<meta property="og:description" content="${esc(L.t(descKey))}" />
+<meta property="og:image" content="${SITE}/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=38" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">${L.t("brand.tagline")}</p>
+  ${siteNavHtml(L)}${langSwitcherHtml(L, path, null)}
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <section class="card">
+    <h2>${esc(L.t(isHome ? "home.heading" : "hub.title"))}</h2>
+    <p class="muted small" style="margin-top:0;">${esc(L.t("home.blurb"))}</p>
+    <ul class="poster-grid">
+${cards}
+    </ul>
+    <p class="muted small" style="margin-top:1rem;">${L.t("home.restInEnglish")}</p>
+  </section>
+</main>
+
+${footerHtml(L)}
+<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+</body>
+</html>
+`;
+}
+
+for (const code of LANGS) {
+  if (code === "en" || !translatedSlugs(code).length) continue;
+  const L = LOCALES[code];
+  for (const isHome of [true, false]) {
+    const out = isHome ? resolve(ROOT, code, "index.html") : resolve(ROOT, code, "run", "index.html");
+    mkdirSync(dirname(out), { recursive: true });
+    writeFileSync(out, localisedListing(L, isHome), "utf8");
+    console.log("wrote", out);
+  }
+}
+
 // Emit the COMPLETE sitemap.xml: static URLs + every generated /run page. Making
 // the sitemap a generated artifact keeps it from drifting as pages are added.
 // lastmod: real content-change dates. Run pages carry their own `updated`
@@ -959,6 +1147,18 @@ const STATIC_URLS = [
 const urlEl = (loc, freq, pri, mod) =>
   `  <url>\n    <loc>${SITE}${loc}</loc>${mod ? `\n    <lastmod>${mod}</lastmod>` : ""}\n    <changefreq>${freq}</changefreq>\n    <priority>${pri}</priority>\n  </url>`;
 const runUrls = pages.map((p) => urlEl(`/run/${p.slug}/`, "monthly", "0.7", p.updated));
+// Localised pages are separate URLs and need to be crawlable in their own
+// right; hreflang in the page head is what ties them back to the English one.
+const localisedRootUrls = LANGS.filter((c) => c !== "en" && translatedSlugs(c).length).flatMap((code) => [
+  urlEl(`${prefixOf(code)}/`, "weekly", "0.8"),
+  urlEl(`${prefixOf(code)}/run/`, "weekly", "0.7"),
+]);
+const localisedUrls = LANGS.filter((c) => c !== "en").flatMap((code) =>
+  translatedSlugs(code)
+    .filter((slug) => pages.some((p) => p.slug === slug))
+    .map((slug) => urlEl(`${prefixOf(code)}/run/${slug}/`, "monthly", "0.6",
+      (pages.find((p) => p.slug === slug) || {}).updated))
+);
 const staticUrls = STATIC_URLS.map((u) => urlEl(u.loc, u.freq, u.pri, u.mod));
 // Order: home, /run/, then all run pages, then the rest of the static set.
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -966,7 +1166,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${staticUrls[0]}
 ${staticUrls[1]}
 ${runUrls.join("\n")}
-${staticUrls.slice(2).join("\n")}
+${localisedRootUrls.length ? localisedRootUrls.join("\n") + "\n" : ""}${localisedUrls.length ? localisedUrls.join("\n") + "\n" : ""}${staticUrls.slice(2).join("\n")}
 </urlset>
 `;
 writeFileSync(resolve(ROOT, "sitemap.xml"), sitemap, "utf8");

@@ -81,6 +81,18 @@ header h1 {
 .site-nav a:hover { color: var(--fg); border-bottom-color: var(--accent); }
 .site-nav a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--accent); }
 
+/* Language switcher, under the primary nav. Only rendered on pages that exist
+   in more than one language, so it stays absent from most of the site. */
+.lang-switcher {
+  margin: .5rem auto 0;
+  text-align: center;
+  font-size: .88rem;
+  color: var(--muted);
+}
+.lang-switcher a { color: var(--muted); text-decoration: none; }
+.lang-switcher a:hover { color: var(--fg); text-decoration: underline; }
+.lang-current { color: var(--fg); font-weight: 600; }
+
 .footer-nav {
   margin: 0.6rem auto 0;
   display: flex;

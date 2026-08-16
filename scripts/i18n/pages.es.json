@@ -1,0 +1,272 @@
+{
+  "_readme": [
+    "Spanish translations of the per-page prose, keyed by slug. Only the fields",
+    "present here override the English entry — anything omitted keeps its English",
+    "value, so a partial translation still renders a coherent page.",
+    "",
+    "A slug appearing in this file is what causes /es/run/<slug>/ to be generated",
+    "at all. Remove a slug and that URL stops existing. Do NOT add a slug with",
+    "English text just to make the page appear; see the note in locales.mjs.",
+    "",
+    "`keywords` is deliberately re-researched per language rather than translated",
+    "word-for-word — people search 'juegos de doom' not 'doom online free'.",
+    "",
+    "Translated by Claude, NOT yet reviewed by a native speaker. Titles and",
+    "descriptions are the marketing-critical strings and deserve a human pass",
+    "before anyone judges these pages on search performance."
+  ],
+  "doom": {
+    "title": "Jugar DOOM Online — Gratis, En Tu Navegador, Sin Descargas — ExeBrowser",
+    "description": "Juega al DOOM original de 1993, el episodio shareware «Knee-Deep in the Dead», online en tu navegador: sin descargas ni instalación. El DOOM clásico de DOS funcionando con DOSBox + WebAssembly.",
+    "keywords": "jugar doom online, doom en el navegador, doom gratis sin descargar, doom online gratis, doom shareware online, doom clasico navegador, jugar doom sin instalar",
+    "ogTitle": "Jugar DOOM Online — Gratis, En Tu Navegador, Sin Descargas",
+    "ogDescription": "El episodio shareware original de DOOM (1993), jugable en tu navegador con DOSBox + WebAssembly. Gratis, legal y sin instalar nada.",
+    "crumb": "Jugar DOOM",
+    "h1": "Juega a DOOM online en tu navegador",
+    "verdict": {
+      "kind": "good",
+      "text": "Shareware gratuito y legal"
+    },
+    "intro": "<p>El <strong>DOOM</strong> auténtico y original —el shooter en primera persona que id Software publicó en 1993— funcionando en una pestaña del navegador. Sin descargas, sin instalación y sin cuenta. Este es el episodio shareware de libre distribución (<em>Knee-Deep in the Dead</em>): el <code>DOOM.EXE</code> original de DOS ejecutándose con DOSBox + WebAssembly. Dale a jugar y empieza a repartir.</p>",
+    "sections": [
+      {
+        "h": "Cómo funciona y qué esperar",
+        "html": "<table class=\"spec-table\"><tr><th>Juego</th><td>DOOM shareware, episodio 1 (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>)</td></tr><tr><th>Motor</th><td><strong>DOSBox + WebAssembly</strong> — binario clásico de DOS</td></tr><tr><th>Época</th><td>1993–1996, versión original de DOS</td></tr><tr><th>Cómo cargarlo</th><td>Descomprime y arrastra la carpeta entera para que el EXE encuentre su WAD</td></tr><tr><th>Resultado esperado</th><td>Va a toda velocidad; el sonido OPL2 funciona</td></tr></table>"
+      },
+      {
+        "h": "El DOOM clásico de DOS frente a los source ports",
+        "html": "<p>Esta página ejecuta el <code>DOOM.EXE</code> original de DOS dentro de DOSBox: exactamente el mismo ejecutable que se distribuía en disquetes en 1993. Sin source ports ni Wine, solo emulación pura de DOSBox. <strong>WASD para moverte</strong> (reasignado desde DOSBox), <kbd>Ctrl</kbd> dispara y <kbd>Espacio</kbd> abre puertas. Las flechas también funcionan.</p><h3>¿Prefieres un source port?</h3><p>id liberó el motor de DOOM en 1997, lo que dio lugar a decenas de versiones modernizadas como Chocolate Doom. Todas usan el mismo WAD shareware, con más resolución y errores corregidos. Eso sí, son programas de escritorio: esta página ejecuta la versión original de DOS, que es justamente la que no requiere preparar nada.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Puedo jugar a DOOM online gratis y sin descargar nada?",
+        "a": "Sí. El primer episodio (Knee-Deep in the Dead) se publicó como shareware gratuito en 1993 y sigue siendo de libre distribución. ExeBrowser ejecuta la versión real de DOS en tu navegador: no hay nada que instalar."
+      },
+      {
+        "q": "¿Es el DOOM de verdad o un remake?",
+        "a": "Es el ejecutable original y sin modificar. ExeBrowser no recrea el juego: ejecuta el binario de DOS auténtico de id Software dentro de DOSBox compilado a WebAssembly, dibujando el resultado en un canvas del navegador."
+      },
+      {
+        "q": "¿Cuáles son los controles de DOOM en el navegador?",
+        "a": "Haz clic en la imagen del juego para capturar el teclado. WASD te mueve (W adelante, S atrás, A giro a la izquierda, D giro a la derecha), Ctrl dispara, Espacio abre puertas y las teclas numéricas cambian de arma. Las flechas también sirven. Pulsa Esc para devolver el ratón a la página."
+      },
+      {
+        "q": "¿Es legal jugar aquí a DOOM?",
+        "a": "Sí, en el caso del episodio shareware: id lo distribuyó para que se copiara libremente, sin modificar y sin coste. Los episodios registrados y DOOM II son comerciales y no están incluidos; cómpralos en id o en Steam."
+      },
+      {
+        "q": "¿Por qué puede ir lento DOOM en el navegador?",
+        "a": "Se emula una CPU x86 dentro de WebAssembly, así que obtienes aproximadamente entre el 10% y el 40% de la velocidad nativa. DOOM es lo bastante ligero como para ir fluido en casi cualquier portátil moderno; en tablets antiguas y Chromebooks puede notarse más lento."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Moverse / girar",
+        "keyboard": "Flechas o W A S D",
+        "mouse": "Mueve el ratón para girar"
+      },
+      {
+        "action": "Disparar",
+        "keyboard": "Ctrl",
+        "mouse": "Clic izquierdo"
+      },
+      {
+        "action": "Abrir puertas / interruptores",
+        "keyboard": "Espacio",
+        "mouse": "—"
+      },
+      {
+        "action": "Correr",
+        "keyboard": "mantén Shift",
+        "mouse": "—"
+      },
+      {
+        "action": "Desplazamiento lateral",
+        "keyboard": "Alt + flechas",
+        "mouse": "Clic derecho"
+      },
+      {
+        "action": "Armas 1–7",
+        "keyboard": "teclas numéricas",
+        "mouse": "—"
+      },
+      {
+        "action": "Mapa",
+        "keyboard": "Tab",
+        "mouse": "—"
+      },
+      {
+        "action": "Menú / atrás",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sonido",
+        "keyboard": "—",
+        "mouse": "Usa el botón de sonido bajo la pantalla para silenciar"
+      }
+    ],
+    "licenseReason": "id Software publicó el primer episodio («Knee-Deep in the Dead») como shareware gratuito en 1993 y sigue siendo de libre distribución, sin modificar y sin coste alguno.",
+    "related": [
+      {
+        "href": "/es/run/freedoom/",
+        "title": "Freedoom",
+        "desc": "El juego libre y completo compatible con DOOM: todos los niveles, sin división shareware."
+      },
+      {
+        "href": "/es/run/wolfenstein-3d/",
+        "title": "Wolfenstein 3D",
+        "desc": "El shooter de id de 1992: el episodio shareware, jugable aquí."
+      },
+      {
+        "href": "/es/run/",
+        "title": "Todos los juegos y programas",
+        "desc": "Todo lo que puedes jugar o ejecutar aquí."
+      }
+    ]
+  },
+  "wolfenstein-3d": {
+    "title": "Jugar Wolfenstein 3D Online — Shareware Gratis, En Tu Navegador — ExeBrowser",
+    "description": "Juega gratis al shareware de Wolfenstein 3D (episodio 1) en tu navegador: el juego original de DOS de 1992 funcionando con DOSBox + WebAssembly. Sin descargas, sin instalar y sin source ports.",
+    "keywords": "jugar wolfenstein 3d online, wolfenstein 3d gratis, wolfenstein 3d navegador, wolfenstein shareware online, wolfenstein 3d sin descargar, wolfenstein 3d dos online",
+    "ogTitle": "Jugar Wolfenstein 3D Online — Shareware Gratis, En Tu Navegador",
+    "ogDescription": "El episodio shareware de Wolfenstein 3D (1992), gratis y legal, en una pestaña del navegador con DOSBox + WebAssembly. Dale a jugar y listo.",
+    "crumb": "Jugar Wolfenstein 3D",
+    "h1": "Juega a Wolfenstein 3D online en tu navegador",
+    "verdict": {
+      "kind": "works",
+      "text": "Funciona — el juego original de DOS se ejecuta con DOSBox en tu navegador"
+    },
+    "intro": "<p><strong>Wolfenstein 3D</strong> —el abuelo de los shooters en primera persona, obra de id Software y Apogee en 1992— y su primer episodio shareware, gratuito y legal. ExeBrowser ejecuta los juegos de DOS directamente con DOSBox compilado a WebAssembly, así que aquí corre el <code>WOLF3D.EXE</code> original en tu navegador: sin source ports, sin configurar nada. Dale a jugar y entra.</p>",
+    "sections": [
+      {
+        "h": "Cómo funciona y qué esperar",
+        "html": "<p>Esta página ejecuta el Wolfenstein 3D original de <strong>DOS de 16 bits</strong> —el <code>WOLF3D.EXE</code> auténtico de 1992— dentro de DOSBox compilado a WebAssembly. No se emula dos veces ni se recompila nada: es el episodio shareware tal y como se publicó, arrancando en un par de segundos.</p><p>Tienes el juego de verdad: B.J. Blazkowicz, los búnkeres laberínticos, los muros secretos que se empujan y ese inconfundible aspecto de raycasting. El sonido es la salida original de AdLib/altavoz interno, así que suena como en 1992 y no como lo reinterpretaría un port moderno. Wolfenstein 3D es tan ligero para los estándares actuales que va a toda velocidad en cualquier equipo moderno; solo en Chromebooks y tablets antiguas podrías notarlo lento.</p>"
+      },
+      {
+        "h": "Source ports, si quieres uno en el escritorio",
+        "html": "<p>id liberó el motor de Wolfenstein 3D en 1995 y la comunidad creó versiones modernas —<a href=\"https://github.com/ECWolfEngine/ECWolf\" target=\"_blank\" rel=\"noopener\">ECWolf</a> y Wolf4SDL— que leen exactamente los mismos datos shareware <code>.WL1</code> con más resolución, vista con ratón y soporte para pantallas actuales. Merecen la pena en un escritorio.</p><p>Pero son programas de escritorio. Esta página ejecuta a propósito la versión original de DOS, porque es la que no te exige preparar absolutamente nada.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Puedo jugar a Wolfenstein 3D online gratis y sin descargar nada?",
+        "a": "Sí. Apogee e id publicaron el primer episodio como shareware en 1992 para que se copiara sin coste, y desde entonces se distribuye libremente. Esta página ejecuta ese episodio shareware en tu navegador: nada que descargar, nada que instalar y sin cuenta."
+      },
+      {
+        "q": "¿Es legal jugar aquí al shareware de Wolfenstein 3D?",
+        "a": "Sí, en el caso del primer episodio shareware. Los episodios registrados, las Nocturnal Missions y Spear of Destiny son comerciales y no están incluidos: cómpralos en id o en Steam."
+      },
+      {
+        "q": "¿Es el Wolfenstein 3D auténtico o un remake?",
+        "a": "El auténtico: el ejecutable original de DOS de 1992 con sus datos originales, sin modificar, dentro de DOSBox. No es una recreación de fans ni un source port; es el juego tal cual se publicó."
+      },
+      {
+        "q": "¿Cuáles son los controles?",
+        "a": "Haz clic en la pantalla del juego para capturar el teclado. Las flechas o WASD te mueven, Ctrl dispara, Espacio abre puertas y empuja muros secretos, las teclas 1–4 cambian de arma y Esc abre el menú."
+      },
+      {
+        "q": "¿Por qué puede ir lento?",
+        "a": "Se emula una CPU x86 dentro de WebAssembly, así que obtienes en torno al 10–40% de la velocidad nativa. Wolfenstein 3D es lo bastante ligero como para que eso sobre en cualquier portátil moderno; en tablets y Chromebooks muy antiguos puede notarse pesado."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Moverse / girar",
+        "keyboard": "Flechas o W A S D",
+        "mouse": "—"
+      },
+      {
+        "action": "Disparar",
+        "keyboard": "Ctrl",
+        "mouse": "Clic izquierdo"
+      },
+      {
+        "action": "Abrir puertas / empujar muros",
+        "keyboard": "Espacio",
+        "mouse": "Clic derecho"
+      },
+      {
+        "action": "Correr",
+        "keyboard": "mantén Shift",
+        "mouse": "—"
+      },
+      {
+        "action": "Desplazamiento lateral",
+        "keyboard": "Alt + flechas",
+        "mouse": "—"
+      },
+      {
+        "action": "Armas 1–4",
+        "keyboard": "teclas numéricas",
+        "mouse": "—"
+      },
+      {
+        "action": "Menú / atrás",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sonido",
+        "keyboard": "—",
+        "mouse": "Usa el botón de sonido bajo la pantalla para silenciar"
+      }
+    ],
+    "licenseReason": "Apogee e id publicaron el primer episodio de Wolfenstein 3D como shareware de libre distribución en 1992; los archivos de datos shareware .WL1 pueden copiarse sin coste, mientras que los episodios registrados y Spear of Destiny siguen siendo comerciales.",
+    "related": [
+      {
+        "href": "/es/run/doom/",
+        "title": "DOOM",
+        "desc": "El shooter de id de 1993: el episodio shareware, jugable aquí."
+      },
+      {
+        "href": "/es/run/",
+        "title": "Todos los juegos y programas",
+        "desc": "Todo lo que puedes jugar o ejecutar aquí."
+      }
+    ]
+  },
+  "tyrian": {
+    "title": "Jugar Tyrian 2000 Online — Gratis, En Tu Navegador, Sin Descargas — ExeBrowser",
+    "description": "Juega gratis a Tyrian 2000, el clásico matamarcianos de scroll vertical, en tu navegador. Su autor lo publicó como freeware: los cinco episodios funcionando con DOSBox + WebAssembly, sin descargar nada.",
+    "keywords": "jugar tyrian 2000 online, tyrian gratis, tyrian navegador, matamarcianos clasico online, shmup gratis navegador, tyrian sin descargar",
+    "ogTitle": "Jugar Tyrian 2000 Online — Gratis, En Tu Navegador",
+    "ogDescription": "El legendario matamarcianos vertical Tyrian 2000, publicado como freeware, jugable en una pestaña del navegador con DOSBox + WebAssembly. Los cinco episodios, sin descargas.",
+    "crumb": "Jugar Tyrian 2000",
+    "h1": "Juega a Tyrian 2000 online en tu navegador",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — clásico freeware gratuito con DOSBox en tu navegador"
+    },
+    "intro": "<p><strong>Tyrian 2000</strong> —el legendario matamarcianos de scroll vertical de Jason Emery, publicado como freeware en 2004— funciona en tu navegador con DOSBox + WebAssembly. Los cinco episodios, sin descargas ni instalación. Usa las flechas o un mando para volar y disparar a lo largo de toda la campaña.</p>",
+    "sections": [
+      {
+        "h": "Cómo funciona y qué esperar",
+        "html": "<p><strong>La licencia es la parte fácil.</strong> El autor, Jason Emery, publicó Tyrian 2000 completo como freeware en 2004, y más tarde el apartado gráfico pasó a una licencia de contenido abierto. Los archivos de datos —gráficos, niveles y música— son de libre distribución, y el juego se ofrece también gratis en GOG. Jugar aquí no tiene nada de turbio: ni piratería, ni cracks, ni hace falta una copia comercial.</p><p><strong>El binario es de DOS</strong>, así que funciona igual que el resto de juegos de DOS de este sitio: el <code>TYRIAN2K.EXE</code> original dentro de DOSBox compilado a WebAssembly. Dale a jugar y en unos segundos estarás en la pantalla de título. Y como el juego es freeware, todos los datos vienen incluidos: no hay nada que buscar, subir ni instalar.</p>"
+      },
+      {
+        "h": "Consejos para jugar",
+        "html": "<p>Gasta sin miedo en la tienda de mejoras entre niveles: al principio importan más un buen escudo y un buen generador que la potencia de fuego pura. Las armas auxiliares de <kbd>Alt</kbd> se recargan solas, así que úsalas sin reservártelas.</p>"
+      }
+    ],
+    "licenseReason": "Jason Emery publicó Tyrian 2000 completo como freeware en 2004; los archivos de datos son de libre distribución y el juego se ofrece gratuitamente, por lo que puede alojarse aquí sin restricciones.",
+    "related": [
+      {
+        "href": "/es/run/doom/",
+        "title": "DOOM",
+        "desc": "El shooter de id de 1993: el episodio shareware, jugable aquí."
+      },
+      {
+        "href": "/es/run/wolfenstein-3d/",
+        "title": "Wolfenstein 3D",
+        "desc": "El shooter de id de 1992, jugable aquí."
+      },
+      {
+        "href": "/es/run/",
+        "title": "Todos los juegos y programas",
+        "desc": "Todo lo que puedes jugar o ejecutar aquí."
+      }
+    ]
+  }
+}

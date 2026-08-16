@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Micropolis Online Free — the Open-Source City Builder, No Download — ExeBrowser</title>
+<meta name="description" content="Build a city in your browser. Micropolis is the open-source release of the classic 1989 city simulator — free, instant, no download, no account, no original game files needed." />
+<meta name="keywords" content="play micropolis online, micropolis browser, city builder online free, city simulator browser, open source city building game, classic city builder no download" />
+<link rel="canonical" href="https://exebrowser.com/run/micropolis/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/micropolis/" />
+<meta property="og:title" content="Play Micropolis online — free city builder, no download" />
+<meta property="og:description" content="The open-source city simulator, running natively in your browser. Zone, build, tax and watch a city grow." />
+<meta property="og:image" content="https://exebrowser.com/run/micropolis/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://exebrowser.com/run/micropolis/screenshot.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css?v=38" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Micropolis", "item": "https://exebrowser.com/run/micropolis/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Micropolis",
+  "url": "https://exebrowser.com/run/micropolis/",
+  "image": "https://exebrowser.com/run/micropolis/screenshot.png",
+  "description": "Build a city in your browser. Micropolis is the open-source release of the classic 1989 city simulator — free, instant, no download, no original game files needed.",
+  "applicationCategory": "Game",
+  "genre": ["Simulation","Strategy","Business"],
+  "gamePlatform": ["Web browser", "Windows", "Mac", "Linux", "Chromebook", "iOS", "Android"],
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this SimCity?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It is the same code, under its original name. Maxis shipped this simulator as SimCity in 1989; Electronic Arts released the source under the GPL in 2008 for the One Laptop Per Child project, under the name Micropolis, because EA kept the SimCity trademark. So this is that open-source release — not a copy of any commercial SimCity, and not affiliated with Electronic Arts." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need any original game files?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Everything needed is open source and already here — the simulation, the graphics, all of it. Nothing to buy and nothing to upload." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an emulator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Unlike the DOS and Windows titles on this site, there is no emulator involved: micropolisJS is a hand-written JavaScript port, so it runs as a normal web page. That is why it starts instantly and works on a phone." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I actually play?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Zone land for residential, commercial and industrial use, connect it with roads and power, and keep the budget in the black. Zones only develop if they have power and access, so a road and a wire to every zone is the first thing to get right." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I save my city?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — use the game's own Save button, and Load game on the welcome screen. Saves are kept in this browser on this device, so they don't follow you to another machine." }
+    }
+  ]
+}
+</script>
+<style>
+  .game-frame {
+    width: 100%; max-width: 980px; height: 720px; border: 0;
+    display: block; margin: 0 auto; border-radius: 8px; background: #c69c7b;
+  }
+  @media (max-width: 720px) { .game-frame { height: 560px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Micropolis</nav>
+
+  <section class="card">
+    <h2>Play Micropolis online — free, instant <span class="verdict good">Runs natively — no emulator</span></h2>
+    <p><strong>Micropolis</strong> is the city simulator Maxis first released in 1989 and Electronic Arts open-sourced in 2008. Zone land, lay roads and power lines, set the tax rate, and watch a city grow — or fail. Playable right now: <strong>no download, no sign-up, nothing to install, and no original game files needed</strong>.</p>
+    <p class="muted small">There is no emulator here. This is <a href="https://github.com/graememcc/micropolisJS" target="_blank" rel="noopener">micropolisJS</a>, a hand-written JavaScript port of the open-source release, so it loads like any other web page and runs on a phone.</p>
+
+    <iframe class="game-frame" src="/apps/micropolis/" title="Micropolis — playable city simulator" loading="eager"></iframe>
+
+    <details class="controls-panel" open>
+      <summary><strong>Controls</strong> — what does what</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Action</th><th scope="col">How</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Start</th><td>Pick a generated map with <strong>Play this map</strong>, or <strong>Generate another</strong> until you like one. Then name the city and choose a difficulty.</td></tr>
+            <tr><th scope="row">Build</th><td>Click a tool in the <strong>Tools</strong> panel, then click the map. Cost is shown on each tool.</td></tr>
+            <tr><th scope="row">Scroll the map</th><td>Drag the map, or use the arrow keys.</td></tr>
+            <tr><th scope="row">Demolish</th><td><strong>Bulldozer</strong>, then click what you want gone.</td></tr>
+            <tr><th scope="row">Inspect a tile</th><td><strong>Query</strong>, then click any tile to see what it is and how it's doing.</td></tr>
+            <tr><th scope="row">Money &amp; taxes</th><td><strong>Budget</strong> — set the tax rate and how much goes to roads, police and fire.</td></tr>
+            <tr><th scope="row">Save / pause</th><td><strong>Save</strong> and <strong>Pause</strong> in the left-hand panel.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <figure class="shot">
+      <img src="/run/micropolis/screenshot.png" alt="Micropolis running in the browser — a city under construction with the tools panel and budget controls" loading="lazy" />
+      <figcaption class="muted small">Micropolis running in a browser tab on this page — no plugins, no install.</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>What it is</h2>
+    <p>This is the original city-building simulation, the one that defined the genre: a grid, three kinds of zone, and a simulation underneath that decides whether anyone actually wants to live there. Demand rises and falls, traffic clogs, power fails, and the city either grows into a metropolis or stalls at a few thousand people while you work out why.</p>
+    <p>The version here is the source Electronic Arts released under the GPL in 2008, so that the game could ship on the One Laptop Per Child machine. That release is called <strong>Micropolis</strong> — the game's original working title — because EA kept the <em>SimCity</em> trademark. It is the same simulation, legally free, and it is what runs on this page.</p>
+  </section>
+
+  <section class="card">
+    <h2>Getting a city off the ground</h2>
+    <ul>
+      <li><strong>Power first.</strong> A zone with no power never develops. Build a coal plant early and run wire to your zones — power jumps across a one-tile gap, but not further.</li>
+      <li><strong>Roads are demand.</strong> Zones need road access to grow. A zone touching no road stays an empty lot forever.</li>
+      <li><strong>Watch the R/C/I bars.</strong> The little graph shows what the city is short of. Zone for whichever bar is highest instead of guessing.</li>
+      <li><strong>Keep industry downwind and apart.</strong> Pollution drags land value down, and low land value keeps residents away.</li>
+      <li><strong>Don't over-tax early.</strong> 7% is a reasonable start. Push it much higher and growth stops before the income matters.</li>
+      <li><strong>Save before you experiment.</strong> Disasters are optional, but bad zoning is its own disaster and there's no undo.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details open>
+      <summary>Is this SimCity?</summary>
+      <p>It is the same code, under its original name. Maxis shipped this simulator as <em>SimCity</em> in 1989; EA released the source under the GPL in 2008 for the One Laptop Per Child project, under the name <strong>Micropolis</strong>, because EA kept the <em>SimCity</em> trademark. So this is that open-source release — not a copy of any commercial version, and not affiliated with Electronic Arts. Details in our <a href="/apps/micropolis/NOTICE.md">provenance notice</a>.</p>
+    </details>
+    <details>
+      <summary>Do I need any original game files?</summary>
+      <p>No. Everything needed is open source and already here — the simulation, the graphics, all of it. Nothing to buy and nothing to upload.</p>
+    </details>
+    <details>
+      <summary>Is this an emulator?</summary>
+      <p>No. Unlike the DOS and Windows titles on this site, there's no emulator involved: micropolisJS is a hand-written JavaScript port, so it runs as a normal web page. That's why it starts instantly and works on a phone.</p>
+    </details>
+    <details>
+      <summary>How do I actually play?</summary>
+      <p>Zone land for residential, commercial and industrial use, connect it with roads and power, and keep the budget in the black. Zones only develop if they have power and access, so a road and a wire to every zone is the first thing to get right.</p>
+    </details>
+    <details>
+      <summary>Can I save my city?</summary>
+      <p>Yes — use the game's own <strong>Save</strong> button, and <strong>Load game</strong> on the welcome screen. Saves are kept in this browser on this device, so they don't follow you to another machine.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>More you can play in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/openttd/"><span class="lc-title">OpenTTD</span><span class="lc-desc">Build a transport empire — open-source, instant play.</span></a></li>
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The XP table — open-source build, instant play.</span></a></li>
+      <li><a class="link-card" href="/run/beneath-a-steel-sky/"><span class="lc-title">Beneath a Steel Sky</span><span class="lc-desc">Revolution&#39;s cyberpunk classic — freeware, instant play.</span></a></li>
+      <li><a class="link-card" href="/run/scorched-earth/"><span class="lc-title">Scorched Earth</span><span class="lc-desc">The mother of all artillery games — instant play.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">The 1993 shareware episode, playable in your browser.</span></a></li>
+      <li><a class="link-card" href="/run/"><span class="lc-title">All games &amp; apps</span><span class="lc-desc">Browse everything you can play or run here.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Micropolis is GPL-3.0 with additional terms; this is an unmodified build of the micropolisJS port of the open-source release. MICROPOLIS is a registered trademark of Micropolis Corporation (Micropolis GmbH), licensed to the upstream project under the Micropolis Public Name License. Not affiliated with or endorsed by Electronic Arts.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+<script src="/save-core.js?v=1"></script>
+<script src="/recent.js?v=3"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+</body>
+</html>

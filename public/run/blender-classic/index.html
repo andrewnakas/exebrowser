@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=37" />
+<link rel="stylesheet" href="/style.css?v=38" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -129,7 +129,7 @@
     </div>
   </section>
   <section class="card">
-    <h2>How it works &amp; what to expect</h2>
+    <h2>How it works &amp;amp; what to expect</h2>
     <p>ExeBrowser doesn't simulate Blender — it runs the real <code>blender.exe</code> through Wine on top of an x86 CPU emulated in WebAssembly. That part is faithful. What's missing is the graphics path.</p><p>Blender is not a normal &ldquo;windows and buttons&rdquo; app that draws with the standard Windows GDI. <strong>Every pixel of Blender's interface</strong> — the 3D viewport, the menus, the panels — is rendered through <strong>OpenGL</strong>, talking to your graphics card. Boxedwine provides no GPU and no accelerated OpenGL, so Blender has nothing to draw on. Realistically you'll see one of these:</p><ul><li><strong>Immediate crash / exit</strong> when Blender tries to create its OpenGL context.</li><li><strong>A black or scrambled window</strong> with no usable interface.</li><li>At best, a frozen splash that never reaches a working viewport.</li></ul><p>This is not a bug we can fix on a single page — it's a fundamental limit of running a GPU-driven 3D app on a software-only, no-OpenGL runtime. Set your expectations to <strong>&ldquo;this is a curiosity, not a workflow.&rdquo;</strong></p>
     <h3>Why even classic Blender (2.49b) won't render here</h3>
     <p>People reasonably assume the <em>old</em> versions are lighter and might squeak by. They are lighter on CPU and RAM, and they are real 32-bit Win32 executables — which is exactly what this runtime targets. But the blocker isn't CPU or memory; it's the graphics API.</p><p>Blender has required OpenGL for its viewport since its earliest public releases. Modern Blender demands OpenGL 3.3+, and even 2.49b-era builds need a working OpenGL driver to draw anything at all. The browser runtime has <strong>no OpenGL acceleration of any kind</strong>, so there is no version of Blender — old or new — that gets a usable viewport here. Choosing an older build doesn't route around the problem; the problem is the missing GPU layer.</p>
@@ -160,7 +160,7 @@
     </details>
   </section>
   <section class="card">
-    <h2>More you can run in your browser</h2>
+    <h2>Related guides</h2>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/mtpaint/"><span class="lc-title">mtPaint</span><span class="lc-desc">A lightweight 2D paint app that does run in the browser.</span></a></li>
       <li><a class="link-card" href="/run/grafx2/"><span class="lc-title">GrafX2</span><span class="lc-desc">Pixel-art editor — a 2D graphics tool that fits the runtime.</span></a></li>

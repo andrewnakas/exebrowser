@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=37" />
+<link rel="stylesheet" href="/style.css?v=38" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -125,7 +125,7 @@
   </section>
 
   <section class="card">
-    <h2>How it works &amp; what to expect</h2>
+    <h2>Why Paint.NET won't run here</h2>
     <h3>Why Paint.NET won't run here</h3>
     <p>Paint.NET isn't a plain Win32 program — it's a managed .NET application. When you launch it, Windows hands control to the .NET Framework runtime (the CLR), which then JIT-compiles and runs Paint.NET's code. No .NET Framework, no Paint.NET. That single dependency is the wall:</p><ul><li><strong>The runtime isn't here.</strong> ExeBrowser ships Wine 1.7.55 with no .NET Framework. Even desktop Wine users install it the hard way with <code>winetricks dotnet35</code> or <code>dotnet48</code> — a multi-hundred-MB download plus registry plumbing that simply can't happen inside a range-fetched browser sandbox.</li><li><strong>Old Wine + .NET is notoriously fragile.</strong> Wine's .NET support improved a lot in later releases, but 1.7.55 dates to 2015 and predates most of that work. Even modern Wine struggles: community reports note Paint.NET 4.3.x "runs" but most tools crash the app, 5.1.x has heavy rendering glitches, and 5.2.x crashes on startup outright.</li><li><strong>It's a 32-bit constraint stacked on a 32-bit constraint.</strong> Newer Paint.NET is 64-bit only and uses Direct2D/GPU acceleration — neither of which exists in our 32-bit, DirectX-9-or-older environment.</li></ul><p>So even the most Wine-friendly classic 3.x build would face down a missing CLR. We'd rather tell you that up front than have you upload an installer that spins and dies.</p>
     <h3>What to use instead — mtPaint</h3>
@@ -157,7 +157,7 @@
     </details>
   </section>
   <section class="card">
-    <h2>More you can run in your browser</h2>
+    <h2>Related guides</h2>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/mtpaint/"><span class="lc-title">mtPaint</span><span class="lc-desc">Native Win32 image editor that actually runs in-browser.</span></a></li>
       <li><a class="link-card" href="/run/grafx2/"><span class="lc-title">GrafX2</span><span class="lc-desc">Bitmap and pixel-art editor, no .NET needed.</span></a></li>

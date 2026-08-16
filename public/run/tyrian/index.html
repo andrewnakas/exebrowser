@@ -4,18 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Play Tyrian 2000 Online — Free, In Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Play Tyrian 2000, the classic vertical-scrolling shmup, in your browser. The game is free (released as freeware), but it's a DOS title — here's how it runs on Wine + WebAssembly and what to expect." />
+<meta name="description" content="Play Tyrian 2000, the classic vertical-scrolling shmup, free in your browser. Released as freeware by its author — all five episodes, running in DOSBox + WebAssembly with nothing to download." />
 <meta name="keywords" content="play tyrian 2000 online, tyrian in browser, tyrian 2000 free, tyrian shmup online no download, tyrian freeware, opentyrian2000 browser, play tyrian no install" />
 <link rel="canonical" href="https://exebrowser.com/run/tyrian/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/tyrian/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/tyrian/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/tyrian/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/tyrian/" />
 <meta property="og:title" content="Play Tyrian 2000 Online — Free, In Your Browser" />
-<meta property="og:description" content="The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via Wine + WebAssembly. Honest setup notes inside — it's a DOS game." />
+<meta property="og:description" content="The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via DOSBox + WebAssembly. All five episodes, no download." />
 <meta property="og:image" content="https://exebrowser.com/run/tyrian/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=37" />
+<link rel="stylesheet" href="/style.css?v=38" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -44,7 +47,7 @@
   "name": "Tyrian 2000",
   "url": "https://exebrowser.com/run/tyrian/",
   "image": "https://exebrowser.com/run/tyrian/screenshot.png",
-  "description": "Play Tyrian 2000, the classic vertical-scrolling shmup, in your browser. The game is free (released as freeware), but it's a DOS title — here's how it runs on Wine + WebAssembly and what to expect.",
+  "description": "Play Tyrian 2000, the classic vertical-scrolling shmup, free in your browser. Released as freeware by its author — all five episodes, running in DOSBox + WebAssembly with nothing to download.",
   "applicationCategory": "Game",
   "genre": ["Shoot 'em up", "Vertical scrolling shooter", "Arcade"],
   "gamePlatform": ["Web browser", "Windows"],
@@ -103,6 +106,7 @@
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
   </nav>
+  <nav class="lang-switcher" aria-label="Language"><span class="lang-current" aria-current="true">English</span> · <a href="/es/run/tyrian/" hreflang="es">Español</a></nav>
 </header>
 
 <main class="prose">
@@ -202,7 +206,7 @@
       <summary><strong>Controls</strong> — what does what</summary>
       <div class="table-wrap">
         <table class="controls-table">
-          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse</th></tr></thead>
+          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse / touch</th></tr></thead>
           <tbody>
         <tr><th scope="row">Fly</th><td><kbd>Arrow keys</kbd></td><td><span class="muted">—</span></td></tr>
         <tr><th scope="row">Fire</th><td><kbd>Ctrl</kbd></td><td><kbd>Left-click</kbd></td></tr>
@@ -215,11 +219,11 @@
       </div>
     </details>
     <p class="next-up"><span class="next-up-label">Play next:</span>
-      <a href="/run/spider-open/">Spider Solitaire</a>
-      <a href="/run/keen4/">Commander Keen 4: Secret of the Oracle</a>
-      <a href="/run/doom/">DOOM</a>
-      <a href="/run/2048-open/">2048</a>
-      <a class="next-up-all" href="/run/">all 40 games →</a>
+      <a href="/run/crystal-caves/">Crystal Caves</a>
+      <a href="/run/jezzball-open/">JezzBall</a>
+      <a href="/run/blake-stone/">Blake Stone</a>
+      <a href="/run/solitaire-open/">Solitaire (Klondike)</a>
+      <a class="next-up-all" href="/run/">all 41 games →</a>
     </p>
     <p class="free-note"><span class="badge-free">FREE</span> <strong>This is the complete game, free.</strong> Declared freeware by rights holder Jason Emery in 2004 — the complete game, not an episode.</p>
     <figure class="app-shot">
@@ -240,7 +244,7 @@
   </section>
   <section class="card">
     <h2>How it works &amp; what to expect</h2>
-    <p>There are two layers to be honest about here: the <strong>license</strong> and the <strong>binary</strong>.</p><p><strong>The license is the easy part.</strong> Author Jason Emery released the complete Tyrian 2000 as freeware in 2004, and the artwork was later placed under an open-content license. The data files (graphics, levels, music) are freely redistributable, and the game is also offered free of charge on GOG. So there's nothing shady about playing it — no piracy, no cracks, no commercial copy required.</p><p><strong>The binary is the tricky part.</strong> The original <code>TYRIAN.EXE</code> / <code>TYRIAN2K.EXE</code> is a <em>DOS</em> executable. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary will not start cleanly without a DOS layer. That's why the verdict here is <em>partial</em>: the game is free and the gameplay is timeless, but getting it running in a browser Win32 environment takes the right approach.</p>
+    <p><strong>The licence is the easy part.</strong> Author Jason Emery released the complete Tyrian 2000 as freeware in 2004, and the artwork was later placed under an open-content licence. The data files — graphics, levels, music — are freely redistributable, and the game is offered free of charge on GOG too. There's nothing shady about playing it here: no piracy, no cracks, no commercial copy required.</p><p><strong>The binary is a DOS one</strong>, so it runs the way the other DOS games on this site do: the original <code>TYRIAN2K.EXE</code> inside DOSBox compiled to WebAssembly. Click play and it boots straight to the title screen in a few seconds. Because the game is freeware, the complete data ships with it — there is nothing to find, upload or install.</p>
     <h3>How it plays here: the freeware game via DOSBox</h3>
     <p>Tyrian 2000 is a DOS game, and it plays in ExeBrowser through a <strong>DOSBox WebAssembly runtime</strong> — the same approach behind DOOM and Wolfenstein 3D here. Click play and the freeware game boots straight to its title screen and menu in a few seconds; no files to find, no upload, nothing installed. Because Tyrian 2000 was released as freeware, the complete game data ships with the runtime.</p><p>Prefer a native rebuild? The open-source <strong><a href="https://github.com/KScl/opentyrian2000" target="_blank" rel="noopener">OpenTyrian2000</a></strong> port (GPL) recreates the game as a modern executable for desktop play. It is SDL-based, so it targets a real desktop rather than this browser sandbox — but it is the best way to play Tyrian natively on a modern machine.</p>
     <h3>Playing tips</h3>
@@ -270,7 +274,7 @@
     </details>
   </section>
   <section class="card">
-    <h2>Play another one — free, no download</h2>
+    <h2>More you can play in your browser</h2>
     <ul class="poster-grid">
         <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
           <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
@@ -284,23 +288,23 @@
           <img class="pc-shot" src="/run/solitaire-open/screenshot.png" width="320" height="240" loading="lazy" alt="Solitaire (Klondike) running in the browser" />
           <span class="pc-body"><span class="pc-title">Solitaire (Klondike)</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/openttd/">
-          <img class="pc-shot" src="/run/openttd/screenshot.png" width="320" height="240" loading="lazy" alt="OpenTTD running in the browser" />
-          <span class="pc-body"><span class="pc-title">OpenTTD</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/micropolis/">
+          <img class="pc-shot" src="/run/micropolis/screenshot.png" width="320" height="240" loading="lazy" alt="Micropolis running in the browser" />
+          <span class="pc-body"><span class="pc-title">Micropolis</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/minesweeper-open/">
-          <img class="pc-shot" src="/run/minesweeper-open/screenshot.png" width="320" height="240" loading="lazy" alt="Minesweeper running in the browser" />
-          <span class="pc-body"><span class="pc-title">Minesweeper</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/rodents-open/">
+          <img class="pc-shot" src="/run/rodents-open/screenshot.png" width="320" height="240" loading="lazy" alt="Rodent's Revenge running in the browser" />
+          <span class="pc-body"><span class="pc-title">Rodent's Revenge</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/2048-open/">
-          <img class="pc-shot" src="/run/2048-open/screenshot.png" width="320" height="240" loading="lazy" alt="2048 running in the browser" />
-          <span class="pc-body"><span class="pc-title">2048</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/freedoom/">
+          <img class="pc-shot" src="/run/freedoom/screenshot.png" width="320" height="240" loading="lazy" alt="Freedoom running in the browser" />
+          <span class="pc-body"><span class="pc-title">Freedoom</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
     </ul>
-    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 40 titles you can play here →</a></p>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 41 titles you can play here →</a></p>
   </section>
   <section class="card">
-    <h2>More you can run in your browser</h2>
+    <h2>Related guides</h2>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/one-must-fall-2097/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Epic's freeware robot fighter — full game, free.</span></a></li>
       <li><a class="link-card" href="/run/raptor/"><span class="lc-title">Raptor: Call of the Shadows</span><span class="lc-desc">Another classic vertical-scrolling DOS shmup.</span></a></li>
@@ -332,7 +336,7 @@
 <!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=30"></script>
+<script src="/dos-embed.js?v=31"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=37" />
+<link rel="stylesheet" href="/style.css?v=38" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -201,7 +201,7 @@
       <summary><strong>Controls</strong> — what does what</summary>
       <div class="table-wrap">
         <table class="controls-table">
-          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse</th></tr></thead>
+          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse / touch</th></tr></thead>
           <tbody>
         <tr><th scope="row">Move / turn</th><td><kbd>Arrow keys</kbd> or <kbd>W A S D</kbd></td><td>Move mouse to turn</td></tr>
         <tr><th scope="row">Fire</th><td><kbd>Ctrl</kbd></td><td><kbd>Left-click</kbd></td></tr>
@@ -217,11 +217,11 @@
       </div>
     </details>
     <p class="next-up"><span class="next-up-label">Play next:</span>
-      <a href="/run/blockdrop-open/">Block Drop</a>
-      <a href="/run/god-of-thunder/">God of Thunder</a>
-      <a href="/run/beneath-a-steel-sky/">Beneath a Steel Sky</a>
-      <a href="/run/commander-keen/">Commander Keen</a>
-      <a class="next-up-all" href="/run/">all 40 games →</a>
+      <a href="/run/wolfenstein-3d/">Wolfenstein 3D</a>
+      <a href="/run/pipes-open/">Pipe Panic</a>
+      <a href="/run/alien-carnage/">Alien Carnage</a>
+      <a href="/run/tyrian/">Tyrian 2000</a>
+      <a class="next-up-all" href="/run/">all 41 games →</a>
     </p>
     <p class="free-note"><span class="badge-free">FREE</span> <strong>This is the complete game, free.</strong> Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.</p>
     <figure class="app-shot">
@@ -234,16 +234,16 @@
   <section class="card">
     <div class="download-box">
       <h3 style="margin-top:0;">Get Freedoom (free &amp;amp; open source)</h3>
-      <div class="download-box"><h3 style="margin-top:0;">The official, libre release</h3><p>Freedoom's game data is released under a modified BSD license — you may freely copy, modify, and redistribute it, provided the license and credit travel with it. Grab the official release from the project itself:</p><p><a class="cta-btn" href="https://freedoom.github.io/download.html" target="_blank" rel="noopener">Download Freedoom (official site) →</a></p><p class="muted small">The download contains <code>freedoom1.wad</code> (Phase 1, Ultimate-Doom-style) and <code>freedoom2.wad</code> (Phase 2, Doom-II-style). These are WAD data files, <strong>not</strong> an executable — you also need a DOOM engine. The simplest free pairing is a small Win32 software-rendering port such as <a href="https://www.chocolate-doom.org/" target="_blank" rel="noopener">Chocolate Doom</a> or Crispy Doom. Put the port's <code>.EXE</code> and a <code>freedoomN.wad</code> in one folder, then use <strong>“Load your own copy”</strong> above to drop the folder in. Everything here — game and engine — is genuinely free and open source.</p></div>
+      <div class="download-box"><h3 style="margin-top:0;">The official, libre release</h3><p>Freedoom's game data is released under a modified BSD license — you may freely copy, modify, and redistribute it, provided the license and credit travel with it. Grab the official release from the project itself:</p><p><a class="cta-btn" href="https://freedoom.github.io/download.html" target="_blank" rel="noopener">Download Freedoom (official site) →</a></p><p class="muted small">The download contains <code>freedoom1.wad</code> (Phase 1, Ultimate-Doom-style) and <code>freedoom2.wad</code> (Phase 2, Doom-II-style). These are WAD data files, <strong>not</strong> an executable — you also need a DOOM engine. The simplest free pairing is a small Win32 software-rendering port such as <a href="https://www.chocolate-doom.org/" target="_blank" rel="noopener">Chocolate Doom</a> or Crispy Doom. Put the port's <code>.EXE</code> and a <code>freedoomN.wad</code> in one folder and run it on your desktop — you don't need any of that to play here, since this page already boots Freedoom for you. Everything involved — game and engine — is genuinely free and open source.</p></div>
     </div>
   </section>
   <section class="card">
-    <h2>How it works &amp; what to expect</h2>
+    <h2>How it works &amp;amp; what to expect</h2>
     <p>ExeBrowser runs a real Win32 executable on Wine + WebAssembly. Freedoom itself isn't an executable — it's an <em>IWAD</em>, a single data file holding all the levels, graphics, sound, and music. So the page actually runs a DOOM <strong>engine</strong> (a small Win32 <code>.exe</code>) and points it at <code>freedoom1.wad</code> or <code>freedoom2.wad</code>. Pick a software-rendering port and it plays at full speed on a modern laptop, exactly like the original DOOM does here.</p>
     <h3>Choose the right engine — this is the important part</h3>
     <p>The engine choice decides whether it works. Be guided by this:</p><ul><li><strong>Chocolate Doom / Crispy Doom (recommended)</strong> — software-rendering, tiny Win32 builds. No 3D acceleration needed, so they run cleanly in the emulator. This is the reliable pairing.</li><li><strong>GZDoom / modern hardware ports (avoid here)</strong> — these require OpenGL 3.3 and a real GPU pipeline that Boxedwine doesn't provide. They will fail to start or render. Save those for a native desktop.</li></ul><p>To launch, put the port's <code>.EXE</code> and a Freedoom WAD in the same folder. Many ports auto-detect a WAD sitting beside them; if not, the engine reads it as the IWAD on startup. Phase 1 (<code>freedoom1.wad</code>) is the four-episode, Ultimate-Doom-style campaign; Phase 2 (<code>freedoom2.wad</code>) is a single 30-level Doom-II-style campaign.</p>
-    <h3>Step by step</h3>
-    <ol><li>Click <strong>▶ Play Freedoom</strong> above to boot Wine on this page.</li><li>Download Freedoom from the box below and a small software-rendering port (Chocolate Doom or Crispy Doom).</li><li>Unzip both into a single folder so the <code>.EXE</code> and a <code>freedoomN.wad</code> sit side by side.</li><li>Use <strong>Load your own copy → a folder</strong> and select that folder, then click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. WASD or arrow keys move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors, <kbd>1</kbd>–<kbd>7</kbd> switch weapons, <kbd>Esc</kbd> releases the mouse.</li></ol>
+    <h3>How it works &amp; what to expect</h3>
+    <p><strong>Freedoom</strong> is not an executable — it's an <em>IWAD</em>, a single data file holding all the levels, sprites and sounds. It needs a DOOM engine to run it, and this page ships one: the freely-redistributable DOOM engine running under DOSBox compiled to WebAssembly, with the Freedoom IWAD alongside it. Click play and it boots — there is nothing to download and nothing to upload.</p><p>On a desktop you'd normally pair the same IWAD with a modern source port such as Chocolate Doom or Crispy Doom. That's the better way to play it natively; it just isn't what this page does.</p>
     <h3>What it is — and what it isn't</h3>
     <p>Freedoom is <em>not</em> id Software's DOOM and isn't trying to be a copy of its art — it's an original, drop-in replacement for the commercial WADs, made from scratch by volunteers so the open-source engines have something completely free to play. That makes it perfect for a browser: no shareware caveats, no licensing tightrope, no "buy the full version" upsell. If you specifically want the original 1993 DOOM levels, see our DOOM shareware page instead. If you just want a free, no-strings DOOM-style shooter to blast through, Freedoom is the cleanest option there is.</p>
   </section>
@@ -271,7 +271,7 @@
     </details>
   </section>
   <section class="card">
-    <h2>Play another one — free, no download</h2>
+    <h2>More you can play in your browser</h2>
     <ul class="poster-grid">
         <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
           <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
@@ -285,23 +285,23 @@
           <img class="pc-shot" src="/run/solitaire-open/screenshot.png" width="320" height="240" loading="lazy" alt="Solitaire (Klondike) running in the browser" />
           <span class="pc-body"><span class="pc-title">Solitaire (Klondike)</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/openttd/">
-          <img class="pc-shot" src="/run/openttd/screenshot.png" width="320" height="240" loading="lazy" alt="OpenTTD running in the browser" />
-          <span class="pc-body"><span class="pc-title">OpenTTD</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/micropolis/">
+          <img class="pc-shot" src="/run/micropolis/screenshot.png" width="320" height="240" loading="lazy" alt="Micropolis running in the browser" />
+          <span class="pc-body"><span class="pc-title">Micropolis</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/blake-stone/">
-          <img class="pc-shot" src="/run/blake-stone/screenshot.png" width="320" height="240" loading="lazy" alt="Blake Stone running in the browser" />
-          <span class="pc-body"><span class="pc-title">Blake Stone</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/snake-open/">
+          <img class="pc-shot" src="/run/snake-open/screenshot.png" width="320" height="240" loading="lazy" alt="Snake running in the browser" />
+          <span class="pc-body"><span class="pc-title">Snake</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
-        <li class="pc-item"><a class="poster-card" href="/run/cosmo/">
-          <img class="pc-shot" src="/run/cosmo/screenshot.png" width="320" height="240" loading="lazy" alt="Cosmo's Cosmic Adventure running in the browser" />
-          <span class="pc-body"><span class="pc-title">Cosmo's Cosmic Adventure</span><span class="pc-play">▶ Play free</span></span>
+        <li class="pc-item"><a class="poster-card" href="/run/one-must-fall-2097/">
+          <img class="pc-shot" src="/run/one-must-fall-2097/screenshot.png" width="320" height="240" loading="lazy" alt="One Must Fall 2097 running in the browser" />
+          <span class="pc-body"><span class="pc-title">One Must Fall 2097</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
     </ul>
-    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 40 titles you can play here →</a></p>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 41 titles you can play here →</a></p>
   </section>
   <section class="card">
-    <h2>More you can run in your browser</h2>
+    <h2>Related guides</h2>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">The 1993 original's shareware episode, playable in your browser.</span></a></li>
       <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">The shooter that started it — shareware episode, instant play.</span></a></li>
@@ -331,7 +331,7 @@
 <!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=30"></script>
+<script src="/dos-embed.js?v=31"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

@@ -112,10 +112,10 @@
   {
     "slug": "wolfenstein-3d",
     "title": "Play Wolfenstein 3D Online — Free Shareware, In Your Browser — ExeBrowser",
-    "description": "Play Wolfenstein 3D shareware (episode 1) in your browser — free and legal. Honest guide: it's a DOS game, so you run it via a Win32 source port on Wine + WebAssembly. Here's what works.",
+    "description": "Play Wolfenstein 3D shareware (episode 1) free in your browser — the original 1992 DOS game running in DOSBox + WebAssembly. No download, no install, no source port needed.",
     "keywords": "play wolfenstein 3d online, wolfenstein 3d in browser, wolfenstein 3d shareware free, wolfenstein 3d no download, ecwolf browser, wolf3d shareware online, classic wolfenstein 3d browser",
     "ogTitle": "Play Wolfenstein 3D Online — Free Shareware, In Your Browser",
-    "ogDescription": "The 1992 Wolfenstein 3D shareware episode, free and legal. It's a DOS game, so you run it through a Win32 source port on Wine + WebAssembly. Honest guide to what works.",
+    "ogDescription": "The 1992 Wolfenstein 3D shareware episode, free and legal, running in a browser tab via DOSBox + WebAssembly. Click play and you're in.",
     "crumb": "Play Wolfenstein 3D",
     "h1": "Play Wolfenstein 3D online in your browser",
     "appName": "Wolfenstein 3D",
@@ -138,43 +138,39 @@
     "licenseReason": "Wolfenstein 3D's first episode was released as freely-distributable shareware by Apogee/id in 1992; the shareware .WL1 data files may be copied at no charge, while the registered episodes and Spear of Destiny remain commercial.",
     "download": {
       "heading": "Get the Wolfenstein 3D shareware (free, legal)",
-      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">The shareware episode (data files) + a Win32 source port</h3><p>You need two pieces, both free and legal:</p><ol><li><strong>The shareware data</strong> — the freely-redistributable first episode (the <code>*.WL1</code> files: <code>VSWAP.WL1</code>, <code>MAPHEAD.WL1</code>, <code>GAMEMAPS.WL1</code>, <code>VGAGRAPH.WL1</code>, <code>VGAHEAD.WL1</code>, <code>AUDIOT.WL1</code>, <code>AUDIOHED.WL1</code>). Apogee released episode one as shareware to be copied at no charge; the Internet Archive keeps preserved copies.</li><li><strong>A Win32 source port</strong> — a modern, open-source rebuild of the engine that runs natively as a Windows EXE. <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a> (grab the <strong>32-bit Windows</strong> build) or the leaner Wolf4SDL.</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">Get Wolfenstein 3D shareware (Internet Archive) →</a></p><p class=\"muted small\">Put the source-port EXE and all the <code>*.WL1</code> files in <strong>one folder</strong>, then use <strong>“Load your own copy”</strong> above to drop the folder in. © id Software / Apogee. Only the <strong>shareware episode</strong> is free to redistribute. The registered episodes, the Nocturnal Missions, and Spear of Destiny are commercial — buy those from <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p></div>"
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">The shareware episode (data files) + a Win32 source port</h3><p>You need two pieces, both free and legal:</p><ol><li><strong>The shareware data</strong> — the freely-redistributable first episode (the <code>*.WL1</code> files: <code>VSWAP.WL1</code>, <code>MAPHEAD.WL1</code>, <code>GAMEMAPS.WL1</code>, <code>VGAGRAPH.WL1</code>, <code>VGAHEAD.WL1</code>, <code>AUDIOT.WL1</code>, <code>AUDIOHED.WL1</code>). Apogee released episode one as shareware to be copied at no charge; the Internet Archive keeps preserved copies.</li><li><strong>A Win32 source port</strong> — a modern, open-source rebuild of the engine that runs natively as a Windows EXE. <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a> (grab the <strong>32-bit Windows</strong> build) or the leaner Wolf4SDL.</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">Get Wolfenstein 3D shareware (Internet Archive) →</a></p><p class=\"muted small\">Put the source-port EXE and all the <code>*.WL1</code> files in <strong>one folder</strong> to play it on your desktop — you need none of that here, since this page already boots the shareware episode. © id Software / Apogee. Only the <strong>shareware episode</strong> is free to redistribute. The registered episodes, the Nocturnal Missions, and Spear of Destiny are commercial — buy those from <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p></div>"
     },
     "licenseNote": "",
     "sections": [
       {
-        "h": "Why you can't just run the original WOLF3D.EXE",
-        "html": "<p>This is the single most important thing to understand. The original Wolfenstein 3D is a <strong>16-bit DOS real-mode program</strong> — there was never an official Windows (Win32) version. ExeBrowser's Wine layer (Wine 1.7.55 on the Boxedwine x86 emulator) is built to run <strong>Win32</strong> executables, not DOS ones. Wine's DOS support is thin and unreliable, so dropping in the raw <code>WOLF3D.EXE</code> will most likely refuse to start or misbehave.</p><p>The clean, fully-legal workaround is a <strong>source port</strong>: after id open-sourced the Wolfenstein 3D engine in 1995, the community built modern rebuilds — <a href=\"https://github.com/ECWolfEngine/ECWolf\" target=\"_blank\" rel=\"noopener\">ECWolf</a> and Wolf4SDL — that compile to native Windows EXEs and read the very same shareware <code>.WL1</code> game data. That's a real Win32 program Wine can actually load.</p>"
+        "h": "How it works & what to expect",
+        "html": "<p>This page runs the original <strong>16-bit DOS</strong> Wolfenstein 3D — the actual 1992 <code>WOLF3D.EXE</code> — inside DOSBox compiled to WebAssembly. Nothing is emulated twice and nothing is rebuilt: it's the shareware episode exactly as it shipped, booting in a couple of seconds.</p><p>You get the genuine game: B.J. Blazkowicz, the maze-like bunkers, secret-wall pushing, and that unmistakable raycast look. Sound is the original AdLib/PC-speaker output, so it sounds the way it did in 1992 rather than the way a modern port would render it. Wolfenstein 3D is featherweight by today's standards, so it runs at full speed on any current machine — older Chromebooks and tablets are the only place you might notice it struggle.</p>"
       },
       {
-        "h": "What to expect — and the caveats",
-        "html": "<p>When it runs, you get the genuine 1992 game: B.J. Blazkowicz, the maze-like Nazi bunker, secret-wall pushing, and that unmistakable raycast look. The honest caveats:</p><ul><li><strong>Source ports use SDL2.</strong> ECWolf depends on SDL2/SDL2_mixer and targets Windows XP and up — heavier than DOOM's tiny Win32 EXE, so it's less of a sure thing under this older Wine. If ECWolf stalls, try the leaner <strong>Wolf4SDL</strong>, or switch the runtime to the <strong>r18</strong> engine variant.</li><li><strong>Sound is the flaky part.</strong> Music and digitized sound effects route through SDL audio under Wine, which is the most fragile path here. The video and controls are far more reliable than the audio.</li><li><strong>Speed.</strong> Wolfenstein 3D is featherweight by modern standards, so even at the emulator's 10–40% of native it generally plays at full speed on a current laptop. Older Chromebooks and tablets may chug.</li></ul><p>Net result: free, legal, and genuinely playable through a source port — but with enough setup and audio uncertainty that we rate it <strong>partial</strong> rather than a one-click classic.</p>"
-      },
-      {
-        "h": "Step by step",
-        "html": "<ol><li>Download the <strong>shareware data</strong> (the <code>*.WL1</code> files) and unzip them on your computer.</li><li>Download a <strong>32-bit Windows source port</strong> (ECWolf or Wolf4SDL) and unzip it into the <em>same folder</em> as the <code>.WL1</code> files.</li><li>Click <strong>▶ Play Wolfenstein 3D</strong> above to boot Wine on this page.</li><li>Use <strong>Load your own copy → a folder</strong> and pick that combined folder.</li><li>Select the source-port EXE (e.g. <code>ECWOLF.EXE</code>) as the entry and click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. Arrows move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens/pushes walls, <kbd>1</kbd>–<kbd>4</kbd> switch weapons, <kbd>Esc</kbd> for the menu and to release the mouse.</li></ol>"
+        "h": "Source ports, if you want one on your desktop",
+        "html": "<p>id open-sourced the Wolfenstein 3D engine in 1995, and the community built modern rebuilds — <a href=\"https://github.com/ECWolfEngine/ECWolf\" target=\"_blank\" rel=\"noopener\">ECWolf</a> and Wolf4SDL — that read the very same shareware <code>.WL1</code> data with higher resolutions, mouse look and modern displays. They're worth having on a desktop.</p><p>They're desktop programs, though. This page deliberately runs the original DOS build instead, because that's the version that needs no setup from you at all.</p>"
       }
     ],
     "faq": [
       {
         "q": "Can I play Wolfenstein 3D online for free with no download?",
-        "a": "You can play it free and legally, but not as pure zero-setup one-click. Wolfenstein 3D is a DOS game, while ExeBrowser runs Win32 software, so you load a small free <strong>source port</strong> (ECWolf or Wolf4SDL) together with the freely-redistributable shareware data files. Both pieces are free; you just drop them into the in-page loader."
+        "a": "Yes. Apogee and id released episode one as shareware in 1992 to be copied at no charge, and it's been freely distributed ever since. This page runs that shareware episode in your browser — nothing to download, nothing to install, no account."
       },
       {
         "q": "Is the Wolfenstein 3D shareware legal to play here?",
-        "a": "Yes, for the shareware first episode. Apogee and id released episode one as shareware in 1992 to be copied at no charge, and it has been distributed freely ever since (it's preserved on the Internet Archive). The registered episodes, the Nocturnal Missions, and Spear of Destiny are commercial and are not included — buy those from id or Steam."
-      },
-      {
-        "q": "Why can't I just run the original WOLF3D.EXE?",
-        "a": "Because it's a 16-bit DOS program and there was never an official Windows version. ExeBrowser's Wine layer runs Win32 executables, and Wine's DOS support is too thin to rely on. The fix is an open-source <strong>source port</strong> (ECWolf / Wolf4SDL) that is a real Win32 EXE and reads the same shareware .WL1 data."
+        "a": "Yes, for the shareware first episode. The registered episodes, the Nocturnal Missions and Spear of Destiny are commercial and are not included — buy those from id or Steam."
       },
       {
         "q": "Is this the real Wolfenstein 3D or a remake?",
-        "a": "It's the real game data — the actual 1992 maps, sprites, and sound from the shareware episode — played through an open-source rebuild of id's engine that id themselves released to the public. It's not a fan re-creation of the levels; it's the original content, run by a modern, faithful engine."
+        "a": "The real thing: the original 1992 DOS executable and its original data, running unmodified inside DOSBox. It isn't a fan re-creation and it isn't a source port — it's the game as it shipped."
       },
       {
-        "q": "The sound isn't working or it won't start. What can I try?",
-        "a": "Audio through SDL under this older Wine is the most fragile part — video and controls usually hold up even when sound doesn't. If the port won't launch at all, try the leaner Wolf4SDL instead of ECWolf, or switch the runtime to the <strong>r18</strong> engine variant. Make sure the EXE and all the <code>*.WL1</code> files are in the same folder."
+        "q": "What are the controls?",
+        "a": "Click the game screen to capture your keyboard. Arrow keys or WASD move, Ctrl fires, Space opens doors and pushes secret walls, the number keys 1–4 switch weapons, and Esc opens the menu."
+      },
+      {
+        "q": "Why might it run slowly?",
+        "a": "An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. Wolfenstein 3D is light enough that this is plenty on any modern laptop; very old tablets and Chromebooks may feel sluggish."
       }
     ],
     "related": [
@@ -325,10 +321,10 @@
   {
     "slug": "tyrian",
     "title": "Play Tyrian 2000 Online — Free, In Your Browser, No Download — ExeBrowser",
-    "description": "Play Tyrian 2000, the classic vertical-scrolling shmup, in your browser. The game is free (released as freeware), but it's a DOS title — here's how it runs on Wine + WebAssembly and what to expect.",
+    "description": "Play Tyrian 2000, the classic vertical-scrolling shmup, free in your browser. Released as freeware by its author — all five episodes, running in DOSBox + WebAssembly with nothing to download.",
     "keywords": "play tyrian 2000 online, tyrian in browser, tyrian 2000 free, tyrian shmup online no download, tyrian freeware, opentyrian2000 browser, play tyrian no install",
     "ogTitle": "Play Tyrian 2000 Online — Free, In Your Browser",
-    "ogDescription": "The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via Wine + WebAssembly. Honest setup notes inside — it's a DOS game.",
+    "ogDescription": "The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via DOSBox + WebAssembly. All five episodes, no download.",
     "crumb": "Play Tyrian 2000",
     "h1": "Play Tyrian 2000 online in your browser",
     "appName": "Tyrian 2000",
@@ -353,7 +349,7 @@
     "sections": [
       {
         "h": "How it works & what to expect",
-        "html": "<p>There are two layers to be honest about here: the <strong>license</strong> and the <strong>binary</strong>.</p><p><strong>The license is the easy part.</strong> Author Jason Emery released the complete Tyrian 2000 as freeware in 2004, and the artwork was later placed under an open-content license. The data files (graphics, levels, music) are freely redistributable, and the game is also offered free of charge on GOG. So there's nothing shady about playing it — no piracy, no cracks, no commercial copy required.</p><p><strong>The binary is the tricky part.</strong> The original <code>TYRIAN.EXE</code> / <code>TYRIAN2K.EXE</code> is a <em>DOS</em> executable. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary will not start cleanly without a DOS layer. That's why the verdict here is <em>partial</em>: the game is free and the gameplay is timeless, but getting it running in a browser Win32 environment takes the right approach.</p>"
+        "html": "<p><strong>The licence is the easy part.</strong> Author Jason Emery released the complete Tyrian 2000 as freeware in 2004, and the artwork was later placed under an open-content licence. The data files — graphics, levels, music — are freely redistributable, and the game is offered free of charge on GOG too. There's nothing shady about playing it here: no piracy, no cracks, no commercial copy required.</p><p><strong>The binary is a DOS one</strong>, so it runs the way the other DOS games on this site do: the original <code>TYRIAN2K.EXE</code> inside DOSBox compiled to WebAssembly. Click play and it boots straight to the title screen in a few seconds. Because the game is freeware, the complete data ships with it — there is nothing to find, upload or install.</p>"
       },
       {
         "h": "How it plays here: the freeware game via DOSBox",
@@ -547,7 +543,7 @@
     "intro": "<p>The real, original <strong>DOOM</strong> — id Software's 1993 first-person shooter — running in a browser tab. No download, no install, no account. This is the freely-redistributable shareware episode (<em>Knee-Deep in the Dead</em>), the original DOS <code>DOOM.EXE</code> executing in DOSBox + WebAssembly. Hit play and start fragging imps.</p>",
     "download": {
       "heading": "Get the DOOM shareware (free, legal)",
-      "html": "<h3 style=\"margin-top:0;\">id Software's official shareware</h3><p>The complete first episode, unmodified, distributed at no charge exactly as the shareware license permits. The most reliable source is the Internet Archive's preserved copy:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">Get DOOM shareware (Internet Archive) →</a></p><p class=\"muted small\">Grab the DOS build (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). Unzip it, then use <strong>\"Load your own copy\"</strong> above to drop the folder in. © id Software — the shareware episode is freely redistributable unmodified and at no charge. The registered episodes and Doom II are commercial and <strong>not</strong> included; buy those from <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
+      "html": "<h3 style=\"margin-top:0;\">id Software's official shareware</h3><p>The complete first episode, unmodified, distributed at no charge exactly as the shareware license permits. The most reliable source is the Internet Archive's preserved copy:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">Get DOOM shareware (Internet Archive) →</a></p><p class=\"muted small\">Grab the DOS build (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). You don't need it to play here — this page already runs the shareware episode — but it's the copy to keep if you want it on your own machine. © id Software — the shareware episode is freely redistributable unmodified and at no charge. The registered episodes and Doom II are commercial and <strong>not</strong> included; buy those from <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
     },
     "sections": [
       {
@@ -556,17 +552,17 @@
       },
       {
         "h": "Classic DOS DOOM vs. source ports",
-        "html": "<p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox — the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. <strong>WASD moves</strong> (remapped via DOSBox), <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors. Arrow keys also work.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. You can load a source port EXE alongside <code>DOOM1.WAD</code> using the \"Load your own copy\" option above.</p>"
+        "html": "<p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox — the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. <strong>WASD moves</strong> (remapped via DOSBox), <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors. Arrow keys also work.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. Those are desktop programs, though — this page runs the original DOS build, which is the version that needs no setup at all.</p>"
       }
     ],
     "faq": [
       {
         "q": "Can I play DOOM online for free with no download?",
-        "a": "Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real Win32 build in your browser — nothing to install."
+        "a": "Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real DOS build in your browser — nothing to install."
       },
       {
         "q": "Is this real DOOM or a remake?",
-        "a": "The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual Windows binary inside an x86 emulator and Wine, rendering to a browser canvas."
+        "a": "The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual DOS binary inside DOSBox compiled to WebAssembly, rendering to a browser canvas."
       },
       {
         "q": "What are the controls for DOOM in the browser?",
@@ -758,7 +754,7 @@
     "intro": "<p><strong>Freedoom</strong> is a fully free, open-source replacement for the DOOM data files — same legendary gameplay, zero proprietary content. It runs with the classic DOS <code>DOOM.EXE</code> engine in DOSBox + WebAssembly. Hit play for instant browser-based demon slaying, no download required.</p>",
     "download": {
       "heading": "Get Freedoom (free &amp; open source)",
-      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">The official, libre release</h3><p>Freedoom's game data is released under a modified BSD license — you may freely copy, modify, and redistribute it, provided the license and credit travel with it. Grab the official release from the project itself:</p><p><a class=\"cta-btn\" href=\"https://freedoom.github.io/download.html\" target=\"_blank\" rel=\"noopener\">Download Freedoom (official site) →</a></p><p class=\"muted small\">The download contains <code>freedoom1.wad</code> (Phase 1, Ultimate-Doom-style) and <code>freedoom2.wad</code> (Phase 2, Doom-II-style). These are WAD data files, <strong>not</strong> an executable — you also need a DOOM engine. The simplest free pairing is a small Win32 software-rendering port such as <a href=\"https://www.chocolate-doom.org/\" target=\"_blank\" rel=\"noopener\">Chocolate Doom</a> or Crispy Doom. Put the port's <code>.EXE</code> and a <code>freedoomN.wad</code> in one folder, then use <strong>“Load your own copy”</strong> above to drop the folder in. Everything here — game and engine — is genuinely free and open source.</p></div>"
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">The official, libre release</h3><p>Freedoom's game data is released under a modified BSD license — you may freely copy, modify, and redistribute it, provided the license and credit travel with it. Grab the official release from the project itself:</p><p><a class=\"cta-btn\" href=\"https://freedoom.github.io/download.html\" target=\"_blank\" rel=\"noopener\">Download Freedoom (official site) →</a></p><p class=\"muted small\">The download contains <code>freedoom1.wad</code> (Phase 1, Ultimate-Doom-style) and <code>freedoom2.wad</code> (Phase 2, Doom-II-style). These are WAD data files, <strong>not</strong> an executable — you also need a DOOM engine. The simplest free pairing is a small Win32 software-rendering port such as <a href=\"https://www.chocolate-doom.org/\" target=\"_blank\" rel=\"noopener\">Chocolate Doom</a> or Crispy Doom. Put the port's <code>.EXE</code> and a <code>freedoomN.wad</code> in one folder and run it on your desktop — you don't need any of that to play here, since this page already boots Freedoom for you. Everything involved — game and engine — is genuinely free and open source.</p></div>"
     },
     "sections": [
       {
@@ -770,8 +766,8 @@
         "html": "<p>The engine choice decides whether it works. Be guided by this:</p><ul><li><strong>Chocolate Doom / Crispy Doom (recommended)</strong> — software-rendering, tiny Win32 builds. No 3D acceleration needed, so they run cleanly in the emulator. This is the reliable pairing.</li><li><strong>GZDoom / modern hardware ports (avoid here)</strong> — these require OpenGL 3.3 and a real GPU pipeline that Boxedwine doesn't provide. They will fail to start or render. Save those for a native desktop.</li></ul><p>To launch, put the port's <code>.EXE</code> and a Freedoom WAD in the same folder. Many ports auto-detect a WAD sitting beside them; if not, the engine reads it as the IWAD on startup. Phase 1 (<code>freedoom1.wad</code>) is the four-episode, Ultimate-Doom-style campaign; Phase 2 (<code>freedoom2.wad</code>) is a single 30-level Doom-II-style campaign.</p>"
       },
       {
-        "h": "Step by step",
-        "html": "<ol><li>Click <strong>▶ Play Freedoom</strong> above to boot Wine on this page.</li><li>Download Freedoom from the box below and a small software-rendering port (Chocolate Doom or Crispy Doom).</li><li>Unzip both into a single folder so the <code>.EXE</code> and a <code>freedoomN.wad</code> sit side by side.</li><li>Use <strong>Load your own copy → a folder</strong> and select that folder, then click <strong>Run in Wine</strong>.</li><li>Click the canvas to capture input. WASD or arrow keys move, <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors, <kbd>1</kbd>–<kbd>7</kbd> switch weapons, <kbd>Esc</kbd> releases the mouse.</li></ol>"
+        "h": "How it works & what to expect",
+        "html": "<p><strong>Freedoom</strong> is not an executable — it's an <em>IWAD</em>, a single data file holding all the levels, sprites and sounds. It needs a DOOM engine to run it, and this page ships one: the freely-redistributable DOOM engine running under DOSBox compiled to WebAssembly, with the Freedoom IWAD alongside it. Click play and it boots — there is nothing to download and nothing to upload.</p><p>On a desktop you'd normally pair the same IWAD with a modern source port such as Chocolate Doom or Crispy Doom. That's the better way to play it natively; it just isn't what this page does.</p>"
       },
       {
         "h": "What it is — and what it isn't",
@@ -939,7 +935,7 @@
       "Action"
     ],
     "fullyFree": "Assets BSD-licensed by the Freedoom project; runs on the freely-redistributable DOOM shareware engine.",
-    "rank": 20
+    "rank": 21
   },
   {
     "slug": "3d-pinball-space-cadet",
@@ -1989,7 +1985,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/spider-open/",
-    "rank": 11,
+    "rank": 12,
     "controls": [
       {
         "action": "Move a card",
@@ -2455,7 +2451,7 @@
       "Action"
     ],
     "appUrl": "/apps/jezzball-open/",
-    "rank": 12,
+    "rank": 13,
     "controls": [
       {
         "action": "Build a wall",
@@ -2986,7 +2982,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 19
+    "rank": 20
   },
   {
     "slug": "scorched-earth",
@@ -3155,7 +3151,7 @@
       "Puzzle & strategy"
     ],
     "pointerLock": true,
-    "rank": 21
+    "rank": 22
   },
   {
     "slug": "jazz-jackrabbit-shareware",
@@ -3505,7 +3501,7 @@
       "Action"
     ],
     "pointerLock": true,
-    "rank": 22
+    "rank": 23
   },
   {
     "slug": "hexen-heretic-shareware",
@@ -3815,7 +3811,7 @@
       "Shooters",
       "Action"
     ],
-    "rank": 26
+    "rank": 27
   },
   {
     "slug": "prince-of-persia",
@@ -3918,7 +3914,7 @@
       }
     ],
     "updated": "2026-07-01",
-    "rank": 23
+    "rank": 24
   },
   {
     "slug": "full-tilt-pinball",
@@ -6292,7 +6288,7 @@
     ],
     "download": {
       "heading": "Download Dia (portable, GPL-2.0)",
-      "html": "<p>Dia is open-source under the GPL-2.0, so we host a portable build you can load straight into ExeBrowser. Unpack and upload the whole folder (the EXE needs its bundled GTK runtime beside it), then launch <code>dia.exe</code>.</p><p><a class=\"cta-btn\" href=\"/apps/dia-diagram/dia-diagram.zip\">Download Dia portable (.zip)</a></p><p class=\"muted\">You can also get the official Windows build and source from <a href=\"https://sourceforge.net/projects/dia-installer/\" target=\"_blank\" rel=\"noopener\">the Dia project on SourceForge</a> (look for <code>dia_0.97.2_win32.zip</code>).</p>"
+      "html": "<p>Dia is open-source under the GPL-2.0, so you can fetch a portable Windows build and load the whole folder into ExeBrowser with <strong>\"Load your own copy\"</strong> above — the EXE needs its bundled GTK runtime beside it, then launch <code>dia.exe</code>.</p><p class=\"muted\">Get the official Windows build and source from <a href=\"https://sourceforge.net/projects/dia-installer/\" target=\"_blank\" rel=\"noopener\">the Dia project on SourceForge</a> (look for <code>dia_0.97.2_win32.zip</code>).</p>"
     },
     "related": [
       {
@@ -6677,7 +6673,7 @@
       "Racing & sports"
     ],
     "fullyFree": "Released as freeware by Bluemoon Interactive; the complete game.",
-    "rank": 27
+    "rank": 28
   },
   {
     "slug": "jetpack",
@@ -6825,7 +6821,7 @@
       "Puzzle & strategy"
     ],
     "fullyFree": "Author released the full 400-level registered version as freeware in 1998.",
-    "rank": 28
+    "rank": 29
   },
   {
     "slug": "god-of-thunder",
@@ -7158,7 +7154,7 @@
       "Action"
     ],
     "fullyFree": "Declared freeware by Diversions Entertainment in 1999 — the complete game.",
-    "rank": 24
+    "rank": 25
   },
   {
     "slug": "xargon",
@@ -7817,7 +7813,7 @@
       "Platformers",
       "Action"
     ],
-    "rank": 25
+    "rank": 26
   },
   {
     "slug": "hearts-open",
@@ -7897,7 +7893,7 @@
     ],
     "screenshot": true,
     "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "rank": 18
+    "rank": 19
   },
   {
     "slug": "cosmo",
@@ -8652,7 +8648,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/rodents-open/",
-    "rank": 13,
+    "rank": 14,
     "controls": [
       {
         "action": "Move",
@@ -8721,7 +8717,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/blockdrop-open/",
-    "rank": 14,
+    "rank": 15,
     "controls": [
       {
         "action": "Move",
@@ -8781,7 +8777,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/snake-open/",
-    "rank": 15,
+    "rank": 16,
     "controls": [
       {
         "action": "Steer",
@@ -8840,7 +8836,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/2048-open/",
-    "rank": 16,
+    "rank": 17,
     "controls": [
       {
         "action": "Slide tiles",
@@ -8893,7 +8889,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/pipes-open/",
-    "rank": 17,
+    "rank": 18,
     "controls": [
       {
         "action": "Lay a pipe",
@@ -9007,7 +9003,7 @@
       "Puzzle & strategy"
     ],
     "appUrl": "/apps/openttd/",
-    "rank": 4,
+    "rank": 11,
     "controls": [
       {
         "action": "Start a game",
@@ -9030,5 +9026,38 @@
         "mouse": "Mouse wheel"
       }
     ]
+  },
+  {
+    "slug": "micropolis",
+    "skipGenerate": true,
+    "appType": "game",
+    "appName": "Micropolis",
+    "author": "Graeme McCutcheon (micropolisJS), from the Micropolis GPL release",
+    "title": "Play Micropolis Online Free — the Open-Source City Builder, No Download — ExeBrowser",
+    "description": "Build a city in your browser. Micropolis is the open-source release of the classic 1989 city simulator — free, instant, no download, no account, no original game files needed.",
+    "keywords": "micropolis, city builder online, city simulator browser, open source city building game, play micropolis",
+    "ogTitle": "Play Micropolis online — free city builder, no download",
+    "ogDescription": "The open-source city simulator, running natively in your browser. Zone, build, tax and watch a city grow.",
+    "crumb": "Play Micropolis",
+    "h1": "Play Micropolis online — free, instant",
+    "genre": [
+      "Simulation",
+      "Strategy",
+      "Business"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "appUrl": "/apps/micropolis/",
+    "hostable": true,
+    "screenshot": true,
+    "updated": "2026-08-16",
+    "addedDate": "2026-08-16",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — native JavaScript, no emulator"
+    },
+    "fullyFree": "Open-source under GPL-3.0: the city simulator Maxis first released as SimCity, which Electronic Arts open-sourced in 2008. The engine and every graphic here are the free release — nothing from a commercial version is needed or included.",
+    "rank": 4
   }
 ]

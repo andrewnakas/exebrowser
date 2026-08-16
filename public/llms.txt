@@ -4,15 +4,15 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-40 titles are hosted and playable instantly. Everything hosted here is
+41 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
 ## Playable now (free, instant, no download)
 
 - [3D Pinball Space Cadet](https://exebrowser.com/run/space-cadet-open/): The classic Windows XP pinball game in your browser — free, instant, no download. Open-source WebAssembly build.
-- [Wolfenstein 3D](https://exebrowser.com/run/wolfenstein-3d/): The 1992 Wolfenstein 3D shareware episode, free and legal. It's a DOS game, so you run it through a Win32 source port on Wine + WebAssembly. Honest guide to what works.
-- [Tyrian 2000](https://exebrowser.com/run/tyrian/): The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via Wine + WebAssembly. Honest setup notes inside — it's a DOS game.
+- [Wolfenstein 3D](https://exebrowser.com/run/wolfenstein-3d/): The 1992 Wolfenstein 3D shareware episode, free and legal, running in a browser tab via DOSBox + WebAssembly. Click play and you're in.
+- [Tyrian 2000](https://exebrowser.com/run/tyrian/): The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via DOSBox + WebAssembly. All five episodes, no download.
 - [DOOM](https://exebrowser.com/run/doom/): The original 1993 DOOM shareware episode, playable in your browser with DOSBox + WebAssembly. Free, legal, no install.
 - [Freedoom](https://exebrowser.com/run/freedoom/): Freedoom, the fully free DOOM-engine game, playable in your browser with DOSBox + WebAssembly. Free, legal, open source.
 - [Solitaire (Klondike)](https://exebrowser.com/run/solitaire-open/): The Klondike Solitaire you know, in your browser — draw 1 or 3, Standard and Vegas scoring, and the bouncing cards when you win.
@@ -50,6 +50,7 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Pipe Panic](https://exebrowser.com/run/pipes-open/): Lay pipe from a queue you can't reorder and stay ahead of the water.
 - [Beneath a Steel Sky](https://exebrowser.com/run/beneath-a-steel-sky/): Revolution's cyberpunk classic with Dave Gibbons art, free and instant.
 - [OpenTTD](https://exebrowser.com/run/openttd/): Build railways, roads and airports and run a transport empire. Free and instant.
+- [Micropolis](https://exebrowser.com/run/micropolis/): The open-source city simulator, running natively in your browser. Zone, build, tax and watch a city grow.
 
 ## Compatibility guides (bring your own copy)
 

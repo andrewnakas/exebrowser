@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/style.css?v=37" />
+<link rel="stylesheet" href="/style.css?v=38" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -126,7 +126,7 @@
   </section>
 
   <section class="card">
-    <h2>How it works &amp; what to expect</h2>
+    <h2>Why it can't connect (the honest breakdown)</h2>
     <h3>Why it can't connect (the honest breakdown)</h3>
     <p>Two independent walls stop FileZilla cold here:</p><ul><li><strong>The Boxedwine WebAssembly build has no working TCP sockets.</strong> The emulator's socket layer is incomplete — attempts to configure a connection fail at the kernel level (the log literally reports <code>setsockopt level 0 not implemented</code>), and TCP socket objects don't function. So even before we reach the browser, the emulated Windows networking stack can't open a connection.</li><li><strong>Browsers don't allow raw outbound connections anyway.</strong> Web pages can only talk over HTTP(S) and WebSockets to servers that opt in via CORS. There is no way for sandboxed code to dial an arbitrary FTP server on port 21, an SFTP server on port 22, or an FTPS endpoint. That's a security boundary of the web platform itself, not a Boxedwine bug.</li></ul><p>Could someone tunnel FTP over a WebSocket proxy in theory? Yes — but that would require running a relay server, and it still wouldn't be "FileZilla connecting to your host." It's not something this instant-play sandbox does.</p>
     <h3>What about just loading the FileZilla window?</h3>
@@ -158,7 +158,7 @@
     </details>
   </section>
   <section class="card">
-    <h2>More you can run in your browser</h2>
+    <h2>Related guides</h2>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/putty/"><span class="lc-title">PuTTY</span><span class="lc-desc">Another networking tool people ask about — same sandbox network limits apply.</span></a></li>
       <li><a class="link-card" href="/run/7-zip/"><span class="lc-title">7-Zip</span><span class="lc-desc">A self-contained archiver that works well in the browser — no network needed.</span></a></li>
