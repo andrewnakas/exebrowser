@@ -74,7 +74,12 @@
     "home.blurb": "No download, no install, no account. Click a title and it boots in this tab.",
     "hub.metaTitle": "All Games You Can Play in Your Browser — ExeBrowser",
     "hub.description": "Every game you can play instantly in your browser, free and with nothing to install.",
-    "home.restInEnglish": ""
+    "home.restInEnglish": "",
+    "js.overlayNote": "Runs in your browser with DOSBox + WebAssembly.<br>Nothing is uploaded. Runtime (~1.4 MB) is cached after first load.",
+    "js.mouseHint": "Click the game screen to give it your keyboard.",
+    "js.starting": "Starting…",
+    "js.cachedNote": "Cached after the first load, so next time is instant.",
+    "js.loadingGame": "Loading {name}…"
   },
   "es": {
     "html.lang": "es",
@@ -138,7 +143,12 @@
     "home.blurb": "Sin descargas, sin instalación y sin cuenta. Haz clic en un título y arranca en esta misma pestaña.",
     "hub.metaTitle": "Todos los juegos que puedes jugar en tu navegador — ExeBrowser",
     "hub.description": "Todos los juegos que puedes jugar al instante en el navegador, gratis y sin instalar nada.",
-    "home.restInEnglish": "Estas son las páginas disponibles en español. El catálogo completo —más de 40 juegos y programas— está en inglés: <a href=\"/run/\">ver todo el catálogo</a>."
+    "home.restInEnglish": "Estas son las páginas disponibles en español. El catálogo completo —más de 40 juegos y programas— está en inglés: <a href=\"/run/\">ver todo el catálogo</a>.",
+    "js.overlayNote": "Se ejecuta en tu navegador con DOSBox + WebAssembly.<br>No se sube nada. El runtime (~1,4 MB) queda en caché tras la primera carga.",
+    "js.mouseHint": "Haz clic en la pantalla del juego para darle el teclado.",
+    "js.starting": "Iniciando…",
+    "js.cachedNote": "Se guarda en caché tras la primera carga, así la próxima vez es instantánea.",
+    "js.loadingGame": "Cargando {name}…"
   },
   "pt-BR": {
     "html.lang": "pt-BR",
@@ -202,7 +212,12 @@
     "home.blurb": "Sem baixar, sem instalar e sem conta. Clique num título e ele abre nesta aba.",
     "hub.metaTitle": "Todos os jogos que você pode jogar no navegador — ExeBrowser",
     "hub.description": "Todos os jogos para jogar na hora no navegador, de graça e sem instalar nada.",
-    "home.restInEnglish": "Estas são as páginas disponíveis em português. O catálogo completo — mais de 40 jogos e programas — está em inglês: <a href=\"/run/\">ver tudo</a>."
+    "home.restInEnglish": "Estas são as páginas disponíveis em português. O catálogo completo — mais de 40 jogos e programas — está em inglês: <a href=\"/run/\">ver tudo</a>.",
+    "js.overlayNote": "Roda no seu navegador com DOSBox + WebAssembly.<br>Nada é enviado. O runtime (~1,4 MB) fica em cache depois da primeira vez.",
+    "js.mouseHint": "Clique na tela do jogo para dar o teclado a ele.",
+    "js.starting": "Iniciando…",
+    "js.cachedNote": "Fica em cache depois da primeira carga, então da próxima vez é instantâneo.",
+    "js.loadingGame": "Carregando {name}…"
   },
   "de": {
     "html.lang": "de",
@@ -266,6 +281,11 @@
     "home.blurb": "Kein Download, keine Installation, kein Konto. Titel anklicken und es startet in diesem Tab.",
     "hub.metaTitle": "Alle Spiele, die du im Browser spielen kannst — ExeBrowser",
     "hub.description": "Alle Spiele, die sofort im Browser laufen — kostenlos und ohne Installation.",
-    "home.restInEnglish": "Das sind die Seiten, die auf Deutsch vorliegen. Der vollständige Katalog — über 40 Spiele und Programme — ist auf Englisch: <a href=\"/run/\">alles ansehen</a>."
+    "home.restInEnglish": "Das sind die Seiten, die auf Deutsch vorliegen. Der vollständige Katalog — über 40 Spiele und Programme — ist auf Englisch: <a href=\"/run/\">alles ansehen</a>.",
+    "js.overlayNote": "Läuft in deinem Browser mit DOSBox + WebAssembly.<br>Nichts wird hochgeladen. Die Laufzeit (~1,4 MB) wird nach dem ersten Laden zwischengespeichert.",
+    "js.mouseHint": "Klicke auf das Spielbild, um ihm die Tastatur zu geben.",
+    "js.starting": "Wird gestartet…",
+    "js.cachedNote": "Nach dem ersten Laden zwischengespeichert — beim nächsten Mal geht es sofort.",
+    "js.loadingGame": "{name} wird geladen…"
   }
 }

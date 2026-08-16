@@ -143,12 +143,12 @@
       <canvas id="dos-canvas" tabindex="0" oncontextmenu="return false;"></canvas>
       <div id="dos-overlay" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.85);">
         <button id="dos-play" class="embed-play" type="button">${esc(T("play", "▶ Play {name}", { name: cfg.appName }))}</button>
-        <p class="muted small" style="margin-top:.75rem;text-align:center;padding:0 1rem;">Runs in your browser with DOSBox + WebAssembly.<br>Nothing is uploaded. Runtime (~1.4 MB) is cached after first load.</p>
+        <p class="muted small" style="margin-top:.75rem;text-align:center;padding:0 1rem;">${T("overlayNote", "Runs in your browser with DOSBox + WebAssembly.<br>Nothing is uploaded. Runtime (~1.4 MB) is cached after first load.")}</p>
       </div>
     </div>
     <p id="dos-status" class="muted small" style="margin:.5rem 0 0;" hidden></p>
     <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
-    <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">Click the game screen to give it your keyboard.</p>
+    <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">${esc(T("mouseHint", "Click the game screen to give it your keyboard."))}</p>
     <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">${esc(T("saveHint", "Save inside the game and it's kept in this browser"))}</span> · <a href="#" id="dos-save-reset">${esc(T("resetSaves", "reset saved progress"))}</a></p>
     <details id="dos-keys" style="margin-top:.5rem;" hidden>
       <summary class="muted small">Keyboard — remap any key</summary>
@@ -818,7 +818,7 @@
     // Keeping the real cursor visible and making the game's cursor meet it is
     // both simpler and self-correcting. You aim with the pointer you can see.
     if (mouseHint) {
-      mouseHint.textContent = "Click the game screen to give it your keyboard.";
+      mouseHint.textContent = T("mouseHint", "Click the game screen to give it your keyboard.");
     }
 
     // Drive the game's cursor to sit under the real one.
@@ -1188,12 +1188,12 @@
   function showLoadingOverlay() {
     overlay.style.display = "flex";
     overlay.innerHTML = `
-      <p style="margin:0 0 .6rem;font-weight:600;">Loading ${esc(cfg.appName)}…</p>
+      <p style="margin:0 0 .6rem;font-weight:600;">${esc(T("loadingGame", "Loading {name}…", { name: cfg.appName }))}</p>
       <div class="dos-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
         <div id="dos-progress-bar" class="dos-progress-fill"></div>
       </div>
-      <p id="dos-progress-label" class="muted small" style="margin:.5rem 0 0;">Starting…</p>
-      <p class="muted small" style="margin:.35rem 0 0;text-align:center;padding:0 1rem;">Cached after the first load, so next time is instant.</p>`;
+      <p id="dos-progress-label" class="muted small" style="margin:.5rem 0 0;">${esc(T("starting", "Starting…"))}</p>
+      <p class="muted small" style="margin:.35rem 0 0;text-align:center;padding:0 1rem;">${esc(T("cachedNote", "Cached after the first load, so next time is instant."))}</p>`;
   }
 
   async function play() {
@@ -1466,7 +1466,7 @@
         // Restore the original overlay so a retry looks like a fresh start.
         overlay.innerHTML = `
           <button id="dos-play" class="embed-play" type="button">${esc(T("play", "▶ Play {name}", { name: cfg.appName }))}</button>
-          <p class="muted small" style="margin-top:.75rem;text-align:center;padding:0 1rem;">Runs in your browser with DOSBox + WebAssembly.<br>Nothing is uploaded. Runtime (~1.4 MB) is cached after first load.</p>`;
+          <p class="muted small" style="margin-top:.75rem;text-align:center;padding:0 1rem;">${T("overlayNote", "Runs in your browser with DOSBox + WebAssembly.<br>Nothing is uploaded. Runtime (~1.4 MB) is cached after first load.")}</p>`;
         const fresh = document.getElementById("dos-play");
         fresh.addEventListener("click", play);
         setStatus("");

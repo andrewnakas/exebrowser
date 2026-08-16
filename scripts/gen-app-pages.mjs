@@ -700,7 +700,8 @@ function clientStringsHtml(L) {
   const keys = ["js.play","js.resume","js.loading","js.startOver","js.savedAgo","js.filesRestored",
     "js.snapshotResume","js.progressSaved","js.resumedExactly","js.confirmDelete","js.justNow",
     "js.minutesAgo","js.anHourAgo","js.hoursAgo","js.yesterday","js.daysAgo",
-    "js.saveHint","js.resetSaves","js.savesCleared","js.restoredFiles"];
+    "js.saveHint","js.resetSaves","js.savesCleared","js.restoredFiles",
+    "js.overlayNote","js.mouseHint","js.starting","js.cachedNote","js.loadingGame"];
   const obj = Object.fromEntries(keys.map((k) => [k.slice(3), L.t(k)]));
   return `\n<script>window.__I18N=${JSON.stringify(obj)};</script>`;
 }
@@ -772,7 +773,7 @@ ${clientStringsHtml(L)}${p.iframeUrl
     ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=31"></script>`
+<script src="/dos-embed.js?v=32"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>

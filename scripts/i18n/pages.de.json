@@ -1,0 +1,116 @@
+{
+  "_readme": [
+    "German translations, keyed by slug. Same rules as the other language files:",
+    "only the fields present override the English entry, and a slug appearing",
+    "here is what causes /de/run/<slug>/ to exist at all.",
+    "",
+    "Germany is the site's highest-engagement country (76.9%), which is why it",
+    "was picked. Translated by Claude, NOT reviewed by a native speaker."
+  ],
+  "doom": {
+    "title": "DOOM online spielen — kostenlos, im Browser, ohne Download — ExeBrowser",
+    "description": "Spiele das originale DOOM von 1993 — die Shareware-Episode „Knee-Deep in the Dead“ — direkt im Browser. Kein Download, keine Installation. Das klassische DOS-DOOM in DOSBox + WebAssembly.",
+    "keywords": "doom online spielen, doom im browser, doom kostenlos ohne download, doom shareware online, klassisches doom browser, doom ohne installation",
+    "ogTitle": "DOOM online spielen — kostenlos, im Browser, ohne Download",
+    "ogDescription": "Die originale DOOM-Shareware-Episode von 1993, spielbar im Browser mit DOSBox + WebAssembly. Kostenlos, legal, ohne Installation.",
+    "crumb": "DOOM spielen",
+    "h1": "DOOM online im Browser spielen",
+    "verdict": {
+      "kind": "good",
+      "text": "Kostenlose, legale Shareware"
+    },
+    "intro": "<p>Das echte, originale <strong>DOOM</strong> — id Softwares Ego-Shooter von 1993 — läuft hier in einem Browser-Tab. Kein Download, keine Installation, kein Konto. Es ist die frei weitergebbare Shareware-Episode (<em>Knee-Deep in the Dead</em>): die originale DOS-<code>DOOM.EXE</code> in DOSBox + WebAssembly. Auf Start drücken und loslegen.</p>",
+    "sections": [
+      {
+        "h": "Wie es funktioniert und was dich erwartet",
+        "html": "<table class=\"spec-table\"><tr><th>Spiel</th><td>DOOM Shareware, Episode 1 (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>)</td></tr><tr><th>Laufzeit</th><td><strong>DOSBox + WebAssembly</strong> — klassisches DOS-Binary</td></tr><tr><th>Zeit</th><td>1993–1996, originale DOS-Fassung</td></tr><tr><th>Erwartung</th><td>Läuft in voller Geschwindigkeit; OPL2-Sound funktioniert</td></tr></table>"
+      },
+      {
+        "h": "Klassisches DOS-DOOM gegenüber Source Ports",
+        "html": "<p>Diese Seite führt die originale DOS-<code>DOOM.EXE</code> in DOSBox aus — exakt die Datei, die 1993 auf Disketten auslieferte. Kein Source Port, kein Wine, reine DOSBox-Emulation. <strong>WASD bewegt</strong>, <kbd>Strg</kbd> schießt, <kbd>Leertaste</kbd> öffnet Türen. Die Pfeiltasten funktionieren ebenfalls.</p><h3>Lieber ein Source Port?</h3><p>id hat die DOOM-Engine 1997 quelloffen gemacht, woraus Dutzende modernisierter Ports wie Chocolate Doom entstanden. Sie nutzen dieselbe Shareware-WAD, mit höheren Auflösungen und behobenen Fehlern. Das sind allerdings Desktop-Programme — diese Seite führt bewusst die DOS-Fassung aus, weil die überhaupt keine Vorbereitung verlangt.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kann ich DOOM kostenlos online spielen, ohne etwas herunterzuladen?",
+        "a": "Ja. Episode eins (Knee-Deep in the Dead) erschien 1993 als kostenlose Shareware und darf bis heute frei weitergegeben werden. ExeBrowser führt die echte DOS-Fassung in deinem Browser aus — es gibt nichts zu installieren."
+      },
+      {
+        "q": "Ist das das echte DOOM oder ein Remake?",
+        "a": "Die echte, unveränderte Programmdatei. ExeBrowser baut das Spiel nicht nach: Es führt id Softwares originales DOS-Binary in einem nach WebAssembly übersetzten DOSBox aus und zeichnet das Ergebnis auf ein Browser-Canvas."
+      },
+      {
+        "q": "Wie ist die Steuerung im Browser?",
+        "a": "Klicke auf das Spielbild, um die Tastatur zu übernehmen. WASD bewegt (W vor, S zurück, A links drehen, D rechts drehen), Strg schießt, die Leertaste öffnet Türen und die Zifferntasten wechseln die Waffe. Die Pfeiltasten gehen auch. Esc gibt die Maus wieder an die Seite zurück."
+      },
+      {
+        "q": "Ist es legal, DOOM hier zu spielen?",
+        "a": "Ja, für die Shareware-Episode: id hat sie ausdrücklich zum freien, unveränderten und kostenlosen Kopieren verbreitet. Die registrierten Episoden und DOOM II sind kommerziell und nicht enthalten — die gibt es bei id oder auf Steam."
+      },
+      {
+        "q": "Warum läuft DOOM im Browser eventuell langsam?",
+        "a": "Eine x86-CPU wird in WebAssembly emuliert, du bekommst also grob 10–40% der nativen Geschwindigkeit. DOOM ist leicht genug, dass das auf jedem aktuellen Notebook mehr als reicht; ältere Tablets und Chromebooks können zäh wirken."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Bewegen / drehen",
+        "keyboard": "Pfeiltasten oder W A S D",
+        "mouse": "Maus bewegen zum Drehen"
+      },
+      {
+        "action": "Schießen",
+        "keyboard": "Strg",
+        "mouse": "Linksklick"
+      },
+      {
+        "action": "Türen / Schalter",
+        "keyboard": "Leertaste",
+        "mouse": "—"
+      },
+      {
+        "action": "Laufen",
+        "keyboard": "Umschalt halten",
+        "mouse": "—"
+      },
+      {
+        "action": "Seitwärts gehen",
+        "keyboard": "Alt + Pfeiltasten",
+        "mouse": "Rechtsklick"
+      },
+      {
+        "action": "Waffen 1–7",
+        "keyboard": "Zifferntasten",
+        "mouse": "—"
+      },
+      {
+        "action": "Automap",
+        "keyboard": "Tab",
+        "mouse": "—"
+      },
+      {
+        "action": "Menü / zurück",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Ton",
+        "keyboard": "—",
+        "mouse": "Zum Stummschalten den Ton-Knopf unter dem Bild nutzen"
+      }
+    ],
+    "licenseReason": "id Software veröffentlichte die erste Episode („Knee-Deep in the Dead“) 1993 als kostenlose Shareware; sie darf weiterhin unverändert und kostenlos frei weitergegeben werden.",
+    "related": [
+      {
+        "href": "/run/wolfenstein-3d/",
+        "title": "Wolfenstein 3D",
+        "desc": "id's Shooter von 1992 — die Shareware-Episode."
+      },
+      {
+        "href": "/run/",
+        "title": "Alle Spiele und Programme",
+        "desc": "Alles, was du hier spielen oder starten kannst."
+      }
+    ]
+  }
+}
