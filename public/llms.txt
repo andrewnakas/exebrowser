@@ -4,7 +4,7 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-43 titles are hosted and playable instantly. Everything hosted here is
+44 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
@@ -51,6 +51,7 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Beneath a Steel Sky](https://exebrowser.com/run/beneath-a-steel-sky/): Revolution's cyberpunk classic with Dave Gibbons art, free and instant.
 - [Lure of the Temptress](https://exebrowser.com/run/lure-of-the-temptress/): Revolution Software’s first game, freed by its creators. Point-and-click, instant, in your browser.
 - [Sołtys](https://exebrowser.com/run/soltys/): L.K. Avalon’s freeware comedy adventure, in English, instant in your browser.
+- [Flight of the Amazon Queen](https://exebrowser.com/run/flight-of-the-amazon-queen/): The 1995 jungle adventure, freed by its authors. Point-and-click, instant, in your browser.
 - [OpenTTD](https://exebrowser.com/run/openttd/): Build railways, roads and airports and run a transport empire. Free and instant.
 - [Micropolis](https://exebrowser.com/run/micropolis/): The open-source city simulator, running natively in your browser. Zone, build, tax and watch a city grow.
 

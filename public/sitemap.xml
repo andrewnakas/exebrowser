@@ -493,6 +493,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/run/flight-of-the-amazon-queen/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/run/openttd/</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>

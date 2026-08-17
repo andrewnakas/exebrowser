@@ -9125,6 +9125,76 @@
   {
     "skipGenerate": true,
     "appType": "game",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "appUrl": "/apps/scummvm/",
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "updated": "2026-08-17",
+    "addedDate": "2026-08-17",
+    "screenshot": false,
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively via ScummVM, no emulator"
+    },
+    "slug": "flight-of-the-amazon-queen",
+    "appName": "Flight of the Amazon Queen",
+    "author": "John Passfield & Steve Stamatiadis",
+    "title": "Play Flight of the Amazon Queen Online Free — 1995 Adventure, No Download — ExeBrowser",
+    "description": "Play Flight of the Amazon Queen free in your browser — the 1995 point-and-click adventure, released as freeware by its authors. Fly Joe King into the Amazon jungle. No download, no sign-up.",
+    "keywords": "play flight of the amazon queen online, flight of the amazon queen free, fotaq browser, scummvm browser, point and click adventure free, 1995 adventure game, john passfield, joe king game",
+    "ogTitle": "Play Flight of the Amazon Queen Online Free — 1995 Adventure",
+    "ogDescription": "The 1995 jungle adventure, freed by its authors. Point-and-click, instant, in your browser.",
+    "crumb": "Play Flight of the Amazon Queen",
+    "h1": "Play Flight of the Amazon Queen online — free, instant",
+    "genre": [
+      "Adventure",
+      "Point-and-click",
+      "Comedy"
+    ],
+    "rank": 6.15,
+    "fullyFree": "Released as freeware by its authors, John Passfield and Steve Stamatiadis, in March 2004 through the ScummVM project. The file here matches the SHA-256 checksum ScummVM publishes for it.",
+    "related": [
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky",
+        "desc": "Revolution’s cyberpunk classic, with Dave Gibbons art."
+      },
+      {
+        "href": "/run/lure-of-the-temptress/",
+        "title": "Lure of the Temptress",
+        "desc": "Revolution’s first game, and the Virtual Theatre engine."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Walk and use",
+        "keyboard": "—",
+        "mouse": "Left-click"
+      },
+      {
+        "action": "Look at something",
+        "keyboard": "—",
+        "mouse": "Right-click"
+      },
+      {
+        "action": "Save, load, options",
+        "keyboard": "Ctrl+F5",
+        "mouse": "Open the Journal in your inventory"
+      },
+      {
+        "action": "Skip the intro",
+        "keyboard": "Esc",
+        "mouse": "—"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
     "author": "The OpenTTD team",
     "hostable": true,
     "intro": "",
