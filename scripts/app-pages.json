@@ -459,8 +459,8 @@
           "cls": "mgp-yellow"
         },
         {
-          "label": "PAUSE",
-          "dosKey": 256,
+          "label": "MODE",
+          "dosKey": 32,
           "cls": ""
         },
         {

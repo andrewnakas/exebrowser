@@ -1290,8 +1290,42 @@
         log("Audio unavailable: " + err.message);
       }
 
-      // Expose for mobile gamepad buttons injected by gen-app-pages.mjs
-      window.__dosEmitKey = (scanCode, pressed) => ci.sendKeyEvent(scanCode, pressed);
+      // Expose for the mobile gamepad and on-screen keyboard injected by
+      // gen-app-pages.mjs.
+      //
+      // A tap is far shorter than it looks. The press and release of a quick
+      // touch can land inside a single emulated frame, and a DOS game polling
+      // the keyboard once a frame never sees the key down at all — so the
+      // button appears dead. This is the same failure the mouse had before it
+      // got a minimum hold; the keyboard path never got one, which is why
+      // tapping FIRE in Tyrian did nothing while holding it worked.
+      //
+      // Every press is therefore held for at least MIN_HOLD_MS of wall clock,
+      // and presses on the same key are serialised behind the previous
+      // release. Serialising matters for rapid tapping: without it a pending
+      // release lands in the middle of the *next* press and cuts it short.
+      const KEY_MIN_HOLD_MS = 90;
+      const keyDownAt = new Map();
+      const keyChain = new Map();
+      const wait = (ms) => new Promise(r => setTimeout(r, ms));
+
+      window.__dosEmitKey = (scanCode, pressed) => {
+        const prev = keyChain.get(scanCode) || Promise.resolve();
+        const next = prev.then(async () => {
+          if (pressed) {
+            keyDownAt.set(scanCode, performance.now());
+            ci.sendKeyEvent(scanCode, true);
+            return;
+          }
+          const downAt = keyDownAt.get(scanCode);
+          keyDownAt.delete(scanCode);
+          const held = downAt === undefined ? KEY_MIN_HOLD_MS : performance.now() - downAt;
+          if (held < KEY_MIN_HOLD_MS) await wait(KEY_MIN_HOLD_MS - held);
+          ci.sendKeyEvent(scanCode, false);
+        });
+        // A thrown link must not wedge the chain for that key forever.
+        keyChain.set(scanCode, next.catch(() => {}));
+      };
       window.__dosCi = ci; // debugging handle
 
       if (PERSIST_ON) {

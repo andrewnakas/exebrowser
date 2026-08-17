@@ -367,7 +367,17 @@ function mobileControlsHtml(p) {
   if (!mc) return "";
 
   const isDos = mc.type.includes("dos");
-  const btns = mc.buttons || [];
+  let btns = mc.buttons || [];
+
+  // Every DOS game puts something behind Enter — starting a game, confirming a
+  // menu, naming a save. Without a button for it the only way through a menu on
+  // a phone is to tap the canvas and hope the game's click-to-key mapping
+  // happens to be the right one, which is what visitors were reduced to doing.
+  // Added here rather than in each of the twenty entries so a new game can't
+  // ship without it.
+  if (isDos && !btns.some((b) => Number(b.dosKey) === 257)) {
+    btns = btns.concat([{ label: "ENTER", dosKey: 257 }]);
+  }
 
   // Separate d-pad buttons (have area) from action buttons (no area)
   const dpad = btns.filter(b => b.area);
@@ -413,10 +423,27 @@ function mobileControlsHtml(p) {
     function fire(type, key, code, keyCode){
       canvas.dispatchEvent(new KeyboardEvent(type,{key:key,code:code,keyCode:keyCode,which:keyCode,bubbles:true,cancelable:true}));
     }
+    // A tap's press and release can land inside one emulated frame, which the
+    // game polls straight past — the button looks dead. Hold every press for a
+    // minimum, and queue a repeat press behind the pending release so rapid
+    // tapping can't cut the previous press short.
+    var MIN_HOLD = 90;
     document.querySelectorAll(".mgp-btn").forEach(function(btn){
       var key=btn.dataset.key, code=btn.dataset.code, kc=parseInt(btn.dataset.keycode,10);
-      function dn(e){ e.preventDefault(); fire("keydown",key,code,kc); btn.classList.add("pressed"); }
-      function up(e){ e.preventDefault(); fire("keyup",key,code,kc); btn.classList.remove("pressed"); }
+      var downAt = 0, releasing = null;
+      function dn(e){
+        e.preventDefault();
+        if (releasing) { return; }
+        downAt = Date.now(); fire("keydown",key,code,kc); btn.classList.add("pressed");
+      }
+      function up(e){
+        e.preventDefault();
+        if (!downAt || releasing) return;
+        var held = Date.now() - downAt; downAt = 0;
+        var done = function(){ fire("keyup",key,code,kc); btn.classList.remove("pressed"); releasing = null; };
+        if (held >= MIN_HOLD) { done(); }
+        else { releasing = setTimeout(done, MIN_HOLD - held); }
+      }
       btn.addEventListener("touchstart", dn, {passive:false});
       btn.addEventListener("touchend",   up, {passive:false});
       btn.addEventListener("touchcancel",up, {passive:false});
@@ -773,7 +800,7 @@ ${clientStringsHtml(L)}${p.iframeUrl
     ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=32"></script>`
+<script src="/dos-embed.js?v=33"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
