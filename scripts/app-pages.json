@@ -8108,9 +8108,9 @@
     "appUrl": "/apps/hocus-pocus/hocus-pocus.zip",
     "verdict": {
       "kind": "good",
-      "text": "Works — shareware Episode 1 runs via DOSBox in your browser"
+      "text": "Works — press a key at the credits screen, then it runs via DOSBox"
     },
-    "intro": "<p><strong>Hocus Pocus</strong> — Moonlite Software and Apogee's 1994 platformer, where an apprentice wizard blasts his way through four fantasy worlds to prove himself worthy of the Council of Wizards. Bright VGA parallax backdrops, a proper magic-bolt attack, and crystals to collect on every level. The <strong>complete shareware Episode 1</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "intro": "<p><strong>Hocus Pocus</strong> — Moonlite Software and Apogee's 1994 platformer, where an apprentice wizard blasts his way through four fantasy worlds to prove himself worthy of the Council of Wizards. Bright VGA parallax backdrops, a proper magic-bolt attack, and crystals to collect on every level. The <strong>complete shareware Episode 1</strong> is hosted here — click Play and it boots in your browser. <strong>Hocus Pocus opens on a sound-credits screen that waits for input — press <kbd>Enter</kbd> (or the ENTER button on mobile) to go on into the title screen.</strong></p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -8145,6 +8145,10 @@
       {
         "q": "Can I play on a phone?",
         "a": "Yes, a touch d-pad with JUMP and FIRE buttons appears below the game on touch devices."
+      },
+      {
+        "q": "It opened on a wall of text and nothing happens — is it broken?",
+        "a": "No. That is the sound-driver credits screen, and it waits for a key press. Tap the screen and press Enter, or use the ENTER button on the mobile pad, and the title screen comes up."
       }
     ],
     "related": [
@@ -8223,6 +8227,11 @@
       ]
     },
     "controls": [
+      {
+        "action": "Get past the credits screen",
+        "keyboard": "Enter",
+        "mouse": "—"
+      },
       {
         "action": "Move",
         "keyboard": "Arrow keys",
@@ -8923,7 +8932,7 @@
         "desc": "Transport Tycoon, open source — build an empire, instant play."
       }
     ],
-    "updated": "2026-08-06",
+    "updated": "2026-08-17",
     "addedDate": "2026-08-06",
     "screenshot": true,
     "fullyFree": "Released as freeware by Revolution Software in 2003, specifically for use with ScummVM — source code included.",
@@ -8934,7 +8943,7 @@
     "slug": "beneath-a-steel-sky",
     "appName": "Beneath a Steel Sky",
     "title": "Play Beneath a Steel Sky Online Free — Classic Adventure, No Download — ExeBrowser",
-    "description": "Play Beneath a Steel Sky free in your browser — Revolution Software's cyberpunk classic with Dave Gibbons artwork, released as freeware by its creators. Plus Lure of the Temptress and Soltys. No download.",
+    "description": "Play Beneath a Steel Sky free in your browser — Revolution Software's cyberpunk classic with Dave Gibbons artwork, released as freeware by its creators. No download.",
     "keywords": "play beneath a steel sky online, beneath a steel sky free, scummvm browser, lure of the temptress online, point and click adventure free, dave gibbons game, classic adventure game no download",
     "ogTitle": "Play Beneath a Steel Sky Online Free — Classic Adventure",
     "ogDescription": "Revolution's cyberpunk classic with Dave Gibbons art, free and instant.",
@@ -8952,9 +8961,9 @@
     "rank": 6,
     "controls": [
       {
-        "action": "Start a game",
+        "action": "Start",
         "keyboard": "—",
-        "mouse": "Pick from the list, click Start"
+        "mouse": "Nothing to do — it loads and begins on its own"
       },
       {
         "action": "Skip the intro",
@@ -8968,6 +8977,146 @@
       },
       {
         "action": "ScummVM menu",
+        "keyboard": "Ctrl+F5",
+        "mouse": "—"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "appUrl": "/apps/scummvm/",
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "updated": "2026-08-17",
+    "addedDate": "2026-08-17",
+    "screenshot": false,
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively via ScummVM, no emulator"
+    },
+    "slug": "lure-of-the-temptress",
+    "appName": "Lure of the Temptress",
+    "author": "Revolution Software",
+    "title": "Play Lure of the Temptress Online Free — Revolution’s 1992 Adventure — ExeBrowser",
+    "description": "Play Lure of the Temptress free in your browser — Revolution Software’s first adventure game and the debut of the Virtual Theatre engine, released as freeware by its creators. No download, no sign-up.",
+    "keywords": "play lure of the temptress online, lure of the temptress free, virtual theatre engine, revolution software freeware, scummvm browser, point and click adventure free, 1992 adventure game",
+    "ogTitle": "Play Lure of the Temptress Online Free — Revolution’s 1992 Adventure",
+    "ogDescription": "Revolution Software’s first game, freed by its creators. Point-and-click, instant, in your browser.",
+    "crumb": "Play Lure of the Temptress",
+    "h1": "Play Lure of the Temptress online — free, instant",
+    "genre": [
+      "Adventure",
+      "Point-and-click",
+      "Fantasy"
+    ],
+    "rank": 6.1,
+    "fullyFree": "Released as freeware by Revolution Software on 1 April 2003. The licence shipped with the game permits free distribution on any medium with the notices intact.",
+    "related": [
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky",
+        "desc": "Revolution’s cyberpunk classic, with Dave Gibbons art."
+      },
+      {
+        "href": "/run/soltys/",
+        "title": "Sołtys",
+        "desc": "A Polish comedy adventure, freed by its publisher in 2011."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Walk and use",
+        "keyboard": "—",
+        "mouse": "Left-click"
+      },
+      {
+        "action": "Look at something",
+        "keyboard": "—",
+        "mouse": "Right-click"
+      },
+      {
+        "action": "Skip the intro",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Save or load",
+        "keyboard": "Ctrl+F5",
+        "mouse": "—"
+      }
+    ]
+  },
+  {
+    "skipGenerate": true,
+    "appType": "game",
+    "hostable": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "appUrl": "/apps/scummvm/",
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "updated": "2026-08-17",
+    "addedDate": "2026-08-17",
+    "screenshot": false,
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively via ScummVM, no emulator"
+    },
+    "slug": "soltys",
+    "appName": "Sołtys",
+    "author": "Laboratorium Komputerowe Avalon",
+    "title": "Play Sołtys Online Free — The Polish Comedy Adventure, in English — ExeBrowser",
+    "description": "Play Sołtys free in your browser — L.K. Avalon’s Polish comedy adventure, released as freeware by its publisher and translated into English. Point-and-click, no download, no sign-up.",
+    "keywords": "play soltys online, soltys game free, soltys english, lk avalon soltys, polish adventure game, scummvm browser, point and click adventure free, cge engine",
+    "ogTitle": "Play Sołtys Online Free — The Polish Comedy Adventure, in English",
+    "ogDescription": "L.K. Avalon’s freeware comedy adventure, in English, instant in your browser.",
+    "crumb": "Play Sołtys",
+    "h1": "Play Sołtys online — free, instant",
+    "genre": [
+      "Adventure",
+      "Point-and-click",
+      "Comedy"
+    ],
+    "rank": 6.2,
+    "fullyFree": "Released as freeware by L.K. Avalon in November 2011, via the ScummVM website. The licence shipped with the game permits free distribution on any medium with the notices intact.",
+    "related": [
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky",
+        "desc": "Revolution’s cyberpunk classic, with Dave Gibbons art."
+      },
+      {
+        "href": "/run/lure-of-the-temptress/",
+        "title": "Lure of the Temptress",
+        "desc": "Revolution’s first game, and the Virtual Theatre engine."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Walk and use",
+        "keyboard": "—",
+        "mouse": "Left-click"
+      },
+      {
+        "action": "Cycle the verb",
+        "keyboard": "—",
+        "mouse": "Right-click"
+      },
+      {
+        "action": "Skip the intro",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Save or load",
         "keyboard": "Ctrl+F5",
         "mouse": "—"
       }

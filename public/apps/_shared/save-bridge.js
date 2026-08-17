@@ -19,6 +19,10 @@
 //           data-name="Open Cadet"
 //           data-persist-dir="/libsdl"></script>
 //
+// …except the slug, which a `?slug=`/`?name=` on the page's own URL overrides.
+// ScummVM runs three different games out of one HTML file, so the tag can only
+// carry a default.
+//
 // It must be a plain (non-async) tag placed after the inline `Module = {…}`
 // block and before the engine's own <script async>: it needs Module to exist
 // so it can push a preRun hook, and it needs to get there before the engine
@@ -27,9 +31,24 @@
   "use strict";
 
   const tag = document.currentScript;
-  const slug = tag?.dataset.slug || "";
-  const name = tag?.dataset.name || slug;
+  // ScummVM serves three different games out of one HTML file, so the slug
+  // can't come from the tag alone — every one of them would have reported its
+  // saves as Beneath a Steel Sky. A `?slug=`/`?name=` on the iframe URL wins;
+  // the hash is spoken for by the engine's own arguments.
+  const query = new URLSearchParams(location.search);
+  const slug = query.get("slug") || tag?.dataset.slug || "";
+  const name = query.get("name") || tag?.dataset.name || slug;
   const persistDir = tag?.dataset.persistDir || "";
+  // ScummVM's three games share one save directory, so summing the directory
+  // credited every game with every other game's saves — play Sołtys and the
+  // site offered to resume Beneath a Steel Sky. `savePrefix` is the engine's
+  // target name; ScummVM writes `<target>.000`, `.001` and so on, so counting
+  // only those files gives an honest per-game answer. Apps that own their
+  // directory outright leave it unset and nothing changes for them.
+  const savePrefix = query.get("savePrefix") || tag?.dataset.savePrefix || "";
+  const owns = savePrefix
+    ? (path) => new RegExp("(^|/)" + savePrefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\.\\w+$", "i").test(path)
+    : () => true;
   const SYNC_INTERVAL_MS = 15000;
 
   if (!slug) return;
@@ -112,7 +131,7 @@
       let st;
       try { st = FS.stat(full); } catch { continue; }
       if (FS.isDir(st.mode)) total += dirBytes(FS, full);
-      else if (FS.isFile(st.mode)) total += st.size || 0;
+      else if (FS.isFile(st.mode) && owns(full)) total += st.size || 0;
     }
     return total;
   }

@@ -70,8 +70,8 @@
     },
     {
       "@type": "Question",
-      "name": "How do I start a game?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pick one from the list when ScummVM loads, then click Start. The games are already installed \u2014 there's nothing to add or upload." }
+      "name": "How do I start the game?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You don't. This page loads ScummVM straight into Beneath a Steel Sky and the intro begins on its own \u2014 press Esc to skip it. The other two freeware adventures have their own pages: Lure of the Temptress and So\u0142tys." }
     },
     {
       "@type": "Question",
@@ -132,7 +132,7 @@
 
   <section class="card">
     <h2>Play Beneath a Steel Sky online — free, instant <span class="verdict good">Runs natively — no emulator</span></h2>
-    <p><strong>Beneath a Steel Sky</strong> — Revolution Software&#39;s 1994 cyberpunk classic, with artwork by <strong>Watchmen</strong> co-creator <strong>Dave Gibbons</strong> — playable right now. <strong>No download, no sign-up, nothing to install.</strong> Two more freeware adventures are installed alongside it: <strong>Lure of the Temptress</strong> and <strong>Sołtys</strong>.</p>
+    <p><strong>Beneath a Steel Sky</strong> — Revolution Software&#39;s 1994 cyberpunk classic, with artwork by <strong>Watchmen</strong> co-creator <strong>Dave Gibbons</strong> — playable right now. <strong>No download, no sign-up, nothing to install.</strong> Two more freeware adventures run on the same engine here: <a href="/run/lure-of-the-temptress/"><strong>Lure of the Temptress</strong></a> and <a href="/run/soltys/"><strong>Sołtys</strong></a>.</p>
     <p class="muted small">Revolution released this game as freeware in 2003 specifically so it could be played with ScummVM. This is that release, running in your browser.</p>
 
     <!-- Args reach ScummVM only through the URL hash: the compiled pre-js sets
@@ -141,7 +141,7 @@
          mixer's buffer size is config-only and cannot be passed here, and
          --output-rate would shrink that buffer rather than help it. -->
     <div class="bass-wrap">
-      <iframe id="bass-frame" class="game-frame" src="/apps/scummvm/scummvm.html#--auto-detect%20--path=/data/games/bass%20--no-filtering%20--no-aspect-ratio" title="ScummVM — Beneath a Steel Sky and other freeware adventures" loading="eager"></iframe>
+      <iframe id="bass-frame" class="game-frame" src="/apps/scummvm/scummvm.html?slug=beneath-a-steel-sky&amp;savePrefix=SKY-VM#--auto-detect%20--path=/data/games/bass%20--no-filtering%20--no-aspect-ratio" title="ScummVM — Beneath a Steel Sky and other freeware adventures" loading="eager"></iframe>
       <div class="bass-loading" id="bass-loading">
         <p style="margin:0;font-weight:600;">Starting Beneath a Steel Sky…</p>
         <progress id="bass-progress" max="100"></progress>
@@ -155,7 +155,7 @@
         <table class="controls-table">
           <thead><tr><th scope="col">Action</th><th scope="col">How</th></tr></thead>
           <tbody>
-        <tr><th scope="row">Start a game</th><td>Pick it from the list, then click <strong>Start</strong>.</td></tr>
+        <tr><th scope="row">Start</th><td>Nothing to do — the game loads and begins on its own.</td></tr>
         <tr><th scope="row">Skip the intro</th><td>Press <kbd>Esc</kbd> — the opening cutscene runs a couple of minutes before you get control.</td></tr>
             <tr><th scope="row">Play</th><td>Point and click. Left-click to walk and use, right-click to look.</td></tr>
         <tr><th scope="row">ScummVM menu</th><td><kbd>Ctrl</kbd>+<kbd>F5</kbd> — save, load, or return to the game list.</td></tr>
@@ -171,13 +171,13 @@
   </section>
 
   <section class="card">
-    <h2>What&#39;s installed</h2>
+    <h2>This game, and two more like it</h2>
     <h3>Beneath a Steel Sky (1994)</h3>
     <p>You are Robert Foster, dragged back to a dystopian city you escaped as a child, with a sarcastic circuit board called Joey for company. Written by Charles Cecil with character and background art by <strong>Dave Gibbons</strong>, it&#39;s one of the best-looking adventure games of the era and routinely appears on best-of lists three decades later. Revolution released it as freeware in 2003, source code and all.</p>
-    <h3>Lure of the Temptress (1992)</h3>
-    <p>Revolution&#39;s first game, and the debut of their Virtual Theatre engine — characters wander the town on their own errands whether or not you&#39;re watching, which was startling in 1992. You play Diermot, an unremarkable peasant caught up in overthrowing the sorceress Selena.</p>
-    <h3>Sołtys (1995)</h3>
-    <p>A Polish comedy adventure from L.K. Avalon, released free in 2011 and translated to English. Rarely seen outside Poland, and worth a look precisely because you almost certainly haven&#39;t played it.</p>
+    <h3><a href="/run/lure-of-the-temptress/">Lure of the Temptress</a> (1992)</h3>
+    <p>Revolution&#39;s first game, and the debut of their Virtual Theatre engine — characters wander the town on their own errands whether or not you&#39;re watching, which was startling in 1992. You play Diermot, an unremarkable peasant caught up in overthrowing the sorceress Selena. <a href="/run/lure-of-the-temptress/">Play it here →</a></p>
+    <h3><a href="/run/soltys/">Sołtys</a></h3>
+    <p>A Polish comedy adventure from L.K. Avalon, released free in 2011 and translated to English. Rarely seen outside Poland, and worth a look precisely because you almost certainly haven&#39;t played it. <a href="/run/soltys/">Play it here →</a></p>
   </section>
 
   <section class="card">
@@ -199,8 +199,8 @@
       <p>ScummVM is a program that replaces the executables of old adventure games, letting them run on modern hardware. It doesn't emulate a PC — it reimplements the game engines directly, which is why it's fast and why it runs in a browser at full speed. This is a WebAssembly build of ScummVM itself, not an emulator running a Windows binary.</p>
     </details>
     <details>
-      <summary>How do I start a game?</summary>
-      <p>Pick one from the list when ScummVM loads, then click Start. The games are already installed — there's nothing to add or upload.</p>
+      <summary>How do I start the game?</summary>
+      <p>You don't — this page loads ScummVM straight into <em>Beneath a Steel Sky</em> and the intro begins on its own. Press <kbd>Esc</kbd> to skip it. The other two freeware adventures have their own pages: <a href="/run/lure-of-the-temptress/">Lure of the Temptress</a> and <a href="/run/soltys/">Sołtys</a>.</p>
     </details>
     <details>
       <summary>Can I save my progress?</summary>
