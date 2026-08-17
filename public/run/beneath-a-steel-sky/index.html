@@ -92,6 +92,21 @@
     display: block; margin: 0 auto; border-radius: 8px; background: #008080;
   }
   @media (max-width: 720px) { .game-frame { height: 560px; } }
+
+  /* ScummVM is a 12 MB download and then plays a two-minute intro before you
+     get control. All of its own feedback lives inside the iframe, so from the
+     outside the page looked dead — reported as "doesn't load" when it was in
+     fact loading. This sits over the frame until the engine reports the game
+     found, mirroring ScummVM's own progress. */
+  .bass-wrap { position: relative; max-width: 900px; margin: 0 auto; }
+  .bass-loading {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: .6rem;
+    background: #06121a; border-radius: 8px; text-align: center; padding: 1rem;
+  }
+  .bass-loading[hidden] { display: none; }
+  .bass-loading progress { width: min(320px, 70%); }
+  .bass-note { color: var(--muted); font-size: .9rem; max-width: 34rem; }
 </style>
 </head>
 <body>
@@ -125,7 +140,14 @@
          win. Audio settings live in /apps/scummvm/scummvm.ini instead — the
          mixer's buffer size is config-only and cannot be passed here, and
          --output-rate would shrink that buffer rather than help it. -->
-    <iframe class="game-frame" src="/apps/scummvm/scummvm.html#--auto-detect%20--path=/data/games/bass%20--no-filtering%20--no-aspect-ratio" title="ScummVM — Beneath a Steel Sky and other freeware adventures" loading="eager"></iframe>
+    <div class="bass-wrap">
+      <iframe id="bass-frame" class="game-frame" src="/apps/scummvm/scummvm.html#--auto-detect%20--path=/data/games/bass%20--no-filtering%20--no-aspect-ratio" title="ScummVM — Beneath a Steel Sky and other freeware adventures" loading="eager"></iframe>
+      <div class="bass-loading" id="bass-loading">
+        <p style="margin:0;font-weight:600;">Starting Beneath a Steel Sky…</p>
+        <progress id="bass-progress" max="100"></progress>
+        <p class="bass-note" id="bass-status">Downloading the ScummVM engine (about 12&nbsp;MB). This happens once — after the first visit it's cached and starts straight away.</p>
+      </div>
+    </div>
 
     <details class="controls-panel" open>
       <summary><strong>Controls</strong> — what does what</summary>
@@ -134,7 +156,8 @@
           <thead><tr><th scope="col">Action</th><th scope="col">How</th></tr></thead>
           <tbody>
         <tr><th scope="row">Start a game</th><td>Pick it from the list, then click <strong>Start</strong>.</td></tr>
-        <tr><th scope="row">Play</th><td>Point and click. Left-click to walk and use, right-click to look.</td></tr>
+        <tr><th scope="row">Skip the intro</th><td>Press <kbd>Esc</kbd> — the opening cutscene runs a couple of minutes before you get control.</td></tr>
+            <tr><th scope="row">Play</th><td>Point and click. Left-click to walk and use, right-click to look.</td></tr>
         <tr><th scope="row">ScummVM menu</th><td><kbd>Ctrl</kbd>+<kbd>F5</kbd> — save, load, or return to the game list.</td></tr>
         <tr><th scope="row">Skip dialogue</th><td><kbd>Esc</kbd> or click.</td></tr>
           </tbody>
@@ -217,6 +240,38 @@
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
+<script>
+(function () {
+  // Same-origin iframe, so the engine's own status and log are readable. Poll
+  // them and mirror the state out here; hide the overlay the moment ScummVM
+  // reports the game found, which is when the intro starts painting.
+  var frame = document.getElementById("bass-frame");
+  var box = document.getElementById("bass-loading");
+  var status = document.getElementById("bass-status");
+  var bar = document.getElementById("bass-progress");
+  if (!frame || !box) return;
+  var started = Date.now();
+  var timer = setInterval(function () {
+    var done = false;
+    try {
+      var d = frame.contentDocument;
+      if (d) {
+        var out = (d.getElementById("output") || {}).value || "";
+        if (/Found BASS|Engine\s+Sky/i.test(out)) done = true;
+        var s = (d.getElementById("status") || {}).textContent || "";
+        if (s && !done) status.textContent = s.replace(/⚡️/g, "").trim();
+        var p = d.getElementById("progress");
+        if (p && !p.hidden && p.max) { bar.max = p.max; bar.value = p.value; }
+      }
+    } catch (e) { /* cross-origin would mean we simply can't mirror it */ }
+    // Don't hang the overlay over a working game if the log ever changes shape.
+    if (done || Date.now() - started > 90000) {
+      clearInterval(timer);
+      box.hidden = true;
+    }
+  }, 400);
+})();
+</script>
 <script src="/save-core.js?v=1"></script>
 <script src="/recent.js?v=3"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>

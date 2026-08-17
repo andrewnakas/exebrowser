@@ -8957,6 +8957,11 @@
         "mouse": "Pick from the list, click Start"
       },
       {
+        "action": "Skip the intro",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
         "action": "Play",
         "keyboard": "—",
         "mouse": "Left-click to use, right-click to look"
