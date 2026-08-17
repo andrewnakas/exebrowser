@@ -4,7 +4,7 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-44 titles are hosted and playable instantly. Everything hosted here is
+43 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
@@ -46,7 +46,6 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Rodent's Revenge](https://exebrowser.com/run/rodents-open/): Push blocks, trap the cats, eat the cheese. The Entertainment Pack classic.
 - [Block Drop](https://exebrowser.com/run/blockdrop-open/): Seven shapes, a ten-wide well, and a four-row clear worth eight times a single.
 - [Snake](https://exebrowser.com/run/snake-open/): Eat, grow, don't crash. The arcade classic with wrap-around walls and two speeds.
-- [2048](https://exebrowser.com/run/2048-open/): Slide, merge, and build to 2048. Undo, best score and swipe controls.
 - [Pipe Panic](https://exebrowser.com/run/pipes-open/): Lay pipe from a queue you can't reorder and stay ahead of the water.
 - [Beneath a Steel Sky](https://exebrowser.com/run/beneath-a-steel-sky/): Revolution's cyberpunk classic with Dave Gibbons art, free and instant.
 - [Lure of the Temptress](https://exebrowser.com/run/lure-of-the-temptress/): Revolution Software’s first game, freed by its creators. Point-and-click, instant, in your browser.

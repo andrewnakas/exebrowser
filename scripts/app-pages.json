@@ -1607,11 +1607,6 @@
         "desc": "Eat, grow, don't crash — the arcade classic."
       },
       {
-        "href": "/run/2048-open/",
-        "title": "Play 2048 online (free)",
-        "desc": "Slide and merge tiles up to 2048."
-      },
-      {
         "href": "/run/pipes-open/",
         "title": "Play Pipe Panic (free)",
         "desc": "Lay pipe and stay ahead of the water."
@@ -2411,11 +2406,6 @@
         "href": "/run/snake-open/",
         "title": "Play Snake online (free)",
         "desc": "Eat, grow, don't crash — the arcade classic."
-      },
-      {
-        "href": "/run/2048-open/",
-        "title": "Play 2048 online (free)",
-        "desc": "Slide and merge tiles up to 2048."
       },
       {
         "href": "/run/pipes-open/",
@@ -8623,11 +8613,6 @@
         "href": "/run/snake-open/",
         "title": "Play Snake online (free)",
         "desc": "Eat, grow, don't crash — the arcade classic."
-      },
-      {
-        "href": "/run/2048-open/",
-        "title": "Play 2048 online (free)",
-        "desc": "Slide and merge tiles up to 2048."
       }
     ],
     "updated": "2026-08-05",
@@ -8689,11 +8674,6 @@
         "href": "/run/snake-open/",
         "title": "Play Snake online (free)",
         "desc": "Eat, grow, don't crash — the arcade classic."
-      },
-      {
-        "href": "/run/2048-open/",
-        "title": "Play 2048 online (free)",
-        "desc": "Slide and merge tiles up to 2048."
       },
       {
         "href": "/run/pipes-open/",
@@ -8802,65 +8782,6 @@
         "action": "Wrap edges",
         "keyboard": "—",
         "mouse": "Walls button"
-      }
-    ]
-  },
-  {
-    "skipGenerate": true,
-    "appType": "game",
-    "author": "ExeBrowser (original implementation)",
-    "hostable": true,
-    "intro": "",
-    "sections": [],
-    "faq": [],
-    "related": [
-      {
-        "href": "/run/pipes-open/",
-        "title": "Play Pipe Panic (free)",
-        "desc": "Lay pipe and stay ahead of the water."
-      }
-    ],
-    "updated": "2026-08-05",
-    "addedDate": "2026-08-05",
-    "screenshot": true,
-    "fullyFree": "Written from scratch for ExeBrowser — original code and assets, free to play.",
-    "verdict": {
-      "kind": "good",
-      "text": "▶ Play now — runs natively, no emulator"
-    },
-    "slug": "2048-open",
-    "appName": "2048",
-    "title": "Play 2048 Online Free — Tile Merging Puzzle, No Download — ExeBrowser",
-    "description": "Play 2048 free in your browser — slide the tiles, merge matching numbers and build up to 2048. Undo, saved best score, swipe controls. No download, no account, works on mobile.",
-    "keywords": "play 2048 online, 2048 game free, 2048 no download, 2048 puzzle browser, tile merging game, 2048 unblocked",
-    "ogTitle": "Play 2048 Online Free — Tile Merging Puzzle",
-    "ogDescription": "Slide, merge, and build to 2048. Undo, best score and swipe controls.",
-    "crumb": "Play 2048",
-    "h1": "Play 2048 online — free, instant",
-    "genre": [
-      "Puzzle",
-      "Strategy"
-    ],
-    "categories": [
-      "Puzzle & strategy"
-    ],
-    "appUrl": "/apps/2048-open/",
-    "rank": 17,
-    "controls": [
-      {
-        "action": "Slide tiles",
-        "keyboard": "Arrows or WASD",
-        "mouse": "Swipe on mobile"
-      },
-      {
-        "action": "Undo",
-        "keyboard": "—",
-        "mouse": "Click Undo"
-      },
-      {
-        "action": "New game",
-        "keyboard": "—",
-        "mouse": "Click New game"
       }
     ]
   },

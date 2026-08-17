@@ -61,12 +61,12 @@
     {
       "@type": "Question",
       "name": "How do you play a pipe-laying puzzle?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Water starts at the source after a short countdown and travels one square at a time through whatever pipe you have laid. You place pieces from a queue \u2014 you can see what's coming but not reorder it \u2014 and you need the flow to reach a set number of pipes before it runs into a dead end." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Water starts at the source after a short countdown and travels one square at a time through whatever pipe you have laid. You place pieces from a queue \u2014 you can see what's coming but not reorder it \u2014 and you need the flow to reach a set number of pipes before it runs into a dead end. Get past that number and you keep scoring for every extra pipe." }
     },
     {
       "@type": "Question",
       "name": "Can I change a pipe after placing it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, as long as the water hasn't reached it. Clicking an existing pipe replaces it with the next one from the queue, at a small score penalty. Once a square has water in it, it's fixed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, as long as the water hasn't reached it, and it costs you nothing but the piece. Clicking an existing pipe replaces it with the next one from the queue. Once a square has water in it, it's fixed." }
     },
     {
       "@type": "Question",
@@ -117,7 +117,7 @@
 
   <section class="card">
     <h2>Play Pipe Panic online — free, instant <span class="verdict good">Runs natively — no emulator</span></h2>
-    <p><strong>Pipe Panic</strong> is a pipe-laying puzzle, playable right now — <strong>no download, no sign-up, nothing to install</strong>. Lay pipe from a queue you can see but can&#39;t reorder, and keep ahead of water that starts flowing whether you&#39;re ready or not. Get the flow through enough pipes to clear the level.</p>
+    <p><strong>Pipe Panic</strong> is a pipe-laying puzzle, playable right now — <strong>no download, no sign-up, nothing to install</strong>. Lay pipe from a queue you can see but can&#39;t reorder, and keep ahead of water that starts flowing whether you&#39;re ready or not. Get the flow through enough pipes to clear the level, then keep laying — the level runs until the water stops, and every pipe past the target is worth bonus points.</p>
 
     <iframe class="game-frame" src="/apps/pipes-open/" title="Pipe Panic — playable game" loading="eager"></iframe>
     <p class="muted small resume-note">Your game saves itself — close the tab and open this page again to pick up exactly where you left off.</p>
@@ -129,8 +129,8 @@
           <thead><tr><th scope="col">Action</th><th scope="col">How</th></tr></thead>
           <tbody>
         <tr><th scope="row">Lay a pipe</th><td>Click a square — it uses the next piece in the queue.</td></tr>
-        <tr><th scope="row">Replace a pipe</th><td>Click one the water hasn&#39;t reached. Costs a few points.</td></tr>
-        <tr><th scope="row">Start early</th><td><strong>Start flow</strong> skips the countdown.</td></tr>
+        <tr><th scope="row">Replace a pipe</th><td>Click one the water hasn&#39;t reached. Free — you only lose the piece.</td></tr>
+        <tr><th scope="row">Start early</th><td><strong>Start flow</strong> skips the countdown and pays a bonus for the time you gave up.</td></tr>
         <tr><th scope="row">New game</th><td><strong>New game</strong> back to level 1.</td></tr>
           </tbody>
         </table>
@@ -150,7 +150,7 @@
     <h3>Building ahead</h3>
     <p>You can lay pipe anywhere, including squares the water will never reach. Dumping an unusable piece somewhere harmless is a legitimate move and often the right one.</p>
     <h3>Replacing</h3>
-    <p>Any pipe the water hasn&#39;t reached can be overwritten for a small penalty. Once a square is wet it&#39;s locked, so mistakes ahead of the flow are recoverable and mistakes behind it are not.</p>
+    <p>Any pipe the water hasn&#39;t reached can be overwritten for free — you just lose the piece you spend doing it. Once a square is wet it&#39;s locked, so mistakes ahead of the flow are recoverable and mistakes behind it are not.</p>
   </section>
 
   <section class="card">
@@ -158,7 +158,7 @@
     <ul>
       <li><strong>Build a long loop, not a short line.</strong> You need a set number of pipes flowed, not a route to anywhere in particular — winding is the point.</li>
       <li><strong>Keep one square of slack ahead of the water.</strong> Building right at the flow leaves no room to react to a bad piece.</li>
-      <li><strong>Dump crosses early.</strong> A four-way piece works from any direction, so it&#39;s the most flexible thing to have already on the board.</li>
+      <li><strong>Place crosses early.</strong> A four-way piece works from any direction, and the water can run through it twice — once on each axis — scoring both times. It&#39;s the most valuable thing to have already on the board.</li>
       <li><strong>Watch the queue, not just the head.</strong> If two corners are coming, plan the turn now.</li>
       <li><strong>Use the countdown.</strong> The bar is real building time — spend all of it before hitting Start flow.</li>
     </ul>
@@ -168,15 +168,15 @@
     <h2>Frequently asked questions</h2>
     <details open>
       <summary>How do you play a pipe-laying puzzle?</summary>
-      <p>Water starts at the source after a short countdown and travels one square at a time through whatever pipe you have laid. You place pieces from a queue — you can see what's coming but not reorder it — and you need the flow to reach a set number of pipes before it runs into a dead end.</p>
+      <p>Water starts at the source after a short countdown and travels one square at a time through whatever pipe you have laid. You place pieces from a queue — you can see what's coming but not reorder it — and you need the flow to reach a set number of pipes before it runs into a dead end. Get past that number and you keep scoring for every extra pipe.</p>
     </details>
     <details>
       <summary>Can I change a pipe after placing it?</summary>
-      <p>Yes, as long as the water hasn't reached it. Clicking an existing pipe replaces it with the next one from the queue, at a small score penalty. Once a square has water in it, it's fixed.</p>
+      <p>Yes, as long as the water hasn't reached it, and it costs you nothing but the piece. Clicking an existing pipe replaces it with the next one from the queue. Once a square has water in it, it's fixed.</p>
     </details>
     <details>
       <summary>What happens if the water reaches a dead end?</summary>
-      <p>The level ends. That's the whole tension of the game — you're always building slightly ahead of the flow, and a piece you can't use is a piece you have to dump somewhere harmless.</p>
+      <p>The level ends there — but you still clear it if the water got through the number of pipes the level asked for. Falling short is what ends the game. That's the whole tension: you're always building slightly ahead of the flow, and a piece you can't use is a piece you have to dump somewhere harmless.</p>
     </details>
     <details>
       <summary>Does it get harder?</summary>
@@ -194,7 +194,7 @@
       <li><a class="link-card" href="/run/blockdrop-open/"><span class="lc-title">Block Drop</span><span class="lc-desc">Falling-block puzzle — clear four rows at once.</span></a></li>
       <li><a class="link-card" href="/run/minesweeper-open/"><span class="lc-title">Minesweeper</span><span class="lc-desc">Three board sizes, chording, first click always safe.</span></a></li>
       <li><a class="link-card" href="/run/jezzball-open/"><span class="lc-title">JezzBall</span><span class="lc-desc">Trap the balls, capture 75% of the field.</span></a></li>
-      <li><a class="link-card" href="/run/2048-open/"><span class="lc-title">2048</span><span class="lc-desc">Slide and merge tiles up to 2048.</span></a></li>
+      <li><a class="link-card" href="/run/blockdrop-open/"><span class="lc-title">Block Drop</span><span class="lc-desc">Stack falling blocks and clear lines — instant play.</span></a></li>
       <li><a class="link-card" href="/run/rodents-open/"><span class="lc-title">Rodent&#39;s Revenge</span><span class="lc-desc">Push blocks, trap the cats.</span></a></li>
       <li><a class="link-card" href="/run/"><span class="lc-title">All games &amp; apps</span><span class="lc-desc">Browse everything you can play or run here.</span></a></li>
     </ul>

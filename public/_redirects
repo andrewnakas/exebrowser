@@ -16,3 +16,8 @@
 # never referenced and has been removed. Pages keeps prior-deploy files, so
 # retire the URL explicitly.
 /apps/freeciv/* /run/freeciv/ 301
+
+# 2048 withdrawn 2026-08-17 at the owner's request. Pages keeps files from
+# prior deploys, so retire both the guide page and the app explicitly.
+/run/2048-open/* /run/ 301
+/apps/2048-open/* /run/ 301
