@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ExeBrowser — new games and posts</title>
+    <link>https://exebrowser.com/</link>
+    <description>Classic DOS and Windows games you can play free in your browser, plus write-ups on how the runtimes work.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 17 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://exebrowser.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Won&apos;t My Old Program Run on Windows 11?</title>
+      <link>https://exebrowser.com/blog/why-old-programs-wont-run-on-windows-11/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/why-old-programs-wont-run-on-windows-11/</guid>
+      <description>Six reasons old Windows software stops working on Windows 11 — missing 16-bit support, dead runtimes, broken installers, retired copy protection — and what actually fixes each one.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Lure of the Temptress</title>
+      <link>https://exebrowser.com/run/lure-of-the-temptress/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/lure-of-the-temptress/</guid>
+      <description>Revolution Software’s first game, freed by its creators. Point-and-click, instant, in your browser.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Sołtys</title>
+      <link>https://exebrowser.com/run/soltys/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/soltys/</guid>
+      <description>L.K. Avalon’s freeware comedy adventure, in English, instant in your browser.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Flight of the Amazon Queen</title>
+      <link>https://exebrowser.com/run/flight-of-the-amazon-queen/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/flight-of-the-amazon-queen/</guid>
+      <description>The 1995 jungle adventure, freed by its authors. Point-and-click, instant, in your browser.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Micropolis</title>
+      <link>https://exebrowser.com/run/micropolis/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/micropolis/</guid>
+      <description>The open-source city simulator, running natively in your browser. Zone, build, tax and watch a city grow.</description>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Beneath a Steel Sky</title>
+      <link>https://exebrowser.com/run/beneath-a-steel-sky/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/beneath-a-steel-sky/</guid>
+      <description>Revolution&apos;s cyberpunk classic with Dave Gibbons art, free and instant.</description>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: OpenTTD</title>
+      <link>https://exebrowser.com/run/openttd/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/openttd/</guid>
+      <description>Build railways, roads and airports and run a transport empire. Free and instant.</description>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: FreeCell</title>
+      <link>https://exebrowser.com/run/freecell-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/freecell-open/</guid>
+      <description>The FreeCell you remember — same deal numbers as Windows, supermoves, unlimited undo.</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Spider Solitaire</title>
+      <link>https://exebrowser.com/run/spider-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/spider-open/</guid>
+      <description>The Spider Solitaire you remember — pick your difficulty, two decks, unlimited undo.</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: JezzBall</title>
+      <link>https://exebrowser.com/run/jezzball-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/jezzball-open/</guid>
+      <description>Build walls, trap the balls, clear 75% of the field. The Entertainment Pack classic.</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Rodent&apos;s Revenge</title>
+      <link>https://exebrowser.com/run/rodents-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/rodents-open/</guid>
+      <description>Push blocks, trap the cats, eat the cheese. The Entertainment Pack classic.</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Block Drop</title>
+      <link>https://exebrowser.com/run/blockdrop-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/blockdrop-open/</guid>
+      <description>Seven shapes, a ten-wide well, and a four-row clear worth eight times a single.</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Snake</title>
+      <link>https://exebrowser.com/run/snake-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/snake-open/</guid>
+      <description>Eat, grow, don&apos;t crash. The arcade classic with wrap-around walls and two speeds.</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Pipe Panic</title>
+      <link>https://exebrowser.com/run/pipes-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/pipes-open/</guid>
+      <description>Lay pipe from a queue you can&apos;t reorder and stay ahead of the water.</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Minesweeper</title>
+      <link>https://exebrowser.com/run/minesweeper-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/minesweeper-open/</guid>
+      <description>The Minesweeper you remember — three board sizes, chording, first click always safe. Instant play in your browser.</description>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Solitaire (Klondike)</title>
+      <link>https://exebrowser.com/run/solitaire-open/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/solitaire-open/</guid>
+      <description>The Klondike Solitaire you know, in your browser — draw 1 or 3, Standard and Vegas scoring, and the bouncing cards when you win.</description>
+      <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Cosmo&apos;s Cosmic Adventure</title>
+      <link>https://exebrowser.com/run/cosmo/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/cosmo/</guid>
+      <description>Apogee&apos;s 1992 platformer in your browser — the complete shareware episode, no download or install.</description>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Hocus Pocus</title>
+      <link>https://exebrowser.com/run/hocus-pocus/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/hocus-pocus/</guid>
+      <description>Apogee&apos;s 1994 wizard platformer in your browser — the complete shareware episode, no download.</description>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Crystal Caves</title>
+      <link>https://exebrowser.com/run/crystal-caves/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/crystal-caves/</guid>
+      <description>Apogee&apos;s 1991 platformer in your browser — the complete shareware episode, no download or install.</description>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Monster Bash</title>
+      <link>https://exebrowser.com/run/monster-bash/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/monster-bash/</guid>
+      <description>Apogee&apos;s 1993 monster-hunting platformer in your browser — the complete shareware episode.</description>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Scorched Earth</title>
+      <link>https://exebrowser.com/run/scorched-earth/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/scorched-earth/</guid>
+      <description>Play Scorched Earth in your browser — the 1991 artillery classic, &apos;the mother of all games&apos;. Shareware, no download, runs via DOSBox + WebAssembly.</description>
+      <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Raptor</title>
+      <link>https://exebrowser.com/run/raptor/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/raptor/</guid>
+      <description>Play Raptor: Call of the Shadows shareware episode free in your browser — Apogee&apos;s 1994 vertical shooter. No download, runs via DOSBox + WebAssembly.</description>
+      <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Open Cadet: How I Rebuilt Space Cadet Pinball as Fully Open Source</title>
+      <link>https://exebrowser.com/blog/open-cadet-open-source-space-cadet/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/open-cadet-open-source-space-cadet/</guid>
+      <description>3D Pinball Space Cadet needs a proprietary PINBALL.DAT to run. I rebuilt that data file from scratch — original art, 47 synthesized sounds, CC0 public domain — so the open-source engine finally runs with zero Microsoft files. Here&apos;s how.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Extract Files From an Old Installer (Without Installing It)</title>
+      <link>https://exebrowser.com/blog/extract-files-from-an-old-installer/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/extract-files-from-an-old-installer/</guid>
+      <description>Old setup.exe won&apos;t run, but you just need the files inside? Here&apos;s how to unpack a legacy Windows installer — with 7-Zip, innoextract, cabextract, msiextract, or a browser sandbox — without a full install.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Where to Legally Get Classic Windows and DOS Games in 2026</title>
+      <link>https://exebrowser.com/blog/legally-get-classic-windows-games/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/legally-get-classic-windows-games/</guid>
+      <description>An honest guide to legally free classic PC games in 2026: redistributable shareware, official freeware, open-source remakes, licensed storefronts — and the truth about abandonware.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Running 16-bit Windows 3.x Software in 2026</title>
+      <link>https://exebrowser.com/blog/run-16-bit-windows-3x-software/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/run-16-bit-windows-3x-software/</guid>
+      <description>Why 16-bit Windows 3.x programs won&apos;t start on 64-bit Windows at all — and four honest ways to run them in 2026, including right in a browser tab.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>We Tested 50+ Windows Apps in the Browser — Here&apos;s What Actually Runs</title>
+      <link>https://exebrowser.com/blog/we-tested-53-windows-apps-in-the-browser/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/we-tested-53-windows-apps-in-the-browser/</guid>
+      <description>We ran more than 50 classic Windows and DOS programs through a browser-based Wine + DOSBox runtime and logged the results. Here&apos;s the full table: what plays instantly, what&apos;s partial, and what won&apos;t run.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Run Windows Software on a Chromebook (4 Ways)</title>
+      <link>https://exebrowser.com/blog/run-windows-software-on-a-chromebook/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/run-windows-software-on-a-chromebook/</guid>
+      <description>Four realistic ways to run Windows programs on a Chromebook, ranked by effort: a no-install browser tool, Linux + Wine, remote desktop, and cloud Windows.</description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wine vs. an Emulator: What&apos;s the Difference?</title>
+      <link>https://exebrowser.com/blog/wine-vs-emulator-explained/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/wine-vs-emulator-explained/</guid>
+      <description>Wine is famously &apos;not an emulator&apos; — what that means, how it differs from DOSBox-style emulation, and why running Windows apps in a browser needs both.</description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Run Old Windows Software Without a Virtual Machine</title>
+      <link>https://exebrowser.com/blog/run-old-software-without-a-vm/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/run-old-software-without-a-vm/</guid>
+      <description>You don&apos;t always need a virtual machine to run an old Windows program. When a browser-based Wine tool is enough, when a VM is still the right call, and how to decide quickly.</description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

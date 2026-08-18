@@ -22,6 +22,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { SITE, esc } from "../catalogue.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -86,3 +87,48 @@ export function translatedEntry(code, entry) {
 
 /** Slugs that have been translated into a given language. */
 export const translatedSlugs = (code) => Object.keys(pagesByLang[code] || {});
+
+/**
+ * Languages with at least one real page. Used for site-level URLs (the home
+ * page, the /run/ hub) that have no slug of their own. Filtering matters: the
+ * switcher and hreflang once listed pt-BR and de before either had a single
+ * page, advertising URLs that 404.
+ */
+export const langsWithContent = () => LANGS.filter((c) => c === "en" || translatedSlugs(c).length);
+
+/**
+ * hreflang alternates for one path, plus x-default pointing at English.
+ *
+ * Lives here rather than in gen-app-pages.mjs because the hand-maintained
+ * pages need byte-identical markup and are stamped by a different script.
+ * Reciprocity is the whole point — Google discards a one-way alternate — so
+ * check-consistency verifies every target links back.
+ *
+ * @param pathAfterPrefix e.g. "/run/doom/" or "/" — the path WITHOUT a /es prefix
+ * @param slug            a catalogue slug to scope languages to, or null for
+ *                        site-level pages (uses langsWithContent instead)
+ */
+export function hreflangHtml(pathAfterPrefix, slug) {
+  const langs = slug ? languagesFor(slug) : langsWithContent();
+  if (langs.length < 2) return "";
+  const rows = langs.map(
+    (c) => `<link rel="alternate" hreflang="${LOCALES[c].htmlLang}" href="${SITE}${prefixOf(c)}${pathAfterPrefix}" />`
+  );
+  rows.push(`<link rel="alternate" hreflang="x-default" href="${SITE}${pathAfterPrefix}" />`);
+  return "\n" + rows.join("\n");
+}
+
+/**
+ * Rendered in the header so a visitor who landed on the wrong language can
+ * leave. Only lists languages this page actually exists in.
+ */
+export function langSwitcherHtml(L, pathAfterPrefix, slug) {
+  const langs = slug ? languagesFor(slug) : langsWithContent();
+  if (langs.length < 2) return "";
+  const links = langs.map((c) =>
+    c === L.code
+      ? `<span class="lang-current" aria-current="true">${esc(LOCALES[c].name)}</span>`
+      : `<a href="${prefixOf(c)}${pathAfterPrefix}" hreflang="${LOCALES[c].htmlLang}">${esc(LOCALES[c].name)}</a>`
+  );
+  return `\n  <nav class="lang-switcher" aria-label="${esc(L.t("nav.language"))}">${links.join(" · ")}</nav>`;
+}

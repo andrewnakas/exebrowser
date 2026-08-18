@@ -1,0 +1,173 @@
+{
+  "_readme": [
+    "Crawlable category pages at /play/<slug>/. Same data-vs-template split as app-pages.json:",
+    "this file holds the words, gen-app-pages.mjs holds the markup.",
+    "",
+    "THE RULE, and it is the same one locales.mjs applies to translations: a category page",
+    "exists only when real authored copy for it exists here AND the category has at least",
+    "MIN_FOR_PAGE members. Generating one page per filter chip would produce, among others, a",
+    "'Pinball' page containing exactly one game — which is a doorway page by any definition, on",
+    "a site that has already been rejected once for thin content. Racing & sports (2 titles) and",
+    "Pinball (1) therefore have chips but no page, and that asymmetry is deliberate.",
+    "",
+    "Fields:",
+    "  slug      URL segment under /play/",
+    "  match     'category' → every playable entry whose categories[] contains `name`",
+    "            'slugs'    → an explicit hand-picked list (for groupings that are a real",
+    "                         search query but not one of the filter chips, e.g. card games)",
+    "  name      the categories[] value to match, when match === 'category'",
+    "  slugs     the explicit member list, when match === 'slugs'",
+    "  picks     3-5 titles with a sentence of ORIGINAL prose each. This is the field that",
+    "            makes the page more than 'the filter, but as a URL'. Do not template it.",
+    "",
+    "Write the intros as separate arguments, not one paragraph with the genre swapped in — a",
+    "reviewer reads them side by side, and so does a search engine."
+  ],
+
+  "_index": {
+    "title": "Browse Classic Games by Category — Play Free in Your Browser — ExeBrowser",
+    "h1": "Browse by category",
+    "description": "Every game hosted here, grouped by what it actually is: DOS shooters, side-scrolling platformers, the Windows desktop classics, and card games. All free, all instant.",
+    "keywords": "classic game categories, browser games by genre, dos games online, windows classic games",
+    "intro": "<p>The catalogue is small enough to scroll and varied enough that scrolling isn't much help. These pages group it by what a game actually is — not by the decade it came from or the engine it runs on, both of which matter to us and to nobody else.</p><p>Every title on every one of these pages is hosted here and boots in the tab you're reading this in. Nothing asks for a download, an account, or a copy of the original you're expected to already own; the software that <em>does</em> need your own copy lives in the <a href=\"/run/\">compatibility guides</a> instead, clearly marked.</p>",
+    "updated": "2026-08-17"
+  },
+
+  "categories": [
+    {
+      "slug": "shooters",
+      "match": "category",
+      "name": "Shooters",
+      "title": "Play Classic DOS Shooters Online Free — DOOM, Wolfenstein & More — ExeBrowser",
+      "h1": "Classic shooters, playable in your browser",
+      "description": "Eight DOS-era shooters running free in your browser — DOOM, Wolfenstein 3D, Blake Stone, Raptor, Tyrian and more. No download, no install, no account.",
+      "keywords": "play dos shooters online, doom in browser, wolfenstein 3d online, classic fps browser, shareware shooters",
+      "intro": "<p>Between 1992 and 1995, one genre paid for the entire shareware business model. id Software gave away the first episode of <em>Wolfenstein 3D</em> and then <em>DOOM</em>, Apogee did the same with <em>Blake Stone</em>, and the calculation was that a first-person shooter is the hardest kind of game to describe and the easiest to be sold by. It worked well enough that the free episodes are still legally free thirty years later, which is why most of this page exists.</p><p>Two of these are not shareware at all. <strong>Freedoom</strong> is a from-scratch replacement for DOOM's data files under a BSD licence, so the whole thing — engine and content — is free. <strong>Tyrian 2000</strong> was released as freeware by its own authors, all of it, no episode split.</p>",
+      "sections": [
+        {
+          "h": "What runs, and how",
+          "html": "<p>Every shooter here is the original DOS binary running under DOSBox compiled to WebAssembly — not a remake, not a source port with modern textures. What you get is what shipped on the disk, at the resolution it shipped at.</p><p>That has one practical consequence worth knowing before you click. <strong>DOOM and Freedoom have working mouse look</strong>; we verified it against the games' own configuration and shipped a <code>DEFAULT.CFG</code> that enables it, because vanilla DOOM ships with <code>use_mouse 0</code> and would otherwise ignore the mouse entirely. The rest are keyboard games, and the pages say so. Blake Stone's menus in particular are keyboard-only by design — that is the game, not the emulator.</p>"
+        },
+        {
+          "h": "Shareware, honestly",
+          "html": "<p>Where a game is a shareware episode, it is labelled as one and the page says which episode you get and what the full version added. We would rather lose the click than have someone finish episode one expecting the game to continue. Titles marked <strong>FREE</strong> are free in full: engine and assets both, nothing held back.</p>"
+        }
+      ],
+      "picks": [
+        { "slug": "doom", "note": "The one that has to be here. Boots to the title screen in about two and a half seconds from a cold cache, which is faster than most pages that merely describe DOOM." },
+        { "slug": "freedoom", "note": "If the licensing question bothers you, play this instead: same engine, entirely free replacement art and levels, and a genuinely good game in its own right rather than a curiosity." },
+        { "slug": "blake-stone", "note": "Apogee's answer to Wolfenstein, with an interesting wrinkle — it has informants you can choose not to shoot, which was novel in 1993. Menus are keyboard-driven." },
+        { "slug": "tyrian", "note": "Not a first-person shooter at all but the best-looking game on this page: a vertical scroller with a genuine ship-upgrade economy, released as freeware in full by its authors." },
+        { "slug": "raptor", "note": "The other Apogee scroller, and the one that most rewards spending money in its between-mission shop rather than hoarding it." }
+      ],
+      "faq": [
+        { "q": "Is playing DOOM here legal?", "a": "Yes. What is hosted is the shareware episode id Software released for free distribution, which has never been withdrawn. The commercial episodes are not here and are not linked." },
+        { "q": "Why does the mouse not work in some of these?", "a": "Because it did not work in the original either. Most DOS shooters other than DOOM shipped with mouse support off or absent. Where a game offers no way to enable it, a click sends that game's fire key instead, so clicking still does the obvious thing." },
+        { "q": "Do my saves survive closing the tab?", "a": "Yes, for the games that have their own save system — saves are written to browser storage and restored the next time you open the page. Fifteen of the DOS titles on the site also support resuming mid-level, not just from their own save menus." }
+      ],
+      "updated": "2026-08-17"
+    },
+
+    {
+      "slug": "platformers",
+      "match": "category",
+      "name": "Platformers",
+      "title": "Play Classic DOS Platformers Online Free — Commander Keen & More — ExeBrowser",
+      "h1": "Side-scrolling platformers, playable in your browser",
+      "description": "Ten DOS platformers running free in your browser — Commander Keen, Cosmo, Crystal Caves, Xargon, Monster Bash, Bio Menace and more. Instant, no download.",
+      "keywords": "play dos platformers online, commander keen browser, apogee games online, classic pc platformers free",
+      "intro": "<p>American PC platformers of the early nineties have a specific texture, and it comes from a technical problem. Consoles had hardware scrolling; PCs did not, and EGA cards actively fought anyone who tried. John Carmack's adaptive tile refresh — written for <em>Commander Keen</em> in 1990 — is the trick that made smooth side-scrolling possible on a PC at all, and almost everything on this page descends from the studios that followed once he had proved it could be done.</p><p>Seven of the ten are Apogee titles, which is less a curatorial choice than a licensing one: Apogee and 3D Realms have been unusually willing to let their catalogue stay free.</p>",
+      "sections": [
+        {
+          "h": "Free in full, versus free first episode",
+          "html": "<p>The split matters more here than in any other category. <strong>Bio Menace</strong>, <strong>Alien Carnage</strong>, <strong>Xargon</strong> and <strong>Jetpack</strong> were released as complete freeware by their rights holders — all episodes, nothing withheld. <strong>Commander Keen</strong>, <strong>Cosmo's Cosmic Adventure</strong>, <strong>Crystal Caves</strong>, <strong>Monster Bash</strong> and <strong>Hocus Pocus</strong> are the free first episode of a larger shareware game.</p><p>Both kinds are labelled on their own pages, and the fully-free ones carry a FREE badge in every listing on the site.</p>"
+        },
+        {
+          "h": "Two games that look broken and are not",
+          "html": "<p>Worth saying plainly, because it cost us time to work out and it reads as a hang. <strong>Xargon</strong> opens on a prompt asking whether you want digital sound and then waits — press <kbd>Y</kbd>. <strong>Hocus Pocus</strong> opens on a sound-credits screen that also waits for a key. Neither is loading, neither has crashed; both are doing exactly what they did in 1993, on a screen nobody remembers because you only ever saw it once.</p><p>Every platformer here also has an on-screen keypad on touch devices, including an ENTER key for menus — added after we found that tapping a button quickly could send the press and release inside a single emulated frame, so the game never saw the key go down at all.</p>"
+        }
+      ],
+      "picks": [
+        { "slug": "commander-keen", "note": "The one the technique was invented for. Still the best argument on this page that a constraint met head-on produces something better than the constraint's absence would have." },
+        { "slug": "cosmo", "note": "Apogee at its most charming — Cosmo's suction-cup hands stick to walls, which turns every level into a climbing puzzle rather than a jumping one." },
+        { "slug": "bio-menace", "note": "Free in full, all three episodes, and considerably meaner than its Keen-adjacent art style prepares you for." },
+        { "slug": "monster-bash", "note": "Underrated: a horror-comedy platformer with genuinely good animation, from the period when Apogee had money to spend on artists." },
+        { "slug": "jetpack", "note": "The odd one out, and closer to a puzzle game than a platformer. Adept Software released it free, including its level editor." }
+      ],
+      "faq": [
+        { "q": "Do these need a keyboard?", "a": "On a computer, yes — they are keyboard games and the arrow keys plus one or two action keys cover everything. On a phone or tablet each page shows an on-screen pad matched to that specific game's controls." },
+        { "q": "Why is Commander Keen only one episode?", "a": "Because only the first episode was ever free. Marooned on Mars was the shareware release; the other two episodes were sold, and still are. The page says which one you are getting." },
+        { "q": "Are these emulated or rewritten?", "a": "Emulated. These are the original DOS executables running under DOSBox in WebAssembly, so the game logic and the artwork are exactly what shipped." }
+      ],
+      "updated": "2026-08-17"
+    },
+
+    {
+      "slug": "windows-classics",
+      "match": "category",
+      "name": "Windows classics",
+      "title": "Play Classic Windows Games Online Free — Solitaire, Minesweeper, SkiFree — ExeBrowser",
+      "h1": "The Windows desktop classics, playable in your browser",
+      "description": "Solitaire, Minesweeper, FreeCell, Spider, Hearts, JezzBall, SkiFree and 3D Pinball — the games that shipped with Windows, playable free in your browser.",
+      "keywords": "classic windows games online, play solitaire minesweeper free, windows 95 games browser, skifree online, 3d pinball space cadet",
+      "intro": "<p>These are the games people actually played on Windows — not because they were the best available, but because they were already there. Solitaire shipped with Windows 3.0 in 1990 to teach people how to drag with a mouse. Minesweeper taught the left and right click. FreeCell was in a 32-bit demo pack. None of them were meant to be the reason you turned the computer on, and for a great many people they were.</p><p>Microsoft has never released any of them, and the original binaries are not redistributable. So most of this page is not emulation — it is <strong>reimplementation</strong>: the rules rebuilt from scratch, in JavaScript, as original code. That is why they load instantly instead of booting an emulator, and why they work properly on a phone.</p>",
+      "sections": [
+        {
+          "h": "What's a rebuild and what's the real thing",
+          "html": "<p>We think the distinction matters, so here it is explicitly. <strong>Solitaire, FreeCell, Spider Solitaire, Hearts, Minesweeper, JezzBall and Rodent's Revenge are original implementations written for this site.</strong> They follow the original rules — including the parts people remember, like Spider's suit selection and Hearts' shoot-the-moon — but no Microsoft code or artwork is involved in any of them.</p><p><strong>SkiFree</strong> is the genuine 1991 binary by Chris Pirih, running under Wine in WebAssembly, because Pirih has long made it freely available. <strong>3D Pinball Space Cadet</strong> is the open-source SpaceCadetPinball engine paired with a data file we rebuilt from scratch and released into the public domain — the original <code>PINBALL.DAT</code> is Microsoft's, so it needed replacing rather than copying. There is <a href=\"/blog/open-cadet-open-source-space-cadet/\">a write-up of how that was done</a>.</p>"
+        },
+        {
+          "h": "They remember where you left off",
+          "html": "<p>Every game on this page saves automatically. Close the tab mid-hand and the same hand is waiting when you come back — the resume card even shows a picture of the screen you left on. Nothing is uploaded anywhere; it is all browser storage on your own machine, and there is a <a href=\"/saves/\">saves page</a> where you can see and clear it.</p>"
+        }
+      ],
+      "picks": [
+        { "slug": "space-cadet-open", "note": "The one worth loading first. It is the full table — flippers, ranks, missions — and it is the only build anywhere that needs no Microsoft files at all." },
+        { "slug": "solitaire-open", "note": "Klondike, draw one or draw three, with the card movement that made the original feel good to use rather than merely playable." },
+        { "slug": "minesweeper-open", "note": "All three standard board sizes, and the chording click that experienced players rely on and most browser clones forget." },
+        { "slug": "skifree", "note": "The actual 1991 program, not a rebuild. And yes, the Yeti is still in it, and still cannot be outrun." },
+        { "slug": "jezzball-open", "note": "The one from the Windows Entertainment Pack that nobody can name and everybody recognises within about four seconds of seeing it." }
+      ],
+      "faq": [
+        { "q": "Are these the real Windows games?", "a": "SkiFree is the original 1991 binary. 3D Pinball is the open-source engine with public-domain data we built to replace Microsoft's. The card and puzzle games are original reimplementations of the rules — Microsoft has never released the originals for redistribution, so copying them was never an option." },
+        { "q": "Do they work on a phone?", "a": "Yes. Because most of them are ordinary JavaScript rather than an emulated program, they load fast and respond to taps the way any web page does. That is the practical upside of rebuilding rather than emulating." },
+        { "q": "Is there any catch — ads, accounts, downloads?", "a": "No account, no download, and nothing to install. Click a title and it runs in the tab." }
+      ],
+      "updated": "2026-08-17"
+    },
+
+    {
+      "slug": "card-games",
+      "match": "slugs",
+      "slugs": ["solitaire-open", "freecell-open", "spider-open", "hearts-open"],
+      "title": "Play Classic Card Games Online Free — Solitaire, FreeCell, Spider, Hearts — ExeBrowser",
+      "h1": "Card games, playable in your browser",
+      "description": "Klondike Solitaire, FreeCell, Spider Solitaire and Hearts — the four Windows card games, rebuilt as open implementations. Free, instant, no sign-up.",
+      "keywords": "play solitaire online free, freecell online, spider solitaire free, hearts card game online, windows card games browser",
+      "intro": "<p>Four card games shipped with Windows over the years and between them they are probably the most-played software Microsoft ever wrote. All four are here, rebuilt from the rules as original implementations, because the originals are not redistributable and never have been.</p><p>What that buys you is worth stating: no emulator, no loading, no plugin. They are ordinary web pages and they behave like it — instant on a laptop, properly responsive on a phone, and they pick up mid-hand exactly where you stopped.</p>",
+      "sections": [
+        {
+          "h": "The rules are the whole point",
+          "html": "<p>A card game is nothing but its rules, so the rules are where the effort went. <strong>FreeCell</strong> implements the real supermove — how many cards you can shift at once is derived from free cells and empty columns, not a fixed number. <strong>Spider</strong> offers one, two and four suits, and will only lift a run that is genuinely in sequence and in suit. <strong>Hearts</strong> plays the full game including passing and shooting the moon, which most browser versions quietly omit because it complicates the scoring.</p><p>Hearts was also the one that needed the most testing. Bot turns run on timers, and a fast human click could leave a stale timer that fired after its seat had already played — so it now runs a single tracked timer that re-checks whose turn it actually is before acting. It was soak-tested over seven complete hands, every one scoring exactly 26 points, which is the arithmetic guarantee that nothing was dropped or double-counted.</p>"
+        },
+        {
+          "h": "Nothing is uploaded, nothing is tracked to a profile",
+          "html": "<p>There is no account and no server-side game state. The hand in progress lives in your own browser's storage, which is why it survives closing the tab and why it does not follow you to another device. You can inspect or clear all of it from the <a href=\"/saves/\">saves page</a>.</p>"
+        }
+      ],
+      "picks": [
+        { "slug": "solitaire-open", "note": "Klondike, with both draw-one and draw-three. The default most people mean when they say 'solitaire'." },
+        { "slug": "freecell-open", "note": "The thinking player's one: almost every deal is winnable, so losing is information rather than luck." },
+        { "slug": "spider-open", "note": "Start at one suit. Four-suit Spider is a genuinely hard game and is not a good introduction to itself." },
+        { "slug": "hearts-open", "note": "The only one here with opponents. Three bots, full passing rotation, and shooting the moon actually works." }
+      ],
+      "faq": [
+        { "q": "Are these the Microsoft card games?", "a": "No, and they cannot be — Microsoft has never licensed those for redistribution. These are original implementations of the same public rules, written for this site. The rules of Klondike are not anyone's property; the 1990 executable is." },
+        { "q": "Do I need to sign up or download anything?", "a": "No. There is no account, nothing to install, and no download. Open a page and deal." },
+        { "q": "Will my game still be there tomorrow?", "a": "Yes, on the same browser and device. The hand in progress is saved automatically to local browser storage and restored when you return." },
+        { "q": "Do they work offline?", "a": "Once a page has loaded, play continues without a connection, but there is no service worker, so the first load of each game does need the network." }
+      ],
+      "updated": "2026-08-17"
+    }
+  ]
+}

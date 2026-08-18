@@ -45,27 +45,66 @@ for (const p of pages) {
   }
 }
 
-// ── 3. Every internal /run/ link resolves ──────────────────────────────────
+// ── 3. Every internal link resolves ────────────────────────────────────────
 // A dead link is worse on this site than most, because visitors follow them
-// expecting a game.
-const runDirs = new Set(
-  existsSync(join(ROOT, "run"))
-    ? readdirSync(join(ROOT, "run")).filter((d) => existsSync(join(ROOT, "run", d, "index.html")))
-    : []
-);
-function checkLinks(file, label) {
-  if (!existsSync(file)) return;
-  const html = readFileSync(file, "utf8");
-  for (const m of html.matchAll(/href="\/run\/([a-z0-9-]+)\/"/g)) {
-    if (!runDirs.has(m[1])) warn(`${label}: links to /run/${m[1]}/ which does not exist`);
+// expecting a game. This used to check only href="/run/<slug>/", which meant
+// every other link shape on the site was unchecked — and the localisation work
+// found real 404 generators hiding in exactly those shapes. Resolve them all.
+
+// Runtime payload trees: machine-generated asset dirs with thousands of files
+// and no prose. Nothing in them is a page a visitor navigates to.
+const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data"]);
+
+function htmlFiles(dir, rel = "") {
+  const out = [];
+  for (const name of readdirSync(dir)) {
+    const abs = join(dir, name);
+    if (statSync(abs).isDirectory()) {
+      if (rel === "" && SKIP_DIRS.has(name)) continue;
+      out.push(...htmlFiles(abs, rel ? `${rel}/${name}` : name));
+    } else if (name.endsWith(".html")) {
+      out.push({ abs, label: rel ? `${rel}/${name}` : name });
+    }
+  }
+  return out;
+}
+
+// _redirects rules make a URL valid without a file behind it — that is how
+// withdrawn titles (2048-open, epic-pinball) keep resolving. Parse the sources
+// so retiring a game doesn't light up the checker.
+const redirectSources = [];
+if (existsSync(join(ROOT, "_redirects"))) {
+  for (const line of readFileSync(join(ROOT, "_redirects"), "utf8").split("\n")) {
+    const t = line.trim();
+    if (!t || t.startsWith("#")) continue;
+    const src = t.split(/\s+/)[0];
+    if (src) redirectSources.push(src);
   }
 }
-for (const p of pages) checkLinks(join(ROOT, "run", p.slug, "index.html"), `run/${p.slug}`);
-checkLinks(join(ROOT, "index.html"), "homepage");
-checkLinks(join(ROOT, "run", "index.html"), "hub");
-if (existsSync(join(ROOT, "blog"))) {
-  for (const d of readdirSync(join(ROOT, "blog"))) {
-    checkLinks(join(ROOT, "blog", d, "index.html"), `blog/${d}`);
+const isRedirected = (href) =>
+  redirectSources.some((src) =>
+    src.endsWith("/*") ? href.startsWith(src.slice(0, -1)) : src === href);
+
+// A directory href (…/) must have an index.html; anything else must be a file.
+function resolves(href) {
+  const path = href.split(/[?#]/)[0];
+  const target = path.endsWith("/")
+    ? join(ROOT, path.slice(1), "index.html")
+    : join(ROOT, path.slice(1));
+  return existsSync(target);
+}
+
+const linkedPages = htmlFiles(ROOT);
+for (const { abs, label } of linkedPages) {
+  const html = readFileSync(abs, "utf8");
+  const seen = new Set();
+  for (const m of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)) {
+    const href = m[1];
+    if (seen.has(href)) continue;
+    seen.add(href);
+    if (href.startsWith("//")) continue; // protocol-relative, external
+    if (resolves(href) || isRedirected(href)) continue;
+    warn(`${label}: links to ${href} which does not resolve`);
   }
 }
 
@@ -118,6 +157,112 @@ for (const p of pages) {
       warn(`${p.slug}: guide for "${p.appName}" but we host "${q.appName}" at /run/${q.slug}/ — not linked`);
     }
   }
+}
+
+// ── 7. hreflang alternates resolve, and are reciprocal ─────────────────────
+// Google silently discards a one-way alternate, so a half-wired language is
+// indistinguishable from no language at all — and this repo has already
+// shipped hreflang pointing at pages that didn't exist. Both halves matter:
+// the target must be on disk, and it must point back.
+const hrefLangOf = (html) =>
+  [...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="https:\/\/exebrowser\.com([^"]*)"/g)]
+    .map((m) => ({ lang: m[1], path: m[2] }));
+
+for (const { abs, label } of linkedPages) {
+  const html = readFileSync(abs, "utf8");
+  const alts = hrefLangOf(html);
+  if (!alts.length) continue;
+  // The page's own URL, derived from its location on disk.
+  const selfPath = "/" + label.replace(/index\.html$/, "");
+  for (const { lang, path } of alts) {
+    if (lang === "x-default") continue;
+    const targetFile = join(ROOT, path.slice(1), "index.html");
+    if (!existsSync(targetFile)) {
+      warn(`${label}: hreflang="${lang}" points at ${path} which does not exist`);
+      continue;
+    }
+    // x-default is excluded: it points at the English page by definition, so
+    // counting it as a reciprocal link would make every alternate to "/" look
+    // wired up even when the real one is missing.
+    const back = hrefLangOf(readFileSync(targetFile, "utf8")).filter((b) => b.lang !== "x-default");
+    if (!back.some((b) => b.path === selfPath)) {
+      warn(`${label}: hreflang="${lang}" → ${path}, but ${path} has no alternate back to ${selfPath}`);
+    }
+  }
+}
+
+// ── 8. Sitemap covers every indexable page, and lists nothing missing ───────
+// Both directions. Forgetting to add a new blog post was a documented manual
+// step until the sitemap started deriving them; this makes the whole class
+// mechanical instead, and also catches a withdrawn page lingering as a <loc>.
+const sitemapFile = join(ROOT, "sitemap.xml");
+if (existsSync(sitemapFile)) {
+  const xml = readFileSync(sitemapFile, "utf8");
+  const locs = new Set(
+    [...xml.matchAll(/<loc>https:\/\/exebrowser\.com([^<]*)<\/loc>/g)].map((m) => m[1])
+  );
+  for (const loc of locs) {
+    if (!existsSync(join(ROOT, loc.slice(1), "index.html"))) {
+      warn(`sitemap: lists ${loc} but no page exists there`);
+    }
+  }
+  for (const { abs, label } of linkedPages) {
+    if (label === "404.html") continue; // deliberately not indexable
+    const html = readFileSync(abs, "utf8");
+    if (/<meta name="robots" content="[^"]*noindex/.test(html)) continue;
+    const path = "/" + label.replace(/index\.html$/, "");
+    if (!locs.has(path)) warn(`sitemap: ${path} is indexable but is not listed`);
+  }
+}
+
+// ── 9. Category pages carry real prose, and their picks are real members ────
+// The doorway-page failure mode, made mechanical. A /play/ page whose only
+// content is the same cards the filter already shows is thin content wearing a
+// URL, and this site cannot afford another strike for that. So: a word floor on
+// the ORIGINAL prose (the cards don't count), a minimum number of editor's
+// picks, and every pick has to actually be in the category it's picked for.
+const MIN_WORDS = 250;
+const MIN_PICKS = 3;
+const catFile = resolve(process.cwd(), "scripts", "play-categories.json");
+if (existsSync(catFile)) {
+  const cats = JSON.parse(readFileSync(catFile, "utf8"));
+  const bySlugAll = Object.fromEntries(pages.map((p) => [p.slug, p]));
+  const words = (s) => String(s).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+
+  for (const cat of cats.categories || []) {
+    const prose =
+      words(cat.intro) +
+      (cat.sections || []).reduce((n, s) => n + words(s.h) + words(s.html), 0) +
+      (cat.picks || []).reduce((n, p) => n + words(p.note), 0) +
+      (cat.faq || []).reduce((n, f) => n + words(f.q) + words(f.a), 0);
+    if (prose < MIN_WORDS) {
+      warn(`play/${cat.slug}: only ${prose} words of original prose (need ${MIN_WORDS})`);
+    }
+    if ((cat.picks || []).length < MIN_PICKS) {
+      warn(`play/${cat.slug}: ${(cat.picks || []).length} picks (need ${MIN_PICKS})`);
+    }
+    const members = cat.match === "slugs"
+      ? (cat.slugs || [])
+      : pages.filter((p) => isPlayable(p) && (p.categories || []).includes(cat.name)).map((p) => p.slug);
+    for (const pick of cat.picks || []) {
+      const p = bySlugAll[pick.slug];
+      if (!p) { warn(`play/${cat.slug}: pick "${pick.slug}" is not a catalogue slug`); continue; }
+      if (!isPlayable(p)) warn(`play/${cat.slug}: pick "${pick.slug}" is not playable`);
+      if (!members.includes(pick.slug)) {
+        warn(`play/${cat.slug}: pick "${pick.slug}" is not a member of this category`);
+      }
+    }
+  }
+}
+
+// ── 10. No localised category URLs exist ───────────────────────────────────
+// /play/ is English-only. hreflangHtml(path, null) would happily advertise
+// /es/play/…, and linking into a language a page doesn't exist in is a 404
+// generator this repo has shipped before.
+for (const { abs, label } of linkedPages) {
+  const html = readFileSync(abs, "utf8");
+  const m = html.match(/["'](\/(?:es|pt-BR|de)\/play\/[^"']*)["']/);
+  if (m) warn(`${label}: links to ${m[1]} — /play/ pages are English-only`);
 }
 
 // ── report ────────────────────────────────────────────────────────────────

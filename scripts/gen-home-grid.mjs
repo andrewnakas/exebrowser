@@ -10,53 +10,59 @@
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { categoryChips, categoryCounts, esc, itemListLd, posterCard, sortPlayable, SITE } from "./catalogue.mjs";
+import { blogPosts } from "./blog-meta.mjs";
 
 const pages = JSON.parse(readFileSync(resolve(process.cwd(), "scripts", "app-pages.json"), "utf8"));
-const INDEX = resolve(process.cwd(), "public", "index.html");
+const ROOT = resolve(process.cwd(), "public");
+const INDEX = resolve(ROOT, "index.html");
 
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const isPlayable = (p) => !!(p.appUrl || p.iframeUrl);
-const shotFile = (p) => (p.screenshot ? (typeof p.screenshot === "string" ? p.screenshot : "screenshot.png") : null);
-const isNew = (p) => p.addedDate && (Date.now() - Date.parse(p.addedDate + "T00:00:00Z")) / 86400000 < 14;
+// Replace the contents of a <!-- gen:name --> … <!-- /gen:name --> pair.
+//
+// The regions used to be located by searching for '<div class="grid-filter"'
+// and then for the next '</div>' after "gf-empty" — which quietly depended on
+// the block never containing a nested <div>. Adding one line with a wrapper
+// element to that block would have truncated the rest of the page, silently,
+// on the next build. Sentinels make the boundaries explicit and a missing one
+// a loud failure instead of a corrupt homepage.
+function replaceRegion(html, name, body) {
+  const open = `<!-- gen:${name} -->`;
+  const close = `<!-- /gen:${name} -->`;
+  const start = html.indexOf(open);
+  const end = html.indexOf(close, start);
+  if (start === -1 || end === -1) {
+    throw new Error(`homepage: missing sentinel pair for "${name}" — expected ${open} … ${close}`);
+  }
+  return html.slice(0, start + open.length) + body + html.slice(end);
+}
 
 // Best-known titles first, then real art, then newest — the grid should read
 // as a shelf, and the famous names are what a first-time visitor is looking
-// for. `rank` is an explicit hand-assigned order (lower = earlier); the two
-// derived keys only break ties among unranked titles. Ranking has to be
-// explicit because the old screenshot/new-badge pair silently decayed into raw
-// JSON order once every addedDate aged past the 14-day NEW window.
-const rankOf = (p) => (typeof p.rank === "number" ? p.rank : Infinity);
-const playable = pages.filter(isPlayable).sort((a, b) => {
-  const r = rankOf(a) - rankOf(b);
-  if (r) return r;
-  const s = (shotFile(b) ? 1 : 0) - (shotFile(a) ? 1 : 0);
-  if (s) return s;
-  return (isNew(b) ? 1 : 0) - (isNew(a) ? 1 : 0);
+// for. The comparator lives in catalogue.mjs so the hub can't sort differently.
+const playable = sortPlayable(pages);
+const card = posterCard;
+
+const counts = categoryCounts(playable);
+const chips = categoryChips(counts);
+
+// The chips are <button>s, which a crawler cannot follow. The categories that
+// have a real page at /play/<slug>/ therefore also get a plain link. Read from
+// the same JSON gen-app-pages.mjs uses, and filtered by the same member
+// minimum, so the homepage can never advertise a category page that wasn't
+// generated. Kept in step by check-consistency, which resolves every href.
+const CATS = JSON.parse(readFileSync(resolve(process.cwd(), "scripts", "play-categories.json"), "utf8"));
+const MIN_FOR_PAGE = 4;
+const liveCats = (CATS.categories || []).filter((c) => {
+  const n = c.match === "slugs"
+    ? (c.slugs || []).filter((s) => playable.some((p) => p.slug === s)).length
+    : playable.filter((p) => (p.categories || []).includes(c.name)).length;
+  return n >= MIN_FOR_PAGE;
 });
-
-const card = (p) => {
-  const shot = shotFile(p);
-  const art = shot
-    ? `<img class="pc-shot" src="/run/${p.slug}/${shot}" width="320" height="240" loading="lazy" alt="${esc(p.appName)} running in the browser" />`
-    : `<span class="pc-shot pc-placeholder" aria-hidden="true">${esc((p.appName || "?").trim().charAt(0))}</span>`;
-  const cats = (p.categories || []).concat(p.fullyFree ? ["Free & complete"] : []).join("|");
-  const hay = [p.appName, p.author, ...(p.genre || []), ...(p.categories || []),
-    p.fullyFree ? "free complete open source freeware" : ""].filter(Boolean).join(" ").toLowerCase();
-  return `        <li class="pc-item" data-cats="${esc(cats)}" data-search="${esc(hay)}"><a class="poster-card" href="/run/${p.slug}/">
-          ${art}
-          <span class="pc-body"><span class="pc-title">${esc(p.appName)}${isNew(p) ? ` <span class="badge-new">NEW</span>` : ""}${p.fullyFree ? ` <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span>` : ""}</span><span class="pc-play">▶ Play free</span></span>
-        </a></li>`;
-};
-
-const counts = new Map();
-for (const p of playable) {
-  for (const c of p.categories || []) counts.set(c, (counts.get(c) || 0) + 1);
-  if (p.fullyFree) counts.set("Free & complete", (counts.get("Free & complete") || 0) + 1);
-}
-const ORDER = ["Free & complete", "Windows classics", "Shooters", "Platformers", "Action", "Puzzle & strategy", "Racing & sports", "Pinball", "Apps & tools"];
-const chips = ORDER.filter((c) => counts.has(c))
-  .map((c) => `<button type="button" class="chip" data-cat="${esc(c)}">${esc(c)} <span class="chip-n">${counts.get(c)}</span></button>`)
-  .join("\n        ");
+const browseLine = liveCats.length
+  ? `      <p class="gf-browse">Browse by category: ${liveCats
+      .map((c) => `<a href="/play/${c.slug}/">${esc(c.h1.replace(/,.*$/, ""))}</a>`)
+      .join(" · ")}</p>\n`
+  : "";
 
 const filter = `    <div class="grid-filter" data-grid-filter>
       <label class="gf-search">
@@ -68,20 +74,43 @@ const filter = `    <div class="grid-filter" data-grid-filter>
         ${chips}
       </div>
       <p class="gf-empty" hidden>No titles match — <button type="button" class="link" data-grid-reset>show everything</button>.</p>
-    </div>`;
+${browseLine}    </div>`;
+
+// The 43-title shelf is the homepage's actual subject, but structurally it was
+// just an unannotated <ul>. ItemList is the schema that says "this page is a
+// catalogue of these things" — and this site emitted 88 FAQPage blocks and not
+// one ItemList. It lives here rather than in gen-app-pages.mjs because the
+// order has to match the grid exactly, and the order is computed here.
+const itemList = itemListLd(playable, {
+  name: "Play classic Windows and DOS games free in your browser",
+  url: `${SITE}/`,
+});
+
+// Three most recently updated posts. The homepage linked to no blog post at
+// all — eight long-form articles sitting one nav click away from the only page
+// Google crawls often. This is the link equity they were missing.
+const posts = blogPosts(ROOT);
+const strip = posts.length
+  ? `
+  <section class="card" id="from-the-blog">
+    <h2>From the blog</h2>
+    <p class="muted small" style="margin-top:0;">How the runtimes work, what actually runs, and where to get classic software legally.</p>
+    <ul class="card-grid">
+${posts.slice(0, 3).map((p) => `      <li><a class="link-card" href="${p.path}"><span class="lc-title">${esc(p.title)}</span><span class="lc-desc">${esc(p.description)}</span></a></li>`).join("\n")}
+    </ul>
+    <p class="muted small" style="margin:1rem 0 0;"><a href="/blog/">All ${posts.length} posts →</a></p>
+  </section>
+`
+  : "";
 
 let html = readFileSync(INDEX, "utf8");
-
-// Replace the filter block, then the grid that follows the continue-playing one.
-const fStart = html.indexOf('<div class="grid-filter"');
-if (fStart === -1) throw new Error("homepage: grid-filter block not found");
-const fEnd = html.indexOf("</div>", html.indexOf("gf-empty", fStart)) + "</div>".length;
-html = html.slice(0, fStart) + filter.trim() + html.slice(fEnd);
-
-const gStart = html.indexOf('<ul class="poster-grid">\n', html.indexOf('id="continue-grid"'));
-if (gStart === -1) throw new Error("homepage: play-now poster grid not found");
-const gEnd = html.indexOf("</ul>", gStart);
-html = html.slice(0, gStart) + '<ul class="poster-grid">\n' + playable.map(card).join("\n") + "\n    " + html.slice(gEnd);
+html = replaceRegion(html, "itemlist", "\n" + itemList);
+html = replaceRegion(html, "gridfilter", "\n" + filter);
+html = replaceRegion(html, "postergrid", '\n    <ul class="poster-grid">\n' + playable.map(card).join("\n") + "\n    </ul>\n    ");
+html = replaceRegion(html, "blogstrip", strip);
 
 writeFileSync(INDEX, html, "utf8");
-console.log(`wrote homepage grid: ${playable.length} titles, ${counts.size} categories`);
+console.log(
+  `wrote homepage: ${playable.length} titles, ${counts.size} categories, ` +
+  `ItemList + ${Math.min(posts.length, 3)} blog cards`
+);

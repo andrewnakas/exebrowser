@@ -35,11 +35,20 @@ For local testing without the Worker, edit `public/app.js` and change `ROOT_FS_U
 Every `/run/<slug>/` page is generated from `scripts/app-pages.json` — never
 hand-edit the HTML, it gets overwritten.
 
+Run all four, in this order — the last two depend on the output of the first
+two, and running them out of order silently loses work:
+
 ```bash
-# regenerate all pages + the hub + sitemap
+# 1. all /run/ pages, the hub, /play/ category pages, 404, sitemap, feed, llms.txt
 node scripts/gen-app-pages.mjs
 
-# check nothing drifted out of sync
+# 2. the homepage's shelf, filter, ItemList and blog strip, in place
+node scripts/gen-home-grid.mjs
+
+# 3. head links onto the ~35 hand-maintained pages the generators don't own
+node scripts/inject-page-links.mjs
+
+# 4. check nothing drifted out of sync
 node scripts/check-consistency.mjs
 ```
 
@@ -47,10 +56,27 @@ The consistency check exists because the same class of bug kept recurring:
 a page states something that was true when written and quietly stopped being
 true when a game was added or a payload rebuilt. It verifies that hosted
 payloads exist and fit the 25 MB Cloudflare Pages limit, that declared
-screenshots are on disk, that every internal `/run/` link resolves, that the
-blog compatibility table matches the live verdicts, that no hosted game still
-claims it can't be played here, and that guides link to the playable version
-of the game they describe. It exits non-zero, so it can gate a deploy.
+screenshots are on disk, that **every** internal link resolves (not just
+`/run/` ones — `_redirects` rules count as resolving), that hreflang
+alternates exist and point back, that the sitemap lists every indexable page
+and nothing else, that the blog compatibility table matches the live verdicts,
+that no hosted game still claims it can't be played here, that guides link to
+the playable version of the game they describe, and that every `/play/`
+category page carries its word floor of original prose. It exits non-zero, so
+it can gate a deploy.
+
+## After deploying
+
+```bash
+npx wrangler pages deploy public --project-name=exebrowser
+node scripts/indexnow.mjs        # tell Bing/DuckDuckGo/Yandex what changed
+```
+
+`indexnow.mjs` is not optional housekeeping: Bing is this site's largest search
+channel by roughly two to one, IndexNow gets URLs crawled in hours rather than
+weeks, and Google ignores it entirely (Search Console is the only lever there).
+Run it *after* the deploy is live — the endpoint fetches the URLs to verify
+them, so submitting first wastes the ping.
 
 **Always boot-test a new payload before writing "play online" copy** — judge
 the canvas buffer, not a screenshot of the page around it, and check the DOS

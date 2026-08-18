@@ -98,9 +98,11 @@ commercial titles are compatibility guides only, where you supply your own copy.
 
 ## About
 
-- [Homepage](https://exebrowser.com/): plays DOOM directly, plus the full catalogue
+- [Homepage](https://exebrowser.com/): the full catalogue as a browsable shelf, searchable and
+  filterable by category, plus a loader for running your own .exe
 - [All games and guides](https://exebrowser.com/run/)
 - [Compatibility guide](https://exebrowser.com/guide/): which categories of Windows software run well
 - [Blog](https://exebrowser.com/blog/): how the runtimes work, licensing, and preservation write-ups
+- [Feed](https://exebrowser.com/feed.xml): new games and posts as they go live
 - Runtimes: DOSBox (DOS titles) and Boxedwine — Wine plus a 32-bit x86 CPU
   emulator — in WebAssembly. 32-bit only; 64-bit Windows binaries will not load.

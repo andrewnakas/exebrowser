@@ -938,6 +938,18 @@ body.dos-playing { overflow: hidden; }
 }
 .chip-n { opacity: .65; font-size: .8em; margin-left: .15rem; }
 .gf-empty { margin: .75rem 0 0; color: var(--muted); font-size: .9rem; }
+
+/* The crawlable counterpart to the filter chips. The chips are buttons, which
+   a search engine cannot follow, so the categories that have a real page at
+   /play/<slug>/ are also linked here as ordinary anchors. */
+.gf-browse { margin: .6rem 0 0; color: var(--muted); font-size: .85rem; }
+.gf-browse a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.gf-browse a:hover { color: var(--accent, #c0392b); }
+
+/* "Where to start" list on the category pages: a title plus a sentence of
+   editorial, so the page carries prose the filter view never could. */
+.picks { list-style: none; padding: 0; margin: .5rem 0 0; }
+.picks li { margin: 0 0 .6rem; padding-left: 1rem; border-left: 2px solid var(--border, #333); }
 .visually-hidden {
   position: absolute; width: 1px; height: 1px;
   padding: 0; margin: -1px; overflow: hidden;
