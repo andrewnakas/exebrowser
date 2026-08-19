@@ -47,6 +47,19 @@ const FEED_LINK =
 // the page.
 const FAVICON_ANCHOR = `<link rel="alternate icon" href="/favicon.ico" />`;
 
+// The playable entries whose page HTML is hand-maintained (skipGenerate in
+// app-pages.json). Kept as a literal list rather than re-reading the catalogue,
+// so adding a game cannot silently change which pages get rewritten here.
+const PLAY_TRACKED = new Set([
+  "space-cadet-open", "solitaire-open", "minesweeper-open", "freecell-open",
+  "spider-open", "jezzball-open", "hearts-open", "rodents-open",
+  "blockdrop-open", "snake-open", "pipes-open", "beneath-a-steel-sky",
+  "lure-of-the-temptress", "soltys", "flight-of-the-amazon-queen",
+  "openttd", "micropolis",
+]);
+const PLAY_SCRIPT = '<script src="/play-events.js?v=1"></script>';
+
+let playAdded = 0;
 let feedAdded = 0;
 let feedSkipped = 0;
 let hreflangAdded = 0;
@@ -84,12 +97,28 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     }
   }
 
+  // ── 3. Play analytics on the hand-maintained game pages ─────────────────
+  // dos-embed.js and embed.js instrument every generated /run/ page. The
+  // playable pages flagged skipGenerate go through neither, so they were
+  // emitting no play_click, boot_success or playtime_heartbeat at all. That is
+  // 17 of 43 playable titles, which made the activation funnel blind to about
+  // 40% of the catalogue.
+  if (PLAY_TRACKED.has(label.replace(/^run\//, "").replace(/\/index\.html$/, ""))
+      && !html.includes("/play-events.js")) {
+    if (html.includes("</body>")) {
+      html = html.replace("</body>", `${PLAY_SCRIPT}\n</body>`);
+      playAdded++;
+    } else {
+      missingAnchor.push(`${label} (no </body> for play-events.js)`);
+    }
+  }
+
   if (html !== before) writeFileSync(abs, html, "utf8");
 }
 
 console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
-  `hreflang into ${hreflangAdded} page(s)`
+  `hreflang into ${hreflangAdded} page(s), play-events into ${playAdded} page(s)`
 );
 if (missingAnchor.length) {
   // Not fatal — a page without the favicon line is almost certainly not a real
