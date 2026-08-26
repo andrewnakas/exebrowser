@@ -1133,3 +1133,62 @@ body.dos-playing { overflow: hidden; }
   border: 1px solid var(--border, #333);
 }
 #embed-offer .cta-btn { cursor: pointer; }
+
+/* ── CJK typography ────────────────────────────────────────────────────────
+   The Japanese and Chinese trees were rendering with a Latin font stack at
+   Latin metrics, which is a real legibility problem rather than a cosmetic one:
+   kanji and hanzi carry far more strokes per glyph than a Latin letter, so at
+   the same size they turn to mud, and at the same line-height the lines crowd.
+
+   Scoped by :lang() so nothing here touches the English pages. */
+:lang(ja), :lang(zh-CN), :lang(zh) {
+  /* System faces first, in the order each platform actually ships them, then
+     Noto as the cross-platform fallback. Latin text inside a CJK page still
+     picks up the Latin faces because they are listed ahead of the CJK ones. */
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo",
+    "PingFang SC", "Microsoft YaHei", "Noto Sans CJK JP", "Noto Sans CJK SC",
+    system-ui, sans-serif;
+  /* Slightly larger and noticeably looser than the Latin default of 1.55.
+     Dense scripts need the vertical room to stay readable. */
+  font-size: 1.03em;
+  line-height: 1.85;
+}
+
+/* The h2 is a flex row holding the heading text plus a verdict badge. In
+   English the heading is short enough that they sit side by side; in Japanese
+   the same heading is long enough that flex squeezes it to a narrow column and
+   breaks it mid-word ("プレ / イ"). Let the row wrap instead of compressing
+   the title. */
+:lang(ja) h2, :lang(zh-CN) h2 {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+:lang(ja) h2 > :first-child, :lang(zh-CN) h2 > :first-child {
+  flex: 1 1 100%;
+}
+
+/* Japanese and Chinese are written without spaces between words, so the browser
+   will happily break a line mid-word unless told otherwise. keep-all plus
+   strict line-breaking applies kinsoku shori — the rules that stop a line
+   starting with a closing bracket or a small kana, or ending with an opener. */
+:lang(ja) p, :lang(ja) li, :lang(ja) h1, :lang(ja) h2, :lang(ja) h3,
+:lang(zh-CN) p, :lang(zh-CN) li, :lang(zh-CN) h1, :lang(zh-CN) h2, :lang(zh-CN) h3 {
+  line-break: strict;
+  overflow-wrap: break-word;
+}
+
+/* Headings in CJK do not need the tight tracking that suits Latin display type,
+   and negative letter-spacing on kanji actively hurts. */
+:lang(ja) h1, :lang(ja) h2, :lang(ja) h3,
+:lang(zh-CN) h1, :lang(zh-CN) h2, :lang(zh-CN) h3 {
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+
+/* Latin-only UI bits inside a CJK page — code, keys, filenames — should keep
+   their monospace face and normal metrics rather than inherit the CJK ones. */
+:lang(ja) code, :lang(ja) kbd, :lang(zh-CN) code, :lang(zh-CN) kbd {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  line-height: 1.5;
+}

@@ -424,7 +424,8 @@
     "js.mouseHint": "点击游戏画面，键盘操作即可生效。",
     "js.starting": "正在启动…",
     "js.cachedNote": "首次加载后会被缓存，下次打开就很快了。",
-    "js.loadingGame": "正在加载 {name}…"
+    "js.loadingGame": "正在加载 {name}…",
+    "hreflang.code": "zh-Hans"
   },
   "fr": {
     "html.lang": "fr",

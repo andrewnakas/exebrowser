@@ -276,6 +276,8 @@ if (existsSync(uiFile)) {
   const ui = JSON.parse(readFileSync(uiFile, "utf8"));
   const en = ui.en || {};
   const KEEP_EN = new Set(["html.lang", "lang.name", "lang.notice", "home.restInEnglish"]);
+  // Optional per-locale keys that deliberately have no English counterpart.
+  const OPTIONAL = new Set(["hreflang.code"]);
   const ph = (v) => [...String(v).matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort().join(",");
   const tags = (v) => (String(v).match(/<\/?[a-z]+/gi) || []).map((t) => t.toLowerCase()).sort().join(",");
   // Scripts that have no business appearing in a given locale.
@@ -289,7 +291,10 @@ if (existsSync(uiFile)) {
     if (code === "_readme" || code === "en") continue;
     for (const k of Object.keys(en)) {
       const v = strings[k];
-      if (v === undefined) { warn(`i18n ${code}: missing key ${k}`); continue; }
+      if (v === undefined) {
+        if (!OPTIONAL.has(k)) warn(`i18n ${code}: missing key ${k}`);
+        continue;
+      }
       if (ph(en[k]) !== ph(v)) warn(`i18n ${code}: placeholder mismatch in ${k}`);
       if (en[k] !== "" && tags(en[k]) !== tags(v)) warn(`i18n ${code}: HTML tag mismatch in ${k}`);
       for (const [re, name, applies] of SCRIPTS) {

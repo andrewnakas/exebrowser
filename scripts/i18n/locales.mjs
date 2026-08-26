@@ -57,6 +57,8 @@ export function locale(code) {
     code,
     prefix: prefixOf(code),
     htmlLang: strings["html.lang"] || code,
+    // Targeting code for hreflang, which is not always the document's lang.
+    hrefLang: strings["hreflang.code"] || strings["html.lang"] || code,
     name: strings["lang.name"] || code,
     isDefault: code === "en",
     /** Translated UI string, falling back to English rather than to nothing. */
@@ -116,7 +118,7 @@ export function hreflangHtml(pathAfterPrefix, slug) {
   const langs = slug ? languagesFor(slug) : langsWithContent();
   if (langs.length < 2) return "";
   const rows = langs.map(
-    (c) => `<link rel="alternate" hreflang="${LOCALES[c].htmlLang}" href="${SITE}${prefixOf(c)}${pathAfterPrefix}" />`
+    (c) => `<link rel="alternate" hreflang="${LOCALES[c].hrefLang}" href="${SITE}${prefixOf(c)}${pathAfterPrefix}" />`
   );
   rows.push(`<link rel="alternate" hreflang="x-default" href="${SITE}${pathAfterPrefix}" />`);
   return "\n" + rows.join("\n");
@@ -132,7 +134,7 @@ export function langSwitcherHtml(L, pathAfterPrefix, slug) {
   const links = langs.map((c) =>
     c === L.code
       ? `<span class="lang-current" aria-current="true">${esc(LOCALES[c].name)}</span>`
-      : `<a href="${prefixOf(c)}${pathAfterPrefix}" hreflang="${LOCALES[c].htmlLang}">${esc(LOCALES[c].name)}</a>`
+      : `<a href="${prefixOf(c)}${pathAfterPrefix}" hreflang="${LOCALES[c].hrefLang}">${esc(LOCALES[c].name)}</a>`
   );
   return `\n  <nav class="lang-switcher" aria-label="${esc(L.t("nav.language"))}">${links.join(" · ")}</nav>`;
 }
