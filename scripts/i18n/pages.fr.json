@@ -1,0 +1,50 @@
+{
+  "_readme": "Per-slug French overrides. A page is only generated when a real translation exists here.",
+  "doom": {
+    "title": "Jouer à DOOM (1993) en ligne — gratuit, sans téléchargement — ExeBrowser",
+    "description": "Le DOOM original de 1993, jouable directement dans votre navigateur. L'épisode shareware gratuit tourne sous DOSBox — sans téléchargement ni installation.",
+    "keywords": "jouer doom en ligne, doom navigateur, doom gratuit, doom 1993, jeux dos en ligne",
+    "ogTitle": "Jouer à DOOM (1993) en ligne — gratuit, sans téléchargement",
+    "ogDescription": "L'épisode shareware du DOOM original de 1993, jouable immédiatement dans votre navigateur.",
+    "crumb": "Jouer à DOOM",
+    "h1": "Jouer à DOOM dans votre navigateur",
+    "verdict": {
+      "kind": "good",
+      "text": "Fonctionne — le jeu DOS original tourne via DOSBox"
+    },
+    "intro": "<p><strong>DOOM</strong> — sorti en 1993 chez id Software, et l'ancêtre de à peu près tous les jeux de tir à la première personne qui ont suivi. Son premier épisode, <em>Knee-Deep in the Dead</em>, a été publié en shareware avec autorisation de libre diffusion : il est donc encore aujourd'hui gratuit et parfaitement légal à jouer.</p><p>Ce qui tourne ici est le <strong>véritable exécutable DOS</strong>, ni un remake ni une réécriture en JavaScript. DOSBox a été compilé vers WebAssembly pour faire tourner le programme d'origine tel quel. <strong>Sans téléchargement, sans installation, sans compte.</strong></p>",
+    "sections": [
+      {
+        "h": "Comment ça fonctionne",
+        "html": "<p>Votre navigateur exécute le fichier DOS livré en 1993, à l'intérieur de DOSBox compilé vers WebAssembly. Les graphismes, le son et les sensations sont exactement ceux de la disquette d'époque : rien n'a été retouché.</p><p>L'épisode inclus est le premier, neuf niveaux, précisément la portion qu'id Software a autorisée à la libre redistribution. Les épisodes suivants étaient commerciaux et ne figurent pas ici.</p>"
+      },
+      {
+        "h": "Commandes et configuration",
+        "html": "<p>Les flèches pour se déplacer, <kbd>Ctrl</kbd> pour tirer, <kbd>Espace</kbd> pour ouvrir les portes et les touches <kbd>1</kbd> à <kbd>7</kbd> pour changer d'arme. La visée à la souris fonctionne également. Sur mobile et tablette, un pavé de touches s'affiche à l'écran.</p><p>C'est un jeu de 1993 et il est léger : il tourne sans peine même sur une machine modeste ou un Chromebook. Tout se passe dans le navigateur et rien n'est envoyé à un serveur.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Peut-on jouer à DOOM gratuitement sans rien télécharger ?",
+        "a": "Oui. Le premier épisode est le shareware qu'id Software a autorisé à la libre diffusion, et il tourne directement dans le navigateur. Il n'y a rien à installer et aucun compte à créer."
+      },
+      {
+        "q": "Est-ce le vrai DOOM ou un remake ?",
+        "a": "Le vrai jeu. L'exécutable DOS de 1993 tourne dans DOSBox compilé vers WebAssembly : c'est exactement le même code que sur un PC de l'époque."
+      },
+      {
+        "q": "Est-ce légal d'y jouer ici ?",
+        "a": "Oui. Nous n'hébergeons que le premier épisode, publié en shareware précisément pour être copié et diffusé librement. Les épisodes commerciaux ne sont pas proposés."
+      },
+      {
+        "q": "Ma progression est-elle sauvegardée ?",
+        "a": "Oui, et pas seulement via le menu de sauvegarde du jeu. Si vous fermez l'onglet en plein niveau, la page vous proposera à votre prochaine visite de reprendre exactement où vous en étiez. Tout reste dans votre navigateur, rien n'est téléversé, et comme il n'y a pas de compte, la sauvegarde ne vous suit pas d'un appareil à l'autre."
+      },
+      {
+        "q": "Est-ce que ça marche sur téléphone ?",
+        "a": "Oui. Sur les appareils tactiles, un pavé de commandes apparaît à l'écran. C'est plus confortable sur ordinateur, mais cela fonctionne très bien sur mobile."
+      }
+    ],
+    "licenseReason": "id Software a publié le premier épisode de DOOM, « Knee-Deep in the Dead », en shareware avec autorisation explicite de redistribution gratuite — c'est précisément ce que nous hébergeons. Les épisodes commerciaux ne sont pas inclus."
+  }
+}

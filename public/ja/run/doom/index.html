@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play DOOM (1993) Online — The Real DOS Game, Saves Progress — ExeBrowser</title>
-<meta name="description" content="The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up." />
-<meta name="keywords" content="play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online" />
-<link rel="canonical" href="https://exebrowser.com/run/doom/" />
+<title>DOOM をブラウザで無料プレイ — ダウンロード不要 — ExeBrowser</title>
+<meta name="description" content="1993年のオリジナル DOOM を、ブラウザでそのままプレイ。無料のシェアウェア版を DOSBox で実行します。ダウンロードもインストールも不要です。" />
+<meta name="keywords" content="doom オンライン, doom ブラウザ, doom 無料, doom 1993, dos ゲーム ブラウザ" />
+<link rel="canonical" href="https://exebrowser.com/ja/run/doom/" />
 <link rel="alternate" hreflang="en" href="https://exebrowser.com/run/doom/" />
 <link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/doom/" />
 <link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/doom/" />
@@ -16,9 +16,9 @@
 <link rel="alternate" hreflang="zh-CN" href="https://exebrowser.com/zh-CN/run/doom/" />
 <link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/doom/" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://exebrowser.com/run/doom/" />
-<meta property="og:title" content="Play DOOM Online — Free, In Your Browser, No Download" />
-<meta property="og:description" content="The original 1993 DOOM shareware episode, playable in your browser with DOSBox + WebAssembly. Free, legal, no install." />
+<meta property="og:url" content="https://exebrowser.com/ja/run/doom/" />
+<meta property="og:title" content="DOOM をブラウザで無料プレイ — ダウンロード不要" />
+<meta property="og:description" content="1993年のオリジナル DOOM のシェアウェア版を、ブラウザですぐにプレイできます。" />
 <meta property="og:image" content="https://exebrowser.com/run/doom/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -42,7 +42,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
     { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
-    { "@type": "ListItem", "position": 3, "name": "Play DOOM", "item": "https://exebrowser.com/run/doom/" }
+    { "@type": "ListItem", "position": 3, "name": "DOOM をプレイ", "item": "https://exebrowser.com/run/doom/" }
   ]
 }
 </script>
@@ -53,7 +53,7 @@
   "name": "DOOM",
   "url": "https://exebrowser.com/run/doom/",
   "image": "https://exebrowser.com/run/doom/screenshot.png",
-  "description": "The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up.",
+  "description": "1993年のオリジナル DOOM を、ブラウザでそのままプレイ。無料のシェアウェア版を DOSBox で実行します。ダウンロードもインストールも不要です。",
   "applicationCategory": "Game",
   "genre": ["First-person shooter", "Action"],
   "gamePlatform": ["Web browser", "Windows"],
@@ -70,33 +70,28 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I play DOOM online for free with no download?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real DOS build in your browser — nothing to install." }
+      "name": "ダウンロードせずに無料で遊べますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "遊べます。第1エピソードは id Software が無償配布を認めたシェアウェア版で、ブラウザ上でそのまま動作します。インストールするものはなく、アカウント登録も必要ありません。" }
     },
     {
       "@type": "Question",
-      "name": "Is this real DOOM or a remake?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual DOS binary inside DOSBox compiled to WebAssembly, rendering to a browser canvas." }
+      "name": "これは本物の DOOM ですか、リメイクですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "本物です。1993年の DOS 実行ファイルを、WebAssembly にコンパイルした DOSBox の中で動かしています。当時の PC で動いていたコードとまったく同じものです。" }
     },
     {
       "@type": "Question",
-      "name": "What are the controls for DOOM in the browser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Click the game canvas to capture input. WASD moves (W=forward, S=back, A=turn left, D=turn right), Ctrl fires, Space opens doors, and the number keys switch weapons. Arrow keys also work. Press Esc to release the mouse back to the page." }
+      "name": "ここで遊ぶのは合法ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "合法です。掲載しているのは第1エピソードのみで、これは自由にコピーして配ってよいものとして公開されたシェアウェア版です。商用エピソードは含んでいません。" }
     },
     {
       "@type": "Question",
-      "name": "Is it legal to play DOOM here?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, for the shareware episode — id distributed it to be freely copied unmodified at no charge. The registered episodes and DOOM II are commercial and aren't included; buy those from id or Steam." }
+      "name": "進行状況は保存されますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "保存されます。ゲーム内のセーブ機能だけでなく、面の途中でタブを閉じても、次に開いたときに中断した場所から再開できます。データはすべてブラウザ内に保存され、どこにもアップロードされません。アカウントもないため、別の端末には引き継がれません。" }
     },
     {
       "@type": "Question",
-      "name": "Why might DOOM run slowly in the browser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. DOOM is light enough to play at full speed on most modern laptops; older tablets and Chromebooks may feel slower." }
-    },
-    {
-      "@type": "Question",
-      "name": "Does it save my progress?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer." }
+      "name": "スマートフォンでも動きますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "動きます。タッチ操作の端末では画面上にゲーム用のキーパッドが表示されます。パソコンのほうが快適ですが、スマートフォンでも問題なく遊べます。" }
     }
   ]
 }
@@ -108,26 +103,26 @@
     <span class="logo" aria-hidden="true">▶_</span>
     <h1>ExeBrowser</h1>
   </div>
-  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <p class="tagline">Windows の <code>.exe</code> をブラウザで実行。インストール不要、アップロード不要。WebAssembly と Wine だけで動きます。</p>
   <nav class="site-nav" aria-label="Primary">
-    <a href="/">Home</a>
-    <a href="/run/">App guides</a>
-    <a href="/blog/">Blog</a>
-    <a href="/guide/">Guide</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
+    <a href="/ja/">ホーム</a>
+    <a href="/ja/run/">アプリ一覧</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/guide/">ガイド</a>
+    <a href="/about/">このサイトについて</a>
+    <a href="/contact/">お問い合わせ</a>
   </nav>
-  <nav class="lang-switcher" aria-label="Language"><span class="lang-current" aria-current="true">English</span> · <a href="/es/run/doom/" hreflang="es">Español</a> · <a href="/pt-BR/run/doom/" hreflang="pt-BR">Português (BR)</a> · <a href="/de/run/doom/" hreflang="de">Deutsch</a> · <a href="/ja/run/doom/" hreflang="ja">日本語</a> · <a href="/fr/run/doom/" hreflang="fr">Français</a> · <a href="/zh-CN/run/doom/" hreflang="zh-CN">简体中文</a></nav>
+  <nav class="lang-switcher" aria-label="言語"><a href="/run/doom/" hreflang="en">English</a> · <a href="/es/run/doom/" hreflang="es">Español</a> · <a href="/pt-BR/run/doom/" hreflang="pt-BR">Português (BR)</a> · <a href="/de/run/doom/" hreflang="de">Deutsch</a> · <span class="lang-current" aria-current="true">日本語</span> · <a href="/fr/run/doom/" hreflang="fr">Français</a> · <a href="/zh-CN/run/doom/" hreflang="zh-CN">简体中文</a></nav>
 </header>
 
 <main class="prose">
   <p class="resume-bar" id="resume-bar" hidden></p>
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play DOOM</nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/ja/">ホーム</a> › <a href="/ja/run/">アプリ一覧</a> › DOOM をプレイ</nav>
 
   <section class="card">
-    <h2>Play DOOM online in your browser <span class="verdict good">Free &amp; legal shareware</span></h2>
-    <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via DOSBox + WebAssembly</p>
-    <p>The real, original <strong>DOOM</strong> — id Software's 1993 first-person shooter — running in a browser tab. No download, no install, no account. This is the freely-redistributable shareware episode (<em>Knee-Deep in the Dead</em>), the original DOS <code>DOOM.EXE</code> executing in DOSBox + WebAssembly. Hit play and start fragging imps.</p>
+    <h2>DOOM をブラウザでプレイ <span class="verdict good">動作します — オリジナルの DOS 版が DOSBox で実行されます</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">最終更新 2026年7月 · 実行環境 DOSBox + WebAssembly</p>
+    <p><strong>DOOM</strong>——1993年に id Software が発表し、その後のあらゆる一人称視点シューティングの原型となった作品です。第1エピソード「Knee-Deep in the Dead」はシェアウェアとして無償配布が認められており、今も合法的に無料で遊べます。</p><p>ここで動いているのは<strong>本物の DOS 版の実行ファイル</strong>です。リメイクでも JavaScript による再実装でもありません。DOSBox を WebAssembly にコンパイルして、そのままブラウザ内で走らせています。<strong>ダウンロード不要、インストール不要、アカウント登録も不要です。</strong></p>
 
     <div id="dos-embed"
          data-app-url="/apps/doom/doom.zip"
@@ -214,10 +209,10 @@
 })();
 </script>
     <details class="controls-panel" open>
-      <summary><strong>Controls</strong> — what does what</summary>
+      <summary><strong>操作方法</strong> — キーの割り当て</summary>
       <div class="table-wrap">
         <table class="controls-table">
-          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse / touch</th></tr></thead>
+          <thead><tr><th scope="col">動作</th><th scope="col">キーボード</th><th scope="col">マウス / タッチ</th></tr></thead>
           <tbody>
         <tr><th scope="row">Move / turn</th><td><kbd>Arrow keys</kbd> or <kbd>W A S D</kbd></td><td>Move mouse to turn</td></tr>
         <tr><th scope="row">Fire</th><td><kbd>Ctrl</kbd></td><td><kbd>Left-click</kbd></td></tr>
@@ -232,18 +227,18 @@
         </table>
       </div>
     </details>
-    <p class="next-up"><span class="next-up-label">Play next:</span>
+    <p class="next-up"><span class="next-up-label">次に遊ぶ:</span>
       <a href="/run/wolfenstein-3d/">Wolfenstein 3D</a>
       <a href="/run/blockdrop-open/">Block Drop</a>
       <a href="/run/god-of-thunder/">God of Thunder</a>
       <a href="/run/lure-of-the-temptress/">Lure of the Temptress</a>
-      <a class="next-up-all" href="/run/">all 44 games →</a>
+      <a class="next-up-all" href="/ja/run/">all 44 games →</a>
     </p>
     <figure class="app-shot">
       <img src="/run/doom/screenshot.png" width="798" height="539" loading="lazy" alt="DOOM running in a browser tab via ExeBrowser" />
       <figcaption>DOOM running in the browser — no install, no upload.</figcaption>
     </figure>
-    <p class="muted small" style="margin-top:1rem;">Runs in your browser tab with DOSBox + WebAssembly — nothing is uploaded. Click the screen to capture input; press <kbd>Ctrl+F10</kbd> to release mouse.</p>
+    <p class="muted small" style="margin-top:1rem;">DOSBox と WebAssembly でブラウザ内で動作します。ファイルは一切アップロードされません。画面をクリックすると操作できます。マウスを解放するには <kbd>Ctrl+F10</kbd> を押してください。</p>
   </section>
 
   <section class="card">
@@ -253,40 +248,37 @@
     </div>
   </section>
   <section class="card">
-    <h2>How it works &amp; what to expect</h2>
-    <table class="spec-table"><tr><th>Game</th><td>DOOM shareware, episode 1 (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>)</td></tr><tr><th>Runtime</th><td><strong>DOSBox + WebAssembly</strong> — classic DOS binary</td></tr><tr><th>Era</th><td>1993–1996, original DOS release</td></tr><tr><th>How to load</th><td>Unzip, then drop the whole folder so the EXE finds its WAD</td></tr><tr><th>Expected result</th><td>Plays at full speed; OPL2 sound works</td></tr></table>
-    <h3>Classic DOS DOOM vs. source ports</h3>
-    <p>This page runs the original <code>DOOM.EXE</code> DOS binary in DOSBox — the same executable that shipped on floppy disks in 1993. No source port, no Wine, just pure DOSBox emulation. <strong>WASD moves</strong> (remapped via DOSBox), <kbd>Ctrl</kbd> fires, <kbd>Space</kbd> opens doors. Arrow keys also work.</p><h3>Want a source port?</h3><p>DOOM's engine was open-sourced by id in 1997, spawning dozens of modernized ports like Chocolate Doom. These run the same shareware WAD with higher resolutions and fixed bugs. Those are desktop programs, though — this page runs the original DOS build, which is the version that needs no setup at all.</p>
+    <h2>動作の仕組み</h2>
+    <h3>動作の仕組み</h3>
+    <p>1993年に出荷された DOS の実行ファイルを、WebAssembly 版の DOSBox がそのまま実行します。グラフィックも音も操作感も、当時のフロッピーディスクの中身と同じものです。</p><p>収録されているのは第1エピソード（全9面）で、id Software が自由な再配布を認めた範囲そのものです。残りのエピソードは商用版のため、ここには含まれていません。</p>
+    <h3>操作方法と動作環境</h3>
+    <p>移動は矢印キー、射撃は <kbd>Ctrl</kbd>、ドアを開けるのは <kbd>Space</kbd>、武器の切り替えは <kbd>1</kbd>〜<kbd>7</kbd> です。マウスでの視点操作にも対応しています。スマートフォンやタブレットでは、画面上にキーパッドが表示されます。</p><p>1993年のゲームなので容量も小さく、Chromebook のような非力な端末でも問題なく動きます。処理はすべてブラウザ内で完結し、サーバーには何も送信されません。</p>
   </section>
   <section class="card">
-    <h2>Frequently asked questions</h2>
+    <h2>よくある質問</h2>
     <details>
-      <summary>Can I play DOOM online for free with no download?</summary>
-      <p>Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real DOS build in your browser — nothing to install.</p>
+      <summary>ダウンロードせずに無料で遊べますか？</summary>
+      <p>遊べます。第1エピソードは id Software が無償配布を認めたシェアウェア版で、ブラウザ上でそのまま動作します。インストールするものはなく、アカウント登録も必要ありません。</p>
     </details>
     <details>
-      <summary>Is this real DOOM or a remake?</summary>
-      <p>The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual DOS binary inside DOSBox compiled to WebAssembly, rendering to a browser canvas.</p>
+      <summary>これは本物の DOOM ですか、リメイクですか？</summary>
+      <p>本物です。1993年の DOS 実行ファイルを、WebAssembly にコンパイルした DOSBox の中で動かしています。当時の PC で動いていたコードとまったく同じものです。</p>
     </details>
     <details>
-      <summary>What are the controls for DOOM in the browser?</summary>
-      <p>Click the game canvas to capture input. WASD moves (W=forward, S=back, A=turn left, D=turn right), Ctrl fires, Space opens doors, and the number keys switch weapons. Arrow keys also work. Press Esc to release the mouse back to the page.</p>
+      <summary>ここで遊ぶのは合法ですか？</summary>
+      <p>合法です。掲載しているのは第1エピソードのみで、これは自由にコピーして配ってよいものとして公開されたシェアウェア版です。商用エピソードは含んでいません。</p>
     </details>
     <details>
-      <summary>Is it legal to play DOOM here?</summary>
-      <p>Yes, for the shareware episode — id distributed it to be freely copied unmodified at no charge. The registered episodes and DOOM II are commercial and aren't included; buy those from id or Steam.</p>
+      <summary>進行状況は保存されますか？</summary>
+      <p>保存されます。ゲーム内のセーブ機能だけでなく、面の途中でタブを閉じても、次に開いたときに中断した場所から再開できます。データはすべてブラウザ内に保存され、どこにもアップロードされません。アカウントもないため、別の端末には引き継がれません。</p>
     </details>
     <details>
-      <summary>Why might DOOM run slowly in the browser?</summary>
-      <p>An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. DOOM is light enough to play at full speed on most modern laptops; older tablets and Chromebooks may feel slower.</p>
-    </details>
-    <details>
-      <summary>Does it save my progress?</summary>
-      <p>Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer.</p>
+      <summary>スマートフォンでも動きますか？</summary>
+      <p>動きます。タッチ操作の端末では画面上にゲーム用のキーパッドが表示されます。パソコンのほうが快適ですが、スマートフォンでも問題なく遊べます。</p>
     </details>
   </section>
   <section class="card">
-    <h2>More you can play in your browser</h2>
+    <h2>ブラウザで遊べる他のゲーム</h2>
     <ul class="poster-grid">
         <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
           <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
@@ -313,10 +305,10 @@
           <span class="pc-body"><span class="pc-title">Hocus Pocus</span><span class="pc-play">▶ Play free</span></span>
         </a></li>
     </ul>
-    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 44 titles you can play here →</a></p>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/ja/run/">See all 44 titles you can play here →</a></p>
   </section>
   <section class="card">
-    <h2>Related guides</h2>
+    <h2>関連ガイド</h2>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">The free, complete DOOM-compatible game — all levels, no shareware split.</span></a></li>
       <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id's 1992 shooter — the shareware episode, playable here.</span></a></li>
@@ -330,22 +322,23 @@
 </main>
 
 <footer>
-  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <p><a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a>・<a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a>・WebAssembly を利用しています。Wine は CodeWeavers の商標です。ExeBrowser は WineHQ、CodeWeavers、Microsoft とは無関係です。</p>
   <nav class="footer-nav" aria-label="Footer">
-    <a href="/">Home</a>
-    <a href="/run/">App guides</a>
-    <a href="/blog/">Blog</a>
-    <a href="/guide/">Compatibility Guide</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-    <a href="/saves/">Saved games</a>
-    <a href="/privacy/">Privacy Policy</a>
-    <a href="/terms/">Terms of Use</a>
+    <a href="/ja/">ホーム</a>
+    <a href="/ja/run/">アプリ一覧</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/guide/">動作互換ガイド</a>
+    <a href="/about/">このサイトについて</a>
+    <a href="/contact/">お問い合わせ</a>
+    <a href="/saves/">セーブデータ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/terms/">利用規約</a>
   </nav>
-  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+  <p>© 2026 ExeBrowser. コンテンツはオープンライセンス、ランタイムは GPL-2.0 / LGPL-2.1 です。</p>
 </footer>
 
-<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
+
+<script>window.__I18N={"play":"▶ {name} をプレイ","resume":"▶ {name} を再開","loading":"読み込み中…","startOver":"最初から始める","savedAgo":"{when}に保存しました。","filesRestored":"セーブデータも一緒に読み込まれています。ゲーム内のメニューからロードしてください。","snapshotResume":"中断したところから、そのまま再開できます。","progressSaved":"進行状況はこのブラウザに保存されます","resumedExactly":"中断した場所から再開しました","confirmDelete":"{name} の保存データを削除しますか？","justNow":"たった今","minutesAgo":"{n}分前","anHourAgo":"1時間前","hoursAgo":"{n}時間前","yesterday":"昨日","daysAgo":"{n}日前","saveHint":"ゲーム内でセーブすると、このブラウザに保存されます","resetSaves":"保存データを消去","savesCleared":"保存データを消去しました。再読み込みすると最初から始まります","restoredFiles":"{n}件のセーブデータを復元しました。ゲーム内のメニューからロードしてください","overlayNote":"DOSBox と WebAssembly でブラウザ内で動作します。<br>アップロードは一切ありません。ランタイム（約1.4MB）は初回読み込み後にキャッシュされます。","mouseHint":"ゲーム画面をクリックすると、キーボード操作が有効になります。","starting":"起動中…","cachedNote":"初回読み込み後はキャッシュされるので、次回はすぐに始まります。","loadingGame":"{name} を読み込んでいます…"};</script><!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script src="/dos-embed.js?v=33"></script>

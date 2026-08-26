@@ -106,7 +106,13 @@ for (const { abs, label } of htmlFiles(ROOT)) {
   // The localised homepages have pointed at "/" since they were built, but "/"
   // never pointed back, so the alternates were one-way and Google discards
   // those. This is the reciprocal half.
-  if (label === "index.html" && !html.includes('rel="alternate" hreflang=')) {
+  // Re-stamp rather than skip-if-present: this block used to bail whenever any
+  // hreflang existed, so adding a language left the homepage advertising the
+  // old set forever. check-consistency's reciprocity rule caught it the moment
+  // ja/fr/zh-CN were registered.
+  if (label === "index.html") {
+    html = html.replace(/\n<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>/g, "");
+    html = html.replace(/\n  <nav class="lang-switcher"[\s\S]*?<\/nav>/, "");
     const canonical = `<link rel="canonical" href="https://exebrowser.com/" />`;
     if (html.includes(canonical)) {
       html = html.replace(canonical, canonical + hreflangHtml("/", null));

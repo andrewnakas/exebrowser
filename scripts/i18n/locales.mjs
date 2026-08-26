@@ -29,7 +29,11 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const ui = JSON.parse(readFileSync(resolve(HERE, "ui.json"), "utf8"));
 
 // Order matters: it's the order the language switcher renders in.
-export const LANGS = ["en", "es", "pt-BR", "de"];
+// Chosen from GA country data rather than by market size — Brazil and
+// Germany are the most engaged non-English audiences (70.4% and 64.2%),
+// Japan is next at 64.3%, and French and Chinese both already show up in
+// Bing query data ("doom en ligne", "doom 在线玩").
+export const LANGS = ["en", "es", "pt-BR", "de", "ja", "fr", "zh-CN"];
 
 // Per-page translations, keyed by slug. Absent file = language has no pages yet.
 function loadPages(code) {

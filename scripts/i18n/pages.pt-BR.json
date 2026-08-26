@@ -162,5 +162,83 @@
       }
     ],
     "licenseReason": "A id Software liberou o primeiro episódio de Wolfenstein 3D como shareware, com permissão explícita de distribuição gratuita — é o que hospedamos aqui. Os demais episódios são comerciais e não estão disponíveis."
+  },
+  "tyrian": {
+    "title": "Jogar Tyrian 2000 Online — Grátis e Completo, Sem Baixar — ExeBrowser",
+    "description": "Jogue Tyrian 2000 no navegador: o clássico shoot 'em up vertical, liberado como freeware pelos próprios autores. Jogo completo, sem baixar e sem instalar.",
+    "keywords": "jogar tyrian online, tyrian 2000 gratis, shoot em up navegador, jogos dos online, tyrian freeware",
+    "ogTitle": "Jogar Tyrian 2000 Online — Grátis e Completo",
+    "ogDescription": "O shoot 'em up clássico, liberado como freeware pelos autores. Completo e jogável no navegador.",
+    "crumb": "Jogar Tyrian 2000",
+    "h1": "Jogue Tyrian 2000 no seu navegador",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — freeware completo rodando via DOSBox"
+    },
+    "intro": "<p><strong>Tyrian 2000</strong> é um shoot 'em up de rolagem vertical de 1995, e provavelmente o mais bonito jogo do gênero feito para DOS. Os próprios autores o liberaram como freeware, então não é uma versão de demonstração: é o <strong>jogo inteiro</strong>, com todos os episódios.</p><p>Roda aqui através do DOSBox compilado para WebAssembly, ou seja, é o executável DOS original. <strong>Sem baixar, sem instalar, sem conta.</strong></p>",
+    "sections": [
+      {
+        "h": "Por que este é diferente dos outros",
+        "html": "<p>Boa parte dos jogos clássicos disponíveis de graça são episódios shareware — a primeira parte de graça e o resto vendido. O Tyrian não é assim. Os detentores dos direitos liberaram o jogo completo como freeware, então o que você joga aqui é tudo o que existe.</p><p>Vale a pena mexer na loja entre as fases: o sistema de melhorias da nave é o coração do jogo, e guardar créditos sem gastar costuma ser um erro.</p>"
+      },
+      {
+        "h": "Controles",
+        "html": "<p>Use as setas para pilotar, <kbd>Espaço</kbd> para o disparo secundário e <kbd>Enter</kbd> para confirmar nos menus. O mouse também funciona para mirar. Em celulares aparece um teclado na tela.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "O jogo é completo mesmo ou só uma demonstração?",
+        "a": "É completo. Os autores liberaram o Tyrian 2000 inteiro como freeware, com todos os episódios — não há uma versão paga escondida atrás disso."
+      },
+      {
+        "q": "É legal jogar aqui?",
+        "a": "É. O jogo foi liberado como freeware pelos próprios detentores dos direitos, com permissão de distribuição gratuita."
+      },
+      {
+        "q": "O meu progresso fica salvo?",
+        "a": "Fica. Além do sistema de salvar do próprio jogo, se você fechar a aba no meio de uma fase o site oferece retomar exatamente de onde parou. Tudo fica no seu navegador e nada é enviado para servidor nenhum."
+      }
+    ],
+    "licenseReason": "O Tyrian 2000 foi liberado como freeware pelos detentores dos direitos, com permissão explícita de distribuição gratuita do jogo completo."
+  },
+  "freedoom": {
+    "title": "Jogar Freedoom Online — Jogo Completo e Livre, Sem Baixar — ExeBrowser",
+    "description": "Freedoom é um jogo livre e de código aberto feito sobre o motor do DOOM — o jogo inteiro, não um episódio de demonstração. Jogue no navegador, sem baixar nada.",
+    "keywords": "jogar freedoom online, freedoom navegador, doom livre, jogo open source navegador, doom gratis",
+    "ogTitle": "Jogar Freedoom Online — Jogo Completo e Livre",
+    "ogDescription": "Um jogo completo e de código aberto sobre o motor do DOOM, jogável direto no navegador.",
+    "crumb": "Jogar Freedoom",
+    "h1": "Jogue Freedoom no seu navegador",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona bem — jogo livre e completo via DOSBox"
+    },
+    "intro": "<p><strong>Freedoom</strong> é um substituto totalmente livre para os arquivos de dados do DOOM: mesma jogabilidade, mas com fases, gráficos e sons criados do zero pela comunidade e distribuídos sob uma licença livre. Não há nenhum conteúdo proprietário envolvido.</p><p>Isso faz dele o único jogo desta lista sem nenhuma ressalva de licença — não é shareware, não é um episódio de demonstração, é o jogo inteiro e você pode copiá-lo à vontade. Roda no navegador com o motor DOS clássico via DOSBox.</p>",
+    "sections": [
+      {
+        "h": "O que ele é e o que não é",
+        "html": "<p>O Freedoom não é o DOOM da id Software com outro nome. É um conjunto de fases e recursos originais, feito para rodar no mesmo motor, com o objetivo de existir um jogo completo no estilo DOOM que seja inteiramente livre.</p><p>Quem conhece o original vai reconhecer o ritmo e a lógica das armas, mas as fases são novas. Como jogo, ele se sustenta sozinho.</p>"
+      },
+      {
+        "h": "Controles",
+        "html": "<p>Setas para andar, <kbd>Ctrl</kbd> para atirar, <kbd>Espaço</kbd> para abrir portas e <kbd>1</kbd> a <kbd>7</kbd> para trocar de arma. O mouse funciona para mirar. Em celulares aparece um teclado na tela.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "O Freedoom é a mesma coisa que o DOOM?",
+        "a": "Não. Ele usa o mesmo motor, mas todas as fases, gráficos e sons foram criados do zero e são distribuídos sob licença livre. Nenhum arquivo original da id Software está envolvido."
+      },
+      {
+        "q": "É realmente livre e legal?",
+        "a": "É. Os dados do Freedoom são publicados sob uma licença BSD modificada que permite explicitamente a redistribuição gratuita, então podemos hospedá-lo sem nenhuma ressalva."
+      },
+      {
+        "q": "O meu progresso fica salvo?",
+        "a": "Fica. Além do sistema de salvar do jogo, se você fechar a aba no meio de uma fase o site oferece retomar de onde parou. Tudo permanece no seu navegador."
+      }
+    ],
+    "licenseReason": "Os dados do Freedoom são distribuídos sob uma licença BSD modificada que permite explicitamente a redistribuição gratuita, o que nos permite hospedar o jogo completo."
   }
 }
