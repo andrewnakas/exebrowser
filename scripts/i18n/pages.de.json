@@ -112,5 +112,52 @@
         "desc": "Alles, was du hier spielen oder starten kannst."
       }
     ]
+  },
+  "wolfenstein-3d": {
+    "title": "Wolfenstein 3D online spielen — gratis, im Browser — ExeBrowser",
+    "description": "Das originale Wolfenstein 3D von 1992 als kostenlose Shareware-Episode, direkt im Browser. Das echte DOS-Spiel in DOSBox — ohne Download, ohne Installation.",
+    "keywords": "wolfenstein 3d online spielen, wolfenstein 3d browser, wolfenstein 3d kostenlos, dos spiele online, shareware",
+    "ogTitle": "Wolfenstein 3D online spielen — gratis, im Browser",
+    "ogDescription": "Die originale Shareware-Episode von 1992, spielbar im Browser. Ohne Download, ohne Konto.",
+    "crumb": "Wolfenstein 3D spielen",
+    "h1": "Wolfenstein 3D im Browser spielen",
+    "verdict": {
+      "kind": "works",
+      "text": "Läuft — das originale DOS-Spiel über DOSBox im Browser"
+    },
+    "intro": "<p><strong>Wolfenstein 3D</strong> — 1992 von id Software und Apogee veröffentlicht und der Urahn des Ego-Shooters. Die erste Episode wurde damals als Shareware zur freien Weitergabe freigegeben und ist bis heute kostenlos spielbar.</p><p>ExeBrowser führt DOS-Spiele direkt über DOSBox aus, kompiliert nach WebAssembly. Was hier läuft, ist also die echte DOS-Datei von 1992 — kein Remake und keine Neuimplementierung. <strong>Kein Download, keine Installation, kein Konto.</strong></p>",
+    "sections": [
+      {
+        "h": "Wie es funktioniert",
+        "html": "<p>Im Browser läuft die originale DOS-Programmdatei in DOSBox, kompiliert nach WebAssembly. Grafik, Sound und Spielgefühl entsprechen exakt der Fassung von 1992; nichts wurde nachbearbeitet.</p><p>Enthalten ist Episode eins, <em>Escape from Wolfenstein</em>, mit zehn Levels — genau der Teil, den id Software zur freien Verbreitung freigegeben hat. Die fünf weiteren Episoden waren kommerziell und sind hier nicht verfügbar.</p>"
+      },
+      {
+        "h": "Zur deutschen Fassung und zur Rechtslage",
+        "html": "<p>Erwähnenswert, weil es hierzulande eine echte Geschichte hat: Wegen der NS-Symbolik war Wolfenstein 3D in Deutschland jahrzehntelang indiziert und praktisch nicht erhältlich. Erst seit der Neubewertung der Sozialadäquanzklausel im Jahr 2018 werden solche Symbole in Spielen wie in Film und Kunst behandelt, wenn sie der Kunst oder der Zeitgeschichte dienen.</p><p>Wir hosten die unveränderte internationale Shareware-Fassung. Das ist keine Rechtsberatung, und wer das für sich anders bewertet, sollte es entsprechend handhaben.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Kann ich Wolfenstein 3D kostenlos ohne Download spielen?",
+        "a": "Ja. Episode eins ist Shareware, die id Software zur freien Weitergabe freigegeben hat, und sie läuft direkt im Browser. Es gibt nichts zu installieren und kein Konto."
+      },
+      {
+        "q": "Ist das das echte Wolfenstein 3D oder ein Remake?",
+        "a": "Das echte Spiel. Die originale DOS-Datei von 1992 läuft in DOSBox, kompiliert nach WebAssembly — derselbe Code wie damals auf einem PC."
+      },
+      {
+        "q": "War Wolfenstein 3D in Deutschland nicht verboten?",
+        "a": "Es war wegen der NS-Symbolik jahrzehntelang indiziert. Seit 2018 wird die Sozialadäquanzklausel auch auf Spiele angewendet, sodass solche Symbole zulässig sein können, wenn sie der Kunst oder der Zeitgeschichte dienen. Hier läuft die unveränderte internationale Shareware-Fassung."
+      },
+      {
+        "q": "Wird mein Spielstand gespeichert?",
+        "a": "Ja, und nicht nur über das Speichermenü des Spiels. Wenn Sie den Tab mitten im Level schließen, bietet die Seite beim nächsten Besuch an, genau dort weiterzumachen. Alles bleibt in Ihrem Browser — nichts wird hochgeladen, und es gibt kein Konto."
+      },
+      {
+        "q": "Funktioniert das auf dem Handy?",
+        "a": "Ja. Auf Touchgeräten erscheint eine Tastatur auf dem Bildschirm mit den Spielsteuerungen. Am Rechner spielt es sich angenehmer, aber es funktioniert."
+      }
+    ],
+    "licenseReason": "id Software hat die erste Episode von Wolfenstein 3D als Shareware mit ausdrücklicher Erlaubnis zur kostenlosen Weitergabe veröffentlicht — genau diese hosten wir. Die übrigen Episoden sind kommerziell und hier nicht verfügbar."
   }
 }

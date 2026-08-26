@@ -115,5 +115,52 @@
         "desc": "Tudo o que dá para jogar ou rodar aqui."
       }
     ]
+  },
+  "wolfenstein-3d": {
+    "title": "Jogar Wolfenstein 3D Online — Grátis, No Navegador, Sem Baixar — ExeBrowser",
+    "description": "Jogue o Wolfenstein 3D original de 1992, o episódio shareware gratuito, direto no navegador. O jogo DOS de verdade rodando em DOSBox — sem baixar, sem instalar.",
+    "keywords": "jogar wolfenstein 3d online, wolfenstein 3d no navegador, wolfenstein 3d gratis, wolfenstein shareware, jogos dos online",
+    "ogTitle": "Jogar Wolfenstein 3D Online — Grátis, No Navegador",
+    "ogDescription": "O episódio shareware original de 1992, jogável no navegador. Sem baixar, sem instalar, sem conta.",
+    "crumb": "Jogar Wolfenstein 3D",
+    "h1": "Jogue Wolfenstein 3D online no seu navegador",
+    "verdict": {
+      "kind": "works",
+      "text": "Funciona — o jogo DOS original roda via DOSBox no navegador"
+    },
+    "intro": "<p><strong>Wolfenstein 3D</strong> — o avô dos jogos de tiro em primeira pessoa, lançado pela id Software e pela Apogee em 1992 — e o seu primeiro episódio shareware é gratuito e legal de jogar. O ExeBrowser roda jogos DOS diretamente via DOSBox compilado para WebAssembly, então este é o binário DOS de verdade, não um remake nem uma reimplementação em JavaScript.</p><p><strong>Sem baixar nada, sem instalar nada, sem criar conta.</strong> Clique em jogar e o episódio um começa em segundos — e o seu progresso fica salvo no navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>O que roda aqui é o executável DOS original de 1992 dentro do DOSBox, compilado para WebAssembly. Isso significa que a jogabilidade, os gráficos e o som são exatamente os que saíram no disquete — nada foi remasterizado ou reinterpretado.</p><p>O episódio um, <em>Escape from Wolfenstein</em>, tem dez fases e é o que a id Software liberou para distribuição gratuita. Os outros cinco episódios foram vendidos e continuam sendo comerciais, então não estão aqui.</p>"
+      },
+      {
+        "h": "Controles e desempenho",
+        "html": "<p>Use as setas para andar, <kbd>Ctrl</kbd> para atirar, <kbd>Espaço</kbd> para abrir portas e as teclas de <kbd>1</kbd> a <kbd>5</kbd> para trocar de arma. Em celulares e tablets aparece um teclado na tela com os controles do jogo.</p><p>O jogo é de 1992 e pesa pouco, então roda bem até em máquinas modestas e em Chromebooks — o navegador faz todo o trabalho e nada é enviado para servidor nenhum.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Dá para jogar Wolfenstein 3D de graça sem baixar?",
+        "a": "Sim. O episódio um é shareware que a id Software liberou para distribuição gratuita, e ele roda direto no navegador. Não há nada para instalar e não é preciso criar conta."
+      },
+      {
+        "q": "Este é o Wolfenstein 3D de verdade ou um remake?",
+        "a": "É o jogo original. O executável DOS de 1992 roda dentro do DOSBox compilado para WebAssembly, então é o mesmo código que rodava num PC da época."
+      },
+      {
+        "q": "É legal jogar aqui?",
+        "a": "É. Só hospedamos o primeiro episódio, que foi distribuído como shareware justamente para ser copiado e repassado livremente. Os episódios comerciais não estão aqui."
+      },
+      {
+        "q": "O meu progresso fica salvo?",
+        "a": "Fica, e não só pelo menu de salvar do próprio jogo. Se você fechar a aba no meio de uma fase, na próxima visita o site oferece voltar exatamente de onde parou. Tudo fica no seu navegador — nada é enviado para lugar nenhum e não existe conta."
+      },
+      {
+        "q": "Funciona no celular?",
+        "a": "Funciona. Aparece um teclado na tela com os controles do jogo. A experiência é melhor no computador, mas dá para jogar no celular sem problema."
+      }
+    ],
+    "licenseReason": "A id Software liberou o primeiro episódio de Wolfenstein 3D como shareware, com permissão explícita de distribuição gratuita — é o que hospedamos aqui. Os demais episódios são comerciais e não estão disponíveis."
   }
 }
