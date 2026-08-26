@@ -772,15 +772,15 @@ ${downloadHtml(p)}
 ${footerHtml(L)}
 
 ${clientStringsHtml(L)}${p.iframeUrl
-  ? `<script src="/save-core.js?v=1"></script>
+  ? `<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>`
   : p.dosRuntime
     ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
-<script src="/save-core.js?v=1"></script>
+<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script src="/dos-embed.js?v=33"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/save-core.js?v=1"></script>
+<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script src="/embed.js?v=6"></script>
 <script src="/app.js?v=19"></script>`}
@@ -1020,7 +1020,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=1"></script>
+<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script src="/filter.js?v=1"></script>
 <script>
@@ -1258,7 +1258,7 @@ ${picks}
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=1"></script>
+<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
@@ -1360,7 +1360,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=1"></script>
+<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
@@ -1452,7 +1452,7 @@ ${cards}
 </main>
 
 ${footerHtml(L)}
-<script src="/save-core.js?v=1"></script>
+<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play DOOM Online — Free, In Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Play the original 1993 DOOM in your browser — the real DOS game, not a remake. Free shareware episode, nothing to download, and it saves your progress." />
+<title>Play DOOM (1993) Online — The Real DOS Game, Saves Progress — ExeBrowser</title>
+<meta name="description" content="The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up." />
 <meta name="keywords" content="play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online" />
 <link rel="canonical" href="https://exebrowser.com/run/doom/" />
 <link rel="alternate" hreflang="en" href="https://exebrowser.com/run/doom/" />
@@ -50,7 +50,7 @@
   "name": "DOOM",
   "url": "https://exebrowser.com/run/doom/",
   "image": "https://exebrowser.com/run/doom/screenshot.png",
-  "description": "Play the original 1993 DOOM in your browser — the real DOS game, not a remake. Free shareware episode, nothing to download, and it saves your progress.",
+  "description": "The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up.",
   "applicationCategory": "Game",
   "genre": ["First-person shooter", "Action"],
   "gamePlatform": ["Web browser", "Windows"],
@@ -89,6 +89,11 @@
       "@type": "Question",
       "name": "Why might DOOM run slowly in the browser?",
       "acceptedAnswer": { "@type": "Answer", "text": "An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. DOOM is light enough to play at full speed on most modern laptops; older tablets and Chromebooks may feel slower." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it save my progress?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer." }
     }
   ]
 }
@@ -272,6 +277,10 @@
       <summary>Why might DOOM run slowly in the browser?</summary>
       <p>An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. DOOM is light enough to play at full speed on most modern laptops; older tablets and Chromebooks may feel slower.</p>
     </details>
+    <details>
+      <summary>Does it save my progress?</summary>
+      <p>Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer.</p>
+    </details>
   </section>
   <section class="card">
     <h2>More you can play in your browser</h2>
@@ -334,7 +343,7 @@
 </footer>
 
 <!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
-<script src="/save-core.js?v=1"></script>
+<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script src="/dos-embed.js?v=33"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>

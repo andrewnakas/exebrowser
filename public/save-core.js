@@ -532,6 +532,24 @@
 
   // ─── init ──────────────────────────────────────────────────────────────
 
+  // Ask the browser to stop treating these saves as disposable.
+  //
+  // Without this, everything the site stores — mid-game snapshots included —
+  // lives in "best-effort" storage, which Chrome and Safari may evict under
+  // disk pressure with no warning and no way for us to know it happened. A
+  // player who is promised their progress is saved and finds it gone has been
+  // lied to, however unintentionally.
+  //
+  // Chrome grants this silently to sites the user actually engages with (this
+  // one holds people for minutes), Firefox prompts, Safari grants on its own
+  // heuristics. It is fire-and-forget: nothing waits on it, a rejection changes
+  // nothing, and it never blocks a save.
+  if (navigator.storage && navigator.storage.persist && navigator.storage.persisted) {
+    navigator.storage.persisted()
+      .then(already => already || navigator.storage.persist())
+      .catch(() => { /* best-effort storage it is */ });
+  }
+
   if (navigator.storage && navigator.storage.estimate) {
     navigator.storage.estimate().then(est => {
       if (est && est.quota) {

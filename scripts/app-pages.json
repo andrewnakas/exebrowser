@@ -111,8 +111,8 @@
   },
   {
     "slug": "wolfenstein-3d",
-    "title": "Play Wolfenstein 3D Online — Free Shareware, In Your Browser — ExeBrowser",
-    "description": "The original 1992 DOS Wolfenstein 3D, free shareware episode one, playable in your browser. No download, no install, and your progress is saved.",
+    "title": "Play Wolfenstein 3D (1992) Online — The Real DOS Game — ExeBrowser",
+    "description": "The original 1992 Wolfenstein 3D, free shareware episode one, running in your browser. The real DOS game in DOSBox — no download, no sign-up, progress saved.",
     "keywords": "play wolfenstein 3d online, wolfenstein 3d in browser, wolfenstein 3d shareware free, wolfenstein 3d no download, ecwolf browser, wolf3d shareware online, classic wolfenstein 3d browser",
     "ogTitle": "Play Wolfenstein 3D Online — Free Shareware, In Your Browser",
     "ogDescription": "The 1992 Wolfenstein 3D shareware episode, free and legal, running in a browser tab via DOSBox + WebAssembly. Click play and you're in.",
@@ -171,6 +171,10 @@
       {
         "q": "Why might it run slowly?",
         "a": "An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. Wolfenstein 3D is light enough that this is plenty on any modern laptop; very old tablets and Chromebooks may feel sluggish."
+      },
+      {
+        "q": "Does it save my progress?",
+        "a": "Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer."
       }
     ],
     "related": [
@@ -516,8 +520,8 @@
   },
   {
     "slug": "doom",
-    "title": "Play DOOM Online — Free, In Your Browser, No Download — ExeBrowser",
-    "description": "Play the original 1993 DOOM in your browser — the real DOS game, not a remake. Free shareware episode, nothing to download, and it saves your progress.",
+    "title": "Play DOOM (1993) Online — The Real DOS Game, Saves Progress — ExeBrowser",
+    "description": "The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up.",
     "keywords": "play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online",
     "ogTitle": "Play DOOM Online — Free, In Your Browser, No Download",
     "ogDescription": "The original 1993 DOOM shareware episode, playable in your browser with DOSBox + WebAssembly. Free, legal, no install.",
@@ -575,6 +579,10 @@
       {
         "q": "Why might DOOM run slowly in the browser?",
         "a": "An x86 CPU is emulated inside WebAssembly, so you get roughly 10–40% of native speed. DOOM is light enough to play at full speed on most modern laptops; older tablets and Chromebooks may feel slower."
+      },
+      {
+        "q": "Does it save my progress?",
+        "a": "Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer."
       }
     ],
     "related": [
@@ -728,8 +736,8 @@
   },
   {
     "slug": "freedoom",
-    "title": "Play Freedoom Online — Free, Libre, In Your Browser, No Download — ExeBrowser",
-    "description": "Freedoom is a free, open-source game built on the DOOM engine — the complete game, not a demo. Plays instantly in your browser with nothing to download.",
+    "title": "Play Freedoom Online Free — The Complete Game, Not a Demo — ExeBrowser",
+    "description": "Freedoom is a free, open-source game on the DOOM engine — the whole game, not a shareware episode. Plays instantly in your browser and saves your progress.",
     "keywords": "play freedoom online, freedoom in browser, freedoom no download, free doom game online, freedoom phase 1, freedoom phase 2, open source doom browser, libre doom online",
     "ogTitle": "Play Freedoom Online — Free &amp; Libre, In Your Browser",
     "ogDescription": "Freedoom, the fully free DOOM-engine game, playable in your browser with DOSBox + WebAssembly. Free, legal, open source.",
@@ -794,6 +802,10 @@
       {
         "q": "What's the difference between Freedoom Phase 1 and Phase 2?",
         "a": "Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of eight levels each — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II and works with DOOM II / Final Doom mods."
+      },
+      {
+        "q": "Does it save my progress?",
+        "a": "Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer."
       }
     ],
     "related": [

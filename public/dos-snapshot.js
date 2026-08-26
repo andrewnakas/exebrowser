@@ -85,8 +85,16 @@
   const FORMAT = 1;
   const PAGE = 65536;                          // wasm page, and our chunk size
   const MAX_HEAP_BYTES = 256 * 1024 * 1024;    // refuse anything absurd
-  const MAX_STORED_BYTES = 64 * 1024 * 1024;   // total across all snapshots
-  const MAX_SLUGS = 2;
+  // Snapshot budget. This is the visitor's own disk, not ours, so the limit
+  // exists to be a good guest rather than to save us anything: browsers hand a
+  // site a slice of free space and evict the whole origin if it misbehaves.
+  //
+  // MAX_SLUGS was 2, which quietly broke the promise the game pages make. A
+  // player who worked through four games found the first two reset, with no
+  // warning and no way to tell it had happened. Twelve is enough that a normal
+  // session never hits it, and the byte budget below is the real guard anyway.
+  const MAX_STORED_BYTES = 192 * 1024 * 1024;  // total across all snapshots
+  const MAX_SLUGS = 12;
   const PARK_TIMEOUT_MS = 3000;
   const FS_HOME = "/home/web_user";
   const SKIP_DIRS = ["/.jsdos/"];
@@ -522,16 +530,24 @@
     let keys;
     try { keys = await allKeys(); } catch { return; }
     const others = keys.filter(k => k !== keepSlug);
-    while (others.length + 1 > MAX_SLUGS) await drop(others.shift());
 
-    let total = incoming;
+    // Size and date everything ONCE, then evict oldest-first for both limits.
+    // The slug-count pass used to run on raw allKeys() order, which IndexedDB
+    // returns sorted by key — alphabetical, not by recency. So the game you
+    // played least recently was safe and the one whose slug sorted first was
+    // thrown away: "blake-stone" evicted while a months-old "xargon" survived.
     const sized = [];
     for (const k of others) {
       const rec = await load(k).catch(() => null);
       if (rec) sized.push({ k, bytes: (rec.heap && rec.heap.length) || 0, at: rec.createdAt || 0 });
+      else await drop(k);              // unreadable record, no reason to keep it
     }
+    sized.sort((a, b) => a.at - b.at);  // oldest first
+
+    while (sized.length + 1 > MAX_SLUGS) await drop(sized.shift().k);
+
+    let total = incoming;
     for (const s of sized) total += s.bytes;
-    sized.sort((a, b) => a.at - b.at);
     while (total > MAX_STORED_BYTES && sized.length) {
       const victim = sized.shift();
       total -= victim.bytes;

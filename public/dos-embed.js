@@ -336,7 +336,7 @@
   async function loadSnapshotModule() {
     if (!SNAPSHOT_POSSIBLE) return false;
     if (!window.DosSnapshot) {
-      try { await loadScript("/dos-snapshot.js?v=2"); }
+      try { await loadScript("/dos-snapshot.js?v=3"); }
       catch (err) { log("Snapshot module unavailable: " + err.message); return false; }
     }
     return !!window.DosSnapshot?.enabled(slug);

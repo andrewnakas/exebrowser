@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Freedoom Online — Free, Libre, In Your Browser, No Download — ExeBrowser</title>
-<meta name="description" content="Freedoom is a free, open-source game built on the DOOM engine — the complete game, not a demo. Plays instantly in your browser with nothing to download." />
+<title>Play Freedoom Online Free — The Complete Game, Not a Demo — ExeBrowser</title>
+<meta name="description" content="Freedoom is a free, open-source game on the DOOM engine — the whole game, not a shareware episode. Plays instantly in your browser and saves your progress." />
 <meta name="keywords" content="play freedoom online, freedoom in browser, freedoom no download, free doom game online, freedoom phase 1, freedoom phase 2, open source doom browser, libre doom online" />
 <link rel="canonical" href="https://exebrowser.com/run/freedoom/" />
 <meta property="og:type" content="article" />
@@ -45,7 +45,7 @@
   "name": "Freedoom",
   "url": "https://exebrowser.com/run/freedoom/",
   "image": "https://exebrowser.com/run/freedoom/screenshot.png",
-  "description": "Freedoom is a free, open-source game built on the DOOM engine — the complete game, not a demo. Plays instantly in your browser with nothing to download.",
+  "description": "Freedoom is a free, open-source game on the DOOM engine — the whole game, not a shareware episode. Plays instantly in your browser and saves your progress.",
   "applicationCategory": "Game",
   "genre": ["First-person shooter", "Action"],
   "gamePlatform": ["Web browser", "Windows"],
@@ -84,6 +84,11 @@
       "@type": "Question",
       "name": "What's the difference between Freedoom Phase 1 and Phase 2?",
       "acceptedAnswer": { "@type": "Answer", "text": "Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of eight levels each — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II and works with DOOM II / Final Doom mods." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it save my progress?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer." }
     }
   ]
 }
@@ -271,6 +276,10 @@
       <summary>What's the difference between Freedoom Phase 1 and Phase 2?</summary>
       <p>Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of eight levels each — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II and works with DOOM II / Final Doom mods.</p>
     </details>
+    <details>
+      <summary>Does it save my progress?</summary>
+      <p>Yes, and not only from the game's own save menu. Close the tab mid-level and the next visit offers to put you back exactly where you were, because the whole emulator state is snapshotted to your browser's storage. Nothing is uploaded and there is no account — the save lives on the device you played on, which also means it does not follow you to another computer.</p>
+    </details>
   </section>
   <section class="card">
     <h2>More you can play in your browser</h2>
@@ -331,7 +340,7 @@
 </footer>
 
 <!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
-<script src="/save-core.js?v=1"></script>
+<script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
 <script src="/dos-embed.js?v=33"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
