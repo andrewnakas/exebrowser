@@ -993,6 +993,7 @@ ${games.map(indexCard).join("\n")}
     <ul class="card-grid">
 ${apps.map(indexCard).join("\n")}
     </ul>
+    <p style="margin-top:1.25rem;">On a school or work laptop that won't let you install anything? <a href="/unblocked/">Everything here runs without installing a thing</a>.</p>
     <p style="margin-top:1.25rem;">Don't see your app? The general <a href="/guide/">compatibility guide</a> explains which categories run well and which struggle. Most classic 32-bit Windows software from 1995–2008 is worth a try.</p>
   </section>
   <section class="card">
@@ -1497,6 +1498,9 @@ const STATIC_URLS = [
   { loc: "/blog/", freq: "weekly", pri: "0.8", mod: blogMod },
   ...posts.map((p) => ({ loc: p.path, freq: "monthly", pri: "0.7", mod: p.modified })),
   { loc: "/play/", freq: "weekly", pri: "0.8", mod: catalogueMod },
+  // The query family Bing shows converting 5-10x better than bare game
+  // names ("doom unblocked" 26.5% CTR vs "doom" 3.25%).
+  { loc: "/unblocked/", freq: "weekly", pri: "0.8", mod: catalogueMod },
   // A category page's content is its cards as much as its prose, so its lastmod
   // has to move when a member does — not only when someone edits the intro.
   ...liveCats.map((c) => ({
