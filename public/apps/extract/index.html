@@ -26,6 +26,24 @@
   input[type=text], input[type=password], input[type=search] {
     background:#0a0908; color:var(--fg); border:1px solid var(--border);
     border-radius:7px; padding:.5em .7em; font:inherit; }
+  /* extractor.js emits rows as .tree-row divs of adjacent inline spans with no
+     separators, so without layout they render as "readme.txt35 BSave".
+     Verified against the real DOM rather than assumed: the rows are divs, not
+     list items, and the Save button sits in a .row-actions span. */
+  .tree-row { display:flex; align-items:center; gap:.6rem; padding:.15rem 0; }
+  .tree-row .name { flex:1 1 auto; min-width:0; overflow:hidden;
+                    text-overflow:ellipsis; white-space:nowrap; cursor:pointer; }
+  .tree-row .name:hover { color:var(--accent); }
+  .tree-row .size { flex:0 0 auto; color:var(--muted); font-size:.85rem;
+                    font-variant-numeric:tabular-nums; }
+  .tree-row .row-actions { flex:0 0 auto; }
+  .row-btn { padding:.22em .7em; font-size:.82rem; font-weight:500; }
+  /* The picked-file row nests name and size inside a wrapper span, so the
+     flex has to go on .file-item's inner span, not on #fileList itself. */
+  .file-item { display:flex; align-items:center; gap:.6rem; }
+  .file-item > span { display:flex; align-items:center; gap:.5rem; min-width:0; }
+  .file-item .name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .file-item .remove { padding:.15em .55em; line-height:1; }
   #fileList:empty, #archiveMeta:empty { display:none; }
   #fileList { margin:.6rem 0; color:var(--muted); font-size:.9rem; }
   #archiveMeta { margin:.5rem 0; color:var(--muted); font-size:.88rem; }

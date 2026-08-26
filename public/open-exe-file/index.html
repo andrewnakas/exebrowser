@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to Open an EXE File — Windows, Mac, Chromebook &amp; Linux — ExeBrowser</title>
+<meta name="description" content="What an .exe file is, why it will not open, and how to run one on Windows, Mac, Chromebook or Linux — including running it in a browser tab with nothing installed." />
+<meta name="keywords" content="open exe file, how to open exe, exe file opener, open exe on mac, open exe chromebook, run exe online, what is an exe file" />
+<link rel="canonical" href="https://exebrowser.com/open-exe-file/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/open-exe-file/" />
+<meta property="og:title" content="How to Open an EXE File — Windows, Mac, Chromebook &amp; Linux" />
+<meta property="og:description" content="What an .exe actually is, why it will not open, and every way to run one — including in a browser tab with nothing installed." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=38" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "How to open an EXE file", "item": "https://exebrowser.com/open-exe-file/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I open an .exe file online without downloading anything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can run one here without installing anything. The file is read by your browser on your own machine and is not uploaded to a server. Small 32-bit Windows programs work best." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I open an .exe on a Mac?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not natively. Use Wine or CrossOver, a Windows virtual machine, or run it in a browser tab. For old, small programs the browser is the least trouble." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does nothing happen when I double-click it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usually a console program that opened and closed immediately, or a missing runtime failing silently. Run it from a Command Prompt to see the error." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to open an .exe file?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Only as safe as its source. A program can do whatever your account can do. Check it on VirusTotal, prefer the vendor's own download, and a browser sandbox is safer than running it natively." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if it is 64-bit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The runtime here is 32-bit, so 64-bit-only programs will not load. Many applications from before about 2010 also shipped a 32-bit build, and that one usually works." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › How to open an EXE file</nav>
+  <section class="card">
+    <h2>What an .exe file actually is</h2>
+    <p>An <code>.exe</code> is a program compiled for Windows. Not a document, not an archive, not a video — a set of machine instructions plus a header telling Windows how to load them. That is why "open with" never works on one: there is no viewer application for a program, because the program <em>is</em> the application.</p>
+    <p>It also explains the two situations people usually arrive here in. Either you are on a Mac, Linux box or Chromebook, where Windows programs do not run at all, or you are on Windows and the file will not start for one of a handful of specific reasons. Those are different problems with different answers.</p>
+
+    <h3>The quickest thing to try</h3>
+    <p>This site runs Windows programs in a browser tab. Drop an <code>.exe</code> on the <a href="/">home page</a> and it will attempt to run it locally — the file is read on your own machine and never uploaded anywhere.</p>
+    <p>Being honest about the limits, because they are real: it works best on <strong>32-bit</strong> Windows software from roughly 1995 to 2008. Small utilities and older games are the sweet spot. Anything needing modern .NET, real network access, or a 3D graphics context will not work, and we <a href="/run/">document the failures alongside the successes</a> rather than pretending otherwise.</p>
+  </section>
+
+  <section class="card">
+    <h2>Opening an .exe on each platform</h2>
+
+    <h3>On a Mac</h3>
+    <p>macOS cannot run <code>.exe</code> files natively — different operating system, and since Apple Silicon a different processor architecture too. Double-clicking gets you an error, and no amount of "open with" changes that.</p>
+    <p>The real options are a compatibility layer such as <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> or CrossOver, which translates Windows API calls rather than emulating a PC; a virtual machine running an actual licensed copy of Windows; or, for small old programs, running it in a browser tab here. The browser route needs nothing installed, which is often the deciding factor.</p>
+
+    <h3>On a Chromebook</h3>
+    <p>ChromeOS cannot install Windows software at all, and that is by design rather than an oversight. There is no Wine to install, no Program Files, nowhere for an installer to go.</p>
+    <p>That leaves running it in the browser, which is what this site does, or the Linux container if your Chromebook has it enabled and you are comfortable installing Wine inside it. There is <a href="/blog/run-windows-software-on-a-chromebook/">a longer write-up of the four approaches</a>, ranked by how much trouble each one is.</p>
+
+    <h3>On Linux</h3>
+    <p>Install Wine from your distribution's package manager, then <code>wine yourprogram.exe</code>. Wine is mature and a great deal works first try. Where it fails it usually fails loudly, naming the DLL or API it could not provide, which at least gives you something to search for.</p>
+
+    <h3>On Windows, when it will not start</h3>
+    <p>If Windows itself refuses to run a Windows program, there is a short list of likely causes and the error message usually identifies which one:</p>
+    <ul>
+      <li><strong>"This app can't run on your PC."</strong> Most often a 16-bit program. 64-bit Windows removed the subsystem that ran those, and there is no setting that brings it back.</li>
+      <li><strong>A missing DLL is named.</strong> Good news, comparatively — the program needs a runtime you do not have. Usually the Visual C++ redistributable, the Visual Basic 6 runtime, or .NET Framework 3.5.</li>
+      <li><strong>SmartScreen blocks it.</strong> Windows does not recognise the publisher. If you are confident of where the file came from, "More info" then "Run anyway".</li>
+      <li><strong>Nothing happens at all.</strong> Often a console program that opened, ran and closed faster than you could see. Try running it from a Command Prompt so the window stays put.</li>
+    </ul>
+    <p>Each of these is covered in more detail in <a href="/blog/why-old-programs-wont-run-on-windows-11/">why old programs will not run on Windows 11</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>When you do not want to run it at all</h2>
+    <p>Sometimes the goal is not to run the program but to get at what is inside it. Installers in particular are usually just archives with a wrapper, and a great many older applications are portable once unpacked — a single folder that runs without ever touching the registry.</p>
+    <p>Our <a href="/run/extract-archive/">archive extractor</a> opens self-extracting <code>.exe</code> files along with 7z, ZIP, RAR and the rest, entirely in the browser with nothing uploaded. <a href="/blog/extract-files-from-an-old-installer/">The full walkthrough</a> covers the cases it cannot handle and what to use instead.</p>
+  </section>
+
+  <section class="card">
+    <h2>Before you run anything</h2>
+    <p>An <code>.exe</code> from an unfamiliar source can do anything your user account can do. That is not scaremongering, it is simply what a program is. Two things worth doing: check the file on <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a>, and prefer the original vendor's download over an aggregator that has wrapped it in its own installer.</p>
+    <p>Running it in a browser tab is meaningfully safer than running it natively, because the browser sandbox is a real boundary and the program gets no access to your actual filesystem. It is not a licence to run malware, but it is a reasonable way to look at something you are unsure about.</p>
+  </section>
+
+  <section class="card">
+    <h2>Common questions</h2>
+    <details><summary>Can I open an .exe file online without downloading anything?</summary><p>You can run one here without installing anything, which is the usual meaning of the question. The file is read by your browser on your own machine — it is not uploaded to a server. Small 32-bit Windows programs work best.</p></details>
+    <details><summary>How do I open an .exe on a Mac?</summary><p>Not natively. Use Wine or CrossOver, a Windows virtual machine, or run it in a browser tab. For old, small programs the browser is the least trouble by a wide margin.</p></details>
+    <details><summary>Why does nothing happen when I double-click it?</summary><p>Usually a console program that opened and closed immediately, or a missing runtime failing silently. Run it from a Command Prompt to see the error rather than guessing.</p></details>
+    <details><summary>Is it safe to open an .exe file?</summary><p>Only as safe as its source. A program can do whatever your account can do. Check it on VirusTotal, prefer the vendor's own download, and if you are unsure, running it in a browser sandbox is a lot safer than running it natively.</p></details>
+    <details><summary>What if it is 64-bit?</summary><p>The runtime here is 32-bit, so 64-bit-only programs will not load. Many applications from before about 2010 shipped a 32-bit build as well, and that one usually works.</p></details>
+  </section>
+
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+</body>
+</html>

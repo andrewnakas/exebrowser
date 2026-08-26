@@ -1501,6 +1501,10 @@ const STATIC_URLS = [
   // The query family Bing shows converting 5-10x better than bare game
   // names ("doom unblocked" 26.5% CTR vs "doom" 3.25%).
   { loc: "/unblocked/", freq: "weekly", pri: "0.8", mod: catalogueMod },
+  // "open exe file" gets 237 Bing impressions at 1.27% CTR because the only
+  // thing ranking for it is the homepage, which is a games shelf. This is
+  // the page that actually answers it.
+  { loc: "/open-exe-file/", freq: "monthly", pri: "0.9", mod: "2026-08-25" },
   // A category page's content is its cards as much as its prose, so its lastmod
   // has to move when a member does — not only when someone edits the intro.
   ...liveCats.map((c) => ({
