@@ -993,7 +993,7 @@ ${games.map(indexCard).join("\n")}
     <ul class="card-grid">
 ${apps.map(indexCard).join("\n")}
     </ul>
-    <p style="margin-top:1.25rem;">On a school or work laptop that won't let you install anything? <a href="/unblocked/">Everything here runs without installing a thing</a>.</p>
+    <p style="margin-top:1.25rem;">On a school or work laptop that won't let you install anything? <a href="/unblocked/">Everything here runs without installing a thing</a>. Got an <code>.exe</code> and no way to open it? <a href="/open-exe-file/">Start here</a>.</p>
     <p style="margin-top:1.25rem;">Don't see your app? The general <a href="/guide/">compatibility guide</a> explains which categories run well and which struggle. Most classic 32-bit Windows software from 1995–2008 is worth a try.</p>
   </section>
   <section class="card">

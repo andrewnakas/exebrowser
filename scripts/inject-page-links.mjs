@@ -80,6 +80,7 @@ const EMBEDDABLE = new Map(
   CATALOGUE.filter((p) => OWN_WORK.test(p.author || "") && p.appUrl).map((p) => [p.slug, p])
 );
 let embedAdded = 0;
+let ogAdded = 0;
 
 let playAdded = 0;
 let feedAdded = 0;
@@ -181,6 +182,28 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     }
   }
 
+  // ── 6. OG:IMAGE FALLBACK ────────────────────────────────────────────────
+  // Three hand-maintained pages (the ScummVM adventures) shipped with no
+  // og:image at all, so every share of them rendered a blank card. The
+  // generated template always emits one; these never went through it. Use the
+  // page's own screenshot when it has one, the site image when it does not.
+  if (html.includes("<meta property=\"og:url\"") && !html.includes("og:image")) {
+    const shot = existsSync(join(ROOT, "run", slug, "screenshot.png"))
+      ? `https://exebrowser.com/run/${slug}/screenshot.png`
+      : "https://exebrowser.com/og.png";
+    html = html.replace(
+      /(<meta property="og:description"[^>]*\/>)/,
+      `$1\n<meta property="og:image" content="${shot}" />`
+    );
+    if (!html.includes("twitter:card")) {
+      html = html.replace(
+        /(<meta property="og:image"[^>]*\/>)/,
+        `$1\n<meta name="twitter:card" content="summary_large_image" />`
+      );
+    }
+    ogAdded++;
+  }
+
   if (html !== before) writeFileSync(abs, html, "utf8");
 }
 
@@ -188,7 +211,7 @@ console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
   `hreflang into ${hreflangAdded} page(s), play-events into ${playAdded} page(s), ` +
   `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
-  `embed offer on ${embedAdded} page(s)`
+  `embed offer on ${embedAdded} page(s), og:image onto ${ogAdded} page(s)`
 );
 if (missingAnchor.length) {
   // Not fatal — a page without the favicon line is almost certainly not a real
