@@ -1,5 +1,89 @@
 {
-  "_readme": "Per-slug Simplified Chinese overrides. A page is only generated when a real translation exists here.",
+  "_readme": "Per-slug Simplified Chinese overrides. A page is only generated when a real translation exists here. Two keys are not pages: _cards translates the related-link cards once per href (a card missing from it is dropped rather than shown in English), and _controls translates the control-table cells keyed by their English text. Anything a page leaves out falls back to the English entry, so check-consistency requires every prose field the English entry fills — including mobileHint, which restates mobileControls.hint on its own.",
+  "_cards": {
+    "/run/doom/": {
+      "title": "DOOM",
+      "desc": "1993 年原版的共享软件章节，直接在浏览器里玩。"
+    },
+    "/run/freedoom/": {
+      "title": "Freedoom",
+      "desc": "面向 DOOM 引擎的自由开放游戏内容，并提供 Win32 版本。"
+    },
+    "/run/wolfenstein-3d/": {
+      "title": "Wolfenstein 3D",
+      "desc": "开创第一人称射击的那一作——共享软件章节，点开就玩。"
+    },
+    "/run/blake-stone/": {
+      "title": "Blake Stone",
+      "desc": "《Aliens of Gold》第一章，基于 Wolfenstein 引擎，点开就玩。"
+    },
+    "/run/raptor/": {
+      "title": "Raptor: Call of the Shadows",
+      "desc": "另一款经典的 DOS 纵版射击游戏。"
+    },
+    "/run/scorched-earth/": {
+      "title": "Scorched Earth",
+      "desc": "所有火炮对战游戏的鼻祖，点开就玩。"
+    },
+    "/run/bio-menace/": {
+      "title": "Bio Menace",
+      "desc": "Apogee 的横版射击闯关游戏——免费软件，内容完整。"
+    },
+    "/run/beneath-a-steel-sky/": {
+      "title": "Beneath a Steel Sky（免费）",
+      "desc": "Revolution 的赛博朋克名作——免费软件，点开就玩。"
+    },
+    "/run/hexen-heretic-shareware/": {
+      "title": "Heretic / Hexen（共享软件版）",
+      "desc": "更多基于 id 引擎的第一人称共享软件经典。"
+    },
+    "/run/space-cadet-open/": {
+      "title": "3D 弹球 太空军校生",
+      "desc": "Windows XP 上的那张经典桌台——开源版本，点开就玩。"
+    },
+    "/run/one-must-fall-2097/": {
+      "title": "One Must Fall 2097",
+      "desc": "Epic 的机器人格斗游戏——完整版，完全免费。"
+    },
+    "/run/jazz-jackrabbit-shareware/": {
+      "title": "Jazz Jackrabbit（共享软件版）",
+      "desc": "Epic 的高速横版动作游戏，共享软件章节。"
+    },
+    "/run/": {
+      "title": "全部游戏与应用",
+      "desc": "这里能玩、能运行的一切。"
+    },
+    "/guide/": {
+      "title": "兼容性指南",
+      "desc": "哪些能在 ExeBrowser 里运行，哪些不能。"
+    }
+  },
+  "_controls": {
+    "Arrow keys": "<kbd>方向键</kbd>",
+    "Arrow keys or W A S D": "<kbd>方向键</kbd> 或 <kbd>W A S D</kbd>",
+    "Alt + arrows": "<kbd>Alt</kbd> + 方向键",
+    "Automap": "自动地图",
+    "Change weapon mode": "切换武器模式",
+    "Fire": "开火",
+    "Fly": "飞行",
+    "Left-click": "左键点击",
+    "Right-click": "右键点击",
+    "Menu / back": "菜单 / 返回",
+    "Move / turn": "移动 / 转向",
+    "Move mouse to turn": "移动鼠标转向",
+    "Open doors / push walls": "开门 / 推开暗墙",
+    "Open doors / switches": "开门 / 按开关",
+    "Pause / menu": "暂停 / 菜单",
+    "Run": "奔跑",
+    "Sidekick weapon": "僚机武器",
+    "Sound": "声音",
+    "Strafe": "横向平移",
+    "Use the Sound button under the screen to mute": "点击画面下方的声音按钮即可静音",
+    "Weapons 1–4": "武器 1–4",
+    "Weapons 1–7": "武器 1–7",
+    "hold Shift": "按住 <kbd>Shift</kbd>",
+    "number keys": "数字键"
+  },
   "doom": {
     "title": "在浏览器里免费玩 DOOM（1993）— 无需下载 — ExeBrowser",
     "description": "1993 年的原版《DOOM》，打开网页就能玩。免费的共享软件版本，通过 DOSBox 运行，无需下载，无需安装，也不用注册。",
@@ -45,6 +129,11 @@
         "a": "能。在触屏设备上，屏幕会显示一组游戏用的虚拟按键。用电脑玩体验更好，但手机上完全可以玩。"
       }
     ],
-    "licenseReason": "id Software 将《DOOM》第一章《Knee-Deep in the Dead》作为共享软件发布，并明确允许免费再分发——我们提供的正是这一部分，不包含任何商业章节。"
+    "licenseReason": "id Software 将《DOOM》第一章《Knee-Deep in the Dead》作为共享软件发布，并明确允许免费再分发——我们提供的正是这一部分，不包含任何商业章节。",
+    "mobileHint": "方向键：移动／转向 · FIRE：开火 · USE：开门 · RUN：奔跑",
+    "download": {
+      "heading": "获取 DOOM 共享软件版（免费且合法）",
+      "html": "<h3 style=\"margin-top:0;\">id Software 官方共享软件版</h3><p>完整的第一章，未经改动，完全按照共享软件许可所允许的方式免费分发。最可靠的来源是 Internet Archive 保存的副本：</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">获取 DOOM 共享软件版（Internet Archive）→</a></p><p class=\"muted small\">请选择 DOS 版本（<code>DOOM.EXE</code> 和 <code>DOOM1.WAD</code>）。在本页游玩并不需要它——这个页面已经在运行共享软件版章节了——但如果你想在自己的电脑上保留一份，这就是该留的那一份。© id Software：共享软件版章节在不作修改、不收取费用的前提下可以自由再分发。注册版章节与 Doom II 属于商业产品，<strong>不</strong>包含在内；请到 <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a> 购买。</p>"
+    }
   }
 }

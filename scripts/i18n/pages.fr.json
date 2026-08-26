@@ -1,5 +1,89 @@
 {
-  "_readme": "Per-slug French overrides. A page is only generated when a real translation exists here.",
+  "_readme": "Per-slug French overrides. A page is only generated when a real translation exists here. Two keys are not pages: _cards translates the related-link cards once per href (a card missing from it is dropped rather than shown in English), and _controls translates the control-table cells keyed by their English text. Anything a page leaves out falls back to the English entry, so check-consistency requires every prose field the English entry fills — including mobileHint, which restates mobileControls.hint on its own.",
+  "_cards": {
+    "/run/doom/": {
+      "title": "DOOM",
+      "desc": "L'épisode shareware de l'original de 1993, jouable dans votre navigateur."
+    },
+    "/run/freedoom/": {
+      "title": "Freedoom",
+      "desc": "Du contenu libre et ouvert pour le moteur de DOOM, avec un portage Win32."
+    },
+    "/run/wolfenstein-3d/": {
+      "title": "Wolfenstein 3D",
+      "desc": "Le jeu de tir qui a tout lancé — épisode shareware, jouable tout de suite."
+    },
+    "/run/blake-stone/": {
+      "title": "Blake Stone",
+      "desc": "Aliens of Gold, épisode 1 — moteur de Wolfenstein, jouable immédiatement."
+    },
+    "/run/raptor/": {
+      "title": "Raptor: Call of the Shadows",
+      "desc": "Un autre grand shoot'em up vertical sous DOS."
+    },
+    "/run/scorched-earth/": {
+      "title": "Scorched Earth",
+      "desc": "L'ancêtre de tous les jeux d'artillerie — jouable tout de suite."
+    },
+    "/run/bio-menace/": {
+      "title": "Bio Menace",
+      "desc": "Le run-and-gun d'Apogee — freeware et complet."
+    },
+    "/run/beneath-a-steel-sky/": {
+      "title": "Beneath a Steel Sky (gratuit)",
+      "desc": "Le classique cyberpunk de Revolution — freeware, jouable tout de suite."
+    },
+    "/run/hexen-heretic-shareware/": {
+      "title": "Heretic / Hexen (shareware)",
+      "desc": "D'autres classiques shareware à la première personne sur technologie id."
+    },
+    "/run/space-cadet-open/": {
+      "title": "3D Pinball Space Cadet",
+      "desc": "La table emblématique de XP — version open source, jouable tout de suite."
+    },
+    "/run/one-must-fall-2097/": {
+      "title": "One Must Fall 2097",
+      "desc": "Le jeu de combat de robots d'Epic — le jeu complet, gratuitement."
+    },
+    "/run/jazz-jackrabbit-shareware/": {
+      "title": "Jazz Jackrabbit (shareware)",
+      "desc": "Le platformer nerveux d'Epic, épisode shareware."
+    },
+    "/run/": {
+      "title": "Tous les jeux et logiciels",
+      "desc": "Tout ce que vous pouvez jouer ou exécuter ici."
+    },
+    "/guide/": {
+      "title": "Guide de compatibilité",
+      "desc": "Ce qui fonctionne dans ExeBrowser, et ce qui ne fonctionne pas."
+    }
+  },
+  "_controls": {
+    "Arrow keys": "<kbd>Touches fléchées</kbd>",
+    "Arrow keys or W A S D": "<kbd>Touches fléchées</kbd> ou <kbd>W A S D</kbd>",
+    "Alt + arrows": "<kbd>Alt</kbd> + touches fléchées",
+    "Automap": "Carte automatique",
+    "Change weapon mode": "Changer de mode de tir",
+    "Fire": "Tirer",
+    "Fly": "Voler",
+    "Left-click": "Clic gauche",
+    "Right-click": "Clic droit",
+    "Menu / back": "Menu / retour",
+    "Move / turn": "Se déplacer / pivoter",
+    "Move mouse to turn": "Bougez la souris pour pivoter",
+    "Open doors / push walls": "Ouvrir les portes / pousser les murs",
+    "Open doors / switches": "Ouvrir les portes / actionner les interrupteurs",
+    "Pause / menu": "Pause / menu",
+    "Run": "Courir",
+    "Sidekick weapon": "Arme auxiliaire",
+    "Sound": "Son",
+    "Strafe": "Pas chassé",
+    "Use the Sound button under the screen to mute": "Utilisez le bouton Son sous l'écran pour couper le son",
+    "Weapons 1–4": "Armes 1–4",
+    "Weapons 1–7": "Armes 1–7",
+    "hold Shift": "maintenir <kbd>Maj</kbd>",
+    "number keys": "touches numériques"
+  },
   "doom": {
     "title": "Jouer à DOOM (1993) en ligne — gratuit, sans téléchargement — ExeBrowser",
     "description": "Le DOOM original de 1993, jouable directement dans votre navigateur. L'épisode shareware gratuit tourne sous DOSBox — sans téléchargement ni installation.",
@@ -45,6 +129,11 @@
         "a": "Oui. Sur les appareils tactiles, un pavé de commandes apparaît à l'écran. C'est plus confortable sur ordinateur, mais cela fonctionne très bien sur mobile."
       }
     ],
-    "licenseReason": "id Software a publié le premier épisode de DOOM, « Knee-Deep in the Dead », en shareware avec autorisation explicite de redistribution gratuite — c'est précisément ce que nous hébergeons. Les épisodes commerciaux ne sont pas inclus."
+    "licenseReason": "id Software a publié le premier épisode de DOOM, « Knee-Deep in the Dead », en shareware avec autorisation explicite de redistribution gratuite — c'est précisément ce que nous hébergeons. Les épisodes commerciaux ne sont pas inclus.",
+    "mobileHint": "Croix directionnelle : se déplacer/pivoter · FIRE : tirer · USE : ouvrir les portes · RUN : courir",
+    "download": {
+      "heading": "Récupérer le shareware de DOOM (gratuit et légal)",
+      "html": "<h3 style=\"margin-top:0;\">Le shareware officiel d'id Software</h3><p>Le premier épisode complet, non modifié, distribué gratuitement exactement comme la licence shareware l'autorise. La source la plus fiable est la copie conservée par l'Internet Archive :</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">Récupérer le shareware de DOOM (Internet Archive) →</a></p><p class=\"muted small\">Prenez la version DOS (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). Elle n'est pas nécessaire pour jouer ici — cette page lance déjà l'épisode shareware — mais c'est la copie à conserver si vous le voulez sur votre propre machine. © id Software : l'épisode shareware peut être librement rediffusé, sans modification et sans frais. Les épisodes enregistrés et Doom II sont commerciaux et <strong>ne sont pas</strong> inclus ; achetez-les chez <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
+    }
   }
 }

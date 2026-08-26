@@ -134,7 +134,6 @@
   </section>
   <section class="card">
     <h2>Why small utilities are the most reliable category</h2>
-    <h3>Why small utilities are the most reliable category</h3>
     <p>The things that break apps under browser-based Wine are modern GPU features, 64-bit code, recent .NET, DRM, and Win32 APIs added after Windows 7. Small classic utilities use none of that. They draw a plain window with standard controls, read and write files, and quit. That maps almost perfectly onto what Wine 1.7.55 implements well, so the failure rate is very low.</p><p>If you've never tried ExeBrowser, run one of these first to get a feel for booting Wine, capturing input on the canvas, and pulling your output back out. The 1995–2008 32-bit Win32 era is the engine's sweet spot, and tiny tools sit right in the middle of it.</p>
     <h3>Editing and saving a file — the round trip</h3>
     <p>A text editor is the perfect demo of getting work in and out. Boot Wine, run the editor, type or open something, then use <strong>Download files written by this app</strong> to pull the saved file back out of the in-memory <code>C:\</code> as a zip.</p><p>One thing to remember: the virtual drive is wiped on reload, so download before you close the tab. To continue later, re-upload that zip alongside the EXE. A single <code>.exe</code> is usually all you need to load; if a tool asks for DLLs, bundle the whole folder instead.</p>

@@ -147,17 +147,17 @@
       </div>
     </div>
     <p id="dos-status" class="muted small" style="margin:.5rem 0 0;" hidden></p>
-    <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; Fullscreen</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; Sound on</button></p>
+    <p style="margin:.5rem 0 0;"><button id="dos-fullscreen" type="button" class="button" hidden>&#9974; ${esc(T("fullscreen", "Fullscreen"))}</button> <button id="dos-sound" type="button" class="button" hidden aria-pressed="true">&#128266; ${esc(T("soundOn", "Sound on"))}</button></p>
     <p id="dos-mouse-hint" class="muted small" style="margin:.25rem 0 0;">${esc(T("mouseHint", "Click the game screen to give it your keyboard."))}</p>
     <p id="dos-save-info" class="muted small" style="margin:.25rem 0 0;" hidden><span id="dos-save-state">${esc(T("saveHint", "Save inside the game and it's kept in this browser"))}</span> · <a href="#" id="dos-save-reset">${esc(T("resetSaves", "reset saved progress"))}</a></p>
     <details id="dos-keys" style="margin-top:.5rem;" hidden>
-      <summary class="muted small">Keyboard — remap any key</summary>
-      <p class="muted small" style="margin:.5rem 0;">Click a key below, then press the key you'd rather use. Saved in this browser, per game.</p>
+      <summary class="muted small">${esc(T("remapKeys", "Keyboard — remap any key"))}</summary>
+      <p class="muted small" style="margin:.5rem 0;">${esc(T("remapHint", "Click a key below, then press the key you'd rather use. Saved in this browser, per game."))}</p>
       <div id="dos-keys-list" class="dos-keys-list"></div>
-      <p style="margin:.5rem 0 0;"><button type="button" class="button" id="dos-keys-reset">Reset to defaults</button></p>
+      <p style="margin:.5rem 0 0;"><button type="button" class="button" id="dos-keys-reset">${esc(T("resetDefaults", "Reset to defaults"))}</button></p>
     </details>
     <details id="dos-console" style="margin-top:.5rem;" hidden>
-      <summary class="muted small">Console output</summary>
+      <summary class="muted small">${esc(T("consoleOutput", "Console output"))}</summary>
       <pre id="dos-log" style="font-size:.7rem;max-height:8rem;overflow:auto;background:#111;padding:.5rem;"></pre>
     </details>
   `;
@@ -547,7 +547,9 @@
     const apply = () => {
       audio.gain.gain.value = on ? 1 : 0;
       if (on) audio.ctx.resume().catch(() => {});
-      soundBtn.textContent = on ? "\u{1F50A} Sound on" : "\u{1F507} Sound off";
+      soundBtn.textContent = on
+        ? "\u{1F50A} " + T("soundOn", "Sound on")
+        : "\u{1F507} " + T("soundOff", "Sound off");
       soundBtn.setAttribute("aria-pressed", on ? "true" : "false");
     };
 

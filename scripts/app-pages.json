@@ -189,7 +189,7 @@
         "desc": "id's 1993 shareware FPS — runs cleanly as Win32."
       },
       {
-        "href": "/run/wolfenstein-3d/",
+        "href": "/run/freedoom/",
         "title": "Freedoom",
         "desc": "Free, open DOOM-engine content with a Win32 port."
       },
@@ -367,23 +367,27 @@
     "faq": [
       {
         "q": "Is Tyrian 2000 really free to play?",
-        "a": "Yes. The full game was released as freeware by the rights holder in 2004, the graphics were later put under an open-content license, and it's also given away free on GOG. There's nothing to buy and nothing shady about playing it."
+        "a": "Yes. Rights holder Jason Emery released the full game as freeware in 2004, the graphics were later placed under an open-content license, and it's given away free on GOG as well. There's nothing to buy and nothing shady about playing it."
       },
       {
         "q": "Can I play Tyrian 2000 in the browser with no download?",
-        "a": "Sort of — you play it in your browser via Wine + WebAssembly, with no install, but you do need to load the game files into the player. Because Tyrian is a DOS game, the smoothest route is the open-source OpenTyrian2000 Win32 port plus the freeware data files, loaded with the on-page uploader."
+        "a": "Yes. Press play and the complete game boots to its title screen in a few seconds. Because Tyrian 2000 is freeware, its data ships with the page — there is nothing to find, upload or install."
       },
       {
-        "q": "Why doesn't the original Tyrian EXE just run?",
-        "a": "The original Tyrian / Tyrian 2000 executable is a DOS program. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary won't start cleanly without a DOS layer. The OpenTyrian2000 source port is a native Win32 rebuild, which is why it's the recommended way to play here."
+        "q": "Is this the real Tyrian or a remake?",
+        "a": "The real one. The original DOS executable and its original data run unmodified inside DOSBox compiled to WebAssembly, so it's the same game that shipped on the disks — not a re-creation and not a source port."
+      },
+      {
+        "q": "How many episodes do I get?",
+        "a": "All five. Tyrian 2000 was released as freeware in full, so unlike the shareware games on this site there is no episode held back behind a purchase."
       },
       {
         "q": "What is OpenTyrian2000?",
-        "a": "It's a free, open-source (GPL) port of Tyrian 2000 that recreates the original game as a modern, native executable using the freeware Tyrian 2000 data files. It's the most reliable way to run the game inside ExeBrowser's Win32 environment."
+        "a": "A free, open-source (GPL) rebuild of the game as a modern native executable, using the same freeware data files. It's the best way to play Tyrian on a desktop — it's SDL-based and aimed at a real machine rather than this browser sandbox, which is why this page runs the original DOS build instead."
       },
       {
         "q": "Will it run at full speed?",
-        "a": "Maybe. ExeBrowser emulates an x86 CPU inside WebAssembly at roughly 10-40% of native speed, and OpenTyrian2000 is SDL-based, which adds overhead. The game is light enough that a modern laptop often handles it fine, but expect possible slowdown on older tablets or Chromebooks."
+        "a": "Usually, yes. An x86 CPU is emulated inside WebAssembly, but Tyrian is a 1995 DOS game and light enough that a modern laptop handles it comfortably. Expect some slowdown on older tablets and Chromebooks."
       }
     ],
     "related": [
@@ -398,11 +402,6 @@
         "desc": "Another classic vertical-scrolling DOS shmup."
       },
       {
-        "href": "/run/tyrian/",
-        "title": "One Must Fall 2097",
-        "desc": "Epic MegaGames' robot-fighting classic."
-      },
-      {
         "href": "/run/jazz-jackrabbit-shareware/",
         "title": "Jazz Jackrabbit (shareware)",
         "desc": "Epic's fast platformer, shareware episode."
@@ -411,11 +410,6 @@
         "href": "/run/doom/",
         "title": "DOOM (shareware)",
         "desc": "The 1993 shooter, free episode in your browser."
-      },
-      {
-        "href": "/guide/",
-        "title": "DOS games in the browser",
-        "desc": "How DOS-era titles fare under Win32 Wine."
       },
       {
         "href": "/guide/",
@@ -1743,7 +1737,7 @@
         "desc": "The classic sol.exe card game — runs the same way."
       },
       {
-        "href": "/run/freecell/",
+        "href": "/run/spider-open/",
         "title": "Spider Solitaire",
         "desc": "Another bundled Windows card classic to try."
       },
@@ -1758,7 +1752,7 @@
         "desc": "The classic XP table — open-source build, instant play."
       },
       {
-        "href": "/run/solitaire/",
+        "href": "/play/card-games/",
         "title": "More classic card games",
         "desc": "Solitaire, FreeCell, Spider and friends."
       },
@@ -2755,11 +2749,6 @@
         "desc": "Free, GPL-friendly replacement Doom IWADs."
       },
       {
-        "href": "/run/chocolate-doom/",
-        "title": "Crispy / source ports",
-        "desc": "More vanilla-accurate Doom engines."
-      },
-      {
         "href": "/run/wolfenstein-3d/",
         "title": "Wolfenstein 3D",
         "desc": "id's earlier shareware FPS in the browser."
@@ -2871,7 +2860,7 @@
         "desc": "id Software's 1993 shooter — free shareware episode, in your browser."
       },
       {
-        "href": "/run/commander-keen/",
+        "href": "/run/wolfenstein-3d/",
         "title": "Wolfenstein 3D",
         "desc": "id's other shareware classic — see how it fares here."
       },
@@ -3231,7 +3220,7 @@
         "desc": "The cinematic platformer classic in your browser."
       },
       {
-        "href": "/run/jazz-jackrabbit-shareware/",
+        "href": "/run/tyrian/",
         "title": "Tyrian",
         "desc": "Epic's freeware shooter — fast, colourful, browser-friendly."
       },
@@ -4992,7 +4981,7 @@
         "desc": "The lighter, rock-solid editors to start with."
       },
       {
-        "href": "/run/notepad-plus-plus/",
+        "href": "/run/wordpad/",
         "title": "Wordpad",
         "desc": "Rich-text editing the classic way."
       },
@@ -5086,11 +5075,6 @@
       }
     ],
     "related": [
-      {
-        "href": "/run/irfanview/",
-        "title": "mtPaint",
-        "desc": "Lightweight bitmap editor that runs well."
-      },
       {
         "href": "/run/mspaint/",
         "title": "MS Paint",
@@ -6144,7 +6128,7 @@
         "desc": "The classic tiny Win32 text editor."
       },
       {
-        "href": "/run/character-map/",
+        "href": "/run/calculator/",
         "title": "Calculator",
         "desc": "Run the classic Windows calc utility."
       },
@@ -6241,11 +6225,6 @@
         "href": "/run/7-zip/",
         "title": "7-Zip",
         "desc": "Free open-source archiver that runs well in the browser."
-      },
-      {
-        "href": "/run/keepass/",
-        "title": "KeePass 1.x setup",
-        "desc": "Step-by-step for loading a .kdb vault in the browser."
       },
       {
         "href": "/run/notepad/",

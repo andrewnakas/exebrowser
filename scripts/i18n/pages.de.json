@@ -1,12 +1,89 @@
 {
-  "_readme": [
-    "German translations, keyed by slug. Same rules as the other language files:",
-    "only the fields present override the English entry, and a slug appearing",
-    "here is what causes /de/run/<slug>/ to exist at all.",
-    "",
-    "Germany is the site's highest-engagement country (76.9%), which is why it",
-    "was picked. Translated by Claude, NOT reviewed by a native speaker."
-  ],
+  "_readme": "Per-slug German overrides. A page is only generated when a real translation exists here. Two keys are not pages: _cards translates the related-link cards once per href (a card missing from it is dropped rather than shown in English), and _controls translates the control-table cells keyed by their English text. Anything a page leaves out falls back to the English entry, so check-consistency requires every prose field the English entry fills — including mobileHint, which restates mobileControls.hint on its own.",
+  "_cards": {
+    "/run/doom/": {
+      "title": "DOOM",
+      "desc": "Die Shareware-Episode des Originals von 1993, direkt im Browser."
+    },
+    "/run/freedoom/": {
+      "title": "Freedoom",
+      "desc": "Freie, offene Inhalte für die DOOM-Engine, mit Win32-Port."
+    },
+    "/run/wolfenstein-3d/": {
+      "title": "Wolfenstein 3D",
+      "desc": "Der Shooter, der alles begann – Shareware-Episode, sofort spielbar."
+    },
+    "/run/blake-stone/": {
+      "title": "Blake Stone",
+      "desc": "Aliens of Gold, Episode 1 – Wolfenstein-Engine, sofort spielbar."
+    },
+    "/run/raptor/": {
+      "title": "Raptor: Call of the Shadows",
+      "desc": "Noch ein klassischer vertikaler DOS-Shmup."
+    },
+    "/run/scorched-earth/": {
+      "title": "Scorched Earth",
+      "desc": "Die Mutter aller Artilleriespiele – sofort spielbar."
+    },
+    "/run/bio-menace/": {
+      "title": "Bio Menace",
+      "desc": "Apogees Run-and-Gun-Plattformer – Freeware und vollständig."
+    },
+    "/run/beneath-a-steel-sky/": {
+      "title": "Beneath a Steel Sky (gratis)",
+      "desc": "Revolutions Cyberpunk-Klassiker – Freeware, sofort spielbar."
+    },
+    "/run/hexen-heretic-shareware/": {
+      "title": "Heretic / Hexen (Shareware)",
+      "desc": "Weitere Shareware-Klassiker auf id-Technik."
+    },
+    "/run/space-cadet-open/": {
+      "title": "3D Pinball Space Cadet",
+      "desc": "Der XP-Klassiker – quelloffener Build, sofort spielbar."
+    },
+    "/run/one-must-fall-2097/": {
+      "title": "One Must Fall 2097",
+      "desc": "Epics Freeware-Roboterprügler – das komplette Spiel, kostenlos."
+    },
+    "/run/jazz-jackrabbit-shareware/": {
+      "title": "Jazz Jackrabbit (Shareware)",
+      "desc": "Epics schneller Plattformer, Shareware-Episode."
+    },
+    "/run/": {
+      "title": "Alle Spiele und Programme",
+      "desc": "Alles, was sich hier spielen oder ausführen lässt."
+    },
+    "/guide/": {
+      "title": "Kompatibilitäts-Guide",
+      "desc": "Was in ExeBrowser läuft und was nicht."
+    }
+  },
+  "_controls": {
+    "Arrow keys": "<kbd>Pfeiltasten</kbd>",
+    "Arrow keys or W A S D": "<kbd>Pfeiltasten</kbd> oder <kbd>W A S D</kbd>",
+    "Alt + arrows": "<kbd>Alt</kbd> + Pfeiltasten",
+    "Automap": "Automatische Karte",
+    "Change weapon mode": "Waffenmodus wechseln",
+    "Fire": "Schießen",
+    "Fly": "Fliegen",
+    "Left-click": "Linksklick",
+    "Right-click": "Rechtsklick",
+    "Menu / back": "Menü / zurück",
+    "Move / turn": "Bewegen / drehen",
+    "Move mouse to turn": "Maus bewegen zum Drehen",
+    "Open doors / push walls": "Türen öffnen / Wände schieben",
+    "Open doors / switches": "Türen öffnen / Schalter betätigen",
+    "Pause / menu": "Pause / Menü",
+    "Run": "Rennen",
+    "Sidekick weapon": "Zweitwaffe",
+    "Sound": "Ton",
+    "Strafe": "Seitwärtsschritt",
+    "Use the Sound button under the screen to mute": "Zum Stummschalten den Ton-Knopf unter dem Bild benutzen",
+    "Weapons 1–4": "Waffen 1–4",
+    "Weapons 1–7": "Waffen 1–7",
+    "hold Shift": "<kbd>Shift</kbd> halten",
+    "number keys": "Zifferntasten"
+  },
   "doom": {
     "title": "DOOM online spielen — kostenlos, im Browser, ohne Download — ExeBrowser",
     "description": "Spiele das originale DOOM von 1993 — die Shareware-Episode „Knee-Deep in the Dead“ — direkt im Browser. Kein Download, keine Installation. Das klassische DOS-DOOM in DOSBox + WebAssembly.",
@@ -111,7 +188,12 @@
         "title": "Alle Spiele und Programme",
         "desc": "Alles, was du hier spielen oder starten kannst."
       }
-    ]
+    ],
+    "mobileHint": "Steuerkreuz: bewegen/drehen · FIRE: schießen · USE: Türen öffnen · RUN: rennen",
+    "download": {
+      "heading": "DOOM-Shareware holen (kostenlos und legal)",
+      "html": "<h3 style=\"margin-top:0;\">Die offizielle Shareware von id Software</h3><p>Die vollständige erste Episode, unverändert und kostenlos weitergegeben, genau wie es die Shareware-Lizenz erlaubt. Die verlässlichste Quelle ist die archivierte Kopie im Internet Archive:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">DOOM-Shareware laden (Internet Archive) →</a></p><p class=\"muted small\">Nimm die DOS-Fassung (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). Zum Spielen hier brauchst du sie nicht – diese Seite startet die Shareware-Episode bereits –, aber sie ist die Kopie, die man behält, wenn man das Spiel auf dem eigenen Rechner haben will. © id Software: Die Shareware-Episode darf unverändert und kostenlos frei weitergegeben werden. Die registrierten Episoden und Doom II sind kommerziell und <strong>nicht</strong> enthalten; die gibt es bei <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
+    }
   },
   "wolfenstein-3d": {
     "title": "Wolfenstein 3D online spielen — gratis, im Browser — ExeBrowser",
@@ -158,6 +240,11 @@
         "a": "Ja. Auf Touchgeräten erscheint eine Tastatur auf dem Bildschirm mit den Spielsteuerungen. Am Rechner spielt es sich angenehmer, aber es funktioniert."
       }
     ],
-    "licenseReason": "id Software hat die erste Episode von Wolfenstein 3D als Shareware mit ausdrücklicher Erlaubnis zur kostenlosen Weitergabe veröffentlicht — genau diese hosten wir. Die übrigen Episoden sind kommerziell und hier nicht verfügbar."
+    "licenseReason": "id Software hat die erste Episode von Wolfenstein 3D als Shareware mit ausdrücklicher Erlaubnis zur kostenlosen Weitergabe veröffentlicht — genau diese hosten wir. Die übrigen Episoden sind kommerziell und hier nicht verfügbar.",
+    "mobileHint": "Steuerkreuz: bewegen/drehen · FIRE: schießen · OPEN: Türen/Wände · MENU: Esc",
+    "download": {
+      "heading": "Wolfenstein-3D-Shareware holen (kostenlos und legal)",
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">Die Shareware-Episode (Datendateien) und ein Win32-Source-Port</h3><p>Du brauchst zwei Teile, beide kostenlos und legal:</p><ol><li><strong>Die Shareware-Daten</strong> – die frei weitergebbare erste Episode (die <code>*.WL1</code>-Dateien). Apogee veröffentlichte Episode eins als Shareware, ausdrücklich zum kostenlosen Kopieren; das Internet Archive bewahrt Kopien auf.</li><li><strong>Einen Win32-Source-Port</strong> – einen modernen, quelloffenen Nachbau der Engine, der als Windows-EXE läuft. <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a> (die <strong>32-Bit</strong>-Version) oder das schlankere Wolf4SDL.</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">Wolfenstein-3D-Shareware laden (Internet Archive) →</a></p><p class=\"muted small\">Zum Spielen auf dem eigenen Rechner gehören die EXE des Source-Ports und alle <code>*.WL1</code>-Dateien in <strong>einen Ordner</strong>. Hier brauchst du davon nichts: Diese Seite startet die Shareware-Episode bereits. © id Software / Apogee. Nur die <strong>Shareware-Episode</strong> darf frei weitergegeben werden; die registrierten Episoden, die Nocturnal Missions und Spear of Destiny sind kommerziell – erhältlich bei <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p></div>"
+    }
   }
 }

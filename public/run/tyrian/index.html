@@ -67,27 +67,32 @@
     {
       "@type": "Question",
       "name": "Is Tyrian 2000 really free to play?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The full game was released as freeware by the rights holder in 2004, the graphics were later put under an open-content license, and it's also given away free on GOG. There's nothing to buy and nothing shady about playing it." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Rights holder Jason Emery released the full game as freeware in 2004, the graphics were later placed under an open-content license, and it's given away free on GOG as well. There's nothing to buy and nothing shady about playing it." }
     },
     {
       "@type": "Question",
       "name": "Can I play Tyrian 2000 in the browser with no download?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sort of — you play it in your browser via Wine + WebAssembly, with no install, but you do need to load the game files into the player. Because Tyrian is a DOS game, the smoothest route is the open-source OpenTyrian2000 Win32 port plus the freeware data files, loaded with the on-page uploader." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Press play and the complete game boots to its title screen in a few seconds. Because Tyrian 2000 is freeware, its data ships with the page — there is nothing to find, upload or install." }
     },
     {
       "@type": "Question",
-      "name": "Why doesn't the original Tyrian EXE just run?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The original Tyrian / Tyrian 2000 executable is a DOS program. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary won't start cleanly without a DOS layer. The OpenTyrian2000 source port is a native Win32 rebuild, which is why it's the recommended way to play here." }
+      "name": "Is this the real Tyrian or a remake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The real one. The original DOS executable and its original data run unmodified inside DOSBox compiled to WebAssembly, so it's the same game that shipped on the disks — not a re-creation and not a source port." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many episodes do I get?",
+      "acceptedAnswer": { "@type": "Answer", "text": "All five. Tyrian 2000 was released as freeware in full, so unlike the shareware games on this site there is no episode held back behind a purchase." }
     },
     {
       "@type": "Question",
       "name": "What is OpenTyrian2000?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It's a free, open-source (GPL) port of Tyrian 2000 that recreates the original game as a modern, native executable using the freeware Tyrian 2000 data files. It's the most reliable way to run the game inside ExeBrowser's Win32 environment." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A free, open-source (GPL) rebuild of the game as a modern native executable, using the same freeware data files. It's the best way to play Tyrian on a desktop — it's SDL-based and aimed at a real machine rather than this browser sandbox, which is why this page runs the original DOS build instead." }
     },
     {
       "@type": "Question",
       "name": "Will it run at full speed?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Maybe. ExeBrowser emulates an x86 CPU inside WebAssembly at roughly 10-40% of native speed, and OpenTyrian2000 is SDL-based, which adds overhead. The game is light enough that a modern laptop often handles it fine, but expect possible slowdown on older tablets or Chromebooks." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Usually, yes. An x86 CPU is emulated inside WebAssembly, but Tyrian is a 1995 DOS game and light enough that a modern laptop handles it comfortably. Expect some slowdown on older tablets and Chromebooks." }
     }
   ]
 }
@@ -257,23 +262,27 @@
     <h2>Frequently asked questions</h2>
     <details>
       <summary>Is Tyrian 2000 really free to play?</summary>
-      <p>Yes. The full game was released as freeware by the rights holder in 2004, the graphics were later put under an open-content license, and it's also given away free on GOG. There's nothing to buy and nothing shady about playing it.</p>
+      <p>Yes. Rights holder Jason Emery released the full game as freeware in 2004, the graphics were later placed under an open-content license, and it's given away free on GOG as well. There's nothing to buy and nothing shady about playing it.</p>
     </details>
     <details>
       <summary>Can I play Tyrian 2000 in the browser with no download?</summary>
-      <p>Sort of — you play it in your browser via Wine + WebAssembly, with no install, but you do need to load the game files into the player. Because Tyrian is a DOS game, the smoothest route is the open-source OpenTyrian2000 Win32 port plus the freeware data files, loaded with the on-page uploader.</p>
+      <p>Yes. Press play and the complete game boots to its title screen in a few seconds. Because Tyrian 2000 is freeware, its data ships with the page — there is nothing to find, upload or install.</p>
     </details>
     <details>
-      <summary>Why doesn't the original Tyrian EXE just run?</summary>
-      <p>The original Tyrian / Tyrian 2000 executable is a DOS program. ExeBrowser's Wine targets 32-bit Win32, so a pure DOS binary won't start cleanly without a DOS layer. The OpenTyrian2000 source port is a native Win32 rebuild, which is why it's the recommended way to play here.</p>
+      <summary>Is this the real Tyrian or a remake?</summary>
+      <p>The real one. The original DOS executable and its original data run unmodified inside DOSBox compiled to WebAssembly, so it's the same game that shipped on the disks — not a re-creation and not a source port.</p>
+    </details>
+    <details>
+      <summary>How many episodes do I get?</summary>
+      <p>All five. Tyrian 2000 was released as freeware in full, so unlike the shareware games on this site there is no episode held back behind a purchase.</p>
     </details>
     <details>
       <summary>What is OpenTyrian2000?</summary>
-      <p>It's a free, open-source (GPL) port of Tyrian 2000 that recreates the original game as a modern, native executable using the freeware Tyrian 2000 data files. It's the most reliable way to run the game inside ExeBrowser's Win32 environment.</p>
+      <p>A free, open-source (GPL) rebuild of the game as a modern native executable, using the same freeware data files. It's the best way to play Tyrian on a desktop — it's SDL-based and aimed at a real machine rather than this browser sandbox, which is why this page runs the original DOS build instead.</p>
     </details>
     <details>
       <summary>Will it run at full speed?</summary>
-      <p>Maybe. ExeBrowser emulates an x86 CPU inside WebAssembly at roughly 10-40% of native speed, and OpenTyrian2000 is SDL-based, which adds overhead. The game is light enough that a modern laptop often handles it fine, but expect possible slowdown on older tablets or Chromebooks.</p>
+      <p>Usually, yes. An x86 CPU is emulated inside WebAssembly, but Tyrian is a 1995 DOS game and light enough that a modern laptop handles it comfortably. Expect some slowdown on older tablets and Chromebooks.</p>
     </details>
   </section>
   <section class="card">
@@ -311,10 +320,8 @@
     <ul class="card-grid">
       <li><a class="link-card" href="/run/one-must-fall-2097/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Epic's freeware robot fighter — full game, free.</span></a></li>
       <li><a class="link-card" href="/run/raptor/"><span class="lc-title">Raptor: Call of the Shadows</span><span class="lc-desc">Another classic vertical-scrolling DOS shmup.</span></a></li>
-      <li><a class="link-card" href="/run/tyrian/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Epic MegaGames' robot-fighting classic.</span></a></li>
       <li><a class="link-card" href="/run/jazz-jackrabbit-shareware/"><span class="lc-title">Jazz Jackrabbit (shareware)</span><span class="lc-desc">Epic's fast platformer, shareware episode.</span></a></li>
       <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM (shareware)</span><span class="lc-desc">The 1993 shooter, free episode in your browser.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">DOS games in the browser</span><span class="lc-desc">How DOS-era titles fare under Win32 Wine.</span></a></li>
       <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in ExeBrowser and what doesn't.</span></a></li>
     </ul>
   </section>
@@ -339,7 +346,7 @@
 <!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=33"></script>
+<script src="/dos-embed.js?v=34"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

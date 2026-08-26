@@ -147,9 +147,9 @@
       </div>
     </div>
   </div>
-  <p class="mgp-hint">D-pad: move/turn · FIRE: shoot · OPEN: doors/walls · MENU: esc</p>
+  <p class="mgp-hint">Cruceta: moverse/girar · FIRE: disparar · OPEN: puertas/muros · MENU: esc</p>
   <details class="mgp-keys">
-    <summary>⌨ Keyboard — for menus &amp; name entry</summary>
+    <summary>⌨ Teclado — para los menús y escribir tu nombre</summary>
     <div class="mgp-keygrid" id="mgp-keygrid"></div>
   </details>
 <script>
@@ -230,24 +230,23 @@
       <a href="/run/keen4/">Commander Keen 4: Secret of the Oracle</a>
       <a href="/es/run/doom/">DOOM</a>
       <a href="/run/jezzball-open/">JezzBall</a>
-      <a class="next-up-all" href="/es/run/">all 44 games →</a>
+      <a class="next-up-all" href="/es/run/">los 44 juegos →</a>
     </p>
     <figure class="app-shot">
-      <img src="/run/wolfenstein-3d/screenshot.png" width="798" height="539" loading="lazy" alt="Wolfenstein 3D running in a browser tab via ExeBrowser" />
-      <figcaption>Wolfenstein 3D running in the browser — no install, no upload.</figcaption>
+      <img src="/run/wolfenstein-3d/screenshot.png" width="798" height="539" loading="lazy" alt="Wolfenstein 3D funcionando en una pestaña del navegador con ExeBrowser" />
+      <figcaption>Wolfenstein 3D funcionando en el navegador: sin instalar nada y sin subir archivos.</figcaption>
     </figure>
     <p class="muted small" style="margin-top:1rem;">Se ejecuta en la pestaña de tu navegador con DOSBox + WebAssembly: no se sube nada. Haz clic en la pantalla para capturar el teclado; pulsa <kbd>Ctrl+F10</kbd> para liberar el ratón.</p>
   </section>
 
   <section class="card">
     <div class="download-box">
-      <h3 style="margin-top:0;">Get the Wolfenstein 3D shareware (free, legal)</h3>
-      <div class="download-box"><h3 style="margin-top:0;">The shareware episode (data files) + a Win32 source port</h3><p>You need two pieces, both free and legal:</p><ol><li><strong>The shareware data</strong> — the freely-redistributable first episode (the <code>*.WL1</code> files: <code>VSWAP.WL1</code>, <code>MAPHEAD.WL1</code>, <code>GAMEMAPS.WL1</code>, <code>VGAGRAPH.WL1</code>, <code>VGAHEAD.WL1</code>, <code>AUDIOT.WL1</code>, <code>AUDIOHED.WL1</code>). Apogee released episode one as shareware to be copied at no charge; the Internet Archive keeps preserved copies.</li><li><strong>A Win32 source port</strong> — a modern, open-source rebuild of the engine that runs natively as a Windows EXE. <a href="https://maniacsvault.net/ecwolf/download.php" target="_blank" rel="noopener">ECWolf</a> (grab the <strong>32-bit Windows</strong> build) or the leaner Wolf4SDL.</li></ol><p><a class="cta-btn" href="https://archive.org/details/wolf3dsw" target="_blank" rel="noopener">Get Wolfenstein 3D shareware (Internet Archive) →</a></p><p class="muted small">Put the source-port EXE and all the <code>*.WL1</code> files in <strong>one folder</strong> to play it on your desktop — you need none of that here, since this page already boots the shareware episode. © id Software / Apogee. Only the <strong>shareware episode</strong> is free to redistribute. The registered episodes, the Nocturnal Missions, and Spear of Destiny are commercial — buy those from <a href="https://store.steampowered.com/app/2270/Wolfenstein_3D/" target="_blank" rel="noopener">id / Steam</a>.</p></div>
+      <h3 style="margin-top:0;">Consigue el shareware de Wolfenstein 3D (gratis y legal)</h3>
+      <div class="download-box"><h3 style="margin-top:0;">El episodio shareware (archivos de datos) y un source port Win32</h3><p>Necesitas dos piezas, ambas gratuitas y legales:</p><ol><li><strong>Los datos del shareware</strong>: el primer episodio, de libre redistribución (los archivos <code>*.WL1</code>). Apogee publicó el episodio uno como shareware para que se copiara sin coste, e Internet Archive conserva copias.</li><li><strong>Un source port de Win32</strong>: una reconstrucción moderna y de código abierto del motor que funciona como un EXE de Windows. <a href="https://maniacsvault.net/ecwolf/download.php" target="_blank" rel="noopener">ECWolf</a> (la versión de <strong>32 bits</strong>) o el más ligero Wolf4SDL.</li></ol><p><a class="cta-btn" href="https://archive.org/details/wolf3dsw" target="_blank" rel="noopener">Descargar el shareware de Wolfenstein 3D (Internet Archive) →</a></p><p class="muted small">Para jugarlo en tu escritorio, pon el EXE del source port y todos los archivos <code>*.WL1</code> en <strong>una misma carpeta</strong>. Aquí no necesitas nada de eso: esta página ya arranca el episodio shareware. © id Software / Apogee. Solo el <strong>episodio shareware</strong> es de libre redistribución; los episodios registrados, las Nocturnal Missions y Spear of Destiny son comerciales y se compran en <a href="https://store.steampowered.com/app/2270/Wolfenstein_3D/" target="_blank" rel="noopener">id / Steam</a>.</p></div>
     </div>
   </section>
   <section class="card">
     <h2>Cómo funciona y qué esperar</h2>
-    <h3>Cómo funciona y qué esperar</h3>
     <p>Esta página ejecuta el Wolfenstein 3D original de <strong>DOS de 16 bits</strong> —el <code>WOLF3D.EXE</code> auténtico de 1992— dentro de DOSBox compilado a WebAssembly. No se emula dos veces ni se recompila nada: es el episodio shareware tal y como se publicó, arrancando en un par de segundos.</p><p>Tienes el juego de verdad: B.J. Blazkowicz, los búnkeres laberínticos, los muros secretos que se empujan y ese inconfundible aspecto de raycasting. El sonido es la salida original de AdLib/altavoz interno, así que suena como en 1992 y no como lo reinterpretaría un port moderno. Wolfenstein 3D es tan ligero para los estándares actuales que va a toda velocidad en cualquier equipo moderno; solo en Chromebooks y tablets antiguas podrías notarlo lento.</p>
     <h3>Source ports, si quieres uno en el escritorio</h3>
     <p>id liberó el motor de Wolfenstein 3D en 1995 y la comunidad creó versiones modernas —<a href="https://github.com/ECWolfEngine/ECWolf" target="_blank" rel="noopener">ECWolf</a> y Wolf4SDL— que leen exactamente los mismos datos shareware <code>.WL1</code> con más resolución, vista con ratón y soporte para pantallas actuales. Merecen la pena en un escritorio.</p><p>Pero son programas de escritorio. Esta página ejecuta a propósito la versión original de DOS, porque es la que no te exige preparar absolutamente nada.</p>
@@ -279,38 +278,31 @@
     <h2>Más juegos que puedes jugar en el navegador</h2>
     <ul class="poster-grid">
         <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
-          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
-          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet funcionando en el navegador" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Jugar gratis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/es/run/doom/">
-          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM running in the browser" />
-          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM funcionando en el navegador" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Jugar gratis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/run/solitaire-open/">
-          <img class="pc-shot" src="/run/solitaire-open/screenshot.png" width="320" height="240" loading="lazy" alt="Solitaire (Klondike) running in the browser" />
-          <span class="pc-body"><span class="pc-title">Solitaire (Klondike)</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/solitaire-open/screenshot.png" width="320" height="240" loading="lazy" alt="Solitaire (Klondike) funcionando en el navegador" />
+          <span class="pc-body"><span class="pc-title">Solitaire (Klondike)</span><span class="pc-play">▶ Jugar gratis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/run/micropolis/">
-          <img class="pc-shot" src="/run/micropolis/screenshot.png" width="320" height="240" loading="lazy" alt="Micropolis running in the browser" />
-          <span class="pc-body"><span class="pc-title">Micropolis</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/micropolis/screenshot.png" width="320" height="240" loading="lazy" alt="Micropolis funcionando en el navegador" />
+          <span class="pc-body"><span class="pc-title">Micropolis</span><span class="pc-play">▶ Jugar gratis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/run/crystal-caves/">
-          <img class="pc-shot" src="/run/crystal-caves/screenshot.png" width="320" height="240" loading="lazy" alt="Crystal Caves running in the browser" />
-          <span class="pc-body"><span class="pc-title">Crystal Caves</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/crystal-caves/screenshot.png" width="320" height="240" loading="lazy" alt="Crystal Caves funcionando en el navegador" />
+          <span class="pc-body"><span class="pc-title">Crystal Caves</span><span class="pc-play">▶ Jugar gratis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/run/minesweeper-open/">
-          <img class="pc-shot" src="/run/minesweeper-open/screenshot.png" width="320" height="240" loading="lazy" alt="Minesweeper running in the browser" />
-          <span class="pc-body"><span class="pc-title">Minesweeper</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/minesweeper-open/screenshot.png" width="320" height="240" loading="lazy" alt="Minesweeper funcionando en el navegador" />
+          <span class="pc-body"><span class="pc-title">Minesweeper</span><span class="pc-play">▶ Jugar gratis</span></span>
         </a></li>
     </ul>
-    <p class="muted small" style="margin:.75rem 0 0;"><a href="/es/run/">See all 44 titles you can play here →</a></p>
-  </section>
-  <section class="card">
-    <h2>Guías relacionadas</h2>
-    <ul class="card-grid">
-      <li><a class="link-card" href="/es/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">El shooter de id de 1993: el episodio shareware, jugable aquí.</span></a></li>
-      <li><a class="link-card" href="/es/run/"><span class="lc-title">Todos los juegos y programas</span><span class="lc-desc">Todo lo que puedes jugar o ejecutar aquí.</span></a></li>
-    </ul>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/es/run/">Ver los 44 títulos que puedes jugar aquí →</a></p>
   </section>
 </main>
 
@@ -331,10 +323,10 @@
 </footer>
 
 
-<script>window.__I18N={"play":"▶ Jugar a {name}","resume":"▶ Continuar {name}","loading":"Cargando…","startOver":"Empezar de cero","savedAgo":"Guardado {when}.","filesRestored":"Tus partidas guardadas se cargan con él: ábrelas desde el menú del propio juego.","snapshotResume":"Retomarás la partida justo donde la dejaste.","progressSaved":"Progreso guardado en este navegador","resumedExactly":"Has vuelto justo donde lo dejaste","confirmDelete":"¿Borrar tu progreso guardado en {name}?","justNow":"ahora mismo","minutesAgo":"hace {n} minutos","anHourAgo":"hace una hora","hoursAgo":"hace {n} horas","yesterday":"ayer","daysAgo":"hace {n} días","saveHint":"Guarda dentro del juego y se conservará en este navegador","resetSaves":"borrar el progreso guardado","savesCleared":"Progreso guardado borrado: recarga para empezar de cero","restoredFiles":"Se han restaurado {n} archivo(s) guardado(s): cárgalos desde el menú del juego","overlayNote":"Se ejecuta en tu navegador con DOSBox + WebAssembly.<br>No se sube nada. El runtime (~1,4 MB) queda en caché tras la primera carga.","mouseHint":"Haz clic en la pantalla del juego para darle el teclado.","starting":"Iniciando…","cachedNote":"Se guarda en caché tras la primera carga, así la próxima vez es instantánea.","loadingGame":"Cargando {name}…"};</script><!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
+<script>window.__I18N={"play":"▶ Jugar a {name}","resume":"▶ Continuar {name}","loading":"Cargando…","startOver":"Empezar de cero","savedAgo":"Guardado {when}.","filesRestored":"Tus partidas guardadas se cargan con él: ábrelas desde el menú del propio juego.","snapshotResume":"Retomarás la partida justo donde la dejaste.","progressSaved":"Progreso guardado en este navegador","resumedExactly":"Has vuelto justo donde lo dejaste","confirmDelete":"¿Borrar tu progreso guardado en {name}?","justNow":"ahora mismo","minutesAgo":"hace {n} minutos","anHourAgo":"hace una hora","hoursAgo":"hace {n} horas","yesterday":"ayer","daysAgo":"hace {n} días","saveHint":"Guarda dentro del juego y se conservará en este navegador","resetSaves":"borrar el progreso guardado","savesCleared":"Progreso guardado borrado: recarga para empezar de cero","restoredFiles":"Se han restaurado {n} archivo(s) guardado(s): cárgalos desde el menú del juego","overlayNote":"Se ejecuta en tu navegador con DOSBox + WebAssembly.<br>No se sube nada. El runtime (~1,4 MB) queda en caché tras la primera carga.","mouseHint":"Haz clic en la pantalla del juego para darle el teclado.","starting":"Iniciando…","cachedNote":"Se guarda en caché tras la primera carga, así la próxima vez es instantánea.","loadingGame":"Cargando {name}…","fullscreen":"Pantalla completa","soundOn":"Sonido activado","soundOff":"Sonido desactivado","remapKeys":"Teclado — reasigna cualquier tecla","remapHint":"Haz clic en una tecla de abajo y luego pulsa la que prefieras usar. Se guarda en este navegador, para cada juego.","resetDefaults":"Restablecer valores por defecto","consoleOutput":"Salida de consola"};</script><!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=33"></script>
+<script src="/dos-embed.js?v=34"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

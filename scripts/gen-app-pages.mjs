@@ -89,7 +89,7 @@ import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import {
   LANGS, LOCALES, languagesFor, translatedEntry, translatedSlugs, prefixOf, hasTranslation,
-  hreflangHtml, langSwitcherHtml, langsWithContent,
+  hreflangHtml, langSwitcherHtml, langsWithContent, cardCopy, controlText,
 } from "./i18n/locales.mjs";
 import { blogPosts } from "./blog-meta.mjs";
 import {
@@ -135,12 +135,19 @@ const screenshotUrl = (p) => {
   return f ? `${SITE}/run/${p.slug}/${f}` : null;
 };
 const ogImage = (p) => screenshotUrl(p) || `${SITE}/og.png`;
+// A translated UI string with {placeholders} filled in. ui.json carries the
+// braces so a translator can move a substitution to wherever the sentence needs
+// it — Japanese and Chinese put the count before the noun, French after.
+const tf = (L, key, vars = {}) =>
+  String(L.t(key)).replace(/\{(\w+)\}/g, (m, k) => (vars[k] !== undefined ? String(vars[k]) : m));
+
 // A <figure> showing the screenshot, placed under the embed on pages that have one.
-const figureHtml = (p) => {
+const figureHtml = (p, L = EN) => {
   const f = screenshotFile(p);
   if (!f) return "";
-  const alt = esc(`${p.appName || p.crumb} running in a browser tab via ExeBrowser`);
-  const cap = esc(`${p.appName || p.crumb} running in the browser — no install, no upload.`);
+  const app = p.appName || p.crumb;
+  const alt = esc(tf(L, "figure.alt", { app }));
+  const cap = esc(tf(L, "figure.caption", { app }));
   const dim = imageSize(resolve(ROOT, "run", p.slug, f)) || { w: 1200, h: 750 };
   return `
     <figure class="app-shot">
@@ -306,20 +313,24 @@ function embedBlock(p) {
 // through the article to find out which key fires.
 // Say plainly when a title is free in full, since most "free" retro games
 // online are a shareware episode with the rest behind a purchase.
-function freeNoteHtml(p) {
+function freeNoteHtml(p, L = EN) {
   if (!p.fullyFree) return "";
   return `
-    <p class="free-note"><span class="badge-free">FREE</span> <strong>This is the complete game, free.</strong> ${esc(p.fullyFree)}</p>`;
+    <p class="free-note"><span class="badge-free">${esc(L.t("free.badge"))}</span> <strong>${esc(L.t("free.heading"))}</strong> ${esc(p.fullyFree)}</p>`;
 }
 
 function controlsPanelHtml(p, L = EN) {
   const rows = p.controls;
   if (!rows || !rows.length) return "";
   const anyMouse = rows.some((r) => r.mouse && r.mouse !== "—");
+  // Every cell goes through the locale's control glossary. The catalogue keeps
+  // one English copy of "Move / turn"; the glossary is where each language says
+  // it once, rather than once per page that happens to list that row.
+  const tx = (v) => controlText(L.code, v);
   const body = rows
     .map(
-      (r) => `        <tr><th scope="row">${esc(r.action)}</th><td>${kbd(r.keyboard)}</td>${
-        anyMouse ? `<td>${r.mouse && r.mouse !== "—" ? kbd(r.mouse) : '<span class="muted">—</span>'}</td>` : ""
+      (r) => `        <tr><th scope="row">${esc(tx(r.action))}</th><td>${kbd(tx(r.keyboard))}</td>${
+        anyMouse ? `<td>${r.mouse && r.mouse !== "—" ? kbd(tx(r.mouse)) : '<span class="muted">—</span>'}</td>` : ""
       }</tr>`
     )
     .join("\n");
@@ -346,6 +357,11 @@ const KEY_WORDS = /\b(Arrow keys|number keys(?: \d–\d)?|Left-click|Right-click
 function kbd(text) {
   const s = String(text);
   if (!s || s === "—") return esc(s);
+  // A translated cell can mark its own keys up. KEY_WORDS only knows English
+  // key names, so "矢印キー" would otherwise render as unstyled text; letting
+  // the glossary write <kbd> directly is simpler than teaching the regex six
+  // languages. The strings come from our own JSON, not from user input.
+  if (s.includes("<kbd>")) return s;
   let out = "";
   let last = 0;
   for (const m of s.matchAll(KEY_WORDS)) {
@@ -355,7 +371,7 @@ function kbd(text) {
   return out + esc(s.slice(last));
 }
 
-function mobileControlsHtml(p) {
+function mobileControlsHtml(p, L = EN) {
   const mc = p.mobileControls;
   if (!mc) return "";
 
@@ -453,7 +469,7 @@ function mobileControlsHtml(p) {
   // A collapsed key palette covers the keys those screens actually ask for.
   const keyPad = isDos ? `
   <details class="mgp-keys">
-    <summary>⌨ Keyboard — for menus &amp; name entry</summary>
+    <summary>${esc(L.t("keypad.summary"))}</summary>
     <div class="mgp-keygrid" id="mgp-keygrid"></div>
   </details>
 <script>
@@ -502,16 +518,19 @@ function mobileControlsHtml(p) {
       </div>
     </div>
   </div>
-  <p class="mgp-hint">${esc(mc.hint)}</p>${keyPad}${wireScript}`;
+  <p class="mgp-hint">${esc(p.mobileHint || mc.hint)}</p>${keyPad}${wireScript}`;
 }
 
-function sectionsHtml(sections) {
-  // The page hardcodes an <h2>How it works & what to expect</h2> wrapper. Some
-  // authored definitions repeat that exact heading as their first section, which
-  // would render a duplicate <h3>. Drop a leading section whose heading matches.
-  const norm = (s) => String(s).replace(/&amp;/g, "&").replace(/\s+/g, " ").trim().toLowerCase();
+function sectionsHtml(sections, promotedFirst = false) {
+  // `promotedFirst` says the caller has already rendered sections[0].h as the
+  // card's <h2>, so repeating it as an <h3> would print the same heading twice
+  // in a row. This used to test the heading text against the literal English
+  // "how it works & what to expect", which meant it only ever fired on the 60-odd
+  // English pages that happened to use that exact phrase: the other 20 English
+  // pages printed the duplicate, and so did every localised page, since a
+  // Japanese heading never matches an English string.
   const list = (sections || []).slice();
-  if (list.length && norm(list[0].h) === "how it works & what to expect") {
+  if (promotedFirst && list.length) {
     // Keep its body (often the spec table) but drop the redundant heading.
     return `\n    ${list[0].html}` + list.slice(1).map((s) => `\n    <h3>${esc(s.h)}</h3>\n    ${s.html}`).join("");
   }
@@ -537,7 +556,18 @@ function resolveHref(L, href) {
   return linkFor(L, m[1]);
 }
 function relatedHtml(related, L = EN) {
-  const cards = (related || [])
+  // A card whose copy this language hasn't translated is dropped rather than
+  // shown in English. That is the same rule the page-level pipeline follows,
+  // and it is why a localised page can legitimately show fewer related links
+  // than the English one — a short honest list beats a bilingual long one.
+  const localised = (related || [])
+    .map((r) => (L.isDefault ? r : (() => {
+      const c = cardCopy(L.code, r.href);
+      return c ? { ...r, ...c } : null;
+    })()))
+    .filter(Boolean);
+  if (!localised.length) return "";
+  const cards = localised
     .map(
       (r) =>
         `      <li><a class="link-card" href="${resolveHref(L, r.href)}"><span class="lc-title">${esc(
@@ -588,15 +618,15 @@ function alsoPlayHtml(current, allPages, L = EN) {
     .map((p) => {
       const shot = screenshotFile(p);
       const art = shot
-        ? `<img class="pc-shot" src="/run/${p.slug}/${shot}" width="320" height="240" loading="lazy" alt="${esc(p.appName)} running in the browser" />`
+        ? `<img class="pc-shot" src="/run/${p.slug}/${shot}" width="320" height="240" loading="lazy" alt="${esc(tf(L, "poster.alt", { app: p.appName }))}" />`
         : `<span class="pc-shot pc-placeholder" aria-hidden="true">${esc((p.appName || "?").trim().charAt(0))}</span>`;
       return `        <li class="pc-item"><a class="poster-card" href="${linkFor(L, p.slug)}">
           ${art}
-          <span class="pc-body"><span class="pc-title">${esc(p.appName)}</span><span class="pc-play">▶ Play free</span></span>
+          <span class="pc-body"><span class="pc-title">${esc(p.appName)}</span><span class="pc-play">${esc(L.t("poster.playFree"))}</span></span>
         </a></li>`;
     })
     .join("\n");
-  return `\n  <section class="card">\n    <h2>${esc(L.t("alsoPlay.heading"))}</h2>\n    <ul class="poster-grid">\n${cards}\n    </ul>\n    <p class="muted small" style="margin:.75rem 0 0;"><a href="${L.path("/run/")}">See all ${allPages.filter(isPlayable).length} titles you can play here →</a></p>\n  </section>`;
+  return `\n  <section class="card">\n    <h2>${esc(L.t("alsoPlay.heading"))}</h2>\n    <ul class="poster-grid">\n${cards}\n    </ul>\n    <p class="muted small" style="margin:.75rem 0 0;"><a href="${L.path("/run/")}">${esc(tf(L, "alsoPlay.seeAll", { n: allPages.filter(isPlayable).length }))}</a></p>\n  </section>`;
 }
 
 // A one-line "what to play next" rail, sitting directly under the game rather
@@ -621,7 +651,7 @@ function nextUpHtml(current, allPages, L = EN) {
   const links = picks
     .map((p) => `<a href="${linkFor(L, p.slug)}">${esc(p.appName)}</a>`)
     .join("\n      ");
-  return `\n    <p class="next-up"><span class="next-up-label">${esc(L.t("nextUp.heading"))}:</span>\n      ${links}\n      <a class="next-up-all" href="${L.path("/run/")}">all ${allPages.filter(isPlayable).length} games →</a>\n    </p>`;
+  return `\n    <p class="next-up"><span class="next-up-label">${esc(L.t("nextUp.heading"))}:</span>\n      ${links}\n      <a class="next-up-all" href="${L.path("/run/")}">${esc(tf(L, "nextUp.all", { n: allPages.filter(isPlayable).length }))}</a>\n    </p>`;
 }
 
 // The site has no way to reach a visitor again — no account, no login, and
@@ -699,13 +729,16 @@ const footerHtml = (L) => `<footer>
 // strings — the play button, the resume card, the save line. They can't read
 // ui.json, so the js.* keys ride along in a small inline object. English pages
 // emit nothing: those scripts already default to English.
+const UI_EN = JSON.parse(
+  readFileSync(resolve(process.cwd(), "scripts", "i18n", "ui.json"), "utf8")
+).en;
 function clientStringsHtml(L) {
   if (L.isDefault) return "";
-  const keys = ["js.play","js.resume","js.loading","js.startOver","js.savedAgo","js.filesRestored",
-    "js.snapshotResume","js.progressSaved","js.resumedExactly","js.confirmDelete","js.justNow",
-    "js.minutesAgo","js.anHourAgo","js.hoursAgo","js.yesterday","js.daysAgo",
-    "js.saveHint","js.resetSaves","js.savesCleared","js.restoredFiles",
-    "js.overlayNote","js.mouseHint","js.starting","js.cachedNote","js.loadingGame"];
+  // Every js.* key in ui.json, not a hand-listed subset: the list version meant
+  // adding a string in two places and silently shipping English if you forgot
+  // the second, which is exactly what happened to the fullscreen and sound
+  // buttons.
+  const keys = Object.keys(UI_EN).filter((k) => k.startsWith("js."));
   const obj = Object.fromEntries(keys.map((k) => [k.slice(3), L.t(k)]));
   return `\n<script>window.__I18N=${JSON.stringify(obj)};</script>`;
 }
@@ -760,12 +793,12 @@ ${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
     <h2>${esc(p.h1 || p.crumb)} <span class="verdict ${p.verdict.kind}">${esc(p.verdict.text)}</span></h2>${p.updated ? `
     <p class="muted small" style="margin-top:0.25rem;">${esc(L.t("page.updated"))} ${esc(monthYear(p.updated, L))} · ${esc(p.verdict.kind === "bad" ? L.t("page.testedWith") : L.t("page.runsVia"))} ${esc(runtimeLabel(p))}${isPlayable(p) || p.verdict.kind === "bad" ? "" : " · " + esc(L.t("page.requiresOwnCopy"))}</p>` : ""}
     ${p.intro}
-${embedBlock(p)}${mobileControlsHtml(p)}${controlsPanelHtml(p, L)}${isPlayable(p) ? nextUpHtml(p, pages, L) : ""}${freeNoteHtml(p)}${figureHtml(p)}
+${embedBlock(p)}${mobileControlsHtml(p, L)}${controlsPanelHtml(p, L)}${isPlayable(p) ? nextUpHtml(p, pages, L) : ""}${freeNoteHtml(p, L)}${figureHtml(p, L)}
     ${p.iframeUrl ? "" : `<p class="muted small" style="margin-top:1rem;">${p.dosRuntime ? L.t("embed.noteDos") : L.t("embed.noteWine")}</p>`}${licenseHtml(p)}
   </section>
 ${downloadHtml(p)}
   <section class="card">
-    <h2>${esc((p.sections && p.sections[0] && p.sections[0].h) || "How it works & what to expect")}</h2>${sectionsHtml(p.sections)}
+    <h2>${esc((p.sections && p.sections[0] && p.sections[0].h) || "How it works & what to expect")}</h2>${sectionsHtml(p.sections, true)}
   </section>${faqHtml(p, L)}${isPlayable(p) ? alsoPlayHtml(p, pages, L) : ""}${newsletterHtml()}${relatedHtml(p.related, L)}
 </main>
 
@@ -778,7 +811,7 @@ ${clientStringsHtml(L)}${p.iframeUrl
     ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=33"></script>`
+<script src="/dos-embed.js?v=34"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>

@@ -306,12 +306,76 @@ if (existsSync(uiFile)) {
     if (existsSync(pagesFile)) {
       const tr = JSON.parse(readFileSync(pagesFile, "utf8"));
       delete tr._readme;
+      delete tr._cards;
+      delete tr._controls;
       for (const [slug, e] of Object.entries(tr)) {
         for (const f of ["title", "description", "h1"]) {
           if (!e[f]) warn(`i18n ${code}/${slug}: missing ${f}`);
         }
         if (e.title && e.title.length > 80) warn(`i18n ${code}/${slug}: title ${e.title.length}c (truncates)`);
+
+        // A field the translation omits falls back to the English entry, and
+        // that fallback is silent. It put an English FAQ on the Spanish Tyrian
+        // page, an English download box on all twelve localised pages, and
+        // English related-card copy everywhere — roughly half the visible text
+        // on the Japanese and Chinese pages. Every prose field the English
+        // entry fills has to be answered here or the page is bilingual.
+        const en = pages.find((q) => q.slug === slug);
+        if (en) {
+          const PROSE = ["title", "description", "keywords", "ogTitle", "ogDescription",
+            "crumb", "h1", "verdict", "intro", "sections", "faq", "download",
+            "licenseNote", "licenseReason", "fullyFree"];
+          const missing = PROSE.filter((k) => en[k] !== undefined && en[k] !== "" && e[k] === undefined);
+          // mobileControls carries key codes, but its `hint` is a sentence; the
+          // translation restates just that, as `mobileHint`.
+          if (en.mobileControls && en.mobileControls.hint && !e.mobileHint) missing.push("mobileHint");
+          if (missing.length) {
+            warn(`i18n ${code}/${slug}: falls back to English for ${missing.join(", ")}`);
+          }
+        }
       }
+    }
+  }
+}
+
+// ── 12. Related cards point at the page they describe ──────────────────────
+// Twelve cards had an href left pointing at the page they sat on while the
+// title named a different game — "Freedoom" on the Wolfenstein page linking
+// back to Wolfenstein. A self-link passes every link check ever written: the
+// target resolves, it is just the wrong target. On a site whose whole SEO
+// problem is that Google has recorded ten internal links, a card that spends
+// its link on itself is the most expensive kind of typo.
+{
+  const bySlug = Object.fromEntries(pages.map((p) => [p.slug, p]));
+  // A card may deliberately mark the current page — "(you're here)".
+  const MARKS_SELF = /\(you're here\)|\(this page\)|this page|you're here/i;
+  for (const p of pages) {
+    const seen = new Map();
+    for (const r of p.related || []) {
+      if (r.href === `/run/${p.slug}/` && !MARKS_SELF.test(`${r.title} ${r.desc}`)) {
+        warn(`related: ${p.slug} card "${r.title}" links to itself`);
+      }
+      // A card whose title names another catalogue entry should link there.
+      // Several entries share an appName — "Notepad" is both /run/notepad/ and
+      // the Notepad++ guide, "Hearts" is the guide and the playable -open build
+      // — so this collects every page that could answer to the title and only
+      // complains when the href matches none of them.
+      const target = bySlug[String(r.href).replace(/^\/run\/|\/$/g, "")];
+      // "+" survives normalisation on purpose: strip it and Notepad++ collides
+      // with Notepad, and every card titled "Notepad" gets reported.
+      const norm = (v) => String(v).toLowerCase().replace(/[^a-z0-9+]/g, "");
+      const named = pages.filter(
+        (q) => q.appName && q.slug !== p.slug && norm(r.title) === norm(q.appName)
+      );
+      // A title matching the target's own slug settles it — /run/notepad/ is
+      // titled "Notepad & utilities" but a card calling it "Notepad" is right.
+      const titlesTarget = target && norm(r.title) === norm(target.slug);
+      if (named.length && target && !titlesTarget && !named.some((q) => q.slug === target.slug)) {
+        warn(`related: ${p.slug} card "${r.title}" points at /run/${target.slug}/`);
+      }
+      const key = `${r.href}`;
+      if (seen.has(key)) warn(`related: ${p.slug} links ${r.href} twice ("${seen.get(key)}" and "${r.title}")`);
+      else seen.set(key, r.title);
     }
   }
 }

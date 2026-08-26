@@ -135,7 +135,6 @@
 
   <section class="card">
     <h2>Pick KeePass 1.x, not 2.x</h2>
-    <h3>Pick KeePass 1.x, not 2.x</h3>
     <p>There are two KeePass lines, and the difference matters here. <strong>KeePass 2.x</strong> is built on Microsoft .NET, which browser-based Wine 1.7.55 supports poorly — it usually will not start at all. <strong>KeePass 1.x</strong> (the "Classic Edition") is a native Win32 program with no .NET dependency, and it is the version to run in your browser. It opens <code>.kdb</code> databases. Note that 1.x and 2.x use different, incompatible database formats: 1.x reads <code>.kdb</code>, while 2.x uses <code>.kdbx</code>. If your vault is a <code>.kdbx</code> file, you would need KeePass 2.x natively to convert or export it first.</p>
     <h3>How to load and save your database</h3>
     <p>The KeePass 1.x build boots automatically when you press Play. To open your own vault, put your <code>.kdb</code> file alongside it using the <strong>folder picker</strong> (drop <code>KeePass.exe</code> and your <code>.kdb</code> in one folder and upload that folder), then open the database from inside KeePass with your master password.</p><ul><li>To get an edited database back out, use <strong>Download files written by this app</strong> after you save inside KeePass — it packages the updated <code>.kdb</code> into a zip you can download before closing the tab.</li><li>The emulated drive lives only in memory. Reloading or closing the tab wipes it, so always export your changes first.</li></ul>

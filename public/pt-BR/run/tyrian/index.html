@@ -66,18 +66,33 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O jogo é completo mesmo ou só uma demonstração?",
-      "acceptedAnswer": { "@type": "Answer", "text": "É completo. Os autores liberaram o Tyrian 2000 inteiro como freeware, com todos os episódios — não há uma versão paga escondida atrás disso." }
+      "name": "Tyrian 2000 é mesmo de graça?",
+      "acceptedAnswer": { "@type": "Answer", "text": "É. O detentor dos direitos, Jason Emery, lançou o jogo completo como freeware em 2004, a arte depois passou para uma licença de conteúdo aberto, e ele também é distribuído de graça na GOG. Não há nada para comprar nem nada de estranho em jogá-lo aqui." }
     },
     {
       "@type": "Question",
-      "name": "É legal jogar aqui?",
-      "acceptedAnswer": { "@type": "Answer", "text": "É. O jogo foi liberado como freeware pelos próprios detentores dos direitos, com permissão de distribuição gratuita." }
+      "name": "Dá para jogar Tyrian 2000 no navegador sem baixar nada?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dá. Aperte jogar e o jogo completo chega à tela de título em alguns segundos. Como Tyrian 2000 é freeware, os dados vêm junto com a página — não há nada para procurar, enviar ou instalar." }
     },
     {
       "@type": "Question",
-      "name": "O meu progresso fica salvo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Fica. Além do sistema de salvar do próprio jogo, se você fechar a aba no meio de uma fase o site oferece retomar exatamente de onde parou. Tudo fica no seu navegador e nada é enviado para servidor nenhum." }
+      "name": "É o Tyrian original ou um remake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O original. O executável de DOS e os dados originais rodam sem modificação dentro do DOSBox compilado para WebAssembly, então é o mesmo jogo que vinha nos disquetes — não é uma recriação nem um source port." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quantos episódios eu recebo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Todos os cinco. O Tyrian 2000 foi lançado como freeware por inteiro, então, ao contrário dos jogos shareware deste site, nenhum episódio fica retido atrás de uma compra." }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é o OpenTyrian2000?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Uma reconstrução livre e de código aberto (GPL) do jogo como executável nativo moderno, usando os mesmos arquivos de dados freeware. É a melhor forma de jogar Tyrian num computador: é baseada em SDL e mira uma máquina real, não este ambiente do navegador — por isso esta página roda a versão de DOS original." }
+    },
+    {
+      "@type": "Question",
+      "name": "Vai rodar em velocidade total?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Normalmente sim. Uma CPU x86 é emulada dentro do WebAssembly, mas Tyrian é um jogo de DOS de 1995 e leve o bastante para um notebook moderno dar conta com folga. Em tablets e Chromebooks antigos pode haver lentidão." }
     }
   ]
 }
@@ -135,9 +150,9 @@
       </div>
     </div>
   </div>
-  <p class="mgp-hint">D-pad: fly · FIRE: shoot · BOMB: secondary weapon · PAUSE: esc</p>
+  <p class="mgp-hint">Direcional: voar · FIRE: atirar · BOMB: arma secundária · PAUSE: esc</p>
   <details class="mgp-keys">
-    <summary>⌨ Keyboard — for menus &amp; name entry</summary>
+    <summary>⌨ Teclado — para os menus e digitar seu nome</summary>
     <div class="mgp-keygrid" id="mgp-keygrid"></div>
   </details>
 <script>
@@ -201,12 +216,12 @@
         <table class="controls-table">
           <thead><tr><th scope="col">Ação</th><th scope="col">Teclado</th><th scope="col">Mouse / toque</th></tr></thead>
           <tbody>
-        <tr><th scope="row">Fly</th><td><kbd>Arrow keys</kbd></td><td><span class="muted">—</span></td></tr>
-        <tr><th scope="row">Fire</th><td><kbd>Ctrl</kbd></td><td><kbd>Left-click</kbd></td></tr>
-        <tr><th scope="row">Sidekick weapon</th><td><kbd>Alt</kbd></td><td><kbd>Right-click</kbd></td></tr>
-        <tr><th scope="row">Change weapon mode</th><td><kbd>Space</kbd></td><td><span class="muted">—</span></td></tr>
-        <tr><th scope="row">Pause / menu</th><td><kbd>Esc</kbd></td><td><span class="muted">—</span></td></tr>
-        <tr><th scope="row">Sound</th><td>—</td><td>Use the Sound button under the screen to mute</td></tr>
+        <tr><th scope="row">Voar</th><td><kbd>Setas</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Atirar</th><td><kbd>Ctrl</kbd></td><td>Clique esquerdo</td></tr>
+        <tr><th scope="row">Arma auxiliar</th><td><kbd>Alt</kbd></td><td>Clique direito</td></tr>
+        <tr><th scope="row">Trocar o modo da arma</th><td><kbd>Space</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Pausa / menu</th><td><kbd>Esc</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Som</th><td>—</td><td>Use o botão Som abaixo da tela para silenciar</td></tr>
           </tbody>
         </table>
       </div>
@@ -216,28 +231,27 @@
       <a href="/run/blockdrop-open/">Block Drop</a>
       <a href="/run/god-of-thunder/">God of Thunder</a>
       <a href="/run/beneath-a-steel-sky/">Beneath a Steel Sky</a>
-      <a class="next-up-all" href="/pt-BR/run/">all 44 games →</a>
+      <a class="next-up-all" href="/pt-BR/run/">todos os 44 jogos →</a>
     </p>
-    <p class="free-note"><span class="badge-free">FREE</span> <strong>This is the complete game, free.</strong> Declared freeware by rights holder Jason Emery in 2004 — the complete game, not an episode.</p>
+    <p class="free-note"><span class="badge-free">GRÁTIS</span> <strong>Este é o jogo completo, de graça.</strong> Declarado freeware pelo detentor dos direitos, Jason Emery, em 2004 — o jogo completo, não um episódio.</p>
     <figure class="app-shot">
-      <img src="/run/tyrian/screenshot.png" width="640" height="479" loading="lazy" alt="Tyrian 2000 running in a browser tab via ExeBrowser" />
-      <figcaption>Tyrian 2000 running in the browser — no install, no upload.</figcaption>
+      <img src="/run/tyrian/screenshot.png" width="640" height="479" loading="lazy" alt="Tyrian 2000 rodando em uma aba do navegador via ExeBrowser" />
+      <figcaption>Tyrian 2000 rodando no navegador — sem instalar nada, sem enviar arquivos.</figcaption>
     </figure>
     <p class="muted small" style="margin-top:1rem;">Roda na aba do seu navegador com DOSBox + WebAssembly — nada é enviado. Clique na tela para capturar o teclado; pressione <kbd>Ctrl+F10</kbd> para liberar o mouse.</p>
     <div class="warn-box">
-      <p class="muted small">Tyrian 2000 was released as freeware by the rights holder, so it plays here directly — the game runs in a DOSBox WebAssembly runtime in your browser tab, nothing to upload. You can also get it free on <a href="https://www.gog.com/game/tyrian_2000" target="_blank" rel="noopener">GOG</a> or as a native source port (see below).</p>
+      <p class="muted small">Tyrian 2000 foi lançado como freeware pelo detentor dos direitos, então ele roda aqui diretamente: o jogo funciona num DOSBox compilado para WebAssembly, dentro da sua aba, e não há nada para enviar. Você também pode baixá-lo de graça na <a href="https://www.gog.com/game/tyrian_2000" target="_blank" rel="noopener">GOG</a> ou como source port nativo (veja abaixo).</p>
     </div>
   </section>
 
   <section class="card">
     <div class="download-box">
-      <h3 style="margin-top:0;">Play Tyrian 2000 (free &amp; instant)</h3>
-      <div class="download-box"><h3 style="margin-top:0;">Nothing to download — it plays here</h3><p>Tyrian 2000 is freeware, and the full game runs right on this page in a DOSBox WebAssembly runtime. Just press <strong>play</strong> above — the title screen loads in seconds and you are straight into the game.</p><p class="muted small">Want it on your own machine too? Tyrian 2000 was released as freeware by the rights holder — you can get it free from <a href="https://www.gog.com/game/tyrian_2000" target="_blank" rel="noopener">GOG</a>, or play it natively with the open-source <a href="https://github.com/KScl/opentyrian2000" target="_blank" rel="noopener">OpenTyrian2000</a> source port (GPL).</p></div>
+      <h3 style="margin-top:0;">Jogue Tyrian 2000 (grátis e na hora)</h3>
+      <div class="download-box"><h3 style="margin-top:0;">Não há nada para baixar — dá para jogar aqui</h3><p>Tyrian 2000 é freeware, e o jogo completo roda nesta própria página, dentro de um DOSBox compilado para WebAssembly. Basta apertar <strong>jogar</strong> acima: a tela de título carrega em segundos e você já está no jogo.</p><p class="muted small">Quer o jogo na sua máquina também? O detentor dos direitos o lançou como freeware, então você pode baixá-lo de graça na <a href="https://www.gog.com/game/tyrian_2000" target="_blank" rel="noopener">GOG</a>, ou jogá-lo nativamente com o port de código aberto <a href="https://github.com/KScl/opentyrian2000" target="_blank" rel="noopener">OpenTyrian2000</a> (GPL).</p></div>
     </div>
   </section>
   <section class="card">
     <h2>Por que este é diferente dos outros</h2>
-    <h3>Por que este é diferente dos outros</h3>
     <p>Boa parte dos jogos clássicos disponíveis de graça são episódios shareware — a primeira parte de graça e o resto vendido. O Tyrian não é assim. Os detentores dos direitos liberaram o jogo completo como freeware, então o que você joga aqui é tudo o que existe.</p><p>Vale a pena mexer na loja entre as fases: o sistema de melhorias da nave é o coração do jogo, e guardar créditos sem gastar costuma ser um erro.</p>
     <h3>Controles</h3>
     <p>Use as setas para pilotar, <kbd>Espaço</kbd> para o disparo secundário e <kbd>Enter</kbd> para confirmar nos menus. O mouse também funciona para mirar. Em celulares aparece um teclado na tela.</p>
@@ -245,58 +259,68 @@
   <section class="card">
     <h2>Perguntas frequentes</h2>
     <details>
-      <summary>O jogo é completo mesmo ou só uma demonstração?</summary>
-      <p>É completo. Os autores liberaram o Tyrian 2000 inteiro como freeware, com todos os episódios — não há uma versão paga escondida atrás disso.</p>
+      <summary>Tyrian 2000 é mesmo de graça?</summary>
+      <p>É. O detentor dos direitos, Jason Emery, lançou o jogo completo como freeware em 2004, a arte depois passou para uma licença de conteúdo aberto, e ele também é distribuído de graça na GOG. Não há nada para comprar nem nada de estranho em jogá-lo aqui.</p>
     </details>
     <details>
-      <summary>É legal jogar aqui?</summary>
-      <p>É. O jogo foi liberado como freeware pelos próprios detentores dos direitos, com permissão de distribuição gratuita.</p>
+      <summary>Dá para jogar Tyrian 2000 no navegador sem baixar nada?</summary>
+      <p>Dá. Aperte jogar e o jogo completo chega à tela de título em alguns segundos. Como Tyrian 2000 é freeware, os dados vêm junto com a página — não há nada para procurar, enviar ou instalar.</p>
     </details>
     <details>
-      <summary>O meu progresso fica salvo?</summary>
-      <p>Fica. Além do sistema de salvar do próprio jogo, se você fechar a aba no meio de uma fase o site oferece retomar exatamente de onde parou. Tudo fica no seu navegador e nada é enviado para servidor nenhum.</p>
+      <summary>É o Tyrian original ou um remake?</summary>
+      <p>O original. O executável de DOS e os dados originais rodam sem modificação dentro do DOSBox compilado para WebAssembly, então é o mesmo jogo que vinha nos disquetes — não é uma recriação nem um source port.</p>
+    </details>
+    <details>
+      <summary>Quantos episódios eu recebo?</summary>
+      <p>Todos os cinco. O Tyrian 2000 foi lançado como freeware por inteiro, então, ao contrário dos jogos shareware deste site, nenhum episódio fica retido atrás de uma compra.</p>
+    </details>
+    <details>
+      <summary>O que é o OpenTyrian2000?</summary>
+      <p>Uma reconstrução livre e de código aberto (GPL) do jogo como executável nativo moderno, usando os mesmos arquivos de dados freeware. É a melhor forma de jogar Tyrian num computador: é baseada em SDL e mira uma máquina real, não este ambiente do navegador — por isso esta página roda a versão de DOS original.</p>
+    </details>
+    <details>
+      <summary>Vai rodar em velocidade total?</summary>
+      <p>Normalmente sim. Uma CPU x86 é emulada dentro do WebAssembly, mas Tyrian é um jogo de DOS de 1995 e leve o bastante para um notebook moderno dar conta com folga. Em tablets e Chromebooks antigos pode haver lentidão.</p>
     </details>
   </section>
   <section class="card">
     <h2>Mais coisas para jogar no navegador</h2>
     <ul class="poster-grid">
         <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
-          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
-          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Jogar grátis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/pt-BR/run/doom/">
-          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM running in the browser" />
-          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Jogar grátis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/run/solitaire-open/">
-          <img class="pc-shot" src="/run/solitaire-open/screenshot.png" width="320" height="240" loading="lazy" alt="Solitaire (Klondike) running in the browser" />
-          <span class="pc-body"><span class="pc-title">Solitaire (Klondike)</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/solitaire-open/screenshot.png" width="320" height="240" loading="lazy" alt="Solitaire (Klondike) rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Solitaire (Klondike)</span><span class="pc-play">▶ Jogar grátis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/run/micropolis/">
-          <img class="pc-shot" src="/run/micropolis/screenshot.png" width="320" height="240" loading="lazy" alt="Micropolis running in the browser" />
-          <span class="pc-body"><span class="pc-title">Micropolis</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/micropolis/screenshot.png" width="320" height="240" loading="lazy" alt="Micropolis rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Micropolis</span><span class="pc-play">▶ Jogar grátis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/pt-BR/run/wolfenstein-3d/">
-          <img class="pc-shot" src="/run/wolfenstein-3d/screenshot.png" width="320" height="240" loading="lazy" alt="Wolfenstein 3D running in the browser" />
-          <span class="pc-body"><span class="pc-title">Wolfenstein 3D</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/wolfenstein-3d/screenshot.png" width="320" height="240" loading="lazy" alt="Wolfenstein 3D rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Wolfenstein 3D</span><span class="pc-play">▶ Jogar grátis</span></span>
         </a></li>
         <li class="pc-item"><a class="poster-card" href="/run/freecell-open/">
-          <img class="pc-shot" src="/run/freecell-open/screenshot.png" width="320" height="240" loading="lazy" alt="FreeCell running in the browser" />
-          <span class="pc-body"><span class="pc-title">FreeCell</span><span class="pc-play">▶ Play free</span></span>
+          <img class="pc-shot" src="/run/freecell-open/screenshot.png" width="320" height="240" loading="lazy" alt="FreeCell rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">FreeCell</span><span class="pc-play">▶ Jogar grátis</span></span>
         </a></li>
     </ul>
-    <p class="muted small" style="margin:.75rem 0 0;"><a href="/pt-BR/run/">See all 44 titles you can play here →</a></p>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/pt-BR/run/">Ver todos os 44 títulos jogáveis aqui →</a></p>
   </section>
   <section class="card">
     <h2>Guias relacionados</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/one-must-fall-2097/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Epic's freeware robot fighter — full game, free.</span></a></li>
-      <li><a class="link-card" href="/run/raptor/"><span class="lc-title">Raptor: Call of the Shadows</span><span class="lc-desc">Another classic vertical-scrolling DOS shmup.</span></a></li>
-      <li><a class="link-card" href="/pt-BR/run/tyrian/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Epic MegaGames' robot-fighting classic.</span></a></li>
-      <li><a class="link-card" href="/run/jazz-jackrabbit-shareware/"><span class="lc-title">Jazz Jackrabbit (shareware)</span><span class="lc-desc">Epic's fast platformer, shareware episode.</span></a></li>
-      <li><a class="link-card" href="/pt-BR/run/doom/"><span class="lc-title">DOOM (shareware)</span><span class="lc-desc">The 1993 shooter, free episode in your browser.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">DOS games in the browser</span><span class="lc-desc">How DOS-era titles fare under Win32 Wine.</span></a></li>
-      <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in ExeBrowser and what doesn't.</span></a></li>
+      <li><a class="link-card" href="/run/one-must-fall-2097/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">O jogo de luta de robôs freeware da Epic: completo e grátis.</span></a></li>
+      <li><a class="link-card" href="/run/raptor/"><span class="lc-title">Raptor: Call of the Shadows</span><span class="lc-desc">Outro clássico shmup vertical de DOS.</span></a></li>
+      <li><a class="link-card" href="/run/jazz-jackrabbit-shareware/"><span class="lc-title">Jazz Jackrabbit (shareware)</span><span class="lc-desc">O plataforma veloz da Epic, episódio shareware.</span></a></li>
+      <li><a class="link-card" href="/pt-BR/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">O episódio shareware do original de 1993, jogável no navegador.</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">Guia de compatibilidade</span><span class="lc-desc">O que roda no ExeBrowser e o que não roda.</span></a></li>
     </ul>
   </section>
 </main>
@@ -318,10 +342,10 @@
 </footer>
 
 
-<script>window.__I18N={"play":"▶ Jogar {name}","resume":"▶ Continuar {name}","loading":"Carregando…","startOver":"Começar de novo","savedAgo":"Salvo {when}.","filesRestored":"Seus jogos salvos são carregados junto — abra-os pelo menu do próprio jogo.","snapshotResume":"Você volta exatamente de onde parou, no meio do jogo.","progressSaved":"Progresso salvo neste navegador","resumedExactly":"Você voltou exatamente de onde parou","confirmDelete":"Apagar seu progresso salvo em {name}?","justNow":"agora mesmo","minutesAgo":"há {n} minutos","anHourAgo":"há uma hora","hoursAgo":"há {n} horas","yesterday":"ontem","daysAgo":"há {n} dias","saveHint":"Salve dentro do jogo e o arquivo fica neste navegador","resetSaves":"apagar o progresso salvo","savesCleared":"Progresso salvo apagado — recarregue para começar de novo","restoredFiles":"{n} arquivo(s) salvo(s) restaurado(s) — abra pelo menu do jogo","overlayNote":"Roda no seu navegador com DOSBox + WebAssembly.<br>Nada é enviado. O runtime (~1,4 MB) fica em cache depois da primeira vez.","mouseHint":"Clique na tela do jogo para dar o teclado a ele.","starting":"Iniciando…","cachedNote":"Fica em cache depois da primeira carga, então da próxima vez é instantâneo.","loadingGame":"Carregando {name}…"};</script><!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
+<script>window.__I18N={"play":"▶ Jogar {name}","resume":"▶ Continuar {name}","loading":"Carregando…","startOver":"Começar de novo","savedAgo":"Salvo {when}.","filesRestored":"Seus jogos salvos são carregados junto — abra-os pelo menu do próprio jogo.","snapshotResume":"Você volta exatamente de onde parou, no meio do jogo.","progressSaved":"Progresso salvo neste navegador","resumedExactly":"Você voltou exatamente de onde parou","confirmDelete":"Apagar seu progresso salvo em {name}?","justNow":"agora mesmo","minutesAgo":"há {n} minutos","anHourAgo":"há uma hora","hoursAgo":"há {n} horas","yesterday":"ontem","daysAgo":"há {n} dias","saveHint":"Salve dentro do jogo e o arquivo fica neste navegador","resetSaves":"apagar o progresso salvo","savesCleared":"Progresso salvo apagado — recarregue para começar de novo","restoredFiles":"{n} arquivo(s) salvo(s) restaurado(s) — abra pelo menu do jogo","overlayNote":"Roda no seu navegador com DOSBox + WebAssembly.<br>Nada é enviado. O runtime (~1,4 MB) fica em cache depois da primeira vez.","mouseHint":"Clique na tela do jogo para dar o teclado a ele.","starting":"Iniciando…","cachedNote":"Fica em cache depois da primeira carga, então da próxima vez é instantâneo.","loadingGame":"Carregando {name}…","fullscreen":"Tela cheia","soundOn":"Som ligado","soundOff":"Som desligado","remapKeys":"Teclado — remapeie qualquer tecla","remapHint":"Clique em uma tecla abaixo e depois pressione a que você prefere usar. Fica salvo neste navegador, por jogo.","resetDefaults":"Restaurar o padrão","consoleOutput":"Saída do console"};</script><!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=2"></script>
 <script src="/recent.js?v=3"></script>
-<script src="/dos-embed.js?v=33"></script>
+<script src="/dos-embed.js?v=34"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

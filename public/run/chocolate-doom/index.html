@@ -136,7 +136,6 @@
   </section>
   <section class="card">
     <h2>Why Chocolate Doom runs so well here</h2>
-    <h3>Why Chocolate Doom runs so well here</h3>
     <p>Most modern Doom source ports (GZDoom and friends) lean on OpenGL or DirectX hardware acceleration — exactly the things 32-bit Wine 1.7.55 inside an emulator handles worst. Chocolate Doom goes the other way on purpose. It renders the original 320×200 software framebuffer through SDL and can fall back to plain Windows GDI, with no demand for a GPU or shader pipeline. That low-tech approach is what makes it one of the friendlier games for ExeBrowser: the heavy lifting is just CPU drawing a tiny frame, which the WebAssembly x86 emulator can keep up with comfortably.</p><p>It's a 32-bit Win32 executable with no 64-bit dependency, no .NET, and no DRM, so it sits squarely inside what this environment supports.</p>
     <h3>Which build to load (this matters)</h3>
     <p>Chocolate Doom comes in two lineages, and the older one is the safer bet in the browser:</p><ul><li><strong>2.3.0 (SDL 1.2)</strong> — the last release before the SDL2 rewrite. It does all its drawing in software with the simplest possible video path, which tends to be the most reliable under Boxedwine. <strong>Start here.</strong></li><li><strong>3.0 and newer (SDL2)</strong> — these moved screen scaling into hardware for crisp high-resolution windows. That's great natively but asks more of the emulated graphics layer, so it can be hit-or-miss in a tab. Try it only if the 2.x build misbehaves.</li></ul><p>Whichever you load, drop the source-port EXE and <code>DOOM1.WAD</code> into the same folder so the engine finds its game data.</p>
@@ -171,7 +170,6 @@
     <ul class="card-grid">
       <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM (1993)</span><span class="lc-desc">The original shareware build, playable in a tab.</span></a></li>
       <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">Free, GPL-friendly replacement Doom IWADs.</span></a></li>
-      <li><a class="link-card" href="/run/chocolate-doom/"><span class="lc-title">Crispy / source ports</span><span class="lc-desc">More vanilla-accurate Doom engines.</span></a></li>
       <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id's earlier shareware FPS in the browser.</span></a></li>
       <li><a class="link-card" href="/run/hexen-heretic-shareware/"><span class="lc-title">Heretic &amp; Hexen</span><span class="lc-desc">Raven's GPL fantasy shooters, vanilla-style.</span></a></li>
       <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs well, what doesn't, and why.</span></a></li>

@@ -36,15 +36,45 @@ const ui = JSON.parse(readFileSync(resolve(HERE, "ui.json"), "utf8"));
 export const LANGS = ["en", "es", "pt-BR", "de", "ja", "fr", "zh-CN"];
 
 // Per-page translations, keyed by slug. Absent file = language has no pages yet.
+//
+// Two keys in that file are not pages. `_cards` and `_controls` are shared
+// glossaries, and they exist because the alternative was untenable: a related
+// card for Freedoom, or a control row reading "Move / turn", is identical on
+// every page that shows it. Duplicating those into each slug meant translating
+// the same sentence six times and letting the copies drift. Translate once
+// here, and every page in the language picks it up.
 function loadPages(code) {
   const file = resolve(HERE, `pages.${code}.json`);
-  if (!existsSync(file)) return {};
+  if (!existsSync(file)) return { pages: {}, cards: {}, controls: {} };
   const raw = JSON.parse(readFileSync(file, "utf8"));
+  const cards = raw._cards || {};
+  const controls = raw._controls || {};
   delete raw._readme;
-  return raw;
+  delete raw._cards;
+  delete raw._controls;
+  return { pages: raw, cards, controls };
 }
 
-const pagesByLang = Object.fromEntries(LANGS.map((code) => [code, code === "en" ? {} : loadPages(code)]));
+const loaded = Object.fromEntries(
+  LANGS.map((code) => [code, code === "en" ? { pages: {}, cards: {}, controls: {} } : loadPages(code)])
+);
+const pagesByLang = Object.fromEntries(LANGS.map((c) => [c, loaded[c].pages]));
+
+/**
+ * Translated related-card copy, keyed by the card's English href.
+ * Returns null when this language hasn't translated that card, which the
+ * renderer treats as "drop the card" rather than "show it in English" — the
+ * same rule the whole pipeline uses for prose.
+ */
+export const cardCopy = (code, href) => (loaded[code]?.cards || {})[href] || null;
+
+/**
+ * Translated control-table cell, keyed by the English string from the
+ * catalogue. Falls back to the English text, which is the right call here:
+ * "Ctrl" and "F10" are the same in every language, and an untranslated verb in
+ * a two-word table cell is a much smaller problem than a missing row.
+ */
+export const controlText = (code, text) => (loaded[code]?.controls || {})[text] ?? text;
 
 /** URL prefix for a language: "" for English, "/es" etc. otherwise. */
 export const prefixOf = (code) => (code === "en" ? "" : `/${code}`);

@@ -1,5 +1,89 @@
 {
-  "_readme": "Per-slug Japanese overrides. A page is only generated when a real translation exists here.",
+  "_readme": "Per-slug Japanese overrides. A page is only generated when a real translation exists here. Two keys are not pages: _cards translates the related-link cards once per href (a card missing from it is dropped rather than shown in English), and _controls translates the control-table cells keyed by their English text. Anything a page leaves out falls back to the English entry, so check-consistency requires every prose field the English entry fills — including mobileHint, which restates mobileControls.hint on its own.",
+  "_cards": {
+    "/run/doom/": {
+      "title": "DOOM",
+      "desc": "1993年のオリジナル版のシェアウェア版エピソードを、ブラウザでそのまま。"
+    },
+    "/run/freedoom/": {
+      "title": "Freedoom",
+      "desc": "DOOM エンジン向けの自由でオープンなゲームデータ。Win32 版も配布されています。"
+    },
+    "/run/wolfenstein-3d/": {
+      "title": "Wolfenstein 3D",
+      "desc": "FPS の原点となった一作。シェアウェア版エピソードをすぐに遊べます。"
+    },
+    "/run/blake-stone/": {
+      "title": "Blake Stone",
+      "desc": "『Aliens of Gold』エピソード1。Wolfenstein エンジン製で、すぐに遊べます。"
+    },
+    "/run/raptor/": {
+      "title": "Raptor: Call of the Shadows",
+      "desc": "もう一つの名作 DOS 縦スクロールシューティング。"
+    },
+    "/run/scorched-earth/": {
+      "title": "Scorched Earth",
+      "desc": "すべての砲撃ゲームの原点。すぐに遊べます。"
+    },
+    "/run/bio-menace/": {
+      "title": "Bio Menace",
+      "desc": "Apogee のラン&ガン型アクション。フリーウェアで全編収録。"
+    },
+    "/run/beneath-a-steel-sky/": {
+      "title": "Beneath a Steel Sky（無料）",
+      "desc": "Revolution によるサイバーパンクの名作。フリーウェアで、すぐに遊べます。"
+    },
+    "/run/hexen-heretic-shareware/": {
+      "title": "Heretic / Hexen（シェアウェア版）",
+      "desc": "id 系エンジンによる一人称視点のシェアウェア名作をもう少し。"
+    },
+    "/run/space-cadet-open/": {
+      "title": "3D ピンボール スペースキャデット",
+      "desc": "Windows XP でおなじみの台。オープンソース版をすぐに遊べます。"
+    },
+    "/run/one-must-fall-2097/": {
+      "title": "One Must Fall 2097",
+      "desc": "Epic のロボット格闘ゲーム。フリーウェアとして全編が無料です。"
+    },
+    "/run/jazz-jackrabbit-shareware/": {
+      "title": "Jazz Jackrabbit（シェアウェア版）",
+      "desc": "Epic の高速アクション。シェアウェア版エピソードを収録。"
+    },
+    "/run/": {
+      "title": "すべてのゲームとアプリ",
+      "desc": "このサイトで遊べる・動かせるものの一覧です。"
+    },
+    "/guide/": {
+      "title": "動作対応ガイド",
+      "desc": "ExeBrowser で動くもの、動かないもの。"
+    }
+  },
+  "_controls": {
+    "Arrow keys": "<kbd>矢印キー</kbd>",
+    "Arrow keys or W A S D": "<kbd>矢印キー</kbd> または <kbd>W A S D</kbd>",
+    "Alt + arrows": "<kbd>Alt</kbd> + 矢印キー",
+    "Automap": "自動マップ",
+    "Change weapon mode": "武器モードの切り替え",
+    "Fire": "攻撃",
+    "Fly": "移動",
+    "Left-click": "左クリック",
+    "Right-click": "右クリック",
+    "Menu / back": "メニュー / 戻る",
+    "Move / turn": "移動 / 旋回",
+    "Move mouse to turn": "マウスを動かして旋回",
+    "Open doors / push walls": "扉を開く / 隠し壁を押す",
+    "Open doors / switches": "扉・スイッチを開く",
+    "Pause / menu": "一時停止 / メニュー",
+    "Run": "ダッシュ",
+    "Sidekick weapon": "サイドキック武器",
+    "Sound": "サウンド",
+    "Strafe": "横移動",
+    "Use the Sound button under the screen to mute": "画面下のサウンドボタンで消音できます",
+    "Weapons 1–4": "武器 1〜4",
+    "Weapons 1–7": "武器 1〜7",
+    "hold Shift": "<kbd>Shift</kbd> を押しながら",
+    "number keys": "数字キー"
+  },
   "doom": {
     "title": "DOOM をブラウザで無料プレイ — ダウンロード不要 — ExeBrowser",
     "description": "1993年のオリジナル DOOM を、ブラウザでそのままプレイ。無料のシェアウェア版を DOSBox で実行します。ダウンロードもインストールも不要です。",
@@ -45,6 +129,11 @@
         "a": "動きます。タッチ操作の端末では画面上にゲーム用のキーパッドが表示されます。パソコンのほうが快適ですが、スマートフォンでも問題なく遊べます。"
       }
     ],
-    "licenseReason": "id Software は DOOM の第1エピソード「Knee-Deep in the Dead」をシェアウェアとして公開し、無償での再配布を明示的に認めています。ここで配信しているのはその範囲のみで、商用エピソードは含みません。"
+    "licenseReason": "id Software は DOOM の第1エピソード「Knee-Deep in the Dead」をシェアウェアとして公開し、無償での再配布を明示的に認めています。ここで配信しているのはその範囲のみで、商用エピソードは含みません。",
+    "mobileHint": "十字キー：移動・旋回 ／ FIRE：攻撃 ／ USE：扉を開く ／ RUN：ダッシュ",
+    "download": {
+      "heading": "DOOM のシェアウェア版を入手する（無料・合法）",
+      "html": "<h3 style=\"margin-top:0;\">id Software 公式のシェアウェア版</h3><p>第1エピソードの全編を、改変せずそのまま、シェアウェアライセンスが認めるとおり無償で配布しているものです。もっとも信頼できる入手先は Internet Archive に保存されているコピーです。</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">DOOM シェアウェア版を入手（Internet Archive）→</a></p><p class=\"muted small\">DOS 版（<code>DOOM.EXE</code> と <code>DOOM1.WAD</code>）を選んでください。このページで遊ぶだけならダウンロードは不要ですが（すでにシェアウェア版が動いています）、自分のパソコンに残しておきたい場合はこちらが手元に置くべきコピーです。© id Software — シェアウェア版エピソードは、改変せず無償であれば自由に再配布できます。製品版エピソードと Doom II は商用製品で、ここには<strong>含まれていません</strong>。購入は <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a> からどうぞ。</p>"
+    }
   }
 }

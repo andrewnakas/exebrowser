@@ -61,8 +61,11 @@ screenshots are on disk, that **every** internal link resolves (not just
 alternates exist and point back, that the sitemap lists every indexable page
 and nothing else, that the blog compatibility table matches the live verdicts,
 that no hosted game still claims it can't be played here, that guides link to
-the playable version of the game they describe, and that every `/play/`
-category page carries its word floor of original prose. It exits non-zero, so
+the playable version of the game they describe, that every `/play/`
+category page carries its word floor of original prose, that no `related` card
+links to the page it sits on or contradicts its own title, and that a localised
+page translates every prose field its English original fills rather than
+silently falling back to English. It exits non-zero, so
 it can gate a deploy.
 
 ## After deploying

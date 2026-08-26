@@ -1,15 +1,89 @@
 {
-  "_readme": [
-    "Brazilian Portuguese translations, keyed by slug. Same rules as the Spanish",
-    "file: only the fields present override the English entry, and a slug",
-    "appearing here is what causes /pt-BR/run/<slug>/ to exist at all.",
-    "",
-    "Do NOT add a slug with English text to make a page appear — see locales.mjs.",
-    "",
-    "Translated by Claude, NOT reviewed by a native speaker. Brazil is the site's",
-    "most engaged non-English audience (72% engagement, 4m average), so the",
-    "titles and descriptions here are worth a human pass before they're judged."
-  ],
+  "_readme": "Per-slug Brazilian Portuguese overrides. A page is only generated when a real translation exists here. Two keys are not pages: _cards translates the related-link cards once per href (a card missing from it is dropped rather than shown in English), and _controls translates the control-table cells keyed by their English text. Anything a page leaves out falls back to the English entry, so check-consistency requires every prose field the English entry fills — including mobileHint, which restates mobileControls.hint on its own.",
+  "_cards": {
+    "/run/doom/": {
+      "title": "DOOM",
+      "desc": "O episódio shareware do original de 1993, jogável no navegador."
+    },
+    "/run/freedoom/": {
+      "title": "Freedoom",
+      "desc": "Conteúdo livre e aberto para o motor do DOOM, com port Win32."
+    },
+    "/run/wolfenstein-3d/": {
+      "title": "Wolfenstein 3D",
+      "desc": "O tiro em primeira pessoa que começou tudo: episódio shareware, na hora."
+    },
+    "/run/blake-stone/": {
+      "title": "Blake Stone",
+      "desc": "Aliens of Gold, episódio 1: motor do Wolfenstein, joga na hora."
+    },
+    "/run/raptor/": {
+      "title": "Raptor: Call of the Shadows",
+      "desc": "Outro clássico shmup vertical de DOS."
+    },
+    "/run/scorched-earth/": {
+      "title": "Scorched Earth",
+      "desc": "A mãe de todos os jogos de artilharia, na hora."
+    },
+    "/run/bio-menace/": {
+      "title": "Bio Menace",
+      "desc": "O plataforma de ação da Apogee: freeware e completo."
+    },
+    "/run/beneath-a-steel-sky/": {
+      "title": "Beneath a Steel Sky (grátis)",
+      "desc": "O clássico cyberpunk da Revolution: freeware, na hora."
+    },
+    "/run/hexen-heretic-shareware/": {
+      "title": "Heretic / Hexen (shareware)",
+      "desc": "Mais clássicos shareware em primeira pessoa com tecnologia id."
+    },
+    "/run/space-cadet-open/": {
+      "title": "3D Pinball Space Cadet",
+      "desc": "A mesa clássica do XP: versão de código aberto, na hora."
+    },
+    "/run/one-must-fall-2097/": {
+      "title": "One Must Fall 2097",
+      "desc": "O jogo de luta de robôs freeware da Epic: completo e grátis."
+    },
+    "/run/jazz-jackrabbit-shareware/": {
+      "title": "Jazz Jackrabbit (shareware)",
+      "desc": "O plataforma veloz da Epic, episódio shareware."
+    },
+    "/run/": {
+      "title": "Todos os jogos e programas",
+      "desc": "Tudo o que dá para jogar ou rodar aqui."
+    },
+    "/guide/": {
+      "title": "Guia de compatibilidade",
+      "desc": "O que roda no ExeBrowser e o que não roda."
+    }
+  },
+  "_controls": {
+    "Arrow keys": "<kbd>Setas</kbd>",
+    "Arrow keys or W A S D": "<kbd>Setas</kbd> ou <kbd>W A S D</kbd>",
+    "Alt + arrows": "<kbd>Alt</kbd> + setas",
+    "Automap": "Mapa automático",
+    "Change weapon mode": "Trocar o modo da arma",
+    "Fire": "Atirar",
+    "Fly": "Voar",
+    "Left-click": "Clique esquerdo",
+    "Right-click": "Clique direito",
+    "Menu / back": "Menu / voltar",
+    "Move / turn": "Mover / virar",
+    "Move mouse to turn": "Mova o mouse para virar",
+    "Open doors / push walls": "Abrir portas / empurrar paredes",
+    "Open doors / switches": "Abrir portas / interruptores",
+    "Pause / menu": "Pausa / menu",
+    "Run": "Correr",
+    "Sidekick weapon": "Arma auxiliar",
+    "Sound": "Som",
+    "Strafe": "Andar de lado",
+    "Use the Sound button under the screen to mute": "Use o botão Som abaixo da tela para silenciar",
+    "Weapons 1–4": "Armas 1–4",
+    "Weapons 1–7": "Armas 1–7",
+    "hold Shift": "segure <kbd>Shift</kbd>",
+    "number keys": "teclas numéricas"
+  },
   "doom": {
     "title": "Jogar DOOM Online — Grátis, No Navegador, Sem Baixar — ExeBrowser",
     "description": "Jogue o DOOM original de 1993, o episódio shareware “Knee-Deep in the Dead”, direto no navegador — sem baixar e sem instalar. O DOOM clássico de DOS rodando em DOSBox + WebAssembly.",
@@ -114,7 +188,12 @@
         "title": "Todos os jogos e programas",
         "desc": "Tudo o que dá para jogar ou rodar aqui."
       }
-    ]
+    ],
+    "mobileHint": "Direcional: mover/virar · FIRE: atirar · USE: abrir portas · RUN: correr",
+    "download": {
+      "heading": "Baixe o shareware do DOOM (grátis e legal)",
+      "html": "<h3 style=\"margin-top:0;\">O shareware oficial da id Software</h3><p>O primeiro episódio completo, sem modificações, distribuído sem custo exatamente como a licença shareware permite. A fonte mais confiável é a cópia preservada no Internet Archive:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">Baixar o shareware do DOOM (Internet Archive) →</a></p><p class=\"muted small\">Procure a versão de DOS (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). Você não precisa dela para jogar aqui — esta página já roda o episódio shareware —, mas é a cópia que vale guardar se quiser o jogo na sua própria máquina. © id Software: o episódio shareware pode ser redistribuído livremente, sem alterações e sem cobrança. Os episódios registrados e o Doom II são comerciais e <strong>não</strong> estão incluídos; compre-os na <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
+    }
   },
   "wolfenstein-3d": {
     "title": "Jogar Wolfenstein 3D Online — Grátis, No Navegador, Sem Baixar — ExeBrowser",
@@ -161,7 +240,12 @@
         "a": "Funciona. Aparece um teclado na tela com os controles do jogo. A experiência é melhor no computador, mas dá para jogar no celular sem problema."
       }
     ],
-    "licenseReason": "A id Software liberou o primeiro episódio de Wolfenstein 3D como shareware, com permissão explícita de distribuição gratuita — é o que hospedamos aqui. Os demais episódios são comerciais e não estão disponíveis."
+    "licenseReason": "A id Software liberou o primeiro episódio de Wolfenstein 3D como shareware, com permissão explícita de distribuição gratuita — é o que hospedamos aqui. Os demais episódios são comerciais e não estão disponíveis.",
+    "mobileHint": "Direcional: mover/virar · FIRE: atirar · OPEN: portas/paredes · MENU: esc",
+    "download": {
+      "heading": "Baixe o shareware do Wolfenstein 3D (grátis e legal)",
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">O episódio shareware (arquivos de dados) e um source port Win32</h3><p>Você precisa de duas peças, ambas gratuitas e legais:</p><ol><li><strong>Os dados do shareware</strong> — o primeiro episódio, de livre redistribuição (os arquivos <code>*.WL1</code>). A Apogee lançou o episódio um como shareware para ser copiado sem custo, e o Internet Archive mantém cópias preservadas.</li><li><strong>Um source port Win32</strong> — uma reconstrução moderna e de código aberto do motor, que roda como um EXE de Windows. <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a> (pegue a build de <strong>32 bits</strong>) ou o mais enxuto Wolf4SDL.</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">Baixar o shareware do Wolfenstein 3D (Internet Archive) →</a></p><p class=\"muted small\">Para jogar no seu computador, coloque o EXE do source port e todos os arquivos <code>*.WL1</code> em <strong>uma única pasta</strong>. Aqui nada disso é necessário: esta página já inicia o episódio shareware. © id Software / Apogee. Apenas o <strong>episódio shareware</strong> é de livre redistribuição; os episódios registrados, as Nocturnal Missions e o Spear of Destiny são comerciais — compre na <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p></div>"
+    }
   },
   "tyrian": {
     "title": "Jogar Tyrian 2000 Online — Grátis e Completo, Sem Baixar — ExeBrowser",
@@ -188,19 +272,38 @@
     ],
     "faq": [
       {
-        "q": "O jogo é completo mesmo ou só uma demonstração?",
-        "a": "É completo. Os autores liberaram o Tyrian 2000 inteiro como freeware, com todos os episódios — não há uma versão paga escondida atrás disso."
+        "q": "Tyrian 2000 é mesmo de graça?",
+        "a": "É. O detentor dos direitos, Jason Emery, lançou o jogo completo como freeware em 2004, a arte depois passou para uma licença de conteúdo aberto, e ele também é distribuído de graça na GOG. Não há nada para comprar nem nada de estranho em jogá-lo aqui."
       },
       {
-        "q": "É legal jogar aqui?",
-        "a": "É. O jogo foi liberado como freeware pelos próprios detentores dos direitos, com permissão de distribuição gratuita."
+        "q": "Dá para jogar Tyrian 2000 no navegador sem baixar nada?",
+        "a": "Dá. Aperte jogar e o jogo completo chega à tela de título em alguns segundos. Como Tyrian 2000 é freeware, os dados vêm junto com a página — não há nada para procurar, enviar ou instalar."
       },
       {
-        "q": "O meu progresso fica salvo?",
-        "a": "Fica. Além do sistema de salvar do próprio jogo, se você fechar a aba no meio de uma fase o site oferece retomar exatamente de onde parou. Tudo fica no seu navegador e nada é enviado para servidor nenhum."
+        "q": "É o Tyrian original ou um remake?",
+        "a": "O original. O executável de DOS e os dados originais rodam sem modificação dentro do DOSBox compilado para WebAssembly, então é o mesmo jogo que vinha nos disquetes — não é uma recriação nem um source port."
+      },
+      {
+        "q": "Quantos episódios eu recebo?",
+        "a": "Todos os cinco. O Tyrian 2000 foi lançado como freeware por inteiro, então, ao contrário dos jogos shareware deste site, nenhum episódio fica retido atrás de uma compra."
+      },
+      {
+        "q": "O que é o OpenTyrian2000?",
+        "a": "Uma reconstrução livre e de código aberto (GPL) do jogo como executável nativo moderno, usando os mesmos arquivos de dados freeware. É a melhor forma de jogar Tyrian num computador: é baseada em SDL e mira uma máquina real, não este ambiente do navegador — por isso esta página roda a versão de DOS original."
+      },
+      {
+        "q": "Vai rodar em velocidade total?",
+        "a": "Normalmente sim. Uma CPU x86 é emulada dentro do WebAssembly, mas Tyrian é um jogo de DOS de 1995 e leve o bastante para um notebook moderno dar conta com folga. Em tablets e Chromebooks antigos pode haver lentidão."
       }
     ],
-    "licenseReason": "O Tyrian 2000 foi liberado como freeware pelos detentores dos direitos, com permissão explícita de distribuição gratuita do jogo completo."
+    "licenseReason": "O Tyrian 2000 foi liberado como freeware pelos detentores dos direitos, com permissão explícita de distribuição gratuita do jogo completo.",
+    "mobileHint": "Direcional: voar · FIRE: atirar · BOMB: arma secundária · PAUSE: esc",
+    "download": {
+      "heading": "Jogue Tyrian 2000 (grátis e na hora)",
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">Não há nada para baixar — dá para jogar aqui</h3><p>Tyrian 2000 é freeware, e o jogo completo roda nesta própria página, dentro de um DOSBox compilado para WebAssembly. Basta apertar <strong>jogar</strong> acima: a tela de título carrega em segundos e você já está no jogo.</p><p class=\"muted small\">Quer o jogo na sua máquina também? O detentor dos direitos o lançou como freeware, então você pode baixá-lo de graça na <a href=\"https://www.gog.com/game/tyrian_2000\" target=\"_blank\" rel=\"noopener\">GOG</a>, ou jogá-lo nativamente com o port de código aberto <a href=\"https://github.com/KScl/opentyrian2000\" target=\"_blank\" rel=\"noopener\">OpenTyrian2000</a> (GPL).</p></div>"
+    },
+    "fullyFree": "Declarado freeware pelo detentor dos direitos, Jason Emery, em 2004 — o jogo completo, não um episódio.",
+    "licenseNote": "<p class=\"muted small\">Tyrian 2000 foi lançado como freeware pelo detentor dos direitos, então ele roda aqui diretamente: o jogo funciona num DOSBox compilado para WebAssembly, dentro da sua aba, e não há nada para enviar. Você também pode baixá-lo de graça na <a href=\"https://www.gog.com/game/tyrian_2000\" target=\"_blank\" rel=\"noopener\">GOG</a> ou como source port nativo (veja abaixo).</p>"
   },
   "freedoom": {
     "title": "Jogar Freedoom Online — Jogo Completo e Livre, Sem Baixar — ExeBrowser",
@@ -239,6 +342,12 @@
         "a": "Fica. Além do sistema de salvar do jogo, se você fechar a aba no meio de uma fase o site oferece retomar de onde parou. Tudo permanece no seu navegador."
       }
     ],
-    "licenseReason": "Os dados do Freedoom são distribuídos sob uma licença BSD modificada que permite explicitamente a redistribuição gratuita, o que nos permite hospedar o jogo completo."
+    "licenseReason": "Os dados do Freedoom são distribuídos sob uma licença BSD modificada que permite explicitamente a redistribuição gratuita, o que nos permite hospedar o jogo completo.",
+    "mobileHint": "Direcional: mover/virar · FIRE: atirar · USE: abrir portas · RUN: correr",
+    "download": {
+      "heading": "Baixe o Freedoom (grátis e de código aberto)",
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">O lançamento oficial e livre</h3><p>Os dados de jogo do Freedoom são publicados sob uma licença BSD modificada — você pode copiar, modificar e redistribuir à vontade, desde que a licença e os créditos acompanhem o material. Pegue a versão oficial no próprio projeto:</p><p><a class=\"cta-btn\" href=\"https://freedoom.github.io/download.html\" target=\"_blank\" rel=\"noopener\">Baixar o Freedoom (site oficial) →</a></p><p class=\"muted small\">O download traz <code>freedoom1.wad</code> (Phase 1, no estilo do Ultimate Doom) e <code>freedoom2.wad</code> (Phase 2, no estilo do Doom II). São arquivos de dados WAD, <strong>não</strong> um executável — você também precisa de um motor DOOM. A combinação gratuita mais simples é um pequeno port Win32 com renderização por software, como o <a href=\"https://www.chocolate-doom.org/\" target=\"_blank\" rel=\"noopener\">Chocolate Doom</a> ou o Crispy Doom. Coloque o <code>.EXE</code> do port e um <code>freedoomN.wad</code> na mesma pasta e rode no seu computador — nada disso é necessário aqui, já que esta página inicia o Freedoom para você. Tudo o que está envolvido, jogo e motor, é genuinamente livre e de código aberto.</p></div>"
+    },
+    "fullyFree": "Arte e fases sob licença BSD pelo projeto Freedoom; roda sobre o motor do DOOM shareware, de livre redistribuição."
   }
 }
