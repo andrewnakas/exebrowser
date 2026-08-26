@@ -4009,6 +4009,40 @@
     "updated": "2026-07-01"
   },
   {
+    "slug": "extract-archive",
+    "title": "Extract 7Z, ZIP & RAR Online Free — No Upload, No Install — ExeBrowser",
+    "description": "Open a .7z, .zip, .rar or .tar in your browser and pull out the files. Nothing uploads, nothing installs, and it works on a locked-down laptop.",
+    "keywords": "extract 7z online, open 7z file, unzip online, extract rar online, open archive browser, 7z extractor no download",
+    "ogTitle": "Extract 7Z, ZIP & RAR in your browser",
+    "ogDescription": "Drop an archive, browse it, pull out what you need. Nothing uploads and nothing installs.",
+    "crumb": "Extract an archive",
+    "appName": "Archive Extractor",
+    "appType": "app",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Utility",
+      "Archive tool"
+    ],
+    "appUrl": "/apps/extract/",
+    "iframeUrl": "",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — runs natively, no emulator"
+    },
+    "categories": [
+      "Apps & tools"
+    ],
+    "fullyFree": "Free and open source all the way down: libarchive under BSD, and the page around it written here.",
+    "rank": 12,
+    "addedDate": "2026-08-26",
+    "updated": "2026-08-26",
+    "skipGenerate": true,
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "related": []
+  },
+  {
     "slug": "7-zip",
     "title": "Run 7-Zip Online in Your Browser — Free, No Install — ExeBrowser",
     "description": "Open a .zip, .7z or .rar in your browser without installing anything. The real 7-Zip running on Wine, and your files never leave your device.",
@@ -4030,7 +4064,7 @@
       "kind": "good",
       "text": "Works well"
     },
-    "intro": "<p>The real <strong>7-Zip</strong> — Igor Pavlov's free, open-source archiver — running in a browser tab. No download, no install, no account. 7-Zip opens just about every archive format there is: <code>.7z</code>, <code>.zip</code>, <code>.rar</code>, <code>.tar</code>, <code>.gz</code>, <code>.iso</code> and more. It's a small, classic Win32 application, which makes it one of the more reliable tools to run inside ExeBrowser when you need to crack open an archive on a device where you can't install anything. Hit play, point it at your archive, and extract.</p>",
+    "intro": "<p class=\"warn-box\"><strong>If you just want to open an archive, there is a faster way.</strong> This page runs the real 7-Zip program, which means booting a 48 MB Wine runtime first — worth it if you want 7-Zip's own interface, slow if you only need the files out of a <code>.7z</code>. <a href=\"/run/extract-archive/\">our archive extractor</a> unpacks 7z, ZIP, RAR, TAR and more natively in the browser, with nothing to boot. Same principle either way: your files never leave your device.</p><p>The real <strong>7-Zip</strong> — Igor Pavlov's free, open-source archiver — running in a browser tab. No download, no install, no account. 7-Zip opens just about every archive format there is: <code>.7z</code>, <code>.zip</code>, <code>.rar</code>, <code>.tar</code>, <code>.gz</code>, <code>.iso</code> and more. It's a small, classic Win32 application, which makes it one of the more reliable tools to run inside ExeBrowser when you need to crack open an archive on a device where you can't install anything. Hit play, point it at your archive, and extract.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",

@@ -4,7 +4,7 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-43 titles are hosted and playable instantly. Everything hosted here is
+44 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
@@ -25,6 +25,7 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Scorched Earth](https://exebrowser.com/run/scorched-earth/): Play Scorched Earth in your browser — the 1991 artillery classic, 'the mother of all games'. Shareware, no download, runs via DOSBox + WebAssembly.
 - [Raptor](https://exebrowser.com/run/raptor/): Play Raptor: Call of the Shadows shareware episode free in your browser — Apogee's 1994 vertical shooter. No download, runs via DOSBox + WebAssembly.
 - [Blake Stone](https://exebrowser.com/run/blake-stone/): Apogee's 1993 sci-fi FPS in your browser — the complete free shareware episode, no download or install. Runs via DOSBox + WebAssembly.
+- [Archive Extractor](https://exebrowser.com/run/extract-archive/): Drop an archive, browse it, pull out what you need. Nothing uploads and nothing installs.
 - [7-Zip](https://exebrowser.com/run/7-zip/): Open and extract 7z, zip, rar, tar and more with real 7-Zip in your browser via Wine + WebAssembly. Free, open-source, nothing to install.
 - [KeePass](https://exebrowser.com/run/keepass/): The KeePass 1.x Classic build loads with one click and runs in your browser via Wine + WebAssembly. KeePass 2.x won't work here — read the version and safety caveats first.
 - [Sumatra PDF](https://exebrowser.com/run/sumatra-pdf/): Open PDF, ePub, MOBI, XPS, DjVu and comic-book files with Sumatra PDF in your browser using Wine + WebAssembly. Open-source, no install, files never leave your machine.

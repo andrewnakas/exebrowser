@@ -96,6 +96,7 @@
     <p>Which method works depends on which of these you're holding — so the practical approach is to try the general-purpose opener first, and reach for a format-specific tool only when that fails.</p>
 
     <h3>Method 1: Open it with 7-Zip (try this first)</h3>
+    <p>If the file you are holding is a plain archive rather than an installer, <a href="/run/extract-archive/">our archive extractor</a> will open it in the browser without installing anything — 7z, ZIP, RAR, TAR and the rest, all client-side.</p>
     <p><a href="/run/7-zip/">7-Zip</a> is the single most useful tool here, because it treats a huge range of installers as browsable archives. You don't run the installer — you right-click it and choose <em>7-Zip → Open archive</em>, and if 7-Zip understands the format you get a file listing you can extract from directly.</p>
     <p>It handles self-extracting <code>.exe</code>s, NSIS installers, Zip and 7z streams, and — importantly — CAB files and the internals of many MSIs. For a large share of old installers this is the whole job: open, look inside, drag the files out, done. 7-Zip is free and open-source, and you can even <a href="/run/7-zip/">run it here in the browser</a> to peek inside a small installer without installing 7-Zip itself.</p>
     <p>If 7-Zip opens the file but shows only a stub or a single blob, the payload is in a format it doesn't unpack — move on to the specific tool below.</p>
