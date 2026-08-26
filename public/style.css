@@ -1120,3 +1120,16 @@ body.dos-playing { overflow: hidden; }
 
 /* Sits under a self-saving game's frame. */
 .resume-note { margin: .5rem 0 0; }
+
+/* ── Embed offer ───────────────────────────────────────────────────────────
+   Shown only on the games written from scratch here. Every accepted embed puts
+   a real link to this domain on someone else's page, which is the constraint
+   the whole site is stuck behind. */
+#embed-offer textarea {
+  width: 100%; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .8rem; line-height: 1.45; padding: .6rem .7rem;
+  border-radius: 6px; resize: vertical;
+  background: var(--bg, #0d0d0f); color: var(--fg, #e8e8ea);
+  border: 1px solid var(--border, #333);
+}
+#embed-offer .cta-btn { cursor: pointer; }

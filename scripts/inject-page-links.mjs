@@ -24,7 +24,9 @@ import { hreflangHtml, langSwitcherHtml, LOCALES } from "./i18n/locales.mjs";
 const ROOT = resolve(process.cwd(), "public");
 
 // Runtime payload trees — machine-generated assets, not pages.
-const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data"]);
+// `embed` is excluded deliberately: those pages are bare iframe wrappers with
+// no site chrome, so none of the head/nav injections below apply to them.
+const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data", "embed"]);
 
 function htmlFiles(dir, rel = "") {
   const out = [];
@@ -58,6 +60,26 @@ const PLAY_TRACKED = new Set([
   "openttd", "micropolis",
 ]);
 const PLAY_SCRIPT = '<script src="/play-events.js?v=1"></script>';
+
+// Title/description for the playable pages the generator does not own, keyed by
+// slug. Read from the catalogue so these pages cannot drift from it again.
+const CATALOGUE = JSON.parse(
+  readFileSync(resolve(process.cwd(), "scripts", "app-pages.json"), "utf8")
+);
+const HAND_MAINTAINED = new Map(
+  CATALOGUE.filter((p) => p.skipGenerate && (p.appUrl || p.iframeUrl) && p.title && p.description)
+    .map((p) => [p.slug, p])
+);
+const esc = (v) =>
+  String(v).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const metaSynced = new Set();
+
+// Games written from scratch here, and therefore ours to let other people host.
+const OWN_WORK = /ExeBrowser \(original implementation\)/i;
+const EMBEDDABLE = new Map(
+  CATALOGUE.filter((p) => OWN_WORK.test(p.author || "") && p.appUrl).map((p) => [p.slug, p])
+);
+let embedAdded = 0;
 
 let playAdded = 0;
 let feedAdded = 0;
@@ -113,12 +135,60 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     }
   }
 
+  // ── 4. SYNC METADATA onto the hand-maintained game pages ────────────────
+  // app-pages.json is meant to be the single source of truth, but skipGenerate
+  // pages never pass through render(), so editing a title or description there
+  // silently changed nothing on 16 of 43 playable pages. Found the hard way
+  // while fixing 23 meta descriptions that were truncating in the SERP: only
+  // 7 of them reached an actual page.
+  const slug = label.replace(/^run\//, "").replace(/\/index\.html$/, "");
+  const entry = HAND_MAINTAINED.get(slug);
+  if (entry) {
+    const t = esc(entry.title);
+    const dsc = esc(entry.description);
+    const newTitle = `<title>${t}</title>`;
+    if (!html.includes(newTitle)) {
+      html = html.replace(/<title>[\s\S]*?<\/title>/, newTitle);
+      metaSynced.add(slug);
+    }
+    const newDesc = `<meta name="description" content="${dsc}" />`;
+    if (!html.includes(newDesc)) {
+      html = html.replace(/<meta name="description" content="[^"]*"\s*\/?>/, newDesc);
+      metaSynced.add(slug);
+    }
+  }
+
+  // ── 5. EMBED OFFER on the games we wrote ourselves ──────────────────────
+  // Only original work is offered for embedding — see gen-embeds.mjs for why
+  // that boundary is a licensing one, not a preference.
+  if (EMBEDDABLE.has(slug) && !html.includes('id="embed-offer"')) {
+    const p = EMBEDDABLE.get(slug);
+    const offer = `
+  <section class="card" id="embed-offer" data-slug="${slug}" data-name="${esc(p.appName)}">
+    <h2>Put ${esc(p.appName)} on your own site</h2>
+    <p>This one is ours — written from scratch, not emulated — so you are welcome to
+    embed it anywhere, free, with no permission needed. Paste this where you want it:</p>
+    <textarea readonly rows="4" spellcheck="false" aria-label="Embed code for ${esc(p.appName)}"></textarea>
+    <p><button type="button" class="cta-btn">Copy embed code</button></p>
+    <p class="muted small">Keeping the credit line is the only thing we ask. Games we
+    host but did not write are not offered for embedding, because those are not ours
+    to hand on.</p>
+  </section>
+  <script src="/embed-snippet.js?v=1"></script>`;
+    if (html.includes("</main>")) {
+      html = html.replace("</main>", offer + "\n</main>");
+      embedAdded++;
+    }
+  }
+
   if (html !== before) writeFileSync(abs, html, "utf8");
 }
 
 console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
-  `hreflang into ${hreflangAdded} page(s), play-events into ${playAdded} page(s)`
+  `hreflang into ${hreflangAdded} page(s), play-events into ${playAdded} page(s), ` +
+  `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
+  `embed offer on ${embedAdded} page(s)`
 );
 if (missingAnchor.length) {
   // Not fatal — a page without the favicon line is almost certainly not a real

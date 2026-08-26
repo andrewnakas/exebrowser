@@ -53,7 +53,7 @@ for (const p of pages) {
 
 // Runtime payload trees: machine-generated asset dirs with thousands of files
 // and no prose. Nothing in them is a page a visitor navigates to.
-const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data"]);
+const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data", "embed"]);
 
 function htmlFiles(dir, rel = "") {
   const out = [];

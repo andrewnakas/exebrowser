@@ -571,8 +571,17 @@ function alsoPlayHtml(current, allPages, L = EN) {
   if (tail.length) {
     let seed = 0;
     for (const ch of current.slug) seed = (seed * 31 + ch.charCodeAt(0)) % 100000;
-    for (let i = 0; i < 2 && i < tail.length; i++) {
-      others.push(tail[(seed + i * 7) % tail.length]);
+    // Walk until two DISTINCT extras are found. The old version took exactly
+    // two samples, so when the seed landed on a title already in `head` the
+    // page rendered the same game twice — snake-open showed Minesweeper twice
+    // and pipes-open showed Block Drop twice. A duplicate card wastes one of
+    // the six inbound links this section exists to spread around.
+    let added = 0;
+    for (let i = 0; added < 2 && i < tail.length; i++) {
+      const cand = tail[(seed + i * 7) % tail.length];
+      if (others.includes(cand)) continue;
+      others.push(cand);
+      added++;
     }
   }
   const cards = others

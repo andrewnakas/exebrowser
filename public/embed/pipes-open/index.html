@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pipe Panic — free to embed — ExeBrowser</title>
+<meta name="description" content="Pipe Panic, free to embed on any site. Written from scratch and hosted by ExeBrowser." />
+<!-- Embedded copies must not compete with the canonical game page in search. -->
+<link rel="canonical" href="https://exebrowser.com/run/pipes-open/" />
+<meta name="robots" content="noindex, follow" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #111; }
+  .wrap { position: relative; width: 100%; height: 100%; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; }
+  /* Survives a host page that strips the snippet's caption: the only
+     attribution some embedders will ever show. Deliberately small and out of
+     the way — an embed that annoys the host gets removed, and a removed embed
+     is worth nothing. */
+  .by {
+    position: absolute; right: 6px; bottom: 6px; z-index: 2;
+    font: 11px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: rgba(0,0,0,.62); color: #fff; text-decoration: none;
+    padding: 4px 7px; border-radius: 4px; opacity: .75;
+  }
+  .by:hover { opacity: 1; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <iframe src="/apps/pipes-open/" title="Pipe Panic" loading="eager"
+            allow="autoplay; fullscreen"></iframe>
+    <a class="by" href="https://exebrowser.com/run/pipes-open/?utm_source=embed&amp;utm_medium=iframe&amp;utm_campaign=pipes-open"
+       target="_blank" rel="noopener">Pipe Panic — play more free games</a>
+  </div>
+</body>
+</html>
