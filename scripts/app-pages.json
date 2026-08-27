@@ -35,6 +35,11 @@
         "href": "/run/openttd/",
         "title": "OpenTTD (free)",
         "desc": "Transport Tycoon, open source — build an empire, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -113,7 +118,7 @@
     "slug": "wolfenstein-3d",
     "title": "Play Wolfenstein 3D (1992) Online — The Real DOS Game — ExeBrowser",
     "description": "The original 1992 Wolfenstein 3D, free shareware episode one, running in your browser. The real DOS game in DOSBox — no download, no sign-up, progress saved.",
-    "keywords": "play wolfenstein 3d online, wolfenstein 3d in browser, wolfenstein 3d shareware free, wolfenstein 3d no download, ecwolf browser, wolf3d shareware online, classic wolfenstein 3d browser",
+    "keywords": "play wolfenstein 3d online, wolfenstein 3d in browser, wolfenstein 3d shareware free, wolfenstein 3d no download, ecwolf browser, wolf3d shareware online, classic wolfenstein 3d browser, wolfenstein 3d unblocked",
     "ogTitle": "Play Wolfenstein 3D Online — Free Shareware, In Your Browser",
     "ogDescription": "The 1992 Wolfenstein 3D shareware episode, free and legal, running in a browser tab via DOSBox + WebAssembly. Click play and you're in.",
     "crumb": "Play Wolfenstein 3D",
@@ -155,6 +160,10 @@
       {
         "q": "Can I play Wolfenstein 3D online for free with no download?",
         "a": "Yes. Apogee and id released episode one as shareware in 1992 to be copied at no charge, and it's been freely distributed ever since. This page runs that shareware episode in your browser — nothing to download, nothing to install, no account."
+      },
+      {
+        "q": "Can I play Wolfenstein 3D unblocked at school or work?",
+        "a": "In most cases. The shareware episode is a 655 KB download and it runs inside the browser tab under DOSBox compiled to WebAssembly — no installer, no admin rights, nothing written to the machine. That is why it works on locked-down laptops where a downloaded game would not. If the network filter blocks this domain outright, though, nothing on the page can get around that."
       },
       {
         "q": "Is the Wolfenstein 3D shareware legal to play here?",
@@ -207,6 +216,11 @@
         "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
         "desc": "The classic XP table — open-source build, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       },
       {
         "href": "/guide/",
@@ -326,7 +340,7 @@
     "slug": "tyrian",
     "title": "Play Tyrian 2000 Online — Free, In Your Browser, No Download — ExeBrowser",
     "description": "Tyrian 2000, the classic space shooter, released as freeware by its own authors. All five episodes, free and complete, playing instantly in your browser.",
-    "keywords": "play tyrian 2000 online, tyrian in browser, tyrian 2000 free, tyrian shmup online no download, tyrian freeware, opentyrian2000 browser, play tyrian no install",
+    "keywords": "play tyrian 2000 online, tyrian in browser, tyrian 2000 free, tyrian shmup online no download, tyrian freeware, opentyrian2000 browser, play tyrian no install, tyrian 2000 unblocked",
     "ogTitle": "Play Tyrian 2000 Online — Free, In Your Browser",
     "ogDescription": "The legendary vertical shooter Tyrian 2000, released as freeware, playable in a browser tab via DOSBox + WebAssembly. All five episodes, no download.",
     "crumb": "Play Tyrian 2000",
@@ -370,6 +384,10 @@
         "a": "Yes. Rights holder Jason Emery released the full game as freeware in 2004, the graphics were later placed under an open-content license, and it's given away free on GOG as well. There's nothing to buy and nothing shady about playing it."
       },
       {
+        "q": "Can I play Tyrian 2000 unblocked at school or work?",
+        "a": "Generally yes, though it is the heaviest game here: about 4.8 MB, because Tyrian 2000 is freeware in full and all five episodes ship with it. On a slow shared connection the first load takes a moment, after which it is cached. It runs entirely inside the tab under DOSBox, with no installer and no admin rights needed. A network filter blocking the domain is the one thing that defeats it."
+      },
+      {
         "q": "Can I play Tyrian 2000 in the browser with no download?",
         "a": "Yes. Press play and the complete game boots to its title screen in a few seconds. Because Tyrian 2000 is freeware, its data ships with the page — there is nothing to find, upload or install."
       },
@@ -410,6 +428,11 @@
         "href": "/run/doom/",
         "title": "DOOM (shareware)",
         "desc": "The 1993 shooter, free episode in your browser."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       },
       {
         "href": "/guide/",
@@ -516,7 +539,7 @@
     "slug": "doom",
     "title": "Play DOOM (1993) Online — The Real DOS Game, Saves Progress — ExeBrowser",
     "description": "The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up.",
-    "keywords": "play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online",
+    "keywords": "play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online, doom unblocked",
     "ogTitle": "Play DOOM Online — Free, In Your Browser, No Download",
     "ogDescription": "The original 1993 DOOM shareware episode, playable in your browser with DOSBox + WebAssembly. Free, legal, no install.",
     "crumb": "Play DOOM",
@@ -557,6 +580,10 @@
       {
         "q": "Can I play DOOM online for free with no download?",
         "a": "Yes. Episode one (Knee-Deep in the Dead) was released as free shareware in 1993 and is still freely redistributable. ExeBrowser runs the real DOS build in your browser — nothing to install."
+      },
+      {
+        "q": "Can I play DOOM unblocked at school or work?",
+        "a": "Usually, yes. There is no installer and no executable to run: the page downloads about 2 MB of game data and a DOSBox build compiled to WebAssembly, then runs it inside the tab like any other web page. Nothing touches the machine's filesystem and nothing needs admin rights, so the restrictions that stop people installing games don't apply. The one thing that will stop it is a network filter blocking exebrowser.com itself — no browser game can work around that."
       },
       {
         "q": "Is this real DOOM or a remake?",
@@ -614,6 +641,11 @@
         "href": "/run/beneath-a-steel-sky/",
         "title": "Beneath a Steel Sky (free)",
         "desc": "Revolution's cyberpunk classic — freeware, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "mobileControls": {
@@ -732,7 +764,7 @@
     "slug": "freedoom",
     "title": "Play Freedoom Online Free — The Complete Game, Not a Demo — ExeBrowser",
     "description": "Freedoom is a free, open-source game on the DOOM engine — the whole game, not a shareware episode. Plays instantly in your browser and saves your progress.",
-    "keywords": "play freedoom online, freedoom in browser, freedoom no download, free doom game online, freedoom phase 1, freedoom phase 2, open source doom browser, libre doom online",
+    "keywords": "play freedoom online, freedoom in browser, freedoom no download, free doom game online, freedoom phase 1, freedoom phase 2, open source doom browser, libre doom online, freedoom unblocked",
     "ogTitle": "Play Freedoom Online — Free & Libre, In Your Browser",
     "ogDescription": "Freedoom, the fully free DOOM-engine game, playable in your browser with DOSBox + WebAssembly. Free, legal, open source.",
     "crumb": "Play Freedoom",
@@ -776,6 +808,10 @@
       {
         "q": "Is Freedoom really free and legal to play online?",
         "a": "Yes, completely. Freedoom is released under a modified BSD license that explicitly allows anyone to copy, modify and redistribute it. It contains no id Software assets at all, so there are no shareware caveats and no copyright tightrope — the game data and the engine that runs it are both free software."
+      },
+      {
+        "q": "Can I play Freedoom unblocked at school or work?",
+        "a": "Yes, in most setups — but it's the largest download on the site at roughly 10 MB, since a complete DOOM-format IWAD carries every level, sprite and sound. Give it a moment on a shared school connection; it is cached afterwards. Everything runs inside the browser tab under DOSBox, with nothing installed and no admin rights required. Only a block on the domain itself will stop it."
       },
       {
         "q": "Is Freedoom the same as DOOM?",
@@ -823,6 +859,11 @@
         "href": "/run/",
         "title": "All games & apps",
         "desc": "Everything you can play or run here."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "licenseNote": "",
@@ -1241,6 +1282,11 @@
         "href": "/run/beneath-a-steel-sky/",
         "title": "Beneath a Steel Sky (free)",
         "desc": "Revolution's cyberpunk classic — freeware, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-08-03",
@@ -1612,6 +1658,11 @@
         "href": "/run/pipes-open/",
         "title": "Play Pipe Panic (free)",
         "desc": "Lay pipe and stay ahead of the water."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-08-04",
@@ -1772,7 +1823,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
     "updated": "2026-08-05",
     "addedDate": "2026-08-05",
     "screenshot": true,
@@ -1954,7 +2011,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
     "updated": "2026-08-05",
     "addedDate": "2026-08-05",
     "screenshot": true,
@@ -2115,7 +2178,7 @@
     "slug": "skifree",
     "title": "Play SkiFree Online — Free, In Your Browser, No Download — ExeBrowser",
     "description": "The real 1991 SkiFree, running in your browser. No download, no install — and yes, the Yeti is still in it, and you still can't outrun him.",
-    "keywords": "play skifree online, skifree in browser, skifree yeti game, skifree no download, skifree windows online, classic skifree browser, chris pirih skifree",
+    "keywords": "play skifree online, skifree in browser, skifree yeti game, skifree no download, skifree windows online, classic skifree browser, chris pirih skifree, skifree unblocked",
     "ogTitle": "Play SkiFree Online — Free, In Your Browser, No Download",
     "ogDescription": "The classic SkiFree yeti game running in your browser with Wine + WebAssembly. Real Win32, one-click play — no install, no account.",
     "crumb": "Play SkiFree",
@@ -2155,6 +2218,10 @@
       {
         "q": "Can I play SkiFree online for free with no download?",
         "a": "Yes — click ▶ Play SkiFree above and you're on the slopes instantly. The game loads right in your browser via Wine + WebAssembly with no install and no account required."
+      },
+      {
+        "q": "Can I play SkiFree unblocked at school or work?",
+        "a": "Almost always. SkiFree is a 38 KB program — smaller than most images on a web page — and it runs in the tab through Wine compiled to WebAssembly. There is nothing to install, nothing to download to the desktop and no admin prompt, which is exactly the profile that gets past a managed-laptop policy. A domain-level block on this site is the only thing that stops it."
       },
       {
         "q": "Is this the real SkiFree or a remake?",
@@ -2198,6 +2265,11 @@
         "href": "/run/solitaire-open/",
         "title": "Solitaire (Klondike)",
         "desc": "Classic Klondike — playable right now, no download."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       },
       {
         "href": "/guide/",
@@ -2413,6 +2485,11 @@
         "href": "/run/pipes-open/",
         "title": "Play Pipe Panic (free)",
         "desc": "Lay pipe and stay ahead of the water."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-08-05",
@@ -2770,7 +2847,7 @@
     "slug": "commander-keen",
     "title": "Play Commander Keen 1 Online — Marooned on Mars, Free Shareware — ExeBrowser",
     "description": "Play Commander Keen: Marooned on Mars in your browser — the complete free shareware Episode 1, instant, no download, via DOSBox + WebAssembly.",
-    "keywords": "play commander keen online, commander keen 1 browser, marooned on mars online, commander keen shareware, commander keen no download",
+    "keywords": "play commander keen online, commander keen 1 browser, marooned on mars online, commander keen shareware, commander keen no download, commander keen unblocked",
     "ogTitle": "Play Commander Keen 1 Online — Marooned on Mars, Free Shareware",
     "ogDescription": "id Software's 1990 platforming classic in your browser — the complete free shareware episode, no download or install. Runs via DOSBox + WebAssembly.",
     "crumb": "Play Commander Keen",
@@ -2816,6 +2893,10 @@
       {
         "q": "Is it legal to play Commander Keen here?",
         "a": "Yes. Episode 1 was released by id Software and Apogee as freely-redistributable shareware in 1990, and that license still stands. Episodes 2 and 3 are commercial and not included — buy the Complete Pack on Steam for those."
+      },
+      {
+        "q": "Can I play Commander Keen unblocked at school or work?",
+        "a": "Usually. The shareware episode is only 146 KB, so it loads almost instantly even on a congested school network, and it runs inside the tab under DOSBox compiled to WebAssembly — no installer, no admin rights, nothing saved to the machine. The only real obstacle is a network filter that blocks this domain."
       },
       {
         "q": "Is this the original game or a remake?",
@@ -2874,6 +2955,11 @@
         "href": "/run/space-cadet-open/",
         "title": "3D Pinball Space Cadet",
         "desc": "The classic XP table — open-source build, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       },
       {
         "href": "/guide/",
@@ -3050,6 +3136,11 @@
         "href": "/run/openttd/",
         "title": "OpenTTD (free)",
         "desc": "Transport Tycoon, open source — build an empire, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "download": {
@@ -3407,6 +3498,11 @@
         "href": "/run/alien-carnage/",
         "title": "Alien Carnage",
         "desc": "Apogee run-and-gun, freeware."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -3683,6 +3779,11 @@
         "href": "/run/hexen-heretic-shareware/",
         "title": "Heretic / Hexen shareware",
         "desc": "More early-90s shooter shareware to try."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       },
       {
         "href": "/guide/",
@@ -6606,6 +6707,11 @@
         "href": "/run/one-must-fall-2097/",
         "title": "One Must Fall 2097",
         "desc": "Epic's robot fighter, freeware since 1999."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -6758,6 +6864,11 @@
         "href": "/run/god-of-thunder/",
         "title": "God of Thunder",
         "desc": "Norse action-adventure, freeware."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -6911,6 +7022,11 @@
         "href": "/run/beneath-a-steel-sky/",
         "title": "Beneath a Steel Sky (free)",
         "desc": "Revolution's cyberpunk classic — freeware, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -7072,6 +7188,11 @@
         "href": "/run/openttd/",
         "title": "OpenTTD (free)",
         "desc": "Transport Tycoon, open source — build an empire, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -7248,6 +7369,11 @@
         "href": "/run/god-of-thunder/",
         "title": "God of Thunder",
         "desc": "Puzzle-heavy action-adventure."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-29",
@@ -7414,6 +7540,11 @@
         "href": "/run/xargon/",
         "title": "Xargon",
         "desc": "Platform-adventure freeware trilogy."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-29",
@@ -7575,6 +7706,11 @@
         "href": "/run/one-must-fall-2097/",
         "title": "One Must Fall 2097",
         "desc": "Epic's freeware robot fighter."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -7731,6 +7867,11 @@
         "href": "/run/xargon/",
         "title": "Xargon",
         "desc": "Freeware platform-adventure trilogy."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -7882,6 +8023,11 @@
         "href": "/run/jezzball-open/",
         "title": "Play JezzBall online (free)",
         "desc": "Trap the balls, capture the field — the Entertainment Pack classic."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-28",
@@ -8005,6 +8151,11 @@
         "href": "/run/god-of-thunder/",
         "title": "God of Thunder",
         "desc": "Freeware puzzle-action adventure."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-29",
@@ -8193,6 +8344,11 @@
         "href": "/run/commander-keen/",
         "title": "Commander Keen",
         "desc": "The shareware platformer that started it all."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-29",
@@ -8372,6 +8528,11 @@
         "href": "/run/bio-menace/",
         "title": "Bio Menace",
         "desc": "Apogee run-and-gun — freeware."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-29",
@@ -8541,6 +8702,11 @@
         "href": "/run/bio-menace/",
         "title": "Bio Menace",
         "desc": "Apogee run-and-gun — freeware."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-07-29",
@@ -8635,6 +8801,11 @@
         "href": "/run/snake-open/",
         "title": "Play Snake online (free)",
         "desc": "Eat, grow, don't crash — the arcade classic."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-08-05",
@@ -8701,6 +8872,11 @@
         "href": "/run/pipes-open/",
         "title": "Play Pipe Panic (free)",
         "desc": "Lay pipe and stay ahead of the water."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-08-05",
@@ -8760,7 +8936,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
     "updated": "2026-08-05",
     "addedDate": "2026-08-05",
     "screenshot": true,
@@ -8815,7 +8997,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
     "updated": "2026-08-05",
     "addedDate": "2026-08-05",
     "screenshot": true,
@@ -8873,6 +9061,11 @@
         "href": "/run/openttd/",
         "title": "OpenTTD (free)",
         "desc": "Transport Tycoon, open source — build an empire, instant play."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "updated": "2026-08-17",
@@ -8970,6 +9163,11 @@
         "href": "/run/soltys/",
         "title": "Sołtys",
         "desc": "A Polish comedy adventure, freed by its publisher in 2011."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "controls": [
@@ -9040,6 +9238,11 @@
         "href": "/run/lure-of-the-temptress/",
         "title": "Lure of the Temptress",
         "desc": "Revolution’s first game, and the Virtual Theatre engine."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "controls": [
@@ -9110,6 +9313,11 @@
         "href": "/run/lure-of-the-temptress/",
         "title": "Lure of the Temptress",
         "desc": "Revolution’s first game, and the Virtual Theatre engine."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
     "controls": [
@@ -9143,7 +9351,13 @@
     "intro": "",
     "sections": [],
     "faq": [],
-    "related": [],
+    "related": [
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
     "updated": "2026-08-06",
     "addedDate": "2026-08-06",
     "screenshot": true,

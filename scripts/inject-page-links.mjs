@@ -79,6 +79,7 @@ const OWN_WORK = /ExeBrowser \(original implementation\)/i;
 const EMBEDDABLE = new Map(
   CATALOGUE.filter((p) => OWN_WORK.test(p.author || "") && p.appUrl).map((p) => [p.slug, p])
 );
+let unblockedAdded = 0;
 let embedAdded = 0;
 let ogAdded = 0;
 
@@ -87,6 +88,14 @@ let feedAdded = 0;
 let feedSkipped = 0;
 let hreflangAdded = 0;
 const missingAnchor = [];
+
+// The /unblocked/ hub answers the highest-converting query shape the site has
+// on record — "<game> unblocked" outperforms the bare game name several times
+// over — and it is exactly the page a locked-down-network visitor wants next.
+// The generator adds a card for it to every playable page it owns; these
+// seventeen it does not own, and they include the four most-played titles.
+const UNBLOCKED_CARD =
+  `      <li><a class="link-card" href="/unblocked/"><span class="lc-title">Games that need nothing installed</span><span class="lc-desc">The full list of titles that run on a locked-down school or work network.</span></a></li>`;
 
 for (const { abs, label } of htmlFiles(ROOT)) {
   let html = readFileSync(abs, "utf8");
@@ -139,6 +148,18 @@ for (const { abs, label } of htmlFiles(ROOT)) {
       playAdded++;
     } else {
       missingAnchor.push(`${label} (no </body> for play-events.js)`);
+    }
+  }
+
+  // ── 3b. The /unblocked/ card on the hand-maintained playable pages ──────
+  if (PLAY_TRACKED.has(label.replace(/^run\//, "").replace(/\/index\.html$/, ""))
+      && !html.includes('href="/unblocked/"')) {
+    const last = html.lastIndexOf("    </ul>");
+    if (last !== -1) {
+      html = html.slice(0, last) + UNBLOCKED_CARD + "\n" + html.slice(last);
+      unblockedAdded++;
+    } else {
+      missingAnchor.push(`${label} (no card grid for the /unblocked/ link)`);
     }
   }
 
@@ -215,7 +236,7 @@ for (const { abs, label } of htmlFiles(ROOT)) {
 
 console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
-  `hreflang into ${hreflangAdded} page(s), play-events into ${playAdded} page(s), ` +
+  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), play-events into ${playAdded} page(s), ` +
   `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
   `embed offer on ${embedAdded} page(s), og:image onto ${ogAdded} page(s)`
 );

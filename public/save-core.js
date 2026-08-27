@@ -250,6 +250,10 @@
       bytes: typeof info.bytes === "number" ? info.bytes : (prev.bytes || 0),
       updatedAt: now,
       playedAt: prev.playedAt || now,
+      // note() builds a fresh record rather than merging, so the play path has
+      // to be carried across explicitly — otherwise the first save after a play
+      // erases it and the resume link silently reverts to the English page.
+      path: playPath() || prev.path || null,
     };
     const thumb = info.thumb || prev.thumb;
     if (thumb) rec.thumb = thumb;
@@ -258,6 +262,21 @@
     pruneThumbs(games);
     writeIndex(games);
     return enforceBudget(info.slug).then(() => rec, () => rec);
+  }
+
+  // Where this game was played, as a site-absolute path. Recording it is what
+  // lets a returning visitor land back in their own language: every resume
+  // surface used to hardcode /run/<slug>/, so somebody who played
+  // /ja/run/doom/ and came back was silently dropped onto the English page —
+  // and the resume bar is the main thing this site has for getting anyone back
+  // at all. Derived from the URL rather than <html lang> because the path is
+  // what has to resolve, and only accepted when it actually looks like one of
+  // our game paths.
+  function playPath() {
+    try {
+      const m = location.pathname.match(/^(\/[A-Za-z]{2}(?:-[A-Za-z]{2,4})?)?\/run\/[^/]+\/$/);
+      return m ? location.pathname : null;
+    } catch { return null; }
   }
 
   // Play history, which is a different fact from "has a save" and used to be
@@ -280,6 +299,7 @@
       slug,
       name: name || prev.name || slug,
       runtime: runtime || prev.runtime || "unknown",
+      path: playPath() || prev.path || null,
       playedAt: now,
     });
     writeIndex(games);

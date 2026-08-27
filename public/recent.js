@@ -59,6 +59,13 @@
   // Kept for the embeds and the hand-written pages that still call it. It now
   // records history only — claiming a save is save-core's job, and only after
   // one has been written.
+  // The path a resume link should point at: where the visitor actually played,
+  // falling back to the English page for history recorded before we stored it.
+  function resumeHref(entry) {
+    return (entry && entry.path) || `/run/${entry.slug}/`;
+  }
+  window.resumeHref = resumeHref;
+
   window.rememberPlayed = function rememberPlayed(slug, name) {
     if (!slug) return;
     core()?.markPlayed(slug, name, "unknown");
@@ -79,7 +86,7 @@
     const o = opts || {};
     const card = document.createElement("a");
     card.className = "poster-card resume-card";
-    card.href = `/run/${entry.slug}/`;
+    card.href = resumeHref(entry);
 
     const img = document.createElement("img");
     img.className = "pc-shot";
@@ -159,7 +166,7 @@
 
     const last = entries().find(e => e.updatedAt);
     if (!last) return;
-    const href = `/run/${last.slug}/`;
+    const href = resumeHref(last);
     if (location.pathname === href) return;
 
     const link = document.createElement("a");
