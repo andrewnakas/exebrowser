@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wolfenstein 3D（1992）をブラウザで無料プレイ — ExeBrowser</title>
+<meta name="description" content="1992年のオリジナル版 Wolfenstein 3D。無料のシェアウェア版エピソードを、DOSBox でそのままブラウザ内で。ダウンロードも登録も不要、進行状況も保存されます。" />
+<meta name="keywords" content="wolfenstein 3d オンライン, ウルフェンシュタイン3d ブラウザ, wolfenstein 3d 無料, wolf3d シェアウェア, dos ゲーム ブラウザ" />
+<link rel="canonical" href="https://exebrowser.com/ja/run/wolfenstein-3d/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/wolfenstein-3d/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/wolfenstein-3d/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/wolfenstein-3d/" />
+<link rel="alternate" hreflang="de" href="https://exebrowser.com/de/run/wolfenstein-3d/" />
+<link rel="alternate" hreflang="ja" href="https://exebrowser.com/ja/run/wolfenstein-3d/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/wolfenstein-3d/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/wolfenstein-3d/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/wolfenstein-3d/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/ja/run/wolfenstein-3d/" />
+<meta property="og:title" content="Wolfenstein 3D をブラウザで無料プレイ — シェアウェア版" />
+<meta property="og:description" content="1992年の Wolfenstein 3D シェアウェア版エピソードを、DOSBox + WebAssembly でブラウザのタブ内に。無料かつ合法、クリックすればすぐ始まります。" />
+<meta property="og:image" content="https://exebrowser.com/run/wolfenstein-3d/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=39" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Wolfenstein 3D をプレイ", "item": "https://exebrowser.com/run/wolfenstein-3d/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Wolfenstein 3D",
+  "url": "https://exebrowser.com/run/wolfenstein-3d/",
+  "image": "https://exebrowser.com/run/wolfenstein-3d/screenshot.png",
+  "description": "1992年のオリジナル版 Wolfenstein 3D。無料のシェアウェア版エピソードを、DOSBox でそのままブラウザ内で。ダウンロードも登録も不要、進行状況も保存されます。",
+  "applicationCategory": "Game",
+  "genre": ["First-person shooter", "Action"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "id Software" },
+  "dateModified": "2026-07-28",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ダウンロードせずに無料で遊べますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。Apogee と id は 1992年に第1エピソードをシェアウェアとして公開し、無償で複製してよいものとしました。以来ずっと自由に配布されています。このページはそのシェアウェア版をブラウザ内で動かしているだけなので、ダウンロードもインストールもアカウントも不要です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ここで遊ぶのは合法ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "シェアウェア版の第1エピソードについては、はい。製品版のエピソード、Nocturnal Missions、Spear of Destiny は商用作品で、ここには含まれていません。それらは id または Steam でご購入ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "これは本物の Wolfenstein 3D ですか、リメイクですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "本物です。1992年の DOS 実行ファイルと当時のデータを、改変せず DOSBox の中で動かしています。ファンによる再現でもソースポートでもなく、出荷されたそのままのゲームです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "操作方法は？",
+      "acceptedAnswer": { "@type": "Answer", "text": "まずゲーム画面をクリックしてキーボード入力を渡してください。移動は矢印キーまたは WASD、射撃は Ctrl、扉を開けたり隠し壁を押したりするのは Space、武器の切り替えは 1〜4、メニューは Esc です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "動作が重くなることはありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "WebAssembly の中で x86 CPU をエミュレートしているため、速度はネイティブのおよそ 10〜40% になります。Wolfenstein 3D はそれで十分すぎるほど軽いので、最近のノートパソコンなら快適です。ごく古いタブレットや Chromebook では重く感じられるかもしれません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "進行状況は保存されますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。しかもゲーム内のセーブメニューからだけではありません。ステージの途中でタブを閉じても、次に訪れたときに「中断した場所から再開しますか」と尋ねられます。エミュレータの状態ごとブラウザのストレージに保存しているためです。どこにもアップロードされず、アカウントもありません。つまり保存先は遊んだその端末であり、別のパソコンには引き継がれません。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Windows の <code>.exe</code> をブラウザで実行。インストール不要、アップロード不要。WebAssembly と Wine だけで動きます。</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/ja/">ホーム</a>
+    <a href="/ja/run/">アプリ一覧</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/guide/">ガイド</a>
+    <a href="/about/">このサイトについて</a>
+    <a href="/contact/">お問い合わせ</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="言語"><a href="/run/wolfenstein-3d/" hreflang="en">English</a> · <a href="/es/run/wolfenstein-3d/" hreflang="es">Español</a> · <a href="/pt-BR/run/wolfenstein-3d/" hreflang="pt-BR">Português (BR)</a> · <a href="/de/run/wolfenstein-3d/" hreflang="de">Deutsch</a> · <span class="lang-current" aria-current="true">日本語</span> · <a href="/fr/run/wolfenstein-3d/" hreflang="fr">Français</a> · <a href="/zh-CN/run/wolfenstein-3d/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/ja/">ホーム</a> › <a href="/ja/run/">アプリ一覧</a> › Wolfenstein 3D をプレイ</nav>
+
+  <section class="card">
+    <h2>Wolfenstein 3D をブラウザでプレイ <span class="verdict works">動作します — オリジナルの DOS 版が DOSBox で実行されます</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">最終更新 2026年7月 · 実行環境 DOSBox + WebAssembly</p>
+    <p><strong>Wolfenstein 3D</strong>——id Software と Apogee が 1992年に送り出した、一人称視点シューティングの祖にあたる作品です。その第1エピソードはシェアウェアとして公開されており、無料で、合法的に遊べます。ExeBrowser では DOSBox を WebAssembly にコンパイルして DOS ゲームを直接動かしているので、当時の <code>WOLF3D.EXE</code> がそのままブラウザで動きます。ソースポートも設定も要りません。プレイを押せば、すぐ中に入れます。</p>
+
+    <div id="dos-embed"
+         data-app-url="/apps/wolfenstein-3d/wolfenstein-3d.zip"
+         data-app-name="Wolfenstein 3D"
+         data-slug="wolfenstein-3d"
+         data-click-key="341"
+         data-click-key-right="32"
+         data-autoboot="false"></div>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-doskey="265" data-code="" data-keycode="0" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-doskey="263" data-code="" data-keycode="0" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-doskey="262" data-code="" data-keycode="0" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-doskey="264" data-code="" data-keycode="0" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-doskey="341" data-code="" data-keycode="0" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-doskey="32" data-code="" data-keycode="0" aria-label="OPEN">OPEN</button>
+          <button type="button" class="mgp-btn " data-doskey="340" data-code="" data-keycode="0" aria-label="RUN">RUN</button>
+          <button type="button" class="mgp-btn " data-doskey="342" data-code="" data-keycode="0" aria-label="STRAFE">STRAFE</button>
+          <button type="button" class="mgp-btn " data-doskey="258" data-code="" data-keycode="0" aria-label="MAP">MAP</button>
+          <button type="button" class="mgp-btn " data-doskey="256" data-code="" data-keycode="0" aria-label="MENU">MENU</button>
+          <button type="button" class="mgp-btn " data-doskey="257" data-code="" data-keycode="0" aria-label="ENTER">ENTER</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">十字キー：移動・旋回 ／ FIRE：攻撃 ／ OPEN：扉・壁 ／ MENU：Esc</p>
+  <details class="mgp-keys">
+    <summary>⌨ キーボード — メニュー操作と名前の入力に</summary>
+    <div class="mgp-keygrid" id="mgp-keygrid"></div>
+  </details>
+<script>
+(function(){
+  // GLFW key codes, matching the map in dos-embed.js.
+  var ROWS = [
+    [["1",49],["2",50],["3",51],["4",52],["5",53],["6",54],["7",55],["8",56],["9",57],["0",48]],
+    [["Q",81],["W",87],["E",69],["R",82],["T",84],["Y",89],["U",85],["I",73],["O",79],["P",80]],
+    [["A",65],["S",83],["D",68],["F",70],["G",71],["H",72],["J",74],["K",75],["L",76]],
+    [["Z",90],["X",88],["C",67],["V",86],["B",66],["N",78],["M",77]],
+    [["SPACE",32],["ENTER",257],["ESC",256],["⌫",259],["Y",89],["N",78]]
+  ];
+  var grid = document.getElementById("mgp-keygrid");
+  if(!grid) return;
+  ROWS.forEach(function(row){
+    var r = document.createElement("div");
+    r.className = "mgp-keyrow";
+    row.forEach(function(pair){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "mgp-key" + (pair[0].length > 1 ? " mgp-key-wide" : "");
+      b.textContent = pair[0];
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(pair[1], true); b.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(pair[1], false); b.classList.remove("pressed"); }
+      b.addEventListener("touchstart", dn, {passive:false});
+      b.addEventListener("touchend", up, {passive:false});
+      b.addEventListener("touchcancel", up, {passive:false});
+      b.addEventListener("mousedown", dn);
+      b.addEventListener("mouseup", up);
+      b.addEventListener("mouseleave", up);
+      r.appendChild(b);
+    });
+    grid.appendChild(r);
+  });
+})();
+</script>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("dos-canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var sc = parseInt(btn.dataset.doskey, 10);
+      if(!sc) return;
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,true); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,false); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <details class="controls-panel" open>
+      <summary><strong>操作方法</strong> — キーの割り当て</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">動作</th><th scope="col">キーボード</th><th scope="col">マウス / タッチ</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">移動 / 旋回</th><td><kbd>矢印キー</kbd> または <kbd>W A S D</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">攻撃</th><td><kbd>Ctrl</kbd></td><td>左クリック</td></tr>
+        <tr><th scope="row">扉を開く / 隠し壁を押す</th><td><kbd>Space</kbd></td><td>右クリック</td></tr>
+        <tr><th scope="row">ダッシュ</th><td><kbd>Shift</kbd> を押しながら</td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">横移動</th><td><kbd>Alt</kbd> + 矢印キー</td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">武器 1〜4</th><td>数字キー</td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">メニュー / 戻る</th><td><kbd>Esc</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">サウンド</th><td>—</td><td>画面下のサウンドボタンで消音できます</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p class="next-up"><span class="next-up-label">次に遊ぶ:</span>
+      <a href="/run/openttd/">OpenTTD</a>
+      <a href="/run/keen4/">Commander Keen 4: Secret of the Oracle</a>
+      <a href="/ja/run/doom/">DOOM</a>
+      <a href="/run/jezzball-open/">JezzBall</a>
+      <a class="next-up-all" href="/ja/run/">全44本を見る →</a>
+    </p>
+    <figure class="app-shot">
+      <img src="/run/wolfenstein-3d/screenshot.png" width="798" height="539" loading="lazy" alt="ExeBrowser でブラウザのタブ内に動作するWolfenstein 3D" />
+      <figcaption>ブラウザで動作するWolfenstein 3D。インストールもアップロードも不要です。</figcaption>
+    </figure>
+    <p class="muted small" style="margin-top:1rem;">DOSBox と WebAssembly でブラウザ内で動作します。ファイルは一切アップロードされません。画面をクリックすると操作できます。マウスを解放するには <kbd>Ctrl+F10</kbd> を押してください。</p>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Wolfenstein 3D のシェアウェア版を入手する（無料・合法）</h3>
+      <div class="download-box"><h3 style="margin-top:0;">シェアウェア版エピソード（データファイル）と Win32 のソースポート</h3><p>必要なものは二つで、どちらも無料かつ合法です。</p><ol><li><strong>シェアウェア版のデータ</strong>——自由に再配布できる第1エピソード（<code>*.WL1</code> という一連のファイル）です。Apogee は第1エピソードを、無償で複製してよいシェアウェアとして公開しました。Internet Archive に保存版があります。</li><li><strong>Win32 のソースポート</strong>——エンジンをオープンソースで作り直したもので、Windows の EXE として動きます。<a href="https://maniacsvault.net/ecwolf/download.php" target="_blank" rel="noopener">ECWolf</a>（<strong>32ビット版</strong>を選んでください）か、より軽量な Wolf4SDL があります。</li></ol><p><a class="cta-btn" href="https://archive.org/details/wolf3dsw" target="_blank" rel="noopener">Wolfenstein 3D シェアウェア版を入手（Internet Archive）→</a></p><p class="muted small">自分のパソコンで遊ぶ場合は、ソースポートの EXE と <code>*.WL1</code> ファイルを<strong>すべて同じフォルダ</strong>に置いてください。このページで遊ぶだけなら何も要りません。すでにシェアウェア版エピソードが起動しています。© id Software / Apogee。自由に再配布してよいのは<strong>シェアウェア版エピソードのみ</strong>です。製品版エピソード、Nocturnal Missions、Spear of Destiny は商用作品なので、<a href="https://store.steampowered.com/app/2270/Wolfenstein_3D/" target="_blank" rel="noopener">id / Steam</a> でご購入ください。</p></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>動作の仕組み</h2>
+    <p>このページが動かしているのは、<strong>16ビットの DOS 版</strong>そのもの——1992年の <code>WOLF3D.EXE</code> です。それを WebAssembly 版の DOSBox の中で実行しています。二重にエミュレートしているわけでも、作り直しているわけでもありません。出荷当時のシェアウェア版エピソードが、数秒で起動します。</p><p>中身も本物です。B.J. ブラスコヴィッチ、迷路のような地下要塞、隠し扉を押して探す感覚、そしてあの独特なレイキャスト描画。音も当時の AdLib と PC スピーカーの出力そのままなので、現代の移植版とは違い、1992年に鳴っていた音が鳴ります。いまの基準では驚くほど軽いゲームなので、最近のマシンならまず問題なく全速で動きます。動作が重く感じられるとすれば、かなり古いタブレットや Chromebook くらいです。</p>
+    <h3>デスクトップで遊ぶならソースポートも</h3>
+    <p>id は 1995年に Wolfenstein 3D のエンジンをオープンソース化しており、有志による現代的な再実装——<a href="https://github.com/ECWolfEngine/ECWolf" target="_blank" rel="noopener">ECWolf</a> や Wolf4SDL——が生まれました。これらは同じシェアウェア版の <code>.WL1</code> データをそのまま読み込みつつ、高解像度表示やマウスルック、現代のディスプレイに対応します。手元のパソコンに入れておく価値は十分にあります。</p><p>ただしそれらはデスクトップ用のプログラムです。このページであえて当時の DOS 版を動かしているのは、そちらなら来た人の側に準備が一切要らないからです。</p>
+  </section>
+  <section class="card">
+    <h2>よくある質問</h2>
+    <details>
+      <summary>ダウンロードせずに無料で遊べますか？</summary>
+      <p>はい。Apogee と id は 1992年に第1エピソードをシェアウェアとして公開し、無償で複製してよいものとしました。以来ずっと自由に配布されています。このページはそのシェアウェア版をブラウザ内で動かしているだけなので、ダウンロードもインストールもアカウントも不要です。</p>
+    </details>
+    <details>
+      <summary>ここで遊ぶのは合法ですか？</summary>
+      <p>シェアウェア版の第1エピソードについては、はい。製品版のエピソード、Nocturnal Missions、Spear of Destiny は商用作品で、ここには含まれていません。それらは id または Steam でご購入ください。</p>
+    </details>
+    <details>
+      <summary>これは本物の Wolfenstein 3D ですか、リメイクですか？</summary>
+      <p>本物です。1992年の DOS 実行ファイルと当時のデータを、改変せず DOSBox の中で動かしています。ファンによる再現でもソースポートでもなく、出荷されたそのままのゲームです。</p>
+    </details>
+    <details>
+      <summary>操作方法は？</summary>
+      <p>まずゲーム画面をクリックしてキーボード入力を渡してください。移動は矢印キーまたは WASD、射撃は Ctrl、扉を開けたり隠し壁を押したりするのは Space、武器の切り替えは 1〜4、メニューは Esc です。</p>
+    </details>
+    <details>
+      <summary>動作が重くなることはありますか？</summary>
+      <p>WebAssembly の中で x86 CPU をエミュレートしているため、速度はネイティブのおよそ 10〜40% になります。Wolfenstein 3D はそれで十分すぎるほど軽いので、最近のノートパソコンなら快適です。ごく古いタブレットや Chromebook では重く感じられるかもしれません。</p>
+    </details>
+    <details>
+      <summary>進行状況は保存されますか？</summary>
+      <p>はい。しかもゲーム内のセーブメニューからだけではありません。ステージの途中でタブを閉じても、次に訪れたときに「中断した場所から再開しますか」と尋ねられます。エミュレータの状態ごとブラウザのストレージに保存しているためです。どこにもアップロードされず、アカウントもありません。つまり保存先は遊んだその端末であり、別のパソコンには引き継がれません。</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>ブラウザで遊べる他のゲーム</h2>
+    <ul class="poster-grid">
+        <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作する3D Pinball Space Cadet" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/ja/run/doom/">
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するDOOM" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/solitaire-open/">
+          <img class="pc-shot" src="/run/solitaire-open/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するSolitaire (Klondike)" />
+          <span class="pc-body"><span class="pc-title">Solitaire (Klondike)</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/micropolis/">
+          <img class="pc-shot" src="/run/micropolis/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するMicropolis" />
+          <span class="pc-body"><span class="pc-title">Micropolis</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/crystal-caves/">
+          <img class="pc-shot" src="/run/crystal-caves/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するCrystal Caves" />
+          <span class="pc-body"><span class="pc-title">Crystal Caves</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/minesweeper-open/">
+          <img class="pc-shot" src="/run/minesweeper-open/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するMinesweeper" />
+          <span class="pc-body"><span class="pc-title">Minesweeper</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+    </ul>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/ja/run/">ここで遊べる44本すべてを見る →</a></p>
+  </section>
+  <section class="card">
+    <h2>関連ガイド</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/bio-menace/"><span class="lc-title">Bio Menace</span><span class="lc-desc">Apogee のラン&amp;ガン型アクション。フリーウェアで全編収録。</span></a></li>
+      <li><a class="link-card" href="/ja/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">1993年のオリジナル版のシェアウェア版エピソードを、ブラウザでそのまま。</span></a></li>
+      <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">DOOM エンジン向けの自由でオープンなゲームデータ。Win32 版も配布されています。</span></a></li>
+      <li><a class="link-card" href="/run/hexen-heretic-shareware/"><span class="lc-title">Heretic / Hexen（シェアウェア版）</span><span class="lc-desc">id 系エンジンによる一人称視点のシェアウェア名作をもう少し。</span></a></li>
+      <li><a class="link-card" href="/run/blake-stone/"><span class="lc-title">Blake Stone</span><span class="lc-desc">『Aliens of Gold』エピソード1。Wolfenstein エンジン製で、すぐに遊べます。</span></a></li>
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D ピンボール スペースキャデット</span><span class="lc-desc">Windows XP でおなじみの台。オープンソース版をすぐに遊べます。</span></a></li>
+      <li><a class="link-card" href="/guide/"><span class="lc-title">動作対応ガイド</span><span class="lc-desc">ExeBrowser で動くもの、動かないもの。</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p><a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a>・<a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a>・WebAssembly を利用しています。Wine は CodeWeavers の商標です。ExeBrowser は WineHQ、CodeWeavers、Microsoft とは無関係です。</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/ja/">ホーム</a>
+    <a href="/ja/run/">アプリ一覧</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/guide/">動作互換ガイド</a>
+    <a href="/about/">このサイトについて</a>
+    <a href="/contact/">お問い合わせ</a>
+    <a href="/saves/">セーブデータ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/terms/">利用規約</a>
+  </nav>
+  <p>© 2026 ExeBrowser. コンテンツはオープンライセンス、ランタイムは GPL-2.0 / LGPL-2.1 です。</p>
+</footer>
+
+
+<script>window.__I18N={"play":"▶ {name} をプレイ","resume":"▶ {name} を再開","loading":"読み込み中…","startOver":"最初から始める","savedAgo":"{when}に保存しました。","filesRestored":"セーブデータも一緒に読み込まれています。ゲーム内のメニューからロードしてください。","snapshotResume":"中断したところから、そのまま再開できます。","progressSaved":"進行状況はこのブラウザに保存されます","resumedExactly":"中断した場所から再開しました","confirmDelete":"{name} の保存データを削除しますか？","justNow":"たった今","minutesAgo":"{n}分前","anHourAgo":"1時間前","hoursAgo":"{n}時間前","yesterday":"昨日","daysAgo":"{n}日前","saveHint":"ゲーム内でセーブすると、このブラウザに保存されます","resetSaves":"保存データを消去","savesCleared":"保存データを消去しました。再読み込みすると最初から始まります","restoredFiles":"{n}件のセーブデータを復元しました。ゲーム内のメニューからロードしてください","overlayNote":"DOSBox と WebAssembly でブラウザ内で動作します。<br>アップロードは一切ありません。ランタイム（約1.4MB）は初回読み込み後にキャッシュされます。","mouseHint":"ゲーム画面をクリックすると、キーボード操作が有効になります。","starting":"起動中…","cachedNote":"初回読み込み後はキャッシュされるので、次回はすぐに始まります。","loadingGame":"{name} を読み込んでいます…","fullscreen":"全画面","soundOn":"サウンド：オン","soundOff":"サウンド：オフ","remapKeys":"キーボード — キーの割り当てを変更","remapHint":"下のキーをクリックしてから、割り当てたいキーを押してください。ゲームごとに、このブラウザ内に保存されます。","resetDefaults":"初期設定に戻す","consoleOutput":"コンソール出力"};</script><!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
+<script src="/save-core.js?v=2"></script>
+<script src="/recent.js?v=3"></script>
+<script src="/dos-embed.js?v=34"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+</body>
+</html>

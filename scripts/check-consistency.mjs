@@ -380,6 +380,67 @@ if (existsSync(uiFile)) {
   }
 }
 
+// ── 13. Plain-text fields don't carry pre-escaped entities ─────────────────
+// These fields go through esc() on render, so an entity written into the data
+// is escaped a second time and reaches the page as a literal "&amp;". It was
+// live on freedoom's og:title, which social cards and search results show
+// verbatim. Fields that legitimately hold HTML — intro, sections[].html,
+// download.html, licenseNote — are inserted raw and are not checked.
+{
+  const ENT = /&(?:amp|lt|gt|quot|#39|apos);/;
+  const PLAIN = ["title", "description", "keywords", "ogTitle", "ogDescription",
+    "crumb", "h1", "appName", "author", "fullyFree", "licenseReason", "mobileHint"];
+  const scan = (obj, label) => {
+    const hit = (v, path) => {
+      if (typeof v === "string" && ENT.test(v)) warn(`escaping: ${label} ${path} has a pre-escaped entity — store the raw character`);
+    };
+    for (const f of PLAIN) hit(obj[f], f);
+    (obj.sections || []).forEach((x, i) => hit(x.h, `sections[${i}].h`));
+    (obj.faq || []).forEach((x, i) => { hit(x.q, `faq[${i}].q`); hit(x.a, `faq[${i}].a`); });
+    if (obj.download) hit(obj.download.heading, "download.heading");
+    (obj.related || []).forEach((r, i) => { hit(r.title, `related[${i}].title`); hit(r.desc, `related[${i}].desc`); });
+    if (obj.verdict) hit(obj.verdict.text, "verdict.text");
+    if (obj.mobileControls) hit(obj.mobileControls.hint, "mobileControls.hint");
+  };
+  for (const p of pages) scan(p, p.slug);
+  // The hand-maintained pages have no data entry to scan, so catch the symptom
+  // in the built HTML too: three -open pages had "All games &amp;amp; apps"
+  // typed straight into the file.
+  for (const { abs, label } of linkedPages) {
+    const html = readFileSync(abs, "utf8");
+    if (/&amp;(?:amp|lt|gt|quot);/.test(html)) warn(`escaping: ${label} renders a double-escaped entity`);
+  }
+  for (const code of ["es", "pt-BR", "de", "ja", "fr", "zh-CN"]) {
+    const f = resolve(process.cwd(), "scripts", "i18n", `pages.${code}.json`);
+    if (!existsSync(f)) continue;
+    const d = JSON.parse(readFileSync(f, "utf8"));
+    for (const [slug, e] of Object.entries(d)) {
+      if (slug.startsWith("_") || typeof e !== "object") continue;
+      scan(e, `${code}/${slug}`);
+    }
+  }
+}
+
+// ── 14. No heading appears twice on the same page ──────────────────────────
+// Rule 12's sibling. Freedoom carried two sections both headed "How it works
+// & what to expect" saying contradictory things, and they weren't adjacent, so
+// nothing caught them. Reads the built HTML rather than the data, which also
+// covers headings the generator itself emits.
+{
+  for (const { abs, label } of linkedPages) {
+    const body = readFileSync(abs, "utf8").split("<main")[1];
+    if (!body) continue;
+    const hs = [...body.split("</main>")[0].matchAll(/<h([23])[^>]*>([\s\S]*?)<\/h\1>/g)]
+      .map((m) => m[2].replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim())
+      .filter(Boolean);
+    const seen = new Set();
+    for (const h of hs) {
+      if (seen.has(h)) { warn(`headings: ${label} repeats "${h.slice(0, 50)}"`); break; }
+      seen.add(h);
+    }
+  }
+}
+
 // ── report ────────────────────────────────────────────────────────────────
 if (problems.length === 0) {
   console.log(`✓ consistency: ${pages.length} pages, ${pages.filter(isPlayable).length} playable — no issues`);

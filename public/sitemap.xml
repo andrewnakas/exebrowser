@@ -589,6 +589,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/es/run/freedoom/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/pt-BR/run/doom/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -625,7 +631,25 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/de/run/tyrian/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/ja/run/doom/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/ja/run/wolfenstein-3d/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/ja/run/tyrian/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -637,7 +661,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/fr/run/wolfenstein-3d/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/zh-CN/run/doom/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/zh-CN/run/wolfenstein-3d/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

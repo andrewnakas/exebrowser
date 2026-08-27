@@ -380,5 +380,66 @@
     ],
     "fullyFree": "Declarado freeware por su titular de derechos, Jason Emery, en 2004: el juego completo, no un episodio.",
     "licenseNote": "<p class=\"muted small\">Tyrian 2000 fue publicado como freeware por su titular de derechos, así que se juega aquí directamente: el juego funciona en un DOSBox compilado a WebAssembly, dentro de tu pestaña, y no hay nada que subir. También puedes conseguirlo gratis en <a href=\"https://www.gog.com/game/tyrian_2000\" target=\"_blank\" rel=\"noopener\">GOG</a> o como source port nativo (más abajo).</p>"
+  },
+  "freedoom": {
+    "title": "Jugar Freedoom Online Gratis — El Juego Completo, No Una Demo — ExeBrowser",
+    "description": "Freedoom es un juego libre y de código abierto sobre el motor de DOOM: el juego entero, no un episodio shareware. Se juega al instante en tu navegador y guarda tu progreso.",
+    "keywords": "jugar freedoom online, freedoom navegador, freedoom sin descargar, doom gratis online, freedoom phase 1, doom libre online",
+    "ogTitle": "Jugar Freedoom Online — Libre y Gratuito, En Tu Navegador",
+    "ogDescription": "Freedoom, el juego completamente libre sobre el motor de DOOM, jugable en tu navegador con DOSBox + WebAssembly. Gratis, legal y de código abierto.",
+    "crumb": "Jugar Freedoom",
+    "h1": "Juega a Freedoom online en tu navegador",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — el juego libre completo, con DOSBox en tu navegador"
+    },
+    "intro": "<p><strong>Freedoom</strong> es un sustituto completamente libre y de código abierto de los archivos de datos de DOOM: la misma jugabilidad legendaria, sin un solo contenido propietario. Se ejecuta con el clásico motor <code>DOOM.EXE</code> de DOS dentro de DOSBox + WebAssembly. Dale a jugar y estarás repartiendo escopetazos al instante, sin descargar nada.</p>",
+    "sections": [
+      {
+        "h": "Cómo funciona y qué esperar",
+        "html": "<p><strong>Freedoom no es un ejecutable.</strong> Es un <em>IWAD</em>: un único archivo de datos que contiene todos los niveles, los sprites, los sonidos y la música. Un IWAD necesita un motor de DOOM que lo ejecute, y esta página trae uno: el motor de DOOM de libre redistribución funcionando bajo DOSBox compilado a WebAssembly, con el IWAD de Freedoom ya colocado a su lado. Dale a jugar y arranca en un par de segundos. No hay nada que descargar, nada que subir y nada que configurar.</p><p>Como es un motor de 1993 haciendo un trabajo de 1993, va a toda velocidad en cualquier equipo actual. Las dos campañas son independientes: Phase 1 (<code>freedoom1.wad</code>) son cuatro episodios de nueve niveles al estilo de The Ultimate Doom, y Phase 2 (<code>freedoom2.wad</code>) es una sola campaña de 30 niveles al estilo de DOOM II.</p>"
+      },
+      {
+        "h": "Qué es y qué no es",
+        "html": "<p>Freedoom <em>no</em> es el DOOM de id Software, y tampoco pretende copiar su arte. Es un sustituto original, hecho desde cero por voluntarios, que encaja en el lugar de los WAD comerciales para que los motores de código abierto tengan algo completamente libre con lo que jugar. Justo eso es lo que lo hace ideal para un navegador: sin advertencias de shareware, sin equilibrismos de licencias, sin un «compra la versión completa» al llegar al noveno nivel.</p><p>Si lo que quieres son los niveles de id de 1993, están en la <a href=\"/es/run/doom/\">página del shareware de DOOM</a>. Si lo que buscas es un shooter estilo DOOM gratuito y sin ataduras, Freedoom es la opción más limpia que hay.</p>"
+      },
+      {
+        "h": "Ejecutarlo en tu propio equipo",
+        "html": "<p>En un ordenador de escritorio combinarías ese mismo IWAD con un source port moderno, y la elección importa:</p><ul><li><strong>Chocolate Doom o Crispy Doom</strong>: renderizado por software, diminutos y fieles al original. Es la combinación fiable, y lo más parecido a lo que ejecuta esta página.</li><li><strong>GZDoom y otros ports con aceleración por hardware</strong>: piden OpenGL 3.3 y una canalización de GPU real. Excelentes de forma nativa, pero no algo que un entorno de navegador pueda ofrecer.</li></ul><p>Pon el <code>.EXE</code> del port y un WAD de Freedoom en la misma carpeta y la mayoría encontrarán el IWAD por su cuenta. Nada de esto hace falta para jugar aquí.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Freedoom es de verdad gratuito y legal?",
+        "a": "Sí, por completo. Freedoom se publica bajo una licencia BSD modificada que permite expresamente copiarlo, modificarlo y redistribuirlo. No contiene ningún recurso de id Software, así que no hay advertencias de shareware ni equilibrismos de derechos de autor: tanto los datos del juego como el motor que los ejecuta son software libre."
+      },
+      {
+        "q": "¿Freedoom es lo mismo que DOOM?",
+        "a": "No. Freedoom es un juego original hecho desde cero que funciona sobre el clásico motor de DOOM y es compatible con niveles y mods en formato DOOM. Es un sustituto libre de los WAD comerciales de id: sensaciones parecidas, contenido enteramente original. Si quieres los niveles de DOOM de 1993, mira la página del shareware de DOOM."
+      },
+      {
+        "q": "¿Tengo que aportar yo un motor o un WAD?",
+        "a": "No. Esta página trae los dos: el motor de DOOM de libre redistribución y el IWAD de Freedoom, ya emparejados, funcionando con DOSBox en tu navegador. Pulsa jugar y arranca. Aportar tu propio motor solo tiene sentido si quieres jugar a Freedoom en tu propio ordenador."
+      },
+      {
+        "q": "¿Qué diferencia hay entre Phase 1 y Phase 2?",
+        "a": "Phase 1 (freedoom1.wad) está construido como The Ultimate Doom —cuatro episodios de nueve niveles— y funciona con mods hechos para el DOOM original. Phase 2 (freedoom2.wad) es una única campaña de 30 niveles al estilo de DOOM II, y funciona con mods de DOOM II y Final Doom."
+      },
+      {
+        "q": "¿Qué source port debería usar en mi ordenador?",
+        "a": "Uno de renderizado por software: Chocolate Doom o Crispy Doom. Ambos son pequeños, libres y fieles al original. Evita GZDoom y los demás ports acelerados por hardware si vas a ejecutarlos bajo emulación, porque necesitan OpenGL 3.3 y un entorno de navegador no puede dárselo. De forma nativa en un escritorio, GZDoom es excelente."
+      },
+      {
+        "q": "¿Se guarda mi progreso?",
+        "a": "Sí, y no solo desde el menú de guardado del juego. Cierra la pestaña a mitad de un nivel y en tu próxima visita se te ofrecerá volver exactamente donde estabas, porque se guarda una instantánea del estado completo del emulador en el almacenamiento de tu navegador. No se sube nada y no hay cuenta: la partida vive en el dispositivo donde jugaste, lo que también significa que no te acompaña a otro ordenador."
+      }
+    ],
+    "mobileHint": "Cruceta: moverse/girar · FIRE: disparar · USE: abrir puertas · RUN: correr",
+    "download": {
+      "heading": "Consigue Freedoom (libre y de código abierto)",
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">La versión oficial y libre</h3><p>Los datos de juego de Freedoom se publican bajo una licencia BSD modificada: puedes copiarlos, modificarlos y redistribuirlos con libertad, siempre que la licencia y los créditos viajen con ellos. Coge la versión oficial del propio proyecto:</p><p><a class=\"cta-btn\" href=\"https://freedoom.github.io/download.html\" target=\"_blank\" rel=\"noopener\">Descargar Freedoom (sitio oficial) →</a></p><p class=\"muted small\">La descarga incluye <code>freedoom1.wad</code> (Phase 1, al estilo de Ultimate Doom) y <code>freedoom2.wad</code> (Phase 2, al estilo de DOOM II). Son archivos de datos WAD, <strong>no</strong> un ejecutable: también necesitas un motor de DOOM. La combinación gratuita más sencilla es un pequeño port de Win32 con renderizado por software, como <a href=\"https://www.chocolate-doom.org/\" target=\"_blank\" rel=\"noopener\">Chocolate Doom</a> o Crispy Doom. Pon el <code>.EXE</code> del port y un <code>freedoomN.wad</code> en la misma carpeta y ejecútalo en tu equipo; aquí no necesitas nada de eso, porque esta página ya arranca Freedoom por ti. Todo lo que interviene —juego y motor— es genuinamente libre y de código abierto.</p></div>"
+    },
+    "licenseReason": "Los datos de juego de Freedoom se publican bajo una licencia BSD modificada que permite expresamente la libre redistribución, así que podemos alojarlos; se combinan con un motor de DOOM de código abierto bajo licencia GPL.",
+    "fullyFree": "Recursos con licencia BSD del proyecto Freedoom; funciona sobre el motor de DOOM shareware, de libre redistribución."
   }
 }

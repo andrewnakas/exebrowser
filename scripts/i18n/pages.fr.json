@@ -135,5 +135,61 @@
       "heading": "Récupérer le shareware de DOOM (gratuit et légal)",
       "html": "<h3 style=\"margin-top:0;\">Le shareware officiel d'id Software</h3><p>Le premier épisode complet, non modifié, distribué gratuitement exactement comme la licence shareware l'autorise. La source la plus fiable est la copie conservée par l'Internet Archive :</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">Récupérer le shareware de DOOM (Internet Archive) →</a></p><p class=\"muted small\">Prenez la version DOS (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). Elle n'est pas nécessaire pour jouer ici — cette page lance déjà l'épisode shareware — mais c'est la copie à conserver si vous le voulez sur votre propre machine. © id Software : l'épisode shareware peut être librement rediffusé, sans modification et sans frais. Les épisodes enregistrés et Doom II sont commerciaux et <strong>ne sont pas</strong> inclus ; achetez-les chez <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
     }
+  },
+  "wolfenstein-3d": {
+    "title": "Jouer à Wolfenstein 3D (1992) en ligne — le vrai jeu DOS — ExeBrowser",
+    "description": "Le Wolfenstein 3D original de 1992, épisode shareware gratuit, dans votre navigateur. Le vrai jeu DOS sous DOSBox — sans téléchargement, sans inscription, progression sauvegardée.",
+    "keywords": "jouer wolfenstein 3d en ligne, wolfenstein 3d navigateur, wolfenstein 3d gratuit, wolf3d shareware, jeux dos en ligne gratuits",
+    "ogTitle": "Jouer à Wolfenstein 3D en ligne — shareware gratuit, dans votre navigateur",
+    "ogDescription": "L'épisode shareware de Wolfenstein 3D (1992), gratuit et légal, dans un onglet de navigateur via DOSBox + WebAssembly. Cliquez sur jouer et vous y êtes.",
+    "crumb": "Jouer à Wolfenstein 3D",
+    "h1": "Jouer à Wolfenstein 3D dans votre navigateur",
+    "verdict": {
+      "kind": "works",
+      "text": "Fonctionne — le jeu DOS original tourne via DOSBox"
+    },
+    "intro": "<p><strong>Wolfenstein 3D</strong> — le grand-père du jeu de tir à la première personne, signé id Software et Apogee en 1992 — et son premier épisode shareware, gratuit et parfaitement légal. ExeBrowser fait tourner les jeux DOS directement via DOSBox compilé en WebAssembly : c'est donc le <code>WOLF3D.EXE</code> d'origine qui s'exécute dans votre navigateur, sans portage, sans réglage. Appuyez sur jouer et vous y êtes.</p>",
+    "sections": [
+      {
+        "h": "Comment ça fonctionne",
+        "html": "<p>Cette page exécute le Wolfenstein 3D <strong>16 bits pour DOS</strong> d'origine — le vrai <code>WOLF3D.EXE</code> de 1992 — à l'intérieur de DOSBox compilé en WebAssembly. Rien n'est émulé deux fois et rien n'est reconstruit : c'est l'épisode shareware exactement tel qu'il est sorti, prêt en deux secondes.</p><p>Vous obtenez le jeu authentique : B.J. Blazkowicz, les bunkers labyrinthiques, les murs secrets à pousser et ce rendu par lancer de rayons impossible à confondre. Le son est la sortie AdLib / haut-parleur PC d'époque, donc il sonne comme en 1992 et non comme un portage moderne le restituerait. Wolfenstein 3D est d'une légèreté confondante pour aujourd'hui : il tourne à pleine vitesse sur n'importe quelle machine actuelle, et seuls les Chromebooks et tablettes vraiment anciens risquent de peiner.</p>"
+      },
+      {
+        "h": "Les portages, si vous en voulez un sur votre ordinateur",
+        "html": "<p>id a ouvert le code du moteur de Wolfenstein 3D en 1995, et la communauté en a tiré des reconstructions modernes — <a href=\"https://github.com/ECWolfEngine/ECWolf\" target=\"_blank\" rel=\"noopener\">ECWolf</a> et Wolf4SDL — qui lisent exactement les mêmes données shareware <code>.WL1</code> avec des résolutions plus élevées, la visée à la souris et la prise en charge des écrans actuels. Elles valent le détour sur un ordinateur de bureau.</p><p>Ce sont toutefois des programmes de bureau. Cette page fait délibérément tourner la version DOS d'origine, parce que c'est celle qui ne vous demande absolument aucune préparation.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Peut-on jouer à Wolfenstein 3D gratuitement sans rien télécharger ?",
+        "a": "Oui. Apogee et id ont publié l'épisode un en shareware en 1992 pour qu'il soit copié gratuitement, et il circule librement depuis. Cette page fait tourner cet épisode shareware dans votre navigateur : rien à télécharger, rien à installer, aucun compte."
+      },
+      {
+        "q": "Est-ce légal d'y jouer ici ?",
+        "a": "Oui, pour le premier épisode shareware. Les épisodes enregistrés, les Nocturnal Missions et Spear of Destiny sont commerciaux et ne sont pas proposés — achetez-les chez id ou sur Steam."
+      },
+      {
+        "q": "Est-ce le vrai Wolfenstein 3D ou un remake ?",
+        "a": "Le vrai. L'exécutable DOS de 1992 et ses données d'origine tournent sans modification dans DOSBox. Ce n'est ni une recréation de fans ni un portage : c'est le jeu tel qu'il est sorti."
+      },
+      {
+        "q": "Quelles sont les commandes ?",
+        "a": "Cliquez sur l'écran de jeu pour lui donner le clavier. Les flèches ou WASD déplacent, Ctrl tire, Espace ouvre les portes et pousse les murs secrets, les touches 1 à 4 changent d'arme, et Échap ouvre le menu."
+      },
+      {
+        "q": "Pourquoi le jeu peut-il ralentir ?",
+        "a": "Un processeur x86 est émulé dans WebAssembly, ce qui donne environ 10 à 40 % de la vitesse native. Wolfenstein 3D est assez léger pour que cela suffise largement sur un ordinateur portable récent ; les tablettes et Chromebooks anciens peuvent sembler poussifs."
+      },
+      {
+        "q": "Ma progression est-elle sauvegardée ?",
+        "a": "Oui, et pas seulement via le menu de sauvegarde du jeu. Fermez l'onglet en plein niveau et la page vous proposera, à votre prochaine visite, de reprendre exactement où vous en étiez : c'est tout l'état de l'émulateur qui est enregistré dans le stockage de votre navigateur. Rien n'est téléversé et il n'y a pas de compte, donc la sauvegarde reste sur l'appareil où vous avez joué et ne vous suit pas ailleurs."
+      }
+    ],
+    "mobileHint": "Croix directionnelle : se déplacer/pivoter · FIRE : tirer · OPEN : portes/murs · MENU : Échap",
+    "download": {
+      "heading": "Récupérer le shareware de Wolfenstein 3D (gratuit et légal)",
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">L'épisode shareware (fichiers de données) et un portage Win32</h3><p>Il vous faut deux morceaux, tous deux gratuits et légaux :</p><ol><li><strong>Les données du shareware</strong> — le premier épisode, librement rediffusable (les fichiers <code>*.WL1</code>). Apogee a publié l'épisode un en shareware pour qu'il soit copié sans frais, et l'Internet Archive en conserve des copies.</li><li><strong>Un portage Win32</strong> — une reconstruction moderne et open source du moteur, qui tourne comme un EXE Windows. <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a> (prenez la version <strong>32 bits</strong>) ou le plus léger Wolf4SDL.</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">Récupérer le shareware de Wolfenstein 3D (Internet Archive) →</a></p><p class=\"muted small\">Pour y jouer sur votre ordinateur, placez l'EXE du portage et tous les fichiers <code>*.WL1</code> dans <strong>un même dossier</strong>. Ici vous n'avez besoin de rien de tout cela : cette page démarre déjà l'épisode shareware. © id Software / Apogee. Seul l'<strong>épisode shareware</strong> est librement rediffusable ; les épisodes enregistrés, les Nocturnal Missions et Spear of Destiny sont commerciaux — achetez-les chez <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p></div>"
+    },
+    "licenseReason": "Le premier épisode de Wolfenstein 3D a été publié en 1992 par Apogee et id comme shareware librement diffusable ; les fichiers de données .WL1 du shareware peuvent être copiés gratuitement, tandis que les épisodes enregistrés et Spear of Destiny restent commerciaux."
   }
 }

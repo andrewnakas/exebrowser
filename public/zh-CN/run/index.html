@@ -61,8 +61,16 @@
           <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM" />
           <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">玩 DOOM</span></span>
         </a></li>
+        <li class="pc-item"><a class="poster-card" href="/zh-CN/run/wolfenstein-3d/">
+          <img class="pc-shot" src="/run/wolfenstein-3d/screenshot.png" width="320" height="240" loading="lazy" alt="Wolfenstein 3D" />
+          <span class="pc-body"><span class="pc-title">Wolfenstein 3D</span><span class="pc-play">玩 Wolfenstein 3D</span></span>
+        </a></li>
     </ul>
     <p class="muted small" style="margin-top:1rem;">以上是有中文版本的页面。完整目录（40 多个游戏和程序）是英文的：<a href="/run/">查看全部</a>。</p>
+  </section>
+  <section class="card">
+    <h2>哪套运行环境负责什么</h2>
+    <p>这里有三套不同的运行环境在干活，一个作品用的是哪一套，基本决定了它跑得有多顺。</p><p>编译成 WebAssembly 的 <strong>DOSBox</strong> 负责运行 DOS 游戏——DOOM、Wolfenstein 3D、Commander Keen 等等。这是最可靠的一条路：当年的可执行文件几秒钟就能启动，在如今任何一台机器上都能满速运行。<strong>Wine 加上 x86 模拟器</strong>负责运行 Windows 程序，这件事要难得多，因为需要在浏览器里重新搭出一整套真正的 32 位 Win32 环境——速度大约是原生的 10% 到 40%，能跑起来的东西也少得多。<strong>ScummVM</strong> 则负责点击式冒险游戏。</p><p>这里有些页面是说明文章而不是可玩的作品，原因可能是软件属于商业产品、体积太大不便托管，或者需要浏览器给不了的硬件。这类页面会在开头说明情况，并告诉你究竟用什么才能把它跑起来。</p>
   </section>
 </main>
 

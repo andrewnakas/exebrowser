@@ -135,5 +135,61 @@
       "heading": "获取 DOOM 共享软件版（免费且合法）",
       "html": "<h3 style=\"margin-top:0;\">id Software 官方共享软件版</h3><p>完整的第一章，未经改动，完全按照共享软件许可所允许的方式免费分发。最可靠的来源是 Internet Archive 保存的副本：</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">获取 DOOM 共享软件版（Internet Archive）→</a></p><p class=\"muted small\">请选择 DOS 版本（<code>DOOM.EXE</code> 和 <code>DOOM1.WAD</code>）。在本页游玩并不需要它——这个页面已经在运行共享软件版章节了——但如果你想在自己的电脑上保留一份，这就是该留的那一份。© id Software：共享软件版章节在不作修改、不收取费用的前提下可以自由再分发。注册版章节与 Doom II 属于商业产品，<strong>不</strong>包含在内；请到 <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a> 购买。</p>"
     }
+  },
+  "wolfenstein-3d": {
+    "title": "在线免费玩 Wolfenstein 3D（1992）——真正的 DOS 原版 — ExeBrowser",
+    "description": "1992 年的 Wolfenstein 3D 原版，免费的共享软件第一章，直接在浏览器里运行。真正的 DOS 游戏跑在 DOSBox 上——无需下载、无需注册，进度还能保存。",
+    "keywords": "在线玩 wolfenstein 3d, 德军总部3d 浏览器, wolfenstein 3d 免费, wolf3d 共享软件, dos 游戏 在线玩",
+    "ogTitle": "在线免费玩 Wolfenstein 3D——共享软件版，就在浏览器里",
+    "ogDescription": "1992 年 Wolfenstein 3D 的共享软件章节，免费且合法，通过 DOSBox + WebAssembly 在浏览器标签页里运行。点开就能玩。",
+    "crumb": "玩 Wolfenstein 3D",
+    "h1": "在浏览器里玩 Wolfenstein 3D",
+    "verdict": {
+      "kind": "works",
+      "text": "可以运行——DOS 原版通过 DOSBox 在浏览器里跑起来"
+    },
+    "intro": "<p><strong>Wolfenstein 3D</strong>——id Software 与 Apogee 在 1992 年推出的作品，第一人称射击游戏的鼻祖。它的共享软件第一章可以免费、合法地游玩。ExeBrowser 把 DOSBox 编译成 WebAssembly，直接运行 DOS 游戏，所以你在浏览器里跑的就是当年那个 <code>WOLF3D.EXE</code>——不需要源码移植版，也不用做任何设置。点开就能进去。</p>",
+    "sections": [
+      {
+        "h": "它是怎么跑起来的",
+        "html": "<p>这个页面运行的是<strong>16 位的 DOS 原版</strong>——1992 年那个真正的 <code>WOLF3D.EXE</code>——把它放在编译成 WebAssembly 的 DOSBox 里执行。没有套两层模拟，也没有重新实现：就是当年发行的共享软件章节，几秒钟就能启动。</p><p>你玩到的是货真价实的那一款：B.J. Blazkowicz、迷宫般的地堡、推开暗墙找密室，以及那种一眼就能认出的光线投射画面。声音也是当年 AdLib 和 PC 扬声器的输出，所以听起来是 1992 年的样子，而不是现代移植版重新渲染的效果。以今天的标准看，Wolfenstein 3D 轻得几乎不占分量，任何一台当代机器都能满速运行；只有相当老旧的 Chromebook 和平板才可能感到吃力。</p>"
+      },
+      {
+        "h": "如果你想在自己电脑上装一个源码移植版",
+        "html": "<p>id 在 1995 年开源了 Wolfenstein 3D 的引擎，社区据此做出了现代的重写版本——<a href=\"https://github.com/ECWolfEngine/ECWolf\" target=\"_blank\" rel=\"noopener\">ECWolf</a> 和 Wolf4SDL——它们读取的正是同一批共享软件 <code>.WL1</code> 数据，但支持更高分辨率、鼠标视角和现代显示器。装在电脑上很值得。</p><p>不过它们是桌面程序。这个页面刻意运行的是当年的 DOS 版本，因为那一版完全不需要你做任何准备。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "不下载任何东西就能免费玩吗？",
+        "a": "可以。Apogee 和 id 在 1992 年把第一章作为共享软件发布，明确允许免费复制，此后它一直被自由分发。这个页面就是在浏览器里运行那个共享软件章节，不用下载、不用安装，也不需要账号。"
+      },
+      {
+        "q": "在这里玩合法吗？",
+        "a": "就共享软件版的第一章而言，合法。注册版章节、Nocturnal Missions 和 Spear of Destiny 属于商业产品，这里并不提供——那些请到 id 或 Steam 购买。"
+      },
+      {
+        "q": "这是真正的 Wolfenstein 3D 还是重制版？",
+        "a": "是真的那一款。1992 年的 DOS 可执行文件和当年的数据未经改动，直接在 DOSBox 里运行。它不是粉丝重做，也不是源码移植版，就是当年发行的那个游戏。"
+      },
+      {
+        "q": "操作方式是什么？",
+        "a": "先点一下游戏画面，把键盘交给它。方向键或 WASD 移动，Ctrl 开火，Space 开门和推暗墙，数字键 1 到 4 切换武器，Esc 打开菜单。"
+      },
+      {
+        "q": "为什么有时候会卡？",
+        "a": "x86 处理器是在 WebAssembly 里模拟出来的，速度大约是原生的 10% 到 40%。Wolfenstein 3D 足够轻，这个速度在任何一台较新的笔记本上都绰绰有余；很老的平板和 Chromebook 可能会显得迟钝。"
+      },
+      {
+        "q": "进度会保存吗？",
+        "a": "会，而且不只是靠游戏自带的存档菜单。你在关卡中途关掉标签页，下次再来时页面会问你要不要从原地继续，因为整个模拟器状态都被快照保存在浏览器的存储里。什么都不会上传，也没有账号——存档就留在你玩的那台设备上，换一台电脑就带不过去了。"
+      }
+    ],
+    "mobileHint": "方向键：移动／转向 · FIRE：开火 · OPEN：门／暗墙 · MENU：Esc",
+    "download": {
+      "heading": "获取 Wolfenstein 3D 共享软件版（免费且合法）",
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">共享软件章节（数据文件）加一个 Win32 源码移植版</h3><p>你需要两样东西，都是免费且合法的：</p><ol><li><strong>共享软件的数据</strong>——可自由再分发的第一章（那一组 <code>*.WL1</code> 文件）。Apogee 当年把第一章作为共享软件发布，允许免费复制，Internet Archive 保存有副本。</li><li><strong>一个 Win32 源码移植版</strong>——用开源方式重写的引擎，以 Windows EXE 的形式运行。可以用 <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a>（请选<strong>32 位</strong>版本），或者更精简的 Wolf4SDL。</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">获取 Wolfenstein 3D 共享软件版（Internet Archive）→</a></p><p class=\"muted small\">想在自己电脑上玩，把源码移植版的 EXE 和所有 <code>*.WL1</code> 文件放进<strong>同一个文件夹</strong>即可。在这里你什么都不用准备：本页面已经在运行共享软件章节了。© id Software / Apogee。可以自由再分发的只有<strong>共享软件章节</strong>；注册版章节、Nocturnal Missions 和 Spear of Destiny 属于商业产品，请到 <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a> 购买。</p></div>"
+    },
+    "licenseReason": "Wolfenstein 3D 的第一章由 Apogee 与 id 在 1992 年作为可自由分发的共享软件发布；共享软件版的 .WL1 数据文件可以免费复制，而注册版章节和 Spear of Destiny 仍属于商业产品。"
   }
 }

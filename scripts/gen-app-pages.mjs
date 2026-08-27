@@ -1482,6 +1482,10 @@ ${cards}
     </ul>
     <p class="muted small" style="margin-top:1rem;">${L.t("home.restInEnglish")}</p>
   </section>
+  <section class="card">
+    <h2>${esc(L.t(isHome ? "home.aboutHeading" : "hub.aboutHeading"))}</h2>
+    ${L.t(isHome ? "home.about" : "hub.about")}
+  </section>
 </main>
 
 ${footerHtml(L)}

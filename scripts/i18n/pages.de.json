@@ -246,5 +246,63 @@
       "heading": "Wolfenstein-3D-Shareware holen (kostenlos und legal)",
       "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">Die Shareware-Episode (Datendateien) und ein Win32-Source-Port</h3><p>Du brauchst zwei Teile, beide kostenlos und legal:</p><ol><li><strong>Die Shareware-Daten</strong> – die frei weitergebbare erste Episode (die <code>*.WL1</code>-Dateien). Apogee veröffentlichte Episode eins als Shareware, ausdrücklich zum kostenlosen Kopieren; das Internet Archive bewahrt Kopien auf.</li><li><strong>Einen Win32-Source-Port</strong> – einen modernen, quelloffenen Nachbau der Engine, der als Windows-EXE läuft. <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a> (die <strong>32-Bit</strong>-Version) oder das schlankere Wolf4SDL.</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">Wolfenstein-3D-Shareware laden (Internet Archive) →</a></p><p class=\"muted small\">Zum Spielen auf dem eigenen Rechner gehören die EXE des Source-Ports und alle <code>*.WL1</code>-Dateien in <strong>einen Ordner</strong>. Hier brauchst du davon nichts: Diese Seite startet die Shareware-Episode bereits. © id Software / Apogee. Nur die <strong>Shareware-Episode</strong> darf frei weitergegeben werden; die registrierten Episoden, die Nocturnal Missions und Spear of Destiny sind kommerziell – erhältlich bei <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p></div>"
     }
+  },
+  "tyrian": {
+    "title": "Tyrian 2000 online spielen — kostenlos, im Browser, ohne Download — ExeBrowser",
+    "description": "Tyrian 2000, der klassische Weltraum-Shooter, von seinen eigenen Urhebern als Freeware freigegeben. Alle fünf Episoden, vollständig und kostenlos, sofort im Browser.",
+    "keywords": "tyrian 2000 online spielen, tyrian browser, tyrian kostenlos, shmup kostenlos browser, tyrian freeware, vertikaler shooter online",
+    "ogTitle": "Tyrian 2000 online spielen — kostenlos, im Browser",
+    "ogDescription": "Der legendäre vertikale Shooter Tyrian 2000, als Freeware freigegeben, spielbar in einem Browser-Tab über DOSBox + WebAssembly. Alle fünf Episoden, kein Download.",
+    "crumb": "Tyrian 2000 spielen",
+    "h1": "Tyrian 2000 im Browser spielen",
+    "verdict": {
+      "kind": "good",
+      "text": "Funktioniert — der Freeware-Klassiker läuft über DOSBox im Browser"
+    },
+    "intro": "<p><strong>Tyrian 2000</strong> — Jason Emerys legendärer vertikaler Shoot-'em-up, 2004 als Freeware freigegeben — läuft über DOSBox + WebAssembly in deinem Browser. Alle fünf Episoden, kein Download, keine Installation. Mit den Pfeiltasten oder einem Gamepad fliegst und schießt du dich durch die ganze Kampagne.</p>",
+    "sections": [
+      {
+        "h": "Wie das läuft",
+        "html": "<p><strong>Die Lizenz ist der einfache Teil.</strong> Autor Jason Emery gab Tyrian 2000 im Jahr 2004 vollständig als Freeware frei, die Grafik wurde später unter eine Open-Content-Lizenz gestellt. Die Datendateien — Grafik, Level, Musik — dürfen frei weitergegeben werden, und auf GOG wird das Spiel ebenfalls verschenkt. Es ist nichts Zwielichtiges daran, es hier zu spielen: keine Raubkopie, kein Crack, keine kommerzielle Fassung nötig.</p><p><strong>Die Programmdatei ist eine DOS-Datei</strong>, also läuft sie wie die übrigen DOS-Spiele auf dieser Seite: die originale <code>TYRIAN2K.EXE</code> in einem nach WebAssembly kompilierten DOSBox. Auf Spielen drücken, und nach ein paar Sekunden steht der Titelbildschirm. Weil das Spiel Freeware ist, liegen die vollständigen Daten schon bei — es gibt nichts zu suchen, hochzuladen oder zu installieren.</p>"
+      },
+      {
+        "h": "Tipps fürs Spielen",
+        "html": "<p>Gib im Shop zwischen den Levels großzügig aus: Ein besserer Schild und ein stärkerer Generator bringen dir am Anfang mehr als reine Feuerkraft. Die Sidekick-Waffen auf <kbd>Alt</kbd> laden sich wieder auf, also benutze sie großzügig, statt sie aufzusparen.</p><p>Lieber ein natives Programm? Der quelloffene Port <strong><a href=\"https://github.com/KScl/opentyrian2000\" target=\"_blank\" rel=\"noopener\">OpenTyrian2000</a></strong> (GPL) baut das Spiel als moderne ausführbare Datei nach. Er setzt auf SDL und zielt damit auf einen echten Desktop statt auf diese Browser-Sandbox — aber er ist der beste Weg, Tyrian auf einem heutigen Rechner zu spielen.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Ist Tyrian 2000 wirklich kostenlos?",
+        "a": "Ja. Rechteinhaber Jason Emery gab das vollständige Spiel 2004 als Freeware frei, die Grafik kam später unter eine Open-Content-Lizenz, und auf GOG wird es ebenfalls verschenkt. Es gibt nichts zu kaufen und nichts Zwielichtiges daran."
+      },
+      {
+        "q": "Kann ich Tyrian 2000 ohne Download im Browser spielen?",
+        "a": "Ja. Auf Spielen drücken, und das vollständige Spiel steht nach wenigen Sekunden auf dem Titelbildschirm. Weil Tyrian 2000 Freeware ist, liegen die Daten der Seite bereits bei — es gibt nichts zu suchen, hochzuladen oder zu installieren."
+      },
+      {
+        "q": "Ist das der echte Tyrian oder ein Remake?",
+        "a": "Der echte. Die originale DOS-Programmdatei und ihre Originaldaten laufen unverändert in einem nach WebAssembly kompilierten DOSBox — dasselbe Spiel, das damals auf den Disketten war, keine Nachbildung und kein Source-Port."
+      },
+      {
+        "q": "Wie viele Episoden bekomme ich?",
+        "a": "Alle fünf. Tyrian 2000 wurde vollständig als Freeware freigegeben, anders als die Shareware-Spiele auf dieser Seite wird also keine Episode hinter einem Kauf zurückgehalten."
+      },
+      {
+        "q": "Was ist OpenTyrian2000?",
+        "a": "Ein freier, quelloffener Nachbau (GPL) des Spiels als moderne native Programmdatei, der dieselben Freeware-Datendateien benutzt. Auf einem Desktop ist er der beste Weg, Tyrian zu spielen — er setzt auf SDL und zielt auf eine echte Maschine statt auf diese Browser-Sandbox, weshalb hier die originale DOS-Fassung läuft."
+      },
+      {
+        "q": "Läuft es mit voller Geschwindigkeit?",
+        "a": "Meistens ja. Ein x86-Prozessor wird in WebAssembly emuliert, aber Tyrian ist ein DOS-Spiel von 1995 und leicht genug, dass ein heutiger Laptop es bequem stemmt. Auf älteren Tablets und Chromebooks kann es etwas ruckeln."
+      }
+    ],
+    "mobileHint": "Steuerkreuz: fliegen · FIRE: schießen · BOMB: Zweitwaffe · PAUSE: Esc",
+    "download": {
+      "heading": "Tyrian 2000 spielen (kostenlos und sofort)",
+      "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">Es gibt nichts herunterzuladen — es läuft hier</h3><p>Tyrian 2000 ist Freeware, und das vollständige Spiel läuft direkt auf dieser Seite in einem nach WebAssembly kompilierten DOSBox. Einfach oben auf <strong>Spielen</strong> drücken: Der Titelbildschirm lädt in Sekunden, und du bist mitten drin.</p><p class=\"muted small\">Du willst es auch auf dem eigenen Rechner? Der Rechteinhaber hat es als Freeware freigegeben, du bekommst es also kostenlos bei <a href=\"https://www.gog.com/game/tyrian_2000\" target=\"_blank\" rel=\"noopener\">GOG</a> — oder du spielst es nativ mit dem quelloffenen Port <a href=\"https://github.com/KScl/opentyrian2000\" target=\"_blank\" rel=\"noopener\">OpenTyrian2000</a> (GPL).</p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Tyrian 2000 wurde vom Rechteinhaber als Freeware freigegeben und läuft deshalb hier direkt — das Spiel läuft in einer DOSBox-WebAssembly-Umgebung in deinem Browser-Tab, es gibt nichts hochzuladen. Du kannst es auch kostenlos bei <a href=\"https://www.gog.com/game/tyrian_2000\" target=\"_blank\" rel=\"noopener\">GOG</a> bekommen oder als nativen Source-Port (siehe unten).</p>",
+    "licenseReason": "Die vollständigen Daten von Tyrian 2000 wurden 2004 vom Rechteinhaber Jason Emery als Freeware freigegeben, die Grafik später unter eine Open-Content-Lizenz gestellt — die Daten dürfen also frei weitergegeben werden.",
+    "fullyFree": "2004 vom Rechteinhaber Jason Emery als Freeware erklärt — das vollständige Spiel, nicht eine Episode."
   }
 }

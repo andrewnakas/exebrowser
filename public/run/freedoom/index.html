@@ -8,11 +8,12 @@
 <meta name="keywords" content="play freedoom online, freedoom in browser, freedoom no download, free doom game online, freedoom phase 1, freedoom phase 2, open source doom browser, libre doom online" />
 <link rel="canonical" href="https://exebrowser.com/run/freedoom/" />
 <link rel="alternate" hreflang="en" href="https://exebrowser.com/run/freedoom/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/freedoom/" />
 <link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/freedoom/" />
 <link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/freedoom/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/freedoom/" />
-<meta property="og:title" content="Play Freedoom Online — Free &amp;amp; Libre, In Your Browser" />
+<meta property="og:title" content="Play Freedoom Online — Free &amp; Libre, In Your Browser" />
 <meta property="og:description" content="Freedoom, the fully free DOOM-engine game, playable in your browser with DOSBox + WebAssembly. Free, legal, open source." />
 <meta property="og:image" content="https://exebrowser.com/run/freedoom/screenshot.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -66,27 +67,27 @@
     {
       "@type": "Question",
       "name": "Is Freedoom really free and legal to play online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely. Freedoom is released under a modified BSD license that explicitly allows anyone to copy, modify, and redistribute it freely. It contains no id Software assets, so there are no shareware or copyright caveats. Both the game data and the open-source engines you pair it with are free software." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely. Freedoom is released under a modified BSD license that explicitly allows anyone to copy, modify and redistribute it. It contains no id Software assets at all, so there are no shareware caveats and no copyright tightrope — the game data and the engine that runs it are both free software." }
     },
     {
       "@type": "Question",
       "name": "Is Freedoom the same as DOOM?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Freedoom is an original, from-scratch game that runs on the classic DOOM engine and is compatible with DOOM-format levels and mods. It's a free replacement for id's commercial DOOM WADs — similar feel, all-original content. If you want the actual 1993 DOOM levels, see our DOOM shareware page." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Freedoom is an original game built from scratch that runs on the classic DOOM engine and is compatible with DOOM-format levels and mods. It's a free replacement for id's commercial WADs — a similar feel, entirely original content. If you want the actual 1993 DOOM levels, see the DOOM shareware page." }
     },
     {
       "@type": "Question",
-      "name": "Why do I need a separate engine to play Freedoom?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Freedoom ships as WAD data files (freedoom1.wad and freedoom2.wad), not a program. A DOOM engine reads that data and runs the game. In the browser, use a lightweight software-rendering port like Chocolate Doom or Crispy Doom — both are small, free Win32 builds that run well on Wine + WebAssembly." }
+      "name": "Do I need to supply an engine or a WAD?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. This page ships both: the freely-redistributable DOOM engine and the Freedoom IWAD, already paired, running under DOSBox in your browser. Press play and it boots. Supplying your own engine is only relevant if you want to play Freedoom on your own desktop." }
     },
     {
       "@type": "Question",
-      "name": "Can I use GZDoom for Freedoom in the browser?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Not here. GZDoom and other modern hardware-accelerated ports require OpenGL 3.3, which the WebAssembly emulator doesn't provide, so they won't render. Stick to software-rendering ports (Chocolate Doom, Crispy Doom) in the browser, and save GZDoom for a native desktop install." }
+      "name": "What's the difference between Phase 1 and Phase 2?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of nine levels — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II, and works with DOOM II and Final Doom mods." }
     },
     {
       "@type": "Question",
-      "name": "What's the difference between Freedoom Phase 1 and Phase 2?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of eight levels each — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II and works with DOOM II / Final Doom mods." }
+      "name": "Which source port should I use on my own computer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A software-rendering one: Chocolate Doom or Crispy Doom. Both are small, free and faithful to the original. Avoid GZDoom and the other hardware-accelerated ports if you're trying to run them under emulation — they need OpenGL 3.3, which a browser sandbox can't give them. Natively on a desktop, GZDoom is excellent." }
     },
     {
       "@type": "Question",
@@ -112,7 +113,7 @@
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
   </nav>
-  <nav class="lang-switcher" aria-label="Language"><span class="lang-current" aria-current="true">English</span> · <a href="/pt-BR/run/freedoom/" hreflang="pt-BR">Português (BR)</a></nav>
+  <nav class="lang-switcher" aria-label="Language"><span class="lang-current" aria-current="true">English</span> · <a href="/es/run/freedoom/" hreflang="es">Español</a> · <a href="/pt-BR/run/freedoom/" hreflang="pt-BR">Português (BR)</a></nav>
 </header>
 
 <main class="prose">
@@ -244,41 +245,39 @@
 
   <section class="card">
     <div class="download-box">
-      <h3 style="margin-top:0;">Get Freedoom (free &amp;amp; open source)</h3>
+      <h3 style="margin-top:0;">Get Freedoom (free &amp; open source)</h3>
       <div class="download-box"><h3 style="margin-top:0;">The official, libre release</h3><p>Freedoom's game data is released under a modified BSD license — you may freely copy, modify, and redistribute it, provided the license and credit travel with it. Grab the official release from the project itself:</p><p><a class="cta-btn" href="https://freedoom.github.io/download.html" target="_blank" rel="noopener">Download Freedoom (official site) →</a></p><p class="muted small">The download contains <code>freedoom1.wad</code> (Phase 1, Ultimate-Doom-style) and <code>freedoom2.wad</code> (Phase 2, Doom-II-style). These are WAD data files, <strong>not</strong> an executable — you also need a DOOM engine. The simplest free pairing is a small Win32 software-rendering port such as <a href="https://www.chocolate-doom.org/" target="_blank" rel="noopener">Chocolate Doom</a> or Crispy Doom. Put the port's <code>.EXE</code> and a <code>freedoomN.wad</code> in one folder and run it on your desktop — you don't need any of that to play here, since this page already boots Freedoom for you. Everything involved — game and engine — is genuinely free and open source.</p></div>
     </div>
   </section>
   <section class="card">
-    <h2>How it works &amp;amp; what to expect</h2>
-    <p>ExeBrowser runs a real Win32 executable on Wine + WebAssembly. Freedoom itself isn't an executable — it's an <em>IWAD</em>, a single data file holding all the levels, graphics, sound, and music. So the page actually runs a DOOM <strong>engine</strong> (a small Win32 <code>.exe</code>) and points it at <code>freedoom1.wad</code> or <code>freedoom2.wad</code>. Pick a software-rendering port and it plays at full speed on a modern laptop, exactly like the original DOOM does here.</p>
-    <h3>Choose the right engine — this is the important part</h3>
-    <p>The engine choice decides whether it works. Be guided by this:</p><ul><li><strong>Chocolate Doom / Crispy Doom (recommended)</strong> — software-rendering, tiny Win32 builds. No 3D acceleration needed, so they run cleanly in the emulator. This is the reliable pairing.</li><li><strong>GZDoom / modern hardware ports (avoid here)</strong> — these require OpenGL 3.3 and a real GPU pipeline that Boxedwine doesn't provide. They will fail to start or render. Save those for a native desktop.</li></ul><p>To launch, put the port's <code>.EXE</code> and a Freedoom WAD in the same folder. Many ports auto-detect a WAD sitting beside them; if not, the engine reads it as the IWAD on startup. Phase 1 (<code>freedoom1.wad</code>) is the four-episode, Ultimate-Doom-style campaign; Phase 2 (<code>freedoom2.wad</code>) is a single 30-level Doom-II-style campaign.</p>
-    <h3>How it works &amp; what to expect</h3>
-    <p><strong>Freedoom</strong> is not an executable — it's an <em>IWAD</em>, a single data file holding all the levels, sprites and sounds. It needs a DOOM engine to run it, and this page ships one: the freely-redistributable DOOM engine running under DOSBox compiled to WebAssembly, with the Freedoom IWAD alongside it. Click play and it boots — there is nothing to download and nothing to upload.</p><p>On a desktop you'd normally pair the same IWAD with a modern source port such as Chocolate Doom or Crispy Doom. That's the better way to play it natively; it just isn't what this page does.</p>
+    <h2>How it works &amp; what to expect</h2>
+    <p><strong>Freedoom is not an executable.</strong> It's an <em>IWAD</em>: one data file holding every level, sprite, sound and piece of music. An IWAD needs a DOOM engine to run it, and this page ships one — the freely-redistributable DOOM engine running under DOSBox compiled to WebAssembly, with the Freedoom IWAD already sitting beside it. Click play and it boots in a couple of seconds. There is nothing to download, nothing to upload and nothing to configure.</p><p>Because it's a 1993-era engine doing 1993-era work, it plays at full speed on anything current. The two campaigns are separate: Phase 1 (<code>freedoom1.wad</code>) is four episodes of nine levels in the style of The Ultimate Doom, and Phase 2 (<code>freedoom2.wad</code>) is a single 30-level campaign in the style of DOOM II.</p>
     <h3>What it is — and what it isn't</h3>
-    <p>Freedoom is <em>not</em> id Software's DOOM and isn't trying to be a copy of its art — it's an original, drop-in replacement for the commercial WADs, made from scratch by volunteers so the open-source engines have something completely free to play. That makes it perfect for a browser: no shareware caveats, no licensing tightrope, no "buy the full version" upsell. If you specifically want the original 1993 DOOM levels, see our DOOM shareware page instead. If you just want a free, no-strings DOOM-style shooter to blast through, Freedoom is the cleanest option there is.</p>
+    <p>Freedoom is <em>not</em> id Software's DOOM, and it isn't trying to copy its art. It's an original, drop-in replacement for the commercial WADs, built from scratch by volunteers so that the open-source engines have something completely free to play. That is exactly what makes it suit a browser: no shareware caveat, no licensing tightrope, no "buy the full version" at level nine.</p><p>If you specifically want id's 1993 levels, the <a href="/run/doom/">DOOM shareware page</a> has them. If you want a free, no-strings DOOM-style shooter to work through, Freedoom is the cleanest option there is.</p>
+    <h3>Running it on your own machine</h3>
+    <p>On a desktop you'd pair the same IWAD with a modern source port, and the choice matters:</p><ul><li><strong>Chocolate Doom or Crispy Doom</strong> — software-rendering, tiny, and faithful to the original. The reliable pairing, and the closest thing to what this page runs.</li><li><strong>GZDoom and other hardware-accelerated ports</strong> — these want OpenGL 3.3 and a real GPU pipeline. Excellent natively; not something a browser sandbox can provide.</li></ul><p>Put the port's <code>.EXE</code> and a Freedoom WAD in the same folder and most ports will find the IWAD on their own. None of this is needed to play here.</p>
   </section>
   <section class="card">
     <h2>Frequently asked questions</h2>
     <details>
       <summary>Is Freedoom really free and legal to play online?</summary>
-      <p>Yes — completely. Freedoom is released under a modified BSD license that explicitly allows anyone to copy, modify, and redistribute it freely. It contains no id Software assets, so there are no shareware or copyright caveats. Both the game data and the open-source engines you pair it with are free software.</p>
+      <p>Yes, completely. Freedoom is released under a modified BSD license that explicitly allows anyone to copy, modify and redistribute it. It contains no id Software assets at all, so there are no shareware caveats and no copyright tightrope — the game data and the engine that runs it are both free software.</p>
     </details>
     <details>
       <summary>Is Freedoom the same as DOOM?</summary>
-      <p>No. Freedoom is an original, from-scratch game that runs on the classic DOOM engine and is compatible with DOOM-format levels and mods. It's a free replacement for id's commercial DOOM WADs — similar feel, all-original content. If you want the actual 1993 DOOM levels, see our DOOM shareware page.</p>
+      <p>No. Freedoom is an original game built from scratch that runs on the classic DOOM engine and is compatible with DOOM-format levels and mods. It's a free replacement for id's commercial WADs — a similar feel, entirely original content. If you want the actual 1993 DOOM levels, see the DOOM shareware page.</p>
     </details>
     <details>
-      <summary>Why do I need a separate engine to play Freedoom?</summary>
-      <p>Freedoom ships as WAD data files (freedoom1.wad and freedoom2.wad), not a program. A DOOM engine reads that data and runs the game. In the browser, use a lightweight software-rendering port like Chocolate Doom or Crispy Doom — both are small, free Win32 builds that run well on Wine + WebAssembly.</p>
+      <summary>Do I need to supply an engine or a WAD?</summary>
+      <p>No. This page ships both: the freely-redistributable DOOM engine and the Freedoom IWAD, already paired, running under DOSBox in your browser. Press play and it boots. Supplying your own engine is only relevant if you want to play Freedoom on your own desktop.</p>
     </details>
     <details>
-      <summary>Can I use GZDoom for Freedoom in the browser?</summary>
-      <p>Not here. GZDoom and other modern hardware-accelerated ports require OpenGL 3.3, which the WebAssembly emulator doesn't provide, so they won't render. Stick to software-rendering ports (Chocolate Doom, Crispy Doom) in the browser, and save GZDoom for a native desktop install.</p>
+      <summary>What's the difference between Phase 1 and Phase 2?</summary>
+      <p>Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of nine levels — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II, and works with DOOM II and Final Doom mods.</p>
     </details>
     <details>
-      <summary>What's the difference between Freedoom Phase 1 and Phase 2?</summary>
-      <p>Phase 1 (freedoom1.wad) is built like The Ultimate Doom — four episodes of eight levels each — and works with mods made for the original DOOM. Phase 2 (freedoom2.wad) is a single 30-level campaign in the style of DOOM II and works with DOOM II / Final Doom mods.</p>
+      <summary>Which source port should I use on my own computer?</summary>
+      <p>A software-rendering one: Chocolate Doom or Crispy Doom. Both are small, free and faithful to the original. Avoid GZDoom and the other hardware-accelerated ports if you're trying to run them under emulation — they need OpenGL 3.3, which a browser sandbox can't give them. Natively on a desktop, GZDoom is excellent.</p>
     </details>
     <details>
       <summary>Does it save my progress?</summary>

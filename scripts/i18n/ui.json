@@ -95,7 +95,11 @@
     "js.remapKeys": "Keyboard — remap any key",
     "js.remapHint": "Click a key below, then press the key you'd rather use. Saved in this browser, per game.",
     "js.resetDefaults": "Reset to defaults",
-    "js.consoleOutput": "Console output"
+    "js.consoleOutput": "Console output",
+    "home.about": "<p><strong>ExeBrowser runs the original programs, not remakes.</strong> A 1993 DOS executable or a 1991 Windows binary is loaded into an emulator compiled to WebAssembly and runs inside the page — the same code that shipped on the floppy disk, with its original graphics, sound and quirks.</p><p>Nothing is installed and nothing is uploaded. The files are served from this site and run entirely on your own device; there is no account, and no server doing the work for you. Progress is kept in your browser, so closing the tab mid-level and coming back later usually puts you where you left off — on that same device and browser, since there is nothing to sync it with.</p><p>Everything hosted here is free to pass on: shareware episodes their publishers released at no charge, and freeware or open-source games whose rights holders put them in the open. Commercial episodes are not included, and each page says plainly which it is.</p>",
+    "hub.about": "<p>Three different runtimes do the work here, and which one a title uses largely decides how well it runs.</p><p><strong>DOSBox</strong>, compiled to WebAssembly, runs the DOS games — DOOM, Wolfenstein 3D, Commander Keen. These are the most dependable: the original executable boots in a couple of seconds and plays at full speed on any current machine. <strong>Wine with an x86 emulator</strong> runs the Windows programs, which is a far harder job, since a real 32-bit Win32 environment has to be rebuilt inside the browser — expect roughly 10–40% of native speed, and a shorter list of things that work at all. <strong>ScummVM</strong> runs the point-and-click adventures.</p><p>Some pages here are guides rather than playable titles, because the software is commercial, or too large to host, or needs hardware a browser cannot offer. Those pages say so at the top and explain what will actually run it.</p>",
+    "home.aboutHeading": "How this works",
+    "hub.aboutHeading": "Which runtime runs what"
   },
   "es": {
     "html.lang": "es",
@@ -180,7 +184,11 @@
     "js.remapKeys": "Teclado — reasigna cualquier tecla",
     "js.remapHint": "Haz clic en una tecla de abajo y luego pulsa la que prefieras usar. Se guarda en este navegador, para cada juego.",
     "js.resetDefaults": "Restablecer valores por defecto",
-    "js.consoleOutput": "Salida de consola"
+    "js.consoleOutput": "Salida de consola",
+    "home.about": "<p><strong>ExeBrowser ejecuta los programas originales, no versiones rehechas.</strong> Un ejecutable de DOS de 1993 o un binario de Windows de 1991 se carga en un emulador compilado a WebAssembly y funciona dentro de la propia página: el mismo código que venía en el disquete, con sus gráficos, su sonido y sus rarezas de entonces.</p><p>No se instala nada y no se sube nada. Los archivos se sirven desde este sitio y se ejecutan por completo en tu propio dispositivo; no hay cuenta ni hay un servidor haciendo el trabajo por ti. El progreso se guarda en tu navegador, así que si cierras la pestaña a mitad de una partida y vuelves más tarde, lo normal es que retomes donde lo dejaste, en ese mismo dispositivo y navegador, porque no hay nada con lo que sincronizarlo.</p><p>Todo lo alojado aquí se puede difundir libremente: episodios shareware que sus editoras publicaron sin coste, y juegos freeware o de código abierto que sus titulares de derechos liberaron. Los episodios comerciales no se incluyen, y cada página dice con claridad de cuál se trata.</p>",
+    "hub.about": "<p>Aquí trabajan tres motores distintos, y cuál de ellos usa cada título determina en buena medida lo bien que funciona.</p><p><strong>DOSBox</strong>, compilado a WebAssembly, ejecuta los juegos de DOS: DOOM, Wolfenstein 3D, Commander Keen. Son los más fiables: el ejecutable original arranca en un par de segundos y va a toda velocidad en cualquier equipo actual. <strong>Wine con un emulador de x86</strong> ejecuta los programas de Windows, y eso es mucho más difícil, porque hay que reconstruir un entorno Win32 de 32 bits real dentro del navegador: cuenta con entre un 10% y un 40% de la velocidad nativa, y con una lista más corta de cosas que llegan a funcionar. <strong>ScummVM</strong> se encarga de las aventuras gráficas.</p><p>Algunas páginas de aquí son guías y no títulos jugables, porque el programa es comercial, o pesa demasiado para alojarlo, o necesita un hardware que un navegador no puede ofrecer. Esas páginas lo dicen al principio y explican con qué sí funciona.</p>",
+    "home.aboutHeading": "Cómo funciona esto",
+    "hub.aboutHeading": "Qué motor ejecuta cada cosa"
   },
   "pt-BR": {
     "html.lang": "pt-BR",
@@ -265,7 +273,11 @@
     "js.remapKeys": "Teclado — remapeie qualquer tecla",
     "js.remapHint": "Clique em uma tecla abaixo e depois pressione a que você prefere usar. Fica salvo neste navegador, por jogo.",
     "js.resetDefaults": "Restaurar o padrão",
-    "js.consoleOutput": "Saída do console"
+    "js.consoleOutput": "Saída do console",
+    "home.about": "<p><strong>O ExeBrowser roda os programas originais, não refeituras.</strong> Um executável de DOS de 1993 ou um binário de Windows de 1991 é carregado num emulador compilado para WebAssembly e roda dentro da própria página — o mesmo código que veio no disquete, com os gráficos, o som e as manias da época.</p><p>Nada é instalado e nada é enviado. Os arquivos vêm deste site e rodam inteiramente no seu próprio aparelho; não há conta, nem um servidor fazendo o trabalho por você. O progresso fica guardado no seu navegador, então fechar a aba no meio de uma fase e voltar depois costuma devolver você ao ponto em que parou — no mesmo aparelho e no mesmo navegador, já que não há nada com que sincronizar.</p><p>Tudo o que está hospedado aqui pode ser repassado livremente: episódios shareware que as distribuidoras lançaram sem cobrar, e jogos freeware ou de código aberto que os detentores dos direitos liberaram. Episódios comerciais não estão incluídos, e cada página diz com clareza qual é o caso.</p>",
+    "hub.about": "<p>Três motores diferentes fazem o trabalho por aqui, e qual deles um título usa determina em boa parte o quanto ele roda bem.</p><p>O <strong>DOSBox</strong>, compilado para WebAssembly, roda os jogos de DOS — DOOM, Wolfenstein 3D, Commander Keen. São os mais confiáveis: o executável original inicia em poucos segundos e roda em velocidade total em qualquer máquina atual. O <strong>Wine com um emulador de x86</strong> roda os programas de Windows, o que é bem mais difícil, já que é preciso reconstruir um ambiente Win32 de 32 bits de verdade dentro do navegador — espere algo entre 10% e 40% da velocidade nativa, e uma lista bem menor de coisas que funcionam. O <strong>ScummVM</strong> cuida das aventuras de apontar e clicar.</p><p>Algumas páginas aqui são guias, e não títulos jogáveis, porque o programa é comercial, ou grande demais para hospedar, ou precisa de um hardware que o navegador não tem como oferecer. Essas páginas avisam logo no começo e explicam o que realmente roda aquilo.</p>",
+    "home.aboutHeading": "Como isto funciona",
+    "hub.aboutHeading": "Qual motor roda o quê"
   },
   "de": {
     "html.lang": "de",
@@ -350,7 +362,11 @@
     "js.remapKeys": "Tastatur – Tasten neu belegen",
     "js.remapHint": "Unten eine Taste anklicken und dann die gewünschte Taste drücken. Wird pro Spiel in diesem Browser gespeichert.",
     "js.resetDefaults": "Auf Standard zurücksetzen",
-    "js.consoleOutput": "Konsolenausgabe"
+    "js.consoleOutput": "Konsolenausgabe",
+    "home.about": "<p><strong>ExeBrowser führt die Originalprogramme aus, keine Neuauflagen.</strong> Eine DOS-Datei von 1993 oder ein Windows-Programm von 1991 wird in einen nach WebAssembly kompilierten Emulator geladen und läuft in der Seite selbst — derselbe Code, der damals auf der Diskette lag, mit seiner ursprünglichen Grafik, seinem Klang und seinen Eigenheiten.</p><p>Es wird nichts installiert und nichts hochgeladen. Die Dateien kommen von dieser Seite und laufen vollständig auf deinem eigenen Gerät; es gibt kein Konto, und kein Server nimmt dir die Arbeit ab. Der Spielstand bleibt in deinem Browser, du kannst den Tab also mitten im Level schließen und später an derselben Stelle weitermachen — auf demselben Gerät und im selben Browser, denn es gibt nichts, womit sich das abgleichen ließe.</p><p>Alles, was hier liegt, darf frei weitergegeben werden: Shareware-Episoden, die ihre Publisher kostenlos veröffentlicht haben, und Freeware- oder Open-Source-Spiele, die ihre Rechteinhaber freigegeben haben. Kommerzielle Episoden sind nicht dabei, und jede Seite sagt klar, worum es sich handelt.</p>",
+    "hub.about": "<p>Hier arbeiten drei verschiedene Laufzeitumgebungen, und welche ein Titel benutzt, entscheidet weitgehend darüber, wie gut er läuft.</p><p><strong>DOSBox</strong>, nach WebAssembly kompiliert, führt die DOS-Spiele aus — DOOM, Wolfenstein 3D, Commander Keen. Das ist der verlässlichste Weg: Die Originaldatei startet in ein paar Sekunden und läuft auf jedem heutigen Rechner mit voller Geschwindigkeit. <strong>Wine samt x86-Emulator</strong> führt die Windows-Programme aus, was deutlich schwieriger ist, denn dafür muss eine echte 32-Bit-Win32-Umgebung im Browser nachgebaut werden — rechne mit etwa 10 bis 40 Prozent der nativen Geschwindigkeit und mit einer kürzeren Liste dessen, was überhaupt funktioniert. <strong>ScummVM</strong> übernimmt die Point-and-Click-Adventures.</p><p>Manche Seiten hier sind Anleitungen statt spielbarer Titel, weil die Software kommerziell ist, zu groß zum Hosten, oder Hardware braucht, die ein Browser nicht bieten kann. Diese Seiten sagen das gleich oben und erklären, womit es tatsächlich läuft.</p>",
+    "home.aboutHeading": "Wie das hier funktioniert",
+    "hub.aboutHeading": "Welche Laufzeit was ausführt"
   },
   "ja": {
     "html.lang": "ja",
@@ -435,7 +451,11 @@
     "js.remapKeys": "キーボード — キーの割り当てを変更",
     "js.remapHint": "下のキーをクリックしてから、割り当てたいキーを押してください。ゲームごとに、このブラウザ内に保存されます。",
     "js.resetDefaults": "初期設定に戻す",
-    "js.consoleOutput": "コンソール出力"
+    "js.consoleOutput": "コンソール出力",
+    "home.about": "<p><strong>ExeBrowser は、移植版やリメイクではなく、当時のプログラムそのものを動かします。</strong>1993年の DOS 用実行ファイルや 1991年の Windows 用バイナリを、WebAssembly にコンパイルしたエミュレータへ読み込み、ページの中でそのまま実行します。フロッピーディスクに入っていたものと同じコードが、当時のままのグラフィック、音、そしてクセごと動きます。</p><p>インストールも、ファイルのアップロードもありません。データはこのサイトから配信され、処理はすべてお使いの端末の中で完結します。アカウントは不要で、サーバーが代わりに動かしているわけでもありません。進行状況はブラウザ内に保存されるので、ステージの途中でタブを閉じても、あとで開けばたいていは続きから再開できます。ただし保存先は同じ端末の同じブラウザに限られます。同期する先がどこにもないためです。</p><p>ここに置いてあるものは、すべて自由に配布してよいものだけです。出版元が無償で公開したシェアウェア版のエピソードと、権利者が公開したフリーウェアやオープンソースのゲームです。商用版のエピソードは含まれておらず、どちらなのかは各ページに明記してあります。</p>",
+    "hub.about": "<p>このサイトでは三つの異なる実行環境が動いており、どれを使うかで、その作品がどれだけ快適に動くかがおおよそ決まります。</p><p><strong>DOSBox</strong> を WebAssembly にコンパイルしたものが、DOS 用のゲーム——DOOM、Wolfenstein 3D、Commander Keen など——を動かします。これがもっとも確実な方法です。当時の実行ファイルが数秒で起動し、いまのパソコンならフルスピードで動きます。<strong>Wine と x86 エミュレータ</strong>の組み合わせは Windows 用のソフトを動かしますが、こちらははるかに難しい仕事です。32ビットの Win32 環境そのものをブラウザの中に組み立て直す必要があるためで、速度はネイティブのおよそ 10〜40% ほど、動くものの範囲もかなり狭くなります。<strong>ScummVM</strong> はポイント&amp;クリック型のアドベンチャーを担当します。</p><p>このサイトのページには、遊べる作品ではなく解説記事にとどまるものもあります。ソフトが商用製品である場合、ここに置くには容量が大きすぎる場合、あるいはブラウザでは用意できないハードウェアを必要とする場合です。そうしたページには冒頭にその旨を書き、では何を使えば動くのかを説明しています。</p>",
+    "home.aboutHeading": "このサイトの仕組み",
+    "hub.aboutHeading": "どの実行環境が何を動かすのか"
   },
   "zh-CN": {
     "html.lang": "zh-CN",
@@ -521,7 +541,11 @@
     "js.remapKeys": "键盘——重新映射任意按键",
     "js.remapHint": "先点击下方的按键，再按下你想改用的那个键。设置按游戏分别保存在本浏览器中。",
     "js.resetDefaults": "恢复默认设置",
-    "js.consoleOutput": "控制台输出"
+    "js.consoleOutput": "控制台输出",
+    "home.about": "<p><strong>ExeBrowser 运行的是当年的原始程序，而不是重制版。</strong>一个 1993 年的 DOS 可执行文件，或者一个 1991 年的 Windows 程序，会被载入编译成 WebAssembly 的模拟器，直接在页面里运行——和当年软盘上的代码一模一样，画面、声音和各种小毛病都原封不动。</p><p>不需要安装，也不需要上传任何文件。数据由本站提供，全部运算都在你自己的设备上完成；没有账号，也不存在由服务器代跑的情况。进度保存在你的浏览器里，所以关卡打到一半关掉标签页、过些时候再回来，通常还能接着上次的位置继续。不过存档只留在同一台设备的同一个浏览器中，因为它没有任何可以同步的去处。</p><p>这里放的每一样东西都可以自由传播：发行商当年免费公开的共享软件章节，以及权利人开放出来的免费软件和开源游戏。商业章节并不包含在内，每个页面也都会明确写出属于哪一种。</p>",
+    "hub.about": "<p>这里有三套不同的运行环境在干活，一个作品用的是哪一套，基本决定了它跑得有多顺。</p><p>编译成 WebAssembly 的 <strong>DOSBox</strong> 负责运行 DOS 游戏——DOOM、Wolfenstein 3D、Commander Keen 等等。这是最可靠的一条路：当年的可执行文件几秒钟就能启动，在如今任何一台机器上都能满速运行。<strong>Wine 加上 x86 模拟器</strong>负责运行 Windows 程序，这件事要难得多，因为需要在浏览器里重新搭出一整套真正的 32 位 Win32 环境——速度大约是原生的 10% 到 40%，能跑起来的东西也少得多。<strong>ScummVM</strong> 则负责点击式冒险游戏。</p><p>这里有些页面是说明文章而不是可玩的作品，原因可能是软件属于商业产品、体积太大不便托管，或者需要浏览器给不了的硬件。这类页面会在开头说明情况，并告诉你究竟用什么才能把它跑起来。</p>",
+    "home.aboutHeading": "这套东西是怎么运作的",
+    "hub.aboutHeading": "哪套运行环境负责什么"
   },
   "fr": {
     "html.lang": "fr",
@@ -606,6 +630,10 @@
     "js.remapKeys": "Clavier — réattribuer n'importe quelle touche",
     "js.remapHint": "Cliquez sur une touche ci-dessous, puis appuyez sur celle que vous préférez. Enregistré dans ce navigateur, jeu par jeu.",
     "js.resetDefaults": "Rétablir les valeurs par défaut",
-    "js.consoleOutput": "Sortie console"
+    "js.consoleOutput": "Sortie console",
+    "home.about": "<p><strong>ExeBrowser exécute les programmes d'origine, pas des remakes.</strong> Un exécutable DOS de 1993 ou un binaire Windows de 1991 est chargé dans un émulateur compilé en WebAssembly et tourne au sein même de la page — le code exact livré sur la disquette, avec ses graphismes, son son et ses bizarreries d'époque.</p><p>Rien n'est installé et rien n'est téléversé. Les fichiers proviennent de ce site et s'exécutent entièrement sur votre propre appareil ; il n'y a pas de compte, et aucun serveur ne fait le travail à votre place. La progression est conservée dans votre navigateur : fermez l'onglet en plein niveau et, en revenant plus tard, vous reprendrez généralement là où vous en étiez — sur ce même appareil et ce même navigateur, puisqu'il n'y a rien avec quoi le synchroniser.</p><p>Tout ce qui est hébergé ici peut être librement rediffusé : des épisodes shareware que leurs éditeurs ont publiés gratuitement, et des jeux freeware ou open source que leurs ayants droit ont ouverts. Les épisodes commerciaux ne sont pas inclus, et chaque page indique clairement de quoi il s'agit.</p>",
+    "hub.about": "<p>Trois environnements d'exécution différents travaillent ici, et celui qu'utilise un titre détermine en grande partie la qualité du résultat.</p><p><strong>DOSBox</strong>, compilé en WebAssembly, fait tourner les jeux DOS — DOOM, Wolfenstein 3D, Commander Keen. Ce sont les plus fiables : l'exécutable d'origine démarre en quelques secondes et tourne à pleine vitesse sur n'importe quelle machine actuelle. <strong>Wine associé à un émulateur x86</strong> fait tourner les programmes Windows, ce qui est bien plus ardu, puisqu'il faut reconstruire un véritable environnement Win32 32 bits dans le navigateur — comptez environ 10 à 40 % de la vitesse native, et une liste bien plus courte de choses qui fonctionnent. <strong>ScummVM</strong> se charge des jeux d'aventure en pointer-cliquer.</p><p>Certaines pages d'ici sont des guides et non des titres jouables, parce que le logiciel est commercial, trop volumineux à héberger, ou réclame du matériel qu'un navigateur ne peut pas fournir. Ces pages le disent d'emblée et expliquent ce qui le fera tourner pour de bon.</p>",
+    "home.aboutHeading": "Comment cela fonctionne",
+    "hub.aboutHeading": "Quel moteur exécute quoi"
   }
 }
