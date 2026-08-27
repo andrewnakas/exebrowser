@@ -208,7 +208,10 @@
     return window.ExeBrowser;
   }
 
-  const slug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || location.pathname;
+  // Same derivation as app.js's track(), so one page reports one slug across
+  // both files rather than "load-exe" here and "/load-exe/" there.
+  const slug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1]
+    || (location.pathname === "/" ? "home" : location.pathname.replace(/^\/|\/$/g, "") || "home");
   function track(name, params) {
     if (typeof window.gtag === "function") {
       window.gtag("event", name, Object.assign({ app_slug: slug, runtime: "boxedwine" }, params || {}));

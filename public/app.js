@@ -1013,7 +1013,12 @@
 
   function track(name, params) {
     if (typeof window.gtag === "function") {
-      const slug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1] || "home";
+      // /run/<slug>/ names itself; the home page is "home"; anything else uses
+      // its own path. The bare "home" fallback meant /load-exe/ — a second page
+      // with the same loader on it — reported its boots as the home page's,
+      // which is exactly the comparison the page exists to be measured on.
+      const slug = (location.pathname.match(/\/run\/([^/]+)/) || [])[1]
+        || (location.pathname === "/" ? "home" : location.pathname.replace(/^\/|\/$/g, "") || "home");
       window.gtag("event", name, Object.assign({ app_slug: slug, runtime: "boxedwine" }, params || {}));
     }
   }
