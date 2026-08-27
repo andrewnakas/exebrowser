@@ -100,6 +100,20 @@ export function posterCard(p) {
         </a></li>`;
 }
 
+// The shelf's one non-title: the visitor's own EXE. Running your own program
+// is the premise of the whole site, and until now the only way to it was a
+// section three screens below the grid — so the shelf, which is what people
+// actually scan, never mentioned it. It's pinned (data-pin) so the category
+// filter leaves it alone; a search that finds nothing is exactly when it is
+// the right answer. Not in app-pages.json on purpose: it is not a catalogue
+// entry, and putting it there would inflate every count, the ItemList schema
+// and the /run/ hub with a page that hosts no software.
+export const byoCard = () =>
+  `        <li class="pc-item pc-byo" data-pin="1" data-search="load your own exe upload run my own program windows executable"><a class="poster-card" href="/load-exe/">
+          <span class="pc-shot" aria-hidden="true">+</span>
+          <span class="pc-body"><span class="pc-title">Your own Windows program</span><span class="pc-play">▶ Load your own EXE</span></span>
+        </a></li>`;
+
 // ── Categories ────────────────────────────────────────────────────────────
 // Display order for the filter chips, on the homepage and the /run/ hub alike.
 // "Free & complete" is derived from `fullyFree`, not written in categories[].

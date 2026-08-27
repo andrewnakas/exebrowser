@@ -345,15 +345,18 @@ details ul { padding-left: 1.25rem; }
 .small { font-size: 0.85rem; }
 .boot-options .muted { margin: 0.5rem 0 0; }
 
-.entry-picker {
+.entry-picker,
+.embed-variant {
   margin: 0.75rem 0 1rem;
   padding: 0.75rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.02);
 }
-.entry-picker label { display: block; margin-bottom: 0.4rem; }
-.entry-picker select {
+.entry-picker label,
+.embed-variant label { display: block; margin-bottom: 0.4rem; }
+.entry-picker select,
+.embed-variant select {
   width: 100%;
   padding: 0.5rem 0.6rem;
   background: var(--bg);
@@ -779,6 +782,26 @@ body.dos-playing { overflow: hidden; }
 .pc-title { font-weight: 600; line-height: 1.25; }
 .pc-play { color: var(--muted); font-size: .85rem; }
 .poster-card:hover .pc-play { color: var(--accent, #c0392b); }
+
+/* The one card in the shelf that isn't a title we host: the visitor's own
+   file. It stays pinned first and is exempt from the category filter (see
+   filter.js) — when a search finds nothing, "run your own" is precisely the
+   answer, so hiding it there would be backwards. Drawn as a dashed outline so
+   it reads as a slot to fill rather than a game with missing art. */
+.pc-byo .poster-card {
+  border-style: dashed;
+  background: linear-gradient(140deg, #171d27, #0e131a);
+}
+.pc-byo .pc-shot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 8 / 5;
+  background: none;
+  color: var(--accent, #c0392b);
+  font: 700 2.6rem/1 system-ui, sans-serif;
+}
+.pc-byo .pc-play { color: var(--accent, #c0392b); }
 
 .badge-new {
   display: inline-block;

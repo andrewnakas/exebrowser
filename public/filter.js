@@ -14,7 +14,11 @@
   const grid = wrap.parentElement.querySelector(".poster-grid:not(#continue-grid)");
   if (!grid) return;
 
-  const items = [...grid.querySelectorAll(".pc-item")];
+  // Pinned tiles (the bring-your-own-EXE card) are not catalogue entries: they
+  // stay put through every filter and never count toward "no titles match".
+  // Filtering one out would hide the answer at the moment it's most useful —
+  // a search for a game we don't host.
+  const items = [...grid.querySelectorAll(".pc-item:not([data-pin])")];
   const chips = [...wrap.querySelectorAll(".chip")];
   const search = wrap.querySelector("[data-grid-search]");
   const empty = wrap.querySelector(".gf-empty");

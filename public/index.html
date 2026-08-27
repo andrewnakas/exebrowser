@@ -31,7 +31,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=39" />
+<link rel="stylesheet" href="/style.css?v=40" />
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
@@ -173,6 +173,7 @@
   <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
   <nav class="site-nav" aria-label="Primary">
     <a href="/" aria-current="page">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Guide</a>
@@ -190,17 +191,6 @@
        It's gone: leading with one title made the homepage that title's page,
        and the shelf below is what actually says what this site is. The resume
        bar above covers the returning player the hero was really serving. ── -->
-
-  <!-- ── Bring your own EXE.
-       This sat first for a while, on the reasoning that running your own
-       program is the premise of the site. Analytics disagreed: the homepage
-       held people 28 seconds while the game pages held them close to two
-       minutes. Most arrivals don't have an EXE to hand — they came to play
-       something. So the shelf leads and this stays right beneath it, compact,
-       for the people who did come with a file.
-
-       It is a shortcut, not a second loader: it hands off to the real one
-       further down, so there is only ever one file-handling path. ── -->
 
   <!-- ── Play now: the games shelf leads the page ── -->
   <section class="card" id="play-now">
@@ -233,6 +223,10 @@
     </div><!-- /gen:gridfilter -->
     <!-- gen:postergrid -->
     <ul class="poster-grid">
+        <li class="pc-item pc-byo" data-pin="1" data-search="load your own exe upload run my own program windows executable"><a class="poster-card" href="/load-exe/">
+          <span class="pc-shot" aria-hidden="true">+</span>
+          <span class="pc-body"><span class="pc-title">Your own Windows program</span><span class="pc-play">▶ Load your own EXE</span></span>
+        </a></li>
         <li class="pc-item" data-cats="Windows classics|Action|Pinball|Free &amp; complete" data-search="3d pinball space cadet cinematronics / k4zmu2a (open source port) pinball arcade windows classics action pinball free complete open source freeware"><a class="poster-card" href="/run/space-cadet-open/">
           <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
           <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet <span class="badge-free" title="Free and complete — no shareware episode, nothing held back">FREE</span></span><span class="pc-play">▶ Play free</span></span>
@@ -414,6 +408,35 @@
     <p class="muted small" style="margin:1rem 0 0;"><a href="/run/">See all app guides →</a> — including honest compatibility notes for software we can't host, which you can load from your own device below.</p>
   </section>
 
+  <!-- ── Bring your own EXE.
+       This sat first for a while, on the reasoning that running your own
+       program is the premise of the site. Analytics disagreed: the homepage
+       held people 28 seconds while the game pages held them close to two
+       minutes. Most arrivals don't have an EXE to hand — they came to play
+       something. So the shelf leads and this sits right beneath it, compact,
+       for the people who did come with a file. (It had drifted three sections
+       down behind the blog strip, which is how the premise of the site ended
+       up below the fold twice over. Moved back, and the shelf now carries a
+       pinned card for it too.)
+
+       It is a shortcut, not a second loader: it hands off to the real one
+       further down, so there is only ever one file-handling path. /load-exe/
+       is the same loader with a URL of its own, for links and for search. ── -->
+  <section class="card" id="byo">
+    <h2>🖥 Or run your own Windows program</h2>
+    <p style="margin-top:0;">Have an old <code>.exe</code> on your drive? Drop it here and it runs in this tab — <strong>no upload, no install, no account</strong>. Your file is read locally and never leaves your device.</p>
+    <div id="byo-drop" class="dropzone" tabindex="0" role="button" aria-label="Choose a Windows program to run">
+      <p style="font-size:1.05rem;margin:.1rem 0 .45rem;"><strong>Drop a Windows <code>.exe</code> here</strong></p>
+      <p class="muted small" style="margin:0 0 .5rem;">or choose
+        <button id="byo-exe" type="button" class="link">a single EXE</button> ·
+        <button id="byo-folder" type="button" class="link">a folder</button> ·
+        <button id="byo-zip" type="button" class="link">a zip</button>
+      </p>
+      <p class="muted small" style="margin:0;">Works best with 32-bit Windows software from 1995–2008. Bring the whole folder if the app has DLLs or data files beside it.</p>
+    </div>
+    <p class="muted small" style="margin:.6rem 0 0;">Not sure it'll run? Read the <a href="/guide/">compatibility guide</a> · <a href="/open-exe-file/">how to open an .exe file</a> · <a href="/load-exe/">the loader on its own page</a>, with the Wine engine picker and the full walkthrough.</p>
+  </section>
+
   <!-- gen:blogstrip -->
   <section class="card" id="from-the-blog">
     <h2>From the blog</h2>
@@ -437,20 +460,6 @@
     </ul>
   </section>
 
-  <section class="card" id="byo">
-    <h2>🖥 Or run your own Windows program</h2>
-    <p style="margin-top:0;">Have an old <code>.exe</code> on your drive? Drop it here and it runs in this tab — <strong>no upload, no install, no account</strong>. Your file is read locally and never leaves your device.</p>
-    <div id="byo-drop" class="dropzone" tabindex="0" role="button" aria-label="Choose a Windows program to run">
-      <p style="font-size:1.05rem;margin:.1rem 0 .45rem;"><strong>Drop a Windows <code>.exe</code> here</strong></p>
-      <p class="muted small" style="margin:0 0 .5rem;">or choose
-        <button id="byo-exe" type="button" class="link">a single EXE</button> ·
-        <button id="byo-folder" type="button" class="link">a folder</button> ·
-        <button id="byo-zip" type="button" class="link">a zip</button>
-      </p>
-      <p class="muted small" style="margin:0;">Works best with 32-bit Windows software from 1995–2008. Bring the whole folder if the app has DLLs or data files beside it.</p>
-    </div>
-    <p class="muted small" style="margin:.6rem 0 0;">Not sure it'll run? Read the <a href="/guide/">compatibility guide</a> · <a href="/open-exe-file/">how to open an .exe file</a> — it's honest about what works and what doesn't.</p>
-  </section>
 
   <section class="hero card">
     <h2>How it works</h2>
@@ -749,6 +758,7 @@
   </p>
   <nav class="footer-nav" aria-label="Footer">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Compatibility Guide</a>
@@ -764,7 +774,7 @@
 
 <script src="/save-core.js?v=3"></script>
 <script src="/recent.js?v=4"></script>
-<script src="/filter.js?v=1"></script>
+<script src="/filter.js?v=2"></script>
 <script>
   window.renderContinue && renderContinue("continue-playing", "continue-grid");
   window.renderResumeBar && renderResumeBar("resume-bar");

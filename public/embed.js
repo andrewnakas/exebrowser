@@ -36,6 +36,9 @@
     entry: host.dataset.entry || "",
     appName: host.dataset.appName || "this app",
     autoboot: host.dataset.autoboot === "true",
+    loaderOpen: host.dataset.loaderOpen === "true",
+    emptyState: host.dataset.emptyState || "",
+    variantPicker: host.dataset.variantPicker === "true",
   };
 
   // Honest CTA: only pages with a hosted payload may promise one-click play.
@@ -44,12 +47,41 @@
   const playLabel = hosted
     ? `▶ Play ${escapeHtml(cfg.appName)}`
     : `Load your copy of ${escapeHtml(cfg.appName)}`;
-  const emptyState = hosted
-    ? `Press play to boot ${escapeHtml(cfg.appName)} in your browser.`
-    : `${escapeHtml(cfg.appName)} isn't hosted here — load your own copy below and it runs right on this page.`;
+  const emptyState = cfg.emptyState
+    ? escapeHtml(cfg.emptyState)
+    : hosted
+      ? `Press play to boot ${escapeHtml(cfg.appName)} in your browser.`
+      : `${escapeHtml(cfg.appName)} isn't hosted here — load your own copy below and it runs right on this page.`;
   const hint = hosted
     ? `Runs entirely in your browser tab with WebAssembly + Wine. Nothing is uploaded. First boot fetches the runtime (~30–60&nbsp;MB), then it's cached.`
     : `We can't redistribute ${escapeHtml(cfg.appName)}, so nothing is hosted here. Your own copy runs entirely in your browser tab with WebAssembly + Wine — nothing is uploaded. First boot fetches the runtime (~30–60&nbsp;MB), then it's cached.`;
+
+  // The Wine engine choice. Hidden on app pages (the guide already knows which
+  // engine its app needs); visible on /load-exe/, where the visitor's file is
+  // the unknown and the wrong engine is the most common reason nothing runs.
+  // "x64" is deliberately absent: it is a separate page with its own loader,
+  // and app.js only redirects to it from the home page's Boot button, so
+  // offering it here would set a variant that never loads.
+  const variantPickerHtml = cfg.variantPicker
+    ? `<div class="embed-variant">
+      <label for="wineVariant"><strong>Wine engine:</strong></label>
+      <select id="wineVariant">
+        <option value="default" selected>Wine 1.7.55 · Win32 — almost everything from 1995–2008</option>
+        <option value="gecko">Wine 1.7.55 · Win32 + Gecko — apps that ask for Internet Explorer</option>
+        <option value="win3x">Wine 3.1 · 16-bit Windows 3.x — 1990–1994 apps</option>
+        <option value="r18">Boxedwine 18R2 — older engine, sometimes runs what the default won't</option>
+      </select>
+    </div>`
+    : "";
+  const variantHiddenHtml = cfg.variantPicker
+    ? ""
+    : `<select id="wineVariant" hidden>
+      <option value="default">default</option>
+      <option value="gecko">gecko</option>
+      <option value="win3x">win3x</option>
+      <option value="r18">r18</option>
+      <option value="x64">x64</option>
+    </select>`;
 
   // The engine in app.js queries these exact IDs. We render real, hidden-where-
   // appropriate controls so binding succeeds; the boot/loader sections are the
@@ -81,6 +113,7 @@
     <div class="embed-loader card" id="loader-section" hidden>
       <h3 style="margin-top:0;">Load your own copy</h3>
       <p class="muted small">Have the files on your device? Drop the app's folder or a zip here — the entry <code>.exe</code> plus any data files beside it.</p>
+      ${variantPickerHtml}
       <div id="dropzone" class="dropzone" tabindex="0">
         <input type="file" id="exeInput" accept=".exe,.EXE,application/x-msdownload" hidden />
         <input type="file" id="folderInput" webkitdirectory directory multiple hidden />
@@ -104,14 +137,11 @@
       <pre id="logOutput" aria-live="polite"></pre>
     </details>
 
-    <!-- Hidden controls app.js expects to exist. -->
-    <select id="wineVariant" hidden>
-      <option value="default">default</option>
-      <option value="gecko">gecko</option>
-      <option value="win3x">win3x</option>
-      <option value="r18">r18</option>
-      <option value="x64">x64</option>
-    </select>
+    <!-- Hidden controls app.js expects to exist. When the page offers a
+         visible picker, the same <select> is moved into the loader card
+         instead of duplicated — app.js binds one element by id, so a second
+         copy would be a control that silently does nothing. -->
+    ${variantHiddenHtml}
     <button id="bootBtn" hidden>Boot Wine</button>
   `;
 
@@ -122,6 +152,26 @@
   const loader = document.getElementById("loader-section");
 
   function showStatus() { status.hidden = false; progress.hidden = false; }
+
+  // /load-exe/ has nothing to reveal — the uploader *is* the page. Skip the
+  // play-to-reveal step so the visitor's first click is on their own file.
+  if (cfg.loaderOpen && !hosted) {
+    overlay.classList.add("hidden");
+    loader.hidden = false;
+    // With no reveal step, the uploader belongs directly under the screen. The
+    // "download what this app wrote" block sits between them by default, which
+    // on this page describes a program that has not run yet.
+    document.getElementById("embed-stage")?.after(loader);
+  }
+
+  // A visible engine picker has to reach the engine. app.js commits the variant
+  // on its Boot button, which this embed never shows, so state.selectedVariant
+  // would otherwise stay on "default" no matter what the <select> says.
+  if (cfg.variantPicker) {
+    document.getElementById("wineVariant")?.addEventListener("change", async (e) => {
+      try { (await waitForEngine()).setVariant(e.target.value); } catch { /* engine not up yet; play() sets it */ }
+    });
+  }
 
   // Same affordance as the DOS embed: if there's something to come back to,
   // show the frame they left on and let them click it. Wine can't snapshot a
@@ -186,7 +236,10 @@
     track("play_click", { hosted: hosted ? 1 : 0 });
     try {
       const EB = await waitForEngine();
-      EB.setVariant(cfg.variant);
+      const chosen = cfg.variantPicker
+        ? (document.getElementById("wineVariant")?.value || cfg.variant)
+        : cfg.variant;
+      EB.setVariant(chosen);
 
       if (cfg.appUrl) {
         // Hosted, license-clean payload: fetch, stage, pick entry, boot. The

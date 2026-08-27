@@ -701,6 +701,7 @@ const linkFor = (L, slug) => (hasTranslation(L.code, slug) ? L.path(`/run/${slug
 
 const siteNavHtml = (L) => `<nav class="site-nav" aria-label="Primary">
     <a href="${L.path("/")}">${esc(L.t("nav.home"))}</a>
+    <a href="/load-exe/">${esc(L.t("nav.loadExe"))}</a>
     <a href="${L.path("/run/")}">${esc(L.t("nav.guides"))}</a>
     <a href="/blog/">${esc(L.t("nav.blog"))}</a>
     <a href="/guide/">${esc(L.t("nav.guide"))}</a>
@@ -712,6 +713,7 @@ const footerHtml = (L) => `<footer>
   <p>${L.t("footer.builtOn")}</p>
   <nav class="footer-nav" aria-label="Footer">
     <a href="${L.path("/")}">${esc(L.t("nav.home"))}</a>
+    <a href="/load-exe/">${esc(L.t("nav.loadExe"))}</a>
     <a href="${L.path("/run/")}">${esc(L.t("nav.guides"))}</a>
     <a href="/blog/">${esc(L.t("nav.blog"))}</a>
     <a href="/guide/">${esc(L.t("footer.compat"))}</a>
@@ -761,7 +763,7 @@ const render = (p, L = EN) => `<!DOCTYPE html>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=39" />
+<link rel="stylesheet" href="/style.css?v=40" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -815,7 +817,7 @@ ${clientStringsHtml(L)}${p.iframeUrl
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/save-core.js?v=3"></script>
 <script src="/recent.js?v=4"></script>
-<script src="/embed.js?v=6"></script>
+<script src="/embed.js?v=7"></script>
 <script src="/app.js?v=19"></script>`}
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>${NEWSLETTER_ACTION ? '\n<script src="/newsletter.js?v=1"></script>' : ""}
 </body>
@@ -963,7 +965,7 @@ const indexHtml = `<!DOCTYPE html>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=39" />
+<link rel="stylesheet" href="/style.css?v=40" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -995,6 +997,7 @@ ${itemListLd(playNow, { name: "Classic Windows and DOS games playable free in yo
   <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
   <nav class="site-nav" aria-label="Primary">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/" aria-current="page">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Guide</a>
@@ -1026,7 +1029,7 @@ ${games.map(indexCard).join("\n")}
     <ul class="card-grid">
 ${apps.map(indexCard).join("\n")}
     </ul>
-    <p style="margin-top:1.25rem;">On a school or work laptop that won't let you install anything? <a href="/unblocked/">Everything here runs without installing a thing</a>. Got an <code>.exe</code> and no way to open it? <a href="/open-exe-file/">Start here</a>.</p>
+    <p style="margin-top:1.25rem;">On a school or work laptop that won't let you install anything? <a href="/unblocked/">Everything here runs without installing a thing</a>. Got an <code>.exe</code> of your own? <a href="/load-exe/">Load it and run it here</a> — or read <a href="/open-exe-file/">what an .exe file actually is</a> first.</p>
     <p style="margin-top:1.25rem;">Don't see your app? The general <a href="/guide/">compatibility guide</a> explains which categories run well and which struggle. Most classic 32-bit Windows software from 1995–2008 is worth a try.</p>
   </section>
   <section class="card">
@@ -1042,6 +1045,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
   <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
   <nav class="footer-nav" aria-label="Footer">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Compatibility Guide</a>
@@ -1056,7 +1060,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
 </footer>
 <script src="/save-core.js?v=3"></script>
 <script src="/recent.js?v=4"></script>
-<script src="/filter.js?v=1"></script>
+<script src="/filter.js?v=2"></script>
 <script>
   window.renderContinue && renderContinue("continue-playing", "continue-grid");
   window.renderResumeBar && renderResumeBar("resume-bar");
@@ -1096,7 +1100,7 @@ const notFoundHtml = `<!DOCTYPE html>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=39" />
+<link rel="stylesheet" href="/style.css?v=40" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1114,6 +1118,7 @@ const notFoundHtml = `<!DOCTYPE html>
   <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
   <nav class="site-nav" aria-label="Primary">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Guide</a>
@@ -1140,6 +1145,7 @@ ${playNow.map(posterCard).join("\n")}
   <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
   <nav class="footer-nav" aria-label="Footer">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Compatibility Guide</a>
@@ -1152,7 +1158,7 @@ ${playNow.map(posterCard).join("\n")}
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/filter.js?v=1"></script>
+<script src="/filter.js?v=2"></script>
 </body>
 </html>
 `;
@@ -1231,7 +1237,7 @@ function renderCategory(cat) {
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=39" />
+<link rel="stylesheet" href="/style.css?v=40" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1253,6 +1259,7 @@ ${faqLd(cat)}
   <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
   <nav class="site-nav" aria-label="Primary">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Guide</a>
@@ -1282,6 +1289,7 @@ ${picks}
   <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
   <nav class="footer-nav" aria-label="Footer">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Compatibility Guide</a>
@@ -1331,7 +1339,7 @@ const catIndexHtml = `<!DOCTYPE html>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=39" />
+<link rel="stylesheet" href="/style.css?v=40" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1360,6 +1368,7 @@ const catIndexHtml = `<!DOCTYPE html>
   <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
   <nav class="site-nav" aria-label="Primary">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Guide</a>
@@ -1385,6 +1394,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
   <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
   <nav class="footer-nav" aria-label="Footer">
     <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Compatibility Guide</a>
@@ -1456,7 +1466,7 @@ function localisedListing(L, isHome) {
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=39" />
+<link rel="stylesheet" href="/style.css?v=40" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1550,6 +1560,10 @@ const STATIC_URLS = [
   // thing ranking for it is the homepage, which is a games shelf. This is
   // the page that actually answers it.
   { loc: "/open-exe-file/", freq: "monthly", pri: "0.9", mod: "2026-08-25" },
+  // The loader had no URL of its own — it was a section three screens down the
+  // home page, which is a games shelf. "run exe online" and its family have
+  // nowhere to land without this.
+  { loc: "/load-exe/", freq: "monthly", pri: "0.9", mod: "2026-08-27" },
   // A category page's content is its cards as much as its prose, so its lastmod
   // has to move when a member does — not only when someone edits the intro.
   ...liveCats.map((c) => ({
@@ -1684,6 +1698,8 @@ ${catalogue(guides)}
 
 - [Homepage](${SITE}/): the full catalogue as a browsable shelf, searchable and
   filterable by category, plus a loader for running your own .exe
+- [Load your own EXE](${SITE}/load-exe/): drop a Windows .exe, folder or zip and run it
+  in the browser — nothing is uploaded, nothing is installed
 - [All games and guides](${SITE}/run/)
 - [Compatibility guide](${SITE}/guide/): which categories of Windows software run well
 - [Blog](${SITE}/blog/): how the runtimes work, licensing, and preservation write-ups

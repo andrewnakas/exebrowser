@@ -10,7 +10,7 @@
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { categoryChips, categoryCounts, esc, itemListLd, posterCard, sortPlayable, SITE } from "./catalogue.mjs";
+import { byoCard, categoryChips, categoryCounts, esc, itemListLd, posterCard, sortPlayable, SITE } from "./catalogue.mjs";
 import { blogPosts } from "./blog-meta.mjs";
 
 const pages = JSON.parse(readFileSync(resolve(process.cwd(), "scripts", "app-pages.json"), "utf8"));
@@ -106,7 +106,10 @@ ${posts.slice(0, 3).map((p) => `      <li><a class="link-card" href="${p.path}">
 let html = readFileSync(INDEX, "utf8");
 html = replaceRegion(html, "itemlist", "\n" + itemList);
 html = replaceRegion(html, "gridfilter", "\n" + filter);
-html = replaceRegion(html, "postergrid", '\n    <ul class="poster-grid">\n' + playable.map(card).join("\n") + "\n    </ul>\n    ");
+// The bring-your-own-EXE tile leads the shelf. It is one tile out of 45 and
+// costs the famous names nothing, but it is the only place the grid says
+// what this site is for beyond the titles we happen to host.
+html = replaceRegion(html, "postergrid", '\n    <ul class="poster-grid">\n' + [byoCard(), ...playable.map(card)].join("\n") + "\n    </ul>\n    ");
 html = replaceRegion(html, "blogstrip", strip);
 
 writeFileSync(INDEX, html, "utf8");

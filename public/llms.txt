@@ -101,6 +101,8 @@ commercial titles are compatibility guides only, where you supply your own copy.
 
 - [Homepage](https://exebrowser.com/): the full catalogue as a browsable shelf, searchable and
   filterable by category, plus a loader for running your own .exe
+- [Load your own EXE](https://exebrowser.com/load-exe/): drop a Windows .exe, folder or zip and run it
+  in the browser — nothing is uploaded, nothing is installed
 - [All games and guides](https://exebrowser.com/run/)
 - [Compatibility guide](https://exebrowser.com/guide/): which categories of Windows software run well
 - [Blog](https://exebrowser.com/blog/): how the runtimes work, licensing, and preservation write-ups
