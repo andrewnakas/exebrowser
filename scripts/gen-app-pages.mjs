@@ -1048,6 +1048,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
     <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
@@ -1145,6 +1146,7 @@ ${playNow.map(posterCard).join("\n")}
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
     <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
@@ -1286,6 +1288,7 @@ ${picks}
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
     <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
@@ -1388,6 +1391,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
     <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
@@ -1538,6 +1542,10 @@ const STATIC_URLS = [
   // The query family Bing shows converting 5-10x better than bare game
   // names ("doom unblocked" 26.5% CTR vs "doom" 3.25%).
   { loc: "/unblocked/", freq: "weekly", pri: "0.8", mod: catalogueMod },
+  // The front door to the embed offer. Every accepted embed is an external
+  // link back, and external links are the one thing holding this site's
+  // crawl budget down — so this page is worth more than its traffic.
+  { loc: "/embed/", freq: "weekly", pri: "0.8", mod: catalogueMod },
   // "open exe file" gets 237 Bing impressions at 1.27% CTR because the only
   // thing ranking for it is the homepage, which is a games shelf. This is
   // the page that actually answers it.

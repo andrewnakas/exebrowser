@@ -26,7 +26,7 @@ const ROOT = resolve(process.cwd(), "public");
 // Runtime payload trees — machine-generated assets, not pages.
 // `embed` is excluded deliberately: those pages are bare iframe wrappers with
 // no site chrome, so none of the head/nav injections below apply to them.
-const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data", "embed"]);
+const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data"]);
 
 function htmlFiles(dir, rel = "") {
   const out = [];
@@ -34,6 +34,12 @@ function htmlFiles(dir, rel = "") {
     const abs = join(dir, name);
     if (statSync(abs).isDirectory()) {
       if (rel === "" && SKIP_DIRS.has(name)) continue;
+      // /embed/ holds one real page plus a wrapper per game. Recurse one level
+      // so index.html is seen, and drop the wrappers below it.
+      if (rel === "" && name === "embed") {
+        out.push(...htmlFiles(abs, "embed").filter((f) => f.label === "embed/index.html"));
+        continue;
+      }
       out.push(...htmlFiles(abs, rel ? `${rel}/${name}` : name));
     } else if (name.endsWith(".html")) {
       out.push({ abs, label: rel ? `${rel}/${name}` : name });
@@ -80,6 +86,7 @@ const EMBEDDABLE = new Map(
   CATALOGUE.filter((p) => OWN_WORK.test(p.author || "") && p.appUrl).map((p) => [p.slug, p])
 );
 let unblockedAdded = 0;
+let embedFooterAdded = 0;
 let embedAdded = 0;
 let ogAdded = 0;
 
@@ -163,6 +170,17 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     }
   }
 
+  // ── 3c. The /embed/ link in the footer of the English pages ─────────────
+  // A footer link on every English page is what makes the hub reachable by a
+  // crawler rather than a URL the sitemap merely asserts. Localised pages are
+  // left alone: the offer is English-only, and their footers are generated.
+  if (!/^(es|pt-BR|de|ja|fr|zh-CN)\//.test(label) && html.includes('<a href="/saves/">Saved games</a>')
+      && !html.includes('href="/embed/"')) {
+    html = html.replace('<a href="/saves/">Saved games</a>',
+      '<a href="/saves/">Saved games</a>\n    <a href="/embed/">Embed our games</a>');
+    embedFooterAdded++;
+  }
+
   // ── 4. SYNC METADATA onto the hand-maintained game pages ────────────────
   // app-pages.json is meant to be the single source of truth, but skipGenerate
   // pages never pass through render(), so editing a title or description there
@@ -236,7 +254,7 @@ for (const { abs, label } of htmlFiles(ROOT)) {
 
 console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
-  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), play-events into ${playAdded} page(s), ` +
+  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
   `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
   `embed offer on ${embedAdded} page(s), og:image onto ${ogAdded} page(s)`
 );

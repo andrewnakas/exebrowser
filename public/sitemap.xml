@@ -751,6 +751,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/embed/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/open-exe-file/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>

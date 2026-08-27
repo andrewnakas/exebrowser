@@ -53,7 +53,7 @@ for (const p of pages) {
 
 // Runtime payload trees: machine-generated asset dirs with thousands of files
 // and no prose. Nothing in them is a page a visitor navigates to.
-const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data", "embed"]);
+const SKIP_DIRS = new Set(["64", "boxedwine", "apps", "dosbox", "dosbox-snap", "data"]);
 
 function htmlFiles(dir, rel = "") {
   const out = [];
@@ -61,6 +61,12 @@ function htmlFiles(dir, rel = "") {
     const abs = join(dir, name);
     if (statSync(abs).isDirectory()) {
       if (rel === "" && SKIP_DIRS.has(name)) continue;
+      // /embed/ holds one real page plus a wrapper per game. Recurse one level
+      // so index.html is seen, and drop the wrappers below it.
+      if (rel === "" && name === "embed") {
+        out.push(...htmlFiles(abs, "embed").filter((f) => f.label === "embed/index.html"));
+        continue;
+      }
       out.push(...htmlFiles(abs, rel ? `${rel}/${name}` : name));
     } else if (name.endsWith(".html")) {
       out.push({ abs, label: rel ? `${rel}/${name}` : name });
@@ -438,6 +444,32 @@ if (existsSync(uiFile)) {
       if (seen.has(h)) { warn(`headings: ${label} repeats "${h.slice(0, 50)}"`); break; }
       seen.add(h);
     }
+  }
+}
+
+// ── 15. One version per asset, site-wide ───────────────────────────────────
+// Cache-busting only works if the whole site agrees on the number. Three
+// different generators emit these tags, and gen-unblocked.mjs is not part of
+// the documented four-step build — so bumping save-core.js everywhere else
+// left /unblocked/ pinned to the old copy, waiting to revert the next time
+// anyone ran that script. A visitor landing there would have been served a
+// stale save-core.js and silently lost the localised resume path.
+{
+  const seen = new Map();
+  for (const { abs, label } of linkedPages) {
+    const html = readFileSync(abs, "utf8");
+    for (const m of html.matchAll(/\/([a-z-]+\.(?:js|css))\?v=(\d+)/g)) {
+      const [, asset, ver] = m;
+      if (!seen.has(asset)) seen.set(asset, new Map());
+      const byVer = seen.get(asset);
+      if (!byVer.has(ver)) byVer.set(ver, []);
+      if (byVer.get(ver).length < 3) byVer.get(ver).push(label);
+    }
+  }
+  for (const [asset, byVer] of seen) {
+    if (byVer.size < 2) continue;
+    const detail = [...byVer].map(([v, where]) => `v${v} (${where.join(", ")}…)`).join(" vs ");
+    warn(`assets: ${asset} is referenced at ${byVer.size} versions — ${detail}`);
   }
 }
 

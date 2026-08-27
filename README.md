@@ -35,8 +35,8 @@ For local testing without the Worker, edit `public/app.js` and change `ROOT_FS_U
 Every `/run/<slug>/` page is generated from `scripts/app-pages.json` — never
 hand-edit the HTML, it gets overwritten.
 
-Run all four, in this order — the last two depend on the output of the first
-two, and running them out of order silently loses work:
+Run all six, in this order — the last two depend on the output of the others,
+and running them out of order silently loses work:
 
 ```bash
 # 1. all /run/ pages, the hub, /play/ category pages, 404, sitemap, feed, llms.txt
@@ -45,12 +45,23 @@ node scripts/gen-app-pages.mjs
 # 2. the homepage's shelf, filter, ItemList and blog strip, in place
 node scripts/gen-home-grid.mjs
 
-# 3. head links onto the ~35 hand-maintained pages the generators don't own
+# 3. /unblocked/ — the intent-modifier landing page
+node scripts/gen-unblocked.mjs
+
+# 4. /embed/ — the hub for the embed offer
+node scripts/gen-embed-hub.mjs
+
+# 5. head links onto the ~35 hand-maintained pages the generators don't own
 node scripts/inject-page-links.mjs
 
-# 4. check nothing drifted out of sync
+# 6. check nothing drifted out of sync
 node scripts/check-consistency.mjs
 ```
+
+Steps 3 and 4 were previously undocumented, which is how `/unblocked/` came to
+sit on a stale `save-core.js` version: every other generator was bumped, that
+one was not, and it would have reverted the page the next time anyone ran it.
+The consistency check now fails when one asset is referenced at two versions.
 
 The consistency check exists because the same class of bug kept recurring:
 a page states something that was true when written and quietly stopped being

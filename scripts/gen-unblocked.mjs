@@ -176,8 +176,8 @@ ${faq.map((f) => `    <details>\n      <summary>${esc(f.q)}</summary>\n      <p>
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=2"></script>
-<script src="/recent.js?v=3"></script>
+<script src="/save-core.js?v=3"></script>
+<script src="/recent.js?v=4"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
 </script>
