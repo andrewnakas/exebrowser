@@ -4,3 +4,10 @@
 name = "exebrowser"
 pages_build_output_dir = "public"
 compatibility_date = "2026-05-01"
+
+# Newsletter signups, written by functions/api/subscribe.js. KV stores the
+# list; it does not send anything. Export with:
+#   npx wrangler kv key list --binding=SUBS --remote
+[[kv_namespaces]]
+binding = "SUBS"
+id = "8b7590452b88493595a98747dccbb763"

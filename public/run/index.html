@@ -394,6 +394,16 @@
       <li><a class="link-card" href="/play/card-games/"><span class="lc-title">Card games, playable in your browser</span><span class="lc-desc">Klondike Solitaire, FreeCell, Spider Solitaire and Hearts — the four Windows card games, rebuilt as open implementations. Free, instant, no sign-up.</span></a></li>
     </ul>
   </section>
+  <section class="card newsletter">
+    <h2>One new retro game in your inbox each week</h2>
+    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
+    <form class="newsletter-form" action="/api/subscribe" method="post" data-newsletter>
+      <label class="visually-hidden" for="nl-email">Email address</label>
+      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+      <button type="submit" class="button primary">Subscribe</button>
+    </form>
+    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
+  </section>
 </main>
 
 <footer>
@@ -420,5 +430,6 @@
   window.renderContinue && renderContinue("continue-playing", "continue-grid");
   window.renderResumeBar && renderResumeBar("resume-bar");
 </script>
+<script src="/newsletter.js?v=1"></script>
 </body>
 </html>

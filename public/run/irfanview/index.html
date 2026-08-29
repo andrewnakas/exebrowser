@@ -158,6 +158,16 @@
       <p>Not reliably. The browser Wine has no real multimedia/DirectShow stack, so video and audio playback generally won't work, and some IrfanView PlugIns (especially media-related ones) may fail or crash. Stick to still-image viewing, editing, and conversion for a smooth experience.</p>
     </details>
   </section>
+  <section class="card newsletter">
+    <h2>One new retro game in your inbox each week</h2>
+    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
+    <form class="newsletter-form" action="/api/subscribe" method="post" data-newsletter>
+      <label class="visually-hidden" for="nl-email">Email address</label>
+      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+      <button type="submit" class="button primary">Subscribe</button>
+    </form>
+    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
+  </section>
   <section class="card">
     <h2>Related guides</h2>
     <ul class="card-grid">
@@ -194,5 +204,6 @@
 <script src="/embed.js?v=8"></script>
 <script src="/app.js?v=20"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/newsletter.js?v=1"></script>
 </body>
 </html>

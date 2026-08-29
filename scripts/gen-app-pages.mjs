@@ -124,11 +124,17 @@ function imageSize(absPath) {
   } catch {}
   return null;
 }
-// Newsletter provider endpoint (Buttondown, Mailchimp, Listmonk — any host that
-// accepts a plain POSTed form). Empty means the signup block is not rendered at
-// all: an email box that silently drops addresses is worse than none, and this
-// is the only place to change to turn the feature on across every page.
-const NEWSLETTER_ACTION = "";
+// Newsletter endpoint. Empty means the signup block is not rendered at all: an
+// email box that silently drops addresses is worse than none, and this is the
+// only place to change to turn the feature on across every page. It sat empty
+// for weeks, which meant the "capture" everyone believed had shipped was
+// rendering nothing on any page.
+//
+// A same-origin path (starting with "/") is our own Pages Function and submits
+// in place; anything else is treated as a third-party provider (Buttondown,
+// Mailchimp, Listmonk) and keeps the target="_blank" those need to show their
+// own confirmation page.
+const NEWSLETTER_ACTION = "/api/subscribe";
 
 const screenshotUrl = (p) => {
   const f = screenshotFile(p);
@@ -663,11 +669,14 @@ function newsletterHtml() {
   return `\n  <section class="card newsletter">
     <h2>One new retro game in your inbox each week</h2>
     <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
-    <form class="newsletter-form" action="${esc(NEWSLETTER_ACTION)}" method="post" target="_blank" data-newsletter>
+    <form class="newsletter-form" action="${esc(NEWSLETTER_ACTION)}" method="post"${
+      NEWSLETTER_ACTION.startsWith("/") ? "" : ' target="_blank"'
+    } data-newsletter>
       <label class="visually-hidden" for="nl-email">Email address</label>
       <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
       <button type="submit" class="button primary">Subscribe</button>
     </form>
+    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
   </section>`;
 }
 

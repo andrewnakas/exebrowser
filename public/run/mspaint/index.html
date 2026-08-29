@@ -158,6 +158,16 @@
       <p>Save inside the app as usual, then click <strong>Download files written by this app</strong> to pull your image out as a zip before you close or reload the tab. Anything left only inside the emulated disk is lost on reload.</p>
     </details>
   </section>
+  <section class="card newsletter">
+    <h2>One new retro game in your inbox each week</h2>
+    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
+    <form class="newsletter-form" action="/api/subscribe" method="post" data-newsletter>
+      <label class="visually-hidden" for="nl-email">Email address</label>
+      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+      <button type="submit" class="button primary">Subscribe</button>
+    </form>
+    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
+  </section>
   <section class="card">
     <h2>Related guides</h2>
     <ul class="card-grid">
@@ -195,5 +205,6 @@
 <script src="/embed.js?v=8"></script>
 <script src="/app.js?v=20"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/newsletter.js?v=1"></script>
 </body>
 </html>

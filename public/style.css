@@ -1140,6 +1140,10 @@ body.dos-playing { overflow: hidden; }
 .newsletter-form input[type="email"]:focus {
   outline: none; border-color: var(--accent);
 }
+/* The result of a signup, filled in by newsletter.js. Hidden until there is
+   something to say, so the block doesn't reserve an empty line. */
+.newsletter-status { margin: .5rem 0 0; }
+.newsletter-status.is-error { color: var(--warn); }
 
 /* Sits under a self-saving game's frame. */
 .resume-note { margin: .5rem 0 0; }
