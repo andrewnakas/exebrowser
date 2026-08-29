@@ -1023,24 +1023,37 @@
     }
   }
 
-  // Playtime heartbeat: one event per minute while an app runs, partial flush on tab-hide.
-  let hbTimer = null, lastBeat = 0;
+  // Playtime heartbeat: one event per minute of *foreground* use. Same shape as
+  // dos-embed.js and play-events.js — see the note there. This one had no stop
+  // at all, so a Wine app left open in a background tab reported playtime
+  // indefinitely; setInterval's background throttle is about one minute, which
+  // happens to be our cadence, so the inflated numbers looked entirely normal.
+  let hbTimer = null, lastBeat = 0, hbLive = false;
   function startHeartbeat() {
-    if (hbTimer) return;
+    hbLive = true;
+    if (hbTimer || document.visibilityState === "hidden") return;
     lastBeat = performance.now();
     hbTimer = setInterval(() => {
       lastBeat = performance.now();
       track("playtime_heartbeat", { seconds: 60 });
     }, 60000);
   }
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState !== "hidden" || !hbTimer) return;
+  function pauseHeartbeat() {
+    if (!hbTimer) return;
     const partial = Math.round((performance.now() - lastBeat) / 1000);
-    if (partial >= 5) {
-      lastBeat = performance.now();
-      track("playtime_heartbeat", { seconds: partial });
-    }
+    clearInterval(hbTimer);
+    hbTimer = null;
+    if (partial >= 5) track("playtime_heartbeat", { seconds: partial });
+  }
+  function stopHeartbeat() {
+    pauseHeartbeat();
+    hbLive = false;
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") pauseHeartbeat();
+    else if (hbLive) startHeartbeat();
   });
+  addEventListener("pagehide", pauseHeartbeat);
 
   async function bootAndRun() {
     if (state.bootInFlight) return;

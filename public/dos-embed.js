@@ -24,28 +24,38 @@
     }
   }
 
-  // Playtime heartbeat: one event per minute while the game runs, partial flush on tab-hide.
-  let hbTimer = null, lastBeat = 0;
+  // Playtime heartbeat: one event per minute of *foreground* play. This file
+  // was the only one of the three that stopped its timer on exit, which is why
+  // DOSBox playtime was the one believable column in the data. It still kept
+  // counting a hidden tab, though — setInterval throttles to about a minute
+  // when backgrounded, i.e. our own cadence — so even DOOM's figure ran roughly
+  // 4-5x over its measured engagement. Pausing on hide fixes the remainder.
+  let hbTimer = null, lastBeat = 0, hbLive = false;
   function startHeartbeat() {
-    if (hbTimer) return;
+    hbLive = true;
+    if (hbTimer || document.visibilityState === "hidden") return;
     lastBeat = performance.now();
     hbTimer = setInterval(() => {
       lastBeat = performance.now();
       track("playtime_heartbeat", { seconds: 60 });
     }, 60000);
   }
-  function stopHeartbeat() {
+  function pauseHeartbeat() {
+    if (!hbTimer) return;
+    const partial = Math.round((performance.now() - lastBeat) / 1000);
     clearInterval(hbTimer);
     hbTimer = null;
+    if (partial >= 5) track("playtime_heartbeat", { seconds: partial });
+  }
+  function stopHeartbeat() {
+    pauseHeartbeat();
+    hbLive = false;
   }
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState !== "hidden" || !hbTimer) return;
-    const partial = Math.round((performance.now() - lastBeat) / 1000);
-    if (partial >= 5) {
-      lastBeat = performance.now();
-      track("playtime_heartbeat", { seconds: partial });
-    }
+    if (document.visibilityState === "hidden") pauseHeartbeat();
+    else if (hbLive) startHeartbeat();
   });
+  addEventListener("pagehide", pauseHeartbeat);
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, c =>
@@ -1380,6 +1390,10 @@
         // interval is only a backstop for a tab that dies without warning.
         // The file-level save keeps running at its usual pace alongside, and
         // is what the player falls back on if any of this misbehaves.
+        // Two strikes of grace for a transient failure, then the breaker trips.
+        let snapFails = 0;
+        const SNAP_FAIL_LIMIT = 3;
+
         const snapFlusher = window.SaveCore.schedule({
           intervalMs: 300000,
           flush: async (reason) => {
@@ -1400,10 +1414,38 @@
                   thumb: window.SaveCore.thumbFromCanvas(canvas),
                 });
                 track("snapshot_save", { bytes: r.bytes, files: r.files, reason });
+                // Count *consecutive* failures, so an occasional blip over a
+                // long session never accumulates into tripping the breaker.
+                snapFails = 0;
               }
             } catch (err) {
               log("Snapshot failed: " + err.message);
-              track("snapshot_save_error", { error_message: String(err.message).slice(0, 120) });
+              // A failing snapshot used to retry forever and report every
+              // attempt. The flusher fires on the 300s interval *and* on every
+              // visibilitychange-hidden, pagehide and freeze, so one visitor
+              // with a full quota or a blocked IndexedDB alt-tabbing around
+              // sent 187 `snapshot_save_error` events in a week — seven users
+              // produced 1,307 of them. Worse, the only symptom was this
+              // `log()` line, which nobody reads: their saves were failing and
+              // the page said nothing.
+              //
+              // So: report the first failure only, give it a couple of retries
+              // in case it was transient, then stop trying and say so.
+              snapFails++;
+              if (snapFails === 1) {
+                track("snapshot_save_error", { error_message: String(err.message).slice(0, 120) });
+              }
+              if (snapFails >= SNAP_FAIL_LIMIT) {
+                snapFlusher.stop();
+                // Honest wording: the file-level save is a separate flusher and
+                // is still running, so progress is not necessarily lost — what
+                // is lost is resuming mid-level from an exact snapshot.
+                saveState.textContent = T(
+                  "snapshotOff",
+                  "Couldn't save a resume point - your in-game saves still work"
+                );
+                track("snapshot_save_disabled", { after: snapFails });
+              }
             }
           },
         });

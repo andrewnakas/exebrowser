@@ -25,26 +25,49 @@
     }
   }
 
-  // One event per minute while the game runs, plus a partial flush when the
-  // tab is hidden. Copied from dos-embed.js so a minute of Solitaire and a
-  // minute of DOOM are the same measurement.
-  let hbTimer = null, lastBeat = 0;
+  // One event per minute of *foreground* play. Copied from dos-embed.js so a
+  // minute of Solitaire and a minute of DOOM are the same measurement — which
+  // is exactly what it had stopped being. Until 2026-08-28 this timer started
+  // on boot and then ran until the tab closed, with no stop and no visibility
+  // gate, while dos-embed.js alone stopped its own. So the DOSBox titles were
+  // bounded and every native/ScummVM/Wine title was not, and GA showed
+  // /run/minesweeper-open/ at 89 minutes per user against a reported 13
+  // seconds. Two halves of the catalogue, two different rulers.
+  //
+  // Note a background tab does not save you here: setInterval is throttled to
+  // roughly once a minute when hidden, which is precisely our cadence, so an
+  // abandoned tab kept billing near-perfect playtime. Hence pausing rather
+  // than relying on the throttle.
+  let hbTimer = null, lastBeat = 0, hbLive = false;
   function startHeartbeat() {
-    if (hbTimer) return;
+    hbLive = true;
+    if (hbTimer || document.visibilityState === "hidden") return;
     lastBeat = performance.now();
     hbTimer = setInterval(() => {
       lastBeat = performance.now();
       track("playtime_heartbeat", { seconds: 60 });
     }, 60000);
   }
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState !== "hidden" || !hbTimer) return;
+  // Park the timer and bank the partial minute. `hbLive` stays true, so a
+  // player who alt-tabs away and comes back resumes being counted.
+  function pauseHeartbeat() {
+    if (!hbTimer) return;
     const partial = Math.round((performance.now() - lastBeat) / 1000);
-    if (partial >= 5) {
-      lastBeat = performance.now();
-      track("playtime_heartbeat", { seconds: partial });
-    }
+    clearInterval(hbTimer);
+    hbTimer = null;
+    if (partial >= 5) track("playtime_heartbeat", { seconds: partial });
+  }
+  function stopHeartbeat() {
+    pauseHeartbeat();
+    hbLive = false;
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") pauseHeartbeat();
+    else if (hbLive) startHeartbeat();
   });
+  // The game is gone when the page is; without this the last partial minute of
+  // every session is simply lost.
+  addEventListener("pagehide", pauseHeartbeat);
 
   const t0 = performance.now();
   let clickAt = null;
