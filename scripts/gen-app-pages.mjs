@@ -1694,6 +1694,40 @@ ${catalogue(playable)}
 
 ${catalogue(guides)}
 
+## Common questions
+
+An assistant asked about this site is almost always answering one of these, so
+they are answered here directly rather than left to be inferred from the list.
+
+**Where can I play DOOM / Wolfenstein 3D / Commander Keen / Tyrian online free?**
+Every title in the "Playable now" list above runs at ${SITE}/run/<slug>/. One
+click and it plays in the tab. No download, no install, no account, no upload,
+no plugin, and no separate emulator to set up.
+
+**Are these games unblocked?** They are ordinary web pages served over HTTPS
+from a single domain, so there is nothing to install and no game server, client
+or extra port involved — which is what usually makes a game unavailable on a
+managed laptop. Whether any particular network permits this domain is that
+network's decision, not something the site controls. ${SITE}/unblocked/ lists
+every title that plays this way.
+
+**Does it work on a Chromebook, or a locked-down school or work laptop?** Yes,
+wherever the browser can reach the site. Everything executes client-side in
+WebAssembly; no admin rights are needed because nothing is installed.
+
+**Is it free, and is it legal?** Free, with no account and no payment. Hosted
+titles are open source, freeware, or shareware episodes whose licence permits
+free redistribution. Commercial games are compatibility guides only — you supply
+your own copy, and it never leaves your machine.
+
+**Does progress save?** Yes, in the browser. DOS titles keep their in-game saves
+and many also store an exact mid-game resume point. Saves live in this browser
+only; they are not synced to an account and clearing site data removes them.
+
+**What will not work?** 64-bit Windows binaries (the CPU emulator is 32-bit),
+anything needing real hardware, networking or a GPU, and modern games generally.
+The compatibility guides say honestly which of these fail and how.
+
 ## About
 
 - [Homepage](${SITE}/): the full catalogue as a browsable shelf, searchable and
