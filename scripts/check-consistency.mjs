@@ -36,6 +36,21 @@ for (const p of pages) {
   }
 }
 
+// ── 1b. Titles fit in a search result ──────────────────────────────────────
+// Bing reports "Title too long" as an SEO error and truncates past roughly 65
+// characters; Google cuts around 60. On 1 Sep 2026 every one of the 83 /run/
+// titles was over 60 and 76 were over 65, because nothing here measured them
+// and a " — ExeBrowser" suffix nobody could see in a result cost 13 characters
+// on every page. Bing is this site's largest channel, so a truncated title is
+// a truncated headline on the majority of impressions.
+const MAX_TITLE = 60;
+for (const p of pages) {
+  if (typeof p.title !== "string") continue;
+  if (p.title.length > MAX_TITLE) {
+    warn(`${p.slug}: title is ${p.title.length}c, over ${MAX_TITLE} (search results truncate it)`);
+  }
+}
+
 // ── 2. Screenshots declared in data exist on disk ──────────────────────────
 for (const p of pages) {
   if (!p.screenshot) continue;

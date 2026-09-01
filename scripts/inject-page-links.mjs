@@ -72,8 +72,14 @@ const PLAY_SCRIPT = '<script src="/play-events.js?v=1"></script>';
 const CATALOGUE = JSON.parse(
   readFileSync(resolve(process.cwd(), "scripts", "app-pages.json"), "utf8")
 );
+// Deliberately NOT gated on appUrl/iframeUrl. That gate meant a page had to be
+// currently playable before its own title could be corrected from the
+// catalogue, which quietly excluded /run/dragon-keep/ — offline, so no appUrl —
+// and left it the last page on the site still carrying the old over-length
+// title after the 1 Sep 2026 sweep. Whether a page is playable today has
+// nothing to do with whether its <title> should match the source of truth.
 const HAND_MAINTAINED = new Map(
-  CATALOGUE.filter((p) => p.skipGenerate && (p.appUrl || p.iframeUrl) && p.title && p.description)
+  CATALOGUE.filter((p) => p.skipGenerate && p.title && p.description)
     .map((p) => [p.slug, p])
 );
 const esc = (v) =>

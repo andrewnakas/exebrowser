@@ -2,7 +2,7 @@
   {
     "slug": "space-cadet-open",
     "skipGenerate": true,
-    "title": "3D Pinball Space Cadet Unblocked — Play Free, No Windows Files — ExeBrowser",
+    "title": "3D Pinball Space Cadet Unblocked — Play Free Online",
     "description": "Play 3D Pinball Space Cadet in your browser — free, instant, no download, no Windows files needed. Open-source WebAssembly build.",
     "keywords": "3d pinball space cadet online, play space cadet pinball online free, space cadet pinball no download",
     "ogTitle": "Play 3D Pinball Space Cadet Online Free — No Download",
@@ -87,7 +87,7 @@
   {
     "slug": "dragon-keep",
     "skipGenerate": true,
-    "title": "Play Dragon's Keep Pinball Online Free — Open-Source Table — ExeBrowser",
+    "title": "Play Dragon's Keep Pinball Online Free — Open-Source Table",
     "description": "Play Dragon's Keep, an original medieval-fantasy pinball table, free in your browser. Open-source engine, CC0 artwork, no download.",
     "keywords": "dragons keep pinball online, play pinball online free, open source pinball browser",
     "ogTitle": "Play Dragon's Keep Pinball Online Free — Open-Source Table",
@@ -116,7 +116,7 @@
   },
   {
     "slug": "wolfenstein-3d",
-    "title": "Wolfenstein 3D Unblocked — Play the Real DOS Game Free Online — ExeBrowser",
+    "title": "Wolfenstein 3D Unblocked — Play the Real DOS Game Free",
     "description": "The original 1992 Wolfenstein 3D, free shareware episode one, running in your browser. The real DOS game in DOSBox — no download, no sign-up, progress saved.",
     "keywords": "play wolfenstein 3d online, wolfenstein 3d in browser, wolfenstein 3d shareware free, wolfenstein 3d no download, ecwolf browser, wolf3d shareware online, classic wolfenstein 3d browser, wolfenstein 3d unblocked",
     "ogTitle": "Play Wolfenstein 3D Online — Free Shareware, In Your Browser",
@@ -338,7 +338,7 @@
   },
   {
     "slug": "tyrian",
-    "title": "Tyrian 2000 Unblocked — Play Free Online, No Download — ExeBrowser",
+    "title": "Tyrian 2000 Unblocked — Play Free Online, No Download",
     "description": "Tyrian 2000, the classic space shooter, released as freeware by its own authors. All five episodes, free and complete, playing instantly in your browser.",
     "keywords": "play tyrian 2000 online, tyrian in browser, tyrian 2000 free, tyrian shmup online no download, tyrian freeware, opentyrian2000 browser, play tyrian no install, tyrian 2000 unblocked",
     "ogTitle": "Play Tyrian 2000 Online — Free, In Your Browser",
@@ -537,7 +537,7 @@
   },
   {
     "slug": "doom",
-    "title": "DOOM Unblocked — Play the Real DOS Game Free, Saves Progress — ExeBrowser",
+    "title": "DOOM Unblocked — Play the Real DOS Game Free, Saves Progress",
     "description": "The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up.",
     "keywords": "play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online, doom unblocked",
     "ogTitle": "Play DOOM Online — Free, In Your Browser, No Download",
@@ -762,7 +762,7 @@
   },
   {
     "slug": "freedoom",
-    "title": "Freedoom Unblocked — Play the Complete Game Free, Not a Demo — ExeBrowser",
+    "title": "Freedoom Unblocked — Play the Complete Game Free, Not a Demo",
     "description": "Freedoom is a free, open-source game on the DOOM engine — the whole game, not a shareware episode. Plays instantly in your browser and saves your progress.",
     "keywords": "play freedoom online, freedoom in browser, freedoom no download, free doom game online, freedoom phase 1, freedoom phase 2, open source doom browser, libre doom online, freedoom unblocked",
     "ogTitle": "Play Freedoom Online — Free & Libre, In Your Browser",
@@ -982,7 +982,7 @@
   },
   {
     "slug": "3d-pinball-space-cadet",
-    "title": "Play 3D Pinball Space Cadet in Your Browser — With Your Own Copy — ExeBrowser",
+    "title": "Play 3D Pinball Space Cadet — With Your Own Copy",
     "description": "Load your own Pinball folder and run PINBALL.EXE in a browser tab via Wine + WebAssembly — full speed, working sound, nothing uploaded to a server.",
     "keywords": "3d pinball space cadet online, play space cadet browser, 3d pinball for windows, space cadet pinball no download, pinball.exe browser, windows xp pinball online",
     "ogTitle": "Play 3D Pinball Space Cadet in Your Browser — With Your Own Copy",
@@ -1097,7 +1097,7 @@
   },
   {
     "slug": "solitaire",
-    "title": "Run Classic Windows Solitaire in Your Browser — With Your Own Copy — ExeBrowser",
+    "title": "Run Classic Windows Solitaire in Your Browser (Wine Guide)",
     "description": "Load your own sol.exe, FreeCell, Minesweeper or Spider and they run client-side via Wine + WebAssembly — fast, no install. We don't host Microsoft's files.",
     "keywords": "windows solitaire online, play classic solitaire browser, sol.exe online, freecell minesweeper browser, windows xp solitaire no download, classic solitaire in browser, run sol.exe wine",
     "ogTitle": "Run Classic Windows Solitaire in Your Browser — With Your Own Copy",
@@ -1219,7 +1219,7 @@
   {
     "slug": "solitaire-open",
     "skipGenerate": true,
-    "title": "Solitaire Unblocked — Play Classic Klondike Free Online — ExeBrowser",
+    "title": "Solitaire Unblocked — Play Classic Klondike Free Online",
     "description": "Klondike Solitaire with draw 1 or draw 3, Vegas scoring, undo and the bouncing win cascade. Free, instant, no account, and it remembers your game.",
     "keywords": "play solitaire online, klondike solitaire free, solitaire no download, windows solitaire browser, classic solitaire game, solitaire unblocked, draw 3 solitaire",
     "ogTitle": "Play Solitaire Online Free — Classic Klondike, No Download",
@@ -1319,7 +1319,7 @@
   },
   {
     "slug": "freeciv",
-    "title": "Play Freeciv Online Free — Open-Source Civilization — ExeBrowser",
+    "title": "Play Freeciv Online Free — Open-Source Civilization",
     "description": "Freeciv is a free, open-source empire-building strategy game inspired by Civilization, playable in your browser at freecivweb.com. Here's how to start a single-player game.",
     "keywords": "play freeciv online, freeciv browser, free civilization game, open source strategy game, civ game no install, freeciv in browser, turn-based empire builder",
     "ogTitle": "Play Freeciv Online Free — Open-Source Civilization",
@@ -1395,7 +1395,7 @@
   },
   {
     "slug": "age-of-empires",
-    "title": "Can You Play Age of Empires in a Browser? Wine Compatibility Guide — ExeBrowser",
+    "title": "Can You Play Age of Empires in a Browser? Wine Guide",
     "description": "A compatibility guide to the 1997 Age of Empires and AoE II under browser Wine + WebAssembly: load your own copy and expect slow but sometimes playable RTS.",
     "keywords": "age of empires browser, run aoe online, age of empires no install, aoe wine browser, play age of empires online, age of empires 2 browser, aoe webassembly",
     "ogTitle": "Can You Play Age of Empires in a Browser? Wine Compatibility Guide",
@@ -1488,7 +1488,7 @@
   },
   {
     "slug": "minesweeper",
-    "title": "Play Minesweeper in Your Browser — With Your Own Copy (Wine Guide) — ExeBrowser",
+    "title": "Play Minesweeper in Your Browser — With Your Own Copy",
     "description": "Classic Windows Minesweeper (winmine.exe) runs great in a browser tab via Wine + WebAssembly — but you load your own copy. Guide plus free clones.",
     "keywords": "play minesweeper online, classic minesweeper browser, winmine.exe online, windows xp minesweeper browser, minesweeper no download, run minesweeper in browser, classic windows minesweeper",
     "ogTitle": "Play Minesweeper in Your Browser — With Your Own Copy (Wine Guide)",
@@ -1595,7 +1595,7 @@
   {
     "slug": "minesweeper-open",
     "skipGenerate": true,
-    "title": "Minesweeper Unblocked — Play the Classic Windows Game Free — ExeBrowser",
+    "title": "Minesweeper Unblocked — Play the Classic Windows Game Free",
     "description": "Classic Minesweeper with all three board sizes and the chording click experienced players rely on. Free, instant, no download and no account.",
     "keywords": "play minesweeper online, minesweeper free, minesweeper no download, classic windows minesweeper, minesweeper browser game, minesweeper expert, minesweeper unblocked",
     "ogTitle": "Play Minesweeper Online Free — Classic Windows Game, No Download",
@@ -1695,7 +1695,7 @@
   },
   {
     "slug": "freecell",
-    "title": "FreeCell in Your Browser — How to Run Your Own freecell.exe — ExeBrowser",
+    "title": "FreeCell in Your Browser — How to Run Your Own freecell.exe",
     "description": "The classic Windows freecell.exe runs at full speed under Wine + WebAssembly. We can't host Microsoft's file — copy it from a PC you own and load it here.",
     "keywords": "play freecell online, classic windows freecell browser, freecell.exe online, windows xp freecell no download, old freecell in browser, freecell wine webassembly",
     "ogTitle": "FreeCell in Your Browser — How to Run Your Own freecell.exe",
@@ -1840,7 +1840,7 @@
     },
     "slug": "freecell-open",
     "appName": "FreeCell",
-    "title": "FreeCell Unblocked — Play the Classic Card Game Free Online — ExeBrowser",
+    "title": "FreeCell Unblocked — Play the Classic Card Game Free Online",
     "description": "FreeCell with the real supermove rule, so how many cards you can shift depends on your free cells. Free, instant, no account, and it saves your game.",
     "keywords": "play freecell online, freecell free, freecell no download, windows freecell browser, freecell deal number, classic freecell, freecell unblocked",
     "ogTitle": "Play FreeCell Online Free — Classic Windows Card Game",
@@ -1883,7 +1883,7 @@
   },
   {
     "slug": "spider-solitaire",
-    "title": "Spider Solitaire in Your Browser — Load Your Own Copy (Wine Guide) — ExeBrowser",
+    "title": "Spider Solitaire in Your Browser — Load Your Own Copy",
     "description": "The XP-era spider.exe runs at full speed on Wine + WebAssembly — but you supply the copy from your own Windows install; we don't host Microsoft's game files.",
     "keywords": "play spider solitaire online, spider solitaire in browser, windows spider solitaire, run spider.exe browser, classic spider solitaire no download, spider solitaire wine",
     "ogTitle": "Spider Solitaire in Your Browser — Load Your Own Copy (Wine Guide)",
@@ -2028,7 +2028,7 @@
     },
     "slug": "spider-open",
     "appName": "Spider Solitaire",
-    "title": "Spider Solitaire Unblocked — Play Free Online, 1, 2 or 4 Suits — ExeBrowser",
+    "title": "Spider Solitaire Unblocked — Free, 1, 2 or 4 Suits",
     "description": "Spider Solitaire in one, two or four suits. Start at one suit — four is genuinely hard. Free, instant, no download, and it remembers your game.",
     "keywords": "play spider solitaire online, spider solitaire free, spider solitaire no download, spider solitaire 1 suit, spider solitaire 2 suits, windows spider solitaire",
     "ogTitle": "Play Spider Solitaire Online Free — 1, 2 or 4 Suits",
@@ -2071,7 +2071,7 @@
   },
   {
     "slug": "hearts",
-    "title": "Microsoft Hearts in Your Browser — How to Run Your Own Copy — ExeBrowser",
+    "title": "Microsoft Hearts in Your Browser — How to Run Your Own Copy",
     "description": "Copy mshearts.exe from a Windows install you own and the classic Hearts card game runs client-side via Wine + WebAssembly. Single-player works well.",
     "keywords": "microsoft hearts online, play hearts in browser, mshearts.exe online, windows hearts game, classic hearts card game browser, microsoft hearts no download",
     "ogTitle": "Microsoft Hearts in Your Browser — How to Run Your Own Copy",
@@ -2176,7 +2176,7 @@
   },
   {
     "slug": "skifree",
-    "title": "SkiFree Unblocked — Play Free Online, No Download — ExeBrowser",
+    "title": "SkiFree Unblocked — Play Free Online, No Download",
     "description": "The real 1991 SkiFree, running in your browser. No download, no install — and yes, the Yeti is still in it, and you still can't outrun him.",
     "keywords": "play skifree online, skifree in browser, skifree yeti game, skifree no download, skifree windows online, classic skifree browser, chris pirih skifree, skifree unblocked",
     "ogTitle": "Play SkiFree Online — Free, In Your Browser, No Download",
@@ -2353,7 +2353,7 @@
   },
   {
     "slug": "jezzball",
-    "title": "JezzBall in the Browser: What Works and How to Load Your Copy — ExeBrowser",
+    "title": "JezzBall in a Browser: What Works and How to Load It",
     "description": "JezzBall (1992, Microsoft Entertainment Pack) runs in the 16-bit Win 3.x runtime — if you load your own copy. Wine setup guide plus free clones.",
     "keywords": "play jezzball online, jezzball in browser, jezzball no download, jezzball windows, microsoft entertainment pack jezzball, jezzball 16-bit wine, jezzball classic game browser",
     "ogTitle": "JezzBall in the Browser: What Works and How to Load Your Copy",
@@ -2502,7 +2502,7 @@
     },
     "slug": "jezzball-open",
     "appName": "JezzBall",
-    "title": "JezzBall Unblocked — Play the Classic Windows Game Free — ExeBrowser",
+    "title": "JezzBall Unblocked — Play the Classic Windows Game Free",
     "description": "JezzBall from the Windows Entertainment Pack, rebuilt to play in any browser. Free, instant, no download, and it picks up where you left off.",
     "keywords": "play jezzball online, jezzball free, jezzball no download, jezzball browser, microsoft entertainment pack, jezzball windows game, jezzball unblocked",
     "ogTitle": "Play JezzBall Online Free — The Classic Windows Game",
@@ -2541,7 +2541,7 @@
   },
   {
     "slug": "chips-challenge",
-    "title": "Chip's Challenge in the Browser: What Works and How to Load Your Copy — ExeBrowser",
+    "title": "Chip's Challenge in a Browser: What Works, How to Load It",
     "description": "How the 16-bit CHIPS.EXE runs on ExeBrowser's win3x engine — quirky but playable. Bring your own copy (Chip's Challenge 1 is free to keep on Steam).",
     "keywords": "play chips challenge online, chips challenge in browser, chips challenge no download, microsoft entertainment pack chips challenge, chips challenge windows 3.1, classic chips challenge browser, chip mccallahan puzzle game online",
     "ogTitle": "Chip's Challenge in the Browser: What Works and How to Load Your Copy",
@@ -2643,7 +2643,7 @@
   },
   {
     "slug": "rodents-revenge",
-    "title": "How to Run Rodent's Revenge in a Browser (With Your Own Copy) — ExeBrowser",
+    "title": "Run Rodent's Revenge in a Browser (With Your Own Copy)",
     "description": "Rodent's Revenge is a 16-bit Microsoft Entertainment Pack puzzle game. Load your own copy on ExeBrowser's win3x runtime and it runs via Wine + WebAssembly.",
     "keywords": "play rodents revenge online, rodents revenge browser, rodents revenge no download, microsoft entertainment pack online, rodents revenge windows 3.1, run rodents revenge wine, 16-bit windows game browser",
     "ogTitle": "How to Run Rodent's Revenge in a Browser (With Your Own Copy)",
@@ -2748,7 +2748,7 @@
   },
   {
     "slug": "chocolate-doom",
-    "title": "Chocolate Doom in the Browser: What Works and How to Load Your Copy — ExeBrowser",
+    "title": "Chocolate Doom in a Browser: What Works, How to Load It",
     "description": "Guide to loading your own chocolate-doom.exe and shareware DOOM1.WAD in browser Wine + WebAssembly — plus the hosted DOOM95 one-click alternative.",
     "keywords": "play chocolate doom online, chocolate doom in browser, chocolate doom no download, doom source port browser, chocolate doom shareware online, run chocolate doom wine, classic doom browser free",
     "ogTitle": "Chocolate Doom in the Browser: What Works and How to Load Your Copy",
@@ -2845,7 +2845,7 @@
   },
   {
     "slug": "commander-keen",
-    "title": "Commander Keen Unblocked — Play Marooned on Mars Free — ExeBrowser",
+    "title": "Commander Keen Unblocked — Play Marooned on Mars Free",
     "description": "Play Commander Keen: Marooned on Mars in your browser — the complete free shareware Episode 1, instant, no download, via DOSBox + WebAssembly.",
     "keywords": "play commander keen online, commander keen 1 browser, marooned on mars online, commander keen shareware, commander keen no download, commander keen unblocked",
     "ogTitle": "Play Commander Keen 1 Online — Marooned on Mars, Free Shareware",
@@ -3059,7 +3059,7 @@
   },
   {
     "slug": "scorched-earth",
-    "title": "Scorched Earth Unblocked — Play the Shareware Free Online — ExeBrowser",
+    "title": "Scorched Earth Unblocked — Play the Shareware Free Online",
     "description": "Play Scorched Earth in your browser — the 1991 artillery classic, 'the mother of all games'. Shareware, no download, runs via DOSBox + WebAssembly.",
     "keywords": "play scorched earth online, scorched earth dos game, scorched earth browser, artillery game online",
     "ogTitle": "Play Scorched Earth Online — Free Shareware",
@@ -3233,7 +3233,7 @@
   },
   {
     "slug": "jazz-jackrabbit-shareware",
-    "title": "Jazz Jackrabbit in the Browser: OpenJazz Guide (Bring the Shareware) — ExeBrowser",
+    "title": "Jazz Jackrabbit in a Browser: OpenJazz Shareware Guide",
     "description": "The 1994 DOS original won't boot under Win32 Wine — but the GPL OpenJazz engine can play Jazz Jackrabbit's shareware levels in a tab if you load the files.",
     "keywords": "play jazz jackrabbit online, jazz jackrabbit shareware browser, jazz jackrabbit in browser, openjazz online, jazz jackrabbit no download, jazz jackrabbit dos browser, epic megagames jazz jackrabbit",
     "ogTitle": "Jazz Jackrabbit in the Browser: OpenJazz Guide (Bring the Shareware)",
@@ -3331,7 +3331,7 @@
   },
   {
     "slug": "one-must-fall",
-    "title": "Play One Must Fall 2097 Online — Free, No Download — ExeBrowser",
+    "title": "Play One Must Fall 2097 Online — Free, No Download",
     "description": "One Must Fall 2097 is freeware and plays free in your browser here — no download, no DOSBox setup. Epic's 1994 robot fighter, running via DOSBox + WebAssembly.",
     "keywords": "play one must fall 2097 online, omf 2097 browser, one must fall 2097 free, omf 2097 freeware, one must fall 2097 dos browser, openomf, play omf in browser no download",
     "ogTitle": "Play One Must Fall 2097 Online — Free, No Download",
@@ -3422,7 +3422,7 @@
   },
   {
     "slug": "raptor",
-    "title": "Raptor Unblocked — Play Call of the Shadows Free Online — ExeBrowser",
+    "title": "Raptor Unblocked — Play Call of the Shadows Free Online",
     "description": "Play Raptor: Call of the Shadows shareware episode free in your browser — Apogee's 1994 vertical shooter. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play raptor call of the shadows online, raptor dos game, raptor shareware, apogee raptor browser",
     "ogTitle": "Play Raptor: Call of the Shadows Online — Free Shareware Episode",
@@ -3588,7 +3588,7 @@
   },
   {
     "slug": "hexen-heretic-shareware",
-    "title": "Heretic and Hexen Shareware in a Browser — Source Port Setup Guide — ExeBrowser",
+    "title": "Heretic and Hexen Shareware in a Browser — Setup Guide",
     "description": "Run Heretic shareware and the Hexen demo in a browser via a Chocolate source port on Wine + WebAssembly. You supply the port EXE and WAD — setup guide inside.",
     "keywords": "play heretic online, heretic in browser, hexen shareware online, play hexen browser, heretic shareware no download, chocolate heretic browser, hexen demo online, doom engine games browser",
     "ogTitle": "Heretic and Hexen Shareware in a Browser — Source Port Setup Guide",
@@ -3689,7 +3689,7 @@
   },
   {
     "slug": "blake-stone",
-    "title": "Blake Stone Unblocked — Play Aliens of Gold Free Online — ExeBrowser",
+    "title": "Blake Stone Unblocked — Play Aliens of Gold Free Online",
     "description": "Play the free shareware episode of Blake Stone: Aliens of Gold in your browser — instant, no download, runs via DOSBox + WebAssembly. Episode 1 is legally free.",
     "keywords": "play blake stone online, blake stone aliens of gold browser, blake stone shareware, blake stone dosbox online, blake stone no download",
     "ogTitle": "Play Blake Stone: Aliens of Gold Online — Free Shareware Episode",
@@ -3903,7 +3903,7 @@
   },
   {
     "slug": "prince-of-persia",
-    "title": "How to Play Classic Prince of Persia in a Browser (via SDLPoP) — ExeBrowser",
+    "title": "Play Classic Prince of Persia in a Browser (SDLPoP)",
     "description": "The 1990 DOS original won't boot under browser Wine and is still sold by Ubisoft — but SDLPoP, the open-source remake, runs. A bring-your-own-copy guide.",
     "keywords": "play prince of persia online, prince of persia browser, prince of persia 1989 online, prince of persia dos in browser, sdlpop browser, classic prince of persia no download, prince of persia wine",
     "ogTitle": "How to Play Classic Prince of Persia in a Browser (via SDLPoP)",
@@ -4006,7 +4006,7 @@
   },
   {
     "slug": "full-tilt-pinball",
-    "title": "Full Tilt! Pinball in the Browser: What Works With Your Own Copy — ExeBrowser",
+    "title": "Full Tilt! Pinball in a Browser: What Works",
     "description": "Full Tilt! Pinball under browser Wine: the Space Cadet table can run from your retail copy, but the DirectDraw launcher and intro movies are flaky.",
     "keywords": "full tilt pinball online, full tilt pinball browser, full tilt pinball no download, cadet.exe browser, maxis pinball wine, full tilt pinball space cadet, run full tilt pinball webassembly",
     "ogTitle": "Full Tilt! Pinball in the Browser: What Works With Your Own Copy",
@@ -4108,7 +4108,7 @@
   },
   {
     "slug": "extract-archive",
-    "title": "Extract 7Z, ZIP & RAR Online Free — No Upload, No Install — ExeBrowser",
+    "title": "Extract 7Z, ZIP & RAR Online Free — No Upload, No Install",
     "description": "Open a .7z, .zip, .rar or .tar in your browser and pull out the files. Nothing uploads, nothing installs, and it works on a locked-down laptop.",
     "keywords": "extract 7z online, open 7z file, unzip online, extract rar online, open archive browser, 7z extractor no download",
     "ogTitle": "Extract 7Z, ZIP & RAR in your browser",
@@ -4143,7 +4143,7 @@
   },
   {
     "slug": "7-zip",
-    "title": "Run 7-Zip Online in Your Browser — Free, No Install — ExeBrowser",
+    "title": "Run 7-Zip Online in Your Browser — Free, No Install",
     "description": "Open a .zip, .7z or .rar in your browser without installing anything. The real 7-Zip running on Wine, and your files never leave your device.",
     "keywords": "7-zip online, run 7zip in browser, extract 7z online, 7zip no install, open archive browser, 7-zip web, extract rar online, archive extractor browser",
     "ogTitle": "Run 7-Zip Online in Your Browser — Free, No Install",
@@ -4249,7 +4249,7 @@
   },
   {
     "slug": "winrar",
-    "title": "How to Open RAR Files in a Browser Tab with Your Own WinRAR — ExeBrowser",
+    "title": "How to Open RAR Files in a Browser Tab with Your Own WinRAR",
     "description": "Load your own 32-bit WinRAR.exe and extract RAR archives in a browser tab via Wine + WebAssembly — no install, nothing uploaded to a server.",
     "keywords": "winrar online, open rar in browser, extract rar online, run winrar without install, winrar browser, winrar no download, open rar files online",
     "ogTitle": "How to Open RAR Files in a Browser Tab with Your Own WinRAR",
@@ -4345,7 +4345,7 @@
   },
   {
     "slug": "notepad",
-    "title": "Notepad and Classic Win32 Utilities in a Browser — Load Your Own — ExeBrowser",
+    "title": "Notepad and Classic Win32 Utilities in a Browser",
     "description": "Tiny single-purpose Win32 tools are the most reliable apps on Wine + WebAssembly. Load your own editor, hex viewer or notepad.exe — it runs client-side.",
     "keywords": "run notepad in browser, windows utilities online, classic win32 tools browser, text editor online no download, small windows app browser, hex editor browser, run exe utilities online",
     "ogTitle": "Notepad and Classic Win32 Utilities in a Browser — Load Your Own",
@@ -4446,7 +4446,7 @@
   },
   {
     "slug": "keepass",
-    "title": "Run KeePass in Your Browser — 1.x Works, 2.x Doesn't — ExeBrowser",
+    "title": "Run KeePass in Your Browser — 1.x Works, 2.x Doesn't",
     "description": "KeePass 1.x Classic, the free GPL password manager, boots one-click here via Wine + WebAssembly. 2.x won't run — version and vault-safety caveats explained.",
     "keywords": "keepass browser, run keepass online, open source password manager windows, keepass 1.x wine, kdbx in browser, keepass classic, kdb password vault",
     "ogTitle": "Run KeePass in Your Browser — 1.x Works, 2.x Doesn't",
@@ -4543,7 +4543,7 @@
   },
   {
     "slug": "mspaint",
-    "title": "How to Run MS Paint in a Browser Tab (With Your Own Copy) — ExeBrowser",
+    "title": "How to Run MS Paint in a Browser Tab (With Your Own Copy)",
     "description": "Classic MSPAINT.EXE from Windows 95–XP runs well under Wine + WebAssembly — load your own copy and it runs client-side. Plus free paint alternatives.",
     "keywords": "run ms paint online, mspaint browser, classic windows paint, old mspaint exe, paint program no install browser, ms paint web, free paint alternative",
     "ogTitle": "How to Run MS Paint in a Browser Tab (With Your Own Copy)",
@@ -4635,7 +4635,7 @@
   },
   {
     "slug": "winamp",
-    "title": "Winamp in Your Browser: The Classic UI Loads, Audio Is Iffy (Guide) — ExeBrowser",
+    "title": "Winamp in Your Browser: Classic UI Loads, Audio Is Iffy",
     "description": "Load your own classic Winamp (2.x/5.x) and the skinned UI, playlist and EQ run under Wine + WebAssembly. Audio playback is hit-or-miss — here's what to expect.",
     "keywords": "winamp browser, run winamp online, play winamp in browser, classic winamp 2.95, winamp wine webassembly, it really whips the llama, winamp skins online, winamp no download",
     "ogTitle": "Winamp in Your Browser: The Classic UI Loads, Audio Is Iffy (Guide)",
@@ -4728,7 +4728,7 @@
   },
   {
     "slug": "abiword",
-    "title": "How to Run AbiWord in a Browser Tab — With Your Own Install — ExeBrowser",
+    "title": "How to Run AbiWord in a Browser Tab — With Your Own Install",
     "description": "AbiWord, the free open-source word processor, runs reliably on Wine + WebAssembly. Load your installed AbiWord.exe and DLLs to edit .doc, .rtf and .abw files.",
     "keywords": "abiword browser, free word processor online, open source word processor, run abiword wine, edit doc in browser no install, abiword online, word processor no download",
     "ogTitle": "How to Run AbiWord in a Browser Tab — With Your Own Install",
@@ -4826,7 +4826,7 @@
   },
   {
     "slug": "gnumeric",
-    "title": "How to Run Gnumeric in a Browser Tab (With Your Own Copy) — ExeBrowser",
+    "title": "How to Run Gnumeric in a Browser Tab (With Your Own Copy)",
     "description": "Gnumeric, the free GPL spreadsheet, runs well under browser Wine + WebAssembly once you load your own installed copy. Opens XLS, CSV, and ODS client-side.",
     "keywords": "gnumeric browser, free spreadsheet online, open source excel alternative, run gnumeric wine, edit xls in browser, csv editor online, gnumeric webassembly",
     "ogTitle": "How to Run Gnumeric in a Browser Tab (With Your Own Copy)",
@@ -4923,7 +4923,7 @@
   },
   {
     "slug": "sumatra-pdf",
-    "title": "Open a PDF in Your Browser — No Viewer to Install — ExeBrowser",
+    "title": "Open a PDF in Your Browser — No Viewer to Install",
     "description": "Open a PDF in your browser using the real SumatraPDF — no viewer to install, no upload. The file is read locally and never leaves your device.",
     "keywords": "sumatra pdf online, run sumatra pdf in browser, open pdf in browser no viewer, lightweight pdf reader online, sumatra pdf wine, read epub mobi cbz online, portable pdf reader browser",
     "ogTitle": "Run Sumatra PDF in Your Browser — Tiny, Fast, Open-Source PDF Reader",
@@ -5030,7 +5030,7 @@
   },
   {
     "slug": "notepad-plus-plus",
-    "title": "Can You Run Notepad++ in a Browser? An Honest Wine Report — ExeBrowser",
+    "title": "Can You Run Notepad++ in a Browser? An Honest Wine Report",
     "description": "Notepad++ under browser Wine stops at a \"Load langs.xml failed\" dialog and never opens an editor window. Here's what we tried and what to use instead.",
     "keywords": "notepad++ online, run notepad plus plus in browser, notepad++ no download, notepad++ web editor, notepad++ wine, open source code editor browser",
     "ogTitle": "Can You Run Notepad++ in a Browser? An Honest Wine Report",
@@ -5115,7 +5115,7 @@
   },
   {
     "slug": "irfanview",
-    "title": "IrfanView in the Browser: What Works When You Load Your Own Copy — ExeBrowser",
+    "title": "IrfanView in a Browser: What Works With Your Own Copy",
     "description": "Bring your own IrfanView and view, convert, and resize images in a browser tab via Wine + WebAssembly. Core viewing works; plugins and video are iffy.",
     "keywords": "irfanview online, run irfanview in browser, irfanview no download, view images in browser, irfanview wine, image viewer online, batch convert images browser",
     "ogTitle": "IrfanView in the Browser: What Works When You Load Your Own Copy",
@@ -5202,7 +5202,7 @@
   },
   {
     "slug": "putty",
-    "title": "Try PuTTY in Your Browser — The UI Runs, SSH Can't Connect — ExeBrowser",
+    "title": "Try PuTTY in Your Browser — The UI Runs, SSH Can't Connect",
     "description": "Launch the real PuTTY one-click via Wine + WebAssembly. The Win32 UI and config dialog work, but browsers block raw sockets — SSH and telnet can't connect.",
     "keywords": "putty online, putty in browser, run putty no download, putty ssh client browser, putty web, putty wine, free ssh client online, putty.exe browser",
     "ogTitle": "Try PuTTY in Your Browser — The UI Runs, SSH Can't Connect",
@@ -5305,7 +5305,7 @@
   },
   {
     "slug": "filezilla",
-    "title": "Why FileZilla Can't Connect in a Browser — And What to Use Instead — ExeBrowser",
+    "title": "Why FileZilla Can't Connect in a Browser — What to Use",
     "description": "FileZilla can't work in a browser — the Wine + WebAssembly sandbox has no outbound networking, so FTP and SFTP can't connect. Here's why, plus alternatives.",
     "keywords": "filezilla online, filezilla in browser, run filezilla without install, filezilla web ftp client, filezilla wine, browser ftp client, filezilla no download",
     "ogTitle": "Why FileZilla Can't Connect in a Browser — And What to Use Instead",
@@ -5398,7 +5398,7 @@
   },
   {
     "slug": "audacity",
-    "title": "Can You Run Audacity in Your Browser? Only Old 32-bit 2.x Builds — ExeBrowser",
+    "title": "Can You Run Audacity in a Browser? Only Old 32-bit Builds",
     "description": "Modern Audacity is 64-bit only and won't start in browser Wine. Load your own legacy 32-bit 2.x build (up to 2.4.2) for editing; recording is unreliable.",
     "keywords": "audacity browser, run audacity online, audacity wine, audacity webassembly, free audio editor browser, audacity 2.4.2 32-bit, edit audio in browser, audacity no download",
     "ogTitle": "Can You Run Audacity in Your Browser? Only Old 32-bit 2.x Builds",
@@ -5496,7 +5496,7 @@
   },
   {
     "slug": "paint-net",
-    "title": "Why Paint.NET Won't Run in a Browser — And What to Use Instead — ExeBrowser",
+    "title": "Why Paint.NET Won't Run in a Browser — What to Use",
     "description": "Paint.NET needs the .NET Framework, which browser-based Wine 1.7.55 can't provide — so it won't run here. Here's why, plus a layered editor that does work.",
     "keywords": "paint.net browser, run paint.net online, paint.net wine, paint.net webassembly, paint.net linux wine, paint.net alternative browser, mtpaint browser, layered image editor wine",
     "ogTitle": "Why Paint.NET Won't Run in a Browser — And What to Use Instead",
@@ -5589,7 +5589,7 @@
   },
   {
     "slug": "mtpaint",
-    "title": "mtPaint in the Browser: What Works and How to Load Your Copy — ExeBrowser",
+    "title": "mtPaint in the Browser: What Works and How to Load Your Copy",
     "description": "mtPaint, the tiny GPL pixel-art editor, is ideal for browser Wine — load your own copy (32-bit builds work best) and it runs client-side via WebAssembly.",
     "keywords": "mtpaint browser, free pixel art editor online, mtpaint online, open source image editor, run mtpaint wine, pixel art editor no install, indexed palette editor browser",
     "ogTitle": "mtPaint in the Browser: What Works and How to Load Your Copy",
@@ -5687,7 +5687,7 @@
   },
   {
     "slug": "grafx2",
-    "title": "GrafX2 in the Browser: Free Pixel Art Editor, Load Your Own Copy — ExeBrowser",
+    "title": "GrafX2 in a Browser: Free Pixel Art Editor",
     "description": "GrafX2, the GPL 256-color pixel-art editor, runs well under browser Wine + WebAssembly. Grab the free Win32 build, load grafx2.exe here, and draw client-side.",
     "keywords": "grafx2 browser, run grafx2 online, grafx2 no install, 256 color pixel art editor online, deluxe paint alternative browser, open source pixel art tool, grafx2 web, draw pixel art in browser",
     "ogTitle": "GrafX2 in the Browser: Free Pixel Art Editor, Load Your Own Copy",
@@ -5785,7 +5785,7 @@
   },
   {
     "slug": "foobar2000",
-    "title": "foobar2000 in the Browser: UI Loads, Audio Is Unreliable (Wine Guide) — ExeBrowser",
+    "title": "foobar2000 in the Browser: UI Loads, Audio Is Unreliable",
     "description": "Load your own copy of foobar2000 and the classic 32-bit UI renders under Wine + WebAssembly — but music playback is hit-or-miss. The honest breakdown.",
     "keywords": "foobar2000 browser, run foobar2000 online, foobar2000 wine, foobar2000 web player, foobar2000 no download, play music foobar2000 browser, foobar2000 32-bit",
     "ogTitle": "foobar2000 in the Browser: UI Loads, Audio Is Unreliable (Wine Guide)",
@@ -5878,7 +5878,7 @@
   },
   {
     "slug": "vlc-classic",
-    "title": "VLC in a Browser Tab? Why Playback Fails Under Emulated Wine — ExeBrowser",
+    "title": "VLC in a Browser Tab? Why Playback Fails Under Emulated Wine",
     "description": "VLC's UI may open under browser-based Wine, but with no GPU acceleration playback stutters or fails. Why the emulator can't keep up — and what to use instead.",
     "keywords": "vlc in browser, run vlc online, vlc media player wine, vlc webassembly, vlc browser no download, classic vlc 32-bit, vlc emulator browser",
     "ogTitle": "VLC in a Browser Tab? Why Playback Fails Under Emulated Wine",
@@ -5971,7 +5971,7 @@
   },
   {
     "slug": "wordpad",
-    "title": "WordPad in Your Browser: RTF Editing Works — With Your Own Copy — ExeBrowser",
+    "title": "WordPad in Your Browser: RTF Editing Works",
     "description": "Load your own wordpad.exe and basic rich-text editing runs via Wine + WebAssembly — though .doc files open garbled. Includes a free open-source alternative.",
     "keywords": "run wordpad online, wordpad in browser, wordpad online free, wordpad no download, write.exe browser, wordpad wine, rtf editor browser, wordpad alternative online",
     "ogTitle": "WordPad in Your Browser: RTF Editing Works — With Your Own Copy",
@@ -6064,7 +6064,7 @@
   },
   {
     "slug": "calculator",
-    "title": "Classic Windows Calculator in Your Browser — With Your Own calc.exe — ExeBrowser",
+    "title": "Classic Windows Calculator in Your Browser — Your calc.exe",
     "description": "The old Win32 calc.exe is one of the most reliable things to run under browser Wine + WebAssembly. Copy it from a Windows install you own and load it here.",
     "keywords": "windows calculator online, classic calc.exe browser, run calc.exe in browser, win32 calculator wine, windows calculator webassembly, classic windows calculator online, calc exe no download",
     "ogTitle": "Classic Windows Calculator in Your Browser — With Your Own calc.exe",
@@ -6161,7 +6161,7 @@
   },
   {
     "slug": "character-map",
-    "title": "Character Map in Your Browser — Load Your Own charmap.exe (Guide) — ExeBrowser",
+    "title": "Character Map in Your Browser — Load Your charmap.exe",
     "description": "Windows Character Map (charmap.exe) runs under Wine + WebAssembly if you load your own copy — with fewer fonts than real Windows. Guide plus free alternatives.",
     "keywords": "character map browser, run charmap.exe online, windows character map no install, charmap in browser, copy special characters online, unicode character map wine",
     "ogTitle": "Character Map in Your Browser — Load Your Own charmap.exe (Guide)",
@@ -6254,7 +6254,7 @@
   },
   {
     "slug": "keepassxc-classic",
-    "title": "Why KeePassXC Won't Run in a Browser — And the KeePass 1.x That Does — ExeBrowser",
+    "title": "Why KeePassXC Won't Run in a Browser — KeePass 1.x Does",
     "description": "KeePassXC is a 64-bit Qt5 app, so it can't load on ExeBrowser's 32-bit Wine 1.7.55. Here's why — and how KeePass 1.x Classic works in the browser instead.",
     "keywords": "keepassxc browser, run keepassxc online, keepassxc wine, keepassxc 32-bit, keepassxc webassembly, open source password manager browser, keepass classic browser, kdbx in browser",
     "ogTitle": "Why KeePassXC Won't Run in a Browser — And the KeePass 1.x That Does",
@@ -6343,7 +6343,7 @@
   },
   {
     "slug": "dia-diagram",
-    "title": "Can You Run Dia in a Browser? Wine Guide (Free Visio Alternative) — ExeBrowser",
+    "title": "Can You Run Dia in a Browser? Free Visio Alternative",
     "description": "Dia, the GPL flowchart editor, loads under browser Wine when you supply your installed dia.exe and GTK DLLs — expect a slow start from the heavy GTK stack.",
     "keywords": "dia diagram editor browser, free visio alternative online, open source flowchart editor, run dia wine, dia diagram online no install, draw flowchart in browser, uml diagram tool free",
     "ogTitle": "Can You Run Dia in a Browser? Wine Guide (Free Visio Alternative)",
@@ -6440,7 +6440,7 @@
   },
   {
     "slug": "inkscape-classic",
-    "title": "Why Inkscape Won't Run Well in a Browser — And What to Use Instead — ExeBrowser",
+    "title": "Why Inkscape Won't Run Well in a Browser — What to Use",
     "description": "Inkscape's heavy GTK+ and Cairo engine fights browser-based Wine — even classic 0.48–0.92 builds crash. Why the free SVG editor fails here, and what to try.",
     "keywords": "inkscape browser, run inkscape online, inkscape svg editor wine, free vector editor browser, inkscape classic 0.48 0.91 webassembly, open source vector graphics online",
     "ogTitle": "Why Inkscape Won't Run Well in a Browser — And What to Use Instead",
@@ -6541,7 +6541,7 @@
   },
   {
     "slug": "blender-classic",
-    "title": "Why Blender Doesn't Run in a Browser — And What to Do Instead — ExeBrowser",
+    "title": "Why Blender Doesn't Run in a Browser — What to Do",
     "description": "Classic Blender (2.49b) won't work in browser Wine: its OpenGL-drawn UI has no hardware 3D under WebAssembly. Why it fails and what to use instead.",
     "keywords": "run blender in browser, blender online no download, blender wine webassembly, blender 2.49b portable, classic blender browser, blender opengl wine not working, blender free open source",
     "ogTitle": "Why Blender Doesn't Run in a Browser — And What to Do Instead",
@@ -6638,7 +6638,7 @@
   },
   {
     "slug": "skyroads",
-    "title": "SkyRoads Unblocked — Play the Freeware Classic Free Online — ExeBrowser",
+    "title": "SkyRoads Unblocked — Play the Freeware Classic Free Online",
     "description": "Play SkyRoads free in your browser — the 1993 Estonian space-racing puzzle classic, released as freeware. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play skyroads online, skyroads browser, skyroads free, skyroads dos game, bluemoon skyroads",
     "ogTitle": "Play SkyRoads Online — Free Freeware Classic",
@@ -6795,7 +6795,7 @@
   },
   {
     "slug": "jetpack",
-    "title": "Jetpack Unblocked — Play the Full Version Free Online — ExeBrowser",
+    "title": "Jetpack Unblocked — Play the Full Version Free Online",
     "description": "Play Jetpack free in your browser — Adept Software's 1993 puzzle-platformer, released free by its author. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play jetpack online, jetpack dos game, jetpack adept software, jetpack free full version",
     "ogTitle": "Play Jetpack Online — Free Full Version",
@@ -6948,7 +6948,7 @@
   },
   {
     "slug": "god-of-thunder",
-    "title": "God of Thunder Unblocked — Play the Freeware Free Online — ExeBrowser",
+    "title": "God of Thunder Unblocked — Play the Freeware Free Online",
     "description": "Play God of Thunder free in your browser — the 1993 Norse action-adventure, released as freeware. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play god of thunder online, god of thunder dos game, god of thunder freeware, thor dos game",
     "ogTitle": "Play God of Thunder Online — Free Freeware",
@@ -7110,7 +7110,7 @@
   },
   {
     "slug": "one-must-fall-2097",
-    "title": "One Must Fall 2097 Unblocked — Play Free Online, No Download — ExeBrowser",
+    "title": "One Must Fall 2097 Unblocked — Play Free Online, No Download",
     "description": "Play One Must Fall 2097 free in your browser — Epic's 1994 robot fighting classic, released as freeware. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play one must fall 2097 online, omf 2097 browser, one must fall free, omf2097 dos",
     "ogTitle": "Play One Must Fall 2097 Online — Free Freeware",
@@ -7291,7 +7291,7 @@
   },
   {
     "slug": "xargon",
-    "title": "Xargon Unblocked — Play the Freeware Trilogy Free Online — ExeBrowser",
+    "title": "Xargon Unblocked — Play the Freeware Trilogy Free Online",
     "description": "Play Xargon free in your browser — Allen Pilgrim's 1993 platformer, released free by its author. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play xargon online, xargon dos game, xargon freeware, epic megagames xargon",
     "ogTitle": "Play Xargon Online — Free Freeware Trilogy",
@@ -7462,7 +7462,7 @@
   },
   {
     "slug": "bio-menace",
-    "title": "Bio Menace Unblocked — Play Episode One Free Online — ExeBrowser",
+    "title": "Bio Menace Unblocked — Play Episode One Free Online",
     "description": "Play Bio Menace free in your browser — Apogee's 1993 run-and-gun platformer, released as freeware by 3D Realms. No download, runs via DOSBox.",
     "keywords": "play bio menace online, bio menace dos game, bio menace freeware, apogee bio menace",
     "ogTitle": "Play Bio Menace Online — Free Freeware Episode One",
@@ -7633,7 +7633,7 @@
   },
   {
     "slug": "alien-carnage",
-    "title": "Alien Carnage Unblocked — Play the Freeware Free Online — ExeBrowser",
+    "title": "Alien Carnage Unblocked — Play the Freeware Free Online",
     "description": "Play Alien Carnage (Halloween Harry) free in your browser — the 1993 Apogee run-and-gun, released as freeware. No download, runs via DOSBox.",
     "keywords": "play alien carnage online, halloween harry dos, alien carnage freeware, apogee alien carnage",
     "ogTitle": "Play Alien Carnage Online — Free Freeware",
@@ -7794,7 +7794,7 @@
   },
   {
     "slug": "keen4",
-    "title": "Commander Keen 4 Unblocked — Play Secret of the Oracle Free — ExeBrowser",
+    "title": "Commander Keen 4 Unblocked — Play Secret of the Oracle Free",
     "description": "Play Commander Keen 4: Secret of the Oracle free in your browser — the shareware episode of Goodbye Galaxy. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play commander keen 4 online, secret of the oracle browser, keen 4 shareware, goodbye galaxy dos",
     "ogTitle": "Play Commander Keen 4 Online — Secret of the Oracle Shareware",
@@ -7971,7 +7971,7 @@
   {
     "slug": "hearts-open",
     "skipGenerate": true,
-    "title": "Hearts Unblocked — Play Free Online, No Download, No Sign-up — ExeBrowser",
+    "title": "Hearts Unblocked — Play Free Online, No Download, No Sign-up",
     "description": "Hearts against three opponents, with the full passing rotation and shooting the moon actually implemented. Free, instant, no account, no download.",
     "keywords": "play hearts online, hearts card game free, hearts online no download, microsoft hearts alternative, hearts game browser",
     "ogTitle": "Play Hearts Online Free — No Download, No Sign-up",
@@ -8055,7 +8055,7 @@
   },
   {
     "slug": "cosmo",
-    "title": "Cosmo's Cosmic Adventure Unblocked — Play the Shareware Free — ExeBrowser",
+    "title": "Cosmo's Cosmic Adventure Unblocked — Play the Shareware Free",
     "description": "Play Cosmo's Cosmic Adventure free in your browser — Apogee's 1992 platformer, the complete shareware episode. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play cosmo's cosmic adventure online, cosmo cosmic adventure browser, apogee cosmo, cosmo dos game free",
     "ogTitle": "Play Cosmo's Cosmic Adventure Online — Free Shareware Episode",
@@ -8249,7 +8249,7 @@
   },
   {
     "slug": "hocus-pocus",
-    "title": "Hocus Pocus Unblocked — Play the Shareware Episode Free — ExeBrowser",
+    "title": "Hocus Pocus Unblocked — Play the Shareware Episode Free",
     "description": "Play Hocus Pocus free in your browser — Apogee's 1994 wizard platformer, the complete shareware episode. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play hocus pocus online, hocus pocus dos game, hocus pocus apogee, hocus pocus browser free",
     "ogTitle": "Play Hocus Pocus Online — Free Shareware Episode",
@@ -8442,7 +8442,7 @@
   },
   {
     "slug": "crystal-caves",
-    "title": "Crystal Caves Unblocked — Play the Shareware Episode Free — ExeBrowser",
+    "title": "Crystal Caves Unblocked — Play the Shareware Episode Free",
     "description": "Play Crystal Caves free in your browser — Apogee's 1991 platformer, the complete shareware episode. No download, runs via DOSBox + WebAssembly.",
     "keywords": "play crystal caves online, crystal caves dos game, crystal caves apogee, crystal caves browser free",
     "ogTitle": "Play Crystal Caves Online — Free Shareware Episode",
@@ -8621,7 +8621,7 @@
   },
   {
     "slug": "monster-bash",
-    "title": "Monster Bash Unblocked — Play the Shareware Episode Free — ExeBrowser",
+    "title": "Monster Bash Unblocked — Play the Shareware Episode Free",
     "description": "Play Monster Bash free in your browser — Apogee's 1993 monster-hunting platformer. The complete shareware episode, no download, runs via DOSBox.",
     "keywords": "play monster bash online, monster bash dos game, monster bash apogee, johnny dash game",
     "ogTitle": "Play Monster Bash Online — Free Shareware Episode",
@@ -8818,7 +8818,7 @@
     },
     "slug": "rodents-open",
     "appName": "Rodent's Revenge",
-    "title": "Rodent's Revenge Unblocked — Play the Windows Classic Free — ExeBrowser",
+    "title": "Rodent's Revenge Unblocked — Play the Windows Classic Free",
     "description": "Rodent's Revenge, the Windows Entertainment Pack puzzle where you trap the cats. Free, instant, nothing to download, and it saves your progress.",
     "keywords": "play rodents revenge online, rodents revenge free, rodents revenge no download, microsoft entertainment pack, rodents revenge browser, cat and mouse puzzle game",
     "ogTitle": "Play Rodent's Revenge Online Free — Classic Windows Game",
@@ -8889,7 +8889,7 @@
     },
     "slug": "blockdrop-open",
     "appName": "Block Drop",
-    "title": "Block Drop Unblocked — Play the Falling Block Puzzle Free — ExeBrowser",
+    "title": "Block Drop Unblocked — Play the Falling Block Puzzle Free",
     "description": "A falling-block puzzle you can play right now, with hold, ghost piece and the standard rotation. Free, instant, no download and no account.",
     "keywords": "falling block puzzle online, block puzzle game free, block drop game, stacking blocks puzzle browser, free puzzle game no download, block game unblocked",
     "ogTitle": "Play Block Drop Online Free — Falling Block Puzzle",
@@ -8953,7 +8953,7 @@
     },
     "slug": "snake-open",
     "appName": "Snake",
-    "title": "Snake Unblocked — Play the Classic Arcade Game Free Online — ExeBrowser",
+    "title": "Snake Unblocked — Play the Classic Arcade Game Free Online",
     "description": "The classic Snake, rebuilt to run in any browser with keyboard or swipe controls. Free, instant, no download and no account needed.",
     "keywords": "play snake online, snake game free, snake no download, classic snake game, nokia snake browser, snake game unblocked, retro snake",
     "ogTitle": "Play Snake Online Free — Classic Arcade Game",
@@ -9014,7 +9014,7 @@
     },
     "slug": "pipes-open",
     "appName": "Pipe Panic",
-    "title": "Pipe Panic Unblocked — Play the Pipe-Laying Puzzle Free — ExeBrowser",
+    "title": "Pipe Panic Unblocked — Play the Pipe-Laying Puzzle Free",
     "description": "Pipe Panic: lay the pipe before the water reaches it. Follows the original Pipe Mania rules, so the flow ends the level, not your game. Free and instant.",
     "keywords": "pipe laying puzzle online, pipe game free, pipe puzzle browser, water flow puzzle game, plumbing puzzle game, pipe game no download",
     "ogTitle": "Play Pipe Panic Online Free — Pipe-Laying Puzzle",
@@ -9078,7 +9078,7 @@
     },
     "slug": "beneath-a-steel-sky",
     "appName": "Beneath a Steel Sky",
-    "title": "Beneath a Steel Sky Unblocked — Play the Classic Adventure Free — ExeBrowser",
+    "title": "Beneath a Steel Sky Unblocked — Play the Classic Free",
     "description": "Beneath a Steel Sky, the 1994 cyberpunk adventure Revolution released as freeware. The complete game, playing in your browser with nothing to install.",
     "keywords": "play beneath a steel sky online, beneath a steel sky free, scummvm browser, lure of the temptress online, point and click adventure free, dave gibbons game, classic adventure game no download",
     "ogTitle": "Play Beneath a Steel Sky Online Free — Classic Adventure",
@@ -9139,7 +9139,7 @@
     "slug": "lure-of-the-temptress",
     "appName": "Lure of the Temptress",
     "author": "Revolution Software",
-    "title": "Lure of the Temptress Unblocked — Play Revolution’s 1992 Adventure — ExeBrowser",
+    "title": "Lure of the Temptress Unblocked — Play the 1992 Adventure",
     "description": "Revolution's 1992 debut, freed by its own authors. The first game with the Virtual Theatre engine, where the townspeople get on with their own lives.",
     "keywords": "play lure of the temptress online, lure of the temptress free, virtual theatre engine, revolution software freeware, scummvm browser, point and click adventure free, 1992 adventure game",
     "ogTitle": "Play Lure of the Temptress Online Free — Revolution’s 1992 Adventure",
@@ -9214,7 +9214,7 @@
     "slug": "soltys",
     "appName": "Sołtys",
     "author": "Laboratorium Komputerowe Avalon",
-    "title": "Sołtys Unblocked — Play the Polish Comedy Adventure in English — ExeBrowser",
+    "title": "Sołtys Unblocked — Polish Comedy Adventure in English",
     "description": "Sołtys, the 1995 Polish comedy adventure, released as freeware by its authors and playable here in English. Complete game, nothing to download.",
     "keywords": "play soltys online, soltys game free, soltys english, lk avalon soltys, polish adventure game, scummvm browser, point and click adventure free, cge engine",
     "ogTitle": "Play Sołtys Online Free — The Polish Comedy Adventure, in English",
@@ -9289,7 +9289,7 @@
     "slug": "flight-of-the-amazon-queen",
     "appName": "Flight of the Amazon Queen",
     "author": "John Passfield & Steve Stamatiadis",
-    "title": "Flight of the Amazon Queen Unblocked — Play the 1995 Adventure Free — ExeBrowser",
+    "title": "Flight of the Amazon Queen Unblocked — Play Free Online",
     "description": "The 1995 LucasArts-style adventure, released as freeware by its creators. The full game, playing in your browser with nothing to install.",
     "keywords": "play flight of the amazon queen online, flight of the amazon queen free, fotaq browser, scummvm browser, point and click adventure free, 1995 adventure game, john passfield, joe king game",
     "ogTitle": "Play Flight of the Amazon Queen Online Free — 1995 Adventure",
@@ -9368,7 +9368,7 @@
     },
     "slug": "openttd",
     "appName": "OpenTTD",
-    "title": "OpenTTD Unblocked — Play Transport Tycoon Free Online — ExeBrowser",
+    "title": "OpenTTD Unblocked — Play Transport Tycoon Free Online",
     "description": "OpenTTD, the open-source Transport Tycoon Deluxe, in your browser. Free engine and free graphics, so it's the complete game with nothing to download.",
     "keywords": "play openttd online, openttd browser, transport tycoon online free, openttd no download, transport tycoon deluxe browser, open source transport game, tycoon game free",
     "ogTitle": "Play OpenTTD Online Free — Transport Tycoon in Your Browser",
@@ -9414,7 +9414,7 @@
     "appType": "game",
     "appName": "Micropolis",
     "author": "Graeme McCutcheon (micropolisJS), from the Micropolis GPL release",
-    "title": "Micropolis Unblocked — Play Open-Source SimCity Free Online — ExeBrowser",
+    "title": "Micropolis Unblocked — Play Open-Source SimCity Free Online",
     "description": "Micropolis is the city simulator Maxis shipped as SimCity, released under the GPL. A hand-written port, so it loads like a web page and works on a phone.",
     "keywords": "micropolis, city builder online, city simulator browser, open source city building game, play micropolis",
     "ogTitle": "Play Micropolis online — free city builder, no download",
