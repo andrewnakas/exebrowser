@@ -91,6 +91,15 @@
     // reporting their boot_ms from navigation start is the honest number.
     const end = at ?? performance.now();
     track("boot_success", { boot_ms: Math.max(0, Math.round(end - (clickAt ?? t0))) });
+    // The generated pages record the play in the local history right here;
+    // without this these 17 titles never showed in "Continue playing" and
+    // never counted as a return visit unless a native save happened to fire.
+    if (window.SaveCore && typeof window.SaveCore.markPlayed === "function") {
+      try { window.SaveCore.markPlayed(slug, appName, runtime); } catch (_) { /* history is best-effort */ }
+    }
+    if (typeof window.rememberPlayed === "function") {
+      try { window.rememberPlayed(slug, appName); } catch (_) {}
+    }
     startHeartbeat();
   }
 

@@ -279,6 +279,18 @@
     } catch { return null; }
   }
 
+  // Once-per-tab-session guard. sessionStorage can throw (private mode on old
+  // Safari, storage disabled); a thrown guard must never block a save or a play.
+  function sessionFlag(key) {
+    try {
+      if (sessionStorage.getItem(key)) return true;
+      sessionStorage.setItem(key, "1");
+      return false;
+    } catch (_) {
+      return false;
+    }
+  }
+
   // Play history, which is a different fact from "has a save" and used to be
   // conflated with it. This one never claims a save exists.
   function markPlayed(slug, name, runtime) {
@@ -290,9 +302,22 @@
     // A returning player is someone whose history predates today. GA can't see
     // this — it's cookie-scoped and the site has no login — so the local play
     // history stays the only honest signal we have.
+    //
+    // Until 2026-09-01 this only fired when the returning player booted a
+    // title they had never played, so the exact loop the site is built around
+    // (save DOOM, come back, resume DOOM) never counted. Now any boot by
+    // someone with day-old history counts, once per tab session, and the
+    // parameters say whether it was the same game and whether a save existed.
+    const newest = Object.values(games).reduce((m, r) => Math.max(m, r.playedAt || 0), 0);
     const priorDay = Object.values(games).some(r => r.playedAt && now - r.playedAt > 86400000);
-    if (priorDay && !prev.playedAt && typeof window.gtag === "function") {
-      window.gtag("event", "return_play", { app_slug: slug, prior_games: Object.keys(games).length });
+    if (priorDay && !sessionFlag("exe_return_sent") && typeof window.gtag === "function") {
+      window.gtag("event", "return_play", {
+        app_slug: slug,
+        prior_games: Object.keys(games).length,
+        same_game: prev.playedAt ? 1 : 0,
+        has_save: prev.updatedAt ? 1 : 0,
+        days_since: Math.round((now - newest) / 86400000),
+      });
     }
 
     games[slug] = Object.assign({}, prev, {
@@ -581,6 +606,22 @@
   // Off the critical path — nothing on screen waits for this.
   const idle = window.requestIdleCallback || (fn => setTimeout(fn, 1200));
   idle(() => reconcile().catch(() => {}));
+
+  // A returning visitor landing anywhere on the site, whether or not they go
+  // on to play. Paired with return_play this is the retention funnel: how many
+  // come back at all, and how many of those get into a game.
+  try {
+    const games = readIndex();
+    const now = Date.now();
+    const recs = Object.values(games);
+    if (recs.some(r => r.playedAt && now - r.playedAt > 86400000) &&
+        !sessionFlag("exe_return_visit_sent") && typeof window.gtag === "function") {
+      window.gtag("event", "return_visit", {
+        prior_games: recs.length,
+        saved_games: recs.filter(r => r.updatedAt).length,
+      });
+    }
+  } catch (_) { /* analytics never blocks */ }
 
   window.SaveCore = {
     get, hasSave, all, saves, note, markPlayed, drop, usage,

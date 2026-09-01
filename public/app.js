@@ -855,6 +855,10 @@
           thumb: window.SaveCore.thumbFromCanvas(document.getElementById("canvas")),
         });
         track("persist_save", { bytes: total, reason });
+        // Same reasoning as dos-embed.js: the first save landing is the moment
+        // a player learns the site remembers them, so that is where the offer
+        // to keep it one tap away belongs.
+        noteWineReturnRoute();
       } catch (err) {
         log("Could not save your files: " + err.message, "warn");
       } finally {
@@ -1010,6 +1014,27 @@
   }
 
   // ─── orchestrator ──────────────────────────────────────────────────────
+
+  let wineReturnNoted = false;
+  function noteWineReturnRoute() {
+    if (wineReturnNoted) return;
+    wineReturnNoted = true;
+    const host = document.getElementById("dos-save-state") || document.getElementById("save-state");
+    if (!host) return;
+    const note = document.createElement("span");
+    note.className = "muted small save-return-note";
+    note.textContent = " — it will still be here when you come back.";
+    host.appendChild(note);
+    if (window.ExeInstall && window.ExeInstall.available() && !window.ExeInstall.isIOS) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "linklike save-install";
+      b.textContent = "Install for one-tap return";
+      b.addEventListener("click", () => window.ExeInstall.prompt());
+      host.appendChild(document.createTextNode(" "));
+      host.appendChild(b);
+    }
+  }
 
   function track(name, params) {
     if (typeof window.gtag === "function") {

@@ -1145,10 +1145,35 @@
         thumb: window.SaveCore.thumbFromCanvas(canvas),
       });
       track("persist_save", { bytes: total, files: changed.length, reason });
+      noteReturnRoute();
     })()
       .catch(err => log("Save failed: " + err.message))
       .finally(() => { saving = null; });
     return saving;
+  }
+
+  // The one moment a player has proof the site remembers them is the moment
+  // their first save lands. Saying so there — and offering the install right
+  // there — is worth more than any banner shown to someone with nothing saved
+  // yet. Fires once per session, and only for a slug that had no save before.
+  let returnRouteShown = false;
+  function noteReturnRoute() {
+    if (returnRouteShown || !saveState) return;
+    returnRouteShown = true;
+    const note = document.createElement("span");
+    note.className = "muted small save-return-note";
+    note.textContent = " — it will still be here when you come back.";
+    saveState.appendChild(note);
+
+    if (window.ExeInstall && window.ExeInstall.available() && !window.ExeInstall.isIOS) {
+      const a = document.createElement("button");
+      a.type = "button";
+      a.className = "linklike save-install";
+      a.textContent = "Install for one-tap return";
+      a.addEventListener("click", () => window.ExeInstall.prompt());
+      saveState.appendChild(document.createTextNode(" "));
+      saveState.appendChild(a);
+    }
   }
 
   // If save-core.js didn't load (a stale cached page, a hand-written embed),
@@ -1481,7 +1506,10 @@
       ci.events().onStdout(msg => log(msg));
       ci.events().onExit(() => {
         stopHeartbeat();
-        setStatus(cfg.appName + " exited.");
+        // Leaving the game is the moment to say the progress survived it.
+        // Players who don't know a save happened have no reason to return.
+        const kept = window.SaveCore?.hasSave(slug);
+        setStatus(cfg.appName + " exited." + (kept ? " Your progress is saved on this device." : ""));
         overlay.style.display = "flex";
         const b = currentPlayBtn();
         if (b) { b.disabled = false; b.textContent = T("play", "▶ Play {name}", { name: cfg.appName }); }

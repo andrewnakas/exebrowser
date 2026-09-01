@@ -17,6 +17,10 @@
 
   const KEY = "exe_recent";
   const MAX = 8;
+  // Four cards was a phone-sized guess made when almost nobody had saves. A
+  // returning player with six saved games could see only four of them, and the
+  // other two had no route at all until the "all saved games" link below.
+  const MAX_CONTINUE = 8;
 
   const core = () => window.SaveCore;
 
@@ -66,9 +70,13 @@
   }
   window.resumeHref = resumeHref;
 
-  window.rememberPlayed = function rememberPlayed(slug, name) {
+  // `runtime` is optional and deliberately passed through undefined when it is
+  // not known: markPlayed falls back to the runtime already on the record, so
+  // calling this after a runtime-aware markPlayed no longer downgrades every
+  // record to "unknown" the way passing the literal string did.
+  window.rememberPlayed = function rememberPlayed(slug, name, runtime) {
     if (!slug) return;
-    core()?.markPlayed(slug, name, "unknown");
+    core()?.markPlayed(slug, name, runtime);
     try {
       const list = readLegacy().filter(e => e.slug !== slug);
       localStorage.setItem(KEY, JSON.stringify([{ slug, name: name || slug, ts: Date.now() }, ...list].slice(0, MAX)));
@@ -152,7 +160,22 @@
       li.appendChild(window.renderResumeCard(Object.assign({}, entry, { name })));
       grid.appendChild(li);
       added++;
-      if (added >= 4) break;
+      if (added >= MAX_CONTINUE) break;
+    }
+    // A player with more saves than fit needs a route to the rest; without it
+    // the older ones are unreachable from the page they land on.
+    const savedTotal = withSave.length;
+    if (added && savedTotal > added && !wrap.querySelector(".continue-all")) {
+      const more = document.createElement("p");
+      more.className = "continue-all muted small";
+      const a = document.createElement("a");
+      a.href = "/saves/";
+      a.textContent = `All ${savedTotal} saved games \u2192`;
+      a.addEventListener("click", () => {
+        window.gtag?.("event", "saves_all_click", { saved_games: savedTotal });
+      });
+      more.appendChild(a);
+      wrap.appendChild(more);
     }
     if (added) wrap.hidden = false;
   };

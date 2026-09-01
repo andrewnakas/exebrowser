@@ -135,3 +135,16 @@
 # conflicting double header. Functions REPLACE the header authoritatively.
 /apps/space-cadet/*
   Cache-Control: no-cache, must-revalidate
+
+# Service worker and manifest.
+#
+# The worker must never be cached hard: a stale sw.js is a stale offline page
+# and an install that cannot be updated. No other rule matches these paths, so
+# there is no header-merge hazard here (see the note at the top of this file).
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+  Service-Worker-Allowed: /
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600

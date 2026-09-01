@@ -771,8 +771,11 @@ const render = (p, L = EN) => `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=40" />
+<link rel="stylesheet" href="/style.css?v=41" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -816,18 +819,21 @@ ${downloadHtml(p)}
 ${footerHtml(L)}
 
 ${clientStringsHtml(L)}${p.iframeUrl
-  ? `<script src="/save-core.js?v=3"></script>
-<script src="/recent.js?v=4"></script>`
+  ? `<script src="/save-core.js?v=4"></script>
+<script src="/recent.js?v=5"></script>
+    <script src="/pwa.js?v=1"></script>`
   : p.dosRuntime
     ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
-<script src="/save-core.js?v=3"></script>
-<script src="/recent.js?v=4"></script>
-<script src="/dos-embed.js?v=34"></script>`
+<script src="/save-core.js?v=4"></script>
+<script src="/recent.js?v=5"></script>
+    <script src="/pwa.js?v=1"></script>
+<script src="/dos-embed.js?v=35"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/save-core.js?v=3"></script>
-<script src="/recent.js?v=4"></script>
+<script src="/save-core.js?v=4"></script>
+<script src="/recent.js?v=5"></script>
+    <script src="/pwa.js?v=1"></script>
 <script src="/embed.js?v=8"></script>
-<script src="/app.js?v=20"></script>`}
+<script src="/app.js?v=21"></script>`}
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>${NEWSLETTER_ACTION ? '\n<script src="/newsletter.js?v=1"></script>' : ""}
 </body>
 </html>
@@ -973,8 +979,11 @@ const indexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=40" />
+<link rel="stylesheet" href="/style.css?v=41" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1067,8 +1076,9 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=3"></script>
-<script src="/recent.js?v=4"></script>
+<script src="/save-core.js?v=4"></script>
+<script src="/recent.js?v=5"></script>
+    <script src="/pwa.js?v=1"></script>
 <script src="/filter.js?v=2"></script>
 <script>
   window.renderContinue && renderContinue("continue-playing", "continue-grid");
@@ -1108,8 +1118,11 @@ const notFoundHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=40" />
+<link rel="stylesheet" href="/style.css?v=41" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1245,8 +1258,11 @@ function renderCategory(cat) {
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=40" />
+<link rel="stylesheet" href="/style.css?v=41" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1311,8 +1327,9 @@ ${picks}
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=3"></script>
-<script src="/recent.js?v=4"></script>
+<script src="/save-core.js?v=4"></script>
+<script src="/recent.js?v=5"></script>
+    <script src="/pwa.js?v=1"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
 </script>
@@ -1347,8 +1364,11 @@ const catIndexHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=40" />
+<link rel="stylesheet" href="/style.css?v=41" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1416,8 +1436,9 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=3"></script>
-<script src="/recent.js?v=4"></script>
+<script src="/save-core.js?v=4"></script>
+<script src="/recent.js?v=5"></script>
+    <script src="/pwa.js?v=1"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
 </script>
@@ -1474,8 +1495,11 @@ function localisedListing(L, isHome) {
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=40" />
+<link rel="stylesheet" href="/style.css?v=41" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1512,8 +1536,9 @@ ${cards}
 </main>
 
 ${footerHtml(L)}
-<script src="/save-core.js?v=3"></script>
-<script src="/recent.js?v=4"></script>
+<script src="/save-core.js?v=4"></script>
+<script src="/recent.js?v=5"></script>
+    <script src="/pwa.js?v=1"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

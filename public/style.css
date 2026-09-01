@@ -1219,3 +1219,19 @@ body.dos-playing { overflow: hidden; }
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   line-height: 1.5;
 }
+
+/* Install offer. Shares the resume bar's shape on purpose: both are the same
+   kind of thing — a one-line route back to a game you already started. */
+.install-bar { justify-content: flex-start; }
+.install-bar .button.primary { padding: .3rem .8rem; font-size: .9rem; }
+.install-dismiss {
+  background: none; border: 0; padding: .3rem .4rem;
+  color: var(--muted); font: inherit; font-size: .9rem; cursor: pointer;
+  text-decoration: underline;
+}
+.install-dismiss:hover { color: var(--fg); }
+.linklike {
+  background: none; border: 0; padding: 0;
+  color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline;
+}
+.continue-all { margin: .4rem 0 0; }

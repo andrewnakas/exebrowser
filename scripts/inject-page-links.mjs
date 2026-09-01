@@ -65,7 +65,17 @@ const PLAY_TRACKED = new Set([
   "lure-of-the-temptress", "soltys", "flight-of-the-amazon-queen",
   "openttd", "micropolis",
 ]);
-const PLAY_SCRIPT = '<script src="/play-events.js?v=1"></script>';
+const PLAY_SCRIPT = '<script src="/play-events.js?v=2"></script>';
+
+// Installability has to reach every page, not just the generated ones: the
+// browser only offers to install a site from a page that links a manifest, and
+// the hand-maintained pages include most of the best-known titles — exactly
+// the pages a returning player lands on.
+const MANIFEST_LINKS =
+  `<link rel="manifest" href="/manifest.webmanifest" />\n` +
+  `    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />\n` +
+  `    <meta name="theme-color" content="#0e0d0b" />`;
+const PWA_SCRIPT = '<script src="/pwa.js?v=1"></script>';
 
 // Title/description for the playable pages the generator does not own, keyed by
 // slug. Read from the catalogue so these pages cannot drift from it again.
@@ -98,6 +108,8 @@ let ogAdded = 0;
 
 let playAdded = 0;
 let feedAdded = 0;
+let manifestAdded = 0;
+let pwaAdded = 0;
 let feedSkipped = 0;
 let hreflangAdded = 0;
 const missingAnchor = [];
@@ -122,6 +134,18 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     feedAdded++;
   } else {
     missingAnchor.push(label);
+  }
+
+  // ── 1b. Manifest + install script ────────────────────────────────────────
+  // Both are guarded on presence, so a page the generators already stamped is
+  // left alone and running this twice is a no-op.
+  if (!html.includes('rel="manifest"') && html.includes(FAVICON_ANCHOR)) {
+    html = html.replace(FAVICON_ANCHOR, `${FAVICON_ANCHOR}\n    ${MANIFEST_LINKS}`);
+    manifestAdded++;
+  }
+  if (!html.includes("/pwa.js") && html.includes("</body>")) {
+    html = html.replace("</body>", `${PWA_SCRIPT}\n</body>`);
+    pwaAdded++;
   }
 
   // ── 2. hreflang + language switcher on the English homepage ──────────────
@@ -260,6 +284,7 @@ for (const { abs, label } of htmlFiles(ROOT)) {
 
 console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
+  `manifest into ${manifestAdded}, pwa.js into ${pwaAdded}, ` +
   `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
   `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
   `embed offer on ${embedAdded} page(s), og:image onto ${ogAdded} page(s)`
