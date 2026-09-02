@@ -1233,10 +1233,13 @@
       <p class="muted small" style="margin:.35rem 0 0;text-align:center;padding:0 1rem;">${esc(T("cachedNote", "Cached after the first load, so next time is instant."))}</p>`;
   }
 
-  async function play() {
+  // `trigger` is a string when the boot was not a click on this page's Play
+  // button (a Resume link elsewhere, an autoboot host); the click handler
+  // passes an event, which is ignored.
+  async function play(trigger) {
     const btn = currentPlayBtn();
     if (btn) { btn.disabled = true; btn.textContent = T("loading", "Loading…"); }
-    track("play_click");
+    track("play_click", typeof trigger === "string" ? { trigger } : {});
     const t0 = performance.now();
     try {
       setStatus("Loading DOSBox runtime…");
@@ -1583,5 +1586,25 @@
   }
 
   playBtn.addEventListener("click", play);
-  if (cfg.autoboot) play();
+
+  // A Resume card anywhere on the site links here with #resume. That click was
+  // the "get me back in"; making the player find the button and click again
+  // on this page was a second ask for the same thing. Boot straight away, but
+  // only when the save the card promised is actually here — if it has gone,
+  // this is a normal visit. The fragment is dropped first so a reload (which
+  // the snapshot fallback does on its own) is a normal visit too.
+  const resumeRequested = location.hash === "#resume";
+  if (resumeRequested) {
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (_) { /* cosmetic */ }
+  }
+  let autoResume = false;
+  if (resumeRequested && PERSIST_ON) {
+    try { autoResume = !!(window.SaveCore && window.SaveCore.get(slug) && window.SaveCore.get(slug).updatedAt); } catch (_) {}
+  }
+  if (autoResume) {
+    try { host.scrollIntoView({ block: "start" }); } catch (_) { /* older browsers */ }
+    play("resume_link");
+  } else if (cfg.autoboot) {
+    play("autoboot");
+  }
 })();

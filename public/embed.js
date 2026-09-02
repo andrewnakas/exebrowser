@@ -232,11 +232,13 @@
     return "Something went wrong starting this app.";
   }
 
-  async function play() {
+  async function play(trigger) {
     playBtn.disabled = true;
     if (hosted) playBtn.textContent = "Booting…";
     showStatus();
-    track("play_click", { hosted: hosted ? 1 : 0 });
+    const params = { hosted: hosted ? 1 : 0 };
+    if (typeof trigger === "string") params.trigger = trigger;
+    track("play_click", params);
     try {
       const EB = await waitForEngine();
       const chosen = cfg.variantPicker
@@ -274,7 +276,24 @@
   }
 
   playBtn.addEventListener("click", play);
-  if (cfg.autoboot) play();
+
+  // Same contract as dos-embed.js: a Resume link elsewhere on the site ends in
+  // #resume, and that click already asked to play. Boot at once when the save
+  // it promised is here; otherwise treat this as an ordinary visit.
+  const resumeRequested = location.hash === "#resume";
+  if (resumeRequested) {
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (_) { /* cosmetic */ }
+  }
+  let autoResume = false;
+  if (resumeRequested && hosted) {
+    try { const r = window.SaveCore && window.SaveCore.get(slug); autoResume = !!(r && r.updatedAt); } catch (_) {}
+  }
+  if (autoResume) {
+    try { host.scrollIntoView({ block: "start" }); } catch (_) { /* older browsers */ }
+    play("resume_link");
+  } else if (cfg.autoboot) {
+    play("autoboot");
+  }
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => (

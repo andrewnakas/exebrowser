@@ -70,6 +70,15 @@
   }
   window.resumeHref = resumeHref;
 
+  // Where a *Resume* link points: the same page, plus a fragment the game
+  // page reads as "boot straight in". The click on the card is already the
+  // decision to play; the game page used to ask for it a second time with its
+  // own Play button, and a return loop is only as strong as its weakest step.
+  // Only saves get it — a "Play again" card promises nothing to resume.
+  function resumeLink(entry) {
+    return resumeHref(entry) + (entry && entry.updatedAt ? "#resume" : "");
+  }
+
   // `runtime` is optional and deliberately passed through undefined when it is
   // not known: markPlayed falls back to the runtime already on the record, so
   // calling this after a runtime-aware markPlayed no longer downgrades every
@@ -94,7 +103,7 @@
     const o = opts || {};
     const card = document.createElement("a");
     card.className = "poster-card resume-card";
-    card.href = resumeHref(entry);
+    card.href = resumeLink(entry);
 
     const img = document.createElement("img");
     img.className = "pc-shot";
@@ -193,7 +202,7 @@
     if (location.pathname === href) return;
 
     const link = document.createElement("a");
-    link.href = href;
+    link.href = resumeLink(last);
     link.className = "resume-link resume-bar-link";
 
     const img = document.createElement("img");
