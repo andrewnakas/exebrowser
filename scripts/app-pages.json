@@ -537,7 +537,7 @@
   },
   {
     "slug": "doom",
-    "title": "DOOM Unblocked — Play the Real DOS Game Free, Saves Progress",
+    "title": "Play DOOM (1993) Free Online — Unblocked, No Download",
     "description": "The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up.",
     "keywords": "play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online, doom unblocked",
     "ogTitle": "Play DOOM Online — Free, In Your Browser, No Download",
@@ -2071,7 +2071,7 @@
   },
   {
     "slug": "hearts",
-    "title": "Microsoft Hearts in Your Browser — How to Run Your Own Copy",
+    "title": "MSHEARTS.EXE in Your Browser — Run Your Own Copy",
     "description": "Copy mshearts.exe from a Windows install you own and the classic Hearts card game runs client-side via Wine + WebAssembly. Single-player works well.",
     "keywords": "microsoft hearts online, play hearts in browser, mshearts.exe online, windows hearts game, classic hearts card game browser, microsoft hearts no download",
     "ogTitle": "Microsoft Hearts in Your Browser — How to Run Your Own Copy",

@@ -13,3 +13,6 @@ assets-too-big-for-pages/
 public/64/*.wasm
 public/64/*.zip
 public/64/*.part*
+
+# build output of scripts/build-distribution.mjs
+dist/
