@@ -101,9 +101,13 @@ const OWN_WORK = /ExeBrowser \(original implementation\)/i;
 const EMBEDDABLE = new Map(
   CATALOGUE.filter((p) => OWN_WORK.test(p.author || "") && p.appUrl).map((p) => [p.slug, p])
 );
+// Every catalogue entry by slug, so the pointer below can name the game the
+// visitor is actually looking at rather than talking about "this game".
+const APP_NAMES = new Map(CATALOGUE.map((p) => [p.slug, p.appName]));
 let unblockedAdded = 0;
 let embedFooterAdded = 0;
 let embedAdded = 0;
+let embedPointerAdded = 0;
 let ogAdded = 0;
 
 let playAdded = 0;
@@ -257,6 +261,50 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     }
   }
 
+  // ── 5b. EMBED POINTER on the games that are NOT ours to hand on ─────────
+  // The embed offer is the one acquisition mechanism whose arithmetic reaches
+  // the traffic goal, and it was only ever shown on the eleven pages we are
+  // licensed to offer. Those eleven earn about 120 of the site's 47,900 monthly
+  // Bing impressions — 0.25%. /run/doom/ alone earns 37,600 and had no mention
+  // of the offer anywhere above the footer. `embed_copy` firing twice a week
+  // was never a demand signal; 99.75% of the audience was never shown the offer.
+  //
+  // So the high-traffic pages get a pointer, not an offer: they say plainly
+  // that THIS game is not ours to give away, and send the visitor to the ones
+  // that are. The distinction matters — implying DOOM is embeddable would be
+  // handing out a right we do not have.
+  const notLocalised = !/^(es|pt-BR|de|ja|fr|zh-CN)\//.test(label);
+  // The homepage, the loader and the guide as well as the game pages. The
+  // loader's audience is the most webmaster-shaped traffic the site has —
+  // someone running their own .exe in a browser tab is disproportionately
+  // likely to run a site — and the homepage's last section is the open-source
+  // licensing list, which is the right neighbour for a giveaway offer.
+  const EXTRA_POINTER_PAGES = new Set(["index.html", "load-exe/index.html", "guide/index.html"]);
+  const onGamePage = label.startsWith("run/") && !EMBEDDABLE.has(slug) && APP_NAMES.has(slug);
+  const onExtraPage = EXTRA_POINTER_PAGES.has(label);
+  if ((onGamePage || onExtraPage) && notLocalised
+      && !html.includes('id="embed-pointer"') && html.includes("</main>")) {
+    // On a game page, name the game and say why it is not on offer; elsewhere
+    // there is no specific title to disclaim, so lead with the offer itself.
+    const lead = onGamePage
+      ? `<h2>Want a game like this on your own site?</h2>
+    <p>${esc(APP_NAMES.get(slug))} isn't ours to give away — we host it, we didn't write
+    it. But eleven of the games here we did write from scratch, and those are free for
+    anyone to put on their own page:`
+      : `<h2>Put one of these games on your own site</h2>
+    <p>Eleven of the games here were written from scratch for this site, which makes them
+    ours to give away — and we do. Free for anyone to put on their own page:`;
+    const pointer = `
+  <section class="card" id="embed-pointer">
+    ${lead} one line of HTML, no account, no permission, no attribution
+    beyond a credit line.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">See the games you can embed</a></p>
+  </section>
+  <script src="/embed-pointer.js?v=1"></script>`;
+    html = html.replace("</main>", pointer + "\n</main>");
+    embedPointerAdded++;
+  }
+
   // ── 6. OG:IMAGE FALLBACK ────────────────────────────────────────────────
   // Three hand-maintained pages (the ScummVM adventures) shipped with no
   // og:image at all, so every share of them rendered a blank card. The
@@ -287,7 +335,7 @@ console.log(
   `manifest into ${manifestAdded}, pwa.js into ${pwaAdded}, ` +
   `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
   `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
-  `embed offer on ${embedAdded} page(s), og:image onto ${ogAdded} page(s)`
+  `embed offer on ${embedAdded} page(s), embed pointer on ${embedPointerAdded} page(s), og:image onto ${ogAdded} page(s)`
 );
 if (missingAnchor.length) {
   // Not fatal — a page without the favicon line is almost certainly not a real
