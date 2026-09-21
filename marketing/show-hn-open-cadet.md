@@ -10,10 +10,16 @@ Playable: <https://exebrowser.com/run/space-cadet-open/>
 
 ## Why this is the link lever
 
-exebrowser.com has **2 referring domains**. That is the root cause of the 43
-pages Google lists as "Discovered — currently not indexed": crawl budget follows
-authority, and there is none to follow. Ranking work downstream of that is
-capped no matter how good the titles are.
+exebrowser.com has **4 referring domains** (2 when this was written; cloudspress,
+itechfaqs, itechguides, decompgames as of 2026-09-21). Bing Webmaster's own top
+recommendation for the site is now "your site does not have enough inbound links
+from high quality domains". That is the root cause of the 43 pages Google lists
+as "Discovered — currently not indexed": crawl budget follows authority, and
+there is barely any to follow. Ranking work downstream of that is capped no
+matter how good the titles are — and the 2026-09-21 read confirmed it from the
+other side: the DOOM title test won outright (weekday Bing clicks 113 → 144/day)
+and the impression ceiling still only moved to ~1,800 users/day at a physically
+impossible 100% CTR. On-page work is done. This is the constraint.
 
 Open Cadet is the strongest link asset the project has, because the story is
 genuinely novel rather than promotional: it is (as far as we know) the first
@@ -83,9 +89,11 @@ get substantive replies rather than a silent upvote-or-nothing.
 
 ## Timing
 
-Post **Tuesday 2026-09-08, 08:30 ET**. Tue–Thu mornings US Eastern is the window
-where /newest turnover is slow enough for a Show HN to be seen. Do not post
-Friday–Sunday.
+Post **Tuesday 2026-09-22, 08:30 ET**. (Re-dated 2026-09-21: the 09-08 slot
+passed unposted. Nothing in the draft has gone stale — repo, NOTICE.md, the
+playable build and the README's link to it were all re-verified live on 09-21.)
+Tue–Thu mornings US Eastern is the window where /newest turnover is slow enough
+for a Show HN to be seen. Do not post Friday–Sunday.
 
 Be at a keyboard for the two hours after. On HN the author answering questions
 in the first hour is most of the difference between a post that lands and one

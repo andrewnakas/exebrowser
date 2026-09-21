@@ -286,7 +286,17 @@ for (const { abs, label } of htmlFiles(ROOT)) {
       && !html.includes('id="embed-pointer"') && html.includes("</main>")) {
     // On a game page, name the game and say why it is not on offer; elsewhere
     // there is no specific title to disclaim, so lead with the offer itself.
-    const lead = onGamePage
+    // "We didn't write it" is true of DOOM and almost everything else here, and
+    // it is the line that makes the pointer land. It is NOT true of the two
+    // pinball builds: Dragon's Keep is our own CC0 artwork and Space Cadet runs
+    // on Open Cadet's CC0 replacement data, both on k4zmu2a's MIT engine. Those
+    // pages say "CC0 artwork" in their own copy, so the disclaimer would
+    // contradict the page it sits on. They get the neutral lead instead — it
+    // claims nothing about the current game and is true everywhere.
+    const ours = /ExeBrowser original|CC0|open source port/i.test(
+      (CATALOGUE.find((c) => c.slug === slug) || {}).author || ""
+    );
+    const lead = onGamePage && !ours
       ? `<h2>Want a game like this on your own site?</h2>
     <p>${esc(APP_NAMES.get(slug))} isn't ours to give away — we host it, we didn't write
     it. But eleven of the games here we did write from scratch, and those are free for
