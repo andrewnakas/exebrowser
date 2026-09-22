@@ -28,17 +28,20 @@
 
 import { writeFileSync, mkdirSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { resolve } from "node:path";
-import { SITE, esc, jsonText, screenshotFile } from "./catalogue.mjs";
+import { SITE, esc, jsonText, screenshotFile, embedTier, isEmbeddable } from "./catalogue.mjs";
 
 const ROOT = resolve(process.cwd(), "public");
 const pages = JSON.parse(readFileSync(resolve(process.cwd(), "scripts", "app-pages.json"), "utf8"));
 
-// Same rule the injector uses: only games written here are ours to hand on.
-// Everything else is hosted under someone else's licence and offering it for
-// embedding would be handing out a right we don't have.
-const OWN_WORK = /ExeBrowser \(original implementation\)/i;
+// Same rule the injector and the wrapper generator use, kept in catalogue.mjs
+// so the three cannot drift. Everything else is hosted under someone else's
+// licence and offering it for embedding would be handing out a right we don't
+// have. `embedTier` separates the games written from scratch here from Space
+// Cadet, which is our CC0 data on an MIT engine — both free to hand on, but
+// only one of them can be described as written from scratch, and only one of
+// them is measured in kilobytes.
 const games = pages
-  .filter((p) => OWN_WORK.test(p.author || "") && p.appUrl)
+  .filter(isEmbeddable)
   .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
 
 // Payload size per game, measured rather than claimed — it's the number a
@@ -53,8 +56,15 @@ function kb(p) {
   } catch { return null; }
   return Math.round(total / 1024);
 }
-const sized = games.map((p) => ({ p, kb: kb(p) }));
-const biggest = Math.max(...sized.map((s) => s.kb || 0));
+const sized = games.map((p) => ({ p, kb: kb(p), tier: embedTier(p) }));
+// The size claims on this page describe the hand-written games, so `biggest`
+// must be measured across THOSE only. Space Cadet is a WebAssembly build of a
+// real pinball engine and is ~6 MB; folding it into this number would turn the
+// page's central promise ("less than a single photograph") into a false one.
+const biggest = Math.max(...sized.filter((s) => s.tier === "own").map((s) => s.kb || 0));
+const heavy = sized.filter((s) => s.tier !== "own");
+const sizeLabel = (kb) =>
+  !kb ? "▶ Play free" : kb < 1024 ? `${kb} KB` : `${(kb / 1024).toFixed(1)} MB`;
 
 const snippet = (slug, name) =>
   `<iframe src="${SITE}/embed/${slug}/" width="100%" height="600"\n` +
@@ -70,7 +80,7 @@ const rows = sized
     return `      <li class="embed-item">
         <a class="poster-card" href="/run/${p.slug}/">
           ${art}
-          <span class="pc-body"><span class="pc-title">${esc(p.appName)}</span><span class="pc-play">${kb ? `${kb} KB` : "▶ Play free"}</span></span>
+          <span class="pc-body"><span class="pc-title">${esc(p.appName)}</span><span class="pc-play">${sizeLabel(kb)}</span></span>
         </a>
         <details>
           <summary>Embed code for ${esc(p.appName)}</summary>
@@ -83,13 +93,13 @@ const rows = sized
 
 const faq = [
   { q: "Can I really put these on my own site for free?",
-    a: `Yes, for these ${games.length}. They were written from scratch here rather than emulated, so they are ours to hand on, and you need no permission and no key. Keeping the credit line under the frame is the only thing we ask.` },
-  { q: "Why aren't DOOM and the other classics on this list?",
-    a: "Because they aren't ours to give. We host them under shareware and freeware licences that let us run them on this site, which is not the same as a right to sub-license them to anybody else. Offering them for embedding would be handing out permission we don't have." },
+    a: `Yes, for these ${games.length}. ${games.length - heavy.length} were written from scratch here rather than emulated, and Space Cadet is an MIT-licensed engine running public-domain data we created, so all of them are ours to hand on. You need no permission and no key. Keeping the credit line under the frame is the only thing we ask.` },
+  { q: "Why aren't DOOM, SkiFree and the rest of the catalogue on this list?",
+    a: "Because they aren't ours to give. We host them under shareware and freeware licences that let us run them on this site, which is not the same as a right to sub-license them to anybody else. Offering them for embedding would be handing out permission we don't have. Space Cadet is on the list precisely because that problem was solved rather than ignored: the engine is MIT and the data files were rebuilt from scratch and dedicated to the public domain, so no Microsoft files are involved." },
   { q: "Will this slow my page down?",
-    a: `Very little. The iframe loads lazily, so nothing is fetched until a visitor scrolls it into view, and every game here is small — the largest is ${biggest} KB, which is less than one photograph. There is no framework and no third-party player.` },
+    a: `Not if it is below the fold. Every frame is lazy-loaded, so nothing is fetched until a visitor scrolls it into view. The ${games.length - heavy.length} hand-written games are tiny — the largest is ${biggest} KB, less than one photograph — with no framework and no third-party player. Space Cadet is the one to think about: it is a WebAssembly pinball engine at roughly ${(heavy[0] ? heavy[0].kb / 1024 : 0).toFixed(1)} MB, which is fine lazily below the fold and is not what you want at the top of a landing page.` },
   { q: "Does it work on mobile?",
-    a: "Yes. Every game has touch controls and the frame is responsive, so it fills whatever width you give it up to 760px. Set your own width and height on the iframe if that suits your layout better." },
+    a: "The hand-written games all have touch controls and the frame is responsive, so it fills whatever width you give it up to 760px. Space Cadet is a keyboard game by design — it plays best on a desktop, and on a phone it will load and render but the flippers want a keyboard. Set your own width and height on the iframe if that suits your layout better." },
   { q: "Do you track my visitors?",
     a: "The embedded frame carries no analytics, no advertising and no cookies. It is the game and nothing else. We can't see who plays it on your site and we don't want to." },
   { q: "Will the game break if you change something?",
@@ -124,7 +134,7 @@ ${games.map((p, i) => `    { "@type": "ListItem", "position": ${i + 1}, "name": 
 </script>`;
 
 const title = `Free Games You Can Embed on Your Website — No Key, No Ads — ExeBrowser`;
-const desc = `${games.length} classic games — Solitaire, Minesweeper, Snake, JezzBall and more — free to embed on any site. One iframe, no API key, no ads, no tracking. Each under ${biggest} KB.`;
+const desc = `${games.length} classic games — 3D Pinball Space Cadet, Solitaire, Minesweeper, Snake, JezzBall and more — free to embed on any site. One iframe, no API key, no ads, no tracking.`;
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -191,8 +201,9 @@ ${faqLd}
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Embed our games</nav>
   <section class="card">
     <h2>Free games you can put on your own site</h2>
-    <p>These ${games.length} games were written from scratch for this site rather than emulated, which means they are ours to give away — and we do. Copy one <code>&lt;iframe&gt;</code>, paste it into your page, done. <strong>No API key, no sign-up, no advertising, no tracking, no fee.</strong></p>
-    <p>They are small enough not to matter: the largest is <strong>${biggest} KB</strong>, less than a single photograph, and the frame loads lazily so nothing is fetched until somebody scrolls to it. There is no framework underneath and no third-party player phoning home.</p>
+    <p>These ${games.length} games are ours to give away, and we do. Copy one <code>&lt;iframe&gt;</code>, paste it into your page, done. <strong>No API key, no sign-up, no advertising, no tracking, no fee.</strong></p>
+    <p>${games.length - heavy.length} of them were written from scratch for this site rather than emulated, and they are small enough not to matter: the largest is <strong>${biggest} KB</strong>, less than a single photograph. There is no framework underneath and no third-party player phoning home.</p>
+    <p><strong>3D Pinball Space Cadet is the exception, and worth stating plainly.</strong> It is a WebAssembly build of <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">k4zmu2a's MIT-licensed engine</a> running <a href="https://github.com/andrewnakas/open-cadet" target="_blank" rel="noopener">replacement game data we wrote and dedicated to the public domain</a>, so it needs no Microsoft files and is free to hand on — but it is a real pinball engine and the frame is about <strong>${(heavy[0] ? heavy[0].kb / 1024 : 0).toFixed(1)} MB</strong>, not kilobytes. Every frame on this page is <code>loading="lazy"</code>, so nothing is fetched until a visitor actually scrolls to it; budget for it anyway if you are putting it above the fold.</p>
     <p class="muted small">The only condition is the credit line that comes with the snippet. Leave it in place and you are square with us.</p>
 
     <h3>Pick one</h3>
@@ -204,7 +215,7 @@ ${rows}
   <section class="card">
     <h2>What the snippet does</h2>
     <p>Each block above is complete and self-contained — an iframe pointing at a dedicated wrapper page, plus the credit paragraph. The wrapper is deliberately bare: no navigation, no header, no advertising, just the game filling the frame.</p>
-    <p>Adjust <code>width</code> and <code>height</code> to suit your layout. The default is full width up to 760px and 600px tall, which suits most article columns; the games are responsive and will fill whatever you give them. <code>loading="lazy"</code> is in there on purpose and worth keeping.</p>
+    <p>Adjust <code>width</code> and <code>height</code> to suit your layout. The default is full width up to 760px and 600px tall, which suits most article columns. The hand-written games are responsive and will fill whatever you give them; Space Cadet renders its table at a fixed aspect and letterboxes into the space, so give it height if you want it large. <code>loading="lazy"</code> is in there on purpose and worth keeping.</p>
     <p>Want to see one in isolation first? Every entry above links to its bare frame, which is exactly what your visitors will get.</p>
   </section>
 

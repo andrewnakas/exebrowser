@@ -17,22 +17,27 @@
 // page itself carries a corner link home for the sites that strip the caption.
 //
 // ── The licensing boundary, which is not negotiable ────────────────────────
-// ONLY games written from scratch for this site are embeddable. Offering a DOOM
-// or Commander Keen embed would be purporting to grant third parties the right
-// to redistribute id Software's and Apogee's shareware — a right we do not hold
-// and cannot sub-license. The filter below is on authorship, not on convenience.
+// Only what we hold the rights to hand on is embeddable — see `embedTier` in
+// catalogue.mjs. That is the eleven games written from scratch here, plus Space
+// Cadet, which is our own CC0 art and audio on k4zmu2a's MIT-licensed engine.
+// Offering a DOOM or Commander Keen embed would be purporting to grant third
+// parties the right to redistribute id Software's and Apogee's shareware — a
+// right we do not hold and cannot sub-license. The filter is on rights, not on
+// convenience.
 
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { SITE, esc } from "./catalogue.mjs";
+import { SITE, esc, embedTier, isEmbeddable } from "./catalogue.mjs";
 
 const ROOT = resolve(process.cwd(), "public");
 const pages = JSON.parse(readFileSync(resolve(process.cwd(), "scripts", "app-pages.json"), "utf8"));
 
 // Authorship is the test. `fullyFree` is not — plenty of third-party titles are
-// free to play here without being ours to hand onward.
-const OWN = /ExeBrowser \(original implementation\)/i;
-const embeddable = pages.filter((p) => OWN.test(p.author || "") && p.appUrl);
+// free to play here without being ours to hand onward. The rule lives in
+// catalogue.mjs so the hub, the game pages and this file cannot drift apart,
+// and it distinguishes games written from scratch here from our CC0 data on
+// k4zmu2a's MIT engine — both free to hand on, but not the same claim.
+const embeddable = pages.filter(isEmbeddable);
 
 const embedHtml = (p) => `<!DOCTYPE html>
 <html lang="en">
@@ -40,7 +45,7 @@ const embedHtml = (p) => `<!DOCTYPE html>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${esc(p.appName)} — free to embed — ExeBrowser</title>
-<meta name="description" content="${esc(p.appName)}, free to embed on any site. Written from scratch and hosted by ExeBrowser." />
+<meta name="description" content="${esc(p.appName)}, free to embed on any site. ${embedTier(p) === "own" ? "Written from scratch and hosted by ExeBrowser." : "Open-source engine and public-domain data, hosted by ExeBrowser."}" />
 <!-- Embedded copies must not compete with the canonical game page in search. -->
 <link rel="canonical" href="${SITE}/run/${p.slug}/" />
 <meta name="robots" content="noindex, follow" />
@@ -88,7 +93,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     writeFileSync(resolve(dir, "index.html"), embedHtml(p), "utf8");
     console.log(`wrote /embed/${p.slug}/`);
   }
-  console.log(`\n${embeddable.length} embeddable games (original work only).`);
+  console.log(`\n${embeddable.length} embeddable games (games we hold the rights to hand on).`);
 }
 
 export { embeddable };

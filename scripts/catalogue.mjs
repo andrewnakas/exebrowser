@@ -182,3 +182,30 @@ ${els}
 }
 </script>`;
 }
+
+// ── Who is embeddable, and on what basis ───────────────────────────────────
+// Two different licensing situations, deliberately kept apart rather than
+// merged into one regex, because the copy on /embed/ has to state which is
+// which and a single flag would let them blur.
+//
+//   own     — written from scratch here. Ours outright, 14–48 KB of plain JS.
+//   cc0Data — our own CC0 art and audio running on k4zmu2a's MIT-licensed
+//             SpaceCadetPinball engine, compiled to WebAssembly. Free to hand
+//             on (MIT permits it and the data is public domain), but it is NOT
+//             "written from scratch here" and it is megabytes, not kilobytes.
+//             Saying otherwise on the hub would be a false claim.
+const OWN_WORK_AUTHOR = /ExeBrowser \(original implementation\)/i;
+
+// An explicit allowlist rather than a pattern. Dragon's Keep matches every
+// description of this tier and is deliberately NOT here: as of 2026-09-21 its
+// Emscripten build aborts on load with "'FS' was not exported", so it is not
+// playable and cannot be offered to anyone else. Add it once that is fixed.
+const CC0_ON_OSS_ENGINE = new Set(["space-cadet-open"]);
+
+export const embedTier = (p) => {
+  if (!p || !p.appUrl) return null;
+  if (OWN_WORK_AUTHOR.test(p.author || "")) return "own";
+  if (CC0_ON_OSS_ENGINE.has(p.slug)) return "cc0Data";
+  return null;
+};
+export const isEmbeddable = (p) => embedTier(p) !== null;

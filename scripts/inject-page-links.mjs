@@ -20,6 +20,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { hreflangHtml, langSwitcherHtml, LOCALES } from "./i18n/locales.mjs";
+import { embedTier, isEmbeddable } from "./catalogue.mjs";
 
 const ROOT = resolve(process.cwd(), "public");
 
@@ -96,11 +97,10 @@ const esc = (v) =>
   String(v).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const metaSynced = new Set();
 
-// Games written from scratch here, and therefore ours to let other people host.
-const OWN_WORK = /ExeBrowser \(original implementation\)/i;
-const EMBEDDABLE = new Map(
-  CATALOGUE.filter((p) => OWN_WORK.test(p.author || "") && p.appUrl).map((p) => [p.slug, p])
-);
+// What we hold the rights to let other people host. The rule lives in
+// catalogue.mjs so this file, gen-embeds.mjs and gen-embed-hub.mjs cannot drift
+// apart on a licensing question.
+const EMBEDDABLE = new Map(CATALOGUE.filter(isEmbeddable).map((p) => [p.slug, p]));
 // Every catalogue entry by slug, so the pointer below can name the game the
 // visitor is actually looking at rather than talking about "this game".
 const APP_NAMES = new Map(CATALOGUE.map((p) => [p.slug, p.appName]));
@@ -243,11 +243,23 @@ for (const { abs, label } of htmlFiles(ROOT)) {
   // that boundary is a licensing one, not a preference.
   if (EMBEDDABLE.has(slug) && !html.includes('id="embed-offer"')) {
     const p = EMBEDDABLE.get(slug);
+    // Two different reasons a game can be on offer, and the copy has to say
+    // which. "Written from scratch, not emulated" is true of the eleven and
+    // false of Space Cadet, whose engine is k4zmu2a's.
+    const why = embedTier(p) === "own"
+      ? `This one is ours — written from scratch, not emulated — so you are welcome to
+    embed it anywhere, free, with no permission needed.`
+      : `This one you can embed because the Microsoft problem was solved rather than
+    ignored: the engine is <a href="https://github.com/k4zmu2a/SpaceCadetPinball"
+    target="_blank" rel="noopener">MIT-licensed</a> and the game data was rebuilt from
+    scratch here and <a href="https://github.com/andrewnakas/open-cadet" target="_blank"
+    rel="noopener">dedicated to the public domain</a>, so no Windows files are involved
+    and no permission is needed. It is a full WebAssembly pinball engine, so the frame
+    is a few megabytes — keep it lazy-loaded and below the fold.`;
     const offer = `
   <section class="card" id="embed-offer" data-slug="${slug}" data-name="${esc(p.appName)}">
     <h2>Put ${esc(p.appName)} on your own site</h2>
-    <p>This one is ours — written from scratch, not emulated — so you are welcome to
-    embed it anywhere, free, with no permission needed. Paste this where you want it:</p>
+    <p>${why} Paste this where you want it:</p>
     <textarea readonly rows="4" spellcheck="false" aria-label="Embed code for ${esc(p.appName)}"></textarea>
     <p><button type="button" class="cta-btn">Copy embed code</button></p>
     <p class="muted small">Keeping the credit line is the only thing we ask. Games we
