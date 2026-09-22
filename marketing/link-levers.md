@@ -125,28 +125,45 @@ reputation it cannot shed.
 
 ---
 
-## An open question this surfaced — Andrew's call
+## Settled 2026-09-21 — Space Cadet is now embeddable
 
-Two pages carry **our own CC0 artwork on k4zmu2a's MIT engine** and are *not*
-currently in the embed offer:
+Decided yes. `/run/space-cadet-open/` is in the embed offer, live, and leads the
+`/embed/` list. It is the most recognisable title in the catalogue and the offer
+is much stronger for it. The eligibility rule now lives in `catalogue.mjs` as
+`embedTier()` — three scripts had each been testing the same author regex, which
+is a licensing question that must not drift between them.
 
-- `/run/space-cadet-open/` — runs on Open Cadet's CC0 replacement data
-- `/run/dragon-keep/` — an original table, our CC0 artwork
+It needed more than a list entry. Nearly every claim on `/embed/` was written
+for eleven hand-written games and is **false** of a WebAssembly pinball engine:
+"written from scratch rather than emulated", "the largest is 48 KB, less than a
+single photograph", "every game here is small", "the games are responsive",
+"every game has touch controls". The page now describes two tiers and states the
+trade-off in the visitor's terms — the eleven are 14–48 KB, Space Cadet is
+**6.1 MB**, every frame is lazy-loaded, and budget for it if it goes above the
+fold. The small-game size figure is now measured across those games only, so a
+heavy title can never quietly falsify it again.
 
-Both were excluded because `OWN_WORK` in `inject-page-links.mjs` matches only
-`ExeBrowser (original implementation)`. The 09-21 pointer work had to route
-around them: the generic "we didn't write it" line contradicted their own pages,
-which say "CC0 artwork" outright, so they get neutral copy instead.
+## Dragon's Keep is BROKEN — fix before offering it
 
-**Space Cadet Pinball is by some distance the most recognisable title in the
-catalogue**, and an embed offer that leads with it is a much stronger offer than
-one that leads with Block Drop. The licensing looks permissive — MIT engine,
-CC0 data, and an iframe embed is a link to our origin rather than a
-redistribution of anything. But it is a licensing decision, not a build one, so
-it is not being made by an agent. If the answer is yes, the change is adding
-those two slugs to `OWN_WORK` and writing offer copy that states the split
-(MIT engine, CC0 data) rather than the current "written from scratch, not
-emulated", which would not be accurate for either.
+`/run/dragon-keep/` was the other candidate and is deliberately excluded. Two
+faults found 2026-09-21:
+
+1. **The build aborts on load.** `/apps/dragon-keep/` throws
+   `Aborted('FS' was not exported. add it to EXPORTED_RUNTIME_METHODS)` from
+   `/apps/_shared/save-bridge.js:141`, which reads `Module.FS`. The Dragon's
+   Keep `SpaceCadetPinball.js` (400 KB) is a **different build** from the
+   working Space Cadet one (192 KB) and does not export `FS`. The fix is an
+   Emscripten rebuild with `-sEXPORTED_RUNTIME_METHODS=...,FS`, or rebuilding
+   the data against the engine build that already works.
+2. **Its own page never launches it.** `/run/dragon-keep/` has no iframe, no
+   canvas, no play button and no link to `/apps/dragon-keep/` — only links to
+   the licence files. Yet it carries a "Works · no files needed" badge and says
+   "play right now in your browser". That is a false claim on a live page, and
+   the same class of problem the honest-title policy exists to prevent.
+
+`appUrl` is also empty for it in `app-pages.json`, which is why every generator
+skips it. Fix the build first, then set `appUrl` to `/apps/dragon-keep/`, then
+add the slug to `CC0_ON_OSS_ENGINE` in `catalogue.mjs`.
 
 ## Measurement — all of it rolls up to one number
 
