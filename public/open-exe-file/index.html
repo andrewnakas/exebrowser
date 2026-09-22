@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>How to Open an EXE File — Windows, Mac, Chromebook &amp; Linux — ExeBrowser</title>
+<title>How to Open an EXE File on Windows, Mac or Chromebook</title>
 <meta name="description" content="What an .exe file is, why it will not open, and how to run one on Windows, Mac, Chromebook or Linux — including running it in a browser tab with nothing installed." />
 <meta name="keywords" content="open exe file, how to open exe, exe file opener, open exe on mac, open exe chromebook, run exe online, what is an exe file" />
 <link rel="canonical" href="https://exebrowser.com/open-exe-file/" />
@@ -83,6 +83,7 @@
     <a href="/">Home</a>
     <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Guide</a>
     <a href="/about/">About</a>
@@ -131,12 +132,14 @@
     <h2>When you do not want to run it at all</h2>
     <p>Sometimes the goal is not to run the program but to get at what is inside it. Installers in particular are usually just archives with a wrapper, and a great many older applications are portable once unpacked — a single folder that runs without ever touching the registry.</p>
     <p>Our <a href="/run/extract-archive/">archive extractor</a> opens self-extracting <code>.exe</code> files along with 7z, ZIP, RAR and the rest, entirely in the browser with nothing uploaded. <a href="/blog/extract-files-from-an-old-installer/">The full walkthrough</a> covers the cases it cannot handle and what to use instead.</p>
+    <p>If you only want to know what the file <em>is</em>, the <a href="/exe-inspector/">EXE viewer</a> reads its headers and shows you the processor it was built for, the system libraries it loads, its icon and whether it is signed — without running any of it.</p>
   </section>
 
   <section class="card">
     <h2>Before you run anything</h2>
     <p>An <code>.exe</code> from an unfamiliar source can do anything your user account can do. That is not scaremongering, it is simply what a program is. Two things worth doing: check the file on <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a>, and prefer the original vendor's download over an aggregator that has wrapped it in its own installer.</p>
     <p>Running it in a browser tab is meaningfully safer than running it natively, because the browser sandbox is a real boundary and the program gets no access to your actual filesystem. It is not a licence to run malware, but it is a reasonable way to look at something you are unsure about.</p>
+    <p>Safer still is not running it. <a href="/exe-inspector/">Reading the file's headers</a> costs nothing and answers most of the ordinary questions — is this the right architecture, is it an installer rather than the program, does it name a publisher, is it signed, is it packed so that it reveals nothing until it runs.</p>
   </section>
 
   <section class="card">
@@ -156,6 +159,7 @@
     <a href="/">Home</a>
     <a href="/load-exe/">Run your EXE</a>
     <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
     <a href="/blog/">Blog</a>
     <a href="/guide/">Compatibility Guide</a>
     <a href="/about/">About</a>

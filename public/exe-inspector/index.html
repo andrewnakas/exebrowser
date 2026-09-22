@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EXE Viewer — See Inside a .exe File Without Running It</title>
+<meta name="description" content="Drop a Windows .exe and read what is inside it: processor, subsystem, the libraries it loads, its icon, version details, signature and packing. Free, nothing uploaded, nothing executed." />
+<meta name="keywords" content="exe viewer, pe viewer, open exe file, inspect exe online, what is inside an exe, exe file analyzer, view exe contents online, pe header viewer" />
+<link rel="canonical" href="https://exebrowser.com/exe-inspector/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/exe-inspector/" />
+<meta property="og:title" content="Look Inside a Windows .exe Without Running It" />
+<meta property="og:description" content="Drop an .exe and see its processor, libraries, icon, version details and signature. Parsed in your own browser — nothing is uploaded." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=41" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "EXE viewer", "item": "https://exebrowser.com/exe-inspector/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my file uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The file is read by JavaScript running on your own machine, the headers are parsed in the tab, and the result is drawn on the page. Nothing is transmitted and no copy is kept, because none is ever made. You can close the network panel of your browser's developer tools on this page and watch that nothing leaves." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this run the program?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. It reads the file the way a librarian reads a spine. Not one instruction from the executable is carried out, which is the point: you can inspect something you are unsure about without giving it a chance to do anything." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it tell me whether an .exe is a virus?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, and nothing that only reads a file can. Inspection shows what a program declares about itself, and a program that wants to hide simply declares less. It is useful for spotting that a file is the wrong architecture, is an installer rather than the program, is unsigned, or is compressed so it reveals nothing until it runs. For an actual safety verdict, use VirusTotal, which runs the file past around seventy scanners." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a PE file?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Portable Executable is the format every Windows .exe, .dll and .sys uses. It begins with a small MS-DOS program left over from 1985 whose only job is to print \"This program cannot be run in DOS mode\", followed by the real header, a table of sections holding code and data, a list of the system libraries the program needs, and a tree of resources — icons, menus, text and version details." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does it say my file is 16-bit or a DOS program?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because it is, and that is why modern Windows refuses to start it. A plain MZ file is a real-mode MS-DOS program; an NE file is 16-bit Windows. 64-bit Windows dropped support for both, so double-clicking them does nothing at all. Both still run under emulation." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does high entropy in a section mean?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Entropy measures how random the bytes look, on a scale of 0 to 8. Ordinary compiled code sits near 6. Above roughly 7.2 the data is compressed or encrypted. That is entirely normal for a section holding a zip or a PNG, and a strong hint of a packer when it is the section the program executes from." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on a Mac, a Chromebook or a phone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is a web page, so it runs wherever a current browser runs. That matters most on machines that cannot open an .exe at all — a Mac or a Chromebook has no way to look inside a Windows executable without installing something, and this needs nothing installed." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › EXE viewer</nav>
+
+  <section class="card">
+    <h2>See inside a Windows .exe file</h2>
+    <p class="muted small" style="margin-top:0.25rem;">Parsed in this tab · Nothing uploaded · Nothing executed</p>
+    <p>Drop a Windows executable below and this page reads its headers and tells you what it is: which processor it was built for, which system libraries it asks for, what it says about its own publisher and version, the icon buried inside it, whether it is signed, and whether it has been compressed to hide its contents. The file never leaves your machine — it is read by JavaScript, here, and the page has nowhere to send it.</p>
+
+    <div id="pe-dropzone" class="dropzone" tabindex="0" role="button" aria-label="Choose a Windows executable to inspect">
+      <input type="file" id="pe-file" accept=".exe,.dll,.sys,.ocx,.scr,.cpl,.mui,.efi,application/x-msdownload" hidden />
+      <p><strong>Drop an <code>.exe</code> here</strong>, or <button id="pe-pick" type="button" class="link">choose a file</button></p>
+      <p class="muted small">Also reads <code>.dll</code>, <code>.sys</code>, <code>.ocx</code> and <code>.scr</code>. Up to 256&nbsp;MB.</p>
+    </div>
+    <p id="pe-status" class="muted small" role="status" aria-live="polite"></p>
+    <div id="pe-report"></div>
+  </section>
+
+  <section class="card">
+    <h2>What the report tells you</h2>
+    <p>Every Windows executable carries a surprising amount of writing about itself, and almost none of it is visible from the desktop. The report is ordered so the most useful parts come first.</p>
+    <h3>The processor and the subsystem</h3>
+    <p>The first honest answer about any <code>.exe</code>. A 64-bit binary will not start on 32-bit Windows; a 32-bit one runs almost anywhere. The subsystem says whether it opens a window, a console, or nothing at all because it is a driver meant to load into the kernel.</p>
+    <h3>The libraries it loads</h3>
+    <p>The import table is the most revealing section of the file. A program has to name, in plain text, every system library and function it intends to call — so a program that talks to the internet must say <code>ws2_32.dll</code>, one that touches the registry must say <code>RegOpenKeyExA</code>, and one that starts other programs must say <code>CreateProcessW</code>. This is declared before a single instruction runs, and it cannot be omitted without giving up the ability to call those functions at all.</p>
+    <h3>What it claims to be</h3>
+    <p>The version resource holds the publisher, product name, file version, copyright line and original filename — the same strings Windows shows in a file's Properties dialog. They are simply text that whoever built the file typed in, so they are useful for identification and worth nothing as proof.</p>
+    <h3>The icon</h3>
+    <p>Pulled out of the resource tree and drawn on the page. It is the fastest way to confirm that a download is the program you think it is, and the fastest way to notice that something is wearing a familiar icon it has no right to.</p>
+    <h3>Packing and entropy</h3>
+    <p>Packers compress an executable and unpack it in memory at startup. That is a legitimate way to make a download smaller and an equally effective way to hide what a program imports until it is already running. The report names the packer when it recognises the signature, and falls back to measuring how random each section looks.</p>
+    <h3>What is stuck on the end</h3>
+    <p>Installers are usually an ordinary small program with an entire archive appended after the last section. When the report says most of the file sits past the end of the executable part, you are looking at a wrapper rather than the program — and <a href="/blog/extract-files-from-an-old-installer/">the files inside can often be extracted without installing anything</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>What it cannot tell you</h2>
+    <p>It cannot tell you whether a file is safe. Nothing that only reads a file can, and a page that implied otherwise would be worse than useless, because it would be reassuring.</p>
+    <p>Everything here is what the program <em>declares</em> about itself. A program that wants to be studied declares a great deal; a program that does not simply declares less, and a packed one declares almost nothing until it is already running. So a long list of capabilities is not evidence of bad behaviour — every updater talks to the network and every installer writes files — and a short list is not evidence of good behaviour either.</p>
+    <p>What inspection is genuinely good for is the ordinary questions: is this the right architecture for my machine, is it an installer or the actual program, does it claim a publisher, is it signed, is it complete, and is it hiding its contents. Those are answerable from the file, and they are most of what people actually want to know.</p>
+    <p>For a verdict on safety, <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a> runs an upload past around seventy scanners. That does involve uploading the file, which this page never does — a trade worth making deliberately rather than by accident.</p>
+  </section>
+
+  <section class="card">
+    <h2>Where your file goes</h2>
+    <p>Nowhere. The browser hands the page the bytes of the file you chose, the parser walks the headers, and the result is written into the page. There is no request, no server, no queue and no retention policy, because there is nothing to retain. Closing the tab disposes of it.</p>
+    <p>This is worth stating plainly because the obvious alternative — an upload-and-scan site — is exactly what someone with a file they distrust should be most careful about. If you want to check the claim rather than take it, open your browser's developer tools, switch to the network panel, and inspect a file: nothing is sent.</p>
+    <p>The page itself uses Google Analytics and Google AdSense, which see page views in the ordinary way. They cannot see the file you chose or anything parsed from it; the report is built in memory and never becomes a request. What we do record is aggregate and anonymous — the format, the processor, and whether the file was signed — with no filename and no file contents. Details in the <a href="/privacy/">privacy policy</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>Common questions</h2>
+    <details>
+      <summary>Is my file uploaded anywhere?</summary>
+      <p>No. The file is read by JavaScript running on your own machine, the headers are parsed in the tab, and the result is drawn on the page. Nothing is transmitted and no copy is kept, because none is ever made.</p>
+    </details>
+    <details>
+      <summary>Does this run the program?</summary>
+      <p>No. It reads the file the way a librarian reads a spine. Not one instruction from the executable is carried out, which is the point: you can inspect something you are unsure about without giving it a chance to do anything. If you decide you do want to run it, <a href="/load-exe/">the loader</a> is a separate page and a deliberate second step.</p>
+    </details>
+    <details>
+      <summary>Can it tell me whether an .exe is a virus?</summary>
+      <p>No, and nothing that only reads a file can. It is useful for spotting that a file is the wrong architecture, is an installer rather than the program, is unsigned, or is compressed so that it reveals nothing until it runs. For an actual safety verdict use <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a>.</p>
+    </details>
+    <details>
+      <summary>What is a PE file?</summary>
+      <p>Portable Executable is the format every Windows <code>.exe</code>, <code>.dll</code> and <code>.sys</code> uses. It opens with a small MS-DOS program left over from 1985 whose only job is to print <em>This program cannot be run in DOS mode</em>, then the real header, a table of sections holding code and data, the list of libraries the program needs, and a tree of resources. <a href="/blog/what-is-an-exe-file/">The longer explanation is here</a>.</p>
+    </details>
+    <details>
+      <summary>Why does it say my file is 16-bit or a DOS program?</summary>
+      <p>Because it is, and that is why modern Windows refuses to start it. A plain MZ file is a real-mode MS-DOS program; an NE file is 16-bit Windows. 64-bit Windows dropped support for both, so double-clicking them does nothing whatsoever — no error, no window. Both still run under emulation, which is <a href="/blog/run-16-bit-windows-3x-software/">a whole subject of its own</a>.</p>
+    </details>
+    <details>
+      <summary>What does high entropy in a section mean?</summary>
+      <p>Entropy measures how random the bytes look, from 0 to 8. Ordinary compiled code sits near 6. Above roughly 7.2 the data is compressed or encrypted — normal for a section holding a zip or a PNG, and a strong hint of a packer when it is the section the program executes from.</p>
+    </details>
+    <details>
+      <summary>Does it work on a Mac, a Chromebook or a phone?</summary>
+      <p>Yes. It is a web page, so it runs wherever a current browser runs. That matters most on the machines that cannot open an <code>.exe</code> at all: a Mac or a Chromebook has no built-in way to look inside a Windows executable, and this needs nothing installed.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>If you want to run it, not just read it</h2>
+    <p>Reading a file and running it are deliberately two different pages here. When the report says a file is 32-bit x86 with nothing exotic in it, <a href="/load-exe/">the loader</a> will have a fair go at running it in a browser tab — no install, nothing uploaded there either.</p>
+    <p><a href="/load-exe/">Run your own EXE →</a> · <a href="/open-exe-file/">How to open an .exe on any platform</a> · <a href="/guide/">What runs and what does not</a> · <a href="/">Games and apps ready to play</a></p>
+  </section>
+
+  <section class="card" id="embed-pointer">
+    <h2>Put one of these games on your own site</h2>
+    <p>Eleven of the games here were written from scratch for this site, which makes them
+    ours to give away — and we do. Free for anyone to put on their own page: one line of HTML, no account, no permission, no attribution
+    beyond a credit line.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">See the games you can embed</a></p>
+  </section>
+  <script src="/embed-pointer.js?v=1"></script>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script src="/save-core.js?v=4"></script>
+<script src="/recent.js?v=6"></script>
+<script src="/pe-inspect.js?v=1"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/pwa.js?v=1"></script>
+</body>
+</html>

@@ -1613,6 +1613,11 @@ const STATIC_URLS = [
   // home page, which is a games shelf. "run exe online" and its family have
   // nowhere to land without this.
   { loc: "/load-exe/", freq: "monthly", pri: "0.9", mod: "2026-08-27" },
+  // The other half of the .exe question. "open exe file" splits into people who
+  // want to run one and people who want to know what one is before they dare;
+  // /load-exe/ answers the first and this answers the second, without the
+  // emulator, which is the only honest way to answer it for a file you distrust.
+  { loc: "/exe-inspector/", freq: "monthly", pri: "0.9", mod: "2026-09-22" },
   // A category page's content is its cards as much as its prose, so its lastmod
   // has to move when a member does — not only when someone edits the intro.
   ...liveCats.map((c) => ({
@@ -1782,6 +1787,7 @@ The compatibility guides say honestly which of these fail and how.
 - [Homepage](${SITE}/): the full catalogue as a browsable shelf, searchable and
   filterable by category, plus a loader for running your own .exe
 - [Load your own EXE](${SITE}/load-exe/): drop a Windows .exe, folder or zip and run it
+- [EXE viewer](${SITE}/exe-inspector/): read a Windows .exe's headers, imports, icon and signature without running it
   in the browser — nothing is uploaded, nothing is installed
 - [All games and guides](${SITE}/run/)
 - [Compatibility guide](${SITE}/guide/): which categories of Windows software run well

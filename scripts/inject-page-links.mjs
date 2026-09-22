@@ -106,6 +106,7 @@ const EMBEDDABLE = new Map(CATALOGUE.filter(isEmbeddable).map((p) => [p.slug, p]
 const APP_NAMES = new Map(CATALOGUE.map((p) => [p.slug, p.appName]));
 let unblockedAdded = 0;
 let embedFooterAdded = 0;
+let inspectorFooterAdded = 0;
 let embedAdded = 0;
 let embedPointerAdded = 0;
 let ogAdded = 0;
@@ -215,6 +216,29 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     embedFooterAdded++;
   }
 
+  // ── 3d. The EXE viewer in both navs of the English pages ───────────────
+  // This one goes in the primary nav, not only the footer. Reading an .exe and
+  // running one are two halves of the same question and the site now answers
+  // both, so burying the second half in a footer would misdescribe the product.
+  // The eighth nav item is affordable *here* because this script owns it: the
+  // alternative was hand-editing the six nav templates plus ~35 pages, which is
+  // what made it not worth doing before.
+  //
+  // Both navs carry the identical "App guides" then "Blog" pair, so this
+  // replaces every occurrence rather than the first — a plain .replace() would
+  // have silently updated the header and left the footer behind.
+  // Idempotence comes from the pair itself: once injected, "App guides" is no
+  // longer directly followed by "Blog", so a second run finds nothing. Guarding
+  // on href="/exe-inspector/" instead would have stopped after the header and
+  // left every footer without the link.
+  if (!/^(es|pt-BR|de|ja|fr|zh-CN)\//.test(label)) {
+    const pair = '<a href="/run/">App guides</a>\n    <a href="/blog/">Blog</a>';
+    if (html.includes(pair)) {
+      html = html.split(pair).join('<a href="/run/">App guides</a>\n    <a href="/exe-inspector/">EXE viewer</a>\n    <a href="/blog/">Blog</a>');
+      inspectorFooterAdded++;
+    }
+  }
+
   // ── 4. SYNC METADATA onto the hand-maintained game pages ────────────────
   // app-pages.json is meant to be the single source of truth, but skipGenerate
   // pages never pass through render(), so editing a title or description there
@@ -291,7 +315,7 @@ for (const { abs, label } of htmlFiles(ROOT)) {
   // someone running their own .exe in a browser tab is disproportionately
   // likely to run a site — and the homepage's last section is the open-source
   // licensing list, which is the right neighbour for a giveaway offer.
-  const EXTRA_POINTER_PAGES = new Set(["index.html", "load-exe/index.html", "guide/index.html"]);
+  const EXTRA_POINTER_PAGES = new Set(["index.html", "load-exe/index.html", "guide/index.html", "exe-inspector/index.html"]);
   const onGamePage = label.startsWith("run/") && !EMBEDDABLE.has(slug) && APP_NAMES.has(slug);
   const onExtraPage = EXTRA_POINTER_PAGES.has(label);
   if ((onGamePage || onExtraPage) && notLocalised
@@ -355,7 +379,7 @@ for (const { abs, label } of htmlFiles(ROOT)) {
 console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
   `manifest into ${manifestAdded}, pwa.js into ${pwaAdded}, ` +
-  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
+  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), EXE viewer footer link onto ${inspectorFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
   `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
   `embed offer on ${embedAdded} page(s), embed pointer on ${embedPointerAdded} page(s), og:image onto ${ogAdded} page(s)`
 );

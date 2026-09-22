@@ -82,9 +82,13 @@ it can gate a deploy.
 ## After deploying
 
 ```bash
-npx wrangler pages deploy public --project-name=exebrowser
+npx wrangler pages deploy public --project-name=exebrowser --branch=main
 node scripts/indexnow.mjs        # tell Bing/DuckDuckGo/Yandex what changed
 ```
+
+`--branch=main` is mandatory, not tidiness. Without it wrangler infers the
+branch from git and ships a *preview* deployment, which succeeds, prints a URL,
+and leaves production untouched.
 
 `indexnow.mjs` is not optional housekeeping: Bing is this site's largest search
 channel by roughly two to one, IndexNow gets URLs crawled in hours rather than
@@ -110,7 +114,7 @@ npx wrangler deploy
 ### Pages
 
 ```bash
-npx wrangler pages deploy public --project-name=exebrowser
+npx wrangler pages deploy public --project-name=exebrowser --branch=main
 ```
 
 Then in the Cloudflare dashboard:
