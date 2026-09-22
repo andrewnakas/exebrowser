@@ -56,12 +56,41 @@
   const Module = window.Module;
   if (!Module) return;
 
+  // Reading a runtime method off Module is NOT safe. Emscripten installs a
+  // throwing getter for anything left out of EXPORTED_RUNTIME_METHODS, so on
+  // such a build `Module.FS` does not return undefined — it calls abort() and
+  // kills the game before it draws a frame. That is how Dragon's Keep shipped
+  // dead: its engine build omits FS, and the plain read below took the whole
+  // program down from inside a save helper.
+  //
+  // `if (!FS)` cannot guard against this, because the guard never runs. Only
+  // wrapping the read does. A game that can't persist is still a game that
+  // runs — that rule already governed mountPersistence(), and this makes it
+  // true of every access rather than one of them.
+  function runtime(name) {
+    // The global first. Every build here installs these as window globals, and
+    // reading a global can never spring the trap. Checking Module first is what
+    // made this dangerous.
+    if (window[name]) return window[name];
+    try {
+      const d = Object.getOwnPropertyDescriptor(Module, name);
+      // An own accessor property with no value IS the trap. Do not read it:
+      // its getter calls abort(), which sets Emscripten's ABORT flag and kills
+      // the runtime permanently. Catching the throw afterwards does not revive
+      // it — the only safe move is never to touch the property.
+      if (d && typeof d.get === "function" && !("value" in d)) return null;
+      return Module[name] || null;
+    } catch {
+      return null;
+    }
+  }
+
   // ─── mount ─────────────────────────────────────────────────────────────
 
   function mountPersistence() {
     try {
-      const FS = Module.FS || window.FS;
-      const IDBFS = Module.IDBFS || window.IDBFS;
+      const FS = runtime("FS");
+      const IDBFS = runtime("IDBFS");
       if (!FS || !IDBFS) return;
 
       // Already mounted by the app itself? Leave it alone.
@@ -103,7 +132,7 @@
   // permanently empty in these builds — it's scratch space for syncfs, not a
   // registry. getMounts walking down from the root mount is the real answer.
   function allMounts() {
-    const FS = Module.FS || window.FS;
+    const FS = runtime("FS");
     if (!FS || !FS.root || !FS.getMounts) return [];
     try { return FS.getMounts(FS.root.mount) || []; } catch { return []; }
   }
@@ -116,7 +145,7 @@
   // parent page delete a save later without knowing anything about the layout
   // inside it.
   function idbfsMounts() {
-    const IDBFS = Module.IDBFS || window.IDBFS;
+    const IDBFS = runtime("IDBFS");
     if (!IDBFS) return [];
     return allMounts().filter(m => m.type === IDBFS && m.mountpoint).map(m => m.mountpoint);
   }
@@ -138,7 +167,7 @@
 
   let inFlight = false;
   function flush() {
-    const FS = Module.FS || window.FS;
+    const FS = runtime("FS");
     const mounts = idbfsMounts();
     if (!FS || !mounts.length || inFlight) return;
     inFlight = true;
