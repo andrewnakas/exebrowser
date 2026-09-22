@@ -91,6 +91,8 @@ import {
   LANGS, LOCALES, languagesFor, translatedEntry, translatedSlugs, prefixOf, hasTranslation,
   hreflangHtml, langSwitcherHtml, langsWithContent, cardCopy, controlText,
 } from "./i18n/locales.mjs";
+import { STATIC_PAGES } from "./i18n/static-pages.mjs";
+import { staticPaths } from "./i18n/locales.mjs";
 import { blogPosts } from "./blog-meta.mjs";
 import {
   SITE, esc, xmlEsc, unesc, isPlayable, screenshotFile, isNew, NEW_BADGE, FREE_BADGE,
@@ -1641,6 +1643,14 @@ const localisedRootUrls = LANGS.filter((c) => c !== "en" && translatedSlugs(c).l
   urlEl(`${prefixOf(code)}/`, "weekly", "0.8"),
   urlEl(`${prefixOf(code)}/run/`, "weekly", "0.7"),
 ]);
+// The localised hand-maintained pages. Written by gen-static-pages.mjs, but
+// listed here because the sitemap has one owner and splitting it would be the
+// fastest possible way to have two files disagree about what exists.
+const localisedStaticUrls = LANGS.filter((c) => c !== "en").flatMap((code) =>
+  staticPaths(code)
+    .filter((path) => STATIC_PAGES[path])
+    .map((path) => urlEl(`${prefixOf(code)}${path}`, "monthly", STATIC_PAGES[path].pri))
+);
 const localisedUrls = LANGS.filter((c) => c !== "en").flatMap((code) =>
   translatedSlugs(code)
     .filter((slug) => pages.some((p) => p.slug === slug))
@@ -1654,7 +1664,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${staticUrls[0]}
 ${staticUrls[1]}
 ${runUrls.join("\n")}
-${localisedRootUrls.length ? localisedRootUrls.join("\n") + "\n" : ""}${localisedUrls.length ? localisedUrls.join("\n") + "\n" : ""}${staticUrls.slice(2).join("\n")}
+${localisedRootUrls.length ? localisedRootUrls.join("\n") + "\n" : ""}${localisedUrls.length ? localisedUrls.join("\n") + "\n" : ""}${localisedStaticUrls.length ? localisedStaticUrls.join("\n") + "\n" : ""}${staticUrls.slice(2).join("\n")}
 </urlset>
 `;
 writeFileSync(resolve(ROOT, "sitemap.xml"), sitemap, "utf8");

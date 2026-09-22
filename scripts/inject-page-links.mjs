@@ -20,6 +20,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { hreflangHtml, langSwitcherHtml, LOCALES } from "./i18n/locales.mjs";
+import { STATIC_PATHS } from "./i18n/static-pages.mjs";
 import { embedTier, isEmbeddable } from "./catalogue.mjs";
 
 const ROOT = resolve(process.cwd(), "public");
@@ -117,6 +118,14 @@ let manifestAdded = 0;
 let pwaAdded = 0;
 let feedSkipped = 0;
 let hreflangAdded = 0;
+// English pages that get a reciprocal hreflang block: label on disk → the path
+// it lives at. The homepage plus every hand-maintained page the localisation
+// pipeline can build, so the two never drift apart.
+const HREFLANG_PAGES = Object.fromEntries([
+  ["index.html", "/"],
+  ...STATIC_PATHS.map((path) => [path.replace(/^\//, "") + "index.html", path]),
+]);
+
 const missingAnchor = [];
 
 // The /unblocked/ hub answers the highest-converting query shape the site has
@@ -161,19 +170,34 @@ for (const { abs, label } of htmlFiles(ROOT)) {
   // hreflang existed, so adding a language left the homepage advertising the
   // old set forever. check-consistency's reciprocity rule caught it the moment
   // ja/fr/zh-CN were registered.
-  if (label === "index.html") {
+  // It is no longer only the homepage. The utility pages are hand-written too,
+  // and gen-static-pages.mjs now builds localised copies of them, so each one
+  // needs the same reciprocal stamp — and each has a DIFFERENT canonical, which
+  // is why the old hardcoded "/" had to become a lookup.
+  //
+  // hreflangHtml decides the language set per path, so a page with no
+  // translations yet emits nothing rather than advertising six 404s.
+  const hreflangPath = HREFLANG_PAGES[label];
+  if (hreflangPath) {
     html = html.replace(/\n<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>/g, "");
     html = html.replace(/\n  <nav class="lang-switcher"[\s\S]*?<\/nav>/, "");
-    const canonical = `<link rel="canonical" href="https://exebrowser.com/" />`;
+    const canonical = `<link rel="canonical" href="https://exebrowser.com${hreflangPath}" />`;
     if (html.includes(canonical)) {
-      html = html.replace(canonical, canonical + hreflangHtml("/", null));
+      // "/" is a site-level URL; everything else in this map is a page the
+      // static pipeline owns, and must be scoped to what it has actually built.
+      const scope = hreflangPath === "/" ? undefined : "static";
+      html = html.replace(canonical, canonical + hreflangHtml(hreflangPath, null, scope));
       hreflangAdded++;
     } else {
       missingAnchor.push(`${label} (canonical anchor for hreflang)`);
     }
     const navEnd = `    <a href="/contact/">Contact</a>\n  </nav>`;
     if (html.includes(navEnd)) {
-      html = html.replace(navEnd, navEnd + langSwitcherHtml(LOCALES.en, "/", null));
+      html = html.replace(navEnd, navEnd + langSwitcherHtml(LOCALES.en, hreflangPath, null, hreflangPath === "/" ? undefined : "static"));
+    } else {
+      // Worth reporting: the switcher failing silently is how a localised page
+      // ends up unreachable from the English one it was translated from.
+      missingAnchor.push(`${label} (nav anchor for the language switcher)`);
     }
   }
 

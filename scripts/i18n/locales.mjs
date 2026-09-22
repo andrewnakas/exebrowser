@@ -60,6 +60,49 @@ const loaded = Object.fromEntries(
 );
 const pagesByLang = Object.fromEntries(LANGS.map((c) => [c, loaded[c].pages]));
 
+// ── The hand-maintained pages ─────────────────────────────────────────────
+//
+// Everything above is keyed by catalogue slug, which covers /run/<slug>/ and
+// nothing else. The utility surface — the loader, the viewer, the guide, the
+// explainer — is hand-written HTML with no slug and no entry in
+// app-pages.json, which is why none of it has ever been localised.
+//
+// `static.<lang>.json` is the same idea keyed by path instead. Same rule: a
+// path absent from the file does not exist in that language.
+function loadStatic(code) {
+  const file = resolve(HERE, `static.${code}.json`);
+  if (!existsSync(file)) return {};
+  const raw = JSON.parse(readFileSync(file, "utf8"));
+  delete raw._readme;
+  return raw;
+}
+const staticByLang = Object.fromEntries(
+  LANGS.map((code) => [code, code === "en" ? {} : loadStatic(code)])
+);
+
+/** The translation for one hand-maintained path, or null. */
+export const staticEntry = (code, path) =>
+  code === "en" ? null : (staticByLang[code] || {})[path] || null;
+
+/** Paths translated into a given language. */
+export const staticPaths = (code) => Object.keys(staticByLang[code] || {});
+
+/**
+ * Languages one hand-maintained path exists in.
+ *
+ * This is the reason the function exists at all: hreflang for these pages used
+ * to fall through to langsWithContent(), which returns every language with ANY
+ * translated slug. Six languages have a translated DOOM page, so /guide/ would
+ * have advertised /ja/guide/ and five others the moment one of them existed —
+ * all 404, and check-consistency rule 7 fails the build on exactly that.
+ */
+export const staticLocalesFor = (path) =>
+  LANGS.filter((c) => c === "en" || Object.prototype.hasOwnProperty.call(staticByLang[c] || {}, path));
+
+/** Is this a path the static localisation pipeline knows about at all? */
+export const isLocalisedStaticPath = (path) =>
+  LANGS.some((c) => c !== "en" && Object.prototype.hasOwnProperty.call(staticByLang[c] || {}, path));
+
 /**
  * Translated related-card copy, keyed by the card's English href.
  * Returns null when this language hasn't translated that card, which the
@@ -144,8 +187,28 @@ export const langsWithContent = () => LANGS.filter((c) => c === "en" || translat
  * @param slug            a catalogue slug to scope languages to, or null for
  *                        site-level pages (uses langsWithContent instead)
  */
-export function hreflangHtml(pathAfterPrefix, slug) {
-  const langs = slug ? languagesFor(slug) : langsWithContent();
+/**
+ * Which languages a given URL exists in — the single decision behind both
+ * hreflang and the switcher, so the two can never disagree.
+ *
+ * Three kinds of page, three answers:
+ *   a catalogue page  → the languages that slug is translated into
+ *   a hand-maintained page (scope "static") → the languages that PATH exists in,
+ *                              which is just English until one is written
+ *   everything else (the home page, the /run/ hub) → every language with content
+ *
+ * Deciding it here rather than at each call site is deliberate: the two callers
+ * below are stamped by different scripts onto different page types, and the one
+ * bug this area keeps producing is advertising a URL that was never written.
+ */
+export function langsForPath(pathAfterPrefix, slug, scope) {
+  if (slug) return languagesFor(slug);
+  if (scope === "static") return staticLocalesFor(pathAfterPrefix);
+  return langsWithContent();
+}
+
+export function hreflangHtml(pathAfterPrefix, slug, scope) {
+  const langs = langsForPath(pathAfterPrefix, slug, scope);
   if (langs.length < 2) return "";
   const rows = langs.map(
     (c) => `<link rel="alternate" hreflang="${LOCALES[c].hrefLang}" href="${SITE}${prefixOf(c)}${pathAfterPrefix}" />`
@@ -158,8 +221,8 @@ export function hreflangHtml(pathAfterPrefix, slug) {
  * Rendered in the header so a visitor who landed on the wrong language can
  * leave. Only lists languages this page actually exists in.
  */
-export function langSwitcherHtml(L, pathAfterPrefix, slug) {
-  const langs = slug ? languagesFor(slug) : langsWithContent();
+export function langSwitcherHtml(L, pathAfterPrefix, slug, scope) {
+  const langs = langsForPath(pathAfterPrefix, slug, scope);
   if (langs.length < 2) return "";
   const links = langs.map((c) =>
     c === L.code

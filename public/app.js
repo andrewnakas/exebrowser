@@ -117,6 +117,22 @@
     els.logOutput.scrollTop = els.logOutput.scrollHeight;
   }
 
+  // ── Translation ─────────────────────────────────────────────────────────
+  // The generator injects window.__I18N on localised pages only, so English
+  // pages are byte-for-byte unchanged and ship no extra bytes. The English
+  // text stays inline as the fallback: a missing key shows English rather
+  // than an empty status line.
+  //
+  // Only the strings a visitor reads go through this. The log() output below
+  // stays English deliberately — it is diagnostic, it interleaves with Wine's
+  // own English output, and translating half a console transcript would make
+  // it harder to read rather than easier.
+  function T(key, fallback, vars) {
+    let s = (window.__I18N && window.__I18N[key]) || fallback;
+    if (vars) for (const k in vars) s = s.split("{" + k + "}").join(vars[k]);
+    return s;
+  }
+
   function setStatus(text) {
     els.bootStatus.textContent = text;
   }
@@ -332,7 +348,7 @@
   //   - win3x uses default runtime so default rules apply.
   async function loadBoxedwineDeps() {
     if (state.depsLoaded) return;
-    setStatus("Loading Boxedwine runtime…");
+    setStatus(T("wineLoadingRuntime", "Loading Boxedwine runtime…"));
     els.bootProgress.hidden = false;
     els.bootProgress.value = 10;
 
@@ -358,7 +374,7 @@
   // mutations. They share scope so we can reach the `let Config` shell.js
   // declares. Then inject boxedwine.js which triggers preRun → initialSetup.
   async function runShellWithConfig() {
-    setStatus("Configuring Wine launch…");
+    setStatus(T("wineConfiguring", "Configuring Wine launch…"));
     els.bootProgress.value = 50;
 
     const variant = activeVariant();
@@ -437,7 +453,7 @@
   // Stage 3: inject the Emscripten runtime. Its preRun calls initialSetup
   // which reads Config.urlParams and builds the filesystem.
   async function startEmulator() {
-    setStatus("Starting emulator…");
+    setStatus(T("wineStartingEmulator", "Starting emulator…"));
     els.bootProgress.value = 75;
     await loadScript(activeVariant().runtimeBase + "boxedwine.js");
     els.bootProgress.value = 100;
@@ -546,8 +562,8 @@
     const suffix = state.stagedFiles.length > 1
       ? ` · ${state.stagedFiles.length} files, ${formatBytes(totalSize)} total`
       : "";
-    els.fileInfo.textContent = `Entry: ${stagedFile.path}${suffix}` +
-      (exeCount > 1 ? ` · ${exeCount} EXEs available` : "");
+    els.fileInfo.textContent = T("wineEntry", "Entry: {path}", { path: stagedFile.path + suffix }) +
+      (exeCount > 1 ? " · " + T("wineExesAvailable", "{n} EXEs available", { n: exeCount }) : "");
     els.runBtn.disabled = false;
   }
 
@@ -1029,7 +1045,7 @@
       const b = document.createElement("button");
       b.type = "button";
       b.className = "linklike save-install";
-      b.textContent = "Install for one-tap return";
+      b.textContent = T("wineInstallPrompt", "Install for one-tap return");
       b.addEventListener("click", () => window.ExeInstall.prompt());
       host.appendChild(document.createTextNode(" "));
       host.appendChild(b);
@@ -1103,7 +1119,7 @@
       await startEmulator();
       state.booted = true;
       els.saveStateBtn.disabled = false;
-      setStatus(`Running ${state.pickedExe.originalName}…`);
+      setStatus(T("wineRunning", "Running {name}…", { name: state.pickedExe.originalName }));
       log("Launch dispatched. Canvas will activate when Wine is ready.");
       track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
       startHeartbeat();
@@ -1139,7 +1155,7 @@
     } catch (err) {
       track("boot_error", { error_message: String(err.message).slice(0, 120) });
       log("Boot failed: " + err.message, "error");
-      setStatus("Boot failed. See console.");
+      setStatus(T("wineBootFailed", "Boot failed. See console."));
       els.bootBtn.disabled = false;
       els.runBtn.disabled = false;
       state.bootInFlight = false;
@@ -1171,9 +1187,9 @@
     if (els.wineVariant) els.wineVariant.disabled = true;
 
     els.loaderSection.classList.remove("disabled");
-    setStatus("Pick an EXE, then click Run.");
+    setStatus(T("winePickThenRun", "Pick an EXE, then click Run."));
     els.bootBtn.disabled = true;
-    els.bootBtn.textContent = "Wine ready — load an EXE";
+    els.bootBtn.textContent = T("wineReadyLoad", "Wine ready — load an EXE");
     log("Wine ready to load (variant: " + state.selectedVariant + "). Drop an EXE below.");
   });
 

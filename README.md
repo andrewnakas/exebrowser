@@ -35,12 +35,16 @@ For local testing without the Worker, edit `public/app.js` and change `ROOT_FS_U
 Every `/run/<slug>/` page is generated from `scripts/app-pages.json` — never
 hand-edit the HTML, it gets overwritten.
 
-Run all six, in this order — the last two depend on the output of the others,
+Run all seven, in this order — the last two depend on the output of the others,
 and running them out of order silently loses work:
 
 ```bash
 # 1. all /run/ pages, the hub, /play/ category pages, 404, sitemap, feed, llms.txt
 node scripts/gen-app-pages.mjs
+
+# 1b. localised copies of the hand-maintained utility pages (/es/load-exe/ etc).
+#     After step 1, because step 1 owns the sitemap and lists what this writes.
+node scripts/gen-static-pages.mjs
 
 # 2. the homepage's shelf, filter, ItemList and blog strip, in place
 node scripts/gen-home-grid.mjs
@@ -95,6 +99,12 @@ channel by roughly two to one, IndexNow gets URLs crawled in hours rather than
 weeks, and Google ignores it entirely (Search Console is the only lever there).
 Run it *after* the deploy is live — the endpoint fetches the URLs to verify
 them, so submitting first wastes the ping.
+
+**`window.__I18N` must be emitted before the scripts that read it.** embed.js,
+app.js and dos-embed.js are IIFEs that run on parse, so a translation block
+placed after them is set too late: every `T()` silently returns its English
+fallback and you get a fully translated page wrapping an English application.
+Nothing fails, and the HTML looks correct. Only loading the page shows it.
 
 **Always boot-test a new payload before writing "play online" copy** — judge
 the canvas buffer, not a screenshot of the page around it, and check the DOS
