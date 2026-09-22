@@ -5,8 +5,15 @@
     <link>https://exebrowser.com/</link>
     <description>Classic DOS and Windows games you can play free in your browser, plus write-ups on how the runtimes work.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://exebrowser.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Is an .exe File — and How Do You Open One?</title>
+      <link>https://exebrowser.com/blog/what-is-an-exe-file/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/what-is-an-exe-file/</guid>
+      <description>What a Windows .exe actually contains, how to open one on Windows, Mac, Linux, Chromebook and phones, how to look inside without running it, and when not to run it at all.</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>New game: Archive Extractor</title>
       <link>https://exebrowser.com/run/extract-archive/</link>
@@ -153,13 +160,6 @@
       <guid isPermaLink="true">https://exebrowser.com/run/monster-bash/</guid>
       <description>Apogee&apos;s 1993 monster-hunting platformer in your browser — the complete shareware episode.</description>
       <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Scorched Earth</title>
-      <link>https://exebrowser.com/run/scorched-earth/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/scorched-earth/</guid>
-      <description>Play Scorched Earth in your browser — the 1991 artillery classic, &apos;the mother of all games&apos;. Shareware, no download, runs via DOSBox + WebAssembly.</description>
-      <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Open Cadet: Space Cadet Pinball, Fully Open Source</title>
