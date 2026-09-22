@@ -1120,6 +1120,9 @@
       state.booted = true;
       els.saveStateBtn.disabled = false;
       setStatus(T("wineRunning", "Running {name}…", { name: state.pickedExe.originalName }));
+      // Someone who has got a program running has earned the install offer,
+      // whether or not they have ever saved anything.
+      if (window.ExeInstall && window.ExeInstall.engaged) window.ExeInstall.engaged("boot");
       log("Launch dispatched. Canvas will activate when Wine is ready.");
       track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
       startHeartbeat();

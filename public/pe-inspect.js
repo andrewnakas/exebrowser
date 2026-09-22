@@ -1158,6 +1158,9 @@
           size_bucket: sizeBucket(file.size),
         });
         host.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Reading a file is the strongest signal this page can produce that
+        // the visitor got what they came for.
+        if (window.ExeInstall && window.ExeInstall.engaged) window.ExeInstall.engaged("inspect");
       }).catch(function () {
         say("The browser could not read that file. If it came from a network drive or a phone, try copying it locally first.", "bad");
         track("inspect_parse_error", { reason: "read_failed", size_bucket: sizeBucket(file.size) });

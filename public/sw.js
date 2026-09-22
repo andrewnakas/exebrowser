@@ -18,9 +18,26 @@
 //     responses to carry COEP; passing those through a second worker risks
 //     dropping the headers and silently disabling SharedArrayBuffer. /apps/*
 //     are the iframed game frames and /api/* is a Cloudflare Function.
-//   - Network-first, always. An offline page is a fallback, never a cache
-//     that could pin a stale page in front of a deployed one.
-const CACHE = "exebrowser-shell-v1";
+//   - Network-first for navigations, always. An offline page is a fallback,
+//     never a cache that could pin a stale page in front of a deployed one.
+//     HTML is never written to the cache, for the same reason.
+//
+// Considered and rejected, 2026-09-22: serving the small shared assets
+// (style.css, pwa.js, the icons) cache-first, so an installed app opens
+// instantly on a slow connection. It was written, and then removed, because it
+// fights a deliberate decision recorded in public/_headers: those files are
+// served max-age=60, must-revalidate precisely so a deploy reaches people in a
+// minute. A cache-first worker in front of that pins whatever it saw first
+// until the next load, and the version query strings only protect you if every
+// change remembers to bump one — which is a rule, not a guarantee. The upside
+// was a faster second paint; the downside was shipping a fix and not knowing
+// who had it. Not worth it for this site.
+
+// Bumped whenever the worker's behaviour changes: activate() deletes every
+// other exebrowser-* cache, so an old shell can never outlive the code that
+// filled it. Without the bump, installed users keep the previous worker and
+// none of this ships to the people it was written for.
+const CACHE = "exebrowser-shell-v2";
 const OFFLINE_URL = "/offline/index.html";
 
 self.addEventListener("install", event => {

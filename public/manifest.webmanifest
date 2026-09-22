@@ -10,12 +10,46 @@
   "theme_color": "#0e0d0b",
   "description": "Run DOS and Windows games and .exe files in your browser. Your progress saves on this device.",
   "categories": ["games", "entertainment", "utilities"],
+  "launch_handler": { "client_mode": "navigate-existing" },
   "icons": [
     { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
     { "src": "/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
+  "screenshots": [
+    {
+      "src": "/screenshots/shelf-wide.jpg",
+      "sizes": "1372x873",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "The shelf of free games and applications, all playable in the tab"
+    },
+    {
+      "src": "/screenshots/game-narrow.png",
+      "sizes": "420x620",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "A game running in the browser with touch controls"
+    }
+  ],
   "shortcuts": [
-    { "name": "Your saved games", "short_name": "Saves", "url": "/saves/?utm_source=pwa", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+    {
+      "name": "Your saved games",
+      "short_name": "Saves",
+      "url": "/saves/?utm_source=pwa&utm_medium=homescreen",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Run your own EXE",
+      "short_name": "Run an EXE",
+      "url": "/load-exe/?utm_source=pwa&utm_medium=homescreen",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Look inside an EXE",
+      "short_name": "EXE viewer",
+      "url": "/exe-inspector/?utm_source=pwa&utm_medium=homescreen",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
   ]
 }

@@ -232,7 +232,7 @@ ${isArticle ? bodyForArticle(L, e, cfg) : bodyForPage(L, e)}
 ${footer(L)}
 ${clientStrings(L)}
 ${(cfg.scripts || []).map((s) => `<script src="${s}"></script>`).join("\n")}${cfg.resumeBar ? '\n<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>' : ""}
-<script src="/pwa.js?v=1"></script>
+<script src="/pwa.js?v=2"></script>
 </body>
 </html>
 `;

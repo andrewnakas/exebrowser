@@ -77,7 +77,7 @@ const MANIFEST_LINKS =
   `<link rel="manifest" href="/manifest.webmanifest" />\n` +
   `    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />\n` +
   `    <meta name="theme-color" content="#0e0d0b" />`;
-const PWA_SCRIPT = '<script src="/pwa.js?v=1"></script>';
+const PWA_SCRIPT = '<script src="/pwa.js?v=2"></script>';
 
 // Title/description for the playable pages the generator does not own, keyed by
 // slug. Read from the catalogue so these pages cannot drift from it again.

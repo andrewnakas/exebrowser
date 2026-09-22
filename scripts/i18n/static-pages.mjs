@@ -29,7 +29,7 @@ export const STATIC_PAGES = {
     resumeBar: true,
     // embed.js builds the runtime DOM that app.js binds to, so the order here
     // is load-bearing, exactly as on the English page.
-    scripts: ["/save-core.js?v=4", "/recent.js?v=6", "/embed.js?v=9", "/app.js?v=21"],
+    scripts: ["/save-core.js?v=4", "/recent.js?v=6", "/embed.js?v=10", "/app.js?v=22"],
   },
   "/open-exe-file/": {
     kind: "page",
@@ -45,7 +45,7 @@ export const STATIC_PAGES = {
     kind: "page",
     pri: "0.7",
     // The viewer parses in the page, so its own strings have to come with it.
-    scripts: ["/pe-inspect.js?v=1"],
+    scripts: ["/pe-inspect.js?v=2"],
   },
   "/blog/what-is-an-exe-file/": {
     kind: "article",

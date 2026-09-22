@@ -183,7 +183,7 @@ ${faq.map((f) => `    <details>\n      <summary>${esc(f.q)}</summary>\n      <p>
 </footer>
 <script src="/save-core.js?v=4"></script>
 <script src="/recent.js?v=6"></script>
-    <script src="/pwa.js?v=1"></script>
+    <script src="/pwa.js?v=2"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
 </script>
