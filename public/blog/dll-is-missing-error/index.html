@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>“A DLL Is Missing” — What It Means and How to Fix It</title>
+<meta name="description" content="Why Windows says a program can't start because a DLL is missing, the four causes, why DLL download sites are the worst possible fix, and how to find out exactly which libraries a program needs." />
+<meta name="keywords" content="dll is missing, program can't start because dll is missing, missing dll error, vcruntime140 dll missing, msvcp140 dll missing, fix dll error" />
+<link rel="canonical" href="https://exebrowser.com/blog/dll-is-missing-error/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/blog/dll-is-missing-error/" />
+<meta property="og:title" content="“A DLL Is Missing” — What It Means and How to Fix It" />
+<meta property="og:description" content="The four real causes, the fix everyone recommends that you should never use, and how to see which libraries a program actually wants." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=41" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A DLL Is Missing - What It Means and How to Fix It",
+  "description": "What the 'program can't start because a DLL is missing' error actually means, its four causes, why downloading DLLs from DLL sites is dangerous, and how to read a program's real library requirements from the file itself.",
+  "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" },
+  "publisher": { "@type": "Organization", "name": "ExeBrowser" },
+  "mainEntityOfPage": "https://exebrowser.com/blog/dll-is-missing-error/",
+  "image": "https://exebrowser.com/og.png",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://exebrowser.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "A DLL is missing", "item": "https://exebrowser.com/blog/dll-is-missing-error/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › A DLL is missing</nav>
+  <section class="card">
+    <h2>“The program can’t start because a DLL is missing”</h2>
+    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published September 22, 2026 · ~8 minute read</p>
+
+<p>You double-click a program and Windows replies that it cannot start because some file ending in <code>.dll</code> is missing, and suggests reinstalling. The name is usually something like <code>VCRUNTIME140.dll</code>, <code>MSVCP140.dll</code>, <code>api-ms-win-crt-runtime-l1-1-0.dll</code>, or something specific to the program itself.</p>
+    <p>The error is more informative than it looks, and the first result for it is almost always the worst possible advice. Both of those are worth going into.</p>
+
+    <h3>What a DLL is, and why programs are missing them</h3>
+    <p>A DLL is a library: compiled code kept in a separate file so that many programs can share one copy instead of each carrying its own. Everything that draws a window on Windows uses the same <code>user32.dll</code>; everything that opens a file uses the same <code>kernel32.dll</code>. It is a good design and it is why Windows installs are not a hundred times larger than they are.</p>
+    <p>The cost of sharing is that a program does not carry everything it needs. It carries a <em>list</em> of what it needs — every library, and every function within each library, written in plain text inside the executable. At startup Windows reads that list and loads each one. If any single entry cannot be found, the program does not start at all, and you get that dialog. It never runs a line of its own code.</p>
+
+    <h3>Where Windows looks</h3>
+    <p>Understanding the second cause below needs one more piece: Windows does not search your whole disk for a library. It looks in a fixed order, and the first place it looks is the folder the program itself is in. After that, roughly, come the system directories, then the current working directory, then each folder listed in your <code>PATH</code>.</p>
+    <p>That first step is why moving an <code>.exe</code> out of its folder breaks it so reliably, and why "it worked on their machine" is usually not a mystery — their copy still had its neighbours. It is also why copying a missing library into the program's own folder sometimes appears to work when nothing else does.</p>
+
+    <h3>The four causes</h3>
+    <ol>
+      <li><strong>A runtime was never installed.</strong> By far the most common. Programs built with Microsoft's C++ compiler need the Visual C++ Redistributable, and it is not part of Windows. A program built with the 2015–2022 toolchain wants <code>VCRUNTIME140.dll</code> and <code>MSVCP140.dll</code>; one from 2013 wants <code>MSVCR120.dll</code>. If the name starts with <code>MSVC</code>, <code>VCRUNTIME</code> or <code>api-ms-win-crt</code>, this is almost certainly your cause.</li>
+      <li><strong>The program was moved out of its folder.</strong> Someone copied the <code>.exe</code> out of a directory that also contained its own libraries. The program is looking for a file that was sitting right next to it a moment ago. Extremely common with portable software and with anything pulled out of an installer.</li>
+      <li><strong>The install is damaged.</strong> An uninstaller took a shared library with it, an update was interrupted, or a disk error removed something. This is the case the Windows dialog is describing when it suggests reinstalling.</li>
+      <li><strong>Something removed it.</strong> Antivirus quarantine, usually. Check the quarantine list before anything else if the file used to work.</li>
+    </ol>
+
+    <h3>Never download a DLL from a DLL site</h3>
+    <p>Search any missing DLL name and the first page of results will be sites offering that exact file for download. Do not use them. This is the most widely repeated bad advice in Windows troubleshooting and it is worth being blunt about why:</p>
+    <ul>
+      <li><strong>You have no idea what you are downloading.</strong> A DLL is executable code, loaded into your process by a program you trust, with that program's permissions. It is a near-perfect delivery vehicle, and these sites are an obvious place to put one.</li>
+      <li><strong>Even an honest copy is likely wrong.</strong> System libraries are versioned together. Dropping one 2015 file into a 2022 set produces a different failure, often a stranger one.</li>
+      <li><strong>It fixes a symptom.</strong> If <code>MSVCP140.dll</code> is missing, the runtime is not installed, and every other program needing it will fail too. Installing the redistributable fixes all of them, permanently, from Microsoft.</li>
+    </ul>
+
+    <p>There is a second reason beyond malware, and it follows directly from the search order above. Because the program's own folder is searched <em>first</em>, a library placed next to an executable takes precedence over the real system one. A program asks for a routine library; it gets yours instead; your code runs inside it. That technique has a name — DLL hijacking — and it is why dropping an unknown file next to a trusted program is worse than running an unknown program on its own.</p>
+
+    <h3>The fixes, in order</h3>
+    <ol>
+      <li><strong>Install the Visual C++ Redistributable</strong> from Microsoft, if the name looks like a runtime. Install both the x64 and x86 versions — a 32-bit program needs the 32-bit runtime even on 64-bit Windows, and that catches a lot of people. One download fixes the whole class of error.</li>
+      <li><strong>Check the program is still in its own folder</strong>, with everything that was shipped alongside it. If you extracted an archive, extract all of it, not just the <code>.exe</code>.</li>
+      <li><strong>Reinstall the program</strong> from its original source. Boring, and frequently correct.</li>
+      <li><strong>Check antivirus quarantine</strong> if it worked yesterday.</li>
+      <li><strong>Run <code>sfc /scannow</code></strong> in an administrator Command Prompt if the missing file is a genuine Windows system library. It repairs Windows' own files from a known-good store.</li>
+      <li><strong>Install DirectX or .NET</strong> if the name points that way — <code>d3dx9_43.dll</code> and similar come from the DirectX End-User Runtime, which old games need and modern Windows does not include.</li>
+    </ol>
+
+    <h3>The common names, and what each one means</h3>
+    <div class="table-wrap">
+      <table class="compat-table">
+        <thead><tr><th>Missing file</th><th>What it belongs to</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td><code>VCRUNTIME140.dll</code>, <code>MSVCP140.dll</code></td><td>Visual C++ 2015–2022</td><td>Install that redistributable, both architectures</td></tr>
+          <tr><td><code>MSVCR120.dll</code>, <code>MSVCP120.dll</code></td><td>Visual C++ 2013</td><td>Install the 2013 redistributable</td></tr>
+          <tr><td><code>MSVCR100.dll</code></td><td>Visual C++ 2010</td><td>Install the 2010 redistributable</td></tr>
+          <tr><td><code>api-ms-win-crt-*.dll</code></td><td>The Universal C Runtime</td><td>Windows Update, or the 2015+ redistributable</td></tr>
+          <tr><td><code>d3dx9_*.dll</code>, <code>xinput1_3.dll</code></td><td>Legacy DirectX</td><td>DirectX End-User Runtime from Microsoft</td></tr>
+          <tr><td><code>MSVBVM60.dll</code></td><td>Visual Basic 6</td><td>The VB6 runtime</td></tr>
+          <tr><td>Anything else, oddly named</td><td>The program itself</td><td>Reinstall, or keep it in its folder</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Find out what the program actually wants</h3>
+    <p>The dialog names one missing library — the first one Windows failed to find. There may be more behind it, and you will discover them one dialog at a time.</p>
+    <p>You do not have to guess, because the full list is inside the file. The import table names every library and every function the program intends to call, and it can be read without running anything. <a href="/exe-inspector/">Drop the <code>.exe</code> into the EXE viewer</a> and it lists them: the Windows libraries it needs, the runtime version it was built against, and any libraries of its own it expects to find beside it. That turns "which runtime do I install?" from a search into a reading.</p>
+    <p>It also answers the question underneath: whether the program is 32-bit or 64-bit, which decides which redistributable you need.</p>
+
+    <h3>When the program is simply too old</h3>
+    <p>Sometimes nothing is missing in a way you can fix. A program built for Windows 95 may want a 16-bit library that 64-bit Windows cannot load at all, and no download will change that — <a href="/blog/run-16-bit-windows-3x-software/">the 16-bit subsystem is gone</a>. Others expect libraries that shipped with a version of Windows that no longer exists.</p>
+    <p>At that point the answer is a compatibility layer rather than a file: a virtual machine with the old Windows on it, or an emulated environment that already contains the right era of libraries. <a href="/load-exe/">Running it in a browser tab</a> is the lowest-effort version of that — the environment there is Wine 1.7.55, which is a 2015 snapshot of the Windows API, and it carries the old libraries as a matter of course. <a href="/blog/why-old-programs-wont-run-on-windows-11/">Why old programs stop working</a> goes through the other causes.</p>
+
+    <h3>The short version</h3>
+    <p>A missing DLL nearly always means a runtime that was never installed, or a program separated from the files it shipped with. Install the Visual C++ Redistributable, keep the program in its folder, and reinstall from the original source. Do not download loose DLLs from search results. And if you want to know what the program is really asking for rather than finding out one dialog at a time, <a href="/exe-inspector/">read its import table</a>.</p>
+
+    <h2>Keep reading</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/blog/why-old-programs-wont-run-on-windows-11/"><span class="lc-title">Why old programs won't run</span><span class="lc-desc">Six causes, and what fixes each one.</span></a></li>
+      <li><a class="link-card" href="/blog/run-16-bit-windows-3x-software/"><span class="lc-title">16-bit software in 2026</span><span class="lc-desc">When the library you need no longer exists.</span></a></li>
+      <li><a class="link-card" href="/blog/what-is-an-exe-file/"><span class="lc-title">What is an .exe file?</span><span class="lc-desc">Where the import table lives, and why.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+<script src="/pwa.js?v=1"></script>
+</body>
+</html>

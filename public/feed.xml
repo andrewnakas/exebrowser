@@ -8,6 +8,34 @@
     <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://exebrowser.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>How to Check if an .exe Is Safe Before You Run It</title>
+      <link>https://exebrowser.com/blog/check-if-an-exe-is-safe/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/check-if-an-exe-is-safe/</guid>
+      <description>What you can learn about a Windows executable without running it — signature, publisher, imports, packing, entropy — what each thing is actually worth, and the limits of every method including scanners.</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>“A DLL Is Missing” — What It Means and How to Fix It</title>
+      <link>https://exebrowser.com/blog/dll-is-missing-error/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/dll-is-missing-error/</guid>
+      <description>Why Windows says a program can&apos;t start because a DLL is missing, the four causes, why DLL download sites are the worst possible fix, and how to find out exactly which libraries a program needs.</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Open an EXE File on Android, Honestly</title>
+      <link>https://exebrowser.com/blog/open-exe-file-on-android/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/open-exe-file-on-android/</guid>
+      <description>Android cannot run Windows .exe files, and most guides promising otherwise are selling something. Here is what genuinely works in 2026 — a browser tab, Winlator, remote desktop — and where each one stops.</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Open an EXE File on a Mac in 2026</title>
+      <link>https://exebrowser.com/blog/open-exe-file-on-mac/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/open-exe-file-on-mac/</guid>
+      <description>Five honest ways to open a Windows .exe on a Mac — a browser tab with nothing installed, Wine, CrossOver, a virtual machine, or remote Windows — and what Apple Silicon changed about all of them.</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>What Is an .exe File — and How Do You Open One?</title>
       <link>https://exebrowser.com/blog/what-is-an-exe-file/</link>
       <guid isPermaLink="true">https://exebrowser.com/blog/what-is-an-exe-file/</guid>
@@ -132,34 +160,6 @@
       <guid isPermaLink="true">https://exebrowser.com/run/solitaire-open/</guid>
       <description>The Klondike Solitaire you know, in your browser — draw 1 or 3, Standard and Vegas scoring, and the bouncing cards when you win.</description>
       <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Cosmo&apos;s Cosmic Adventure</title>
-      <link>https://exebrowser.com/run/cosmo/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/cosmo/</guid>
-      <description>Apogee&apos;s 1992 platformer in your browser — the complete shareware episode, no download or install.</description>
-      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Hocus Pocus</title>
-      <link>https://exebrowser.com/run/hocus-pocus/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/hocus-pocus/</guid>
-      <description>Apogee&apos;s 1994 wizard platformer in your browser — the complete shareware episode, no download.</description>
-      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Crystal Caves</title>
-      <link>https://exebrowser.com/run/crystal-caves/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/crystal-caves/</guid>
-      <description>Apogee&apos;s 1991 platformer in your browser — the complete shareware episode, no download or install.</description>
-      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Monster Bash</title>
-      <link>https://exebrowser.com/run/monster-bash/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/monster-bash/</guid>
-      <description>Apogee&apos;s 1993 monster-hunting platformer in your browser — the complete shareware episode.</description>
-      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Open Cadet: Space Cadet Pinball, Fully Open Source</title>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to Check if an .exe Is Safe Before You Run It</title>
+<meta name="description" content="What you can learn about a Windows executable without running it — signature, publisher, imports, packing, entropy — what each thing is actually worth, and the limits of every method including scanners." />
+<meta name="keywords" content="is this exe safe, check exe file safe, how to check exe before running, is exe a virus, verify exe file, exe file scanner" />
+<link rel="canonical" href="https://exebrowser.com/blog/check-if-an-exe-is-safe/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/blog/check-if-an-exe-is-safe/" />
+<meta property="og:title" content="How to Check if an .exe Is Safe Before You Run It" />
+<meta property="og:description" content="What a file tells you about itself before it runs — and what none of it proves." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=41" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Check if an .exe Is Safe Before You Run It",
+  "description": "A practical guide to inspecting a Windows executable before running it: code signatures, version strings, the import table, packers and entropy, scanners and sandboxes — and what each method genuinely proves.",
+  "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" },
+  "publisher": { "@type": "Organization", "name": "ExeBrowser" },
+  "mainEntityOfPage": "https://exebrowser.com/blog/check-if-an-exe-is-safe/",
+  "image": "https://exebrowser.com/og.png",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://exebrowser.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Is this .exe safe?", "item": "https://exebrowser.com/blog/check-if-an-exe-is-safe/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Is this .exe safe?</nav>
+  <section class="card">
+    <h2>How to check if an .exe is safe before you run it</h2>
+    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published September 22, 2026 · ~9 minute read</p>
+
+<p>You have downloaded something ending in <code>.exe</code> and you are not certain about it. Perhaps the site looked improvised, perhaps a colleague sent it, perhaps you searched for a tool and the first three results all offered a different installer with the same name.</p>
+    <p>Most advice at this point is "scan it", which is not wrong but is a small part of the answer. A Windows executable declares a great deal about itself before it runs a single instruction, and reading those declarations costs nothing. What follows is what you can learn, in rough order of usefulness, and — the part usually left out — what each thing is actually worth as evidence.</p>
+
+    <h3>Start with where it came from</h3>
+    <p>This remains the highest-value check and no amount of file analysis replaces it. The vendor's own site beats an aggregator; an aggregator that wraps the download in its own installer is a bad sign on its own; and a link that arrived unprompted in a message is the single most common way people get caught, whoever appears to have sent it.</p>
+    <p>If the program is open source, prefer the project's own release page. If the project publishes checksums, compare them — that is the only method on this page that proves the file is byte-for-byte what the author published.</p>
+
+    <h3>Is it signed, and by whom?</h3>
+    <p>An Authenticode signature binds the file to a certificate someone had to buy with an identity attached. A signed file that has been altered fails verification, so a valid signature does tell you the bytes are as the signer left them.</p>
+    <p>What it does not tell you is that the signer is trustworthy. Certificates are purchased, and they are stolen; signed malware exists and always has. Treat a signature as identification, not endorsement — it says who to blame, not that there is no one to blame. On Windows you can see it under Properties → Digital Signatures. Elsewhere, <a href="/exe-inspector/">the EXE viewer</a> will at least tell you whether one is present, though no browser can verify a certificate chain.</p>
+    <p>Unsigned is not damning. Most small open-source utilities are unsigned, because certificates cost money. It is one input.</p>
+
+    <h3>What does it say about itself?</h3>
+    <p>Executables carry a version resource: company name, product name, file version, copyright line, original filename. This is what Windows shows in the Properties dialog, and it is the fastest way to notice that a file called <code>setup.exe</code> claims to be something else entirely, or that its "original filename" does not match the name you downloaded.</p>
+    <p>Bear in mind what these strings are. They are text that whoever compiled the file typed into a resource script. Anyone can put "Microsoft Corporation" there. They are excellent for identification and worth nothing as proof.</p>
+
+    <h3>What does it ask Windows to do?</h3>
+    <p>This is the most interesting part, and the least known. A Windows program cannot call a system function without naming it, in plain text, in a table inside the file. Want to open a socket? The file must name <code>ws2_32.dll</code>. Want to read the registry? It must name <code>RegOpenKeyExA</code>. Start another process, install a service, hook the keyboard, encrypt something — each of those is a named import, written down before anything runs.</p>
+    <p>So you can read, from the file alone, roughly what a program is equipped to do. A small offline image converter that imports networking functions is at least worth a question. An installer that imports service-control functions is telling you it intends to install a service.</p>
+    <p>Two cautions, both important. First, these APIs are utterly ordinary: every updater talks to the network, every installer writes files, plenty of legitimate software reads the registry. A long list is not an accusation. Second, and more seriously, the absence of a list means nothing at all — see the next section.</p>
+
+    <h3>Is it packed?</h3>
+    <p>Packers compress an executable and unpack it in memory when it starts. UPX is the common legitimate one; there are many commercial protectors too. Compression makes downloads smaller and makes reverse engineering harder, and both of those are reasons honest software uses it.</p>
+    <p>It also means that everything in the previous section evaporates. A packed program imports almost nothing — typically just enough to allocate memory and load libraries by name at runtime — and only reveals its real imports once it is already running, which is precisely too late. So "this file imports almost nothing" is not reassurance. It is the opposite: it means static inspection cannot see anything, and you should lean harder on provenance and on scanning.</p>
+    <p>You can spot packing without recognising the specific packer, by measuring entropy — how random the bytes look, on a scale of 0 to 8. Ordinary compiled code sits around 6. Compressed or encrypted data sits above 7.2. A program whose executable section is at 7.9 has been packed, whatever it is called.</p>
+
+    <h3>Is it even the program?</h3>
+    <p>Very often the thing you downloaded is a wrapper: a small program with an entire archive appended after it. That is what a self-extracting installer is. Worth knowing for two reasons — the thing you actually want is inside, and can frequently be <a href="/run/extract-archive/">extracted without running anything</a>; and the wrapper's own properties tell you nothing about what it will unpack.</p>
+    <p>A file where 95% of the bytes sit after the last section of the executable is a wrapper, and that is visible without running it.</p>
+
+    <h3>Scan it</h3>
+    <p><a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a> runs an upload past around seventy engines at once, which is far better than any single scanner including the one you have. If the file has been seen before you also get its history, which is often more informative than the verdicts.</p>
+    <p>The catch is in the word "upload". You are handing the file to a third party, and if it is a confidential document wrapped in an installer, that is a decision rather than a formality. You can search by hash instead — compute the file's SHA-256 and look that up — which tells you whether the file is known without sending it anywhere.</p>
+    <p>And calibrate the result. One or two detections out of seventy is usually a false positive, especially for packed software or small utilities that manipulate the system. Fifteen is not.</p>
+
+    <h3>Run it somewhere that does not matter</h3>
+    <p>Everything above is static. At some point you may simply want to see what the program does, and the answer is to give it somewhere to do it that you do not care about: a virtual machine with no network and no shared folders, Windows Sandbox on Pro editions, or an online sandbox service that will run it and produce a behaviour report.</p>
+    <p>A browser tab is a partial version of this. <a href="/load-exe/">The loader here</a> runs 32-bit Windows programs in an emulated environment inside the page, with no access to your real filesystem and no network for the program to reach. It is genuinely a boundary, and it is not a malware analysis lab — it is a reasonable way to see whether an old utility does what it claims.</p>
+
+    <h3>What none of it proves</h3>
+    <p>There is no static check that establishes a file is safe. Everything on this page is a program's account of itself, and a program that wishes to be misleading is under no obligation to be honest in advance. What these checks are genuinely good for is the ordinary questions — is this the architecture I need, is it a wrapper, does it claim a publisher, is it signed, is it complete, is it hiding — and those turn out to be what most people actually want to know.</p>
+    <p>Used well, inspection raises or lowers your confidence. It does not settle it. If the answer matters, the order is: trust the source, verify the checksum, scan the hash, and run it somewhere disposable.</p>
+
+    <p><a href="/exe-inspector/">The EXE viewer</a> does the static half of this in the browser — signature presence, publisher strings, imports, packing, entropy, whether it is a wrapper — without uploading the file anywhere and without running it.</p>
+
+    <h2>Keep reading</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/blog/what-is-an-exe-file/"><span class="lc-title">What is an .exe file?</span><span class="lc-desc">The format, and what each part of it is for.</span></a></li>
+      <li><a class="link-card" href="/blog/extract-files-from-an-old-installer/"><span class="lc-title">Extract files from an installer</span><span class="lc-desc">Get the contents out without executing it.</span></a></li>
+      <li><a class="link-card" href="/blog/legally-get-classic-windows-games/"><span class="lc-title">Where to get old software legally</span><span class="lc-desc">Sources that are not a gamble.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+<script src="/pwa.js?v=1"></script>
+</body>
+</html>
