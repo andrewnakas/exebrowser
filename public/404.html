@@ -23,6 +23,21 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+  // Which URL was actually asked for. The page_view this fires carries the
+  // title "Page not found", so GA4 has been reporting the *volume* of 404s
+  // (210 views in the week to 20 Sep 2026, 2.7% of all views) while saying
+  // nothing about which addresses produced them — and Search Console lists no
+  // 404s at all, so Google's index is not the source. Without the path there
+  // is no way to tell a dead inbound link from a typo'd slug from a stale
+  // bookmark, and therefore no way to decide whether to redirect, restore or
+  // ignore. Referrer is included because a 404 with a referrer is a broken
+  // link somebody else controls, which is worth an email; one without is not.
+  if (!navigator.webdriver) {
+    gtag('event', 'page_not_found', {
+      missing_path: location.pathname + location.search,
+      from_referrer: document.referrer || '(none)'
+    });
+  }
 </script>
 </head>
 <body>
