@@ -83,7 +83,7 @@ const html = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Unblocked Games — Free, No Download, Runs in Your Browser — ExeBrowser</title>
+<title>Unblocked Games — Free, No Download, Runs in Your Browser</title>
 <meta name="description" content="${playable.length} classic games that run as ordinary web pages, so there is nothing to install on a locked-down school or work laptop. Free, no account, works on Chromebooks." />
 <meta name="keywords" content="unblocked games, unblocked games at school, no download games, chromebook games, browser games no install" />
 <link rel="canonical" href="${SITE}/unblocked/" />

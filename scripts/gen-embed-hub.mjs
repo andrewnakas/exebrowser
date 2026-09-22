@@ -133,7 +133,10 @@ ${games.map((p, i) => `    { "@type": "ListItem", "position": ${i + 1}, "name": 
 }
 </script>`;
 
-const title = `Free Games You Can Embed on Your Website — No Key, No Ads — ExeBrowser`;
+// 60 characters is the ceiling — Bing cuts around 65 and the " — ExeBrowser"
+// suffix sat past the cut, paid for and never displayed. Same rule as the
+// 1 Sep 2026 sweep, which covered the catalogue titles but not this one.
+const title = `Free Games You Can Embed on Your Website — No Key, No Ads`;
 const desc = `${games.length} classic games — 3D Pinball Space Cadet, Solitaire, Minesweeper, Snake, JezzBall and more — free to embed on any site. One iframe, no API key, no ads, no tracking.`;
 
 const html = `<!DOCTYPE html>

@@ -162,14 +162,14 @@
       <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Open Cadet: How I Rebuilt Space Cadet Pinball as Fully Open Source</title>
+      <title>Open Cadet: Space Cadet Pinball, Fully Open Source</title>
       <link>https://exebrowser.com/blog/open-cadet-open-source-space-cadet/</link>
       <guid isPermaLink="true">https://exebrowser.com/blog/open-cadet-open-source-space-cadet/</guid>
       <description>3D Pinball Space Cadet needs a proprietary PINBALL.DAT to run. I rebuilt that data file from scratch — original art, 47 synthesized sounds, CC0 public domain — so the open-source engine finally runs with zero Microsoft files. Here&apos;s how.</description>
       <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How to Extract Files From an Old Installer (Without Installing It)</title>
+      <title>How to Extract Files From an Installer, Without Installing</title>
       <link>https://exebrowser.com/blog/extract-files-from-an-old-installer/</link>
       <guid isPermaLink="true">https://exebrowser.com/blog/extract-files-from-an-old-installer/</guid>
       <description>Old setup.exe won&apos;t run, but you just need the files inside? Here&apos;s how to unpack a legacy Windows installer — with 7-Zip, innoextract, cabextract, msiextract, or a browser sandbox — without a full install.</description>
@@ -190,7 +190,7 @@
       <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>We Tested 50+ Windows Apps in the Browser — Here&apos;s What Actually Runs</title>
+      <title>We Tested 50+ Windows Apps in the Browser — What Runs</title>
       <link>https://exebrowser.com/blog/we-tested-53-windows-apps-in-the-browser/</link>
       <guid isPermaLink="true">https://exebrowser.com/blog/we-tested-53-windows-apps-in-the-browser/</guid>
       <description>We ran more than 50 classic Windows and DOS programs through a browser-based Wine + DOSBox runtime and logged the results. Here&apos;s the full table: what plays instantly, what&apos;s partial, and what won&apos;t run.</description>
