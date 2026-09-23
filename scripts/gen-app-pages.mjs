@@ -188,22 +188,25 @@ const monthYear = (iso, L = EN) => {
     return `${MONTHS[m - 1]} ${y}`;
   }
 };
-function breadcrumbLd(p) {
+// The URLs here have to carry the locale prefix, or /es/run/doom/ tells Google
+// its breadcrumb trail is three English pages — a structured-data claim that
+// contradicts the canonical right above it. Same for the two hardcoded names.
+function breadcrumbLd(p, L = EN) {
   return `<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE}/" },
-    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "${SITE}/run/" },
-    { "@type": "ListItem", "position": 3, "name": ${jsonText(p.crumb)}, "item": "${SITE}/run/${p.slug}/" }
+    { "@type": "ListItem", "position": 1, "name": ${jsonText(L.t("crumb.home"))}, "item": "${SITE}${L.path("/")}" },
+    { "@type": "ListItem", "position": 2, "name": ${jsonText(L.t("crumb.guides"))}, "item": "${SITE}${L.path("/run/")}" },
+    { "@type": "ListItem", "position": 3, "name": ${jsonText(p.crumb)}, "item": "${SITE}${L.path(`/run/${p.slug}/`)}" }
   ]
 }
 </script>`;
 }
 
-function appLd(p) {
-  const url = `${SITE}/run/${p.slug}/`;
+function appLd(p, L = EN) {
+  const url = `${SITE}${L.path(`/run/${p.slug}/`)}`;
   if (p.appType === "game") {
     const genre = (p.genre || []).map((g) => JSON.stringify(g)).join(", ");
     return `<script type="application/ld+json">
@@ -788,8 +791,8 @@ const render = (p, L = EN) => `<!DOCTYPE html>
   // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
   if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
 </script>
-${breadcrumbLd(p)}
-${appLd(p)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
+${breadcrumbLd(p, L)}
+${appLd(p, L)}${p.faq && p.faq.length ? "\n" + faqLd(p) : ""}
 </head>
 <body>
 <header>

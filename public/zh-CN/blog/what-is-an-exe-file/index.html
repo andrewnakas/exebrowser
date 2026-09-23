@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>.exe 文件是什么 —— 又该怎么打开？</title>
+<meta name="description" content=".exe 文件到底是什么、在 Windows、Mac、Chromebook、Linux、Android 和 iOS 上怎么打开、怎么不运行就看清里面有什么，以及什么时候根本不该打开它。" />
+<meta name="keywords" content="exe 文件是什么, exe 文件, 怎么打开 exe, PE 格式, 没有 windows 打开 exe, exe 安全吗" />
+<link rel="canonical" href="https://exebrowser.com/zh-CN/blog/what-is-an-exe-file/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/blog/what-is-an-exe-file/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/blog/what-is-an-exe-file/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/blog/what-is-an-exe-file/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/blog/what-is-an-exe-file/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/blog/what-is-an-exe-file/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/zh-CN/blog/what-is-an-exe-file/" />
+<meta property="og:title" content=".exe 文件是什么 —— 又该怎么打开？" />
+<meta property="og:description" content="一个 .exe 里面装着什么、各个平台上怎么打开、怎么不运行就看清它，以及什么时候干脆别打开。" />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=41" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://exebrowser.com/zh-CN/" },
+    { "@type": "ListItem", "position": 2, "name": "博客", "item": "https://exebrowser.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": ".exe 文件是什么", "item": "https://exebrowser.com/zh-CN/blog/what-is-an-exe-file/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": ".exe 文件是什么 —— 又该怎么打开？",
+  "description": ".exe 文件到底是什么、在 Windows、Mac、Chromebook、Linux、Android 和 iOS 上怎么打开、怎么不运行就看清里面有什么，以及什么时候根本不该打开它。",
+  "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" },
+  "publisher": { "@type": "Organization", "name": "ExeBrowser" },
+  "mainEntityOfPage": "https://exebrowser.com/zh-CN/blog/what-is-an-exe-file/",
+  "image": "https://exebrowser.com/og.png",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22"
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">在浏览器里直接运行 Windows 的 <code>.exe</code> 程序。无需安装，无需上传，只用 WebAssembly 和 Wine。</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/zh-CN/">首页</a>
+    <a href="/zh-CN/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/blog/">博客</a>
+    <a href="/zh-CN/guide/">指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="语言"><a href="/blog/what-is-an-exe-file/" hreflang="en">English</a> · <a href="/es/blog/what-is-an-exe-file/" hreflang="es">Español</a> · <a href="/pt-BR/blog/what-is-an-exe-file/" hreflang="pt-BR">Português (BR)</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/zh-CN/">首页</a> › <a href="/blog/">博客</a> › .exe 文件是什么</nav>
+
+  <section class="card">
+    <h2>.exe 文件是什么 —— 又该怎么打开？</h2>
+    <p class="updated">作者 <a href="/about/">Andrew Nakas</a> · 发布于 2026 年 9 月 22 日 · 约 8 分钟阅读</p>
+
+    <p>大多数人遇到这个问题的方式都一样：不知什么东西下载了一个以 <code>.exe</code> 结尾的文件，双击之后什么有用的事都没发生。也许你在 Mac 上。也许你在一台不让你装任何东西的公司笔记本上。也许它<em>确实</em>是一台 Windows 电脑，而它仍然拒绝启动。</p>
+    <p>这篇文章讲清楚这个文件到底是什么、在各个平台上怎么打开、怎么在不运行的前提下看清它内部，以及大多数指南跳过的那一部分——什么时候你根本就不该打开它。</p>
+
+
+    <h3>.exe 到底是什么</h3>
+    <p><code>.exe</code> 是一个<strong>程序</strong>，不是一份文档。打开它不会显示任何内容；它是在告诉你的操作系统开始执行里面的机器码。这篇文章之所以比「双击一下」复杂得多，原因全在这里。</p>
+    <p>严格来说它是一个 <strong>PE 文件</strong>——Portable Executable，微软从 Windows NT 起使用的格式。一个 PE 文件内部包含：</p>
+    <ul>
+      <li>开头一小段 <strong>DOS stub</strong>，是 1980 年代留下来的。老 <code>.exe</code> 在 DOS 下运行时会打印「This program cannot be run in DOS mode」，就是因为它。</li>
+      <li>一个 <strong>PE 头</strong>，说明这些代码针对哪种 CPU（32 位 x86、64 位 x64、ARM）、期待哪个版本的 Windows，以及各部分在内存里的位置。</li>
+      <li>若干<strong>节（section）</strong>，装着真正的机器码、固定数据，以及各种资源——图标、对话框布局、内嵌文本。</li>
+      <li>一张<strong>导入表</strong>，列出它需要的 Windows 库，比如 <code>kernel32.dll</code> 或 <code>user32.dll</code>。</li>
+    </ul>
+    <p>正是这张导入表，让 <code>.exe</code> 很少能自给自足。它默认周围存在一个 Windows。把同一个文件交给 macOS 或 Linux，那里没人听得懂它说的话——文件本身没问题，只是听众不对。</p>
+    <p>另外还有两种东西用着同样的扩展名，行为却不一样：<strong>安装程序</strong>（一个小程序，唯一的任务是把真正的程序铺到你硬盘上）和<strong>自解压压缩包</strong>（一个 zip，前面焊了一个解压器）。这两样后面都还会用到。</p>
+
+    <h3>在 Windows 上打开</h3>
+    <p>双击。这真的就是全部步骤，而如果它管用，你也不会在读这篇文章了。当它不管用时，几乎总是下面几种情况之一：</p>
+    <ul>
+      <li><strong>SmartScreen 拦住了。</strong>会弹出一个蓝色的「Windows 已保护你的电脑」。如果你确定来源，点「更多信息」→「仍要运行」。如果你并不确定，停下来——看下面那一节关于安全的内容。</li>
+      <li><strong>它需要管理员权限。</strong>右键 →「以管理员身份运行」。安装程序通常需要。</li>
+      <li><strong>它是 16 位的。</strong>Windows 3.x 年代的东西在 64 位 Windows 上根本启动不了；那个子系统被移除了。参见<a href="/blog/run-16-bit-windows-3x-software/">运行 Windows 3.x 的 16 位软件</a>。</li>
+      <li><strong>缺少某个 DLL。</strong>错误信息点名某个 <code>.dll</code>，说明程序期待一个你没有的库或运行时。通常这个文件需要待在它原来的文件夹里，和它的同伴们一起。</li>
+      <li><strong>它就是老。</strong><a href="/blog/why-old-programs-wont-run-on-windows-11/">为什么老程序在 Windows 11 上跑不起来</a>讲了兼容模式的各种选项。</li>
+    </ul>
+
+    <h3>在 Mac 上打开</h3>
+    <p>macOS 无法原生运行 <code>.exe</code>，而且从来就不能——Apple Silicon 上的 CPU 约定不同，而底下的操作系统本来就完全是另一套。改文件名没有任何用。老老实实排个序，你现实中的选择是：</p>
+    <ul>
+      <li><strong>在浏览器标签页里运行。</strong>什么都不用装，在 Intel 和 Apple Silicon 上表现一样。<a href="/zh-CN/load-exe/">本站的加载器</a>做的就是这件事——一份编译成 WebAssembly 的 <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a>，加上一个 x86 模拟器，在标签页里本地运行。你的文件不会被上传到任何地方。限制是真实的，也值得说清楚：它针对的是 1995 到 2008 年左右的经典 32 位 Win32 软件，速度约为原生的 10–40%。一个上古小工具或一个老游戏，可以。现代的 64 位应用，不行。</li>
+      <li><strong>装 Wine 或 CrossOver。</strong>能力更强，配置也麻烦得多。Wine 是免费的；CrossOver 是商业软件，手把手的程度更好。</li>
+      <li><strong>虚拟机。</strong>Parallels 或 VMware，配一份真正的 Windows 授权。这是兼容性最好的答案，也是最贵的——无论是钱还是磁盘空间。</li>
+      <li><strong>Boot Camp。</strong>只限 Intel 版 Mac。在 Apple Silicon 上已经没有了。</li>
+    </ul>
+    <p>如果目标是「把这个老程序打开一次」，浏览器这条路通常是分寸刚好的那个。如果目标是「在这台 Mac 上经常运行 Windows 软件」，你真正需要的是虚拟机。</p>
+
+    <h3>在 Chromebook 上</h3>
+    <p>和 macOS 的处境一样，还多一层麻烦：学校和公司统一管理的 Chromebook 经常禁止安装任何东西，包括 Linux 容器。不需要安装的浏览器路线往往是唯一没被封掉的，而且在 ARM 架构的 Chromebook 上也能用，因为 CPU 本来就是模拟出来的。这一点我们单独写过一篇——<a href="/blog/run-windows-software-on-a-chromebook/">在 Chromebook 上运行 Windows 软件的四种办法</a>。</p>
+
+    <h3>在 Linux 上</h3>
+    <p>用发行版的包管理器装上 Wine，然后 <code>wine 程序.exe</code>。除了 Windows 自己，Linux 是原生支持最好的：Wine 已经成熟，而在游戏方面 Valve 的 Proton 就建立在它之上。如果你不想装任何东西，浏览器这条路在这里同样管用。</p>
+
+    <h3>在 Android 和 iOS 上</h3>
+    <p>说实话：基本上做不到，而那些暗示可以的指南只是在浪费你的时间。iOS 上没有任何受支持的方式来运行 Windows 软件。Android 上确实有能启动整套 Windows 环境的模拟器，但又慢又难伺候。浏览器标签页在这两个系统上都能打开体积不大的经典程序，这个门槛确实很低——够你看一眼老游戏，不够用来干正事。</p>
+
+    <h3>如果你只想看看里面有什么</h3>
+    <p>很多时候真正的目标根本不是运行这个程序。你想要的是里面的某一个文件——一份文档、一张图、一个驱动、一份来自早已装不上的软件的数据文件。要做到这件事，你不需要执行任何东西。</p>
+    <ul>
+      <li><strong>先试试压缩工具。</strong>很多安装程序和全部自解压压缩包，用 <a href="/run/7-zip/">7-Zip</a> 都能像普通 zip 一样直接打开。右键 →「打开压缩包」。你也可以在浏览器里用<a href="/run/extract-archive/">这里的解压工具</a>。</li>
+      <li><strong>安装程序有自己的拆包工具。</strong><code>innoextract</code> 对付 Inno Setup，<code>cabextract</code> 对付基于 CAB 的，<code>msiexec /a</code> 可以对 <code>.msi</code> 做一次管理式解包。完整步骤：<a href="/blog/extract-files-from-an-old-installer/">怎么从老安装包里提取文件</a>。</li>
+      <li><strong>如果要检查可执行文件本身</strong>——它导入了什么、带着哪些资源、是 32 位还是 64 位——你要的是一个 PE 查看器，而不是一个「打开」它的程序。这能在一行代码都不执行的情况下回答「这到底是个什么东西」。</li>
+    </ul>
+    <p>这条路同时也是安全的那条。读一个文件，和执行它，完全不是一回事。</p>
+
+    <h3>打开之前：它安全吗？</h3>
+    <p>一个 <code>.exe</code>，你的用户账户能做什么，它就能做什么。大多数指南把这一点埋在角落里；在这里它应该是声音最大的一段。</p>
+    <ul>
+      <li><strong>它是从哪来的？</strong>厂商自己的网站，和邮件附件、下载站、聊天里的一个链接，完全是两回事。如果你说不出来源，就别运行。</li>
+      <li><strong>这个文件名是不是被精心设计过？</strong><code>发票.pdf.exe</code> 不是 PDF。Windows 默认隐藏已知扩展名，而这个骗术靠的正是这一点。</li>
+      <li><strong>扫一遍。</strong>在运行任何你拿不准的东西之前，先传到 <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a>，让几十个引擎一起查。</li>
+      <li><strong>别信所谓「已修复」的破解补丁或注册机。</strong>这一类东西是互联网上最稳定的恶意软件投递渠道。</li>
+      <li><strong>只需要里面的文件时，优先解压而不是执行</strong>，用上面那些工具。</li>
+    </ul>
+    <p>浏览器沙箱能解决其中一部分问题，但不是全部：在标签页里运行的程序拿不到你真正的文件系统，所以它没法加密你的文档。它是一道真实的隔离边界，但不是一张「可以运行你毫无理由信任的东西」的许可证。</p>
+
+    <h3>快速解答</h3>
+    <ul>
+      <li><strong>能把 .exe 转换成别的格式吗？</strong>不能。宣传这种功能的转换器，要么其实是在解压一个压缩包，要么就是什么都没卖给你。里面的代码针对的是特定的 CPU 和操作系统。</li>
+      <li><strong>为什么它显示「This program cannot be run in DOS mode」？</strong>你看到的是 DOS stub。这说明一个 Windows 可执行文件被拿到了不是 Windows 的地方运行。</li>
+      <li><strong>双击之后什么都没发生。</strong>常常是一个控制台程序打开、输出、然后立刻退出了。打开一个终端，从那里运行它，窗口就会留着。</li>
+      <li><strong>没有 Windows 能打开 .exe 吗？</strong>能——在 Mac 或 Linux 上用 Wine、用虚拟机，或者对体积较小的经典程序用一个浏览器标签页。</li>
+    </ul>
+
+    <h3>一句话版本</h3>
+    <p><code>.exe</code> 是一个 Windows 程序，所以「打开」它就等于运行它——这就是为什么在 Windows 上很容易，在别的地方都很别扭。如果你需要<em>用</em>它，按平台和频率来选：一个老程序偶尔打开，用浏览器标签页；经常要用，装 Wine；任何现代软件，上虚拟机。如果你只是要从里面<em>取出</em>什么东西，用压缩工具，根本别执行它。无论走哪条路，先弄清楚这个文件是从哪来的。</p>
+
+    <p>如果你宁愿先看清楚再动手，<a href="/exe-inspector/">EXE 查看器</a>能把这些都从文件里读给你看——文件头、依赖库、图标、签名——全在浏览器里完成，一行都不执行。而如果你想现在就试试免安装的那条路，<a href="/zh-CN/load-exe/">加载器在这里</a>：拖一个 <code>.exe</code> 进去，它就在标签页里、在你自己的机器上跑起来。什么能跑、什么不能跑，<a href="/zh-CN/guide/">兼容性指南</a>里说得很直白。</p>
+
+    <h2>继续阅读</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/zh-CN/open-exe-file/"><span class="lc-title">怎么打开 .exe 文件</span><span class="lc-desc">逐个平台讲清楚运行它的每一种办法。</span></a></li>
+      <li><a class="link-card" href="/blog/extract-files-from-an-old-installer/"><span class="lc-title">从老安装包里提取文件</span><span class="lc-desc">不安装也能把里面的东西取出来。</span></a></li>
+      <li><a class="link-card" href="/blog/check-if-an-exe-is-safe/"><span class="lc-title">这个 .exe 安全吗？</span><span class="lc-desc">运行之前你能弄清楚些什么。</span></a></li>
+      <li><a class="link-card" href="/blog/wine-vs-emulator-explained/"><span class="lc-title">Wine 与模拟器的区别</span><span class="lc-desc">两者的差别究竟在哪里。</span></a></li>
+      <li><a class="link-card" href="/zh-CN/guide/"><span class="lc-title">兼容性指南</span><span class="lc-desc">哪些程序能在浏览器里跑，哪些不能。</span></a></li>
+    </ul>
+
+  </section>
+</main>
+
+<footer>
+  <p>基于 <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a>、<a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> 和 WebAssembly 构建。Wine 是 CodeWeavers 的商标。ExeBrowser 与 WineHQ、CodeWeavers 和微软均无关联。</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/zh-CN/">首页</a>
+    <a href="/zh-CN/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/blog/">博客</a>
+    <a href="/zh-CN/guide/">兼容性指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+    <a href="/saves/">游戏存档</a>
+    <a href="/privacy/">隐私政策</a>
+    <a href="/terms/">使用条款</a>
+  </nav>
+  <p>© 2026 ExeBrowser。内容采用开放许可，运行时基于 GPL-2.0 / LGPL-2.1。</p>
+</footer>
+
+<script>window.__I18N={"play":"▶ 开始玩 {name}","resume":"▶ 继续玩 {name}","loading":"加载中…","startOver":"重新开始","savedAgo":"保存于{when}。","filesRestored":"你的存档也一并载入了，请在游戏自带的菜单里读取。","snapshotResume":"可以从你上次中断的地方继续，进度不会丢。","progressSaved":"进度已保存在这个浏览器里","resumedExactly":"已从上次中断的地方继续","snapshotOff":"无法保存恢复点 - 游戏内存档仍然有效","confirmDelete":"确定要删除 {name} 的存档吗？","justNow":"刚刚","minutesAgo":"{n} 分钟前","anHourAgo":"1 小时前","hoursAgo":"{n} 小时前","yesterday":"昨天","daysAgo":"{n} 天前","saveHint":"在游戏里存档，存档会保留在这个浏览器中","resetSaves":"清除存档","savesCleared":"存档已清除，刷新页面即可重新开始","restoredFiles":"已恢复 {n} 个存档，请在游戏菜单中读取","overlayNote":"通过 DOSBox 和 WebAssembly 在浏览器中运行。<br>不会上传任何文件。运行时约 1.4 MB，首次加载后会被缓存。","mouseHint":"点击游戏画面，键盘操作即可生效。","starting":"正在启动…","cachedNote":"首次加载后会被缓存，下次打开就很快了。","loadingGame":"正在加载 {name}…","fullscreen":"全屏","soundOn":"声音已开","soundOff":"声音已关","remapKeys":"键盘——重新映射任意按键","remapHint":"先点击下方的按键，再按下你想改用的那个键。设置按游戏分别保存在本浏览器中。","resetDefaults":"恢复默认设置","consoleOutput":"控制台输出","wineLoadYours":"载入你自己的 {name}","wineEmptyHosted":"点击播放即可在浏览器中启动 {name}。","wineEmptyOwn":"本站没有托管 {name}，请在下方载入你自己的副本，它会直接在本页运行。","wineHintHosted":"完全在你的浏览器标签页中运行，使用 WebAssembly + Wine。不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineHintOwn":"我们无权转发 {name}，因此本站没有托管任何内容。你自己的副本完全在浏览器标签页中运行，使用 WebAssembly + Wine，不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineEngine":"Wine 引擎：","wineVariantDefault":"Wine 1.7.55 · Win32 — 1995–2008 年的绝大多数程序","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — 需要 Internet Explorer 的程序","wineVariant16":"Wine 3.1 · 16 位 Windows 3.x — 1990–1994 年的程序","wineVariantR18":"Boxedwine 18R2 — 较旧的引擎，有时能运行默认引擎跑不动的程序","wineIdle":"空闲。","wineDownloadFiles":"下载该程序写入的文件","wineFilesKept":"该程序保存的文件会留在这个浏览器里，下次打开本页时自动恢复。若要留存一份，请使用下载按钮。","wineCaptures":"抓取程序写入内存中 C:\\ 盘的存档和生成内容。","wineLoadOwnCopy":"载入你自己的副本","wineHaveFiles":"文件就在你的设备上？把程序所在的文件夹或一个 zip 拖到这里——入口 <code>.exe</code> 以及旁边的数据文件。","wineDropFiles":"把文件拖到这里，或选择：","winePickExe":"单个 EXE","winePickFolder":"一个文件夹","winePickZip":"一个 zip","wineEntryExe":"入口 EXE：","wineRun":"在 Wine 中运行","wineLoadingRuntime":"正在载入 Boxedwine 运行时…","wineConfiguring":"正在配置 Wine 启动…","wineStartingEmulator":"正在启动模拟器…","wineRunning":"正在运行 {name}…","wineBootFailed":"启动失败，请查看控制台。","winePickThenRun":"先选择一个 EXE，再点击运行。","wineReadyLoad":"Wine 已就绪 — 请载入一个 EXE","wineInstallPrompt":"安装后一键回来","wineEntry":"入口：{path}","wineExesAvailable":"可用 EXE 共 {n} 个"};</script>
+
+<script src="/pwa.js?v=2"></script>
+</body>
+</html>

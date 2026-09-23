@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>完整指南：在浏览器里运行 Windows 的 EXE 文件</title>
+<meta name="description" content="Windows 的 .exe 怎么在一个浏览器标签页里跑起来、哪些软件能跑哪些不能、该选哪一个 Wine 引擎，以及常见故障怎么排查。" />
+<meta name="keywords" content="浏览器运行 exe 指南, wine webassembly, exe在线运行 兼容性, boxedwine, 不安装运行 windows 程序, 哪些程序能跑" />
+<link rel="canonical" href="https://exebrowser.com/zh-CN/guide/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/guide/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/guide/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/guide/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/guide/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/guide/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/zh-CN/guide/" />
+<meta property="og:title" content="在浏览器里运行 Windows EXE 的完整指南" />
+<meta property="og:description" content="它到底怎么做到的、什么能跑什么不能、该选哪个引擎，以及画面一片漆黑时该怎么办。" />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=41" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://exebrowser.com/zh-CN/" },
+    { "@type": "ListItem", "position": 2, "name": "兼容性指南", "item": "https://exebrowser.com/zh-CN/guide/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">在浏览器里直接运行 Windows 的 <code>.exe</code> 程序。无需安装，无需上传，只用 WebAssembly 和 Wine。</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/zh-CN/">首页</a>
+    <a href="/zh-CN/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/blog/">博客</a>
+    <a href="/zh-CN/guide/">指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="语言"><a href="/guide/" hreflang="en">English</a> · <a href="/es/guide/" hreflang="es">Español</a> · <a href="/pt-BR/guide/" hreflang="pt-BR">Português (BR)</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/zh-CN/">首页</a> › 兼容性指南</nav>
+
+  <section class="card">
+    <h2>在浏览器里运行 Windows EXE 文件的完整指南</h2>
+    <p class="updated">最后更新：2026 年 6 月 8 日 · 约 12 分钟阅读</p>
+    <p>在网页浏览器里运行一个 Windows 程序，听上去像是不该成立的事。底下没有 Windows，没有一颗一定存在的 x86 处理器，也没有安装程序——只有一个标签页。但它确实能跑。这份指南既讲<em>它是怎么做到的</em>，也讲更实用的那一半：<em>怎么把它用好</em>。无论你是想让一个老共享软件游戏复活、从一个上古工具里救出一份文档，还是单纯出于好奇，这都是那本实操手册。</p>
+
+    <div class="warn-box" style="border-color:#2e7d32;">
+      <p style="margin-top:0;"><strong>你可以在这里运行自己的软件。</strong>这份指南说的是<em>你自己的</em>文件：来自你硬盘的一个 Windows <code>.exe</code>、一个程序文件夹，或者它的一个 zip。它在你的浏览器标签页里运行：<strong>不会有任何东西被上传到服务器</strong>，文件在本地读取，写进一块内存里的 <code>C:\</code> 盘，关掉标签页就消失。</p>
+      <p style="margin-bottom:0;"><a class="button" href="/zh-CN/load-exe/">🖥 加载你自己的 EXE、文件夹或 zip →</a> &nbsp; <span class="muted small">免费，无需账号。最适合 1995–2008 年的 32 位 Windows 软件。</span></p>
+    </div>
+
+    <h3>1. 为什么会有人想在浏览器里跑 EXE？</h3>
+    <p>老实说，是因为麻烦。32 位 Windows 的经典年代——大约 1995 到 2008 年——留下了一个庞大的软件目录：工具、游戏、CD-ROM 教育软件、商务软件、demoscene 作品。其中很大一部分至今仍能运行，但它们当年所依赖的硬件和操作系统正在消失。如果你手上是 Chromebook、iPad、现代的 Mac 或者一台 Linux 机器，想跑一个 1999 年的 Windows 安装程序就是一桩苦差事：你需要虚拟机、一份 Windows 授权，还有耐心。</p>
+    <p>在浏览器里执行把这一切压缩掉了。程序逻辑跑到任何有现代浏览器的地方，而那基本上是所有地方。常见的动机包括：</p>
+    <ul>
+      <li><strong>软件保存。</strong>博物馆、档案工作者和爱好者，想让老程序保持可运行，又不必分发一整台虚拟机。</li>
+      <li><strong>受限设备上的教学。</strong>用 Chromebook 的学校，仍然需要某个特定的老旧教学软件。</li>
+      <li><strong>快速演示。</strong>给同事看一个内部老工具，不用装东西，也不用开虚拟机。</li>
+      <li><strong>数据抢救。</strong>从一个只有老 EXE 才知道怎么打开的文件里把数据取出来。</li>
+      <li><strong>怀旧。</strong>重新打开你记忆里那些配着 56k 调制解调器和米黄色机箱的共享软件。</li>
+    </ul>
+
+    <h3>2. 它实际是怎么工作的：三层叠在一起</h3>
+    <p>理解一下这套机器是值得的，因为所有限制都直接来自它。三项技术层层叠加。</p>
+    <p><strong>第一层是 CPU 模拟器。</strong>一个 Windows EXE 是一串 x86 机器指令。你的浏览器说的是 <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>，不是 x86，所以它没法直接执行这些指令。办法是做一颗软件 CPU：一个用 C++ 写的程序，逐条读取 x86 指令，并在一颗虚拟的奔腾时代处理器上模拟它的效果。这个 C++ 模拟器被编译成 WebAssembly，浏览器跑的是<em>它</em>。所以某种意义上你是在一个模拟器里跑另一个模拟器——这正是它慢的原因。</p>
+    <p><strong>第二层是 Wine。</strong>EXE 里不只有 CPU 指令；它还会不停调用 <code>kernel32.dll</code>、<code>user32.dll</code>、<code>gdi32.dll</code> 这类 Windows 系统库。<a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a>——这个递归的名字意思是「Wine 不是模拟器」——是在 POSIX 基础上从零重写的那套 Windows API。当被模拟的程序调用 <code>CreateWindowExA</code> 时，Wine 拦下它，跑自己那份兼容实现。Wine 已经积累了几十年，完成度高得惊人，但它终究不是 100% 的 Windows，这就是第二个不兼容的来源。</p>
+    <p><strong>第三层是与浏览器之间的桥。</strong>Wine 画出来的东西总得显示在什么地方。运行时把 Wine 的帧缓冲映射到一个 HTML <code>&lt;canvas&gt;</code> 上，把你的键盘和鼠标送进 Wine 的输入队列，把声音交给 Web Audio，再伪造一块虚拟 <code>C:\</code> 盘（用一个内存文件系统），让 Wine 以为自己面对的是一块正常的硬盘。整条流水线单线程运行在页面的主 WebAssembly 实例上，所以它在任何现代浏览器里都能跑，不需要特殊的响应头或开关。</p>
+    <p>三层叠起来，大致能给出原生 CPU 速度的 10% 到 40%。对一个靠菜单操作的工具来说，这个差距看不出来。对 3D 游戏或者重度压缩来说，非常明显。</p>
+
+    <h3>3. 到底哪些程序能跑？</h3>
+    <p>试过大量程序之后，规律是稳定的。下面这些类别跑得<strong>很好</strong>：</p>
+    <ul>
+      <li><strong>2005 年之前的工具和共享软件</strong>——文件管理器、十六进制编辑器、文本编辑器、早期的 WinRAR / 7-Zip 界面、各种小工具。</li>
+      <li><strong>Win9x 到 XP 早期的 2D 游戏</strong>——点击式冒险、益智游戏、回合制策略、2D RPG。凡是在 500 MHz 奔腾 III 上过得舒服的，都行。</li>
+      <li><strong>早期办公套件</strong>——Office 97 和 2000 大体可用；AbiWord 和 Gnumeric 非常稳。</li>
+      <li><strong>编程与 demo 工具</strong>——VB6 和早期 Delphi 程序、Turbo Pascal 生成的二进制文件、经典的 Win32 demoscene 作品。</li>
+      <li><strong>教育软件</strong>——九十年代末的 CD-ROM 教学软件、数学和语言学习程序。</li>
+    </ul>
+    <p>而下面这些类别会<strong>很吃力</strong>：</p>
+    <ul>
+      <li><strong>任何 64 位程序。</strong>这里的 Wine 只有 32 位版本；纯 x64 的二进制文件装载不了。去找一个更老的 32 位版本。</li>
+      <li><strong>用 DirectX 9 及以上、Direct3D 10/11/12 或 Vulkan 的 3D 游戏。</strong>3D 管线很有限；OpenGL 1.x 能用，现代着色器那一套不行。</li>
+      <li><strong>.NET 4.5 及以后。</strong>内置的 Wine 早于现代 .NET 的大部分内容。2.0 / 3.5 的程序有时能跑；更新的运行库通常不行。</li>
+      <li><strong>DRM、在线激活、反作弊。</strong>它们会以 Wine 无法满足的方式探测系统，然后拒绝启动。</li>
+      <li><strong>Windows 7 之后的 API。</strong>UWP 应用、现代的资源管理器扩展、Office 2010 之后的功能区界面。</li>
+    </ul>
+
+    <h3>4. 选对 Wine 变体</h3>
+    <p>ExeBrowser 提供四种运行时变体，而选对哪一种，是决定一个程序能不能启动的最大单一因素。</p>
+    <ul>
+      <li><strong>Wine 1.7.55 · Win32（默认）。</strong>1995 到 2008 年之间几乎所有东西的日常之选。文件系统的大部分是按需获取的，所以第一次启动只会拉取程序真正用到的部分，通常 30–60 MB。从这里开始。</li>
+      <li><strong>Wine 1.7.55 · Win32 + Gecko。</strong>和默认的一样，但额外打包了一份离线的 Wine Gecko。当程序或安装器内嵌了 Internet Explorer / HTML 帮助组件，并提示要下载 Gecko 时用它——例如 3D 弹球太空军校生，或者调用 HTML 帮助的 MSI 安装包。</li>
+      <li><strong>Wine 3.1 · 仅 Win 3.x 16 位。</strong>一个专门的构建，针对 1990–1994 年使用 WIN16 API 的 16 位 Windows 程序。它<em>不能</em>运行 Win32 程序。遇到真正古老的 16 位共享软件时再用它。</li>
+      <li><strong>Boxedwine 18R2。</strong>引擎在 2018 年的一个旧快照。Wine 版本相近，但模拟器和集成方式不同，所以偶尔会出现默认引擎跑不起来、它却能跑的程序（反之亦然）。这是「别的都不行时试试这个」的选项。</li>
+    </ul>
+    <p>一个合理的策略：先试默认；如果程序提到 HTML、IE 或帮助文件，换 +Gecko；如果它明显是 16 位的，用 Win 3.x；如果它在默认引擎上一启动就崩，试 18R2。</p>
+
+    <h3>5. 把自己的 DLL 和数据文件一起带上</h3>
+    <p>很多真实程序并不是一个自成一体的 EXE——它们期望安装目录里旁边还有 DLL、数据文件或配置。只丢一个 EXE 进来，这些就都留在外面了，程序会找不到 <code>data\maps\level1.dat</code> 或者 <code>plugins\render.dll</code>。</p>
+    <p>解决办法是上传<strong>整个文件夹</strong>（或者它的 zip），而不是孤零零一个 EXE。用加载器上的文件夹或 zip 选择器。你提供的一切，都会在程序运行前被复制到 Wine 的虚拟目录 <code>C:\Users\username\Desktop\userapp\</code> 里，这样相对路径就能找到东西。如果一个包里不止一个 EXE，会有一个入口选择器让你挑要启动哪一个。仅这一步，就能解决很大一部分「它就是跑不起来」的情况。</p>
+
+    <h3>6. 常见故障的排查</h3>
+    <p><strong>「启动 Wine」一直不结束。</strong>通常是运行时文件的下载被拦住或卡住了——公司代理、防火墙，或者某个过于积极的浏览器扩展干扰了那些几十兆的 <code>.wasm</code> 和文件系统请求。在开发者工具 → 网络里，看看发往 <code>/boxedwine/…</code> 的请求是失败还是挂着。换一个网络、为本站关掉广告拦截扩展，然后重新加载。</p>
+    <p><strong>点了运行之后画面全黑。</strong>程序启动了，但在初始化时崩了，或者正在等待某个看不见的东西。打开控制台那一栏，找以 <code>err:</code> 开头的行。<code>err:module:import_dll Library X.dll not found</code> 表示缺 DLL——把整个安装文件夹传上来。<code>0x80004005</code> 或 <code>STATUS_DLL_NOT_FOUND</code> 这类代码是同一个意思。控制台什么都没有？试试 18R2 变体。</p>
+    <p><strong>「MSI install error 1627」。</strong>这是 Wine 1.7.55 的限制——MSI 自定义操作支持不完整，不是 ExeBrowser 的 bug。在浏览器里没有绕过的办法。如果存在非 MSI 的安装包就找那个，或者在你自己的电脑上把 MSI 解开（用 7-Zip 或 <code>msiextract</code>），再把解出来的文件夹传上来。</p>
+    <p><strong>慢得离谱。</strong>这是预期之中的——你正在 WebAssembly 里模拟一颗 x86 CPU。把程序提供的「快速」或「低画质」渲染模式打开，关掉其他标签页，并优先使用基于 Chromium 的浏览器（它的 WebAssembly 优化目前最快）。</p>
+    <p><strong>键盘和鼠标传不到程序里。</strong>直接点一下画布来捕获输入；按 <kbd>Esc</kbd> 释放。Wine 默认是美式键盘布局，所以字符不对往往意味着程序假定了另一套代码页。</p>
+    <p><strong>重新加载后文件都没了。</strong>虚拟 <code>C:\</code> 盘存在内存里，一刷新就被清空。重新加载之前，先用「下载这个程序写出的文件」，下次把那个 zip 连同 EXE 一起传上来，就能恢复你的状态。</p>
+
+    <h3>7. 保存与取回你的成果</h3>
+    <p>因为文件系统在内存里，程序写出的任何东西——安装结果、存档、生成的文档——都会在标签页关闭时消失。「下载这个程序写出的文件」这个按钮，会把程序写进 <code>C:\</code> 的所有内容打包成一个 zip 交给你。这是取出安装结果或游戏存档的标准做法，也是把状态从一次会话带到下一次的办法：下载那个 zip，下次访问时再作为文件夹或 zip 传回来。</p>
+
+    <h3>8. 浏览器里的 Windows：一段简史</h3>
+    <p>这个想法比今天大多数浏览器都要老。2010 年代初，<a href="https://copy.sh/v86/" target="_blank" rel="noopener">v86</a> 这样的项目已经能在一个 JavaScript 写的 x86 模拟器里启动整套操作系统（DOS、Windows 95、ReactOS），而 Fabrice Bellard 的 JSLinux 则展示了一个完整的 Linux 用户态跑在客户端。它们慢得像玩具，但证明了这条路走得通。转折点是 2017 年标准化的 <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>，它让浏览器能以接近原生的速度执行编译后的字节码——忽然之间，像 Wine 这样庞大的 C/C++ 代码库成了可行的移植目标。Boxedwine 在 2018 年前后有了实验性的 WebAssembly 目标（就是这里仍作为备用引擎的那个「18R2」构建），后来的版本又加上了按需分段获取的文件系统，于是启动从几分钟缩短到了几秒。</p>
+
+    <h3>9. 常见问题</h3>
+    <p><strong>我的文件会被上传吗？</strong>不会。它在本地读取，写进一个内存文件系统；没有任何东西离开你的设备。详见<a href="/privacy/">隐私政策</a>。</p>
+    <p><strong>需要很快的电脑吗？</strong>任何现代浏览器（Chrome、Edge、Firefox、Safari），最好有 4 GB 以上的可用内存。最关键的是单核速度；2018 年以后的笔记本都很从容。</p>
+    <p><strong>能跑 64 位程序吗？</strong>不能——引擎只有 32 位。去找同一款软件的 32 位版本。</p>
+    <p><strong>这样做合法吗？</strong>运行你本来就有权运行的软件没有问题。你要为自己加载的可执行文件负责；详见<a href="/terms/">使用条款</a>。</p>
+
+    <h3>准备好试试了吗？</h3>
+    <p>回到<a href="/zh-CN/load-exe/">加载页面</a>，启动 Wine，拖一个 EXE 进去。先从又小又老的东西开始——一个经典益智游戏，或者一个简单的小工具——先找到手感，再去碰有野心的东西。如果你发现了什么跑得特别好（或者失败得特别有意思），<a href="/contact/">联系页面</a>一直开着。</p>
+  </section>
+
+  <section class="card">
+    <h2>相关指南</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/zh-CN/open-exe-file/"><span class="lc-title">怎么打开 .exe 文件</span><span class="lc-desc">.exe 是什么，以及运行它的每一种办法：Windows、Mac、Chromebook、Linux。</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">什么都不用装的游戏</span><span class="lc-desc">在被锁死的学校或公司笔记本上能跑什么，以及为什么。</span></a></li>
+      <li><a class="link-card" href="/run/extract-archive/"><span class="lc-title">解压一个压缩包</span><span class="lc-desc">在浏览器里打开 7z、ZIP 或 RAR，不上传任何东西。</span></a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>把这里的游戏放到你自己的网站上</h2>
+    <p>这里有十一个游戏是专门为这个网站从零写的，所以它们是我们的，可以送出去——我们也确实这么做了。任何人都可以免费放到自己的页面上：一行 HTML，不用账号，不用申请许可，除了一行署名之外不需要别的。</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">看看你可以嵌入哪些游戏</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>基于 <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a>、<a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> 和 WebAssembly 构建。Wine 是 CodeWeavers 的商标。ExeBrowser 与 WineHQ、CodeWeavers 和微软均无关联。</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/zh-CN/">首页</a>
+    <a href="/zh-CN/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/blog/">博客</a>
+    <a href="/zh-CN/guide/">兼容性指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+    <a href="/saves/">游戏存档</a>
+    <a href="/privacy/">隐私政策</a>
+    <a href="/terms/">使用条款</a>
+  </nav>
+  <p>© 2026 ExeBrowser。内容采用开放许可，运行时基于 GPL-2.0 / LGPL-2.1。</p>
+</footer>
+
+<script>window.__I18N={"play":"▶ 开始玩 {name}","resume":"▶ 继续玩 {name}","loading":"加载中…","startOver":"重新开始","savedAgo":"保存于{when}。","filesRestored":"你的存档也一并载入了，请在游戏自带的菜单里读取。","snapshotResume":"可以从你上次中断的地方继续，进度不会丢。","progressSaved":"进度已保存在这个浏览器里","resumedExactly":"已从上次中断的地方继续","snapshotOff":"无法保存恢复点 - 游戏内存档仍然有效","confirmDelete":"确定要删除 {name} 的存档吗？","justNow":"刚刚","minutesAgo":"{n} 分钟前","anHourAgo":"1 小时前","hoursAgo":"{n} 小时前","yesterday":"昨天","daysAgo":"{n} 天前","saveHint":"在游戏里存档，存档会保留在这个浏览器中","resetSaves":"清除存档","savesCleared":"存档已清除，刷新页面即可重新开始","restoredFiles":"已恢复 {n} 个存档，请在游戏菜单中读取","overlayNote":"通过 DOSBox 和 WebAssembly 在浏览器中运行。<br>不会上传任何文件。运行时约 1.4 MB，首次加载后会被缓存。","mouseHint":"点击游戏画面，键盘操作即可生效。","starting":"正在启动…","cachedNote":"首次加载后会被缓存，下次打开就很快了。","loadingGame":"正在加载 {name}…","fullscreen":"全屏","soundOn":"声音已开","soundOff":"声音已关","remapKeys":"键盘——重新映射任意按键","remapHint":"先点击下方的按键，再按下你想改用的那个键。设置按游戏分别保存在本浏览器中。","resetDefaults":"恢复默认设置","consoleOutput":"控制台输出","wineLoadYours":"载入你自己的 {name}","wineEmptyHosted":"点击播放即可在浏览器中启动 {name}。","wineEmptyOwn":"本站没有托管 {name}，请在下方载入你自己的副本，它会直接在本页运行。","wineHintHosted":"完全在你的浏览器标签页中运行，使用 WebAssembly + Wine。不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineHintOwn":"我们无权转发 {name}，因此本站没有托管任何内容。你自己的副本完全在浏览器标签页中运行，使用 WebAssembly + Wine，不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineEngine":"Wine 引擎：","wineVariantDefault":"Wine 1.7.55 · Win32 — 1995–2008 年的绝大多数程序","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — 需要 Internet Explorer 的程序","wineVariant16":"Wine 3.1 · 16 位 Windows 3.x — 1990–1994 年的程序","wineVariantR18":"Boxedwine 18R2 — 较旧的引擎，有时能运行默认引擎跑不动的程序","wineIdle":"空闲。","wineDownloadFiles":"下载该程序写入的文件","wineFilesKept":"该程序保存的文件会留在这个浏览器里，下次打开本页时自动恢复。若要留存一份，请使用下载按钮。","wineCaptures":"抓取程序写入内存中 C:\\ 盘的存档和生成内容。","wineLoadOwnCopy":"载入你自己的副本","wineHaveFiles":"文件就在你的设备上？把程序所在的文件夹或一个 zip 拖到这里——入口 <code>.exe</code> 以及旁边的数据文件。","wineDropFiles":"把文件拖到这里，或选择：","winePickExe":"单个 EXE","winePickFolder":"一个文件夹","winePickZip":"一个 zip","wineEntryExe":"入口 EXE：","wineRun":"在 Wine 中运行","wineLoadingRuntime":"正在载入 Boxedwine 运行时…","wineConfiguring":"正在配置 Wine 启动…","wineStartingEmulator":"正在启动模拟器…","wineRunning":"正在运行 {name}…","wineBootFailed":"启动失败，请查看控制台。","winePickThenRun":"先选择一个 EXE，再点击运行。","wineReadyLoad":"Wine 已就绪 — 请载入一个 EXE","wineInstallPrompt":"安装后一键回来","wineEntry":"入口：{path}","wineExesAvailable":"可用 EXE 共 {n} 个"};</script>
+<script src="/embed-pointer.js?v=1"></script>
+<script src="/pwa.js?v=2"></script>
+</body>
+</html>

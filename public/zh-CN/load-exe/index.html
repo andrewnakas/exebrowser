@@ -95,7 +95,7 @@
     <a href="/zh-CN/run/">程序列表</a>
     <a href="/exe-inspector/">EXE 查看器</a>
     <a href="/blog/">博客</a>
-    <a href="/guide/">指南</a>
+    <a href="/zh-CN/guide/">指南</a>
     <a href="/about/">关于</a>
     <a href="/contact/">联系</a>
   </nav>
@@ -150,7 +150,7 @@
       <li><strong>.NET、较新的 Visual C++ 运行库，以及一切需要 Windows 10 API 的程序。</strong>Wine 1.7.55 比它们都早。</li>
       <li><strong>任何需要网络、授权服务器或真实硬件的东西</strong>：加密狗、打印机、串口设备、光盘检测。</li>
     </ul>
-    <p>速度大约是原生的 10% 到 40%，因为每一条 x86 指令都是模拟执行的。跑工具和老式 2D 游戏没问题，跑任何吃性能的东西都不行。<a href="/guide/">兼容性指南</a>按类别讲得更细，我们还<a href="/blog/we-tested-53-windows-apps-in-the-browser/">实测了 53 个真实程序</a>并公布了每一个的结果。</p>
+    <p>速度大约是原生的 10% 到 40%，因为每一条 x86 指令都是模拟执行的。跑工具和老式 2D 游戏没问题，跑任何吃性能的东西都不行。<a href="/zh-CN/guide/">兼容性指南</a>按类别讲得更细，我们还<a href="/blog/we-tested-53-windows-apps-in-the-browser/">实测了 53 个真实程序</a>并公布了每一个的结果。</p>
   </section>
 
   <section class="card">
@@ -178,6 +178,12 @@
   </section>
 
   <section class="card">
+    <h2>把这里的游戏放到你自己的网站上</h2>
+    <p>这里有十一个游戏是专门为这个网站从零写的，所以它们是我们的，可以送出去——我们也确实这么做了。任何人都可以免费放到自己的页面上：一行 HTML，不用账号，不用申请许可，除了一行署名之外不需要别的。</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">看看你可以嵌入哪些游戏</a></p>
+  </section>
+
+  <section class="card">
     <h2>常见问题</h2>
     <details><summary>我的 EXE 会被上传到服务器吗？</summary><p>不会。文件由你自己机器上的 JavaScript 读取，复制到标签页内的一块内存 <code>C:\</code> 盘。它不会被发送到任何地方，关掉标签页就没有了。</p></details>
     <details><summary>到底哪些 Windows 程序能跑？</summary><p>大约 1995 到 2008 年的 32 位 Windows 软件效果最好：小工具、Win32 和 GDI 应用、老式安装程序、2D 游戏。64 位程序，以及任何需要 Direct3D、.NET 或较新运行库的程序，还有指望真实硬件或联网的程序，都是常见的失败情形。</p></details>
@@ -196,7 +202,7 @@
     <a href="/zh-CN/run/">程序列表</a>
     <a href="/exe-inspector/">EXE 查看器</a>
     <a href="/blog/">博客</a>
-    <a href="/guide/">兼容性指南</a>
+    <a href="/zh-CN/guide/">兼容性指南</a>
     <a href="/about/">关于</a>
     <a href="/contact/">联系</a>
     <a href="/saves/">游戏存档</a>
@@ -211,6 +217,7 @@
 <script src="/recent.js?v=6"></script>
 <script src="/embed.js?v=10"></script>
 <script src="/app.js?v=22"></script>
+<script src="/embed-pointer.js?v=1"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 <script src="/pwa.js?v=2"></script>
 </body>

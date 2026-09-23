@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guia completo: rodar arquivos EXE no navegador</title>
+<meta name="description" content="Como um .exe do Windows roda dentro de uma aba do navegador, quais programas funcionam e quais não, como escolher a variante certa do Wine e como resolver as falhas mais comuns." />
+<meta name="keywords" content="guia rodar exe no navegador, wine webassembly, compatibilidade exe online, boxedwine, executar programas windows sem instalar, quais programas funcionam" />
+<link rel="canonical" href="https://exebrowser.com/pt-BR/guide/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/guide/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/guide/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/guide/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/guide/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/guide/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/pt-BR/guide/" />
+<meta property="og:title" content="Guia completo para rodar EXE do Windows no navegador" />
+<meta property="og:description" content="Como funciona por dentro, o que inicia e o que não inicia, qual motor escolher e o que fazer quando a tela fica preta." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=41" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://exebrowser.com/pt-BR/" },
+    { "@type": "ListItem", "position": 2, "name": "Guia de compatibilidade", "item": "https://exebrowser.com/pt-BR/guide/" }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Rode arquivos <code>.exe</code> do Windows no seu navegador. Sem instalar. Sem enviar nada. Só WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/pt-BR/">Início</a>
+    <a href="/pt-BR/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/exe-inspector/">Visualizador de EXE</a>
+    <a href="/blog/">Blog</a>
+    <a href="/pt-BR/guide/">Guia</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="Idioma"><a href="/guide/" hreflang="en">English</a> · <a href="/es/guide/" hreflang="es">Español</a> · <span class="lang-current" aria-current="true">Português (BR)</span> · <a href="/zh-CN/guide/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/pt-BR/">Início</a> › Guia de compatibilidade</nav>
+
+  <section class="card">
+    <h2>O guia completo para rodar arquivos EXE do Windows no navegador</h2>
+    <p class="updated">Última atualização: 8 de junho de 2026 · ~12 minutos de leitura</p>
+    <p>Rodar um programa do Windows dentro de um navegador soa como algo que não deveria ser possível. Não há Windows embaixo, não há garantia de um processador x86, não há instalador — só uma aba. Mesmo assim funciona, e este guia explica <em>como</em> funciona e, mais útil ainda, <em>como tirar o máximo proveito disso</em>. Seja para ressuscitar um velho jogo shareware, recuperar um documento preso num utilitário de outra época ou simplesmente matar a curiosidade, este é o manual prático.</p>
+
+    <div class="warn-box" style="border-color:#2e7d32;">
+      <p style="margin-top:0;"><strong>Você pode rodar o seu próprio software aqui.</strong> Este guia é sobre os <em>seus</em> arquivos: um <code>.exe</code> do Windows do seu próprio disco, a pasta de um aplicativo ou um zip dela. Tudo roda dentro da sua aba do navegador: <strong>nada é enviado para um servidor</strong>, o arquivo é lido localmente e escrito num <code>C:\</code> em memória que some quando você fecha a aba.</p>
+      <p style="margin-bottom:0;"><a class="button" href="/pt-BR/load-exe/">🖥 Carregue seu próprio EXE, pasta ou zip →</a> &nbsp; <span class="muted small">Grátis, sem conta. Melhor com software Windows de 32 bits de 1995 a 2008.</span></p>
+    </div>
+
+    <h3>1. Por que alguém rodaria um EXE no navegador?</h3>
+    <p>A resposta honesta é atrito. A era clássica do Windows de 32 bits — mais ou menos de 1995 a 2008 — produziu um catálogo enorme de software: utilitários, jogos, títulos educativos em CD-ROM, ferramentas corporativas, produções de demoscene. Muita coisa ainda funciona, mas o hardware e os sistemas operacionais para os quais aquilo foi feito estão sumindo. Se você tem um Chromebook, um iPad, um Mac moderno ou uma máquina Linux, rodar um instalador do Windows de 1999 é um trabalhão: exige máquina virtual, licença do Windows e paciência.</p>
+    <p>A execução no navegador elimina esse atrito. A lógica do aplicativo viaja para onde houver um navegador moderno, o que hoje é praticamente em todo lugar. As motivações mais comuns são:</p>
+    <ul>
+      <li><strong>Preservação de software.</strong> Museus, arquivistas e entusiastas mantendo programas antigos executáveis sem precisar distribuir máquinas virtuais.</li>
+      <li><strong>Ensino em equipamentos bloqueados.</strong> Escolas com Chromebooks que ainda dependem de uma ferramenta de aprendizagem antiga e específica.</li>
+      <li><strong>Demonstrações rápidas.</strong> Mostrar a um colega uma velha ferramenta interna sem instalador e sem VM.</li>
+      <li><strong>Recuperação.</strong> Extrair dados de um arquivo que só um EXE antigo sabe abrir.</li>
+      <li><strong>Nostalgia.</strong> Revisitar o shareware que você lembra de um modem de 56k e um gabinete bege.</li>
+    </ul>
+
+    <h3>2. Como funciona de verdade: três camadas empilhadas</h3>
+    <p>Vale entender o maquinário, porque as limitações decorrem diretamente dele. São três tecnologias, uma sobre a outra.</p>
+    <p><strong>A primeira camada é o emulador de CPU.</strong> Um EXE do Windows é um fluxo de instruções de máquina x86. Seu navegador fala <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>, não x86, então não consegue executar essas instruções diretamente. A solução é uma CPU em software: um programa escrito em C++ que lê cada instrução x86 e simula o efeito dela num processador virtual da era Pentium. Esse emulador em C++ é compilado para WebAssembly, e o navegador roda <em>isso</em>. Você está, de certo modo, rodando um emulador dentro de outro emulador — que é exatamente o motivo de ser lento.</p>
+    <p><strong>A segunda camada é o Wine.</strong> Um EXE não contém só instruções de CPU; ele chama o tempo todo bibliotecas de sistema do Windows como <code>kernel32.dll</code>, <code>user32.dll</code> e <code>gdi32.dll</code>. O <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> — cujo nome recursivo quer dizer “Wine não é um emulador” — é uma reimplementação do zero dessas APIs do Windows sobre uma base POSIX. Quando o programa emulado chama <code>CreateWindowExA</code>, o Wine intercepta e executa a própria versão compatível. O Wine tem décadas de profundidade e é espantosamente completo, mas não é 100% do Windows, e essa é a segunda fonte de incompatibilidade.</p>
+    <p><strong>A terceira camada é a ponte com o navegador.</strong> O que o Wine desenha precisa aparecer em algum lugar. O runtime mapeia o framebuffer do Wine para um <code>&lt;canvas&gt;</code> HTML, encaminha teclado e mouse para a fila de entrada do Wine, manda o áudio para o Web Audio e fabrica um disco <code>C:\</code> virtual (com um sistema de arquivos em memória) para que o Wine acredite estar olhando para um disco normal. Todo esse encadeamento roda numa única thread, na instância WebAssembly principal da página, então funciona em qualquer navegador moderno sem cabeçalhos nem flags especiais.</p>
+    <p>Empilhadas, as camadas entregam algo entre 10% e 40% da velocidade nativa de CPU. Num utilitário feito de menus isso é invisível. Num jogo 3D ou numa compressão pesada é bem perceptível.</p>
+
+    <h3>3. Quais aplicativos realmente rodam?</h3>
+    <p>Depois de muitos testes, o padrão é consistente. As categorias a seguir funcionam <strong>bem</strong>:</p>
+    <ul>
+      <li><strong>Utilitários e shareware anteriores a 2005</strong> — gerenciadores de arquivos, editores hexadecimais, editores de texto, as primeiras interfaces do WinRAR e do 7-Zip, ferramentas pequenas.</li>
+      <li><strong>Jogos 2D da era Win9x e do começo do XP</strong> — aventuras de apontar e clicar, jogos de quebra-cabeça, estratégia por turnos, RPGs 2D. Qualquer coisa que fosse feliz num Pentium III de 500 MHz.</li>
+      <li><strong>Suítes de escritório antigas</strong> — Office 97 e 2000 funcionam na maior parte; AbiWord e Gnumeric são bem confiáveis.</li>
+      <li><strong>Ferramentas de programação e demos</strong> — aplicativos em VB6 e no Delphi antigo, binários do Turbo Pascal, produções clássicas de demoscene em Win32.</li>
+      <li><strong>Software educativo</strong> — títulos em CD-ROM do fim dos anos 1990, tutores de matemática e de idiomas.</li>
+    </ul>
+    <p>E as categorias que <strong>penam</strong>:</p>
+    <ul>
+      <li><strong>Qualquer coisa de 64 bits.</strong> A compilação do Wine aqui é só de 32 bits; binários exclusivamente x64 não carregam. Procure uma versão antiga de 32 bits.</li>
+      <li><strong>Jogos 3D com DirectX 9 ou mais novo, Direct3D 10/11/12 ou Vulkan.</strong> O pipeline 3D é limitado; OpenGL 1.x funciona, pilhas de shaders modernas não.</li>
+      <li><strong>.NET 4.5 em diante.</strong> O Wine embutido é anterior a boa parte do .NET moderno. Aplicativos de 2.0 e 3.5 às vezes funcionam; runtimes mais novos normalmente não.</li>
+      <li><strong>DRM, ativação online, anticheat.</strong> Eles sondam o sistema de maneiras que o Wine não consegue satisfazer e se recusam a iniciar.</li>
+      <li><strong>APIs posteriores ao Windows 7.</strong> Aplicativos UWP, extensões modernas do shell, interfaces de faixa de opções do Office 2010 em diante.</li>
+    </ul>
+
+    <h3>4. Escolhendo a variante certa do Wine</h3>
+    <p>O ExeBrowser oferece quatro variantes de runtime, e escolher a certa é o maior fator isolado para um aplicativo iniciar ou não.</p>
+    <ul>
+      <li><strong>Wine 1.7.55 · Win32 (padrão).</strong> A escolha do dia a dia para quase tudo de 1995 a 2008. A maior parte do sistema de arquivos é baixada sob demanda, então o primeiro boot só puxa o que o aplicativo toca — normalmente de 30 a 60 MB. Comece por aqui.</li>
+      <li><strong>Wine 1.7.55 · Win32 + Gecko.</strong> Igual ao padrão, mas com uma cópia offline do pacote Wine Gecko embutida. Use quando um aplicativo ou instalador embute componentes do Internet Explorer ou da ajuda em HTML e pede para baixar o Gecko — por exemplo o Pinball 3D Space Cadet, ou instaladores MSI que chamam a ajuda HTML.</li>
+      <li><strong>Wine 3.1 · só Win 3.x de 16 bits.</strong> Uma compilação especializada para programas Windows de 16 bits de 1990 a 1994 que usam a API WIN16. Ela <em>não</em> roda aplicativos Win32. Recorra a ela com shareware genuinamente antigo de 16 bits.</li>
+      <li><strong>Boxedwine 18R2.</strong> Um retrato de 2018 do motor. A versão do Wine é parecida, mas o emulador e a integração são diferentes, então de vez em quando um aplicativo que falha no motor padrão funciona aqui (ou o contrário). É a opção “tente isto quando nada mais funcionar”.</li>
+    </ul>
+    <p>Uma estratégia razoável: tente primeiro o padrão; se o aplicativo menciona HTML, IE ou ajuda, mude para +Gecko; se é claramente de 16 bits, use o Win 3.x; se ele fecha na hora no padrão, tente o 18R2.</p>
+
+    <h3>5. Trazendo suas próprias DLLs e arquivos de dados</h3>
+    <p>Muitos aplicativos reais não são um único EXE autossuficiente — eles esperam DLLs, arquivos de dados ou configuração ao lado, no diretório de instalação. Soltar só o EXE deixa tudo isso para trás, e o aplicativo não acha <code>data\maps\level1.dat</code> ou <code>plugins\render.dll</code>.</p>
+    <p>A solução é enviar a <strong>pasta inteira</strong> (ou um zip dela) em vez do EXE sozinho. Use o seletor de pasta ou de zip no carregador. Tudo o que você fornecer é copiado para o diretório virtual <code>C:\Users\username\Desktop\userapp\</code> do Wine antes de o programa rodar, de modo que buscas por caminho relativo funcionem. Quando um pacote contém mais de um EXE, um seletor deixa você escolher qual iniciar. Esse único passo resolve boa parte dos casos de “simplesmente não inicia”.</p>
+
+    <h3>6. Resolvendo as falhas mais comuns</h3>
+    <p><strong>O “Iniciar o Wine” nunca termina.</strong> Normalmente é um download dos arquivos do runtime bloqueado ou travado — um proxy corporativo, um firewall ou uma extensão agressiva do navegador atrapalhando as requisições de vários megabytes do <code>.wasm</code> e do sistema de arquivos. No DevTools → Rede, veja se as requisições para <code>/boxedwine/…</code> estão falhando ou pendurando. Tente outra rede, desative bloqueadores de anúncio para este site e recarregue.</p>
+    <p><strong>Tela preta depois de dar Executar.</strong> O aplicativo iniciou, mas quebrou durante a inicialização ou está esperando por algo invisível. Abra a seção do console e procure linhas começando com <code>err:</code>. Um <code>err:module:import_dll Library X.dll not found</code> significa DLL faltando — envie a pasta de instalação. Códigos como <code>0x80004005</code> ou <code>STATUS_DLL_NOT_FOUND</code> querem dizer o mesmo. Console vazio? Tente a variante 18R2.</p>
+    <p><strong>“MSI install error 1627”.</strong> É uma limitação do Wine 1.7.55 — suporte incompleto a ações personalizadas de MSI, não um bug do ExeBrowser. Não há contorno dentro do navegador. Procure um instalador que não seja MSI, se existir, ou extraia o MSI na sua própria máquina (7-Zip ou <code>msiextract</code>) e envie a pasta extraída.</p>
+    <p><strong>Impossivelmente lento.</strong> É o esperado — você está emulando uma CPU x86 dentro do WebAssembly. Ative qualquer modo de renderização “rápido” ou “baixa qualidade” que o aplicativo ofereça, feche outras abas e prefira um navegador baseado em Chromium (a otimização de WebAssembly dele é hoje a mais rápida).</p>
+    <p><strong>Teclado e mouse não chegam ao aplicativo.</strong> Clique direto no canvas para capturar a entrada; aperte <kbd>Esc</kbd> para liberar. O Wine assume por padrão um layout de teclado americano, então caracteres errados podem indicar uma página de código diferente da que o aplicativo espera.</p>
+    <p><strong>Os arquivos somem ao recarregar.</strong> O <code>C:\</code> virtual vive na memória e é apagado ao recarregar. Use “Baixar os arquivos escritos por este programa” antes de recarregar e, na próxima vez, envie esse zip junto com o EXE para restaurar o seu estado.</p>
+
+    <h3>7. Salvando e recuperando o seu trabalho</h3>
+    <p>Como o sistema de arquivos fica na memória, tudo o que o programa escrever — saída de instalador, jogos salvos, documentos gerados — desaparece quando a aba fecha. O botão “Baixar os arquivos escritos por este programa” empacota num zip tudo o que o programa escreveu em <code>C:\</code> para você guardar. É a maneira canônica de extrair o resultado de um instalador ou os saves de um jogo, e também de levar o estado de uma sessão para outra: baixe o zip e reenvie como pasta ou zip na próxima visita.</p>
+
+    <h3>8. Uma breve história do Windows dentro do navegador</h3>
+    <p>A ideia é anterior à maioria dos navegadores atuais. No começo dos anos 2010, projetos como o <a href="https://copy.sh/v86/" target="_blank" rel="noopener">v86</a> davam boot em sistemas operacionais inteiros (DOS, Windows 95, ReactOS) dentro de um emulador x86 escrito em JavaScript, e o JSLinux de Fabrice Bellard mostrou um userland Linux completo rodando no cliente. Eram curiosidades lentas, mas provaram o conceito. O ponto de virada foi o <a href="https://webassembly.org/" target="_blank" rel="noopener">WebAssembly</a>, padronizado em 2017, que permitiu aos navegadores rodar bytecode compilado perto da velocidade nativa — de repente, bases de código em C e C++ do tamanho do Wine viraram alvos viáveis. O Boxedwine ganhou um alvo experimental de WebAssembly por volta de 2018 (a compilação “18R2” ainda usada aqui como motor alternativo), e versões posteriores acrescentaram sistemas de arquivos buscados por faixa sob demanda, de modo que os boots levam segundos em vez de minutos.</p>
+
+    <h3>9. Perguntas frequentes</h3>
+    <p><strong>Meu arquivo é enviado para algum lugar?</strong> Não. Ele é lido localmente e escrito num sistema de arquivos em memória; nada sai do seu dispositivo. Veja a <a href="/privacy/">política de privacidade</a>.</p>
+    <p><strong>Preciso de um computador rápido?</strong> Qualquer navegador moderno (Chrome, Edge, Firefox, Safari) e, de preferência, 4 GB ou mais de RAM livre. O que mais importa é a velocidade de um núcleo só; um notebook de 2018 ou mais novo fica confortável.</p>
+    <p><strong>Dá para rodar aplicativos de 64 bits?</strong> Não — o motor é só de 32 bits. Procure uma compilação de 32 bits do mesmo software.</p>
+    <p><strong>Isto é legal?</strong> Rodar software que você tem o direito de rodar é tranquilo. Você é responsável pelos executáveis que carregar; veja os <a href="/terms/">termos de uso</a>.</p>
+
+    <h3>Pronto para experimentar?</h3>
+    <p>Volte ao <a href="/pt-BR/load-exe/">carregador</a>, inicie o Wine e solte um EXE. Comece com algo pequeno e antigo — um quebra-cabeça clássico ou um utilitário simples — para pegar o jeito antes de partir para algo ambicioso. E se você descobrir algo que funciona especialmente bem (ou que falha de um jeito engraçado), a <a href="/contact/">página de contato</a> está aberta.</p>
+  </section>
+
+  <section class="card">
+    <h2>Guias relacionados</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/pt-BR/open-exe-file/"><span class="lc-title">Como abrir um arquivo .exe</span><span class="lc-desc">O que é um .exe e todas as formas de executar um: Windows, Mac, Chromebook, Linux.</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">Jogos que não precisam instalar nada</span><span class="lc-desc">O que roda num notebook bloqueado da escola ou do trabalho, e por quê.</span></a></li>
+      <li><a class="link-card" href="/run/extract-archive/"><span class="lc-title">Extrair um arquivo compactado</span><span class="lc-desc">Abra 7z, ZIP ou RAR no navegador sem enviar nada.</span></a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Coloque um destes jogos no seu próprio site</h2>
+    <p>Onze dos jogos daqui foram escritos do zero para este site, o que os torna nossos para dar — e é o que fazemos. Livres para qualquer pessoa colocar na própria página: uma linha de HTML, sem conta, sem pedir permissão e sem mais atribuição do que uma linha de crédito.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">Veja os jogos que você pode incorporar</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>Feito com <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine é marca registrada da CodeWeavers. O ExeBrowser não é afiliado à WineHQ, à CodeWeavers nem à Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/pt-BR/">Início</a>
+    <a href="/pt-BR/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/exe-inspector/">Visualizador de EXE</a>
+    <a href="/blog/">Blog</a>
+    <a href="/pt-BR/guide/">Guia de compatibilidade</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+    <a href="/saves/">Jogos salvos</a>
+    <a href="/privacy/">Política de privacidade</a>
+    <a href="/terms/">Termos de uso</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Conteúdo sob licença aberta; runtime sob GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script>window.__I18N={"play":"▶ Jogar {name}","resume":"▶ Continuar {name}","loading":"Carregando…","startOver":"Começar de novo","savedAgo":"Salvo {when}.","filesRestored":"Seus jogos salvos são carregados junto — abra-os pelo menu do próprio jogo.","snapshotResume":"Você volta exatamente de onde parou, no meio do jogo.","progressSaved":"Progresso salvo neste navegador","resumedExactly":"Você voltou exatamente de onde parou","snapshotOff":"Não foi possível salvar um ponto de retomada: seus saves do jogo continuam funcionando","confirmDelete":"Apagar seu progresso salvo em {name}?","justNow":"agora mesmo","minutesAgo":"há {n} minutos","anHourAgo":"há uma hora","hoursAgo":"há {n} horas","yesterday":"ontem","daysAgo":"há {n} dias","saveHint":"Salve dentro do jogo e o arquivo fica neste navegador","resetSaves":"apagar o progresso salvo","savesCleared":"Progresso salvo apagado — recarregue para começar de novo","restoredFiles":"{n} arquivo(s) salvo(s) restaurado(s) — abra pelo menu do jogo","overlayNote":"Roda no seu navegador com DOSBox + WebAssembly.<br>Nada é enviado. O runtime (~1,4 MB) fica em cache depois da primeira vez.","mouseHint":"Clique na tela do jogo para dar o teclado a ele.","starting":"Iniciando…","cachedNote":"Fica em cache depois da primeira carga, então da próxima vez é instantâneo.","loadingGame":"Carregando {name}…","fullscreen":"Tela cheia","soundOn":"Som ligado","soundOff":"Som desligado","remapKeys":"Teclado — remapeie qualquer tecla","remapHint":"Clique em uma tecla abaixo e depois pressione a que você prefere usar. Fica salvo neste navegador, por jogo.","resetDefaults":"Restaurar o padrão","consoleOutput":"Saída do console","wineLoadYours":"Carregue sua cópia de {name}","wineEmptyHosted":"Aperte play para iniciar {name} no seu navegador.","wineEmptyOwn":"{name} não está hospedado aqui — carregue sua própria cópia abaixo e ele roda nesta mesma página.","wineHintHosted":"Roda inteiramente na sua aba com WebAssembly + Wine. Nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineHintOwn":"Não podemos redistribuir {name}, então nada fica hospedado aqui. Sua própria cópia roda inteiramente na sua aba com WebAssembly + Wine — nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineEngine":"Motor do Wine:","wineVariantDefault":"Wine 1.7.55 · Win32 — quase tudo de 1995–2008","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — programas que pedem o Internet Explorer","wineVariant16":"Wine 3.1 · Windows 3.x de 16 bits — programas de 1990–1994","wineVariantR18":"Boxedwine 18R2 — motor mais antigo; às vezes roda o que o padrão não roda","wineIdle":"Ocioso.","wineDownloadFiles":"Baixar os arquivos que este programa gravou","wineFilesKept":"Os arquivos que este programa salvar ficam guardados neste navegador e são restaurados na próxima vez que você abrir a página. Use o botão de download para ficar com uma cópia.","wineCaptures":"Captura os saves e o conteúdo que o programa gravou na unidade C:\\ em memória.","wineLoadOwnCopy":"Carregue sua própria cópia","wineHaveFiles":"Tem os arquivos no seu aparelho? Solte aqui a pasta do programa ou um zip: o <code>.exe</code> principal mais os arquivos de dados ao lado dele.","wineDropFiles":"Solte os arquivos aqui, ou escolha:","winePickExe":"um único EXE","winePickFolder":"uma pasta","winePickZip":"um zip","wineEntryExe":"EXE principal:","wineRun":"Executar no Wine","wineLoadingRuntime":"Carregando o motor Boxedwine…","wineConfiguring":"Configurando a inicialização do Wine…","wineStartingEmulator":"Iniciando o emulador…","wineRunning":"Executando {name}…","wineBootFailed":"A inicialização falhou. Veja o console.","winePickThenRun":"Escolha um EXE e clique em Executar.","wineReadyLoad":"Wine pronto — carregue um EXE","wineInstallPrompt":"Instalar para voltar com um toque","wineEntry":"Principal: {path}","wineExesAvailable":"{n} EXEs disponíveis"};</script>
+<script src="/embed-pointer.js?v=1"></script>
+<script src="/pwa.js?v=2"></script>
+</body>
+</html>

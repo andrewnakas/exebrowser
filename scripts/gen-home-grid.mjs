@@ -86,10 +86,28 @@ const itemList = itemListLd(playable, {
   url: `${SITE}/`,
 });
 
-// Three most recently updated posts. The homepage linked to no blog post at
-// all — eight long-form articles sitting one nav click away from the only page
-// Google crawls often. This is the link equity they were missing.
-const posts = blogPosts(ROOT);
+// Which posts lead the strip, in this order. Anything not listed follows by
+// recency, and a slug listed here that no longer exists is ignored — so this is
+// an editorial lead, not a whitelist that silently drops the rest.
+//
+// It exists because blogPosts() sorts by `modified` and ties inside one date
+// fall back to the stable sort, i.e. filename order. Five posts now share
+// 2026-09-22, so the three the homepage showed were simply the alphabetically
+// first three — and /blog/what-is-an-exe-file/, written for the largest query
+// in this niche, was fifth and did not appear at all.
+const FEATURED = [
+  "what-is-an-exe-file",
+  "check-if-an-exe-is-safe",
+  "open-exe-file-on-mac",
+];
+
+// Three most recently updated posts, the featured ones first. The homepage
+// linked to no blog post at all — eight long-form articles sitting one nav
+// click away from the only page Google crawls often. This is the link equity
+// they were missing.
+const byRecency = blogPosts(ROOT);
+const lead = FEATURED.map((slug) => byRecency.find((p) => p.slug === slug)).filter(Boolean);
+const posts = [...lead, ...byRecency.filter((p) => !lead.includes(p))];
 const strip = posts.length
   ? `
   <section class="card" id="from-the-blog">

@@ -166,10 +166,13 @@ ${e.faq.map((q) => `    <details><summary>${esc(q.q)}</summary>${q.a}</details>`
 }
 
 function bodyForArticle(L, e, cfg) {
+  // The lede sits between the byline and the first h3 on the English articles,
+  // so an article without intro support would drop it silently — the exact
+  // half-translated shape this pipeline refuses everywhere else.
   const parts = [`  <section class="card">
     <h2>${esc(e.h1)}</h2>
     <p class="updated">${e.byline}</p>
-`];
+${e.intro || ""}`];
   for (const s of e.sections || []) {
     parts.push(`    <h3>${esc(s.h)}</h3>\n${s.html}`);
   }

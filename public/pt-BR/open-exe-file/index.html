@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Como abrir um arquivo EXE no Windows, Mac ou Chromebook</title>
+<meta name="description" content="O que é um arquivo .exe, por que ele não abre e como executar um no Windows, Mac, Chromebook ou Linux — inclusive rodando numa aba do navegador sem instalar nada." />
+<meta name="keywords" content="abrir arquivo exe, como abrir exe, abrir exe no mac, abrir exe no chromebook, executar exe online, o que é arquivo exe, programa para abrir exe" />
+<link rel="canonical" href="https://exebrowser.com/pt-BR/open-exe-file/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/open-exe-file/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/open-exe-file/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/open-exe-file/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/open-exe-file/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/open-exe-file/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/pt-BR/open-exe-file/" />
+<meta property="og:title" content="Como abrir um arquivo EXE: Windows, Mac, Chromebook e Linux" />
+<meta property="og:description" content="O que um .exe realmente é, por que ele não inicia e todas as formas de executá-lo — inclusive numa aba do navegador, sem instalar nada." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=41" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://exebrowser.com/pt-BR/" },
+    { "@type": "ListItem", "position": 2, "name": "Como abrir um arquivo EXE", "item": "https://exebrowser.com/pt-BR/open-exe-file/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dá para abrir um arquivo .exe online sem baixar nada?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Você pode executar um aqui sem instalar nada, que é o sentido usual da pergunta. O arquivo é lido pelo seu navegador na sua própria máquina — ele não é enviado a nenhum servidor. Programas Windows pequenos e de 32 bits funcionam melhor." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como abro um .exe no Mac?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nativamente, não dá. Use Wine ou CrossOver, uma máquina virtual com Windows, ou rode numa aba do navegador. Para programas antigos e pequenos, o navegador é de longe o caminho menos trabalhoso." }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que não acontece nada quando dou dois cliques?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Normalmente é um programa de console que abriu e fechou na hora, ou um runtime faltando falhando em silêncio. Rode pelo Prompt de Comando para ver o erro em vez de adivinhar." }
+    },
+    {
+      "@type": "Question",
+      "name": "É seguro abrir um arquivo .exe?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tão seguro quanto a origem dele. Um programa pode fazer o que a sua conta pode fazer. Confira no VirusTotal, prefira o download do próprio fabricante e, na dúvida, rodar no isolamento do navegador é bem mais seguro do que rodar nativamente." }
+    },
+    {
+      "@type": "Question",
+      "name": "E se for de 64 bits?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O runtime daqui é de 32 bits, então programas exclusivamente de 64 bits não vão carregar. Muitos aplicativos anteriores a mais ou menos 2010 também traziam uma versão de 32 bits, e essa geralmente funciona." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Rode arquivos <code>.exe</code> do Windows no seu navegador. Sem instalar. Sem enviar nada. Só WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/pt-BR/">Início</a>
+    <a href="/pt-BR/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/exe-inspector/">Visualizador de EXE</a>
+    <a href="/blog/">Blog</a>
+    <a href="/pt-BR/guide/">Guia</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="Idioma"><a href="/open-exe-file/" hreflang="en">English</a> · <a href="/es/open-exe-file/" hreflang="es">Español</a> · <span class="lang-current" aria-current="true">Português (BR)</span> · <a href="/zh-CN/open-exe-file/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/pt-BR/">Início</a> › Como abrir um arquivo EXE</nav>
+
+  <section class="card">
+    <h2>O que um arquivo .exe realmente é</h2>
+    <p>Um <code>.exe</code> é um programa compilado para Windows. Não é um documento, nem um arquivo compactado, nem um vídeo: são instruções de máquina mais um cabeçalho que diz ao Windows como carregá-las. É por isso que “abrir com” nunca funciona com um deles: não existe visualizador para um programa, porque o programa <em>é</em> o aplicativo.</p>
+    <p>Isso também explica as duas situações em que as pessoas costumam chegar aqui. Ou você está num Mac, num Linux ou num Chromebook, onde programas do Windows simplesmente não rodam, ou está no Windows e o arquivo não inicia por um de uns poucos motivos bem específicos. São problemas diferentes, com respostas diferentes.</p>
+
+    <h3>O caminho mais rápido</h3>
+    <p>Este site roda programas do Windows numa aba do navegador. Solte um <code>.exe</code> na <a href="/pt-BR/load-exe/">página do carregador</a> e ele tentará executá-lo localmente: o arquivo é lido na sua própria máquina e nunca é enviado a lugar nenhum.</p>
+    <p>Sendo honesto quanto aos limites, porque eles são reais: funciona melhor com software Windows de <strong>32 bits</strong> de mais ou menos 1995 a 2008. Utilitários pequenos e jogos antigos são o ponto ideal. Qualquer coisa que precise de .NET moderno, acesso real à rede ou um contexto gráfico 3D não vai funcionar, e nós <a href="/pt-BR/run/">documentamos os fracassos junto com os acertos</a> em vez de fingir o contrário.</p>
+  </section>
+
+  <section class="card">
+    <h2>Como abrir um .exe em cada plataforma</h2>
+    <h3>No Mac</h3>
+    <p>O macOS não consegue executar arquivos <code>.exe</code> nativamente: é outro sistema operacional e, desde o Apple Silicon, também outra arquitetura de processador. Dar dois cliques resulta num erro, e nenhum “abrir com” muda isso.</p>
+    <p>As opções reais são uma camada de compatibilidade como o <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> ou o CrossOver, que traduz as chamadas da API do Windows em vez de emular um PC inteiro; uma máquina virtual rodando uma cópia licenciada do Windows; ou, para programas pequenos e antigos, executá-lo aqui numa aba do navegador. O caminho do navegador não exige instalar nada, o que muitas vezes é o fator decisivo.</p>
+
+    <h3>No Chromebook</h3>
+    <p>O ChromeOS não consegue instalar software do Windows de jeito nenhum, e isso é uma decisão de projeto, não um descuido. Não há Wine para instalar, não há Arquivos de Programas, não há onde um instalador se colocar.</p>
+    <p>Sobram dois caminhos: rodar no navegador, que é o que este site faz, ou o contêiner Linux, se o seu Chromebook tiver ele habilitado e você se sentir à vontade para instalar o Wine lá dentro. Há <a href="/blog/run-windows-software-on-a-chromebook/">um texto mais longo sobre as quatro abordagens</a>, ordenado por quanto trabalho cada uma dá.</p>
+
+    <h3>No Linux</h3>
+    <p>Instale o Wine pelo gerenciador de pacotes da sua distribuição e depois <code>wine seuprograma.exe</code>. O Wine é maduro e muita coisa funciona de primeira. Quando falha, costuma falhar de forma barulhenta, dizendo qual DLL ou API não conseguiu fornecer — o que pelo menos dá algo para pesquisar.</p>
+
+    <h3>No Windows, quando ele não inicia</h3>
+    <p>Se é o próprio Windows que se recusa a executar um programa do Windows, a lista de causas prováveis é curta e a mensagem de erro normalmente identifica qual delas é:</p>
+    <ul>
+      <li><strong>“Este aplicativo não pode ser executado no seu PC.”</strong> Quase sempre um programa de 16 bits. O Windows de 64 bits removeu o subsistema que rodava esses programas, e não existe configuração que o traga de volta.</li>
+      <li><strong>Uma DLL faltando é nomeada.</strong> Comparativamente, boa notícia: o programa precisa de um runtime que você não tem. Normalmente o redistribuível do Visual C++, o runtime do Visual Basic 6 ou o .NET Framework 3.5.</li>
+      <li><strong>O SmartScreen bloqueia.</strong> O Windows não reconhece o publicador. Se você tem certeza de onde o arquivo veio, “Mais informações” e depois “Executar assim mesmo”.</li>
+      <li><strong>Não acontece nada.</strong> Muitas vezes é um programa de console que abriu, rodou e fechou mais rápido do que você conseguiu ver. Rode a partir do Prompt de Comando para a janela ficar aberta.</li>
+    </ul>
+    <p>Cada um desses casos é detalhado em <a href="/blog/why-old-programs-wont-run-on-windows-11/">por que programas antigos não rodam no Windows 11</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>Quando você não quer executá-lo de jeito nenhum</h2>
+    <p>Às vezes o objetivo não é rodar o programa, e sim chegar ao que está dentro dele. Instaladores, em particular, normalmente são apenas arquivos compactados com um invólucro, e muitíssimos aplicativos antigos são portáteis depois de desempacotados: uma única pasta que roda sem jamais tocar no registro.</p>
+    <p>Nosso <a href="/run/extract-archive/">extrator de arquivos compactados</a> abre <code>.exe</code> autoextraíveis junto com 7z, ZIP, RAR e o resto, inteiramente no navegador e sem enviar nada. <a href="/blog/extract-files-from-an-old-installer/">O passo a passo completo</a> cobre os casos que ele não resolve e o que usar no lugar.</p>
+    <p>Se você só quer saber <em>o que</em> o arquivo é, o <a href="/exe-inspector/">visualizador de EXE</a> lê os cabeçalhos dele e mostra para qual processador foi compilado, quais bibliotecas do sistema carrega, o ícone e se está assinado — sem executar nada.</p>
+    <p>E se a dúvida é se vale a pena executá-lo, <a href="/blog/check-if-an-exe-is-safe/">este .exe é seguro?</a> passa por todas as verificações que valem a pena e pelo que cada uma realmente prova.</p>
+  </section>
+
+  <section class="card">
+    <h2>Antes de executar qualquer coisa</h2>
+    <p>Um <code>.exe</code> de origem desconhecida pode fazer tudo o que a sua conta de usuário pode fazer. Isso não é alarmismo, é simplesmente o que um programa é. Duas coisas que valem a pena: conferir o arquivo no <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a> e preferir o download do fabricante original ao de um agregador que embrulhou o programa no próprio instalador.</p>
+    <p>Executá-lo numa aba do navegador é sensivelmente mais seguro do que executá-lo nativamente, porque o isolamento do navegador é uma fronteira real e o programa não recebe acesso ao seu sistema de arquivos de verdade. Não é uma licença para rodar malware, mas é um jeito razoável de olhar algo sobre o qual você está em dúvida.</p>
+    <p>Mais seguro ainda é não executar. <a href="/exe-inspector/">Ler os cabeçalhos do arquivo</a> não custa nada e responde à maioria das perguntas comuns: é a arquitetura certa, é um instalador em vez do programa, ele nomeia um publicador, está assinado, está empacotado de um jeito que não revela nada até rodar.</p>
+  </section>
+
+  <section class="card">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Dá para abrir um arquivo .exe online sem baixar nada?</summary><p>Você pode executar um aqui sem instalar nada, que é o sentido usual da pergunta. O arquivo é lido pelo seu navegador na sua própria máquina — ele não é enviado a nenhum servidor. Programas Windows pequenos e de 32 bits funcionam melhor.</p></details>
+    <details><summary>Como abro um .exe no Mac?</summary><p>Nativamente, não dá. Use Wine ou CrossOver, uma máquina virtual com Windows, ou rode numa aba do navegador. Para programas antigos e pequenos, o navegador é de longe o caminho menos trabalhoso.</p></details>
+    <details><summary>Por que não acontece nada quando dou dois cliques?</summary><p>Normalmente é um programa de console que abriu e fechou na hora, ou um runtime faltando falhando em silêncio. Rode pelo Prompt de Comando para ver o erro em vez de adivinhar.</p></details>
+    <details><summary>É seguro abrir um arquivo .exe?</summary><p>Tão seguro quanto a origem dele. Um programa pode fazer o que a sua conta pode fazer. Confira no VirusTotal, prefira o download do próprio fabricante e, na dúvida, rodar no isolamento do navegador é bem mais seguro do que rodar nativamente.</p></details>
+    <details><summary>E se for de 64 bits?</summary><p>O runtime daqui é de 32 bits, então programas exclusivamente de 64 bits não vão carregar. Muitos aplicativos anteriores a mais ou menos 2010 também traziam uma versão de 32 bits, e essa geralmente funciona.</p></details>
+  </section>
+</main>
+
+<footer>
+  <p>Feito com <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine é marca registrada da CodeWeavers. O ExeBrowser não é afiliado à WineHQ, à CodeWeavers nem à Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/pt-BR/">Início</a>
+    <a href="/pt-BR/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/exe-inspector/">Visualizador de EXE</a>
+    <a href="/blog/">Blog</a>
+    <a href="/pt-BR/guide/">Guia de compatibilidade</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+    <a href="/saves/">Jogos salvos</a>
+    <a href="/privacy/">Política de privacidade</a>
+    <a href="/terms/">Termos de uso</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Conteúdo sob licença aberta; runtime sob GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script>window.__I18N={"play":"▶ Jogar {name}","resume":"▶ Continuar {name}","loading":"Carregando…","startOver":"Começar de novo","savedAgo":"Salvo {when}.","filesRestored":"Seus jogos salvos são carregados junto — abra-os pelo menu do próprio jogo.","snapshotResume":"Você volta exatamente de onde parou, no meio do jogo.","progressSaved":"Progresso salvo neste navegador","resumedExactly":"Você voltou exatamente de onde parou","snapshotOff":"Não foi possível salvar um ponto de retomada: seus saves do jogo continuam funcionando","confirmDelete":"Apagar seu progresso salvo em {name}?","justNow":"agora mesmo","minutesAgo":"há {n} minutos","anHourAgo":"há uma hora","hoursAgo":"há {n} horas","yesterday":"ontem","daysAgo":"há {n} dias","saveHint":"Salve dentro do jogo e o arquivo fica neste navegador","resetSaves":"apagar o progresso salvo","savesCleared":"Progresso salvo apagado — recarregue para começar de novo","restoredFiles":"{n} arquivo(s) salvo(s) restaurado(s) — abra pelo menu do jogo","overlayNote":"Roda no seu navegador com DOSBox + WebAssembly.<br>Nada é enviado. O runtime (~1,4 MB) fica em cache depois da primeira vez.","mouseHint":"Clique na tela do jogo para dar o teclado a ele.","starting":"Iniciando…","cachedNote":"Fica em cache depois da primeira carga, então da próxima vez é instantâneo.","loadingGame":"Carregando {name}…","fullscreen":"Tela cheia","soundOn":"Som ligado","soundOff":"Som desligado","remapKeys":"Teclado — remapeie qualquer tecla","remapHint":"Clique em uma tecla abaixo e depois pressione a que você prefere usar. Fica salvo neste navegador, por jogo.","resetDefaults":"Restaurar o padrão","consoleOutput":"Saída do console","wineLoadYours":"Carregue sua cópia de {name}","wineEmptyHosted":"Aperte play para iniciar {name} no seu navegador.","wineEmptyOwn":"{name} não está hospedado aqui — carregue sua própria cópia abaixo e ele roda nesta mesma página.","wineHintHosted":"Roda inteiramente na sua aba com WebAssembly + Wine. Nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineHintOwn":"Não podemos redistribuir {name}, então nada fica hospedado aqui. Sua própria cópia roda inteiramente na sua aba com WebAssembly + Wine — nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineEngine":"Motor do Wine:","wineVariantDefault":"Wine 1.7.55 · Win32 — quase tudo de 1995–2008","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — programas que pedem o Internet Explorer","wineVariant16":"Wine 3.1 · Windows 3.x de 16 bits — programas de 1990–1994","wineVariantR18":"Boxedwine 18R2 — motor mais antigo; às vezes roda o que o padrão não roda","wineIdle":"Ocioso.","wineDownloadFiles":"Baixar os arquivos que este programa gravou","wineFilesKept":"Os arquivos que este programa salvar ficam guardados neste navegador e são restaurados na próxima vez que você abrir a página. Use o botão de download para ficar com uma cópia.","wineCaptures":"Captura os saves e o conteúdo que o programa gravou na unidade C:\\ em memória.","wineLoadOwnCopy":"Carregue sua própria cópia","wineHaveFiles":"Tem os arquivos no seu aparelho? Solte aqui a pasta do programa ou um zip: o <code>.exe</code> principal mais os arquivos de dados ao lado dele.","wineDropFiles":"Solte os arquivos aqui, ou escolha:","winePickExe":"um único EXE","winePickFolder":"uma pasta","winePickZip":"um zip","wineEntryExe":"EXE principal:","wineRun":"Executar no Wine","wineLoadingRuntime":"Carregando o motor Boxedwine…","wineConfiguring":"Configurando a inicialização do Wine…","wineStartingEmulator":"Iniciando o emulador…","wineRunning":"Executando {name}…","wineBootFailed":"A inicialização falhou. Veja o console.","winePickThenRun":"Escolha um EXE e clique em Executar.","wineReadyLoad":"Wine pronto — carregue um EXE","wineInstallPrompt":"Instalar para voltar com um toque","wineEntry":"Principal: {path}","wineExesAvailable":"{n} EXEs disponíveis"};</script>
+
+<script src="/pwa.js?v=2"></script>
+</body>
+</html>

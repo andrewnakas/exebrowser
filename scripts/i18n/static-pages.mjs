@@ -29,7 +29,7 @@ export const STATIC_PAGES = {
     resumeBar: true,
     // embed.js builds the runtime DOM that app.js binds to, so the order here
     // is load-bearing, exactly as on the English page.
-    scripts: ["/save-core.js?v=4", "/recent.js?v=6", "/embed.js?v=10", "/app.js?v=22"],
+    scripts: ["/save-core.js?v=4", "/recent.js?v=6", "/embed.js?v=10", "/app.js?v=22", "/embed-pointer.js?v=1"],
   },
   "/open-exe-file/": {
     kind: "page",
@@ -39,7 +39,9 @@ export const STATIC_PAGES = {
   "/guide/": {
     kind: "page",
     pri: "0.7",
-    scripts: [],
+    // The English guide carries the embed pointer and measures it; a localised
+    // copy that dropped the script would silently stop counting the clicks.
+    scripts: ["/embed-pointer.js?v=1"],
   },
   "/exe-inspector/": {
     kind: "page",

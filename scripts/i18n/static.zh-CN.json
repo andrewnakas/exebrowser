@@ -1,6 +1,5 @@
 {
   "_readme": "手工维护的工具页面的简体中文翻译，按路径索引。这里没有的路径在中文里就不存在：不会生成、没有任何链接指向它，hreflang 也不会提到它。由 Claude 翻译，未经母语者校对；标题和 meta 描述属于营销文案，值得人工再看一遍。",
-
   "/load-exe/": {
     "title": "在线运行 EXE — 免费打开 .exe 文件",
     "description": "在浏览器里打开并运行 Windows 的 .exe 文件：免费、无需下载、无需安装，也不会上传任何东西。拖入一个 .exe、一个文件夹或一个 zip，它就在这个标签页里、在你自己的机器上运行。",
@@ -17,7 +16,7 @@
       },
       {
         "h": "哪些能跑，哪些老实说跑不了",
-        "html": "    <p>这是一个被模拟出来的 32 位 Windows 环境，而不是覆盖在你真实机器之上的兼容层。在为它花掉一次下载之前，值得先知道边界在哪里。</p>\n    <h3>运行良好</h3>\n    <ul>\n      <li>大约 1995 到 2008 年的 32 位 Win32 和 GDI 应用：编辑器、查看器、计算器、压缩工具、各种小工具。</li>\n      <li>那个年代的 2D 游戏，包括不少在 Windows 11 上已经启动不了的。</li>\n      <li>老式安装程序——前提是你要的是里面的文件，而不是装好的系统。</li>\n      <li>16 位的 Windows 3.x 软件，使用上方选择器里的 <strong>Wine 3.1 · 16 位</strong> 引擎。</li>\n    </ul>\n    <h3>通常跑不了</h3>\n    <ul>\n      <li><strong>64 位程序。</strong>默认引擎只有 32 位。另有一个<a href=\"/64/\">实验性的 64 位运行时</a>，带独立的载入器，但很多东西在里面还画不出来。</li>\n      <li><strong>Direct3D 和现代 3D 游戏。</strong>这里没有 GPU 直通。</li>\n      <li><strong>.NET、较新的 Visual C++ 运行库，以及一切需要 Windows 10 API 的程序。</strong>Wine 1.7.55 比它们都早。</li>\n      <li><strong>任何需要网络、授权服务器或真实硬件的东西</strong>：加密狗、打印机、串口设备、光盘检测。</li>\n    </ul>\n    <p>速度大约是原生的 10% 到 40%，因为每一条 x86 指令都是模拟执行的。跑工具和老式 2D 游戏没问题，跑任何吃性能的东西都不行。<a href=\"/guide/\">兼容性指南</a>按类别讲得更细，我们还<a href=\"/blog/we-tested-53-windows-apps-in-the-browser/\">实测了 53 个真实程序</a>并公布了每一个的结果。</p>"
+        "html": "    <p>这是一个被模拟出来的 32 位 Windows 环境，而不是覆盖在你真实机器之上的兼容层。在为它花掉一次下载之前，值得先知道边界在哪里。</p>\n    <h3>运行良好</h3>\n    <ul>\n      <li>大约 1995 到 2008 年的 32 位 Win32 和 GDI 应用：编辑器、查看器、计算器、压缩工具、各种小工具。</li>\n      <li>那个年代的 2D 游戏，包括不少在 Windows 11 上已经启动不了的。</li>\n      <li>老式安装程序——前提是你要的是里面的文件，而不是装好的系统。</li>\n      <li>16 位的 Windows 3.x 软件，使用上方选择器里的 <strong>Wine 3.1 · 16 位</strong> 引擎。</li>\n    </ul>\n    <h3>通常跑不了</h3>\n    <ul>\n      <li><strong>64 位程序。</strong>默认引擎只有 32 位。另有一个<a href=\"/64/\">实验性的 64 位运行时</a>，带独立的载入器，但很多东西在里面还画不出来。</li>\n      <li><strong>Direct3D 和现代 3D 游戏。</strong>这里没有 GPU 直通。</li>\n      <li><strong>.NET、较新的 Visual C++ 运行库，以及一切需要 Windows 10 API 的程序。</strong>Wine 1.7.55 比它们都早。</li>\n      <li><strong>任何需要网络、授权服务器或真实硬件的东西</strong>：加密狗、打印机、串口设备、光盘检测。</li>\n    </ul>\n    <p>速度大约是原生的 10% 到 40%，因为每一条 x86 指令都是模拟执行的。跑工具和老式 2D 游戏没问题，跑任何吃性能的东西都不行。<a href=\"/zh-CN/guide/\">兼容性指南</a>按类别讲得更细，我们还<a href=\"/blog/we-tested-53-windows-apps-in-the-browser/\">实测了 53 个真实程序</a>并公布了每一个的结果。</p>"
       },
       {
         "h": "如果它启动不了",
@@ -30,6 +29,10 @@
       {
         "h": "没有东西要载入？这里本来就有不少",
         "html": "    <p>大多数人来的时候手上并没有 <code>.exe</code>。我们托管了一批免费、授权干净、点一下就能启动的游戏和应用——DOOM、德军总部 3D、Tyrian 等等——不需要上传任何东西。</p>\n    <p><a href=\"/zh-CN/\">去看看 →</a> · <a href=\"/zh-CN/run/\">全部指南</a></p>\n    <p class=\"muted small\">目录和博客的绝大部分仍是英文。中文页面只有真正翻译过的那些，不是把其余内容机翻一遍。</p>"
+      },
+      {
+        "h": "把这里的游戏放到你自己的网站上",
+        "html": "    <p>这里有十一个游戏是专门为这个网站从零写的，所以它们是我们的，可以送出去——我们也确实这么做了。任何人都可以免费放到自己的页面上：一行 HTML，不用账号，不用申请许可，除了一行署名之外不需要别的。</p>\n    <p><a class=\"cta-btn\" href=\"/embed/\" id=\"embed-pointer-cta\">看看你可以嵌入哪些游戏</a></p>"
       }
     ],
     "faqHeading": "常见问题",
@@ -59,5 +62,126 @@
         "a": "<p>每一条 x86 指令都在你的浏览器里被模拟执行，所以速度大约是原生的 10% 到 40%。跑工具、老式 2D 游戏和安装程序没问题，跑吃性能的东西就很难受。</p>"
       }
     ]
+  },
+  "/open-exe-file/": {
+    "title": "怎么打开 EXE 文件 — Windows、Mac 与 Chromebook",
+    "description": ".exe 文件到底是什么、为什么打不开，以及在 Windows、Mac、Chromebook 或 Linux 上运行它的各种办法——包括在浏览器标签页里运行，什么都不用装。",
+    "keywords": "打开 exe 文件, 怎么打开 exe, mac 打开 exe, chromebook 运行 exe, exe在线运行, exe 文件是什么, exe 打开方式",
+    "ogTitle": "怎么打开 EXE 文件：Windows、Mac、Chromebook 与 Linux",
+    "ogDescription": ".exe 究竟是什么、为什么不启动，以及运行它的每一种办法——包括在浏览器标签页里运行，什么都不用装。",
+    "crumb": "怎么打开 EXE 文件",
+    "h1": ".exe 文件到底是什么",
+    "intro": "    <p><code>.exe</code> 是为 Windows 编译出来的程序。它不是文档，不是压缩包，也不是视频——它是一串机器指令，加上一个告诉 Windows 该怎么装载它们的文件头。这也是「打开方式」对它从来没用的原因：程序没有对应的查看器，因为程序本身就是那个应用。</p>\n    <p>这同时解释了大家来到这里的两种处境。要么你在 Mac、Linux 或 Chromebook 上，Windows 程序根本跑不起来；要么你就在 Windows 上，而文件因为少数几个具体原因之一启动不了。这是两个不同的问题，答案也不同。</p>\n\n    <h3>最快能试的一招</h3>\n    <p>这个网站在浏览器标签页里运行 Windows 程序。把一个 <code>.exe</code> 拖到<a href=\"/zh-CN/load-exe/\">加载页面</a>上，它就会尝试在本地运行：文件在你自己的机器上被读取，不会上传到任何地方。</p>\n    <p>限制也得说清楚，因为它们是真实存在的：这里最适合大约 1995 到 2008 年之间的 <strong>32 位</strong> Windows 软件。小工具和老游戏是最佳区间。任何需要现代 .NET、真实网络访问或 3D 图形环境的东西都跑不了，而我们<a href=\"/zh-CN/run/\">把失败的例子和成功的一起写出来</a>，而不是假装它们不存在。</p>",
+    "sections": [
+      {
+        "h": "在各个平台上怎么打开 .exe",
+        "html": "    <h3>在 Mac 上</h3>\n    <p>macOS 无法原生运行 <code>.exe</code> 文件：操作系统不同，而自 Apple Silicon 之后处理器架构也不同。双击只会得到一个错误，换多少种「打开方式」都改变不了。</p>\n    <p>真正可行的办法有三种：像 <a href=\"https://www.winehq.org/\" target=\"_blank\" rel=\"noopener\">Wine</a> 或 CrossOver 这样的兼容层，它翻译 Windows API 调用，而不是模拟一整台 PC；跑着正版 Windows 的虚拟机；或者，对于又老又小的程序，直接在这里的浏览器标签页里运行。浏览器这条路什么都不用装，这往往就是决定性的因素。</p>\n\n    <h3>在 Chromebook 上</h3>\n    <p>ChromeOS 完全无法安装 Windows 软件，这是设计使然，不是疏漏。没有 Wine 可装，没有 Program Files，安装程序也无处可去。</p>\n    <p>剩下的就是在浏览器里运行——也就是这个网站做的事——或者用 Linux 容器，前提是你的 Chromebook 开启了它，而且你愿意在里面装 Wine。我们还有<a href=\"/blog/run-windows-software-on-a-chromebook/\">一篇更长的文章讲这四种办法</a>，按麻烦程度排了序。</p>\n\n    <h3>在 Linux 上</h3>\n    <p>用发行版的包管理器装上 Wine，然后 <code>wine 你的程序.exe</code>。Wine 已经相当成熟，很多软件第一次就能跑起来。跑不起来的时候它通常会大声报错，直接说出缺了哪个 DLL 或哪个 API，至少给了你一个可以去搜的关键词。</p>\n\n    <h3>在 Windows 上，当它就是不启动</h3>\n    <p>如果连 Windows 自己都拒绝运行一个 Windows 程序，可能的原因就那么几个，而且错误信息通常已经指明了是哪一个：</p>\n    <ul>\n      <li><strong>「此应用无法在你的电脑上运行」。</strong>多半是一个 16 位程序。64 位 Windows 移除了运行它们的子系统，没有任何设置能把它找回来。</li>\n      <li><strong>提示缺少某个 DLL。</strong>相对来说算是好消息：程序需要一个你没装的运行库。通常是 Visual C++ 可再发行组件、Visual Basic 6 运行库，或 .NET Framework 3.5。</li>\n      <li><strong>SmartScreen 拦截了它。</strong>Windows 不认识这个发布者。如果你确信文件的来源，点「更多信息」再点「仍要运行」。</li>\n      <li><strong>什么都没发生。</strong>常见的情况是一个控制台程序打开、运行、又关掉了，快到你看不见。试着从命令提示符里运行，窗口就会留着。</li>\n    </ul>\n    <p>这几种情况在<a href=\"/blog/why-old-programs-wont-run-on-windows-11/\">为什么老程序在 Windows 11 上跑不起来</a>里讲得更细。</p>"
+      },
+      {
+        "h": "当你根本不想运行它的时候",
+        "html": "    <p>有时候目的并不是运行这个程序，而是拿到它里面的东西。安装包尤其如此，它们通常就是加了一层外壳的压缩包；而非常多的老应用一旦解开就是绿色软件——一个文件夹，从不碰注册表就能运行。</p>\n    <p>我们的<a href=\"/run/extract-archive/\">解压工具</a>能打开自解压 <code>.exe</code>，也能打开 7z、ZIP、RAR 等等，全程在浏览器里完成，不上传任何东西。<a href=\"/blog/extract-files-from-an-old-installer/\">完整的操作说明</a>讲了它处理不了的情况，以及那时该用什么。</p>\n    <p>如果你只想知道这个文件<em>是什么</em>，<a href=\"/exe-inspector/\">EXE 查看器</a>会读取它的文件头，告诉你它是为哪种处理器编译的、加载了哪些系统库、图标长什么样、有没有签名——一行代码都不会执行。</p>\n    <p>而如果你正在权衡要不要运行它，<a href=\"/blog/check-if-an-exe-is-safe/\">这个 .exe 安全吗？</a>逐一讲了值得做的每一项检查，以及每一项到底能证明什么。</p>"
+      },
+      {
+        "h": "运行任何东西之前",
+        "html": "    <p>一个来路不明的 <code>.exe</code>，你的用户账户能做什么，它就能做什么。这不是危言耸听，这就是「程序」的定义。有两件事值得做：把文件拿到 <a href=\"https://www.virustotal.com/\" target=\"_blank\" rel=\"noopener\">VirusTotal</a> 上查一下；宁可从原厂下载，也别用那些把它重新包进自家安装器的下载站。</p>\n    <p>在浏览器标签页里运行，确实比在本机直接运行安全得多，因为浏览器沙箱是一道真实的边界，程序拿不到你真正的文件系统。这不等于可以拿来跑恶意软件，但对于一个你拿不准的文件，这是个合理的查看方式。</p>\n    <p>更安全的做法是根本不运行。<a href=\"/exe-inspector/\">读一读文件头</a>不花任何代价，却能回答大部分日常问题：架构对不对、它是安装包还是程序本体、有没有署名的发布者、有没有签名、是不是被加了壳以至于不运行就什么都看不出来。</p>"
+      }
+    ],
+    "faqHeading": "常见问题",
+    "faq": [
+      {
+        "q": "不下载任何东西，能在线打开 .exe 文件吗？",
+        "a": "<p>你可以在这里运行一个，什么都不用装——这通常就是这个问题真正的意思。文件由你自己机器上的浏览器读取，不会上传到服务器。体积较小的 32 位 Windows 程序效果最好。</p>"
+      },
+      {
+        "q": "在 Mac 上怎么打开 .exe？",
+        "a": "<p>原生打不开。可以用 Wine 或 CrossOver、装 Windows 的虚拟机，或者在浏览器标签页里运行。对又老又小的程序来说，浏览器省事得多。</p>"
+      },
+      {
+        "q": "双击之后什么都没发生，为什么？",
+        "a": "<p>通常是一个控制台程序开了又立刻关掉，或者缺少某个运行库而悄悄失败了。从命令提示符里运行它，就能看到错误，不用靠猜。</p>"
+      },
+      {
+        "q": "打开 .exe 文件安全吗？",
+        "a": "<p>它只有来源那么安全。一个程序能做你的账户能做的一切。拿到 VirusTotal 上查一查，优先选厂商自己的下载；如果拿不准，在浏览器沙箱里运行比在本机运行安全得多。</p>"
+      },
+      {
+        "q": "如果它是 64 位的呢？",
+        "a": "<p>这里的运行时是 32 位的，所以纯 64 位程序装载不了。2010 年之前的很多应用同时也发布了 32 位版本，那个通常能跑。</p>"
+      }
+    ]
+  },
+  "/guide/": {
+    "title": "完整指南：在浏览器里运行 Windows 的 EXE 文件",
+    "description": "Windows 的 .exe 怎么在一个浏览器标签页里跑起来、哪些软件能跑哪些不能、该选哪一个 Wine 引擎，以及常见故障怎么排查。",
+    "keywords": "浏览器运行 exe 指南, wine webassembly, exe在线运行 兼容性, boxedwine, 不安装运行 windows 程序, 哪些程序能跑",
+    "ogTitle": "在浏览器里运行 Windows EXE 的完整指南",
+    "ogDescription": "它到底怎么做到的、什么能跑什么不能、该选哪个引擎，以及画面一片漆黑时该怎么办。",
+    "crumb": "兼容性指南",
+    "h1": "在浏览器里运行 Windows EXE 文件的完整指南",
+    "intro": "    <p class=\"updated\">最后更新：2026 年 6 月 8 日 · 约 12 分钟阅读</p>\n    <p>在网页浏览器里运行一个 Windows 程序，听上去像是不该成立的事。底下没有 Windows，没有一颗一定存在的 x86 处理器，也没有安装程序——只有一个标签页。但它确实能跑。这份指南既讲<em>它是怎么做到的</em>，也讲更实用的那一半：<em>怎么把它用好</em>。无论你是想让一个老共享软件游戏复活、从一个上古工具里救出一份文档，还是单纯出于好奇，这都是那本实操手册。</p>\n\n    <div class=\"warn-box\" style=\"border-color:#2e7d32;\">\n      <p style=\"margin-top:0;\"><strong>你可以在这里运行自己的软件。</strong>这份指南说的是<em>你自己的</em>文件：来自你硬盘的一个 Windows <code>.exe</code>、一个程序文件夹，或者它的一个 zip。它在你的浏览器标签页里运行：<strong>不会有任何东西被上传到服务器</strong>，文件在本地读取，写进一块内存里的 <code>C:\\</code> 盘，关掉标签页就消失。</p>\n      <p style=\"margin-bottom:0;\"><a class=\"button\" href=\"/zh-CN/load-exe/\">🖥 加载你自己的 EXE、文件夹或 zip →</a> &nbsp; <span class=\"muted small\">免费，无需账号。最适合 1995–2008 年的 32 位 Windows 软件。</span></p>\n    </div>\n\n    <h3>1. 为什么会有人想在浏览器里跑 EXE？</h3>\n    <p>老实说，是因为麻烦。32 位 Windows 的经典年代——大约 1995 到 2008 年——留下了一个庞大的软件目录：工具、游戏、CD-ROM 教育软件、商务软件、demoscene 作品。其中很大一部分至今仍能运行，但它们当年所依赖的硬件和操作系统正在消失。如果你手上是 Chromebook、iPad、现代的 Mac 或者一台 Linux 机器，想跑一个 1999 年的 Windows 安装程序就是一桩苦差事：你需要虚拟机、一份 Windows 授权，还有耐心。</p>\n    <p>在浏览器里执行把这一切压缩掉了。程序逻辑跑到任何有现代浏览器的地方，而那基本上是所有地方。常见的动机包括：</p>\n    <ul>\n      <li><strong>软件保存。</strong>博物馆、档案工作者和爱好者，想让老程序保持可运行，又不必分发一整台虚拟机。</li>\n      <li><strong>受限设备上的教学。</strong>用 Chromebook 的学校，仍然需要某个特定的老旧教学软件。</li>\n      <li><strong>快速演示。</strong>给同事看一个内部老工具，不用装东西，也不用开虚拟机。</li>\n      <li><strong>数据抢救。</strong>从一个只有老 EXE 才知道怎么打开的文件里把数据取出来。</li>\n      <li><strong>怀旧。</strong>重新打开你记忆里那些配着 56k 调制解调器和米黄色机箱的共享软件。</li>\n    </ul>\n\n    <h3>2. 它实际是怎么工作的：三层叠在一起</h3>\n    <p>理解一下这套机器是值得的，因为所有限制都直接来自它。三项技术层层叠加。</p>\n    <p><strong>第一层是 CPU 模拟器。</strong>一个 Windows EXE 是一串 x86 机器指令。你的浏览器说的是 <a href=\"https://webassembly.org/\" target=\"_blank\" rel=\"noopener\">WebAssembly</a>，不是 x86，所以它没法直接执行这些指令。办法是做一颗软件 CPU：一个用 C++ 写的程序，逐条读取 x86 指令，并在一颗虚拟的奔腾时代处理器上模拟它的效果。这个 C++ 模拟器被编译成 WebAssembly，浏览器跑的是<em>它</em>。所以某种意义上你是在一个模拟器里跑另一个模拟器——这正是它慢的原因。</p>\n    <p><strong>第二层是 Wine。</strong>EXE 里不只有 CPU 指令；它还会不停调用 <code>kernel32.dll</code>、<code>user32.dll</code>、<code>gdi32.dll</code> 这类 Windows 系统库。<a href=\"https://www.winehq.org/\" target=\"_blank\" rel=\"noopener\">Wine</a>——这个递归的名字意思是「Wine 不是模拟器」——是在 POSIX 基础上从零重写的那套 Windows API。当被模拟的程序调用 <code>CreateWindowExA</code> 时，Wine 拦下它，跑自己那份兼容实现。Wine 已经积累了几十年，完成度高得惊人，但它终究不是 100% 的 Windows，这就是第二个不兼容的来源。</p>\n    <p><strong>第三层是与浏览器之间的桥。</strong>Wine 画出来的东西总得显示在什么地方。运行时把 Wine 的帧缓冲映射到一个 HTML <code>&lt;canvas&gt;</code> 上，把你的键盘和鼠标送进 Wine 的输入队列，把声音交给 Web Audio，再伪造一块虚拟 <code>C:\\</code> 盘（用一个内存文件系统），让 Wine 以为自己面对的是一块正常的硬盘。整条流水线单线程运行在页面的主 WebAssembly 实例上，所以它在任何现代浏览器里都能跑，不需要特殊的响应头或开关。</p>\n    <p>三层叠起来，大致能给出原生 CPU 速度的 10% 到 40%。对一个靠菜单操作的工具来说，这个差距看不出来。对 3D 游戏或者重度压缩来说，非常明显。</p>\n\n    <h3>3. 到底哪些程序能跑？</h3>\n    <p>试过大量程序之后，规律是稳定的。下面这些类别跑得<strong>很好</strong>：</p>\n    <ul>\n      <li><strong>2005 年之前的工具和共享软件</strong>——文件管理器、十六进制编辑器、文本编辑器、早期的 WinRAR / 7-Zip 界面、各种小工具。</li>\n      <li><strong>Win9x 到 XP 早期的 2D 游戏</strong>——点击式冒险、益智游戏、回合制策略、2D RPG。凡是在 500 MHz 奔腾 III 上过得舒服的，都行。</li>\n      <li><strong>早期办公套件</strong>——Office 97 和 2000 大体可用；AbiWord 和 Gnumeric 非常稳。</li>\n      <li><strong>编程与 demo 工具</strong>——VB6 和早期 Delphi 程序、Turbo Pascal 生成的二进制文件、经典的 Win32 demoscene 作品。</li>\n      <li><strong>教育软件</strong>——九十年代末的 CD-ROM 教学软件、数学和语言学习程序。</li>\n    </ul>\n    <p>而下面这些类别会<strong>很吃力</strong>：</p>\n    <ul>\n      <li><strong>任何 64 位程序。</strong>这里的 Wine 只有 32 位版本；纯 x64 的二进制文件装载不了。去找一个更老的 32 位版本。</li>\n      <li><strong>用 DirectX 9 及以上、Direct3D 10/11/12 或 Vulkan 的 3D 游戏。</strong>3D 管线很有限；OpenGL 1.x 能用，现代着色器那一套不行。</li>\n      <li><strong>.NET 4.5 及以后。</strong>内置的 Wine 早于现代 .NET 的大部分内容。2.0 / 3.5 的程序有时能跑；更新的运行库通常不行。</li>\n      <li><strong>DRM、在线激活、反作弊。</strong>它们会以 Wine 无法满足的方式探测系统，然后拒绝启动。</li>\n      <li><strong>Windows 7 之后的 API。</strong>UWP 应用、现代的资源管理器扩展、Office 2010 之后的功能区界面。</li>\n    </ul>\n\n    <h3>4. 选对 Wine 变体</h3>\n    <p>ExeBrowser 提供四种运行时变体，而选对哪一种，是决定一个程序能不能启动的最大单一因素。</p>\n    <ul>\n      <li><strong>Wine 1.7.55 · Win32（默认）。</strong>1995 到 2008 年之间几乎所有东西的日常之选。文件系统的大部分是按需获取的，所以第一次启动只会拉取程序真正用到的部分，通常 30–60 MB。从这里开始。</li>\n      <li><strong>Wine 1.7.55 · Win32 + Gecko。</strong>和默认的一样，但额外打包了一份离线的 Wine Gecko。当程序或安装器内嵌了 Internet Explorer / HTML 帮助组件，并提示要下载 Gecko 时用它——例如 3D 弹球太空军校生，或者调用 HTML 帮助的 MSI 安装包。</li>\n      <li><strong>Wine 3.1 · 仅 Win 3.x 16 位。</strong>一个专门的构建，针对 1990–1994 年使用 WIN16 API 的 16 位 Windows 程序。它<em>不能</em>运行 Win32 程序。遇到真正古老的 16 位共享软件时再用它。</li>\n      <li><strong>Boxedwine 18R2。</strong>引擎在 2018 年的一个旧快照。Wine 版本相近，但模拟器和集成方式不同，所以偶尔会出现默认引擎跑不起来、它却能跑的程序（反之亦然）。这是「别的都不行时试试这个」的选项。</li>\n    </ul>\n    <p>一个合理的策略：先试默认；如果程序提到 HTML、IE 或帮助文件，换 +Gecko；如果它明显是 16 位的，用 Win 3.x；如果它在默认引擎上一启动就崩，试 18R2。</p>\n\n    <h3>5. 把自己的 DLL 和数据文件一起带上</h3>\n    <p>很多真实程序并不是一个自成一体的 EXE——它们期望安装目录里旁边还有 DLL、数据文件或配置。只丢一个 EXE 进来，这些就都留在外面了，程序会找不到 <code>data\\maps\\level1.dat</code> 或者 <code>plugins\\render.dll</code>。</p>\n    <p>解决办法是上传<strong>整个文件夹</strong>（或者它的 zip），而不是孤零零一个 EXE。用加载器上的文件夹或 zip 选择器。你提供的一切，都会在程序运行前被复制到 Wine 的虚拟目录 <code>C:\\Users\\username\\Desktop\\userapp\\</code> 里，这样相对路径就能找到东西。如果一个包里不止一个 EXE，会有一个入口选择器让你挑要启动哪一个。仅这一步，就能解决很大一部分「它就是跑不起来」的情况。</p>\n\n    <h3>6. 常见故障的排查</h3>\n    <p><strong>「启动 Wine」一直不结束。</strong>通常是运行时文件的下载被拦住或卡住了——公司代理、防火墙，或者某个过于积极的浏览器扩展干扰了那些几十兆的 <code>.wasm</code> 和文件系统请求。在开发者工具 → 网络里，看看发往 <code>/boxedwine/…</code> 的请求是失败还是挂着。换一个网络、为本站关掉广告拦截扩展，然后重新加载。</p>\n    <p><strong>点了运行之后画面全黑。</strong>程序启动了，但在初始化时崩了，或者正在等待某个看不见的东西。打开控制台那一栏，找以 <code>err:</code> 开头的行。<code>err:module:import_dll Library X.dll not found</code> 表示缺 DLL——把整个安装文件夹传上来。<code>0x80004005</code> 或 <code>STATUS_DLL_NOT_FOUND</code> 这类代码是同一个意思。控制台什么都没有？试试 18R2 变体。</p>\n    <p><strong>「MSI install error 1627」。</strong>这是 Wine 1.7.55 的限制——MSI 自定义操作支持不完整，不是 ExeBrowser 的 bug。在浏览器里没有绕过的办法。如果存在非 MSI 的安装包就找那个，或者在你自己的电脑上把 MSI 解开（用 7-Zip 或 <code>msiextract</code>），再把解出来的文件夹传上来。</p>\n    <p><strong>慢得离谱。</strong>这是预期之中的——你正在 WebAssembly 里模拟一颗 x86 CPU。把程序提供的「快速」或「低画质」渲染模式打开，关掉其他标签页，并优先使用基于 Chromium 的浏览器（它的 WebAssembly 优化目前最快）。</p>\n    <p><strong>键盘和鼠标传不到程序里。</strong>直接点一下画布来捕获输入；按 <kbd>Esc</kbd> 释放。Wine 默认是美式键盘布局，所以字符不对往往意味着程序假定了另一套代码页。</p>\n    <p><strong>重新加载后文件都没了。</strong>虚拟 <code>C:\\</code> 盘存在内存里，一刷新就被清空。重新加载之前，先用「下载这个程序写出的文件」，下次把那个 zip 连同 EXE 一起传上来，就能恢复你的状态。</p>\n\n    <h3>7. 保存与取回你的成果</h3>\n    <p>因为文件系统在内存里，程序写出的任何东西——安装结果、存档、生成的文档——都会在标签页关闭时消失。「下载这个程序写出的文件」这个按钮，会把程序写进 <code>C:\\</code> 的所有内容打包成一个 zip 交给你。这是取出安装结果或游戏存档的标准做法，也是把状态从一次会话带到下一次的办法：下载那个 zip，下次访问时再作为文件夹或 zip 传回来。</p>\n\n    <h3>8. 浏览器里的 Windows：一段简史</h3>\n    <p>这个想法比今天大多数浏览器都要老。2010 年代初，<a href=\"https://copy.sh/v86/\" target=\"_blank\" rel=\"noopener\">v86</a> 这样的项目已经能在一个 JavaScript 写的 x86 模拟器里启动整套操作系统（DOS、Windows 95、ReactOS），而 Fabrice Bellard 的 JSLinux 则展示了一个完整的 Linux 用户态跑在客户端。它们慢得像玩具，但证明了这条路走得通。转折点是 2017 年标准化的 <a href=\"https://webassembly.org/\" target=\"_blank\" rel=\"noopener\">WebAssembly</a>，它让浏览器能以接近原生的速度执行编译后的字节码——忽然之间，像 Wine 这样庞大的 C/C++ 代码库成了可行的移植目标。Boxedwine 在 2018 年前后有了实验性的 WebAssembly 目标（就是这里仍作为备用引擎的那个「18R2」构建），后来的版本又加上了按需分段获取的文件系统，于是启动从几分钟缩短到了几秒。</p>\n\n    <h3>9. 常见问题</h3>\n    <p><strong>我的文件会被上传吗？</strong>不会。它在本地读取，写进一个内存文件系统；没有任何东西离开你的设备。详见<a href=\"/privacy/\">隐私政策</a>。</p>\n    <p><strong>需要很快的电脑吗？</strong>任何现代浏览器（Chrome、Edge、Firefox、Safari），最好有 4 GB 以上的可用内存。最关键的是单核速度；2018 年以后的笔记本都很从容。</p>\n    <p><strong>能跑 64 位程序吗？</strong>不能——引擎只有 32 位。去找同一款软件的 32 位版本。</p>\n    <p><strong>这样做合法吗？</strong>运行你本来就有权运行的软件没有问题。你要为自己加载的可执行文件负责；详见<a href=\"/terms/\">使用条款</a>。</p>\n\n    <h3>准备好试试了吗？</h3>\n    <p>回到<a href=\"/zh-CN/load-exe/\">加载页面</a>，启动 Wine，拖一个 EXE 进去。先从又小又老的东西开始——一个经典益智游戏，或者一个简单的小工具——先找到手感，再去碰有野心的东西。如果你发现了什么跑得特别好（或者失败得特别有意思），<a href=\"/contact/\">联系页面</a>一直开着。</p>",
+    "sections": [
+      {
+        "h": "相关指南",
+        "html": "    <ul class=\"card-grid\">\n      <li><a class=\"link-card\" href=\"/zh-CN/open-exe-file/\"><span class=\"lc-title\">怎么打开 .exe 文件</span><span class=\"lc-desc\">.exe 是什么，以及运行它的每一种办法：Windows、Mac、Chromebook、Linux。</span></a></li>\n      <li><a class=\"link-card\" href=\"/unblocked/\"><span class=\"lc-title\">什么都不用装的游戏</span><span class=\"lc-desc\">在被锁死的学校或公司笔记本上能跑什么，以及为什么。</span></a></li>\n      <li><a class=\"link-card\" href=\"/run/extract-archive/\"><span class=\"lc-title\">解压一个压缩包</span><span class=\"lc-desc\">在浏览器里打开 7z、ZIP 或 RAR，不上传任何东西。</span></a></li>\n    </ul>"
+      },
+      {
+        "h": "把这里的游戏放到你自己的网站上",
+        "html": "    <p>这里有十一个游戏是专门为这个网站从零写的，所以它们是我们的，可以送出去——我们也确实这么做了。任何人都可以免费放到自己的页面上：一行 HTML，不用账号，不用申请许可，除了一行署名之外不需要别的。</p>\n    <p><a class=\"cta-btn\" href=\"/embed/\" id=\"embed-pointer-cta\">看看你可以嵌入哪些游戏</a></p>"
+      }
+    ]
+  },
+  "/blog/what-is-an-exe-file/": {
+    "title": ".exe 文件是什么 —— 又该怎么打开？",
+    "description": ".exe 文件到底是什么、在 Windows、Mac、Chromebook、Linux、Android 和 iOS 上怎么打开、怎么不运行就看清里面有什么，以及什么时候根本不该打开它。",
+    "keywords": "exe 文件是什么, exe 文件, 怎么打开 exe, PE 格式, 没有 windows 打开 exe, exe 安全吗",
+    "ogTitle": ".exe 文件是什么 —— 又该怎么打开？",
+    "ogDescription": "一个 .exe 里面装着什么、各个平台上怎么打开、怎么不运行就看清它，以及什么时候干脆别打开。",
+    "crumb": ".exe 文件是什么",
+    "h1": ".exe 文件是什么 —— 又该怎么打开？",
+    "byline": "作者 <a href=\"/about/\">Andrew Nakas</a> · 发布于 2026 年 9 月 22 日 · 约 8 分钟阅读",
+    "intro": "\n    <p>大多数人遇到这个问题的方式都一样：不知什么东西下载了一个以 <code>.exe</code> 结尾的文件，双击之后什么有用的事都没发生。也许你在 Mac 上。也许你在一台不让你装任何东西的公司笔记本上。也许它<em>确实</em>是一台 Windows 电脑，而它仍然拒绝启动。</p>\n    <p>这篇文章讲清楚这个文件到底是什么、在各个平台上怎么打开、怎么在不运行的前提下看清它内部，以及大多数指南跳过的那一部分——什么时候你根本就不该打开它。</p>\n",
+    "sections": [
+      {
+        "h": ".exe 到底是什么",
+        "html": "    <p><code>.exe</code> 是一个<strong>程序</strong>，不是一份文档。打开它不会显示任何内容；它是在告诉你的操作系统开始执行里面的机器码。这篇文章之所以比「双击一下」复杂得多，原因全在这里。</p>\n    <p>严格来说它是一个 <strong>PE 文件</strong>——Portable Executable，微软从 Windows NT 起使用的格式。一个 PE 文件内部包含：</p>\n    <ul>\n      <li>开头一小段 <strong>DOS stub</strong>，是 1980 年代留下来的。老 <code>.exe</code> 在 DOS 下运行时会打印「This program cannot be run in DOS mode」，就是因为它。</li>\n      <li>一个 <strong>PE 头</strong>，说明这些代码针对哪种 CPU（32 位 x86、64 位 x64、ARM）、期待哪个版本的 Windows，以及各部分在内存里的位置。</li>\n      <li>若干<strong>节（section）</strong>，装着真正的机器码、固定数据，以及各种资源——图标、对话框布局、内嵌文本。</li>\n      <li>一张<strong>导入表</strong>，列出它需要的 Windows 库，比如 <code>kernel32.dll</code> 或 <code>user32.dll</code>。</li>\n    </ul>\n    <p>正是这张导入表，让 <code>.exe</code> 很少能自给自足。它默认周围存在一个 Windows。把同一个文件交给 macOS 或 Linux，那里没人听得懂它说的话——文件本身没问题，只是听众不对。</p>\n    <p>另外还有两种东西用着同样的扩展名，行为却不一样：<strong>安装程序</strong>（一个小程序，唯一的任务是把真正的程序铺到你硬盘上）和<strong>自解压压缩包</strong>（一个 zip，前面焊了一个解压器）。这两样后面都还会用到。</p>"
+      },
+      {
+        "h": "在 Windows 上打开",
+        "html": "    <p>双击。这真的就是全部步骤，而如果它管用，你也不会在读这篇文章了。当它不管用时，几乎总是下面几种情况之一：</p>\n    <ul>\n      <li><strong>SmartScreen 拦住了。</strong>会弹出一个蓝色的「Windows 已保护你的电脑」。如果你确定来源，点「更多信息」→「仍要运行」。如果你并不确定，停下来——看下面那一节关于安全的内容。</li>\n      <li><strong>它需要管理员权限。</strong>右键 →「以管理员身份运行」。安装程序通常需要。</li>\n      <li><strong>它是 16 位的。</strong>Windows 3.x 年代的东西在 64 位 Windows 上根本启动不了；那个子系统被移除了。参见<a href=\"/blog/run-16-bit-windows-3x-software/\">运行 Windows 3.x 的 16 位软件</a>。</li>\n      <li><strong>缺少某个 DLL。</strong>错误信息点名某个 <code>.dll</code>，说明程序期待一个你没有的库或运行时。通常这个文件需要待在它原来的文件夹里，和它的同伴们一起。</li>\n      <li><strong>它就是老。</strong><a href=\"/blog/why-old-programs-wont-run-on-windows-11/\">为什么老程序在 Windows 11 上跑不起来</a>讲了兼容模式的各种选项。</li>\n    </ul>"
+      },
+      {
+        "h": "在 Mac 上打开",
+        "html": "    <p>macOS 无法原生运行 <code>.exe</code>，而且从来就不能——Apple Silicon 上的 CPU 约定不同，而底下的操作系统本来就完全是另一套。改文件名没有任何用。老老实实排个序，你现实中的选择是：</p>\n    <ul>\n      <li><strong>在浏览器标签页里运行。</strong>什么都不用装，在 Intel 和 Apple Silicon 上表现一样。<a href=\"/zh-CN/load-exe/\">本站的加载器</a>做的就是这件事——一份编译成 WebAssembly 的 <a href=\"https://www.winehq.org/\" target=\"_blank\" rel=\"noopener\">Wine</a>，加上一个 x86 模拟器，在标签页里本地运行。你的文件不会被上传到任何地方。限制是真实的，也值得说清楚：它针对的是 1995 到 2008 年左右的经典 32 位 Win32 软件，速度约为原生的 10–40%。一个上古小工具或一个老游戏，可以。现代的 64 位应用，不行。</li>\n      <li><strong>装 Wine 或 CrossOver。</strong>能力更强，配置也麻烦得多。Wine 是免费的；CrossOver 是商业软件，手把手的程度更好。</li>\n      <li><strong>虚拟机。</strong>Parallels 或 VMware，配一份真正的 Windows 授权。这是兼容性最好的答案，也是最贵的——无论是钱还是磁盘空间。</li>\n      <li><strong>Boot Camp。</strong>只限 Intel 版 Mac。在 Apple Silicon 上已经没有了。</li>\n    </ul>\n    <p>如果目标是「把这个老程序打开一次」，浏览器这条路通常是分寸刚好的那个。如果目标是「在这台 Mac 上经常运行 Windows 软件」，你真正需要的是虚拟机。</p>"
+      },
+      {
+        "h": "在 Chromebook 上",
+        "html": "    <p>和 macOS 的处境一样，还多一层麻烦：学校和公司统一管理的 Chromebook 经常禁止安装任何东西，包括 Linux 容器。不需要安装的浏览器路线往往是唯一没被封掉的，而且在 ARM 架构的 Chromebook 上也能用，因为 CPU 本来就是模拟出来的。这一点我们单独写过一篇——<a href=\"/blog/run-windows-software-on-a-chromebook/\">在 Chromebook 上运行 Windows 软件的四种办法</a>。</p>"
+      },
+      {
+        "h": "在 Linux 上",
+        "html": "    <p>用发行版的包管理器装上 Wine，然后 <code>wine 程序.exe</code>。除了 Windows 自己，Linux 是原生支持最好的：Wine 已经成熟，而在游戏方面 Valve 的 Proton 就建立在它之上。如果你不想装任何东西，浏览器这条路在这里同样管用。</p>"
+      },
+      {
+        "h": "在 Android 和 iOS 上",
+        "html": "    <p>说实话：基本上做不到，而那些暗示可以的指南只是在浪费你的时间。iOS 上没有任何受支持的方式来运行 Windows 软件。Android 上确实有能启动整套 Windows 环境的模拟器，但又慢又难伺候。浏览器标签页在这两个系统上都能打开体积不大的经典程序，这个门槛确实很低——够你看一眼老游戏，不够用来干正事。</p>"
+      },
+      {
+        "h": "如果你只想看看里面有什么",
+        "html": "    <p>很多时候真正的目标根本不是运行这个程序。你想要的是里面的某一个文件——一份文档、一张图、一个驱动、一份来自早已装不上的软件的数据文件。要做到这件事，你不需要执行任何东西。</p>\n    <ul>\n      <li><strong>先试试压缩工具。</strong>很多安装程序和全部自解压压缩包，用 <a href=\"/run/7-zip/\">7-Zip</a> 都能像普通 zip 一样直接打开。右键 →「打开压缩包」。你也可以在浏览器里用<a href=\"/run/extract-archive/\">这里的解压工具</a>。</li>\n      <li><strong>安装程序有自己的拆包工具。</strong><code>innoextract</code> 对付 Inno Setup，<code>cabextract</code> 对付基于 CAB 的，<code>msiexec /a</code> 可以对 <code>.msi</code> 做一次管理式解包。完整步骤：<a href=\"/blog/extract-files-from-an-old-installer/\">怎么从老安装包里提取文件</a>。</li>\n      <li><strong>如果要检查可执行文件本身</strong>——它导入了什么、带着哪些资源、是 32 位还是 64 位——你要的是一个 PE 查看器，而不是一个「打开」它的程序。这能在一行代码都不执行的情况下回答「这到底是个什么东西」。</li>\n    </ul>\n    <p>这条路同时也是安全的那条。读一个文件，和执行它，完全不是一回事。</p>"
+      },
+      {
+        "h": "打开之前：它安全吗？",
+        "html": "    <p>一个 <code>.exe</code>，你的用户账户能做什么，它就能做什么。大多数指南把这一点埋在角落里；在这里它应该是声音最大的一段。</p>\n    <ul>\n      <li><strong>它是从哪来的？</strong>厂商自己的网站，和邮件附件、下载站、聊天里的一个链接，完全是两回事。如果你说不出来源，就别运行。</li>\n      <li><strong>这个文件名是不是被精心设计过？</strong><code>发票.pdf.exe</code> 不是 PDF。Windows 默认隐藏已知扩展名，而这个骗术靠的正是这一点。</li>\n      <li><strong>扫一遍。</strong>在运行任何你拿不准的东西之前，先传到 <a href=\"https://www.virustotal.com/\" target=\"_blank\" rel=\"noopener\">VirusTotal</a>，让几十个引擎一起查。</li>\n      <li><strong>别信所谓「已修复」的破解补丁或注册机。</strong>这一类东西是互联网上最稳定的恶意软件投递渠道。</li>\n      <li><strong>只需要里面的文件时，优先解压而不是执行</strong>，用上面那些工具。</li>\n    </ul>\n    <p>浏览器沙箱能解决其中一部分问题，但不是全部：在标签页里运行的程序拿不到你真正的文件系统，所以它没法加密你的文档。它是一道真实的隔离边界，但不是一张「可以运行你毫无理由信任的东西」的许可证。</p>"
+      },
+      {
+        "h": "快速解答",
+        "html": "    <ul>\n      <li><strong>能把 .exe 转换成别的格式吗？</strong>不能。宣传这种功能的转换器，要么其实是在解压一个压缩包，要么就是什么都没卖给你。里面的代码针对的是特定的 CPU 和操作系统。</li>\n      <li><strong>为什么它显示「This program cannot be run in DOS mode」？</strong>你看到的是 DOS stub。这说明一个 Windows 可执行文件被拿到了不是 Windows 的地方运行。</li>\n      <li><strong>双击之后什么都没发生。</strong>常常是一个控制台程序打开、输出、然后立刻退出了。打开一个终端，从那里运行它，窗口就会留着。</li>\n      <li><strong>没有 Windows 能打开 .exe 吗？</strong>能——在 Mac 或 Linux 上用 Wine、用虚拟机，或者对体积较小的经典程序用一个浏览器标签页。</li>\n    </ul>"
+      },
+      {
+        "h": "一句话版本",
+        "html": "    <p><code>.exe</code> 是一个 Windows 程序，所以「打开」它就等于运行它——这就是为什么在 Windows 上很容易，在别的地方都很别扭。如果你需要<em>用</em>它，按平台和频率来选：一个老程序偶尔打开，用浏览器标签页；经常要用，装 Wine；任何现代软件，上虚拟机。如果你只是要从里面<em>取出</em>什么东西，用压缩工具，根本别执行它。无论走哪条路，先弄清楚这个文件是从哪来的。</p>"
+      }
+    ],
+    "outro": "    <p>如果你宁愿先看清楚再动手，<a href=\"/exe-inspector/\">EXE 查看器</a>能把这些都从文件里读给你看——文件头、依赖库、图标、签名——全在浏览器里完成，一行都不执行。而如果你想现在就试试免安装的那条路，<a href=\"/zh-CN/load-exe/\">加载器在这里</a>：拖一个 <code>.exe</code> 进去，它就在标签页里、在你自己的机器上跑起来。什么能跑、什么不能跑，<a href=\"/zh-CN/guide/\">兼容性指南</a>里说得很直白。</p>\n\n    <h2>继续阅读</h2>\n    <ul class=\"card-grid\">\n      <li><a class=\"link-card\" href=\"/zh-CN/open-exe-file/\"><span class=\"lc-title\">怎么打开 .exe 文件</span><span class=\"lc-desc\">逐个平台讲清楚运行它的每一种办法。</span></a></li>\n      <li><a class=\"link-card\" href=\"/blog/extract-files-from-an-old-installer/\"><span class=\"lc-title\">从老安装包里提取文件</span><span class=\"lc-desc\">不安装也能把里面的东西取出来。</span></a></li>\n      <li><a class=\"link-card\" href=\"/blog/check-if-an-exe-is-safe/\"><span class=\"lc-title\">这个 .exe 安全吗？</span><span class=\"lc-desc\">运行之前你能弄清楚些什么。</span></a></li>\n      <li><a class=\"link-card\" href=\"/blog/wine-vs-emulator-explained/\"><span class=\"lc-title\">Wine 与模拟器的区别</span><span class=\"lc-desc\">两者的差别究竟在哪里。</span></a></li>\n      <li><a class=\"link-card\" href=\"/zh-CN/guide/\"><span class=\"lc-title\">兼容性指南</span><span class=\"lc-desc\">哪些程序能在浏览器里跑，哪些不能。</span></a></li>\n    </ul>"
   }
 }

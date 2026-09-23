@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>怎么打开 EXE 文件 — Windows、Mac 与 Chromebook</title>
+<meta name="description" content=".exe 文件到底是什么、为什么打不开，以及在 Windows、Mac、Chromebook 或 Linux 上运行它的各种办法——包括在浏览器标签页里运行，什么都不用装。" />
+<meta name="keywords" content="打开 exe 文件, 怎么打开 exe, mac 打开 exe, chromebook 运行 exe, exe在线运行, exe 文件是什么, exe 打开方式" />
+<link rel="canonical" href="https://exebrowser.com/zh-CN/open-exe-file/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/open-exe-file/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/open-exe-file/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/open-exe-file/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/open-exe-file/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/open-exe-file/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/zh-CN/open-exe-file/" />
+<meta property="og:title" content="怎么打开 EXE 文件：Windows、Mac、Chromebook 与 Linux" />
+<meta property="og:description" content=".exe 究竟是什么、为什么不启动，以及运行它的每一种办法——包括在浏览器标签页里运行，什么都不用装。" />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=41" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://exebrowser.com/zh-CN/" },
+    { "@type": "ListItem", "position": 2, "name": "怎么打开 EXE 文件", "item": "https://exebrowser.com/zh-CN/open-exe-file/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "不下载任何东西，能在线打开 .exe 文件吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "你可以在这里运行一个，什么都不用装——这通常就是这个问题真正的意思。文件由你自己机器上的浏览器读取，不会上传到服务器。体积较小的 32 位 Windows 程序效果最好。" }
+    },
+    {
+      "@type": "Question",
+      "name": "在 Mac 上怎么打开 .exe？",
+      "acceptedAnswer": { "@type": "Answer", "text": "原生打不开。可以用 Wine 或 CrossOver、装 Windows 的虚拟机，或者在浏览器标签页里运行。对又老又小的程序来说，浏览器省事得多。" }
+    },
+    {
+      "@type": "Question",
+      "name": "双击之后什么都没发生，为什么？",
+      "acceptedAnswer": { "@type": "Answer", "text": "通常是一个控制台程序开了又立刻关掉，或者缺少某个运行库而悄悄失败了。从命令提示符里运行它，就能看到错误，不用靠猜。" }
+    },
+    {
+      "@type": "Question",
+      "name": "打开 .exe 文件安全吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "它只有来源那么安全。一个程序能做你的账户能做的一切。拿到 VirusTotal 上查一查，优先选厂商自己的下载；如果拿不准，在浏览器沙箱里运行比在本机运行安全得多。" }
+    },
+    {
+      "@type": "Question",
+      "name": "如果它是 64 位的呢？",
+      "acceptedAnswer": { "@type": "Answer", "text": "这里的运行时是 32 位的，所以纯 64 位程序装载不了。2010 年之前的很多应用同时也发布了 32 位版本，那个通常能跑。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">在浏览器里直接运行 Windows 的 <code>.exe</code> 程序。无需安装，无需上传，只用 WebAssembly 和 Wine。</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/zh-CN/">首页</a>
+    <a href="/zh-CN/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/blog/">博客</a>
+    <a href="/zh-CN/guide/">指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="语言"><a href="/open-exe-file/" hreflang="en">English</a> · <a href="/es/open-exe-file/" hreflang="es">Español</a> · <a href="/pt-BR/open-exe-file/" hreflang="pt-BR">Português (BR)</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/zh-CN/">首页</a> › 怎么打开 EXE 文件</nav>
+
+  <section class="card">
+    <h2>.exe 文件到底是什么</h2>
+    <p><code>.exe</code> 是为 Windows 编译出来的程序。它不是文档，不是压缩包，也不是视频——它是一串机器指令，加上一个告诉 Windows 该怎么装载它们的文件头。这也是「打开方式」对它从来没用的原因：程序没有对应的查看器，因为程序本身就是那个应用。</p>
+    <p>这同时解释了大家来到这里的两种处境。要么你在 Mac、Linux 或 Chromebook 上，Windows 程序根本跑不起来；要么你就在 Windows 上，而文件因为少数几个具体原因之一启动不了。这是两个不同的问题，答案也不同。</p>
+
+    <h3>最快能试的一招</h3>
+    <p>这个网站在浏览器标签页里运行 Windows 程序。把一个 <code>.exe</code> 拖到<a href="/zh-CN/load-exe/">加载页面</a>上，它就会尝试在本地运行：文件在你自己的机器上被读取，不会上传到任何地方。</p>
+    <p>限制也得说清楚，因为它们是真实存在的：这里最适合大约 1995 到 2008 年之间的 <strong>32 位</strong> Windows 软件。小工具和老游戏是最佳区间。任何需要现代 .NET、真实网络访问或 3D 图形环境的东西都跑不了，而我们<a href="/zh-CN/run/">把失败的例子和成功的一起写出来</a>，而不是假装它们不存在。</p>
+  </section>
+
+  <section class="card">
+    <h2>在各个平台上怎么打开 .exe</h2>
+    <h3>在 Mac 上</h3>
+    <p>macOS 无法原生运行 <code>.exe</code> 文件：操作系统不同，而自 Apple Silicon 之后处理器架构也不同。双击只会得到一个错误，换多少种「打开方式」都改变不了。</p>
+    <p>真正可行的办法有三种：像 <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> 或 CrossOver 这样的兼容层，它翻译 Windows API 调用，而不是模拟一整台 PC；跑着正版 Windows 的虚拟机；或者，对于又老又小的程序，直接在这里的浏览器标签页里运行。浏览器这条路什么都不用装，这往往就是决定性的因素。</p>
+
+    <h3>在 Chromebook 上</h3>
+    <p>ChromeOS 完全无法安装 Windows 软件，这是设计使然，不是疏漏。没有 Wine 可装，没有 Program Files，安装程序也无处可去。</p>
+    <p>剩下的就是在浏览器里运行——也就是这个网站做的事——或者用 Linux 容器，前提是你的 Chromebook 开启了它，而且你愿意在里面装 Wine。我们还有<a href="/blog/run-windows-software-on-a-chromebook/">一篇更长的文章讲这四种办法</a>，按麻烦程度排了序。</p>
+
+    <h3>在 Linux 上</h3>
+    <p>用发行版的包管理器装上 Wine，然后 <code>wine 你的程序.exe</code>。Wine 已经相当成熟，很多软件第一次就能跑起来。跑不起来的时候它通常会大声报错，直接说出缺了哪个 DLL 或哪个 API，至少给了你一个可以去搜的关键词。</p>
+
+    <h3>在 Windows 上，当它就是不启动</h3>
+    <p>如果连 Windows 自己都拒绝运行一个 Windows 程序，可能的原因就那么几个，而且错误信息通常已经指明了是哪一个：</p>
+    <ul>
+      <li><strong>「此应用无法在你的电脑上运行」。</strong>多半是一个 16 位程序。64 位 Windows 移除了运行它们的子系统，没有任何设置能把它找回来。</li>
+      <li><strong>提示缺少某个 DLL。</strong>相对来说算是好消息：程序需要一个你没装的运行库。通常是 Visual C++ 可再发行组件、Visual Basic 6 运行库，或 .NET Framework 3.5。</li>
+      <li><strong>SmartScreen 拦截了它。</strong>Windows 不认识这个发布者。如果你确信文件的来源，点「更多信息」再点「仍要运行」。</li>
+      <li><strong>什么都没发生。</strong>常见的情况是一个控制台程序打开、运行、又关掉了，快到你看不见。试着从命令提示符里运行，窗口就会留着。</li>
+    </ul>
+    <p>这几种情况在<a href="/blog/why-old-programs-wont-run-on-windows-11/">为什么老程序在 Windows 11 上跑不起来</a>里讲得更细。</p>
+  </section>
+
+  <section class="card">
+    <h2>当你根本不想运行它的时候</h2>
+    <p>有时候目的并不是运行这个程序，而是拿到它里面的东西。安装包尤其如此，它们通常就是加了一层外壳的压缩包；而非常多的老应用一旦解开就是绿色软件——一个文件夹，从不碰注册表就能运行。</p>
+    <p>我们的<a href="/run/extract-archive/">解压工具</a>能打开自解压 <code>.exe</code>，也能打开 7z、ZIP、RAR 等等，全程在浏览器里完成，不上传任何东西。<a href="/blog/extract-files-from-an-old-installer/">完整的操作说明</a>讲了它处理不了的情况，以及那时该用什么。</p>
+    <p>如果你只想知道这个文件<em>是什么</em>，<a href="/exe-inspector/">EXE 查看器</a>会读取它的文件头，告诉你它是为哪种处理器编译的、加载了哪些系统库、图标长什么样、有没有签名——一行代码都不会执行。</p>
+    <p>而如果你正在权衡要不要运行它，<a href="/blog/check-if-an-exe-is-safe/">这个 .exe 安全吗？</a>逐一讲了值得做的每一项检查，以及每一项到底能证明什么。</p>
+  </section>
+
+  <section class="card">
+    <h2>运行任何东西之前</h2>
+    <p>一个来路不明的 <code>.exe</code>，你的用户账户能做什么，它就能做什么。这不是危言耸听，这就是「程序」的定义。有两件事值得做：把文件拿到 <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a> 上查一下；宁可从原厂下载，也别用那些把它重新包进自家安装器的下载站。</p>
+    <p>在浏览器标签页里运行，确实比在本机直接运行安全得多，因为浏览器沙箱是一道真实的边界，程序拿不到你真正的文件系统。这不等于可以拿来跑恶意软件，但对于一个你拿不准的文件，这是个合理的查看方式。</p>
+    <p>更安全的做法是根本不运行。<a href="/exe-inspector/">读一读文件头</a>不花任何代价，却能回答大部分日常问题：架构对不对、它是安装包还是程序本体、有没有署名的发布者、有没有签名、是不是被加了壳以至于不运行就什么都看不出来。</p>
+  </section>
+
+  <section class="card">
+    <h2>常见问题</h2>
+    <details><summary>不下载任何东西，能在线打开 .exe 文件吗？</summary><p>你可以在这里运行一个，什么都不用装——这通常就是这个问题真正的意思。文件由你自己机器上的浏览器读取，不会上传到服务器。体积较小的 32 位 Windows 程序效果最好。</p></details>
+    <details><summary>在 Mac 上怎么打开 .exe？</summary><p>原生打不开。可以用 Wine 或 CrossOver、装 Windows 的虚拟机，或者在浏览器标签页里运行。对又老又小的程序来说，浏览器省事得多。</p></details>
+    <details><summary>双击之后什么都没发生，为什么？</summary><p>通常是一个控制台程序开了又立刻关掉，或者缺少某个运行库而悄悄失败了。从命令提示符里运行它，就能看到错误，不用靠猜。</p></details>
+    <details><summary>打开 .exe 文件安全吗？</summary><p>它只有来源那么安全。一个程序能做你的账户能做的一切。拿到 VirusTotal 上查一查，优先选厂商自己的下载；如果拿不准，在浏览器沙箱里运行比在本机运行安全得多。</p></details>
+    <details><summary>如果它是 64 位的呢？</summary><p>这里的运行时是 32 位的，所以纯 64 位程序装载不了。2010 年之前的很多应用同时也发布了 32 位版本，那个通常能跑。</p></details>
+  </section>
+</main>
+
+<footer>
+  <p>基于 <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a>、<a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> 和 WebAssembly 构建。Wine 是 CodeWeavers 的商标。ExeBrowser 与 WineHQ、CodeWeavers 和微软均无关联。</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/zh-CN/">首页</a>
+    <a href="/zh-CN/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/blog/">博客</a>
+    <a href="/zh-CN/guide/">兼容性指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+    <a href="/saves/">游戏存档</a>
+    <a href="/privacy/">隐私政策</a>
+    <a href="/terms/">使用条款</a>
+  </nav>
+  <p>© 2026 ExeBrowser。内容采用开放许可，运行时基于 GPL-2.0 / LGPL-2.1。</p>
+</footer>
+
+<script>window.__I18N={"play":"▶ 开始玩 {name}","resume":"▶ 继续玩 {name}","loading":"加载中…","startOver":"重新开始","savedAgo":"保存于{when}。","filesRestored":"你的存档也一并载入了，请在游戏自带的菜单里读取。","snapshotResume":"可以从你上次中断的地方继续，进度不会丢。","progressSaved":"进度已保存在这个浏览器里","resumedExactly":"已从上次中断的地方继续","snapshotOff":"无法保存恢复点 - 游戏内存档仍然有效","confirmDelete":"确定要删除 {name} 的存档吗？","justNow":"刚刚","minutesAgo":"{n} 分钟前","anHourAgo":"1 小时前","hoursAgo":"{n} 小时前","yesterday":"昨天","daysAgo":"{n} 天前","saveHint":"在游戏里存档，存档会保留在这个浏览器中","resetSaves":"清除存档","savesCleared":"存档已清除，刷新页面即可重新开始","restoredFiles":"已恢复 {n} 个存档，请在游戏菜单中读取","overlayNote":"通过 DOSBox 和 WebAssembly 在浏览器中运行。<br>不会上传任何文件。运行时约 1.4 MB，首次加载后会被缓存。","mouseHint":"点击游戏画面，键盘操作即可生效。","starting":"正在启动…","cachedNote":"首次加载后会被缓存，下次打开就很快了。","loadingGame":"正在加载 {name}…","fullscreen":"全屏","soundOn":"声音已开","soundOff":"声音已关","remapKeys":"键盘——重新映射任意按键","remapHint":"先点击下方的按键，再按下你想改用的那个键。设置按游戏分别保存在本浏览器中。","resetDefaults":"恢复默认设置","consoleOutput":"控制台输出","wineLoadYours":"载入你自己的 {name}","wineEmptyHosted":"点击播放即可在浏览器中启动 {name}。","wineEmptyOwn":"本站没有托管 {name}，请在下方载入你自己的副本，它会直接在本页运行。","wineHintHosted":"完全在你的浏览器标签页中运行，使用 WebAssembly + Wine。不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineHintOwn":"我们无权转发 {name}，因此本站没有托管任何内容。你自己的副本完全在浏览器标签页中运行，使用 WebAssembly + Wine，不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineEngine":"Wine 引擎：","wineVariantDefault":"Wine 1.7.55 · Win32 — 1995–2008 年的绝大多数程序","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — 需要 Internet Explorer 的程序","wineVariant16":"Wine 3.1 · 16 位 Windows 3.x — 1990–1994 年的程序","wineVariantR18":"Boxedwine 18R2 — 较旧的引擎，有时能运行默认引擎跑不动的程序","wineIdle":"空闲。","wineDownloadFiles":"下载该程序写入的文件","wineFilesKept":"该程序保存的文件会留在这个浏览器里，下次打开本页时自动恢复。若要留存一份，请使用下载按钮。","wineCaptures":"抓取程序写入内存中 C:\\ 盘的存档和生成内容。","wineLoadOwnCopy":"载入你自己的副本","wineHaveFiles":"文件就在你的设备上？把程序所在的文件夹或一个 zip 拖到这里——入口 <code>.exe</code> 以及旁边的数据文件。","wineDropFiles":"把文件拖到这里，或选择：","winePickExe":"单个 EXE","winePickFolder":"一个文件夹","winePickZip":"一个 zip","wineEntryExe":"入口 EXE：","wineRun":"在 Wine 中运行","wineLoadingRuntime":"正在载入 Boxedwine 运行时…","wineConfiguring":"正在配置 Wine 启动…","wineStartingEmulator":"正在启动模拟器…","wineRunning":"正在运行 {name}…","wineBootFailed":"启动失败，请查看控制台。","winePickThenRun":"先选择一个 EXE，再点击运行。","wineReadyLoad":"Wine 已就绪 — 请载入一个 EXE","wineInstallPrompt":"安装后一键回来","wineEntry":"入口：{path}","wineExesAvailable":"可用 EXE 共 {n} 个"};</script>
+
+<script src="/pwa.js?v=2"></script>
+</body>
+</html>
