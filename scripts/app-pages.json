@@ -9440,5 +9440,1124 @@
     },
     "fullyFree": "Open-source under GPL-3.0: the city simulator Maxis first released as SimCity, which Electronic Arts open-sourced in 2008. The engine and every graphic here are the free release — nothing from a commercial version is needed or included.",
     "rank": 4
+  },
+  {
+    "slug": "duke-nukem-3d",
+    "title": "Duke Nukem 3D Online — Play the Shareware Free",
+    "description": "Play Duke Nukem 3D free in your browser — An Apogee Game, the official shareware episode L.A. Meltdown. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "duke nukem 3d online, play duke nukem 3d in browser, duke nukem 3d shareware, duke 3d free, duke nukem 3d unblocked, build engine browser",
+    "ogTitle": "Play Duke Nukem 3D Online — Free Shareware Episode",
+    "ogDescription": "3D Realms' 1996 shooter in your browser: the shareware episode L.A. Meltdown, no download or install.",
+    "crumb": "Play Duke Nukem 3D",
+    "h1": "Play Duke Nukem 3D online — the free shareware episode",
+    "appName": "Duke Nukem 3D",
+    "appType": "game",
+    "author": "3D Realms / Apogee Software",
+    "genre": [
+      "First-person shooter",
+      "Action"
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/duke-nukem-3d/duke-nukem-3d.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode 1 runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Duke Nukem 3D</strong> — 3D Realms' 1996 Build-engine shooter, the one with the pig cops, the interactive everything and the one-liners. The <strong>shareware episode, <em>L.A. Meltdown</em></strong>, is hosted here exactly as 3D Realms released it — click Play and it boots in your browser. Leave it alone at the title screen and it plays its own demo; press <kbd>Esc</kbd> for the menu and pick <em>New Game</em>.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release (version 1.3D) running in a WebAssembly build of DOSBox, set to give it as much CPU as your device has. On a recent laptop or desktop it plays smoothly; a phone or an older Chromebook will be choppier, because every instruction of a game that wanted a fast 486 is being emulated. The package is under 6&nbsp;MB and is cached after the first load.</p>"
+      },
+      {
+        "h": "Playing tips",
+        "html": "<p>Keys open doors and the coloured card readers — the shareware levels hide them behind vents you can kick or shoot open. Hold <kbd>Shift</kbd> to run, which you will want almost all the time. The jetpack and steroids in your inventory are selected with <kbd>[</kbd> and <kbd>]</kbd> and used with <kbd>Enter</kbd>. Mirrors, toilets and arcade cabinets all react — that is the game, not a bug.</p>"
+      },
+      {
+        "h": "Shareware episode — and the full game",
+        "html": "<p>Episode 1 is the shareware episode, and its licence lets free websites offer it — so long as every one of its files ships unmodified, which they do here. Episodes 2 and 3 (and the later Atomic Edition's fourth) were the commercial release and are not included; the full game is still sold.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Duke Nukem 3D legal to play here?",
+        "a": "Yes. This is the official shareware episode, whose licence explicitly allows free websites to make it available. The commercial episodes are not hosted."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move, Ctrl fires, Space opens doors and uses switches, A jumps, Z crouches, Shift runs and Tab shows the map. The full table is under the game."
+      },
+      {
+        "q": "Why is it slow on my phone?",
+        "a": "Duke 3D wanted a fast 486 in 1996, and here every one of its instructions is emulated in your browser. A recent desktop or laptop handles it; a phone or a budget Chromebook will drop frames."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games persist in this browser between visits, best-effort. Save from the game's own menu with F2."
+      },
+      {
+        "q": "Can I play the full game here?",
+        "a": "Only the shareware episode is hosted. If you own the DOS version, drop its folder into the DOS emulator page and it runs the same way."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/doom/",
+        "title": "DOOM",
+        "desc": "id's shareware episode — the shooter Duke answered."
+      },
+      {
+        "href": "/run/rise-of-the-triad/",
+        "title": "Rise of the Triad",
+        "desc": "Apogee's other mid-90s shooter, shareware episode."
+      },
+      {
+        "href": "/run/wolfenstein-3d/",
+        "title": "Wolfenstein 3D",
+        "desc": "Where the genre started, playable instantly."
+      },
+      {
+        "href": "/run/duke-nukem/",
+        "title": "Duke Nukem (1991)",
+        "desc": "Duke's first, side-scrolling outing."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-10-01",
+    "addedDate": "2026-10-01",
+    "rank": 2.5,
+    "mobileControls": {
+      "type": "fps-dos",
+      "hint": "D-pad: move/turn · FIRE: ctrl · OPEN: space · JUMP: A · RUN: shift",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "OPEN",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 65,
+          "cls": ""
+        },
+        {
+          "label": "CROUCH",
+          "dosKey": 90,
+          "cls": ""
+        },
+        {
+          "label": "RUN",
+          "dosKey": 340,
+          "cls": ""
+        },
+        {
+          "label": "MAP",
+          "dosKey": 258,
+          "cls": ""
+        },
+        {
+          "label": "MENU",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move / turn",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Open / use",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "A",
+        "mouse": "—"
+      },
+      {
+        "action": "Crouch",
+        "keyboard": "Z",
+        "mouse": "—"
+      },
+      {
+        "action": "Run",
+        "keyboard": "hold Shift (Caps Lock toggles)",
+        "mouse": "—"
+      },
+      {
+        "action": "Strafe",
+        "keyboard": "Alt + arrows",
+        "mouse": "—"
+      },
+      {
+        "action": "Inventory",
+        "keyboard": "[ and ] to pick, Enter to use",
+        "mouse": "—"
+      },
+      {
+        "action": "Map",
+        "keyboard": "Tab",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / save / load",
+        "keyboard": "Esc · F2 · F3",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware episode plays here free.</strong> The rest of Duke Nukem 3D was the commercial release, and is still sold:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Duke+Nukem+3D\" target=\"_blank\" rel=\"noopener\">Find Duke Nukem 3D on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Duke+Nukem+3D\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Episode 1 of Duke Nukem 3D is 3D Realms' shareware episode, hosted under its licence's grant to free websites with every original file unmodified. The commercial episodes are not hosted. Provenance: <a href=\"/apps/duke-nukem-3d/NOTICE.md\">/apps/duke-nukem-3d/NOTICE.md</a>.</p>",
+    "screenshot": true
+  },
+  {
+    "slug": "rise-of-the-triad",
+    "title": "Rise of the Triad Online — Play the Shareware Free",
+    "description": "Play Rise of the Triad free in your browser — An Apogee Game, the shareware episode The HUNT Begins. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "rise of the triad online, play rott in browser, rise of the triad shareware, rott free, rise of the triad unblocked, apogee shooter online",
+    "ogTitle": "Play Rise of the Triad Online — Free Shareware Episode",
+    "ogDescription": "Apogee's 1995 shooter in your browser: the shareware episode The HUNT Begins, no download or install.",
+    "crumb": "Play Rise of the Triad",
+    "h1": "Play Rise of the Triad online — the free shareware episode",
+    "appName": "Rise of the Triad",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "First-person shooter",
+      "Action"
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/rise-of-the-triad/rise-of-the-triad.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Rise of the Triad</strong> — Apogee's 1995 shooter, built on a heavily reworked Wolfenstein 3D engine and famous for its heat-seeking missiles, god mode and gibs. The <strong>shareware episode, <em>The HUNT Begins</em></strong>, is hosted here — click Play and it boots in your browser. It runs its credits and a demo by itself; press any key for the menu and choose <em>New Game</em>, then pick one of the five HUNT members to play as.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release (1.3) running in a WebAssembly build of DOSBox. The package is under 4&nbsp;MB. The game itself caps at 35 frames a second, which a recent laptop or desktop holds; slower devices will drop below it.</p>"
+      },
+      {
+        "h": "Playing tips",
+        "html": "<p>Each of the five characters trades speed against health — Taradino is the all-rounder. Missile weapons are picked up and used until they run out, after which you fall back to your pistols. Jump pads and moving platforms hide most of the secrets.</p>"
+      },
+      {
+        "h": "Shareware episode — and the full game",
+        "html": "<p>The HUNT Begins is the shareware episode Apogee distributed; its VENDOR.DOC permits sharing it and forbids distributing the registered game, so only the shareware is here. The full game, <em>Rise of the Triad: Dark War</em>, is still sold.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Rise of the Triad legal to play here?",
+        "a": "Yes. This is Apogee's official shareware episode, distributed under its VENDOR.DOC, the same basis as the Cosmo, Hocus Pocus and Blake Stone episodes hosted here."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move, Ctrl fires, Space opens doors, Shift runs and Alt strafes by default. The controls can be changed under Options in the game's menu."
+      },
+      {
+        "q": "It is just showing credits — is it broken?",
+        "a": "No. The game shows its credits and plays a demo when left alone. Press any key to get the menu."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games persist in this browser between visits, best-effort."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/duke-nukem-3d/",
+        "title": "Duke Nukem 3D",
+        "desc": "3D Realms' shooter, shareware episode."
+      },
+      {
+        "href": "/run/wolfenstein-3d/",
+        "title": "Wolfenstein 3D",
+        "desc": "The engine ROTT grew out of."
+      },
+      {
+        "href": "/run/blake-stone/",
+        "title": "Blake Stone",
+        "desc": "Apogee's other Wolfenstein-engine shooter."
+      },
+      {
+        "href": "/run/doom/",
+        "title": "DOOM",
+        "desc": "id's shareware episode."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-10-01",
+    "addedDate": "2026-10-01",
+    "rank": 5.5,
+    "mobileControls": {
+      "type": "fps-dos",
+      "hint": "D-pad: move/turn · FIRE: ctrl · OPEN: space · RUN: shift",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "OPEN",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "RUN",
+          "dosKey": 340,
+          "cls": ""
+        },
+        {
+          "label": "STRAFE",
+          "dosKey": 342,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "MENU",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move / turn",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Open doors",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Run",
+        "keyboard": "hold Shift",
+        "mouse": "—"
+      },
+      {
+        "action": "Strafe",
+        "keyboard": "Alt + arrows",
+        "mouse": "—"
+      },
+      {
+        "action": "Change keys",
+        "keyboard": "Esc → Options",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware episode plays here free.</strong> The rest of Rise of the Triad was the commercial release, and is still sold:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Rise+of+the+Triad\" target=\"_blank\" rel=\"noopener\">Find Rise of the Triad on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Rise+of+the+Triad\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">The HUNT Begins is Apogee's freely-distributable shareware episode of Rise of the Triad. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/rise-of-the-triad/NOTICE.md\">/apps/rise-of-the-triad/NOTICE.md</a>.</p>",
+    "screenshot": true
+  },
+  {
+    "slug": "duke-nukem",
+    "title": "Duke Nukem (1991) Online — Play the Shareware Free",
+    "description": "Play the original Duke Nukem free in your browser — An Apogee Game from 1991, the shareware episode Shrapnel City. No download, runs via DOSBox.",
+    "keywords": "duke nukem 1991 online, play duke nukem 1 in browser, duke nukem shareware, duke nukem 1 free, apogee platformer online",
+    "ogTitle": "Play Duke Nukem (1991) Online — Free Shareware Episode",
+    "ogDescription": "Apogee's 1991 platformer that introduced Duke: the shareware episode, in your browser.",
+    "crumb": "Play Duke Nukem (1991)",
+    "h1": "Play Duke Nukem (1991) online — the free shareware episode",
+    "appName": "Duke Nukem",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Platformer",
+      "Action"
+    ],
+    "categories": [
+      "Platformers",
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/duke-nukem/duke-nukem.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode 1 runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Duke Nukem</strong> — Apogee's 1991 EGA platformer, the game that introduced Duke five years before he went 3D. Duke fights Dr. Proton's robots across a ruined city, collecting weapon upgrades and access cards. The <strong>shareware Episode 1, <em>Shrapnel City</em></strong>, is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release running in a WebAssembly build of DOSBox. It is a tiny package — about 220&nbsp;KB — so it starts almost instantly, and EGA graphics at 320×200 are light work for any device.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p>The arrow keys move Duke, and the Ctrl and Alt keys jump and fire. Press <kbd>F1</kbd> during play for the game's own help, which lists every key and lets you redefine them.</p>"
+      },
+      {
+        "h": "Shareware episode — and the full game",
+        "html": "<p>Episode 1 is the shareware episode Apogee distributed; its VENDOR.DOC permits sharing that episode and forbids distributing any registered version, so only Episode 1 is here. Episodes 2 and 3 were the commercial purchase.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Duke Nukem legal to play here?",
+        "a": "Yes. This is Apogee's official shareware Episode 1, distributed under its VENDOR.DOC — the same basis as the Cosmo and Hocus Pocus episodes hosted here."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move; Ctrl and Alt jump and fire. F1 in the game shows the full key list and lets you change it."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a touch d-pad with CTRL, ALT and other keys appears below the game on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/duke-nukem-2/",
+        "title": "Duke Nukem II",
+        "desc": "The 1993 sequel, shareware episode."
+      },
+      {
+        "href": "/run/duke-nukem-3d/",
+        "title": "Duke Nukem 3D",
+        "desc": "Duke goes 3D — shareware episode."
+      },
+      {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee platformer from the same team."
+      },
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "The shareware platformer that started it all."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-10-01",
+    "addedDate": "2026-10-01",
+    "rank": 20.5,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · CTRL / ALT: jump and fire · F1: help",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "F1",
+          "dosKey": 290,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump and fire",
+        "keyboard": "Ctrl and Alt",
+        "mouse": "—"
+      },
+      {
+        "action": "Help and key setup",
+        "keyboard": "F1",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Episode 1 of Duke Nukem is Apogee's freely-distributable shareware episode. Episodes 2 and 3 are commercial and not hosted here. Provenance: <a href=\"/apps/duke-nukem/NOTICE.md\">/apps/duke-nukem/NOTICE.md</a>.</p>",
+    "screenshot": true
+  },
+  {
+    "slug": "duke-nukem-2",
+    "title": "Duke Nukem II Online — Play the Shareware Free",
+    "description": "Play Duke Nukem II free in your browser — An Apogee Game from 1993, the shareware episode Neutron Fallout. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "duke nukem 2 online, play duke nukem ii in browser, duke nukem 2 shareware, duke nukem ii free, apogee platformer online",
+    "ogTitle": "Play Duke Nukem II Online — Free Shareware Episode",
+    "ogDescription": "Apogee's 1993 VGA platformer: the shareware episode, in your browser, no download.",
+    "crumb": "Play Duke Nukem II",
+    "h1": "Play Duke Nukem II online — the free shareware episode",
+    "appName": "Duke Nukem II",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Platformer",
+      "Action"
+    ],
+    "categories": [
+      "Platformers",
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/duke-nukem-2/duke-nukem-2.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode 1 runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Duke Nukem II</strong> — Apogee's 1993 VGA sequel, in which Duke is kidnapped by the Rigelatins and blasts his way out across four episodes. The <strong>shareware Episode 1, <em>Neutron Fallout</em></strong>, is hosted here — click Play, pick a skill level and it starts in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release running in a WebAssembly build of DOSBox. The package is just over 1&nbsp;MB, with full AdLib music and digitised sound.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p>The arrow keys move Duke, and Ctrl and Alt jump and fire. The panel beside the playfield says it too: press <kbd>H</kbd> for help and <kbd>F1</kbd> for options, where the keys can be redefined.</p>"
+      },
+      {
+        "h": "Shareware episode — and the full game",
+        "html": "<p>Episode 1 is the shareware episode Apogee licensed for free distribution — <em>An Apogee Game</em>, try before you buy. Episodes 2 to 4 were the commercial release and are not included.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Duke Nukem II legal to play here?",
+        "a": "Yes. This is Apogee's official shareware Episode 1, distributed under its shareware licence. The registered episodes are not hosted."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move; Ctrl and Alt jump and fire. H shows the in-game help and F1 opens the options, where keys can be changed."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes, a touch d-pad with CTRL, ALT and other keys appears below the game on touch devices."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/duke-nukem/",
+        "title": "Duke Nukem (1991)",
+        "desc": "The original, shareware episode."
+      },
+      {
+        "href": "/run/duke-nukem-3d/",
+        "title": "Duke Nukem 3D",
+        "desc": "Duke goes 3D — shareware episode."
+      },
+      {
+        "href": "/run/hocus-pocus/",
+        "title": "Hocus Pocus",
+        "desc": "Apogee's VGA wizard platformer."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee run-and-gun — freeware."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-10-01",
+    "addedDate": "2026-10-01",
+    "rank": 20.6,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · CTRL / ALT: jump and fire · H: help",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "H",
+          "dosKey": 72,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump and fire",
+        "keyboard": "Ctrl and Alt",
+        "mouse": "—"
+      },
+      {
+        "action": "Help",
+        "keyboard": "H",
+        "mouse": "—"
+      },
+      {
+        "action": "Options and key setup",
+        "keyboard": "F1",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Episode 1 of Duke Nukem II is An Apogee Game, distributed as shareware under Apogee's licence. Episodes 2–4 are commercial and not hosted here. Provenance: <a href=\"/apps/duke-nukem-2/NOTICE.md\">/apps/duke-nukem-2/NOTICE.md</a>.</p>",
+    "screenshot": true
+  },
+  {
+    "slug": "wacky-wheels",
+    "title": "Wacky Wheels Online — Play the Shareware Free",
+    "description": "Play Wacky Wheels free in your browser — An Apogee Game, the 1994 animal kart racer, shareware version. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "wacky wheels online, play wacky wheels in browser, wacky wheels shareware, dos kart racing game online, apogee racing game",
+    "ogTitle": "Play Wacky Wheels Online — Free Shareware Version",
+    "ogDescription": "Apogee's 1994 kart racer with animal drivers and hedgehog ammo, in your browser.",
+    "crumb": "Play Wacky Wheels",
+    "h1": "Play Wacky Wheels online — the free shareware version",
+    "appName": "Wacky Wheels",
+    "appType": "game",
+    "author": "Beavis Soft / Apogee Software",
+    "genre": [
+      "Racing",
+      "Kart racing"
+    ],
+    "categories": [
+      "Racing & sports"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/wacky-wheels/wacky-wheels.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware version runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Wacky Wheels</strong> — the 1994 kart racer from Beavis Soft, published by Apogee: eight animal drivers, Mode&nbsp;7-style tracks and hedgehogs to throw at each other. The <strong>shareware version</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release running in a WebAssembly build of DOSBox. The package is about 1.5&nbsp;MB. The pseudo-3D track scaling is the heaviest thing it does, and a laptop or desktop keeps up easily.</p>"
+      },
+      {
+        "h": "Controls",
+        "html": "<p>The arrow keys steer; the driving and firing keys are listed, and can be changed, in the game's options. Collect the hedgehogs on the track to have something to throw.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the shareware release Apogee distributed under its VENDOR.DOC, which permits sharing it and forbids distributing the registered game. The full game is still sold.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Wacky Wheels legal to play here?",
+        "a": "Yes. This is the official shareware version, distributed under Apogee's VENDOR.DOC. The registered game is not hosted."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Settings and best times persist in this browser between visits, best-effort."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "A touch pad with arrow keys and the common action keys appears below the game on touch devices; it is far better with a keyboard."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/skyroads/",
+        "title": "SkyRoads",
+        "desc": "The 1993 space-road racer, instant play."
+      },
+      {
+        "href": "/run/duke-nukem-3d/",
+        "title": "Duke Nukem 3D",
+        "desc": "Apogee's shooter, shareware episode."
+      },
+      {
+        "href": "/run/skifree/",
+        "title": "SkiFree",
+        "desc": "Down the mountain, away from the yeti."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-10-01",
+    "addedDate": "2026-10-01",
+    "rank": 28.5,
+    "mobileControls": {
+      "type": "racer-dos",
+      "hint": "D-pad: steer · CTRL / ALT / SPACE: the game's action keys",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Steer",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Drive, brake and throw",
+        "keyboard": "set in the game's options",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware episode plays here free.</strong> The rest of Wacky Wheels was the commercial release, and is still sold:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Wacky+Wheels\" target=\"_blank\" rel=\"noopener\">Find Wacky Wheels on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Wacky+Wheels\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Wacky Wheels shareware is An Apogee Game, freely distributable under its VENDOR.DOC. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/wacky-wheels/NOTICE.md\">/apps/wacky-wheels/NOTICE.md</a>.</p>",
+    "screenshot": true
+  },
+  {
+    "slug": "kens-labyrinth",
+    "title": "Ken's Labyrinth Online — Play the Full Game Free",
+    "description": "Play Ken's Labyrinth free in your browser — Ken Silverman's 1993 shooter, the complete game, released free by its author with Epic's permission. Runs via DOSBox.",
+    "keywords": "ken's labyrinth online, play ken's labyrinth in browser, ken silverman game, ken's labyrinth free, 1993 dos shooter online",
+    "ogTitle": "Play Ken's Labyrinth Online — the Complete Game, Free",
+    "ogDescription": "Ken Silverman's 1993 first-person maze shooter — the whole game, released free by its author.",
+    "crumb": "Play Ken's Labyrinth",
+    "h1": "Play Ken's Labyrinth online — the complete game, free",
+    "appName": "Ken's Labyrinth",
+    "appType": "game",
+    "author": "Ken Silverman / Epic MegaGames",
+    "genre": [
+      "First-person shooter",
+      "Action"
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/kens-labyrinth/kens-labyrinth.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — the complete freeware release runs via DOSBox in your browser"
+    },
+    "fullyFree": "Ken Silverman released the complete game for free in 1999, with Epic MegaGames' permission.",
+    "intro": "<p><strong>Ken's Labyrinth</strong> — the 1993 first-person shooter Ken Silverman wrote as a teenager, a year before he built the Build engine behind Duke Nukem 3D. You are trapped in an alien labyrinth and shoot your way out, floor by floor. In 1999 Silverman released <strong>the complete game</strong> for free, with Epic MegaGames' permission — all of it is hosted here.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS release running in a WebAssembly build of DOSBox. The whole game is under 1&nbsp;MB. Every file from the author's release is included, as his README asks.</p>"
+      },
+      {
+        "h": "Playing tips",
+        "html": "<p>Fireballs are your first weapon and they bounce — fire around corners. Keys and coins are everywhere; the coins buy things from the vending machines on later floors. Press <kbd>Space</kbd> on doors to open them.</p>"
+      },
+      {
+        "h": "Why the whole game is free",
+        "html": "<p>Epic MegaGames published it as shareware. When Epic stopped selling its older titles, Silverman asked, and released the full version for free in November 1999. His only conditions are to keep every file of his archive together and not to sell it.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Ken's Labyrinth legal to play here?",
+        "a": "Yes. Its author released the complete game for free in 1999 with Epic MegaGames' permission, asking only that every file stays in the package — which it does."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Arrow keys move and turn, left Ctrl shoots, Space opens doors, left Shift runs and right Ctrl strafes. F1 selects the fireball weapon."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes — saved games persist in this browser between visits, best-effort."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/duke-nukem-3d/",
+        "title": "Duke Nukem 3D",
+        "desc": "Built on the engine Silverman wrote next."
+      },
+      {
+        "href": "/run/wolfenstein-3d/",
+        "title": "Wolfenstein 3D",
+        "desc": "The other early-90s maze shooter."
+      },
+      {
+        "href": "/run/blake-stone/",
+        "title": "Blake Stone",
+        "desc": "Apogee's Wolfenstein-engine shooter."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-10-01",
+    "addedDate": "2026-10-01",
+    "rank": 29.5,
+    "mobileControls": {
+      "type": "fps-dos",
+      "hint": "D-pad: move/turn · FIRE: ctrl · OPEN: space · RUN: shift",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "OPEN",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "RUN",
+          "dosKey": 340,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "MENU",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move / turn",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Shoot",
+        "keyboard": "left Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Open / use",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Run",
+        "keyboard": "left Shift",
+        "mouse": "—"
+      },
+      {
+        "action": "Strafe",
+        "keyboard": "right Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Fireballs",
+        "keyboard": "F1",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Ken's Labyrinth was released free in full by its author, Ken Silverman, in 1999 with Epic MegaGames' permission. Every file of his release is included. Provenance: <a href=\"/apps/kens-labyrinth/NOTICE.md\">/apps/kens-labyrinth/NOTICE.md</a>.</p>",
+    "screenshot": true
   }
 ]

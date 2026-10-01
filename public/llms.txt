@@ -4,7 +4,7 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-44 titles are hosted and playable instantly. Everything hosted here is
+50 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
@@ -54,6 +54,12 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Flight of the Amazon Queen](https://exebrowser.com/run/flight-of-the-amazon-queen/): The 1995 jungle adventure, freed by its authors. Point-and-click, instant, in your browser.
 - [OpenTTD](https://exebrowser.com/run/openttd/): Build railways, roads and airports and run a transport empire. Free and instant.
 - [Micropolis](https://exebrowser.com/run/micropolis/): The open-source city simulator, running natively in your browser. Zone, build, tax and watch a city grow.
+- [Duke Nukem 3D](https://exebrowser.com/run/duke-nukem-3d/): 3D Realms' 1996 shooter in your browser: the shareware episode L.A. Meltdown, no download or install.
+- [Rise of the Triad](https://exebrowser.com/run/rise-of-the-triad/): Apogee's 1995 shooter in your browser: the shareware episode The HUNT Begins, no download or install.
+- [Duke Nukem](https://exebrowser.com/run/duke-nukem/): Apogee's 1991 platformer that introduced Duke: the shareware episode, in your browser.
+- [Duke Nukem II](https://exebrowser.com/run/duke-nukem-2/): Apogee's 1993 VGA platformer: the shareware episode, in your browser, no download.
+- [Wacky Wheels](https://exebrowser.com/run/wacky-wheels/): Apogee's 1994 kart racer with animal drivers and hedgehog ammo, in your browser.
+- [Ken's Labyrinth](https://exebrowser.com/run/kens-labyrinth/): Ken Silverman's 1993 first-person maze shooter — the whole game, released free by its author.
 
 ## Compatibility guides (bring your own copy)
 
