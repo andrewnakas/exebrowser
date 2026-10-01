@@ -628,7 +628,7 @@
     win32: ["pfWin32", "32-bit program — switched engine back",
       "pfWin32Body", "The 16-bit engine cannot run this one, so the engine is back on Wine 1.7.55 (Win32)."],
     dos: ["pfDos", "A DOS program, not a Windows one",
-      "pfDosBody", "Wine runs Windows programs, so it will not start this. The DOS games on this site run under DOSBox instead, which cannot load your own files yet."],
+      "pfDosBody", "Wine runs Windows programs, so it will not start this — but the DOS player on this site will, and your files go with you."],
     not_exe: ["pfNotExe", "This is not a Windows program",
       "pfNotExeBody", "It does not start with the MZ marker every .exe has. It may be a renamed archive or document, or a download that did not finish."],
     damaged: ["pfDamaged", "This file is incomplete or damaged",
@@ -686,7 +686,16 @@
       actions.append(a, " ");
     };
     if (kase === "x64") link("/64/?chunked=1", "pfOpen64", "Try the experimental 64-bit engine (pick the file again there) →", "open_64");
-    if (kase === "dos") link("/run/", "pfDosLink", "See the DOS games already set up here →", "dos_games");
+    if (kase === "dos") {
+      // The files travel with them, so the DOS player opens ready to run.
+      link("/dos-emulator/#handoff", "pfDosLink", "Open it in the DOS player →", "open_dos");
+      const a = actions.querySelector('a[href="/dos-emulator/#handoff"]');
+      a?.addEventListener("click", async (e) => {
+        e.preventDefault();
+        await window.ExeHandoff?.put(state.stagedFiles, state.pickedExe && state.pickedExe.path);
+        location.href = a.href;
+      });
+    }
     if (kase === "installer") link("/run/extract-archive/", "pfExtract", "Extract the files instead →", "extract");
     if (kase === "crt" || kase === "dll") {
       const b = document.createElement("button");
@@ -1569,6 +1578,24 @@
   });
 
   els.runBtn.addEventListener("click", bootAndRun);
+
+  // Sent here from the DOS player with a Windows program already chosen.
+  if (location.hash === "#handoff" && window.ExeHandoff) {
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (_) { /* cosmetic */ }
+    window.ExeHandoff.take().then((h) => {
+      if (!h || !h.files || !h.files.length) return;
+      clearStaged();
+      for (const f of h.files) {
+        const safe = sanitizeRelPath(f.path);
+        if (safe) state.stagedFiles.push({ path: safe, bytes: f.bytes });
+      }
+      log(`Brought over ${state.stagedFiles.length} file(s) from the DOS player.`);
+      state.entrySource = "handoff";
+      refreshEntryPicker();
+      if (h.entry) window.ExeBrowser?.preferEntry(h.entry.split("/").pop());
+      els.dropzone.scrollIntoView({ behavior: "smooth", block: "center" });
+    }).catch(() => {});
+  }
   els.saveStateBtn.addEventListener("click", downloadWritableLayer);
 
   // ─── programmatic API ────────────────────────────────────────────────────

@@ -75,6 +75,9 @@
     return !!(entry && /^(byo-|home$)/.test(entry.slug || ""));
   }
   function resumeHref(entry) {
+    // A DOS program brought to /dos-emulator/ is saved as "byo-dos-<hash>"
+    // and comes back the same way: open that page and pick the program again.
+    if (/^byo-dos-/.test((entry && entry.slug) || "")) return "/dos-emulator/";
     if (isByo(entry)) {
       return (entry.path && /\/load-exe\/$/.test(entry.path)) ? entry.path : "/load-exe/";
     }

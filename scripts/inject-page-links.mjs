@@ -108,6 +108,7 @@ const APP_NAMES = new Map(CATALOGUE.map((p) => [p.slug, p.appName]));
 let unblockedAdded = 0;
 let embedFooterAdded = 0;
 let inspectorFooterAdded = 0;
+let dosFooterAdded = 0;
 let embedAdded = 0;
 let embedPointerAdded = 0;
 let ogAdded = 0;
@@ -263,6 +264,18 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     }
   }
 
+  // ── 3e. The DOS emulator in the footer of the English pages ────────────
+  // Footer only: the primary nav is already eight items. Anchored on the
+  // "Saved games" link, which appears in the footer and nowhere else, and
+  // guarded on the href so a second run adds nothing.
+  if (!/^(es|pt-BR|de|ja|fr|zh-CN)\//.test(label) && !html.includes('href="/dos-emulator/">DOS emulator</a>')) {
+    const anchor = '<a href="/saves/">Saved games</a>';
+    if (html.includes(anchor)) {
+      html = html.replace(anchor, '<a href="/dos-emulator/">DOS emulator</a>\n    ' + anchor);
+      dosFooterAdded++;
+    }
+  }
+
   // ── 4. SYNC METADATA onto the hand-maintained game pages ────────────────
   // app-pages.json is meant to be the single source of truth, but skipGenerate
   // pages never pass through render(), so editing a title or description there
@@ -403,7 +416,7 @@ for (const { abs, label } of htmlFiles(ROOT)) {
 console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
   `manifest into ${manifestAdded}, pwa.js into ${pwaAdded}, ` +
-  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), EXE viewer footer link onto ${inspectorFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
+  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), EXE viewer footer link onto ${inspectorFooterAdded} page(s), DOS emulator footer link onto ${dosFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
   `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
   `embed offer on ${embedAdded} page(s), embed pointer on ${embedPointerAdded} page(s), og:image onto ${ogAdded} page(s)`
 );

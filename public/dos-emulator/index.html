@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DOS Emulator Online — Run Your Own DOS Program Free</title>
+<meta name="description" content="Run your own DOS game or program in the browser with DOSBox — drop the .exe, .com, folder or zip and it starts in this tab. Free, nothing uploaded, no install." />
+<meta name="keywords" content="dos emulator online, run dos games in browser, dosbox online, run dos exe online, play old dos games, dos emulator for chromebook" />
+<link rel="canonical" href="https://exebrowser.com/dos-emulator/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/dos-emulator/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/dos-emulator/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/dos-emulator/" />
+<meta property="og:title" content="Run Your Own DOS Program in the Browser" />
+<meta property="og:description" content="Drop a DOS .exe, .com, folder or zip and it runs in DOSBox in this tab. Nothing uploaded, no install." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=42" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "DOS emulator", "item": "https://exebrowser.com/dos-emulator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my DOS program uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The files are read on your own machine, packed into a virtual C: drive inside the browser tab and run by DOSBox compiled to WebAssembly. Nothing is sent to a server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which DOS programs run?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most real-mode and DOS/4GW games and programs from the 1980s and 1990s: anything DOSBox runs. Sound Blaster 16 and PC speaker sound are emulated. Windows programs (including Windows 3.x) need the Windows loader instead." }
+    },
+    {
+      "@type": "Question",
+      "name": "My game needs its data files. What do I load?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Load the whole folder, or a zip of it, rather than the single .exe. Every file goes onto the virtual C: drive and you choose which program starts." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my saved games kept?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, in this browser. Files the program writes are stored locally and put back the next time you load the same program here. Browsers can clear that storage, so it is a convenience, not a backup." }
+    },
+    {
+      "@type": "Question",
+      "name": "The game runs too fast or too slow. What can I change?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pick a different speed before pressing Run. The 386 setting suits most games; very early PC games that run too fast want the 286 setting, and late-90s games that crawl want the 486 or maximum setting." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  </header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › DOS emulator</nav>
+
+  <section class="card">
+    <h2>Run your own DOS program in the browser</h2>
+    <p class="muted small" style="margin-top:0.25rem;">Runs via DOSBox on WebAssembly · Nothing is uploaded · No account</p>
+    <p>Drop a DOS game or program below — the <code>.exe</code>, <code>.com</code> or <code>.bat</code>, its whole folder, or a zip of it — and it runs in DOSBox inside this tab. The files are read on your own machine and put on a virtual <code>C:</code> drive that exists only in the tab's memory. This is the same DOSBox that runs DOOM and Commander Keen on this site.</p>
+
+    <div class="embed-loader card" style="margin-top:1rem;">
+      <div id="dos-byo-drop" class="dropzone" tabindex="0">
+        <input type="file" id="dos-byo-exe" accept=".exe,.EXE,.com,.COM,.bat,.BAT" hidden />
+        <input type="file" id="dos-byo-folder" webkitdirectory directory multiple hidden />
+        <input type="file" id="dos-byo-zip" accept=".zip,application/zip" hidden />
+        <p>Drop files here, or pick:
+          <button id="dos-byo-pick-exe" type="button" class="link">a single program</button> ·
+          <button id="dos-byo-pick-folder" type="button" class="link">a folder</button> ·
+          <button id="dos-byo-pick-zip" type="button" class="link">a zip</button>
+        </p>
+        <p id="dos-byo-info" class="muted"></p>
+      </div>
+      <div id="dos-byo-notice" class="preflight" role="status" hidden></div>
+      <div id="dos-byo-entry-wrap" class="entry-picker" hidden>
+        <label for="dos-byo-entry"><strong>Program to start:</strong></label>
+        <select id="dos-byo-entry"></select>
+      </div>
+      <div class="entry-picker">
+        <label for="dos-byo-speed"><strong>Speed:</strong></label>
+        <select id="dos-byo-speed">
+          <option value="3000">286 — early-80s games that run far too fast</option>
+          <option value="8000" selected>386 — right for most games</option>
+          <option value="12000">Fast 386 — DOOM-era games</option>
+          <option value="20000">486 — mid-90s games</option>
+          <option value="max">Maximum — late-90s games; heavy on slower devices</option>
+        </select>
+      </div>
+      <button id="dos-byo-run" class="primary" type="button" disabled>Run in DOSBox</button>
+    </div>
+
+    <div id="dos-embed" style="margin-top:1rem;"
+         data-byo="true"
+         data-app-name="your program"
+         data-slug="dos-emulator"
+         data-autoboot="false"></div>
+
+    <p class="muted small" style="margin-top:1rem;">The emulator is about 1.4&nbsp;MB and cached after the first run. Click the screen to give it your keyboard. When the program exits you are left at the <code>C:\&gt;</code> prompt, where you can type another command.</p>
+  </section>
+
+  <section class="card">
+    <h2>What runs, and what does not</h2>
+    <p>This is DOSBox, the emulator most people use to play old PC games today, compiled to run in a web page. If a program runs in DOSBox on a desktop, it very likely runs here too — just slower, because every instruction is emulated in your browser.</p>
+    <h3>Works well</h3>
+    <ul>
+      <li>DOS games from the 1980s and 1990s: real-mode games and DOS/4GW ones such as DOOM-era shooters.</li>
+      <li>Sound Blaster 16, AdLib music and the PC speaker, all emulated.</li>
+      <li>Text-mode programs: old editors, BASIC, Turbo Pascal, utilities, BBS-era tools.</li>
+    </ul>
+    <h3>Does not</h3>
+    <ul>
+      <li><strong>Windows programs, including Windows 3.x.</strong> DOSBox only prints <em>This program cannot be run in DOS mode</em>. The page notices and offers to send the files to the <a href="/load-exe/">Windows loader</a> instead.</li>
+      <li><strong>CD-ROM games that check for the disc</strong>, and anything needing a network, a modem or a printer.</li>
+      <li><strong>Very demanding late-90s games</strong> may be too slow on a phone or an older laptop.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>If it does not start</h2>
+    <ol>
+      <li><strong>Load the folder, not the lone EXE.</strong> Nearly every DOS game keeps its graphics and levels in files beside the program.</li>
+      <li><strong>Check which program starts.</strong> A folder often has <code>SETUP.EXE</code>, <code>INSTALL.EXE</code> and the game itself; the page guesses the game, but the picker lets you choose.</li>
+      <li><strong>Run the setup program first, if the game has one.</strong> Many games need a configuration file with sound settings. Pick <code>SETUP</code>, choose Sound Blaster at port 220, IRQ 7, DMA 1, then run the game.</li>
+      <li><strong>Change the speed.</strong> A game that is unplayably fast wants the 286 setting; one that crawls wants 486 or maximum.</li>
+      <li><strong>Choose “Just the C:\&gt; prompt”</strong> and type the command yourself, the way the game's own README says to start it.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Where your files go</h2>
+    <p>Nowhere. They are read with the browser's file API and written to an in-memory drive. No part of them is transmitted. Anything the program saves — saved games, high scores, settings — is kept in this browser and put back the next time you load the same program here.</p>
+    <p>The page uses Google Analytics for page metrics and Google AdSense for ads; neither can see your files or the emulator. Details in the <a href="/privacy/">privacy policy</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>No DOS game to hand? There are some here already</h2>
+    <p>Shareware and freeware DOS classics are hosted on this site and start in one click: <a href="/run/doom/">DOOM</a>, <a href="/run/keen4/">Commander Keen 4</a>, <a href="/run/scorched-earth/">Scorched Earth</a>, <a href="/run/wolfenstein-3d/">Wolfenstein 3D</a>, <a href="/run/tyrian/">Tyrian</a>, <a href="/run/jetpack/">Jetpack</a> and more.</p>
+    <p><a href="/">Browse the shelf →</a> · <a href="/run/">All app guides</a> · <a href="/load-exe/">Run a Windows .exe instead</a></p>
+  </section>
+</main>
+
+
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/dos-emulator/">DOS emulator</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+<script src="/handoff.js?v=1"></script>
+<script src="/dos-embed.js?v=37"></script>
+<script src="/dos-byo.js?v=1"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/pwa.js?v=2"></script>
+</body>
+</html>

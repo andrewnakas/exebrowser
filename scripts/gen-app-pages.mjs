@@ -824,21 +824,21 @@ ${downloadHtml(p)}
 ${footerHtml(L)}
 
 ${clientStringsHtml(L)}${p.iframeUrl
-  ? `<script src="/save-core.js?v=5"></script>
-<script src="/recent.js?v=7"></script>
+  ? `<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
     <script src="/pwa.js?v=2"></script>`
   : p.dosRuntime
     ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
-<script src="/save-core.js?v=5"></script>
-<script src="/recent.js?v=7"></script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
     <script src="/pwa.js?v=2"></script>
-<script src="/dos-embed.js?v=36"></script>`
+<script src="/dos-embed.js?v=37"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/save-core.js?v=5"></script>
-<script src="/recent.js?v=7"></script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
     <script src="/pwa.js?v=2"></script>
 <script src="/embed.js?v=10"></script>
-<script src="/app.js?v=23"></script>`}
+<script src="/app.js?v=24"></script>`}
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>${NEWSLETTER_ACTION ? '\n<script src="/newsletter.js?v=1"></script>' : ""}
 </body>
 </html>
@@ -1081,8 +1081,8 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=5"></script>
-<script src="/recent.js?v=7"></script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
     <script src="/pwa.js?v=2"></script>
 <script src="/filter.js?v=2"></script>
 <script>
@@ -1347,8 +1347,8 @@ ${picks}
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=5"></script>
-<script src="/recent.js?v=7"></script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
     <script src="/pwa.js?v=2"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
@@ -1456,8 +1456,8 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
   </nav>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
-<script src="/save-core.js?v=5"></script>
-<script src="/recent.js?v=7"></script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
     <script src="/pwa.js?v=2"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
@@ -1556,8 +1556,8 @@ ${cards}
 </main>
 
 ${footerHtml(L)}
-<script src="/save-core.js?v=5"></script>
-<script src="/recent.js?v=7"></script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
     <script src="/pwa.js?v=2"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
@@ -1623,6 +1623,9 @@ const STATIC_URLS = [
   // /load-exe/ answers the first and this answers the second, without the
   // emulator, which is the only honest way to answer it for a file you distrust.
   { loc: "/exe-inspector/", freq: "monthly", pri: "0.9", mod: "2026-09-22" },
+  // The DOS half of "run my own program". The Windows loader's preflight sends
+  // every DOS .exe here, and "dos emulator online" had nowhere to land.
+  { loc: "/dos-emulator/", freq: "monthly", pri: "0.9", mod: "2026-10-01" },
   // A category page's content is its cards as much as its prose, so its lastmod
   // has to move when a member does — not only when someone edits the intro.
   ...liveCats.map((c) => ({
@@ -1800,6 +1803,7 @@ The compatibility guides say honestly which of these fail and how.
 - [Homepage](${SITE}/): the full catalogue as a browsable shelf, searchable and
   filterable by category, plus a loader for running your own .exe
 - [Load your own EXE](${SITE}/load-exe/): drop a Windows .exe, folder or zip and run it
+- [DOS emulator](${SITE}/dos-emulator/): drop your own DOS game or program (.exe, .com, folder or zip) and run it in DOSBox
 - [EXE viewer](${SITE}/exe-inspector/): read a Windows .exe's headers, imports, icon and signature without running it
   in the browser — nothing is uploaded, nothing is installed
 - [All games and guides](${SITE}/run/)

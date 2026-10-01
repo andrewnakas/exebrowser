@@ -149,6 +149,7 @@
     <h3>Usually does not</h3>
     <ul>
       <li><strong>64-bit programs.</strong> The default engine is 32-bit only. There is an <a href="/64/">experimental 64-bit runtime</a> with its own loader, but many things do not render in it yet.</li>
+      <li><strong>DOS programs.</strong> Wine runs Windows software only. DOS games and programs go to the <a href="/dos-emulator/">DOS emulator</a>, which runs them in DOSBox — drop one here and the page offers to send it there.</li>
       <li><strong>Direct3D and modern 3D games.</strong> There is no GPU passthrough here.</li>
       <li><strong>.NET, modern Visual C++ runtimes, and anything expecting Windows 10 APIs.</strong> Wine 1.7.55 predates them.</li>
       <li><strong>Anything needing the network, a licence server, or real hardware</strong> — dongles, printers, serial devices, disc checks.</li>
@@ -211,11 +212,12 @@
 </footer>
 
 <!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
-<script src="/save-core.js?v=5"></script>
-<script src="/recent.js?v=7"></script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
 <script src="/embed.js?v=10"></script>
+<script src="/handoff.js?v=1"></script>
 <script src="/pe-inspect.js?v=3"></script>
-<script src="/app.js?v=23"></script>
+<script src="/app.js?v=24"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 <script src="/pwa.js?v=2"></script>
 </body>

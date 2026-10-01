@@ -8,19 +8,28 @@
     appUrl: host.dataset.appUrl || "",
     appName: host.dataset.appName || "this game",
     autoboot: host.dataset.autoboot === "true",
+    // /dos-emulator/: no hosted game. The page builds a bundle from the
+    // visitor's own files and hands it over through window.DosEmbed.
+    byo: host.dataset.byo === "true",
+    bundle: null,
   };
 
   // The slug keys saved progress in IndexedDB, so an embed that lives outside
   // /run/<slug>/ (the homepage hero) has to name its game explicitly — otherwise
   // it would save under "/" and a player's homepage progress and game-page
   // progress would be two separate, silently diverging worlds.
-  const slug = host.dataset.slug
+  // `let` because the bring-your-own page only learns it once a file is
+  // picked (byo-dos-<hash of the program's name>, so each program keeps its
+  // own saves). Analytics still report that page as one slug, "dos-emulator":
+  // a hash per upload would be noise, not a dimension.
+  let slug = host.dataset.slug
     || (location.pathname.match(/\/run\/([^/]+)/) || [])[1]
     || location.pathname;
 
   function track(name, params) {
     if (typeof window.gtag === "function") {
-      window.gtag("event", name, Object.assign({ app_slug: slug, runtime: "dosbox" }, params || {}));
+      const appSlug = cfg.byo ? "dos-emulator" : slug;
+      window.gtag("event", name, Object.assign({ app_slug: appSlug, runtime: "dosbox" }, params || {}));
     }
   }
 
@@ -200,10 +209,10 @@
   function showResumeOverlay(rec) {
     const btn = document.getElementById("dos-play");
     if (!btn) return;
-    const art = rec.thumb || `/run/${slug}/screenshot.png`;
+    const art = rec.thumb || (cfg.byo ? "" : `/run/${slug}/screenshot.png`);
     btn.classList.add("embed-play-resume");
     btn.innerHTML =
-      `<img src="${esc(art)}" alt="" class="resume-shot" onerror="this.remove()">` +
+      (art ? `<img src="${esc(art)}" alt="" class="resume-shot" onerror="this.remove()">` : "") +
       `<span>${esc(T("resume", "▶ Resume {name}", { name: cfg.appName }))}</span>`;
     const note = btn.parentElement?.querySelector("p");
     if (!note) return;
@@ -584,6 +593,19 @@
     });
 
     ci.events().onFrame((rgb) => {
+      // The size event can fire before this listener exists — it is attached
+      // only once dosDirect has resolved — and then every frame was painted
+      // at the 320x200 default. A 640x400 text screen (the DOS prompt, an
+      // EGA title) came out as two torn, interleaved half-copies. The
+      // emulator always knows its real frame size, so ask it whenever the
+      // pixels do not fit the size we assumed.
+      if (rgb.length !== frameW * frameH * 3 && typeof ci.width === "function") {
+        const cw = ci.width(), ch = ci.height();
+        if (cw > 0 && ch > 0 && cw * ch * 3 === rgb.length) {
+          frameW = cw;
+          frameH = ch;
+        }
+      }
       const w = frameW, h = frameH;
       if (canvas.width !== w || canvas.height !== h) {
         canvas.width = w;
@@ -1246,7 +1268,7 @@
       snapshotOn = await loadSnapshotModule();
       await loadEmulators();
 
-      const bundle = await fetchBundle(cfg.appUrl);
+      const bundle = cfg.bundle || await fetchBundle(cfg.appUrl);
 
       // Layer any previously saved changes over the base game.
       let saved = null;
@@ -1586,6 +1608,33 @@
   }
 
   playBtn.addEventListener("click", play);
+
+  // The bring-your-own page's way in: a bundle built in the browser from the
+  // visitor's files (game files + .jsdos/dosbox.conf), never fetched. The
+  // play button stays hidden there until a program is staged, because there
+  // is nothing for it to play before that.
+  if (cfg.byo) {
+    window.DosEmbed = {
+      stage(bytes, name, newSlug) {
+        cfg.bundle = bytes;
+        cfg.appName = name;
+        slug = newSlug;
+        const btn = currentPlayBtn();
+        if (btn) {
+          btn.hidden = false;
+          btn.disabled = false;
+          btn.textContent = T("play", "▶ Play {name}", { name: cfg.appName });
+        }
+        if (PERSIST_ON) {
+          const rec = window.SaveCore?.get(slug);
+          if (rec && rec.updatedAt) showResumeOverlay(rec);
+        }
+      },
+      play: () => play("byo"),
+    };
+    playBtn.hidden = true;
+    document.dispatchEvent(new Event("dosembed:ready"));
+  }
 
   // A Resume card anywhere on the site links here with #resume. That click was
   // the "get me back in"; making the player find the button and click again
