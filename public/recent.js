@@ -65,8 +65,25 @@
   // one has been written.
   // The path a resume link should point at: where the visitor actually played,
   // falling back to the English page for history recorded before we stored it.
+  //
+  // An EXE the visitor uploaded themselves is saved as "byo-<hash>" and has no
+  // page of its own, so /run/byo-…/ is a 404 — and for a month it was the
+  // destination of every Resume link for those saves, which made it nearly
+  // every 404 on the site. Its files come back when the same EXE is opened in
+  // the loader again, so the loader is where the link goes.
+  function isByo(entry) {
+    return !!(entry && /^(byo-|home$)/.test(entry.slug || ""));
+  }
   function resumeHref(entry) {
+    if (isByo(entry)) {
+      return (entry.path && /\/load-exe\/$/.test(entry.path)) ? entry.path : "/load-exe/";
+    }
     return (entry && entry.path) || `/run/${entry.slug}/`;
+  }
+  // Poster art exists only for catalogue games; asking for an uploaded EXE's
+  // is just another 404.
+  function fallbackShot(entry) {
+    return isByo(entry) ? "" : `/run/${entry.slug}/screenshot.png`;
   }
   window.resumeHref = resumeHref;
 
@@ -76,7 +93,7 @@
   // own Play button, and a return loop is only as strong as its weakest step.
   // Only saves get it — a "Play again" card promises nothing to resume.
   function resumeLink(entry) {
-    return resumeHref(entry) + (entry && entry.updatedAt ? "#resume" : "");
+    return resumeHref(entry) + (entry && entry.updatedAt && !isByo(entry) ? "#resume" : "");
   }
 
   // `runtime` is optional and deliberately passed through undefined when it is
@@ -109,7 +126,8 @@
     img.className = "pc-shot";
     img.alt = "";
     img.loading = "lazy";
-    img.src = entry.thumb || `/run/${entry.slug}/screenshot.png`;
+    const shot = entry.thumb || fallbackShot(entry);
+    if (shot) img.src = shot;
     // A save written before thumbnails existed, or a game whose canvas can't
     // be read back, falls through to the poster art; a missing poster leaves
     // the card text-only rather than showing a broken image.
@@ -132,7 +150,7 @@
       body.appendChild(when);
     }
 
-    card.appendChild(img);
+    if (shot) card.appendChild(img);
     card.appendChild(body);
     card.addEventListener("click", () => {
       window.gtag?.("event", "resume_click", { app_slug: entry.slug, has_save: entry.updatedAt ? 1 : 0 });
@@ -199,7 +217,20 @@
     const last = entries().find(e => e.updatedAt);
     if (!last) return;
     const href = resumeHref(last);
-    if (location.pathname === href) return;
+    if (location.pathname === href) {
+      // Already on the loader: there is nothing to link to, but the visitor
+      // needs telling that opening the same file brings their work back.
+      if (!isByo(last)) return;
+      const label = document.createElement("span");
+      label.className = "resume-label";
+      label.textContent = "Welcome back —";
+      const note = document.createElement("span");
+      const name = last.name || "your program";
+      note.textContent = ` your files from ${name} are saved in this browser. Open ${name} again below and they come back.`;
+      bar.append(label, note);
+      bar.hidden = false;
+      return;
+    }
 
     const link = document.createElement("a");
     link.href = resumeLink(last);
@@ -208,7 +239,8 @@
     const img = document.createElement("img");
     img.className = "resume-bar-shot";
     img.alt = "";
-    img.src = last.thumb || `/run/${last.slug}/screenshot.png`;
+    const shot = last.thumb || fallbackShot(last);
+    if (shot) img.src = shot;
     img.addEventListener("error", () => img.remove(), { once: true });
 
     const text = document.createElement("span");
@@ -218,7 +250,8 @@
     when.className = "muted small";
     when.textContent = " · saved " + relativeTime(last.updatedAt);
 
-    link.append(img, text, when);
+    if (shot) link.append(img);
+    link.append(text, when);
     link.addEventListener("click", () => {
       window.gtag?.("event", "resume_click", { app_slug: last.slug, has_save: 1 });
     });

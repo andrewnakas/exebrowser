@@ -274,7 +274,9 @@
   // our game paths.
   function playPath() {
     try {
-      const m = location.pathname.match(/^(\/[A-Za-z]{2}(?:-[A-Za-z]{2,4})?)?\/run\/[^/]+\/$/);
+      // The loader counts too: an uploaded EXE's save belongs to whichever
+      // language's /load-exe/ it was made on (recent.js routes it there).
+      const m = location.pathname.match(/^(\/[A-Za-z]{2}(?:-[A-Za-z]{2,4})?)?\/(?:run\/[^/]+|load-exe)\/$/);
       return m ? location.pathname : null;
     } catch { return null; }
   }

@@ -21,3 +21,10 @@
 # prior deploys, so retire both the guide page and the app explicitly.
 /run/2048-open/* /run/ 301
 /apps/2048-open/* /run/ 301
+
+# An EXE the visitor uploaded is saved under "byo-<hash>" and has no page.
+# Until 2026-10-01 the Resume link for those saves pointed at /run/byo-…/,
+# which was ~100% of the site's 404s. recent.js now sends them to the loader;
+# this catches the old links still sitting in browsers' cached recent.js.
+/run/byo-* /load-exe/ 302
+/run/home/ /load-exe/ 302
