@@ -32,7 +32,7 @@ import { STATIC_PAGES, staticLinkFor } from "./i18n/static-pages.mjs";
 
 const ROOT = resolve(process.cwd(), "public");
 
-const STYLE = "/style.css?v=41";
+const STYLE = "/style.css?v=42";
 const ADSENSE = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>`;
 const GA = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>

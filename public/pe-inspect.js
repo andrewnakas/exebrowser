@@ -1185,7 +1185,9 @@
 
   // Exposed the way save-core.js exposes SaveCore: it is what makes the parser
   // testable outside a browser, and the page itself is the only caller.
-  window.PEInspect = { parse: parse, interpret: interpret, verdict: verdict };
+  // The loader (app.js) runs the same parse on the file it is about to boot,
+  // and reports sizes in the same buckets so the two pages compare directly.
+  window.PEInspect = { parse: parse, interpret: interpret, verdict: verdict, sizeBucket: sizeBucket };
 
   if (typeof document === "undefined") return;
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

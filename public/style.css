@@ -1235,3 +1235,20 @@ body.dos-playing { overflow: hidden; }
   color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline;
 }
 .continue-all { margin: .4rem 0 0; }
+
+/* Loader preflight: what pe-inspect.js read from the visitor's EXE, shown
+   between the dropzone and Run. Amber for "worth knowing", red for "will
+   most likely not start". Never blocks Run. */
+.preflight {
+  margin: 0.75rem 0 1rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--warn);
+  border-radius: 0.5rem;
+  background: rgba(230, 179, 90, 0.10);
+}
+.preflight strong { color: var(--warn); }
+.preflight.preflight-bad { border-color: var(--bad); background: rgba(229, 115, 115, 0.10); }
+.preflight.preflight-bad strong { color: var(--bad); }
+.preflight p { margin: 0.35rem 0 0; }
+.preflight .preflight-actions a,
+.preflight .preflight-actions .linklike { margin-right: 0.75rem; }

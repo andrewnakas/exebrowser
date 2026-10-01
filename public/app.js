@@ -106,6 +106,14 @@
     booted: false,
     // Locked in when the user clicks Boot Wine; reused on Run.
     selectedVariant: "default",
+    // Where the staged files came from: "exe" | "folder" | "zip" | "files"
+    // (a multi-file drop) for the visitor's own, "hosted" for a /run/ payload.
+    entrySource: null,
+    // What pe-inspect made of the entry EXE, for the byo_result event.
+    preflight: null,
+    // The variant the preflight replaced, so picking a different file can put
+    // the visitor's own choice back rather than leaving ours in place.
+    autoSwitchedFrom: null,
   };
 
   // ─── helpers ───────────────────────────────────────────────────────────
@@ -508,6 +516,9 @@
     els.entryPicker.innerHTML = "";
     els.fileInfo.textContent = "";
     els.runBtn.disabled = true;
+    state.entrySource = null;
+    state.preflight = null;
+    showPreflight(null);
   }
 
   // After stagedFiles is populated, find EXEs, refresh the entry-picker, and
@@ -565,6 +576,7 @@
     els.fileInfo.textContent = T("wineEntry", "Entry: {path}", { path: stagedFile.path + suffix }) +
       (exeCount > 1 ? " · " + T("wineExesAvailable", "{n} EXEs available", { n: exeCount }) : "");
     els.runBtn.disabled = false;
+    if (state.entrySource && state.entrySource !== "hosted") preflight(stagedFile);
   }
 
   // Check PE magic on every EXE the user gives us; warn (not fail) on misses.
@@ -572,6 +584,199 @@
     if (bytes.length < 64 || bytes[0] !== 0x4d || bytes[1] !== 0x5a) {
       log(`Warning: ${path} doesn't start with PE 'MZ' magic.`, "warn");
     }
+  }
+
+  // ─── preflight: read the visitor's EXE before booting it ───────────────
+  // Until this existed the only check was the MZ test above, logged to a
+  // console most people never open. A 64-bit build, a DOS game, a .NET tool or
+  // a 16-bit Windows 3.x program all booted the 30–60 MB runtime and ended on a
+  // blank screen with no explanation. pe-inspect.js (the /exe-inspector/
+  // parser) already knows every one of those cases, so the loader asks it
+  // first and says what it found — in a sentence, before the download.
+  //
+  // It never blocks Run. The parser reads what a file declares, and saying
+  // "this won't run" about something that would have is worse than letting
+  // the visitor find out.
+  const MODERN_CRT = /^(vcruntime140|msvcp140|ucrtbase|api-ms-win-crt|msvcr(90|100|110|120))/i;
+
+  function classify(p, info) {
+    if (p.format === "not-exe") return "not_exe";
+    if (p.format === "dos") return "dos";
+    if (p.format === "ne") return "win16";
+    if (p.format === "le") return "cpu";
+    const arch = p.machineInfo && p.machineInfo.arch;
+    if (arch === "x64") return "x64";
+    if (!p.sections || !p.sections.length || p.truncated) return "damaged";
+    if (arch !== "x86") return "cpu";
+    if (p.dotnet) return ".net";
+    if (p.subsystem === 1 || (p.subsystem >= 10 && p.subsystem <= 13)) return "driver";
+    if (p.isDll) return "dll";
+    if (info.installer && p.overlaySize > p.size * 0.5) return "installer";
+    // Only worth saying for a lone EXE: from a folder or zip the DLLs came along.
+    if (state.entrySource === "exe" &&
+        (p.imports || []).some((d) => MODERN_CRT.test(d.dll || ""))) return "crt";
+    return "ok";
+  }
+
+  // [headline, explanation] per case. Plain text: these go through T() and
+  // are set with textContent, so a translation cannot inject markup.
+  const PF_TEXT = {
+    x64: ["pfX64", "64-bit program",
+      "pfX64Body", "The engine here runs 32-bit Windows programs, so this one will most likely not start. If the download page offers a 32-bit (x86) build of the same version, that one usually runs."],
+    win16: ["pfWin16", "16-bit Windows program — switched engine",
+      "pfWin16Body", "This was built for Windows 3.x. The engine is now set to Wine 3.1 (16-bit), the one that can run it."],
+    win32: ["pfWin32", "32-bit program — switched engine back",
+      "pfWin32Body", "The 16-bit engine cannot run this one, so the engine is back on Wine 1.7.55 (Win32)."],
+    dos: ["pfDos", "A DOS program, not a Windows one",
+      "pfDosBody", "Wine runs Windows programs, so it will not start this. The DOS games on this site run under DOSBox instead, which cannot load your own files yet."],
+    not_exe: ["pfNotExe", "This is not a Windows program",
+      "pfNotExeBody", "It does not start with the MZ marker every .exe has. It may be a renamed archive or document, or a download that did not finish."],
+    damaged: ["pfDamaged", "This file is incomplete or damaged",
+      "pfDamagedBody", "Its headers describe more data than the file holds, which usually means the download stopped early. Download it again."],
+    cpu: ["pfCpu", "Built for a different processor",
+      "pfCpuBody", "The emulator here runs x86 code only, so this file cannot start."],
+    driver: ["pfDriver", "A driver, not an application",
+      "pfDriverBody", "This loads into the Windows kernel or runs before Windows does. There is nothing here to load it into."],
+    ".net": ["pfDotnet", "A .NET program",
+      "pfDotnetBody", "It needs the .NET Framework, which this Wine version predates, so it will most likely stop at startup."],
+    dll: ["pfDll", "This is a DLL, not a program",
+      "pfDllBody", "A DLL is a library that programs load. Load the program's whole folder and pick its .exe."],
+    installer: ["pfInstaller", "This is an installer",
+      "pfInstallerBody", "Running it unpacks the program rather than starting it. That can work — let it finish — but extracting the files may be quicker."],
+    crt: ["pfCrt", "It needs DLLs that came with it",
+      "pfCrtBody", "This program uses a Visual C++ runtime that is not part of Windows. Load its whole folder instead of the lone .exe, so those DLLs come too."],
+  };
+  const PF_BAD = new Set(["x64", "dos", "not_exe", "damaged", "cpu", "driver", ".net", "dll"]);
+
+  function preflightBox() {
+    let box = document.getElementById("preflight");
+    if (!box && els.dropzone) {
+      box = document.createElement("div");
+      box.id = "preflight";
+      box.className = "preflight";
+      box.setAttribute("role", "status");
+      box.hidden = true;
+      // Outside the dropzone: a click anywhere in there opens the file picker.
+      els.dropzone.after(box);
+    }
+    return box;
+  }
+
+  function showPreflight(kase) {
+    const box = preflightBox();
+    if (!box) return;
+    box.replaceChildren();
+    box.hidden = !kase;
+    box.classList.toggle("preflight-bad", PF_BAD.has(kase));
+    if (!kase) return;
+    const t = PF_TEXT[kase];
+    const head = document.createElement("strong");
+    head.textContent = T(t[0], t[1]);
+    const body = document.createElement("p");
+    body.textContent = T(t[2], t[3]);
+    box.append(head, body);
+
+    const actions = document.createElement("p");
+    actions.className = "preflight-actions";
+    const link = (href, key, text, action) => {
+      const a = document.createElement("a");
+      a.href = href;
+      a.textContent = T(key, text);
+      if (action) a.addEventListener("click", () => track("preflight_action", { action }));
+      actions.append(a, " ");
+    };
+    if (kase === "x64") link("/64/?chunked=1", "pfOpen64", "Try the experimental 64-bit engine (pick the file again there) →", "open_64");
+    if (kase === "dos") link("/run/", "pfDosLink", "See the DOS games already set up here →", "dos_games");
+    if (kase === "installer") link("/run/extract-archive/", "pfExtract", "Extract the files instead →", "extract");
+    if (kase === "crt" || kase === "dll") {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "linklike";
+      b.textContent = T("pfPickFolder", "Pick the folder instead");
+      b.addEventListener("click", () => {
+        track("preflight_action", { action: "pick_folder" });
+        els.folderInput.click();
+      });
+      actions.append(b);
+    }
+    if (actions.childNodes.length) box.append(actions);
+    if (PF_BAD.has(kase)) {
+      const note = document.createElement("p");
+      note.className = "muted small";
+      note.textContent = T("pfRunAnyway", "You can still press Run — this is read from the file's headers, and they are occasionally wrong.");
+      box.append(note);
+    }
+  }
+
+  // The runtime is fetched in bootAndRun, so until then the engine is free to
+  // change. After a boot it is not, and the caller says nothing rather than
+  // claim a switch that did not happen.
+  function switchVariant(to) {
+    if (state.booted || state.bootInFlight) return false;
+    state.selectedVariant = to;
+    if (els.wineVariant) els.wineVariant.value = to;
+    log(`Preflight: switched engine to ${to}.`);
+    return true;
+  }
+
+  function preflight(stagedFile) {
+    state.preflight = null;
+    showPreflight(null);
+    if (!window.PEInspect || !/\.exe$/i.test(stagedFile.path)) return;
+    let p, info, v;
+    try {
+      const b = stagedFile.bytes;
+      const buf = b.byteOffset === 0 && b.byteLength === b.buffer.byteLength
+        ? b.buffer : b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength);
+      p = window.PEInspect.parse(buf);
+      info = window.PEInspect.interpret(p);
+      v = window.PEInspect.verdict(p, info);
+    } catch (err) {
+      log("Preflight could not read this file: " + err.message, "warn");
+      return;
+    }
+    let kase = classify(p, info);
+    state.preflight = {
+      format: p.format,
+      arch: (p.machineInfo && p.machineInfo.arch) || "n/a",
+      subsystem: p.subsystem === 2 ? "gui" : p.subsystem === 3 ? "console" : p.subsystem == null ? "n/a" : "other",
+      is_dotnet: p.dotnet ? 1 : 0,
+      installer: info.installer ? 1 : 0,
+      gfx3d: info.capabilities.indexOf("Draws with Direct3D or OpenGL") >= 0 ? 1 : 0,
+      verdict: v.kind,
+      preflight: kase,
+      size_bucket: window.PEInspect.sizeBucket ? window.PEInspect.sizeBucket(stagedFile.bytes.length) : "n/a",
+    };
+
+    // The engine mismatches are fixed for them rather than described: a 16-bit
+    // file gets the 16-bit engine, and a 32-bit file is taken off it again
+    // (it is 16-bit only, whoever picked it).
+    if (kase === "win16") {
+      const from = state.selectedVariant;
+      if (from === "win3x" || !switchVariant("win3x")) kase = null;
+      else {
+        state.autoSwitchedFrom = from;
+        track("preflight_action", { action: "auto_16bit" });
+      }
+    } else if (state.selectedVariant === "win3x" && p.format === "pe" && state.preflight.arch === "x86") {
+      const back = state.autoSwitchedFrom || "default";
+      state.autoSwitchedFrom = null;
+      if (switchVariant(back)) {
+        track("preflight_action", { action: "auto_32bit" });
+        if (kase === "ok") kase = "win32";
+      }
+    } else if (state.autoSwitchedFrom) {
+      // We picked 16-bit for an earlier file; this one is not. Quietly give
+      // back the engine the visitor had.
+      if (switchVariant(state.autoSwitchedFrom)) state.autoSwitchedFrom = null;
+    }
+    if (kase === "ok") return;
+    if (!kase) return;
+    log(`Preflight: ${kase} (${state.preflight.format}/${state.preflight.arch}).`, PF_BAD.has(kase) ? "warn" : "info");
+    showPreflight(kase);
+    track("preflight_shown", {
+      preflight: kase, format: state.preflight.format, arch: state.preflight.arch, verdict: v.kind,
+    });
   }
 
   async function handleSingleExe(file) {
@@ -582,6 +787,7 @@
     const safe = sanitizeExeName(file.name);
     state.stagedFiles.push({ path: safe, bytes });
     log(`Loaded ${file.name} → ${safe} (${formatBytes(file.size)}).`);
+    state.entrySource = "exe";
     refreshEntryPicker();
   }
 
@@ -610,6 +816,7 @@
       state.stagedFiles.push({ path: safe, bytes });
     }
     log(`Loaded folder: ${files.length} files staged.`);
+    state.entrySource = "folder";
     refreshEntryPicker();
   }
 
@@ -631,6 +838,7 @@
       state.stagedFiles.push({ path: safe, bytes });
     }
     log(`Loaded zip: ${state.stagedFiles.length} files extracted.`);
+    state.entrySource = "zip";
     refreshEntryPicker();
   }
 
@@ -1096,6 +1304,95 @@
   });
   addEventListener("pagehide", pauseHeartbeat);
 
+  // ─── did it actually draw? ─────────────────────────────────────────────
+  // boot_success fires once the emulator script has loaded, before Wine has
+  // drawn anything, so a blank screen counts as a success there. This watches
+  // the canvas itself — Boxedwine draws through a plain 2D context, so it can
+  // be read back — and reports the first frame that shows a picture. One
+  // definition of "it ran" for uploads (byo_result) and hosted titles
+  // (first_frame) alike. boot_success stays as it was so its history holds.
+  const FRAME_POLL_MS = 500;
+  const FRAME_TIMEOUT_MS = 90000;
+  const FRAME_MIN_COLOURS = 4;
+  let frameProbe = null;
+
+  function canvasColours(canvas) {
+    try {
+      if (!canvas || !canvas.width || !canvas.height) return 0;
+      if (!frameProbe) {
+        frameProbe = document.createElement("canvas");
+        frameProbe.width = 64;
+        frameProbe.height = 48;
+      }
+      const ctx = frameProbe.getContext("2d", { willReadFrequently: true });
+      ctx.drawImage(canvas, 0, 0, 64, 48);
+      const d = ctx.getImageData(0, 0, 64, 48).data;
+      const seen = new Set();
+      for (let i = 0; i < d.length; i += 4) seen.add((d[i] << 16) | (d[i + 1] << 8) | d[i + 2]);
+      return seen.size;
+    } catch {
+      return 0;
+    }
+  }
+
+  // The timeout counts only time the tab was on screen. A hidden tab gets no
+  // animation frames, so Boxedwine paints nothing however long it runs, and
+  // someone who switched tabs during the download would otherwise be counted
+  // as a program that never drew.
+  // Boxedwine's SDL draws through WebGL without preserveDrawingBuffer, so the
+  // buffer is cleared once each frame is composited and reading it back
+  // between paints returns a blank image. An animated game is caught mid-paint
+  // often enough to look fine; a static window like Notepad reads as empty
+  // forever. Asking for a preserved buffer on this one canvas makes the
+  // picture readable at any moment, for the watcher below and for save
+  // thumbnails alike. On an 800x600 canvas the cost is one small copy a frame.
+  function keepCanvasReadable() {
+    const proto = HTMLCanvasElement.prototype;
+    if (proto.getContext.__exeBrowserPreserve) return;
+    const original = proto.getContext;
+    const patched = function (type, attrs) {
+      if (this === els.canvas && /webgl/i.test(String(type))) {
+        attrs = Object.assign({}, attrs, { preserveDrawingBuffer: true });
+      }
+      return original.call(this, type, attrs);
+    };
+    patched.__exeBrowserPreserve = true;
+    proto.getContext = patched;
+  }
+
+  function watchFirstFrame(t0, report) {
+    let done = false;
+    let visibleMs = 0;
+    let last = performance.now();
+    const finish = (outcome) => {
+      if (done) return;
+      done = true;
+      clearInterval(timer);
+      removeEventListener("pagehide", onHide);
+      report(outcome, Math.round(performance.now() - t0));
+    };
+    const onHide = () => finish("left_early");
+    const timer = setInterval(() => {
+      const now = performance.now();
+      if (document.visibilityState === "visible") visibleMs += now - last;
+      last = now;
+      if (canvasColours(els.canvas) >= FRAME_MIN_COLOURS) finish("frame");
+      else if (visibleMs > FRAME_TIMEOUT_MS) finish("no_frame");
+    }, FRAME_POLL_MS);
+    addEventListener("pagehide", onHide);
+  }
+
+  // Everything byo_result knows about the visitor's program. Never the name:
+  // what they run is theirs, and the shape of it is all the question needs.
+  function byoParams() {
+    const isBat = /\.bat$/i.test(state.pickedExe?.path || "");
+    return Object.assign(
+      { format: isBat ? "bat" : "n/a" },
+      state.preflight || {},
+      { variant: state.selectedVariant, entry_source: state.entrySource },
+    );
+  }
+
   async function bootAndRun() {
     if (state.bootInFlight) return;
     if (!state.pickedExe) {
@@ -1107,8 +1404,13 @@
     els.runBtn.disabled = true;
     els.bootBtn.disabled = true;
     const t0 = performance.now();
+    const byo = !!state.entrySource && state.entrySource !== "hosted";
+    if (byo && state.preflight && PF_BAD.has(state.preflight.preflight)) {
+      track("preflight_action", { action: "run_anyway" });
+    }
 
     try {
+      keepCanvasReadable();
       installXhrInterceptor();
       await loadBoxedwineDeps();
       await buildAppZip();
@@ -1126,6 +1428,11 @@
       log("Launch dispatched. Canvas will activate when Wine is ready.");
       track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
       startHeartbeat();
+      watchFirstFrame(t0, (outcome, ms) => {
+        log(`First frame: ${outcome} after ${ms} ms.`);
+        if (byo) track("byo_result", Object.assign({ outcome, ttff_ms: ms }, byoParams()));
+        else track("first_frame", { outcome, ttff_ms: ms });
+      });
 
       if (WINE_PERSIST_ON) {
         // The overlays only exist once Wine has finished mounting, and how
@@ -1157,6 +1464,10 @@
       }
     } catch (err) {
       track("boot_error", { error_message: String(err.message).slice(0, 120) });
+      if (byo) {
+        track("byo_result", Object.assign(
+          { outcome: "error", ttff_ms: Math.round(performance.now() - t0) }, byoParams()));
+      }
       log("Boot failed: " + err.message, "error");
       setStatus(T("wineBootFailed", "Boot failed. See console."));
       els.bootBtn.disabled = false;
@@ -1252,6 +1563,7 @@
         state.stagedFiles.push({ path: safe, bytes });
       }
       log(`Dropped ${state.stagedFiles.length} files (flat).`);
+      state.entrySource = "files";
       refreshEntryPicker();
     }
   });
@@ -1286,6 +1598,7 @@
       state.stagedFiles.push({ path: safe, bytes });
     }
     log(`Fetched hosted app: ${state.stagedFiles.length} files staged from ${url}.`);
+    state.entrySource = "hosted";
     refreshEntryPicker();
   }
 
@@ -1294,6 +1607,8 @@
     setVariant(name) {
       if (WINE_VARIANTS[name]) {
         state.selectedVariant = name;
+        // A deliberate choice outranks one the preflight made.
+        state.autoSwitchedFrom = null;
         if (els.wineVariant) els.wineVariant.value = name;
       }
     },

@@ -780,7 +780,7 @@ const render = (p, L = EN) => `<!DOCTYPE html>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=41" />
+<link rel="stylesheet" href="/style.css?v=42" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -838,7 +838,7 @@ ${clientStringsHtml(L)}${p.iframeUrl
 <script src="/recent.js?v=7"></script>
     <script src="/pwa.js?v=2"></script>
 <script src="/embed.js?v=10"></script>
-<script src="/app.js?v=22"></script>`}
+<script src="/app.js?v=23"></script>`}
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>${NEWSLETTER_ACTION ? '\n<script src="/newsletter.js?v=1"></script>' : ""}
 </body>
 </html>
@@ -988,7 +988,7 @@ const indexHtml = `<!DOCTYPE html>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=41" />
+<link rel="stylesheet" href="/style.css?v=42" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1127,7 +1127,7 @@ const notFoundHtml = `<!DOCTYPE html>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=41" />
+<link rel="stylesheet" href="/style.css?v=42" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1282,7 +1282,7 @@ function renderCategory(cat) {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=41" />
+<link rel="stylesheet" href="/style.css?v=42" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1388,7 +1388,7 @@ const catIndexHtml = `<!DOCTYPE html>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=41" />
+<link rel="stylesheet" href="/style.css?v=42" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
@@ -1519,7 +1519,7 @@ function localisedListing(L, isHome) {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0e0d0b" />
 <link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
-<link rel="stylesheet" href="/style.css?v=41" />
+<link rel="stylesheet" href="/style.css?v=42" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
 <script>
