@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skyrise — Free Skyscraper Building Game, Play Online</title>
+<meta name="description" content="Build a skyscraper floor by floor: offices, hotels, shops and the elevators that make it all work. An original tower sim that runs in your browser and on phones." />
+<meta name="keywords" content="skyscraper game online, tower building game, tower sim browser, elevator management game, build a skyscraper free, tower tycoon game no download" />
+<link rel="canonical" href="https://exebrowser.com/run/skyrise/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/skyrise/" />
+<meta property="og:title" content="Skyrise — build and run a skyscraper in your browser" />
+<meta property="og:description" content="Offices, hotels, cinemas and the elevators that hold it together. Five stars and a landmark wedding at floor 100." />
+<meta property="og:image" content="https://exebrowser.com/run/skyrise/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://exebrowser.com/run/skyrise/screenshot.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=42" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Skyrise", "item": "https://exebrowser.com/run/skyrise/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Skyrise",
+  "url": "https://exebrowser.com/run/skyrise/",
+  "image": "https://exebrowser.com/run/skyrise/screenshot.png",
+  "description": "Build and run a skyscraper in your browser: offices, apartments, hotels, shops and cinemas, and the elevators that move everyone between them. Free, instant, no download.",
+  "applicationCategory": "Game",
+  "genre": ["Simulation","Strategy","Business"],
+  "gamePlatform": ["Web browser", "Windows", "Mac", "Linux", "Chromebook", "iOS", "Android"],
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this SimTower?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Skyrise is an original game written from scratch for this site, in the same genre as the tower simulators of the 1990s. It contains no code, art, sound or text from SimTower or Yoot Tower, and it is not affiliated with Maxis, Electronic Arts, OPeNBooK or Sega." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to download anything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Skyrise is plain JavaScript that runs in the page, with no emulator and no game files to supply. It loads in about a second and works on a phone." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are my tenants moving out?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Almost always the elevators. People get stressed waiting and riding, and a tenant who stays unhappy for a whole day leaves. Use the Mood view to find the red floors, then add cars to that lift, add a second shaft, or move busy tenants nearer the lobby." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I save my tower?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. It autosaves every game day, and the menu has a manual save and load. Saves are kept in this browser on this device." }
+    }
+  ]
+}
+</script>
+<style>
+  .game-frame {
+    width: 100%; max-width: 1100px; height: 720px; border: 0;
+    display: block; margin: 0 auto; border-radius: 8px; background: #1b2230;
+  }
+  @media (max-width: 720px) { .game-frame { height: 600px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Skyrise</nav>
+
+  <section class="card">
+    <h2>Play Skyrise — a free skyscraper sim <span class="verdict good">Runs natively — no emulator</span></h2>
+    <p><strong>Skyrise</strong> is a skyscraper you build and run, floor by floor. Rent offices, sell apartments, open hotels, shops and a cinema, then keep thousands of people moving between them with stairs, escalators and banks of elevators. Grow the population to earn stars, and at five stars top out at floor 100. <strong>No download, no sign-up, nothing to install.</strong></p>
+    <p class="muted small">Written from scratch for ExeBrowser in plain JavaScript. Every room, person and sound is drawn or synthesised by the game itself, so it starts instantly and runs on a phone. <a href="/apps/skyrise/" target="_blank" rel="noopener">Open it full screen</a>.</p>
+
+    <iframe class="game-frame" src="/apps/skyrise/" title="Skyrise — playable skyscraper simulator" loading="eager"></iframe>
+
+    <details class="controls-panel" open>
+      <summary><strong>Controls</strong> — what does what</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Action</th><th scope="col">How</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Start</th><td>Pick <strong>Build</strong> and drag a ground-floor lobby first. Nothing else can be placed until it exists.</td></tr>
+            <tr><th scope="row">Build</th><td>Choose a tool in the bottom bar, then click (or drag, for rows and lift shafts) in the tower. Cost and the star needed show on each tool.</td></tr>
+            <tr><th scope="row">Move around</th><td>Drag the view, scroll the wheel, or use + and −. On a phone, drag with one finger and pinch to zoom.</td></tr>
+            <tr><th scope="row">Add lift cars</th><td><strong>Lifts</strong>, then click an existing shaft. <strong>Adjust lifts</strong> stretches a shaft or switches floors on and off.</td></tr>
+            <tr><th scope="row">Inspect</th><td><strong>Inspect</strong>, then click a room, a person or a lift to see how they're doing and change rent.</td></tr>
+            <tr><th scope="row">Find problems</th><td><strong>Mood</strong>, <strong>Rent</strong> and <strong>Hotel</strong> on the map panel colour the tower by tenant mood, price and dirty rooms.</td></tr>
+            <tr><th scope="row">Speed / save</th><td>Pause and speed buttons top right. Save and load are in the ☰ menu.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <figure class="shot">
+      <img src="/run/skyrise/screenshot.png" alt="Skyrise running in the browser — a mixed tower of offices, hotel rooms, a cinema and shops at dusk, with three lift shafts" loading="lazy" />
+      <figcaption class="muted small">A mid-game tower at dusk, running in a browser tab on this page.</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>What it is</h2>
+    <p>Skyrise is a tower simulator: a side-on cross-section of a building where every tenant is a few dozen little people with a schedule. Office workers arrive at eight, crowd the lifts at lunch and leave at five. Hotel guests check in in the evening and need their rooms cleaned in the morning. Cinema crowds spill into the shops nearby. The building is only as good as the transport that connects it, so the real game is designing the elevators.</p>
+    <p>Stars unlock as the population grows: hotels and housekeeping at two stars; escalators, express lifts, restaurants, shops, a cinema and parking at three; then a metro station, and finally a landmark at the top of a hundred-storey tower. On the way you'll handle fires, bomb threats, a very important guest who judges your suites, and rooms that turn infested if nobody cleans them.</p>
+  </section>
+
+  <section class="card">
+    <h2>Getting a tower off the ground</h2>
+    <ul>
+      <li><strong>Lobby, then a lift.</strong> Offices and apartments only let if people can reach them from the lobby. A shaft from floor 1 up through your first floors comes before almost anything else.</li>
+      <li><strong>Offices pay; apartments sell.</strong> Offices pay rent every quarter. An apartment pays once when it sells, and you give the money back if the owners leave.</li>
+      <li><strong>Watch the queues at eight and noon.</strong> That's when stress builds. Add cars to a busy shaft before adding another shaft.</li>
+      <li><strong>Sky lobbies every 15 floors.</strong> Express lifts stop only at lobby floors, so a tall tower is a set of express trunks with local lifts above each sky lobby.</li>
+      <li><strong>Keep noisy things away from bedrooms.</strong> Restaurants and shops next to apartments or hotel rooms annoy the people living there.</li>
+      <li><strong>Use the Mood view.</strong> It shows exactly which tenants are about to leave, before they do.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details open>
+      <summary>Is this SimTower?</summary>
+      <p>No. Skyrise is an original game written from scratch for this site, in the same genre as the tower simulators of the 1990s such as <em>SimTower</em> (1994) and <em>Yoot Tower</em> (1998). It contains no code, art, sound or text from either, and it is not affiliated with Maxis, Electronic Arts, OPeNBooK or Sega. It was built from a written description of how the genre plays, kept separate from the original games. See the <a href="/apps/skyrise/NOTICE.md">provenance notice</a>.</p>
+    </details>
+    <details>
+      <summary>Do I need to download anything?</summary>
+      <p>No. Skyrise is plain JavaScript that runs in the page, with no emulator and no game files to supply. It loads in about a second and works on a phone.</p>
+    </details>
+    <details>
+      <summary>Why are my tenants moving out?</summary>
+      <p>Almost always the elevators. People get stressed waiting and riding, and a tenant who stays unhappy for a whole day leaves. Use the <strong>Mood</strong> view to find the red floors, then add cars to that lift, add a second shaft, or move busy tenants nearer the lobby.</p>
+    </details>
+    <details>
+      <summary>Can I save my tower?</summary>
+      <p>Yes. It autosaves every game day, and the ☰ menu has a manual save and load. Saves are kept in this browser on this device.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>More you can play in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/parkhaven/"><span class="lc-title">Parkhaven</span><span class="lc-desc">Build a theme park and design your own coasters.</span></a></li>
+      <li><a class="link-card" href="/run/micropolis/"><span class="lc-title">Micropolis</span><span class="lc-desc">The open-source city simulator — instant play.</span></a></li>
+      <li><a class="link-card" href="/run/openttd/"><span class="lc-title">OpenTTD</span><span class="lc-desc">Build a transport empire — open-source, instant play.</span></a></li>
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The XP table — open-source build, instant play.</span></a></li>
+      <li><a class="link-card" href="/run/"><span class="lc-title">All games &amp; apps</span><span class="lc-desc">Browse everything you can play or run here.</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">Games that need nothing installed</span><span class="lc-desc">The full list of titles that run on a locked-down school or work network.</span></a></li>
+    </ul>
+  </section>
+
+  <section class="card" id="embed-pointer">
+    <h2>Want a game like this on your own site?</h2>
+    <p>Eleven of the games here we wrote from scratch, and those are free for anyone to
+    put on their own page: one line of HTML, no account, no permission, no attribution
+    beyond a credit line.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">See the games you can embed</a></p>
+  </section>
+  <script src="/embed-pointer.js?v=1"></script>
+
+  <section class="card" id="embed-offer" data-slug="skyrise" data-name="Skyrise">
+    <h2>Put Skyrise on your own site</h2>
+    <p>This one is ours — written from scratch, not emulated — so you are welcome to
+    embed it anywhere, free, with no permission needed. Paste this where you want it:</p>
+    <textarea readonly rows="4" spellcheck="false" aria-label="Embed code for Skyrise"></textarea>
+    <p><button type="button" class="cta-btn">Copy embed code</button></p>
+    <p class="muted small">Keeping the credit line is the only thing we ask. Games we
+    host but did not write are not offered for embedding, because those are not ours
+    to hand on.</p>
+  </section>
+  <script src="/embed-snippet.js?v=1"></script>
+</main>
+
+<footer>
+  <p>Skyrise is an original game by ExeBrowser, MIT-licensed. SimTower is a trademark of Electronic Arts; Yoot Tower and The Tower are trademarks of their owners. They are mentioned here only to describe the genre; Skyrise is not affiliated with or endorsed by any of them.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/dos-emulator/">DOS emulator</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/play-events.js?v=2"></script>
+<script src="/pwa.js?v=2"></script>
+</body>
+</html>

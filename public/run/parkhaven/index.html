@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Parkhaven — Free Theme Park Game with a Coaster Builder</title>
+<meta name="description" content="Build a theme park in your browser: lay paths, place rides, design your own roller coaster piece by piece and keep thousands of guests happy. Free and original." />
+<meta name="keywords" content="theme park game online, roller coaster builder browser, build a theme park free, coaster designer game, amusement park sim no download, park management game" />
+<link rel="canonical" href="https://exebrowser.com/run/parkhaven/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/parkhaven/" />
+<meta property="og:title" content="Parkhaven — build a theme park and design coasters, free" />
+<meta property="og:description" content="Paths, rides, stalls, staff and a piece-by-piece coaster builder with real ride ratings. Runs in your browser." />
+<meta property="og:image" content="https://exebrowser.com/run/parkhaven/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://exebrowser.com/run/parkhaven/screenshot.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=42" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593636324187853" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Parkhaven", "item": "https://exebrowser.com/run/parkhaven/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Parkhaven",
+  "url": "https://exebrowser.com/run/parkhaven/",
+  "image": "https://exebrowser.com/run/parkhaven/screenshot.png",
+  "description": "Build and run a theme park in your browser: paths, flat rides, stalls, staff and roller coasters you design piece by piece. Free, instant, no download.",
+  "applicationCategory": "Game",
+  "genre": ["Simulation","Strategy","Business"],
+  "gamePlatform": ["Web browser", "Windows", "Mac", "Linux", "Chromebook", "iOS", "Android"],
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this RollerCoaster Tycoon?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Parkhaven is an original game written from scratch for this site, in the same genre as the theme-park simulators of the 1990s and 2000s. It contains no code, art, sound or text from RollerCoaster Tycoon or OpenRCT2, and it is not affiliated with Chris Sawyer, Atari or Frontier." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to download anything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Parkhaven is plain JavaScript and WebGL that runs in the page, with no emulator and no game files to supply. It needs a browser with WebGL 2, which every current desktop and phone browser has." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I build a roller coaster?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Open Rides, choose the Steel Coaster, and place its station. The builder then adds track one piece at a time: straights, slopes, curves, a lift hill, brakes and a loop. Bring the track back round to the station, run a test, connect the entrance and exit to a path, and open it. The test measures speed, G-forces, drops and airtime, which set the ride's excitement, intensity and nausea." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I save my park?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. It autosaves every game month, and the menu has three save slots. Saves are kept in this browser on this device." }
+    }
+  ]
+}
+</script>
+<style>
+  .game-frame {
+    width: 100%; max-width: 1100px; height: 720px; border: 0;
+    display: block; margin: 0 auto; border-radius: 8px; background: #6f9c55;
+  }
+  @media (max-width: 720px) { .game-frame { height: 600px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Parkhaven</nav>
+
+  <section class="card">
+    <h2>Play Parkhaven — a free theme park sim <span class="verdict good">Runs natively — no emulator</span></h2>
+    <p><strong>Parkhaven</strong> is a theme park you build and run. Lay paths from the gate, place carousels, teacups, a swingboat and a drop tower, add food stalls and restrooms, then design your own <strong>roller coaster piece by piece</strong>, with lift hills, banked turns and a loop. Keep guests fed, happy and not too queasy, and hit each park's goal. <strong>No download, no sign-up, nothing to install.</strong></p>
+    <p class="muted small">Written from scratch for ExeBrowser in JavaScript and WebGL. Every model and sound is generated by the game itself, so it starts instantly and runs on a phone. <a href="/apps/parkhaven/" target="_blank" rel="noopener">Open it full screen</a>.</p>
+
+    <iframe class="game-frame" src="/apps/parkhaven/" title="Parkhaven — playable theme park simulator" loading="eager"></iframe>
+
+    <details class="controls-panel" open>
+      <summary><strong>Controls</strong> — what does what</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Action</th><th scope="col">How</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Start</th><td>Pick a park from the menu: three with a goal to reach, or the open sandbox.</td></tr>
+            <tr><th scope="row">Paths</th><td><strong>Path</strong>, then click tiles, or drag for a straight run. <strong>Queue</strong> lays a queue line up to a ride entrance.</td></tr>
+            <tr><th scope="row">Rides &amp; stalls</th><td><strong>Rides</strong>, pick one, place it, then place its entrance and exit beside it. Open it from its window.</td></tr>
+            <tr><th scope="row">Coasters</th><td>Place the station, then add pieces in the builder until the track returns to the station. Test it, then open it.</td></tr>
+            <tr><th scope="row">Move the view</th><td>Right-drag, or WASD / arrow keys. Wheel to zoom, Q / E to rotate. On a phone: drag, pinch, tap.</td></tr>
+            <tr><th scope="row">Rotate what you place</th><td>R</td></tr>
+            <tr><th scope="row">Speed</th><td>Space pauses; 1–4 set the speed.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <figure class="shot">
+      <img src="/run/parkhaven/screenshot.png" alt="Parkhaven running in the browser — a red steel roller coaster with a vertical loop beside its station, with its ride window showing excitement, intensity and nausea ratings" loading="lazy" />
+      <figcaption class="muted small">A home-built looping coaster and its test results, running in a browser tab on this page.</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>What it is</h2>
+    <p>Parkhaven is a theme park simulator. Every guest who walks through the gate has a budget, a stomach, a bladder and an opinion on how intense a ride they can take. They wander your paths, pick rides, queue, spend money on food and souvenirs, drop litter, get lost, and tell you what they think. Keep them happy and your park rating rises, which brings more of them through the gate.</p>
+    <p>The heart of it is the coaster builder. Track goes down one piece at a time, the train runs on simple physics, and a test run measures top speed, G-forces, drops, airtime and inversions. Those numbers become the ride's excitement, intensity and nausea ratings, and they decide who will ride it and what they'll pay. Around that sit flat rides, go-karts, a log flume, stalls, handymen, mechanics, security guards and entertainers, breakdowns and inspections, weather, research and marketing.</p>
+  </section>
+
+  <section class="card">
+    <h2>Getting a park off the ground</h2>
+    <ul>
+      <li><strong>Path first, from the gate.</strong> Guests only reach what a path connects. Every ride needs its entrance and exit joined to a path.</li>
+      <li><strong>Start gentle.</strong> A carousel and teacups suit almost everyone. Big rides come later, once you can afford them and the guests can take them.</li>
+      <li><strong>Feed them, and put toilets near the food.</strong> Hungry, thirsty guests who can't find a restroom leave unhappy.</li>
+      <li><strong>Hire a handyman early.</strong> Litter and vomit on paths drag the park rating down faster than anything else.</li>
+      <li><strong>Test before you open.</strong> A coaster that's too intense sits empty. Gentler curves and lower drops bring intensity down; a loop adds excitement.</li>
+      <li><strong>Price by value.</strong> A ride's window shows what guests think it's worth. Charge just under that.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details open>
+      <summary>Is this RollerCoaster Tycoon?</summary>
+      <p>No. Parkhaven is an original game written from scratch for this site, in the same genre as theme-park simulators such as <em>RollerCoaster Tycoon</em> (1999). It contains no code, art, sound or text from it or from OpenRCT2, and it is not affiliated with Chris Sawyer, Atari or Frontier. It was built from a written description of how the genre plays, kept separate from the original games. See the <a href="/apps/parkhaven/NOTICE.md">provenance notice</a>.</p>
+    </details>
+    <details>
+      <summary>Do I need to download anything?</summary>
+      <p>No. Parkhaven is plain JavaScript and WebGL that runs in the page, with no emulator and no game files to supply. It needs a browser with WebGL 2, which every current desktop and phone browser has.</p>
+    </details>
+    <details>
+      <summary>How do I build a roller coaster?</summary>
+      <p>Open <strong>Rides</strong>, choose the <strong>Steel Coaster</strong>, and place its station. The builder then adds track one piece at a time: straights, slopes, curves, a lift hill, brakes and a loop. Bring the track back round to the station, run a test, connect the entrance and exit to a path, and open it. The test measures speed, G-forces, drops and airtime, which set the ride's excitement, intensity and nausea.</p>
+    </details>
+    <details>
+      <summary>Can I save my park?</summary>
+      <p>Yes. It autosaves every game month, and the menu has three save slots. Saves are kept in this browser on this device.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>More you can play in your browser</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/skyrise/"><span class="lc-title">Skyrise</span><span class="lc-desc">Build a skyscraper and keep its elevators moving.</span></a></li>
+      <li><a class="link-card" href="/run/micropolis/"><span class="lc-title">Micropolis</span><span class="lc-desc">The open-source city simulator — instant play.</span></a></li>
+      <li><a class="link-card" href="/run/openttd/"><span class="lc-title">OpenTTD</span><span class="lc-desc">Build a transport empire — open-source, instant play.</span></a></li>
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">The XP table — open-source build, instant play.</span></a></li>
+      <li><a class="link-card" href="/run/"><span class="lc-title">All games &amp; apps</span><span class="lc-desc">Browse everything you can play or run here.</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">Games that need nothing installed</span><span class="lc-desc">The full list of titles that run on a locked-down school or work network.</span></a></li>
+    </ul>
+  </section>
+
+  <section class="card" id="embed-pointer">
+    <h2>Want a game like this on your own site?</h2>
+    <p>Eleven of the games here we wrote from scratch, and those are free for anyone to
+    put on their own page: one line of HTML, no account, no permission, no attribution
+    beyond a credit line.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">See the games you can embed</a></p>
+  </section>
+  <script src="/embed-pointer.js?v=1"></script>
+
+  <section class="card" id="embed-offer" data-slug="parkhaven" data-name="Parkhaven">
+    <h2>Put Parkhaven on your own site</h2>
+    <p>This one is ours — written from scratch, not emulated — so you are welcome to
+    embed it anywhere, free, with no permission needed. Paste this where you want it:</p>
+    <textarea readonly rows="4" spellcheck="false" aria-label="Embed code for Parkhaven"></textarea>
+    <p><button type="button" class="cta-btn">Copy embed code</button></p>
+    <p class="muted small">Keeping the credit line is the only thing we ask. Games we
+    host but did not write are not offered for embedding, because those are not ours
+    to hand on.</p>
+  </section>
+  <script src="/embed-snippet.js?v=1"></script>
+</main>
+
+<footer>
+  <p>Parkhaven is an original game by ExeBrowser, MIT-licensed. RollerCoaster Tycoon is a trademark of its owners. It is mentioned here only to describe the genre; Parkhaven is not affiliated with or endorsed by Chris Sawyer, Atari, Frontier or the OpenRCT2 project.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/dos-emulator/">DOS emulator</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/play-events.js?v=2"></script>
+<script src="/pwa.js?v=2"></script>
+</body>
+</html>

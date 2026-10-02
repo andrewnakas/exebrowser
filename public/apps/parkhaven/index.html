@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="description" content="Parkhaven - build and run your own theme park in the browser. Lay paths, build rides and coasters, keep your guests happy.">
+<meta name="theme-color" content="#2f3a4a">
+<title>Parkhaven</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="gl"></canvas>
+  <canvas id="ov"></canvas>
+  <header id="hud"></header>
+  <div id="windows"></div>
+  <div id="bottom">
+    <div id="ticker" style="display:none"></div>
+    <div id="toolhint" style="display:none"></div>
+    <nav id="toolbar" aria-label="Tools"></nav>
+  </div>
+  <div id="toast"></div>
+  <div id="modal"></div>
+  <div id="fatal"><div class="mbox"><h1>Parkhaven</h1><p></p></div></div>
+  <noscript><div class="mbox">Parkhaven needs JavaScript.</div></noscript>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

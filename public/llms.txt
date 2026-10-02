@@ -4,7 +4,7 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-50 titles are hosted and playable instantly. Everything hosted here is
+52 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
@@ -60,6 +60,8 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Duke Nukem II](https://exebrowser.com/run/duke-nukem-2/): Apogee's 1993 VGA platformer: the shareware episode, in your browser, no download.
 - [Wacky Wheels](https://exebrowser.com/run/wacky-wheels/): Apogee's 1994 kart racer with animal drivers and hedgehog ammo, in your browser.
 - [Ken's Labyrinth](https://exebrowser.com/run/kens-labyrinth/): Ken Silverman's 1993 first-person maze shooter — the whole game, released free by its author.
+- [Skyrise](https://exebrowser.com/run/skyrise/): Offices, hotels, cinemas and the elevators that hold it together. Five stars and a landmark wedding at floor 100.
+- [Parkhaven](https://exebrowser.com/run/parkhaven/): Paths, rides, stalls, staff and a piece-by-piece coaster builder with real ride ratings. Runs in your browser.
 
 ## Compatibility guides (bring your own copy)
 

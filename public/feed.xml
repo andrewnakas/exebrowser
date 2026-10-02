@@ -5,8 +5,22 @@
     <link>https://exebrowser.com/</link>
     <description>Classic DOS and Windows games you can play free in your browser, plus write-ups on how the runtimes work.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://exebrowser.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New game: Skyrise</title>
+      <link>https://exebrowser.com/run/skyrise/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/skyrise/</guid>
+      <description>Offices, hotels, cinemas and the elevators that hold it together. Five stars and a landmark wedding at floor 100.</description>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Parkhaven</title>
+      <link>https://exebrowser.com/run/parkhaven/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/parkhaven/</guid>
+      <description>Paths, rides, stalls, staff and a piece-by-piece coaster builder with real ride ratings. Runs in your browser.</description>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>New game: Duke Nukem 3D</title>
       <link>https://exebrowser.com/run/duke-nukem-3d/</link>
@@ -145,20 +159,6 @@
       <link>https://exebrowser.com/run/freecell-open/</link>
       <guid isPermaLink="true">https://exebrowser.com/run/freecell-open/</guid>
       <description>The FreeCell you remember — same deal numbers as Windows, supermoves, unlimited undo.</description>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Spider Solitaire</title>
-      <link>https://exebrowser.com/run/spider-open/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/spider-open/</guid>
-      <description>The Spider Solitaire you remember — pick your difficulty, two decks, unlimited undo.</description>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: JezzBall</title>
-      <link>https://exebrowser.com/run/jezzball-open/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/jezzball-open/</guid>
-      <description>Build walls, trap the balls, clear 75% of the field. The Entertainment Pack classic.</description>
       <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
     </item>
     <item>

@@ -48,12 +48,20 @@ const games = pages
 // webmaster actually cares about and the strongest thing this offer has.
 function kb(p) {
   const dir = resolve(ROOT, p.appUrl.replace(/^\//, "").replace(/\/[^/]*$/, ""));
-  let total = 0;
-  try {
-    for (const f of readdirSync(dir)) {
-      try { total += statSync(resolve(dir, f)).size; } catch { /* skip */ }
+  // Recursive: Skyrise and Parkhaven keep their code in js/, and a flat read
+  // reported them as a few KB when they are a few hundred.
+  const walk = (d) => {
+    let total = 0;
+    for (const f of readdirSync(d)) {
+      try {
+        const st = statSync(resolve(d, f));
+        total += st.isDirectory() ? walk(resolve(d, f)) : st.size;
+      } catch { /* skip */ }
     }
-  } catch { return null; }
+    return total;
+  };
+  let total;
+  try { total = walk(dir); } catch { return null; }
   return Math.round(total / 1024);
 }
 const sized = games.map((p) => ({ p, kb: kb(p), tier: embedTier(p) }));
@@ -97,7 +105,7 @@ const faq = [
   { q: "Why aren't DOOM, SkiFree and the rest of the catalogue on this list?",
     a: "Because they aren't ours to give. We host them under shareware and freeware licences that let us run them on this site, which is not the same as a right to sub-license them to anybody else. Offering them for embedding would be handing out permission we don't have. Space Cadet is on the list precisely because that problem was solved rather than ignored: the engine is MIT and the data files were rebuilt from scratch and dedicated to the public domain, so no Microsoft files are involved." },
   { q: "Will this slow my page down?",
-    a: `Not if it is below the fold. Every frame is lazy-loaded, so nothing is fetched until a visitor scrolls it into view. The ${games.length - heavy.length} hand-written games are tiny — the largest is ${biggest} KB, less than one photograph — with no framework and no third-party player. Space Cadet is the one to think about: it is a WebAssembly pinball engine at roughly ${(heavy[0] ? heavy[0].kb / 1024 : 0).toFixed(1)} MB, which is fine lazily below the fold and is not what you want at the top of a landing page.` },
+    a: `Not if it is below the fold. Every frame is lazy-loaded, so nothing is fetched until a visitor scrolls it into view. The ${games.length - heavy.length} hand-written games are small — the largest is ${sizeLabel(biggest)}, less than one phone photograph — with no framework and no third-party player. Space Cadet is the one to think about: it is a WebAssembly pinball engine at roughly ${(heavy[0] ? heavy[0].kb / 1024 : 0).toFixed(1)} MB, which is fine lazily below the fold and is not what you want at the top of a landing page.` },
   { q: "Does it work on mobile?",
     a: "The hand-written games all have touch controls and the frame is responsive, so it fills whatever width you give it up to 760px. Space Cadet is a keyboard game by design — it plays best on a desktop, and on a phone it will load and render but the flippers want a keyboard. Set your own width and height on the iframe if that suits your layout better." },
   { q: "Do you track my visitors?",
@@ -205,7 +213,7 @@ ${faqLd}
   <section class="card">
     <h2>Free games you can put on your own site</h2>
     <p>These ${games.length} games are ours to give away, and we do. Copy one <code>&lt;iframe&gt;</code>, paste it into your page, done. <strong>No API key, no sign-up, no advertising, no tracking, no fee.</strong></p>
-    <p>${games.length - heavy.length} of them were written from scratch for this site rather than emulated, and they are small enough not to matter: the largest is <strong>${biggest} KB</strong>, less than a single photograph. There is no framework underneath and no third-party player phoning home.</p>
+    <p>${games.length - heavy.length} of them were written from scratch for this site rather than emulated, and they are small enough not to matter: the largest is <strong>${sizeLabel(biggest)}</strong>, less than a single phone photograph. There is no framework underneath and no third-party player phoning home.</p>
     <p><strong>3D Pinball Space Cadet is the exception, and worth stating plainly.</strong> It is a WebAssembly build of <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">k4zmu2a's MIT-licensed engine</a> running <a href="https://github.com/andrewnakas/open-cadet" target="_blank" rel="noopener">replacement game data we wrote and dedicated to the public domain</a>, so it needs no Microsoft files and is free to hand on — but it is a real pinball engine and the frame is about <strong>${(heavy[0] ? heavy[0].kb / 1024 : 0).toFixed(1)} MB</strong>, not kilobytes. Every frame on this page is <code>loading="lazy"</code>, so nothing is fetched until a visitor actually scrolls to it; budget for it anyway if you are putting it above the fold.</p>
     <p class="muted small">The only condition is the credit line that comes with the snippet. Leave it in place and you are square with us.</p>
 

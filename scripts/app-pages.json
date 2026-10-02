@@ -10559,5 +10559,71 @@
     ],
     "licenseNote": "<p class=\"muted small\">Ken's Labyrinth was released free in full by its author, Ken Silverman, in 1999 with Epic MegaGames' permission. Every file of his release is included. Provenance: <a href=\"/apps/kens-labyrinth/NOTICE.md\">/apps/kens-labyrinth/NOTICE.md</a>.</p>",
     "screenshot": true
+  },
+  {
+    "slug": "skyrise",
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "updated": "2026-10-02",
+    "addedDate": "2026-10-02",
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "genre": [
+      "Simulation",
+      "Strategy",
+      "Business"
+    ],
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "appName": "Skyrise",
+    "title": "Skyrise — Free Skyscraper Building Game, Play Online",
+    "description": "Build a skyscraper floor by floor: offices, hotels, shops and the elevators that make it all work. An original tower sim that runs in your browser and on phones.",
+    "keywords": "skyscraper game online, tower building game, tower sim browser, elevator management game, build a skyscraper free, tower tycoon game no download",
+    "ogTitle": "Skyrise — build and run a skyscraper in your browser",
+    "ogDescription": "Offices, hotels, cinemas and the elevators that hold it together. Five stars and a landmark wedding at floor 100.",
+    "crumb": "Play Skyrise",
+    "h1": "Play Skyrise — a free skyscraper sim",
+    "appUrl": "/apps/skyrise/",
+    "screenshot": true,
+    "rank": 4.5,
+    "fullyFree": "Written from scratch for ExeBrowser — original code, art and sound, MIT-licensed. No original game files needed."
+  },
+  {
+    "slug": "parkhaven",
+    "skipGenerate": true,
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "hostable": true,
+    "updated": "2026-10-02",
+    "addedDate": "2026-10-02",
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "genre": [
+      "Simulation",
+      "Strategy",
+      "Business"
+    ],
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "appName": "Parkhaven",
+    "title": "Parkhaven — Free Theme Park Game with a Coaster Builder",
+    "description": "Build a theme park in your browser: lay paths, place rides, design your own roller coaster piece by piece and keep thousands of guests happy. Free and original.",
+    "keywords": "theme park game online, roller coaster builder browser, build a theme park free, coaster designer game, amusement park sim no download, park management game",
+    "ogTitle": "Parkhaven — build a theme park and design coasters, free",
+    "ogDescription": "Paths, rides, stalls, staff and a piece-by-piece coaster builder with real ride ratings. Runs in your browser.",
+    "crumb": "Play Parkhaven",
+    "h1": "Play Parkhaven — a free theme park sim",
+    "appUrl": "/apps/parkhaven/",
+    "screenshot": true,
+    "rank": 4.6,
+    "fullyFree": "Written from scratch for ExeBrowser — original code, 3D models and sound, MIT-licensed. No original game files needed."
   }
 ]

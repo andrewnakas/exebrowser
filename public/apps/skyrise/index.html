@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Skyrise</title>
+<meta name="description" content="Skyrise: build a skyscraper floor by floor, wire up its lifts, and keep tenants happy enough to earn five stars. An original browser game.">
+<meta name="theme-color" content="#151a28">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="bar">
+    <button id="starsBtn" class="stars" title="Star rating: click to see what the next star needs"><span id="stars"></span></button>
+    <div class="when"><span id="clock">00:00</span><span id="date"></span></div>
+    <div class="money"><span id="funds"></span><span id="pop"></span></div>
+    <div id="speed" role="group" aria-label="Speed">
+      <button data-speed="0" title="Pause (Space)">❚❚</button>
+      <button data-speed="1" title="Normal (1)">▶</button>
+      <button data-speed="2" title="Fast (2)">▶▶</button>
+      <button data-speed="4" title="Faster (3)">▶▶▶</button>
+      <button data-speed="8" title="Very fast (4)">⏩</button>
+    </div>
+    <button id="finBtn" class="iconbtn" title="Finances">$</button>
+    <button id="menuBtn" class="iconbtn" title="Menu">☰</button>
+  </header>
+  <div id="ticker" aria-live="polite"></div>
+  <div id="stage">
+    <canvas id="view"></canvas>
+    <aside id="mini">
+      <canvas id="minimap" width="150" height="230"></canvas>
+      <div id="overlays" role="group" aria-label="Map overlays">
+        <button data-ov="none" class="on" title="Plain view">Map</button>
+        <button data-ov="eval" title="Tenant happiness (pauses)">Mood</button>
+        <button data-ov="price" title="Rent levels (pauses)">Rent</button>
+        <button data-ov="hotel" title="Hotel housekeeping (pauses)">Hotel</button>
+      </div>
+      <button id="miniToggle" title="Hide map">▾</button>
+    </aside>
+    <div id="zoom"><button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button></div>
+    <div id="hint"></div>
+    <div id="previewBar" class="hidden"><span id="previewInfo">Preview</span><button id="previewEnd" class="primary">Resume the real tower</button></div>
+  </div>
+  <div id="toolopts"></div>
+  <nav id="toolbar"></nav>
+  <div id="flyout" class="hidden"></div>
+  <div id="modal" class="hidden"><div id="panel"></div></div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

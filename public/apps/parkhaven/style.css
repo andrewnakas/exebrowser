@@ -1,0 +1,137 @@
+/* Parkhaven - interface styles */
+:root {
+  --ink: #23303d; --muted: #6c7884; --panel: #fbf8f1; --panel2: #f1ebdf; --line: #ded5c4;
+  --accent: #2f8f83; --accent2: #e58a3a; --bad: #d1493a; --good: #2f9a59; --hud: rgba(31, 40, 52, 0.88);
+  --r: 10px; --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #9ec7e4; font-family: var(--font); color: var(--ink); -webkit-text-size-adjust: 100%; }
+#app { position: fixed; inset: 0; }
+#gl, #ov { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#ov { touch-action: none; cursor: crosshair; }
+button { font: inherit; color: inherit; cursor: pointer; }
+
+/* ---------- HUD ---------- */
+#hud { position: absolute; top: 0; left: 0; right: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px;
+  padding: 6px 10px; padding-top: max(6px, env(safe-area-inset-top)); background: var(--hud); color: #f4f1ea; font-size: 14px; z-index: 5; }
+.hcell { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+.hcell svg { width: 16px; height: 16px; opacity: .85; }
+#h-cash { font-weight: 700; color: #ffe27a; }
+#h-cash.neg { color: #ff8a7a; }
+#h-rating .lbl { opacity: .7; }
+.bar { display: inline-block; width: 60px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.18); overflow: hidden; vertical-align: middle; }
+.bar i { display: block; height: 100%; border-radius: 4px; }
+.speeds, .cam { display: flex; gap: 2px; margin-left: auto; }
+.cam { margin-left: 0; }
+.speeds button, .cam button, .hbtn { background: rgba(255,255,255,.1); border: 0; color: #f4f1ea; padding: 4px 8px; border-radius: 6px; min-width: 32px; font-size: 13px; }
+.speeds button.on { background: var(--accent); }
+.hbtn { position: relative; }
+#h-unread { position: absolute; top: -4px; right: -4px; background: var(--accent2); border-radius: 8px; font-size: 10px; padding: 0 4px; }
+#h-unread:empty { display: none; }
+
+/* ---------- bottom: ticker, hint, toolbar ---------- */
+#bottom { position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; display: flex; flex-direction: column; align-items: stretch; pointer-events: none; }
+#bottom > * { pointer-events: auto; }
+#ticker { align-self: flex-start; margin: 0 8px 6px; max-width: min(640px, calc(100% - 16px)); background: rgba(251, 248, 241, .94); border-left: 4px solid var(--accent);
+  padding: 6px 10px; border-radius: 8px; font-size: 13px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.15); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#ticker.k-warn { border-color: var(--accent2); } #ticker.k-bad { border-color: var(--bad); } #ticker.k-good { border-color: var(--good); }
+#toolhint { align-self: center; margin: 0 8px 6px; background: rgba(35, 48, 61, .9); color: #f4f1ea; padding: 6px 10px; border-radius: 8px; font-size: 13px; display: flex; gap: 8px; align-items: center; max-width: calc(100% - 16px); }
+#toolhint button { background: var(--accent); border: 0; color: #fff; border-radius: 6px; padding: 3px 10px; }
+#toolbar { display: flex; gap: 2px; padding: 6px 6px; padding-bottom: max(6px, env(safe-area-inset-bottom)); background: var(--hud); overflow-x: auto; scrollbar-width: none; justify-content: center; }
+#toolbar::-webkit-scrollbar { display: none; }
+#toolbar button { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 2px; background: transparent; border: 0; color: #e9e4d8; padding: 4px 8px; border-radius: 8px; min-width: 54px; font-size: 11px; }
+#toolbar button.on { background: var(--accent); color: #fff; }
+#toolbar button:hover { background: rgba(255,255,255,.12); }
+
+/* ---------- windows ---------- */
+#windows { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
+.win { position: absolute; width: 340px; max-height: calc(100% - 150px); display: flex; flex-direction: column; background: var(--panel); border-radius: var(--r);
+  box-shadow: 0 10px 30px rgba(20, 30, 40, .3); pointer-events: auto; font-size: 13.5px; border: 1px solid var(--line); }
+.win.wide { width: 440px; }
+.win header { display: flex; align-items: center; justify-content: space-between; padding: 8px 8px 8px 12px; background: var(--panel2); border-radius: var(--r) var(--r) 0 0; cursor: grab; touch-action: none; }
+.win h2 { font-size: 15px; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.win .x { border: 0; background: transparent; font-size: 22px; line-height: 1; padding: 0 6px; color: var(--muted); }
+.win .body { padding: 10px 12px 12px; overflow-y: auto; }
+.win h3 { font-size: 13px; margin: 12px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.win p { margin: 6px 0; }
+.row { display: flex; gap: 6px; align-items: center; margin: 6px 0; flex-wrap: wrap; }
+.row.spread { justify-content: space-between; }
+.win button, .mbox button { background: #fff; border: 1px solid var(--line); border-radius: 7px; padding: 6px 10px; }
+.win button:hover, .mbox button:hover { border-color: var(--accent); }
+.win button:disabled { opacity: .45; cursor: default; }
+button.primary { background: var(--accent) !important; color: #fff; border-color: var(--accent) !important; }
+button.danger { color: var(--bad); }
+button.sm { padding: 3px 9px; min-width: 30px; }
+button.link { border: 0 !important; background: transparent !important; padding: 0 !important; color: var(--accent); text-align: left; }
+.segs { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.segs.wrap { flex-wrap: wrap; }
+.segs .seg { border: 0 !important; border-radius: 0 !important; padding: 6px 12px; display: flex; flex-direction: column; align-items: center; }
+.segs .seg small { color: var(--muted); font-size: 10px; }
+.segs .seg.on { background: var(--accent) !important; color: #fff; }
+.segs .seg.on small { color: #e6f4f2; }
+.tabs { display: flex; gap: 2px; margin: 8px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.tabs button { border: 0 !important; border-radius: 6px 6px 0 0 !important; background: transparent !important; padding: 6px 10px; color: var(--muted); }
+.tabs button.on { color: var(--ink); box-shadow: inset 0 -2px var(--accent); }
+.state { font-weight: 600; }
+.warn { color: var(--accent2); font-weight: 600; }
+.bad { color: var(--bad); } .good { color: var(--good); } .muted { color: var(--muted); }
+table.kv { width: 100%; border-collapse: collapse; margin: 6px 0; }
+table.kv th { text-align: left; font-weight: 500; color: var(--muted); padding: 3px 0; width: 48%; }
+table.kv td { padding: 3px 0; text-align: right; }
+.scrollx { overflow-x: auto; }
+table.fin { border-collapse: collapse; font-size: 12px; width: 100%; }
+table.fin th, table.fin td { padding: 3px 5px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--line); }
+table.fin td:first-child { text-align: left; }
+table.fin tr.tot td { font-weight: 700; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+.card { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; padding: 8px 10px !important; }
+.card span { color: var(--accent); font-weight: 600; font-size: 12px; }
+.card small { color: var(--muted); font-size: 11.5px; line-height: 1.3; }
+.card.locked { opacity: .55; }
+ul.list { list-style: none; padding: 0; margin: 4px 0; }
+ul.list li { padding: 4px 0; border-bottom: 1px dashed var(--line); }
+ul.notices li small { color: var(--muted); margin-right: 4px; }
+ul.notices li.k-bad { color: var(--bad); } ul.notices li.k-warn { color: #b8661e; }
+ul.thoughts { margin: 4px 0; padding-left: 18px; }
+ul.thoughts li { margin: 3px 0; }
+.need { display: flex; align-items: center; justify-content: space-between; margin: 3px 0; }
+.need .bar { width: 55%; height: 9px; background: #e6dfd1; }
+.graph { width: 100%; height: 50px; background: #fff; border: 1px solid var(--line); border-radius: 6px; display: block; }
+div.graph { padding: 14px; font-size: 12px; text-align: center; }
+details summary { cursor: pointer; color: var(--muted); margin: 8px 0 2px; }
+.tgrp { display: flex; align-items: center; gap: 4px; margin: 5px 0; flex-wrap: wrap; }
+.tgrp > span { width: 64px; color: var(--muted); font-size: 12px; }
+.tgrp .tb { min-width: 38px; padding: 6px 8px; font-size: 16px; line-height: 1; }
+.tgrp .tb.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+.binfo { min-height: 20px; }
+ol.help { padding-left: 20px; } ol.help li { margin: 5px 0; }
+input[type=range] { flex: 1; }
+
+/* ---------- toast & modal ---------- */
+#toast { position: absolute; left: 50%; top: 64px; transform: translate(-50%, -20px); background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 8px;
+  font-size: 13.5px; opacity: 0; transition: opacity .2s, transform .2s; pointer-events: none; z-index: 20; max-width: 90%; text-align: center; }
+#toast.show { opacity: .95; transform: translate(-50%, 0); }
+#toast.bad { background: var(--bad); }
+#modal, #fatal { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(20, 30, 40, .45); z-index: 30; padding: 16px; }
+.mbox { background: var(--panel); border-radius: 14px; padding: 18px 20px; max-width: 640px; width: 100%; max-height: 100%; overflow-y: auto; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+.mbox h1 { margin: 0 0 4px; font-size: 28px; color: var(--accent); letter-spacing: .01em; }
+.mbox .lead { margin: 0 0 12px; color: var(--muted); }
+.mbox .scen { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+.mbox .card b { font-size: 15px; }
+
+/* ---------- phones ---------- */
+@media (max-width: 719px) {
+  #hud { font-size: 12.5px; gap: 3px 8px; padding: 4px 6px; padding-top: max(4px, env(safe-area-inset-top)); }
+  .wname, #h-rating .lbl { display: none; }
+  .bar { width: 40px; }
+  .speeds { margin-left: 0; }
+  .speeds button, .cam button, .hbtn { padding: 4px 6px; min-width: 28px; }
+  #toolbar { justify-content: flex-start; }
+  #toolbar button { min-width: 50px; padding: 4px 4px; }
+  .win, .win.wide { left: 0 !important; right: 0 !important; top: auto !important; bottom: calc(58px + env(safe-area-inset-bottom)); width: 100%; max-height: 58%; border-radius: 14px 14px 0 0; }
+  .win header { border-radius: 14px 14px 0 0; cursor: default; }
+  .win button, .mbox button { padding: 8px 12px; }
+  button.sm { padding: 6px 12px; }
+  #toolhint { font-size: 12px; }
+  #ticker { font-size: 12px; }
+}
