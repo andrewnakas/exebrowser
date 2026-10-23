@@ -1,7 +1,3 @@
-# ads.txt is Mediavine's, hosted by them so it stays current as their demand
-# partners change (their standard setup). It replaces the old AdSense-only file.
-/ads.txt https://adstxt.mediavine.com/sites/c56060b8-5def-4889-a40e-9e36b06bfd48/ads.txt 301
-
 /index.html / 301
 
 # Games that were staged then withdrawn before launch. Cloudflare Pages keeps

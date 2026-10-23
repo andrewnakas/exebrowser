@@ -18,6 +18,12 @@
 //     title is ad-free until someone checks its licence and sets the flag.
 //   - Pages for titles we don't host (bring-your-own guides) carry ads.
 import { readFileSync } from "node:fs";
+
+// Ads are switched off site-wide. Google's MCM review rejected exebrowser.com
+// twice for "low value content" (Mediavine, 2026-10-21), so Mediavine will
+// never serve here and its tag only threw errors. Set back to true with the
+// next network's tag in AD_TAG/AD_TAG_RE (Media.net application pending).
+export const ADS_ON = false;
 import { resolve } from "node:path";
 
 export const AD_TAG =
@@ -37,6 +43,7 @@ export function loadPages(root = process.cwd()) {
 // `rel` is the page's path under public/, e.g. "run/doom/index.html".
 // Returns null when the page should carry ads, or the reason it must not.
 export function noAdReason(rel, html, bySlug) {
+  if (!ADS_ON) return "ads switched off site-wide";
   if (NO_AD_DIRS.some((d) => rel.startsWith(d))) return "runtime or game frame";
   if (/^embed\/[^/]+\/index\.html$/.test(rel)) return "embed wrapper (runs on other sites)";
   if (rel === "404.html") return "404 page";
