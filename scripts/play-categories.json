@@ -220,6 +220,63 @@
           "a": "Not from this site, which needs the network to load each puzzle. Simon Tatham also publishes the collection as free downloads for Windows and Unix-like systems, and others have ported it to further platforms."
         }
       ]
+    },
+    {
+      "slug": "board-games",
+      "match": "category",
+      "name": "Board games",
+      "title": "Play Board Games Online Free — Chess, Checkers, Backgammon, Mahjong",
+      "h1": "Board games, playable in your browser",
+      "description": "Chess against Stockfish, chess puzzles, checkers, backgammon, Reversi, Four in a Row and Mahjong Solitaire. Free, instant, no sign-up, no download.",
+      "keywords": "board games online free, play chess online, checkers online, backgammon online, mahjong solitaire, reversi online, four in a row",
+      "intro": "<p>Board games are older than every other kind of game on this site by a few thousand years, and they ask the least of a computer: a grid, some pieces, and an opponent. That last part is where the work is. Every game on this page comes with a computer player you can turn up or down, from one that is happy to lose to one that won't.</p><p>None of them run in an emulator. They are ordinary web pages — most of them written from the rules for this site, with chess built on the same open-source engine and board that the biggest chess sites use — so they load instantly and play the same on a phone as on a desktop.</p>",
+      "sections": [
+        {
+          "h": "Where the opponents come from",
+          "html": "<p>The <strong>chess</strong> opponent is Stockfish 19, the strongest open-source engine, compiled to WebAssembly and deliberately weakened at the lower levels. <strong>Checkers</strong>, <strong>Reversi</strong> and <strong>Four in a Row</strong> use a classic look-ahead search written for this site; the Level menu sets how many moves ahead it looks. <strong>Backgammon</strong> scores every way to play its roll and picks the best by racing distance, safety of its checkers and the points it holds. <strong>Mahjong Solitaire</strong> has no opponent, but its deals are generated so that every one can be cleared.</p>"
+        },
+        {
+          "h": "Your game is kept, nothing is uploaded",
+          "html": "<p>There's no account and no server-side state. A game in progress is saved in your own browser and comes back when you reopen the page; the chess-puzzle rating lives there too. You can see or clear all of it on the <a href=\"/saves/\">saves page</a>.</p>"
+        }
+      ],
+      "picks": [
+        {
+          "slug": "chess",
+          "note": "Start at level 3 if you play casually. Level 8 is full-strength Stockfish and will not make the mistake you're hoping for."
+        },
+        {
+          "slug": "chess-puzzles",
+          "note": "Real positions from real games, chosen to match your rating as it moves. Five minutes of these does more for your chess than an hour of blitz."
+        },
+        {
+          "slug": "mahjong",
+          "note": "The tile-matching patience game, on four layouts. Every deal is winnable, so a stuck board means a choice you can undo."
+        },
+        {
+          "slug": "backgammon",
+          "note": "The full game with hits, the bar and gammons. The computer won't cheat on the dice, however much it feels like it."
+        },
+        {
+          "slug": "checkers",
+          "note": "American rules, forced captures included. Hard looks seven moves ahead and follows every capture chain to the end."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Do I need to sign up or download anything?",
+          "a": "No. Every game here opens in the page and plays straight away — no account, no install, no plugin."
+        },
+        {
+          "q": "Can I play against another person?",
+          "a": "Not yet. Every game on this page is one player against the computer, with levels to choose from."
+        },
+        {
+          "q": "Do they work on a phone?",
+          "a": "Yes. The boards resize to the screen and everything is played by tapping. Mahjong's larger layouts are easiest in landscape."
+        }
+      ],
+      "updated": "2026-10-23"
     }
   ]
 }

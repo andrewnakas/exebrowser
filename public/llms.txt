@@ -4,7 +4,7 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-138 titles are hosted and playable instantly. Everything hosted here is
+146 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
@@ -148,6 +148,14 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Hidden balls laser deduction puzzle (Black Box)](https://exebrowser.com/run/black-box-puzzle/): Play Black Box free online: fire laser beams into a grid and deduce where the hidden balls are from how the beams are absorbed, turned or reflected.
 - [Light flipping puzzle (Flip)](https://exebrowser.com/run/flip-puzzle/): Play Flip free online: click squares to toggle them and their neighbours until every light on the grid is on. Cross and random patterns. No download.
 - [Code-breaking colour game (Guess)](https://exebrowser.com/run/guess-colours/): Play Guess free online: work out the hidden row of coloured pegs from black and white feedback pegs within ten tries. Classic code-breaking rules.
+- [Chess](https://exebrowser.com/run/chess/): Stockfish 19 in your browser tab, turned down to whatever strength you want. Undo, flip the board, play either colour.
+- [Chess puzzles](https://exebrowser.com/run/chess-puzzles/): Find the winning move. Thousands of real-game tactics, matched to your level, with a rating that follows you.
+- [Mahjong Solitaire](https://exebrowser.com/run/mahjong/): Clear the board by matching free tiles in pairs. Four layouts, hints, undo and a shuffle that never makes a game unwinnable.
+- [Checkers](https://exebrowser.com/run/checkers/): American checkers with forced captures, multiple jumps and kings, against a computer at three strengths.
+- [Reversi](https://exebrowser.com/run/reversi/): The disc-flipping strategy game on an 8×8 board, against a computer at three strengths.
+- [Four in a Row](https://exebrowser.com/run/four-in-a-row/): Drop discs, line up four across, down or diagonally, and beat a computer that searches up to eight moves ahead.
+- [Backgammon](https://exebrowser.com/run/backgammon/): The two-thousand-year-old race game, with hits, the bar and gammons, against a computer opponent. Free, instant.
+- [NetHack](https://exebrowser.com/run/nethack/): The official NetHack source compiled to WebAssembly. Pick a role, descend, save with S and come back later.
 
 ## Compatibility guides (bring your own copy)
 

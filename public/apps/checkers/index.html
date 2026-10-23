@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Checkers — free board game</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .75rem;
+    font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #23170f; color: #f3ede6;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+  }
+  .bar { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+  .score { gap: 1rem; font-size: .95rem; }
+  .score b { font-variant-numeric: tabular-nums; }
+  .chip { display: inline-block; width: .9em; height: .9em; border-radius: 50%; vertical-align: -.1em; margin-right: .25em; }
+  .chip.r { background: #c0392b; } .chip.w { background: #ece6d8; }
+  #board {
+    --size: min(92vw, 540px, calc(100vh - 150px));
+    width: var(--size); height: var(--size);
+    display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr);
+    border: 6px solid #4a2e1a; border-radius: 6px;
+    touch-action: manipulation;
+  }
+  .sq { border: 0; padding: 0; display: flex; align-items: center; justify-content: center; background: #e8d3b0; }
+  .sq.dark { background: #8a5a36; }
+  .sq.can { cursor: pointer; }
+  .sq.sel { background: #b3863e; }
+  .sq.target { cursor: pointer; }
+  .sq.target::after { content: ""; width: 30%; height: 30%; border-radius: 50%; background: rgba(241,196,15,.75); }
+  .sq.trail { background: #a07040; }
+  .sq.last { box-shadow: inset 0 0 0 3px rgba(241,196,15,.6); }
+  .pc {
+    width: 78%; height: 78%; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: calc(var(--size) / 20); line-height: 1; pointer-events: none;
+    box-shadow: 0 3px 0 rgba(0,0,0,.35);
+  }
+  .pc.r { background: radial-gradient(circle at 35% 30%, #ff6b5b, #a52a1f 70%); color: #ffd9d4; }
+  .pc.w { background: radial-gradient(circle at 35% 30%, #fffdf6, #c9c0ad 70%); color: #6b5a3c; }
+  .pc.cap { opacity: .35; }
+  .sq.can .pc { box-shadow: 0 0 0 3px rgba(241,196,15,.55), 0 3px 0 rgba(0,0,0,.35); }
+  #status { text-align: center; min-height: 1.4em; font-size: .95rem; }
+  .button, select {
+    font: inherit; font-size: .9rem; padding: .4rem .8rem;
+    border-radius: 8px; border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08); color: inherit; cursor: pointer;
+  }
+  select option { color: #111; }
+  .button:disabled { opacity: .45; cursor: default; }
+</style>
+</head>
+<body>
+  <div class="bar score">
+    <span><span class="chip r"></span>You <b id="cr">12</b></span>
+    <span><span class="chip w"></span>Computer <b id="cw">12</b></span>
+  </div>
+  <div id="board" role="grid" aria-label="Checkers board"></div>
+  <p id="status" aria-live="polite"></p>
+  <div class="bar">
+    <label>Level
+      <select id="level">
+        <option value="2">Easy</option>
+        <option value="4" selected>Medium</option>
+        <option value="7">Hard</option>
+      </select>
+    </label>
+    <button class="button" id="undo">Undo</button>
+    <button class="button" id="new">New game</button>
+  </div>
+<script src="/apps/gamesave.js?v=1"></script>
+<script src="checkers.js?v=1"></script>
+</body>
+</html>

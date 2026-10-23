@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Four in a Row Online Free vs Computer — Connect 4 Discs</title>
+<meta name="description" content="Four in a Row free in your browser: drop discs into the 7×6 grid and connect four before the computer does. Three levels, undo, no download." />
+<meta name="keywords" content="four in a row, connect four online, connect 4 game, play four in a row free, four in a row vs computer, drop disc game" />
+<link rel="canonical" href="https://exebrowser.com/run/four-in-a-row/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/run/four-in-a-row/" />
+<meta property="og:title" content="Four in a Row vs Computer — Free" />
+<meta property="og:description" content="Drop discs, line up four across, down or diagonally, and beat a computer that searches up to eight moves ahead." />
+<meta property="og:image" content="https://exebrowser.com/run/four-in-a-row/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exebrowser.com/" },
+    { "@type": "ListItem", "position": 2, "name": "App guides", "item": "https://exebrowser.com/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Play Four in a Row", "item": "https://exebrowser.com/run/four-in-a-row/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Four in a Row",
+  "url": "https://exebrowser.com/run/four-in-a-row/",
+  "image": "https://exebrowser.com/run/four-in-a-row/screenshot.png",
+  "description": "Four in a Row free in your browser: drop discs into the 7×6 grid and connect four before the computer does. Three levels, undo, no download.",
+  "applicationCategory": "Game",
+  "genre": ["Board game", "Strategy"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "ExeBrowser (original implementation)" },
+  "dateModified": "2026-10-23",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this Connect 4?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's the same game. \"Connect Four\" is a trademark of Hasbro, so we use the generic name; the rules — a 7×6 upright grid, discs that fall, four in a line wins — are not owned by anyone." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the first player always win?",
+      "acceptedAnswer": { "@type": "Answer", "text": "With perfect play, yes — the game was solved in 1988, and the first player wins by starting in the centre. Neither you nor the computer here plays perfectly, though." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the keyboard?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes: number keys 1 to 7 drop a disc in that column." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Run Windows <code>.exe</code> files in your browser. No install. No upload. Just WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/run/">App guides</a> › Play Four in a Row</nav>
+
+  <section class="card">
+    <h2>Play Four in a Row against the computer <span class="verdict good">▶ Play now — runs natively, no emulator</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guide updated October 2026 · Runs via WebAssembly (native port)</p>
+    <p>The vertical connection game: seven columns, six rows, and discs that drop to the lowest free hole. Tap a column (or press 1–7) to drop a red disc; the computer answers with yellow. The first to line up four in a row — across, up and down, or diagonally — wins. Who goes first alternates from game to game, and the score is kept across games.</p>
+
+    <div class="iframe-embed-wrap" style="position:relative;width:100%;height:min(680px, calc(100vw * 0.86 + 160px));background:#101a2e;border-radius:4px;overflow:hidden;">
+      <iframe src="/apps/four-in-a-row/"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allowfullscreen
+              loading="lazy"
+              title="Four in a Row"></iframe>
+    </div>
+    <details class="controls-panel" open>
+      <summary><strong>Controls</strong> — what does what</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Action</th><th scope="col">Keyboard</th><th scope="col">Mouse / touch</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">Drop a disc</th><td><kbd>1</kbd>–<kbd>7</kbd></td><td>Click the column</td></tr>
+        <tr><th scope="row">Take back</th><td>—</td><td>Undo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p class="next-up"><span class="next-up-label">Play next:</span>
+      <a href="/run/sixteen-puzzle/">Sliding row puzzle (Sixteen)</a>
+      <a href="/run/lost-adventures-of-kroz/">The Lost Adventures of Kroz</a>
+      <a href="/run/alien-carnage/">Alien Carnage</a>
+      <a href="/run/mahjong/">Mahjong Solitaire</a>
+      <a class="next-up-all" href="/run/">all 146 games →</a>
+    </p>
+    <p class="free-note"><span class="badge-free">FREE</span> <strong>This is the complete game, free.</strong> Written from scratch for ExeBrowser — original code, nothing to unlock, free to play.</p>
+    <figure class="app-shot">
+      <img src="/run/four-in-a-row/screenshot.png" width="700" height="640" loading="lazy" alt="Four in a Row running in a browser tab via ExeBrowser" />
+      <figcaption>Four in a Row running in the browser — no install, no upload.</figcaption>
+    </figure>
+    
+    <div class="warn-box">
+      <p class="muted small">Original code written for ExeBrowser — see <a href="/apps/four-in-a-row/NOTICE.md">NOTICE.md</a>.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Tips</h2>
+    <p>The middle column takes part in more lines of four than any other, so it's the strongest place to start. Watch for threats on two levels at once: a disc that threatens to complete a line in two different places can't be blocked. And keep track of which holes each of you would win on — sometimes the right move is to leave a column alone because filling it would let your opponent drop into the square above.</p>
+    <h3>The computer</h3>
+    <p><b>Easy</b> looks two moves ahead, with a little randomness; <b>Medium</b> searches five; <b>Hard</b> searches eight, which is enough to see most traps before you spring them. It scores positions by counting the lines of four each side can still make, and prefers the centre.</p>
+  </section>
+  <section class="card">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is this Connect 4?</summary>
+      <p>It's the same game. "Connect Four" is a trademark of Hasbro, so we use the generic name; the rules — a 7×6 upright grid, discs that fall, four in a line wins — are not owned by anyone.</p>
+    </details>
+    <details>
+      <summary>Can the first player always win?</summary>
+      <p>With perfect play, yes — the game was solved in 1988, and the first player wins by starting in the centre. Neither you nor the computer here plays perfectly, though.</p>
+    </details>
+    <details>
+      <summary>Can I use the keyboard?</summary>
+      <p>Yes: number keys 1 to 7 drop a disc in that column.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>More you can play in your browser</h2>
+    <ul class="poster-grid">
+        <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet running in the browser" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/doom/">
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM running in the browser" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/duke-nukem-3d/">
+          <img class="pc-shot" src="/run/duke-nukem-3d/screenshot.png" width="320" height="240" loading="lazy" alt="Duke Nukem 3D running in the browser" />
+          <span class="pc-body"><span class="pc-title">Duke Nukem 3D</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/librequake/">
+          <img class="pc-shot" src="/run/librequake/screenshot.png" width="320" height="240" loading="lazy" alt="LibreQuake running in the browser" />
+          <span class="pc-body"><span class="pc-title">LibreQuake</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/pharaohs-tomb/">
+          <img class="pc-shot" src="/run/pharaohs-tomb/screenshot.png" width="320" height="240" loading="lazy" alt="Pharaoh's Tomb running in the browser" />
+          <span class="pc-body"><span class="pc-title">Pharaoh's Tomb</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/god-of-thunder/">
+          <img class="pc-shot" src="/run/god-of-thunder/screenshot.png" width="320" height="240" loading="lazy" alt="God of Thunder running in the browser" />
+          <span class="pc-body"><span class="pc-title">God of Thunder</span><span class="pc-play">▶ Play free</span></span>
+        </a></li>
+    </ul>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 146 titles you can play here →</a></p>
+  </section>
+  <section class="card newsletter">
+    <h2>One new retro game in your inbox each week</h2>
+    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
+    <form class="newsletter-form" action="/api/subscribe" method="post" data-newsletter>
+      <label class="visually-hidden" for="nl-email">Email address</label>
+      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+      <button type="submit" class="button primary">Subscribe</button>
+    </form>
+    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
+  </section>
+  <section class="card">
+    <h2>Related guides</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/reversi/"><span class="lc-title">Reversi</span><span class="lc-desc">Outflank and flip discs on the 8×8 board against a three-level computer.</span></a></li>
+      <li><a class="link-card" href="/run/checkers/"><span class="lc-title">Checkers</span><span class="lc-desc">American checkers against the computer, with forced captures and kings.</span></a></li>
+      <li><a class="link-card" href="/run/chess/"><span class="lc-title">Chess vs computer</span><span class="lc-desc">Play the Stockfish engine at eight levels, from beginner to maximum.</span></a></li>
+      <li><a class="link-card" href="/run/mahjong/"><span class="lc-title">Mahjong Solitaire</span><span class="lc-desc">Match free tiles in pairs on four layouts; every deal can be cleared.</span></a></li>
+      <li><a class="link-card" href="/play/board-games/"><span class="lc-title">All board games</span><span class="lc-desc">Chess, checkers, backgammon, mahjong and more, all in the browser.</span></a></li>
+    </ul>
+  </section>
+
+  <section class="card" id="embed-pointer">
+    <h2>Want a game like this on your own site?</h2>
+    <p>Four in a Row isn't ours to give away — we host it, we didn't write
+    it. But eleven of the games here we did write from scratch, and those are free for
+    anyone to put on their own page: one line of HTML, no account, no permission, no attribution
+    beyond a credit line.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">See the games you can embed</a></p>
+  </section>
+  <script src="/embed-pointer.js?v=1"></script>
+</main>
+
+<footer>
+  <p>Built on <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine is a trademark of CodeWeavers. ExeBrowser is not affiliated with WineHQ, CodeWeavers, or Microsoft. Sister site: <a href="https://macemu.com/" target="_blank" rel="noopener">macemu.com</a>, classic Mac games in your browser.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="/load-exe/">Run your EXE</a>
+    <a href="/run/">App guides</a>
+    <a href="/exe-inspector/">EXE viewer</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Compatibility Guide</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/dos-emulator/">DOS emulator</a>
+    <a href="/saves/">Saved games</a>
+    <a href="/embed/">Embed our games</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Use</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+    <script src="/pwa.js?v=2"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/newsletter.js?v=1"></script>
+</body>
+</html>

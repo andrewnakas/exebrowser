@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chess vs computer — free</title>
+<link rel="stylesheet" href="vendor/chessground.base.css?v=921" />
+<link rel="stylesheet" href="vendor/chessground.brown.css?v=921" />
+<link rel="stylesheet" href="vendor/chessground.cburnett.css?v=921" />
+<link rel="stylesheet" href="chess.css?v=2" />
+</head>
+<body>
+  <div class="layout">
+    <div class="board-wrap"><div id="board"></div></div>
+    <div class="side">
+      <div class="card">
+        <p id="status" aria-live="polite">Loading the engine…</p>
+        <p class="sub" id="sub"></p>
+      </div>
+      <div class="card row">
+        <label>Level
+          <select id="level">
+            <option value="1">1 — beginner</option>
+            <option value="2">2</option>
+            <option value="3" selected>3 — casual</option>
+            <option value="4">4</option>
+            <option value="5">5 — club</option>
+            <option value="6">6</option>
+            <option value="7">7 — strong</option>
+            <option value="8">8 — maximum</option>
+          </select>
+        </label>
+        <label>Play as
+          <select id="side">
+            <option value="white">White</option>
+            <option value="black">Black</option>
+            <option value="random">Random</option>
+          </select>
+        </label>
+      </div>
+      <div class="card row">
+        <button class="button primary" id="new">New game</button>
+        <button class="button" id="undo">Undo</button>
+        <button class="button" id="flip">Flip board</button>
+        <button class="button" id="resign">Resign</button>
+      </div>
+      <div class="card"><ol id="moves" aria-label="Moves"></ol></div>
+    </div>
+  </div>
+<script src="/apps/gamesave.js?v=1"></script>
+<script type="module" src="play.js?v=1"></script>
+</body>
+</html>

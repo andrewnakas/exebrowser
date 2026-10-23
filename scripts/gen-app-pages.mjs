@@ -91,7 +91,7 @@
 //                screenshot/NEW-badge sort decayed into raw JSON order once
 //                every addedDate aged out of the 14-day window.
 //   categories   array from the closed set used by the filter chips: Shooters,
-//                Platformers, Action, Puzzle & strategy, Logic puzzles, Educational, Racing & sports,
+//                Platformers, Action, Puzzle & strategy, Board games, Logic puzzles, Educational, Racing & sports,
 //                Pinball, Apps & tools. ("Free & complete" is derived from
 //                `fullyFree`, not written here.) Chip order lives in two
 //                places — this file and gen-home-grid.mjs — and must match.

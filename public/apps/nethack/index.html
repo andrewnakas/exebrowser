@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NetHack — play in the browser</title>
+<style>
+  :root { color-scheme: dark; --fs: 15px; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: #000; color: #c8c8c8;
+    font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  #wrap { flex: 1 1 auto; display: flex; flex-direction: column; align-items: center; padding: 4px; min-height: 0; overflow: auto; }
+  #term, #msgs {
+    font-family: "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: var(--fs); line-height: 1.18; white-space: pre; margin: 0;
+  }
+  #msgs { width: calc(var(--fs) * 0.6 * 80); min-height: calc(var(--fs) * 1.18 * 2); color: #e8e8e8; overflow: hidden; }
+  #msgs .old { opacity: .45; }
+  #term { position: relative; cursor: default; }
+  #term .row { height: calc(var(--fs) * 1.18); }
+  .cur { outline: 1px solid #ddd; }
+  .pet { text-decoration: underline; }
+  .inv { background: #c8c8c8; color: #000 !important; }
+  .c0 { color: #5c6bc0; } .c1 { color: #d33; } .c2 { color: #3b3; } .c3 { color: #b8860b; }
+  .c4 { color: #46f; } .c5 { color: #c3c; } .c6 { color: #3bb; } .c7, .c8 { color: #c8c8c8; }
+  .c9 { color: #f90; } .c10 { color: #6f6; } .c11 { color: #ff5; } .c12 { color: #79f; }
+  .c13 { color: #f6f; } .c14 { color: #6ff; } .c15 { color: #fff; }
+
+  #overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.72); display: none;
+    align-items: center; justify-content: center; z-index: 10; padding: 10px;
+  }
+  #overlay.open { display: flex; }
+  #panel {
+    background: #111; border: 1px solid #555; border-radius: 6px; max-width: min(96vw, 820px); max-height: 92vh;
+    overflow: auto; padding: 12px 14px; color: #ddd;
+    font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace; font-size: 14px; white-space: pre-wrap;
+  }
+  #panel .item { cursor: pointer; display: block; padding: 1px 4px; border-radius: 3px; }
+  #panel .item:hover { background: #2a2a2a; }
+  #panel .item.sel { background: #24462a; }
+  #panel .head { font-weight: 700; color: #fff; display: block; padding: 4px 0 1px; }
+  #panel .hint { opacity: .6; display: block; margin-top: 8px; font-family: system-ui, sans-serif; font-size: 13px; }
+  #panel input { font: inherit; width: 100%; margin-top: 8px; background: #000; color: #fff; border: 1px solid #666; padding: 6px; }
+
+  #pad { display: none; gap: 6px; padding: 6px; justify-content: center; flex-wrap: wrap; border-top: 1px solid #222; background: #0b0b0b; }
+  body.touch #pad { display: flex; }
+  .dirs { display: grid; grid-template-columns: repeat(3, 42px); gap: 4px; }
+  .keys { display: grid; grid-template-columns: repeat(5, 46px); gap: 4px; align-content: start; }
+  #pad button {
+    height: 38px; border-radius: 6px; border: 1px solid #333; background: #1c1c1c; color: #ddd;
+    font: 600 14px/1 ui-monospace, Menlo, monospace; touch-action: manipulation;
+  }
+  #pad button:active { background: #333; }
+
+  #start { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #000; z-index: 20; padding: 16px; }
+  #start .box { max-width: 460px; width: 100%; font-family: system-ui, sans-serif; }
+  #start h1 { font-size: 1.3rem; margin: 0 0 .6rem; color: #fff; }
+  #start label { display: block; margin: .6rem 0 .2rem; font-size: .9rem; opacity: .8; }
+  #start input, #start select { width: 100%; font: inherit; padding: .5rem; border-radius: 6px; border: 1px solid #444; background: #111; color: #fff; }
+  #start .go { margin-top: 1rem; width: 100%; padding: .7rem; font: 600 1rem system-ui; border: 0; border-radius: 8px; background: #3f7d3a; color: #fff; cursor: pointer; }
+  #start p { font-size: .85rem; opacity: .7; }
+  #kbd { position: absolute; opacity: 0; width: 1px; height: 1px; left: -10px; }
+</style>
+</head>
+<body>
+  <div id="start">
+    <div class="box">
+      <h1>NetHack 3.6.7</h1>
+      <label for="pname">Your name</label>
+      <input id="pname" maxlength="20" autocomplete="off" value="Adventurer" />
+      <label for="prole">Role</label>
+      <select id="prole">
+        <option value="random">Random</option>
+        <option>Archeologist</option><option>Barbarian</option><option>Caveman</option><option>Healer</option>
+        <option>Knight</option><option>Monk</option><option>Priest</option><option>Ranger</option>
+        <option>Rogue</option><option>Samurai</option><option>Tourist</option><option>Valkyrie</option><option>Wizard</option>
+      </select>
+      <button class="go" id="go">Start a new game</button>
+      <p id="savednote" hidden>A saved game for this name was found — starting continues it.</p>
+      <p>Save with <b>S</b> (then <b>y</b>); the save stays in this browser. Arrow keys or hjkl move; <b>?</b> lists commands.</p>
+    </div>
+  </div>
+  <div id="wrap">
+    <div id="msgs" aria-live="polite"></div>
+    <div id="term" role="img" aria-label="NetHack map"></div>
+  </div>
+  <div id="pad">
+    <div class="dirs">
+      <button data-k="y">↖</button><button data-k="k">↑</button><button data-k="u">↗</button>
+      <button data-k="h">←</button><button data-k="s" title="search">s</button><button data-k="l">→</button>
+      <button data-k="b">↙</button><button data-k="j">↓</button><button data-k="n">↘</button>
+    </div>
+    <div class="keys">
+      <button data-k="\x1b">Esc</button><button data-k="\r">↵</button><button data-k=",">,</button><button data-k="i">i</button><button data-k=".">.</button>
+      <button data-k="<">&lt;</button><button data-k=">">&gt;</button><button data-k="#">#</button><button data-k="?">?</button><button id="kbdbtn">⌨</button>
+    </div>
+  </div>
+  <input id="kbd" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" />
+<script type="module" src="nethack-ui.js?v=1"></script>
+</body>
+</html>

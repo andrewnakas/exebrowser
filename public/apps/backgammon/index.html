@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Backgammon — free board game</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .6rem;
+    font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #1b1410; color: #f3ede6;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+  }
+  .bar-row { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+  .score { gap: 1rem; font-size: .95rem; }
+  .score b { font-variant-numeric: tabular-nums; }
+  .chip { display: inline-block; width: .9em; height: .9em; border-radius: 50%; vertical-align: -.1em; margin-right: .25em; }
+  .chip.h { background: #f2ead8; } .chip.c { background: #3a2a22; border: 1px solid #8a7060; }
+
+  #board {
+    --w: min(96vw, 720px, calc((100vh - 170px) * 1.25));
+    width: var(--w); aspect-ratio: 1.25;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) .8fr repeat(6, 1fr) .8fr;
+    grid-template-rows: 1fr 1fr;
+    background: #6b4226; border: calc(var(--w) / 60) solid #3d2414; border-radius: 8px;
+    touch-action: manipulation; user-select: none; position: relative;
+    --ck: min(calc(var(--w) / 15.6), 46px);
+  }
+  .pt { position: relative; display: flex; flex-direction: column; align-items: center; padding: 2px 0; cursor: default; }
+  .pt.bottom { flex-direction: column-reverse; }
+  .pt::before {
+    content: ""; position: absolute; left: 6%; right: 6%; top: 0; height: 84%;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    background: var(--tri);
+  }
+  .pt.bottom::before { top: auto; bottom: 0; clip-path: polygon(0 100%, 100% 100%, 50% 0); }
+  .pt.odd { --tri: #d9b98a; } .pt.even { --tri: #8e2f22; }
+  .mid, .off { background: #3d2414; display: flex; flex-direction: column; align-items: center; padding: 4px 0; gap: 2px; }
+  .mid.bottom, .off.bottom { flex-direction: column-reverse; }
+  .off { background: #2c1a0f; }
+  .ck {
+    position: relative; width: var(--ck); height: var(--ck); border-radius: 50%; flex: 0 0 auto;
+    margin: -1px 0; display: flex; align-items: center; justify-content: center;
+    font: 700 calc(var(--ck) * .4)/1 system-ui, sans-serif;
+  }
+  .ck.h { background: radial-gradient(circle at 35% 30%, #fffaf0, #d8ccb2 70%); color: #6b5a3c; box-shadow: 0 2px 0 rgba(0,0,0,.35); }
+  .ck.c { background: radial-gradient(circle at 35% 30%, #6a5045, #22160f 70%); color: #e6d6c6; box-shadow: 0 2px 0 rgba(0,0,0,.45); }
+  .off .ck { height: calc(var(--ck) * .28); border-radius: 3px; margin: 0; }
+  .src { cursor: pointer; }
+  .src .ck.h.tip { box-shadow: 0 0 0 3px #f1c40f; }
+  .sel { outline: 3px solid #f1c40f; outline-offset: -3px; }
+  .target { cursor: pointer; }
+  .target::after {
+    content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+    width: calc(var(--ck) * .5); height: calc(var(--ck) * .5); border-radius: 50%;
+    background: rgba(241,196,15,.85); bottom: 6px;
+  }
+  .pt.top.target::after { top: auto; bottom: 6px; }
+  .pt.bottom.target::after { bottom: auto; top: 6px; }
+  .off.target { outline: 3px dashed #f1c40f; outline-offset: -4px; cursor: pointer; }
+  .off.target::after { display: none; }
+  .last-from { box-shadow: inset 0 0 0 2px rgba(241,196,15,.45); }
+  .num { position: absolute; font-size: calc(var(--w) / 52); opacity: .55; }
+  .pt.top .num { bottom: 2px; } .pt.bottom .num { top: 2px; }
+
+  #dice { display: flex; gap: .4rem; min-height: 40px; align-items: center; }
+  .die {
+    width: 38px; height: 38px; border-radius: 7px; background: #fbf8f2; color: #1b1410;
+    display: flex; align-items: center; justify-content: center; font: 700 22px/1 system-ui, sans-serif;
+  }
+  .die.cpu { background: #3a2a22; color: #f3ede6; border: 1px solid #8a7060; }
+  .die.used { opacity: .3; }
+  #status { text-align: center; min-height: 1.4em; font-size: .95rem; margin: 0; }
+  .button, select {
+    font: inherit; font-size: .9rem; padding: .45rem .9rem;
+    border-radius: 8px; border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08); color: inherit; cursor: pointer;
+  }
+  .button.primary { background: #c0392b; border-color: #c0392b; color: #fff; font-weight: 600; }
+  select option { color: #111; }
+  .button:disabled { opacity: .45; cursor: default; }
+</style>
+</head>
+<body>
+  <div class="bar-row score">
+    <span><span class="chip h"></span>You <b id="sh">0</b></span>
+    <span><span class="chip c"></span>Computer <b id="sc">0</b></span>
+    <span style="opacity:.7">Pips: <b id="ph">167</b> / <b id="pc">167</b></span>
+  </div>
+  <div id="board" aria-label="Backgammon board"></div>
+  <div class="bar-row">
+    <div id="dice" aria-live="polite"></div>
+    <button class="button primary" id="roll">Roll</button>
+    <button class="button" id="undo">Undo</button>
+  </div>
+  <p id="status" aria-live="polite"></p>
+  <div class="bar-row">
+    <label>Level
+      <select id="level">
+        <option value="0">Easy</option>
+        <option value="1" selected>Strong</option>
+      </select>
+    </label>
+    <button class="button" id="new">New game</button>
+  </div>
+<script src="/apps/gamesave.js?v=1"></script>
+<script src="backgammon.js?v=2"></script>
+</body>
+</html>

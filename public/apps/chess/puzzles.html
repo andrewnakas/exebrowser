@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chess puzzles — free</title>
+<link rel="stylesheet" href="vendor/chessground.base.css?v=921" />
+<link rel="stylesheet" href="vendor/chessground.brown.css?v=921" />
+<link rel="stylesheet" href="vendor/chessground.cburnett.css?v=921" />
+<link rel="stylesheet" href="chess.css?v=2" />
+</head>
+<body>
+  <div class="layout">
+    <div class="board-wrap"><div id="board"></div></div>
+    <div class="side">
+      <div class="card">
+        <p id="status" aria-live="polite">Loading puzzles…</p>
+        <p class="sub" id="sub"></p>
+      </div>
+      <div class="card row">
+        <button class="button primary" id="next">Next puzzle</button>
+        <button class="button" id="hint">Hint</button>
+        <button class="button" id="solution">Show solution</button>
+      </div>
+      <div class="card">
+        <div class="row" style="justify-content:space-between">
+          <span>Your rating <b id="rating">1200</b></span>
+          <span>Streak <b id="streak">0</b></span>
+          <span>Solved <b id="solved">0</b></span>
+        </div>
+        <p class="sub" id="meta"></p>
+      </div>
+    </div>
+  </div>
+<script type="module" src="puzzles.js?v=1"></script>
+</body>
+</html>

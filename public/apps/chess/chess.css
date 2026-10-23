@@ -1,0 +1,66 @@
+/* ExeBrowser chess pages. GPL-3.0-or-later with the rest of /apps/chess/. */
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: .6rem;
+  font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #1c1a17; color: #efeae2;
+  min-height: 100vh;
+}
+.layout {
+  display: flex; gap: .9rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;
+  max-width: 980px; margin: 0 auto;
+}
+/* Stacked (board, then controls) until there's room for a 250px sidebar.
+   The /run/ pages size their iframe to match this breakpoint. */
+.board-wrap {
+  --size: min(calc(100vw - 24px), 560px, calc(100vh - 24px));
+  width: var(--size); height: var(--size); position: relative; flex: 0 0 auto;
+}
+.board-wrap > .cg-wrap { width: 100%; height: 100%; }
+.side {
+  flex: 1 1 240px; max-width: 340px; min-width: 0;
+  display: flex; flex-direction: column; gap: .6rem;
+}
+@media (max-width: 679px) { .side { max-width: none; flex-basis: 100%; } }
+@media (min-width: 680px) {
+  .layout { flex-wrap: nowrap; }
+  .board-wrap { --size: min(calc(100vw - 300px), 560px, calc(100vh - 24px)); }
+  .side { flex: 0 0 250px; }
+}
+.card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09); border-radius: 10px; padding: .7rem .8rem; }
+#status { font-weight: 600; min-height: 1.4em; margin: 0; }
+.sub { opacity: .75; font-size: .88rem; margin: .2rem 0 0; }
+.row { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center; }
+.button, select {
+  font: inherit; font-size: .9rem; padding: .42rem .8rem;
+  border-radius: 8px; border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.08); color: inherit; cursor: pointer;
+}
+.button.primary { background: #3f7d3a; border-color: #3f7d3a; color: #fff; font-weight: 600; }
+.button:disabled { opacity: .45; cursor: default; }
+select option { color: #111; }
+label { font-size: .9rem; }
+#moves {
+  font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+  max-height: 220px; overflow-y: auto; margin: 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: 2.4em 1fr 1fr;
+}
+#moves li { display: contents; }
+#moves .n { opacity: .5; }
+.promo.cg-wrap {
+  position: absolute; inset: 0; z-index: 5; background: rgba(0,0,0,.6);
+  display: flex; align-items: center; justify-content: center; gap: 2%;
+}
+.promo-btn {
+  width: 18%; aspect-ratio: 1; border-radius: 12px; border: 2px solid rgba(255,255,255,.4);
+  background: #e9e1cf; cursor: pointer; padding: 6%; position: relative;
+}
+.promo-btn:hover, .promo-btn:focus { background: #fff; outline: 3px solid #f1c40f; }
+.promo.cg-wrap .promo-btn piece {
+  position: static; display: block; width: 100%; height: 100%; transform: none;
+  background-size: cover; pointer-events: none;
+}
+.badge { display: inline-block; padding: .05rem .45rem; border-radius: 999px; background: rgba(255,255,255,.1); font-size: .8rem; margin: 0 .25rem .25rem 0; }
+.ok { color: #8fd18a; } .bad { color: #ff8a7a; }
+a { color: #9cc7ff; }

@@ -89,6 +89,26 @@ and committed. Each frame uses the collection's fit-to-container mode, so a
 puzzle fills its iframe at any width; its `/run/` page sets `iframeHeight`
 rather than the default 16:10 box.
 
+### Board games and NetHack
+
+These are web apps under `public/apps/<slug>/`, shown on their `/run/` page in
+an iframe (`iframeUrl`). Their third-party parts are fetched by pinned,
+sha-checked scripts. The output is small and is committed, so these only need
+re-running to change a version:
+
+```bash
+node scripts/build-chess.mjs             # Stockfish 19 lite-single, chessground, chess.js → apps/chess/vendor/
+node scripts/build-chess.mjs --puzzles   # also re-cut apps/chess/puzzles.json from the Lichess CC0 database (needs zstd)
+node scripts/build-mahjong-tiles.mjs     # CC0 riichi tile SVGs → apps/mahjong/tiles/
+node scripts/build-nethack.mjs           # NetHack 3.6.7 wasm (@neth4ck/wasm-367) → apps/nethack/vendor/
+```
+
+Checkers, Reversi, Four in a Row, Backgammon and Mahjong are our own code
+(MIT). The chess pages are GPL-3.0 because Stockfish and chessground are. The
+NetHack window port, `apps/nethack/nethack-ui.js`, is ours and goes with the
+NetHack General Public License. None of them needs SharedArrayBuffer or
+COOP/COEP headers, which would block ad iframes.
+
 ### Adding a DOS game
 
 Every hosted title carries a `provenance` in `app-pages.json`: `clean`,

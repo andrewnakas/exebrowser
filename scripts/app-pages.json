@@ -22776,5 +22776,880 @@
     "addedDate": "2026-10-06",
     "rank": 44,
     "screenshot": true
+  },
+  {
+    "slug": "chess",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "Play Chess vs Computer Online Free — Stockfish, 8 Levels",
+    "description": "Play chess against the computer free in your browser: Stockfish 19 at eight levels, from beginner to maximum strength. No sign-up, no download.",
+    "keywords": "play chess online, chess vs computer, chess against computer free, stockfish online, play chess free no sign up, chess game browser",
+    "ogTitle": "Play Chess vs Computer — Free, 8 Levels, No Sign-up",
+    "ogDescription": "Stockfish 19 in your browser tab, turned down to whatever strength you want. Undo, flip the board, play either colour.",
+    "crumb": "Play Chess",
+    "h1": "Play chess against the computer",
+    "appName": "Chess",
+    "appType": "game",
+    "author": "ExeBrowser, with Stockfish and lichess's chessground",
+    "genre": [
+      "Board game",
+      "Strategy"
+    ],
+    "categories": [
+      "Board games",
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/chess/",
+    "iframeHeight": "calc(min(100vw - 70px, 560px) + 24px + max(0px, min(370px, (760px - 100vw) * 100)))",
+    "iframeBg": "#1c1a17",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — Stockfish runs in your browser"
+    },
+    "intro": "<p>A chess board and an opponent that never gets tired of you. The computer is <strong>Stockfish 19</strong>, the strongest open-source chess engine there is, compiled to WebAssembly and running inside this page. You choose how hard it plays: level 1 picks loose moves and looks only one move ahead, level 8 thinks for a second and a half at full strength. Drag a piece or tap it and then a square; the board shows where it can go.</p>",
+    "sections": [
+      {
+        "h": "Choosing a level",
+        "html": "<p>The eight levels combine Stockfish's own <em>Skill Level</em> setting, which makes it deliberately choose weaker moves, with a cap on how far ahead it searches. Roughly:</p><ul><li><b>1–2</b> — for learning the moves. It leaves pieces hanging and misses simple captures.</li><li><b>3–4</b> — casual play. It punishes blunders but makes some of its own.</li><li><b>5–6</b> — a good club player. Expect to lose material if you leave a tactic on the board.</li><li><b>7–8</b> — very strong. Level 8 is full Stockfish with a short think; a draw against it is an achievement.</li></ul><p>You can change the level mid-game; the next computer move uses the new setting.</p>"
+      },
+      {
+        "h": "Playing a game",
+        "html": "<p>Pick <b>White</b>, <b>Black</b> or <b>Random</b> and press <b>New game</b>. All the rules are enforced: castling, en passant, promotion (a picker offers queen, rook, bishop or knight), and every draw — stalemate, threefold repetition, the fifty-move rule and insufficient material. <b>Undo</b> takes back your last move and the computer's reply. The move list beside the board uses standard algebraic notation, so you can copy a game into any analysis tool afterwards.</p><p>If you close the tab mid-game, the position is kept in this browser and comes back next time you open the page.</p>"
+      },
+      {
+        "h": "How it works",
+        "html": "<p>Nothing is sent to a server. The engine is the single-threaded \"lite\" WebAssembly build of Stockfish 19 from the stockfish.js project, about 1.8 MB including its neural-network evaluation, and it runs in a background worker so the board stays responsive while it thinks. The board itself is <em>chessground</em>, the open-source board that lichess.org uses, and the rules come from chess.js. Because both Stockfish and chessground are GPL-licensed, the code of this page is released under the GPL too; it is served unminified at <a href=\"/apps/chess/\">/apps/chess/</a>.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How strong is the computer at the highest level?",
+        "a": "Level 8 is Stockfish 19 at full strength with about 1.5 seconds per move. The lite network is a little weaker than desktop Stockfish, but it still plays far above any human. Lower levels are deliberately weakened with Stockfish's Skill Level option and a shallow search."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. There is no sign-up and nothing is uploaded; the engine runs in your browser. Your unfinished game is saved in this browser's local storage."
+      },
+      {
+        "q": "Can I play on my phone?",
+        "a": "Yes. Tap a piece and then the square you want; the board resizes to the screen. The engine is single-threaded, so it works on any modern phone browser without special settings."
+      },
+      {
+        "q": "Can I play against a friend?",
+        "a": "Not on this page yet — it is one player against the computer. You can choose either colour and switch sides between games."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Move a piece",
+        "keyboard": "—",
+        "mouse": "Drag it, or click it then click the square"
+      },
+      {
+        "action": "Promote a pawn",
+        "keyboard": "Esc cancels",
+        "mouse": "Pick a piece from the overlay"
+      },
+      {
+        "action": "Take back a move",
+        "keyboard": "—",
+        "mouse": "Undo"
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/chess-puzzles/",
+        "title": "Chess puzzles",
+        "desc": "Thousands of tactics from the Lichess database, matched to your rating."
+      },
+      {
+        "href": "/run/checkers/",
+        "title": "Checkers",
+        "desc": "American checkers against the computer, with forced captures and kings."
+      },
+      {
+        "href": "/run/backgammon/",
+        "title": "Backgammon",
+        "desc": "The full race-and-hit game with gammons, against the computer."
+      },
+      {
+        "href": "/run/reversi/",
+        "title": "Reversi",
+        "desc": "Outflank and flip discs on the 8×8 board against a three-level computer."
+      },
+      {
+        "href": "/play/board-games/",
+        "title": "All board games",
+        "desc": "Chess, checkers, backgammon, mahjong and more, all in the browser."
+      }
+    ],
+    "fullyFree": "Open source: Stockfish (GPL-3.0), chessground (GPL-3.0) and chess.js (BSD) — the full engine, every level, no limits.",
+    "licenseReason": "Stockfish and chessground are GPL-3.0 and chess.js is BSD-2-Clause, all of which allow redistribution and commercial use; this page's own code is GPL-3.0 and served unminified.",
+    "licenseNote": "<p class=\"muted small\">Engine: <a href=\"https://github.com/nmrugg/stockfish.js\" target=\"_blank\" rel=\"noopener\">Stockfish 19 via stockfish.js</a> (<a href=\"/apps/chess/vendor/COPYING-stockfish.txt\">GPL-3.0</a>). Board: <a href=\"https://github.com/lichess-org/chessground\" target=\"_blank\" rel=\"noopener\">chessground</a> (GPL-3.0; cburnett pieces GPLv2+). Rules: <a href=\"https://github.com/jhlywa/chess.js\" target=\"_blank\" rel=\"noopener\">chess.js</a> (<a href=\"/apps/chess/vendor/LICENSE-chess.js.txt\">BSD-2</a>). This page's code is GPL-3.0 — see <a href=\"/apps/chess/NOTICE.md\">NOTICE.md</a>. Vendored by scripts/build-chess.mjs.</p>",
+    "updated": "2026-10-23",
+    "addedDate": "2026-10-23",
+    "rank": 3.2,
+    "screenshot": true
+  },
+  {
+    "slug": "chess-puzzles",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "Chess Puzzles Online Free — Tactics Trainer With Rating",
+    "description": "Free chess puzzles in your browser: over 4,600 tactics from the Lichess database, picked to match your rating as it rises. Hints, solutions, no sign-up.",
+    "keywords": "chess puzzles, chess puzzles online, chess tactics trainer, free chess puzzles, mate in 2 puzzles, lichess puzzles",
+    "ogTitle": "Chess Puzzles — Free Tactics Trainer",
+    "ogDescription": "Find the winning move. Thousands of real-game tactics, matched to your level, with a rating that follows you.",
+    "crumb": "Chess puzzles",
+    "h1": "Chess puzzles — find the best move",
+    "appName": "Chess puzzles",
+    "appType": "game",
+    "author": "ExeBrowser, with puzzles from the Lichess database",
+    "genre": [
+      "Board game",
+      "Puzzle"
+    ],
+    "categories": [
+      "Board games",
+      "Logic puzzles"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/chess/puzzles.html",
+    "iframeHeight": "calc(min(100vw - 70px, 560px) + 24px + max(0px, min(290px, (760px - 100vw) * 100)))",
+    "iframeBg": "#1c1a17",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — 4,600+ puzzles, no sign-up"
+    },
+    "intro": "<p>Each puzzle starts from a real game at the moment one side made a mistake. The opponent's move is played for you; then it's your turn to find the move that punishes it — a fork, a pin, a mate, a winning exchange. Get it right and the opponent replies, and you keep going until the combination is complete. The puzzles come from the <strong>Lichess puzzle database</strong>, which its authors release into the public domain, and each one has been played and rated by thousands of people.</p>",
+    "sections": [
+      {
+        "h": "How the rating works",
+        "html": "<p>You start at 1200. Every puzzle has its own rating, and the next one is chosen close to yours. Solve a puzzle on the first try, without a hint, and your rating goes up — more for a puzzle rated above you, less for one below. A wrong move, a hint or Show solution counts as a miss and lowers it. It's the same Elo arithmetic chess ratings use, so after twenty or thirty puzzles the number settles around where you really are.</p><p>Your rating, streak and the puzzles you've already seen are stored in this browser only.</p>"
+      },
+      {
+        "h": "What's in the set",
+        "html": "<p>About 4,600 puzzles, 220 in every hundred-point band from 600 to 2700, chosen for being popular, well-tested and stable in rating. The themes shown under the board — mate in 2, fork, pin, discovered attack, back-rank mate and so on — come from the database's own tagging, so you can see what kind of idea you're looking for once you've found it. Each puzzle links back to its page on lichess.org if you want to see the game it came from.</p>"
+      },
+      {
+        "h": "Tips",
+        "html": "<p>Check every capture and every check first — most tactics start with one of them. Look for undefended pieces and for pieces that are defending two things at once. In a mate puzzle, any move that delivers checkmate counts, even if it isn't the one in the database.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Where do the puzzles come from?",
+        "a": "From the Lichess puzzle database, which is published under CC0 (public domain). We host a selection of about 4,600 of its six million puzzles, spread evenly across the rating range."
+      },
+      {
+        "q": "Why did my rating go down when I used a hint?",
+        "a": "A hint, a wrong move or Show solution counts as not solving the puzzle unaided, so the rating treats it as a miss. You can still finish the puzzle afterwards."
+      },
+      {
+        "q": "Will I see the same puzzle twice?",
+        "a": "Not until you have worked through the puzzles near your rating; the page remembers the last 1,500 you've seen in this browser."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Move a piece",
+        "keyboard": "—",
+        "mouse": "Drag it, or click it then the square"
+      },
+      {
+        "action": "Get a hint",
+        "keyboard": "—",
+        "mouse": "Hint circles the piece to move"
+      },
+      {
+        "action": "Next puzzle",
+        "keyboard": "—",
+        "mouse": "Next puzzle"
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Play the Stockfish engine at eight levels, from beginner to maximum."
+      },
+      {
+        "href": "/run/sudoku/",
+        "title": "Sudoku",
+        "desc": "Endless generated grids from Trivial to Unreasonable."
+      },
+      {
+        "href": "/run/checkers/",
+        "title": "Checkers",
+        "desc": "American checkers against the computer, with forced captures and kings."
+      },
+      {
+        "href": "/play/board-games/",
+        "title": "All board games",
+        "desc": "Chess, checkers, backgammon, mahjong and more, all in the browser."
+      }
+    ],
+    "fullyFree": "Every puzzle, every rating band, no daily limit — the puzzles are public domain (CC0) and the board is open source.",
+    "licenseReason": "The Lichess puzzle database is CC0; the board (chessground) is GPL-3.0 and chess.js is BSD-2-Clause.",
+    "licenseNote": "<p class=\"muted small\">Puzzles: <a href=\"https://database.lichess.org/#puzzles\" target=\"_blank\" rel=\"noopener\">Lichess puzzle database</a>, CC0. Board: chessground (GPL-3.0); rules: chess.js (BSD-2). This page's code is GPL-3.0 — see <a href=\"/apps/chess/NOTICE.md\">NOTICE.md</a>. The selection is built by scripts/build-chess.mjs --puzzles.</p>",
+    "updated": "2026-10-23",
+    "addedDate": "2026-10-23",
+    "rank": 17,
+    "screenshot": true
+  },
+  {
+    "slug": "mahjong",
+    "provenance": "clean",
+    "adsOk": true,
+    "title": "Play Mahjong Solitaire Online Free — 4 Layouts, No Download",
+    "description": "Mahjong solitaire free in your browser: match pairs of free tiles on Turtle, Pyramid, Bridge and Fortress layouts. Every deal is winnable. No download.",
+    "keywords": "mahjong, mahjong solitaire, mahjong online free, play mahjong, mahjong connect, tile matching game, shanghai solitaire",
+    "ogTitle": "Mahjong Solitaire — Free, Every Deal Winnable",
+    "ogDescription": "Clear the board by matching free tiles in pairs. Four layouts, hints, undo and a shuffle that never makes a game unwinnable.",
+    "crumb": "Play Mahjong",
+    "h1": "Play Mahjong Solitaire online",
+    "appName": "Mahjong Solitaire",
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Puzzle",
+      "Tile matching"
+    ],
+    "categories": [
+      "Board games",
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/mahjong/",
+    "iframeHeight": "min(720px, calc(100vw * 0.8 + 140px))",
+    "iframeBg": "#0d2a20",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "intro": "<p>The tile-matching patience game, played with a full set of 136 mahjong tiles stacked into a layout. Take tiles off in matching pairs; a tile can only be taken when nothing sits on top of it and it is open on its left or right side. Clear the whole stack to win. Unlike many versions, every deal here can be cleared: the tiles are laid out by playing a random game backwards, so a solution always exists — the challenge is finding it.</p>",
+    "sections": [
+      {
+        "h": "How to play",
+        "html": "<p>Click a free tile, then another free tile with the same face, and both disappear. Blocked tiles are shaded darker. Identical faces match: the same number of the same suit (circles, bamboo or characters), the same wind or the same dragon. The counter above the board shows how many pairs are left and how many matches are open to you right now. When that number reaches zero you're stuck — press <b>Undo</b> to back out of the dead end, or <b>Shuffle</b> to rearrange the tiles still on the board.</p>"
+      },
+      {
+        "h": "Layouts",
+        "html": "<ul><li><b>Turtle</b> — the traditional shape: a wide base with stepped layers in the middle. The best place to start.</li><li><b>Pyramid</b> — four layers rising to a small peak. The tiles you need are often buried deep, so open the top early.</li><li><b>Bridge</b> — long and low, with two layers stacked on the centre span. Many tiles are blocked side-to-side rather than from above.</li><li><b>Fortress</b> — a walled square with towers at the corners. The towers have to come down before the walls open up.</li></ul>"
+      },
+      {
+        "h": "Strategy",
+        "html": "<p>Prefer matches that free other tiles: a tile on top of a stack or at the end of a long row unlocks more than one in the open. When three or four of a face are free, think before you take two — the pair you leave behind may be the only way into a stack later. Hint shows one possible match, but not necessarily the best one. Shuffle keeps the game winnable, but undo history is cleared when you use it.</p>"
+      },
+      {
+        "h": "About this version",
+        "html": "<p>The game is our own code. The tile artwork is FluffyStuff's riichi mahjong tile set, which its author has dedicated to the public domain. That set has no flower or season tiles, so the layouts here use the 136 standard tiles — 34 faces, four of each — instead of the 144 some versions use.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is every game really winnable?",
+        "a": "Yes. Tiles are assigned by simulating a complete game in reverse — repeatedly picking two positions that would both be free and giving them the same face — so at least one way to clear the board exists. Shuffle uses the same method on the remaining tiles."
+      },
+      {
+        "q": "Which tiles can I take?",
+        "a": "A tile is free when no tile lies on top of it (even partly) and at least one of its long sides — left or right — has no neighbour at the same height."
+      },
+      {
+        "q": "Does it save my game?",
+        "a": "Yes. If you close the page mid-game, the layout and the tiles you've removed are kept in this browser and come back next time."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Select / match a tile",
+        "keyboard": "Tab to a tile, Enter",
+        "mouse": "Click the tile"
+      },
+      {
+        "action": "Show a possible match",
+        "keyboard": "—",
+        "mouse": "Hint"
+      },
+      {
+        "action": "Take back a pair",
+        "keyboard": "—",
+        "mouse": "Undo"
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/solitaire-open/",
+        "title": "Solitaire (Klondike)",
+        "desc": "Classic Klondike, draw one or draw three."
+      },
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Play the Stockfish engine at eight levels, from beginner to maximum."
+      },
+      {
+        "href": "/run/backgammon/",
+        "title": "Backgammon",
+        "desc": "The full race-and-hit game with gammons, against the computer."
+      },
+      {
+        "href": "/run/sudoku/",
+        "title": "Sudoku",
+        "desc": "Endless generated grids from Trivial to Unreasonable."
+      },
+      {
+        "href": "/play/board-games/",
+        "title": "All board games",
+        "desc": "Chess, checkers, backgammon, mahjong and more, all in the browser."
+      }
+    ],
+    "fullyFree": "Written from scratch for ExeBrowser, with public-domain (CC0) tile art — all four layouts, free.",
+    "licenseReason": "Our own code; the tile artwork is FluffyStuff's riichi-mahjong-tiles, dedicated to the public domain under CC0.",
+    "licenseNote": "<p class=\"muted small\">Tile art: <a href=\"https://github.com/FluffyStuff/riichi-mahjong-tiles\" target=\"_blank\" rel=\"noopener\">FluffyStuff/riichi-mahjong-tiles</a>, CC0 (<a href=\"/apps/mahjong/tiles/LICENSE.md\">licence</a>). Game code written for ExeBrowser — see <a href=\"/apps/mahjong/NOTICE.md\">NOTICE.md</a>.</p>",
+    "updated": "2026-10-23",
+    "addedDate": "2026-10-23",
+    "rank": 3.4,
+    "screenshot": true
+  },
+  {
+    "slug": "checkers",
+    "provenance": "clean",
+    "adsOk": true,
+    "title": "Play Checkers Online Free vs Computer — No Download",
+    "description": "Play checkers (draughts) against the computer free in your browser. American rules: forced captures, multi-jumps and kings. Three levels, undo.",
+    "keywords": "checkers, play checkers online, checkers vs computer, draughts online, checkers game free, play checkers free",
+    "ogTitle": "Checkers vs Computer — Free, No Download",
+    "ogDescription": "American checkers with forced captures, multiple jumps and kings, against a computer at three strengths.",
+    "crumb": "Play Checkers",
+    "h1": "Play checkers against the computer",
+    "appName": "Checkers",
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Board game",
+      "Strategy"
+    ],
+    "categories": [
+      "Board games",
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/checkers/",
+    "iframeHeight": "min(720px, calc(100vw + 170px))",
+    "iframeBg": "#23170f",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "intro": "<p>Checkers by the American rules (English draughts) against a computer opponent. You play red and move first. Tap a piece and the squares it can reach light up; if a capture is available you must take it, and the board only lets you pick pieces that can. When a jump lands where another jump is possible, keep tapping landing squares until the move is complete.</p>",
+    "sections": [
+      {
+        "h": "Rules",
+        "html": "<ul><li>Pieces move one square diagonally forward, on the dark squares only.</li><li>Captures are compulsory: jump an adjacent enemy piece into the empty square behind it. If the landing square offers another jump, the same piece must continue.</li><li>A piece that reaches the far row is crowned king (marked ♛) and may then move and jump backwards too. Being crowned ends the move.</li><li>You lose when you have no legal move — usually because every piece is gone or blocked. Fifty moves each without a capture or a crowning is a draw.</li></ul>"
+      },
+      {
+        "h": "The computer",
+        "html": "<p><b>Easy</b> looks two moves ahead and plays loosely; <b>Medium</b> searches four; <b>Hard</b> searches seven and follows forced capture sequences to the end, so it won't walk into a trade it can't see. It values material, kings, advancement, the centre and keeping its back row home to stop you crowning.</p>"
+      },
+      {
+        "h": "Tips",
+        "html": "<p>Keep your back row intact for as long as you can — it's the cheapest defence against enemy kings. Trade pieces when you're ahead and avoid trades when behind. Because captures are forced, you can offer a piece to drag an opponent's man into a square where you get two back.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Are captures forced?",
+        "a": "Yes, as in American checkers. If any jump is available you must take one, and a piece that can keep jumping must do so."
+      },
+      {
+        "q": "Can kings fly across the board?",
+        "a": "No — these are American/English rules, where a king moves one square at a time in any diagonal direction. Flying kings belong to international and Russian draughts."
+      },
+      {
+        "q": "Is my game saved?",
+        "a": "Yes, an unfinished game is kept in this browser and resumes when you come back."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Move a piece",
+        "keyboard": "Tab / Enter",
+        "mouse": "Click the piece, then a highlighted square"
+      },
+      {
+        "action": "Multi-jump",
+        "keyboard": "—",
+        "mouse": "Click each landing square in turn"
+      },
+      {
+        "action": "Take back",
+        "keyboard": "—",
+        "mouse": "Undo"
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Play the Stockfish engine at eight levels, from beginner to maximum."
+      },
+      {
+        "href": "/run/reversi/",
+        "title": "Reversi",
+        "desc": "Outflank and flip discs on the 8×8 board against a three-level computer."
+      },
+      {
+        "href": "/run/backgammon/",
+        "title": "Backgammon",
+        "desc": "The full race-and-hit game with gammons, against the computer."
+      },
+      {
+        "href": "/run/four-in-a-row/",
+        "title": "Four in a Row",
+        "desc": "Drop discs, connect four, beat a search-based computer opponent."
+      },
+      {
+        "href": "/play/board-games/",
+        "title": "All board games",
+        "desc": "Chess, checkers, backgammon, mahjong and more, all in the browser."
+      }
+    ],
+    "fullyFree": "Written from scratch for ExeBrowser — original code, nothing to unlock, free to play.",
+    "licenseReason": "Written from scratch for ExeBrowser; the rules of checkers are not copyrightable.",
+    "licenseNote": "<p class=\"muted small\">Original code written for ExeBrowser — see <a href=\"/apps/checkers/NOTICE.md\">NOTICE.md</a>.</p>",
+    "updated": "2026-10-23",
+    "addedDate": "2026-10-23",
+    "rank": 9.5,
+    "screenshot": true
+  },
+  {
+    "slug": "reversi",
+    "provenance": "clean",
+    "adsOk": true,
+    "title": "Play Reversi Online Free vs Computer — Classic Disc Game",
+    "description": "Play Reversi free in your browser against the computer: outflank and flip discs on the 8×8 board. Three levels, legal moves shown, undo. No download.",
+    "keywords": "reversi, play reversi online, reversi vs computer, reversi game free, disc flipping game, othello style game",
+    "ogTitle": "Reversi vs Computer — Free, No Download",
+    "ogDescription": "The disc-flipping strategy game on an 8×8 board, against a computer at three strengths.",
+    "crumb": "Play Reversi",
+    "h1": "Play Reversi against the computer",
+    "appName": "Reversi",
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Board game",
+      "Strategy"
+    ],
+    "categories": [
+      "Board games",
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/reversi/",
+    "iframeHeight": "min(700px, calc(100vw + 150px))",
+    "iframeBg": "#13261b",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "intro": "<p>Reversi is played on an 8×8 board with discs that are black on one side and white on the other. You play black and move first. Place a disc so that one or more straight lines of white discs are trapped between it and another black disc, and every trapped disc flips to black. Legal squares are marked with a dot. When the board fills — or neither side can move — whoever has more discs wins.</p>",
+    "sections": [
+      {
+        "h": "Rules",
+        "html": "<ul><li>The game starts with four discs in the centre, two of each colour on a diagonal.</li><li>Every move must flip at least one opposing disc, along a row, column or diagonal. A single move can flip lines in several directions at once.</li><li>If you have no legal move you pass; if neither side can move, the game ends.</li><li>The player with more discs at the end wins.</li></ul><p>The game is also widely known by a trademarked name; the rules are the same.</p>"
+      },
+      {
+        "h": "Strategy",
+        "html": "<p>Corners can never be flipped, so they are the most valuable squares on the board; the squares diagonally next to them are the most dangerous, because playing there usually hands the corner to your opponent. Early in the game, having <em>fewer</em> discs is often better — it leaves your opponent with fewer moves. Count disc totals only near the end. The computer plays exactly this way: corner-first square weights, mobility, and raw disc count once fewer than fourteen squares remain.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who moves first?",
+        "a": "Black moves first, and you play black."
+      },
+      {
+        "q": "What happens if I have no legal move?",
+        "a": "You pass automatically and the computer moves again. If neither side can move, the game ends and the discs are counted."
+      },
+      {
+        "q": "How strong is Hard?",
+        "a": "Hard searches five moves ahead with alpha-beta pruning and a positional evaluation. It is a solid club-level opponent but not a perfect player."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Place a disc",
+        "keyboard": "Tab / Enter",
+        "mouse": "Click a dotted square"
+      },
+      {
+        "action": "Take back",
+        "keyboard": "—",
+        "mouse": "Undo"
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/checkers/",
+        "title": "Checkers",
+        "desc": "American checkers against the computer, with forced captures and kings."
+      },
+      {
+        "href": "/run/four-in-a-row/",
+        "title": "Four in a Row",
+        "desc": "Drop discs, connect four, beat a search-based computer opponent."
+      },
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Play the Stockfish engine at eight levels, from beginner to maximum."
+      },
+      {
+        "href": "/run/backgammon/",
+        "title": "Backgammon",
+        "desc": "The full race-and-hit game with gammons, against the computer."
+      },
+      {
+        "href": "/play/board-games/",
+        "title": "All board games",
+        "desc": "Chess, checkers, backgammon, mahjong and more, all in the browser."
+      }
+    ],
+    "fullyFree": "Written from scratch for ExeBrowser — original code, nothing to unlock, free to play.",
+    "licenseReason": "Written from scratch for ExeBrowser; the rules of Reversi are not copyrightable and the trademarked name is not used.",
+    "licenseNote": "<p class=\"muted small\">Original code written for ExeBrowser — see <a href=\"/apps/reversi/NOTICE.md\">NOTICE.md</a>.</p>",
+    "updated": "2026-10-23",
+    "addedDate": "2026-10-23",
+    "rank": 15.5,
+    "screenshot": true
+  },
+  {
+    "slug": "four-in-a-row",
+    "provenance": "clean",
+    "adsOk": true,
+    "title": "Play Four in a Row Online Free vs Computer — Connect 4 Discs",
+    "description": "Four in a Row free in your browser: drop discs into the 7×6 grid and connect four before the computer does. Three levels, undo, no download.",
+    "keywords": "four in a row, connect four online, connect 4 game, play four in a row free, four in a row vs computer, drop disc game",
+    "ogTitle": "Four in a Row vs Computer — Free",
+    "ogDescription": "Drop discs, line up four across, down or diagonally, and beat a computer that searches up to eight moves ahead.",
+    "crumb": "Play Four in a Row",
+    "h1": "Play Four in a Row against the computer",
+    "appName": "Four in a Row",
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Board game",
+      "Strategy"
+    ],
+    "categories": [
+      "Board games",
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/four-in-a-row/",
+    "iframeHeight": "min(680px, calc(100vw * 0.86 + 160px))",
+    "iframeBg": "#101a2e",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "intro": "<p>The vertical connection game: seven columns, six rows, and discs that drop to the lowest free hole. Tap a column (or press 1–7) to drop a red disc; the computer answers with yellow. The first to line up four in a row — across, up and down, or diagonally — wins. Who goes first alternates from game to game, and the score is kept across games.</p>",
+    "sections": [
+      {
+        "h": "Tips",
+        "html": "<p>The middle column takes part in more lines of four than any other, so it's the strongest place to start. Watch for threats on two levels at once: a disc that threatens to complete a line in two different places can't be blocked. And keep track of which holes each of you would win on — sometimes the right move is to leave a column alone because filling it would let your opponent drop into the square above.</p>"
+      },
+      {
+        "h": "The computer",
+        "html": "<p><b>Easy</b> looks two moves ahead, with a little randomness; <b>Medium</b> searches five; <b>Hard</b> searches eight, which is enough to see most traps before you spring them. It scores positions by counting the lines of four each side can still make, and prefers the centre.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is this Connect 4?",
+        "a": "It's the same game. \"Connect Four\" is a trademark of Hasbro, so we use the generic name; the rules — a 7×6 upright grid, discs that fall, four in a line wins — are not owned by anyone."
+      },
+      {
+        "q": "Can the first player always win?",
+        "a": "With perfect play, yes — the game was solved in 1988, and the first player wins by starting in the centre. Neither you nor the computer here plays perfectly, though."
+      },
+      {
+        "q": "Can I use the keyboard?",
+        "a": "Yes: number keys 1 to 7 drop a disc in that column."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Drop a disc",
+        "keyboard": "1–7",
+        "mouse": "Click the column"
+      },
+      {
+        "action": "Take back",
+        "keyboard": "—",
+        "mouse": "Undo"
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/reversi/",
+        "title": "Reversi",
+        "desc": "Outflank and flip discs on the 8×8 board against a three-level computer."
+      },
+      {
+        "href": "/run/checkers/",
+        "title": "Checkers",
+        "desc": "American checkers against the computer, with forced captures and kings."
+      },
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Play the Stockfish engine at eight levels, from beginner to maximum."
+      },
+      {
+        "href": "/run/mahjong/",
+        "title": "Mahjong Solitaire",
+        "desc": "Match free tiles in pairs on four layouts; every deal can be cleared."
+      },
+      {
+        "href": "/play/board-games/",
+        "title": "All board games",
+        "desc": "Chess, checkers, backgammon, mahjong and more, all in the browser."
+      }
+    ],
+    "fullyFree": "Written from scratch for ExeBrowser — original code, nothing to unlock, free to play.",
+    "licenseReason": "Written from scratch for ExeBrowser; the rules are not copyrightable and the trademarked name is not used.",
+    "licenseNote": "<p class=\"muted small\">Original code written for ExeBrowser — see <a href=\"/apps/four-in-a-row/NOTICE.md\">NOTICE.md</a>.</p>",
+    "updated": "2026-10-23",
+    "addedDate": "2026-10-23",
+    "rank": 17.5,
+    "screenshot": true
+  },
+  {
+    "slug": "backgammon",
+    "provenance": "clean",
+    "adsOk": true,
+    "title": "Play Backgammon Online Free vs Computer — No Download",
+    "description": "Play backgammon free in your browser against the computer: full rules with hitting, the bar, bearing off, gammons and backgammons. No sign-up.",
+    "keywords": "backgammon, play backgammon online, backgammon vs computer, backgammon free, backgammon game online, tavla",
+    "ogTitle": "Backgammon vs Computer — Free, Full Rules",
+    "ogDescription": "The two-thousand-year-old race game, with hits, the bar and gammons, against a computer opponent. Free, instant.",
+    "crumb": "Play Backgammon",
+    "h1": "Play backgammon against the computer",
+    "appName": "Backgammon",
+    "appType": "game",
+    "author": "ExeBrowser (original implementation)",
+    "genre": [
+      "Board game",
+      "Strategy"
+    ],
+    "categories": [
+      "Board games",
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/backgammon/",
+    "iframeHeight": "min(760px, calc(100vw * 0.8 + 210px))",
+    "iframeBg": "#1b1410",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs natively, no emulator"
+    },
+    "intro": "<p>Backgammon is a race with collisions. You and the computer each have fifteen checkers moving in opposite directions around the board; you move yours from the 24-point down to your home board (points 1–6) and bear them off. Land on a point held by a single enemy checker and you send it to the bar, where it must start again. First to bear off all fifteen wins. Press <b>Roll</b>, then tap a checker and a highlighted point for each die.</p>",
+    "sections": [
+      {
+        "h": "Rules",
+        "html": "<ul><li>Each die is a separate move: a 5 and a 3 move one checker eight points or two checkers five and three. Doubles are played four times.</li><li>You may not land on a point held by two or more enemy checkers.</li><li>A checker on the bar must re-enter in the opponent's home board before anything else moves.</li><li>You must use both dice if any legal sequence allows it; if only one can be used, it must be the larger when either would do. The board only offers moves that obey this.</li><li>Once all fifteen checkers are home you bear off, using a die equal to a checker's point, or a higher die on your highest checker.</li></ul>"
+      },
+      {
+        "h": "Scoring",
+        "html": "<p>A win is worth one point. If the loser hasn't borne off a single checker, it's a <b>gammon</b> and counts two; if the loser also still has a checker on the bar or in the winner's home board, it's a <b>backgammon</b> and counts three. The score carries over from game to game. There is no doubling cube in this version.</p>"
+      },
+      {
+        "h": "Strategy",
+        "html": "<p>Make points rather than leaving single checkers (blots) where they can be hit — especially your 5-point and the bar point (7). A row of consecutive made points, a prime, can trap enemy checkers behind it. When you're well ahead in the race, stop fighting and run home. The pip counts above the board show how far each side has to go.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is the doubling cube included?",
+        "a": "Not yet. Games are scored as single wins, gammons and backgammons, with the score kept across games."
+      },
+      {
+        "q": "Does the computer cheat with the dice?",
+        "a": "No. Both sides' dice come from the browser's random number generator, and the computer sees nothing you don't."
+      },
+      {
+        "q": "How do I bear off?",
+        "a": "Once all fifteen of your checkers are on points 1–6, tap a checker and then the tray on the right edge of the board."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Roll the dice",
+        "keyboard": "—",
+        "mouse": "Roll"
+      },
+      {
+        "action": "Move a checker",
+        "keyboard": "—",
+        "mouse": "Click the checker, then a highlighted point"
+      },
+      {
+        "action": "Bear off",
+        "keyboard": "—",
+        "mouse": "Click a checker, then the tray"
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/checkers/",
+        "title": "Checkers",
+        "desc": "American checkers against the computer, with forced captures and kings."
+      },
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Play the Stockfish engine at eight levels, from beginner to maximum."
+      },
+      {
+        "href": "/run/mahjong/",
+        "title": "Mahjong Solitaire",
+        "desc": "Match free tiles in pairs on four layouts; every deal can be cleared."
+      },
+      {
+        "href": "/run/hearts-open/",
+        "title": "Hearts",
+        "desc": "Three computer opponents, passing and shooting the moon."
+      },
+      {
+        "href": "/play/board-games/",
+        "title": "All board games",
+        "desc": "Chess, checkers, backgammon, mahjong and more, all in the browser."
+      }
+    ],
+    "fullyFree": "Written from scratch for ExeBrowser — original code, nothing to unlock, free to play.",
+    "licenseReason": "Written from scratch for ExeBrowser; backgammon is a traditional game whose rules are not copyrightable.",
+    "licenseNote": "<p class=\"muted small\">Original code written for ExeBrowser — see <a href=\"/apps/backgammon/NOTICE.md\">NOTICE.md</a>.</p>",
+    "updated": "2026-10-23",
+    "addedDate": "2026-10-23",
+    "rank": 10.5,
+    "screenshot": true
+  },
+  {
+    "slug": "nethack",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "Play NetHack Online in Your Browser — Free, Saves Your Game",
+    "description": "Play NetHack 3.6.7 in your browser: the real game compiled to WebAssembly, with colour, menus, mouse travel and saves kept in your browser. Free.",
+    "keywords": "nethack, nethack online, play nethack in browser, nethack web, roguelike online, nethack 3.6",
+    "ogTitle": "NetHack in Your Browser — The Real 3.6.7",
+    "ogDescription": "The official NetHack source compiled to WebAssembly. Pick a role, descend, save with S and come back later.",
+    "crumb": "Play NetHack",
+    "h1": "Play NetHack in your browser",
+    "appName": "NetHack",
+    "appType": "game",
+    "author": "The NetHack DevTeam",
+    "genre": [
+      "Roguelike",
+      "RPG"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/nethack/",
+    "iframeHeight": "min(680px, calc(100vw * 0.62 + 300px))",
+    "iframeBg": "#000",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — the real NetHack 3.6.7"
+    },
+    "intro": "<p>NetHack is the dungeon crawl that has been in development since 1987: descend through randomly generated levels, find the Amulet of Yendor at the bottom, and bring it back up — if you survive. This is the official <strong>NetHack 3.6.7</strong> source compiled to WebAssembly, not a remake, so every interaction the game is famous for is here. Choose a name and a role, press Start, and click the game to give it the keyboard.</p>",
+    "sections": [
+      {
+        "h": "Controls",
+        "html": "<p>Move with <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd> and <kbd>y</kbd> <kbd>u</kbd> <kbd>b</kbd> <kbd>n</kbd> for diagonals, or with the arrow keys and the numeric keypad. A capital letter (or Shift+arrow) runs. Some essentials: <kbd>,</kbd> pick up, <kbd>i</kbd> inventory, <kbd>e</kbd> eat, <kbd>q</kbd> quaff, <kbd>r</kbd> read, <kbd>w</kbd> wield, <kbd>W</kbd> wear, <kbd>s</kbd> search, <kbd>&lt;</kbd> and <kbd>&gt;</kbd> stairs, <kbd>#</kbd> extended commands such as <code>#pray</code>, <kbd>?</kbd> help. Alt+letter sends NetHack's Meta commands. Click a spot on the map to travel there. On a phone, a keypad appears under the map with directions and the common keys, and ⌨ opens the system keyboard.</p>"
+      },
+      {
+        "h": "Saving",
+        "html": "<p>Press <kbd>S</kbd> and answer <kbd>y</kbd> to save and stop. The save is kept in this browser's storage; next time you open this page with the same name, the start button says <em>Continue saved game</em> and you pick up where you left off. As in NetHack itself there is no autosave — but if you close the tab without saving, the last save you made is still there, so you lose only the time since then.</p>"
+      },
+      {
+        "h": "First game tips",
+        "html": "<p>Valkyrie is the most forgiving role for a first game: strong, cold-resistant, with a good sword. Let your pet go first into unknown rooms, don't eat corpses you can't identify, and when you're in trouble, <code>#pray</code> — your god will usually help if you haven't prayed recently. Read the messages at the top; NetHack tells you almost everything, but only once.</p>"
+      },
+      {
+        "h": "About this build",
+        "html": "<p>The game is the NetHack DevTeam's own source, compiled to WebAssembly by the neth4ck project and released under the NetHack General Public License. The window port that draws the map and menus and reads your keys is written for this site. NetHack's built-in help files live in the game's data archive, which this build doesn't expose to the help viewer, so a few help pages show a short notice instead.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is this the real NetHack or a clone?",
+        "a": "The real one: NetHack 3.6.7, the last 3.6 release, built from the official source to WebAssembly. The rules, monsters, items and every special level are the originals."
+      },
+      {
+        "q": "Where is my save kept?",
+        "a": "In your browser's IndexedDB storage for this site, under the name you chose. Clearing site data deletes it, and it doesn't move between browsers or devices."
+      },
+      {
+        "q": "Can I play with tiles instead of letters?",
+        "a": "Not yet — this version draws the classic coloured characters."
+      },
+      {
+        "q": "Is NetHack free?",
+        "a": "Yes. NetHack has always been free software under the NetHack General Public License, which allows it to be shared and hosted as long as the licence and source stay available."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Move / attack",
+        "keyboard": "hjklyubn, arrows or numpad",
+        "mouse": "Click a map square to travel"
+      },
+      {
+        "action": "Extended command",
+        "keyboard": "#, or Alt+letter",
+        "mouse": "# button, then pick"
+      },
+      {
+        "action": "Save and quit",
+        "keyboard": "S, then y",
+        "mouse": "—"
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Play the Stockfish engine at eight levels, from beginner to maximum."
+      },
+      {
+        "href": "/run/backgammon/",
+        "title": "Backgammon",
+        "desc": "The full race-and-hit game with gammons, against the computer."
+      },
+      {
+        "href": "/run/mahjong/",
+        "title": "Mahjong Solitaire",
+        "desc": "Match free tiles in pairs on four layouts; every deal can be cleared."
+      },
+      {
+        "href": "/run/checkers/",
+        "title": "Checkers",
+        "desc": "American checkers against the computer, with forced captures and kings."
+      }
+    ],
+    "fullyFree": "Free software under the NetHack General Public License — the complete game, every role and every level.",
+    "licenseReason": "NetHack is released under the NetHack General Public License, which permits redistribution (including commercially) with the licence and source available.",
+    "licenseNote": "<p class=\"muted small\">NetHack 3.6.7 © the NetHack DevTeam, under the <a href=\"/apps/nethack/vendor/LICENSE.md\">NetHack General Public License</a>; source at <a href=\"https://github.com/NetHack/NetHack\" target=\"_blank\" rel=\"noopener\">github.com/NetHack/NetHack</a>. WebAssembly build: <a href=\"https://www.npmjs.com/package/@neth4ck/wasm-367\" target=\"_blank\" rel=\"noopener\">@neth4ck/wasm-367</a>, vendored by scripts/build-nethack.mjs. Browser window port written for ExeBrowser — see <a href=\"/apps/nethack/NOTICE.md\">NOTICE.md</a>.</p>",
+    "updated": "2026-10-23",
+    "addedDate": "2026-10-23",
+    "rank": 11.5,
+    "screenshot": true
   }
 ]

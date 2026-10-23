@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Four in a Row — free board game</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .75rem;
+    font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #101a2e; color: #eef1f6;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+  }
+  .bar { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+  .score { gap: 1rem; font-size: .95rem; }
+  .score b { font-variant-numeric: tabular-nums; }
+  .chip { display: inline-block; width: .9em; height: .9em; border-radius: 50%; vertical-align: -.1em; margin-right: .25em; }
+  .chip.r { background: #e74c3c; } .chip.y { background: #f5c518; }
+  #board {
+    --w: min(94vw, 560px, calc((100vh - 150px) * 7 / 6));
+    width: var(--w); aspect-ratio: 7 / 6;
+    display: grid; grid-template-columns: repeat(7, 1fr); grid-template-rows: repeat(6, 1fr);
+    gap: 1.6%; padding: 1.6%; background: #1d4fbf; border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.35);
+    touch-action: manipulation; cursor: pointer;
+  }
+  .hole { border-radius: 50%; background: #0b1324; position: relative; overflow: hidden; }
+  .hole.r::after, .hole.y::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+    animation: drop .28s ease-in;
+  }
+  .hole.r::after { background: radial-gradient(circle at 35% 30%, #ff7a6b, #c0392b 70%); }
+  .hole.y::after { background: radial-gradient(circle at 35% 30%, #ffe680, #d9a400 70%); }
+  .hole.win { box-shadow: 0 0 0 4px #fff inset; }
+  .hole.win::after { opacity: .85; }
+  .col-hover .hole.hint { background: #22314f; }
+  @keyframes drop { from { transform: translateY(-400%); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .hole::after { animation: none !important; } }
+  #status { text-align: center; min-height: 1.4em; font-size: .95rem; }
+  .button, select {
+    font: inherit; font-size: .9rem; padding: .4rem .8rem;
+    border-radius: 8px; border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08); color: inherit; cursor: pointer;
+  }
+  select option { color: #111; }
+  .button:disabled { opacity: .45; cursor: default; }
+</style>
+</head>
+<body>
+  <div class="bar score">
+    <span><span class="chip r"></span>You <b id="sh">0</b></span>
+    <span><span class="chip y"></span>Computer <b id="sc">0</b></span>
+  </div>
+  <div id="board" role="grid" aria-label="Four in a Row board — tap a column to drop a disc"></div>
+  <p id="status" aria-live="polite"></p>
+  <div class="bar">
+    <label>Level
+      <select id="level">
+        <option value="2">Easy</option>
+        <option value="5" selected>Medium</option>
+        <option value="8">Hard</option>
+      </select>
+    </label>
+    <button class="button" id="undo">Undo</button>
+    <button class="button" id="new">New game</button>
+  </div>
+<script src="/apps/gamesave.js?v=1"></script>
+<script src="fourinarow.js?v=1"></script>
+</body>
+</html>

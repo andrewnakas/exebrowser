@@ -5,8 +5,64 @@
     <link>https://exebrowser.com/</link>
     <description>Classic DOS and Windows games you can play free in your browser, plus write-ups on how the runtimes work.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://exebrowser.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New game: Chess</title>
+      <link>https://exebrowser.com/run/chess/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/chess/</guid>
+      <description>Stockfish 19 in your browser tab, turned down to whatever strength you want. Undo, flip the board, play either colour.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Chess puzzles</title>
+      <link>https://exebrowser.com/run/chess-puzzles/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/chess-puzzles/</guid>
+      <description>Find the winning move. Thousands of real-game tactics, matched to your level, with a rating that follows you.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Mahjong Solitaire</title>
+      <link>https://exebrowser.com/run/mahjong/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/mahjong/</guid>
+      <description>Clear the board by matching free tiles in pairs. Four layouts, hints, undo and a shuffle that never makes a game unwinnable.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Checkers</title>
+      <link>https://exebrowser.com/run/checkers/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/checkers/</guid>
+      <description>American checkers with forced captures, multiple jumps and kings, against a computer at three strengths.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Reversi</title>
+      <link>https://exebrowser.com/run/reversi/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/reversi/</guid>
+      <description>The disc-flipping strategy game on an 8×8 board, against a computer at three strengths.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Four in a Row</title>
+      <link>https://exebrowser.com/run/four-in-a-row/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/four-in-a-row/</guid>
+      <description>Drop discs, line up four across, down or diagonally, and beat a computer that searches up to eight moves ahead.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Backgammon</title>
+      <link>https://exebrowser.com/run/backgammon/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/backgammon/</guid>
+      <description>The two-thousand-year-old race game, with hits, the bar and gammons, against a computer opponent. Free, instant.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: NetHack</title>
+      <link>https://exebrowser.com/run/nethack/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/nethack/</guid>
+      <description>The official NetHack source compiled to WebAssembly. Pick a role, descend, save with S and come back later.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>New game: Sudoku (Solo)</title>
       <link>https://exebrowser.com/run/sudoku/</link>
@@ -61,62 +117,6 @@
       <link>https://exebrowser.com/run/light-up-puzzle/</link>
       <guid isPermaLink="true">https://exebrowser.com/run/light-up-puzzle/</guid>
       <description>Play Light Up free in your browser: place bulbs so every white square is lit, no bulb shines on another, and numbered walls get their count. 7×7 to 14</description>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Network tile-rotation puzzle (Net)</title>
-      <link>https://exebrowser.com/run/net-puzzle/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/net-puzzle/</guid>
-      <description>Play Net free in your browser: rotate scrambled pipe tiles until every square joins one network with no loops. 5×5 to 13×11, with wrap-around boards.</description>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Spiral Galaxies puzzle (Galaxies)</title>
-      <link>https://exebrowser.com/run/galaxies-puzzle/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/galaxies-puzzle/</guid>
-      <description>Play Spiral Galaxies free in your browser: divide the grid into regions that are each symmetric around their single dot. 7×7 to 15×15, two difficultie</description>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Arrow path puzzle (Signpost)</title>
-      <link>https://exebrowser.com/run/signpost-puzzle/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/signpost-puzzle/</guid>
-      <description>Play Signpost free in your browser: link every square into one numbered chain, each step lying in the direction of its arrow. Grids from 4×4 to 7×7.</description>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Tents and trees puzzle (Tents)</title>
-      <link>https://exebrowser.com/run/tents-puzzle/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/tents-puzzle/</guid>
-      <description>Play the Tents and Trees puzzle free in your browser: pitch one tent beside each tree, never touching another tent, matching row and column counts.</description>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Flood fill colour puzzle (Flood)</title>
-      <link>https://exebrowser.com/run/flood-puzzle/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/flood-puzzle/</guid>
-      <description>Play the flood fill puzzle free in your browser: recolour the top-left area until the whole grid is one colour, within the move limit. 12×12 and 16×16</description>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Same Game</title>
-      <link>https://exebrowser.com/run/same-game/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/same-game/</guid>
-      <description>Play Same Game free in your browser: remove groups of same-coloured blocks to clear the board and score points. Several board sizes and colour counts.</description>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Untangle (planar graph puzzle) (Untangle)</title>
-      <link>https://exebrowser.com/run/untangle/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/untangle/</guid>
-      <description>Play Untangle free in your browser: drag the points of a tangled graph until no two lines cross. Choose 6 to 25 points, or set any number in Custom.</description>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Fifteen puzzle (Fifteen)</title>
-      <link>https://exebrowser.com/run/fifteen-puzzle/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/fifteen-puzzle/</guid>
-      <description>Play the 15 puzzle free in your browser: slide numbered tiles into order with the gap bottom right. Hint key, undo, and custom board sizes.</description>
       <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
     </item>
     <item>

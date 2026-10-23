@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reversi — free board game</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: .75rem;
+    font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #13261b; color: #eef4ef;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    min-height: 100vh;
+  }
+  .bar { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+  .score { display: flex; gap: 1rem; font-size: .95rem; }
+  .score b { font-variant-numeric: tabular-nums; }
+  .chip { display: inline-block; width: .9em; height: .9em; border-radius: 50%; vertical-align: -.1em; margin-right: .25em; }
+  .chip.b { background: #111; border: 1px solid #555; } .chip.w { background: #f4f4ee; }
+  #board {
+    --size: min(92vw, 520px, calc(100vh - 150px));
+    width: var(--size); height: var(--size);
+    display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr);
+    gap: 2px; padding: 2px; background: #0a1a10; border-radius: 8px;
+    touch-action: manipulation;
+  }
+  .sq {
+    background: #1f7a45; border: 0; padding: 0; position: relative; cursor: default;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sq.legal { cursor: pointer; }
+  .sq.legal::after {
+    content: ""; width: 26%; height: 26%; border-radius: 50%;
+    background: rgba(0,0,0,.28);
+  }
+  .sq.legal:hover::after { background: rgba(0,0,0,.45); }
+  .sq.last { box-shadow: inset 0 0 0 3px #f1c40f; }
+  .disc { width: 82%; height: 82%; border-radius: 50%; transition: background .25s; }
+  .disc.b { background: radial-gradient(circle at 35% 30%, #4a4a4a, #0b0b0b 70%); }
+  .disc.w { background: radial-gradient(circle at 35% 30%, #fff, #d4d4cc 70%); }
+  #status { text-align: center; min-height: 1.4em; font-size: .95rem; }
+  .button, select {
+    font: inherit; font-size: .9rem; padding: .4rem .8rem;
+    border-radius: 8px; border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08); color: inherit; cursor: pointer;
+  }
+  select option { color: #111; }
+  .button:disabled { opacity: .45; cursor: default; }
+</style>
+</head>
+<body>
+  <div class="bar score">
+    <span><span class="chip b"></span>You <b id="sb">2</b></span>
+    <span><span class="chip w"></span>Computer <b id="sw">2</b></span>
+  </div>
+  <div id="board" role="grid" aria-label="Reversi board"></div>
+  <p id="status" aria-live="polite"></p>
+  <div class="bar">
+    <label>Level
+      <select id="level">
+        <option value="1">Easy</option>
+        <option value="3" selected>Medium</option>
+        <option value="5">Hard</option>
+      </select>
+    </label>
+    <button class="button" id="undo">Undo</button>
+    <button class="button" id="new">New game</button>
+  </div>
+<script src="/apps/gamesave.js?v=1"></script>
+<script src="reversi.js?v=1"></script>
+</body>
+</html>
