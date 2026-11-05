@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jugar 3D Pinball Space Cadet online — el pinball de Windows XP gratis</title>
+<meta name="description" content="Juega a 3D Pinball Space Cadet en tu navegador: gratis, al instante, sin descargas y sin archivos de Windows. Versión de código abierto en WebAssembly." />
+<meta name="keywords" content="3d pinball space cadet online, jugar space cadet pinball online gratis, space cadet pinball sin descargar, pinball de windows xp online, space cadet pinball en el navegador, space cadet pinball sin archivos de microsoft, jugar 3d pinball gratis, pinball de windows online, space cadet pinball chromebook, space cadet pinball desbloqueado, space cadet pinball código abierto, space cadet pinball webassembly" />
+<link rel="canonical" href="https://exebrowser.com/es/run/space-cadet-open/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/space-cadet-open/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/space-cadet-open/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/space-cadet-open/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/space-cadet-open/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/space-cadet-open/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/space-cadet-open/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/es/run/space-cadet-open/" />
+<meta property="og:title" content="Jugar 3D Pinball Space Cadet online gratis — sin descargas ni archivos de Windows" />
+<meta property="og:description" content="El clásico pinball de Windows XP en tu navegador: gratis, al instante y sin descargas. Versión de código abierto en WebAssembly. Funciona en cualquier dispositivo, incluidos Mac, Chromebook y Linux." />
+<meta property="og:image" content="https://exebrowser.com/run/space-cadet-open/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://exebrowser.com/run/space-cadet-open/screenshot.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://exebrowser.com/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Guías de programas", "item": "https://exebrowser.com/es/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Jugar a Space Cadet Pinball", "item": "https://exebrowser.com/es/run/space-cadet-open/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "3D Pinball for Windows – Space Cadet (versión de código abierto)",
+  "url": "https://exebrowser.com/es/run/space-cadet-open/",
+  "image": "https://exebrowser.com/run/space-cadet-open/screenshot.png",
+  "description": "Juega gratis en tu navegador al clásico pinball Space Cadet de Windows XP. Versión de código abierto en WebAssembly: sin descargas, sin archivos de Windows y sin instalar nada. Funciona en cualquier dispositivo.",
+  "applicationCategory": "Game",
+  "genre": ["Pinball", "Arcade"],
+  "gamePlatform": ["Navegador web", "Windows", "Mac", "Linux", "Chromebook"],
+  "operatingSystem": "Web Browser",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Necesito archivos de Microsoft Windows para jugar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Esta versión usa recursos totalmente abiertos y no necesita ningún archivo de Windows XP, Windows 95 ni de ningún otro producto de Microsoft. Solo tienes que pulsar Jugar y el juego se carga al instante en tu navegador: no hay nada que aportar ni que descargar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona en Windows 10 y Windows 11?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Como se ejecuta en tu navegador mediante WebAssembly, funciona en Windows 10, Windows 11, macOS, Linux y Chromebook: en cualquier dispositivo con un navegador moderno como Chrome, Firefox, Edge o Safari. Microsoft retiró el juego original después de Windows XP; esta versión de código abierto para navegador no tiene esa limitación." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué se eliminó 3D Pinball Space Cadet de Windows?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Microsoft abandonó Space Cadet al desarrollar Windows Vista de 64 bits. El motor de física tenía un error de redondeo en coma flotante: en procesadores de 64 bits, ciertos cálculos decimales daban resultados ligeramente distintos que en los de 32 bits, y la bola atravesaba de vez en cuando los flippers y las paredes. En lugar de reescribir la física, Microsoft eliminó el juego. Raymond Chen, de Microsoft, documentó la causa exacta en su blog de desarrollo en enero de 2022. El motor de código abierto SpaceCadetPinball que se usa aquí corrige ese error." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es el auténtico Space Cadet de Microsoft?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usa el motor de código abierto obtenido por ingeniería inversa (con licencia MIT) junto con arte y sonidos originales de dominio público CC0, no el binario propietario de Microsoft. Las reglas de física, las misiones y la jugabilidad son fieles al original, pero no se usa ni se incluye ningún archivo de Microsoft. Si quieres ejecutar el binario original de verdad, consulta nuestra guía de 3D Pinball Space Cadet con Wine (en inglés; tendrás que aportar tu propia copia)." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo jugar a Space Cadet Pinball desbloqueado en el instituto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Se ejecuta por completo en tu navegador mediante WebAssembly: sin descargas, sin plugins y sin instalaciones. Funciona en los Chromebook del centro y en redes que bloquean las descargas de juegos o el contenido Flash/Java. Solo tienes que abrir esta página y pulsar Jugar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona en el móvil o en una tableta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los controles táctiles vienen integrados: toca el lado izquierdo de la mesa para el flipper izquierdo, el lado derecho para el flipper derecho y el botón central bajo la mesa para lanzar. En pantallas pequeñas, la mesa se amplía hasta ocupar toda la pantalla al pulsar Jugar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son las misiones de Space Cadet Pinball?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hay 9 tipos de misión: Entrenamiento de lanzamiento (Launch Training), Amenaza alienígena (Alien Menace), Plaga cósmica (Cosmic Plague), Mención de honor (Commendation), Mayday, Misión secreta (Secret Mission), Reconocimiento (Recon), Estasis (Stasis) y Rescate (Rescue). Cada una se activa encendiendo en orden los tres indicadores amarillos de Misión. Completar misiones te asciende de rango, desde Cadete (Cadet) hasta Almirante de la flota (Fleet Admiral)." }
+    },
+    {
+      "@type": "Question",
+      "name": "La tecla del flipper derecho no funciona, ¿qué hago?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El flipper derecho está asignado por defecto a la tecla / (barra). En distribuciones que no son QWERTY o en algunos teclados internacionales, esa tecla puede no corresponder correctamente. Usa el clic derecho como flipper derecho alternativo: funciona sea cual sea la distribución de tu teclado." }
+    }
+  ]
+}
+</script>
+<style>
+  .play-frame-wrap { margin: 1rem 0; }
+  .play-frame { width: 100%; max-width: 640px; height: 480px; border: 0;
+                display: block; margin: 0 auto; background: #000; border-radius: 6px; }
+  .play-cta { display:inline-block; margin: 0 auto 0.5rem; }
+
+  .mobile-controls { display: none; }
+  .mobile-hint { display: none; }
+  .mobile-controls {
+    max-width: 640px; margin: 0.5rem auto 0; gap: 0.6rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .mc-btn {
+    -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    touch-action: manipulation; cursor: pointer;
+    font: 700 1.1rem/1 system-ui, sans-serif; letter-spacing: .03em;
+    color: #cfe8ff; background: linear-gradient(#1b2a44, #0d1626);
+    border: 1px solid #3a5a8a; border-radius: 10px;
+    padding: 1.1rem 0.4rem; text-align: center;
+    box-shadow: 0 2px 0 #0a1220, inset 0 1px 0 rgba(120,180,255,.15);
+  }
+  .mc-btn:active {
+    background: linear-gradient(#284064, #16243c);
+    transform: translateY(1px); box-shadow: 0 1px 0 #0a1220;
+    color: #fff;
+  }
+  .mc-launch { color: #ffe1a8; border-color: #8a6a3a; }
+  @media (hover: none) and (pointer: coarse) {
+    .mobile-controls { display: grid; }
+    .mobile-hint { display: inline; }
+  }
+  @media (max-width: 720px) {
+    .mobile-controls { display: grid; }
+    .mobile-hint { display: inline; }
+  }
+
+  body.playing { overflow: hidden; }
+  @media (max-width: 720px) {
+    body.playing { position: fixed; inset: 0; width: 100%; }
+  }
+  .play-overlay { display: block; }
+  body.playing .play-overlay {
+    display: flex;
+    position: fixed; inset: 0; z-index: 9999;
+    background: #05080f;
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    overscroll-behavior: none; touch-action: none;
+  }
+  body.playing .play-overlay .play-frame {
+    flex: 1 1 auto; width: 100vw; max-width: 100vw; height: auto; min-height: 0;
+    margin: 0; border-radius: 0;
+  }
+  body.playing .play-overlay .mobile-controls {
+    display: grid; width: 100%; max-width: 100%;
+    margin: 0; padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
+    gap: 0.5rem; flex: 0 0 auto;
+  }
+  body.playing .play-overlay .mc-btn { padding: 1.4rem 0.4rem; font-size: 1.25rem; }
+  .play-exit {
+    display: none; position: fixed; top: calc(6px + env(safe-area-inset-top));
+    right: 8px; z-index: 10000;
+    background: rgba(10,18,32,.8); color: #cfe8ff; border: 1px solid #3a5a8a;
+    border-radius: 8px; padding: .4rem .7rem; font: 600 .9rem system-ui; cursor: pointer;
+  }
+  body.playing .play-exit { display: block; }
+
+  .rank-table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .75rem 0; }
+  .rank-table th { background: #1a2740; color: #cfe8ff; padding: .4rem .6rem; text-align: left; }
+  .rank-table td { padding: .35rem .6rem; border-bottom: 1px solid #1e2d47; }
+  .rank-table tr:last-child td { border-bottom: none; }
+
+  .mission-list { columns: 2; column-gap: 2rem; margin: .5rem 0; }
+  @media (max-width: 500px) { .mission-list { columns: 1; } }
+  .mission-list li { margin-bottom: .3rem; break-inside: avoid; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Ejecuta archivos <code>.exe</code> de Windows en tu navegador. Sin instalar. Sin subir nada. Solo WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/es/">Inicio</a>
+    <a href="/load-exe/">Ejecuta tu EXE</a>
+    <a href="/es/run/">Guías de programas</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guía</a>
+    <a href="/about/">Acerca de</a>
+    <a href="/contact/">Contacto</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="Idioma"><a href="/run/space-cadet-open/" hreflang="en">English</a> · <span class="lang-current" aria-current="true">Español</span> · <a href="/pt-BR/run/space-cadet-open/" hreflang="pt-BR">Português (BR)</a> · <a href="/fr/run/space-cadet-open/" hreflang="fr">Français</a> · <a href="/zh-CN/run/space-cadet-open/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/es/">Inicio</a> › <a href="/es/run/">Guías de programas</a> › Jugar a Space Cadet Pinball</nav>
+
+  <section class="card">
+    <h2>Juega a 3D Pinball Space Cadet online: gratis, al instante y sin descargas <span class="verdict good">Funciona · no necesita archivos</span></h2>
+    <p>El clásico pinball de Windows XP, listo para jugar ahora mismo en tu navegador: <strong>sin descargas, sin instalación y sin necesidad de archivos de Microsoft Windows</strong>. Es una compilación en WebAssembly del motor de código abierto <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> con recursos originales de dominio público. Funciona en Windows 10, Windows 11, Mac, Linux y Chromebook. Pulsa Jugar y en unos segundos tendrás la bola en el lanzador.</p>
+
+    <div class="play-frame-wrap">
+      <button class="button play-cta" id="boot-pinball" type="button">&#9654; Jugar a 3D Pinball Space Cadet — gratis y al instante</button>
+      <button type="button" class="play-exit" id="play-exit" aria-label="Salir de pantalla completa">&#10005; Salir</button>
+      <div class="play-overlay" id="play-overlay">
+        <iframe class="play-frame" id="pinball-frame" title="3D Pinball Space Cadet — versión de código abierto para navegador"
+                allow="autoplay; gamepad; fullscreen"
+                data-src="/apps/space-cadet/?v=1782869574"></iframe>
+        <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
+          <button type="button" class="mc-btn mc-flip" data-key="z" aria-label="Flipper izquierdo">&#9664; FLIP</button>
+          <button type="button" class="mc-btn mc-launch" data-key="space" aria-label="Lanzar la bola">&#9679; LANZAR</button>
+          <button type="button" class="mc-btn mc-flip" data-key="slash" aria-label="Flipper derecho">FLIP &#9654;</button>
+        </div>
+      </div>
+    </div>
+    <p class="muted small" style="margin-top:0.5rem;">Se ejecuta por completo en tu navegador: no se sube nada ni se instala nada. Haz clic en el juego para que capture el teclado. <strong>Lanzar:</strong> mantén pulsada y suelta la tecla <kbd>Espacio</kbd>. <strong>Flippers:</strong> <kbd>Z</kbd> el izquierdo, <kbd>/</kbd> el derecho. <strong>Partida nueva:</strong> <kbd>F2</kbd>. <strong>Ratón:</strong> clic izquierdo = flipper izquierdo, clic derecho = flipper derecho. <kbd>Esc</kbd> libera el control. Los menús del propio juego están en inglés. <span class="mobile-hint">En el móvil, usa los botones <strong>FLIP</strong> / <strong>LANZAR</strong> que hay bajo la mesa.</span></p>
+
+    <details class="controls-panel" open>
+      <summary><strong>Controles</strong>: qué hace cada cosa</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Acción</th><th scope="col">Teclado</th><th scope="col">Ratón / táctil</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">Lanzar la bola</th><td>mantén pulsada y suelta <kbd>Espacio</kbd></td><td>Botón central (móvil)</td></tr>
+        <tr><th scope="row">Flipper izquierdo</th><td><kbd>Z</kbd></td><td><kbd>Clic izquierdo</kbd> · toque a la izquierda</td></tr>
+        <tr><th scope="row">Flipper derecho</th><td><kbd>/</kbd> (barra)</td><td><kbd>Clic derecho</kbd> · toque a la derecha</td></tr>
+        <tr><th scope="row">Partida nueva</th><td><kbd>F2</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Pausa</th><td><kbd>F3</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Liberar el ratón</th><td><kbd>Esc</kbd></td><td><span class="muted">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="warn-box" style="border-color:#2e7d32;">
+      <p><strong>Sin archivos de Microsoft. Sin zonas grises.</strong> A diferencia de los sitios que sirven el binario original de Microsoft, esta versión usa el motor de código abierto con arte y sonidos totalmente originales bajo CC0 (dominio público). No necesitas un disco de Windows XP, el instalador original ni ningún archivo propietario. <a href="https://github.com/andrewnakas/open-cadet" target="_blank" rel="noopener">Descarga el paquete de datos en GitHub</a> para usarlo con el motor de escritorio · <a href="/apps/space-cadet/CC0-LICENSE.txt">Licencia CC0</a> · <a href="/apps/space-cadet/NOTICE.md">Aviso del proyecto</a>.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Controles: teclado y ratón</h2>
+    <table class="rank-table" aria-label="Controles del juego">
+      <thead><tr><th>Acción</th><th>Teclado</th><th>Ratón / táctil</th></tr></thead>
+      <tbody>
+        <tr><td>Flipper izquierdo</td><td><kbd>Z</kbd></td><td>Clic izquierdo · toque a la izquierda</td></tr>
+        <tr><td>Flipper derecho</td><td><kbd>/</kbd> (barra)</td><td>Clic derecho · toque a la derecha</td></tr>
+        <tr><td>Lanzar (lanzador)</td><td>Mantén pulsada y suelta <kbd>Espacio</kbd></td><td>Toque en el centro (móvil)</td></tr>
+        <tr><td>Partida nueva</td><td><kbd>F2</kbd></td><td>—</td></tr>
+        <tr><td>Pausa</td><td><kbd>F3</kbd></td><td>—</td></tr>
+        <tr><td>Liberar el ratón</td><td><kbd>Esc</kbd></td><td>—</td></tr>
+      </tbody>
+    </table>
+    <p class="muted small"><strong>Teclados que no son QWERTY:</strong> si <kbd>/</kbd> no responde, prueba la tecla que queda a la derecha de <kbd>.</kbd> en tu distribución, o usa el clic derecho como flipper derecho.</p>
+  </section>
+
+  <section class="card">
+    <h2>Cómo funciona: WebAssembly, no emulación</h2>
+    <p>La mayoría de los sitios que ofrecen «Space Cadet online» usan DOSBox o un emulador de Windows para ejecutar el binario original de Microsoft, que es software propietario. Esta versión es distinta: ejecuta el <strong>motor de código abierto SpaceCadetPinball</strong>, obtenido por ingeniería inversa del binario original por el desarrollador k4zmu2a y compilado a WebAssembly con Emscripten. La física, la detección de colisiones, el comportamiento de la bola y la lógica de las misiones son fieles a los originales de 1995/2001.</p>
+    <p>Como el motor está compilado de forma nativa a WebAssembly (y no metido dentro de un emulador), el juego va a <strong>máxima velocidad</strong> en cualquier navegador moderno —Chrome, Firefox, Edge, Safari— y en cualquier sistema operativo. Aquí tampoco existe el error de física de 64 bits: la versión de código abierto corrigió el problema de redondeo en coma flotante que llevó a Microsoft a quitar el juego a partir de Windows Vista.</p>
+
+    <h3>Funciona en todas partes donde Windows XP no llega</h3>
+    <ul>
+      <li><strong>Windows 10 y 11:</strong> el juego original desapareció con Vista; esta versión funciona en cualquier Windows moderno.</li>
+      <li><strong>Mac y Linux:</strong> no necesitas Windows para nada.</li>
+      <li><strong>Chromebook:</strong> funciona en Chrome, sin extensiones y sin apps de Android.</li>
+      <li><strong>Desbloqueado en el instituto:</strong> WebAssembly puro en el navegador; no hay descargas, plugins ni instalaciones que bloquear.</li>
+    </ul>
+
+    <h3>Por qué es legal alojarlo</h3>
+    <p>El motor SpaceCadetPinball tiene licencia MIT. El archivo de datos de la mesa (PINBALL.DAT), todo el arte y todos los efectos de sonido que usa esta versión son obras originales publicadas bajo <strong>CC0 (dominio público)</strong>: creadas desde cero, no derivadas de los recursos de Microsoft. No es una copia pirata del juego de Microsoft, sino una obra independiente y de libre redistribución inspirada en él.</p>
+  </section>
+
+  <section class="card">
+    <h2>Misiones: los 9 tipos de misión</h2>
+    <p>Space Cadet tiene 9 categorías de misión. Cada una se activa golpeando en orden las tres luces amarillas de Misión (en la parte superior de la mesa) y cumpliendo después un objetivo. Las misiones dan ascensos de rango y puntos extra. Los nombres originales en inglés, entre paréntesis, son los que verás en el juego.</p>
+    <ol class="mission-list">
+      <li><strong>Entrenamiento de lanzamiento (Launch Training)</strong>: golpea en orden los bumpers de lanzamiento</li>
+      <li><strong>Amenaza alienígena (Alien Menace)</strong>: destruye los objetivos alienígenas de la rampa derecha</li>
+      <li><strong>Plaga cósmica (Cosmic Plague)</strong>: golpea el agujero negro y los bumpers en orden</li>
+      <li><strong>Mención de honor (Commendation)</strong>: consigue tres tiros de habilidad en una misma partida</li>
+      <li><strong>Mayday</strong>: mantén la bola en juego dentro del pozo de gravedad</li>
+      <li><strong>Misión secreta (Secret Mission)</strong>: encuentra el objetivo oculto del lado izquierdo</li>
+      <li><strong>Reconocimiento (Recon)</strong>: enciende todos los indicadores amarillos de la mesa</li>
+      <li><strong>Estasis (Stasis)</strong>: usa la secuencia multibola de la rampa derecha</li>
+      <li><strong>Rescate (Rescue)</strong>: antes tienes que completar todas las demás misiones</li>
+    </ol>
+    <p class="muted small">Completar misiones te da ascensos de rango. Los rangos más altos desbloquean misiones más difíciles con mejores multiplicadores de puntuación.</p>
+  </section>
+
+  <section class="card">
+    <h2>Progresión de rangos: de Cadete a Almirante de la flota</h2>
+    <p>El sistema de rangos militares es una de las señas de identidad de Space Cadet. Empiezas como Cadete y vas ascendiendo al completar misiones y acumular puntos. Estos son los 9 rangos:</p>
+    <table class="rank-table" aria-label="Rangos militares de Space Cadet Pinball">
+      <thead><tr><th>#</th><th>Rango</th><th>Cómo conseguirlo</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Cadete (Cadet)</td><td>Rango inicial</td></tr>
+        <tr><td>2</td><td>Alférez (Ensign)</td><td>Completa la misión Entrenamiento de lanzamiento</td></tr>
+        <tr><td>3</td><td>Teniente (Lieutenant)</td><td>Completa la misión Amenaza alienígena</td></tr>
+        <tr><td>4</td><td>Capitán (Captain)</td><td>Completa la misión Plaga cósmica</td></tr>
+        <tr><td>5</td><td>Capitán de corbeta (Lieutenant Commander)</td><td>Completa la misión Mención de honor</td></tr>
+        <tr><td>6</td><td>Comandante (Commander)</td><td>Completa la misión Mayday</td></tr>
+        <tr><td>7</td><td>Comodoro (Commodore)</td><td>Completa la Misión secreta</td></tr>
+        <tr><td>8</td><td>Almirante (Admiral)</td><td>Completa las misiones Reconocimiento y Estasis</td></tr>
+        <tr><td>9</td><td>Almirante de la flota (Fleet Admiral)</td><td>Completa la misión Rescate (requiere todas las demás)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Consejos y estrategia</h2>
+    <ul>
+      <li><strong>Domina el tiro de habilidad:</strong> suelta el lanzador justo en el momento adecuado para dar en la luz amarilla superior al lanzar; así enciendes gratis la primera luz de Misión.</li>
+      <li><strong>Aprovecha el pozo de gravedad:</strong> si golpeas el agujero negro del centro mientras parpadea, hará pasar la bola por secuencias multibola.</li>
+      <li><strong>Sacude la mesa con cuidado:</strong> el juego admite el tilt (aunque la sensibilidad en esta versión puede variar); los empujones suaves ayudan a guiar la bola sin provocar tilt.</li>
+      <li><strong>Prioridad: enciende las banderas:</strong> los cuatro objetivos de bandera del lado derecho dan un multiplicador de puntuación de 2× cuando están todos encendidos. Vuelve a encenderlos cada vez que la mesa se reinicie.</li>
+      <li><strong>Protege el desagüe:</strong> el carril exterior izquierdo es por donde más bolas se pierden. Con una bola lenta, ten siempre preparado el flipper izquierdo.</li>
+      <li><strong>Asciende rápido:</strong> hacer Entrenamiento de lanzamiento → Amenaza alienígena → Plaga cósmica en ese orden da los ascensos tempranos más rápidos y bonificaciones de puntos más grandes.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Historia: de Full Tilt! Pinball a Windows XP</h2>
+    <p>Space Cadet nació como una de las tres mesas de <strong>Full Tilt! Pinball</strong> (1995), un juego comercial desarrollado por Cinematronics y publicado por Maxis (los de SimCity). Microsoft licenció solo la mesa Space Cadet y la incluyó en el Plus! Pack de Windows 95; después la incorporó gratis en Windows XP, donde millones de personas la jugaron como el descanso favorito entre tarea y tarea.</p>
+    <p>Cuando Microsoft creó Windows Vista como sistema de 64 bits, el motor de física de Space Cadet dejó de funcionar bien. La bola atravesaba los flippers porque el código original hacía operaciones en coma flotante que daban resultados ligeramente distintos en procesadores de 64 bits que en los de 32 bits. En lugar de reescribir la física, Microsoft retiró el juego a partir de Vista. Raymond Chen, de Microsoft, documentó la causa técnica exacta en su blog de desarrollo en enero de 2022.</p>
+    <p>El juego quedó prácticamente perdido para toda una generación de usuarios de Windows, hasta que en 2021 el desarrollador k4zmu2a aplicó ingeniería inversa al binario original de Windows XP y publicó <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> como proyecto de código abierto. El motor descompilado incluye una corrección del error de física de 64 bits, así que en hardware moderno es incluso <em>más</em> preciso que el original. Esta versión para navegador se basa en ese motor.</p>
+  </section>
+
+  <section class="card">
+    <h2>Preguntas frecuentes</h2>
+    <details open>
+      <summary>¿Necesito archivos de Microsoft Windows para jugar?</summary>
+      <p>No. Esta versión usa recursos totalmente abiertos y no necesita ningún archivo de Windows XP, Windows 95 ni de ningún otro producto de Microsoft. Solo tienes que pulsar Jugar y el juego se carga al instante en tu navegador: no hay nada que aportar ni que descargar.</p>
+    </details>
+    <details>
+      <summary>¿Funciona en Windows 10 y Windows 11?</summary>
+      <p>Sí. Como se ejecuta en tu navegador mediante WebAssembly, funciona en Windows 10, Windows 11, macOS, Linux y Chromebook: en cualquier dispositivo con un navegador moderno como Chrome, Firefox, Edge o Safari. Microsoft retiró el juego original después de Windows XP; esta versión de código abierto para navegador no tiene esa limitación.</p>
+    </details>
+    <details>
+      <summary>¿Por qué se eliminó 3D Pinball Space Cadet de Windows?</summary>
+      <p>Microsoft abandonó Space Cadet al desarrollar Windows Vista de 64 bits. El motor de física tenía un error de redondeo en coma flotante: en procesadores de 64 bits, ciertos cálculos decimales daban resultados ligeramente distintos que en los de 32 bits, y la bola atravesaba de vez en cuando los flippers y las paredes. En lugar de reescribir la física, Microsoft eliminó el juego. Raymond Chen, de Microsoft, documentó la causa exacta en su blog de desarrollo en enero de 2022. El motor de código abierto SpaceCadetPinball que se usa aquí corrige ese error.</p>
+    </details>
+    <details>
+      <summary>¿Es el auténtico Space Cadet de Microsoft?</summary>
+      <p>Usa el motor de código abierto obtenido por ingeniería inversa (con licencia MIT) junto con arte y sonidos originales de dominio público CC0, no el binario propietario de Microsoft. Las reglas de física, las misiones y la jugabilidad son fieles al original, pero no se usa ni se incluye ningún archivo de Microsoft. Si quieres ejecutar el binario original de verdad, consulta nuestra guía de <a href="/run/3d-pinball-space-cadet/">3D Pinball Space Cadet con Wine</a> (en inglés; tendrás que aportar tu propia copia).</p>
+    </details>
+    <details>
+      <summary>¿Puedo jugar a Space Cadet Pinball desbloqueado en el instituto?</summary>
+      <p>Sí. Se ejecuta por completo en tu navegador mediante WebAssembly: sin descargas, sin plugins y sin instalaciones. Funciona en los Chromebook del centro y en redes que bloquean las descargas de juegos o el contenido Flash/Java. Solo tienes que abrir esta página y pulsar Jugar.</p>
+    </details>
+    <details>
+      <summary>¿Funciona en el móvil o en una tableta?</summary>
+      <p>Sí. Los controles táctiles vienen integrados: toca el lado izquierdo de la mesa para el flipper izquierdo, el lado derecho para el flipper derecho y el botón central bajo la mesa para lanzar. En pantallas pequeñas, la mesa se amplía hasta ocupar toda la pantalla al pulsar Jugar.</p>
+    </details>
+    <details>
+      <summary>¿Cuáles son las misiones de Space Cadet Pinball?</summary>
+      <p>Hay 9 tipos de misión: Entrenamiento de lanzamiento (Launch Training), Amenaza alienígena (Alien Menace), Plaga cósmica (Cosmic Plague), Mención de honor (Commendation), Mayday, Misión secreta (Secret Mission), Reconocimiento (Recon), Estasis (Stasis) y Rescate (Rescue). Cada una se activa encendiendo en orden los tres indicadores amarillos de Misión. Completar misiones te asciende de rango, desde Cadete (Cadet) hasta Almirante de la flota (Fleet Admiral).</p>
+    </details>
+    <details>
+      <summary>La tecla del flipper derecho no funciona, ¿qué hago?</summary>
+      <p>El flipper derecho está asignado por defecto a la tecla <kbd>/</kbd> (barra). En distribuciones que no son QWERTY o en algunos teclados internacionales, esa tecla puede no corresponder correctamente. Usa el <strong>clic derecho</strong> como flipper derecho alternativo: funciona sea cual sea la distribución de tu teclado.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>Más juegos para tu navegador</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">Space Cadet original (tu copia)</span><span class="lc-desc">Ejecuta el binario real de Microsoft con Wine; tú aportas los archivos.</span></a></li>
+      <li><a class="link-card" href="/run/dragon-keep/"><span class="lc-title">Dragon's Keep Pinball</span><span class="lc-desc">Una segunda mesa original sobre el mismo motor; ahora mismo fuera de servicio mientras se arregla su compilación.</span></a></li>
+      <li><a class="link-card" href="/run/full-tilt-pinball/"><span class="lc-title">Full Tilt! Pinball</span><span class="lc-desc">La colección original de Maxis/Cinematronics de la que salió Space Cadet.</span></a></li>
+      <li><a class="link-card" href="/es/run/doom/"><span class="lc-title">DOOM (shareware)</span><span class="lc-desc">El clásico de 1993: episodio shareware gratuito, para jugar al instante.</span></a></li>
+      <li><a class="link-card" href="/es/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">El clásico FPS de id Software de 1992, funcionando con DOSBox.</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Solitario de Windows</span><span class="lc-desc">El juego de cartas que venía con todas las versiones de Windows.</span></a></li>
+      <li><a class="link-card" href="/es/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">Un juego totalmente libre con el motor de DOOM; no necesita archivos.</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">Juegos que no necesitan instalar nada</span><span class="lc-desc">La lista completa de títulos que funcionan en una red escolar o de trabajo restringida.</span></a></li>
+    </ul>
+  </section>
+
+
+
+  <section class="card" id="embed-offer" data-slug="space-cadet-open" data-name="3D Pinball Space Cadet">
+    <h2>Pon 3D Pinball Space Cadet en tu propia web</h2>
+    <p>Este sí puedes insertarlo, porque el problema de Microsoft se resolvió en lugar de
+    ignorarlo: el motor tiene <a href="https://github.com/k4zmu2a/SpaceCadetPinball"
+    target="_blank" rel="noopener">licencia MIT</a> y los datos del juego se rehicieron desde
+    cero aquí y se <a href="https://github.com/andrewnakas/open-cadet" target="_blank"
+    rel="noopener">cedieron al dominio público</a>, así que no interviene ningún archivo de Windows
+    y no hace falta pedir permiso. Es un motor de pinball completo en WebAssembly, así que el marco
+    pesa unos cuantos megas: mantenlo con carga diferida y por debajo de la parte visible de la página. Pega esto donde quieras que aparezca:</p>
+    <textarea readonly rows="4" spellcheck="false" aria-label="Código para insertar 3D Pinball Space Cadet"></textarea>
+    <p><button type="button" class="cta-btn">Copiar el código</button></p>
+    <p class="muted small">Lo único que te pedimos es que mantengas la línea de crédito. Los juegos que
+    alojamos pero no hemos escrito nosotros no se ofrecen para insertar, porque no nos corresponde
+    cederlos.</p>
+  </section>
+  <script src="/embed-snippet.js?v=1"></script>
+</main>
+
+<footer>
+  <p>Este juego se basa en el motor de código abierto <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> (licencia MIT) con datos originales CC0 / de dominio público. ExeBrowser no está afiliado a Microsoft ni a Maxis.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/es/">Inicio</a>
+    <a href="/load-exe/">Ejecuta tu EXE</a>
+    <a href="/es/run/">Guías de programas</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guía de compatibilidad</a>
+    <a href="/about/">Acerca de</a>
+    <a href="/contact/">Contacto</a>
+    <a href="/saves/">Partidas guardadas</a>
+    <a href="/privacy/">Política de privacidad</a>
+    <a href="/terms/">Términos de uso</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Datos del juego CC0 / dominio público; motor bajo licencia MIT. 3D Pinball Space Cadet es una marca registrada de Microsoft.</p>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('boot-pinball');
+    var frame = document.getElementById('pinball-frame');
+    var exitBtn = document.getElementById('play-exit');
+    var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+                  || window.matchMedia('(max-width: 720px)').matches;
+
+    function enterPlayMode() {
+      if (!isTouch) return;
+      document.body.classList.add('playing');
+      window.scrollTo(0, 0);
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+    }
+    function exitPlayMode() {
+      document.body.classList.remove('playing');
+      document.removeEventListener('touchmove', preventScroll, { passive: false });
+    }
+    function preventScroll(e) { e.preventDefault(); }
+    if (exitBtn) exitBtn.addEventListener('click', exitPlayMode);
+
+    btn.addEventListener('click', function () {
+      if (!frame.src) {
+        frame.loading = 'eager';
+        frame.src = frame.getAttribute('data-src');
+      }
+      btn.disabled = true;
+      btn.textContent = 'Loading…';
+      frame.addEventListener('load', function () {
+        btn.style.display = 'none';
+        frame.focus();
+        enterPlayMode();
+      }, { once: true });
+    });
+
+    var KEYS = {
+      z:     { key: 'z',  code: 'KeyZ',  keyCode: 90 },
+      slash: { key: '/',  code: 'Slash', keyCode: 191 },
+      space: { key: ' ',  code: 'Space', keyCode: 32 }
+    };
+    function gameTarget() {
+      try {
+        var doc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
+        if (!doc) return null;
+        return doc.getElementById('canvas') || doc.body || doc;
+      } catch (e) { return null; }
+    }
+    function fireKey(type, spec) {
+      var win = frame.contentWindow;
+      var tgt = gameTarget();
+      if (!win || !tgt) return;
+      try {
+        var m = win.Module;
+        if (m && m.SDL2 && m.SDL2.audioContext && m.SDL2.audioContext.state === 'suspended')
+          m.SDL2.audioContext.resume();
+      } catch (e) {}
+      var ev = new win.KeyboardEvent(type, {
+        key: spec.key, code: spec.code, keyCode: spec.keyCode,
+        which: spec.keyCode, bubbles: true, cancelable: true
+      });
+      tgt.dispatchEvent(ev);
+    }
+    var held = {};
+    function press(name)   { if (held[name]) return; held[name] = true;  fireKey('keydown', KEYS[name]); }
+    function release(name) { if (!held[name]) return; held[name] = false; fireKey('keyup',   KEYS[name]); }
+
+    document.querySelectorAll('#mobile-controls .mc-btn').forEach(function (b) {
+      var name = b.getAttribute('data-key');
+      var down = function (e) { e.preventDefault(); press(name); };
+      var up   = function (e) { e.preventDefault(); release(name); };
+      b.addEventListener('touchstart',  down, { passive: false });
+      b.addEventListener('touchend',    up,   { passive: false });
+      b.addEventListener('touchcancel', up,   { passive: false });
+      b.addEventListener('mousedown', down);
+      b.addEventListener('mouseup',   up);
+      b.addEventListener('mouseleave', up);
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) Object.keys(held).forEach(release);
+    });
+  })();
+</script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/play-events.js?v=3"></script>
+<script src="/pwa.js?v=3"></script>
+</body>
+</html>

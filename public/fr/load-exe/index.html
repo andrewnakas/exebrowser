@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ouvrir un fichier EXE en ligne — lancez vos .exe gratuitement</title>
+<meta name="description" content="Ouvrez un fichier .exe Windows dans votre navigateur et exécutez-le : gratuit, sans téléchargement, sans installation et sans aucun envoi. Déposez un .exe, un dossier ou un zip et il s'exécute dans cet onglet, sur votre propre machine." />
+<meta name="keywords" content="ouvrir exe en ligne, lancer exe en ligne, ouvrir fichier exe, exécuter exe sans installer, émulateur exe navigateur, lancer programme windows sur chromebook" />
+<link rel="canonical" href="https://exebrowser.com/fr/load-exe/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/load-exe/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/load-exe/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/load-exe/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/load-exe/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/load-exe/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/load-exe/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/fr/load-exe/" />
+<meta property="og:title" content="Chargez votre propre EXE et lancez-le dans le navigateur" />
+<meta property="og:description" content="Déposez un .exe, un dossier ou un zip Windows et il s'exécute dans cet onglet. Aucun envoi, aucune installation, aucun compte." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://exebrowser.com/fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Ouvrir un EXE", "item": "https://exebrowser.com/fr/load-exe/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mon EXE est-il envoyé sur un serveur ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. Le fichier est lu par JavaScript sur votre propre machine et copié sur un lecteur C:\\ en mémoire, dans l'onglet. Il n'est envoyé nulle part et disparaît quand vous fermez l'onglet." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels programmes Windows fonctionnent vraiment ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Les logiciels Windows 32 bits d'environ 1995 à 2008 fonctionnent le mieux : petits utilitaires, applications Win32 et GDI, anciens installateurs et jeux 2D. Les programmes 64 bits, tout ce qui exige Direct3D, .NET ou un runtime moderne, et tout ce qui attend du vrai matériel ou un accès à internet sont les échecs habituels." }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon programme a besoin de DLL à côté de lui. Que faire ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Chargez le dossier entier, ou un zip de celui-ci, au lieu du .exe seul. Choisir un dossier ou un zip place tous les fichiers sur le lecteur C:\\ virtuel, puis vous choisissez l'exécutable à lancer." }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je récupérer les fichiers que le programme écrit ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Télécharger les fichiers écrits par ce programme rassemble dans un zip tout ce que le programme a écrit sur le lecteur C:\\ virtuel : sauvegardes, documents exportés, ce qu'un installateur a décompressé." }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que ça marche sur un Chromebook ou un portable professionnel verrouillé ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, parce que rien n'est installé. C'est une page web qui utilise WebAssembly : elle fonctionne partout où tourne une version récente de Chrome, Edge, Firefox ou Safari, y compris sur les appareils gérés où vous ne pouvez pas installer de logiciels." }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi est-ce lent ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Chaque instruction x86 est émulée dans votre navigateur : comptez entre 10 et 40 % de la vitesse native. C'est très bien pour des utilitaires, de vieux jeux 2D et des installateurs, beaucoup moins pour quoi que ce soit de gourmand." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Exécutez des fichiers <code>.exe</code> Windows dans votre navigateur. Sans installation, sans téléversement. Juste WebAssembly et Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/fr/">Accueil</a>
+    <a href="/fr/load-exe/">Lancer votre EXE</a>
+    <a href="/fr/run/">Applications</a>
+    <a href="/fr/exe-inspector/">Visionneuse EXE</a>
+    <a href="/blog/">Blog</a>
+    <a href="/fr/guide/">Guide</a>
+    <a href="/about/">À propos</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="Langue"><a href="/load-exe/" hreflang="en">English</a> · <a href="/es/load-exe/" hreflang="es">Español</a> · <a href="/pt-BR/load-exe/" hreflang="pt-BR">Português (BR)</a> · <span class="lang-current" aria-current="true">Français</span> · <a href="/zh-CN/load-exe/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/fr/">Accueil</a> › Ouvrir un EXE</nav>
+
+  <section class="card">
+    <h2>Ouvrez un fichier EXE et lancez-le ici</h2>
+    <p class="muted small" style="margin-top:0.25rem;">Fonctionne avec Wine 1.7.55 (Win32) + Boxedwine sur WebAssembly · Rien n'est envoyé · Sans compte</p>
+    <p>Déposez ci-dessous un exécutable Windows — ou le dossier entier, ou un zip de celui-ci — et il s'exécutera dans cet onglet. Le fichier est lu sur votre propre machine et copié sur un lecteur <code>C:\</code> virtuel qui n'existe que dans la mémoire de l'onglet. Aucun serveur ne l'exécute, il n'y a pas d'installateur, et rien ne reste derrière vous quand vous fermez la page.</p>
+
+    <div id="exe-embed"
+         data-variant="default"
+         data-app-name="votre programme"
+         data-empty-state="Rien ne tourne encore — choisissez votre .exe ci-dessous et il démarrera ici."
+         data-loader-open="true"
+         data-variant-picker="true"
+         data-autoboot="false"></div>
+
+    <p class="muted small" style="margin-top:1rem;">Le premier lancement télécharge le moteur Wine (~30–60&nbsp;Mo) et le met en cache. Cliquez sur l'écran pour lui confier la souris et le clavier ; appuyez sur <kbd>Échap</kbd> pour les récupérer.</p>
+  </section>
+
+  <section class="card">
+    <h2>Comment ouvrir un fichier EXE sur n'importe quel ordinateur</h2>
+    <p>Un fichier <code>.exe</code> est un programme Windows : l'ouvrir, c'est l'exécuter. Il n'existe pas de visionneuse « avec » laquelle l'ouvrir. Sous Windows, il suffit d'un double-clic. Sur un Mac, un Chromebook, sous Linux ou sur un ordinateur où vous ne pouvez rien installer, le plus rapide est l'outil ci-dessus : il exécute le programme dans cet onglet, sans rien installer.</p>
+    <p>Les autres solutions — Wine ou CrossOver sur Mac, le conteneur Linux sur Chromebook, et que faire quand Windows lui-même refuse de lancer un programme — sont détaillées dans le guide complet, <a href="/fr/open-exe-file/">comment ouvrir un fichier EXE sur Windows, Mac ou Chromebook</a>. Si vous voulez simplement savoir <a href="/fr/blog/what-is-an-exe-file/">ce qu'est un fichier .exe</a>, une courte lecture y est consacrée.</p>
+  </section>
+
+  <section class="card">
+    <h2>Laquelle des trois options choisir</h2>
+    <p>Les trois aboutissent au même résultat — les fichiers déposés sur le lecteur virtuel — mais chacune convient à ce que vous avez sur votre disque.</p>
+    <ul>
+      <li><strong>Un seul EXE</strong> : pour un programme autonome — un vieil utilitaire, un jeu en un seul fichier, un outil portable. Si, sur un vrai PC, il se lance d'un double-clic et rien d'autre, c'est cette option.</li>
+      <li><strong>Un dossier</strong> : pour tout ce qui s'accompagne de fichiers <code>.dll</code>, <code>.dat</code>, <code>.ini</code> ou de données. C'est le cas de la plupart des vrais logiciels, et c'est l'option que l'on néglige avant de conclure que son programme ne fonctionne pas. Le dossier est chargé en entier et vous choisissez quel <code>.exe</code> démarre.</li>
+      <li><strong>Un zip</strong> : comme un dossier, quand vous avez l'archive plutôt que le répertoire décompressé. Pratique sur les navigateurs mobiles, qui ne permettent pas de sélectionner un dossier.</li>
+    </ul>
+    <p>Si le programme a besoin d'un fichier sur lequel travailler — une archive à extraire, un document à ouvrir — placez aussi ce fichier dans le dossier avant de le charger. Rien dans l'onglet ne peut voir votre vrai disque : tout ce que le programme doit ouvrir doit entrer avec lui.</p>
+  </section>
+
+  <section class="card">
+    <h2>Ce qui fonctionne, et ce qui ne fonctionne honnêtement pas</h2>
+    <p>Il s'agit d'un environnement Windows 32 bits émulé, pas d'une couche de compatibilité posée sur votre vraie machine, et mieux vaut savoir où passe la limite avant de consacrer un téléchargement à l'essai.</p>
+    <h3>Fonctionne bien</h3>
+    <ul>
+      <li>Les applications Win32 et GDI 32 bits d'environ 1995 à 2008 : éditeurs, visionneuses, calculatrices, outils de compression, petits utilitaires.</li>
+      <li>Les jeux 2D de cette époque, y compris bon nombre qui ne démarrent plus sous Windows 11.</li>
+      <li>Les anciens installateurs, quand ce que vous voulez, ce sont les fichiers qu'ils contiennent plutôt qu'un système installé.</li>
+      <li>Les logiciels Windows 3.x 16 bits, avec le moteur <strong>Wine 3.1 · 16 bits</strong> du sélecteur ci-dessus.</li>
+    </ul>
+    <h3>Ne fonctionne généralement pas</h3>
+    <ul>
+      <li><strong>Les programmes 64 bits.</strong> Le moteur par défaut est uniquement 32 bits. Il existe un <a href="/64/">environnement 64 bits expérimental</a> avec son propre lanceur, mais beaucoup de choses ne s'y affichent pas encore correctement.</li>
+      <li><strong>Les programmes DOS.</strong> Wine n'exécute que des logiciels Windows. Les jeux et programmes DOS relèvent de l'<a href="/dos-emulator/">émulateur DOS</a>, qui les fait tourner sous DOSBox — déposez-en un ici et la page vous proposera de l'y envoyer.</li>
+      <li><strong>Direct3D et les jeux 3D modernes.</strong> Il n'y a ici aucun accès au GPU.</li>
+      <li><strong>.NET, les runtimes Visual C++ modernes et tout ce qui attend les API de Windows 10.</strong> Wine 1.7.55 leur est antérieur.</li>
+      <li><strong>Tout ce qui a besoin du réseau, d'un serveur de licences ou de vrai matériel</strong> : dongles, imprimantes, périphériques série, vérifications de disque.</li>
+    </ul>
+    <p>La vitesse tourne autour de 10 à 40 % de la vitesse native, parce que chaque instruction x86 est émulée. C'est suffisant pour un utilitaire ou un vieux jeu, pas pour quoi que ce soit de gourmand. Le <a href="/fr/guide/">guide de compatibilité</a> passe les catégories en revue plus en détail, et <a href="/blog/we-tested-53-windows-apps-in-the-browser/">nous avons testé 53 vraies applications</a> en publiant le résultat pour chacune.</p>
+  </section>
+
+  <section class="card">
+    <h2>S'il ne démarre pas</h2>
+    <ol>
+      <li><strong>Chargez le dossier, pas l'EXE seul.</strong> Une DLL manquante à côté du programme est de loin la panne la plus fréquente, et elle se manifeste en général par… rien du tout.</li>
+      <li><strong>Vérifiez qu'il est en 32 bits.</strong> Beaucoup de téléchargements proposent désormais la version 64 bits par défaut ; la version 32 bits de la même édition fonctionne souvent très bien ici.</li>
+      <li><strong>Essayez un autre moteur.</strong> <em>Boxedwine 18R2</em> exécute parfois ce que le moteur par défaut refuse, et une application qui réclame Internet Explorer a besoin de l'option <em>+ Gecko</em>.</li>
+      <li><strong>Lisez la console.</strong> La section <em>Sortie console</em> sous l'écran montre ce dont Wine s'est réellement plaint — en général une DLL manquante nommément citée ou un appel non implémenté.</li>
+      <li><strong>C'est peut-être un installateur, pas le programme.</strong> Lancez-le quand même, laissez-le décompresser, puis utilisez <strong>Télécharger les fichiers écrits par ce programme</strong> pour récupérer ce qu'il a produit. <a href="/blog/extract-files-from-an-old-installer/">Extraire un ancien installateur</a> présente les autres solutions.</li>
+    </ol>
+    <p><strong>Ce n'est pas du tout un programme ?</strong> Les anciens documents, fichiers d'aide et tableurs (.wpd, .wps, .hlp, .chm, .wk1, .cwk et d'autres) n'ont pas besoin de Windows pour s'ouvrir : <a href="https://openoldfile.com/">openoldfile.com</a>, notre site frère, les lit directement dans votre navigateur.</p>
+  </section>
+
+  <section class="card">
+    <h2>Où va votre fichier</h2>
+    <p>Nulle part. Le <code>.exe</code> est lu localement grâce à l'API de fichiers du navigateur et écrit dans un système de fichiers en mémoire que Wine voit comme <code>C:\</code>. Aucune partie n'en est transmise, et il n'y a aucune copie à supprimer côté serveur, puisqu'aucune n'est jamais créée. Quand vous fermez l'onglet, le lecteur virtuel disparaît ; les fichiers qu'un programme enregistre sont conservés uniquement dans ce navigateur pour que vous puissiez reprendre là où vous en étiez, et <strong>Télécharger les fichiers écrits par ce programme</strong> vous en donne une copie que vous gardez.</p>
+    <p>La page elle-même utilise Google Analytics pour la mesure d'audience et Mediavine pour la publicité. Ni l'un ni l'autre ne peut voir votre fichier, le lecteur virtuel ou quoi que ce soit que fait le programme : ce sont des scripts ordinaires au niveau de la page, et la mémoire de l'émulateur leur est inaccessible. Les détails figurent dans la <a href="/privacy/">politique de confidentialité</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>Rien à charger ? Il y a déjà beaucoup à voir ici</h2>
+    <p>La plupart des visiteurs arrivent sans <code>.exe</code> sous la main. Nous hébergeons une collection de jeux et d'applications gratuits, aux licences en règle, qui démarrent en un clic — DOOM, Space Cadet Pinball, le Solitaire, SkiFree, 7-Zip et plusieurs dizaines d'autres — sans rien envoyer.</p>
+    <p><a href="/fr/">Parcourir la collection →</a> · <a href="/fr/run/">Tous les guides</a> · <a href="/unblocked/">Ce qui tourne sur un portable verrouillé</a> · <a href="/fr/open-exe-file/">Ce qu'est vraiment un fichier .exe</a></p>
+    <p>Pas encore assez sûr d'un fichier pour l'exécuter ? <a href="/fr/exe-inspector/">Regardez d'abord ce qu'il contient</a> — architecture, bibliothèques chargées, icône et signature — sans exécuter une seule de ses instructions.</p>
+    <p class="muted small">Vous n'êtes pas sous Windows ? <a href="/blog/open-exe-file-on-mac/">Ouvrir un .exe sur Mac</a> · <a href="/blog/run-windows-software-on-a-chromebook/">sur Chromebook</a> · <a href="/blog/open-exe-file-on-android/">sur Android</a>.</p>
+    <p class="muted small">La majeure partie du catalogue et du blog est en anglais. Les pages en français sont celles qui ont réellement été traduites, pas une version automatique du reste.</p>
+  </section>
+
+  <section class="card">
+    <h2>Mettez l'un de ces jeux sur votre propre site</h2>
+    <p>Onze des jeux présents ici ont été écrits de zéro pour ce site, ce qui nous permet de les offrir — et c'est ce que nous faisons. Chacun peut les mettre gratuitement sur sa propre page : une ligne de HTML, sans compte, sans demander la permission et sans autre attribution qu'une ligne de crédits.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">Voir les jeux que vous pouvez intégrer</a></p>
+  </section>
+
+  <section class="card">
+    <h2>Questions fréquentes</h2>
+    <details><summary>Mon EXE est-il envoyé sur un serveur ?</summary><p>Non. Le fichier est lu par JavaScript sur votre propre machine et copié sur un lecteur <code>C:\</code> en mémoire, dans l'onglet. Il n'est envoyé nulle part et disparaît quand vous fermez l'onglet.</p></details>
+    <details><summary>Quels programmes Windows fonctionnent vraiment ?</summary><p>Les logiciels Windows 32 bits d'environ 1995 à 2008 fonctionnent le mieux : petits utilitaires, applications Win32 et GDI, anciens installateurs et jeux 2D. Les programmes 64 bits, tout ce qui exige Direct3D, .NET ou un runtime moderne, et tout ce qui attend du vrai matériel ou un accès à internet sont les échecs habituels.</p></details>
+    <details><summary>Mon programme a besoin de DLL à côté de lui. Que faire ?</summary><p>Chargez le dossier entier, ou un zip de celui-ci, au lieu du <code>.exe</code> seul. Choisir un dossier ou un zip place tous les fichiers sur le lecteur <code>C:\</code> virtuel, puis vous choisissez l'exécutable à lancer.</p></details>
+    <details><summary>Puis-je récupérer les fichiers que le programme écrit ?</summary><p>Oui. <strong>Télécharger les fichiers écrits par ce programme</strong> rassemble dans un zip tout ce que le programme a écrit sur le lecteur <code>C:\</code> virtuel : sauvegardes, documents exportés, ce qu'un installateur a décompressé.</p></details>
+    <details><summary>Est-ce que ça marche sur un Chromebook ou un portable professionnel verrouillé ?</summary><p>Oui, parce que rien n'est installé. C'est une page web qui utilise WebAssembly : elle fonctionne partout où tourne une version récente de Chrome, Edge, Firefox ou Safari, y compris sur les appareils gérés où vous ne pouvez pas installer de logiciels.</p></details>
+    <details><summary>Pourquoi est-ce lent ?</summary><p>Chaque instruction x86 est émulée dans votre navigateur : comptez entre 10 et 40 % de la vitesse native. C'est très bien pour des utilitaires, de vieux jeux 2D et des installateurs, beaucoup moins pour quoi que ce soit de gourmand.</p></details>
+  </section>
+</main>
+
+<footer>
+  <p>Propulsé par <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine est une marque de CodeWeavers. ExeBrowser n'est affilié ni à WineHQ, ni à CodeWeavers, ni à Microsoft. Site jumeau : <a href="https://macemu.com/" target="_blank" rel="noopener">macemu.com</a>, les jeux Mac classiques dans votre navigateur.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/fr/">Accueil</a>
+    <a href="/fr/load-exe/">Lancer votre EXE</a>
+    <a href="/fr/run/">Applications</a>
+    <a href="/fr/exe-inspector/">Visionneuse EXE</a>
+    <a href="/blog/">Blog</a>
+    <a href="/fr/guide/">Guide de compatibilité</a>
+    <a href="/about/">À propos</a>
+    <a href="/contact/">Contact</a>
+    <a href="/saves/">Parties sauvegardées</a>
+    <a href="/privacy/">Politique de confidentialité</a>
+    <a href="/terms/">Conditions d'utilisation</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Contenu sous licence ouverte ; environnement d'exécution sous GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script>window.__I18N={"play":"▶ Jouer à {name}","resume":"▶ Reprendre {name}","loading":"Chargement…","startOver":"Recommencer","savedAgo":"Sauvegardé {when}.","filesRestored":"Vos sauvegardes sont chargées avec le jeu — récupérez-les depuis son propre menu.","snapshotResume":"Vous reprendrez exactement là où vous vous étiez arrêté, en pleine partie.","progressSaved":"Progression sauvegardée dans ce navigateur","resumedExactly":"Repris exactement là où vous vous étiez arrêté","snapshotOff":"Impossible d'enregistrer un point de reprise : vos sauvegardes du jeu fonctionnent toujours","confirmDelete":"Supprimer votre progression sauvegardée dans {name} ?","justNow":"à l'instant","minutesAgo":"il y a {n} minutes","anHourAgo":"il y a une heure","hoursAgo":"il y a {n} heures","yesterday":"hier","daysAgo":"il y a {n} jours","saveHint":"Sauvegardez dans le jeu et la partie reste dans ce navigateur","resetSaves":"effacer la progression","savesCleared":"Progression effacée — rechargez la page pour repartir de zéro","restoredFiles":"{n} sauvegarde(s) restaurée(s) — à charger depuis le menu du jeu","overlayNote":"Fonctionne dans votre navigateur avec DOSBox et WebAssembly.<br>Rien n'est téléversé. L'environnement (~1,4 Mo) est mis en cache après le premier chargement.","mouseHint":"Cliquez sur l'écran du jeu pour lui donner le clavier.","starting":"Démarrage…","cachedNote":"Mis en cache après le premier chargement : la prochaine fois sera instantanée.","loadingGame":"Chargement de {name}…","fullscreen":"Plein écran","soundOn":"Son activé","soundOff":"Son coupé","remapKeys":"Clavier — réattribuer n'importe quelle touche","remapHint":"Cliquez sur une touche ci-dessous, puis appuyez sur celle que vous préférez. Enregistré dans ce navigateur, jeu par jeu.","resetDefaults":"Rétablir les valeurs par défaut","consoleOutput":"Sortie console","wineLoadYours":"Charger votre copie de {name}","wineEmptyHosted":"Appuyez sur lecture pour démarrer {name} dans votre navigateur.","wineEmptyOwn":"{name} n'est pas hébergé ici : chargez votre propre copie ci-dessous et elle s'exécute sur cette page.","wineHintHosted":"S'exécute entièrement dans votre onglet avec WebAssembly + Wine. Rien n'est envoyé. Le premier démarrage télécharge le moteur (~30–60&nbsp;Mo), ensuite il est mis en cache.","wineHintOwn":"Nous ne pouvons pas redistribuer {name}, rien n'est donc hébergé ici. Votre propre copie s'exécute entièrement dans votre onglet avec WebAssembly + Wine : rien n'est envoyé. Le premier démarrage télécharge le moteur (~30–60&nbsp;Mo), ensuite il est mis en cache.","wineEngine":"Moteur Wine :","wineVariantDefault":"Wine 1.7.55 · Win32 — presque tout de 1995 à 2008","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — applications qui réclament Internet Explorer","wineVariant16":"Wine 3.1 · Windows 3.x 16 bits — applications de 1990 à 1994","wineVariantR18":"Boxedwine 18R2 — moteur plus ancien, exécute parfois ce que le moteur par défaut refuse","wineVariantX64":"wine64 · expérimental — programmes 64 bits, s'ouvre sur sa propre page","wineIdle":"Inactif.","wineDownloadFiles":"Télécharger les fichiers écrits par ce programme","wineFilesKept":"Les fichiers que ce programme enregistre restent dans ce navigateur et sont restaurés à votre prochaine visite. Utilisez le bouton de téléchargement pour en garder une copie.","wineCaptures":"Récupère les sauvegardes et le contenu que le programme a écrits sur son lecteur C:\\ en mémoire.","wineLoadOwnCopy":"Charger votre propre copie","wineHaveFiles":"Vous avez les fichiers sur votre appareil ? Déposez ici le dossier du programme ou un zip : le <code>.exe</code> principal et les fichiers de données qui l'accompagnent.","wineDropFiles":"Déposez les fichiers ici, ou choisissez :","winePickExe":"un seul EXE","winePickFolder":"un dossier","winePickZip":"un zip","wineEntryExe":"EXE principal :","wineRun":"Exécuter dans Wine","wineLoadingRuntime":"Chargement du moteur Boxedwine…","wineConfiguring":"Configuration du démarrage de Wine…","wineStartingEmulator":"Démarrage de l'émulateur…","wineRunning":"Exécution de {name}…","wineBootFailed":"Échec du démarrage. Voir la console.","winePickThenRun":"Choisissez un EXE, puis cliquez sur Exécuter.","wineReadyLoad":"Wine est prêt — chargez un EXE","wineInstallPrompt":"Installer pour revenir en un geste","wineEntry":"Principal : {path}","wineExesAvailable":"{n} EXE disponibles","wineX64Pending":"Choisissez votre fichier ci-dessous — la suite se passe sur la page 64 bits expérimentale.","wineFetchedSoFar":"{amount} de fichiers du moteur récupérés pour l'instant…","wineStillStarting":"Démarrage toujours en cours…","wineStillWaiting":"Toujours en attente d'une image — normal pour certains logiciels anciens. Si cela continue, consultez la sortie console ci-dessous.","wineHandoffArrived":"Transféré depuis le lecteur DOS — prêt à être exécuté.","pfX64":"Programme 64 bits","pfX64Body":"Le moteur d'ici exécute des programmes Windows 32 bits, celui-ci ne démarrera donc très probablement pas. Si la page de téléchargement propose une version 32 bits (x86) de la même version, celle-ci fonctionne généralement.","pfWin16":"Programme Windows 16 bits — moteur changé","pfWin16Body":"Il a été conçu pour Windows 3.x. Le moteur est maintenant Wine 3.1 (16 bits), celui qui peut l'exécuter.","pfWin32":"Programme 32 bits — moteur rétabli","pfWin32Body":"Le moteur 16 bits ne peut pas exécuter celui-ci, le moteur est donc revenu à Wine 1.7.55 (Win32).","pfDos":"Un programme DOS, pas Windows","pfDosBody":"Wine exécute des programmes Windows, il ne démarrera donc pas celui-ci — mais le lecteur DOS de ce site le fera, et vos fichiers suivent.","pfNotExe":"Ce n'est pas un programme Windows","pfNotExeBody":"Il ne commence pas par la marque MZ que possède tout .exe. C'est peut-être une archive ou un document renommé, ou un téléchargement interrompu.","pfDamaged":"Ce fichier est incomplet ou endommagé","pfDamagedBody":"Ses en-têtes décrivent plus de données que le fichier n'en contient, ce qui signifie généralement que le téléchargement s'est arrêté trop tôt. Téléchargez-le à nouveau.","pfCpu":"Compilé pour un autre processeur","pfCpuBody":"L'émulateur d'ici n'exécute que du code x86, ce fichier ne peut donc pas démarrer.","pfDriver":"Un pilote, pas une application","pfDriverBody":"Il se charge dans le noyau de Windows ou s'exécute avant Windows. Il n'y a rien ici où le charger.","pfDotnet":"Un programme .NET","pfDotnetBody":"Il a besoin du .NET Framework, plus récent que cette version de Wine, il s'arrêtera donc très probablement au démarrage.","pfDll":"C'est une DLL, pas un programme","pfDllBody":"Une DLL est une bibliothèque que chargent les programmes. Chargez tout le dossier du programme et choisissez son .exe.","pfInstaller":"C'est un programme d'installation","pfInstallerBody":"L'exécuter décompresse le programme au lieu de le lancer. Cela peut fonctionner — laissez-le terminer. Extraire les fichiers peut être plus rapide, mais ne marche que pour les installateurs basés sur ZIP/7z ; cela n'aidera pas avec un InstallShield, un MSI ou un NSIS.","pfCrt":"Il a besoin des DLL fournies avec lui","pfCrtBody":"Ce programme utilise {dll}, un runtime Visual C++ qui ne fait pas partie de Windows. Chargez tout son dossier plutôt que le .exe seul, pour que ces DLL soient incluses.","pfOpen64":"Essayer le moteur 64 bits expérimental — votre fichier vous suit →","pfDosLink":"L'ouvrir dans le lecteur DOS →","pfExtract":"Extraire plutôt les fichiers →","pfPickFolder":"Choisir plutôt le dossier","pfRunAnyway":"Vous pouvez quand même cliquer sur Exécuter — ces informations viennent des en-têtes du fichier, qui se trompent parfois.","pfCapGfx":"il dessine avec Direct3D ou OpenGL, et il n'y a pas de passthrough GPU ici","pfCapNet":"il attend un réseau, que cet onglet ne lui donne pas","pfCapNote":"À savoir : {notes}."};</script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+<script src="/embed.js?v=11"></script>
+<script src="/handoff.js?v=1"></script>
+<script src="/pe-inspect.js?v=3"></script>
+<script src="/app.js?v=26"></script>
+<script src="/embed-pointer.js?v=1"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/pwa.js?v=3"></script>
+</body>
+</html>

@@ -80,6 +80,20 @@ node scripts/build-librequake-data.mjs   # public/apps/librequake/id1/ (~79 MB)
 node scripts/build-warzone2100-data.mjs  # public/apps/warzone2100/ parts, wasm, music (~87 MB)
 ```
 
+### Hand-translated game pages
+
+Generated `/run/` pages are localised from `scripts/i18n/pages.<lang>.json`.
+Pages marked `skipGenerate` can't be: the generator never writes them, in any
+language. Two of them are translated by hand anyway, because they are among the
+most-played titles: `space-cadet-open` and `parkhaven`, in es, pt-BR, zh-CN and
+fr. That means eight HTML files under `public/<lang>/run/<slug>/`.
+
+Each one also has an entry in `pages.<lang>.json`. That entry is what puts the
+page in the sitemap and the `/xx/run/` listing, and what makes
+`inject-page-links.mjs` stamp reciprocal hreflang and a language switcher onto
+both the English page and its copies. **When the English page changes, update
+the eight copies by hand.** Nothing regenerates them.
+
 ### The logic puzzles
 
 `public/apps/puzzles/` is Simon Tatham's Portable Puzzle Collection (MIT),

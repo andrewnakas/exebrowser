@@ -49,6 +49,26 @@
       "title": "Jazz Jackrabbit（共享软件版）",
       "desc": "Epic 的高速横版动作游戏，共享软件章节。"
     },
+    "/run/rise-of-the-triad/": {
+      "title": "Rise of the Triad",
+      "desc": "Apogee 90 年代中期的另一款射击游戏，共享软件章节。"
+    },
+    "/run/duke-nukem/": {
+      "title": "Duke Nukem (1991)",
+      "desc": "Duke 的第一次登场，横版卷轴游戏。"
+    },
+    "/dos-emulator/": {
+      "title": "运行你自己的 DOS 游戏",
+      "desc": "有注册版或其他 DOS 游戏？拖进 DOS 播放器就能玩。"
+    },
+    "/unblocked/": {
+      "title": "无需安装任何东西的游戏",
+      "desc": "能在受限的学校或公司网络上运行的完整游戏列表（英文页面）。"
+    },
+    "https://macemu.com/run/marathon/?utm_source=exebrowser&utm_medium=referral": {
+      "title": "Marathon (1994)：Mac 上的 DOOM",
+      "desc": "Bungie 的射击游戏，运行在我们的姊妹站 macemu.com 的模拟 Mac 上（英文）。"
+    },
     "/run/": {
       "title": "全部游戏与应用",
       "desc": "这里能玩、能运行的一切。"
@@ -136,6 +156,119 @@
       "html": "<h3 style=\"margin-top:0;\">id Software 官方共享软件版</h3><p>完整的第一章，未经改动，完全按照共享软件许可所允许的方式免费分发。最可靠的来源是 Internet Archive 保存的副本：</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">获取 DOOM 共享软件版（Internet Archive）→</a></p><p class=\"muted small\">请选择 DOS 版本（<code>DOOM.EXE</code> 和 <code>DOOM1.WAD</code>）。在本页游玩并不需要它——这个页面已经在运行共享软件版章节了——但如果你想在自己的电脑上保留一份，这就是该留的那一份。© id Software：共享软件版章节在不作修改、不收取费用的前提下可以自由再分发。注册版章节与 Doom II 属于商业产品，<strong>不</strong>包含在内；请到 <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a> 购买。</p>"
     }
   },
+  "duke-nukem-3d": {
+    "title": "在线免费玩 Duke Nukem 3D（1996）——共享软件版 — ExeBrowser",
+    "description": "在浏览器里免费玩 Duke Nukem 3D——Apogee 出品的官方共享软件章节 L.A. Meltdown。无需下载，通过 DOSBox + WebAssembly 运行。",
+    "keywords": "在线玩 duke nukem 3d, 毁灭公爵3d 浏览器, duke nukem 3d 共享软件, 毁灭公爵 免费, duke 3d 在线玩, build 引擎 浏览器",
+    "ogTitle": "在线免费玩 Duke Nukem 3D——共享软件章节",
+    "ogDescription": "3D Realms 1996 年的射击游戏，就在你的浏览器里：共享软件章节 L.A. Meltdown，无需下载、无需安装。",
+    "crumb": "玩 Duke Nukem 3D",
+    "h1": "在线玩 Duke Nukem 3D——免费的共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件第一章通过 DOSBox 在浏览器里跑起来"
+    },
+    "intro": "<p><strong>Duke Nukem 3D</strong>——3D Realms 在 1996 年推出的 Build 引擎射击游戏，就是那个有猪警察、几乎一切都能互动、满嘴俏皮话的游戏。它的<strong>共享软件章节 <em>L.A. Meltdown</em></strong> 原封不动地按 3D Realms 当年发布的样子放在这里——点击开始，它就会在浏览器里启动。停在标题画面不动，它会自己播放演示；按 <kbd>Esc</kbd> 打开菜单，选择 <em>New Game</em> 即可开始。</p>",
+    "sections": [
+      {
+        "h": "它是怎么跑起来的",
+        "html": "<p>这里运行的是 DOS 原版（1.3D 版），放在编译成 WebAssembly 的 DOSBox 里，并设置为尽可能使用你设备的全部 CPU。在较新的笔记本或台式机上很流畅；在手机或较旧的 Chromebook 上会有卡顿，因为这款当年要求高速 486 的游戏，每一条指令都要靠模拟来执行。整个游戏包不到 6&nbsp;MB，首次加载后会被缓存。</p>"
+      },
+      {
+        "h": "游戏小贴士",
+        "html": "<p>钥匙卡用来开门和启动彩色读卡器——共享软件关卡常把它们藏在通风口后面，一脚踢开或开枪打开即可。按住 <kbd>Shift</kbd> 奔跑，你几乎会一直想这么做。物品栏里的喷气背包和类固醇用 <kbd>[</kbd> 和 <kbd>]</kbd> 选择，按 <kbd>Enter</kbd> 使用。镜子、马桶和街机都会有反应——这是游戏本身的设计，不是 bug。</p>"
+      },
+      {
+        "h": "共享软件章节与完整版",
+        "html": "<p>第一章就是共享软件章节，它的许可允许免费网站提供下载和游玩——前提是所有文件都原封不动地一起分发，这里正是如此。第二、三章（以及后来 Atomic Edition 加入的第四章）属于商业版，这里不提供；完整版至今仍在销售。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Duke Nukem 3D 合法吗？",
+        "a": "合法。这是官方的共享软件章节，它的许可明确允许免费网站提供。商业版章节不在这里托管。"
+      },
+      {
+        "q": "操作方式是什么？",
+        "a": "方向键移动，Ctrl 开火，Space 开门和使用开关，A 跳跃，Z 蹲下，Shift 奔跑，Tab 显示地图。完整的按键表在游戏画面下方。"
+      },
+      {
+        "q": "为什么在我的手机上很卡？",
+        "a": "Duke 3D 在 1996 年就需要一台高速 486，而在这里它的每一条指令都要在浏览器里模拟执行。较新的台式机或笔记本能应付自如；手机或入门级 Chromebook 会掉帧。"
+      },
+      {
+        "q": "进度会保存吗？",
+        "a": "会——存档会尽量保留在这个浏览器里，下次来还在。用游戏自带菜单按 F2 存档。"
+      },
+      {
+        "q": "能在这里玩完整版吗？",
+        "a": "这里只托管共享软件章节。如果你拥有 DOS 版，把它的文件夹拖进 DOS 模拟器页面，就能用同样的方式运行。"
+      }
+    ],
+    "controls": [
+      {
+        "action": "移动 / 转向",
+        "keyboard": "<kbd>方向键</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "开火",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "开门 / 使用",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "跳跃",
+        "keyboard": "<kbd>A</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "蹲下",
+        "keyboard": "Z",
+        "mouse": "—"
+      },
+      {
+        "action": "奔跑",
+        "keyboard": "按住 <kbd>Shift</kbd>（<kbd>Caps Lock</kbd> 切换常驻）",
+        "mouse": "—"
+      },
+      {
+        "action": "横向平移",
+        "keyboard": "<kbd>Alt</kbd> + 方向键",
+        "mouse": "—"
+      },
+      {
+        "action": "物品栏",
+        "keyboard": "<kbd>[</kbd> 和 <kbd>]</kbd> 选择，<kbd>Enter</kbd> 使用",
+        "mouse": "—"
+      },
+      {
+        "action": "地图",
+        "keyboard": "Tab",
+        "mouse": "—"
+      },
+      {
+        "action": "菜单 / 存档 / 读档",
+        "keyboard": "Esc · F2 · F3",
+        "mouse": "—"
+      },
+      {
+        "action": "声音",
+        "keyboard": "—",
+        "mouse": "点击画面下方的声音按钮即可静音"
+      }
+    ],
+    "mobileHint": "方向键：移动／转向 · FIRE：开火 · OPEN：开门／使用 · JUMP：跳跃 · RUN：奔跑",
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件章节在这里免费玩。</strong> Duke Nukem 3D 的其余部分属于商业版，至今仍在销售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Duke+Nukem+3D\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Duke Nukem 3D →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Duke+Nukem+3D\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Duke Nukem 3D 第一章是 3D Realms 的共享软件章节，依据其许可对免费网站的授权托管于此，所有原始文件均未经改动。商业版章节不在这里托管。来源说明：<a href=\"/apps/duke-nukem-3d/NOTICE.md\">/apps/duke-nukem-3d/NOTICE.md</a>。</p>"
+  },
   "wolfenstein-3d": {
     "title": "在线免费玩 Wolfenstein 3D（1992）——真正的 DOS 原版 — ExeBrowser",
     "description": "1992 年的 Wolfenstein 3D 原版，免费的共享软件第一章，直接在浏览器里运行。真正的 DOS 游戏跑在 DOSBox 上——无需下载、无需注册，进度还能保存。",
@@ -191,5 +324,69 @@
       "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">共享软件章节（数据文件）加一个 Win32 源码移植版</h3><p>你需要两样东西，都是免费且合法的：</p><ol><li><strong>共享软件的数据</strong>——可自由再分发的第一章（那一组 <code>*.WL1</code> 文件）。Apogee 当年把第一章作为共享软件发布，允许免费复制，Internet Archive 保存有副本。</li><li><strong>一个 Win32 源码移植版</strong>——用开源方式重写的引擎，以 Windows EXE 的形式运行。可以用 <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a>（请选<strong>32 位</strong>版本），或者更精简的 Wolf4SDL。</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">获取 Wolfenstein 3D 共享软件版（Internet Archive）→</a></p><p class=\"muted small\">想在自己电脑上玩，把源码移植版的 EXE 和所有 <code>*.WL1</code> 文件放进<strong>同一个文件夹</strong>即可。在这里你什么都不用准备：本页面已经在运行共享软件章节了。© id Software / Apogee。可以自由再分发的只有<strong>共享软件章节</strong>；注册版章节、Nocturnal Missions 和 Spear of Destiny 属于商业产品，请到 <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a> 购买。</p></div>"
     },
     "licenseReason": "Wolfenstein 3D 的第一章由 Apogee 与 id 在 1992 年作为可自由分发的共享软件发布；共享软件版的 .WL1 数据文件可以免费复制，而注册版章节和 Spear of Destiny 仍属于商业产品。"
+  },
+  "parkhaven": {
+    "title": "Parkhaven — 免费主题乐园游戏，可自己设计过山车",
+    "description": "在浏览器里建造主题乐园：铺设道路、摆放游乐设施、一节一节地设计你自己的过山车，让成千上万的游客玩得开心。免费，原创。",
+    "keywords": "主题乐园游戏在线玩, 浏览器过山车建造, 免费建造主题乐园, 过山车设计游戏, 游乐园模拟 无需下载, 乐园经营游戏",
+    "ogTitle": "Parkhaven — 免费建造主题乐园、设计过山车",
+    "ogDescription": "道路、游乐设施、小卖部、员工，还有可逐节拼搭的过山车编辑器，设施评分按真实测试计算。直接在浏览器里运行。",
+    "crumb": "玩 Parkhaven",
+    "h1": "玩 Parkhaven — 免费的主题乐园模拟游戏",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 立即开玩 — 原生运行，无需模拟器"
+    },
+    "fullyFree": "专为 ExeBrowser 从零编写——代码、3D 模型和音效均为原创，采用 MIT 许可。不需要任何原版游戏文件。"
+  },
+  "space-cadet-open": {
+    "title": "在线玩 3D Pinball Space Cadet（三维弹球）— Windows XP 经典弹球免费玩",
+    "description": "在浏览器里玩 3D Pinball Space Cadet（三维弹球）：免费，即点即玩，无需下载，也不需要任何 Windows 文件。基于开源引擎的 WebAssembly 版本。",
+    "keywords": "三维弹球在线玩, 3d pinball space cadet 在线, space cadet 弹球免费玩, 三维弹球 无需下载, windows xp 弹球在线, 太空军校生弹球 浏览器, 三维弹球 无需微软文件, 免费玩 3d pinball, windows 弹球游戏在线, 三维弹球 chromebook, space cadet pinball 开源, space cadet pinball webassembly",
+    "ogTitle": "免费在线玩 3D Pinball Space Cadet（三维弹球）— 无需下载，无需 Windows 文件",
+    "ogDescription": "Windows XP 的经典弹球游戏，直接在浏览器里玩：免费，即点即玩，无需下载。基于开源引擎的 WebAssembly 版本，Mac、Chromebook、Linux 等任何设备都能运行。",
+    "crumb": "玩三维弹球 Space Cadet",
+    "h1": "在线玩 3D Pinball Space Cadet（三维弹球）——免费、即点即玩、无需下载",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行 · 无需任何文件"
+    },
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "controls": [
+      {
+        "action": "发射弹球",
+        "keyboard": "按住空格再松开",
+        "mouse": "—"
+      },
+      {
+        "action": "左挡板",
+        "keyboard": "Z",
+        "mouse": "鼠标左键"
+      },
+      {
+        "action": "右挡板",
+        "keyboard": "/（斜杠）",
+        "mouse": "鼠标右键"
+      },
+      {
+        "action": "新游戏",
+        "keyboard": "F2",
+        "mouse": "—"
+      },
+      {
+        "action": "暂停",
+        "keyboard": "F3",
+        "mouse": "—"
+      },
+      {
+        "action": "释放鼠标",
+        "keyboard": "Esc",
+        "mouse": "—"
+      }
+    ],
+    "mobileHint": "在手机上，请使用球台下方的挡板 / 发射按钮。",
+    "fullyFree": "引擎采用 MIT 许可证，美术、音效和球台数据均为完全原创，并以 CC0 公有领域发布。"
   }
 }

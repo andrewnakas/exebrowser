@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jogar Duke Nukem 3D Online — Shareware Grátis, No Navegador — ExeBrowser</title>
+<meta name="description" content="Jogue Duke Nukem 3D grátis no navegador: o episódio shareware oficial da Apogee, L.A. Meltdown. Sem baixar nada, rodando via DOSBox + WebAssembly." />
+<meta name="keywords" content="jogar duke nukem 3d online, duke nukem 3d no navegador, duke nukem 3d shareware, duke 3d gratis, duke nukem 3d sem baixar, build engine navegador" />
+<link rel="canonical" href="https://exebrowser.com/pt-BR/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/duke-nukem-3d/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/pt-BR/run/duke-nukem-3d/" />
+<meta property="og:title" content="Jogar Duke Nukem 3D Online — Episódio Shareware Grátis" />
+<meta property="og:description" content="O jogo de tiro de 1996 da 3D Realms no navegador: o episódio shareware L.A. Meltdown, sem baixar nem instalar." />
+<meta property="og:image" content="https://exebrowser.com/run/duke-nukem-3d/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://exebrowser.com/pt-BR/" },
+    { "@type": "ListItem", "position": 2, "name": "Guias de programas", "item": "https://exebrowser.com/pt-BR/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Jogar Duke Nukem 3D", "item": "https://exebrowser.com/pt-BR/run/duke-nukem-3d/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Duke Nukem 3D",
+  "url": "https://exebrowser.com/pt-BR/run/duke-nukem-3d/",
+  "image": "https://exebrowser.com/run/duke-nukem-3d/screenshot.png",
+  "description": "Jogue Duke Nukem 3D grátis no navegador: o episódio shareware oficial da Apogee, L.A. Meltdown. Sem baixar nada, rodando via DOSBox + WebAssembly.",
+  "applicationCategory": "Game",
+  "genre": ["First-person shooter", "Action"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "3D Realms / Apogee Software" },
+  "dateModified": "2026-10-01",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "É legal jogar Duke Nukem 3D aqui?",
+      "acceptedAnswer": { "@type": "Answer", "text": "É. Este é o episódio shareware oficial, cuja licença permite explicitamente que sites gratuitos o disponibilizem. Os episódios comerciais não estão hospedados." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais são os controles?",
+      "acceptedAnswer": { "@type": "Answer", "text": "As setas movem, Ctrl atira, Espaço abre portas e aciona interruptores, A pula, Z agacha, Shift corre e Tab mostra o mapa. A tabela completa fica abaixo do jogo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que fica lento no meu celular?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Duke 3D pedia um 486 rápido em 1996, e aqui cada uma das instruções dele é emulada no seu navegador. Um desktop ou notebook recente dá conta; um celular ou um Chromebook de entrada vai perder quadros." }
+    },
+    {
+      "@type": "Question",
+      "name": "O meu progresso fica salvo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fica — os jogos salvos permanecem neste navegador entre uma visita e outra, na medida do possível. Salve pelo próprio menu do jogo com F2." }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para jogar o jogo completo aqui?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Só o episódio shareware está hospedado. Se você tem a versão para DOS, arraste a pasta dela para a página do emulador de DOS e ela roda do mesmo jeito." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Rode arquivos <code>.exe</code> do Windows no seu navegador. Sem instalar. Sem enviar nada. Só WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/pt-BR/">Início</a>
+    <a href="/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guia</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="Idioma"><a href="/run/duke-nukem-3d/" hreflang="en">English</a> · <a href="/es/run/duke-nukem-3d/" hreflang="es">Español</a> · <span class="lang-current" aria-current="true">Português (BR)</span> · <a href="/fr/run/duke-nukem-3d/" hreflang="fr">Français</a> · <a href="/zh-CN/run/duke-nukem-3d/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/pt-BR/">Início</a> › <a href="/pt-BR/run/">Guias de programas</a> › Jogar Duke Nukem 3D</nav>
+
+  <section class="card">
+    <h2>Jogue Duke Nukem 3D online — o episódio shareware gratuito <span class="verdict good">Funciona — o episódio shareware 1 roda via DOSBox no navegador</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guia atualizado em outubro de 2026 · Roda com DOSBox + WebAssembly</p>
+    <p><strong>Duke Nukem 3D</strong> — o jogo de tiro de 1996 da 3D Realms com motor Build, aquele dos porcos policiais, dos cenários em que tudo é interativo e das frases de efeito. O <strong>episódio shareware, <em>L.A. Meltdown</em></strong>, está hospedado aqui exatamente como a 3D Realms o lançou — clique em jogar e ele inicia no seu navegador. Se você deixar parado na tela de título, ele roda a própria demo; aperte <kbd>Esc</kbd> para abrir o menu e escolha <em>New Game</em>.</p>
+
+    <div id="dos-embed"
+         data-app-url="/apps/duke-nukem-3d/duke-nukem-3d.zip"
+         data-app-name="Duke Nukem 3D"
+         data-slug="duke-nukem-3d"
+         data-autoboot="false"></div>
+  <div class="mgp" id="mobile-gamepad" aria-label="Mobile game controls">
+    <div class="mgp-row">
+      <div class="mgp-dpad">
+        <button type="button" class="mgp-btn mgp-up" data-doskey="265" data-code="" data-keycode="0" aria-label="▲">▲</button>
+          <button type="button" class="mgp-btn mgp-left" data-doskey="263" data-code="" data-keycode="0" aria-label="◀">◀</button>
+          <button type="button" class="mgp-btn mgp-right" data-doskey="262" data-code="" data-keycode="0" aria-label="▶">▶</button>
+          <button type="button" class="mgp-btn mgp-down" data-doskey="264" data-code="" data-keycode="0" aria-label="▼">▼</button>
+      </div>
+      <div class="mgp-actions">
+        <button type="button" class="mgp-btn mgp-accent" data-doskey="341" data-code="" data-keycode="0" aria-label="FIRE">FIRE</button>
+          <button type="button" class="mgp-btn mgp-yellow" data-doskey="32" data-code="" data-keycode="0" aria-label="OPEN">OPEN</button>
+          <button type="button" class="mgp-btn " data-doskey="65" data-code="" data-keycode="0" aria-label="JUMP">JUMP</button>
+          <button type="button" class="mgp-btn " data-doskey="90" data-code="" data-keycode="0" aria-label="CROUCH">CROUCH</button>
+          <button type="button" class="mgp-btn " data-doskey="340" data-code="" data-keycode="0" aria-label="RUN">RUN</button>
+          <button type="button" class="mgp-btn " data-doskey="258" data-code="" data-keycode="0" aria-label="MAP">MAP</button>
+          <button type="button" class="mgp-btn " data-doskey="256" data-code="" data-keycode="0" aria-label="MENU">MENU</button>
+          <button type="button" class="mgp-btn " data-doskey="257" data-code="" data-keycode="0" aria-label="ENTER">ENTER</button>
+      </div>
+    </div>
+  </div>
+  <p class="mgp-hint">Direcional: mover/virar · FIRE: atirar · OPEN: abrir/usar · JUMP: pular · RUN: correr</p>
+  <details class="mgp-keys">
+    <summary>⌨ Teclado — para os menus e digitar seu nome</summary>
+    <div class="mgp-keygrid" id="mgp-keygrid"></div>
+  </details>
+<script>
+(function(){
+  // GLFW key codes, matching the map in dos-embed.js.
+  var ROWS = [
+    [["1",49],["2",50],["3",51],["4",52],["5",53],["6",54],["7",55],["8",56],["9",57],["0",48]],
+    [["Q",81],["W",87],["E",69],["R",82],["T",84],["Y",89],["U",85],["I",73],["O",79],["P",80]],
+    [["A",65],["S",83],["D",68],["F",70],["G",71],["H",72],["J",74],["K",75],["L",76]],
+    [["Z",90],["X",88],["C",67],["V",86],["B",66],["N",78],["M",77]],
+    [["SPACE",32],["ENTER",257],["ESC",256],["⌫",259],["Y",89],["N",78]]
+  ];
+  var grid = document.getElementById("mgp-keygrid");
+  if(!grid) return;
+  ROWS.forEach(function(row){
+    var r = document.createElement("div");
+    r.className = "mgp-keyrow";
+    row.forEach(function(pair){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "mgp-key" + (pair[0].length > 1 ? " mgp-key-wide" : "");
+      b.textContent = pair[0];
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(pair[1], true); b.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(pair[1], false); b.classList.remove("pressed"); }
+      b.addEventListener("touchstart", dn, {passive:false});
+      b.addEventListener("touchend", up, {passive:false});
+      b.addEventListener("touchcancel", up, {passive:false});
+      b.addEventListener("mousedown", dn);
+      b.addEventListener("mouseup", up);
+      b.addEventListener("mouseleave", up);
+      r.appendChild(b);
+    });
+    grid.appendChild(r);
+  });
+})();
+</script>
+<script>
+(function(){
+  function wire(){
+    var canvas = document.getElementById("dos-canvas");
+    if(!canvas){ setTimeout(wire,300); return; }
+    document.querySelectorAll(".mgp-btn").forEach(function(btn){
+      var sc = parseInt(btn.dataset.doskey, 10);
+      if(!sc) return;
+      function dn(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,true); btn.classList.add("pressed"); }
+      function up(e){ e.preventDefault(); window.__dosEmitKey && window.__dosEmitKey(sc,false); btn.classList.remove("pressed"); }
+      btn.addEventListener("touchstart", dn, {passive:false});
+      btn.addEventListener("touchend",   up, {passive:false});
+      btn.addEventListener("touchcancel",up, {passive:false});
+      btn.addEventListener("mousedown",  dn);
+      btn.addEventListener("mouseup",    up);
+      btn.addEventListener("mouseleave", up);
+    });
+  }
+  wire();
+})();
+</script>
+    <details class="controls-panel" open>
+      <summary><strong>Controles</strong> — o que cada tecla faz</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Ação</th><th scope="col">Teclado</th><th scope="col">Mouse / toque</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">Mover / virar</th><td><kbd>Setas</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Atirar</th><td><kbd>Ctrl</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Abrir / usar</th><td><kbd>Espaço</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Pular</th><td><kbd>A</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Agachar</th><td><kbd>Z</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Correr</th><td>segure <kbd>Shift</kbd> (<kbd>Caps Lock</kbd> alterna)</td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Andar de lado</th><td><kbd>Alt</kbd> + setas</td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Inventário</th><td><kbd>[</kbd> e <kbd>]</kbd> para escolher, <kbd>Enter</kbd> para usar</td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Mapa</th><td><kbd>Tab</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Menu / salvar / carregar</th><td><kbd>Esc</kbd> · <kbd>F2</kbd> · <kbd>F3</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">Som</th><td>—</td><td>Use o botão de som abaixo da tela para silenciar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p class="next-up"><span class="next-up-label">Jogue agora:</span>
+      <a href="/run/map-colouring-puzzle/">Map colouring puzzle (Map)</a>
+      <a href="/run/magnets-puzzle/">Magnets puzzle (Magnets)</a>
+      <a href="/run/vlak/">Vlak</a>
+      <a href="/run/monster-bash/">Monster Bash</a>
+      <a class="next-up-all" href="/pt-BR/run/">todos os 146 jogos →</a>
+    </p>
+    <figure class="app-shot">
+      <img src="/run/duke-nukem-3d/screenshot.png" width="640" height="480" loading="lazy" alt="Duke Nukem 3D rodando em uma aba do navegador via ExeBrowser" />
+      <figcaption>Duke Nukem 3D rodando no navegador — sem instalar nada, sem enviar arquivos.</figcaption>
+    </figure>
+    <p class="muted small" style="margin-top:1rem;">Roda na aba do seu navegador com DOSBox + WebAssembly — nada é enviado. Clique na tela para capturar o teclado; pressione <kbd>Ctrl+F10</kbd> para liberar o mouse.</p>
+    <div class="warn-box">
+      <p class="muted small">O episódio 1 de Duke Nukem 3D é o episódio shareware da 3D Realms, hospedado conforme a permissão que a licença dá a sites gratuitos, com todos os arquivos originais sem modificação. Os episódios comerciais não estão hospedados. Procedência: <a href="/apps/duke-nukem-3d/NOTICE.md">/apps/duke-nukem-3d/NOTICE.md</a>.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="download-box">
+      <h3 style="margin-top:0;">Tenha o jogo completo</h3>
+      <div class="download-box"><p><strong>O episódio shareware roda aqui de graça.</strong> O resto de Duke Nukem 3D era a versão comercial, e continua à venda:</p><p><a class="button" href="https://store.steampowered.com/search/?term=Duke+Nukem+3D" target="_blank" rel="noopener">Procurar Duke Nukem 3D na Steam →</a> <a class="button" href="https://www.gog.com/en/games?query=Duke+Nukem+3D" target="_blank" rel="noopener">Procurar na GOG →</a></p></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>Como funciona e o que esperar</h2>
+    <p>É a versão original para DOS (1.3D) rodando numa build do DOSBox em WebAssembly, configurada para usar toda a CPU que o seu aparelho tiver. Num notebook ou desktop recente ele roda liso; num celular ou num Chromebook mais antigo vai engasgar, porque cada instrução de um jogo que pedia um 486 rápido está sendo emulada. O pacote tem menos de 6&nbsp;MB e fica em cache depois do primeiro carregamento.</p>
+    <h3>Dicas de jogo</h3>
+    <p>As chaves abrem portas e os leitores de cartão coloridos — as fases do shareware as escondem atrás de dutos de ventilação que você pode abrir com um chute ou um tiro. Segure <kbd>Shift</kbd> para correr, o que você vai querer quase o tempo todo. O jetpack e os esteroides do inventário são selecionados com <kbd>[</kbd> e <kbd>]</kbd> e usados com <kbd>Enter</kbd>. Espelhos, privadas e fliperamas reagem — isso é o jogo, não um bug.</p>
+    <h3>Episódio shareware — e o jogo completo</h3>
+    <p>O episódio 1 é o episódio shareware, e a licença dele permite que sites gratuitos o ofereçam — desde que todos os arquivos sejam distribuídos sem modificação, como acontece aqui. Os episódios 2 e 3 (e o quarto, da posterior Atomic Edition) eram a versão comercial e não estão incluídos; o jogo completo continua à venda.</p>
+  </section>
+  <section class="card">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>É legal jogar Duke Nukem 3D aqui?</summary>
+      <p>É. Este é o episódio shareware oficial, cuja licença permite explicitamente que sites gratuitos o disponibilizem. Os episódios comerciais não estão hospedados.</p>
+    </details>
+    <details>
+      <summary>Quais são os controles?</summary>
+      <p>As setas movem, Ctrl atira, Espaço abre portas e aciona interruptores, A pula, Z agacha, Shift corre e Tab mostra o mapa. A tabela completa fica abaixo do jogo.</p>
+    </details>
+    <details>
+      <summary>Por que fica lento no meu celular?</summary>
+      <p>Duke 3D pedia um 486 rápido em 1996, e aqui cada uma das instruções dele é emulada no seu navegador. Um desktop ou notebook recente dá conta; um celular ou um Chromebook de entrada vai perder quadros.</p>
+    </details>
+    <details>
+      <summary>O meu progresso fica salvo?</summary>
+      <p>Fica — os jogos salvos permanecem neste navegador entre uma visita e outra, na medida do possível. Salve pelo próprio menu do jogo com F2.</p>
+    </details>
+    <details>
+      <summary>Dá para jogar o jogo completo aqui?</summary>
+      <p>Só o episódio shareware está hospedado. Se você tem a versão para DOS, arraste a pasta dela para a página do emulador de DOS e ela roda do mesmo jeito.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>Mais coisas para jogar no navegador</h2>
+    <ul class="poster-grid">
+        <li class="pc-item"><a class="poster-card" href="/pt-BR/run/space-cadet-open/">
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/pt-BR/run/doom/">
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/librequake/">
+          <img class="pc-shot" src="/run/librequake/screenshot.png" width="320" height="240" loading="lazy" alt="LibreQuake rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">LibreQuake</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/prince-of-persia/">
+          <img class="pc-shot" src="/run/prince-of-persia/screenshot.png" width="320" height="240" loading="lazy" alt="Prince of Persia rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Prince of Persia</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/same-game/">
+          <img class="pc-shot" src="/run/same-game/screenshot.png" width="320" height="240" loading="lazy" alt="Same Game rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Same Game</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/loopy-puzzle/">
+          <img class="pc-shot" src="/run/loopy-puzzle/screenshot.png" width="320" height="240" loading="lazy" alt="Number loop puzzle (Loopy) rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Number loop puzzle (Loopy)</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+    </ul>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/pt-BR/run/">Ver todos os 146 títulos jogáveis aqui →</a></p>
+  </section>
+  <section class="card">
+    <h2>Guias relacionados</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/pt-BR/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">O episódio shareware do original de 1993, jogável no navegador.</span></a></li>
+      <li><a class="link-card" href="/run/rise-of-the-triad/"><span class="lc-title">Rise of the Triad</span><span class="lc-desc">O outro jogo de tiro da Apogee de meados dos anos 90, episódio shareware.</span></a></li>
+      <li><a class="link-card" href="/pt-BR/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">O tiro em primeira pessoa que começou tudo: episódio shareware, na hora.</span></a></li>
+      <li><a class="link-card" href="/run/duke-nukem/"><span class="lc-title">Duke Nukem (1991)</span><span class="lc-desc">A primeira aventura do Duke, em rolagem lateral.</span></a></li>
+      <li><a class="link-card" href="/dos-emulator/"><span class="lc-title">Rode o seu próprio jogo de DOS</span><span class="lc-desc">Tem a versão registrada ou outro jogo de DOS? Arraste para o player de DOS.</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">Jogos que não precisam de instalação</span><span class="lc-desc">A lista completa de títulos que rodam numa rede bloqueada de escola ou trabalho (páginas em inglês).</span></a></li>
+      <li><a class="link-card" href="https://macemu.com/run/marathon/?utm_source=exebrowser&utm_medium=referral"><span class="lc-title">Marathon (1994), o DOOM do Mac</span><span class="lc-desc">O jogo de tiro da Bungie, num Mac emulado no macemu.com, nosso site irmão (em inglês).</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Feito com <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine é marca registrada da CodeWeavers. O ExeBrowser não é afiliado à WineHQ, à CodeWeavers nem à Microsoft. Site irmão: <a href="https://macemu.com/" target="_blank" rel="noopener">macemu.com</a>, jogos clássicos de Mac no seu navegador.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/pt-BR/">Início</a>
+    <a href="/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guia de compatibilidade</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+    <a href="/saves/">Jogos salvos</a>
+    <a href="/privacy/">Política de privacidade</a>
+    <a href="/terms/">Termos de uso</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Conteúdo sob licença aberta; runtime sob GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+
+<script>window.__I18N={"play":"▶ Jogar {name}","resume":"▶ Continuar {name}","loading":"Carregando…","startOver":"Começar de novo","savedAgo":"Salvo {when}.","filesRestored":"Seus jogos salvos são carregados junto — abra-os pelo menu do próprio jogo.","snapshotResume":"Você volta exatamente de onde parou, no meio do jogo.","progressSaved":"Progresso salvo neste navegador","resumedExactly":"Você voltou exatamente de onde parou","snapshotOff":"Não foi possível salvar um ponto de retomada: seus saves do jogo continuam funcionando","confirmDelete":"Apagar seu progresso salvo em {name}?","justNow":"agora mesmo","minutesAgo":"há {n} minutos","anHourAgo":"há uma hora","hoursAgo":"há {n} horas","yesterday":"ontem","daysAgo":"há {n} dias","saveHint":"Salve dentro do jogo e o arquivo fica neste navegador","resetSaves":"apagar o progresso salvo","savesCleared":"Progresso salvo apagado — recarregue para começar de novo","restoredFiles":"{n} arquivo(s) salvo(s) restaurado(s) — abra pelo menu do jogo","overlayNote":"Roda no seu navegador com DOSBox + WebAssembly.<br>Nada é enviado. O runtime (~1,4 MB) fica em cache depois da primeira vez.","mouseHint":"Clique na tela do jogo para dar o teclado a ele.","starting":"Iniciando…","cachedNote":"Fica em cache depois da primeira carga, então da próxima vez é instantâneo.","loadingGame":"Carregando {name}…","fullscreen":"Tela cheia","soundOn":"Som ligado","soundOff":"Som desligado","remapKeys":"Teclado — remapeie qualquer tecla","remapHint":"Clique em uma tecla abaixo e depois pressione a que você prefere usar. Fica salvo neste navegador, por jogo.","resetDefaults":"Restaurar o padrão","consoleOutput":"Saída do console","wineLoadYours":"Carregue sua cópia de {name}","wineEmptyHosted":"Aperte play para iniciar {name} no seu navegador.","wineEmptyOwn":"{name} não está hospedado aqui — carregue sua própria cópia abaixo e ele roda nesta mesma página.","wineHintHosted":"Roda inteiramente na sua aba com WebAssembly + Wine. Nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineHintOwn":"Não podemos redistribuir {name}, então nada fica hospedado aqui. Sua própria cópia roda inteiramente na sua aba com WebAssembly + Wine — nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineEngine":"Motor do Wine:","wineVariantDefault":"Wine 1.7.55 · Win32 — quase tudo de 1995–2008","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — programas que pedem o Internet Explorer","wineVariant16":"Wine 3.1 · Windows 3.x de 16 bits — programas de 1990–1994","wineVariantR18":"Boxedwine 18R2 — motor mais antigo; às vezes roda o que o padrão não roda","wineVariantX64":"wine64 · experimental — programas de 64 bits, abre em página própria","wineIdle":"Ocioso.","wineDownloadFiles":"Baixar os arquivos que este programa gravou","wineFilesKept":"Os arquivos que este programa salvar ficam guardados neste navegador e são restaurados na próxima vez que você abrir a página. Use o botão de download para ficar com uma cópia.","wineCaptures":"Captura os saves e o conteúdo que o programa gravou na unidade C:\\ em memória.","wineLoadOwnCopy":"Carregue sua própria cópia","wineHaveFiles":"Tem os arquivos no seu aparelho? Solte aqui a pasta do programa ou um zip: o <code>.exe</code> principal mais os arquivos de dados ao lado dele.","wineDropFiles":"Solte os arquivos aqui, ou escolha:","winePickExe":"um único EXE","winePickFolder":"uma pasta","winePickZip":"um zip","wineEntryExe":"EXE principal:","wineRun":"Executar no Wine","wineLoadingRuntime":"Carregando o motor Boxedwine…","wineConfiguring":"Configurando a inicialização do Wine…","wineStartingEmulator":"Iniciando o emulador…","wineRunning":"Executando {name}…","wineBootFailed":"A inicialização falhou. Veja o console.","winePickThenRun":"Escolha um EXE e clique em Executar.","wineReadyLoad":"Wine pronto — carregue um EXE","wineInstallPrompt":"Instalar para voltar com um toque","wineEntry":"Principal: {path}","wineExesAvailable":"{n} EXEs disponíveis","wineX64Pending":"Escolha seu arquivo abaixo — ele continua na página experimental de 64 bits.","wineFetchedSoFar":"Baixados {amount} dos arquivos do motor até agora…","wineStillStarting":"Ainda iniciando…","wineStillWaiting":"Ainda esperando uma imagem — normal em alguns programas mais antigos. Veja a saída do console abaixo se isso continuar.","wineHandoffArrived":"Trazido do player de DOS — pronto para executar.","pfX64":"Programa de 64 bits","pfX64Body":"O motor daqui executa programas Windows de 32 bits, então este provavelmente não vai iniciar. Se a página de download oferecer uma versão de 32 bits (x86) da mesma versão, essa costuma funcionar.","pfWin16":"Programa Windows de 16 bits — motor trocado","pfWin16Body":"Ele foi feito para o Windows 3.x. O motor agora é o Wine 3.1 (16 bits), o que consegue executá-lo.","pfWin32":"Programa de 32 bits — motor restaurado","pfWin32Body":"O motor de 16 bits não executa este, então o motor voltou para o Wine 1.7.55 (Win32).","pfDos":"Um programa DOS, não Windows","pfDosBody":"O Wine executa programas Windows, então não vai iniciar este — mas o player de DOS deste site vai, e seus arquivos vão junto.","pfNotExe":"Isto não é um programa Windows","pfNotExeBody":"Ele não começa com a marca MZ que todo .exe tem. Pode ser um arquivo compactado ou documento renomeado, ou um download que não terminou.","pfDamaged":"Este arquivo está incompleto ou danificado","pfDamagedBody":"Os cabeçalhos descrevem mais dados do que o arquivo contém, o que geralmente significa que o download parou antes do fim. Baixe de novo.","pfCpu":"Feito para outro processador","pfCpuBody":"O emulador daqui executa apenas código x86, então este arquivo não consegue iniciar.","pfDriver":"Um driver, não um aplicativo","pfDriverBody":"Ele é carregado no kernel do Windows ou roda antes do Windows. Aqui não há onde carregá-lo.","pfDotnet":"Um programa .NET","pfDotnetBody":"Ele precisa do .NET Framework, que é posterior a esta versão do Wine, então provavelmente vai parar na inicialização.","pfDll":"Isto é uma DLL, não um programa","pfDllBody":"Uma DLL é uma biblioteca que os programas carregam. Carregue a pasta inteira do programa e escolha o .exe dele.","pfInstaller":"Isto é um instalador","pfInstallerBody":"Executá-lo descompacta o programa em vez de iniciá-lo. Pode funcionar — deixe terminar. Extrair os arquivos pode ser mais rápido, mas só funciona com instaladores baseados em ZIP/7z; não ajuda com um InstallShield, MSI ou empacotado com NSIS.","pfCrt":"Ele precisa das DLLs que vieram junto","pfCrtBody":"Este programa usa {dll}, um runtime do Visual C++ que não faz parte do Windows. Carregue a pasta inteira em vez do .exe sozinho, para que essas DLLs venham junto.","pfOpen64":"Experimente o motor experimental de 64 bits — seu arquivo vai junto →","pfDosLink":"Abrir no player de DOS →","pfExtract":"Extrair os arquivos em vez disso →","pfPickFolder":"Escolher a pasta em vez disso","pfRunAnyway":"Você ainda pode clicar em Executar — isto é lido dos cabeçalhos do arquivo, e às vezes eles estão errados.","pfCapGfx":"ele desenha com Direct3D ou OpenGL, e aqui não há passagem direta de GPU","pfCapNet":"ele espera uma rede, e a aba não oferece nenhuma","pfCapNote":"Vale saber: {notes}."};</script><!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+    <script src="/pwa.js?v=3"></script>
+<script src="/dos-embed.js?v=38"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+</body>
+</html>

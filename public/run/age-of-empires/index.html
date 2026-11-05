@@ -163,23 +163,13 @@
       <p>Switch to the r18 Wine variant; its older engine sometimes starts games the default build chokes on. If you still get a black screen, open the Console and look for err: lines naming a missing DLL, then add that file to your uploaded folder.</p>
     </details>
   </section>
-  <section class="card newsletter">
-    <h2>One new retro game in your inbox each week</h2>
-    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
-    <form class="newsletter-form" action="/api/subscribe" method="post" data-newsletter>
-      <label class="visually-hidden" for="nl-email">Email address</label>
-      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
-      <button type="submit" class="button primary">Subscribe</button>
-    </form>
-    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
-  </section>
   <section class="card">
     <h2>Related guides</h2>
     <ul class="card-grid">
       <li><a class="link-card" href="/run/solitaire-open/"><span class="lc-title">Solitaire (Klondike)</span><span class="lc-desc">Classic Klondike, playable right now — no emulator, no download.</span></a></li>
       <li><a class="link-card" href="/run/scorched-earth/"><span class="lc-title">Scorched Earth</span><span class="lc-desc">Turn-based artillery — the strategy classic, instant play.</span></a></li>
       <li><a class="link-card" href="/run/one-must-fall-2097/"><span class="lc-title">One Must Fall 2097</span><span class="lc-desc">Robot fighting with a full tournament mode — freeware, complete.</span></a></li>
-      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">The 1993 shareware episode, playable in your browser.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">Play DOOM online</span><span class="lc-desc">The 1993 shareware episode, playable in your browser.</span></a></li>
       <li><a class="link-card" href="/guide/"><span class="lc-title">Compatibility guide</span><span class="lc-desc">What runs in the browser, and what doesn't.</span></a></li>
     </ul>
   </section>
@@ -218,10 +208,9 @@
 <!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
+    <script src="/pwa.js?v=3"></script>
 <script src="/embed.js?v=11"></script>
-<script src="/app.js?v=25"></script>
+<script src="/app.js?v=26"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
-<script src="/newsletter.js?v=1"></script>
 </body>
 </html>

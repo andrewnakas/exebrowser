@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Parkhaven — 免费主题乐园游戏，可自己设计过山车</title>
+<meta name="description" content="在浏览器里建造主题乐园：铺设道路、摆放游乐设施、一节一节地设计你自己的过山车，让成千上万的游客玩得开心。免费，原创。" />
+<meta name="keywords" content="主题乐园游戏在线玩, 浏览器过山车建造, 免费建造主题乐园, 过山车设计游戏, 游乐园模拟 无需下载, 乐园经营游戏" />
+<link rel="canonical" href="https://exebrowser.com/zh-CN/run/parkhaven/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/parkhaven/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/parkhaven/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/parkhaven/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/parkhaven/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/parkhaven/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/parkhaven/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/zh-CN/run/parkhaven/" />
+<meta property="og:title" content="Parkhaven — 免费建造主题乐园、设计过山车" />
+<meta property="og:description" content="道路、游乐设施、小卖部、员工，还有可逐节拼搭的过山车编辑器，设施评分按真实测试计算。直接在浏览器里运行。" />
+<meta property="og:image" content="https://exebrowser.com/run/parkhaven/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://exebrowser.com/run/parkhaven/screenshot.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://exebrowser.com/zh-CN/" },
+    { "@type": "ListItem", "position": 2, "name": "程序列表", "item": "https://exebrowser.com/zh-CN/run/" },
+    { "@type": "ListItem", "position": 3, "name": "玩 Parkhaven", "item": "https://exebrowser.com/zh-CN/run/parkhaven/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Parkhaven",
+  "url": "https://exebrowser.com/zh-CN/run/parkhaven/",
+  "image": "https://exebrowser.com/run/parkhaven/screenshot.png",
+  "description": "在浏览器里建造并经营一座主题乐园：道路、平地游乐设施、小卖部、员工，以及你一节一节亲手设计的过山车。免费，即开即玩，无需下载。",
+  "applicationCategory": "Game",
+  "genre": ["Simulation","Strategy","Business"],
+  "gamePlatform": ["Web browser", "Windows", "Mac", "Linux", "Chromebook", "iOS", "Android"],
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "这是《过山车大亨》（RollerCoaster Tycoon）吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不是。Parkhaven 是专门为本站从零编写的原创游戏，和 1990 到 2000 年代的主题乐园模拟游戏属于同一类型。它不含任何来自《过山车大亨》或 OpenRCT2 的代码、美术、音效或文字，与 Chris Sawyer、Atari 和 Frontier 均无关联。" }
+    },
+    {
+      "@type": "Question",
+      "name": "需要下载什么吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不需要。Parkhaven 是直接在网页中运行的纯 JavaScript 和 WebGL 程序，没有模拟器，也不需要你提供任何游戏文件。只需要一个支持 WebGL 2 的浏览器，而目前所有电脑和手机浏览器都支持。" }
+    },
+    {
+      "@type": "Question",
+      "name": "怎么建造过山车？",
+      "acceptedAnswer": { "@type": "Answer", "text": "打开 Rides，选择 Steel Coaster（钢制过山车），放好车站。之后编辑器会一节一节地添加轨道：直道、坡道、弯道、提升坡、刹车段和回环。让轨道绕回车站，进行一次试运行，把入口和出口接到道路上，然后开放。试运行会测量速度、G 力、落差和腾空时间，这些数据决定设施的刺激度、强度和眩晕度。" }
+    },
+    {
+      "@type": "Question",
+      "name": "可以保存我的乐园吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可以。游戏每过一个游戏月会自动存档，菜单里还有三个存档位。存档保存在这台设备的这个浏览器里。" }
+    }
+  ]
+}
+</script>
+<style>
+  .game-frame {
+    width: 100%; max-width: 1100px; height: 720px; border: 0;
+    display: block; margin: 0 auto; border-radius: 8px; background: #6f9c55;
+  }
+  @media (max-width: 720px) { .game-frame { height: 600px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">在浏览器里直接运行 Windows 的 <code>.exe</code> 程序。无需安装，无需上传，只用 WebAssembly 和 Wine。</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/zh-CN/">首页</a>
+    <a href="/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/blog/">博客</a>
+    <a href="/guide/">指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="语言"><a href="/run/parkhaven/" hreflang="en">English</a> · <a href="/es/run/parkhaven/" hreflang="es">Español</a> · <a href="/pt-BR/run/parkhaven/" hreflang="pt-BR">Português (BR)</a> · <a href="/fr/run/parkhaven/" hreflang="fr">Français</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/zh-CN/">首页</a> › <a href="/zh-CN/run/">程序列表</a> › 玩 Parkhaven</nav>
+
+  <section class="card">
+    <h2>玩 Parkhaven — 免费的主题乐园模拟游戏 <span class="verdict good">原生运行 — 无需模拟器</span></h2>
+    <p><strong>Parkhaven</strong> 是一座由你亲手建造、亲自经营的主题乐园。从大门开始铺路，摆上旋转木马、旋转咖啡杯、海盗船和跳楼机，再加上小吃摊和厕所，然后<strong>一节一节地设计你自己的过山车</strong>——提升坡、倾斜弯道、回环，样样都有。让游客吃饱、玩开心、别晕得太厉害，并完成每座乐园的目标。<strong>无需下载，无需注册，什么都不用装。</strong></p>
+    <p class="muted small">这是 ExeBrowser 用 JavaScript 和 WebGL 从零写成的游戏。所有模型和音效都由游戏自己生成，所以打开就能玩，手机上也能跑。游戏界面为英文。<a href="/apps/parkhaven/" target="_blank" rel="noopener">全屏打开</a>。</p>
+
+    <iframe class="game-frame" src="/apps/parkhaven/" title="Parkhaven — 可直接游玩的主题乐园模拟游戏" loading="eager"></iframe>
+
+    <details class="controls-panel" open>
+      <summary><strong>操作方式</strong> — 各按键的作用</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">操作</th><th scope="col">方法</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">开始</th><td>在菜单里选一座乐园：三座带有要完成的目标，另有一个自由沙盒模式。</td></tr>
+            <tr><th scope="row">道路</th><td>点 <strong>Path</strong>，然后点击地块，或者拖动铺出一段直路。<strong>Queue</strong> 用来铺一条通往设施入口的排队通道。</td></tr>
+            <tr><th scope="row">游乐设施和小卖部</th><td>点 <strong>Rides</strong>，选一个并放好，再在旁边放上它的入口和出口。在它的窗口里将其开放。</td></tr>
+            <tr><th scope="row">过山车</th><td>先放车站，然后在编辑器里逐节添加轨道，直到轨道回到车站。试运行后再开放。</td></tr>
+            <tr><th scope="row">移动视角</th><td>按住右键拖动，或用 WASD / 方向键。滚轮缩放，Q / E 旋转。手机上：拖动、双指缩放、点按。</td></tr>
+            <tr><th scope="row">旋转要放置的物体</th><td>R</td></tr>
+            <tr><th scope="row">速度</th><td>空格键暂停；1–4 设置速度。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <figure class="shot">
+      <img src="/run/parkhaven/screenshot.png" alt="在浏览器中运行的 Parkhaven：车站旁一座带垂直回环的红色钢制过山车，设施窗口显示刺激度、强度和眩晕度评分" loading="lazy" />
+      <figcaption class="muted small">一座自己搭的回环过山车和它的试运行结果，就在本页的浏览器标签页里运行。</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>这是什么游戏</h2>
+    <p>Parkhaven 是一款主题乐园模拟游戏。每位走进大门的游客都有自己的预算、胃口、膀胱，以及对自己能承受多刺激的设施的判断。他们沿着你铺的路闲逛、挑选设施、排队、花钱买吃的和纪念品、乱扔垃圾、迷路，还会告诉你他们的想法。让他们开心，乐园评分就会上升，进而吸引更多游客走进大门。</p>
+    <p>游戏的核心是过山车编辑器。轨道一节一节地铺设，列车按简单的物理规律运行，试运行会测量最高速度、G 力、落差、腾空时间和翻转次数。这些数据会换算成设施的刺激度、强度和眩晕度评分，决定谁愿意坐、愿意付多少钱。除此之外还有平地游乐设施、卡丁车、激流勇进、小卖部、清洁工、机修工、保安和表演人员，以及故障与检修、天气、研发和市场营销。</p>
+  </section>
+
+  <section class="card">
+    <h2>乐园起步指南</h2>
+    <ul>
+      <li><strong>先修路，从大门开始。</strong>游客只能到达有道路相连的地方。每个设施的入口和出口都必须接上道路。</li>
+      <li><strong>先从温和的开始。</strong>旋转木马和旋转咖啡杯几乎人人都能玩。大型设施留到以后，等你买得起、游客也受得了的时候再建。</li>
+      <li><strong>让游客吃饱，并把厕所建在吃的旁边。</strong>又饿又渴、还找不到厕所的游客会不高兴地离开。</li>
+      <li><strong>尽早雇清洁工。</strong>道路上的垃圾和呕吐物拉低乐园评分的速度比什么都快。</li>
+      <li><strong>开放前先试运行。</strong>强度太高的过山车没人坐。弯道缓一点、落差低一点能降低强度；加个回环能提升刺激度。</li>
+      <li><strong>按价值定价。</strong>设施窗口会显示游客认为它值多少钱。定价略低于这个数就好。</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>常见问题</h2>
+    <details open>
+      <summary>这是《过山车大亨》（RollerCoaster Tycoon）吗？</summary>
+      <p>不是。Parkhaven 是专门为本站从零编写的原创游戏，和 <em>RollerCoaster Tycoon</em>（1999）这类主题乐园模拟游戏属于同一类型。它不含任何来自该游戏或 OpenRCT2 的代码、美术、音效或文字，与 Chris Sawyer、Atari 和 Frontier 均无关联。它依据一份描述该类型玩法的书面说明开发，与原版游戏完全隔离。详见<a href="/apps/parkhaven/NOTICE.md">来源声明</a>（英文）。</p>
+    </details>
+    <details>
+      <summary>需要下载什么吗？</summary>
+      <p>不需要。Parkhaven 是直接在网页中运行的纯 JavaScript 和 WebGL 程序，没有模拟器，也不需要你提供任何游戏文件。只需要一个支持 WebGL 2 的浏览器，而目前所有电脑和手机浏览器都支持。</p>
+    </details>
+    <details>
+      <summary>怎么建造过山车？</summary>
+      <p>打开 <strong>Rides</strong>，选择 <strong>Steel Coaster</strong>（钢制过山车），放好车站。之后编辑器会一节一节地添加轨道：直道、坡道、弯道、提升坡、刹车段和回环。让轨道绕回车站，进行一次试运行，把入口和出口接到道路上，然后开放。试运行会测量速度、G 力、落差和腾空时间，这些数据决定设施的刺激度、强度和眩晕度。</p>
+    </details>
+    <details>
+      <summary>可以保存我的乐园吗？</summary>
+      <p>可以。游戏每过一个游戏月会自动存档，菜单里还有三个存档位。存档保存在这台设备的这个浏览器里。</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>更多可在浏览器里玩的游戏</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/skyrise/"><span class="lc-title">Skyrise</span><span class="lc-desc">建一座摩天大楼，让电梯一直运转顺畅。</span></a></li>
+      <li><a class="link-card" href="/run/micropolis/"><span class="lc-title">Micropolis</span><span class="lc-desc">开源城市模拟游戏，即开即玩。</span></a></li>
+      <li><a class="link-card" href="/run/openttd/"><span class="lc-title">OpenTTD</span><span class="lc-desc">打造运输帝国——开源，即开即玩。</span></a></li>
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">XP 自带的那张弹球台——开源版本，即开即玩。</span></a></li>
+      <li><a class="link-card" href="/zh-CN/run/"><span class="lc-title">全部游戏和程序</span><span class="lc-desc">浏览这里所有可以玩或运行的内容。</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">无需安装任何东西的游戏</span><span class="lc-desc">在受限的学校或公司网络上也能运行的完整游戏列表。</span></a></li>
+    </ul>
+  </section>
+
+  <section class="card" id="embed-pointer">
+    <h2>想在自己的网站上放一个这样的游戏？</h2>
+    <p>这里有十一款游戏是我们从零写的，任何人都可以免费把它们放到自己的网页上：
+    只需一行 HTML，无需账号，无需许可，除了一行署名之外不需要任何其他标注。</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">查看可以嵌入的游戏</a></p>
+  </section>
+  <script src="/embed-pointer.js?v=1"></script>
+
+  <section class="card" id="embed-offer" data-slug="parkhaven" data-name="Parkhaven">
+    <h2>把 Parkhaven 放到你的网站上</h2>
+    <p>这款游戏是我们自己的——从零编写，不是模拟运行——所以欢迎你免费把它嵌入到任何地方，
+    无需许可。把下面的代码粘贴到你想显示的位置：</p>
+    <textarea readonly rows="4" spellcheck="false" aria-label="Parkhaven 嵌入代码"></textarea>
+    <p><button type="button" class="cta-btn">复制嵌入代码</button></p>
+    <p class="muted small">我们唯一的要求是保留署名那一行。我们托管但并非我们编写的游戏不提供嵌入，
+    因为那些不是我们的，不能由我们转授。</p>
+  </section>
+  <script src="/embed-snippet.js?v=1"></script>
+</main>
+
+<footer>
+  <p>Parkhaven 是 ExeBrowser 的原创游戏，采用 MIT 许可。RollerCoaster Tycoon（《过山车大亨》）是其所有者的商标，此处提及仅为说明游戏类型；Parkhaven 与 Chris Sawyer、Atari、Frontier 及 OpenRCT2 项目均无关联，也未获得其认可。</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/zh-CN/">首页</a>
+    <a href="/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/blog/">博客</a>
+    <a href="/guide/">兼容性指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+    <a href="/saves/">游戏存档</a>
+    <a href="/privacy/">隐私政策</a>
+    <a href="/terms/">使用条款</a>
+  </nav>
+  <p>© 2026 ExeBrowser。内容采用开放许可，运行时基于 GPL-2.0 / LGPL-2.1。</p>
+</footer>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/play-events.js?v=3"></script>
+<script src="/pwa.js?v=3"></script>
+</body>
+</html>

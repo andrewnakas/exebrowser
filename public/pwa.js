@@ -5,18 +5,16 @@
 // save sitting in localStorage and no route to it. An installed icon is that
 // route, so this file exists to earn one.
 //
-// The prompt is deliberately not shown to everyone. A first-time visitor who
-// has not played anything has been given no reason to install and asking them
-// spends the browser's one-shot beforeinstallprompt on the worst possible
-// audience. It is offered to people who have something to come back FOR: a
-// save on this device, two titles played, a program run or inspected, three
-// pages read in one session, or a return visit already recorded.
+// The prompt is shown at a moment, not on a page load. It used to appear 800ms
+// after load for anyone with a save, two titles played, a return visit or three
+// pages read — 19,080 shows to 6,012 users in the 28 days to 2026-11-03, for
+// 510 installs. Most of those shows landed on someone who had just arrived and
+// had not done anything yet on this page.
 //
-// That list used to be the first two items only, and both come from
-// save-core.js — which is loaded on the catalogue and nowhere else. So every
-// reader of the blog, the guide, the .exe explainer and the loader was
-// excluded by construction, however engaged they were, and that is now the
-// faster-growing half of the site.
+// Now it waits for the visitor to do the thing they came for: their first
+// save lands, a program has been running for a minute, or the viewer has read
+// a file. `trigger` on install_prompt_shown says which, so the next funnel read
+// can compare the three.
 (() => {
   "use strict";
 
@@ -27,13 +25,12 @@
 
   const DISMISS_KEY = "exe_install_dismissed";
   const DISMISS_DAYS = 14;
-  // Pages seen this tab session. The qualification test below used to depend
-  // entirely on SaveCore, which is loaded on the catalogue and nowhere else —
-  // so nobody reading the blog, the guide, the viewer or the .exe explainer
-  // could ever be offered an install, however long they stayed. That audience
-  // is now the fastest-growing half of the site.
+  // Pages seen this tab session — reported with the offer, no longer a trigger.
   const VIEWS_KEY = "exe_views";
   const ENGAGED_KEY = "exe_engaged";
+  // A boot is the start of a session, not proof of one; the bar appearing over
+  // the first frame is an interruption. A minute in, they are playing.
+  const BOOT_DELAY_MS = 60000;
   const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) && !window.MSStream;
   const standalone = (window.matchMedia && matchMedia("(display-mode: standalone)").matches) ||
                      navigator.standalone === true;
@@ -73,7 +70,9 @@
   window.addEventListener("beforeinstallprompt", e => {
     e.preventDefault();
     deferred = e;
-    maybeOffer();
+    // The moment may already have passed before Chrome decided the site was
+    // installable; offer it now rather than lose it.
+    if (pending) maybeOffer(pending);
   });
 
   // One install, one event. `appinstalled` and the userChoice promise both
@@ -100,14 +99,16 @@
     isIOS,
     standalone,
     /**
-     * Called by the runtimes when a visitor does something that earns the
-     * offer: boots a program, or reads one in the viewer. A far better signal
-     * than a page view, and the reason the bar can now reach the utility
-     * audience at all.
+     * Called by the runtimes at the moments that earn the offer:
+     *   "save"    — the first save landed (dos-embed.js, app.js)
+     *   "boot"    — a program or game started; offered a minute later
+     *   "inspect" — the viewer read a file (pe-inspect.js)
      */
     engaged(what) {
-      writeSS(ENGAGED_KEY, what || "1");
-      maybeOffer();
+      what = what || "engaged";
+      writeSS(ENGAGED_KEY, what);
+      if (what === "boot") setTimeout(() => maybeOffer("boot"), BOOT_DELAY_MS);
+      else maybeOffer(what);
     },
     async prompt() {
       if (!deferred) return null;
@@ -127,36 +128,18 @@
 
   // ── The offer ────────────────────────────────────────────────────────────
   //
-  // Still not everyone: a first-time visitor who has done nothing has been
-  // given no reason to install, and asking them spends the browser's one-shot
-  // beforeinstallprompt on the worst possible audience.
-  //
-  // What changed is who counts as having done something. The old test was
-  // SaveCore-only, and SaveCore is loaded on the catalogue and nowhere else,
-  // so the entire utility and blog audience — the half that is growing — was
-  // structurally excluded no matter how engaged it was.
-  function qualifies() {
-    if (standalone || dismissedRecently()) return false;
-    try {
-      if (window.SaveCore && SaveCore.saves().length >= 1) return true;   // has a save
-      if (window.SaveCore && SaveCore.all().length >= 2) return true;      // played two things
-    } catch (_) { /* fall through */ }
-    if (readSS(ENGAGED_KEY)) return true;                                  // ran or inspected something
-    if (views >= 3) return true;                                           // read three pages this session
-    // Written by save-core.js on a return visit. Kept as a signal, no longer
-    // the only one that can reach a reader.
-    return !!readSS("exe_return_visit_sent");
-  }
-
+  // Only ever called from engaged(), so there is no page-load path: whoever
+  // sees it has just saved, played for a minute, or read a file.
   let offered = false;
-  function maybeOffer() {
-    if (offered || !qualifies()) return;
-    if (!deferred && !isIOS) return;
+  let pending = null;   // a moment that came before beforeinstallprompt did
+  function maybeOffer(trigger) {
+    if (offered || standalone || dismissedRecently()) return;
+    if (!deferred && !isIOS) { pending = trigger; return; }
     offered = true;
-    render();
+    render(trigger);
   }
 
-  function render() {
+  function render(trigger) {
     if (document.getElementById("install-bar")) return;
     const bar = document.createElement("p");
     bar.className = "resume-bar install-bar";
@@ -205,18 +188,15 @@
     else if (main) main.insertBefore(bar, main.firstChild);
     else return;
 
-    // `reason` is the whole point of widening the test: without it the next
-    // funnel read cannot tell whether the new audience installs at all.
+    // `trigger` is the moment that raised the bar (save, boot or inspect).
+    // `reason` keeps its old meaning so the funnel stays comparable with the
+    // reads before 2026-11.
     track("install_prompt_shown", {
       ios: isIOS ? 1 : 0,
       saved_games: saved,
-      reason: saved ? "has_save" : readSS(ENGAGED_KEY) ? "engaged" : views >= 3 ? "read_pages" : "return_visit",
+      trigger: trigger || "engaged",
+      reason: saved ? "has_save" : "engaged",
       views,
     });
   }
-
-  // iOS never fires beforeinstallprompt, so it needs its own trigger. Both
-  // paths wait for save-core.js to have loaded and run.
-  if (document.readyState === "complete") setTimeout(maybeOffer, 800);
-  else addEventListener("load", () => setTimeout(maybeOffer, 800));
 })();

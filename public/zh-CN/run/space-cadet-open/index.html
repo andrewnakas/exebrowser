@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>在线玩 3D Pinball Space Cadet（三维弹球）— Windows XP 经典弹球免费玩</title>
+<meta name="description" content="在浏览器里玩 3D Pinball Space Cadet（三维弹球）：免费，即点即玩，无需下载，也不需要任何 Windows 文件。基于开源引擎的 WebAssembly 版本。" />
+<meta name="keywords" content="三维弹球在线玩, 3d pinball space cadet 在线, space cadet 弹球免费玩, 三维弹球 无需下载, windows xp 弹球在线, 太空军校生弹球 浏览器, 三维弹球 无需微软文件, 免费玩 3d pinball, windows 弹球游戏在线, 三维弹球 chromebook, space cadet pinball 开源, space cadet pinball webassembly" />
+<link rel="canonical" href="https://exebrowser.com/zh-CN/run/space-cadet-open/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/space-cadet-open/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/space-cadet-open/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/space-cadet-open/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/space-cadet-open/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/space-cadet-open/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/space-cadet-open/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/zh-CN/run/space-cadet-open/" />
+<meta property="og:title" content="免费在线玩 3D Pinball Space Cadet（三维弹球）— 无需下载，无需 Windows 文件" />
+<meta property="og:description" content="Windows XP 的经典弹球游戏，直接在浏览器里玩：免费，即点即玩，无需下载。基于开源引擎的 WebAssembly 版本，Mac、Chromebook、Linux 等任何设备都能运行。" />
+<meta property="og:image" content="https://exebrowser.com/run/space-cadet-open/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://exebrowser.com/run/space-cadet-open/screenshot.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://exebrowser.com/zh-CN/" },
+    { "@type": "ListItem", "position": 2, "name": "程序列表", "item": "https://exebrowser.com/zh-CN/run/" },
+    { "@type": "ListItem", "position": 3, "name": "玩三维弹球 Space Cadet", "item": "https://exebrowser.com/zh-CN/run/space-cadet-open/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "3D Pinball for Windows – Space Cadet（开源版本）",
+  "url": "https://exebrowser.com/zh-CN/run/space-cadet-open/",
+  "image": "https://exebrowser.com/run/space-cadet-open/screenshot.png",
+  "description": "在浏览器里免费玩 Windows XP 经典弹球游戏 Space Cadet（三维弹球）。基于开源引擎的 WebAssembly 版本：无需下载，无需 Windows 文件，无需安装，任何设备都能玩。",
+  "applicationCategory": "Game",
+  "genre": ["弹球", "街机"],
+  "gamePlatform": ["网页浏览器", "Windows", "Mac", "Linux", "Chromebook"],
+  "operatingSystem": "Web Browser",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "玩这个游戏需要微软 Windows 的文件吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不需要。这个版本使用的全部是开源资源，不需要 Windows XP、Windows 95 或任何微软产品里的文件。点一下“开始游戏”，游戏就会立刻在浏览器里加载——不用提供任何文件，也不用下载任何东西。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Windows 10 和 Windows 11 上能玩吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "能。它通过 WebAssembly 在浏览器里运行，所以 Windows 10、Windows 11、macOS、Linux 和 Chromebook 都能玩——只要设备上有 Chrome、Firefox、Edge 或 Safari 这类现代浏览器就行。原版游戏在 Windows XP 之后被微软移除了，而这个开源的浏览器版本没有这个限制。" }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么 Windows 里没有三维弹球了？",
+      "acceptedAnswer": { "@type": "Answer", "text": "微软在开发 64 位 Windows Vista 时放弃了 Space Cadet。它的物理引擎有一个浮点舍入错误：在 64 位处理器上，某些小数运算的结果和 32 位处理器略有不同，导致弹球偶尔会直接穿过挡板和墙壁。微软没有选择重写物理代码，而是干脆把游戏砍掉了。微软的 Raymond Chen 在 2022 年 1 月的开发者博客中记录了具体原因。这里使用的开源 SpaceCadetPinball 引擎已经修复了这个错误。" }
+    },
+    {
+      "@type": "Question",
+      "name": "这是微软正版的 Space Cadet 吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "这里用的是通过逆向工程重建的开源引擎（MIT 许可证），配合原创的 CC0 公有领域美术和音效，而不是微软的专有程序。物理规则、任务和玩法都忠实于原版，但没有使用或包含任何微软文件。如果你想运行真正的原版程序，请看我们的《通过 Wine 运行 3D Pinball Space Cadet》指南（英文页面，需要你自己提供游戏副本）。" }
+    },
+    {
+      "@type": "Question",
+      "name": "在学校能玩不被屏蔽的三维弹球吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "能。它完全通过 WebAssembly 在浏览器里运行——不用下载，不用插件，也不用安装。在学校的 Chromebook 上，以及屏蔽游戏下载或 Flash/Java 内容的网络中都能玩。打开这个页面，点“开始游戏”就行。" }
+    },
+    {
+      "@type": "Question",
+      "name": "手机或平板上能玩吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "能。游戏内置了触屏操作：点球台左侧控制左挡板，点右侧控制右挡板，点球台下方的中间按钮发射。在小屏幕上，点“开始游戏”后球台会放大并铺满整个屏幕。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Space Cadet 弹球有哪些任务？",
+      "acceptedAnswer": { "@type": "Answer", "text": "一共有 9 类任务：发射训练（Launch Training）、外星威胁（Alien Menace）、宇宙瘟疫（Cosmic Plague）、嘉奖（Commendation）、紧急求救（Mayday）、秘密任务（Secret Mission）、侦察（Recon）、停滞（Stasis）和营救（Rescue）。依次点亮三个黄色的任务指示灯即可激活任务。完成任务可以晋升军衔，从学员（Cadet）一路升到舰队司令（Fleet Admiral）。" }
+    },
+    {
+      "@type": "Question",
+      "name": "右挡板的按键没反应，怎么办？",
+      "acceptedAnswer": { "@type": "Answer", "text": "右挡板默认绑定在 /（斜杠）键上。在非 QWERTY 布局或某些其他语言的键盘上，这个键可能无法正确识别。可以改用鼠标右键来控制右挡板——无论键盘布局如何都能用。" }
+    }
+  ]
+}
+</script>
+<style>
+  .play-frame-wrap { margin: 1rem 0; }
+  .play-frame { width: 100%; max-width: 640px; height: 480px; border: 0;
+                display: block; margin: 0 auto; background: #000; border-radius: 6px; }
+  .play-cta { display:inline-block; margin: 0 auto 0.5rem; }
+
+  .mobile-controls { display: none; }
+  .mobile-hint { display: none; }
+  .mobile-controls {
+    max-width: 640px; margin: 0.5rem auto 0; gap: 0.6rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .mc-btn {
+    -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    touch-action: manipulation; cursor: pointer;
+    font: 700 1.1rem/1 system-ui, sans-serif; letter-spacing: .03em;
+    color: #cfe8ff; background: linear-gradient(#1b2a44, #0d1626);
+    border: 1px solid #3a5a8a; border-radius: 10px;
+    padding: 1.1rem 0.4rem; text-align: center;
+    box-shadow: 0 2px 0 #0a1220, inset 0 1px 0 rgba(120,180,255,.15);
+  }
+  .mc-btn:active {
+    background: linear-gradient(#284064, #16243c);
+    transform: translateY(1px); box-shadow: 0 1px 0 #0a1220;
+    color: #fff;
+  }
+  .mc-launch { color: #ffe1a8; border-color: #8a6a3a; }
+  @media (hover: none) and (pointer: coarse) {
+    .mobile-controls { display: grid; }
+    .mobile-hint { display: inline; }
+  }
+  @media (max-width: 720px) {
+    .mobile-controls { display: grid; }
+    .mobile-hint { display: inline; }
+  }
+
+  body.playing { overflow: hidden; }
+  @media (max-width: 720px) {
+    body.playing { position: fixed; inset: 0; width: 100%; }
+  }
+  .play-overlay { display: block; }
+  body.playing .play-overlay {
+    display: flex;
+    position: fixed; inset: 0; z-index: 9999;
+    background: #05080f;
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    overscroll-behavior: none; touch-action: none;
+  }
+  body.playing .play-overlay .play-frame {
+    flex: 1 1 auto; width: 100vw; max-width: 100vw; height: auto; min-height: 0;
+    margin: 0; border-radius: 0;
+  }
+  body.playing .play-overlay .mobile-controls {
+    display: grid; width: 100%; max-width: 100%;
+    margin: 0; padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
+    gap: 0.5rem; flex: 0 0 auto;
+  }
+  body.playing .play-overlay .mc-btn { padding: 1.4rem 0.4rem; font-size: 1.25rem; }
+  .play-exit {
+    display: none; position: fixed; top: calc(6px + env(safe-area-inset-top));
+    right: 8px; z-index: 10000;
+    background: rgba(10,18,32,.8); color: #cfe8ff; border: 1px solid #3a5a8a;
+    border-radius: 8px; padding: .4rem .7rem; font: 600 .9rem system-ui; cursor: pointer;
+  }
+  body.playing .play-exit { display: block; }
+
+  .rank-table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .75rem 0; }
+  .rank-table th { background: #1a2740; color: #cfe8ff; padding: .4rem .6rem; text-align: left; }
+  .rank-table td { padding: .35rem .6rem; border-bottom: 1px solid #1e2d47; }
+  .rank-table tr:last-child td { border-bottom: none; }
+
+  .mission-list { columns: 2; column-gap: 2rem; margin: .5rem 0; }
+  @media (max-width: 500px) { .mission-list { columns: 1; } }
+  .mission-list li { margin-bottom: .3rem; break-inside: avoid; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">在浏览器里直接运行 Windows 的 <code>.exe</code> 程序。无需安装，无需上传，只用 WebAssembly 和 Wine。</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/zh-CN/">首页</a>
+    <a href="/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/blog/">博客</a>
+    <a href="/guide/">指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="语言"><a href="/run/space-cadet-open/" hreflang="en">English</a> · <a href="/es/run/space-cadet-open/" hreflang="es">Español</a> · <a href="/pt-BR/run/space-cadet-open/" hreflang="pt-BR">Português (BR)</a> · <a href="/fr/run/space-cadet-open/" hreflang="fr">Français</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/zh-CN/">首页</a> › <a href="/zh-CN/run/">程序列表</a> › 玩三维弹球 Space Cadet</nav>
+
+  <section class="card">
+    <h2>在线玩 3D Pinball Space Cadet（三维弹球）——免费、即点即玩、无需下载 <span class="verdict good">可以运行 · 无需任何文件</span></h2>
+    <p>Windows XP 的经典弹球游戏，现在就能在浏览器里玩——<strong>无需下载，无需安装，也不需要任何微软 Windows 文件</strong>。这是开源 <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> 引擎的 WebAssembly 版本，搭配原创的公有领域素材。Windows 10、Windows 11、Mac、Linux 和 Chromebook 都能运行。点击开始，几秒钟后弹球就已经在发射杆上等着你了。</p>
+
+    <div class="play-frame-wrap">
+      <button class="button play-cta" id="boot-pinball" type="button">&#9654; 开始游戏：3D Pinball Space Cadet — 免费，即点即玩</button>
+      <button type="button" class="play-exit" id="play-exit" aria-label="退出全屏">&#10005; 退出</button>
+      <div class="play-overlay" id="play-overlay">
+        <iframe class="play-frame" id="pinball-frame" title="3D Pinball Space Cadet — 开源浏览器版本"
+                allow="autoplay; gamepad; fullscreen"
+                data-src="/apps/space-cadet/?v=1782869574"></iframe>
+        <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
+          <button type="button" class="mc-btn mc-flip" data-key="z" aria-label="左挡板">&#9664; 挡板</button>
+          <button type="button" class="mc-btn mc-launch" data-key="space" aria-label="发射弹球">&#9679; 发射</button>
+          <button type="button" class="mc-btn mc-flip" data-key="slash" aria-label="右挡板">挡板 &#9654;</button>
+        </div>
+      </div>
+    </div>
+    <p class="muted small" style="margin-top:0.5rem;">完全在你的浏览器里运行——不上传任何东西，也不安装任何东西。先点一下游戏画面，让它接收键盘输入。<strong>发射：</strong>按住 <kbd>空格</kbd> 再松开。<strong>挡板：</strong><kbd>Z</kbd> 控制左边，<kbd>/</kbd> 控制右边。<strong>新游戏：</strong><kbd>F2</kbd>。<strong>鼠标：</strong>左键 = 左挡板，右键 = 右挡板。按 <kbd>Esc</kbd> 释放输入。游戏本身的菜单是英文的。<span class="mobile-hint">在手机上，请使用球台下方的<strong>挡板</strong> / <strong>发射</strong>按钮。</span></p>
+
+    <details class="controls-panel" open>
+      <summary><strong>操作</strong>——各按键的作用</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">动作</th><th scope="col">键盘</th><th scope="col">鼠标 / 触屏</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">发射弹球</th><td>按住 <kbd>空格</kbd> 再松开</td><td>中间按钮（手机）</td></tr>
+        <tr><th scope="row">左挡板</th><td><kbd>Z</kbd></td><td><kbd>鼠标左键</kbd> · 点击左侧</td></tr>
+        <tr><th scope="row">右挡板</th><td><kbd>/</kbd>（斜杠）</td><td><kbd>鼠标右键</kbd> · 点击右侧</td></tr>
+        <tr><th scope="row">新游戏</th><td><kbd>F2</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">暂停</th><td><kbd>F3</kbd></td><td><span class="muted">—</span></td></tr>
+        <tr><th scope="row">释放鼠标</th><td><kbd>Esc</kbd></td><td><span class="muted">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="warn-box" style="border-color:#2e7d32;">
+      <p><strong>不含微软文件，没有灰色地带。</strong>有些网站直接提供微软的原版程序，这里不一样：这个版本使用开源引擎，搭配完全原创、以 CC0（公有领域）发布的美术和音效。你不需要 Windows XP 光盘、原版安装程序或任何专有文件。<a href="https://github.com/andrewnakas/open-cadet" target="_blank" rel="noopener">在 GitHub 上获取数据包</a>，即可在桌面版引擎上运行 · <a href="/apps/space-cadet/CC0-LICENSE.txt">CC0 许可证</a> · <a href="/apps/space-cadet/NOTICE.md">项目声明</a>。</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>操作方式——键盘和鼠标</h2>
+    <table class="rank-table" aria-label="游戏操作">
+      <thead><tr><th>动作</th><th>键盘</th><th>鼠标 / 触屏</th></tr></thead>
+      <tbody>
+        <tr><td>左挡板</td><td><kbd>Z</kbd></td><td>鼠标左键 · 点击左侧</td></tr>
+        <tr><td>右挡板</td><td><kbd>/</kbd>（斜杠）</td><td>鼠标右键 · 点击右侧</td></tr>
+        <tr><td>发射（发射杆）</td><td>按住 <kbd>空格</kbd> 再松开</td><td>点击中间（手机）</td></tr>
+        <tr><td>新游戏</td><td><kbd>F2</kbd></td><td>—</td></tr>
+        <tr><td>暂停</td><td><kbd>F3</kbd></td><td>—</td></tr>
+        <tr><td>释放鼠标</td><td><kbd>Esc</kbd></td><td>—</td></tr>
+      </tbody>
+    </table>
+    <p class="muted small"><strong>非 QWERTY 键盘：</strong>如果 <kbd>/</kbd> 键没反应，试试你键盘布局上 <kbd>.</kbd> 右边的那个键，或者直接用鼠标右键控制右挡板。</p>
+  </section>
+
+  <section class="card">
+    <h2>工作原理——WebAssembly，而不是模拟器</h2>
+    <p>大多数提供“在线玩 Space Cadet”的网站，都是用 DOSBox 或 Windows 模拟器来运行微软的原版程序——而那是专有软件。这个版本不一样：它运行的是<strong>开源的 SpaceCadetPinball 引擎</strong>，由开发者 k4zmu2a 对原版程序进行逆向工程重建，再通过 Emscripten 编译成 WebAssembly。物理效果、碰撞检测、弹球运动和任务逻辑都忠实于 1995 年和 2001 年的原版。</p>
+    <p>因为引擎是直接编译成 WebAssembly 的（而不是套在模拟器里），游戏在任何现代浏览器——Chrome、Firefox、Edge、Safari——和任何操作系统上都能<strong>全速运行</strong>。这里也不存在 64 位物理错误：开源移植版修复了当年导致微软从 Windows Vista 起移除这款游戏的浮点舍入问题。</p>
+
+    <h3>Windows XP 去不了的地方，它都能去</h3>
+    <ul>
+      <li><strong>Windows 10 和 11：</strong>原版游戏在 Vista 中就被移除了——这个版本在所有新版 Windows 上都能运行。</li>
+      <li><strong>Mac 和 Linux：</strong>完全不需要 Windows。</li>
+      <li><strong>Chromebook：</strong>在 Chrome 里直接运行，不需要扩展程序，也不需要安卓应用。</li>
+      <li><strong>在学校也不会被屏蔽：</strong>纯浏览器 WebAssembly——没有需要拦截的下载、插件或安装程序。</li>
+    </ul>
+
+    <h3>为什么可以合法托管</h3>
+    <p>SpaceCadetPinball 引擎采用 MIT 许可证。这个版本使用的球台数据文件（PINBALL.DAT）、全部美术和全部音效，都是以 <strong>CC0（公有领域）</strong>发布的原创作品——从零开始制作，并非源自微软的素材。这不是微软游戏的盗版，而是一部受其启发、可以自由再分发的独立作品。</p>
+  </section>
+
+  <section class="card">
+    <h2>任务——全部 9 类任务</h2>
+    <p>Space Cadet 共有 9 类任务。依次击中球台顶部的三个黄色任务（Mission）灯即可激活任务，然后完成对应目标。完成任务可以晋升军衔并获得额外分数。括号里是游戏中显示的英文原名。</p>
+    <ol class="mission-list">
+      <li><strong>发射训练（Launch Training）</strong>——按顺序击中发射区的弹射器</li>
+      <li><strong>外星威胁（Alien Menace）</strong>——摧毁右侧坡道上的外星目标</li>
+      <li><strong>宇宙瘟疫（Cosmic Plague）</strong>——按顺序击中黑洞和弹射器</li>
+      <li><strong>嘉奖（Commendation）</strong>——在一局中完成三次技巧射击</li>
+      <li><strong>紧急求救（Mayday）</strong>——让弹球在重力井中保持不落</li>
+      <li><strong>秘密任务（Secret Mission）</strong>——找到左侧隐藏的目标</li>
+      <li><strong>侦察（Recon）</strong>——点亮球台周围所有黄色指示灯</li>
+      <li><strong>停滞（Stasis）</strong>——利用右侧坡道的多球序列</li>
+      <li><strong>营救（Rescue）</strong>——需要先完成其他所有任务</li>
+    </ol>
+    <p class="muted small">完成任务会获得军衔晋升。军衔越高，解锁的任务越难，分数倍率也越高。</p>
+  </section>
+
+  <section class="card">
+    <h2>军衔晋升——从学员到舰队司令</h2>
+    <p>军衔系统是 Space Cadet 最有特色的设计之一。你从学员起步，通过完成任务和累积分数不断晋升。以下是全部 9 个军衔：</p>
+    <table class="rank-table" aria-label="Space Cadet 弹球中的军衔">
+      <thead><tr><th>#</th><th>军衔</th><th>晋升条件</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>学员（Cadet）</td><td>初始军衔</td></tr>
+        <tr><td>2</td><td>少尉（Ensign）</td><td>完成“发射训练”任务</td></tr>
+        <tr><td>3</td><td>中尉（Lieutenant）</td><td>完成“外星威胁”任务</td></tr>
+        <tr><td>4</td><td>上尉（Captain）</td><td>完成“宇宙瘟疫”任务</td></tr>
+        <tr><td>5</td><td>少校（Lieutenant Commander）</td><td>完成“嘉奖”任务</td></tr>
+        <tr><td>6</td><td>中校（Commander）</td><td>完成“紧急求救”任务</td></tr>
+        <tr><td>7</td><td>准将（Commodore）</td><td>完成“秘密任务”</td></tr>
+        <tr><td>8</td><td>上将（Admiral）</td><td>完成“侦察”和“停滞”任务</td></tr>
+        <tr><td>9</td><td>舰队司令（Fleet Admiral）</td><td>完成“营救”任务（需要先完成其他所有任务）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>技巧与策略</h2>
+    <ul>
+      <li><strong>练好技巧射击：</strong>在恰当的时机松开发射杆，让弹球在发射时击中顶部的黄灯——这样可以免费点亮第一盏任务灯。</li>
+      <li><strong>利用重力井：</strong>中间的黑洞在闪烁时被击中，会让弹球进入多球序列。</li>
+      <li><strong>小心推台：</strong>游戏支持倾斜（Tilt）判定（不过这个版本的倾斜灵敏度可能不太稳定）——轻轻推一下可以引导弹球，又不会触发倾斜。</li>
+      <li><strong>优先点亮旗帜：</strong>右侧的四个旗帜目标全部点亮后，分数倍率变为 2×。每次球台重置后都要重新点亮。</li>
+      <li><strong>守住出球口：</strong>左侧外通道是最常见的漏球位置。球速慢的时候，左挡板要随时准备好。</li>
+      <li><strong>快速升衔：</strong>按“发射训练 → 外星威胁 → 宇宙瘟疫”的顺序完成任务，前期升衔最快，分数奖励也更多。</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>历史——从 Full Tilt! Pinball 到 Windows XP</h2>
+    <p>Space Cadet 最初是 <strong>Full Tilt! Pinball</strong>（1995）中的三张球台之一。这是一款商业游戏，由 Cinematronics 开发、Maxis（就是做《模拟城市》的那家公司）发行。微软只授权了 Space Cadet 这一张球台，先把它放进 Windows 95 的 Plus! 扩展包，后来又免费内置到 Windows XP 中——数以百万计的人在工作间隙玩过它，对它念念不忘。</p>
+    <p>微软把 Windows Vista 做成 64 位系统时，Space Cadet 的物理引擎出了问题。弹球会直接穿过挡板，因为原版代码中的浮点运算在 64 位和 32 位处理器上会得出略有差异的结果。微软没有重写物理代码，而是从 Vista 起把这款游戏砍掉了。微软的 Raymond Chen 在 2022 年 1 月的开发者博客中记录了确切的技术原因。</p>
+    <p>此后整整一代 Windows 用户几乎都玩不到这款游戏——直到 2021 年，开发者 k4zmu2a 对 Windows XP 的原版程序进行了逆向工程，并以开源项目的形式发布了 <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a>。反编译出的引擎修复了 64 位物理错误，因此在现代硬件上甚至比原版<em>更</em>精确。这个浏览器版本就是基于该引擎构建的。</p>
+  </section>
+
+  <section class="card">
+    <h2>常见问题</h2>
+    <details open>
+      <summary>玩这个游戏需要微软 Windows 的文件吗？</summary>
+      <p>不需要。这个版本使用的全部是开源资源，不需要 Windows XP、Windows 95 或任何微软产品里的文件。点一下“开始游戏”，游戏就会立刻在浏览器里加载——不用提供任何文件，也不用下载任何东西。</p>
+    </details>
+    <details>
+      <summary>Windows 10 和 Windows 11 上能玩吗？</summary>
+      <p>能。它通过 WebAssembly 在浏览器里运行，所以 Windows 10、Windows 11、macOS、Linux 和 Chromebook 都能玩——只要设备上有 Chrome、Firefox、Edge 或 Safari 这类现代浏览器就行。原版游戏在 Windows XP 之后被微软移除了，而这个开源的浏览器版本没有这个限制。</p>
+    </details>
+    <details>
+      <summary>为什么 Windows 里没有三维弹球了？</summary>
+      <p>微软在开发 64 位 Windows Vista 时放弃了 Space Cadet。它的物理引擎有一个浮点舍入错误：在 64 位处理器上，某些小数运算的结果和 32 位处理器略有不同，导致弹球偶尔会直接穿过挡板和墙壁。微软没有选择重写物理代码，而是干脆把游戏砍掉了。微软的 Raymond Chen 在 2022 年 1 月的开发者博客中记录了具体原因。这里使用的开源 SpaceCadetPinball 引擎已经修复了这个错误。</p>
+    </details>
+    <details>
+      <summary>这是微软正版的 Space Cadet 吗？</summary>
+      <p>这里用的是通过逆向工程重建的开源引擎（MIT 许可证），配合原创的 CC0 公有领域美术和音效，而不是微软的专有程序。物理规则、任务和玩法都忠实于原版，但没有使用或包含任何微软文件。如果你想运行真正的原版程序，请看我们的<a href="/run/3d-pinball-space-cadet/">《通过 Wine 运行 3D Pinball Space Cadet》</a>指南（英文页面，需要你自己提供游戏副本）。</p>
+    </details>
+    <details>
+      <summary>在学校能玩不被屏蔽的三维弹球吗？</summary>
+      <p>能。它完全通过 WebAssembly 在浏览器里运行——不用下载，不用插件，也不用安装。在学校的 Chromebook 上，以及屏蔽游戏下载或 Flash/Java 内容的网络中都能玩。打开这个页面，点“开始游戏”就行。</p>
+    </details>
+    <details>
+      <summary>手机或平板上能玩吗？</summary>
+      <p>能。游戏内置了触屏操作：点球台左侧控制左挡板，点右侧控制右挡板，点球台下方的中间按钮发射。在小屏幕上，点“开始游戏”后球台会放大并铺满整个屏幕。</p>
+    </details>
+    <details>
+      <summary>Space Cadet 弹球有哪些任务？</summary>
+      <p>一共有 9 类任务：发射训练（Launch Training）、外星威胁（Alien Menace）、宇宙瘟疫（Cosmic Plague）、嘉奖（Commendation）、紧急求救（Mayday）、秘密任务（Secret Mission）、侦察（Recon）、停滞（Stasis）和营救（Rescue）。依次点亮三个黄色的任务指示灯即可激活任务。完成任务可以晋升军衔，从学员（Cadet）一路升到舰队司令（Fleet Admiral）。</p>
+    </details>
+    <details>
+      <summary>右挡板的按键没反应，怎么办？</summary>
+      <p>右挡板默认绑定在 <kbd>/</kbd>（斜杠）键上。在非 QWERTY 布局或某些其他语言的键盘上，这个键可能无法正确识别。可以改用<strong>鼠标右键</strong>来控制右挡板——无论键盘布局如何都能用。</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>更多可以在浏览器里玩的游戏</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/3d-pinball-space-cadet/"><span class="lc-title">原版 Space Cadet（使用你自己的副本）</span><span class="lc-desc">通过 Wine 运行微软原版程序——需要自备文件。</span></a></li>
+      <li><a class="link-card" href="/run/dragon-keep/"><span class="lc-title">Dragon's Keep Pinball</span><span class="lc-desc">基于同一引擎的第二张原创球台——目前正在修复构建，暂时无法游玩。</span></a></li>
+      <li><a class="link-card" href="/run/full-tilt-pinball/"><span class="lc-title">Full Tilt! Pinball</span><span class="lc-desc">Space Cadet 的出处：Maxis / Cinematronics 的原版弹球合集。</span></a></li>
+      <li><a class="link-card" href="/zh-CN/run/doom/"><span class="lc-title">DOOM（共享软件版）</span><span class="lc-desc">1993 年的经典之作——免费的共享软件章节，即点即玩。</span></a></li>
+      <li><a class="link-card" href="/zh-CN/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id Software 1992 年的经典 FPS，通过 DOSBox 运行。</span></a></li>
+      <li><a class="link-card" href="/run/solitaire/"><span class="lc-title">Windows 纸牌</span><span class="lc-desc">每个 Windows 版本都自带的纸牌游戏。</span></a></li>
+      <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">完全自由的 DOOM 引擎游戏——不需要任何文件。</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">无需安装任何东西的游戏</span><span class="lc-desc">在受限的学校或公司网络上也能运行的完整游戏列表。</span></a></li>
+    </ul>
+  </section>
+
+
+
+  <section class="card" id="embed-offer" data-slug="space-cadet-open" data-name="3D Pinball Space Cadet">
+    <h2>把 3D Pinball Space Cadet 放到你自己的网站上</h2>
+    <p>这款游戏可以嵌入，是因为微软版权的问题已经被真正解决，而不是被无视：引擎采用
+    <a href="https://github.com/k4zmu2a/SpaceCadetPinball"
+    target="_blank" rel="noopener">MIT 许可证</a>，游戏数据则是我们从零重新制作、并
+    <a href="https://github.com/andrewnakas/open-cadet" target="_blank"
+    rel="noopener">贡献到公有领域</a>的，因此不涉及任何 Windows 文件，也不需要任何授权。
+    它是一个完整的 WebAssembly 弹球引擎，框架体积有几 MB——请保持延迟加载，并放在首屏以下。把下面的代码粘贴到你想放的位置：</p>
+    <textarea readonly rows="4" spellcheck="false" aria-label="3D Pinball Space Cadet 的嵌入代码"></textarea>
+    <p><button type="button" class="cta-btn">复制嵌入代码</button></p>
+    <p class="muted small">我们唯一的要求是保留署名链接。我们托管但并非由我们制作的游戏不提供嵌入，
+    因为那些不是我们可以转授的东西。</p>
+  </section>
+  <script src="/embed-snippet.js?v=1"></script>
+</main>
+
+<footer>
+  <p>本游戏基于开源 <a href="https://github.com/k4zmu2a/SpaceCadetPinball" target="_blank" rel="noopener">SpaceCadetPinball</a> 引擎（MIT 许可证）构建，使用原创的 CC0 / 公有领域数据。ExeBrowser 与微软和 Maxis 均无关联。</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/zh-CN/">首页</a>
+    <a href="/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/blog/">博客</a>
+    <a href="/guide/">兼容性指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+    <a href="/saves/">游戏存档</a>
+    <a href="/privacy/">隐私政策</a>
+    <a href="/terms/">使用条款</a>
+  </nav>
+  <p>© 2026 ExeBrowser。游戏数据采用 CC0 / 公有领域，引擎基于 MIT 许可证。3D Pinball Space Cadet 是微软的商标。</p>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('boot-pinball');
+    var frame = document.getElementById('pinball-frame');
+    var exitBtn = document.getElementById('play-exit');
+    var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+                  || window.matchMedia('(max-width: 720px)').matches;
+
+    function enterPlayMode() {
+      if (!isTouch) return;
+      document.body.classList.add('playing');
+      window.scrollTo(0, 0);
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+    }
+    function exitPlayMode() {
+      document.body.classList.remove('playing');
+      document.removeEventListener('touchmove', preventScroll, { passive: false });
+    }
+    function preventScroll(e) { e.preventDefault(); }
+    if (exitBtn) exitBtn.addEventListener('click', exitPlayMode);
+
+    btn.addEventListener('click', function () {
+      if (!frame.src) {
+        frame.loading = 'eager';
+        frame.src = frame.getAttribute('data-src');
+      }
+      btn.disabled = true;
+      btn.textContent = 'Loading…';
+      frame.addEventListener('load', function () {
+        btn.style.display = 'none';
+        frame.focus();
+        enterPlayMode();
+      }, { once: true });
+    });
+
+    var KEYS = {
+      z:     { key: 'z',  code: 'KeyZ',  keyCode: 90 },
+      slash: { key: '/',  code: 'Slash', keyCode: 191 },
+      space: { key: ' ',  code: 'Space', keyCode: 32 }
+    };
+    function gameTarget() {
+      try {
+        var doc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
+        if (!doc) return null;
+        return doc.getElementById('canvas') || doc.body || doc;
+      } catch (e) { return null; }
+    }
+    function fireKey(type, spec) {
+      var win = frame.contentWindow;
+      var tgt = gameTarget();
+      if (!win || !tgt) return;
+      try {
+        var m = win.Module;
+        if (m && m.SDL2 && m.SDL2.audioContext && m.SDL2.audioContext.state === 'suspended')
+          m.SDL2.audioContext.resume();
+      } catch (e) {}
+      var ev = new win.KeyboardEvent(type, {
+        key: spec.key, code: spec.code, keyCode: spec.keyCode,
+        which: spec.keyCode, bubbles: true, cancelable: true
+      });
+      tgt.dispatchEvent(ev);
+    }
+    var held = {};
+    function press(name)   { if (held[name]) return; held[name] = true;  fireKey('keydown', KEYS[name]); }
+    function release(name) { if (!held[name]) return; held[name] = false; fireKey('keyup',   KEYS[name]); }
+
+    document.querySelectorAll('#mobile-controls .mc-btn').forEach(function (b) {
+      var name = b.getAttribute('data-key');
+      var down = function (e) { e.preventDefault(); press(name); };
+      var up   = function (e) { e.preventDefault(); release(name); };
+      b.addEventListener('touchstart',  down, { passive: false });
+      b.addEventListener('touchend',    up,   { passive: false });
+      b.addEventListener('touchcancel', up,   { passive: false });
+      b.addEventListener('mousedown', down);
+      b.addEventListener('mouseup',   up);
+      b.addEventListener('mouseleave', up);
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) Object.keys(held).forEach(release);
+    });
+  })();
+</script>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/play-events.js?v=3"></script>
+<script src="/pwa.js?v=3"></script>
+</body>
+</html>

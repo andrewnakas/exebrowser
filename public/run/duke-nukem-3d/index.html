@@ -7,6 +7,12 @@
 <meta name="description" content="Play Duke Nukem 3D free in your browser — An Apogee Game, the official shareware episode L.A. Meltdown. No download, runs via DOSBox + WebAssembly." />
 <meta name="keywords" content="duke nukem 3d online, play duke nukem 3d in browser, duke nukem 3d shareware, duke 3d free, duke nukem 3d unblocked, build engine browser" />
 <link rel="canonical" href="https://exebrowser.com/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/duke-nukem-3d/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/duke-nukem-3d/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/run/duke-nukem-3d/" />
 <meta property="og:title" content="Play Duke Nukem 3D Online — Free Shareware Episode" />
@@ -108,6 +114,7 @@
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
   </nav>
+  <nav class="lang-switcher" aria-label="Language"><span class="lang-current" aria-current="true">English</span> · <a href="/es/run/duke-nukem-3d/" hreflang="es">Español</a> · <a href="/pt-BR/run/duke-nukem-3d/" hreflang="pt-BR">Português (BR)</a> · <a href="/fr/run/duke-nukem-3d/" hreflang="fr">Français</a> · <a href="/zh-CN/run/duke-nukem-3d/" hreflang="zh-Hans">简体中文</a></nav>
 </header>
 
 <main class="prose">
@@ -309,20 +316,10 @@
     </ul>
     <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 146 titles you can play here →</a></p>
   </section>
-  <section class="card newsletter">
-    <h2>One new retro game in your inbox each week</h2>
-    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
-    <form class="newsletter-form" action="/api/subscribe" method="post" data-newsletter>
-      <label class="visually-hidden" for="nl-email">Email address</label>
-      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
-      <button type="submit" class="button primary">Subscribe</button>
-    </form>
-    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
-  </section>
   <section class="card">
     <h2>Related guides</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM</span><span class="lc-desc">id's shareware episode — the shooter Duke answered.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">Play DOOM online</span><span class="lc-desc">id's shareware episode — the shooter Duke answered.</span></a></li>
       <li><a class="link-card" href="/run/rise-of-the-triad/"><span class="lc-title">Rise of the Triad</span><span class="lc-desc">Apogee's other mid-90s shooter, shareware episode.</span></a></li>
       <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">Where the genre started, playable instantly.</span></a></li>
       <li><a class="link-card" href="/run/duke-nukem/"><span class="lc-title">Duke Nukem (1991)</span><span class="lc-desc">Duke's first, side-scrolling outing.</span></a></li>
@@ -366,9 +363,8 @@
 <!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
-<script src="/dos-embed.js?v=37"></script>
+    <script src="/pwa.js?v=3"></script>
+<script src="/dos-embed.js?v=38"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
-<script src="/newsletter.js?v=1"></script>
 </body>
 </html>

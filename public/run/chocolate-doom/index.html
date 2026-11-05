@@ -169,20 +169,10 @@
       <p>Not in the browser. Chocolate Doom's networking expects real UDP sockets, which this emulated environment doesn't provide. Single-player and loading the shareware episode work; multiplayer netplay does not.</p>
     </details>
   </section>
-  <section class="card newsletter">
-    <h2>One new retro game in your inbox each week</h2>
-    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
-    <form class="newsletter-form" action="/api/subscribe" method="post" data-newsletter>
-      <label class="visually-hidden" for="nl-email">Email address</label>
-      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
-      <button type="submit" class="button primary">Subscribe</button>
-    </form>
-    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
-  </section>
   <section class="card">
     <h2>Related guides</h2>
     <ul class="card-grid">
-      <li><a class="link-card" href="/run/doom/"><span class="lc-title">DOOM (1993)</span><span class="lc-desc">The original shareware build, playable in a tab.</span></a></li>
+      <li><a class="link-card" href="/run/doom/"><span class="lc-title">Play DOOM (1993) online</span><span class="lc-desc">The original shareware build, playable in a tab.</span></a></li>
       <li><a class="link-card" href="/run/freedoom/"><span class="lc-title">Freedoom</span><span class="lc-desc">Free, GPL-friendly replacement Doom IWADs.</span></a></li>
       <li><a class="link-card" href="/run/wolfenstein-3d/"><span class="lc-title">Wolfenstein 3D</span><span class="lc-desc">id's earlier shareware FPS in the browser.</span></a></li>
       <li><a class="link-card" href="/run/hexen-heretic-shareware/"><span class="lc-title">Heretic &amp; Hexen</span><span class="lc-desc">Raven's GPL fantasy shooters, vanilla-style.</span></a></li>
@@ -224,10 +214,9 @@
 <!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
+    <script src="/pwa.js?v=3"></script>
 <script src="/embed.js?v=11"></script>
-<script src="/app.js?v=25"></script>
+<script src="/app.js?v=26"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
-<script src="/newsletter.js?v=1"></script>
 </body>
 </html>

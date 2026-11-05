@@ -10,6 +10,7 @@
 <link rel="alternate" hreflang="en" href="https://exebrowser.com/open-exe-file/" />
 <link rel="alternate" hreflang="es" href="https://exebrowser.com/es/open-exe-file/" />
 <link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/open-exe-file/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/open-exe-file/" />
 <link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/open-exe-file/" />
 <link rel="alternate" hreflang="x-default" href="https://exebrowser.com/open-exe-file/" />
 <meta property="og:type" content="website" />
@@ -47,6 +48,16 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": ".exe 文件是什么？",
+      "acceptedAnswer": { "@type": "Answer", "text": "为 Windows 编译的程序：机器指令，加上一个告诉 Windows 如何加载它们的文件头。它不是文档，所以没有什么软件可以用来“打开”它，只能运行它。它里面有什么一文讲得更详细。" }
+    },
+    {
+      "@type": "Question",
+      "name": "exe 应用是什么？",
+      "acceptedAnswer": { "@type": "Answer", "text": "是同一回事：“exe 应用”通常指以 .exe 形式发布的 Windows 程序，可能是程序本身，也可能是把程序装到你电脑上的安装包。手机和 Mac 都不能原生运行它。" }
+    },
     {
       "@type": "Question",
       "name": "不下载任何东西，能在线打开 .exe 文件吗？",
@@ -87,17 +98,28 @@
     <a href="/zh-CN/">首页</a>
     <a href="/zh-CN/load-exe/">运行你的 EXE</a>
     <a href="/zh-CN/run/">程序列表</a>
-    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/zh-CN/exe-inspector/">EXE 查看器</a>
     <a href="/blog/">博客</a>
     <a href="/zh-CN/guide/">指南</a>
     <a href="/about/">关于</a>
     <a href="/contact/">联系</a>
   </nav>
-  <nav class="lang-switcher" aria-label="语言"><a href="/open-exe-file/" hreflang="en">English</a> · <a href="/es/open-exe-file/" hreflang="es">Español</a> · <a href="/pt-BR/open-exe-file/" hreflang="pt-BR">Português (BR)</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
+  <nav class="lang-switcher" aria-label="语言"><a href="/open-exe-file/" hreflang="en">English</a> · <a href="/es/open-exe-file/" hreflang="es">Español</a> · <a href="/pt-BR/open-exe-file/" hreflang="pt-BR">Português (BR)</a> · <a href="/fr/open-exe-file/" hreflang="fr">Français</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
 </header>
 
 <main class="prose">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/zh-CN/">首页</a> › 怎么打开 EXE 文件</nav>
+
+  <section class="card">
+    <h2>怎么打开 EXE 文件</h2>
+    <p><code>.exe</code> 文件是一个 Windows 程序，所以“打开”它就是运行它。具体怎么做，取决于你用的是什么电脑：</p>
+    <ul>
+      <li><strong>在 Windows 上：</strong>双击即可。如果它启动不了，错误信息通常会说明原因，常见的几种见下文。</li>
+      <li><strong>在 Mac 或 Linux 上：</strong>用 Wine 或 CrossOver、装有 Windows 的虚拟机，或者直接在浏览器标签页里运行。</li>
+      <li><strong>在 Chromebook 上，或在不能安装软件的电脑上：</strong>在浏览器标签页里运行。什么都不用装，文件也不会离开你的电脑。</li>
+    </ul>
+    <p class="cta-row"><a class="cta-btn" href="/zh-CN/load-exe/">在浏览器里打开 .exe</a></p>
+  </section>
 
   <section class="card">
     <h2>.exe 文件到底是什么</h2>
@@ -150,6 +172,8 @@
 
   <section class="card">
     <h2>常见问题</h2>
+    <details><summary>.exe 文件是什么？</summary><p>为 Windows 编译的程序：机器指令，加上一个告诉 Windows 如何加载它们的文件头。它不是文档，所以没有什么软件可以用来“打开”它，只能运行它。<a href="/zh-CN/blog/what-is-an-exe-file/">它里面有什么</a>一文讲得更详细。</p></details>
+    <details><summary>exe 应用是什么？</summary><p>是同一回事：“exe 应用”通常指以 <code>.exe</code> 形式发布的 Windows 程序，可能是程序本身，也可能是把程序装到你电脑上的安装包。手机和 Mac 都不能原生运行它。</p></details>
     <details><summary>不下载任何东西，能在线打开 .exe 文件吗？</summary><p>你可以在这里运行一个，什么都不用装——这通常就是这个问题真正的意思。文件由你自己机器上的浏览器读取，不会上传到服务器。体积较小的 32 位 Windows 程序效果最好。</p></details>
     <details><summary>在 Mac 上怎么打开 .exe？</summary><p>原生打不开。可以用 Wine 或 CrossOver、装 Windows 的虚拟机，或者在浏览器标签页里运行。对又老又小的程序来说，浏览器省事得多。</p></details>
     <details><summary>双击之后什么都没发生，为什么？</summary><p>通常是一个控制台程序开了又立刻关掉，或者缺少某个运行库而悄悄失败了。从命令提示符里运行它，就能看到错误，不用靠猜。</p></details>
@@ -164,7 +188,7 @@
     <a href="/zh-CN/">首页</a>
     <a href="/zh-CN/load-exe/">运行你的 EXE</a>
     <a href="/zh-CN/run/">程序列表</a>
-    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/zh-CN/exe-inspector/">EXE 查看器</a>
     <a href="/blog/">博客</a>
     <a href="/zh-CN/guide/">兼容性指南</a>
     <a href="/about/">关于</a>
@@ -178,6 +202,6 @@
 
 <script>window.__I18N={"play":"▶ 开始玩 {name}","resume":"▶ 继续玩 {name}","loading":"加载中…","startOver":"重新开始","savedAgo":"保存于{when}。","filesRestored":"你的存档也一并载入了，请在游戏自带的菜单里读取。","snapshotResume":"可以从你上次中断的地方继续，进度不会丢。","progressSaved":"进度已保存在这个浏览器里","resumedExactly":"已从上次中断的地方继续","snapshotOff":"无法保存恢复点 - 游戏内存档仍然有效","confirmDelete":"确定要删除 {name} 的存档吗？","justNow":"刚刚","minutesAgo":"{n} 分钟前","anHourAgo":"1 小时前","hoursAgo":"{n} 小时前","yesterday":"昨天","daysAgo":"{n} 天前","saveHint":"在游戏里存档，存档会保留在这个浏览器中","resetSaves":"清除存档","savesCleared":"存档已清除，刷新页面即可重新开始","restoredFiles":"已恢复 {n} 个存档，请在游戏菜单中读取","overlayNote":"通过 DOSBox 和 WebAssembly 在浏览器中运行。<br>不会上传任何文件。运行时约 1.4 MB，首次加载后会被缓存。","mouseHint":"点击游戏画面，键盘操作即可生效。","starting":"正在启动…","cachedNote":"首次加载后会被缓存，下次打开就很快了。","loadingGame":"正在加载 {name}…","fullscreen":"全屏","soundOn":"声音已开","soundOff":"声音已关","remapKeys":"键盘——重新映射任意按键","remapHint":"先点击下方的按键，再按下你想改用的那个键。设置按游戏分别保存在本浏览器中。","resetDefaults":"恢复默认设置","consoleOutput":"控制台输出","wineLoadYours":"载入你自己的 {name}","wineEmptyHosted":"点击播放即可在浏览器中启动 {name}。","wineEmptyOwn":"本站没有托管 {name}，请在下方载入你自己的副本，它会直接在本页运行。","wineHintHosted":"完全在你的浏览器标签页中运行，使用 WebAssembly + Wine。不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineHintOwn":"我们无权转发 {name}，因此本站没有托管任何内容。你自己的副本完全在浏览器标签页中运行，使用 WebAssembly + Wine，不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineEngine":"Wine 引擎：","wineVariantDefault":"Wine 1.7.55 · Win32 — 1995–2008 年的绝大多数程序","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — 需要 Internet Explorer 的程序","wineVariant16":"Wine 3.1 · 16 位 Windows 3.x — 1990–1994 年的程序","wineVariantR18":"Boxedwine 18R2 — 较旧的引擎，有时能运行默认引擎跑不动的程序","wineVariantX64":"wine64 · 实验性 — 适用于 64 位程序，会打开独立页面","wineIdle":"空闲。","wineDownloadFiles":"下载该程序写入的文件","wineFilesKept":"该程序保存的文件会留在这个浏览器里，下次打开本页时自动恢复。若要留存一份，请使用下载按钮。","wineCaptures":"抓取程序写入内存中 C:\\ 盘的存档和生成内容。","wineLoadOwnCopy":"载入你自己的副本","wineHaveFiles":"文件就在你的设备上？把程序所在的文件夹或一个 zip 拖到这里——入口 <code>.exe</code> 以及旁边的数据文件。","wineDropFiles":"把文件拖到这里，或选择：","winePickExe":"单个 EXE","winePickFolder":"一个文件夹","winePickZip":"一个 zip","wineEntryExe":"入口 EXE：","wineRun":"在 Wine 中运行","wineLoadingRuntime":"正在载入 Boxedwine 运行时…","wineConfiguring":"正在配置 Wine 启动…","wineStartingEmulator":"正在启动模拟器…","wineRunning":"正在运行 {name}…","wineBootFailed":"启动失败，请查看控制台。","winePickThenRun":"先选择一个 EXE，再点击运行。","wineReadyLoad":"Wine 已就绪 — 请载入一个 EXE","wineInstallPrompt":"安装后一键回来","wineEntry":"入口：{path}","wineExesAvailable":"可用 EXE 共 {n} 个","wineX64Pending":"请在下方选择文件——会继续在实验性的 64 位页面中打开。","wineFetchedSoFar":"已获取 {amount} 运行时文件…","wineStillStarting":"仍在启动…","wineStillWaiting":"仍在等待画面出现——对一些较旧的软件来说是正常的。如果持续如此，请查看下方的控制台输出。","wineHandoffArrived":"已从 DOS 播放器带过来 — 可以运行了。","pfX64":"64 位程序","pfX64Body":"这里的引擎运行的是 32 位 Windows 程序，所以这个程序很可能无法启动。如果下载页面提供同一版本的 32 位（x86）版本，那个版本通常可以运行。","pfWin16":"16 位 Windows 程序——已切换引擎","pfWin16Body":"它是为 Windows 3.x 制作的。引擎已切换为能运行它的 Wine 3.1（16 位）。","pfWin32":"32 位程序——已切回引擎","pfWin32Body":"16 位引擎无法运行这个程序，所以引擎已切回 Wine 1.7.55（Win32）。","pfDos":"这是 DOS 程序，不是 Windows 程序","pfDosBody":"Wine 运行的是 Windows 程序，所以不会启动它——但本站的 DOS 播放器可以，而且你的文件会一起带过去。","pfNotExe":"这不是 Windows 程序","pfNotExeBody":"它不是以每个 .exe 都有的 MZ 标记开头。它可能是改了名的压缩包或文档，或者是没下载完的文件。","pfDamaged":"这个文件不完整或已损坏","pfDamagedBody":"它的文件头描述的数据比文件实际包含的多，这通常意味着下载中途停止了。请重新下载。","pfCpu":"为其他处理器编译","pfCpuBody":"这里的模拟器只能运行 x86 代码，所以这个文件无法启动。","pfDriver":"这是驱动程序，不是应用程序","pfDriverBody":"它会加载到 Windows 内核中，或在 Windows 之前运行。这里没有可以加载它的地方。","pfDotnet":".NET 程序","pfDotnetBody":"它需要 .NET Framework，而这个 Wine 版本比它更早，所以很可能在启动时停止。","pfDll":"这是 DLL，不是程序","pfDllBody":"DLL 是供程序加载的库。请加载该程序的整个文件夹，然后选择它的 .exe。","pfInstaller":"这是安装程序","pfInstallerBody":"运行它会解压程序，而不是启动程序。这样可能行得通（请让它完成）。直接提取文件可能更快，但只适用于基于 ZIP/7z 的安装程序；对 InstallShield、MSI 或 NSIS 打包的安装程序没有帮助。","pfCrt":"它需要随附的 DLL","pfCrtBody":"这个程序使用的 {dll} 是不属于 Windows 的 Visual C++ 运行库。请加载整个文件夹而不是单独的 .exe，这样这些 DLL 也会一起加载。","pfOpen64":"试试实验性的 64 位引擎——你的文件会一起带过去 →","pfDosLink":"在 DOS 播放器中打开 →","pfExtract":"改为提取文件 →","pfPickFolder":"改为选择文件夹","pfRunAnyway":"你仍然可以点击运行——这些信息读取自文件头，而文件头偶尔会出错。","pfCapGfx":"它使用 Direct3D 或 OpenGL 绘图，而这里没有 GPU 直通","pfCapNet":"它需要联网，而这个标签页无法提供","pfCapNote":"值得了解：{notes}。"};</script>
 
-<script src="/pwa.js?v=2"></script>
+<script src="/pwa.js?v=3"></script>
 </body>
 </html>

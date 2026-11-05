@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Visualizador de EXE — Veja dentro de um .exe sem executá-lo</title>
+<meta name="description" content="Solte um .exe do Windows e veja o que há dentro dele: processador, subsistema, as bibliotecas que carrega, o ícone, as informações de versão, a assinatura e se está compactado. Grátis, sem enviar nada e sem executar nada." />
+<meta name="keywords" content="visualizador exe, visualizador pe, abrir arquivo exe, inspecionar exe online, o que tem dentro de um exe, analisador de arquivo exe, ver conteúdo de exe online, visualizador de cabeçalho pe" />
+<link rel="canonical" href="https://exebrowser.com/pt-BR/exe-inspector/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/exe-inspector/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/exe-inspector/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/exe-inspector/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/exe-inspector/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/exe-inspector/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/exe-inspector/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://exebrowser.com/pt-BR/exe-inspector/" />
+<meta property="og:title" content="Veja dentro de um .exe do Windows sem executá-lo" />
+<meta property="og:description" content="Solte um .exe e veja o processador, as bibliotecas, o ícone, as informações de versão e a assinatura. Analisado no seu próprio navegador — nada é enviado." />
+<meta property="og:image" content="https://exebrowser.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://exebrowser.com/pt-BR/" },
+    { "@type": "ListItem", "position": 2, "name": "Visualizador de EXE", "item": "https://exebrowser.com/pt-BR/exe-inspector/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Meu arquivo é enviado para algum lugar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. O arquivo é lido por JavaScript rodando na sua própria máquina, os cabeçalhos são analisados na aba e o resultado é desenhado na página. Nada é transmitido e nenhuma cópia é guardada, porque nenhuma cópia chega a ser feita." }
+    },
+    {
+      "@type": "Question",
+      "name": "Isto executa o programa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. Ele lê o arquivo como um bibliotecário lê a lombada de um livro. Nem uma instrução do executável é executada, e é justamente essa a ideia: você pode inspecionar algo de que não tem certeza sem dar a ele a chance de fazer qualquer coisa. Se decidir que quer mesmo executá-lo, o carregador é outra página e um segundo passo deliberado." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ele consegue dizer se um .exe é vírus?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não, e nada que apenas leia um arquivo consegue. Ele é útil para perceber que um arquivo é da arquitetura errada, é um instalador e não o programa, não está assinado ou está compactado para não revelar nada até ser executado. Para um veredicto de verdade sobre segurança, use o VirusTotal." }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é um arquivo PE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Portable Executable é o formato usado por todo .exe, .dll e .sys do Windows. Ele começa com um pequeno programa de MS-DOS que sobrou de 1985 e cuja única função é imprimir This program cannot be run in DOS mode; depois vêm o cabeçalho de verdade, uma tabela de seções com código e dados, a lista de bibliotecas de que o programa precisa e uma árvore de recursos. A explicação mais longa está aqui." }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que ele diz que meu arquivo é de 16 bits ou um programa de DOS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Porque é, e é por isso que o Windows moderno se recusa a iniciá-lo. Um arquivo MZ simples é um programa de MS-DOS em modo real; um arquivo NE é do Windows de 16 bits. O Windows de 64 bits deixou de suportar os dois, então dar dois cliques neles não faz absolutamente nada — nenhum erro, nenhuma janela. Os dois ainda rodam com emulação, que é um assunto à parte (em inglês)." }
+    },
+    {
+      "@type": "Question",
+      "name": "O que significa entropia alta numa seção?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A entropia mede o quão aleatórios os bytes parecem, de 0 a 8. Código compilado comum fica perto de 6. Acima de 7,2, mais ou menos, os dados estão compactados ou criptografados — normal numa seção que guarda um zip ou um PNG, e um forte indício de compactador quando é a seção a partir da qual o programa é executado." }
+    },
+    {
+      "@type": "Question",
+      "name": "Funciona no Mac, no Chromebook ou no celular?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. É uma página web, então funciona onde quer que rode um navegador atual. Isso importa mais nas máquinas que não conseguem abrir um .exe de jeito nenhum: um Mac ou um Chromebook não tem uma forma nativa de olhar dentro de um executável do Windows, e isto não exige instalar nada." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Rode arquivos <code>.exe</code> do Windows no seu navegador. Sem instalar. Sem enviar nada. Só WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/pt-BR/">Início</a>
+    <a href="/pt-BR/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/pt-BR/exe-inspector/">Visualizador de EXE</a>
+    <a href="/blog/">Blog</a>
+    <a href="/pt-BR/guide/">Guia</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="Idioma"><a href="/exe-inspector/" hreflang="en">English</a> · <a href="/es/exe-inspector/" hreflang="es">Español</a> · <span class="lang-current" aria-current="true">Português (BR)</span> · <a href="/fr/exe-inspector/" hreflang="fr">Français</a> · <a href="/zh-CN/exe-inspector/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/pt-BR/">Início</a> › Visualizador de EXE</nav>
+
+  <section class="card">
+    <h2>Veja dentro de um arquivo .exe do Windows</h2>
+    <p class="muted small" style="margin-top:0.25rem;">Analisado nesta aba · Nada é enviado · Nada é executado</p>
+    <p>Solte um executável do Windows abaixo e esta página lê os cabeçalhos dele e diz o que ele é: para qual processador foi compilado, quais bibliotecas do sistema ele pede, o que diz sobre o próprio fabricante e a própria versão, o ícone escondido lá dentro, se está assinado e se foi compactado para esconder o conteúdo. O arquivo nunca sai da sua máquina — ele é lido por JavaScript, aqui mesmo, e a página não tem para onde enviá-lo.</p>
+
+    <div id="pe-dropzone" class="dropzone" tabindex="0" role="button" aria-label="Escolha um executável do Windows para inspecionar">
+      <input type="file" id="pe-file" accept=".exe,.dll,.sys,.ocx,.scr,.cpl,.mui,.efi,application/x-msdownload" hidden />
+      <p><strong>Solte um <code>.exe</code> aqui</strong>, ou <button id="pe-pick" type="button" class="link">escolha um arquivo</button></p>
+      <p class="muted small">Também lê <code>.dll</code>, <code>.sys</code>, <code>.ocx</code> e <code>.scr</code>. Até 256&nbsp;MB.</p>
+    </div>
+    <p id="pe-status" class="muted small" role="status" aria-live="polite"></p>
+    <div id="pe-report"></div>
+  </section>
+
+  <section class="card">
+    <h2>O que o relatório mostra</h2>
+    <p>Todo executável do Windows carrega uma quantidade surpreendente de informação escrita sobre si mesmo, e quase nada disso aparece na área de trabalho. O relatório está ordenado para que as partes mais úteis venham primeiro.</p>
+    <h3>O processador e o subsistema</h3>
+    <p>A primeira resposta honesta sobre qualquer <code>.exe</code>. Um binário de 64 bits não inicia num Windows de 32 bits; um de 32 bits roda em quase qualquer lugar. O subsistema diz se ele abre uma janela, um console ou nada, por ser um driver feito para ser carregado no kernel.</p>
+    <h3>As bibliotecas que ele carrega</h3>
+    <p>A tabela de importação é a parte mais reveladora do arquivo. Um programa precisa citar, em texto puro, cada biblioteca e cada função do sistema que pretende chamar — então um programa que fala com a internet precisa dizer <code>ws2_32.dll</code>, um que mexe no registro precisa dizer <code>RegOpenKeyExA</code> e um que inicia outros programas precisa dizer <code>CreateProcessW</code>. Isso fica declarado antes de uma única instrução ser executada, e não dá para omitir sem abrir mão de poder chamar essas funções.</p>
+    <h3>O que ele diz ser</h3>
+    <p>O recurso de versão guarda o fabricante, o nome do produto, a versão do arquivo, a linha de copyright e o nome original do arquivo — as mesmas strings que o Windows mostra na janela de Propriedades de um arquivo. São só texto que quem compilou o arquivo digitou, então servem para identificação e não valem nada como prova.</p>
+    <h3>O ícone</h3>
+    <p>Extraído da árvore de recursos e desenhado na página. É o jeito mais rápido de confirmar que um download é mesmo o programa que você imagina, e o jeito mais rápido de perceber que algo está usando um ícone conhecido que não é dele.</p>
+    <h3>Compactação e entropia</h3>
+    <p>Compactadores (packers) comprimem um executável e o descompactam na memória ao iniciar. É uma forma legítima de deixar um download menor, e uma forma igualmente eficaz de esconder o que um programa importa até ele já estar rodando. O relatório dá o nome do compactador quando reconhece a assinatura dele e, se não reconhecer, passa a medir o quão aleatória cada seção parece.</p>
+    <h3>O que está grudado no final</h3>
+    <p>Instaladores costumam ser um programa pequeno e comum com um arquivo compactado inteiro anexado depois da última seção. Quando o relatório diz que a maior parte do arquivo fica além do fim da parte executável, você está olhando para um invólucro e não para o programa — e <a href="/blog/extract-files-from-an-old-installer/">muitas vezes dá para extrair os arquivos de dentro sem instalar nada</a> (em inglês).</p>
+  </section>
+
+  <section class="card">
+    <h2>O que ele não consegue dizer</h2>
+    <p>Ele não consegue dizer se um arquivo é seguro. Nada que apenas leia um arquivo consegue, e uma página que desse a entender o contrário seria pior do que inútil, porque passaria uma falsa segurança.</p>
+    <p>Tudo aqui é o que o programa <em>declara</em> sobre si mesmo. Um programa que quer ser estudado declara muita coisa; um que não quer simplesmente declara menos, e um compactado não declara quase nada até já estar rodando. Por isso uma lista longa de capacidades não é prova de mau comportamento — todo atualizador usa a rede e todo instalador grava arquivos — e uma lista curta também não é prova de bom comportamento.</p>
+    <p>Para o que a inspeção serve de verdade são as perguntas comuns: é a arquitetura certa para a minha máquina, é um instalador ou o programa em si, ele diz ter um fabricante, está assinado, está completo, está escondendo o conteúdo? Tudo isso dá para responder a partir do arquivo, e é a maior parte do que as pessoas realmente querem saber.</p>
+    <p>Para um veredicto sobre segurança, o <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a> passa o arquivo enviado por uns setenta antivírus. Isso envolve, sim, enviar o arquivo, coisa que esta página nunca faz — uma troca que vale a pena fazer de propósito, e não sem perceber.</p>
+    <p>A explicação mais longa está em <a href="/blog/check-if-an-exe-is-safe/">este .exe é seguro para executar?</a> (em inglês) — cada sinal que um arquivo dá antes de rodar, quanto cada um realmente vale como evidência e em que ordem verificar.</p>
+  </section>
+
+  <section class="card">
+    <h2>Para onde vai o seu arquivo</h2>
+    <p>Para lugar nenhum. O navegador entrega à página os bytes do arquivo que você escolheu, o analisador percorre os cabeçalhos e o resultado é escrito na página. Não há requisição, nem servidor, nem fila, nem política de retenção, porque não há nada para reter. Fechar a aba descarta tudo.</p>
+    <p>Vale dizer isso com todas as letras, porque a alternativa óbvia — um site de enviar e analisar — é exatamente aquilo com que alguém que desconfia de um arquivo deveria ter mais cuidado. Se você prefere conferir em vez de acreditar, abra as ferramentas de desenvolvedor do navegador, vá até o painel de rede e inspecione um arquivo: nada é enviado.</p>
+    <p>A página em si usa o Google Analytics e o Mediavine, que veem as visitas da forma de sempre. Eles não conseguem ver o arquivo que você escolheu nem nada extraído dele; o relatório é montado na memória e nunca vira uma requisição. O que registramos é agregado e anônimo — o formato, o processador e se o arquivo estava assinado —, sem nome de arquivo e sem conteúdo do arquivo. Os detalhes estão na <a href="/privacy/">política de privacidade</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>Se você quer executar, e não só ler</h2>
+    <p>Aqui, ler um arquivo e executá-lo são, de propósito, duas páginas diferentes. Quando o relatório diz que um arquivo é x86 de 32 bits sem nada exótico dentro, <a href="/pt-BR/load-exe/">o carregador</a> tem boas chances de rodá-lo numa aba do navegador — sem instalar nada e, lá também, sem enviar nada.</p>
+    <p><a href="/pt-BR/load-exe/">Execute o seu próprio EXE →</a> · <a href="/pt-BR/open-exe-file/">Como abrir um .exe em qualquer plataforma</a> · <a href="/pt-BR/guide/">O que funciona e o que não funciona</a> · <a href="/pt-BR/">Jogos e aplicativos prontos para jogar</a></p>
+    <p class="muted small">Guias por plataforma (em inglês): <a href="/blog/open-exe-file-on-mac/">no Mac</a> · <a href="/blog/run-windows-software-on-a-chromebook/">no Chromebook</a> · <a href="/blog/open-exe-file-on-android/">no Android</a>. E se um programa se recusa a iniciar porque falta alguma coisa, <a href="/blog/dll-is-missing-error/">o erro de DLL ausente</a> costuma ser mais simples do que parece.</p>
+  </section>
+
+  <section class="card">
+    <h2>Coloque um destes jogos no seu próprio site</h2>
+    <p>Onze dos jogos daqui foram escritos do zero para este site, o que os torna nossos para dar — e é o que fazemos. Livres para qualquer pessoa colocar na própria página: uma linha de HTML, sem conta, sem pedir permissão e sem mais atribuição do que uma linha de crédito.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">Veja os jogos que você pode incorporar</a></p>
+  </section>
+
+  <section class="card">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Meu arquivo é enviado para algum lugar?</summary><p>Não. O arquivo é lido por JavaScript rodando na sua própria máquina, os cabeçalhos são analisados na aba e o resultado é desenhado na página. Nada é transmitido e nenhuma cópia é guardada, porque nenhuma cópia chega a ser feita.</p></details>
+    <details><summary>Isto executa o programa?</summary><p>Não. Ele lê o arquivo como um bibliotecário lê a lombada de um livro. Nem uma instrução do executável é executada, e é justamente essa a ideia: você pode inspecionar algo de que não tem certeza sem dar a ele a chance de fazer qualquer coisa. Se decidir que quer mesmo executá-lo, <a href="/pt-BR/load-exe/">o carregador</a> é outra página e um segundo passo deliberado.</p></details>
+    <details><summary>Ele consegue dizer se um .exe é vírus?</summary><p>Não, e nada que apenas leia um arquivo consegue. Ele é útil para perceber que um arquivo é da arquitetura errada, é um instalador e não o programa, não está assinado ou está compactado para não revelar nada até ser executado. Para um veredicto de verdade sobre segurança, use o <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a>.</p></details>
+    <details><summary>O que é um arquivo PE?</summary><p>Portable Executable é o formato usado por todo <code>.exe</code>, <code>.dll</code> e <code>.sys</code> do Windows. Ele começa com um pequeno programa de MS-DOS que sobrou de 1985 e cuja única função é imprimir <em>This program cannot be run in DOS mode</em>; depois vêm o cabeçalho de verdade, uma tabela de seções com código e dados, a lista de bibliotecas de que o programa precisa e uma árvore de recursos. <a href="/pt-BR/blog/what-is-an-exe-file/">A explicação mais longa está aqui</a>.</p></details>
+    <details><summary>Por que ele diz que meu arquivo é de 16 bits ou um programa de DOS?</summary><p>Porque é, e é por isso que o Windows moderno se recusa a iniciá-lo. Um arquivo MZ simples é um programa de MS-DOS em modo real; um arquivo NE é do Windows de 16 bits. O Windows de 64 bits deixou de suportar os dois, então dar dois cliques neles não faz absolutamente nada — nenhum erro, nenhuma janela. Os dois ainda rodam com emulação, que é <a href="/blog/run-16-bit-windows-3x-software/">um assunto à parte</a> (em inglês).</p></details>
+    <details><summary>O que significa entropia alta numa seção?</summary><p>A entropia mede o quão aleatórios os bytes parecem, de 0 a 8. Código compilado comum fica perto de 6. Acima de 7,2, mais ou menos, os dados estão compactados ou criptografados — normal numa seção que guarda um zip ou um PNG, e um forte indício de compactador quando é a seção a partir da qual o programa é executado.</p></details>
+    <details><summary>Funciona no Mac, no Chromebook ou no celular?</summary><p>Sim. É uma página web, então funciona onde quer que rode um navegador atual. Isso importa mais nas máquinas que não conseguem abrir um <code>.exe</code> de jeito nenhum: um Mac ou um Chromebook não tem uma forma nativa de olhar dentro de um executável do Windows, e isto não exige instalar nada.</p></details>
+  </section>
+</main>
+
+<footer>
+  <p>Feito com <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine é marca registrada da CodeWeavers. O ExeBrowser não é afiliado à WineHQ, à CodeWeavers nem à Microsoft. Site irmão: <a href="https://macemu.com/" target="_blank" rel="noopener">macemu.com</a>, jogos clássicos de Mac no seu navegador.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/pt-BR/">Início</a>
+    <a href="/pt-BR/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/pt-BR/exe-inspector/">Visualizador de EXE</a>
+    <a href="/blog/">Blog</a>
+    <a href="/pt-BR/guide/">Guia de compatibilidade</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+    <a href="/saves/">Jogos salvos</a>
+    <a href="/privacy/">Política de privacidade</a>
+    <a href="/terms/">Termos de uso</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Conteúdo sob licença aberta; runtime sob GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+<script>window.__I18N={"play":"▶ Jogar {name}","resume":"▶ Continuar {name}","loading":"Carregando…","startOver":"Começar de novo","savedAgo":"Salvo {when}.","filesRestored":"Seus jogos salvos são carregados junto — abra-os pelo menu do próprio jogo.","snapshotResume":"Você volta exatamente de onde parou, no meio do jogo.","progressSaved":"Progresso salvo neste navegador","resumedExactly":"Você voltou exatamente de onde parou","snapshotOff":"Não foi possível salvar um ponto de retomada: seus saves do jogo continuam funcionando","confirmDelete":"Apagar seu progresso salvo em {name}?","justNow":"agora mesmo","minutesAgo":"há {n} minutos","anHourAgo":"há uma hora","hoursAgo":"há {n} horas","yesterday":"ontem","daysAgo":"há {n} dias","saveHint":"Salve dentro do jogo e o arquivo fica neste navegador","resetSaves":"apagar o progresso salvo","savesCleared":"Progresso salvo apagado — recarregue para começar de novo","restoredFiles":"{n} arquivo(s) salvo(s) restaurado(s) — abra pelo menu do jogo","overlayNote":"Roda no seu navegador com DOSBox + WebAssembly.<br>Nada é enviado. O runtime (~1,4 MB) fica em cache depois da primeira vez.","mouseHint":"Clique na tela do jogo para dar o teclado a ele.","starting":"Iniciando…","cachedNote":"Fica em cache depois da primeira carga, então da próxima vez é instantâneo.","loadingGame":"Carregando {name}…","fullscreen":"Tela cheia","soundOn":"Som ligado","soundOff":"Som desligado","remapKeys":"Teclado — remapeie qualquer tecla","remapHint":"Clique em uma tecla abaixo e depois pressione a que você prefere usar. Fica salvo neste navegador, por jogo.","resetDefaults":"Restaurar o padrão","consoleOutput":"Saída do console","wineLoadYours":"Carregue sua cópia de {name}","wineEmptyHosted":"Aperte play para iniciar {name} no seu navegador.","wineEmptyOwn":"{name} não está hospedado aqui — carregue sua própria cópia abaixo e ele roda nesta mesma página.","wineHintHosted":"Roda inteiramente na sua aba com WebAssembly + Wine. Nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineHintOwn":"Não podemos redistribuir {name}, então nada fica hospedado aqui. Sua própria cópia roda inteiramente na sua aba com WebAssembly + Wine — nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineEngine":"Motor do Wine:","wineVariantDefault":"Wine 1.7.55 · Win32 — quase tudo de 1995–2008","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — programas que pedem o Internet Explorer","wineVariant16":"Wine 3.1 · Windows 3.x de 16 bits — programas de 1990–1994","wineVariantR18":"Boxedwine 18R2 — motor mais antigo; às vezes roda o que o padrão não roda","wineVariantX64":"wine64 · experimental — programas de 64 bits, abre em página própria","wineIdle":"Ocioso.","wineDownloadFiles":"Baixar os arquivos que este programa gravou","wineFilesKept":"Os arquivos que este programa salvar ficam guardados neste navegador e são restaurados na próxima vez que você abrir a página. Use o botão de download para ficar com uma cópia.","wineCaptures":"Captura os saves e o conteúdo que o programa gravou na unidade C:\\ em memória.","wineLoadOwnCopy":"Carregue sua própria cópia","wineHaveFiles":"Tem os arquivos no seu aparelho? Solte aqui a pasta do programa ou um zip: o <code>.exe</code> principal mais os arquivos de dados ao lado dele.","wineDropFiles":"Solte os arquivos aqui, ou escolha:","winePickExe":"um único EXE","winePickFolder":"uma pasta","winePickZip":"um zip","wineEntryExe":"EXE principal:","wineRun":"Executar no Wine","wineLoadingRuntime":"Carregando o motor Boxedwine…","wineConfiguring":"Configurando a inicialização do Wine…","wineStartingEmulator":"Iniciando o emulador…","wineRunning":"Executando {name}…","wineBootFailed":"A inicialização falhou. Veja o console.","winePickThenRun":"Escolha um EXE e clique em Executar.","wineReadyLoad":"Wine pronto — carregue um EXE","wineInstallPrompt":"Instalar para voltar com um toque","wineEntry":"Principal: {path}","wineExesAvailable":"{n} EXEs disponíveis","wineX64Pending":"Escolha seu arquivo abaixo — ele continua na página experimental de 64 bits.","wineFetchedSoFar":"Baixados {amount} dos arquivos do motor até agora…","wineStillStarting":"Ainda iniciando…","wineStillWaiting":"Ainda esperando uma imagem — normal em alguns programas mais antigos. Veja a saída do console abaixo se isso continuar.","wineHandoffArrived":"Trazido do player de DOS — pronto para executar.","pfX64":"Programa de 64 bits","pfX64Body":"O motor daqui executa programas Windows de 32 bits, então este provavelmente não vai iniciar. Se a página de download oferecer uma versão de 32 bits (x86) da mesma versão, essa costuma funcionar.","pfWin16":"Programa Windows de 16 bits — motor trocado","pfWin16Body":"Ele foi feito para o Windows 3.x. O motor agora é o Wine 3.1 (16 bits), o que consegue executá-lo.","pfWin32":"Programa de 32 bits — motor restaurado","pfWin32Body":"O motor de 16 bits não executa este, então o motor voltou para o Wine 1.7.55 (Win32).","pfDos":"Um programa DOS, não Windows","pfDosBody":"O Wine executa programas Windows, então não vai iniciar este — mas o player de DOS deste site vai, e seus arquivos vão junto.","pfNotExe":"Isto não é um programa Windows","pfNotExeBody":"Ele não começa com a marca MZ que todo .exe tem. Pode ser um arquivo compactado ou documento renomeado, ou um download que não terminou.","pfDamaged":"Este arquivo está incompleto ou danificado","pfDamagedBody":"Os cabeçalhos descrevem mais dados do que o arquivo contém, o que geralmente significa que o download parou antes do fim. Baixe de novo.","pfCpu":"Feito para outro processador","pfCpuBody":"O emulador daqui executa apenas código x86, então este arquivo não consegue iniciar.","pfDriver":"Um driver, não um aplicativo","pfDriverBody":"Ele é carregado no kernel do Windows ou roda antes do Windows. Aqui não há onde carregá-lo.","pfDotnet":"Um programa .NET","pfDotnetBody":"Ele precisa do .NET Framework, que é posterior a esta versão do Wine, então provavelmente vai parar na inicialização.","pfDll":"Isto é uma DLL, não um programa","pfDllBody":"Uma DLL é uma biblioteca que os programas carregam. Carregue a pasta inteira do programa e escolha o .exe dele.","pfInstaller":"Isto é um instalador","pfInstallerBody":"Executá-lo descompacta o programa em vez de iniciá-lo. Pode funcionar — deixe terminar. Extrair os arquivos pode ser mais rápido, mas só funciona com instaladores baseados em ZIP/7z; não ajuda com um InstallShield, MSI ou empacotado com NSIS.","pfCrt":"Ele precisa das DLLs que vieram junto","pfCrtBody":"Este programa usa {dll}, um runtime do Visual C++ que não faz parte do Windows. Carregue a pasta inteira em vez do .exe sozinho, para que essas DLLs venham junto.","pfOpen64":"Experimente o motor experimental de 64 bits — seu arquivo vai junto →","pfDosLink":"Abrir no player de DOS →","pfExtract":"Extrair os arquivos em vez disso →","pfPickFolder":"Escolher a pasta em vez disso","pfRunAnyway":"Você ainda pode clicar em Executar — isto é lido dos cabeçalhos do arquivo, e às vezes eles estão errados.","pfCapGfx":"ele desenha com Direct3D ou OpenGL, e aqui não há passagem direta de GPU","pfCapNet":"ele espera uma rede, e a aba não oferece nenhuma","pfCapNote":"Vale saber: {notes}."};</script>
+<script src="/pe-inspect.js?v=3"></script>
+<script src="/embed-pointer.js?v=1"></script>
+<script src="/pwa.js?v=3"></script>
+</body>
+</html>

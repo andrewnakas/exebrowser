@@ -1254,6 +1254,7 @@
           thumb: window.SaveCore.thumbFromCanvas(document.getElementById("canvas")),
         });
         track("persist_save", { bytes: total, reason });
+        window.ExeInstall?.engaged?.("save");
         // Same reasoning as dos-embed.js: the first save landing is the moment
         // a player learns the site remembers them, so that is where the offer
         // to keep it one tap away belongs.

@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play DOOM (1993) Free Online — Unblocked, No Download</title>
+<title>Play DOOM (1993) Online in Your Browser — Free, Unblocked</title>
 <meta name="description" content="The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up." />
-<meta name="keywords" content="play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online, doom unblocked" />
+<meta name="keywords" content="play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online, doom unblocked, doom emulator, doom web, doom 1993 online" />
 <link rel="canonical" href="https://exebrowser.com/run/doom/" />
 <link rel="alternate" hreflang="en" href="https://exebrowser.com/run/doom/" />
 <link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/doom/" />
@@ -87,6 +87,11 @@
     },
     {
       "@type": "Question",
+      "name": "Is this a DOOM emulator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, in the useful sense: DOOM itself is the untouched 1993 DOS program, and what runs it is DOSBox — a PC and DOS emulator — compiled to WebAssembly so it works in a web browser. That is why it plays exactly like the original rather than like a source port, and why nothing needs installing." }
+    },
+    {
+      "@type": "Question",
       "name": "What are the controls for DOOM in the browser?",
       "acceptedAnswer": { "@type": "Answer", "text": "Click the game canvas to capture input. WASD moves (W=forward, S=back, A=turn left, D=turn right), Ctrl fires, Space opens doors, and the number keys switch weapons. Arrow keys also work. Press Esc to release the mouse back to the page." }
     },
@@ -136,7 +141,7 @@
   <section class="card">
     <h2>Play DOOM online in your browser <span class="verdict good">Free &amp; legal shareware</span></h2>
     <p class="muted small" style="margin-top:0.25rem;">Guide updated July 2026 · Runs via DOSBox + WebAssembly</p>
-    <p>The real, original <strong>DOOM</strong> — id Software's 1993 first-person shooter — running in a browser tab. No download, no install, no account. This is the freely-redistributable shareware episode (<em>Knee-Deep in the Dead</em>), the original DOS <code>DOOM.EXE</code> executing in DOSBox + WebAssembly. Hit play and start fragging imps.</p>
+    <p>The real, original <strong>DOOM</strong> — id Software's 1993 first-person shooter — playable online, free, right here in your browser. No download, no install, no account. This is the freely-redistributable shareware episode (<em>Knee-Deep in the Dead</em>): the original DOS <code>DOOM.EXE</code> running in DOSBox, a DOS emulator compiled to WebAssembly, so DOOM plays on the web like any other page. Hit play and start fragging imps.</p>
 
     <div id="dos-embed"
          data-app-url="/apps/doom/doom.zip"
@@ -282,6 +287,10 @@
       <p>The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual DOS binary inside DOSBox compiled to WebAssembly, rendering to a browser canvas.</p>
     </details>
     <details>
+      <summary>Is this a DOOM emulator?</summary>
+      <p>Yes, in the useful sense: DOOM itself is the untouched 1993 DOS program, and what runs it is DOSBox — a PC and DOS emulator — compiled to WebAssembly so it works in a web browser. That is why it plays exactly like the original rather than like a source port, and why nothing needs installing.</p>
+    </details>
+    <details>
       <summary>What are the controls for DOOM in the browser?</summary>
       <p>Click the game canvas to capture input. WASD moves (W=forward, S=back, A=turn left, D=turn right), Ctrl fires, Space opens doors, and the number keys switch weapons. Arrow keys also work. Press Esc to release the mouse back to the page.</p>
     </details>
@@ -327,16 +336,6 @@
         </a></li>
     </ul>
     <p class="muted small" style="margin:.75rem 0 0;"><a href="/run/">See all 146 titles you can play here →</a></p>
-  </section>
-  <section class="card newsletter">
-    <h2>One new retro game in your inbox each week</h2>
-    <p class="muted small" style="margin-top:0;">We add a game most weeks — free, legal, playable in the browser. No spam, unsubscribe in one click.</p>
-    <form class="newsletter-form" action="/api/subscribe" method="post" data-newsletter>
-      <label class="visually-hidden" for="nl-email">Email address</label>
-      <input id="nl-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
-      <button type="submit" class="button primary">Subscribe</button>
-    </form>
-    <p class="muted small newsletter-status" data-newsletter-status hidden></p>
   </section>
   <section class="card">
     <h2>Related guides</h2>
@@ -388,9 +387,8 @@
 <!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
-<script src="/dos-embed.js?v=37"></script>
+    <script src="/pwa.js?v=3"></script>
+<script src="/dos-embed.js?v=38"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
-<script src="/newsletter.js?v=1"></script>
 </body>
 </html>

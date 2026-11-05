@@ -49,6 +49,26 @@
       "title": "Jazz Jackrabbit (shareware)",
       "desc": "Le platformer nerveux d'Epic, épisode shareware."
     },
+    "/run/rise-of-the-triad/": {
+      "title": "Rise of the Triad",
+      "desc": "L'autre jeu de tir d'Apogee du milieu des années 90, épisode shareware."
+    },
+    "/run/duke-nukem/": {
+      "title": "Duke Nukem (1991)",
+      "desc": "La première aventure de Duke, en défilement horizontal."
+    },
+    "/dos-emulator/": {
+      "title": "Lancer votre propre jeu DOS",
+      "desc": "Vous avez la version enregistrée ou un autre jeu DOS ? Déposez-le dans le lecteur DOS."
+    },
+    "/unblocked/": {
+      "title": "Des jeux qui ne demandent aucune installation",
+      "desc": "La liste complète des titres qui tournent sur un réseau d'école ou d'entreprise verrouillé (pages en anglais)."
+    },
+    "https://macemu.com/run/marathon/?utm_source=exebrowser&utm_medium=referral": {
+      "title": "Marathon (1994), le DOOM du Mac",
+      "desc": "Le jeu de tir de Bungie, sur un Mac émulé sur macemu.com, notre site jumeau (en anglais)."
+    },
     "/run/": {
       "title": "Tous les jeux et logiciels",
       "desc": "Tout ce que vous pouvez jouer ou exécuter ici."
@@ -136,6 +156,119 @@
       "html": "<h3 style=\"margin-top:0;\">Le shareware officiel d'id Software</h3><p>Le premier épisode complet, non modifié, distribué gratuitement exactement comme la licence shareware l'autorise. La source la plus fiable est la copie conservée par l'Internet Archive :</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">Récupérer le shareware de DOOM (Internet Archive) →</a></p><p class=\"muted small\">Prenez la version DOS (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). Elle n'est pas nécessaire pour jouer ici — cette page lance déjà l'épisode shareware — mais c'est la copie à conserver si vous le voulez sur votre propre machine. © id Software : l'épisode shareware peut être librement rediffusé, sans modification et sans frais. Les épisodes enregistrés et Doom II sont commerciaux et <strong>ne sont pas</strong> inclus ; achetez-les chez <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
     }
   },
+  "duke-nukem-3d": {
+    "title": "Jouer à Duke Nukem 3D (1996) en ligne — shareware gratuit — ExeBrowser",
+    "description": "Jouez gratuitement à Duke Nukem 3D dans votre navigateur : l'épisode shareware officiel d'Apogee, L.A. Meltdown. Sans téléchargement, via DOSBox + WebAssembly.",
+    "keywords": "jouer duke nukem 3d en ligne, duke nukem 3d navigateur, duke nukem 3d shareware, duke 3d gratuit, duke nukem 3d sans téléchargement, moteur build navigateur",
+    "ogTitle": "Jouer à Duke Nukem 3D en ligne — l'épisode shareware gratuit",
+    "ogDescription": "Le jeu de tir de 3D Realms (1996) dans votre navigateur : l'épisode shareware L.A. Meltdown, sans téléchargement ni installation.",
+    "crumb": "Jouer à Duke Nukem 3D",
+    "h1": "Jouer à Duke Nukem 3D en ligne — l'épisode shareware gratuit",
+    "verdict": {
+      "kind": "good",
+      "text": "Fonctionne — l'épisode shareware 1 tourne via DOSBox dans votre navigateur"
+    },
+    "intro": "<p><strong>Duke Nukem 3D</strong> — le jeu de tir de 3D Realms sorti en 1996 sur moteur Build, celui des flics-cochons, des décors où tout est interactif et des répliques cultes. L'<strong>épisode shareware, <em>L.A. Meltdown</em></strong>, est hébergé ici exactement tel que 3D Realms l'a publié : cliquez sur jouer et il démarre dans votre navigateur. Laissez-le sur l'écran titre et il lance sa propre démo ; appuyez sur <kbd>Échap</kbd> pour ouvrir le menu et choisissez <em>New Game</em>.</p>",
+    "sections": [
+      {
+        "h": "Comment ça fonctionne et à quoi s'attendre",
+        "html": "<p>C'est la version DOS d'origine (1.3D) qui tourne dans une compilation WebAssembly de DOSBox, réglée pour lui donner tout le processeur dont dispose votre appareil. Sur un ordinateur portable ou de bureau récent, c'est fluide ; sur un téléphone ou un vieux Chromebook, ce sera plus saccadé, car chaque instruction d'un jeu qui réclamait un 486 rapide est émulée. Le paquet pèse moins de 6&nbsp;Mo et il est mis en cache après le premier chargement.</p>"
+      },
+      {
+        "h": "Conseils de jeu",
+        "html": "<p>Les clés ouvrent les portes et les lecteurs de cartes de couleur ; les niveaux shareware les cachent derrière des grilles d'aération que vous pouvez défoncer à coups de pied ou de feu. Maintenez <kbd>Shift</kbd> pour courir, ce que vous voudrez faire presque tout le temps. Le jetpack et les stéroïdes de l'inventaire se sélectionnent avec <kbd>[</kbd> et <kbd>]</kbd> et s'utilisent avec <kbd>Entrée</kbd>. Les miroirs, les toilettes et les bornes d'arcade réagissent : c'est le jeu, pas un bug.</p>"
+      },
+      {
+        "h": "L'épisode shareware — et le jeu complet",
+        "html": "<p>L'épisode 1 est l'épisode shareware, et sa licence autorise les sites gratuits à le proposer, à condition que tous ses fichiers soient distribués sans modification, ce qui est le cas ici. Les épisodes 2 et 3 (et le quatrième de l'Atomic Edition, sortie plus tard) constituaient la version commerciale et ne sont pas inclus ; le jeu complet est toujours en vente.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Est-ce légal de jouer à Duke Nukem 3D ici ?",
+        "a": "Oui. Il s'agit de l'épisode shareware officiel, dont la licence autorise explicitement les sites gratuits à le mettre à disposition. Les épisodes commerciaux ne sont pas hébergés."
+      },
+      {
+        "q": "Quelles sont les commandes ?",
+        "a": "Les flèches déplacent, Ctrl tire, Espace ouvre les portes et actionne les interrupteurs, A saute, Z accroupit, Shift fait courir et Tab affiche la carte. Le tableau complet se trouve sous le jeu."
+      },
+      {
+        "q": "Pourquoi est-ce lent sur mon téléphone ?",
+        "a": "En 1996, Duke 3D réclamait un 486 rapide, et ici chacune de ses instructions est émulée dans votre navigateur. Un ordinateur de bureau ou portable récent s'en sort ; un téléphone ou un Chromebook d'entrée de gamme perdra des images."
+      },
+      {
+        "q": "Ma progression est-elle sauvegardée ?",
+        "a": "Oui — les parties sauvegardées sont conservées dans ce navigateur d'une visite à l'autre, dans la mesure du possible. Sauvegardez depuis le menu du jeu avec F2."
+      },
+      {
+        "q": "Puis-je jouer au jeu complet ici ?",
+        "a": "Seul l'épisode shareware est hébergé. Si vous possédez la version DOS, déposez son dossier sur la page de l'émulateur DOS et il tournera de la même façon."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Se déplacer / pivoter",
+        "keyboard": "<kbd>Flèches</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "Tirer",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Ouvrir / utiliser",
+        "keyboard": "<kbd>Espace</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "Sauter",
+        "keyboard": "<kbd>A</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "S'accroupir",
+        "keyboard": "Z",
+        "mouse": "—"
+      },
+      {
+        "action": "Courir",
+        "keyboard": "maintenir <kbd>Shift</kbd> (<kbd>Verr. Maj</kbd> pour basculer)",
+        "mouse": "—"
+      },
+      {
+        "action": "Pas latéral",
+        "keyboard": "<kbd>Alt</kbd> + flèches",
+        "mouse": "—"
+      },
+      {
+        "action": "Inventaire",
+        "keyboard": "<kbd>[</kbd> et <kbd>]</kbd> pour choisir, <kbd>Entrée</kbd> pour utiliser",
+        "mouse": "—"
+      },
+      {
+        "action": "Carte",
+        "keyboard": "Tab",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / sauvegarder / charger",
+        "keyboard": "<kbd>Échap</kbd> · <kbd>F2</kbd> · <kbd>F3</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "Son",
+        "keyboard": "—",
+        "mouse": "Utilisez le bouton Son sous l'écran pour couper le son"
+      }
+    ],
+    "mobileHint": "Croix directionnelle : se déplacer/pivoter · FIRE : tirer · OPEN : ouvrir/utiliser · JUMP : sauter · RUN : courir",
+    "download": {
+      "heading": "Obtenir le jeu complet",
+      "html": "<div class=\"download-box\"><p><strong>L'épisode shareware se joue gratuitement ici.</strong> Le reste de Duke Nukem 3D constituait la version commerciale, et il est toujours en vente :</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Duke+Nukem+3D\" target=\"_blank\" rel=\"noopener\">Trouver Duke Nukem 3D sur Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Duke+Nukem+3D\" target=\"_blank\" rel=\"noopener\">Le trouver sur GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">L'épisode 1 de Duke Nukem 3D est l'épisode shareware de 3D Realms, hébergé en vertu de l'autorisation que sa licence accorde aux sites gratuits, avec tous les fichiers d'origine non modifiés. Les épisodes commerciaux ne sont pas hébergés. Provenance : <a href=\"/apps/duke-nukem-3d/NOTICE.md\">/apps/duke-nukem-3d/NOTICE.md</a>.</p>"
+  },
   "wolfenstein-3d": {
     "title": "Jouer à Wolfenstein 3D (1992) en ligne — le vrai jeu DOS — ExeBrowser",
     "description": "Le Wolfenstein 3D original de 1992, épisode shareware gratuit, dans votre navigateur. Le vrai jeu DOS sous DOSBox — sans téléchargement, sans inscription, progression sauvegardée.",
@@ -191,5 +324,69 @@
       "html": "<div class=\"download-box\"><h3 style=\"margin-top:0;\">L'épisode shareware (fichiers de données) et un portage Win32</h3><p>Il vous faut deux morceaux, tous deux gratuits et légaux :</p><ol><li><strong>Les données du shareware</strong> — le premier épisode, librement rediffusable (les fichiers <code>*.WL1</code>). Apogee a publié l'épisode un en shareware pour qu'il soit copié sans frais, et l'Internet Archive en conserve des copies.</li><li><strong>Un portage Win32</strong> — une reconstruction moderne et open source du moteur, qui tourne comme un EXE Windows. <a href=\"https://maniacsvault.net/ecwolf/download.php\" target=\"_blank\" rel=\"noopener\">ECWolf</a> (prenez la version <strong>32 bits</strong>) ou le plus léger Wolf4SDL.</li></ol><p><a class=\"cta-btn\" href=\"https://archive.org/details/wolf3dsw\" target=\"_blank\" rel=\"noopener\">Récupérer le shareware de Wolfenstein 3D (Internet Archive) →</a></p><p class=\"muted small\">Pour y jouer sur votre ordinateur, placez l'EXE du portage et tous les fichiers <code>*.WL1</code> dans <strong>un même dossier</strong>. Ici vous n'avez besoin de rien de tout cela : cette page démarre déjà l'épisode shareware. © id Software / Apogee. Seul l'<strong>épisode shareware</strong> est librement rediffusable ; les épisodes enregistrés, les Nocturnal Missions et Spear of Destiny sont commerciaux — achetez-les chez <a href=\"https://store.steampowered.com/app/2270/Wolfenstein_3D/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p></div>"
     },
     "licenseReason": "Le premier épisode de Wolfenstein 3D a été publié en 1992 par Apogee et id comme shareware librement diffusable ; les fichiers de données .WL1 du shareware peuvent être copiés gratuitement, tandis que les épisodes enregistrés et Spear of Destiny restent commerciaux."
+  },
+  "parkhaven": {
+    "title": "Parkhaven — Jeu de parc d'attractions gratuit avec éditeur de montagnes russes",
+    "description": "Construisez un parc d'attractions dans votre navigateur : tracez des allées, installez des manèges, concevez votre propre montagne russe pièce par pièce et rendez heureux des milliers de visiteurs. Gratuit et original.",
+    "keywords": "jeu de parc d'attractions en ligne, créer des montagnes russes navigateur, construire un parc d'attractions gratuit, jeu de conception de montagnes russes, simulation de parc d'attractions sans téléchargement, jeu de gestion de parc",
+    "ogTitle": "Parkhaven — construisez un parc d'attractions et vos montagnes russes, gratuit",
+    "ogDescription": "Allées, manèges, stands, personnel et un éditeur de montagnes russes pièce par pièce avec de vraies notes d'attraction. Fonctionne dans votre navigateur.",
+    "crumb": "Jouer à Parkhaven",
+    "h1": "Jouer à Parkhaven — une simulation de parc d'attractions gratuite",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Jouer maintenant — fonctionne nativement, sans émulateur"
+    },
+    "fullyFree": "Écrit de zéro pour ExeBrowser — code, modèles 3D et sons originaux, sous licence MIT. Aucun fichier du jeu original n'est nécessaire."
+  },
+  "space-cadet-open": {
+    "title": "Jouer à 3D Pinball Space Cadet en ligne — le flipper de Windows XP gratuit",
+    "description": "Jouez à 3D Pinball Space Cadet dans votre navigateur : gratuit, instantané, sans téléchargement et sans aucun fichier Windows. Version open source en WebAssembly.",
+    "keywords": "3d pinball space cadet en ligne, jouer à space cadet pinball gratuit, space cadet pinball sans téléchargement, flipper windows xp en ligne, space cadet pinball navigateur, space cadet pinball sans fichiers microsoft, jouer à 3d pinball gratuit, flipper windows en ligne, space cadet pinball chromebook, space cadet pinball débloqué, space cadet pinball open source, space cadet pinball webassembly",
+    "ogTitle": "Jouer à 3D Pinball Space Cadet en ligne gratuitement — sans téléchargement ni fichiers Windows",
+    "ogDescription": "Le flipper culte de Windows XP dans votre navigateur : gratuit, instantané, sans téléchargement. Version open source en WebAssembly. Fonctionne sur tous les appareils, y compris Mac, Chromebook et Linux.",
+    "crumb": "Jouer à Space Cadet Pinball",
+    "h1": "Jouer à 3D Pinball Space Cadet en ligne : gratuit, instantané, sans téléchargement",
+    "verdict": {
+      "kind": "good",
+      "text": "Fonctionne · aucun fichier requis"
+    },
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "controls": [
+      {
+        "action": "Lancer la bille",
+        "keyboard": "maintenir puis relâcher Espace",
+        "mouse": "—"
+      },
+      {
+        "action": "Flipper gauche",
+        "keyboard": "Z",
+        "mouse": "Clic gauche"
+      },
+      {
+        "action": "Flipper droit",
+        "keyboard": "/ (barre oblique)",
+        "mouse": "Clic droit"
+      },
+      {
+        "action": "Nouvelle partie",
+        "keyboard": "F2",
+        "mouse": "—"
+      },
+      {
+        "action": "Pause",
+        "keyboard": "F3",
+        "mouse": "—"
+      },
+      {
+        "action": "Libérer la souris",
+        "keyboard": "Échap",
+        "mouse": "—"
+      }
+    ],
+    "mobileHint": "Sur mobile, utilisez les boutons FLIP / LANCER sous la table.",
+    "fullyFree": "Moteur sous licence MIT ; graphismes, sons et données de la table entièrement originaux, dans le domaine public (CC0)."
   }
 }

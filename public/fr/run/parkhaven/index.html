@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Parkhaven — Jeu de parc d'attractions gratuit avec éditeur de montagnes russes</title>
+<meta name="description" content="Construisez un parc d'attractions dans votre navigateur : tracez des allées, installez des manèges, concevez votre propre montagne russe pièce par pièce et rendez heureux des milliers de visiteurs. Gratuit et original." />
+<meta name="keywords" content="jeu de parc d'attractions en ligne, créer des montagnes russes navigateur, construire un parc d'attractions gratuit, jeu de conception de montagnes russes, simulation de parc d'attractions sans téléchargement, jeu de gestion de parc" />
+<link rel="canonical" href="https://exebrowser.com/fr/run/parkhaven/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/parkhaven/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/parkhaven/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/parkhaven/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/parkhaven/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/parkhaven/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/parkhaven/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/fr/run/parkhaven/" />
+<meta property="og:title" content="Parkhaven — construisez un parc d'attractions et vos montagnes russes, gratuit" />
+<meta property="og:description" content="Allées, manèges, stands, personnel et un éditeur de montagnes russes pièce par pièce avec de vraies notes d'attraction. Fonctionne dans votre navigateur." />
+<meta property="og:image" content="https://exebrowser.com/run/parkhaven/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://exebrowser.com/run/parkhaven/screenshot.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://exebrowser.com/fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Applications", "item": "https://exebrowser.com/fr/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Jouer à Parkhaven", "item": "https://exebrowser.com/fr/run/parkhaven/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Parkhaven",
+  "url": "https://exebrowser.com/fr/run/parkhaven/",
+  "image": "https://exebrowser.com/run/parkhaven/screenshot.png",
+  "description": "Construisez et gérez un parc d'attractions dans votre navigateur : allées, manèges, stands, personnel et montagnes russes que vous concevez pièce par pièce. Gratuit, instantané, sans téléchargement.",
+  "applicationCategory": "Game",
+  "genre": ["Simulation","Strategy","Business"],
+  "gamePlatform": ["Web browser", "Windows", "Mac", "Linux", "Chromebook", "iOS", "Android"],
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Est-ce que c'est RollerCoaster Tycoon ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. Parkhaven est un jeu original écrit de zéro pour ce site, du même genre que les simulations de parcs d'attractions des années 1990 et 2000. Il ne contient aucun code, graphisme, son ou texte de RollerCoaster Tycoon ni d'OpenRCT2, et n'est affilié ni à Chris Sawyer, ni à Atari, ni à Frontier." }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il télécharger quelque chose ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. Parkhaven est du JavaScript et du WebGL purs qui tournent dans la page, sans émulateur et sans fichiers de jeu à fournir. Il faut un navigateur compatible WebGL 2, ce qui est le cas de tous les navigateurs actuels sur ordinateur comme sur mobile." }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment construire une montagne russe ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ouvrez Rides, choisissez la Steel Coaster et placez sa gare. L'éditeur ajoute ensuite les rails pièce par pièce : lignes droites, pentes, virages, une montée à chaîne, des freins et un looping. Ramenez le circuit jusqu'à la gare, lancez un essai, reliez l'entrée et la sortie à une allée, puis ouvrez l'attraction. L'essai mesure la vitesse, les forces G, les chutes et le temps en apesanteur, qui déterminent l'excitation, l'intensité et la nausée de l'attraction." }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je sauvegarder mon parc ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le jeu sauvegarde automatiquement chaque mois de jeu, et le menu propose trois emplacements de sauvegarde. Les sauvegardes sont conservées dans ce navigateur, sur cet appareil." }
+    }
+  ]
+}
+</script>
+<style>
+  .game-frame {
+    width: 100%; max-width: 1100px; height: 720px; border: 0;
+    display: block; margin: 0 auto; border-radius: 8px; background: #6f9c55;
+  }
+  @media (max-width: 720px) { .game-frame { height: 600px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Exécutez des fichiers <code>.exe</code> Windows dans votre navigateur. Sans installation, sans téléversement. Juste WebAssembly et Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/fr/">Accueil</a>
+    <a href="/load-exe/">Lancer votre EXE</a>
+    <a href="/fr/run/">Applications</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide</a>
+    <a href="/about/">À propos</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="Langue"><a href="/run/parkhaven/" hreflang="en">English</a> · <a href="/es/run/parkhaven/" hreflang="es">Español</a> · <a href="/pt-BR/run/parkhaven/" hreflang="pt-BR">Português (BR)</a> · <span class="lang-current" aria-current="true">Français</span> · <a href="/zh-CN/run/parkhaven/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/fr/">Accueil</a> › <a href="/fr/run/">Applications</a> › Jouer à Parkhaven</nav>
+
+  <section class="card">
+    <h2>Jouer à Parkhaven — une simulation de parc d'attractions gratuite <span class="verdict good">Fonctionne nativement — sans émulateur</span></h2>
+    <p><strong>Parkhaven</strong> est un parc d'attractions que vous construisez et gérez vous-même. Tracez des allées depuis l'entrée, installez des carrousels, des tasses tournantes, un bateau pirate et une tour de chute, ajoutez des stands de nourriture et des toilettes, puis concevez votre propre <strong>montagne russe pièce par pièce</strong>, avec montées à chaîne, virages relevés et looping. Gardez vos visiteurs rassasiés, contents et pas trop barbouillés, et atteignez l'objectif de chaque parc. <strong>Sans téléchargement, sans inscription, rien à installer.</strong></p>
+    <p class="muted small">Écrit de zéro pour ExeBrowser en JavaScript et WebGL. Tous les modèles et les sons sont générés par le jeu lui-même : il démarre instantanément et tourne sur un téléphone. L'interface du jeu est en anglais. <a href="/apps/parkhaven/" target="_blank" rel="noopener">Ouvrir en plein écran</a>.</p>
+
+    <iframe class="game-frame" src="/apps/parkhaven/" title="Parkhaven — simulation de parc d'attractions jouable" loading="eager"></iframe>
+
+    <details class="controls-panel" open>
+      <summary><strong>Commandes</strong> — à quoi sert quoi</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Action</th><th scope="col">Comment</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Commencer</th><td>Choisissez un parc dans le menu : trois avec un objectif à atteindre, ou le mode bac à sable libre.</td></tr>
+            <tr><th scope="row">Allées</th><td><strong>Path</strong>, puis cliquez sur les cases, ou faites glisser pour tracer une ligne droite. <strong>Queue</strong> trace une file d'attente jusqu'à l'entrée d'une attraction.</td></tr>
+            <tr><th scope="row">Attractions et stands</th><td><strong>Rides</strong>, choisissez-en une, placez-la, puis placez son entrée et sa sortie à côté. Ouvrez-la depuis sa fenêtre.</td></tr>
+            <tr><th scope="row">Montagnes russes</th><td>Placez la gare, puis ajoutez des pièces dans l'éditeur jusqu'à ce que le circuit revienne à la gare. Testez-la, puis ouvrez-la.</td></tr>
+            <tr><th scope="row">Déplacer la vue</th><td>Glisser avec le bouton droit, ou WASD / flèches. Molette pour zoomer, Q / E pour pivoter. Sur téléphone : glisser, pincer, toucher.</td></tr>
+            <tr><th scope="row">Pivoter ce que vous placez</th><td>R</td></tr>
+            <tr><th scope="row">Vitesse</th><td>Espace met en pause ; 1–4 règlent la vitesse.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <figure class="shot">
+      <img src="/run/parkhaven/screenshot.png" alt="Parkhaven dans le navigateur : une montagne russe en acier rouge avec un looping vertical à côté de sa gare, et la fenêtre de l'attraction affichant ses notes d'excitation, d'intensité et de nausée" loading="lazy" />
+      <figcaption class="muted small">Une montagne russe à looping construite à la main et ses résultats d'essai, dans un onglet du navigateur, sur cette page même.</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>De quoi s'agit-il</h2>
+    <p>Parkhaven est une simulation de parc d'attractions. Chaque visiteur qui passe l'entrée a un budget, un estomac, une vessie et un avis sur l'intensité qu'il est prêt à supporter. Les visiteurs parcourent vos allées, choisissent des attractions, font la queue, dépensent leur argent en nourriture et en souvenirs, jettent des papiers par terre, se perdent et vous disent ce qu'ils pensent. Rendez-les heureux et la note de votre parc grimpe, ce qui en fait venir davantage.</p>
+    <p>Le cœur du jeu, c'est l'éditeur de montagnes russes. Les rails se posent pièce par pièce, le train obéit à une physique simple et un essai mesure la vitesse maximale, les forces G, les chutes, le temps en apesanteur et les inversions. Ces chiffres deviennent les notes d'excitation, d'intensité et de nausée de l'attraction, et décident qui montera dedans et combien il paiera. Autour de cela : manèges classiques, karts, rivière à bûches, stands, agents d'entretien, mécaniciens, agents de sécurité et animateurs, pannes et inspections, météo, recherche et marketing.</p>
+  </section>
+
+  <section class="card">
+    <h2>Lancer son parc</h2>
+    <ul>
+      <li><strong>Les allées d'abord, depuis l'entrée.</strong> Les visiteurs n'atteignent que ce qu'une allée relie. Chaque attraction doit avoir son entrée et sa sortie reliées à une allée.</li>
+      <li><strong>Commencez en douceur.</strong> Un carrousel et des tasses tournantes conviennent à presque tout le monde. Les grosses attractions viendront plus tard, quand vous aurez les moyens de les payer et que les visiteurs pourront les supporter.</li>
+      <li><strong>Nourrissez-les, et mettez des toilettes près de la nourriture.</strong> Des visiteurs affamés et assoiffés qui ne trouvent pas de toilettes repartent mécontents.</li>
+      <li><strong>Embauchez tôt un agent d'entretien.</strong> Les déchets et le vomi dans les allées font chuter la note du parc plus vite que tout le reste.</li>
+      <li><strong>Testez avant d'ouvrir.</strong> Une montagne russe trop intense reste vide. Des virages plus doux et des chutes moins hautes réduisent l'intensité ; un looping ajoute de l'excitation.</li>
+      <li><strong>Fixez le prix selon la valeur.</strong> La fenêtre de chaque attraction indique ce que les visiteurs pensent qu'elle vaut. Demandez juste un peu moins.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Questions fréquentes</h2>
+    <details open>
+      <summary>Est-ce que c'est RollerCoaster Tycoon ?</summary>
+      <p>Non. Parkhaven est un jeu original écrit de zéro pour ce site, du même genre que des simulations de parcs d'attractions comme <em>RollerCoaster Tycoon</em> (1999). Il ne contient aucun code, graphisme, son ou texte de ce jeu ni d'OpenRCT2, et n'est affilié ni à Chris Sawyer, ni à Atari, ni à Frontier. Il a été conçu à partir d'une description écrite du fonctionnement du genre, tenue à l'écart des jeux originaux. Voir la <a href="/apps/parkhaven/NOTICE.md">note de provenance</a> (en anglais).</p>
+    </details>
+    <details>
+      <summary>Faut-il télécharger quelque chose ?</summary>
+      <p>Non. Parkhaven est du JavaScript et du WebGL purs qui tournent dans la page, sans émulateur et sans fichiers de jeu à fournir. Il faut un navigateur compatible WebGL 2, ce qui est le cas de tous les navigateurs actuels sur ordinateur comme sur mobile.</p>
+    </details>
+    <details>
+      <summary>Comment construire une montagne russe ?</summary>
+      <p>Ouvrez <strong>Rides</strong>, choisissez la <strong>Steel Coaster</strong> et placez sa gare. L'éditeur ajoute ensuite les rails pièce par pièce : lignes droites, pentes, virages, une montée à chaîne, des freins et un looping. Ramenez le circuit jusqu'à la gare, lancez un essai, reliez l'entrée et la sortie à une allée, puis ouvrez l'attraction. L'essai mesure la vitesse, les forces G, les chutes et le temps en apesanteur, qui déterminent l'excitation, l'intensité et la nausée de l'attraction.</p>
+    </details>
+    <details>
+      <summary>Puis-je sauvegarder mon parc ?</summary>
+      <p>Oui. Le jeu sauvegarde automatiquement chaque mois de jeu, et le menu propose trois emplacements de sauvegarde. Les sauvegardes sont conservées dans ce navigateur, sur cet appareil.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>D'autres jeux à lancer dans votre navigateur</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/skyrise/"><span class="lc-title">Skyrise</span><span class="lc-desc">Construisez un gratte-ciel et faites tourner ses ascenseurs.</span></a></li>
+      <li><a class="link-card" href="/run/micropolis/"><span class="lc-title">Micropolis</span><span class="lc-desc">Le simulateur de ville open source, jouable tout de suite.</span></a></li>
+      <li><a class="link-card" href="/run/openttd/"><span class="lc-title">OpenTTD</span><span class="lc-desc">Bâtissez un empire du transport — open source, jouable tout de suite.</span></a></li>
+      <li><a class="link-card" href="/run/space-cadet-open/"><span class="lc-title">3D Pinball Space Cadet</span><span class="lc-desc">Le flipper de XP en version open source, jouable tout de suite.</span></a></li>
+      <li><a class="link-card" href="/fr/run/"><span class="lc-title">Tous les jeux et applications</span><span class="lc-desc">Parcourez tout ce que vous pouvez jouer ou lancer ici.</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">Des jeux sans rien à installer</span><span class="lc-desc">La liste complète des titres qui fonctionnent sur un réseau scolaire ou professionnel verrouillé.</span></a></li>
+    </ul>
+  </section>
+
+  <section class="card" id="embed-pointer">
+    <h2>Un jeu comme celui-ci sur votre propre site ?</h2>
+    <p>Onze des jeux d'ici ont été écrits de zéro par nos soins, et n'importe qui peut les
+    mettre gratuitement sur sa propre page : une ligne de HTML, sans compte, sans autorisation,
+    sans autre mention qu'une ligne de crédit.</p>
+    <p><a class="cta-btn" href="/embed/" id="embed-pointer-cta">Voir les jeux que vous pouvez intégrer</a></p>
+  </section>
+  <script src="/embed-pointer.js?v=1"></script>
+
+  <section class="card" id="embed-offer" data-slug="parkhaven" data-name="Parkhaven">
+    <h2>Mettez Parkhaven sur votre site</h2>
+    <p>Celui-ci est à nous — écrit de zéro, pas émulé — vous pouvez donc
+    l'intégrer où vous voulez, gratuitement et sans autorisation. Collez ceci là où vous voulez qu'il apparaisse :</p>
+    <textarea readonly rows="4" spellcheck="false" aria-label="Code d'intégration de Parkhaven"></textarea>
+    <p><button type="button" class="cta-btn">Copier le code d'intégration</button></p>
+    <p class="muted small">La seule chose que nous demandons, c'est de garder la ligne de crédit. Les jeux
+    que nous hébergeons sans les avoir écrits ne sont pas proposés à l'intégration, car ce n'est pas
+    à nous de les céder.</p>
+  </section>
+  <script src="/embed-snippet.js?v=1"></script>
+</main>
+
+<footer>
+  <p>Parkhaven est un jeu original d'ExeBrowser, sous licence MIT. RollerCoaster Tycoon est une marque de ses propriétaires. Elle n'est citée ici que pour décrire le genre ; Parkhaven n'est ni affilié à Chris Sawyer, Atari, Frontier ou au projet OpenRCT2, ni approuvé par eux.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/fr/">Accueil</a>
+    <a href="/load-exe/">Lancer votre EXE</a>
+    <a href="/fr/run/">Applications</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guide de compatibilité</a>
+    <a href="/about/">À propos</a>
+    <a href="/contact/">Contact</a>
+    <a href="/saves/">Parties sauvegardées</a>
+    <a href="/privacy/">Politique de confidentialité</a>
+    <a href="/terms/">Conditions d'utilisation</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Contenu sous licence ouverte ; environnement d'exécution sous GPL-2.0 / LGPL-2.1.</p>
+</footer>
+<script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+<script src="/play-events.js?v=3"></script>
+<script src="/pwa.js?v=3"></script>
+</body>
+</html>

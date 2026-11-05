@@ -1,5 +1,8 @@
 # Which bet is the 10,000/day bet
 
+> **Superseded 2026-11-05 by [`search-over-embeds.md`](search-over-embeds.md).**
+> The premise below that search caps out at ~1,100 users/day turned out to be wrong.
+
 Decision record, 2026-09-05. Supersedes the open question in the growth brief.
 Numbers from the GA4 / Search Console / Bing Webmaster read of the same date.
 

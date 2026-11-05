@@ -1167,6 +1167,7 @@
         thumb: window.SaveCore.thumbFromCanvas(canvas),
       });
       track("persist_save", { bytes: total, files: changed.length, reason });
+      window.ExeInstall?.engaged?.("save");
       noteReturnRoute();
     })()
       .catch(err => log("Save failed: " + err.message))
@@ -1464,6 +1465,7 @@
                   thumb: window.SaveCore.thumbFromCanvas(canvas),
                 });
                 track("snapshot_save", { bytes: r.bytes, files: r.files, reason });
+                window.ExeInstall?.engaged?.("save");
                 // Count *consecutive* failures, so an occasional blip over a
                 // long session never accumulates into tripping the breaker.
                 snapFails = 0;
@@ -1546,6 +1548,7 @@
       window.SaveCore?.markPlayed(slug, cfg.appName, "dosbox");
       window.rememberPlayed?.(slug, cfg.appName);
       track("boot_success", { boot_ms: Math.round(performance.now() - t0) });
+      window.ExeInstall?.engaged?.("boot");
       startHeartbeat();
 
     } catch (err) {

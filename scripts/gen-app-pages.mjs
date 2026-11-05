@@ -149,7 +149,12 @@ function imageSize(absPath) {
 // in place; anything else is treated as a third-party provider (Buttondown,
 // Mailchimp, Listmonk) and keeps the target="_blank" those need to show their
 // own confirmation page.
-const NEWSLETTER_ACTION = "/api/subscribe";
+//
+// Switched off 2026-11-05: one signup in the 28 days to 2026-11-03 (8 in KV in
+// total), against 510 home-screen installs in the same window. Installs are the
+// return route that works, so the space goes to that. functions/api/subscribe.js
+// and the SUBS KV namespace are kept — they hold the addresses already given.
+const NEWSLETTER_ACTION = "";
 
 const screenshotUrl = (p) => {
   const f = screenshotFile(p);
@@ -849,19 +854,19 @@ ${footerHtml(L)}
 ${clientStringsHtml(L)}${p.iframeUrl
   ? `<script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>`
+    <script src="/pwa.js?v=3"></script>`
   : p.dosRuntime
     ? `<!-- save-core.js first: the embed asks it whether to offer a resume before it renders. -->
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
-<script src="/dos-embed.js?v=37"></script>`
+    <script src="/pwa.js?v=3"></script>
+<script src="/dos-embed.js?v=38"></script>`
     : `<!-- embed.js must run first: it builds the runtime DOM that app.js binds to. -->
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
+    <script src="/pwa.js?v=3"></script>
 <script src="/embed.js?v=11"></script>
-<script src="/app.js?v=25"></script>`}
+<script src="/app.js?v=26"></script>`}
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>${NEWSLETTER_ACTION ? '\n<script src="/newsletter.js?v=1"></script>' : ""}
 </body>
 </html>
@@ -1105,7 +1110,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
 </footer>
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
+    <script src="/pwa.js?v=3"></script>
 <script src="/filter.js?v=2"></script>
 <script>
   window.renderContinue && renderContinue("continue-playing", "continue-grid");
@@ -1370,7 +1375,7 @@ ${picks}
 </footer>
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
+    <script src="/pwa.js?v=3"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
 </script>
@@ -1478,7 +1483,7 @@ ${liveCats.map((c) => `      <li><a class="link-card" href="/play/${c.slug}/"><s
 </footer>
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
+    <script src="/pwa.js?v=3"></script>
 <script>
   window.renderResumeBar && renderResumeBar("resume-bar");
 </script>
@@ -1577,7 +1582,7 @@ ${cards}
 ${footerHtml(L)}
 <script src="/save-core.js?v=6"></script>
 <script src="/recent.js?v=8"></script>
-    <script src="/pwa.js?v=2"></script>
+    <script src="/pwa.js?v=3"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
 </body>
 </html>

@@ -199,7 +199,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "id's 1993 shareware FPS — runs cleanly as Win32."
       },
       {
@@ -437,7 +437,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM (shareware)",
+        "title": "Play DOOM online",
         "desc": "The 1993 shooter, free episode in your browser."
       },
       {
@@ -549,9 +549,9 @@
   {
     "slug": "doom",
     "provenance": "shareware",
-    "title": "Play DOOM (1993) Free Online — Unblocked, No Download",
+    "title": "Play DOOM (1993) Online in Your Browser — Free, Unblocked",
     "description": "The original 1993 DOOM, running in your browser. The real DOS game in DOSBox, not a remake or a JS port — and it saves your progress. No download, no sign-up.",
-    "keywords": "play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online, doom unblocked",
+    "keywords": "play doom online, doom in browser, doom online free no download, play doom no install, doom shareware online, classic doom browser, doom95 browser, knee-deep in the dead online, doom unblocked, doom emulator, doom web, doom 1993 online",
     "ogTitle": "Play DOOM Online — Free, In Your Browser, No Download",
     "ogDescription": "The original 1993 DOOM shareware episode, playable in your browser with DOSBox + WebAssembly. Free, legal, no install.",
     "crumb": "Play DOOM",
@@ -573,7 +573,7 @@
       "kind": "good",
       "text": "Free & legal shareware"
     },
-    "intro": "<p>The real, original <strong>DOOM</strong> — id Software's 1993 first-person shooter — running in a browser tab. No download, no install, no account. This is the freely-redistributable shareware episode (<em>Knee-Deep in the Dead</em>), the original DOS <code>DOOM.EXE</code> executing in DOSBox + WebAssembly. Hit play and start fragging imps.</p>",
+    "intro": "<p>The real, original <strong>DOOM</strong> — id Software's 1993 first-person shooter — playable online, free, right here in your browser. No download, no install, no account. This is the freely-redistributable shareware episode (<em>Knee-Deep in the Dead</em>): the original DOS <code>DOOM.EXE</code> running in DOSBox, a DOS emulator compiled to WebAssembly, so DOOM plays on the web like any other page. Hit play and start fragging imps.</p>",
     "download": {
       "heading": "Get the DOOM shareware (free, legal)",
       "html": "<h3 style=\"margin-top:0;\">id Software's official shareware</h3><p>The complete first episode, unmodified, distributed at no charge exactly as the shareware license permits. The most reliable source is the Internet Archive's preserved copy:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">Get DOOM shareware (Internet Archive) →</a></p><p class=\"muted small\">Grab the DOS build (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). You don't need it to play here — this page already runs the shareware episode — but it's the copy to keep if you want it on your own machine. © id Software — the shareware episode is freely redistributable unmodified and at no charge. The registered episodes and Doom II are commercial and <strong>not</strong> included; buy those from <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
@@ -600,6 +600,10 @@
       {
         "q": "Is this real DOOM or a remake?",
         "a": "The real, original executable, running unmodified. ExeBrowser doesn't re-create the game; it runs id Software's actual DOS binary inside DOSBox compiled to WebAssembly, rendering to a browser canvas."
+      },
+      {
+        "q": "Is this a DOOM emulator?",
+        "a": "Yes, in the useful sense: DOOM itself is the untouched 1993 DOS program, and what runs it is DOSBox — a PC and DOS emulator — compiled to WebAssembly so it works in a web browser. That is why it plays exactly like the original rather than like a source port, and why nothing needs installing."
       },
       {
         "q": "What are the controls for DOOM in the browser?",
@@ -860,7 +864,7 @@
     "related": [
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "The 1993 original's shareware episode, playable in your browser."
       },
       {
@@ -1508,7 +1512,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "The 1993 shareware episode, playable in your browser."
       },
       {
@@ -2862,7 +2866,7 @@
     "related": [
       {
         "href": "/run/doom/",
-        "title": "DOOM (1993)",
+        "title": "Play DOOM (1993) online",
         "desc": "The original shareware build, playable in a tab."
       },
       {
@@ -2983,7 +2987,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "id Software's 1993 shooter — free shareware episode, in your browser."
       },
       {
@@ -3364,7 +3368,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM (shareware)",
+        "title": "Play DOOM online",
         "desc": "The free shareware episode, running on Wine + WebAssembly."
       },
       {
@@ -3708,7 +3712,7 @@
     "related": [
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "The free shareware episode, playable instantly."
       },
       {
@@ -3811,7 +3815,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "The free 1993 shareware FPS — and it runs great."
       },
       {
@@ -4846,7 +4850,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "Free shareware, hosted and ready to play."
       },
       {
@@ -7850,7 +7854,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "The 1993 shareware classic, instant play."
       },
       {
@@ -8126,13 +8130,13 @@
     "slug": "hearts-open",
     "provenance": "clean",
     "skipGenerate": true,
-    "title": "Play Hearts Online Free — Like Windows mshearts, No Download",
-    "description": "Hearts against three opponents, with the full passing rotation and shooting the moon actually implemented. Free, instant, no account, no download.",
+    "title": "Play Hearts Like Windows mshearts — Free Online, No Download",
+    "description": "The classic Windows Hearts game (mshearts) rules — passing rotation, queen of spades, shooting the moon — against three opponents. Free, instant, no download.",
     "keywords": "play hearts online, hearts card game free, hearts online no download, microsoft hearts alternative, hearts game browser",
     "ogTitle": "Play Hearts Online Free — No Download, No Sign-up",
     "ogDescription": "The classic trick-taking card game in your browser — three computer opponents, full rules, instant play.",
     "crumb": "Play Hearts",
-    "h1": "Play Hearts online — free, instant",
+    "h1": "Play Hearts online — like Windows mshearts, free and instant",
     "appName": "Hearts",
     "appType": "game",
     "author": "ExeBrowser (original implementation)",
@@ -9604,12 +9608,12 @@
     "appName": "Micropolis",
     "author": "Graeme McCutcheon (micropolisJS), from the Micropolis GPL release",
     "title": "Play Micropolis Online — the Open-Source SimCity, Free",
-    "description": "Micropolis is the city simulator Maxis shipped as SimCity, released under the GPL. A hand-written port, so it loads like a web page and works on a phone.",
+    "description": "Micropolis is SimCity — the city builder Maxis shipped, open-sourced under the GPL. Play it free online: a hand-written port that loads like a web page and works on a phone.",
     "keywords": "micropolis, city builder online, city simulator browser, open source city building game, play micropolis",
     "ogTitle": "Play Micropolis online — free city builder, no download",
     "ogDescription": "The open-source city simulator, running natively in your browser. Zone, build, tax and watch a city grow.",
     "crumb": "Play Micropolis",
-    "h1": "Play Micropolis online — free, instant",
+    "h1": "Play Micropolis online — the open-source SimCity, free",
     "genre": [
       "Simulation",
       "Strategy",
@@ -9700,7 +9704,7 @@
     "related": [
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "id's shareware episode — the shooter Duke answered."
       },
       {
@@ -9942,7 +9946,7 @@
       },
       {
         "href": "/run/doom/",
-        "title": "DOOM",
+        "title": "Play DOOM online",
         "desc": "id's shareware episode."
       },
       {

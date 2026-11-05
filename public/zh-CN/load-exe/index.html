@@ -10,6 +10,7 @@
 <link rel="alternate" hreflang="en" href="https://exebrowser.com/load-exe/" />
 <link rel="alternate" hreflang="es" href="https://exebrowser.com/es/load-exe/" />
 <link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/load-exe/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/load-exe/" />
 <link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/load-exe/" />
 <link rel="alternate" hreflang="x-default" href="https://exebrowser.com/load-exe/" />
 <meta property="og:type" content="website" />
@@ -92,13 +93,13 @@
     <a href="/zh-CN/">首页</a>
     <a href="/zh-CN/load-exe/">运行你的 EXE</a>
     <a href="/zh-CN/run/">程序列表</a>
-    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/zh-CN/exe-inspector/">EXE 查看器</a>
     <a href="/blog/">博客</a>
     <a href="/zh-CN/guide/">指南</a>
     <a href="/about/">关于</a>
     <a href="/contact/">联系</a>
   </nav>
-  <nav class="lang-switcher" aria-label="语言"><a href="/load-exe/" hreflang="en">English</a> · <a href="/es/load-exe/" hreflang="es">Español</a> · <a href="/pt-BR/load-exe/" hreflang="pt-BR">Português (BR)</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
+  <nav class="lang-switcher" aria-label="语言"><a href="/load-exe/" hreflang="en">English</a> · <a href="/es/load-exe/" hreflang="es">Español</a> · <a href="/pt-BR/load-exe/" hreflang="pt-BR">Português (BR)</a> · <a href="/fr/load-exe/" hreflang="fr">Français</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
 </header>
 
 <main class="prose">
@@ -119,6 +120,12 @@
          data-autoboot="false"></div>
 
     <p class="muted small" style="margin-top:1rem;">首次启动会下载 Wine 运行时（约 30–60&nbsp;MB）并缓存下来。点击画面把鼠标和键盘交给它；按 <kbd>Esc</kbd> 收回。</p>
+  </section>
+
+  <section class="card">
+    <h2>在任何电脑上打开 EXE 文件</h2>
+    <p><code>.exe</code> 文件是一个 Windows 程序，所以“打开”它就是运行它，并没有什么查看器可以用来打开。在 Windows 上双击即可。在 Mac、Chromebook、Linux，或者不能安装软件的电脑上，最快的办法就是上面的打开工具：它在这个标签页里运行程序，什么都不用装。</p>
+    <p>其他办法，比如 Mac 上的 Wine 或 CrossOver、Chromebook 上的 Linux 容器，以及 Windows 自己拒绝启动程序时该怎么办，都在完整指南<a href="/zh-CN/open-exe-file/">《如何在 Windows、Mac 或 Chromebook 上打开 EXE 文件》</a>里。如果你只想知道 <a href="/zh-CN/blog/what-is-an-exe-file/">.exe 文件是什么</a>，那篇短文单独讲。</p>
   </section>
 
   <section class="card">
@@ -199,7 +206,7 @@
     <a href="/zh-CN/">首页</a>
     <a href="/zh-CN/load-exe/">运行你的 EXE</a>
     <a href="/zh-CN/run/">程序列表</a>
-    <a href="/exe-inspector/">EXE 查看器</a>
+    <a href="/zh-CN/exe-inspector/">EXE 查看器</a>
     <a href="/blog/">博客</a>
     <a href="/zh-CN/guide/">兼容性指南</a>
     <a href="/about/">关于</a>
@@ -217,9 +224,9 @@
 <script src="/embed.js?v=11"></script>
 <script src="/handoff.js?v=1"></script>
 <script src="/pe-inspect.js?v=3"></script>
-<script src="/app.js?v=25"></script>
+<script src="/app.js?v=26"></script>
 <script src="/embed-pointer.js?v=1"></script>
 <script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
-<script src="/pwa.js?v=2"></script>
+<script src="/pwa.js?v=3"></script>
 </body>
 </html>

@@ -997,6 +997,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/es/run/duke-nukem-3d/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/es/run/wolfenstein-3d/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -1015,8 +1021,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/es/run/parkhaven/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/es/run/space-cadet-open/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/pt-BR/run/doom/</loc>
     <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/pt-BR/run/duke-nukem-3d/</loc>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1034,6 +1058,18 @@
   </url>
   <url>
     <loc>https://exebrowser.com/pt-BR/run/freedoom/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/pt-BR/run/parkhaven/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/pt-BR/run/space-cadet-open/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1081,7 +1117,25 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/fr/run/duke-nukem-3d/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/fr/run/wolfenstein-3d/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/fr/run/parkhaven/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/fr/run/space-cadet-open/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1093,7 +1147,25 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/zh-CN/run/duke-nukem-3d/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/zh-CN/run/wolfenstein-3d/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/zh-CN/run/parkhaven/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/zh-CN/run/space-cadet-open/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1119,6 +1191,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://exebrowser.com/es/exe-inspector/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://exebrowser.com/pt-BR/load-exe/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1135,6 +1212,36 @@
   </url>
   <url>
     <loc>https://exebrowser.com/pt-BR/blog/what-is-an-exe-file/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/pt-BR/exe-inspector/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/fr/load-exe/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/fr/open-exe-file/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/fr/exe-inspector/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/fr/guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/fr/blog/what-is-an-exe-file/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1157,6 +1264,11 @@
     <loc>https://exebrowser.com/zh-CN/blog/what-is-an-exe-file/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/zh-CN/exe-inspector/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://exebrowser.com/blog/</loc>

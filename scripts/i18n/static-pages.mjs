@@ -29,7 +29,7 @@ export const STATIC_PAGES = {
     resumeBar: true,
     // embed.js builds the runtime DOM that app.js binds to, so the order here
     // is load-bearing, exactly as on the English page.
-    scripts: ["/save-core.js?v=6", "/recent.js?v=8", "/embed.js?v=11", "/handoff.js?v=1", "/pe-inspect.js?v=3", "/app.js?v=25", "/embed-pointer.js?v=1"],
+    scripts: ["/save-core.js?v=6", "/recent.js?v=8", "/embed.js?v=11", "/handoff.js?v=1", "/pe-inspect.js?v=3", "/app.js?v=26", "/embed-pointer.js?v=1"],
   },
   "/open-exe-file/": {
     kind: "page",
@@ -47,7 +47,8 @@ export const STATIC_PAGES = {
     kind: "page",
     pri: "0.7",
     // The viewer parses in the page, so its own strings have to come with it.
-    scripts: ["/pe-inspect.js?v=3"],
+    // embed-pointer.js for the same reason as /guide/: the card is in the copy.
+    scripts: ["/pe-inspect.js?v=3", "/embed-pointer.js?v=1"],
   },
   "/blog/what-is-an-exe-file/": {
     kind: "article",

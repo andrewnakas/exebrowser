@@ -19,7 +19,7 @@
 
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { resolve, join } from "node:path";
-import { hreflangHtml, langSwitcherHtml, LOCALES } from "./i18n/locales.mjs";
+import { hreflangHtml, langSwitcherHtml, languagesFor, LANGS, LOCALES } from "./i18n/locales.mjs";
 import { STATIC_PATHS } from "./i18n/static-pages.mjs";
 import { embedTier, isEmbeddable } from "./catalogue.mjs";
 
@@ -67,7 +67,7 @@ const PLAY_TRACKED = new Set([
   "lure-of-the-temptress", "soltys", "flight-of-the-amazon-queen",
   "openttd", "micropolis",
 ]);
-const PLAY_SCRIPT = '<script src="/play-events.js?v=2"></script>';
+const PLAY_SCRIPT = '<script src="/play-events.js?v=3"></script>';
 
 // Installability has to reach every page, not just the generated ones: the
 // browser only offers to install a site from a page that links a manifest, and
@@ -77,7 +77,7 @@ const MANIFEST_LINKS =
   `<link rel="manifest" href="/manifest.webmanifest" />\n` +
   `    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />\n` +
   `    <meta name="theme-color" content="#0e0d0b" />`;
-const PWA_SCRIPT = '<script src="/pwa.js?v=2"></script>';
+const PWA_SCRIPT = '<script src="/pwa.js?v=3"></script>';
 
 // Title/description for the playable pages the generator does not own, keyed by
 // slug. Read from the catalogue so these pages cannot drift from it again.
@@ -200,6 +200,34 @@ for (const { abs, label } of htmlFiles(ROOT)) {
       // ends up unreachable from the English one it was translated from.
       missingAnchor.push(`${label} (nav anchor for the language switcher)`);
     }
+  }
+
+  // ── 2b. hreflang + switcher on the hand-maintained /run/ pages ───────────
+  // A skipGenerate game page never goes through render(), so it has no
+  // alternates of its own. Once one is hand-translated (an entry in
+  // pages.<lang>.json plus public/<lang>/run/<slug>/index.html), both the
+  // English page and every copy need the same reciprocal block a generated
+  // page gets. languagesFor() is the same decision render() uses, so the
+  // sitemap, the /xx/run/ listing and these tags all agree on what exists.
+  const handRun = label.match(/^(?:([A-Za-z-]+)\/)?run\/([^/]+)\/index\.html$/);
+  const handCode = handRun ? handRun[1] || "en" : null;
+  if (handRun && LANGS.includes(handCode) && HAND_MAINTAINED.has(handRun[2])
+      && languagesFor(handRun[2]).length > 1) {
+    const hSlug = handRun[2];
+    const hPath = `/run/${hSlug}/`;
+    const L = LOCALES[handCode];
+    html = html.replace(/\n<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>/g, "");
+    html = html.replace(/\n  <nav class="lang-switcher"[\s\S]*?<\/nav>/, "");
+    const canonical = `<link rel="canonical" href="https://exebrowser.com${L.prefix}${hPath}" />`;
+    if (html.includes(canonical)) {
+      html = html.replace(canonical, canonical + hreflangHtml(hPath, hSlug));
+      hreflangAdded++;
+    } else {
+      missingAnchor.push(`${label} (canonical anchor for hreflang)`);
+    }
+    const nav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/);
+    if (nav) html = html.replace(nav[0], nav[0] + langSwitcherHtml(L, hPath, hSlug));
+    else missingAnchor.push(`${label} (nav anchor for the language switcher)`);
   }
 
   // ── 3. Play analytics on the hand-maintained game pages ─────────────────

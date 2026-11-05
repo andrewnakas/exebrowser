@@ -11,6 +11,10 @@
     "intro": "    <p class=\"muted small\" style=\"margin-top:0.25rem;\">基于 Wine 1.7.55（Win32）+ Boxedwine 的 WebAssembly 构建 · 不上传任何内容 · 无需账号</p>\n    <p>把一个 Windows 可执行文件拖到下面——整个文件夹或它的 zip 也可以——它就会在这个标签页里运行。文件在你自己的机器上被读取，复制到一块只存在于标签页内存中的虚拟 <code>C:\\</code> 盘。没有服务器参与运行，没有安装程序，关掉页面之后也不会留下任何东西。</p>\n\n    <div id=\"exe-embed\"\n         data-variant=\"default\"\n         data-app-name=\"你的程序\"\n         data-empty-state=\"还没有运行任何东西——在下面选择你的 .exe，它就会从这里启动。\"\n         data-loader-open=\"true\"\n         data-variant-picker=\"true\"\n         data-autoboot=\"false\"></div>\n\n    <p class=\"muted small\" style=\"margin-top:1rem;\">首次启动会下载 Wine 运行时（约 30–60&nbsp;MB）并缓存下来。点击画面把鼠标和键盘交给它；按 <kbd>Esc</kbd> 收回。</p>",
     "sections": [
       {
+        "h": "在任何电脑上打开 EXE 文件",
+        "html": "    <p><code>.exe</code> 文件是一个 Windows 程序，所以“打开”它就是运行它，并没有什么查看器可以用来打开。在 Windows 上双击即可。在 Mac、Chromebook、Linux，或者不能安装软件的电脑上，最快的办法就是上面的打开工具：它在这个标签页里运行程序，什么都不用装。</p>\n    <p>其他办法，比如 Mac 上的 Wine 或 CrossOver、Chromebook 上的 Linux 容器，以及 Windows 自己拒绝启动程序时该怎么办，都在完整指南<a href=\"/zh-CN/open-exe-file/\">《如何在 Windows、Mac 或 Chromebook 上打开 EXE 文件》</a>里。如果你只想知道 <a href=\"/zh-CN/blog/what-is-an-exe-file/\">.exe 文件是什么</a>，那篇短文单独讲。</p>"
+      },
+      {
         "h": "三种方式该用哪一种",
         "html": "    <p>三种方式最终都走到同一步——文件被装入虚拟盘——但适合的情况不同，取决于你硬盘上有什么。</p>\n    <ul>\n      <li><strong>单个 EXE</strong>：适合自成一体的程序，比如一个老工具、一个单文件游戏、一个绿色软件。如果它在真实的电脑上双击就能跑、不需要别的东西，那就选这个。</li>\n      <li><strong>一个文件夹</strong>：适合旁边还有 <code>.dll</code>、<code>.dat</code>、<code>.ini</code> 或数据文件的程序。绝大多数真实软件都是这样，而这恰恰是大家在断定「我的程序跑不了」之前跳过的那个选项。整个文件夹会被装入，再由你指定哪个 <code>.exe</code> 是入口。</li>\n      <li><strong>一个 zip</strong>：和文件夹一样，适合你手上是压缩包而不是解压好的目录时。在不支持选择文件夹的手机浏览器上尤其好用。</li>\n    </ul>\n    <p>如果程序需要一个数据文件才能工作——要打开的压缩包、要载入的文档——上传之前请把它一并放进文件夹。标签页里的任何东西都看不到你真实的磁盘，所以程序要打开的一切都得跟着它一起进来。</p>"
       },
@@ -70,9 +74,13 @@
     "ogTitle": "怎么打开 EXE 文件：Windows、Mac、Chromebook 与 Linux",
     "ogDescription": ".exe 究竟是什么、为什么不启动，以及运行它的每一种办法——包括在浏览器标签页里运行，什么都不用装。",
     "crumb": "怎么打开 EXE 文件",
-    "h1": ".exe 文件到底是什么",
-    "intro": "    <p><code>.exe</code> 是为 Windows 编译出来的程序。它不是文档，不是压缩包，也不是视频——它是一串机器指令，加上一个告诉 Windows 该怎么装载它们的文件头。这也是「打开方式」对它从来没用的原因：程序没有对应的查看器，因为程序本身就是那个应用。</p>\n    <p>这同时解释了大家来到这里的两种处境。要么你在 Mac、Linux 或 Chromebook 上，Windows 程序根本跑不起来；要么你就在 Windows 上，而文件因为少数几个具体原因之一启动不了。这是两个不同的问题，答案也不同。</p>\n\n    <h3>最快能试的一招</h3>\n    <p>这个网站在浏览器标签页里运行 Windows 程序。把一个 <code>.exe</code> 拖到<a href=\"/zh-CN/load-exe/\">加载页面</a>上，它就会尝试在本地运行：文件在你自己的机器上被读取，不会上传到任何地方。</p>\n    <p>限制也得说清楚，因为它们是真实存在的：这里最适合大约 1995 到 2008 年之间的 <strong>32 位</strong> Windows 软件。小工具和老游戏是最佳区间。任何需要现代 .NET、真实网络访问或 3D 图形环境的东西都跑不了，而我们<a href=\"/zh-CN/run/\">把失败的例子和成功的一起写出来</a>，而不是假装它们不存在。</p>",
+    "h1": "怎么打开 EXE 文件",
+    "intro": "    <p><code>.exe</code> 文件是一个 Windows 程序，所以“打开”它就是运行它。具体怎么做，取决于你用的是什么电脑：</p>\n    <ul>\n      <li><strong>在 Windows 上：</strong>双击即可。如果它启动不了，错误信息通常会说明原因，常见的几种见下文。</li>\n      <li><strong>在 Mac 或 Linux 上：</strong>用 Wine 或 CrossOver、装有 Windows 的虚拟机，或者直接在浏览器标签页里运行。</li>\n      <li><strong>在 Chromebook 上，或在不能安装软件的电脑上：</strong>在浏览器标签页里运行。什么都不用装，文件也不会离开你的电脑。</li>\n    </ul>\n    <p class=\"cta-row\"><a class=\"cta-btn\" href=\"/zh-CN/load-exe/\">在浏览器里打开 .exe</a></p>",
     "sections": [
+      {
+        "h": ".exe 文件到底是什么",
+        "html": "    <p><code>.exe</code> 是为 Windows 编译出来的程序。它不是文档，不是压缩包，也不是视频——它是一串机器指令，加上一个告诉 Windows 该怎么装载它们的文件头。这也是「打开方式」对它从来没用的原因：程序没有对应的查看器，因为程序本身就是那个应用。</p>\n    <p>这同时解释了大家来到这里的两种处境。要么你在 Mac、Linux 或 Chromebook 上，Windows 程序根本跑不起来；要么你就在 Windows 上，而文件因为少数几个具体原因之一启动不了。这是两个不同的问题，答案也不同。</p>\n\n    <h3>最快能试的一招</h3>\n    <p>这个网站在浏览器标签页里运行 Windows 程序。把一个 <code>.exe</code> 拖到<a href=\"/zh-CN/load-exe/\">加载页面</a>上，它就会尝试在本地运行：文件在你自己的机器上被读取，不会上传到任何地方。</p>\n    <p>限制也得说清楚，因为它们是真实存在的：这里最适合大约 1995 到 2008 年之间的 <strong>32 位</strong> Windows 软件。小工具和老游戏是最佳区间。任何需要现代 .NET、真实网络访问或 3D 图形环境的东西都跑不了，而我们<a href=\"/zh-CN/run/\">把失败的例子和成功的一起写出来</a>，而不是假装它们不存在。</p>"
+      },
       {
         "h": "在各个平台上怎么打开 .exe",
         "html": "    <h3>在 Mac 上</h3>\n    <p>macOS 无法原生运行 <code>.exe</code> 文件：操作系统不同，而自 Apple Silicon 之后处理器架构也不同。双击只会得到一个错误，换多少种「打开方式」都改变不了。</p>\n    <p>真正可行的办法有三种：像 <a href=\"https://www.winehq.org/\" target=\"_blank\" rel=\"noopener\">Wine</a> 或 CrossOver 这样的兼容层，它翻译 Windows API 调用，而不是模拟一整台 PC；跑着正版 Windows 的虚拟机；或者，对于又老又小的程序，直接在这里的浏览器标签页里运行。浏览器这条路什么都不用装，这往往就是决定性的因素。</p>\n\n    <h3>在 Chromebook 上</h3>\n    <p>ChromeOS 完全无法安装 Windows 软件，这是设计使然，不是疏漏。没有 Wine 可装，没有 Program Files，安装程序也无处可去。</p>\n    <p>剩下的就是在浏览器里运行——也就是这个网站做的事——或者用 Linux 容器，前提是你的 Chromebook 开启了它，而且你愿意在里面装 Wine。我们还有<a href=\"/blog/run-windows-software-on-a-chromebook/\">一篇更长的文章讲这四种办法</a>，按麻烦程度排了序。</p>\n\n    <h3>在 Linux 上</h3>\n    <p>用发行版的包管理器装上 Wine，然后 <code>wine 你的程序.exe</code>。Wine 已经相当成熟，很多软件第一次就能跑起来。跑不起来的时候它通常会大声报错，直接说出缺了哪个 DLL 或哪个 API，至少给了你一个可以去搜的关键词。</p>\n\n    <h3>在 Windows 上，当它就是不启动</h3>\n    <p>如果连 Windows 自己都拒绝运行一个 Windows 程序，可能的原因就那么几个，而且错误信息通常已经指明了是哪一个：</p>\n    <ul>\n      <li><strong>「此应用无法在你的电脑上运行」。</strong>多半是一个 16 位程序。64 位 Windows 移除了运行它们的子系统，没有任何设置能把它找回来。</li>\n      <li><strong>提示缺少某个 DLL。</strong>相对来说算是好消息：程序需要一个你没装的运行库。通常是 Visual C++ 可再发行组件、Visual Basic 6 运行库，或 .NET Framework 3.5。</li>\n      <li><strong>SmartScreen 拦截了它。</strong>Windows 不认识这个发布者。如果你确信文件的来源，点「更多信息」再点「仍要运行」。</li>\n      <li><strong>什么都没发生。</strong>常见的情况是一个控制台程序打开、运行、又关掉了，快到你看不见。试着从命令提示符里运行，窗口就会留着。</li>\n    </ul>\n    <p>这几种情况在<a href=\"/blog/why-old-programs-wont-run-on-windows-11/\">为什么老程序在 Windows 11 上跑不起来</a>里讲得更细。</p>"
@@ -88,6 +96,14 @@
     ],
     "faqHeading": "常见问题",
     "faq": [
+      {
+        "q": ".exe 文件是什么？",
+        "a": "<p>为 Windows 编译的程序：机器指令，加上一个告诉 Windows 如何加载它们的文件头。它不是文档，所以没有什么软件可以用来“打开”它，只能运行它。<a href=\"/zh-CN/blog/what-is-an-exe-file/\">它里面有什么</a>一文讲得更详细。</p>"
+      },
+      {
+        "q": "exe 应用是什么？",
+        "a": "<p>是同一回事：“exe 应用”通常指以 <code>.exe</code> 形式发布的 Windows 程序，可能是程序本身，也可能是把程序装到你电脑上的安装包。手机和 Mac 都不能原生运行它。</p>"
+      },
       {
         "q": "不下载任何东西，能在线打开 .exe 文件吗？",
         "a": "<p>你可以在这里运行一个，什么都不用装——这通常就是这个问题真正的意思。文件由你自己机器上的浏览器读取，不会上传到服务器。体积较小的 32 位 Windows 程序效果最好。</p>"
@@ -183,5 +199,68 @@
       }
     ],
     "outro": "    <p>如果你宁愿先看清楚再动手，<a href=\"/exe-inspector/\">EXE 查看器</a>能把这些都从文件里读给你看——文件头、依赖库、图标、签名——全在浏览器里完成，一行都不执行。而如果你想现在就试试免安装的那条路，<a href=\"/zh-CN/load-exe/\">加载器在这里</a>：拖一个 <code>.exe</code> 进去，它就在标签页里、在你自己的机器上跑起来。什么能跑、什么不能跑，<a href=\"/zh-CN/guide/\">兼容性指南</a>里说得很直白。</p>\n\n    <h2>继续阅读</h2>\n    <ul class=\"card-grid\">\n      <li><a class=\"link-card\" href=\"/zh-CN/open-exe-file/\"><span class=\"lc-title\">怎么打开 .exe 文件</span><span class=\"lc-desc\">逐个平台讲清楚运行它的每一种办法。</span></a></li>\n      <li><a class=\"link-card\" href=\"/blog/extract-files-from-an-old-installer/\"><span class=\"lc-title\">从老安装包里提取文件</span><span class=\"lc-desc\">不安装也能把里面的东西取出来。</span></a></li>\n      <li><a class=\"link-card\" href=\"/blog/check-if-an-exe-is-safe/\"><span class=\"lc-title\">这个 .exe 安全吗？</span><span class=\"lc-desc\">运行之前你能弄清楚些什么。</span></a></li>\n      <li><a class=\"link-card\" href=\"/blog/wine-vs-emulator-explained/\"><span class=\"lc-title\">Wine 与模拟器的区别</span><span class=\"lc-desc\">两者的差别究竟在哪里。</span></a></li>\n      <li><a class=\"link-card\" href=\"/zh-CN/guide/\"><span class=\"lc-title\">兼容性指南</span><span class=\"lc-desc\">哪些程序能在浏览器里跑，哪些不能。</span></a></li>\n    </ul>"
+  },
+  "/exe-inspector/": {
+    "title": "EXE 查看器 — 不运行也能看清 .exe 文件里有什么",
+    "description": "拖入一个 Windows .exe，看清它里面有什么：处理器、子系统、它加载的库、图标、版本信息、签名以及是否加壳。免费，不上传任何内容，也不执行任何代码。",
+    "keywords": "exe 查看器, pe 查看器, 打开 exe 文件, 在线查看 exe, exe 里面有什么, exe 文件分析, 在线查看 exe 内容, pe 头查看器",
+    "ogTitle": "不运行，也能看清一个 Windows .exe 的内部",
+    "ogDescription": "拖入一个 .exe，查看它的处理器、依赖库、图标、版本信息和签名。全部在你自己的浏览器里解析——不上传任何内容。",
+    "crumb": "EXE 查看器",
+    "h1": "看清一个 Windows .exe 文件的内部",
+    "intro": "    <p class=\"muted small\" style=\"margin-top:0.25rem;\">在本标签页内解析 · 不上传任何内容 · 不执行任何代码</p>\n    <p>把一个 Windows 可执行文件拖到下面，这个页面会读取它的文件头，告诉你它是什么：为哪种处理器编译、需要哪些系统库、对自己的发布者和版本是怎么说的、藏在里面的图标、有没有签名，以及有没有被压缩来隐藏内容。文件从不离开你的机器——它由 JavaScript 就在这里读取，而这个页面根本没有地方可以把它发出去。</p>\n\n    <div id=\"pe-dropzone\" class=\"dropzone\" tabindex=\"0\" role=\"button\" aria-label=\"选择一个要检查的 Windows 可执行文件\">\n      <input type=\"file\" id=\"pe-file\" accept=\".exe,.dll,.sys,.ocx,.scr,.cpl,.mui,.efi,application/x-msdownload\" hidden />\n      <p><strong>把 <code>.exe</code> 拖到这里</strong>，或者 <button id=\"pe-pick\" type=\"button\" class=\"link\">选择文件</button></p>\n      <p class=\"muted small\">也能读取 <code>.dll</code>、<code>.sys</code>、<code>.ocx</code> 和 <code>.scr</code>。最大 256&nbsp;MB。</p>\n    </div>\n    <p id=\"pe-status\" class=\"muted small\" role=\"status\" aria-live=\"polite\"></p>\n    <div id=\"pe-report\"></div>",
+    "sections": [
+      {
+        "h": "报告会告诉你什么",
+        "html": "    <p>每个 Windows 可执行文件都写着大量关于自己的信息，多得出人意料，而在桌面上几乎一样都看不到。报告的顺序经过安排，最有用的部分排在最前面。</p>\n    <h3>处理器与子系统</h3>\n    <p>这是关于任何 <code>.exe</code> 的第一个老实答案。64 位程序在 32 位 Windows 上无法启动；32 位程序几乎在哪里都能运行。子系统说明它会打开一个窗口、一个控制台，还是什么都不打开——因为它是一个要加载进内核的驱动程序。</p>\n    <h3>它加载的库</h3>\n    <p>导入表是整个文件里最能说明问题的部分。程序必须以明文写出它打算调用的每一个系统库和函数——所以要上网的程序必须写出 <code>ws2_32.dll</code>，要动注册表的必须写出 <code>RegOpenKeyExA</code>，要启动其他程序的必须写出 <code>CreateProcessW</code>。这些在任何一条指令运行之前就已经声明好了，而且不写就等于放弃调用这些函数的能力。</p>\n    <h3>它自称是什么</h3>\n    <p>版本资源里保存着发布者、产品名称、文件版本、版权声明和原始文件名——也就是 Windows 在文件“属性”对话框里显示的那些字符串。它们只是构建这个文件的人随手填进去的文字，所以拿来识别文件很有用，拿来当证据则一文不值。</p>\n    <h3>图标</h3>\n    <p>从资源树中提取出来，直接画在页面上。这是确认一个下载就是你以为的那个程序的最快方法，也是发现某个东西冒用了它本无权使用的熟悉图标的最快方法。</p>\n    <h3>加壳与熵</h3>\n    <p>加壳工具会压缩可执行文件，并在启动时于内存中解压。这是缩小下载体积的正当手段，也同样能有效地把程序导入了什么一直藏到它运行起来为止。报告在认出加壳工具的特征时会直接说出它的名字，认不出时则退而测量每个节看起来有多随机。</p>\n    <h3>末尾附带的东西</h3>\n    <p>安装程序通常是一个普通的小程序，在最后一个节之后附加了一整个压缩包。如果报告说文件的大部分都位于可执行部分的末尾之后，你看到的就是一个外壳而不是程序本身——而且<a href=\"/blog/extract-files-from-an-old-installer/\">里面的文件往往不用安装就能提取出来</a>（英文）。</p>"
+      },
+      {
+        "h": "它不能告诉你什么",
+        "html": "    <p>它不能告诉你一个文件是否安全。任何只读取文件的东西都做不到，而一个暗示自己能做到的页面比没用还糟糕，因为它会让人放下心来。</p>\n    <p>这里的一切都是程序对自己的<em>声明</em>。一个愿意被研究的程序会声明很多；一个不愿意的程序只是声明得少一些，而加了壳的程序在真正运行之前几乎什么都不声明。所以一长串能力并不能证明它行为不端——每个更新程序都要联网，每个安装程序都要写文件——一串很短的列表也同样证明不了它行为端正。</p>\n    <p>检查真正擅长回答的是那些日常问题：它和我机器的架构对得上吗？它是安装程序还是程序本身？它声称有发布者吗？有签名吗？完整吗？是不是在隐藏内容？这些都能从文件本身得到答案，而它们正是大多数人真正想知道的。</p>\n    <p>如果要一个关于安全性的结论，<a href=\"https://www.virustotal.com/\" target=\"_blank\" rel=\"noopener\">VirusTotal</a> 会让你上传的文件过一遍大约七十款杀毒引擎。这确实需要上传文件，而这个页面从不这样做——这是一个应该有意识地做出、而不是不知不觉就做了的取舍。</p>\n    <p>更详细的讨论见<a href=\"/blog/check-if-an-exe-is-safe/\">这个 .exe 能放心运行吗？</a>（英文）——文件在运行之前透露出的每一个信号、每个信号作为证据到底有多少分量，以及应该按什么顺序去检查。</p>"
+      },
+      {
+        "h": "你的文件去了哪里",
+        "html": "    <p>哪里都没去。浏览器把你选中的文件的字节交给页面，解析器逐一读过文件头，结果写进页面。没有请求、没有服务器、没有队列，也没有数据保留政策，因为根本没有什么需要保留。关掉标签页，它就没了。</p>\n    <p>之所以要把这一点说清楚，是因为最显而易见的替代方案——上传后扫描的网站——恰恰是手里拿着一个信不过的文件的人最应该小心的东西。如果你想亲自验证而不是听信这番话，打开浏览器的开发者工具，切到“网络”面板，然后检查一个文件：什么都不会被发送。</p>\n    <p>页面本身使用 Google Analytics 和 Mediavine，它们以通常的方式看到页面访问。它们看不到你选择的文件，也看不到从中解析出的任何内容；报告在内存中生成，从不变成一次请求。我们确实会记录的是汇总且匿名的信息——格式、处理器以及文件是否有签名——不含文件名，也不含文件内容。细节见<a href=\"/privacy/\">隐私政策</a>。</p>"
+      },
+      {
+        "h": "如果你想运行它，而不只是看看",
+        "html": "    <p>在这里，读取文件和运行文件被刻意放在两个不同的页面。如果报告显示一个文件是 32 位 x86、里面没有什么特别的东西，<a href=\"/zh-CN/load-exe/\">加载器</a>很有机会在浏览器标签页里把它跑起来——同样无需安装，那边也不上传任何内容。</p>\n    <p><a href=\"/zh-CN/load-exe/\">运行你自己的 EXE →</a> · <a href=\"/zh-CN/open-exe-file/\">在任何平台上打开 .exe 的方法</a> · <a href=\"/zh-CN/guide/\">哪些能运行，哪些不能</a> · <a href=\"/zh-CN/\">即点即玩的游戏和应用</a></p>\n    <p class=\"muted small\">各平台指南（英文）：<a href=\"/blog/open-exe-file-on-mac/\">Mac</a> · <a href=\"/blog/run-windows-software-on-a-chromebook/\">Chromebook</a> · <a href=\"/blog/open-exe-file-on-android/\">Android</a>。如果某个程序因为缺少东西而拒绝启动，<a href=\"/blog/dll-is-missing-error/\">缺少 DLL 的错误</a>通常比看上去简单。</p>"
+      },
+      {
+        "h": "把这里的游戏放到你自己的网站上",
+        "html": "    <p>这里有十一个游戏是专门为这个网站从零写的，所以它们是我们的，可以送出去——我们也确实这么做了。任何人都可以免费放到自己的页面上：一行 HTML，不用账号，不用申请许可，除了一行署名之外不需要别的。</p>\n    <p><a class=\"cta-btn\" href=\"/embed/\" id=\"embed-pointer-cta\">看看你可以嵌入哪些游戏</a></p>"
+      }
+    ],
+    "faqHeading": "常见问题",
+    "faq": [
+      {
+        "q": "我的文件会被上传到什么地方吗？",
+        "a": "<p>不会。文件由你自己机器上运行的 JavaScript 读取，文件头在标签页里解析，结果画在页面上。没有任何东西被传输，也不会保留任何副本，因为副本从来没有被创建过。</p>"
+      },
+      {
+        "q": "这会运行那个程序吗？",
+        "a": "<p>不会。它读取文件的方式就像图书管理员看书脊一样。可执行文件里的指令一条都不会被执行，而这正是关键：你可以检查一个拿不准的东西，却不给它任何做事的机会。如果你决定确实要运行它，<a href=\"/zh-CN/load-exe/\">加载器</a>是另一个页面，也是需要你主动迈出的第二步。</p>"
+      },
+      {
+        "q": "它能告诉我一个 .exe 是不是病毒吗？",
+        "a": "<p>不能，任何只读取文件的东西都不能。它的用处在于发现一个文件架构不对、是安装程序而不是程序本身、没有签名，或者被压缩得在运行之前什么都不透露。要得到真正的安全结论，请用 <a href=\"https://www.virustotal.com/\" target=\"_blank\" rel=\"noopener\">VirusTotal</a>。</p>"
+      },
+      {
+        "q": "什么是 PE 文件？",
+        "a": "<p>Portable Executable（可移植可执行文件）是所有 Windows <code>.exe</code>、<code>.dll</code> 和 <code>.sys</code> 使用的格式。它开头是一个 1985 年遗留下来的小 MS-DOS 程序，唯一的任务就是打印 <em>This program cannot be run in DOS mode</em>；之后才是真正的文件头、一张存放代码和数据的节表、程序所需的库列表，以及一棵资源树。<a href=\"/zh-CN/blog/what-is-an-exe-file/\">更详细的解释在这里</a>。</p>"
+      },
+      {
+        "q": "为什么它说我的文件是 16 位程序或 DOS 程序？",
+        "a": "<p>因为它确实是，这也正是现代 Windows 拒绝启动它的原因。普通的 MZ 文件是实模式的 MS-DOS 程序；NE 文件则是 16 位 Windows 程序。64 位 Windows 对两者都不再支持，所以双击它们什么反应都没有——没有报错，也没有窗口。两者都仍然可以在模拟环境下运行，那是<a href=\"/blog/run-16-bit-windows-3x-software/\">另一个完整的话题</a>（英文）。</p>"
+      },
+      {
+        "q": "某个节的熵很高是什么意思？",
+        "a": "<p>熵衡量的是字节看起来有多随机，范围是 0 到 8。普通的编译代码在 6 左右。大约超过 7.2，数据就是压缩过或加密过的——对于存放 zip 或 PNG 的节来说这很正常，但如果它正是程序执行代码所在的那个节，就强烈暗示加了壳。</p>"
+      },
+      {
+        "q": "在 Mac、Chromebook 或手机上能用吗？",
+        "a": "<p>能。它是一个网页，所以只要有一个较新的浏览器就能运行。这一点在那些根本打不开 <code>.exe</code> 的机器上最有意义：Mac 或 Chromebook 没有任何内置的方法去查看 Windows 可执行文件的内部，而这个页面什么都不用安装。</p>"
+      }
+    ]
   }
 }

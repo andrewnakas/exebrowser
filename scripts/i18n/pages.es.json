@@ -49,6 +49,26 @@
       "title": "Jazz Jackrabbit (shareware)",
       "desc": "El plataformas veloz de Epic, episodio shareware."
     },
+    "/run/rise-of-the-triad/": {
+      "title": "Rise of the Triad",
+      "desc": "El otro shooter de Apogee de mediados de los 90, episodio shareware."
+    },
+    "/run/duke-nukem/": {
+      "title": "Duke Nukem (1991)",
+      "desc": "La primera aventura de Duke, de scroll lateral."
+    },
+    "/dos-emulator/": {
+      "title": "Ejecuta tu propio juego de DOS",
+      "desc": "¿Tienes la versión registrada u otro juego de DOS? Arrástralo al reproductor de DOS."
+    },
+    "/unblocked/": {
+      "title": "Juegos que no necesitan instalar nada",
+      "desc": "La lista completa de títulos que funcionan en una red restringida de colegio o trabajo (páginas en inglés)."
+    },
+    "https://macemu.com/run/marathon/?utm_source=exebrowser&utm_medium=referral": {
+      "title": "Marathon (1994), el DOOM de Mac",
+      "desc": "El shooter de Bungie, en un Mac emulado en macemu.com, nuestro sitio hermano (en inglés)."
+    },
     "/run/": {
       "title": "Todos los juegos y programas",
       "desc": "Todo lo que puedes jugar o ejecutar aquí."
@@ -85,7 +105,7 @@
     "number keys": "teclas numéricas"
   },
   "doom": {
-    "title": "Jugar DOOM Online — Gratis, En Tu Navegador, Sin Descargas — ExeBrowser",
+    "title": "Jugar DOOM en el Navegador — Gratis, Online, Sin Descargas — ExeBrowser",
     "description": "Juega al DOOM original de 1993, el episodio shareware «Knee-Deep in the Dead», online en tu navegador: sin descargas ni instalación. El DOOM clásico de DOS funcionando con DOSBox + WebAssembly.",
     "keywords": "jugar doom online, doom en el navegador, doom gratis sin descargar, doom online gratis, doom shareware online, doom clasico navegador, jugar doom sin instalar",
     "ogTitle": "Jugar DOOM Online — Gratis, En Tu Navegador, Sin Descargas",
@@ -96,7 +116,7 @@
       "kind": "good",
       "text": "Shareware gratuito y legal"
     },
-    "intro": "<p>El <strong>DOOM</strong> auténtico y original —el shooter en primera persona que id Software publicó en 1993— funcionando en una pestaña del navegador. Sin descargas, sin instalación y sin cuenta. Este es el episodio shareware de libre distribución (<em>Knee-Deep in the Dead</em>): el <code>DOOM.EXE</code> original de DOS ejecutándose con DOSBox + WebAssembly. Dale a jugar y empieza a repartir.</p>",
+    "intro": "<p>El <strong>DOOM</strong> auténtico y original —el shooter en primera persona que id Software publicó en 1993— para jugar online y gratis en tu navegador. Sin descargas, sin instalación y sin cuenta. Este es el episodio shareware de libre distribución (<em>Knee-Deep in the Dead</em>): el <code>DOOM.EXE</code> original de DOS ejecutándose en DOSBox, un emulador de DOS compilado a WebAssembly, así que DOOM funciona en el navegador como cualquier otra página. Dale a jugar y empieza a repartir.</p>",
     "sections": [
       {
         "h": "Cómo funciona y qué esperar",
@@ -115,6 +135,10 @@
       {
         "q": "¿Es el DOOM de verdad o un remake?",
         "a": "Es el ejecutable original y sin modificar. ExeBrowser no recrea el juego: ejecuta el binario de DOS auténtico de id Software dentro de DOSBox compilado a WebAssembly, dibujando el resultado en un canvas del navegador."
+      },
+      {
+        "q": "¿Es un emulador de DOOM?",
+        "a": "Sí, en el sentido útil: DOOM es el programa de DOS de 1993 sin modificar, y lo que lo ejecuta es DOSBox —un emulador de PC y de DOS— compilado a WebAssembly para que funcione en el navegador. Por eso se juega exactamente como el original y no como un port, y por eso no hace falta instalar nada."
       },
       {
         "q": "¿Cuáles son los controles de DOOM en el navegador?",
@@ -199,6 +223,119 @@
       "heading": "Consigue el shareware de DOOM (gratis y legal)",
       "html": "<h3 style=\"margin-top:0;\">El shareware oficial de id Software</h3><p>El primer episodio completo, sin modificar, distribuido sin coste tal y como permite la licencia shareware. La fuente más fiable es la copia preservada en Internet Archive:</p><p><a class=\"cta-btn\" href=\"https://archive.org/details/DOOM_95\" target=\"_blank\" rel=\"noopener\">Descargar el shareware de DOOM (Internet Archive) →</a></p><p class=\"muted small\">Busca la versión de DOS (<code>DOOM.EXE</code> + <code>DOOM1.WAD</code>). No te hace falta para jugar aquí —esta página ya ejecuta el episodio shareware—, pero es la copia que conviene guardar si lo quieres en tu propio ordenador. © id Software: el episodio shareware puede redistribuirse libremente, sin modificar y sin coste. Los episodios registrados y Doom II son comerciales y <strong>no</strong> se incluyen; cómpralos en <a href=\"https://store.steampowered.com/app/2280/DOOM__DOOM_II/\" target=\"_blank\" rel=\"noopener\">id / Steam</a>.</p>"
     }
+  },
+  "duke-nukem-3d": {
+    "title": "Jugar Duke Nukem 3D Online — Shareware Gratis, En Tu Navegador — ExeBrowser",
+    "description": "Juega gratis a Duke Nukem 3D en tu navegador: el episodio shareware oficial de Apogee, L.A. Meltdown. Sin descargas, funciona con DOSBox + WebAssembly.",
+    "keywords": "duke nukem 3d online, jugar duke nukem 3d en el navegador, duke nukem 3d shareware, duke 3d gratis, duke nukem 3d sin descargar, motor build navegador",
+    "ogTitle": "Jugar Duke Nukem 3D Online — Episodio Shareware Gratis",
+    "ogDescription": "El shooter de 3D Realms de 1996 en tu navegador: el episodio shareware L.A. Meltdown, sin descargas ni instalación.",
+    "crumb": "Jugar Duke Nukem 3D",
+    "h1": "Juega a Duke Nukem 3D online: el episodio shareware gratuito",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona: el episodio shareware 1 se ejecuta con DOSBox en tu navegador"
+    },
+    "intro": "<p><strong>Duke Nukem 3D</strong>: el shooter de 3D Realms de 1996 con motor Build, el de los cerdos policía, los escenarios en los que todo es interactivo y las frases lapidarias. El <strong>episodio shareware, <em>L.A. Meltdown</em></strong>, está alojado aquí tal y como lo publicó 3D Realms: dale a jugar y arranca en tu navegador. Si lo dejas en la pantalla de título, reproduce su propia demo; pulsa <kbd>Esc</kbd> para abrir el menú y elige <em>New Game</em>.</p>",
+    "sections": [
+      {
+        "h": "Cómo funciona y qué esperar",
+        "html": "<p>Es la versión original de DOS (1.3D) ejecutándose en una compilación de DOSBox para WebAssembly, configurada para darle toda la CPU que tenga tu dispositivo. En un portátil o un ordenador de sobremesa recientes va fluido; en un móvil o en un Chromebook antiguo irá a tirones, porque se emula cada instrucción de un juego que pedía un 486 rápido. El paquete ocupa menos de 6&nbsp;MB y se guarda en caché tras la primera carga.</p>"
+      },
+      {
+        "h": "Consejos para jugar",
+        "html": "<p>Las llaves abren puertas y los lectores de tarjetas de colores; los niveles shareware las esconden tras rejillas de ventilación que puedes abrir a patadas o a tiros. Mantén <kbd>Shift</kbd> para correr, que es lo que querrás casi todo el tiempo. El jetpack y los esteroides del inventario se seleccionan con <kbd>[</kbd> y <kbd>]</kbd> y se usan con <kbd>Enter</kbd>. Los espejos, los váteres y las máquinas recreativas reaccionan: eso es el juego, no un error.</p>"
+      },
+      {
+        "h": "El episodio shareware y el juego completo",
+        "html": "<p>El episodio 1 es el episodio shareware, y su licencia permite que las webs gratuitas lo ofrezcan, siempre que todos sus archivos se distribuyan sin modificar, como ocurre aquí. Los episodios 2 y 3 (y el cuarto de la posterior Atomic Edition) eran la versión comercial y no están incluidos; el juego completo se sigue vendiendo.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Es legal jugar aquí a Duke Nukem 3D?",
+        "a": "Sí. Es el episodio shareware oficial, cuya licencia permite expresamente que las webs gratuitas lo pongan a disposición del público. Los episodios comerciales no están alojados."
+      },
+      {
+        "q": "¿Cuáles son los controles?",
+        "a": "Las flechas te mueven, Ctrl dispara, Espacio abre puertas y activa interruptores, A salta, Z te agacha, Shift corre y Tab muestra el mapa. La tabla completa está debajo del juego."
+      },
+      {
+        "q": "¿Por qué va lento en mi móvil?",
+        "a": "Duke 3D pedía un 486 rápido en 1996, y aquí cada una de sus instrucciones se emula en tu navegador. Un ordenador de sobremesa o un portátil recientes lo mueven sin problema; un móvil o un Chromebook económico perderán fotogramas."
+      },
+      {
+        "q": "¿Se guarda mi progreso?",
+        "a": "Sí: las partidas guardadas se conservan en este navegador entre visitas, en la medida de lo posible. Guarda desde el propio menú del juego con F2."
+      },
+      {
+        "q": "¿Puedo jugar aquí al juego completo?",
+        "a": "Solo está alojado el episodio shareware. Si tienes la versión de DOS, arrastra su carpeta a la página del emulador de DOS y funcionará igual."
+      }
+    ],
+    "controls": [
+      {
+        "action": "Moverse / girar",
+        "keyboard": "<kbd>Flechas</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "Disparar",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Abrir / usar",
+        "keyboard": "<kbd>Espacio</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "Saltar",
+        "keyboard": "<kbd>A</kbd>",
+        "mouse": "—"
+      },
+      {
+        "action": "Agacharse",
+        "keyboard": "Z",
+        "mouse": "—"
+      },
+      {
+        "action": "Correr",
+        "keyboard": "mantén <kbd>Shift</kbd> (<kbd>Bloq Mayús</kbd> lo alterna)",
+        "mouse": "—"
+      },
+      {
+        "action": "Desplazarse de lado",
+        "keyboard": "<kbd>Alt</kbd> + flechas",
+        "mouse": "—"
+      },
+      {
+        "action": "Inventario",
+        "keyboard": "<kbd>[</kbd> y <kbd>]</kbd> para elegir, <kbd>Enter</kbd> para usar",
+        "mouse": "—"
+      },
+      {
+        "action": "Mapa",
+        "keyboard": "Tab",
+        "mouse": "—"
+      },
+      {
+        "action": "Menú / guardar / cargar",
+        "keyboard": "Esc · F2 · F3",
+        "mouse": "—"
+      },
+      {
+        "action": "Sonido",
+        "keyboard": "—",
+        "mouse": "Usa el botón Sonido que hay bajo la pantalla para silenciar"
+      }
+    ],
+    "mobileHint": "Cruceta: moverse/girar · FIRE: disparar · OPEN: abrir/usar · JUMP: saltar · RUN: correr",
+    "download": {
+      "heading": "Consigue el juego completo",
+      "html": "<div class=\"download-box\"><p><strong>El episodio shareware se juega aquí gratis.</strong> El resto de Duke Nukem 3D era la versión comercial, y se sigue vendiendo:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Duke+Nukem+3D\" target=\"_blank\" rel=\"noopener\">Buscar Duke Nukem 3D en Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Duke+Nukem+3D\" target=\"_blank\" rel=\"noopener\">Buscarlo en GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">El episodio 1 de Duke Nukem 3D es el episodio shareware de 3D Realms, alojado conforme a la autorización que su licencia concede a las webs gratuitas, con todos los archivos originales sin modificar. Los episodios comerciales no están alojados. Procedencia: <a href=\"/apps/duke-nukem-3d/NOTICE.md\">/apps/duke-nukem-3d/NOTICE.md</a>.</p>"
   },
   "wolfenstein-3d": {
     "title": "Jugar Wolfenstein 3D Online — Shareware Gratis, En Tu Navegador — ExeBrowser",
@@ -441,5 +578,69 @@
     },
     "licenseReason": "Los datos de juego de Freedoom se publican bajo una licencia BSD modificada que permite expresamente la libre redistribución, así que podemos alojarlos; se combinan con un motor de DOOM de código abierto bajo licencia GPL.",
     "fullyFree": "Recursos con licencia BSD del proyecto Freedoom; funciona sobre el motor de DOOM shareware, de libre redistribución."
+  },
+  "parkhaven": {
+    "title": "Parkhaven — Juego gratis de parque temático con creador de montañas rusas",
+    "description": "Construye un parque temático en tu navegador: traza caminos, coloca atracciones, diseña tu propia montaña rusa pieza a pieza y mantén contentos a miles de visitantes. Gratis y original.",
+    "keywords": "juego de parque temático online, crear montaña rusa en el navegador, construir un parque temático gratis, juego para diseñar montañas rusas, simulador de parque de atracciones sin descargar, juego de gestión de parques",
+    "ogTitle": "Parkhaven — construye un parque temático y diseña montañas rusas, gratis",
+    "ogDescription": "Caminos, atracciones, puestos, personal y un creador de montañas rusas pieza a pieza con valoraciones reales de cada atracción. Funciona en tu navegador.",
+    "crumb": "Jugar a Parkhaven",
+    "h1": "Juega a Parkhaven — un simulador de parque temático gratis",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Juega ya — nativo, sin emulador"
+    },
+    "fullyFree": "Escrito desde cero para ExeBrowser: código, modelos 3D y sonido originales, con licencia MIT. No hace falta ningún archivo del juego original."
+  },
+  "space-cadet-open": {
+    "title": "Jugar 3D Pinball Space Cadet online — el pinball de Windows XP gratis",
+    "description": "Juega a 3D Pinball Space Cadet en tu navegador: gratis, al instante, sin descargas y sin archivos de Windows. Versión de código abierto en WebAssembly.",
+    "keywords": "3d pinball space cadet online, jugar space cadet pinball online gratis, space cadet pinball sin descargar, pinball de windows xp online, space cadet pinball en el navegador, space cadet pinball sin archivos de microsoft, jugar 3d pinball gratis, pinball de windows online, space cadet pinball chromebook, space cadet pinball desbloqueado, space cadet pinball código abierto, space cadet pinball webassembly",
+    "ogTitle": "Jugar 3D Pinball Space Cadet online gratis — sin descargas ni archivos de Windows",
+    "ogDescription": "El clásico pinball de Windows XP en tu navegador: gratis, al instante y sin descargas. Versión de código abierto en WebAssembly. Funciona en cualquier dispositivo, incluidos Mac, Chromebook y Linux.",
+    "crumb": "Jugar a Space Cadet Pinball",
+    "h1": "Juega a 3D Pinball Space Cadet online: gratis, al instante y sin descargas",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona · no necesita archivos"
+    },
+    "intro": "",
+    "sections": [],
+    "faq": [],
+    "controls": [
+      {
+        "action": "Lanzar la bola",
+        "keyboard": "mantén pulsada y suelta Espacio",
+        "mouse": "—"
+      },
+      {
+        "action": "Flipper izquierdo",
+        "keyboard": "Z",
+        "mouse": "Clic izquierdo"
+      },
+      {
+        "action": "Flipper derecho",
+        "keyboard": "/ (barra)",
+        "mouse": "Clic derecho"
+      },
+      {
+        "action": "Partida nueva",
+        "keyboard": "F2",
+        "mouse": "—"
+      },
+      {
+        "action": "Pausa",
+        "keyboard": "F3",
+        "mouse": "—"
+      },
+      {
+        "action": "Liberar el ratón",
+        "keyboard": "Esc",
+        "mouse": "—"
+      }
+    ],
+    "mobileHint": "En el móvil, usa los botones FLIP / LANZAR que hay bajo la mesa.",
+    "fullyFree": "Motor con licencia MIT y arte, sonido y datos de la mesa totalmente originales, de dominio público (CC0)."
   }
 }
