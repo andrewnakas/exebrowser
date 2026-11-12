@@ -1272,9 +1272,15 @@
   </url>
   <url>
     <loc>https://exebrowser.com/blog/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exebrowser.com/blog/open-exe-file-on-android/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://exebrowser.com/blog/check-if-an-exe-is-safe/</loc>
@@ -1284,12 +1290,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/blog/dll-is-missing-error/</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/blog/open-exe-file-on-android/</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
