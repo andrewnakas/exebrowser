@@ -4,7 +4,7 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-146 titles are hosted and playable instantly. Everything hosted here is
+171 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
@@ -156,6 +156,31 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Four in a Row](https://exebrowser.com/run/four-in-a-row/): Drop discs, line up four across, down or diagonally, and beat a computer that searches up to eight moves ahead.
 - [Backgammon](https://exebrowser.com/run/backgammon/): The two-thousand-year-old race game, with hits, the bar and gammons, against a computer opponent. Free, instant.
 - [NetHack](https://exebrowser.com/run/nethack/): The official NetHack source compiled to WebAssembly. Pick a role, descend, save with S and come back later.
+- [Shadow Warrior](https://exebrowser.com/run/shadow-warrior/): 3D Realms' 1997 shooter — katana, shurikens and sticky bombs — in a browser tab.
+- [Descent](https://exebrowser.com/run/descent/): Fly a ship through mine tunnels in any direction: Parallax's 1995 classic, shareware version.
+- [Epic Pinball](https://exebrowser.com/run/epic-pinball/): The 1993 DOS pinball hit from Epic MegaGames — the shareware Android table, in your browser.
+- [Death Rally](https://exebrowser.com/run/death-rally/): Remedy's first game: top-down racing with machine guns, mines and a shady upgrade shop.
+- [Jill of the Jungle](https://exebrowser.com/run/jill-of-the-jungle/): The 1992 platformer that put Epic MegaGames on the map — episode one, in your browser.
+- [Terminal Velocity](https://exebrowser.com/run/terminal-velocity/): Fast arcade flying over textured 3D planets — the 1995 shareware episode, in your browser.
+- [Liero](https://exebrowser.com/run/liero/): Two worms, forty weapons, one keyboard: the freeware classic Liero, in your browser.
+- [Major Stryker](https://exebrowser.com/run/major-stryker/): Apogee's 1993 vertical shooter, freeware since 2006 — all three episodes in your browser.
+- [Stargunner](https://exebrowser.com/run/stargunner/): Apogee's last DOS shoot 'em up: rendered sprites, a weapon shop and a lot of bullets.
+- [Secret Agent](https://exebrowser.com/run/secret-agent/): Agent 006½ against the Diabolical Villain Society — Apogee's 1992 platformer, episode one.
+- [Realms of Chaos](https://exebrowser.com/run/realms-of-chaos/): Warrior or sorceress, swapped at a keypress: Apogee's 1995 VGA platformer, episode one.
+- [Mystic Towers](https://exebrowser.com/run/mystic-towers/): An elderly wizard, twelve towers and a lot of monsters: Apogee's isometric adventure, shareware.
+- [Traffic Department 2192](https://exebrowser.com/run/traffic-department-2192/): A top-down shooter with a script as long as its mission list — episode one, in your browser.
+- [Cyberdogs](https://exebrowser.com/run/cyberdogs/): Top-down missions, a gun shop and two-player co-op on one keyboard: the freeware Cyberdogs.
+- [Xenophage: Alien Bloodsport](https://exebrowser.com/run/xenophage/): Screen-filling aliens trading blows: Apogee's 1995 fighting game, shareware version.
+- [Boppin'](https://exebrowser.com/run/boppin/): Throw blocks, match patterns, rescue the villains: the oddest puzzle game Apogee published.
+- [Paganitzu](https://exebrowser.com/run/paganitzu/): Push boulders, dodge snakes, collect keys: Alabama Smith's 1991 temple puzzler, part one.
+- [Dark Ages](https://exebrowser.com/run/dark-ages/): A prince, a stolen throne and AdLib music: Apogee's 1991 platformer, freeware in full.
+- [Math Rescue](https://exebrowser.com/run/math-rescue/): The Gruzzles stole the numbers. Solve sums to get them back — the 1992 classroom platformer.
+- [Word Rescue](https://exebrowser.com/run/word-rescue/): The Gruzzles stole the words. Match each one to its picture — the 1992 classroom platformer.
+- [2048](https://exebrowser.com/run/2048/): The original 2048 by Gabriele Cirulli — slide, merge, reach the 2048 tile.
+- [Hextris](https://exebrowser.com/run/hextris/): Rotate the hexagon, match the colours, keep up as it gets faster: the open-source Hextris.
+- [Zork I](https://exebrowser.com/run/zork-1/): You are standing in an open field west of a white house, with a boarded front door — and under that house lie the ruins of a vast underground empire, full of treasure and guarded by a thief, a troll and the dark.
+- [Zork II](https://exebrowser.com/run/zork-2/): It picks up where the first game ends, deeper in the Great Underground Empire, where a senile but dangerous wizard appears at random to cast spells on you.
+- [Zork III](https://exebrowser.com/run/zork-3/): The last of the trilogy is quieter and stranger than the first two: fewer treasures, more consequences, and a score that rewards what you choose to do rather than what you collect.
 
 ## Compatibility guides (bring your own copy)
 

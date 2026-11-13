@@ -40,13 +40,13 @@
       "name": "Shooters",
       "title": "Play Classic DOS Shooters Online Free — DOOM, Wolfenstein & More — ExeBrowser",
       "h1": "Classic shooters, playable in your browser",
-      "description": "Eight DOS-era shooters running free in your browser — DOOM, Wolfenstein 3D, Blake Stone, Raptor, Tyrian and more. No download, no install, no account.",
+      "description": "DOS-era shooters running free in your browser — DOOM, Wolfenstein 3D, Shadow Warrior, Descent, Raptor, Tyrian and more. No download, no install, no account.",
       "keywords": "play dos shooters online, doom in browser, wolfenstein 3d online, classic fps browser, shareware shooters",
       "intro": "<p>Between 1992 and 1995, one genre paid for the entire shareware business model. id Software gave away the first episode of <em>Wolfenstein 3D</em> and then <em>DOOM</em>, Apogee did the same with <em>Blake Stone</em>, and the calculation was that a first-person shooter is the hardest kind of game to describe and the easiest to be sold by. It worked well enough that the free episodes are still legally free thirty years later, which is why most of this page exists.</p><p>Two of these are not shareware at all. <strong>Freedoom</strong> is a from-scratch replacement for DOOM's data files under a BSD licence, so the whole thing — engine and content — is free. <strong>Tyrian 2000</strong> was released as freeware by its own authors, all of it, no episode split.</p>",
       "sections": [
         {
           "h": "What runs, and how",
-          "html": "<p>Every shooter here is the original DOS binary running under DOSBox compiled to WebAssembly — not a remake, not a source port with modern textures. What you get is what shipped on the disk, at the resolution it shipped at.</p><p>That has one practical consequence worth knowing before you click. <strong>DOOM and Freedoom have working mouse look</strong>; we verified it against the games' own configuration and shipped a <code>DEFAULT.CFG</code> that enables it, because vanilla DOOM ships with <code>use_mouse 0</code> and would otherwise ignore the mouse entirely. The rest are keyboard games, and the pages say so. Blake Stone's menus in particular are keyboard-only by design — that is the game, not the emulator.</p>"
+          "html": "<p>Every shooter here is the original DOS binary running under DOSBox compiled to WebAssembly — not a remake, not a source port with modern textures. What you get is what shipped on the disk, at the resolution it shipped at.</p><p>That has one practical consequence worth knowing before you click. <strong>DOOM and Freedoom have working mouse look</strong>; we verified it against the games' own configuration and shipped a <code>DEFAULT.CFG</code> that enables it, because vanilla DOOM ships with <code>use_mouse 0</code> and would otherwise ignore the mouse entirely. The rest are keyboard games, and the pages say so. Blake Stone's menus in particular are keyboard-only by design — that is the game, not the emulator.</p><p>The later additions push the emulator harder. <strong>Shadow Warrior</strong>, <strong>Descent</strong> and <strong>Terminal Velocity</strong> were built for a fast 486 or a Pentium, so they want a reasonably recent laptop; the scrolling shooters — <strong>Major Stryker</strong>, <strong>Stargunner</strong>, <strong>Raptor</strong> — run on anything.</p>"
         },
         {
           "h": "Shareware, honestly",
@@ -58,14 +58,16 @@
         { "slug": "freedoom", "note": "If the licensing question bothers you, play this instead: same engine, entirely free replacement art and levels, and a genuinely good game in its own right rather than a curiosity." },
         { "slug": "blake-stone", "note": "Apogee's answer to Wolfenstein, with an interesting wrinkle — it has informants you can choose not to shoot, which was novel in 1993. Menus are keyboard-driven." },
         { "slug": "tyrian", "note": "Not a first-person shooter at all but the best-looking game on this page: a vertical scroller with a genuine ship-upgrade economy, released as freeware in full by its authors." },
-        { "slug": "raptor", "note": "The other Apogee scroller, and the one that most rewards spending money in its between-mission shop rather than hoarding it." }
+        { "slug": "raptor", "note": "The other Apogee scroller, and the one that most rewards spending money in its between-mission shop rather than hoarding it." },
+        { "slug": "shadow-warrior", "note": "The last and most elaborate of the Build-engine shareware episodes: four levels, a katana, and sticky bombs. Sound is set up already; the humour has aged the way you would expect." },
+        { "slug": "descent", "note": "The shooter that removed the floor. Seven shareware levels of flying a ship through mine tunnels in any direction, and the automap on Tab is not optional." }
       ],
       "faq": [
         { "q": "Is playing DOOM here legal?", "a": "Yes. What is hosted is the shareware episode id Software released for free distribution, which has never been withdrawn. The commercial episodes are not here and are not linked." },
         { "q": "Why does the mouse not work in some of these?", "a": "Because it did not work in the original either. Most DOS shooters other than DOOM shipped with mouse support off or absent. Where a game offers no way to enable it, a click sends that game's fire key instead, so clicking still does the obvious thing." },
         { "q": "Do my saves survive closing the tab?", "a": "Yes, for the games that have their own save system — saves are written to browser storage and restored the next time you open the page. Fifteen of the DOS titles on the site also support resuming mid-level, not just from their own save menus." }
       ],
-      "updated": "2026-08-17"
+      "updated": "2026-11-13"
     },
 
     {
@@ -74,13 +76,13 @@
       "name": "Platformers",
       "title": "Play Classic DOS Platformers Online Free — Commander Keen & More — ExeBrowser",
       "h1": "Side-scrolling platformers, playable in your browser",
-      "description": "Ten DOS platformers running free in your browser — Commander Keen, Cosmo, Crystal Caves, Xargon, Monster Bash, Bio Menace and more. Instant, no download.",
+      "description": "DOS platformers running free in your browser — Commander Keen, Jill of the Jungle, Cosmo, Crystal Caves, Xargon, Bio Menace and more. Instant, no download.",
       "keywords": "play dos platformers online, commander keen browser, apogee games online, classic pc platformers free",
-      "intro": "<p>American PC platformers of the early nineties have a specific texture, and it comes from a technical problem. Consoles had hardware scrolling; PCs did not, and EGA cards actively fought anyone who tried. John Carmack's adaptive tile refresh — written for <em>Commander Keen</em> in 1990 — is the trick that made smooth side-scrolling possible on a PC at all, and almost everything on this page descends from the studios that followed once he had proved it could be done.</p><p>Seven of the ten are Apogee titles, which is less a curatorial choice than a licensing one: Apogee and 3D Realms have been unusually willing to let their catalogue stay free.</p>",
+      "intro": "<p>American PC platformers of the early nineties have a specific texture, and it comes from a technical problem. Consoles had hardware scrolling; PCs did not, and EGA cards actively fought anyone who tried. John Carmack's adaptive tile refresh — written for <em>Commander Keen</em> in 1990 — is the trick that made smooth side-scrolling possible on a PC at all, and almost everything on this page descends from the studios that followed once he had proved it could be done.</p><p>Most of them are Apogee titles, which is less a curatorial choice than a licensing one: Apogee and 3D Realms have been unusually willing to let their catalogue stay free.</p>",
       "sections": [
         {
           "h": "Free in full, versus free first episode",
-          "html": "<p>The split matters more here than in any other category. <strong>Bio Menace</strong>, <strong>Alien Carnage</strong>, <strong>Xargon</strong> and <strong>Jetpack</strong> were released as complete freeware by their rights holders — all episodes, nothing withheld. <strong>Commander Keen</strong>, <strong>Cosmo's Cosmic Adventure</strong>, <strong>Crystal Caves</strong>, <strong>Monster Bash</strong> and <strong>Hocus Pocus</strong> are the free first episode of a larger shareware game.</p><p>Both kinds are labelled on their own pages, and the fully-free ones carry a FREE badge in every listing on the site.</p>"
+          "html": "<p>The split matters more here than in any other category. <strong>Bio Menace</strong>, <strong>Alien Carnage</strong>, <strong>Xargon</strong> and <strong>Jetpack</strong> were released as complete freeware by their rights holders — all episodes, nothing withheld. <strong>Commander Keen</strong>, <strong>Cosmo's Cosmic Adventure</strong>, <strong>Crystal Caves</strong>, <strong>Monster Bash</strong> and <strong>Hocus Pocus</strong> are the free first episode of a larger shareware game, as are the newer arrivals <strong>Jill of the Jungle</strong>, <strong>Secret Agent</strong> and <strong>Realms of Chaos</strong>. <strong>Dark Ages</strong> joins the free-in-full group: Apogee released all three volumes as freeware in 2009.</p><p>Both kinds are labelled on their own pages, and the fully-free ones carry a FREE badge in every listing on the site.</p>"
         },
         {
           "h": "Two games that look broken and are not",
@@ -92,14 +94,15 @@
         { "slug": "cosmo", "note": "Apogee at its most charming — Cosmo's suction-cup hands stick to walls, which turns every level into a climbing puzzle rather than a jumping one." },
         { "slug": "bio-menace", "note": "Free in full, all three episodes, and considerably meaner than its Keen-adjacent art style prepares you for." },
         { "slug": "monster-bash", "note": "Underrated: a horror-comedy platformer with genuinely good animation, from the period when Apogee had money to spend on artists." },
-        { "slug": "jetpack", "note": "The odd one out, and closer to a puzzle game than a platformer. Adept Software released it free, including its level editor." }
+        { "slug": "jetpack", "note": "The odd one out, and closer to a puzzle game than a platformer. Adept Software released it free, including its level editor." },
+        { "slug": "jill-of-the-jungle", "note": "Epic MegaGames answering Keen in 1992, with 256 colours and Sound Blaster music. Press Enter at the setup screen it opens on; the knife comes back when you throw it." }
       ],
       "faq": [
         { "q": "Do these need a keyboard?", "a": "On a computer, yes — they are keyboard games and the arrow keys plus one or two action keys cover everything. On a phone or tablet each page shows an on-screen pad matched to that specific game's controls." },
         { "q": "Why is Commander Keen only one episode?", "a": "Because only the first episode was ever free. Marooned on Mars was the shareware release; the other two episodes were sold, and still are. The page says which one you are getting." },
         { "q": "Are these emulated or rewritten?", "a": "Emulated. These are the original DOS executables running under DOSBox in WebAssembly, so the game logic and the artwork are exactly what shipped." }
       ],
-      "updated": "2026-08-17"
+      "updated": "2026-11-13"
     },
 
     {

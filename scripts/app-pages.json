@@ -23655,5 +23655,4206 @@
     "addedDate": "2026-10-23",
     "rank": 11.5,
     "screenshot": true
+  },
+  {
+    "slug": "shadow-warrior",
+    "provenance": "shareware",
+    "title": "Shadow Warrior Unblocked — Play the 1997 Shareware Online",
+    "description": "Play Shadow Warrior (1997) free in your browser: the official shareware episode of 3D Realms' Build-engine shooter. No download, runs via DOSBox + WebAssembly.",
+    "keywords": "shadow warrior unblocked, shadow warrior online, play shadow warrior in browser, shadow warrior 1997 shareware, build engine shooter online, shadow warrior dos",
+    "ogTitle": "Shadow Warrior Unblocked — Play the 1997 Shareware Online",
+    "ogDescription": "3D Realms' 1997 shooter — katana, shurikens and sticky bombs — in a browser tab.",
+    "crumb": "Play Shadow Warrior",
+    "h1": "Play Shadow Warrior online — the 1997 shareware episode",
+    "appName": "Shadow Warrior",
+    "appType": "game",
+    "author": "3D Realms Entertainment",
+    "genre": [
+      "Shooter",
+      "First-person shooter"
+    ],
+    "categories": [
+      "Shooters"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/shadow-warrior/shadow-warrior.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Shadow Warrior</strong> is 3D Realms' 1997 first-person shooter, built on the same Build engine as Duke Nukem 3D and pushed further: rooms over rooms, drivable vehicles, a katana and sticky bombs. The official <strong>shareware episode</strong> (version 1.2, four levels) is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>This is the original DOS shareware release running inside a WebAssembly build of DOSBox. The package is about 13&nbsp;MB, so allow a few seconds on the first load; after that your browser keeps it. Sound Blaster sound and music are already configured.</p><p>Shadow Warrior is the heaviest Build-engine game on this site. A recent laptop or desktop runs it smoothly at its native 320×200; older Chromebooks and phones will drop frames in the larger outdoor areas.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The keys are the Build-engine set you may know from Duke Nukem 3D: arrow keys to move and turn, <kbd>Ctrl</kbd> to fire, <kbd>Space</kbd> to open doors and use switches, <kbd>A</kbd> to jump and <kbd>Z</kbd> to crouch. Number keys pick weapons; the katana on <kbd>1</kbd> never runs out. Every key can be changed under Options in the game's menu.</p><p>A warning that was on the box in 1997 too: this is a violent game with crude humour and stereotypes of its time. It is not one for young players.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>What runs here is the shareware episode 3D Realms released for free distribution, under the LICENSE.TXT included in the package. That licence covers this episode only; the registered game with its remaining levels is not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Shadow Warrior here?",
+        "a": "Yes. This is the official shareware episode, which 3D Realms licensed for free distribution in the LICENSE.TXT that ships inside the package. The registered game is not hosted."
+      },
+      {
+        "q": "How much of the game is included?",
+        "a": "The shareware episode: four levels, with the katana, shurikens, riot gun, Uzis and sticky bombs. The full game's second episode is not part of the shareware release."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. Saves made from the game's own menu are kept in this browser and restored on your next visit. Clearing site data removes them."
+      },
+      {
+        "q": "Will it run on a school Chromebook?",
+        "a": "It loads without installing anything, which is what usually matters on a managed device. Speed depends on the machine: recent Chromebooks cope, low-end ones will be choppy."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/duke-nukem-3d/",
+        "title": "Duke Nukem 3D",
+        "desc": "Apogee's shooter, shareware episode."
+      },
+      {
+        "href": "/run/doom/",
+        "title": "DOOM",
+        "desc": "The 1993 original's shareware episode, playable in your browser."
+      },
+      {
+        "href": "/run/rise-of-the-triad/",
+        "title": "Rise of the Triad",
+        "desc": "Apogee's 1994 shooter: The HUNT Begins, shareware."
+      },
+      {
+        "href": "/run/descent/",
+        "title": "Descent",
+        "desc": "The 1995 six-degrees-of-freedom shooter, shareware levels."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 5.6,
+    "mobileControls": {
+      "type": "fps-dos",
+      "hint": "D-pad: move/turn · FIRE: shoot · OPEN: doors/switches · MENU: esc",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "OPEN",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "RUN",
+          "dosKey": 340,
+          "cls": ""
+        },
+        {
+          "label": "STRAFE",
+          "dosKey": 342,
+          "cls": ""
+        },
+        {
+          "label": "MAP",
+          "dosKey": 258,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "MENU",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "clickKey": 341,
+    "controls": [
+      {
+        "action": "Move / turn",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Open / use",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "A",
+        "mouse": "—"
+      },
+      {
+        "action": "Crouch",
+        "keyboard": "Z",
+        "mouse": "—"
+      },
+      {
+        "action": "Run",
+        "keyboard": "hold Shift",
+        "mouse": "—"
+      },
+      {
+        "action": "Strafe",
+        "keyboard": "Alt + arrows",
+        "mouse": "—"
+      },
+      {
+        "action": "Weapons 1–0",
+        "keyboard": "number keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Map",
+        "keyboard": "Tab",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Shadow Warrior was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">Find Shadow Warrior on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Shadow Warrior shareware is freely distributable under the LICENSE.TXT included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/shadow-warrior/NOTICE.md\">/apps/shadow-warrior/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Shadow Warrior is freely distributable under the LICENSE.TXT included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "descent",
+    "provenance": "shareware",
+    "title": "Descent Unblocked — Play the 1995 Shareware Online Free",
+    "description": "Play Descent (1995) free in your browser: the official shareware version of Parallax's six-degrees-of-freedom shooter, seven mine levels. No download needed.",
+    "keywords": "descent unblocked, descent online, play descent in browser, descent 1995 shareware, descent dos game online, six degrees of freedom shooter",
+    "ogTitle": "Descent Unblocked — Play the 1995 Shareware Online Free",
+    "ogDescription": "Fly a ship through mine tunnels in any direction: Parallax's 1995 classic, shareware version.",
+    "crumb": "Play Descent",
+    "h1": "Play Descent online — the 1995 shareware version",
+    "appName": "Descent",
+    "appType": "game",
+    "author": "Parallax Software / Interplay Productions",
+    "genre": [
+      "Shooter",
+      "Six degrees of freedom"
+    ],
+    "categories": [
+      "Shooters"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/descent/descent.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware version runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Descent</strong> is the 1995 shooter from Parallax Software that put you in a ship inside a mine and let you fly in every direction: up, down, sideways and upside down. The official <strong>shareware version</strong> (1.4, the first seven levels) is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. The package is under 3&nbsp;MB and starts in a few seconds. The game asks for a pilot name first; type anything and press <kbd>Enter</kbd>.</p><p>Descent was a demanding game in 1995 and it still asks more of the emulator than a 2D title. A laptop or desktop from the last several years plays it smoothly.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Your ship moves on six axes, which takes a few minutes to get used to. With the default keyboard layout <kbd>A</kbd> and <kbd>Z</kbd> thrust forward and back, the arrow keys turn and pitch, <kbd>Ctrl</kbd> fires lasers and <kbd>Space</kbd> fires missiles. <kbd>Tab</kbd> opens the 3D automap, which you will need. Each level ends the same way: destroy the reactor, then find the exit before the mine blows.</p><p>All keys can be remapped under Options → Customize.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>The game's own README says it best: “This game may be freely distributed.” That applies to this shareware version with its seven levels. The registered game has 30 levels and is not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Descent here?",
+        "a": "Yes. This is the shareware version, whose README states that it may be freely distributed. The registered 30-level game is not hosted."
+      },
+      {
+        "q": "How many levels are included?",
+        "a": "Seven: the complete shareware release, version 1.4."
+      },
+      {
+        "q": "Can I use a mouse or joystick?",
+        "a": "The keyboard works out of the box and is how most people played the shareware. Mouse control can be switched on in the game's Options menu, but a browser tab does not pass a joystick through to DOS."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. Your pilot and saved games are kept in this browser and restored on the next visit."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/doom/",
+        "title": "DOOM",
+        "desc": "The 1993 original's shareware episode, playable in your browser."
+      },
+      {
+        "href": "/run/terminal-velocity/",
+        "title": "Terminal Velocity",
+        "desc": "The 1995 arcade flight shooter from 3D Realms, shareware."
+      },
+      {
+        "href": "/run/shadow-warrior/",
+        "title": "Shadow Warrior",
+        "desc": "3D Realms' 1997 Build-engine shooter, shareware episode."
+      },
+      {
+        "href": "/run/tyrian/",
+        "title": "Tyrian 2000",
+        "desc": "The freeware vertical shooter, all five episodes."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 5.7,
+    "mobileControls": {
+      "type": "fps-dos",
+      "hint": "D-pad: turn/pitch · FWD / BACK: thrust · FIRE: lasers · MISSILE: secondary",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FWD",
+          "dosKey": 65,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "BACK",
+          "dosKey": 90,
+          "cls": ""
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "MISSILE",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "MAP",
+          "dosKey": 258,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "MENU",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Turn / pitch",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Thrust forward / back",
+        "keyboard": "A / Z",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire lasers",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire missiles",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Slide",
+        "keyboard": "Alt + arrows",
+        "mouse": "—"
+      },
+      {
+        "action": "Automap",
+        "keyboard": "Tab",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Descent was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Descent\" target=\"_blank\" rel=\"noopener\">Find Descent on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Descent\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Descent shareware is freely distributable under the README.TXT included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/descent/NOTICE.md\">/apps/descent/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Descent is freely distributable under the README.TXT included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "epic-pinball",
+    "provenance": "shareware",
+    "title": "Epic Pinball Online — Play the 1993 Shareware Table Free",
+    "description": "Play Epic Pinball (1993) free in your browser: the official shareware release with the Android table. Fast DOS pinball, no download, works on school laptops.",
+    "keywords": "epic pinball online, epic pinball unblocked, play epic pinball in browser, pinball unblocked, dos pinball game online, epic megagames pinball",
+    "ogTitle": "Epic Pinball Online — Play the 1993 Shareware Table Free",
+    "ogDescription": "The 1993 DOS pinball hit from Epic MegaGames — the shareware Android table, in your browser.",
+    "crumb": "Play Epic Pinball",
+    "h1": "Play Epic Pinball online — the shareware table",
+    "appName": "Epic Pinball",
+    "appType": "game",
+    "author": "Digital Extremes / Epic MegaGames",
+    "genre": [
+      "Pinball"
+    ],
+    "categories": [
+      "Pinball"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/epic-pinball/epic-pinball.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware table runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Epic Pinball</strong> is the 1993 pinball game written by James Schmalz and published by Epic MegaGames: smooth scrolling tables, digital music and a ball that actually feels heavy. The official <strong>shareware release</strong>, with its Android table, is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware package runs inside a WebAssembly build of DOSBox. It is well under 1&nbsp;MB, so it loads almost at once. The first screens are Epic's intro and a menu; press <kbd>Enter</kbd> to reach the table.</p><p>Epic Pinball was written in assembly for a 386, and it runs at full speed in the browser on nearly anything, including a Chromebook.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The two <kbd>Shift</kbd> keys are the flippers. Hold the down arrow to pull the plunger back and let go to launch. <kbd>Space</kbd> nudges the table — do it too often and you tilt. The game's own help screen lists every key.</p><p>On the Android table, the first thing to learn is the ramp shots that spell out the robot's parts; completing the android is what starts the big scoring.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the shareware release Epic MegaGames put out for free distribution, with its VENDOR.DOC and LICENSE.DOC included. The registered packs added more tables; they are commercial and are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Epic Pinball free to play here?",
+        "a": "Yes. This is the official shareware release, which Epic MegaGames published for free distribution. The registered table packs are not hosted."
+      },
+      {
+        "q": "Which tables are included?",
+        "a": "The shareware table, Android. The other tables were sold in the registered packs."
+      },
+      {
+        "q": "What are the controls?",
+        "a": "Left and right Shift are the flippers, the down arrow pulls the plunger, and Space nudges the table."
+      },
+      {
+        "q": "Is this the Windows pinball game?",
+        "a": "No. The pinball game that shipped with Windows was 3D Pinball: Space Cadet. This site has an open table for that engine on its own page; Epic Pinball is an earlier DOS game from a different studio."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/space-cadet-open/",
+        "title": "Space Cadet pinball",
+        "desc": "An open table for the classic Windows pinball engine."
+      },
+      {
+        "href": "/run/jill-of-the-jungle/",
+        "title": "Jill of the Jungle",
+        "desc": "Epic MegaGames' 1992 platformer, the shareware first episode."
+      },
+      {
+        "href": "/run/one-must-fall-2097/",
+        "title": "One Must Fall 2097",
+        "desc": "The robot fighting game, freeware."
+      },
+      {
+        "href": "/run/tyrian/",
+        "title": "Tyrian 2000",
+        "desc": "The freeware vertical shooter, all five episodes."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 6.5,
+    "mobileControls": {
+      "type": "pinball-dos",
+      "hint": "L / R: flippers · ▼: pull and release the plunger · TILT: nudge",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "L",
+          "dosKey": 340,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "R",
+          "dosKey": 344,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "TILT",
+          "dosKey": 32,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Left flipper",
+        "keyboard": "Left Shift",
+        "mouse": "—"
+      },
+      {
+        "action": "Right flipper",
+        "keyboard": "Right Shift",
+        "mouse": "—"
+      },
+      {
+        "action": "Launch the ball",
+        "keyboard": "hold and release the down arrow",
+        "mouse": "—"
+      },
+      {
+        "action": "Nudge the table",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Epic Pinball was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Epic%20Pinball\" target=\"_blank\" rel=\"noopener\">Find Epic Pinball on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Epic%20Pinball\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Epic Pinball shareware is freely distributable under the LICENSE.DOC and VENDOR.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/epic-pinball/NOTICE.md\">/apps/epic-pinball/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Epic Pinball is freely distributable under the LICENSE.DOC and VENDOR.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "death-rally",
+    "provenance": "shareware",
+    "title": "Death Rally Online — Play the 1996 Shareware Free",
+    "description": "Play Death Rally (1996) free in your browser: the official shareware version of Remedy's top-down combat racer. Guns, mines, upgrades. No download needed.",
+    "keywords": "death rally online, death rally unblocked, play death rally in browser, death rally 1996 shareware, top down racing game online, remedy death rally dos",
+    "ogTitle": "Death Rally Online — Play the 1996 Shareware Free",
+    "ogDescription": "Remedy's first game: top-down racing with machine guns, mines and a shady upgrade shop.",
+    "crumb": "Play Death Rally",
+    "h1": "Play Death Rally online — the 1996 shareware version",
+    "appName": "Death Rally",
+    "appType": "game",
+    "author": "Remedy Entertainment / Apogee Software",
+    "genre": [
+      "Racing",
+      "Vehicular combat"
+    ],
+    "categories": [
+      "Racing & sports",
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/death-rally/death-rally.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware version runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Death Rally</strong> is the 1996 top-down combat racer that was Remedy Entertainment's first game, published by Apogee. You start with a beaten-up Vagabond, race for prize money, and spend it on engines, tyres, armour and less sporting things. The official <strong>shareware version</strong> (1.1) is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. The package is about 7&nbsp;MB. It opens on the main menu in high-resolution VGA; choose Start Racing and pick a driver.</p><p>Races run smoothly on a normal laptop. The menus are 640×480, so they look sharper than most DOS games of the time.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Steer with the arrow keys: up accelerates, down brakes. The remaining keys — turbo, machine gun, mines — are shown and can be changed under Configure on the main menu. Early on, enter the easy race, finish in the top three and put the money into the engine before anything else.</p><p>Between races the shop sells repairs and upgrades, and the loan shark and the saboteur offer shortcuts that cost more than they first appear to.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the shareware version Apogee released under the LICENSE.DOC in the package, which allows it to be shared free of charge. It has a reduced set of tracks and cars. The registered game is not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Death Rally here?",
+        "a": "Yes. This is the official shareware version, licensed by Apogee for free distribution in its LICENSE.DOC. The registered game is not hosted."
+      },
+      {
+        "q": "What is missing compared with the full game?",
+        "a": "The shareware has fewer tracks and cars than the registered game. The racing, weapons, shop and career ladder all work."
+      },
+      {
+        "q": "Does my career save?",
+        "a": "Yes, best-effort. The game saves your driver between races, and this page keeps those files in your browser for your next visit."
+      },
+      {
+        "q": "Can two people play?",
+        "a": "The multiplayer option in the menu needs a DOS network, which a browser tab cannot provide. Single-player is the mode that works here."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/wacky-wheels/",
+        "title": "Wacky Wheels",
+        "desc": "Apogee's animal kart racer, shareware version."
+      },
+      {
+        "href": "/run/skyroads/",
+        "title": "SkyRoads",
+        "desc": "The 1993 space-road racer, instant play."
+      },
+      {
+        "href": "/run/liero/",
+        "title": "Liero",
+        "desc": "The real-time two-player worm duel, freeware."
+      },
+      {
+        "href": "/run/duke-nukem-3d/",
+        "title": "Duke Nukem 3D",
+        "desc": "Apogee's shooter, shareware episode."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 12.5,
+    "mobileControls": {
+      "type": "racer-dos",
+      "hint": "D-pad: steer, accelerate, brake · CTRL / ALT / SPACE: the game's action keys",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Steer",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Accelerate / brake",
+        "keyboard": "Up / Down arrows",
+        "mouse": "—"
+      },
+      {
+        "action": "Turbo, guns and mines",
+        "keyboard": "set in the game's options",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Death Rally was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Death%20Rally\" target=\"_blank\" rel=\"noopener\">Find Death Rally on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Death%20Rally\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Death Rally shareware is freely distributable under the LICENSE.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/death-rally/NOTICE.md\">/apps/death-rally/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Death Rally is freely distributable under the LICENSE.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "jill-of-the-jungle",
+    "provenance": "shareware",
+    "title": "Jill of the Jungle Online — Play Episode 1 Free",
+    "description": "Play Jill of the Jungle (1992) free in your browser: the official shareware first episode of Tim Sweeney's platformer for Epic MegaGames. No download needed.",
+    "keywords": "jill of the jungle online, jill of the jungle unblocked, play jill of the jungle in browser, epic megagames platformer, dos platformer online, jill of the jungle shareware",
+    "ogTitle": "Jill of the Jungle Online — Play Episode 1 Free",
+    "ogDescription": "The 1992 platformer that put Epic MegaGames on the map — episode one, in your browser.",
+    "crumb": "Play Jill of the Jungle",
+    "h1": "Play Jill of the Jungle online — the shareware episode",
+    "appName": "Jill of the Jungle",
+    "appType": "game",
+    "author": "Epic MegaGames",
+    "genre": [
+      "Platformer"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/jill-of-the-jungle/jill-of-the-jungle.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Jill of the Jungle</strong> is the 1992 platformer programmed by Tim Sweeney, the game Epic MegaGames answered Commander Keen with: 256-colour VGA, Sound Blaster music, and a heroine who turns into a bird, a fish and a frog. The official <strong>shareware first episode</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. It is about 300&nbsp;KB and starts almost instantly. The first screen shows the sound and graphics setup; press <kbd>Enter</kbd> to accept it.</p><p>It runs at full speed on anything, including phones and Chromebooks.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Arrow keys move, <kbd>Shift</kbd> jumps and <kbd>Alt</kbd> throws your knife once you have found one — it comes back like a boomerang. The episode is built around a hub map: walk to a level's entrance and press up to go in. Keys open the matching doors, and apples restore health.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the first of three episodes, the one Epic MegaGames released as shareware. Its VENDOR.DOC grants permission to distribute it as long as it is clearly identified as shareware. The other two episodes are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Jill of the Jungle free to play here?",
+        "a": "Yes. This is the shareware first episode, which Epic MegaGames gave permission to distribute in the VENDOR.DOC included in the package."
+      },
+      {
+        "q": "How many episodes are included?",
+        "a": "One of three. Episodes two (Jill Goes Underground) and three (Jill Saves the Prince) were the registered part of the game."
+      },
+      {
+        "q": "Who made it?",
+        "a": "Tim Sweeney programmed it for his company Epic MegaGames, which later became Epic Games."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. Games saved from Jill's own menu are kept in this browser."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "Marooned on Mars: the shareware episode that made id Software."
+      },
+      {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee's suction-cup platformer, shareware episode."
+      },
+      {
+        "href": "/run/epic-pinball/",
+        "title": "Epic Pinball",
+        "desc": "Epic's 1993 DOS pinball: the shareware Android table."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's action platformer: freeware, the complete game."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 13.5,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: Shift · KNIFE: Alt · ENTER/ESC: menus",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 340,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "KNIFE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Shift",
+        "mouse": "—"
+      },
+      {
+        "action": "Throw knife",
+        "keyboard": "Alt",
+        "mouse": "—"
+      },
+      {
+        "action": "Enter a level",
+        "keyboard": "Up arrow",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Jill of the Jungle was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Jill%20of%20the%20Jungle\" target=\"_blank\" rel=\"noopener\">Find Jill of the Jungle on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Jill%20of%20the%20Jungle\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Jill of the Jungle shareware is freely distributable under the VENDOR.DOC and LICENSE.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/jill-of-the-jungle/NOTICE.md\">/apps/jill-of-the-jungle/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Jill of the Jungle is freely distributable under the VENDOR.DOC and LICENSE.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "terminal-velocity",
+    "provenance": "shareware",
+    "title": "Terminal Velocity Online — Play the 1995 Shareware Free",
+    "description": "Play Terminal Velocity (1995) free in your browser: the official shareware episode of the fast 3D flight shooter from Terminal Reality and 3D Realms.",
+    "keywords": "terminal velocity online, terminal velocity unblocked, play terminal velocity in browser, terminal velocity 1995 shareware, dos flight shooter online, 3d realms terminal velocity",
+    "ogTitle": "Terminal Velocity Online — Play the 1995 Shareware Free",
+    "ogDescription": "Fast arcade flying over textured 3D planets — the 1995 shareware episode, in your browser.",
+    "crumb": "Play Terminal Velocity",
+    "h1": "Play Terminal Velocity online — the shareware episode",
+    "appName": "Terminal Velocity",
+    "appType": "game",
+    "author": "Terminal Reality / 3D Realms Entertainment",
+    "genre": [
+      "Shooter",
+      "Flight combat"
+    ],
+    "categories": [
+      "Shooters"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/terminal-velocity/terminal-velocity.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Terminal Velocity</strong> is the 1995 flight shooter by Terminal Reality, published by 3D Realms: no flight-sim checklists, just a fast ship, open 3D planets and tunnels to dive into. The official <strong>shareware episode</strong> (version 1.2) is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. The package is under 4&nbsp;MB, with Sound Blaster sound already configured.</p><p>This was a showpiece for fast PCs in 1995, so it is one of the more demanding DOS games here. It plays well on a recent laptop or desktop.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The arrow keys fly the ship. Firing, afterburner and weapon selection are on the keyboard too; the game's help screen (<kbd>F1</kbd>) lists them, and they can be changed in its options. Shoot the marked targets on each planet, then find the tunnel entrance: the tunnels are where the bosses are.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the shareware release, marked “episode one”, which 3D Realms licensed for free distribution in the LICENSE.TXT included in the package. The licence says plainly that it covers no other episode; the registered game is not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Terminal Velocity here?",
+        "a": "Yes. This is the official shareware episode, which 3D Realms licensed for free distribution. The registered game is not hosted."
+      },
+      {
+        "q": "How much is included?",
+        "a": "Episode one of the game: its planets and their tunnel sections."
+      },
+      {
+        "q": "Can I fly with the mouse?",
+        "a": "The keyboard works out of the box. Mouse flight can be enabled in the game's options, though the keyboard is easier in a browser tab."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/descent/",
+        "title": "Descent",
+        "desc": "The 1995 six-degrees-of-freedom shooter, shareware levels."
+      },
+      {
+        "href": "/run/tyrian/",
+        "title": "Tyrian 2000",
+        "desc": "The freeware vertical shooter, all five episodes."
+      },
+      {
+        "href": "/run/raptor/",
+        "title": "Raptor: Call of the Shadows",
+        "desc": "Another classic DOS vertical shooter."
+      },
+      {
+        "href": "/run/shadow-warrior/",
+        "title": "Shadow Warrior",
+        "desc": "3D Realms' 1997 Build-engine shooter, shareware episode."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 24.5,
+    "mobileControls": {
+      "type": "shmup-dos",
+      "hint": "D-pad: fly · FIRE: Ctrl · ALT / SPACE: the game's other keys · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Fly",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire, afterburner, weapons",
+        "keyboard": "listed on the game's F1 help screen",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Terminal Velocity was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Terminal%20Velocity\" target=\"_blank\" rel=\"noopener\">Find Terminal Velocity on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Terminal%20Velocity\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Terminal Velocity shareware is freely distributable under the LICENSE.TXT included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/terminal-velocity/NOTICE.md\">/apps/terminal-velocity/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Terminal Velocity is freely distributable under the LICENSE.TXT included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "liero",
+    "provenance": "freeware",
+    "title": "Liero Online — Play the Real-Time Worms Duel Free",
+    "description": "Play Liero 1.33 free in your browser: the freeware real-time worm duel for two players on one keyboard, or one player against the computer. No download.",
+    "keywords": "liero online, liero unblocked, play liero in browser, liero 1.33, real time worms game, two player keyboard game online",
+    "ogTitle": "Liero Online — Play the Real-Time Worms Duel Free",
+    "ogDescription": "Two worms, forty weapons, one keyboard: the freeware classic Liero, in your browser.",
+    "crumb": "Play Liero",
+    "h1": "Play Liero online — the freeware worm duel",
+    "appName": "Liero",
+    "appType": "game",
+    "author": "Joosa Riekkinen",
+    "genre": [
+      "Action",
+      "Artillery"
+    ],
+    "categories": [
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/liero/liero.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — the complete freeware game runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Liero</strong> is the 1998 freeware game by Joosa Riekkinen that is often described as real-time Worms: two worms dig through destructible dirt and go at each other with a ninja rope and around forty weapons, with no turns and no waiting. <strong>Version 1.33, the complete game,</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS game runs inside a WebAssembly build of DOSBox. It is under 400&nbsp;KB and starts in a second or two; press any key at the loading text to reach the menu.</p><p>Liero is light enough to run at full speed on any device.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Liero was made for two people sharing one keyboard, and that still works here. You can also set the second worm to be computer-controlled in the options. Each player picks five weapons before the match. The options menu shows each player's keys and lets you change them — do that first, since two sets of hands on one laptop keyboard need some planning.</p><p>The ninja rope is the skill that separates players: fire it, swing, and let go.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>Liero is freeware. Its documentation says so directly: it may be distributed to anyone, by any means, as long as its contents are not changed. The files here are the unmodified 1.33 release.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Liero really free?",
+        "a": "Yes. Its author released it as freeware, and the included documentation permits distributing it unchanged. This is the complete game, not a demo."
+      },
+      {
+        "q": "Can I play alone?",
+        "a": "Yes. Set one of the two worms to computer control in the options menu."
+      },
+      {
+        "q": "How do two people play on one keyboard?",
+        "a": "Each player has their own set of keys, shown in the options menu, where you can also change them. A full-size keyboard is more comfortable than a small laptop one."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/scorched-earth/",
+        "title": "Scorched Earth",
+        "desc": "The mother of all artillery games, instant play."
+      },
+      {
+        "href": "/run/cyberdogs/",
+        "title": "Cyberdogs",
+        "desc": "The 1994 top-down mission shooter for one or two players, freeware."
+      },
+      {
+        "href": "/run/one-must-fall-2097/",
+        "title": "One Must Fall 2097",
+        "desc": "The robot fighting game, freeware."
+      },
+      {
+        "href": "/run/death-rally/",
+        "title": "Death Rally",
+        "desc": "Remedy's 1996 top-down combat racer, shareware version."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 24.6,
+    "mobileControls": {
+      "type": "keys-dos",
+      "hint": "D-pad: move · CTRL / ALT / SPACE: the game's action keys · ENTER: confirm",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "Y",
+          "dosKey": 89,
+          "cls": ""
+        },
+        {
+          "label": "N",
+          "dosKey": 78,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Player 1 and player 2 keys",
+        "keyboard": "shown and changed in the game's options",
+        "mouse": "—"
+      },
+      {
+        "action": "Menus",
+        "keyboard": "Arrow keys and Enter",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "fullyFree": "Released as freeware by its author, Joosa Riekkinen: the complete game.",
+    "licenseNote": "<p class=\"muted small\">Liero is freeware: its documentation states that it may be distributed to anyone and anyhow, provided its contents are unchanged. Provenance: <a href=\"/apps/liero/NOTICE.md\">/apps/liero/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Liero is freeware: its documentation states that it may be distributed to anyone and anyhow, provided its contents are unchanged."
+  },
+  {
+    "slug": "major-stryker",
+    "provenance": "freeware",
+    "title": "Major Stryker Online — Play the Full Game Free",
+    "description": "Play Major Stryker (1993) free in your browser: Apogee's vertical shoot 'em up, released as freeware in 2006. All three episodes, no download needed.",
+    "keywords": "major stryker online, major stryker unblocked, play major stryker in browser, apogee shoot em up, dos vertical shooter online, major stryker freeware",
+    "ogTitle": "Major Stryker Online — Play the Full Game Free",
+    "ogDescription": "Apogee's 1993 vertical shooter, freeware since 2006 — all three episodes in your browser.",
+    "crumb": "Play Major Stryker",
+    "h1": "Play Major Stryker online — the complete freeware game",
+    "appName": "Major Stryker",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Shooter",
+      "Shoot 'em up"
+    ],
+    "categories": [
+      "Shooters"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/major-stryker/major-stryker.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — the complete freeware game runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Major Stryker</strong> is Apogee's 1993 vertical shoot 'em up: three planets (lava, arctic and desert), triple-parallax EGA scrolling and a ship that picks up bigger guns as it goes. Apogee released it as <strong>freeware</strong> in 2006, so the complete game is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>Apogee's own freeware package runs inside a WebAssembly build of DOSBox. It is a little over 1&nbsp;MB. The game is from the 16-colour EGA era and runs at full speed on any device.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The arrow keys move your ship. The fire key and the others are shown in the game's instructions and can be changed from its menu. Pick up the weapon pods that freed scientists and destroyed targets leave behind, and try not to get hit: a hit costs you your upgraded gun before it costs you a life.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>Apogee Software released Major Stryker as freeware on 14 March 2006. The package here is <code>strykerfw.zip</code>, the freeware release from Apogee's own download server, with all three episodes.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Major Stryker really free?",
+        "a": "Yes. Apogee released the full game as freeware on 14 March 2006. This is that release, taken from an archived copy of Apogee's own download server."
+      },
+      {
+        "q": "How many episodes are included?",
+        "a": "All three: Lava Planet, Arctic Planet and Desert Planet."
+      },
+      {
+        "q": "Does my high score save?",
+        "a": "Yes, best-effort. The game's saved files are kept in this browser between visits."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/raptor/",
+        "title": "Raptor: Call of the Shadows",
+        "desc": "Another classic DOS vertical shooter."
+      },
+      {
+        "href": "/run/tyrian/",
+        "title": "Tyrian 2000",
+        "desc": "The freeware vertical shooter, all five episodes."
+      },
+      {
+        "href": "/run/stargunner/",
+        "title": "Stargunner",
+        "desc": "Apogee's 1996 side-scrolling shooter, shareware episode."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's action platformer: freeware, the complete game."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 54,
+    "mobileControls": {
+      "type": "shmup-dos",
+      "hint": "D-pad: fly · FIRE: Ctrl · ALT / SPACE: the game's other keys · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Fly",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire and other keys",
+        "keyboard": "shown in the game's instructions",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "fullyFree": "Released as freeware by Apogee Software on 14 March 2006: the complete game, all three episodes.",
+    "licenseNote": "<p class=\"muted small\">Apogee Software released Major Stryker as freeware on 14 March 2006; this is the freeware package from Apogee's own download server. Provenance: <a href=\"/apps/major-stryker/NOTICE.md\">/apps/major-stryker/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Apogee Software released Major Stryker as freeware on 14 March 2006; this is the freeware package from Apogee's own download server."
+  },
+  {
+    "slug": "stargunner",
+    "provenance": "shareware",
+    "title": "Stargunner Online — Play the 1996 Shareware Free",
+    "description": "Play Stargunner (1996) free in your browser: the official shareware episode of Apogee's side-scrolling space shooter, with a ship shop between stages.",
+    "keywords": "stargunner online, stargunner unblocked, play stargunner in browser, apogee stargunner shareware, dos side scrolling shooter online, shoot em up browser",
+    "ogTitle": "Stargunner Online — Play the 1996 Shareware Free",
+    "ogDescription": "Apogee's last DOS shoot 'em up: rendered sprites, a weapon shop and a lot of bullets.",
+    "crumb": "Play Stargunner",
+    "h1": "Play Stargunner online — the shareware episode",
+    "appName": "Stargunner",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Shooter",
+      "Shoot 'em up"
+    ],
+    "categories": [
+      "Shooters"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/stargunner/stargunner.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Stargunner</strong> is the 1996 side-scrolling shoot 'em up that was one of the last games released under the Apogee name: pre-rendered ships, fast scrolling and a shop where credits buy weapons, engines and satellites. The official <strong>shareware episode</strong> (version 1.1) is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. The package is about 5&nbsp;MB. It runs smoothly on an ordinary laptop.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The arrow keys move the ship. The fire keys are shown in the game's control options, where they can be changed. Collect the credits enemies drop: after each stage you can spend them on front, top and bottom weapons and on a faster engine. A balanced ship does better than one enormous gun.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the shareware episode, distributed under the LICENSE.DOC in the package. Apogee later released the full game as freeware as a Windows installer; the version hosted here is the DOS shareware episode, which is the one its licence clearly allows to be passed on.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Stargunner here?",
+        "a": "Yes. This is the official shareware episode, licensed by Apogee for free distribution in its LICENSE.DOC."
+      },
+      {
+        "q": "How much is included?",
+        "a": "The first episode of the game, including the shop between stages."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. Saved games are kept in this browser between visits."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/tyrian/",
+        "title": "Tyrian 2000",
+        "desc": "The freeware vertical shooter, all five episodes."
+      },
+      {
+        "href": "/run/raptor/",
+        "title": "Raptor: Call of the Shadows",
+        "desc": "Another classic DOS vertical shooter."
+      },
+      {
+        "href": "/run/major-stryker/",
+        "title": "Major Stryker",
+        "desc": "Apogee's 1993 vertical shooter: freeware, all three episodes."
+      },
+      {
+        "href": "/run/terminal-velocity/",
+        "title": "Terminal Velocity",
+        "desc": "The 1995 arcade flight shooter from 3D Realms, shareware."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 55,
+    "mobileControls": {
+      "type": "shmup-dos",
+      "hint": "D-pad: fly · FIRE: Ctrl · ALT / SPACE: the game's other keys · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Fly",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire and other keys",
+        "keyboard": "set in the game's options",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Stargunner was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Stargunner\" target=\"_blank\" rel=\"noopener\">Find Stargunner on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Stargunner\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Stargunner shareware is freely distributable under the LICENSE.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/stargunner/NOTICE.md\">/apps/stargunner/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Stargunner is freely distributable under the LICENSE.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "secret-agent",
+    "provenance": "shareware",
+    "title": "Secret Agent Online — Play Apogee's 1992 Platformer Free",
+    "description": "Play Secret Agent (1992) free in your browser: the official shareware episode of Apogee's spy platformer, The Hunt for Red Rock Rover. No download.",
+    "keywords": "secret agent apogee online, secret agent dos game, play secret agent in browser, secret agent 1992 shareware, apogee platformer online, secret agent unblocked",
+    "ogTitle": "Secret Agent Online — Play Apogee's 1992 Platformer Free",
+    "ogDescription": "Agent 006½ against the Diabolical Villain Society — Apogee's 1992 platformer, episode one.",
+    "crumb": "Play Secret Agent",
+    "h1": "Play Secret Agent online — the shareware episode",
+    "appName": "Secret Agent",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Platformer"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/secret-agent/secret-agent.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Secret Agent</strong> is Apogee's 1992 platformer in the Crystal Caves mould: you are Agent 006½, parachuted onto an island of enemy bases, each one a single-screen-wide maze of guards, lasers and locked doors. The official <strong>shareware episode</strong>, The Hunt for Red Rock Rover, is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. It is under 200&nbsp;KB and loads at once. It is a 16-colour EGA game and runs at full speed on any device.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Arrow keys move, <kbd>Ctrl</kbd> jumps and <kbd>Alt</kbd> fires. Ammunition is limited, so do not shoot at everything. In each base you need to find the floppy disk and take it to the computer to shut down the lasers, then use the dynamite on the exit door. The glasses pick-up reveals hidden platforms.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is episode one of three, the shareware release. Apogee's VENDOR.DOC, included in the package, encourages passing it on without charge. Episodes two and three are the registered game and are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Secret Agent here?",
+        "a": "Yes. This is the shareware episode, which Apogee's VENDOR.DOC allows anyone to copy and pass on without charge."
+      },
+      {
+        "q": "How many episodes are included?",
+        "a": "One of three: The Hunt for Red Rock Rover."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. The game saves your position on the island map, and this page keeps that file in your browser."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "Marooned on Mars: the shareware episode that made id Software."
+      },
+      {
+        "href": "/run/duke-nukem/",
+        "title": "Duke Nukem",
+        "desc": "The 1991 side-scroller, shareware episode."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's action platformer: freeware, the complete game."
+      },
+      {
+        "href": "/run/dark-ages/",
+        "title": "Dark Ages",
+        "desc": "Apogee's 1991 fantasy platformer: freeware, all three volumes."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 56,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: Ctrl · FIRE: Alt · ENTER/ESC: menus",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire",
+        "keyboard": "Alt",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Secret Agent was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Secret%20Agent\" target=\"_blank\" rel=\"noopener\">Find Secret Agent on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Secret%20Agent\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Secret Agent shareware is freely distributable under the VENDOR.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/secret-agent/NOTICE.md\">/apps/secret-agent/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Secret Agent is freely distributable under the VENDOR.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "realms-of-chaos",
+    "provenance": "shareware",
+    "title": "Realms of Chaos Online — Play the 1995 Shareware Free",
+    "description": "Play Realms of Chaos (1995) free in your browser: the official shareware episode of Apogee's fantasy platformer. Swap between a warrior and a sorceress.",
+    "keywords": "realms of chaos online, realms of chaos apogee, play realms of chaos in browser, realms of chaos shareware, dos fantasy platformer online, apogee platformer",
+    "ogTitle": "Realms of Chaos Online — Play the 1995 Shareware Free",
+    "ogDescription": "Warrior or sorceress, swapped at a keypress: Apogee's 1995 VGA platformer, episode one.",
+    "crumb": "Play Realms of Chaos",
+    "h1": "Play Realms of Chaos online — the shareware episode",
+    "appName": "Realms of Chaos",
+    "appType": "game",
+    "author": "Apogee Software",
+    "genre": [
+      "Platformer",
+      "Action"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/realms-of-chaos/realms-of-chaos.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Realms of Chaos</strong> is Apogee's 1995 fantasy platformer. You control two characters and switch between them at any moment: Endrick the warrior, who hits hard with his sword, and Elandra the sorceress, who jumps higher and attacks from a distance. The official <strong>shareware episode</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox, with Sound Blaster music and effects already set up. The package is a little over 2&nbsp;MB. It runs smoothly on an ordinary laptop or Chromebook.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Arrow keys move, <kbd>Ctrl</kbd> jumps and <kbd>Alt</kbd> attacks; <kbd>Space</kbd> swaps between Endrick and Elandra. The two share one health bar, so switching is about the right tool for the moment rather than a second life. Keys can be changed in the game's options.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the first of three episodes, released as shareware under the VENDOR.DOC in the package. The other two episodes are the registered game and are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Realms of Chaos here?",
+        "a": "Yes. This is the official shareware episode, which Apogee's VENDOR.DOC allows to be passed on without charge."
+      },
+      {
+        "q": "How many episodes are included?",
+        "a": "One of three."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. Saved games are kept in this browser between visits."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's action platformer: freeware, the complete game."
+      },
+      {
+        "href": "/run/jill-of-the-jungle/",
+        "title": "Jill of the Jungle",
+        "desc": "Epic MegaGames' 1992 platformer, the shareware first episode."
+      },
+      {
+        "href": "/run/mystic-towers/",
+        "title": "Mystic Towers",
+        "desc": "Apogee's 1994 isometric wizard adventure, shareware."
+      },
+      {
+        "href": "/run/keen4/",
+        "title": "Commander Keen 4",
+        "desc": "Secret of the Oracle, shareware episode."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 57,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: Ctrl · ATTACK: Alt · ENTER/ESC: menus",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ATTACK",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Attack",
+        "keyboard": "Alt",
+        "mouse": "—"
+      },
+      {
+        "action": "Swap character",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Realms of Chaos was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Realms%20of%20Chaos\" target=\"_blank\" rel=\"noopener\">Find Realms of Chaos on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Realms%20of%20Chaos\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Realms of Chaos shareware is freely distributable under the VENDOR.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/realms-of-chaos/NOTICE.md\">/apps/realms-of-chaos/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Realms of Chaos is freely distributable under the VENDOR.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "mystic-towers",
+    "provenance": "shareware",
+    "title": "Mystic Towers Online — Play the 1994 Shareware Free",
+    "description": "Play Mystic Towers (1994) free in your browser: the official shareware version of Apogee's isometric puzzle adventure starring the wizard Baron Baldric.",
+    "keywords": "mystic towers online, mystic towers apogee, play mystic towers in browser, mystic towers shareware, isometric dos game online, baron baldric",
+    "ogTitle": "Mystic Towers Online — Play the 1994 Shareware Free",
+    "ogDescription": "An elderly wizard, twelve towers and a lot of monsters: Apogee's isometric adventure, shareware.",
+    "crumb": "Play Mystic Towers",
+    "h1": "Play Mystic Towers online — the shareware version",
+    "appName": "Mystic Towers",
+    "appType": "game",
+    "author": "Animation F/X / Apogee Software",
+    "genre": [
+      "Action",
+      "Puzzle"
+    ],
+    "categories": [
+      "Action",
+      "Puzzle & strategy"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/mystic-towers/mystic-towers.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware version runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Mystic Towers</strong> is the 1994 isometric action-puzzle game by the Australian studio Animation F/X, published by Apogee. Baron Baldric, an elderly wizard with a bad back, has to clear towers of monsters room by room, casting spells and remembering to eat and drink. The official <strong>shareware version</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. The package is about 1&nbsp;MB. Press <kbd>Enter</kbd> at the opening text screens to reach the game. It runs at full speed on any recent device.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The arrow keys walk Baldric around each isometric room. Jumping, casting and picking things up are on the keyboard; the game's help screen lists the keys. In each tower you must kill every monster, destroy the monster generator and find the key to the exit. Watch the food and drink meters: an adventurer who forgets lunch does not last.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the shareware release, distributed under Apogee's VENDOR.DOC, which is included in the package. It contains the first towers; the registered game has the rest and is not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Mystic Towers here?",
+        "a": "Yes. This is the official shareware version, which Apogee's VENDOR.DOC allows to be passed on without charge."
+      },
+      {
+        "q": "How much is included?",
+        "a": "The shareware towers. The registered game adds the remaining ones."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. Saved games are kept in this browser between visits."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/realms-of-chaos/",
+        "title": "Realms of Chaos",
+        "desc": "Apogee's 1995 fantasy platformer, shareware episode."
+      },
+      {
+        "href": "/run/paganitzu/",
+        "title": "Paganitzu",
+        "desc": "Apogee's 1991 temple puzzle game, shareware part one."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's action platformer: freeware, the complete game."
+      },
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky (free)",
+        "desc": "Revolution's cyberpunk adventure, freeware."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 58,
+    "mobileControls": {
+      "type": "keys-dos",
+      "hint": "D-pad: move · CTRL / ALT / SPACE: the game's action keys · ENTER: confirm",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "Y",
+          "dosKey": 89,
+          "cls": ""
+        },
+        {
+          "label": "N",
+          "dosKey": 78,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Walk",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump, cast and pick up",
+        "keyboard": "listed on the game's help screen",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Mystic Towers was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Mystic%20Towers\" target=\"_blank\" rel=\"noopener\">Find Mystic Towers on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Mystic%20Towers\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Mystic Towers shareware is freely distributable under the VENDOR.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/mystic-towers/NOTICE.md\">/apps/mystic-towers/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Mystic Towers is freely distributable under the VENDOR.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "traffic-department-2192",
+    "provenance": "shareware",
+    "title": "Traffic Department 2192 Online — Play Episode 1 Free",
+    "description": "Play Traffic Department 2192 (1994) free in your browser: the shareware first episode of the story-driven top-down shooter published by Safari Software.",
+    "keywords": "traffic department 2192 online, td2192, play traffic department 2192 in browser, traffic department 2192 shareware, top down dos shooter online, safari software",
+    "ogTitle": "Traffic Department 2192 Online — Play Episode 1 Free",
+    "ogDescription": "A top-down shooter with a script as long as its mission list — episode one, in your browser.",
+    "crumb": "Play Traffic Department 2192",
+    "h1": "Play Traffic Department 2192 online — episode one",
+    "appName": "Traffic Department 2192",
+    "appType": "game",
+    "author": "P-Squared Productions / Safari Software",
+    "genre": [
+      "Shooter",
+      "Top-down shooter"
+    ],
+    "categories": [
+      "Shooters"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/traffic-department-2192/traffic-department-2192.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Traffic Department 2192</strong> is the 1994 top-down shooter by P-Squared Productions, published by Epic's Safari Software label. You fly a hoverskid over the streets of a colony city as Lieutenant Velasquez, and between missions the game tells an unusually long and sharp-tongued story. The <strong>shareware first episode</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. The package is a little over 1&nbsp;MB. It runs at full speed on an ordinary laptop or Chromebook.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The arrow keys steer your hoverskid over the city map. The fire key and the rest are shown in the game's instructions. Missions vary: escort, intercept, destroy. Read the briefings — the dialogue between missions is half the game, and the characters are not polite to each other.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is episode one of three, distributed under the LICENSE.DOC in the package, in which Safari Software allows and encourages online distribution as long as no files are altered or removed. The files here are complete and unmodified. The later episodes are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Traffic Department 2192 here?",
+        "a": "Yes. This is the shareware episode. Its LICENSE.DOC allows online distribution provided no files are altered or removed, and none have been."
+      },
+      {
+        "q": "How many episodes are included?",
+        "a": "One of three."
+      },
+      {
+        "q": "Is it suitable for children?",
+        "a": "The story has strong language for a 1994 shareware game, and the plot is dark in places. It is better suited to older players."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/raptor/",
+        "title": "Raptor: Call of the Shadows",
+        "desc": "Another classic DOS vertical shooter."
+      },
+      {
+        "href": "/run/cyberdogs/",
+        "title": "Cyberdogs",
+        "desc": "The 1994 top-down mission shooter for one or two players, freeware."
+      },
+      {
+        "href": "/run/major-stryker/",
+        "title": "Major Stryker",
+        "desc": "Apogee's 1993 vertical shooter: freeware, all three episodes."
+      },
+      {
+        "href": "/run/tyrian/",
+        "title": "Tyrian 2000",
+        "desc": "The freeware vertical shooter, all five episodes."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 59,
+    "mobileControls": {
+      "type": "shmup-dos",
+      "hint": "D-pad: fly · FIRE: Ctrl · ALT / SPACE: the game's other keys · ESC: menu",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Steer",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Fire and other keys",
+        "keyboard": "shown in the game's instructions",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Traffic Department 2192 was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Traffic%20Department%202192\" target=\"_blank\" rel=\"noopener\">Find Traffic Department 2192 on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Traffic%20Department%202192\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Traffic Department 2192 shareware is freely distributable under the LICENSE.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/traffic-department-2192/NOTICE.md\">/apps/traffic-department-2192/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Traffic Department 2192 is freely distributable under the LICENSE.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "cyberdogs",
+    "provenance": "freeware",
+    "title": "Cyberdogs Online — Play the 1994 Freeware Shooter",
+    "description": "Play Cyberdogs (1994) free in your browser: Ronny Wester's freeware top-down shooter for one or two players on one keyboard. Buy guns, clear missions.",
+    "keywords": "cyberdogs online, cyberdogs dos game, play cyberdogs in browser, cyberdogs freeware, two player dos shooter, c-dogs original",
+    "ogTitle": "Cyberdogs Online — Play the 1994 Freeware Shooter",
+    "ogDescription": "Top-down missions, a gun shop and two-player co-op on one keyboard: the freeware Cyberdogs.",
+    "crumb": "Play Cyberdogs",
+    "h1": "Play Cyberdogs online — the freeware shooter",
+    "appName": "Cyberdogs",
+    "appType": "game",
+    "author": "Ronny Wester",
+    "genre": [
+      "Shooter",
+      "Top-down shooter"
+    ],
+    "categories": [
+      "Shooters",
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/cyberdogs/cyberdogs.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — the complete freeware game runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Cyberdogs</strong> is Ronny Wester's 1994 freeware top-down shooter, the game that C-Dogs later grew out of. One or two players on the same keyboard buy weapons, then fight through missions with objectives to collect or destroy. <strong>The complete game</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS game runs inside a WebAssembly build of DOSBox. It is about 260&nbsp;KB and starts in a couple of seconds. It runs at full speed on any device.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Choose one or two players from the menu, then spend your starting cash in the shop: a second weapon and some armour go a long way. In each mission, complete the objectives shown at the start, then get to the exit. The keys for both players are shown, and can be changed, in the game's options.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>Cyberdogs is freeware. The author's README says: “This game is freeware, feel free to spread it around.” The files here are the unmodified release.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Cyberdogs really free?",
+        "a": "Yes. Its author, Ronny Wester, released it as freeware and invites people to spread it around. This is the complete game."
+      },
+      {
+        "q": "Can two people play together?",
+        "a": "Yes, on one keyboard, co-operatively. Each player's keys are set in the options menu."
+      },
+      {
+        "q": "How is it related to C-Dogs?",
+        "a": "Cyberdogs came first. Wester's sequel, C-Dogs, followed in 1997, and the open-source C-Dogs SDL project continues it today."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/liero/",
+        "title": "Liero",
+        "desc": "The real-time two-player worm duel, freeware."
+      },
+      {
+        "href": "/run/traffic-department-2192/",
+        "title": "Traffic Department 2192",
+        "desc": "The 1994 top-down hoverskid shooter with a long story, episode one."
+      },
+      {
+        "href": "/run/doom/",
+        "title": "DOOM",
+        "desc": "The 1993 original's shareware episode, playable in your browser."
+      },
+      {
+        "href": "/run/scorched-earth/",
+        "title": "Scorched Earth",
+        "desc": "The mother of all artillery games, instant play."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 60,
+    "mobileControls": {
+      "type": "keys-dos",
+      "hint": "D-pad: move · CTRL / ALT / SPACE: the game's action keys · ENTER: confirm",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "Y",
+          "dosKey": 89,
+          "cls": ""
+        },
+        {
+          "label": "N",
+          "dosKey": 78,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Player 1 and player 2 keys",
+        "keyboard": "shown and changed in the game's options",
+        "mouse": "—"
+      },
+      {
+        "action": "Menus",
+        "keyboard": "Arrow keys and Enter",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "fullyFree": "Released as freeware by its author, Ronny Wester: the complete game.",
+    "licenseNote": "<p class=\"muted small\">Cyberdogs is freeware: its README states “This game is freeware, feel free to spread it around.” Provenance: <a href=\"/apps/cyberdogs/NOTICE.md\">/apps/cyberdogs/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Cyberdogs is freeware: its README states “This game is freeware, feel free to spread it around.”"
+  },
+  {
+    "slug": "xenophage",
+    "provenance": "shareware",
+    "title": "Xenophage Online — Play Alien Bloodsport Shareware Free",
+    "description": "Play Xenophage: Alien Bloodsport (1995) free in your browser: the shareware version of Apogee's one-on-one fighting game with huge alien fighters.",
+    "keywords": "xenophage online, xenophage alien bloodsport, play xenophage in browser, apogee fighting game, dos fighting game online, xenophage shareware",
+    "ogTitle": "Xenophage Online — Play Alien Bloodsport Shareware Free",
+    "ogDescription": "Screen-filling aliens trading blows: Apogee's 1995 fighting game, shareware version.",
+    "crumb": "Play Xenophage: Alien Bloodsport",
+    "h1": "Play Xenophage: Alien Bloodsport online — shareware",
+    "appName": "Xenophage: Alien Bloodsport",
+    "appType": "game",
+    "author": "Argo Games / Apogee Software",
+    "genre": [
+      "Fighting"
+    ],
+    "categories": [
+      "Action"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/xenophage/xenophage.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware version runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Xenophage: Alien Bloodsport</strong> is the 1995 one-on-one fighting game by Argo Games, published by Apogee. Its fighters are aliens, and they are enormous: the camera zooms out as they separate so that both stay on screen. The official <strong>shareware version</strong> (1.1) is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. The package is about 6&nbsp;MB. It plays well on a recent laptop or desktop; the zooming is the demanding part.</p><p>As the title suggests, the fights are gory. It is not a game for young players.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The game opens on its own setup menu. Choose a music card first if you want music (AdLib works here), then pick Start XenoPhage. After that, choose a fighter and a mode. Movement and attacks are on the keyboard; the game's options show the keys for each player and let you change them. Two players can share a keyboard for versus matches.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the shareware version, distributed under the LICENSE.DOC in the package, with a reduced set of fighters. Apogee later released the full game as freeware as a Windows installer; the version hosted here is the DOS shareware release, which its licence clearly allows to be passed on.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Xenophage here?",
+        "a": "Yes. This is the official shareware version, licensed by Apogee for free distribution in its LICENSE.DOC."
+      },
+      {
+        "q": "How many fighters are included?",
+        "a": "The shareware version has a reduced roster. The registered game has all of them."
+      },
+      {
+        "q": "Why does it start on a setup screen?",
+        "a": "That is the game's own sound setup. Pick AdLib under Choose Music Card if you want music, then choose Start XenoPhage."
+      },
+      {
+        "q": "Can two people play?",
+        "a": "Yes, on one keyboard. Each player's keys are set in the game's options."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/one-must-fall-2097/",
+        "title": "One Must Fall 2097",
+        "desc": "The robot fighting game, freeware."
+      },
+      {
+        "href": "/run/liero/",
+        "title": "Liero",
+        "desc": "The real-time two-player worm duel, freeware."
+      },
+      {
+        "href": "/run/shadow-warrior/",
+        "title": "Shadow Warrior",
+        "desc": "3D Realms' 1997 Build-engine shooter, shareware episode."
+      },
+      {
+        "href": "/run/duke-nukem-3d/",
+        "title": "Duke Nukem 3D",
+        "desc": "Apogee's shooter, shareware episode."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 61,
+    "mobileControls": {
+      "type": "fighter-dos",
+      "hint": "D-pad: move & jump · CTRL / ALT / SPACE: attacks",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Setup menu",
+        "keyboard": "Arrow keys and Enter",
+        "mouse": "—"
+      },
+      {
+        "action": "Move and attack",
+        "keyboard": "shown and changed in the game's options",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Xenophage: Alien Bloodsport was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Xenophage\" target=\"_blank\" rel=\"noopener\">Find Xenophage on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Xenophage\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Xenophage: Alien Bloodsport shareware is freely distributable under the LICENSE.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/xenophage/NOTICE.md\">/apps/xenophage/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Xenophage: Alien Bloodsport is freely distributable under the LICENSE.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "boppin",
+    "provenance": "shareware",
+    "title": "Boppin' Online — Play the 1994 Puzzle Shareware Free",
+    "description": "Play Boppin' (1994) free in your browser: the official shareware episode of the block-matching puzzle game from Accursed Toys and Apogee. No download.",
+    "keywords": "boppin online, boppin apogee, play boppin in browser, boppin shareware, dos puzzle game online, block puzzle dos",
+    "ogTitle": "Boppin' Online — Play the 1994 Puzzle Shareware Free",
+    "ogDescription": "Throw blocks, match patterns, rescue the villains: the oddest puzzle game Apogee published.",
+    "crumb": "Play Boppin'",
+    "h1": "Play Boppin' online — the shareware episode",
+    "appName": "Boppin'",
+    "appType": "game",
+    "author": "Accursed Toys / Apogee Software",
+    "genre": [
+      "Puzzle"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/boppin/boppin.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Boppin'</strong> is the 1994 puzzle game by Accursed Toys, published by Apogee. The heroes, Yeet and Boik, clear each room by throwing blocks at matching blocks, bouncing them off angled surfaces to reach the awkward ones. Their mission is to rescue video-game villains, because a game world with no bad guys is no fun. The official <strong>shareware episode</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. The package is a little over 1&nbsp;MB. It runs at full speed on an ordinary laptop or Chromebook.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The arrow keys move your character; the throw key and the others are shown in the game's instructions. Pick up a block from a source, then throw it so that it lands against blocks of the same pattern. Clear every block to finish the room. Making larger shapes scores bonus points, and running out of throwable blocks costs a life.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the first episode, released as shareware under the VENDOR.DOC in the package. The remaining episodes are the registered game and are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Boppin' here?",
+        "a": "Yes. This is the official shareware episode, which Apogee's VENDOR.DOC allows to be passed on without charge."
+      },
+      {
+        "q": "How much is included?",
+        "a": "The first episode's puzzle rooms."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. The game's saved files are kept in this browser between visits."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/paganitzu/",
+        "title": "Paganitzu",
+        "desc": "Apogee's 1991 temple puzzle game, shareware part one."
+      },
+      {
+        "href": "/run/blockdrop-open/",
+        "title": "Block Drop",
+        "desc": "Falling blocks, our own open build."
+      },
+      {
+        "href": "/run/sudoku/",
+        "title": "Sudoku",
+        "desc": "Endless generated puzzles, five difficulty levels."
+      },
+      {
+        "href": "/run/2048/",
+        "title": "2048",
+        "desc": "The original 2048, the author's own open-source code."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 62,
+    "mobileControls": {
+      "type": "keys-dos",
+      "hint": "D-pad: move · CTRL / ALT / SPACE: the game's action keys · ENTER: confirm",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "Y",
+          "dosKey": 89,
+          "cls": ""
+        },
+        {
+          "label": "N",
+          "dosKey": 78,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Throw and other keys",
+        "keyboard": "shown in the game's instructions",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Boppin' was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Boppin\" target=\"_blank\" rel=\"noopener\">Find Boppin on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Boppin\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Boppin' shareware is freely distributable under the VENDOR.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/boppin/NOTICE.md\">/apps/boppin/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Boppin' is freely distributable under the VENDOR.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "paganitzu",
+    "provenance": "shareware",
+    "title": "Paganitzu Online — Play the 1991 Puzzle Game Free",
+    "description": "Play Paganitzu (1991) free in your browser: the shareware first part, Romancing the Rose, of Apogee's boulder-pushing temple puzzle game. No download.",
+    "keywords": "paganitzu online, paganitzu apogee, play paganitzu in browser, paganitzu shareware, dos puzzle game online, alabama smith",
+    "ogTitle": "Paganitzu Online — Play the 1991 Puzzle Game Free",
+    "ogDescription": "Push boulders, dodge snakes, collect keys: Alabama Smith's 1991 temple puzzler, part one.",
+    "crumb": "Play Paganitzu",
+    "h1": "Play Paganitzu online — part one, shareware",
+    "appName": "Paganitzu",
+    "appType": "game",
+    "author": "Trilobyte (Keith Schuler) / Apogee Software",
+    "genre": [
+      "Puzzle"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/paganitzu/paganitzu.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware part one runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Paganitzu</strong> is Keith Schuler's 1991 puzzle game, published by Apogee. Explorer Alabama Smith works through an Aztec pyramid one single-screen room at a time, pushing boulders, collecting keys and working out which snake will spit at him. The <strong>shareware first part</strong>, Romancing the Rose, is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. It is about 260&nbsp;KB and loads at once. Press <kbd>Enter</kbd> at the opening screens. It is a 16-colour EGA game and runs at full speed on any device.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The game first asks three setup questions (graphics, controller, sound): press <kbd>1</kbd> for each. The arrow keys then move Alabama one square at a time. Collect all the keys in a room to open the exit. Boulders can be pushed but not pulled, so think before you shove one into a corner. If you trap yourself, the game has a key to restart the room; its instructions list it.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is part one of three, released as shareware under the VENDOR.DOC in the package. Parts two and three are the registered game and are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Paganitzu here?",
+        "a": "Yes. This is the official shareware part, which Apogee's VENDOR.DOC allows to be passed on without charge."
+      },
+      {
+        "q": "How many levels are included?",
+        "a": "The twenty rooms of part one, Romancing the Rose."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. The game's saved files are kept in this browser between visits."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/boppin/",
+        "title": "Boppin'",
+        "desc": "The 1994 block-throwing puzzle game, shareware episode."
+      },
+      {
+        "href": "/run/mystic-towers/",
+        "title": "Mystic Towers",
+        "desc": "Apogee's 1994 isometric wizard adventure, shareware."
+      },
+      {
+        "href": "/run/sudoku/",
+        "title": "Sudoku",
+        "desc": "Endless generated puzzles, five difficulty levels."
+      },
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "Marooned on Mars: the shareware episode that made id Software."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 63,
+    "mobileControls": {
+      "type": "keys-dos",
+      "hint": "D-pad: move · CTRL / ALT / SPACE: the game's action keys · ENTER: confirm",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "CTRL",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "ALT",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "Y",
+          "dosKey": 89,
+          "cls": ""
+        },
+        {
+          "label": "N",
+          "dosKey": 78,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Restart room and other keys",
+        "keyboard": "shown in the game's instructions",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Paganitzu was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Paganitzu\" target=\"_blank\" rel=\"noopener\">Find Paganitzu on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Paganitzu\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Paganitzu shareware is freely distributable under the VENDOR.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/paganitzu/NOTICE.md\">/apps/paganitzu/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Paganitzu is freely distributable under the VENDOR.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "dark-ages",
+    "provenance": "freeware",
+    "title": "Dark Ages Online — Play Apogee's 1991 Platformer Free",
+    "description": "Play Dark Ages (1991) free in your browser: Apogee's fantasy platformer, released as freeware in 2009. All three volumes included, no download needed.",
+    "keywords": "dark ages apogee online, dark ages dos game, play dark ages in browser, dark ages 1991 freeware, apogee platformer online, dark ages unblocked",
+    "ogTitle": "Dark Ages Online — Play Apogee's 1991 Platformer Free",
+    "ogDescription": "A prince, a stolen throne and AdLib music: Apogee's 1991 platformer, freeware in full.",
+    "crumb": "Play Dark Ages",
+    "h1": "Play Dark Ages online — the complete freeware game",
+    "appName": "Dark Ages",
+    "appType": "game",
+    "author": "Scenario Software / Apogee Software",
+    "genre": [
+      "Platformer"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/dark-ages/dark-ages.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — the complete freeware game runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Dark Ages</strong> is a 1991 Apogee platformer in which a prince raised as a peasant fights his way back to the throne. It is remembered as one of the first shareware games with AdLib music. Apogee released it as <strong>freeware</strong> in 2009, so all three volumes are hosted here — click Play and volume one boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>Apogee's own freeware package runs inside a WebAssembly build of DOSBox. It is under 400&nbsp;KB and loads at once. It is a 16-colour EGA game and runs at full speed on any device.</p><p>The page starts volume one. Volumes two and three are in the same package: quit the game to the DOS prompt and type <code>DA2</code> or <code>DA3</code>.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>The arrow keys move the prince; the jump and fire keys are shown in the game's instructions. Your weapon improves as you find upgrades, and shields protect you for a limited number of hits. Talk to the wise man in each level, who will trade you a clue or an item for what he asks.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>Apogee Software released Dark Ages as freeware in March 2009. The package here is <code>da_freew.zip</code>, the freeware release from Apogee's own download server, with all three volumes.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Dark Ages really free?",
+        "a": "Yes. Apogee released the full game as freeware in March 2009. This is that release, taken from an archived copy of Apogee's own download server."
+      },
+      {
+        "q": "How do I play volumes two and three?",
+        "a": "Quit volume one to the DOS prompt, then type DA2 or DA3 and press Enter."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes, best-effort. The game's saved files are kept in this browser between visits."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/duke-nukem/",
+        "title": "Duke Nukem",
+        "desc": "The 1991 side-scroller, shareware episode."
+      },
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "Marooned on Mars: the shareware episode that made id Software."
+      },
+      {
+        "href": "/run/secret-agent/",
+        "title": "Secret Agent",
+        "desc": "Apogee's 1992 spy platformer, shareware episode."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's action platformer: freeware, the complete game."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 64,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: Ctrl · FIRE: Alt · ENTER/ESC: menus",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "FIRE",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump and fire",
+        "keyboard": "shown in the game's instructions",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "fullyFree": "Released as freeware by Apogee Software in March 2009: the complete game, all three volumes.",
+    "licenseNote": "<p class=\"muted small\">Apogee Software released Dark Ages as freeware in March 2009; this is the freeware package from Apogee's own download server. Provenance: <a href=\"/apps/dark-ages/NOTICE.md\">/apps/dark-ages/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Apogee Software released Dark Ages as freeware in March 2009; this is the freeware package from Apogee's own download server."
+  },
+  {
+    "slug": "math-rescue",
+    "provenance": "shareware",
+    "title": "Math Rescue Online — Play the 1992 Maths Game Free",
+    "description": "Play Math Rescue (1992) free in your browser: the shareware episode of the educational platformer where solving sums gets the stolen numbers back.",
+    "keywords": "math rescue online, math rescue game, play math rescue in browser, math rescue apogee, educational dos game online, maths platformer",
+    "ogTitle": "Math Rescue Online — Play the 1992 Maths Game Free",
+    "ogDescription": "The Gruzzles stole the numbers. Solve sums to get them back — the 1992 classroom platformer.",
+    "crumb": "Play Math Rescue",
+    "h1": "Play Math Rescue online — the shareware episode",
+    "appName": "Math Rescue",
+    "appType": "game",
+    "author": "Redwood Games / Apogee Software",
+    "genre": [
+      "Educational",
+      "Platformer"
+    ],
+    "categories": [
+      "Educational",
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/math-rescue/math-rescue.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Math Rescue</strong> is the 1992 educational platformer by Karen Crowther's Redwood Games, published by Apogee. Creatures called Gruzzles have stolen the world's numbers, and you win them back by solving arithmetic problems while a helpful butterfly drops slime on anything that gets in your way. The official <strong>shareware episode</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. It is under 400&nbsp;KB and loads at once. It runs at full speed on any device, including school Chromebooks.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Choose a boy or a girl and a difficulty level; the levels set which kinds of problems appear, from simple addition up to multiplication and division, including word problems. Arrow keys move and <kbd>Ctrl</kbd> jumps. Touch a number to get a problem, answer it, and collect the answers to open the exit.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the first episode, released as shareware under the VENDOR.DOC in the package. The other episodes are the registered game and are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Math Rescue here?",
+        "a": "Yes. This is the official shareware episode, which Apogee's VENDOR.DOC allows to be passed on without charge."
+      },
+      {
+        "q": "What ages is it for?",
+        "a": "It was made for primary-school children. The difficulty setting changes the arithmetic from simple sums to multiplication, division and word problems."
+      },
+      {
+        "q": "Does it work on a school Chromebook?",
+        "a": "Yes. Nothing is installed and the game is light enough for any Chromebook."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/word-rescue/",
+        "title": "Word Rescue",
+        "desc": "The 1992 reading platformer from Apogee, shareware episode."
+      },
+      {
+        "href": "/run/number-munchers/",
+        "title": "Number Munchers",
+        "desc": "The classroom maths classic."
+      },
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "Marooned on Mars: the shareware episode that made id Software."
+      },
+      {
+        "href": "/run/sudoku/",
+        "title": "Sudoku",
+        "desc": "Endless generated puzzles, five difficulty levels."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 65,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: Ctrl · SLIME: Alt · ENTER/ESC: menus",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "SLIME",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Math Rescue was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Math%20Rescue\" target=\"_blank\" rel=\"noopener\">Find Math Rescue on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Math%20Rescue\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Math Rescue shareware is freely distributable under the VENDOR.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/math-rescue/NOTICE.md\">/apps/math-rescue/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Math Rescue is freely distributable under the VENDOR.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "word-rescue",
+    "provenance": "shareware",
+    "title": "Word Rescue Online — Play the 1992 Reading Game Free",
+    "description": "Play Word Rescue (1992) free in your browser: the shareware episode of the educational platformer where matching words to pictures beats the Gruzzles.",
+    "keywords": "word rescue online, word rescue game, play word rescue in browser, word rescue apogee, educational dos game online, reading game for kids",
+    "ogTitle": "Word Rescue Online — Play the 1992 Reading Game Free",
+    "ogDescription": "The Gruzzles stole the words. Match each one to its picture — the 1992 classroom platformer.",
+    "crumb": "Play Word Rescue",
+    "h1": "Play Word Rescue online — the shareware episode",
+    "appName": "Word Rescue",
+    "appType": "game",
+    "author": "Redwood Games / Apogee Software",
+    "genre": [
+      "Educational",
+      "Platformer"
+    ],
+    "categories": [
+      "Educational",
+      "Platformers"
+    ],
+    "dosRuntime": true,
+    "hostable": true,
+    "appUrl": "/apps/word-rescue/word-rescue.zip",
+    "verdict": {
+      "kind": "good",
+      "text": "Works — shareware episode runs via DOSBox in your browser"
+    },
+    "intro": "<p><strong>Word Rescue</strong> is the 1992 educational platformer by Karen Crowther's Redwood Games, published by Apogee. The Gruzzles cannot read, so they have stolen all the words; you get them back by matching each word to its picture, with Benny Bookworm sliming any Gruzzle that comes too close. The official <strong>shareware episode</strong> is hosted here — click Play and it boots in your browser.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The original DOS shareware release runs inside a WebAssembly build of DOSBox. It is a little over 300&nbsp;KB and loads at once. It runs at full speed on any device, including school Chromebooks.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Choose a boy or a girl and a difficulty level, which sets how hard the words are. Arrow keys move and <kbd>Ctrl</kbd> jumps. Touch a question-mark box to see a word, then find the picture it names. Match all the words, collect the key and leave by the door.</p>"
+      },
+      {
+        "h": "Shareware version — and the full game",
+        "html": "<p>This is the first episode, released as shareware under the VENDOR.DOC in the package. The other episodes are the registered game and are not hosted here.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it legal to play Word Rescue here?",
+        "a": "Yes. This is the official shareware episode, which Apogee's VENDOR.DOC allows to be passed on without charge."
+      },
+      {
+        "q": "What ages is it for?",
+        "a": "It was made for children who are learning to read. The difficulty setting changes the vocabulary."
+      },
+      {
+        "q": "Does it work on a school Chromebook?",
+        "a": "Yes. Nothing is installed and the game is light enough for any Chromebook."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/math-rescue/",
+        "title": "Math Rescue",
+        "desc": "The 1992 maths platformer from Apogee, shareware episode."
+      },
+      {
+        "href": "/run/number-munchers/",
+        "title": "Number Munchers",
+        "desc": "The classroom maths classic."
+      },
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "Marooned on Mars: the shareware episode that made id Software."
+      },
+      {
+        "href": "/run/cosmo/",
+        "title": "Cosmo's Cosmic Adventure",
+        "desc": "Apogee's suction-cup platformer, shareware episode."
+      },
+      {
+        "href": "/dos-emulator/",
+        "title": "Run your own DOS game",
+        "desc": "Have the registered version or another DOS game? Drop it in the DOS player."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 66,
+    "mobileControls": {
+      "type": "platformer-dos",
+      "hint": "D-pad: move · JUMP: Ctrl · SLIME: Alt · ENTER/ESC: menus",
+      "buttons": [
+        {
+          "label": "▲",
+          "dosKey": 265,
+          "area": "up"
+        },
+        {
+          "label": "◀",
+          "dosKey": 263,
+          "area": "left"
+        },
+        {
+          "label": "▶",
+          "dosKey": 262,
+          "area": "right"
+        },
+        {
+          "label": "▼",
+          "dosKey": 264,
+          "area": "down"
+        },
+        {
+          "label": "JUMP",
+          "dosKey": 341,
+          "cls": "mgp-accent"
+        },
+        {
+          "label": "SLIME",
+          "dosKey": 342,
+          "cls": "mgp-yellow"
+        },
+        {
+          "label": "SPACE",
+          "dosKey": 32,
+          "cls": ""
+        },
+        {
+          "label": "ENTER",
+          "dosKey": 257,
+          "cls": ""
+        },
+        {
+          "label": "ESC",
+          "dosKey": 256,
+          "cls": ""
+        }
+      ]
+    },
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      },
+      {
+        "action": "Sound",
+        "keyboard": "—",
+        "mouse": "Use the Sound button under the screen to mute"
+      }
+    ],
+    "download": {
+      "heading": "Get the full game",
+      "html": "<div class=\"download-box\"><p><strong>The shareware release plays here free.</strong> The rest of Word Rescue was the registered, commercial release. Check whether a store carries it today:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Word%20Rescue\" target=\"_blank\" rel=\"noopener\">Find Word Rescue on Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Word%20Rescue\" target=\"_blank\" rel=\"noopener\">Find it on GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Word Rescue shareware is freely distributable under the VENDOR.DOC included in the package. The registered game is commercial and not hosted here. Provenance: <a href=\"/apps/word-rescue/NOTICE.md\">/apps/word-rescue/NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "The shareware release of Word Rescue is freely distributable under the VENDOR.DOC included in the package; the registered game is not hosted."
+  },
+  {
+    "slug": "2048",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "2048 Unblocked — Play the Original Game Online Free",
+    "description": "Play 2048 free in your browser: the original open-source game by Gabriele Cirulli, not a copy. No ads in the game, no download, works on school networks.",
+    "keywords": "2048 unblocked, 2048 online, play 2048, 2048 game, 2048 original, 2048 free no ads",
+    "ogTitle": "2048 Unblocked — Play the Original Game Online Free",
+    "ogDescription": "The original 2048 by Gabriele Cirulli — slide, merge, reach the 2048 tile.",
+    "crumb": "Play 2048",
+    "h1": "Play 2048 online — the original game",
+    "appName": "2048",
+    "appType": "game",
+    "author": "Gabriele Cirulli",
+    "genre": [
+      "Puzzle"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/2048/",
+    "iframeHeight": "min(820px, calc(100vw + 300px))",
+    "iframeBg": "#faf8ef",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs right here in your browser"
+    },
+    "intro": "<p><strong>2048</strong> is the sliding-tile puzzle Gabriele Cirulli wrote over a weekend in March 2014 and released as open source. This is <strong>the original game, running the author's own code</strong> — slide the tiles, merge matching numbers and try to build the 2048 tile.</p>",
+    "sections": [
+      {
+        "h": "How to play",
+        "html": "<p>Use the arrow keys, or swipe on a touch screen. Every move slides all the tiles as far as they will go in that direction. When two tiles with the same number meet, they merge into one tile with their sum. After each move a new 2 or 4 appears in an empty square. You win when you make a 2048 tile, and you can keep going after that; the game ends when the board is full and no move is possible.</p>"
+      },
+      {
+        "h": "Getting past 512",
+        "html": "<p>Pick a corner and keep your largest tile there. Fill that tile's row in descending order, and avoid the one direction that would pull the big tile out of its corner unless you have no other move. Most games are lost by a single careless swipe, not by bad luck.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>Cirulli published 2048 under the MIT licence, which allows anyone to copy and host it. The files here are his, unmodified, and the game itself makes no requests to any other site. Your best score is stored in your own browser.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is this the real 2048?",
+        "a": "Yes. It is the original game by Gabriele Cirulli, running his open-source code unmodified, not a clone or a rewrite."
+      },
+      {
+        "q": "Is 2048 unblocked here?",
+        "a": "The game is a few small files served from this site, with nothing to install, and the game itself contacts no other site. Whether a particular school or office network allows this site is up to that network."
+      },
+      {
+        "q": "Does it save my best score?",
+        "a": "Yes. Your best score and the game in progress are kept in your browser's local storage."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes. Swipe in the direction you want the tiles to move."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/hextris/",
+        "title": "Hextris",
+        "desc": "The fast hexagonal block-matching game, open source."
+      },
+      {
+        "href": "/run/sudoku/",
+        "title": "Sudoku",
+        "desc": "Endless generated puzzles, five difficulty levels."
+      },
+      {
+        "href": "/run/blockdrop-open/",
+        "title": "Block Drop",
+        "desc": "Falling blocks, our own open build."
+      },
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Stockfish at eight levels, no sign-up."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 3.6,
+    "controls": [
+      {
+        "action": "Slide the tiles",
+        "keyboard": "Arrow keys (W A S D also work)",
+        "mouse": "Swipe on a touch screen"
+      },
+      {
+        "action": "Start a new game",
+        "keyboard": "R",
+        "mouse": "New Game button"
+      }
+    ],
+    "fullyFree": "Open source under the MIT licence: the complete original game.",
+    "licenseNote": "<p class=\"muted small\">2048 is by <a href=\"https://github.com/gabrielecirulli/2048\" target=\"_blank\" rel=\"noopener\">Gabriele Cirulli</a>, used under the <a href=\"/apps/2048/LICENSE.txt\">MIT licence</a>. The files are unmodified; see <a href=\"/apps/2048/NOTICE.md\">NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "2048 is published by its author, Gabriele Cirulli, under the MIT licence, which permits redistribution including commercial use."
+  },
+  {
+    "slug": "hextris",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "Hextris Unblocked — Play the Hexagon Puzzle Online Free",
+    "description": "Play Hextris free in your browser: the open-source hexagonal puzzle game. Rotate the hexagon, match three colours, survive as it speeds up. No download.",
+    "keywords": "hextris unblocked, hextris online, play hextris, hextris game, hexagon puzzle game, hextris free",
+    "ogTitle": "Hextris Unblocked — Play the Hexagon Puzzle Online Free",
+    "ogDescription": "Rotate the hexagon, match the colours, keep up as it gets faster: the open-source Hextris.",
+    "crumb": "Play Hextris",
+    "h1": "Play Hextris online — the hexagon puzzle game",
+    "appName": "Hextris",
+    "appType": "game",
+    "author": "Logan Engstrom, Garrett Finucane, Noah Moroze and Michael Yang",
+    "genre": [
+      "Puzzle",
+      "Arcade"
+    ],
+    "categories": [
+      "Puzzle & strategy",
+      "Action"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/hextris/",
+    "iframeHeight": "min(680px, calc(100vw + 120px))",
+    "iframeBg": "#ecf0f1",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs right here in your browser"
+    },
+    "intro": "<p><strong>Hextris</strong> is a fast puzzle game built around a hexagon. Coloured blocks fall towards it from all six sides; you rotate the hexagon so they land where you want them. Join three or more of the same colour and they clear. Four students wrote it in 2014 and released it as <strong>open source</strong>, and it runs right here.</p>",
+    "sections": [
+      {
+        "h": "How to play",
+        "html": "<p>Press the left and right arrow keys to rotate the hexagon, or tap the left and right sides of the screen. Holding the down arrow speeds the blocks up. Blocks clear when three or more of one colour touch, and clearing several groups in a row builds a combo. The game ends when a stack on any side grows past the grey outer hexagon.</p>"
+      },
+      {
+        "h": "Lasting longer",
+        "html": "<p>Keep the six stacks level instead of clearing one side at a time: a tall stack is what ends the game. Look at the colour of the next block before you rotate, and when two blocks are falling at once, deal with the nearer one first.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>Hextris is published under the GNU General Public License, version 3, which allows anyone to copy and host it. The copy here has had its advertising and analytics code removed, so the game makes no requests to any other site; the changes are listed in the notice file. Your high score is stored in your own browser.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Hextris free?",
+        "a": "Yes. It is open-source software under the GPL version 3. This is the complete game."
+      },
+      {
+        "q": "Is Hextris unblocked here?",
+        "a": "The game is a few small files served from this site, with nothing to install, and the game itself contacts no other site. Whether a particular school or office network allows this site is up to that network."
+      },
+      {
+        "q": "Does it save my high score?",
+        "a": "Yes. High scores are kept in your browser's local storage."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes. Tap the left or right side of the screen to rotate the hexagon."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/2048/",
+        "title": "2048",
+        "desc": "The original 2048, the author's own open-source code."
+      },
+      {
+        "href": "/run/blockdrop-open/",
+        "title": "Block Drop",
+        "desc": "Falling blocks, our own open build."
+      },
+      {
+        "href": "/run/sudoku/",
+        "title": "Sudoku",
+        "desc": "Endless generated puzzles, five difficulty levels."
+      },
+      {
+        "href": "/run/chess/",
+        "title": "Chess vs computer",
+        "desc": "Stockfish at eight levels, no sign-up."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 16.2,
+    "controls": [
+      {
+        "action": "Rotate the hexagon",
+        "keyboard": "Left / Right arrows",
+        "mouse": "Tap the left or right side of the screen"
+      },
+      {
+        "action": "Speed the blocks up",
+        "keyboard": "Down arrow",
+        "mouse": "—"
+      },
+      {
+        "action": "Pause",
+        "keyboard": "P",
+        "mouse": "Pause button"
+      },
+      {
+        "action": "Start / restart",
+        "keyboard": "Enter",
+        "mouse": "Click the hexagon"
+      }
+    ],
+    "fullyFree": "Open source under the GNU GPL version 3: the complete game.",
+    "licenseNote": "<p class=\"muted small\">Hextris is by <a href=\"https://github.com/Hextris/hextris\" target=\"_blank\" rel=\"noopener\">Logan Engstrom, Garrett Finucane, Noah Moroze and Michael Yang</a>, used under the <a href=\"/apps/hextris/LICENSE.md\">GNU GPL v3</a>. Advertising and analytics code was removed; the changes are listed in <a href=\"/apps/hextris/NOTICE.md\">NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Hextris is published by its authors under the GNU General Public License v3, which permits redistribution including commercial use; the modified source served here is listed in NOTICE.md."
+  },
+  {
+    "slug": "zork-1",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "Play Zork I Online Free — The Great Underground Empire",
+    "description": "Play Zork I: The Great Underground Empire (1980) free in your browser: Infocom's text adventure, open source under the MIT licence since 2025.",
+    "keywords": "zork 1 online, play zork i online, zork i free, zork browser, infocom text adventure online, interactive fiction online",
+    "ogTitle": "Play Zork I Online Free — The Great Underground Empire",
+    "ogDescription": "You are standing in an open field west of a white house, with a boarded front door — and under that house lie the ruins of a vast underground empire, full of treasure and guarded by a thief, a troll and the dark.",
+    "crumb": "Play Zork I",
+    "h1": "Play Zork I: The Great Underground Empire online",
+    "appName": "Zork I",
+    "appType": "game",
+    "author": "Infocom (Marc Blank, Dave Lebling, Bruce Daniels, Tim Anderson)",
+    "genre": [
+      "Adventure",
+      "Interactive fiction"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/zork/parchment.html?story=/apps/zork/zork1.z3",
+    "iframeHeight": "min(640px, 80vh)",
+    "iframeBg": "#fff",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs right here in your browser"
+    },
+    "intro": "<p><strong>Zork I: The Great Underground Empire</strong> is Infocom's 1980 text adventure. You are standing in an open field west of a white house, with a boarded front door — and under that house lie the ruins of a vast underground empire, full of treasure and guarded by a thief, a troll and the dark. In November 2025 Microsoft released the Zork trilogy as <strong>open source</strong>, and the game runs right here: type a command and press <kbd>Enter</kbd>.</p>",
+    "sections": [
+      {
+        "h": "How to play",
+        "html": "<p>There are no graphics. The game describes where you are, and you type what you want to do: <code>open mailbox</code>, <code>go north</code> (or just <code>n</code>), <code>take lamp</code>, <code>inventory</code> (or <code>i</code>), <code>look</code>. The parser understands full sentences such as <code>put the sword in the case</code>. Find a light source before you go underground: in the dark, you are likely to be eaten by a grue.</p><p>Draw a map as you go. That was the advice in 1980 and it has not changed.</p>"
+      },
+      {
+        "h": "Saving your game",
+        "html": "<p>Type <code>save</code> to store your position and <code>restore</code> to return to it. Saved games are kept in this browser, so they will be there on your next visit unless you clear the site's data. The interpreter also keeps an automatic save, so closing the tab does not lose your place.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>On 20 November 2025 Microsoft, which owns Infocom's catalogue through Activision, published Zork I, II and III under the MIT licence. The story file here is the compiled game from that release, unmodified, and it runs in Parchment, an open-source interpreter (also MIT). “Zork” remains a trademark of its owner; this site is not affiliated with Microsoft or Activision.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Zork I really free now?",
+        "a": "Yes. Microsoft released Zork I, II and III under the MIT licence on 20 November 2025. This page runs the game file from that release."
+      },
+      {
+        "q": "Is this the original game or a remake?",
+        "a": "The original. It is Infocom's own compiled story file, run by a modern Z-machine interpreter in your browser."
+      },
+      {
+        "q": "How do I save?",
+        "a": "Type save. Your saved game is stored in this browser; type restore to load it."
+      },
+      {
+        "q": "Do I need to play the trilogy in order?",
+        "a": "Zork I is the place to start. Each game stands alone, though the three tell one loose story."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/zork-2/",
+        "title": "Zork II",
+        "desc": "Infocom's 1981 text adventure, open source since 2025."
+      },
+      {
+        "href": "/run/zork-3/",
+        "title": "Zork III",
+        "desc": "Infocom's 1982 text adventure, open source since 2025."
+      },
+      {
+        "href": "/run/nethack/",
+        "title": "NetHack",
+        "desc": "The classic roguelike, saved in your browser."
+      },
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky (free)",
+        "desc": "Revolution's cyberpunk adventure, freeware."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 7.5,
+    "controls": [
+      {
+        "action": "Give a command",
+        "keyboard": "Type it and press Enter",
+        "mouse": "—"
+      },
+      {
+        "action": "Move",
+        "keyboard": "n, s, e, w, u, d (north, south, east, west, up, down)",
+        "mouse": "—"
+      },
+      {
+        "action": "Check what you carry",
+        "keyboard": "i",
+        "mouse": "—"
+      },
+      {
+        "action": "Save / load",
+        "keyboard": "save / restore",
+        "mouse": "—"
+      }
+    ],
+    "fullyFree": "Open source: Microsoft released the game under the MIT licence in November 2025. The complete game.",
+    "licenseNote": "<p class=\"muted small\">Zork I is © Microsoft, released under the <a href=\"/apps/zork/LICENSE-zork.txt\">MIT licence</a> (<a href=\"https://github.com/historicalsource/zork1\" target=\"_blank\" rel=\"noopener\">source</a>). Interpreter: <a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a> (<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>). Details in <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Microsoft released Zork I, II and III under the MIT licence on 20 November 2025; the story file is from that release and runs in the MIT-licensed Parchment interpreter."
+  },
+  {
+    "slug": "zork-2",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "Play Zork II Online Free — The Wizard of Frobozz",
+    "description": "Play Zork II: The Wizard of Frobozz (1981) free in your browser: Infocom's text adventure, open source under the MIT licence since 2025.",
+    "keywords": "zork 2 online, play zork ii online, zork ii free, zork browser, infocom text adventure online, interactive fiction online",
+    "ogTitle": "Play Zork II Online Free — The Wizard of Frobozz",
+    "ogDescription": "It picks up where the first game ends, deeper in the Great Underground Empire, where a senile but dangerous wizard appears at random to cast spells on you.",
+    "crumb": "Play Zork II",
+    "h1": "Play Zork II: The Wizard of Frobozz online",
+    "appName": "Zork II",
+    "appType": "game",
+    "author": "Infocom (Marc Blank, Dave Lebling, Bruce Daniels, Tim Anderson)",
+    "genre": [
+      "Adventure",
+      "Interactive fiction"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/zork/parchment.html?story=/apps/zork/zork2.z3",
+    "iframeHeight": "min(640px, 80vh)",
+    "iframeBg": "#fff",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs right here in your browser"
+    },
+    "intro": "<p><strong>Zork II: The Wizard of Frobozz</strong> is Infocom's 1981 text adventure. It picks up where the first game ends, deeper in the Great Underground Empire, where a senile but dangerous wizard appears at random to cast spells on you. In November 2025 Microsoft released the Zork trilogy as <strong>open source</strong>, and the game runs right here: type a command and press <kbd>Enter</kbd>.</p>",
+    "sections": [
+      {
+        "h": "How to play",
+        "html": "<p>There are no graphics. The game describes where you are, and you type what you want to do: <code>open mailbox</code>, <code>go north</code> (or just <code>n</code>), <code>take lamp</code>, <code>inventory</code> (or <code>i</code>), <code>look</code>. The parser understands full sentences such as <code>put the sword in the case</code>. You begin with the lamp and sword from the first game. The Wizard's spells wear off; waiting is sometimes the right move.</p><p>Draw a map as you go. That was the advice in 1980 and it has not changed.</p>"
+      },
+      {
+        "h": "Saving your game",
+        "html": "<p>Type <code>save</code> to store your position and <code>restore</code> to return to it. Saved games are kept in this browser, so they will be there on your next visit unless you clear the site's data. The interpreter also keeps an automatic save, so closing the tab does not lose your place.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>On 20 November 2025 Microsoft, which owns Infocom's catalogue through Activision, published Zork I, II and III under the MIT licence. The story file here is the compiled game from that release, unmodified, and it runs in Parchment, an open-source interpreter (also MIT). “Zork” remains a trademark of its owner; this site is not affiliated with Microsoft or Activision.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Zork II really free now?",
+        "a": "Yes. Microsoft released Zork I, II and III under the MIT licence on 20 November 2025. This page runs the game file from that release."
+      },
+      {
+        "q": "Is this the original game or a remake?",
+        "a": "The original. It is Infocom's own compiled story file, run by a modern Z-machine interpreter in your browser."
+      },
+      {
+        "q": "How do I save?",
+        "a": "Type save. Your saved game is stored in this browser; type restore to load it."
+      },
+      {
+        "q": "Do I need to play the trilogy in order?",
+        "a": "Each game stands alone, but they were written as a series and Zork I is the best place to start."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/zork-1/",
+        "title": "Zork I",
+        "desc": "Infocom's 1980 text adventure, open source since 2025."
+      },
+      {
+        "href": "/run/zork-3/",
+        "title": "Zork III",
+        "desc": "Infocom's 1982 text adventure, open source since 2025."
+      },
+      {
+        "href": "/run/nethack/",
+        "title": "NetHack",
+        "desc": "The classic roguelike, saved in your browser."
+      },
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky (free)",
+        "desc": "Revolution's cyberpunk adventure, freeware."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 60,
+    "controls": [
+      {
+        "action": "Give a command",
+        "keyboard": "Type it and press Enter",
+        "mouse": "—"
+      },
+      {
+        "action": "Move",
+        "keyboard": "n, s, e, w, u, d (north, south, east, west, up, down)",
+        "mouse": "—"
+      },
+      {
+        "action": "Check what you carry",
+        "keyboard": "i",
+        "mouse": "—"
+      },
+      {
+        "action": "Save / load",
+        "keyboard": "save / restore",
+        "mouse": "—"
+      }
+    ],
+    "fullyFree": "Open source: Microsoft released the game under the MIT licence in November 2025. The complete game.",
+    "licenseNote": "<p class=\"muted small\">Zork II is © Microsoft, released under the <a href=\"/apps/zork/LICENSE-zork.txt\">MIT licence</a> (<a href=\"https://github.com/historicalsource/zork2\" target=\"_blank\" rel=\"noopener\">source</a>). Interpreter: <a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a> (<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>). Details in <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Microsoft released Zork I, II and III under the MIT licence on 20 November 2025; the story file is from that release and runs in the MIT-licensed Parchment interpreter."
+  },
+  {
+    "slug": "zork-3",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "Play Zork III Online Free — The Dungeon Master",
+    "description": "Play Zork III: The Dungeon Master (1982) free in your browser: Infocom's text adventure, open source under the MIT licence since 2025.",
+    "keywords": "zork 3 online, play zork iii online, zork iii free, zork browser, infocom text adventure online, interactive fiction online",
+    "ogTitle": "Play Zork III Online Free — The Dungeon Master",
+    "ogDescription": "The last of the trilogy is quieter and stranger than the first two: fewer treasures, more consequences, and a score that rewards what you choose to do rather than what you collect.",
+    "crumb": "Play Zork III",
+    "h1": "Play Zork III: The Dungeon Master online",
+    "appName": "Zork III",
+    "appType": "game",
+    "author": "Infocom (Marc Blank, Dave Lebling, Bruce Daniels, Tim Anderson)",
+    "genre": [
+      "Adventure",
+      "Interactive fiction"
+    ],
+    "categories": [
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/zork/parchment.html?story=/apps/zork/zork3.z3",
+    "iframeHeight": "min(640px, 80vh)",
+    "iframeBg": "#fff",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — runs right here in your browser"
+    },
+    "intro": "<p><strong>Zork III: The Dungeon Master</strong> is Infocom's 1982 text adventure. The last of the trilogy is quieter and stranger than the first two: fewer treasures, more consequences, and a score that rewards what you choose to do rather than what you collect. In November 2025 Microsoft released the Zork trilogy as <strong>open source</strong>, and the game runs right here: type a command and press <kbd>Enter</kbd>.</p>",
+    "sections": [
+      {
+        "h": "How to play",
+        "html": "<p>There are no graphics. The game describes where you are, and you type what you want to do: <code>open mailbox</code>, <code>go north</code> (or just <code>n</code>), <code>take lamp</code>, <code>inventory</code> (or <code>i</code>), <code>look</code>. The parser understands full sentences such as <code>put the sword in the case</code>. The score works differently here: it goes up when you do something that matters, not when you pick something up.</p><p>Draw a map as you go. That was the advice in 1980 and it has not changed.</p>"
+      },
+      {
+        "h": "Saving your game",
+        "html": "<p>Type <code>save</code> to store your position and <code>restore</code> to return to it. Saved games are kept in this browser, so they will be there on your next visit unless you clear the site's data. The interpreter also keeps an automatic save, so closing the tab does not lose your place.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>On 20 November 2025 Microsoft, which owns Infocom's catalogue through Activision, published Zork I, II and III under the MIT licence. The story file here is the compiled game from that release, unmodified, and it runs in Parchment, an open-source interpreter (also MIT). “Zork” remains a trademark of its owner; this site is not affiliated with Microsoft or Activision.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Zork III really free now?",
+        "a": "Yes. Microsoft released Zork I, II and III under the MIT licence on 20 November 2025. This page runs the game file from that release."
+      },
+      {
+        "q": "Is this the original game or a remake?",
+        "a": "The original. It is Infocom's own compiled story file, run by a modern Z-machine interpreter in your browser."
+      },
+      {
+        "q": "How do I save?",
+        "a": "Type save. Your saved game is stored in this browser; type restore to load it."
+      },
+      {
+        "q": "Do I need to play the trilogy in order?",
+        "a": "Each game stands alone, but they were written as a series and Zork I is the best place to start."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/zork-1/",
+        "title": "Zork I",
+        "desc": "Infocom's 1980 text adventure, open source since 2025."
+      },
+      {
+        "href": "/run/zork-2/",
+        "title": "Zork II",
+        "desc": "Infocom's 1981 text adventure, open source since 2025."
+      },
+      {
+        "href": "/run/nethack/",
+        "title": "NetHack",
+        "desc": "The classic roguelike, saved in your browser."
+      },
+      {
+        "href": "/run/beneath-a-steel-sky/",
+        "title": "Beneath a Steel Sky (free)",
+        "desc": "Revolution's cyberpunk adventure, freeware."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 61,
+    "controls": [
+      {
+        "action": "Give a command",
+        "keyboard": "Type it and press Enter",
+        "mouse": "—"
+      },
+      {
+        "action": "Move",
+        "keyboard": "n, s, e, w, u, d (north, south, east, west, up, down)",
+        "mouse": "—"
+      },
+      {
+        "action": "Check what you carry",
+        "keyboard": "i",
+        "mouse": "—"
+      },
+      {
+        "action": "Save / load",
+        "keyboard": "save / restore",
+        "mouse": "—"
+      }
+    ],
+    "fullyFree": "Open source: Microsoft released the game under the MIT licence in November 2025. The complete game.",
+    "licenseNote": "<p class=\"muted small\">Zork III is © Microsoft, released under the <a href=\"/apps/zork/LICENSE-zork.txt\">MIT licence</a> (<a href=\"https://github.com/historicalsource/zork3\" target=\"_blank\" rel=\"noopener\">source</a>). Interpreter: <a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a> (<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>). Details in <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Microsoft released Zork I, II and III under the MIT licence on 20 November 2025; the story file is from that release and runs in the MIT-licensed Parchment interpreter."
   }
 ]

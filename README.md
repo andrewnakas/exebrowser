@@ -139,6 +139,16 @@ node scripts/make-dos-bundle.mjs <slug>     # → public/apps/<slug>/<slug>.zip
 node scripts/boot-test.mjs <slug> [--keys Enter] [--shot]
 ```
 
+Three optional source fields cover the awkward packages. `installer` is for an
+archive that holds only the publisher's INSTALL.EXE: the bundler runs it inside
+our own DOSBox (`scripts/unpack-dos-installer.mjs`, which needs Chrome and
+playwright-core like the boot test) and bundles what it installs; its `keys`
+and `after` lists also drive a game's sound-setup program when the game will
+not start without one (see `shadow-warrior` and `realms-of-chaos`). `member`
+names a zip inside a tarball `url`, used for the archived ftp.3drealms.com
+mirror that most Apogee shareware comes from. `keepAll` skips the default
+strip list, for shareware whose licence requires every original file.
+
 `boot-test.mjs` serves `public/` itself and loads the bundle into a bare DOS
 embed, so a title can be tested before it has a page. It judges the
 emulator's canvas buffer, not a page screenshot. `--shot` writes the page

@@ -32,6 +32,17 @@
 //   inner     optional zip inside the archive that holds the game (some items
 //             wrap the real zip in another one)
 //   retrieved YYYY-MM-DD the source was fetched, copied into NOTICE.md
+//   member    path of the game's zip inside `url`, when `url` is a tarball
+//             holding many (the archived ftp.3drealms.com mirror). The tarball
+//             is fetched once into dos/_shared/ and checked against
+//             `urlSha256`; `sha256` then pins the member itself.
+//   installer true (or {keys:[…], wait:s, exe:"INSTALL.EXE", after:[dos commands]}) when the archive
+//             holds only an installer: it is run in our own DOSBox by
+//             scripts/unpack-dos-installer.mjs and the bundle is what it
+//             installs. `exe` is then relative to the installed tree.
+//   keepAll   true to skip the default strip list below. For shareware whose
+//             licence allows distribution only with every original file
+//             present (file_id.diz included).
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
@@ -110,9 +121,21 @@ for (const slug of slugs) {
   if (!src) { console.error(`${slug}: not in scripts/dos-sources.json`); failed++; continue; }
   try {
     fs.mkdirSync(CACHE, { recursive: true });
-    const ext = path.extname(new URL(src.url).pathname).toLowerCase() || ".zip";
+    const ext = path.extname(src.member || new URL(src.url).pathname).toLowerCase() || ".zip";
     const file = path.join(CACHE, `${slug}${ext}`);
-    if (!fs.existsSync(file)) {
+    if (!fs.existsSync(file) && src.member) {
+      const shared = path.join(CACHE, "_shared", path.basename(new URL(src.url).pathname));
+      fs.mkdirSync(path.dirname(shared), { recursive: true });
+      if (!fs.existsSync(shared)) {
+        console.log(`${slug}: downloading ${src.url}`);
+        execFileSync("curl", ["-sSL", "--fail", "-o", shared, src.url], { stdio: "inherit" });
+      }
+      if (src.urlSha256) {
+        const got = execFileSync("shasum", ["-a", "256", shared]).toString().split(" ")[0];
+        if (got !== src.urlSha256) throw new Error(`tarball sha256 ${got} != pinned ${src.urlSha256}`);
+      }
+      fs.writeFileSync(file, execFileSync("tar", ["-xOf", shared, src.member], { maxBuffer: 1 << 28 }));
+    } else if (!fs.existsSync(file)) {
       console.log(`${slug}: downloading ${src.url}`);
       execFileSync("curl", ["-sSL", "--fail", "-o", file, src.url], { stdio: "inherit" });
     }
@@ -136,13 +159,26 @@ for (const slug of slugs) {
       fs.rmSync(work, { recursive: true, force: true });
       fs.renameSync(out, work);
     }
+    if (src.installer) {
+      const o = src.installer === true ? {} : src.installer;
+      const out = path.join(CACHE, `${slug}.installed`);
+      const args = [path.join(ROOT, "scripts", "unpack-dos-installer.mjs"), file, out];
+      if (o.keys) args.push("--keys", o.keys.join(","));
+      if (o.wait) args.push("--wait", String(o.wait));
+      if (o.exe) args.push("--exe", o.exe);
+      if (o.after) args.push("--after", o.after.join(";"));
+      execFileSync(process.execPath, args, { stdio: "inherit" });
+      fs.rmSync(path.join(out, "_src"), { recursive: true, force: true });
+      fs.rmSync(work, { recursive: true, force: true });
+      fs.renameSync(out, work);
+    }
     const base = src.root ? path.join(work, src.root) : work;
     if (!fs.existsSync(base)) throw new Error(`root ${src.root} not in archive`);
 
     // file_id.diz (a TOSEC catalogue card), *.ba1 launcher stubs and
     // "Recalbox Ready.txt" are added by archivists, not part of the game;
     // always drop them.
-    const res = ["file_id.diz", "*.ba1", "Recalbox Ready.txt", ...(src.strip || [])].map(globToRe);
+    const res = [...(src.keepAll ? [] : ["file_id.diz", "*.ba1", "Recalbox Ready.txt"]), ...(src.strip || [])].map(globToRe);
     for (const rel of walk(base)) {
       if (res.some((re) => re.test(rel) || re.test(path.basename(rel)))) fs.rmSync(path.join(base, rel));
     }

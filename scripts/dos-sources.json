@@ -445,5 +445,445 @@
       "c"
     ],
     "bootColours": 3
+  },
+  "epic-pinball": {
+    "url": "https://archive.org/download/epic_pinball_11/epic_pinball.zip",
+    "exe": "PINBALL.EXE",
+    "item": "epic_pinball_11",
+    "retrieved": "2026-11-13",
+    "cycles": "max",
+    "keepAll": true,
+    "sha256": "b9965ed6a7a85e7746c57cdb89107fbfba6dc7c58b6cc6856be26756fa59d560",
+    "bootKeys": [
+      "Enter",
+      "Enter"
+    ],
+    "bootWait": 40
+  },
+  "jill-of-the-jungle": {
+    "url": "https://archive.org/download/JillOfTheJungle/jill.ZIP",
+    "exe": "JILL.EXE",
+    "item": "JillOfTheJungle",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "sha256": "123ea8e7a485a98980a88031aa3acb6fd7f1edcfa04fcdf9882d1055f5648d10",
+    "bootKeys": [
+      "Enter"
+    ]
+  },
+  "death-rally": {
+    "url": "https://archive.org/download/msdos_1ral11_shareware/msdos_1ral11_shareware.zip",
+    "exe": "RALLY.EXE",
+    "item": "msdos_1ral11_shareware",
+    "retrieved": "2026-11-13",
+    "cycles": "max",
+    "keepAll": true,
+    "sha256": "82880533f192b7bc44d227bd84b673ecb7583ce6be8f958528f6d012c5cbd733"
+  },
+  "traffic-department-2192": {
+    "url": "https://archive.org/download/TrafficDepartment2192/td2192.zip",
+    "exe": "TD1.EXE",
+    "item": "TrafficDepartment2192",
+    "retrieved": "2026-11-13",
+    "cycles": "max",
+    "keepAll": true,
+    "sha256": "7c3d87236b11b035b78091aa6104e0a4c70b83c9ea4e1710a5d68d1cad31abf3"
+  },
+  "liero": {
+    "url": "https://archive.org/download/msdos_Liero_1999/Liero_1999.zip",
+    "exe": "LIERO.EXE",
+    "root": "Liero",
+    "item": "msdos_Liero_1999",
+    "retrieved": "2026-11-13",
+    "cycles": "max",
+    "keepAll": true,
+    "sha256": "c61bb1936a4e13ed576263cc11c156b86b03dbf78fc143e5f6e32b87481cf43c",
+    "bootKeys": [
+      "Enter"
+    ]
+  },
+  "cyberdogs": {
+    "url": "https://archive.org/download/msdos_DOGS_shareware/DOGS.zip",
+    "exe": "DOGS.EXE",
+    "item": "msdos_DOGS_shareware",
+    "retrieved": "2026-11-13",
+    "cycles": "max",
+    "keepAll": true,
+    "sha256": "9431609209993b114825cc57b3cfaf76a2c4fb9e5aad6b70fd361cc73d5a9d69"
+  },
+  "secret-agent": {
+    "url": "https://archive.org/download/SecretAgent_945/1sa10a.zip",
+    "installer": true,
+    "root": "AGENT",
+    "exe": "SAM1.EXE",
+    "item": "SecretAgent_945",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "sha256": "d42ee4ac2023926fcf4fd7958d95fd48511fa3dd8f81cb83d360bc9de123aeec"
+  },
+  "terminal-velocity": {
+    "url": "https://archive.org/download/TerminalVelocity/3dtv12.zip",
+    "installer": {
+      "wait": 25,
+      "after": [
+        "cd \\TV",
+        "SETUP.EXE"
+      ],
+      "keys": [
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "wait8",
+        "y",
+        "wait4",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "Enter",
+        "wait4",
+        "y",
+        "wait8",
+        "y",
+        "wait5",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "Enter",
+        "wait12"
+      ]
+    },
+    "root": "TV",
+    "exe": "TV.EXE",
+    "item": "TerminalVelocity",
+    "retrieved": "2026-11-13",
+    "cycles": "max",
+    "keepAll": true,
+    "sha256": "ff55a2a54be15f73899cc591310a226ded1f652c1a73ceeaeeb72e9881346ca4"
+  },
+  "descent": {
+    "url": "https://archive.org/download/Descent_896/desc14sw.zip",
+    "installer": {
+      "wait": 25
+    },
+    "root": "GAMES/DESCENT",
+    "exe": "DCNTSHR.EXE",
+    "item": "Descent_896",
+    "retrieved": "2026-11-13",
+    "cycles": "max",
+    "keepAll": true,
+    "sha256": "8c7a2984dbe8852927f5463aa230dcd649c97a4604b5e49b9e655bc17324de54",
+    "bootKeys": [
+      "Escape",
+      "Escape"
+    ]
+  },
+  "major-stryker": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/freeware/strykerfw.zip",
+    "exe": "STRYKER.EXE",
+    "sha256": "283b28bef3429276aefe4c4927f71f745c1e325789515121eb626f06c27286b1",
+    "bootKeys": [
+      "Enter",
+      "Enter"
+    ]
+  },
+  "dark-ages": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/freeware/da_freew.zip",
+    "exe": "DA1.EXE",
+    "sha256": "82562bcda071d1a00dc06368a844e510157f6f12187af9a8f0ef46e1b926863d"
+  },
+  "shadow-warrior": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/3dsw12.zip",
+    "installer": {
+      "wait": 30,
+      "after": [
+        "cd \\SW",
+        "SETUP.EXE"
+      ],
+      "keys": [
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "wait30",
+        "Enter",
+        "Enter",
+        "ArrowDown",
+        "ArrowDown",
+        "Enter",
+        "wait2",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "wait1",
+        "ArrowDown",
+        "Enter",
+        "wait1",
+        "ArrowDown",
+        "ArrowDown",
+        "Enter",
+        "wait1",
+        "Escape",
+        "wait1",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "Enter",
+        "wait20"
+      ]
+    },
+    "exe": "SW.EXE",
+    "cycles": "max",
+    "sha256": "6e41b3769d0373fc160c2113469c6f8bc2932dc1a77b69c81c1bd9644a189a8f",
+    "root": "SW",
+    "bootWait": 45
+  },
+  "boppin": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/1bop11.zip",
+    "installer": {
+      "wait": 25,
+      "after": [
+        "choice /c:y /n",
+        "cd \\BOPPIN",
+        "SETUP.EXE"
+      ],
+      "keys": [
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "wait8",
+        "y",
+        "wait8",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "wait5"
+      ]
+    },
+    "exe": "BOPSW.EXE",
+    "cycles": "max",
+    "sha256": "185b17cc7acacbe8fdc3442184ab286e5d523cd4c3373ff6682255755ae09dc6",
+    "root": "BOPPIN"
+  },
+  "mystic-towers": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/1mystic.zip",
+    "installer": {
+      "wait": 25
+    },
+    "exe": "TOWERS.EXE",
+    "cycles": "max",
+    "sha256": "b9fe808e7e717f8d4236679127eac3030c920d5b83b1da9473938c906ae0d5be",
+    "root": "TOWERS",
+    "bootKeys": [
+      "Enter",
+      "Enter"
+    ]
+  },
+  "realms-of-chaos": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/1roc.zip",
+    "installer": {
+      "wait": 25,
+      "after": [
+        "choice /c:y /n",
+        "cd \\ROC",
+        "SETUP.EXE"
+      ],
+      "keys": [
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "Enter",
+        "wait8",
+        "y",
+        "wait8",
+        "Enter",
+        "wait1",
+        "Enter",
+        "wait1",
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowUp",
+        "Enter",
+        "wait2",
+        "ArrowDown",
+        "Enter",
+        "wait1",
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowUp",
+        "Enter",
+        "wait2",
+        "Enter",
+        "wait2",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "Enter",
+        "wait2",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowDown",
+        "Enter",
+        "wait2",
+        "Enter",
+        "wait5"
+      ]
+    },
+    "exe": "ROCSW.EXE",
+    "cycles": "max",
+    "sha256": "f45d23bca59b2fcf2cb5807e0124605d9e4da0ca5a0803ba5666c0cda839a08b",
+    "root": "ROC"
+  },
+  "paganitzu": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/1paga.zip",
+    "installer": {
+      "wait": 25
+    },
+    "exe": "PAGA1.EXE",
+    "sha256": "ab84b8d60900222aeaa30e2379a2dc393b93e696aa6acbb204ea4d6e5bd27c32",
+    "root": "PAGA",
+    "bootKeys": [
+      "Enter",
+      "Enter",
+      "1",
+      "1",
+      "1",
+      "Enter",
+      "Enter"
+    ]
+  },
+  "math-rescue": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/1math.zip",
+    "installer": {
+      "wait": 25
+    },
+    "exe": "MR1.EXE",
+    "sha256": "76ae65427f3812b4819b72f72e83a0f6ed1e55318ba88d075b6189eb232b3f52",
+    "root": "MATH"
+  },
+  "word-rescue": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/1rescue.zip",
+    "installer": {
+      "wait": 25
+    },
+    "exe": "WR1.EXE",
+    "sha256": "eb89dc8db444d2145904b8427c5a1ffb53752f417b8a584e3acf5ac432550035",
+    "root": "WORD"
+  },
+  "xenophage": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/1xeno11.zip",
+    "installer": {
+      "wait": 25
+    },
+    "exe": "XPS.BAT",
+    "cycles": "max",
+    "sha256": "83c8e33a6c6b9ea86d9f62e979c062003072f49d17c85e630f27550bdd7abc33",
+    "root": "XENO"
+  },
+  "stargunner": {
+    "url": "https://archive.org/download/ftp.3drealms.com/2016.01.27.ftp.3drealms.com.tar.xz",
+    "urlSha256": "f886e31d99acf99a076608cd55788a09633f1276d795c8fb4df98ce6fc4e0e5b",
+    "item": "ftp.3drealms.com",
+    "retrieved": "2026-11-13",
+    "keepAll": true,
+    "member": "./ftp.3drealms.com/share/1star11.zip",
+    "installer": {
+      "wait": 25
+    },
+    "exe": "STARGUN.EXE",
+    "cycles": "max",
+    "sha256": "d7e723cb8e53804625ed3a89fa9e2b3a353a4a14aa310c1253c5050f44e6f0d0",
+    "root": "STARGUN"
   }
 }
