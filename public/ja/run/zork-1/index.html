@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zork I をブラウザで無料プレイ — The Great Underground Empire</title>
+<meta name="description" content="Zork I: The Great Underground Empire（1980年）をブラウザで無料プレイ。Infocom のテキストアドベンチャーで、2025年から MIT ライセンスのオープンソースとして公開されています。" />
+<meta name="keywords" content="zork 1 無料, zork 1 ブラウザ, zork 1 オンライン, zork ダウンロード不要, infocom テキストアドベンチャー, インタラクティブフィクション ブラウザ" />
+<link rel="canonical" href="https://exebrowser.com/ja/run/zork-1/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/zork-1/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/zork-1/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/zork-1/" />
+<link rel="alternate" hreflang="de" href="https://exebrowser.com/de/run/zork-1/" />
+<link rel="alternate" hreflang="ja" href="https://exebrowser.com/ja/run/zork-1/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/zork-1/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/zork-1/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/zork-1/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/ja/run/zork-1/" />
+<meta property="og:title" content="Zork I をブラウザで無料プレイ — The Great Underground Empire" />
+<meta property="og:description" content="あなたは白い家の西に広がる野原に立っていて、玄関の扉は板で打ち付けられています。その家の地下には広大な地下帝国の遺跡が眠っており、財宝に満ち、盗賊とトロルと暗闇がそれを守っています。" />
+<meta property="og:image" content="https://exebrowser.com/run/zork-1/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://exebrowser.com/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "アプリ一覧", "item": "https://exebrowser.com/ja/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Zork I をプレイ", "item": "https://exebrowser.com/ja/run/zork-1/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Zork I",
+  "url": "https://exebrowser.com/ja/run/zork-1/",
+  "image": "https://exebrowser.com/run/zork-1/screenshot.png",
+  "description": "Zork I: The Great Underground Empire（1980年）をブラウザで無料プレイ。Infocom のテキストアドベンチャーで、2025年から MIT ライセンスのオープンソースとして公開されています。",
+  "applicationCategory": "Game",
+  "genre": ["Adventure", "Interactive fiction"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Infocom (Marc Blank, Dave Lebling, Bruce Daniels, Tim Anderson)" },
+  "dateModified": "2026-11-13",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Zork I はいま本当に無料なのですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。このページは、その公開版のゲームファイルを動かしています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "これはオリジナルのゲームですか、リメイクですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "オリジナルです。Infocom 自身によるコンパイル済みのストーリーファイルを、現代の Z-machine インタープリターがブラウザ内で実行しています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "セーブするにはどうすればいいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "save と入力してください。セーブデータはこのブラウザに保存されます。読み込むには restore と入力します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "三部作は順番に遊ぶ必要がありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "始めるなら Zork I からです。どの作品も単独で楽しめますが、3作でゆるやかにつながったひとつの物語を語っています。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Windows の <code>.exe</code> をブラウザで実行。インストール不要、アップロード不要。WebAssembly と Wine だけで動きます。</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/ja/">ホーム</a>
+    <a href="/load-exe/">自分のEXEを実行</a>
+    <a href="/ja/run/">アプリ一覧</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/guide/">ガイド</a>
+    <a href="/about/">このサイトについて</a>
+    <a href="/contact/">お問い合わせ</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="言語"><a href="/run/zork-1/" hreflang="en">English</a> · <a href="/es/run/zork-1/" hreflang="es">Español</a> · <a href="/pt-BR/run/zork-1/" hreflang="pt-BR">Português (BR)</a> · <a href="/de/run/zork-1/" hreflang="de">Deutsch</a> · <span class="lang-current" aria-current="true">日本語</span> · <a href="/fr/run/zork-1/" hreflang="fr">Français</a> · <a href="/zh-CN/run/zork-1/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/ja/">ホーム</a> › <a href="/ja/run/">アプリ一覧</a> › Zork I をプレイ</nav>
+
+  <section class="card">
+    <h2>Zork I: The Great Underground Empire をオンラインでプレイ <span class="verdict good">▶ 今すぐプレイ — このブラウザ上でそのまま動きます</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">最終更新 2026年11月 · 実行環境 WebAssembly (native port)</p>
+    <p><strong>Zork I: The Great Underground Empire</strong> は、Infocom による 1980年のテキストアドベンチャーです。あなたは白い家の西に広がる野原に立っていて、玄関の扉は板で打ち付けられています。その家の地下には広大な地下帝国の遺跡が眠っており、財宝に満ち、盗賊とトロルと暗闇がそれを守っています。2025年11月、Microsoft が Zork 三部作を<strong>オープンソース</strong>として公開し、このページでそのまま遊べるようになりました。コマンドを入力して <kbd>Enter</kbd> を押してください。</p>
+
+    <div class="iframe-embed-wrap" style="position:relative;width:100%;height:min(640px, 80vh);background:#fff;border-radius:4px;overflow:hidden;">
+      <iframe src="/apps/zork/parchment.html?story=/apps/zork/zork1.z3"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allowfullscreen
+              loading="lazy"
+              title="Zork I"></iframe>
+    </div>
+    <details class="controls-panel" open>
+      <summary><strong>操作方法</strong> — キーの割り当て</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">動作</th><th scope="col">キーボード</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">コマンドを入力</th><td>入力して <kbd>Enter</kbd> を押す</td></tr>
+        <tr><th scope="row">移動</th><td>n, s, e, w, u, d（北・南・東・西・上・下）</td></tr>
+        <tr><th scope="row">持ち物を確認</th><td><kbd>i</kbd></td></tr>
+        <tr><th scope="row">セーブ / ロード</th><td>save / restore</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p class="next-up"><span class="next-up-label">次に遊ぶ:</span>
+      <a href="/ja/run/dark-ages/">Dark Ages</a>
+      <a href="/run/inertia-puzzle/">Sliding ball gem puzzle (Inertia)</a>
+      <a href="/run/god-of-thunder/">God of Thunder</a>
+      <a href="/run/lemmings/">Lemmings</a>
+      <a class="next-up-all" href="/ja/run/">全171本を見る →</a>
+    </p>
+    <p class="free-note"><span class="badge-free">無料</span> <strong>これは製品版そのもので、無料です。</strong> オープンソース：Microsoft が 2025年11月に MIT ライセンスで公開しました。ゲーム全体です。</p>
+    <figure class="app-shot">
+      <img src="/run/zork-1/screenshot.png" width="800" height="500" loading="lazy" alt="ExeBrowser でブラウザのタブ内に動作するZork I" />
+      <figcaption>ブラウザで動作するZork I。インストールもアップロードも不要です。</figcaption>
+    </figure>
+    
+    <div class="warn-box">
+      <p class="muted small">Zork I は © Microsoft で、<a href="/apps/zork/LICENSE-zork.txt">MIT ライセンス</a>で公開されています（<a href="https://github.com/historicalsource/zork1" target="_blank" rel="noopener">ソース</a>）。インタープリター：<a href="https://github.com/curiousdannii/parchment" target="_blank" rel="noopener">Parchment</a>（<a href="/apps/zork/LICENSE-parchment.txt">MIT</a>）。詳しくは <a href="/apps/zork/NOTICE.md">NOTICE.md</a> をご覧ください。</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>遊び方</h2>
+    <p>グラフィックはありません。ゲームがいまいる場所を文章で説明し、あなたはやりたいことを英語で入力します。たとえば <code>open mailbox</code>、<code>go north</code>（または単に <code>n</code>）、<code>take lamp</code>、<code>inventory</code>（または <code>i</code>）、<code>look</code> などです。パーサーは <code>put the sword in the case</code> のような完全な文も理解します。地下に降りる前に明かりを見つけておきましょう。暗闇の中では grue に食べられてしまうおそれがあります。</p><p>進みながら地図を描きましょう。1980年当時からの助言で、いまも変わりません。</p>
+    <h3>ゲームのセーブ</h3>
+    <p><code>save</code> と入力すると現在の状況が保存され、<code>restore</code> でそこに戻れます。セーブデータはこのブラウザに保持されるので、サイトのデータを消去しないかぎり、次回の訪問時にも残っています。インタープリターは自動セーブも行うため、タブを閉じても進行状況は失われません。</p>
+    <h3>無料で遊べる理由</h3>
+    <p>2025年11月20日、Activision を通じて Infocom の作品群を保有する Microsoft が、Zork I、II、III を MIT ライセンスで公開しました。ここにあるストーリーファイルは、その公開版に含まれるコンパイル済みのゲームを改変せずに使ったもので、オープンソースのインタープリター Parchment（こちらも MIT）の上で動いています。「Zork」は引き続きその権利者の商標です。このサイトは Microsoft および Activision とは関係がありません。</p>
+  </section>
+  <section class="card">
+    <h2>よくある質問</h2>
+    <details>
+      <summary>Zork I はいま本当に無料なのですか？</summary>
+      <p>はい。Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。このページは、その公開版のゲームファイルを動かしています。</p>
+    </details>
+    <details>
+      <summary>これはオリジナルのゲームですか、リメイクですか？</summary>
+      <p>オリジナルです。Infocom 自身によるコンパイル済みのストーリーファイルを、現代の Z-machine インタープリターがブラウザ内で実行しています。</p>
+    </details>
+    <details>
+      <summary>セーブするにはどうすればいいですか？</summary>
+      <p>save と入力してください。セーブデータはこのブラウザに保存されます。読み込むには restore と入力します。</p>
+    </details>
+    <details>
+      <summary>三部作は順番に遊ぶ必要がありますか？</summary>
+      <p>始めるなら Zork I からです。どの作品も単独で楽しめますが、3作でゆるやかにつながったひとつの物語を語っています。</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>ブラウザで遊べる他のゲーム</h2>
+    <ul class="poster-grid">
+        <li class="pc-item"><a class="poster-card" href="/run/space-cadet-open/">
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作する3D Pinball Space Cadet" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/ja/run/doom/">
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するDOOM" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/duke-nukem-3d/">
+          <img class="pc-shot" src="/run/duke-nukem-3d/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するDuke Nukem 3D" />
+          <span class="pc-body"><span class="pc-title">Duke Nukem 3D</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/librequake/">
+          <img class="pc-shot" src="/run/librequake/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するLibreQuake" />
+          <span class="pc-body"><span class="pc-title">LibreQuake</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/beneath-a-steel-sky/">
+          <img class="pc-shot" src="/run/beneath-a-steel-sky/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するBeneath a Steel Sky" />
+          <span class="pc-body"><span class="pc-title">Beneath a Steel Sky</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/ja/run/tyrian/">
+          <img class="pc-shot" src="/run/tyrian/screenshot.png" width="320" height="240" loading="lazy" alt="ブラウザで動作するTyrian 2000" />
+          <span class="pc-body"><span class="pc-title">Tyrian 2000</span><span class="pc-play">▶ 無料でプレイ</span></span>
+        </a></li>
+    </ul>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/ja/run/">ここで遊べる171本すべてを見る →</a></p>
+  </section>
+  <section class="card">
+    <h2>関連ガイド</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/ja/run/zork-2/"><span class="lc-title">Zork II</span><span class="lc-desc">Infocom による 1981年のテキストアドベンチャー。2025年からオープンソースです。</span></a></li>
+      <li><a class="link-card" href="/ja/run/zork-3/"><span class="lc-title">Zork III</span><span class="lc-desc">Infocom による 1982年のテキストアドベンチャー。2025年からオープンソースです。</span></a></li>
+      <li><a class="link-card" href="/run/nethack/"><span class="lc-title">NetHack</span><span class="lc-desc">ローグライクの古典。セーブはブラウザ内に保存されます。</span></a></li>
+      <li><a class="link-card" href="/run/beneath-a-steel-sky/"><span class="lc-title">Beneath a Steel Sky（無料）</span><span class="lc-desc">Revolution によるサイバーパンクの名作。フリーウェアで、すぐに遊べます。</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">インストール不要で遊べるゲーム</span><span class="lc-desc">制限のかかった学校や職場のネットワークでも動くタイトルの全リストです。</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p><a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a>・<a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a>・WebAssembly を利用しています。Wine は CodeWeavers の商標です。ExeBrowser は WineHQ、CodeWeavers、Microsoft とは無関係です。姉妹サイト：<a href="https://macemu.com/" target="_blank" rel="noopener">macemu.com</a>（ブラウザで遊べるクラシック Mac ゲーム）。</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/ja/">ホーム</a>
+    <a href="/load-exe/">自分のEXEを実行</a>
+    <a href="/ja/run/">アプリ一覧</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/guide/">動作互換ガイド</a>
+    <a href="/about/">このサイトについて</a>
+    <a href="/contact/">お問い合わせ</a>
+    <a href="/saves/">セーブデータ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/terms/">利用規約</a>
+  </nav>
+  <p>© 2026 ExeBrowser. コンテンツはオープンライセンス、ランタイムは GPL-2.0 / LGPL-2.1 です。</p>
+</footer>
+
+
+<script>window.__I18N={"play":"▶ {name} をプレイ","resume":"▶ {name} を再開","loading":"読み込み中…","startOver":"最初から始める","savedAgo":"{when}に保存しました。","filesRestored":"セーブデータも一緒に読み込まれています。ゲーム内のメニューからロードしてください。","snapshotResume":"中断したところから、そのまま再開できます。","progressSaved":"進行状況はこのブラウザに保存されます","resumedExactly":"中断した場所から再開しました","snapshotOff":"再開ポイントを保存できませんでした - ゲーム内のセーブは引き続き使えます","confirmDelete":"{name} の保存データを削除しますか？","justNow":"たった今","minutesAgo":"{n}分前","anHourAgo":"1時間前","hoursAgo":"{n}時間前","yesterday":"昨日","daysAgo":"{n}日前","saveHint":"ゲーム内でセーブすると、このブラウザに保存されます","resetSaves":"保存データを消去","savesCleared":"保存データを消去しました。再読み込みすると最初から始まります","restoredFiles":"{n}件のセーブデータを復元しました。ゲーム内のメニューからロードしてください","overlayNote":"DOSBox と WebAssembly でブラウザ内で動作します。<br>アップロードは一切ありません。ランタイム（約1.4MB）は初回読み込み後にキャッシュされます。","mouseHint":"ゲーム画面をクリックすると、キーボード操作が有効になります。","starting":"起動中…","cachedNote":"初回読み込み後はキャッシュされるので、次回はすぐに始まります。","loadingGame":"{name} を読み込んでいます…","fullscreen":"全画面","soundOn":"サウンド：オン","soundOff":"サウンド：オフ","remapKeys":"キーボード — キーの割り当てを変更","remapHint":"下のキーをクリックしてから、割り当てたいキーを押してください。ゲームごとに、このブラウザ内に保存されます。","resetDefaults":"初期設定に戻す","consoleOutput":"コンソール出力","wineLoadYours":"{name} のコピーを読み込む","wineEmptyHosted":"再生を押すと {name} がブラウザーで起動します。","wineEmptyOwn":"{name} はここでは配布していません。下からご自分のコピーを読み込めば、このページでそのまま動きます。","wineHintHosted":"WebAssembly と Wine によってブラウザーのタブ内だけで動作します。何もアップロードされません。初回起動時にランタイム（約30～60&nbsp;MB）を取得し、以降はキャッシュされます。","wineHintOwn":"{name} は再配布できないため、ここでは何も配布していません。ご自分のコピーは WebAssembly と Wine によってブラウザーのタブ内だけで動作し、何もアップロードされません。初回起動時にランタイム（約30～60&nbsp;MB）を取得し、以降はキャッシュされます。","wineEngine":"Wine エンジン：","wineVariantDefault":"Wine 1.7.55 · Win32 — 1995〜2008年のほぼすべて","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — Internet Explorer を必要とするアプリ","wineVariant16":"Wine 3.1 · 16ビット Windows 3.x — 1990〜1994年のアプリ","wineVariantR18":"Boxedwine 18R2 — 古いエンジン。既定では動かないものが動くことがあります","wineVariantX64":"wine64・実験的 — 64ビットのプログラム向け。専用ページで開きます","wineIdle":"待機中。","wineDownloadFiles":"このアプリが書き出したファイルをダウンロード","wineFilesKept":"このアプリが保存したファイルはこのブラウザーに残り、次にこのページを開いたときに復元されます。手元に残したい場合はダウンロードボタンを使ってください。","wineCaptures":"アプリがメモリ上の C:\\ ドライブに書き込んだセーブデータや生成物を取り出します。","wineLoadOwnCopy":"ご自分のコピーを読み込む","wineHaveFiles":"ファイルが手元にありますか。アプリのフォルダーか zip をここにドロップしてください。起点となる <code>.exe</code> と、その横にあるデータファイルを一緒に。","wineDropFiles":"ここにファイルをドロップするか、次から選択：","winePickExe":"単体の EXE","winePickFolder":"フォルダー","winePickZip":"zip ファイル","wineEntryExe":"起点の EXE：","wineRun":"Wine で実行","wineLoadingRuntime":"Boxedwine ランタイムを読み込み中…","wineConfiguring":"Wine の起動を設定中…","wineStartingEmulator":"エミュレーターを起動中…","wineRunning":"{name} を実行中…","wineBootFailed":"起動に失敗しました。コンソールを確認してください。","winePickThenRun":"EXE を選んでから「実行」を押してください。","wineReadyLoad":"Wine の準備完了 — EXE を読み込んでください","wineInstallPrompt":"インストールしてワンタップで戻る","wineEntry":"起点：{path}","wineExesAvailable":"利用できる EXE は {n} 件","wineX64Pending":"下でファイルを選んでください — 実験的な64ビットページに続けて進みます。","wineFetchedSoFar":"ランタイムのファイルを {amount} 取得しました…","wineStillStarting":"まだ起動中です…","wineStillWaiting":"まだ画面が表示されていません — 古いソフトではよくあることです。続く場合は下のコンソール出力を確認してください。","wineHandoffArrived":"DOSプレイヤーから引き継ぎました — 実行の準備ができています。","pfX64":"64ビットのプログラム","pfX64Body":"ここのエンジンは32ビットのWindowsプログラムを実行するため、これはおそらく起動しません。ダウンロードページに同じバージョンの32ビット（x86）版があれば、そちらは大抵動きます。","pfWin16":"16ビットWindowsのプログラム — エンジンを切り替えました","pfWin16Body":"Windows 3.x向けに作られたものです。実行できるWine 3.1（16ビット）にエンジンを切り替えました。","pfWin32":"32ビットのプログラム — エンジンを戻しました","pfWin32Body":"16ビットエンジンではこれを実行できないため、Wine 1.7.55（Win32）に戻しました。","pfDos":"WindowsではなくDOSのプログラム","pfDosBody":"WineはWindowsプログラムを実行するため、これは起動しません。ですが、このサイトのDOSプレイヤーなら動き、ファイルもそのまま引き継がれます。","pfNotExe":"Windowsのプログラムではありません","pfNotExeBody":"すべての.exeにあるMZマークで始まっていません。名前を変えたアーカイブや文書、または途中で止まったダウンロードかもしれません。","pfDamaged":"このファイルは不完全か壊れています","pfDamagedBody":"ヘッダーに書かれたデータ量がファイルの実際の大きさより多く、たいていはダウンロードが途中で止まったことを意味します。もう一度ダウンロードしてください。","pfCpu":"別のプロセッサ向けに作られています","pfCpuBody":"ここのエミュレーターはx86コードしか実行できないため、このファイルは起動できません。","pfDriver":"アプリではなくドライバーです","pfDriverBody":"これはWindowsカーネルに読み込まれるか、Windowsより前に動くものです。ここには読み込む先がありません。","pfDotnet":".NETのプログラム","pfDotnetBody":".NET Frameworkが必要ですが、このWineはそれより古いため、おそらく起動時に止まります。","pfDll":"プログラムではなくDLLです","pfDllBody":"DLLはプログラムが読み込むライブラリです。プログラムのフォルダーごと読み込んで、その.exeを選んでください。","pfInstaller":"これはインストーラーです","pfInstallerBody":"実行するとプログラムが起動するのではなく展開されます。うまくいくこともあります（最後まで待ってください）。ファイルを取り出す方が早いこともありますが、ZIP/7z形式のインストーラーにしか使えません。InstallShieldやMSI、NSISで包まれたものには効きません。","pfCrt":"同梱のDLLが必要です","pfCrtBody":"このプログラムはWindowsに含まれないVisual C++ランタイム {dll} を使います。.exe単体ではなくフォルダーごと読み込めば、そのDLLも一緒に入ります。","pfOpen64":"実験的な64ビットエンジンを試す — ファイルもそのまま引き継がれます →","pfDosLink":"DOSプレイヤーで開く →","pfExtract":"代わりにファイルを取り出す →","pfPickFolder":"代わりにフォルダーを選ぶ","pfRunAnyway":"それでも「実行」は押せます。これはファイルのヘッダーから読み取ったもので、まれに間違っていることがあります。","pfCapGfx":"Direct3DかOpenGLで描画するため、GPUを素通しできるここでは動きません","pfCapNet":"ネットワークを必要としますが、このタブには用意されていません","pfCapNote":"知っておくとよいこと：{notes}。"};</script><script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+    <script src="/pwa.js?v=3"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+</body>
+</html>

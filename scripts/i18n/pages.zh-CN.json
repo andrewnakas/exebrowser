@@ -1,4 +1,53 @@
 {
+  "2048": {
+    "title": "2048 在线玩 — 原版游戏网页版，免费免下载",
+    "description": "在浏览器里免费玩 2048：Gabriele Cirulli 的开源原版，不是山寨版。游戏内没有广告，无需下载，在学校网络上也能运行。",
+    "keywords": "2048 在线玩, 2048 网页版, 2048 免费, 2048 原版, 2048 小游戏, 2048 免下载 无广告",
+    "ogTitle": "2048 在线玩 — 原版游戏，免费免下载",
+    "ogDescription": "Gabriele Cirulli 的原版 2048——滑动、合并，拼出 2048 方块。",
+    "crumb": "玩 2048",
+    "h1": "在线玩 2048——原版游戏",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 立即开始——直接在你的浏览器里运行"
+    },
+    "intro": "<p><strong>2048</strong> 是 Gabriele Cirulli 在 2014 年 3 月用一个周末写出来、并以开源方式发布的数字滑块益智游戏。这里是<strong>原版游戏，运行的就是作者本人的代码</strong>——滑动方块，合并相同的数字，努力拼出 2048 方块。</p>",
+    "sections": [
+      {
+        "h": "怎么玩",
+        "html": "<p>用方向键操作，触屏上则用手指滑动。每一步都会让所有方块朝那个方向滑到底。两个数字相同的方块相遇时，会合并成一个数字为两者之和的方块。每走一步，空格里会新出现一个 2 或 4。拼出 2048 方块就算获胜，之后还可以继续玩；棋盘填满且无路可走时，游戏结束。</p>"
+      },
+      {
+        "h": "突破 512",
+        "html": "<p>选定一个角落，把最大的方块一直留在那里。让它所在的那一行按从大到小的顺序排满；有一个方向会把大方块拉出角落，除非别无选择，否则不要往那个方向滑。大多数败局都输在一次随手的滑动上，而不是运气不好。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>Cirulli 以 MIT 许可证发布了 2048，任何人都可以复制和托管它。这里的文件就是他的原始文件，未经改动，游戏本身不会向其他任何网站发出请求。你的最高分保存在你自己的浏览器里。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "这是真正的 2048 吗？",
+        "a": "是的。这是 Gabriele Cirulli 的原版游戏，运行的是他未经改动的开源代码，不是克隆版，也不是重写版。"
+      },
+      {
+        "q": "在学校或公司网络上能玩 2048 吗？",
+        "a": "游戏只是由本站提供的几个小文件，不需要安装任何东西，游戏本身也不会连接其他网站。至于某个学校或公司的网络是否允许访问本站，则取决于那个网络。"
+      },
+      {
+        "q": "会保存我的最高分吗？",
+        "a": "会。你的最高分和正在进行的这一局都保存在浏览器的本地存储里。"
+      },
+      {
+        "q": "手机上能玩吗？",
+        "a": "能。朝你想让方块移动的方向滑动即可。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">2048 的作者是 <a href=\"https://github.com/gabrielecirulli/2048\" target=\"_blank\" rel=\"noopener\">Gabriele Cirulli</a>，依据 <a href=\"/apps/2048/LICENSE.txt\">MIT 许可证</a>使用。文件未经改动；详见 <a href=\"/apps/2048/NOTICE.md\">NOTICE.md</a>。</p>",
+    "licenseReason": "2048 由作者 Gabriele Cirulli 以 MIT 许可证发布，该许可证允许再分发，包括商业使用。",
+    "fullyFree": "以 MIT 许可证开源：完整的原版游戏。"
+  },
   "_readme": "Per-slug Simplified Chinese overrides. A page is only generated when a real translation exists here. Two keys are not pages: _cards translates the related-link cards once per href (a card missing from it is dropped rather than shown in English), and _controls translates the control-table cells keyed by their English text. Anything a page leaves out falls back to the English entry, so check-consistency requires every prose field the English entry fills — including mobileHint, which restates mobileControls.hint on its own.",
   "_cards": {
     "/run/doom/": {
@@ -76,6 +125,150 @@
     "/guide/": {
       "title": "兼容性指南",
       "desc": "哪些能在 ExeBrowser 里运行，哪些不能。"
+    },
+    "/run/duke-nukem-3d/": {
+      "title": "Duke Nukem 3D",
+      "desc": "Apogee 的射击游戏，共享软件章节。"
+    },
+    "/run/descent/": {
+      "title": "Descent",
+      "desc": "1995 年的六自由度射击游戏，共享软件版关卡。"
+    },
+    "/run/terminal-velocity/": {
+      "title": "Terminal Velocity",
+      "desc": "3D Realms 1995 年的街机式飞行射击游戏，共享软件版。"
+    },
+    "/run/shadow-warrior/": {
+      "title": "Shadow Warrior",
+      "desc": "3D Realms 1997 年的 Build 引擎射击游戏，共享软件章节。"
+    },
+    "/run/tyrian/": {
+      "title": "Tyrian 2000",
+      "desc": "免费软件纵版射击游戏，五章齐全。"
+    },
+    "/run/jill-of-the-jungle/": {
+      "title": "Jill of the Jungle",
+      "desc": "Epic MegaGames 1992 年的平台跳跃游戏，共享软件版第一章。"
+    },
+    "/run/wacky-wheels/": {
+      "title": "Wacky Wheels",
+      "desc": "Apogee 的动物卡丁车赛车游戏，共享软件版。"
+    },
+    "/run/skyroads/": {
+      "title": "SkyRoads",
+      "desc": "1993 年的太空公路竞速游戏，点开就玩。"
+    },
+    "/run/liero/": {
+      "title": "Liero",
+      "desc": "即时制的双人蠕虫对决，免费软件。"
+    },
+    "/run/commander-keen/": {
+      "title": "Commander Keen",
+      "desc": "《Marooned on Mars》：成就了 id Software 的共享软件章节。"
+    },
+    "/run/cosmo/": {
+      "title": "Cosmo's Cosmic Adventure",
+      "desc": "Apogee 的吸盘手平台跳跃游戏，共享软件章节。"
+    },
+    "/run/epic-pinball/": {
+      "title": "Epic Pinball",
+      "desc": "Epic 1993 年的 DOS 弹球游戏：共享软件版的 Android 球台。"
+    },
+    "/run/cyberdogs/": {
+      "title": "Cyberdogs",
+      "desc": "1994 年的俯视角任务射击游戏，支持单人或双人，免费软件。"
+    },
+    "/run/death-rally/": {
+      "title": "Death Rally",
+      "desc": "Remedy 1996 年的俯视角战斗赛车游戏，共享软件版。"
+    },
+    "/run/stargunner/": {
+      "title": "Stargunner",
+      "desc": "Apogee 1996 年的横版射击游戏，共享软件章节。"
+    },
+    "/run/major-stryker/": {
+      "title": "Major Stryker",
+      "desc": "Apogee 1993 年的纵版射击游戏：免费软件，三章齐全。"
+    },
+    "/run/dark-ages/": {
+      "title": "Dark Ages",
+      "desc": "Apogee 1991 年的奇幻平台跳跃游戏：免费软件，三卷齐全。"
+    },
+    "/run/mystic-towers/": {
+      "title": "Mystic Towers",
+      "desc": "Apogee 1994 年的等距视角巫师冒险游戏，共享软件版。"
+    },
+    "/run/keen4/": {
+      "title": "Commander Keen 4",
+      "desc": "《Secret of the Oracle》，共享软件章节。"
+    },
+    "/run/realms-of-chaos/": {
+      "title": "Realms of Chaos",
+      "desc": "Apogee 1995 年的奇幻平台跳跃游戏，共享软件章节。"
+    },
+    "/run/paganitzu/": {
+      "title": "Paganitzu",
+      "desc": "Apogee 1991 年的神庙益智游戏，共享软件版第一部。"
+    },
+    "/run/traffic-department-2192/": {
+      "title": "Traffic Department 2192",
+      "desc": "1994 年的俯视角悬浮飞车射击游戏，剧情很长，第一章。"
+    },
+    "/run/blockdrop-open/": {
+      "title": "Block Drop",
+      "desc": "下落方块，我们自己的开源版本。"
+    },
+    "/run/sudoku/": {
+      "title": "数独",
+      "desc": "无限生成的题目，五个难度等级。"
+    },
+    "/run/2048/": {
+      "title": "2048",
+      "desc": "原版 2048，作者本人的开源代码。"
+    },
+    "/run/boppin/": {
+      "title": "Boppin'",
+      "desc": "1994 年的扔方块益智游戏，共享软件章节。"
+    },
+    "/run/secret-agent/": {
+      "title": "Secret Agent",
+      "desc": "Apogee 1992 年的特工平台跳跃游戏，共享软件章节。"
+    },
+    "/run/word-rescue/": {
+      "title": "Word Rescue",
+      "desc": "Apogee 1992 年的识字平台跳跃游戏，共享软件章节。"
+    },
+    "/run/number-munchers/": {
+      "title": "Number Munchers",
+      "desc": "课堂上的数学经典。"
+    },
+    "/run/math-rescue/": {
+      "title": "Math Rescue",
+      "desc": "Apogee 1992 年的数学平台跳跃游戏，共享软件章节。"
+    },
+    "/run/hextris/": {
+      "title": "Hextris",
+      "desc": "快节奏的六边形方块配对游戏，开源。"
+    },
+    "/run/chess/": {
+      "title": "国际象棋：对战电脑",
+      "desc": "Stockfish 引擎，八个等级，无需注册。"
+    },
+    "/run/zork-2/": {
+      "title": "Zork II",
+      "desc": "Infocom 1981 年的文字冒险游戏，2025 年起开源。"
+    },
+    "/run/zork-3/": {
+      "title": "Zork III",
+      "desc": "Infocom 1982 年的文字冒险游戏，2025 年起开源。"
+    },
+    "/run/nethack/": {
+      "title": "NetHack",
+      "desc": "经典的 Roguelike 游戏，进度保存在你的浏览器里。"
+    },
+    "/run/zork-1/": {
+      "title": "Zork I",
+      "desc": "Infocom 1980 年的文字冒险游戏，2025 年起开源。"
     }
   },
   "_controls": {
@@ -102,7 +295,84 @@
     "Weapons 1–4": "武器 1–4",
     "Weapons 1–7": "武器 1–7",
     "hold Shift": "按住 <kbd>Shift</kbd>",
-    "number keys": "数字键"
+    "number keys": "数字键",
+    "Ctrl": "<kbd>Ctrl</kbd>",
+    "Open / use": "开门 / 使用",
+    "Space": "<kbd>Space</kbd>",
+    "Jump": "跳跃",
+    "A": "<kbd>A</kbd>",
+    "Crouch": "蹲下",
+    "Z": "<kbd>Z</kbd>",
+    "Weapons 1–0": "武器 1–0",
+    "Map": "地图",
+    "Tab": "<kbd>Tab</kbd>",
+    "Esc": "<kbd>Esc</kbd>",
+    "Turn / pitch": "转向 / 俯仰",
+    "Thrust forward / back": "前进 / 后退",
+    "A / Z": "<kbd>A</kbd> / <kbd>Z</kbd>",
+    "Fire lasers": "发射激光",
+    "Fire missiles": "发射导弹",
+    "Slide": "侧向滑移",
+    "Left flipper": "左挡板",
+    "Left Shift": "<kbd>左 Shift</kbd>",
+    "Right flipper": "右挡板",
+    "Right Shift": "<kbd>右 Shift</kbd>",
+    "Launch the ball": "发球",
+    "hold and release the down arrow": "按住<kbd>下方向键</kbd>再松开",
+    "Nudge the table": "摇晃球台",
+    "Steer": "转向",
+    "Accelerate / brake": "加速 / 刹车",
+    "Up / Down arrows": "<kbd>上 / 下方向键</kbd>",
+    "Turbo, guns and mines": "涡轮加速、机枪和地雷",
+    "set in the game's options": "在游戏选项里设置",
+    "Move": "移动",
+    "Shift": "<kbd>Shift</kbd>",
+    "Throw knife": "掷飞刀",
+    "Alt": "<kbd>Alt</kbd>",
+    "Enter a level": "进入关卡",
+    "Up arrow": "<kbd>上方向键</kbd>",
+    "Fire, afterburner, weapons": "开火、加力、武器",
+    "listed on the game's F1 help screen": "见游戏的 <kbd>F1</kbd> 帮助画面",
+    "Player 1 and player 2 keys": "玩家 1 和玩家 2 的按键",
+    "shown and changed in the game's options": "在游戏选项里查看和修改",
+    "Menus": "菜单",
+    "Arrow keys and Enter": "<kbd>方向键</kbd> 和 <kbd>Enter</kbd>",
+    "Fire and other keys": "开火及其他按键",
+    "shown in the game's instructions": "见游戏内的说明",
+    "Attack": "攻击",
+    "Swap character": "切换角色",
+    "Walk": "行走",
+    "Jump, cast and pick up": "跳跃、施法和拾取",
+    "listed on the game's help screen": "见游戏的帮助画面",
+    "Setup menu": "设置菜单",
+    "Move and attack": "移动和攻击",
+    "Throw and other keys": "投掷及其他按键",
+    "Restart room and other keys": "重开房间及其他按键",
+    "Jump and fire": "跳跃和开火",
+    "Slide the tiles": "滑动方块",
+    "Arrow keys (W A S D also work)": "<kbd>方向键</kbd>（<kbd>W A S D</kbd> 也可以）",
+    "Swipe on a touch screen": "在触屏上滑动",
+    "Start a new game": "开始新游戏",
+    "R": "<kbd>R</kbd>",
+    "New Game button": "“New Game”按钮",
+    "Rotate the hexagon": "旋转六边形",
+    "Left / Right arrows": "<kbd>左 / 右方向键</kbd>",
+    "Tap the left or right side of the screen": "点按屏幕左侧或右侧",
+    "Speed the blocks up": "让方块加速",
+    "Down arrow": "<kbd>下方向键</kbd>",
+    "Pause": "暂停",
+    "P": "<kbd>P</kbd>",
+    "Pause button": "暂停按钮",
+    "Start / restart": "开始 / 重新开始",
+    "Enter": "<kbd>Enter</kbd>",
+    "Click the hexagon": "点击六边形",
+    "Give a command": "输入指令",
+    "Type it and press Enter": "输入后按 <kbd>Enter</kbd>",
+    "n, s, e, w, u, d (north, south, east, west, up, down)": "n、s、e、w、u、d（北、南、东、西、上、下）",
+    "Check what you carry": "查看随身物品",
+    "i": "<code>i</code>",
+    "Save / load": "存档 / 读档",
+    "save / restore": "<code>save</code> / <code>restore</code>"
   },
   "doom": {
     "title": "在浏览器里免费玩 DOOM（1993）— 无需下载 — ExeBrowser",
@@ -388,5 +658,1193 @@
     ],
     "mobileHint": "在手机上，请使用球台下方的挡板 / 发射按钮。",
     "fullyFree": "引擎采用 MIT 许可证，美术、音效和球台数据均为完全原创，并以 CC0 公有领域发布。"
+  },
+  "shadow-warrior": {
+    "title": "Shadow Warrior 在线玩 — 1997 年共享软件版，浏览器免费畅玩",
+    "description": "在浏览器里免费玩 Shadow Warrior（1997）：3D Realms 出品的 Build 引擎射击游戏的官方共享软件章节。无需下载，通过 DOSBox + WebAssembly 运行。",
+    "keywords": "shadow warrior 在线玩, shadow warrior 网页版, 影子武士 1997 免费, shadow warrior 共享软件, build 引擎 射击游戏 在线, shadow warrior 免下载",
+    "ogTitle": "Shadow Warrior 在线玩 — 1997 年共享软件版",
+    "ogDescription": "3D Realms 1997 年的射击游戏——武士刀、手里剑和粘性炸弹——就在浏览器标签页里。",
+    "crumb": "玩 Shadow Warrior",
+    "h1": "在线玩 Shadow Warrior——1997 年的共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Shadow Warrior</strong>（影子武士）是 3D Realms 在 1997 年推出的第一人称射击游戏，和 Duke Nukem 3D 用的是同一个 Build 引擎，而且走得更远：房间上面叠房间、可以驾驶的载具、一把武士刀，还有粘性炸弹。官方的<strong>共享软件章节</strong>（1.2 版，共四关）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 13&nbsp;MB，首次加载需要等几秒；之后浏览器会把它保留下来。Sound Blaster 音效和音乐已经配置好。</p><p>Shadow Warrior 是本站最吃性能的 Build 引擎游戏。较新的笔记本或台式机能以原生的 320×200 分辨率流畅运行；较旧的 Chromebook 和手机在较大的室外场景里会掉帧。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>按键就是你可能在 Duke Nukem 3D 里熟悉的那套 Build 引擎键位：方向键移动和转向，<kbd>Ctrl</kbd> 开火，<kbd>Space</kbd> 开门和使用开关，<kbd>A</kbd> 跳跃，<kbd>Z</kbd> 蹲下。数字键选择武器；<kbd>1</kbd> 上的武士刀永远用不完。所有按键都可以在游戏菜单的 Options 里修改。</p><p>有句提醒在 1997 年的包装盒上就有：这是一款暴力游戏，带有那个年代的粗俗幽默和刻板印象，不适合年幼的玩家。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这里运行的是 3D Realms 发布、允许免费分发的共享软件章节，依据的是游戏包内附带的 LICENSE.TXT。该许可只涵盖这一章；包含其余关卡的注册版不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Shadow Warrior 合法吗？",
+        "a": "合法。这是官方的共享软件章节，3D Realms 在游戏包内附带的 LICENSE.TXT 里授权它可以免费分发。注册版不在这里托管。"
+      },
+      {
+        "q": "包含游戏的多少内容？",
+        "a": "共享软件章节：四个关卡，有武士刀、手里剑、防暴枪、Uzi 冲锋枪和粘性炸弹。完整版的第二章不属于共享软件版。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。通过游戏自带菜单保存的存档会留在这个浏览器里，下次访问时恢复。清除网站数据会把它们删掉。"
+      },
+      {
+        "q": "学校的 Chromebook 上能运行吗？",
+        "a": "它不需要安装任何东西就能加载，在受管理的设备上这通常是最关键的。速度取决于机器：较新的 Chromebook 应付得来，低端机型会卡顿。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Shadow Warrior 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Shadow Warrior →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Shadow Warrior 共享软件版可依据游戏包内附带的 LICENSE.TXT 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/shadow-warrior/NOTICE.md\">/apps/shadow-warrior/NOTICE.md</a>。</p>",
+    "licenseReason": "Shadow Warrior 的共享软件版可依据游戏包内附带的 LICENSE.TXT 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动／转向 · FIRE：开火 · OPEN：开门／开关 · MENU：Esc"
+  },
+  "descent": {
+    "title": "Descent 在线玩 — 1995 年共享软件版，浏览器免费畅玩",
+    "description": "在浏览器里免费玩 Descent（1995）：Parallax 出品的六自由度射击游戏的官方共享软件版，共七个矿井关卡。无需下载。",
+    "keywords": "descent 在线玩, descent 网页版, 天旋地转 游戏 免费, descent 1995 共享软件, descent dos 游戏 在线, 六自由度 射击游戏",
+    "ogTitle": "Descent 在线玩 — 1995 年共享软件版，免费",
+    "ogDescription": "驾驶飞船在矿井隧道里朝任意方向飞行：Parallax 1995 年的经典，共享软件版。",
+    "crumb": "玩 Descent",
+    "h1": "在线玩 Descent——1995 年的共享软件版",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件版通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Descent</strong>（天旋地转）是 Parallax Software 在 1995 年推出的射击游戏，它把你放进矿井里的一艘飞船，让你朝任何方向飞：向上、向下、侧移，甚至倒过来飞。官方的<strong>共享软件版</strong>（1.4 版，前七关）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包不到 3&nbsp;MB，几秒钟就能启动。游戏一开始会让你输入飞行员名字；随便输入点什么，再按 <kbd>Enter</kbd> 即可。</p><p>Descent 在 1995 年就是一款很吃配置的游戏，现在它对模拟器的要求也仍然比 2D 游戏高。近几年的笔记本或台式机都能流畅运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>你的飞船可以沿六个轴运动，需要花几分钟适应。在默认键位下，<kbd>A</kbd> 和 <kbd>Z</kbd> 前进和后退，方向键控制转向和俯仰，<kbd>Ctrl</kbd> 发射激光，<kbd>Space</kbd> 发射导弹。<kbd>Tab</kbd> 打开 3D 自动地图，你肯定用得上。每一关的结局都一样：摧毁反应堆，然后在矿井爆炸前找到出口。</p><p>所有按键都可以在 Options → Customize 里重新设置。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>游戏自带的 README 说得最清楚：“This game may be freely distributed.”（本游戏可以自由分发。）这指的是这个包含七个关卡的共享软件版。注册版有 30 个关卡，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Descent 合法吗？",
+        "a": "合法。这是共享软件版，它的 README 写明可以自由分发。30 关的注册版不在这里托管。"
+      },
+      {
+        "q": "包含多少个关卡？",
+        "a": "七个：完整的共享软件版，1.4 版。"
+      },
+      {
+        "q": "可以用鼠标或摇杆吗？",
+        "a": "键盘开箱即用，当年大多数人也是用键盘玩共享软件版的。鼠标操作可以在游戏的 Options 菜单里打开，但浏览器标签页无法把摇杆传给 DOS。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。你的飞行员档案和存档会留在这个浏览器里，下次访问时恢复。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Descent 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Descent\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Descent →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Descent\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Descent 共享软件版可依据游戏包内附带的 README.TXT 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/descent/NOTICE.md\">/apps/descent/NOTICE.md</a>。</p>",
+    "licenseReason": "Descent 的共享软件版可依据游戏包内附带的 README.TXT 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：转向／俯仰 · FWD / BACK：前进／后退 · FIRE：激光 · MISSILE：副武器"
+  },
+  "epic-pinball": {
+    "title": "Epic Pinball 在线玩 — 1993 年共享软件弹球桌，免费网页版",
+    "description": "在浏览器里免费玩 Epic Pinball（1993）：官方共享软件版，带 Android 球台。节奏飞快的 DOS 弹球游戏，无需下载，学校的笔记本上也能玩。",
+    "keywords": "epic pinball 在线玩, epic pinball 网页版, epic pinball 免费, 弹球游戏 在线玩, dos 弹球游戏, epic megagames 弹球",
+    "ogTitle": "Epic Pinball 在线玩 — 1993 年共享软件弹球桌",
+    "ogDescription": "Epic MegaGames 1993 年的 DOS 弹球名作——共享软件版的 Android 球台，就在你的浏览器里。",
+    "crumb": "玩 Epic Pinball",
+    "h1": "在线玩 Epic Pinball——共享软件版球台",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件版球台通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Epic Pinball</strong> 是 James Schmalz 编写、Epic MegaGames 在 1993 年发行的弹球游戏：流畅卷动的球台、数字音乐，还有一颗真正有分量感的球。官方的<strong>共享软件版</strong>连同它的 Android 球台就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。它远不到 1&nbsp;MB，几乎一点就开。最先出现的是 Epic 的片头和一个菜单；按 <kbd>Enter</kbd> 进入球台。</p><p>Epic Pinball 是用汇编语言为 386 编写的，在浏览器里几乎任何设备都能全速运行，包括 Chromebook。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>左右两个 <kbd>Shift</kbd> 键就是挡板。按住下方向键把弹簧杆拉回，松开即可发球。<kbd>Space</kbd> 可以摇晃球台——摇得太频繁就会触发 tilt 犯规。游戏自带的帮助画面列出了全部按键。</p><p>在 Android 球台上，首先要学会的是那几条能拼出机器人各个部件的坡道射门；把机器人拼完整，才会开启大额得分。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是 Epic MegaGames 发布、允许免费分发的共享软件版，附带了它的 VENDOR.DOC 和 LICENSE.DOC。注册版的球台包增加了更多球台；它们属于商业产品，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Epic Pinball 免费吗？",
+        "a": "免费。这是官方的共享软件版，Epic MegaGames 发布它就是为了让人免费分发。注册版的球台包不在这里托管。"
+      },
+      {
+        "q": "包含哪些球台？",
+        "a": "共享软件版的球台 Android。其他球台是在注册版球台包里出售的。"
+      },
+      {
+        "q": "怎么操作？",
+        "a": "左右 Shift 是挡板，下方向键拉弹簧杆，Space 摇晃球台。"
+      },
+      {
+        "q": "这是 Windows 自带的那个弹球游戏吗？",
+        "a": "不是。Windows 自带的弹球游戏是 3D Pinball: Space Cadet。本站另有一个页面提供基于那个引擎的开源球台；Epic Pinball 是另一家工作室更早推出的 DOS 游戏。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Epic Pinball 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Epic%20Pinball\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Epic Pinball →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Epic%20Pinball\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Epic Pinball 共享软件版可依据游戏包内附带的 LICENSE.DOC 和 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/epic-pinball/NOTICE.md\">/apps/epic-pinball/NOTICE.md</a>。</p>",
+    "licenseReason": "Epic Pinball 的共享软件版可依据游戏包内附带的 LICENSE.DOC 和 VENDOR.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "L / R：挡板 · ▼：拉动并松开弹簧杆 · TILT：摇晃球台"
+  },
+  "death-rally": {
+    "title": "Death Rally 在线玩 — 1996 年共享软件版，浏览器免费畅玩",
+    "description": "在浏览器里免费玩 Death Rally（1996）：Remedy 出品的俯视角战斗赛车游戏的官方共享软件版。机枪、地雷、改装升级。无需下载。",
+    "keywords": "death rally 在线玩, death rally 网页版, 死亡拉力 免费, death rally 1996 共享软件, 俯视角 赛车游戏 在线, remedy death rally dos",
+    "ogTitle": "Death Rally 在线玩 — 1996 年共享软件版，免费",
+    "ogDescription": "Remedy 的第一款游戏：俯视角赛车，配上机枪、地雷和一家不太正经的改装店。",
+    "crumb": "玩 Death Rally",
+    "h1": "在线玩 Death Rally——1996 年的共享软件版",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件版通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Death Rally</strong>（死亡拉力）是 1996 年的俯视角战斗赛车游戏，也是 Remedy Entertainment 的第一款作品，由 Apogee 发行。你从一辆破旧的 Vagabond 起步，靠比赛赢奖金，再把钱花在引擎、轮胎、装甲以及一些不那么光彩的东西上。官方的<strong>共享软件版</strong>（1.1 版）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 7&nbsp;MB。启动后是高分辨率 VGA 的主菜单；选择 Start Racing，再挑一名车手。</p><p>比赛在普通笔记本上就能流畅运行。菜单是 640×480 的，所以看起来比当年大多数 DOS 游戏都清晰。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>用方向键驾驶：上加速，下刹车。其余按键——涡轮加速、机枪、地雷——可以在主菜单的 Configure 里查看和修改。刚开始时，先参加简单级别的比赛，跑进前三名，然后优先把钱投到引擎上。</p><p>两场比赛之间，商店出售维修和升级，而放高利贷的和搞破坏的人会给你提供捷径，只是代价比乍看起来要高。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是 Apogee 依据游戏包内的 LICENSE.DOC 发布的共享软件版，该许可允许免费分享。它的赛道和车辆数量有所削减。注册版不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Death Rally 合法吗？",
+        "a": "合法。这是官方的共享软件版，Apogee 在它的 LICENSE.DOC 里授权免费分发。注册版不在这里托管。"
+      },
+      {
+        "q": "和完整版相比少了什么？",
+        "a": "共享软件版的赛道和车辆比注册版少。比赛、武器、商店和生涯晋级都可以正常玩。"
+      },
+      {
+        "q": "我的生涯进度会保存吗？",
+        "a": "会，尽量保留。游戏会在两场比赛之间保存你的车手，本页面会把这些文件留在你的浏览器里，供下次访问使用。"
+      },
+      {
+        "q": "可以两个人一起玩吗？",
+        "a": "菜单里的多人选项需要 DOS 网络，浏览器标签页提供不了。这里能玩的是单人模式。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Death Rally 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Death%20Rally\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Death Rally →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Death%20Rally\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Death Rally 共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/death-rally/NOTICE.md\">/apps/death-rally/NOTICE.md</a>。</p>",
+    "licenseReason": "Death Rally 的共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：转向、加速、刹车 · CTRL / ALT / SPACE：游戏的动作键"
+  },
+  "jill-of-the-jungle": {
+    "title": "Jill of the Jungle 在线玩 — 第一章免费，浏览器直接玩",
+    "description": "在浏览器里免费玩 Jill of the Jungle（1992）：Tim Sweeney 为 Epic MegaGames 制作的平台跳跃游戏，官方共享软件版第一章。无需下载。",
+    "keywords": "jill of the jungle 在线玩, jill of the jungle 网页版, jill of the jungle 免费, epic megagames 平台游戏, dos 平台跳跃游戏 在线, jill of the jungle 共享软件",
+    "ogTitle": "Jill of the Jungle 在线玩 — 第一章免费",
+    "ogDescription": "让 Epic MegaGames 一举成名的 1992 年平台跳跃游戏——第一章，就在你的浏览器里。",
+    "crumb": "玩 Jill of the Jungle",
+    "h1": "在线玩 Jill of the Jungle——共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Jill of the Jungle</strong> 是 Tim Sweeney 在 1992 年编写的平台跳跃游戏，也是 Epic MegaGames 对 Commander Keen 的回应：256 色 VGA 画面、Sound Blaster 音乐，还有一位能变成鸟、鱼和青蛙的女主角。官方的<strong>共享软件版第一章</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。它约 300&nbsp;KB，几乎瞬间启动。第一个画面显示的是声音和画面设置；按 <kbd>Enter</kbd> 接受即可。</p><p>它在任何设备上都能全速运行，包括手机和 Chromebook。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键移动，<kbd>Shift</kbd> 跳跃，找到飞刀之后用 <kbd>Alt</kbd> 投掷——它会像回旋镖一样飞回来。这一章围绕一张枢纽地图展开：走到某个关卡的入口，按上方向键进入。钥匙用来打开对应的门，苹果可以恢复生命值。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是三章中的第一章，也就是 Epic MegaGames 作为共享软件发布的那一章。它的 VENDOR.DOC 允许分发，前提是明确标明它是共享软件。另外两章不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Jill of the Jungle 免费吗？",
+        "a": "免费。这是共享软件版第一章，Epic MegaGames 在游戏包内附带的 VENDOR.DOC 里允许分发它。"
+      },
+      {
+        "q": "包含几章？",
+        "a": "三章中的一章。第二章（Jill Goes Underground）和第三章（Jill Saves the Prince）属于游戏的注册版部分。"
+      },
+      {
+        "q": "它是谁做的？",
+        "a": "Tim Sweeney 为他自己的公司 Epic MegaGames 编写了它，这家公司后来成为 Epic Games。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。通过 Jill 自带菜单保存的存档会留在这个浏览器里。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Jill of the Jungle 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Jill%20of%20the%20Jungle\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Jill of the Jungle →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Jill%20of%20the%20Jungle\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Jill of the Jungle 共享软件版可依据游戏包内附带的 VENDOR.DOC 和 LICENSE.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/jill-of-the-jungle/NOTICE.md\">/apps/jill-of-the-jungle/NOTICE.md</a>。</p>",
+    "licenseReason": "Jill of the Jungle 的共享软件版可依据游戏包内附带的 VENDOR.DOC 和 LICENSE.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动 · JUMP：Shift · KNIFE：Alt · ENTER/ESC：菜单"
+  },
+  "terminal-velocity": {
+    "title": "Terminal Velocity 在线玩 — 1995 年共享软件版，免费网页版",
+    "description": "在浏览器里免费玩 Terminal Velocity（1995）：Terminal Reality 开发、3D Realms 发行的高速 3D 飞行射击游戏，官方共享软件章节。",
+    "keywords": "terminal velocity 在线玩, terminal velocity 网页版, terminal velocity 免费, terminal velocity 1995 共享软件, dos 飞行射击游戏 在线, 3d realms terminal velocity",
+    "ogTitle": "Terminal Velocity 在线玩 — 1995 年共享软件版",
+    "ogDescription": "在带贴图的 3D 星球上空高速飞行的街机式射击——1995 年的共享软件章节，就在你的浏览器里。",
+    "crumb": "玩 Terminal Velocity",
+    "h1": "在线玩 Terminal Velocity——共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Terminal Velocity</strong> 是 Terminal Reality 开发、3D Realms 在 1995 年发行的飞行射击游戏：没有模拟飞行那一套检查清单，只有一艘快船、开阔的 3D 星球和可以一头扎进去的隧道。官方的<strong>共享软件章节</strong>（1.2 版）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包不到 4&nbsp;MB，Sound Blaster 音效已经配置好。</p><p>它在 1995 年是用来展示高速 PC 性能的作品，所以算是本站比较吃性能的 DOS 游戏之一。在较新的笔记本或台式机上运行良好。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键驾驶飞船。开火、加力和武器选择也都在键盘上；游戏的帮助画面（<kbd>F1</kbd>）列出了这些按键，也可以在游戏选项里修改。击毁每个星球上标记出来的目标，然后找到隧道入口：Boss 都在隧道里。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是标为“episode one”（第一章）的共享软件版，3D Realms 在游戏包内附带的 LICENSE.TXT 里授权它可以免费分发。许可写得很明白，它不涵盖其他任何章节；注册版不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Terminal Velocity 合法吗？",
+        "a": "合法。这是官方的共享软件章节，3D Realms 授权它可以免费分发。注册版不在这里托管。"
+      },
+      {
+        "q": "包含多少内容？",
+        "a": "游戏的第一章：其中的各个星球以及它们的隧道段落。"
+      },
+      {
+        "q": "可以用鼠标飞行吗？",
+        "a": "键盘开箱即用。鼠标飞行可以在游戏选项里开启，不过在浏览器标签页里用键盘更省事。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Terminal Velocity 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Terminal%20Velocity\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Terminal Velocity →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Terminal%20Velocity\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Terminal Velocity 共享软件版可依据游戏包内附带的 LICENSE.TXT 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/terminal-velocity/NOTICE.md\">/apps/terminal-velocity/NOTICE.md</a>。</p>",
+    "licenseReason": "Terminal Velocity 的共享软件版可依据游戏包内附带的 LICENSE.TXT 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：飞行 · FIRE：Ctrl · ALT / SPACE：游戏的其他按键 · ESC：菜单"
+  },
+  "liero": {
+    "title": "Liero 在线玩 — 即时制蠕虫对战，免费网页版",
+    "description": "在浏览器里免费玩 Liero 1.33：免费软件，即时制的蠕虫对决，可以两人共用一个键盘，也可以一个人对战电脑。无需下载。",
+    "keywords": "liero 在线玩, liero 网页版, liero 免费, liero 1.33, 即时制 百战天虫, 双人 同键盘 游戏 在线",
+    "ogTitle": "Liero 在线玩 — 即时制蠕虫对战，免费",
+    "ogDescription": "两条蠕虫、四十种武器、一个键盘：免费软件经典 Liero，就在你的浏览器里。",
+    "crumb": "玩 Liero",
+    "h1": "在线玩 Liero——免费软件蠕虫对决",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——完整的免费软件版通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Liero</strong> 是 Joosa Riekkinen 在 1998 年发布的免费软件游戏，常被称作即时制的 Worms：两条蠕虫在可破坏的泥土里挖洞，用一根忍者绳索和大约四十种武器互相厮杀，没有回合，也不用等待。<strong>1.33 版，完整的游戏，</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版游戏，放在编译成 WebAssembly 的 DOSBox 里。它不到 400&nbsp;KB，一两秒就能启动；在加载文字出现时按任意键进入菜单。</p><p>Liero 很轻量，在任何设备上都能全速运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>Liero 本来就是为两个人共用一个键盘而设计的，在这里依然可以这样玩。你也可以在选项里把第二条蠕虫设为由电脑控制。每位玩家在对战前挑选五种武器。选项菜单会显示每位玩家的按键，并允许修改——先把这件事做了，因为两双手挤在一块笔记本键盘上，需要事先安排一下。</p><p>忍者绳索是拉开玩家差距的技巧：射出去，荡起来，再松手。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>Liero 是免费软件。它的文档说得很直接：可以用任何方式分发给任何人，只要内容不被改动。这里的文件是未经改动的 1.33 版。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Liero 真的免费吗？",
+        "a": "是的。作者把它作为免费软件发布，随附的文档允许在不作改动的前提下分发。这是完整的游戏，不是试玩版。"
+      },
+      {
+        "q": "可以一个人玩吗？",
+        "a": "可以。在选项菜单里把两条蠕虫中的一条设为电脑控制即可。"
+      },
+      {
+        "q": "两个人怎么在一个键盘上玩？",
+        "a": "每位玩家有自己的一套按键，在选项菜单里可以查看，也可以修改。全尺寸键盘比小巧的笔记本键盘用起来更舒服。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Liero 是免费软件：它的文档写明，只要内容不被改动，就可以用任何方式分发给任何人。来源说明：<a href=\"/apps/liero/NOTICE.md\">/apps/liero/NOTICE.md</a>。</p>",
+    "licenseReason": "Liero 是免费软件：它的文档写明，只要内容不被改动，就可以用任何方式分发给任何人。",
+    "fullyFree": "由作者 Joosa Riekkinen 作为免费软件发布：完整的游戏。",
+    "mobileHint": "方向键：移动 · CTRL / ALT / SPACE：游戏的动作键 · ENTER：确认"
+  },
+  "major-stryker": {
+    "title": "Major Stryker 在线玩 — 完整版免费，浏览器直接玩",
+    "description": "在浏览器里免费玩 Major Stryker（1993）：Apogee 出品的纵版射击游戏，2006 年作为免费软件发布。三章全部收录，无需下载。",
+    "keywords": "major stryker 在线玩, major stryker 网页版, major stryker 免费, apogee 射击游戏, dos 纵版射击游戏 在线, major stryker 免费软件",
+    "ogTitle": "Major Stryker 在线玩 — 完整版免费",
+    "ogDescription": "Apogee 1993 年的纵版射击游戏，2006 年起成为免费软件——三章全部在你的浏览器里。",
+    "crumb": "玩 Major Stryker",
+    "h1": "在线玩 Major Stryker——完整的免费软件版",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——完整的免费软件版通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Major Stryker</strong> 是 Apogee 在 1993 年推出的纵版射击游戏：三颗星球（熔岩、极地和沙漠）、三层视差卷动的 EGA 画面，还有一艘一路捡到更强火力的飞船。Apogee 在 2006 年把它作为<strong>免费软件</strong>发布，所以这里托管的是完整的游戏——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 Apogee 自己的免费软件包，放在编译成 WebAssembly 的 DOSBox 里。它 1&nbsp;MB 出头。游戏出自 16 色 EGA 时代，在任何设备上都能全速运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键移动飞船。开火键和其他按键见游戏内的说明，也可以在游戏菜单里修改。获救的科学家和被摧毁的目标会留下武器舱，记得捡起来，并且尽量别中弹：中弹先丢的是升级过的武器，然后才是一条命。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>Apogee Software 于 2006 年 3 月 14 日把 Major Stryker 作为免费软件发布。这里的游戏包是 <code>strykerfw.zip</code>，即来自 Apogee 自家下载服务器的免费软件版，三章齐全。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Major Stryker 真的免费吗？",
+        "a": "是的。Apogee 于 2006 年 3 月 14 日把完整版游戏作为免费软件发布。这里就是那个版本，取自 Apogee 自家下载服务器的存档副本。"
+      },
+      {
+        "q": "包含几章？",
+        "a": "三章全部包含：Lava Planet、Arctic Planet 和 Desert Planet。"
+      },
+      {
+        "q": "我的最高分会保存吗？",
+        "a": "会，尽量保留。游戏的存档文件会留在这个浏览器里，下次访问还在。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Apogee Software 于 2006 年 3 月 14 日把 Major Stryker 作为免费软件发布；这里是来自 Apogee 自家下载服务器的免费软件包。来源说明：<a href=\"/apps/major-stryker/NOTICE.md\">/apps/major-stryker/NOTICE.md</a>。</p>",
+    "licenseReason": "Apogee Software 于 2006 年 3 月 14 日把 Major Stryker 作为免费软件发布；这里是来自 Apogee 自家下载服务器的免费软件包。",
+    "fullyFree": "由 Apogee Software 于 2006 年 3 月 14 日作为免费软件发布：完整的游戏，三章齐全。",
+    "mobileHint": "方向键：飞行 · FIRE：Ctrl · ALT / SPACE：游戏的其他按键 · ESC：菜单"
+  },
+  "stargunner": {
+    "title": "Stargunner 在线玩 — 1996 年共享软件版，浏览器免费畅玩",
+    "description": "在浏览器里免费玩 Stargunner（1996）：Apogee 出品的横版太空射击游戏的官方共享软件章节，关卡之间还有飞船商店。",
+    "keywords": "stargunner 在线玩, stargunner 网页版, stargunner 免费, apogee stargunner 共享软件, dos 横版射击游戏 在线, 清版射击 网页版",
+    "ogTitle": "Stargunner 在线玩 — 1996 年共享软件版，免费",
+    "ogDescription": "Apogee 最后一款 DOS 清版射击游戏：预渲染的精灵图、武器商店，还有铺天盖地的子弹。",
+    "crumb": "玩 Stargunner",
+    "h1": "在线玩 Stargunner——共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Stargunner</strong> 是 1996 年的横版清版射击游戏，也是以 Apogee 名义发行的最后几款游戏之一：预渲染的飞船、高速卷动的画面，还有一家可以用点数购买武器、引擎和僚机卫星的商店。官方的<strong>共享软件章节</strong>（1.1 版）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 5&nbsp;MB。在普通笔记本上就能流畅运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键移动飞船。开火键可以在游戏的操作选项里查看，也可以在那里修改。记得收集敌人掉落的点数：每关结束后，可以用它们购买前置、上方和下方武器，以及更快的引擎。一艘配置均衡的飞船比只装一门巨炮的表现更好。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是共享软件章节，依据游戏包内的 LICENSE.DOC 分发。Apogee 后来以 Windows 安装包的形式把完整版作为免费软件发布；这里托管的是 DOS 共享软件章节，也就是它的许可明确允许转发的那个版本。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Stargunner 合法吗？",
+        "a": "合法。这是官方的共享软件章节，Apogee 在它的 LICENSE.DOC 里授权免费分发。"
+      },
+      {
+        "q": "包含多少内容？",
+        "a": "游戏的第一章，包括关卡之间的商店。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。存档会留在这个浏览器里，下次访问还在。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Stargunner 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Stargunner\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Stargunner →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Stargunner\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Stargunner 共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/stargunner/NOTICE.md\">/apps/stargunner/NOTICE.md</a>。</p>",
+    "licenseReason": "Stargunner 的共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：飞行 · FIRE：Ctrl · ALT / SPACE：游戏的其他按键 · ESC：菜单"
+  },
+  "secret-agent": {
+    "title": "Secret Agent 在线玩 — Apogee 1992 年平台游戏，免费网页版",
+    "description": "在浏览器里免费玩 Secret Agent（1992）：Apogee 出品的特工题材平台跳跃游戏的官方共享软件章节 The Hunt for Red Rock Rover。无需下载。",
+    "keywords": "secret agent apogee 在线玩, secret agent dos 游戏, secret agent 网页版, secret agent 1992 共享软件, apogee 平台游戏 在线, secret agent 免费",
+    "ogTitle": "Secret Agent 在线玩 — Apogee 1992 年平台游戏，免费",
+    "ogDescription": "特工 006½ 对抗 Diabolical Villain Society——Apogee 1992 年的平台跳跃游戏，第一章。",
+    "crumb": "玩 Secret Agent",
+    "h1": "在线玩 Secret Agent——共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Secret Agent</strong> 是 Apogee 在 1992 年推出的平台跳跃游戏，走的是 Crystal Caves 的路子：你是特工 006½，被空投到一座遍布敌方基地的小岛上，每座基地都是一个屏幕宽的迷宫，里面满是守卫、激光和上锁的门。官方的<strong>共享软件章节</strong> The Hunt for Red Rock Rover 就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。它不到 200&nbsp;KB，一点就开。这是一款 16 色 EGA 游戏，在任何设备上都能全速运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键移动，<kbd>Ctrl</kbd> 跳跃，<kbd>Alt</kbd> 开火。弹药有限，所以不要见什么打什么。在每座基地里，你要先找到软盘，把它带到电脑前关掉激光，然后用炸药炸开出口的门。捡到眼镜可以让隐藏的平台显形。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是三章中的第一章，即共享软件版。游戏包内附带的 Apogee 的 VENDOR.DOC 鼓励人们免费转发它。第二章和第三章属于注册版，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Secret Agent 合法吗？",
+        "a": "合法。这是共享软件章节，Apogee 的 VENDOR.DOC 允许任何人免费复制和转发。"
+      },
+      {
+        "q": "包含几章？",
+        "a": "三章中的一章：The Hunt for Red Rock Rover。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。游戏会保存你在岛屿地图上的位置，本页面会把那个文件留在你的浏览器里。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Secret Agent 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Secret%20Agent\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Secret Agent →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Secret%20Agent\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Secret Agent 共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/secret-agent/NOTICE.md\">/apps/secret-agent/NOTICE.md</a>。</p>",
+    "licenseReason": "Secret Agent 的共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动 · JUMP：Ctrl · FIRE：Alt · ENTER/ESC：菜单"
+  },
+  "realms-of-chaos": {
+    "title": "Realms of Chaos 在线玩 — 1995 年共享软件版，免费网页版",
+    "description": "在浏览器里免费玩 Realms of Chaos（1995）：Apogee 出品的奇幻平台跳跃游戏的官方共享软件章节。可以在战士和女术士之间随时切换。",
+    "keywords": "realms of chaos 在线玩, realms of chaos apogee, realms of chaos 网页版, realms of chaos 共享软件, dos 奇幻 平台游戏 在线, apogee 平台游戏 免费",
+    "ogTitle": "Realms of Chaos 在线玩 — 1995 年共享软件版",
+    "ogDescription": "战士还是女术士，一键切换：Apogee 1995 年的 VGA 平台跳跃游戏，第一章。",
+    "crumb": "玩 Realms of Chaos",
+    "h1": "在线玩 Realms of Chaos——共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Realms of Chaos</strong> 是 Apogee 在 1995 年推出的奇幻平台跳跃游戏。你控制两个角色，可以随时在他们之间切换：战士 Endrick 挥剑势大力沉，女术士 Elandra 跳得更高，还能远程攻击。官方的<strong>共享软件章节</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里，Sound Blaster 音乐和音效已经设置好。游戏包 2&nbsp;MB 出头。在普通笔记本或 Chromebook 上都能流畅运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键移动，<kbd>Ctrl</kbd> 跳跃，<kbd>Alt</kbd> 攻击；<kbd>Space</kbd> 在 Endrick 和 Elandra 之间切换。两人共用一条生命值，所以切换是为了在合适的时机用上合适的人，而不是多一条命。按键可以在游戏选项里修改。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是三章中的第一章，依据游戏包内的 VENDOR.DOC 作为共享软件发布。另外两章属于注册版，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Realms of Chaos 合法吗？",
+        "a": "合法。这是官方的共享软件章节，Apogee 的 VENDOR.DOC 允许免费转发。"
+      },
+      {
+        "q": "包含几章？",
+        "a": "三章中的一章。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。存档会留在这个浏览器里，下次访问还在。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Realms of Chaos 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Realms%20of%20Chaos\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Realms of Chaos →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Realms%20of%20Chaos\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Realms of Chaos 共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/realms-of-chaos/NOTICE.md\">/apps/realms-of-chaos/NOTICE.md</a>。</p>",
+    "licenseReason": "Realms of Chaos 的共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动 · JUMP：Ctrl · ATTACK：Alt · ENTER/ESC：菜单"
+  },
+  "mystic-towers": {
+    "title": "Mystic Towers 在线玩 — 1994 年共享软件版，免费网页版",
+    "description": "在浏览器里免费玩 Mystic Towers（1994）：Apogee 发行的等距视角解谜冒险游戏的官方共享软件版，主角是巫师 Baron Baldric。",
+    "keywords": "mystic towers 在线玩, mystic towers apogee, mystic towers 网页版, mystic towers 共享软件, 等距视角 dos 游戏 在线, baron baldric",
+    "ogTitle": "Mystic Towers 在线玩 — 1994 年共享软件版",
+    "ogDescription": "一位年迈的巫师、十二座高塔和一大群怪物：Apogee 的等距视角冒险游戏，共享软件版。",
+    "crumb": "玩 Mystic Towers",
+    "h1": "在线玩 Mystic Towers——共享软件版",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件版通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Mystic Towers</strong> 是澳大利亚工作室 Animation F/X 开发、Apogee 在 1994 年发行的等距视角动作解谜游戏。Baron Baldric 是一位腰不好的年迈巫师，他得一个房间一个房间地清光塔里的怪物，一边施法，一边还得记着吃饭喝水。官方的<strong>共享软件版</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 1&nbsp;MB。在开头的文字画面按 <kbd>Enter</kbd> 进入游戏。它在任何较新的设备上都能全速运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键控制 Baldric 在每个等距视角的房间里走动。跳跃、施法和拾取物品都在键盘上；游戏的帮助画面列出了这些按键。在每座塔里，你必须杀光所有怪物，摧毁怪物生成器，并找到通往出口的钥匙。留意食物和饮水计量条：忘了吃午饭的冒险者撑不了多久。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是共享软件版，依据游戏包内附带的 Apogee 的 VENDOR.DOC 分发。它包含最初的几座塔；其余的塔在注册版里，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Mystic Towers 合法吗？",
+        "a": "合法。这是官方的共享软件版，Apogee 的 VENDOR.DOC 允许免费转发。"
+      },
+      {
+        "q": "包含多少内容？",
+        "a": "共享软件版的几座塔。其余的塔在注册版里。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。存档会留在这个浏览器里，下次访问还在。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Mystic Towers 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Mystic%20Towers\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Mystic Towers →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Mystic%20Towers\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Mystic Towers 共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/mystic-towers/NOTICE.md\">/apps/mystic-towers/NOTICE.md</a>。</p>",
+    "licenseReason": "Mystic Towers 的共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动 · CTRL / ALT / SPACE：游戏的动作键 · ENTER：确认"
+  },
+  "traffic-department-2192": {
+    "title": "Traffic Department 2192 在线玩 — 第一章免费，浏览器直接玩",
+    "description": "在浏览器里免费玩 Traffic Department 2192（1994）：Safari Software 发行的剧情向俯视角射击游戏，共享软件版第一章。",
+    "keywords": "traffic department 2192 在线玩, td2192, traffic department 2192 网页版, traffic department 2192 共享软件, 俯视角 dos 射击游戏 在线, safari software",
+    "ogTitle": "Traffic Department 2192 在线玩 — 第一章免费",
+    "ogDescription": "一款剧本和任务列表一样长的俯视角射击游戏——第一章，就在你的浏览器里。",
+    "crumb": "玩 Traffic Department 2192",
+    "h1": "在线玩 Traffic Department 2192——第一章",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Traffic Department 2192</strong> 是 P-Squared Productions 开发的俯视角射击游戏，1994 年由 Epic 旗下的 Safari Software 品牌发行。你扮演 Velasquez 中尉，驾驶悬浮飞车穿行在一座殖民城市的街道上空，而在任务之间，游戏会讲述一个篇幅长得出奇、言辞也相当尖刻的故事。<strong>共享软件版第一章</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包 1&nbsp;MB 出头。在普通笔记本或 Chromebook 上都能全速运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键操纵你的悬浮飞车在城市地图上飞行。开火键和其他按键见游戏内的说明。任务各不相同：护送、拦截、摧毁。任务简报一定要读——任务之间的对话占了这款游戏的一半，而且角色之间说话并不客气。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是三章中的第一章，依据游戏包内的 LICENSE.DOC 分发；Safari Software 在其中允许并鼓励在线分发，只要不改动或删除任何文件。这里的文件完整且未经改动。后续章节不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Traffic Department 2192 合法吗？",
+        "a": "合法。这是共享软件章节。它的 LICENSE.DOC 允许在线分发，前提是不改动或删除任何文件，而这里一个文件都没动过。"
+      },
+      {
+        "q": "包含几章？",
+        "a": "三章中的一章。"
+      },
+      {
+        "q": "适合儿童玩吗？",
+        "a": "以 1994 年的共享软件游戏来说，它的剧情用语相当粗重，情节有些地方也比较阴暗。更适合年龄大一些的玩家。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Traffic Department 2192 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Traffic%20Department%202192\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Traffic Department 2192 →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Traffic%20Department%202192\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Traffic Department 2192 共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/traffic-department-2192/NOTICE.md\">/apps/traffic-department-2192/NOTICE.md</a>。</p>",
+    "licenseReason": "Traffic Department 2192 的共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：飞行 · FIRE：Ctrl · ALT / SPACE：游戏的其他按键 · ESC：菜单"
+  },
+  "cyberdogs": {
+    "title": "Cyberdogs 在线玩 — 1994 年免费软件射击游戏，网页版",
+    "description": "在浏览器里免费玩 Cyberdogs（1994）：Ronny Wester 的免费软件俯视角射击游戏，支持单人或两人共用一个键盘。买枪，清任务。",
+    "keywords": "cyberdogs 在线玩, cyberdogs dos 游戏, cyberdogs 网页版, cyberdogs 免费软件, 双人 dos 射击游戏, c-dogs 原版",
+    "ogTitle": "Cyberdogs 在线玩 — 1994 年免费软件射击游戏",
+    "ogDescription": "俯视角任务、枪械商店，还有同一键盘上的双人合作：免费软件 Cyberdogs。",
+    "crumb": "玩 Cyberdogs",
+    "h1": "在线玩 Cyberdogs——免费软件射击游戏",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——完整的免费软件版通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Cyberdogs</strong> 是 Ronny Wester 在 1994 年发布的免费软件俯视角射击游戏，后来的 C-Dogs 就是从它发展而来的。一到两名玩家共用一个键盘，先购买武器，然后在任务中一路战斗，完成收集或摧毁的目标。<strong>完整的游戏</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版游戏，放在编译成 WebAssembly 的 DOSBox 里。它约 260&nbsp;KB，两三秒就能启动。在任何设备上都能全速运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>在菜单里选择单人或双人，然后到商店里花掉初始资金：一把副武器加一些护甲就很管用。每个任务里，先完成开场时显示的目标，再赶到出口。两位玩家的按键都可以在游戏选项里查看和修改。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>Cyberdogs 是免费软件。作者的 README 里写道：“This game is freeware, feel free to spread it around.”（本游戏是免费软件，欢迎随意传播。）这里的文件是未经改动的发行版。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Cyberdogs 真的免费吗？",
+        "a": "是的。作者 Ronny Wester 把它作为免费软件发布，并欢迎大家传播。这是完整的游戏。"
+      },
+      {
+        "q": "可以两个人一起玩吗？",
+        "a": "可以，在一个键盘上合作游玩。每位玩家的按键在选项菜单里设置。"
+      },
+      {
+        "q": "它和 C-Dogs 是什么关系？",
+        "a": "先有 Cyberdogs。Wester 的续作 C-Dogs 在 1997 年推出，如今开源项目 C-Dogs SDL 仍在延续它。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Cyberdogs 是免费软件：它的 README 写明“This game is freeware, feel free to spread it around.”来源说明：<a href=\"/apps/cyberdogs/NOTICE.md\">/apps/cyberdogs/NOTICE.md</a>。</p>",
+    "licenseReason": "Cyberdogs 是免费软件：它的 README 写明“This game is freeware, feel free to spread it around.”（本游戏是免费软件，欢迎随意传播。）",
+    "fullyFree": "由作者 Ronny Wester 作为免费软件发布：完整的游戏。",
+    "mobileHint": "方向键：移动 · CTRL / ALT / SPACE：游戏的动作键 · ENTER：确认"
+  },
+  "xenophage": {
+    "title": "Xenophage 在线玩 — Alien Bloodsport 共享软件版，免费网页版",
+    "description": "在浏览器里免费玩 Xenophage: Alien Bloodsport（1995）：Apogee 发行的一对一格斗游戏的共享软件版，登场的是体型巨大的外星格斗家。",
+    "keywords": "xenophage 在线玩, xenophage alien bloodsport, xenophage 网页版, apogee 格斗游戏, dos 格斗游戏 在线, xenophage 共享软件",
+    "ogTitle": "Xenophage 在线玩 — Alien Bloodsport 共享软件版",
+    "ogDescription": "占满屏幕的外星人你来我往：Apogee 1995 年的格斗游戏，共享软件版。",
+    "crumb": "玩 Xenophage: Alien Bloodsport",
+    "h1": "在线玩 Xenophage: Alien Bloodsport——共享软件版",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件版通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Xenophage: Alien Bloodsport</strong> 是 Argo Games 开发、Apogee 在 1995 年发行的一对一格斗游戏。它的格斗家都是外星人，而且个头巨大：双方拉开距离时镜头会随之拉远，好让两者都留在画面里。官方的<strong>共享软件版</strong>（1.1）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 6&nbsp;MB。在较新的笔记本或台式机上运行良好；镜头缩放是最吃性能的部分。</p><p>正如标题所暗示的，战斗场面相当血腥。这不是给年幼玩家玩的游戏。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>游戏一启动就是它自带的设置菜单。想听音乐的话，先选一种音乐卡（AdLib 在这里可用），然后选择 Start XenoPhage。之后再挑选格斗家和模式。移动和攻击都在键盘上；游戏选项会显示每位玩家的按键，并允许修改。两名玩家可以共用一个键盘进行对战。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是共享软件版，依据游戏包内的 LICENSE.DOC 分发，可选的格斗家数量有所削减。Apogee 后来以 Windows 安装包的形式把完整版作为免费软件发布；这里托管的是 DOS 共享软件版，它的许可明确允许转发。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Xenophage 合法吗？",
+        "a": "合法。这是官方的共享软件版，Apogee 在它的 LICENSE.DOC 里授权免费分发。"
+      },
+      {
+        "q": "包含多少名格斗家？",
+        "a": "共享软件版的阵容有所削减。注册版包含全部格斗家。"
+      },
+      {
+        "q": "为什么一开始是设置画面？",
+        "a": "那是游戏自带的声音设置。想听音乐的话，在 Choose Music Card 里选 AdLib，然后选择 Start XenoPhage。"
+      },
+      {
+        "q": "可以两个人玩吗？",
+        "a": "可以，共用一个键盘。每位玩家的按键在游戏选项里设置。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Xenophage: Alien Bloodsport 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Xenophage\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Xenophage →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Xenophage\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Xenophage: Alien Bloodsport 共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/xenophage/NOTICE.md\">/apps/xenophage/NOTICE.md</a>。</p>",
+    "licenseReason": "Xenophage: Alien Bloodsport 的共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动和跳跃 · CTRL / ALT / SPACE：攻击"
+  },
+  "boppin": {
+    "title": "Boppin' 在线玩 — 1994 年益智游戏共享软件版，免费网页版",
+    "description": "在浏览器里免费玩 Boppin'（1994）：Accursed Toys 开发、Apogee 发行的方块配对益智游戏的官方共享软件章节。无需下载。",
+    "keywords": "boppin 在线玩, boppin apogee, boppin 网页版, boppin 共享软件, dos 益智游戏 在线, dos 方块 益智游戏",
+    "ogTitle": "Boppin' 在线玩 — 1994 年益智游戏共享软件版",
+    "ogDescription": "扔方块、配图案、营救反派：Apogee 发行过的最古怪的益智游戏。",
+    "crumb": "玩 Boppin'",
+    "h1": "在线玩 Boppin'——共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Boppin'</strong> 是 Accursed Toys 开发、Apogee 在 1994 年发行的益智游戏。主角 Yeet 和 Boik 要把方块扔向相同图案的方块来清空每个房间，够不着的地方就借助斜面反弹过去。他们的任务是营救电子游戏里的反派，因为没有坏蛋的游戏世界一点也不好玩。官方的<strong>共享软件章节</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包 1&nbsp;MB 出头。在普通笔记本或 Chromebook 上都能全速运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键移动角色；投掷键和其他按键见游戏内的说明。先从方块源那里拿起一个方块，再把它扔出去，让它落在相同图案的方块旁边。清掉所有方块就算过关。拼出更大的图形可以获得奖励分，而可扔的方块用完则会损失一条命。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是第一章，依据游戏包内的 VENDOR.DOC 作为共享软件发布。其余章节属于注册版，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Boppin' 合法吗？",
+        "a": "合法。这是官方的共享软件章节，Apogee 的 VENDOR.DOC 允许免费转发。"
+      },
+      {
+        "q": "包含多少内容？",
+        "a": "第一章的各个谜题房间。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。游戏的存档文件会留在这个浏览器里，下次访问还在。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Boppin' 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Boppin\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Boppin →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Boppin\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Boppin' 共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/boppin/NOTICE.md\">/apps/boppin/NOTICE.md</a>。</p>",
+    "licenseReason": "Boppin' 的共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动 · CTRL / ALT / SPACE：游戏的动作键 · ENTER：确认"
+  },
+  "paganitzu": {
+    "title": "Paganitzu 在线玩 — 1991 年益智游戏，浏览器免费畅玩",
+    "description": "在浏览器里免费玩 Paganitzu（1991）：Apogee 发行的推石头神庙益智游戏，共享软件版第一部 Romancing the Rose。无需下载。",
+    "keywords": "paganitzu 在线玩, paganitzu apogee, paganitzu 网页版, paganitzu 共享软件, dos 益智游戏 在线, alabama smith",
+    "ogTitle": "Paganitzu 在线玩 — 1991 年益智游戏，免费",
+    "ogDescription": "推石头、躲毒蛇、收集钥匙：Alabama Smith 1991 年的神庙益智游戏，第一部。",
+    "crumb": "玩 Paganitzu",
+    "h1": "在线玩 Paganitzu——第一部，共享软件版",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件版第一部通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Paganitzu</strong> 是 Keith Schuler 制作、Apogee 在 1991 年发行的益智游戏。探险家 Alabama Smith 要一个房间一个房间地闯过一座阿兹特克金字塔，每个房间占一屏，他得推石头、收集钥匙，还要弄清楚哪条蛇会朝他吐毒液。<strong>共享软件版第一部</strong> Romancing the Rose 就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。它约 260&nbsp;KB，一点就开。在开头的几个画面按 <kbd>Enter</kbd>。这是一款 16 色 EGA 游戏，在任何设备上都能全速运行。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>游戏一开始会问三个设置问题（画面、控制器、声音）：每个都按 <kbd>1</kbd>。之后用方向键让 Alabama 一格一格地移动。收集房间里的所有钥匙就能打开出口。石头只能推、不能拉，所以把它推进角落之前要想清楚。如果把自己困住了，游戏有一个重开房间的按键；游戏内的说明里列出了它。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是三部中的第一部，依据游戏包内的 VENDOR.DOC 作为共享软件发布。第二部和第三部属于注册版，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Paganitzu 合法吗？",
+        "a": "合法。这是官方的共享软件部分，Apogee 的 VENDOR.DOC 允许免费转发。"
+      },
+      {
+        "q": "包含多少个关卡？",
+        "a": "第一部 Romancing the Rose 的二十个房间。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。游戏的存档文件会留在这个浏览器里，下次访问还在。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Paganitzu 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Paganitzu\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Paganitzu →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Paganitzu\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Paganitzu 共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/paganitzu/NOTICE.md\">/apps/paganitzu/NOTICE.md</a>。</p>",
+    "licenseReason": "Paganitzu 的共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动 · CTRL / ALT / SPACE：游戏的动作键 · ENTER：确认"
+  },
+  "dark-ages": {
+    "title": "Dark Ages 在线玩 — Apogee 1991 年平台游戏，免费网页版",
+    "description": "在浏览器里免费玩 Dark Ages（1991）：Apogee 出品的奇幻平台跳跃游戏，2009 年作为免费软件发布。三卷全部收录，无需下载。",
+    "keywords": "dark ages apogee 在线玩, dark ages dos 游戏, dark ages 网页版, dark ages 1991 免费软件, apogee 平台游戏 在线, dark ages 免费",
+    "ogTitle": "Dark Ages 在线玩 — Apogee 1991 年平台游戏，免费",
+    "ogDescription": "一位王子、一个被夺走的王位，还有 AdLib 音乐：Apogee 1991 年的平台跳跃游戏，完整免费。",
+    "crumb": "玩 Dark Ages",
+    "h1": "在线玩 Dark Ages——完整的免费软件版",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——完整的免费软件版通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Dark Ages</strong> 是 Apogee 在 1991 年推出的平台跳跃游戏，讲的是一位被当作农民养大的王子一路打回王位的故事。它被人们记住，是因为它是最早带有 AdLib 音乐的共享软件游戏之一。Apogee 在 2009 年把它作为<strong>免费软件</strong>发布，所以三卷全都托管在这里——点击开始，第一卷就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 Apogee 自己的免费软件包，放在编译成 WebAssembly 的 DOSBox 里。它不到 400&nbsp;KB，一点就开。这是一款 16 色 EGA 游戏，在任何设备上都能全速运行。</p><p>本页面启动的是第一卷。第二卷和第三卷在同一个游戏包里：退出游戏回到 DOS 提示符，输入 <code>DA2</code> 或 <code>DA3</code>。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>方向键移动王子；跳跃键和开火键见游戏内的说明。找到升级道具后，你的武器会变强，护盾则能替你挡下有限次数的攻击。记得和每一关里的智者交谈，只要给他想要的东西，他就会用一条线索或一件物品和你交换。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>Apogee Software 于 2009 年 3 月把 Dark Ages 作为免费软件发布。这里的游戏包是 <code>da_freew.zip</code>，即来自 Apogee 自家下载服务器的免费软件版，三卷齐全。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Dark Ages 真的免费吗？",
+        "a": "是的。Apogee 于 2009 年 3 月把完整版游戏作为免费软件发布。这里就是那个版本，取自 Apogee 自家下载服务器的存档副本。"
+      },
+      {
+        "q": "怎么玩第二卷和第三卷？",
+        "a": "退出第一卷回到 DOS 提示符，然后输入 DA2 或 DA3 并按 Enter。"
+      },
+      {
+        "q": "游戏进度会保存吗？",
+        "a": "会，尽量保留。游戏的存档文件会留在这个浏览器里，下次访问还在。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Apogee Software 于 2009 年 3 月把 Dark Ages 作为免费软件发布；这里是来自 Apogee 自家下载服务器的免费软件包。来源说明：<a href=\"/apps/dark-ages/NOTICE.md\">/apps/dark-ages/NOTICE.md</a>。</p>",
+    "licenseReason": "Apogee Software 于 2009 年 3 月把 Dark Ages 作为免费软件发布；这里是来自 Apogee 自家下载服务器的免费软件包。",
+    "fullyFree": "由 Apogee Software 于 2009 年 3 月作为免费软件发布：完整的游戏，三卷齐全。",
+    "mobileHint": "方向键：移动 · JUMP：Ctrl · FIRE：Alt · ENTER/ESC：菜单"
+  },
+  "math-rescue": {
+    "title": "Math Rescue 在线玩 — 1992 年数学游戏，浏览器免费畅玩",
+    "description": "在浏览器里免费玩 Math Rescue（1992）：寓教于乐的平台跳跃游戏的共享软件章节，靠解算术题把被偷走的数字夺回来。",
+    "keywords": "math rescue 在线玩, math rescue 游戏, math rescue 网页版, math rescue apogee, dos 教育游戏 在线, 数学 平台游戏",
+    "ogTitle": "Math Rescue 在线玩 — 1992 年数学游戏，免费",
+    "ogDescription": "Gruzzles 偷走了数字。解出算术题把它们夺回来——1992 年的课堂平台跳跃游戏。",
+    "crumb": "玩 Math Rescue",
+    "h1": "在线玩 Math Rescue——共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Math Rescue</strong> 是 Karen Crowther 的 Redwood Games 开发、Apogee 在 1992 年发行的教育类平台跳跃游戏。一种叫 Gruzzles 的生物偷走了全世界的数字，你要靠解算术题把它们赢回来，同时还有一只热心的蝴蝶会朝任何挡路的东西滴黏液。官方的<strong>共享软件章节</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。它不到 400&nbsp;KB，一点就开。在任何设备上都能全速运行，包括学校的 Chromebook。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>选择男孩或女孩，再选一个难度等级；难度决定会出现哪些类型的题目，从简单的加法到乘法和除法，还包括应用题。方向键移动，<kbd>Ctrl</kbd> 跳跃。碰一下数字就会出题，答完题，集齐答案就能打开出口。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是第一章，依据游戏包内的 VENDOR.DOC 作为共享软件发布。其他章节属于注册版，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Math Rescue 合法吗？",
+        "a": "合法。这是官方的共享软件章节，Apogee 的 VENDOR.DOC 允许免费转发。"
+      },
+      {
+        "q": "适合多大的孩子？",
+        "a": "它是为小学生制作的。难度设置会让算术题从简单的加减变成乘法、除法和应用题。"
+      },
+      {
+        "q": "学校的 Chromebook 上能玩吗？",
+        "a": "能。不需要安装任何东西，而且游戏很轻量，任何 Chromebook 都跑得动。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Math Rescue 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Math%20Rescue\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Math Rescue →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Math%20Rescue\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Math Rescue 共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/math-rescue/NOTICE.md\">/apps/math-rescue/NOTICE.md</a>。</p>",
+    "licenseReason": "Math Rescue 的共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动 · JUMP：Ctrl · SLIME：Alt · ENTER/ESC：菜单"
+  },
+  "word-rescue": {
+    "title": "Word Rescue 在线玩 — 1992 年识字游戏，浏览器免费畅玩",
+    "description": "在浏览器里免费玩 Word Rescue（1992）：寓教于乐的平台跳跃游戏的共享软件章节，把单词和图片配对就能打败 Gruzzles。",
+    "keywords": "word rescue 在线玩, word rescue 游戏, word rescue 网页版, word rescue apogee, dos 教育游戏 在线, 儿童 英语单词 游戏",
+    "ogTitle": "Word Rescue 在线玩 — 1992 年识字游戏，免费",
+    "ogDescription": "Gruzzles 偷走了单词。把每个单词和它的图片配对——1992 年的课堂平台跳跃游戏。",
+    "crumb": "玩 Word Rescue",
+    "h1": "在线玩 Word Rescue——共享软件章节",
+    "verdict": {
+      "kind": "good",
+      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
+    },
+    "intro": "<p><strong>Word Rescue</strong> 是 Karen Crowther 的 Redwood Games 开发、Apogee 在 1992 年发行的教育类平台跳跃游戏。Gruzzles 不识字，于是把所有单词都偷走了；你要把每个单词和它的图片配对来夺回它们，而书虫 Benny Bookworm 会朝靠得太近的 Gruzzle 喷黏液。官方的<strong>共享软件章节</strong>就托管在这里——点击开始，它就会在浏览器里启动。</p>",
+    "sections": [
+      {
+        "h": "运行原理与性能表现",
+        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。它 300&nbsp;KB 出头，一点就开。在任何设备上都能全速运行，包括学校的 Chromebook。</p>"
+      },
+      {
+        "h": "玩法与操作",
+        "html": "<p>选择男孩或女孩，再选一个难度等级，它决定单词的难易。方向键移动，<kbd>Ctrl</kbd> 跳跃。碰一下问号箱就能看到一个单词，然后去找它所指的那张图片。配对完所有单词，拿到钥匙，从门离开。</p>"
+      },
+      {
+        "h": "共享软件版与完整版",
+        "html": "<p>这是第一章，依据游戏包内的 VENDOR.DOC 作为共享软件发布。其他章节属于注册版，不在这里托管。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "在这里玩 Word Rescue 合法吗？",
+        "a": "合法。这是官方的共享软件章节，Apogee 的 VENDOR.DOC 允许免费转发。"
+      },
+      {
+        "q": "适合多大的孩子？",
+        "a": "它是为正在学习阅读的孩子制作的。难度设置会改变词汇量。"
+      },
+      {
+        "q": "学校的 Chromebook 上能玩吗？",
+        "a": "能。不需要安装任何东西，而且游戏很轻量，任何 Chromebook 都跑得动。"
+      }
+    ],
+    "download": {
+      "heading": "获取完整版游戏",
+      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Word Rescue 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Word%20Rescue\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Word Rescue →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Word%20Rescue\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Word Rescue 共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/word-rescue/NOTICE.md\">/apps/word-rescue/NOTICE.md</a>。</p>",
+    "licenseReason": "Word Rescue 的共享软件版可依据游戏包内附带的 VENDOR.DOC 自由分发；注册版不在这里托管。",
+    "mobileHint": "方向键：移动 · JUMP：Ctrl · SLIME：Alt · ENTER/ESC：菜单"
+  },
+  "hextris": {
+    "title": "Hextris 在线玩 — 六边形益智游戏，免费网页版",
+    "description": "在浏览器里免费玩 Hextris：开源的六边形益智游戏。旋转六边形，凑齐三个同色方块，在越来越快的节奏里撑下去。无需下载。",
+    "keywords": "hextris 在线玩, hextris 网页版, hextris 免费, hextris 游戏, 六边形 益智游戏, hextris 免下载",
+    "ogTitle": "Hextris 在线玩 — 六边形益智游戏，免费",
+    "ogDescription": "旋转六边形，配对颜色，跟上越来越快的节奏：开源的 Hextris。",
+    "crumb": "玩 Hextris",
+    "h1": "在线玩 Hextris——六边形益智游戏",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 立即开始——直接在你的浏览器里运行"
+    },
+    "intro": "<p><strong>Hextris</strong> 是一款围绕六边形展开的快节奏益智游戏。彩色方块从六个方向朝它落下；你旋转六边形，让它们落在你想要的位置。三个或更多同色方块连在一起就会消除。它由四名学生在 2014 年编写，并以<strong>开源</strong>方式发布，就在这里直接运行。</p>",
+    "sections": [
+      {
+        "h": "怎么玩",
+        "html": "<p>按左右方向键旋转六边形，或者点按屏幕的左右两侧。按住下方向键可以让方块加速下落。三个或更多同色方块相接时就会消除，连续消除几组可以累积连击。任何一边的方块堆超出灰色的外层六边形时，游戏结束。</p>"
+      },
+      {
+        "h": "怎样撑得更久",
+        "html": "<p>让六堆方块保持齐平，而不是一次只清一边：终结游戏的正是堆得太高的那一堆。旋转之前先看清下一个方块的颜色；同时有两个方块在下落时，先处理离得近的那个。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>Hextris 以 GNU 通用公共许可证第 3 版发布，任何人都可以复制和托管它。这里的副本去掉了广告和统计分析代码，所以游戏不会向其他任何网站发出请求；改动内容列在声明文件里。你的最高分保存在你自己的浏览器里。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Hextris 免费吗？",
+        "a": "免费。它是采用 GPL 第 3 版的开源软件。这是完整的游戏。"
+      },
+      {
+        "q": "在学校或公司网络上能玩 Hextris 吗？",
+        "a": "游戏只是由本站提供的几个小文件，不需要安装任何东西，游戏本身也不会连接其他网站。至于某个学校或公司的网络是否允许访问本站，则取决于那个网络。"
+      },
+      {
+        "q": "会保存我的最高分吗？",
+        "a": "会。最高分保存在浏览器的本地存储里。"
+      },
+      {
+        "q": "手机上能玩吗？",
+        "a": "能。点按屏幕的左侧或右侧来旋转六边形。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Hextris 的作者是 <a href=\"https://github.com/Hextris/hextris\" target=\"_blank\" rel=\"noopener\">Logan Engstrom、Garrett Finucane、Noah Moroze 和 Michael Yang</a>，依据 <a href=\"/apps/hextris/LICENSE.md\">GNU GPL v3</a> 使用。广告和统计分析代码已被移除；改动内容列在 <a href=\"/apps/hextris/NOTICE.md\">NOTICE.md</a> 里。</p>",
+    "licenseReason": "Hextris 由其作者以 GNU 通用公共许可证第 3 版发布，该许可证允许再分发，包括商业使用；这里提供的修改版源代码列在 NOTICE.md 里。",
+    "fullyFree": "以 GNU GPL 第 3 版开源：完整的游戏。"
+  },
+  "zork-1": {
+    "title": "Zork I 在线玩 — The Great Underground Empire，免费网页版",
+    "description": "在浏览器里免费玩 Zork I: The Great Underground Empire（1980）：Infocom 的文字冒险游戏，2025 年起以 MIT 许可证开源。",
+    "keywords": "zork 1 在线玩, zork i 网页版, zork i 免费, zork 浏览器, infocom 文字冒险游戏 在线, 互动小说 在线玩",
+    "ogTitle": "Zork I 在线玩 — The Great Underground Empire，免费",
+    "ogDescription": "你站在一栋白房子西边的空旷田野上，房子的前门被木板钉死——而在那栋房子底下，埋藏着一个庞大地下帝国的废墟，里面满是宝藏，守护它的是一个盗贼、一个巨魔和无边的黑暗。",
+    "crumb": "玩 Zork I",
+    "h1": "在线玩 Zork I: The Great Underground Empire",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 立即开始——直接在你的浏览器里运行"
+    },
+    "intro": "<p><strong>Zork I: The Great Underground Empire</strong>（魔域） 是 Infocom 在 1980 年推出的文字冒险游戏。你站在一栋白房子西边的空旷田野上，房子的前门被木板钉死——而在那栋房子底下，埋藏着一个庞大地下帝国的废墟，里面满是宝藏，守护它的是一个盗贼、一个巨魔和无边的黑暗。2025 年 11 月，Microsoft 把 Zork 三部曲以<strong>开源</strong>方式发布，游戏就在这里直接运行：输入一条指令，再按 <kbd>Enter</kbd>。</p>",
+    "sections": [
+      {
+        "h": "怎么玩",
+        "html": "<p>游戏没有画面。它会描述你身在何处，你则输入想做的事：<code>open mailbox</code>、<code>go north</code>（或者只输入 <code>n</code>）、<code>take lamp</code>、<code>inventory</code>（或 <code>i</code>）、<code>look</code>。解析器能理解完整的句子，比如 <code>put the sword in the case</code>。下到地底之前先找一个光源：在黑暗里，你很可能会被 grue 吃掉。</p><p>边玩边画地图。这是 1980 年的建议，至今没有变。</p>"
+      },
+      {
+        "h": "保存游戏",
+        "html": "<p>输入 <code>save</code> 保存当前进度，输入 <code>restore</code> 回到那个位置。存档保留在这个浏览器里，所以除非你清除本站的数据，下次访问时它们还在。解释器还会自动存档，因此关掉标签页也不会丢失进度。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>2025 年 11 月 20 日，通过 Activision 拥有 Infocom 全部作品的 Microsoft 以 MIT 许可证发布了 Zork I、II 和 III。这里的故事文件就是那次发布中编译好的游戏，未经改动，运行在开源解释器 Parchment（同样采用 MIT 许可证）里。“Zork”仍是其所有者的商标；本站与 Microsoft 或 Activision 没有关联。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork I 现在真的免费了吗？",
+        "a": "是的。Microsoft 于 2025 年 11 月 20 日以 MIT 许可证发布了 Zork I、II 和 III。本页面运行的就是那次发布中的游戏文件。"
+      },
+      {
+        "q": "这是原版游戏还是重制版？",
+        "a": "是原版。这是 Infocom 自己编译的故事文件，由一个现代的 Z-machine 解释器在你的浏览器里运行。"
+      },
+      {
+        "q": "怎么存档？",
+        "a": "输入 save。存档保存在这个浏览器里；输入 restore 即可读取。"
+      },
+      {
+        "q": "需要按顺序玩这三部曲吗？",
+        "a": "Zork I 是入门的起点。每一部都可以独立游玩，不过三部合起来讲的是一个松散相连的故事。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork I © Microsoft，以 <a href=\"/apps/zork/LICENSE-zork.txt\">MIT 许可证</a>发布（<a href=\"https://github.com/historicalsource/zork1\" target=\"_blank\" rel=\"noopener\">源代码</a>）。解释器：<a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a>（<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>）。详情见 <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>。</p>",
+    "licenseReason": "Microsoft 于 2025 年 11 月 20 日以 MIT 许可证发布了 Zork I、II 和 III；故事文件来自那次发布，运行在采用 MIT 许可证的 Parchment 解释器里。",
+    "fullyFree": "开源：Microsoft 于 2025 年 11 月以 MIT 许可证发布了这款游戏。完整的游戏。"
+  },
+  "zork-2": {
+    "title": "Zork II 在线玩 — The Wizard of Frobozz，免费网页版",
+    "description": "在浏览器里免费玩 Zork II: The Wizard of Frobozz（1981）：Infocom 的文字冒险游戏，2025 年起以 MIT 许可证开源。",
+    "keywords": "zork 2 在线玩, zork ii 网页版, zork ii 免费, zork 浏览器, infocom 文字冒险游戏 在线, 互动小说 在线玩",
+    "ogTitle": "Zork II 在线玩 — The Wizard of Frobozz，免费",
+    "ogDescription": "它紧接着第一部的结尾，在 Great Underground Empire 的更深处展开，那里有一位老糊涂却很危险的巫师，会随机出现并对你施法。",
+    "crumb": "玩 Zork II",
+    "h1": "在线玩 Zork II: The Wizard of Frobozz",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 立即开始——直接在你的浏览器里运行"
+    },
+    "intro": "<p><strong>Zork II: The Wizard of Frobozz</strong> 是 Infocom 在 1981 年推出的文字冒险游戏。它紧接着第一部的结尾，在 Great Underground Empire 的更深处展开，那里有一位老糊涂却很危险的巫师，会随机出现并对你施法。2025 年 11 月，Microsoft 把 Zork 三部曲以<strong>开源</strong>方式发布，游戏就在这里直接运行：输入一条指令，再按 <kbd>Enter</kbd>。</p>",
+    "sections": [
+      {
+        "h": "怎么玩",
+        "html": "<p>游戏没有画面。它会描述你身在何处，你则输入想做的事：<code>open mailbox</code>、<code>go north</code>（或者只输入 <code>n</code>）、<code>take lamp</code>、<code>inventory</code>（或 <code>i</code>）、<code>look</code>。解析器能理解完整的句子，比如 <code>put the sword in the case</code>。开局时你带着第一部里的提灯和剑。巫师的法术会自行消退；有时候等待才是正确的做法。</p><p>边玩边画地图。这是 1980 年的建议，至今没有变。</p>"
+      },
+      {
+        "h": "保存游戏",
+        "html": "<p>输入 <code>save</code> 保存当前进度，输入 <code>restore</code> 回到那个位置。存档保留在这个浏览器里，所以除非你清除本站的数据，下次访问时它们还在。解释器还会自动存档，因此关掉标签页也不会丢失进度。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>2025 年 11 月 20 日，通过 Activision 拥有 Infocom 全部作品的 Microsoft 以 MIT 许可证发布了 Zork I、II 和 III。这里的故事文件就是那次发布中编译好的游戏，未经改动，运行在开源解释器 Parchment（同样采用 MIT 许可证）里。“Zork”仍是其所有者的商标；本站与 Microsoft 或 Activision 没有关联。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork II 现在真的免费了吗？",
+        "a": "是的。Microsoft 于 2025 年 11 月 20 日以 MIT 许可证发布了 Zork I、II 和 III。本页面运行的就是那次发布中的游戏文件。"
+      },
+      {
+        "q": "这是原版游戏还是重制版？",
+        "a": "是原版。这是 Infocom 自己编译的故事文件，由一个现代的 Z-machine 解释器在你的浏览器里运行。"
+      },
+      {
+        "q": "怎么存档？",
+        "a": "输入 save。存档保存在这个浏览器里；输入 restore 即可读取。"
+      },
+      {
+        "q": "需要按顺序玩这三部曲吗？",
+        "a": "每一部都可以独立游玩，不过它们是作为一个系列来写的，Zork I 是最好的起点。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork II © Microsoft，以 <a href=\"/apps/zork/LICENSE-zork.txt\">MIT 许可证</a>发布（<a href=\"https://github.com/historicalsource/zork2\" target=\"_blank\" rel=\"noopener\">源代码</a>）。解释器：<a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a>（<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>）。详情见 <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>。</p>",
+    "licenseReason": "Microsoft 于 2025 年 11 月 20 日以 MIT 许可证发布了 Zork I、II 和 III；故事文件来自那次发布，运行在采用 MIT 许可证的 Parchment 解释器里。",
+    "fullyFree": "开源：Microsoft 于 2025 年 11 月以 MIT 许可证发布了这款游戏。完整的游戏。"
+  },
+  "zork-3": {
+    "title": "Zork III 在线玩 — The Dungeon Master，免费网页版",
+    "description": "在浏览器里免费玩 Zork III: The Dungeon Master（1982）：Infocom 的文字冒险游戏，2025 年起以 MIT 许可证开源。",
+    "keywords": "zork 3 在线玩, zork iii 网页版, zork iii 免费, zork 浏览器, infocom 文字冒险游戏 在线, 互动小说 在线玩",
+    "ogTitle": "Zork III 在线玩 — The Dungeon Master，免费",
+    "ogDescription": "三部曲的最后一部比前两部更安静，也更奇特：宝藏更少，后果更多，而且得分奖励的是你选择去做的事，而不是你收集到的东西。",
+    "crumb": "玩 Zork III",
+    "h1": "在线玩 Zork III: The Dungeon Master",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 立即开始——直接在你的浏览器里运行"
+    },
+    "intro": "<p><strong>Zork III: The Dungeon Master</strong> 是 Infocom 在 1982 年推出的文字冒险游戏。三部曲的最后一部比前两部更安静，也更奇特：宝藏更少，后果更多，而且得分奖励的是你选择去做的事，而不是你收集到的东西。2025 年 11 月，Microsoft 把 Zork 三部曲以<strong>开源</strong>方式发布，游戏就在这里直接运行：输入一条指令，再按 <kbd>Enter</kbd>。</p>",
+    "sections": [
+      {
+        "h": "怎么玩",
+        "html": "<p>游戏没有画面。它会描述你身在何处，你则输入想做的事：<code>open mailbox</code>、<code>go north</code>（或者只输入 <code>n</code>）、<code>take lamp</code>、<code>inventory</code>（或 <code>i</code>）、<code>look</code>。解析器能理解完整的句子，比如 <code>put the sword in the case</code>。这一部的计分方式不同：做了有意义的事才会加分，而不是捡到东西就加分。</p><p>边玩边画地图。这是 1980 年的建议，至今没有变。</p>"
+      },
+      {
+        "h": "保存游戏",
+        "html": "<p>输入 <code>save</code> 保存当前进度，输入 <code>restore</code> 回到那个位置。存档保留在这个浏览器里，所以除非你清除本站的数据，下次访问时它们还在。解释器还会自动存档，因此关掉标签页也不会丢失进度。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>2025 年 11 月 20 日，通过 Activision 拥有 Infocom 全部作品的 Microsoft 以 MIT 许可证发布了 Zork I、II 和 III。这里的故事文件就是那次发布中编译好的游戏，未经改动，运行在开源解释器 Parchment（同样采用 MIT 许可证）里。“Zork”仍是其所有者的商标；本站与 Microsoft 或 Activision 没有关联。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork III 现在真的免费了吗？",
+        "a": "是的。Microsoft 于 2025 年 11 月 20 日以 MIT 许可证发布了 Zork I、II 和 III。本页面运行的就是那次发布中的游戏文件。"
+      },
+      {
+        "q": "这是原版游戏还是重制版？",
+        "a": "是原版。这是 Infocom 自己编译的故事文件，由一个现代的 Z-machine 解释器在你的浏览器里运行。"
+      },
+      {
+        "q": "怎么存档？",
+        "a": "输入 save。存档保存在这个浏览器里；输入 restore 即可读取。"
+      },
+      {
+        "q": "需要按顺序玩这三部曲吗？",
+        "a": "每一部都可以独立游玩，不过它们是作为一个系列来写的，Zork I 是最好的起点。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork III © Microsoft，以 <a href=\"/apps/zork/LICENSE-zork.txt\">MIT 许可证</a>发布（<a href=\"https://github.com/historicalsource/zork3\" target=\"_blank\" rel=\"noopener\">源代码</a>）。解释器：<a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a>（<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>）。详情见 <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>。</p>",
+    "licenseReason": "Microsoft 于 2025 年 11 月 20 日以 MIT 许可证发布了 Zork I、II 和 III；故事文件来自那次发布，运行在采用 MIT 许可证的 Parchment 解释器里。",
+    "fullyFree": "开源：Microsoft 于 2025 年 11 月以 MIT 许可证发布了这款游戏。完整的游戏。"
   }
 }

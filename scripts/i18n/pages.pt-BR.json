@@ -1,4 +1,53 @@
 {
+  "2048": {
+    "title": "Jogar 2048 Online Grátis — O Jogo Original",
+    "description": "Jogue 2048 grátis no navegador: o jogo original de código aberto de Gabriele Cirulli, não uma cópia. Sem anúncios no jogo, sem baixar, funciona em redes de escola.",
+    "keywords": "jogar 2048 online, 2048 grátis, 2048 no navegador, 2048 original, 2048 desbloqueado, 2048 sem anúncios",
+    "ogTitle": "Jogar 2048 Online Grátis — O Jogo Original",
+    "ogDescription": "O 2048 original de Gabriele Cirulli — deslize, junte e chegue à peça 2048.",
+    "crumb": "Jogar 2048",
+    "h1": "Jogue 2048 online — o jogo original",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Jogue agora — roda aqui mesmo no seu navegador"
+    },
+    "intro": "<p><strong>2048</strong> é o quebra-cabeça de peças deslizantes que Gabriele Cirulli escreveu num fim de semana de março de 2014 e lançou como código aberto. Este é <strong>o jogo original, rodando o código do próprio autor</strong> — deslize as peças, junte os números iguais e tente montar a peça 2048.</p>",
+    "sections": [
+      {
+        "h": "Como jogar",
+        "html": "<p>Use as setas do teclado ou deslize o dedo numa tela de toque. Cada jogada desliza todas as peças o máximo possível naquela direção. Quando duas peças com o mesmo número se encontram, elas se juntam numa só peça com a soma das duas. Depois de cada jogada, um novo 2 ou 4 aparece numa casa vazia. Você vence ao formar uma peça 2048 e pode continuar jogando depois disso; o jogo termina quando o tabuleiro está cheio e nenhuma jogada é possível.</p>"
+      },
+      {
+        "h": "Como passar do 512",
+        "html": "<p>Escolha um canto e mantenha sua maior peça ali. Preencha a fileira dessa peça em ordem decrescente e evite a única direção que tiraria a peça grande do canto, a menos que não haja outra jogada. A maioria das partidas se perde por um único deslize descuidado, não por azar.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>Cirulli publicou o 2048 sob a licença MIT, que permite a qualquer pessoa copiá-lo e hospedá-lo. Os arquivos aqui são os dele, sem modificações, e o jogo em si não faz requisições a nenhum outro site. Sua melhor pontuação fica guardada no seu próprio navegador.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Este é o 2048 de verdade?",
+        "a": "Sim. É o jogo original de Gabriele Cirulli, rodando o código aberto dele sem modificações, não um clone nem uma reescrita."
+      },
+      {
+        "q": "O 2048 é desbloqueado aqui?",
+        "a": "O jogo são alguns arquivos pequenos servidos por este site, sem nada para instalar, e o jogo em si não acessa nenhum outro site. Se uma determinada rede de escola ou de escritório permite este site, isso depende dessa rede."
+      },
+      {
+        "q": "Ele salva minha melhor pontuação?",
+        "a": "Sim. Sua melhor pontuação e a partida em andamento ficam no armazenamento local do seu navegador."
+      },
+      {
+        "q": "Dá para jogar no celular?",
+        "a": "Dá. Deslize o dedo na direção em que você quer que as peças se movam."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">2048 é de <a href=\"https://github.com/gabrielecirulli/2048\" target=\"_blank\" rel=\"noopener\">Gabriele Cirulli</a>, usado sob a <a href=\"/apps/2048/LICENSE.txt\">licença MIT</a>. Os arquivos não foram modificados; veja <a href=\"/apps/2048/NOTICE.md\">NOTICE.md</a>.</p>",
+    "licenseReason": "O 2048 é publicado pelo seu autor, Gabriele Cirulli, sob a licença MIT, que permite a redistribuição, inclusive para uso comercial.",
+    "fullyFree": "Código aberto sob a licença MIT: o jogo original completo."
+  },
   "_readme": "Per-slug Brazilian Portuguese overrides. A page is only generated when a real translation exists here. Two keys are not pages: _cards translates the related-link cards once per href (a card missing from it is dropped rather than shown in English), and _controls translates the control-table cells keyed by their English text. Anything a page leaves out falls back to the English entry, so check-consistency requires every prose field the English entry fills — including mobileHint, which restates mobileControls.hint on its own.",
   "_cards": {
     "/run/doom/": {
@@ -76,6 +125,150 @@
     "/guide/": {
       "title": "Guia de compatibilidade",
       "desc": "O que roda no ExeBrowser e o que não roda."
+    },
+    "/run/duke-nukem-3d/": {
+      "title": "Duke Nukem 3D",
+      "desc": "O jogo de tiro da Apogee, episódio shareware."
+    },
+    "/run/descent/": {
+      "title": "Descent",
+      "desc": "O jogo de tiro de 1995 com seis graus de liberdade, fases shareware."
+    },
+    "/run/terminal-velocity/": {
+      "title": "Terminal Velocity",
+      "desc": "O jogo de tiro aéreo arcade de 1995 da 3D Realms, shareware."
+    },
+    "/run/shadow-warrior/": {
+      "title": "Shadow Warrior",
+      "desc": "O jogo de tiro de 1997 da 3D Realms no motor Build, episódio shareware."
+    },
+    "/run/tyrian/": {
+      "title": "Tyrian 2000",
+      "desc": "O shmup vertical freeware, com todos os cinco episódios."
+    },
+    "/run/jill-of-the-jungle/": {
+      "title": "Jill of the Jungle",
+      "desc": "O plataforma de 1992 da Epic MegaGames, o primeiro episódio shareware."
+    },
+    "/run/wacky-wheels/": {
+      "title": "Wacky Wheels",
+      "desc": "O jogo de kart com animais da Apogee, versão shareware."
+    },
+    "/run/skyroads/": {
+      "title": "SkyRoads",
+      "desc": "A corrida em estradas espaciais de 1993, na hora."
+    },
+    "/run/liero/": {
+      "title": "Liero",
+      "desc": "O duelo de minhocas em tempo real para dois jogadores, freeware."
+    },
+    "/run/commander-keen/": {
+      "title": "Commander Keen",
+      "desc": "Marooned on Mars: o episódio shareware que fez a id Software."
+    },
+    "/run/cosmo/": {
+      "title": "Cosmo's Cosmic Adventure",
+      "desc": "O plataforma das ventosas da Apogee, episódio shareware."
+    },
+    "/run/epic-pinball/": {
+      "title": "Epic Pinball",
+      "desc": "O pinball de DOS de 1993 da Epic: a mesa shareware Android."
+    },
+    "/run/cyberdogs/": {
+      "title": "Cyberdogs",
+      "desc": "O jogo de tiro com missões visto de cima de 1994, para um ou dois jogadores, freeware."
+    },
+    "/run/death-rally/": {
+      "title": "Death Rally",
+      "desc": "O jogo de corrida e combate visto de cima de 1996 da Remedy, versão shareware."
+    },
+    "/run/stargunner/": {
+      "title": "Stargunner",
+      "desc": "O jogo de tiro de rolagem lateral de 1996 da Apogee, episódio shareware."
+    },
+    "/run/major-stryker/": {
+      "title": "Major Stryker",
+      "desc": "O shmup vertical de 1993 da Apogee: freeware, com os três episódios."
+    },
+    "/run/dark-ages/": {
+      "title": "Dark Ages",
+      "desc": "O plataforma de fantasia de 1991 da Apogee: freeware, com os três volumes."
+    },
+    "/run/mystic-towers/": {
+      "title": "Mystic Towers",
+      "desc": "A aventura isométrica de mago de 1994 da Apogee, shareware."
+    },
+    "/run/keen4/": {
+      "title": "Commander Keen 4",
+      "desc": "Secret of the Oracle, episódio shareware."
+    },
+    "/run/realms-of-chaos/": {
+      "title": "Realms of Chaos",
+      "desc": "O plataforma de fantasia de 1995 da Apogee, episódio shareware."
+    },
+    "/run/paganitzu/": {
+      "title": "Paganitzu",
+      "desc": "O quebra-cabeça de templo de 1991 da Apogee, primeira parte shareware."
+    },
+    "/run/traffic-department-2192/": {
+      "title": "Traffic Department 2192",
+      "desc": "O jogo de tiro de hoverskid visto de cima de 1994, com uma longa história, episódio um."
+    },
+    "/run/blockdrop-open/": {
+      "title": "Block Drop",
+      "desc": "Blocos que caem, na nossa própria versão aberta."
+    },
+    "/run/sudoku/": {
+      "title": "Sudoku",
+      "desc": "Quebra-cabeças gerados sem fim, cinco níveis de dificuldade."
+    },
+    "/run/2048/": {
+      "title": "2048",
+      "desc": "O 2048 original, com o código aberto do próprio autor."
+    },
+    "/run/boppin/": {
+      "title": "Boppin'",
+      "desc": "O quebra-cabeça de arremessar blocos de 1994, episódio shareware."
+    },
+    "/run/secret-agent/": {
+      "title": "Secret Agent",
+      "desc": "O plataforma de espionagem de 1992 da Apogee, episódio shareware."
+    },
+    "/run/word-rescue/": {
+      "title": "Word Rescue",
+      "desc": "O plataforma de leitura de 1992 da Apogee, episódio shareware."
+    },
+    "/run/number-munchers/": {
+      "title": "Number Munchers",
+      "desc": "O clássico de matemática das salas de aula."
+    },
+    "/run/math-rescue/": {
+      "title": "Math Rescue",
+      "desc": "O plataforma de matemática de 1992 da Apogee, episódio shareware."
+    },
+    "/run/hextris/": {
+      "title": "Hextris",
+      "desc": "O veloz jogo hexagonal de combinar blocos, de código aberto."
+    },
+    "/run/chess/": {
+      "title": "Xadrez contra o computador",
+      "desc": "Stockfish em oito níveis, sem cadastro."
+    },
+    "/run/zork-2/": {
+      "title": "Zork II",
+      "desc": "A aventura de texto de 1981 da Infocom, de código aberto desde 2025."
+    },
+    "/run/zork-3/": {
+      "title": "Zork III",
+      "desc": "A aventura de texto de 1982 da Infocom, de código aberto desde 2025."
+    },
+    "/run/nethack/": {
+      "title": "NetHack",
+      "desc": "O roguelike clássico, salvo no seu navegador."
+    },
+    "/run/zork-1/": {
+      "title": "Zork I",
+      "desc": "A aventura de texto de 1980 da Infocom, de código aberto desde 2025."
     }
   },
   "_controls": {
@@ -102,7 +295,84 @@
     "Weapons 1–4": "Armas 1–4",
     "Weapons 1–7": "Armas 1–7",
     "hold Shift": "segure <kbd>Shift</kbd>",
-    "number keys": "teclas numéricas"
+    "number keys": "teclas numéricas",
+    "Ctrl": "<kbd>Ctrl</kbd>",
+    "Open / use": "Abrir / usar",
+    "Space": "<kbd>Space</kbd>",
+    "Jump": "Pular",
+    "A": "<kbd>A</kbd>",
+    "Crouch": "Agachar",
+    "Z": "<kbd>Z</kbd>",
+    "Weapons 1–0": "Armas 1–0",
+    "Map": "Mapa",
+    "Tab": "<kbd>Tab</kbd>",
+    "Esc": "<kbd>Esc</kbd>",
+    "Turn / pitch": "Virar / inclinar",
+    "Thrust forward / back": "Impulso para frente / para trás",
+    "A / Z": "<kbd>A</kbd> / <kbd>Z</kbd>",
+    "Fire lasers": "Disparar lasers",
+    "Fire missiles": "Disparar mísseis",
+    "Slide": "Deslizar de lado",
+    "Left flipper": "Flipper esquerdo",
+    "Left Shift": "<kbd>Shift</kbd> esquerdo",
+    "Right flipper": "Flipper direito",
+    "Right Shift": "<kbd>Shift</kbd> direito",
+    "Launch the ball": "Lançar a bola",
+    "hold and release the down arrow": "segure e solte a <kbd>Seta para baixo</kbd>",
+    "Nudge the table": "Sacudir a mesa",
+    "Steer": "Dirigir",
+    "Accelerate / brake": "Acelerar / frear",
+    "Up / Down arrows": "<kbd>Seta para cima</kbd> / <kbd>Seta para baixo</kbd>",
+    "Turbo, guns and mines": "Turbo, armas e minas",
+    "set in the game's options": "definidos nas opções do jogo",
+    "Move": "Mover",
+    "Shift": "<kbd>Shift</kbd>",
+    "Throw knife": "Arremessar a faca",
+    "Alt": "<kbd>Alt</kbd>",
+    "Enter a level": "Entrar numa fase",
+    "Up arrow": "<kbd>Seta para cima</kbd>",
+    "Fire, afterburner, weapons": "Tiro, pós-combustor, armas",
+    "listed on the game's F1 help screen": "listados na tela de ajuda do jogo (<kbd>F1</kbd>)",
+    "Player 1 and player 2 keys": "Teclas do jogador 1 e do jogador 2",
+    "shown and changed in the game's options": "exibidas e alteradas nas opções do jogo",
+    "Menus": "Menus",
+    "Arrow keys and Enter": "<kbd>Setas</kbd> e <kbd>Enter</kbd>",
+    "Fire and other keys": "Tiro e outras teclas",
+    "shown in the game's instructions": "exibidas nas instruções do jogo",
+    "Attack": "Atacar",
+    "Swap character": "Trocar de personagem",
+    "Walk": "Andar",
+    "Jump, cast and pick up": "Pular, lançar feitiços e pegar itens",
+    "listed on the game's help screen": "listados na tela de ajuda do jogo",
+    "Setup menu": "Menu de configuração",
+    "Move and attack": "Mover e atacar",
+    "Throw and other keys": "Arremesso e outras teclas",
+    "Restart room and other keys": "Reiniciar a sala e outras teclas",
+    "Jump and fire": "Pular e atirar",
+    "Slide the tiles": "Deslizar as peças",
+    "Arrow keys (W A S D also work)": "<kbd>Setas</kbd> (<kbd>W A S D</kbd> também funcionam)",
+    "Swipe on a touch screen": "Deslize o dedo na tela de toque",
+    "Start a new game": "Começar um novo jogo",
+    "R": "<kbd>R</kbd>",
+    "New Game button": "Botão New Game",
+    "Rotate the hexagon": "Girar o hexágono",
+    "Left / Right arrows": "<kbd>Seta para a esquerda</kbd> / <kbd>Seta para a direita</kbd>",
+    "Tap the left or right side of the screen": "Toque no lado esquerdo ou direito da tela",
+    "Speed the blocks up": "Acelerar os blocos",
+    "Down arrow": "<kbd>Seta para baixo</kbd>",
+    "Pause": "Pausar",
+    "P": "<kbd>P</kbd>",
+    "Pause button": "Botão de pausa",
+    "Start / restart": "Iniciar / reiniciar",
+    "Enter": "<kbd>Enter</kbd>",
+    "Click the hexagon": "Clique no hexágono",
+    "Give a command": "Dar um comando",
+    "Type it and press Enter": "Digite e aperte <kbd>Enter</kbd>",
+    "n, s, e, w, u, d (north, south, east, west, up, down)": "n, s, e, w, u, d (norte, sul, leste, oeste, para cima, para baixo)",
+    "Check what you carry": "Ver o que você carrega",
+    "i": "i",
+    "Save / load": "Salvar / carregar",
+    "save / restore": "save / restore"
   },
   "doom": {
     "title": "Jogar DOOM Online — Grátis, No Navegador, Sem Baixar — ExeBrowser",
@@ -546,5 +816,1193 @@
     ],
     "mobileHint": "No celular, use os botões FLIP / LANÇAR abaixo da mesa.",
     "fullyFree": "Motor com licença MIT e arte, som e dados da mesa totalmente originais, em domínio público (CC0)."
+  },
+  "shadow-warrior": {
+    "title": "Jogar Shadow Warrior Online Grátis — O Shareware de 1997",
+    "description": "Jogue Shadow Warrior (1997) grátis no navegador: o episódio shareware oficial do jogo de tiro da 3D Realms no motor Build. Sem baixar, roda via DOSBox + WebAssembly.",
+    "keywords": "jogar shadow warrior online, shadow warrior grátis, shadow warrior no navegador, shadow warrior 1997 shareware, shadow warrior sem baixar, jogo de tiro build engine online",
+    "ogTitle": "Jogar Shadow Warrior Online Grátis — O Shareware de 1997",
+    "ogDescription": "O jogo de tiro de 1997 da 3D Realms — katana, shurikens e bombas adesivas — numa aba do navegador.",
+    "crumb": "Jogar Shadow Warrior",
+    "h1": "Jogue Shadow Warrior online — o episódio shareware de 1997",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Shadow Warrior</strong> é o jogo de tiro em primeira pessoa de 1997 da 3D Realms, feito no mesmo motor Build de Duke Nukem 3D e levado mais longe: salas sobre salas, veículos dirigíveis, uma katana e bombas adesivas. O <strong>episódio shareware</strong> oficial (versão 1.2, quatro fases) está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>Esta é a versão shareware original de DOS rodando dentro de um DOSBox compilado para WebAssembly. O pacote tem cerca de 13&nbsp;MB, então espere alguns segundos no primeiro carregamento; depois disso o navegador o guarda. O som e a música Sound Blaster já estão configurados.</p><p>Shadow Warrior é o jogo de motor Build mais pesado deste site. Um notebook ou desktop recente o roda liso na resolução nativa de 320×200; Chromebooks e celulares mais antigos vão perder quadros nas áreas externas maiores.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As teclas são o conjunto do motor Build que você talvez conheça de Duke Nukem 3D: setas para mover e virar, <kbd>Ctrl</kbd> para atirar, <kbd>Space</kbd> para abrir portas e usar interruptores, <kbd>A</kbd> para pular e <kbd>Z</kbd> para agachar. As teclas numéricas escolhem as armas; a katana, no <kbd>1</kbd>, nunca acaba. Todas as teclas podem ser alteradas em Options, no menu do jogo.</p><p>Um aviso que também estava na caixa em 1997: este é um jogo violento, com humor grosseiro e estereótipos da sua época. Não é para jogadores jovens.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>O que roda aqui é o episódio shareware que a 3D Realms lançou para distribuição gratuita, nos termos do LICENSE.TXT incluído no pacote. Essa licença cobre apenas este episódio; o jogo registrado, com as fases restantes, não está hospedado aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Shadow Warrior aqui?",
+        "a": "Sim. Este é o episódio shareware oficial, que a 3D Realms licenciou para distribuição gratuita no LICENSE.TXT que vem dentro do pacote. O jogo registrado não está hospedado."
+      },
+      {
+        "q": "Quanto do jogo está incluído?",
+        "a": "O episódio shareware: quatro fases, com a katana, os shurikens, a riot gun, as Uzis e as bombas adesivas. O segundo episódio do jogo completo não faz parte da versão shareware."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Os saves feitos pelo menu do próprio jogo ficam neste navegador e são restaurados na sua próxima visita. Limpar os dados do site os apaga."
+      },
+      {
+        "q": "Vai rodar num Chromebook da escola?",
+        "a": "Ele carrega sem instalar nada, que é o que costuma importar num aparelho gerenciado. A velocidade depende da máquina: Chromebooks recentes dão conta, os mais simples vão engasgar."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Shadow Warrior era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">Procurar Shadow Warrior na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Shadow Warrior pode ser distribuído livremente nos termos do arquivo LICENSE.TXT incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/shadow-warrior/NOTICE.md\">/apps/shadow-warrior/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Shadow Warrior pode ser distribuída livremente nos termos do arquivo LICENSE.TXT incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover/virar · FIRE: atirar · OPEN: portas/interruptores · MENU: esc"
+  },
+  "descent": {
+    "title": "Jogar Descent Online Grátis — O Shareware de 1995",
+    "description": "Jogue Descent (1995) grátis no navegador: a versão shareware oficial do jogo de tiro com seis graus de liberdade da Parallax, com sete fases de mina. Sem baixar.",
+    "keywords": "jogar descent online, descent grátis, descent no navegador, descent 1995 shareware, descent sem baixar, jogo de tiro seis graus de liberdade",
+    "ogTitle": "Jogar Descent Online Grátis — O Shareware de 1995",
+    "ogDescription": "Pilote uma nave por túneis de mina em qualquer direção: o clássico de 1995 da Parallax, versão shareware.",
+    "crumb": "Jogar Descent",
+    "h1": "Jogue Descent online — a versão shareware de 1995",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — a versão shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Descent</strong> é o jogo de tiro de 1995 da Parallax Software que colocou você numa nave dentro de uma mina e deixou voar em todas as direções: para cima, para baixo, de lado e de cabeça para baixo. A <strong>versão shareware</strong> oficial (1.4, as sete primeiras fases) está hospedada aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. O pacote tem menos de 3&nbsp;MB e inicia em poucos segundos. O jogo pede primeiro um nome de piloto; digite qualquer coisa e aperte <kbd>Enter</kbd>.</p><p>Descent era um jogo exigente em 1995 e ainda pede mais do emulador do que um título 2D. Um notebook ou desktop dos últimos anos o roda liso.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>Sua nave se move em seis eixos, e leva alguns minutos para se acostumar. No layout padrão de teclado, <kbd>A</kbd> e <kbd>Z</kbd> dão impulso para frente e para trás, as setas viram e inclinam a nave, <kbd>Ctrl</kbd> dispara os lasers e <kbd>Space</kbd> dispara os mísseis. <kbd>Tab</kbd> abre o mapa automático em 3D, de que você vai precisar. Toda fase termina do mesmo jeito: destrua o reator e depois ache a saída antes que a mina exploda.</p><p>Todas as teclas podem ser remapeadas em Options → Customize.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>O README do próprio jogo diz melhor: “This game may be freely distributed.” (este jogo pode ser distribuído livremente). Isso vale para esta versão shareware com suas sete fases. O jogo registrado tem 30 fases e não está hospedado aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Descent aqui?",
+        "a": "Sim. Esta é a versão shareware, cujo README afirma que ela pode ser distribuída livremente. O jogo registrado de 30 fases não está hospedado."
+      },
+      {
+        "q": "Quantas fases estão incluídas?",
+        "a": "Sete: a versão shareware completa, 1.4."
+      },
+      {
+        "q": "Posso usar mouse ou joystick?",
+        "a": "O teclado funciona de cara e é como a maioria das pessoas jogava o shareware. O controle por mouse pode ser ligado no menu Options do jogo, mas uma aba do navegador não repassa um joystick para o DOS."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Seu piloto e seus jogos salvos ficam neste navegador e são restaurados na próxima visita."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Descent era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Descent\" target=\"_blank\" rel=\"noopener\">Procurar Descent na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Descent\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Descent pode ser distribuído livremente nos termos do arquivo README.TXT incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/descent/NOTICE.md\">/apps/descent/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Descent pode ser distribuída livremente nos termos do arquivo README.TXT incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: virar/inclinar · FWD / BACK: impulso · FIRE: lasers · MISSILE: arma secundária"
+  },
+  "epic-pinball": {
+    "title": "Jogar Epic Pinball Online Grátis — A Mesa Shareware de 1993",
+    "description": "Jogue Epic Pinball (1993) grátis no navegador: a versão shareware oficial com a mesa Android. Pinball de DOS veloz, sem baixar, funciona em notebooks de escola.",
+    "keywords": "jogar epic pinball online, epic pinball grátis, epic pinball no navegador, pinball online sem baixar, pinball de dos online, epic megagames pinball",
+    "ogTitle": "Jogar Epic Pinball Online Grátis — A Mesa Shareware de 1993",
+    "ogDescription": "O sucesso de pinball para DOS de 1993 da Epic MegaGames — a mesa shareware Android, no seu navegador.",
+    "crumb": "Jogar Epic Pinball",
+    "h1": "Jogue Epic Pinball online — a mesa shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — a mesa shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Epic Pinball</strong> é o jogo de pinball de 1993 escrito por James Schmalz e publicado pela Epic MegaGames: mesas com rolagem suave, música digital e uma bola que realmente parece pesada. A <strong>versão shareware</strong> oficial, com a mesa Android, está hospedada aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>O pacote shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. Ele tem bem menos de 1&nbsp;MB, então carrega quase na hora. As primeiras telas são a abertura da Epic e um menu; aperte <kbd>Enter</kbd> para chegar à mesa.</p><p>Epic Pinball foi escrito em assembly para um 386 e roda em velocidade total no navegador em praticamente qualquer coisa, inclusive num Chromebook.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As duas teclas <kbd>Shift</kbd> são os flippers. Segure a seta para baixo para puxar o lançador e solte para lançar a bola. <kbd>Space</kbd> sacode a mesa — faça isso demais e dá tilt. A tela de ajuda do próprio jogo lista todas as teclas.</p><p>Na mesa Android, a primeira coisa a aprender são os lançamentos de rampa que vão completando as partes do robô; completar o androide é o que dá início à pontuação alta.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Esta é a versão shareware que a Epic MegaGames lançou para distribuição gratuita, com seus arquivos VENDOR.DOC e LICENSE.DOC incluídos. Os pacotes registrados traziam mais mesas; eles são comerciais e não estão hospedados aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Epic Pinball é grátis para jogar aqui?",
+        "a": "Sim. Esta é a versão shareware oficial, que a Epic MegaGames publicou para distribuição gratuita. Os pacotes de mesas registrados não estão hospedados."
+      },
+      {
+        "q": "Quais mesas estão incluídas?",
+        "a": "A mesa shareware, Android. As outras mesas eram vendidas nos pacotes registrados."
+      },
+      {
+        "q": "Quais são os controles?",
+        "a": "Os Shift esquerdo e direito são os flippers, a seta para baixo puxa o lançador e Space sacode a mesa."
+      },
+      {
+        "q": "Este é o pinball do Windows?",
+        "a": "Não. O pinball que vinha com o Windows era o 3D Pinball: Space Cadet. Este site tem uma mesa aberta para aquele motor numa página própria; Epic Pinball é um jogo de DOS anterior, de outro estúdio."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Epic Pinball era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Epic%20Pinball\" target=\"_blank\" rel=\"noopener\">Procurar Epic Pinball na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Epic%20Pinball\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Epic Pinball pode ser distribuído livremente nos termos dos arquivos LICENSE.DOC e VENDOR.DOC incluídos no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/epic-pinball/NOTICE.md\">/apps/epic-pinball/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Epic Pinball pode ser distribuída livremente nos termos dos arquivos LICENSE.DOC e VENDOR.DOC incluídos no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "L / R: flippers · ▼: puxar e soltar o lançador · TILT: sacudir a mesa"
+  },
+  "death-rally": {
+    "title": "Jogar Death Rally Online Grátis — O Shareware de 1996",
+    "description": "Jogue Death Rally (1996) grátis no navegador: a versão shareware oficial do jogo de corrida e combate visto de cima da Remedy. Armas, minas, melhorias. Sem baixar.",
+    "keywords": "jogar death rally online, death rally grátis, death rally no navegador, death rally 1996 shareware, jogo de corrida visto de cima online, death rally sem baixar",
+    "ogTitle": "Jogar Death Rally Online Grátis — O Shareware de 1996",
+    "ogDescription": "O primeiro jogo da Remedy: corrida vista de cima com metralhadoras, minas e uma loja de melhorias nada confiável.",
+    "crumb": "Jogar Death Rally",
+    "h1": "Jogue Death Rally online — a versão shareware de 1996",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — a versão shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Death Rally</strong> é o jogo de corrida e combate visto de cima de 1996 que foi o primeiro jogo da Remedy Entertainment, publicado pela Apogee. Você começa com um Vagabond todo surrado, corre por prêmios em dinheiro e gasta tudo em motores, pneus, blindagem e coisas menos esportivas. A <strong>versão shareware</strong> oficial (1.1) está hospedada aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. O pacote tem cerca de 7&nbsp;MB. Ele abre no menu principal em VGA de alta resolução; escolha Start Racing e selecione um piloto.</p><p>As corridas rodam lisas num notebook comum. Os menus são em 640×480, então parecem mais nítidos do que os da maioria dos jogos de DOS da época.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>Dirija com as setas: para cima acelera, para baixo freia. As demais teclas — turbo, metralhadora, minas — são exibidas e podem ser alteradas em Configure, no menu principal. No começo, entre na corrida fácil, termine entre os três primeiros e invista o dinheiro no motor antes de qualquer outra coisa.</p><p>Entre as corridas, a loja vende reparos e melhorias, e o agiota e o sabotador oferecem atalhos que custam mais do que parecem à primeira vista.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Esta é a versão shareware que a Apogee lançou nos termos do LICENSE.DOC do pacote, que permite compartilhá-la sem custo. Ela tem um conjunto reduzido de pistas e carros. O jogo registrado não está hospedado aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Death Rally aqui?",
+        "a": "Sim. Esta é a versão shareware oficial, licenciada pela Apogee para distribuição gratuita no seu LICENSE.DOC. O jogo registrado não está hospedado."
+      },
+      {
+        "q": "O que falta em relação ao jogo completo?",
+        "a": "O shareware tem menos pistas e carros do que o jogo registrado. As corridas, as armas, a loja e a escada da carreira funcionam todas."
+      },
+      {
+        "q": "Minha carreira fica salva?",
+        "a": "Sim, na medida do possível. O jogo salva seu piloto entre as corridas, e esta página guarda esses arquivos no seu navegador para a próxima visita."
+      },
+      {
+        "q": "Dá para jogar em duas pessoas?",
+        "a": "A opção multiplayer do menu precisa de uma rede de DOS, que uma aba do navegador não consegue oferecer. O modo de um jogador é o que funciona aqui."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Death Rally era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Death%20Rally\" target=\"_blank\" rel=\"noopener\">Procurar Death Rally na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Death%20Rally\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Death Rally pode ser distribuído livremente nos termos do arquivo LICENSE.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/death-rally/NOTICE.md\">/apps/death-rally/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Death Rally pode ser distribuída livremente nos termos do arquivo LICENSE.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: dirigir, acelerar, frear · CTRL / ALT / SPACE: as teclas de ação do jogo"
+  },
+  "jill-of-the-jungle": {
+    "title": "Jogar Jill of the Jungle Online Grátis — Episódio 1",
+    "description": "Jogue Jill of the Jungle (1992) grátis no navegador: o primeiro episódio shareware oficial do jogo de plataforma de Tim Sweeney para a Epic MegaGames. Sem baixar.",
+    "keywords": "jogar jill of the jungle online, jill of the jungle grátis, jill of the jungle no navegador, jill of the jungle shareware, jogo de plataforma dos online, epic megagames plataforma",
+    "ogTitle": "Jogar Jill of the Jungle Online Grátis — Episódio 1",
+    "ogDescription": "O jogo de plataforma de 1992 que pôs a Epic MegaGames no mapa — o episódio um, no seu navegador.",
+    "crumb": "Jogar Jill of the Jungle",
+    "h1": "Jogue Jill of the Jungle online — o episódio shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Jill of the Jungle</strong> é o jogo de plataforma de 1992 programado por Tim Sweeney, a resposta da Epic MegaGames a Commander Keen: VGA de 256 cores, música Sound Blaster e uma heroína que se transforma em pássaro, peixe e sapo. O <strong>primeiro episódio shareware</strong> oficial está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. Ela tem cerca de 300&nbsp;KB e inicia quase instantaneamente. A primeira tela mostra a configuração de som e gráficos; aperte <kbd>Enter</kbd> para aceitá-la.</p><p>Roda em velocidade total em qualquer coisa, inclusive celulares e Chromebooks.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas movem, <kbd>Shift</kbd> pula e <kbd>Alt</kbd> arremessa sua faca, depois que você encontrar uma — ela volta como um bumerangue. O episódio é montado em torno de um mapa central: ande até a entrada de uma fase e aperte para cima para entrar. As chaves abrem as portas correspondentes, e as maçãs recuperam a vida.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Este é o primeiro de três episódios, aquele que a Epic MegaGames lançou como shareware. Seu VENDOR.DOC dá permissão para distribuí-lo desde que ele seja claramente identificado como shareware. Os outros dois episódios não estão hospedados aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Jill of the Jungle é grátis para jogar aqui?",
+        "a": "Sim. Este é o primeiro episódio shareware, que a Epic MegaGames deu permissão para distribuir no VENDOR.DOC incluído no pacote."
+      },
+      {
+        "q": "Quantos episódios estão incluídos?",
+        "a": "Um de três. Os episódios dois (Jill Goes Underground) e três (Jill Saves the Prince) eram a parte registrada do jogo."
+      },
+      {
+        "q": "Quem fez o jogo?",
+        "a": "Tim Sweeney o programou para a sua empresa, a Epic MegaGames, que mais tarde se tornou a Epic Games."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Os jogos salvos pelo menu do próprio Jill ficam neste navegador."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Jill of the Jungle era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Jill%20of%20the%20Jungle\" target=\"_blank\" rel=\"noopener\">Procurar Jill of the Jungle na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Jill%20of%20the%20Jungle\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Jill of the Jungle pode ser distribuído livremente nos termos dos arquivos VENDOR.DOC e LICENSE.DOC incluídos no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/jill-of-the-jungle/NOTICE.md\">/apps/jill-of-the-jungle/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Jill of the Jungle pode ser distribuída livremente nos termos dos arquivos VENDOR.DOC e LICENSE.DOC incluídos no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover · JUMP: Shift · KNIFE: Alt · ENTER/ESC: menus"
+  },
+  "terminal-velocity": {
+    "title": "Jogar Terminal Velocity Online Grátis — O Shareware de 1995",
+    "description": "Jogue Terminal Velocity (1995) grátis no navegador: o episódio shareware oficial do veloz jogo de tiro aéreo em 3D da Terminal Reality e da 3D Realms.",
+    "keywords": "jogar terminal velocity online, terminal velocity grátis, terminal velocity no navegador, terminal velocity 1995 shareware, jogo de nave dos online, terminal velocity sem baixar",
+    "ogTitle": "Jogar Terminal Velocity Online Grátis — O Shareware de 1995",
+    "ogDescription": "Voo arcade veloz sobre planetas 3D texturizados — o episódio shareware de 1995, no seu navegador.",
+    "crumb": "Jogar Terminal Velocity",
+    "h1": "Jogue Terminal Velocity online — o episódio shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Terminal Velocity</strong> é o jogo de tiro aéreo de 1995 da Terminal Reality, publicado pela 3D Realms: nada de checklists de simulador de voo, só uma nave veloz, planetas 3D abertos e túneis para mergulhar. O <strong>episódio shareware</strong> oficial (versão 1.2) está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. O pacote tem menos de 4&nbsp;MB, com o som Sound Blaster já configurado.</p><p>Este jogo era uma vitrine para PCs rápidos em 1995, então é um dos jogos de DOS mais exigentes daqui. Roda bem num notebook ou desktop recente.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas pilotam a nave. O tiro, o pós-combustor e a seleção de armas também ficam no teclado; a tela de ajuda do jogo (<kbd>F1</kbd>) lista as teclas, e elas podem ser alteradas nas opções. Atire nos alvos marcados em cada planeta e depois ache a entrada do túnel: é nos túneis que estão os chefes.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Esta é a versão shareware, marcada como “episódio um”, que a 3D Realms licenciou para distribuição gratuita no LICENSE.TXT incluído no pacote. A licença diz com todas as letras que não cobre nenhum outro episódio; o jogo registrado não está hospedado aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Terminal Velocity aqui?",
+        "a": "Sim. Este é o episódio shareware oficial, que a 3D Realms licenciou para distribuição gratuita. O jogo registrado não está hospedado."
+      },
+      {
+        "q": "Quanto do jogo está incluído?",
+        "a": "O episódio um do jogo: seus planetas e os respectivos trechos de túnel."
+      },
+      {
+        "q": "Posso pilotar com o mouse?",
+        "a": "O teclado funciona de cara. O voo por mouse pode ser ativado nas opções do jogo, embora o teclado seja mais fácil numa aba do navegador."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Terminal Velocity era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Terminal%20Velocity\" target=\"_blank\" rel=\"noopener\">Procurar Terminal Velocity na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Terminal%20Velocity\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Terminal Velocity pode ser distribuído livremente nos termos do arquivo LICENSE.TXT incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/terminal-velocity/NOTICE.md\">/apps/terminal-velocity/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Terminal Velocity pode ser distribuída livremente nos termos do arquivo LICENSE.TXT incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: voar · FIRE: Ctrl · ALT / SPACE: as outras teclas do jogo · ESC: menu"
+  },
+  "liero": {
+    "title": "Jogar Liero Online Grátis — O Duelo de Minhocas em Tempo Real",
+    "description": "Jogue Liero 1.33 grátis no navegador: o duelo de minhocas freeware em tempo real para dois jogadores num só teclado, ou um jogador contra o computador. Sem baixar.",
+    "keywords": "jogar liero online, liero grátis, liero no navegador, liero 1.33, jogo de minhocas em tempo real, jogo para dois jogadores no mesmo teclado",
+    "ogTitle": "Jogar Liero Online Grátis — O Duelo de Minhocas em Tempo Real",
+    "ogDescription": "Duas minhocas, quarenta armas, um teclado: o clássico freeware Liero, no seu navegador.",
+    "crumb": "Jogar Liero",
+    "h1": "Jogue Liero online — o duelo de minhocas freeware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o jogo freeware completo roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Liero</strong> é o jogo freeware de 1998 de Joosa Riekkinen que costuma ser descrito como um Worms em tempo real: duas minhocas cavam por uma terra destrutível e partem uma para cima da outra com uma corda ninja e cerca de quarenta armas, sem turnos e sem espera. <strong>A versão 1.33, o jogo completo,</strong> está hospedada aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>O jogo original de DOS roda dentro de um DOSBox compilado para WebAssembly. Ele tem menos de 400&nbsp;KB e inicia em um ou dois segundos; aperte qualquer tecla no texto de carregamento para chegar ao menu.</p><p>Liero é leve o bastante para rodar em velocidade total em qualquer aparelho.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>Liero foi feito para duas pessoas dividindo um teclado, e isso continua funcionando aqui. Você também pode definir nas opções que a segunda minhoca seja controlada pelo computador. Cada jogador escolhe cinco armas antes da partida. O menu de opções mostra as teclas de cada jogador e permite alterá-las — faça isso primeiro, já que dois pares de mãos num teclado de notebook pedem algum planejamento.</p><p>A corda ninja é a habilidade que separa os jogadores: dispare, balance e solte.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>Liero é freeware. A documentação dele diz isso diretamente: ele pode ser distribuído a qualquer pessoa, por qualquer meio, desde que seu conteúdo não seja alterado. Os arquivos aqui são a versão 1.33 sem modificações.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Liero é mesmo de graça?",
+        "a": "É. O autor o lançou como freeware, e a documentação incluída permite distribuí-lo sem alterações. Este é o jogo completo, não uma demo."
+      },
+      {
+        "q": "Dá para jogar sozinho?",
+        "a": "Dá. Defina uma das duas minhocas como controlada pelo computador no menu de opções."
+      },
+      {
+        "q": "Como duas pessoas jogam num só teclado?",
+        "a": "Cada jogador tem seu próprio conjunto de teclas, exibido no menu de opções, onde você também pode alterá-las. Um teclado de tamanho normal é mais confortável do que um pequeno de notebook."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Liero é freeware: sua documentação afirma que ele pode ser distribuído a qualquer pessoa e de qualquer forma, desde que seu conteúdo não seja alterado. Procedência: <a href=\"/apps/liero/NOTICE.md\">/apps/liero/NOTICE.md</a>.</p>",
+    "licenseReason": "Liero é freeware: sua documentação afirma que ele pode ser distribuído a qualquer pessoa e de qualquer forma, desde que seu conteúdo não seja alterado.",
+    "fullyFree": "Lançado como freeware pelo seu autor, Joosa Riekkinen: o jogo completo.",
+    "mobileHint": "Direcional: mover · CTRL / ALT / SPACE: as teclas de ação do jogo · ENTER: confirmar"
+  },
+  "major-stryker": {
+    "title": "Jogar Major Stryker Online Grátis — O Jogo Completo",
+    "description": "Jogue Major Stryker (1993) grátis no navegador: o shoot 'em up vertical da Apogee, lançado como freeware em 2006. Todos os três episódios, sem baixar nada.",
+    "keywords": "jogar major stryker online, major stryker grátis, major stryker no navegador, major stryker freeware, shoot em up vertical dos online, major stryker sem baixar",
+    "ogTitle": "Jogar Major Stryker Online Grátis — O Jogo Completo",
+    "ogDescription": "O shoot 'em up vertical de 1993 da Apogee, freeware desde 2006 — todos os três episódios no seu navegador.",
+    "crumb": "Jogar Major Stryker",
+    "h1": "Jogue Major Stryker online — o jogo freeware completo",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o jogo freeware completo roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Major Stryker</strong> é o shoot 'em up vertical de 1993 da Apogee: três planetas (de lava, ártico e desértico), rolagem EGA com paralaxe tripla e uma nave que vai pegando armas maiores pelo caminho. A Apogee o lançou como <strong>freeware</strong> em 2006, então o jogo completo está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>O pacote freeware da própria Apogee roda dentro de um DOSBox compilado para WebAssembly. Ele tem pouco mais de 1&nbsp;MB. O jogo é da era EGA de 16 cores e roda em velocidade total em qualquer aparelho.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas movem sua nave. A tecla de tiro e as demais são exibidas nas instruções do jogo e podem ser alteradas pelo menu. Pegue as cápsulas de armas que os cientistas libertados e os alvos destruídos deixam para trás, e tente não ser atingido: um golpe custa sua arma melhorada antes de custar uma vida.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>A Apogee Software lançou Major Stryker como freeware em 14 de março de 2006. O pacote aqui é o <code>strykerfw.zip</code>, a versão freeware do servidor de downloads da própria Apogee, com todos os três episódios.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Major Stryker é mesmo de graça?",
+        "a": "É. A Apogee lançou o jogo completo como freeware em 14 de março de 2006. Esta é essa versão, tirada de uma cópia arquivada do servidor de downloads da própria Apogee."
+      },
+      {
+        "q": "Quantos episódios estão incluídos?",
+        "a": "Todos os três: Lava Planet, Arctic Planet e Desert Planet."
+      },
+      {
+        "q": "Meu recorde fica salvo?",
+        "a": "Sim, na medida do possível. Os arquivos salvos do jogo ficam neste navegador entre as visitas."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">A Apogee Software lançou Major Stryker como freeware em 14 de março de 2006; este é o pacote freeware do servidor de downloads da própria Apogee. Procedência: <a href=\"/apps/major-stryker/NOTICE.md\">/apps/major-stryker/NOTICE.md</a>.</p>",
+    "licenseReason": "A Apogee Software lançou Major Stryker como freeware em 14 de março de 2006; este é o pacote freeware do servidor de downloads da própria Apogee.",
+    "fullyFree": "Lançado como freeware pela Apogee Software em 14 de março de 2006: o jogo completo, todos os três episódios.",
+    "mobileHint": "Direcional: voar · FIRE: Ctrl · ALT / SPACE: as outras teclas do jogo · ESC: menu"
+  },
+  "stargunner": {
+    "title": "Jogar Stargunner Online Grátis — O Shareware de 1996",
+    "description": "Jogue Stargunner (1996) grátis no navegador: o episódio shareware oficial do jogo de tiro espacial de rolagem lateral da Apogee, com loja de naves entre as fases.",
+    "keywords": "jogar stargunner online, stargunner grátis, stargunner no navegador, stargunner shareware apogee, jogo de nave de rolagem lateral dos, shoot em up no navegador",
+    "ogTitle": "Jogar Stargunner Online Grátis — O Shareware de 1996",
+    "ogDescription": "O último shoot 'em up de DOS da Apogee: sprites renderizados, uma loja de armas e muita bala na tela.",
+    "crumb": "Jogar Stargunner",
+    "h1": "Jogue Stargunner online — o episódio shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Stargunner</strong> é o shoot 'em up de rolagem lateral de 1996 que foi um dos últimos jogos lançados com o nome Apogee: naves pré-renderizadas, rolagem veloz e uma loja onde os créditos compram armas, motores e satélites. O <strong>episódio shareware</strong> oficial (versão 1.1) está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. O pacote tem cerca de 5&nbsp;MB. Roda liso num notebook comum.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas movem a nave. As teclas de tiro são exibidas nas opções de controle do jogo, onde podem ser alteradas. Colete os créditos que os inimigos deixam cair: depois de cada fase você pode gastá-los em armas frontais, superiores e inferiores e num motor mais rápido. Uma nave equilibrada se sai melhor do que uma com um único canhão enorme.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Este é o episódio shareware, distribuído nos termos do LICENSE.DOC do pacote. Mais tarde a Apogee lançou o jogo completo como freeware, na forma de um instalador para Windows; a versão hospedada aqui é o episódio shareware de DOS, que é aquele cuja licença permite claramente que seja repassado.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Stargunner aqui?",
+        "a": "Sim. Este é o episódio shareware oficial, licenciado pela Apogee para distribuição gratuita no seu LICENSE.DOC."
+      },
+      {
+        "q": "Quanto do jogo está incluído?",
+        "a": "O primeiro episódio do jogo, incluindo a loja entre as fases."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Os jogos salvos ficam neste navegador entre as visitas."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Stargunner era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Stargunner\" target=\"_blank\" rel=\"noopener\">Procurar Stargunner na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Stargunner\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Stargunner pode ser distribuído livremente nos termos do arquivo LICENSE.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/stargunner/NOTICE.md\">/apps/stargunner/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Stargunner pode ser distribuída livremente nos termos do arquivo LICENSE.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: voar · FIRE: Ctrl · ALT / SPACE: as outras teclas do jogo · ESC: menu"
+  },
+  "secret-agent": {
+    "title": "Jogar Secret Agent Online Grátis — O Plataforma de 1992 da Apogee",
+    "description": "Jogue Secret Agent (1992) grátis no navegador: o episódio shareware oficial do jogo de plataforma de espionagem da Apogee, The Hunt for Red Rock Rover. Sem baixar.",
+    "keywords": "jogar secret agent online, secret agent apogee grátis, secret agent no navegador, secret agent 1992 shareware, jogo de plataforma apogee online, secret agent sem baixar",
+    "ogTitle": "Jogar Secret Agent Online Grátis — O Plataforma de 1992 da Apogee",
+    "ogDescription": "O Agente 006½ contra a Diabolical Villain Society — o jogo de plataforma de 1992 da Apogee, episódio um.",
+    "crumb": "Jogar Secret Agent",
+    "h1": "Jogue Secret Agent online — o episódio shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Secret Agent</strong> é o jogo de plataforma de 1992 da Apogee nos moldes de Crystal Caves: você é o Agente 006½, lançado de paraquedas numa ilha de bases inimigas, cada uma delas um labirinto da largura de uma única tela, cheio de guardas, lasers e portas trancadas. O <strong>episódio shareware</strong> oficial, The Hunt for Red Rock Rover, está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. Ela tem menos de 200&nbsp;KB e carrega na hora. É um jogo EGA de 16 cores e roda em velocidade total em qualquer aparelho.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas movem, <kbd>Ctrl</kbd> pula e <kbd>Alt</kbd> atira. A munição é limitada, então não atire em tudo. Em cada base você precisa achar o disquete e levá-lo ao computador para desligar os lasers, e depois usar a dinamite na porta de saída. O item dos óculos revela plataformas escondidas.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Este é o episódio um de três, a versão shareware. O VENDOR.DOC da Apogee, incluído no pacote, incentiva que ele seja repassado sem cobrança. Os episódios dois e três são o jogo registrado e não estão hospedados aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Secret Agent aqui?",
+        "a": "Sim. Este é o episódio shareware, que o VENDOR.DOC da Apogee permite a qualquer pessoa copiar e repassar sem cobrança."
+      },
+      {
+        "q": "Quantos episódios estão incluídos?",
+        "a": "Um de três: The Hunt for Red Rock Rover."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. O jogo salva sua posição no mapa da ilha, e esta página guarda esse arquivo no seu navegador."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Secret Agent era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Secret%20Agent\" target=\"_blank\" rel=\"noopener\">Procurar Secret Agent na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Secret%20Agent\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Secret Agent pode ser distribuído livremente nos termos do arquivo VENDOR.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/secret-agent/NOTICE.md\">/apps/secret-agent/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Secret Agent pode ser distribuída livremente nos termos do arquivo VENDOR.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover · JUMP: Ctrl · FIRE: Alt · ENTER/ESC: menus"
+  },
+  "realms-of-chaos": {
+    "title": "Jogar Realms of Chaos Online Grátis — O Shareware de 1995",
+    "description": "Jogue Realms of Chaos (1995) grátis no navegador: o episódio shareware oficial do jogo de plataforma de fantasia da Apogee. Alterne entre guerreiro e feiticeira.",
+    "keywords": "jogar realms of chaos online, realms of chaos grátis, realms of chaos no navegador, realms of chaos shareware, jogo de plataforma de fantasia dos, realms of chaos apogee",
+    "ogTitle": "Jogar Realms of Chaos Online Grátis — O Shareware de 1995",
+    "ogDescription": "Guerreiro ou feiticeira, trocados com uma tecla: o jogo de plataforma VGA de 1995 da Apogee, episódio um.",
+    "crumb": "Jogar Realms of Chaos",
+    "h1": "Jogue Realms of Chaos online — o episódio shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Realms of Chaos</strong> é o jogo de plataforma de fantasia de 1995 da Apogee. Você controla dois personagens e alterna entre eles a qualquer momento: Endrick, o guerreiro, que bate forte com a espada, e Elandra, a feiticeira, que pula mais alto e ataca à distância. O <strong>episódio shareware</strong> oficial está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly, com a música e os efeitos Sound Blaster já configurados. O pacote tem pouco mais de 2&nbsp;MB. Roda liso num notebook comum ou num Chromebook.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas movem, <kbd>Ctrl</kbd> pula e <kbd>Alt</kbd> ataca; <kbd>Space</kbd> alterna entre Endrick e Elandra. Os dois dividem uma única barra de vida, então a troca serve para ter a ferramenta certa na hora certa, não para ganhar uma segunda vida. As teclas podem ser alteradas nas opções do jogo.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Este é o primeiro de três episódios, lançado como shareware nos termos do VENDOR.DOC do pacote. Os outros dois episódios são o jogo registrado e não estão hospedados aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Realms of Chaos aqui?",
+        "a": "Sim. Este é o episódio shareware oficial, que o VENDOR.DOC da Apogee permite repassar sem cobrança."
+      },
+      {
+        "q": "Quantos episódios estão incluídos?",
+        "a": "Um de três."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Os jogos salvos ficam neste navegador entre as visitas."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Realms of Chaos era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Realms%20of%20Chaos\" target=\"_blank\" rel=\"noopener\">Procurar Realms of Chaos na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Realms%20of%20Chaos\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Realms of Chaos pode ser distribuído livremente nos termos do arquivo VENDOR.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/realms-of-chaos/NOTICE.md\">/apps/realms-of-chaos/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Realms of Chaos pode ser distribuída livremente nos termos do arquivo VENDOR.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover · JUMP: Ctrl · ATTACK: Alt · ENTER/ESC: menus"
+  },
+  "mystic-towers": {
+    "title": "Jogar Mystic Towers Online Grátis — O Shareware de 1994",
+    "description": "Jogue Mystic Towers (1994) grátis no navegador: a versão shareware oficial da aventura isométrica de quebra-cabeças da Apogee, estrelada pelo mago Baron Baldric.",
+    "keywords": "jogar mystic towers online, mystic towers grátis, mystic towers no navegador, mystic towers shareware, jogo isométrico de dos online, baron baldric",
+    "ogTitle": "Jogar Mystic Towers Online Grátis — O Shareware de 1994",
+    "ogDescription": "Um mago idoso, doze torres e muitos monstros: a aventura isométrica da Apogee, shareware.",
+    "crumb": "Jogar Mystic Towers",
+    "h1": "Jogue Mystic Towers online — a versão shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — a versão shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Mystic Towers</strong> é o jogo isométrico de ação e quebra-cabeça de 1994 do estúdio australiano Animation F/X, publicado pela Apogee. Baron Baldric, um mago idoso com problema de coluna, precisa limpar torres de monstros sala por sala, lançando feitiços e lembrando de comer e beber. A <strong>versão shareware</strong> oficial está hospedada aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. O pacote tem cerca de 1&nbsp;MB. Aperte <kbd>Enter</kbd> nas telas de texto da abertura para chegar ao jogo. Roda em velocidade total em qualquer aparelho recente.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas fazem Baldric andar por cada sala isométrica. Pular, lançar feitiços e pegar coisas ficam no teclado; a tela de ajuda do jogo lista as teclas. Em cada torre você precisa matar todos os monstros, destruir o gerador de monstros e achar a chave da saída. Fique de olho nos medidores de comida e bebida: um aventureiro que esquece o almoço não dura muito.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Esta é a versão shareware, distribuída nos termos do VENDOR.DOC da Apogee, que está incluído no pacote. Ela contém as primeiras torres; o jogo registrado tem o restante e não está hospedado aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Mystic Towers aqui?",
+        "a": "Sim. Esta é a versão shareware oficial, que o VENDOR.DOC da Apogee permite repassar sem cobrança."
+      },
+      {
+        "q": "Quanto do jogo está incluído?",
+        "a": "As torres do shareware. O jogo registrado acrescenta as restantes."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Os jogos salvos ficam neste navegador entre as visitas."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Mystic Towers era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Mystic%20Towers\" target=\"_blank\" rel=\"noopener\">Procurar Mystic Towers na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Mystic%20Towers\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Mystic Towers pode ser distribuído livremente nos termos do arquivo VENDOR.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/mystic-towers/NOTICE.md\">/apps/mystic-towers/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Mystic Towers pode ser distribuída livremente nos termos do arquivo VENDOR.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover · CTRL / ALT / SPACE: as teclas de ação do jogo · ENTER: confirmar"
+  },
+  "traffic-department-2192": {
+    "title": "Jogar Traffic Department 2192 Online Grátis — Episódio 1",
+    "description": "Jogue Traffic Department 2192 (1994) grátis no navegador: o primeiro episódio shareware do jogo de tiro visto de cima com muita história, da Safari Software.",
+    "keywords": "jogar traffic department 2192 online, td2192, traffic department 2192 grátis, traffic department 2192 no navegador, traffic department 2192 shareware, jogo de tiro visto de cima dos",
+    "ogTitle": "Jogar Traffic Department 2192 Online Grátis — Episódio 1",
+    "ogDescription": "Um jogo de tiro visto de cima com um roteiro tão longo quanto a lista de missões — episódio um, no seu navegador.",
+    "crumb": "Jogar Traffic Department 2192",
+    "h1": "Jogue Traffic Department 2192 online — episódio um",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Traffic Department 2192</strong> é o jogo de tiro visto de cima de 1994 da P-Squared Productions, publicado pelo selo Safari Software, da Epic. Você pilota um hoverskid sobre as ruas de uma cidade-colônia como a tenente Velasquez, e entre as missões o jogo conta uma história incomumente longa e de língua afiada. O <strong>primeiro episódio shareware</strong> está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. O pacote tem pouco mais de 1&nbsp;MB. Roda em velocidade total num notebook comum ou num Chromebook.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas conduzem seu hoverskid pelo mapa da cidade. A tecla de tiro e as demais são exibidas nas instruções do jogo. As missões variam: escoltar, interceptar, destruir. Leia os briefings — o diálogo entre as missões é metade do jogo, e os personagens não são educados uns com os outros.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Este é o episódio um de três, distribuído nos termos do LICENSE.DOC do pacote, no qual a Safari Software permite e incentiva a distribuição online desde que nenhum arquivo seja alterado ou removido. Os arquivos aqui estão completos e sem modificações. Os episódios seguintes não estão hospedados aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Traffic Department 2192 aqui?",
+        "a": "Sim. Este é o episódio shareware. Seu LICENSE.DOC permite a distribuição online desde que nenhum arquivo seja alterado ou removido, e nenhum foi."
+      },
+      {
+        "q": "Quantos episódios estão incluídos?",
+        "a": "Um de três."
+      },
+      {
+        "q": "É adequado para crianças?",
+        "a": "A história tem linguagem forte para um jogo shareware de 1994, e o enredo é sombrio em alguns momentos. É mais indicado para jogadores mais velhos."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Traffic Department 2192 era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Traffic%20Department%202192\" target=\"_blank\" rel=\"noopener\">Procurar Traffic Department 2192 na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Traffic%20Department%202192\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Traffic Department 2192 pode ser distribuído livremente nos termos do arquivo LICENSE.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/traffic-department-2192/NOTICE.md\">/apps/traffic-department-2192/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Traffic Department 2192 pode ser distribuída livremente nos termos do arquivo LICENSE.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: voar · FIRE: Ctrl · ALT / SPACE: as outras teclas do jogo · ESC: menu"
+  },
+  "cyberdogs": {
+    "title": "Jogar Cyberdogs Online Grátis — O Jogo de Tiro Freeware de 1994",
+    "description": "Jogue Cyberdogs (1994) grátis no navegador: o tiro freeware visto de cima de Ronny Wester, para um ou dois jogadores num teclado. Compre armas, cumpra missões.",
+    "keywords": "jogar cyberdogs online, cyberdogs grátis, cyberdogs no navegador, cyberdogs freeware, jogo de tiro dos para dois jogadores, c-dogs original",
+    "ogTitle": "Jogar Cyberdogs Online Grátis — O Jogo de Tiro Freeware de 1994",
+    "ogDescription": "Missões vistas de cima, uma loja de armas e modo cooperativo para dois num só teclado: o freeware Cyberdogs.",
+    "crumb": "Jogar Cyberdogs",
+    "h1": "Jogue Cyberdogs online — o jogo de tiro freeware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o jogo freeware completo roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Cyberdogs</strong> é o jogo de tiro freeware visto de cima de 1994 de Ronny Wester, o jogo do qual C-Dogs nasceu mais tarde. Um ou dois jogadores no mesmo teclado compram armas e depois enfrentam missões com objetivos para coletar ou destruir. <strong>O jogo completo</strong> está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>O jogo original de DOS roda dentro de um DOSBox compilado para WebAssembly. Ele tem cerca de 260&nbsp;KB e inicia em uns dois segundos. Roda em velocidade total em qualquer aparelho.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>Escolha um ou dois jogadores no menu e depois gaste seu dinheiro inicial na loja: uma segunda arma e alguma blindagem ajudam muito. Em cada missão, cumpra os objetivos mostrados no início e depois chegue à saída. As teclas dos dois jogadores são exibidas, e podem ser alteradas, nas opções do jogo.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>Cyberdogs é freeware. O README do autor diz: “This game is freeware, feel free to spread it around.” (este jogo é freeware, fique à vontade para espalhá-lo). Os arquivos aqui são a versão sem modificações.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Cyberdogs é mesmo de graça?",
+        "a": "É. Seu autor, Ronny Wester, o lançou como freeware e convida as pessoas a espalhá-lo. Este é o jogo completo."
+      },
+      {
+        "q": "Duas pessoas podem jogar juntas?",
+        "a": "Sim, num só teclado, em modo cooperativo. As teclas de cada jogador são definidas no menu de opções."
+      },
+      {
+        "q": "Qual é a relação com C-Dogs?",
+        "a": "Cyberdogs veio primeiro. A continuação de Wester, C-Dogs, saiu em 1997, e o projeto de código aberto C-Dogs SDL dá sequência a ela hoje."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Cyberdogs é freeware: seu README afirma “This game is freeware, feel free to spread it around.” (este jogo é freeware, fique à vontade para espalhá-lo). Procedência: <a href=\"/apps/cyberdogs/NOTICE.md\">/apps/cyberdogs/NOTICE.md</a>.</p>",
+    "licenseReason": "Cyberdogs é freeware: seu README afirma “This game is freeware, feel free to spread it around.” (este jogo é freeware, fique à vontade para espalhá-lo).",
+    "fullyFree": "Lançado como freeware pelo seu autor, Ronny Wester: o jogo completo.",
+    "mobileHint": "Direcional: mover · CTRL / ALT / SPACE: as teclas de ação do jogo · ENTER: confirmar"
+  },
+  "xenophage": {
+    "title": "Jogar Xenophage Online Grátis — Alien Bloodsport Shareware",
+    "description": "Jogue Xenophage: Alien Bloodsport (1995) grátis no navegador: a versão shareware do jogo de luta um contra um da Apogee, com lutadores alienígenas enormes.",
+    "keywords": "jogar xenophage online, xenophage alien bloodsport, xenophage grátis, xenophage no navegador, jogo de luta de dos online, xenophage shareware",
+    "ogTitle": "Jogar Xenophage Online Grátis — Alien Bloodsport Shareware",
+    "ogDescription": "Alienígenas que enchem a tela trocando golpes: o jogo de luta de 1995 da Apogee, versão shareware.",
+    "crumb": "Jogar Xenophage: Alien Bloodsport",
+    "h1": "Jogue Xenophage: Alien Bloodsport online — shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — a versão shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Xenophage: Alien Bloodsport</strong> é o jogo de luta um contra um de 1995 da Argo Games, publicado pela Apogee. Seus lutadores são alienígenas, e são enormes: a câmera se afasta à medida que eles se separam, para que os dois continuem na tela. A <strong>versão shareware</strong> oficial (1.1) está hospedada aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. O pacote tem cerca de 6&nbsp;MB. Roda bem num notebook ou desktop recente; o zoom é a parte exigente.</p><p>Como o título sugere, as lutas são sangrentas. Não é um jogo para jogadores jovens.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>O jogo abre no seu próprio menu de configuração. Escolha primeiro uma placa de música se quiser música (AdLib funciona aqui) e depois selecione Start XenoPhage. Em seguida, escolha um lutador e um modo. O movimento e os ataques ficam no teclado; as opções do jogo mostram as teclas de cada jogador e permitem alterá-las. Dois jogadores podem dividir um teclado nas partidas versus.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Esta é a versão shareware, distribuída nos termos do LICENSE.DOC do pacote, com um conjunto reduzido de lutadores. Mais tarde a Apogee lançou o jogo completo como freeware, na forma de um instalador para Windows; a versão hospedada aqui é o shareware de DOS, cuja licença permite claramente que seja repassado.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Xenophage aqui?",
+        "a": "Sim. Esta é a versão shareware oficial, licenciada pela Apogee para distribuição gratuita no seu LICENSE.DOC."
+      },
+      {
+        "q": "Quantos lutadores estão incluídos?",
+        "a": "A versão shareware tem um elenco reduzido. O jogo registrado tem todos eles."
+      },
+      {
+        "q": "Por que ele começa numa tela de configuração?",
+        "a": "É a configuração de som do próprio jogo. Selecione AdLib em Choose Music Card se quiser música e depois escolha Start XenoPhage."
+      },
+      {
+        "q": "Dá para jogar em duas pessoas?",
+        "a": "Dá, num só teclado. As teclas de cada jogador são definidas nas opções do jogo."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Xenophage: Alien Bloodsport era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Xenophage\" target=\"_blank\" rel=\"noopener\">Procurar Xenophage na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Xenophage\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Xenophage: Alien Bloodsport pode ser distribuído livremente nos termos do arquivo LICENSE.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/xenophage/NOTICE.md\">/apps/xenophage/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Xenophage: Alien Bloodsport pode ser distribuída livremente nos termos do arquivo LICENSE.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover e pular · CTRL / ALT / SPACE: ataques"
+  },
+  "boppin": {
+    "title": "Jogar Boppin' Online Grátis — O Quebra-Cabeça Shareware de 1994",
+    "description": "Jogue Boppin' (1994) grátis no navegador: o episódio shareware oficial do quebra-cabeça de combinar blocos da Accursed Toys e da Apogee. Sem baixar nada.",
+    "keywords": "jogar boppin online, boppin grátis, boppin no navegador, boppin shareware, jogo de quebra-cabeça dos online, boppin apogee",
+    "ogTitle": "Jogar Boppin' Online Grátis — O Quebra-Cabeça Shareware de 1994",
+    "ogDescription": "Arremesse blocos, combine padrões, resgate os vilões: o quebra-cabeça mais esquisito que a Apogee publicou.",
+    "crumb": "Jogar Boppin'",
+    "h1": "Jogue Boppin' online — o episódio shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Boppin'</strong> é o jogo de quebra-cabeça de 1994 da Accursed Toys, publicado pela Apogee. Os heróis, Yeet e Boik, limpam cada sala arremessando blocos contra blocos iguais, fazendo-os quicar em superfícies inclinadas para alcançar os mais difíceis. A missão deles é resgatar vilões de videogame, porque um mundo de jogo sem bandidos não tem graça. O <strong>episódio shareware</strong> oficial está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. O pacote tem pouco mais de 1&nbsp;MB. Roda em velocidade total num notebook comum ou num Chromebook.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas movem seu personagem; a tecla de arremesso e as demais são exibidas nas instruções do jogo. Pegue um bloco numa fonte e arremesse-o de modo que ele pare encostado em blocos do mesmo padrão. Elimine todos os blocos para terminar a sala. Formar figuras maiores rende pontos de bônus, e ficar sem blocos arremessáveis custa uma vida.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Este é o primeiro episódio, lançado como shareware nos termos do VENDOR.DOC do pacote. Os episódios restantes são o jogo registrado e não estão hospedados aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Boppin' aqui?",
+        "a": "Sim. Este é o episódio shareware oficial, que o VENDOR.DOC da Apogee permite repassar sem cobrança."
+      },
+      {
+        "q": "Quanto do jogo está incluído?",
+        "a": "As salas de quebra-cabeça do primeiro episódio."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Os arquivos salvos do jogo ficam neste navegador entre as visitas."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Boppin' era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Boppin\" target=\"_blank\" rel=\"noopener\">Procurar Boppin na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Boppin\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Boppin' pode ser distribuído livremente nos termos do arquivo VENDOR.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/boppin/NOTICE.md\">/apps/boppin/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Boppin' pode ser distribuída livremente nos termos do arquivo VENDOR.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover · CTRL / ALT / SPACE: as teclas de ação do jogo · ENTER: confirmar"
+  },
+  "paganitzu": {
+    "title": "Jogar Paganitzu Online Grátis — O Quebra-Cabeça de 1991",
+    "description": "Jogue Paganitzu (1991) grátis no navegador: a primeira parte shareware, Romancing the Rose, do quebra-cabeça de empurrar pedras em templos da Apogee. Sem baixar.",
+    "keywords": "jogar paganitzu online, paganitzu grátis, paganitzu no navegador, paganitzu shareware, jogo de quebra-cabeça dos online, alabama smith",
+    "ogTitle": "Jogar Paganitzu Online Grátis — O Quebra-Cabeça de 1991",
+    "ogDescription": "Empurre pedras, desvie de cobras, colete chaves: o quebra-cabeça de templo de 1991 de Alabama Smith, parte um.",
+    "crumb": "Jogar Paganitzu",
+    "h1": "Jogue Paganitzu online — parte um, shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — a primeira parte shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Paganitzu</strong> é o jogo de quebra-cabeça de 1991 de Keith Schuler, publicado pela Apogee. O explorador Alabama Smith atravessa uma pirâmide asteca uma sala de tela única por vez, empurrando pedras, coletando chaves e descobrindo qual cobra vai cuspir nele. A <strong>primeira parte shareware</strong>, Romancing the Rose, está hospedada aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. Ela tem cerca de 260&nbsp;KB e carrega na hora. Aperte <kbd>Enter</kbd> nas telas de abertura. É um jogo EGA de 16 cores e roda em velocidade total em qualquer aparelho.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>O jogo primeiro faz três perguntas de configuração (gráficos, controle, som): aperte <kbd>1</kbd> em cada uma. Depois, as setas movem Alabama uma casa por vez. Colete todas as chaves de uma sala para abrir a saída. As pedras podem ser empurradas, mas não puxadas, então pense antes de enfiar uma num canto. Se você ficar preso, o jogo tem uma tecla para reiniciar a sala; ela está listada nas instruções.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Esta é a parte um de três, lançada como shareware nos termos do VENDOR.DOC do pacote. As partes dois e três são o jogo registrado e não estão hospedadas aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Paganitzu aqui?",
+        "a": "Sim. Esta é a parte shareware oficial, que o VENDOR.DOC da Apogee permite repassar sem cobrança."
+      },
+      {
+        "q": "Quantas fases estão incluídas?",
+        "a": "As vinte salas da parte um, Romancing the Rose."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Os arquivos salvos do jogo ficam neste navegador entre as visitas."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Paganitzu era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Paganitzu\" target=\"_blank\" rel=\"noopener\">Procurar Paganitzu na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Paganitzu\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Paganitzu pode ser distribuído livremente nos termos do arquivo VENDOR.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/paganitzu/NOTICE.md\">/apps/paganitzu/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Paganitzu pode ser distribuída livremente nos termos do arquivo VENDOR.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover · CTRL / ALT / SPACE: as teclas de ação do jogo · ENTER: confirmar"
+  },
+  "dark-ages": {
+    "title": "Jogar Dark Ages Online Grátis — O Plataforma de 1991 da Apogee",
+    "description": "Jogue Dark Ages (1991) grátis no navegador: o jogo de plataforma de fantasia da Apogee, lançado como freeware em 2009. Os três volumes incluídos, sem baixar nada.",
+    "keywords": "jogar dark ages online, dark ages apogee grátis, dark ages no navegador, dark ages 1991 freeware, jogo de plataforma apogee online, dark ages sem baixar",
+    "ogTitle": "Jogar Dark Ages Online Grátis — O Plataforma de 1991 da Apogee",
+    "ogDescription": "Um príncipe, um trono roubado e música AdLib: o jogo de plataforma de 1991 da Apogee, freeware por inteiro.",
+    "crumb": "Jogar Dark Ages",
+    "h1": "Jogue Dark Ages online — o jogo freeware completo",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o jogo freeware completo roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Dark Ages</strong> é um jogo de plataforma de 1991 da Apogee em que um príncipe criado como camponês luta para voltar ao trono. Ele é lembrado como um dos primeiros jogos shareware com música AdLib. A Apogee o lançou como <strong>freeware</strong> em 2009, então os três volumes estão hospedados aqui — clique em Jogar e o volume um inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>O pacote freeware da própria Apogee roda dentro de um DOSBox compilado para WebAssembly. Ele tem menos de 400&nbsp;KB e carrega na hora. É um jogo EGA de 16 cores e roda em velocidade total em qualquer aparelho.</p><p>A página inicia o volume um. Os volumes dois e três estão no mesmo pacote: saia do jogo para o prompt do DOS e digite <code>DA2</code> ou <code>DA3</code>.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>As setas movem o príncipe; as teclas de pulo e de tiro são exibidas nas instruções do jogo. Sua arma melhora conforme você encontra aprimoramentos, e os escudos protegem você por um número limitado de golpes. Fale com o sábio de cada fase, que troca uma dica ou um item pelo que ele pedir.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>A Apogee Software lançou Dark Ages como freeware em março de 2009. O pacote aqui é o <code>da_freew.zip</code>, a versão freeware do servidor de downloads da própria Apogee, com todos os três volumes.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Dark Ages é mesmo de graça?",
+        "a": "É. A Apogee lançou o jogo completo como freeware em março de 2009. Esta é essa versão, tirada de uma cópia arquivada do servidor de downloads da própria Apogee."
+      },
+      {
+        "q": "Como jogo os volumes dois e três?",
+        "a": "Saia do volume um para o prompt do DOS, depois digite DA2 ou DA3 e aperte Enter."
+      },
+      {
+        "q": "Meu progresso fica salvo?",
+        "a": "Sim, na medida do possível. Os arquivos salvos do jogo ficam neste navegador entre as visitas."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">A Apogee Software lançou Dark Ages como freeware em março de 2009; este é o pacote freeware do servidor de downloads da própria Apogee. Procedência: <a href=\"/apps/dark-ages/NOTICE.md\">/apps/dark-ages/NOTICE.md</a>.</p>",
+    "licenseReason": "A Apogee Software lançou Dark Ages como freeware em março de 2009; este é o pacote freeware do servidor de downloads da própria Apogee.",
+    "fullyFree": "Lançado como freeware pela Apogee Software em março de 2009: o jogo completo, todos os três volumes.",
+    "mobileHint": "Direcional: mover · JUMP: Ctrl · FIRE: Alt · ENTER/ESC: menus"
+  },
+  "math-rescue": {
+    "title": "Jogar Math Rescue Online Grátis — O Jogo de Matemática de 1992",
+    "description": "Jogue Math Rescue (1992) grátis no navegador: o episódio shareware do jogo de plataforma educativo em que resolver contas traz de volta os números roubados.",
+    "keywords": "jogar math rescue online, math rescue grátis, math rescue no navegador, math rescue apogee, jogo educativo de dos online, jogo de matemática de plataforma",
+    "ogTitle": "Jogar Math Rescue Online Grátis — O Jogo de Matemática de 1992",
+    "ogDescription": "Os Gruzzles roubaram os números. Resolva contas para recuperá-los — o jogo de plataforma de 1992 das salas de aula.",
+    "crumb": "Jogar Math Rescue",
+    "h1": "Jogue Math Rescue online — o episódio shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Math Rescue</strong> é o jogo de plataforma educativo de 1992 da Redwood Games, de Karen Crowther, publicado pela Apogee. Criaturas chamadas Gruzzles roubaram os números do mundo, e você os recupera resolvendo problemas de aritmética enquanto uma borboleta prestativa despeja gosma em tudo o que entra no seu caminho. O <strong>episódio shareware</strong> oficial está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. Ela tem menos de 400&nbsp;KB e carrega na hora. Roda em velocidade total em qualquer aparelho, inclusive Chromebooks de escola.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>Escolha um menino ou uma menina e um nível de dificuldade; os níveis definem que tipos de problema aparecem, da adição simples até a multiplicação e a divisão, incluindo problemas com enunciado. As setas movem e <kbd>Ctrl</kbd> pula. Toque num número para receber um problema, responda e colete as respostas para abrir a saída.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Este é o primeiro episódio, lançado como shareware nos termos do VENDOR.DOC do pacote. Os outros episódios são o jogo registrado e não estão hospedados aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Math Rescue aqui?",
+        "a": "Sim. Este é o episódio shareware oficial, que o VENDOR.DOC da Apogee permite repassar sem cobrança."
+      },
+      {
+        "q": "Para que idade ele é?",
+        "a": "Foi feito para crianças do ensino fundamental. A dificuldade escolhida muda a aritmética, de contas simples a multiplicação, divisão e problemas com enunciado."
+      },
+      {
+        "q": "Funciona num Chromebook da escola?",
+        "a": "Funciona. Nada é instalado, e o jogo é leve o bastante para qualquer Chromebook."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Math Rescue era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Math%20Rescue\" target=\"_blank\" rel=\"noopener\">Procurar Math Rescue na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Math%20Rescue\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Math Rescue pode ser distribuído livremente nos termos do arquivo VENDOR.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/math-rescue/NOTICE.md\">/apps/math-rescue/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Math Rescue pode ser distribuída livremente nos termos do arquivo VENDOR.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover · JUMP: Ctrl · SLIME: Alt · ENTER/ESC: menus"
+  },
+  "word-rescue": {
+    "title": "Jogar Word Rescue Online Grátis — O Jogo de Leitura de 1992",
+    "description": "Jogue Word Rescue (1992) grátis no navegador: o episódio shareware do jogo de plataforma educativo em que ligar palavras a figuras derrota os Gruzzles.",
+    "keywords": "jogar word rescue online, word rescue grátis, word rescue no navegador, word rescue apogee, jogo educativo de dos online, jogo de leitura para crianças",
+    "ogTitle": "Jogar Word Rescue Online Grátis — O Jogo de Leitura de 1992",
+    "ogDescription": "Os Gruzzles roubaram as palavras. Ligue cada uma à sua figura — o jogo de plataforma de 1992 das salas de aula.",
+    "crumb": "Jogar Word Rescue",
+    "h1": "Jogue Word Rescue online — o episódio shareware",
+    "verdict": {
+      "kind": "good",
+      "text": "Funciona — o episódio shareware roda via DOSBox no seu navegador"
+    },
+    "intro": "<p><strong>Word Rescue</strong> é o jogo de plataforma educativo de 1992 da Redwood Games, de Karen Crowther, publicado pela Apogee. Os Gruzzles não sabem ler, então roubaram todas as palavras; você as recupera ligando cada palavra à sua figura, com Benny Bookworm jogando gosma em qualquer Gruzzle que chegue perto demais. O <strong>episódio shareware</strong> oficial está hospedado aqui — clique em Jogar e ele inicia no seu navegador.</p>",
+    "sections": [
+      {
+        "h": "Como funciona e o que esperar",
+        "html": "<p>A versão shareware original de DOS roda dentro de um DOSBox compilado para WebAssembly. Ela tem pouco mais de 300&nbsp;KB e carrega na hora. Roda em velocidade total em qualquer aparelho, inclusive Chromebooks de escola.</p>"
+      },
+      {
+        "h": "Como jogar",
+        "html": "<p>Escolha um menino ou uma menina e um nível de dificuldade, que define o quanto as palavras são difíceis. As setas movem e <kbd>Ctrl</kbd> pula. Toque numa caixa com ponto de interrogação para ver uma palavra e depois ache a figura que ela nomeia. Ligue todas as palavras, pegue a chave e saia pela porta.</p>"
+      },
+      {
+        "h": "Versão shareware — e o jogo completo",
+        "html": "<p>Este é o primeiro episódio, lançado como shareware nos termos do VENDOR.DOC do pacote. Os outros episódios são o jogo registrado e não estão hospedados aqui.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "É legal jogar Word Rescue aqui?",
+        "a": "Sim. Este é o episódio shareware oficial, que o VENDOR.DOC da Apogee permite repassar sem cobrança."
+      },
+      {
+        "q": "Para que idade ele é?",
+        "a": "Foi feito para crianças que estão aprendendo a ler. A dificuldade escolhida muda o vocabulário."
+      },
+      {
+        "q": "Funciona num Chromebook da escola?",
+        "a": "Funciona. Nada é instalado, e o jogo é leve o bastante para qualquer Chromebook."
+      }
+    ],
+    "download": {
+      "heading": "Consiga o jogo completo",
+      "html": "<div class=\"download-box\"><p><strong>A versão shareware roda aqui de graça.</strong> O restante de Word Rescue era a versão registrada, comercial. Veja se alguma loja vende o jogo hoje:</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Word%20Rescue\" target=\"_blank\" rel=\"noopener\">Procurar Word Rescue na Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Word%20Rescue\" target=\"_blank\" rel=\"noopener\">Procurar na GOG →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">O shareware de Word Rescue pode ser distribuído livremente nos termos do arquivo VENDOR.DOC incluído no pacote. O jogo registrado é comercial e não está hospedado aqui. Procedência: <a href=\"/apps/word-rescue/NOTICE.md\">/apps/word-rescue/NOTICE.md</a>.</p>",
+    "licenseReason": "A versão shareware de Word Rescue pode ser distribuída livremente nos termos do arquivo VENDOR.DOC incluído no pacote; o jogo registrado não está hospedado.",
+    "mobileHint": "Direcional: mover · JUMP: Ctrl · SLIME: Alt · ENTER/ESC: menus"
+  },
+  "hextris": {
+    "title": "Jogar Hextris Online Grátis — O Quebra-Cabeça do Hexágono",
+    "description": "Jogue Hextris grátis no navegador: o quebra-cabeça hexagonal de código aberto. Gire o hexágono, junte três cores e sobreviva enquanto ele acelera. Sem baixar.",
+    "keywords": "jogar hextris online, hextris grátis, hextris no navegador, hextris desbloqueado, jogo de quebra-cabeça hexagonal, hextris sem baixar",
+    "ogTitle": "Jogar Hextris Online Grátis — O Quebra-Cabeça do Hexágono",
+    "ogDescription": "Gire o hexágono, combine as cores, acompanhe o ritmo enquanto ele acelera: o Hextris de código aberto.",
+    "crumb": "Jogar Hextris",
+    "h1": "Jogue Hextris online — o quebra-cabeça do hexágono",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Jogue agora — roda aqui mesmo no seu navegador"
+    },
+    "intro": "<p><strong>Hextris</strong> é um quebra-cabeça veloz construído em torno de um hexágono. Blocos coloridos caem em direção a ele pelos seis lados; você gira o hexágono para que eles pousem onde você quer. Junte três ou mais da mesma cor e eles somem. Quatro estudantes o escreveram em 2014 e o lançaram como <strong>código aberto</strong>, e ele roda aqui mesmo.</p>",
+    "sections": [
+      {
+        "h": "Como jogar",
+        "html": "<p>Aperte as setas para a esquerda e para a direita para girar o hexágono, ou toque nos lados esquerdo e direito da tela. Segurar a seta para baixo acelera os blocos. Os blocos somem quando três ou mais de uma mesma cor se tocam, e eliminar vários grupos em sequência monta um combo. O jogo termina quando uma pilha de qualquer lado passa do hexágono cinza externo.</p>"
+      },
+      {
+        "h": "Como durar mais",
+        "html": "<p>Mantenha as seis pilhas niveladas em vez de limpar um lado por vez: uma pilha alta é o que encerra o jogo. Olhe a cor do próximo bloco antes de girar e, quando dois blocos estiverem caindo ao mesmo tempo, cuide primeiro do mais próximo.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>Hextris é publicado sob a GNU General Public License, versão 3, que permite a qualquer pessoa copiá-lo e hospedá-lo. A cópia daqui teve o código de publicidade e de analytics removido, então o jogo não faz requisições a nenhum outro site; as alterações estão listadas no arquivo de aviso. Seu recorde fica guardado no seu próprio navegador.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Hextris é grátis?",
+        "a": "É. É um software de código aberto sob a GPL versão 3. Este é o jogo completo."
+      },
+      {
+        "q": "O Hextris é desbloqueado aqui?",
+        "a": "O jogo são alguns arquivos pequenos servidos por este site, sem nada para instalar, e o jogo em si não acessa nenhum outro site. Se uma determinada rede de escola ou de escritório permite este site, isso depende dessa rede."
+      },
+      {
+        "q": "Ele salva meu recorde?",
+        "a": "Sim. Os recordes ficam no armazenamento local do seu navegador."
+      },
+      {
+        "q": "Dá para jogar no celular?",
+        "a": "Dá. Toque no lado esquerdo ou direito da tela para girar o hexágono."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Hextris é de <a href=\"https://github.com/Hextris/hextris\" target=\"_blank\" rel=\"noopener\">Logan Engstrom, Garrett Finucane, Noah Moroze e Michael Yang</a>, usado sob a <a href=\"/apps/hextris/LICENSE.md\">GNU GPL v3</a>. O código de publicidade e de analytics foi removido; as alterações estão listadas em <a href=\"/apps/hextris/NOTICE.md\">NOTICE.md</a>.</p>",
+    "licenseReason": "Hextris é publicado pelos seus autores sob a GNU General Public License v3, que permite a redistribuição, inclusive para uso comercial; o código-fonte modificado servido aqui está listado em NOTICE.md.",
+    "fullyFree": "Código aberto sob a GNU GPL versão 3: o jogo completo."
+  },
+  "zork-1": {
+    "title": "Jogar Zork I Online Grátis — The Great Underground Empire",
+    "description": "Jogue Zork I: The Great Underground Empire (1980) grátis no navegador: a aventura de texto da Infocom, de código aberto sob a licença MIT desde 2025.",
+    "keywords": "jogar zork 1 online, zork i grátis, zork no navegador, zork i sem baixar, aventura de texto infocom online, ficção interativa online",
+    "ogTitle": "Jogar Zork I Online Grátis — The Great Underground Empire",
+    "ogDescription": "Você está parado num campo aberto a oeste de uma casa branca, com a porta da frente fechada com tábuas — e debaixo dessa casa estão as ruínas de um vasto império subterrâneo, cheio de tesouros e guardado por um ladrão, um troll e a escuridão.",
+    "crumb": "Jogar Zork I",
+    "h1": "Jogue Zork I: The Great Underground Empire online",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Jogue agora — roda aqui mesmo no seu navegador"
+    },
+    "intro": "<p><strong>Zork I: The Great Underground Empire</strong> é a aventura de texto de 1980 da Infocom. Você está parado num campo aberto a oeste de uma casa branca, com a porta da frente fechada com tábuas — e debaixo dessa casa estão as ruínas de um vasto império subterrâneo, cheio de tesouros e guardado por um ladrão, um troll e a escuridão. Em novembro de 2025 a Microsoft lançou a trilogia Zork como <strong>código aberto</strong>, e o jogo roda aqui mesmo: digite um comando e aperte <kbd>Enter</kbd>.</p>",
+    "sections": [
+      {
+        "h": "Como jogar",
+        "html": "<p>Não há gráficos. O jogo descreve onde você está, e você digita o que quer fazer: <code>open mailbox</code>, <code>go north</code> (ou só <code>n</code>), <code>take lamp</code>, <code>inventory</code> (ou <code>i</code>), <code>look</code>. O interpretador de comandos entende frases completas, como <code>put the sword in the case</code>. Ache uma fonte de luz antes de descer para o subterrâneo: no escuro, é bem provável que você seja devorado por um grue.</p><p>Desenhe um mapa enquanto joga. Esse era o conselho em 1980 e ele não mudou.</p>"
+      },
+      {
+        "h": "Como salvar o jogo",
+        "html": "<p>Digite <code>save</code> para guardar sua posição e <code>restore</code> para voltar a ela. Os jogos salvos ficam neste navegador, então estarão lá na sua próxima visita, a menos que você limpe os dados do site. O interpretador também mantém um salvamento automático, então fechar a aba não faz você perder o ponto em que estava.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>Em 20 de novembro de 2025 a Microsoft, que é dona do catálogo da Infocom por meio da Activision, publicou Zork I, II e III sob a licença MIT. O arquivo de história aqui é o jogo compilado dessa publicação, sem modificações, e ele roda no Parchment, um interpretador de código aberto (também MIT). “Zork” continua sendo uma marca registrada do seu titular; este site não é afiliado à Microsoft nem à Activision.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork I é mesmo de graça agora?",
+        "a": "É. A Microsoft lançou Zork I, II e III sob a licença MIT em 20 de novembro de 2025. Esta página roda o arquivo de jogo dessa publicação."
+      },
+      {
+        "q": "É o jogo original ou um remake?",
+        "a": "O original. É o arquivo de história compilado pela própria Infocom, executado por um interpretador moderno de Z-machine no seu navegador."
+      },
+      {
+        "q": "Como eu salvo?",
+        "a": "Digite save. Seu jogo salvo fica guardado neste navegador; digite restore para carregá-lo."
+      },
+      {
+        "q": "Preciso jogar a trilogia em ordem?",
+        "a": "Zork I é o lugar para começar. Cada jogo se sustenta sozinho, embora os três contem uma única história, sem amarras muito firmes."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork I é © Microsoft, lançado sob a <a href=\"/apps/zork/LICENSE-zork.txt\">licença MIT</a> (<a href=\"https://github.com/historicalsource/zork1\" target=\"_blank\" rel=\"noopener\">código-fonte</a>). Interpretador: <a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a> (<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>). Detalhes em <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>.</p>",
+    "licenseReason": "A Microsoft lançou Zork I, II e III sob a licença MIT em 20 de novembro de 2025; o arquivo de história vem dessa publicação e roda no interpretador Parchment, licenciado sob a MIT.",
+    "fullyFree": "Código aberto: a Microsoft lançou o jogo sob a licença MIT em novembro de 2025. O jogo completo."
+  },
+  "zork-2": {
+    "title": "Jogar Zork II Online Grátis — The Wizard of Frobozz",
+    "description": "Jogue Zork II: The Wizard of Frobozz (1981) grátis no navegador: a aventura de texto da Infocom, de código aberto sob a licença MIT desde 2025.",
+    "keywords": "jogar zork 2 online, zork ii grátis, zork no navegador, zork ii sem baixar, aventura de texto infocom online, ficção interativa online",
+    "ogTitle": "Jogar Zork II Online Grátis — The Wizard of Frobozz",
+    "ogDescription": "Ele continua de onde o primeiro jogo termina, mais fundo no Grande Império Subterrâneo, onde um mago senil mas perigoso aparece ao acaso para lançar feitiços em você.",
+    "crumb": "Jogar Zork II",
+    "h1": "Jogue Zork II: The Wizard of Frobozz online",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Jogue agora — roda aqui mesmo no seu navegador"
+    },
+    "intro": "<p><strong>Zork II: The Wizard of Frobozz</strong> é a aventura de texto de 1981 da Infocom. Ele continua de onde o primeiro jogo termina, mais fundo no Grande Império Subterrâneo, onde um mago senil mas perigoso aparece ao acaso para lançar feitiços em você. Em novembro de 2025 a Microsoft lançou a trilogia Zork como <strong>código aberto</strong>, e o jogo roda aqui mesmo: digite um comando e aperte <kbd>Enter</kbd>.</p>",
+    "sections": [
+      {
+        "h": "Como jogar",
+        "html": "<p>Não há gráficos. O jogo descreve onde você está, e você digita o que quer fazer: <code>open mailbox</code>, <code>go north</code> (ou só <code>n</code>), <code>take lamp</code>, <code>inventory</code> (ou <code>i</code>), <code>look</code>. O interpretador de comandos entende frases completas, como <code>put the sword in the case</code>. Você começa com a lamparina e a espada do primeiro jogo. Os feitiços do Mago passam com o tempo; às vezes esperar é a jogada certa.</p><p>Desenhe um mapa enquanto joga. Esse era o conselho em 1980 e ele não mudou.</p>"
+      },
+      {
+        "h": "Como salvar o jogo",
+        "html": "<p>Digite <code>save</code> para guardar sua posição e <code>restore</code> para voltar a ela. Os jogos salvos ficam neste navegador, então estarão lá na sua próxima visita, a menos que você limpe os dados do site. O interpretador também mantém um salvamento automático, então fechar a aba não faz você perder o ponto em que estava.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>Em 20 de novembro de 2025 a Microsoft, que é dona do catálogo da Infocom por meio da Activision, publicou Zork I, II e III sob a licença MIT. O arquivo de história aqui é o jogo compilado dessa publicação, sem modificações, e ele roda no Parchment, um interpretador de código aberto (também MIT). “Zork” continua sendo uma marca registrada do seu titular; este site não é afiliado à Microsoft nem à Activision.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork II é mesmo de graça agora?",
+        "a": "É. A Microsoft lançou Zork I, II e III sob a licença MIT em 20 de novembro de 2025. Esta página roda o arquivo de jogo dessa publicação."
+      },
+      {
+        "q": "É o jogo original ou um remake?",
+        "a": "O original. É o arquivo de história compilado pela própria Infocom, executado por um interpretador moderno de Z-machine no seu navegador."
+      },
+      {
+        "q": "Como eu salvo?",
+        "a": "Digite save. Seu jogo salvo fica guardado neste navegador; digite restore para carregá-lo."
+      },
+      {
+        "q": "Preciso jogar a trilogia em ordem?",
+        "a": "Cada jogo se sustenta sozinho, mas eles foram escritos como uma série, e Zork I é o melhor lugar para começar."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork II é © Microsoft, lançado sob a <a href=\"/apps/zork/LICENSE-zork.txt\">licença MIT</a> (<a href=\"https://github.com/historicalsource/zork2\" target=\"_blank\" rel=\"noopener\">código-fonte</a>). Interpretador: <a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a> (<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>). Detalhes em <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>.</p>",
+    "licenseReason": "A Microsoft lançou Zork I, II e III sob a licença MIT em 20 de novembro de 2025; o arquivo de história vem dessa publicação e roda no interpretador Parchment, licenciado sob a MIT.",
+    "fullyFree": "Código aberto: a Microsoft lançou o jogo sob a licença MIT em novembro de 2025. O jogo completo."
+  },
+  "zork-3": {
+    "title": "Jogar Zork III Online Grátis — The Dungeon Master",
+    "description": "Jogue Zork III: The Dungeon Master (1982) grátis no navegador: a aventura de texto da Infocom, de código aberto sob a licença MIT desde 2025.",
+    "keywords": "jogar zork 3 online, zork iii grátis, zork no navegador, zork iii sem baixar, aventura de texto infocom online, ficção interativa online",
+    "ogTitle": "Jogar Zork III Online Grátis — The Dungeon Master",
+    "ogDescription": "O último da trilogia é mais silencioso e mais estranho do que os dois primeiros: menos tesouros, mais consequências e uma pontuação que recompensa o que você escolhe fazer, não o que você coleta.",
+    "crumb": "Jogar Zork III",
+    "h1": "Jogue Zork III: The Dungeon Master online",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Jogue agora — roda aqui mesmo no seu navegador"
+    },
+    "intro": "<p><strong>Zork III: The Dungeon Master</strong> é a aventura de texto de 1982 da Infocom. O último da trilogia é mais silencioso e mais estranho do que os dois primeiros: menos tesouros, mais consequências e uma pontuação que recompensa o que você escolhe fazer, não o que você coleta. Em novembro de 2025 a Microsoft lançou a trilogia Zork como <strong>código aberto</strong>, e o jogo roda aqui mesmo: digite um comando e aperte <kbd>Enter</kbd>.</p>",
+    "sections": [
+      {
+        "h": "Como jogar",
+        "html": "<p>Não há gráficos. O jogo descreve onde você está, e você digita o que quer fazer: <code>open mailbox</code>, <code>go north</code> (ou só <code>n</code>), <code>take lamp</code>, <code>inventory</code> (ou <code>i</code>), <code>look</code>. O interpretador de comandos entende frases completas, como <code>put the sword in the case</code>. A pontuação funciona de outro jeito aqui: ela sobe quando você faz algo que importa, não quando pega alguma coisa.</p><p>Desenhe um mapa enquanto joga. Esse era o conselho em 1980 e ele não mudou.</p>"
+      },
+      {
+        "h": "Como salvar o jogo",
+        "html": "<p>Digite <code>save</code> para guardar sua posição e <code>restore</code> para voltar a ela. Os jogos salvos ficam neste navegador, então estarão lá na sua próxima visita, a menos que você limpe os dados do site. O interpretador também mantém um salvamento automático, então fechar a aba não faz você perder o ponto em que estava.</p>"
+      },
+      {
+        "h": "Por que é grátis",
+        "html": "<p>Em 20 de novembro de 2025 a Microsoft, que é dona do catálogo da Infocom por meio da Activision, publicou Zork I, II e III sob a licença MIT. O arquivo de história aqui é o jogo compilado dessa publicação, sem modificações, e ele roda no Parchment, um interpretador de código aberto (também MIT). “Zork” continua sendo uma marca registrada do seu titular; este site não é afiliado à Microsoft nem à Activision.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork III é mesmo de graça agora?",
+        "a": "É. A Microsoft lançou Zork I, II e III sob a licença MIT em 20 de novembro de 2025. Esta página roda o arquivo de jogo dessa publicação."
+      },
+      {
+        "q": "É o jogo original ou um remake?",
+        "a": "O original. É o arquivo de história compilado pela própria Infocom, executado por um interpretador moderno de Z-machine no seu navegador."
+      },
+      {
+        "q": "Como eu salvo?",
+        "a": "Digite save. Seu jogo salvo fica guardado neste navegador; digite restore para carregá-lo."
+      },
+      {
+        "q": "Preciso jogar a trilogia em ordem?",
+        "a": "Cada jogo se sustenta sozinho, mas eles foram escritos como uma série, e Zork I é o melhor lugar para começar."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork III é © Microsoft, lançado sob a <a href=\"/apps/zork/LICENSE-zork.txt\">licença MIT</a> (<a href=\"https://github.com/historicalsource/zork3\" target=\"_blank\" rel=\"noopener\">código-fonte</a>). Interpretador: <a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a> (<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>). Detalhes em <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>.</p>",
+    "licenseReason": "A Microsoft lançou Zork I, II e III sob a licença MIT em 20 de novembro de 2025; o arquivo de história vem dessa publicação e roda no interpretador Parchment, licenciado sob a MIT.",
+    "fullyFree": "Código aberto: a Microsoft lançou o jogo sob a licença MIT em novembro de 2025. O jogo completo."
   }
 }

@@ -1,4 +1,53 @@
 {
+  "2048": {
+    "title": "2048 をブラウザで無料プレイ — 本家オリジナル版をオンラインで",
+    "description": "2048 をブラウザで無料プレイ。Gabriele Cirulli によるオープンソースのオリジナル版で、コピー品ではありません。ゲーム内広告なし、ダウンロード不要、学校のネットワークでも動作します。",
+    "keywords": "2048 無料, 2048 ブラウザ, 2048 オンライン, 2048 ダウンロード不要, 2048 オリジナル, 2048 広告なし",
+    "ogTitle": "2048 をブラウザで無料プレイ — 本家オリジナル版をオンラインで",
+    "ogDescription": "Gabriele Cirulli によるオリジナルの 2048。タイルを動かして合体させ、2048 のタイルを目指しましょう。",
+    "crumb": "2048 をプレイ",
+    "h1": "2048 をオンラインでプレイ — オリジナル版",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 今すぐプレイ — このブラウザ上でそのまま動きます"
+    },
+    "intro": "<p><strong>2048</strong> は、Gabriele Cirulli が 2014年3月に週末だけで書き上げ、オープンソースとして公開したスライドパズルです。ここにあるのは<strong>作者自身のコードで動くオリジナル版</strong>です。タイルを動かし、同じ数字を合体させて、2048 のタイルを作ることを目指してください。</p>",
+    "sections": [
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーを使うか、タッチ画面ではスワイプします。1回動かすと、すべてのタイルがその方向へ行けるところまで滑ります。同じ数字のタイル同士がぶつかると、合計の数字を持つ1枚のタイルに合体します。動かすたびに、空いているマスに新しい 2 か 4 が現れます。2048 のタイルを作れば勝ちで、そのあとも続けて遊べます。盤面が埋まって動かせる手がなくなるとゲーム終了です。</p>"
+      },
+      {
+        "h": "512 の先へ進むには",
+        "html": "<p>角をひとつ決めて、いちばん大きなタイルをそこに置き続けましょう。そのタイルのある列を大きい順に並べて埋め、大きなタイルを角から引きはがしてしまう方向には、ほかに手がないとき以外は動かさないようにします。負けの原因のほとんどは運の悪さではなく、不注意な1回のスワイプです。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>Cirulli は 2048 を MIT ライセンスで公開しており、誰でもコピーして配信することが認められています。ここにあるファイルは彼のもので、改変していません。ゲーム自体がほかのサイトへリクエストを送ることもありません。ベストスコアはお使いのブラウザ内に保存されます。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "これは本物の 2048 ですか？",
+        "a": "はい。Gabriele Cirulli によるオリジナルのゲームで、彼のオープンソースのコードを改変せずに動かしています。クローンでも書き直しでもありません。"
+      },
+      {
+        "q": "ここの 2048 は学校や職場でもブロックされませんか？",
+        "a": "ゲームはこのサイトから配信される数個の小さなファイルだけでできており、インストールするものはなく、ゲーム自体がほかのサイトに接続することもありません。特定の学校や職場のネットワークがこのサイトを許可しているかどうかは、そのネットワーク次第です。"
+      },
+      {
+        "q": "ベストスコアは保存されますか？",
+        "a": "はい。ベストスコアとプレイ中のゲームは、ブラウザのローカルストレージに保存されます。"
+      },
+      {
+        "q": "スマートフォンでも遊べますか？",
+        "a": "はい。タイルを動かしたい方向にスワイプしてください。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">2048 は <a href=\"https://github.com/gabrielecirulli/2048\" target=\"_blank\" rel=\"noopener\">Gabriele Cirulli</a> の作品で、<a href=\"/apps/2048/LICENSE.txt\">MIT ライセンス</a>に基づいて利用しています。ファイルは改変していません。詳しくは <a href=\"/apps/2048/NOTICE.md\">NOTICE.md</a> をご覧ください。</p>",
+    "licenseReason": "2048 は作者の Gabriele Cirulli によって MIT ライセンスで公開されており、商用利用を含む再配布が認められています。",
+    "fullyFree": "MIT ライセンスのオープンソースで、オリジナルのゲーム全体です。"
+  },
   "_readme": "Per-slug Japanese overrides. A page is only generated when a real translation exists here. Two keys are not pages: _cards translates the related-link cards once per href (a card missing from it is dropped rather than shown in English), and _controls translates the control-table cells keyed by their English text. Anything a page leaves out falls back to the English entry, so check-consistency requires every prose field the English entry fills — including mobileHint, which restates mobileControls.hint on its own.",
   "_cards": {
     "/run/doom/": {
@@ -56,6 +105,166 @@
     "/guide/": {
       "title": "動作対応ガイド",
       "desc": "ExeBrowser で動くもの、動かないもの。"
+    },
+    "/run/duke-nukem-3d/": {
+      "title": "Duke Nukem 3D",
+      "desc": "Apogee のシューティング。シェアウェア版エピソードです。"
+    },
+    "/run/rise-of-the-triad/": {
+      "title": "Rise of the Triad",
+      "desc": "Apogee による 1994年のシューティング「The HUNT Begins」。シェアウェア版です。"
+    },
+    "/run/descent/": {
+      "title": "Descent",
+      "desc": "1995年の6自由度シューティング。シェアウェア版のステージを収録。"
+    },
+    "/dos-emulator/": {
+      "title": "手持ちの DOS ゲームを動かす",
+      "desc": "製品版やほかの DOS ゲームをお持ちですか？ DOS プレイヤーにドロップしてください。"
+    },
+    "/unblocked/": {
+      "title": "インストール不要で遊べるゲーム",
+      "desc": "制限のかかった学校や職場のネットワークでも動くタイトルの全リストです。"
+    },
+    "/run/terminal-velocity/": {
+      "title": "Terminal Velocity",
+      "desc": "3D Realms による 1995年のアーケード風フライトシューティング。シェアウェア版です。"
+    },
+    "/run/shadow-warrior/": {
+      "title": "Shadow Warrior",
+      "desc": "3D Realms による 1997年の Build エンジン製シューティング。シェアウェア版エピソードです。"
+    },
+    "/run/tyrian/": {
+      "title": "Tyrian 2000",
+      "desc": "フリーウェアの縦スクロールシューティング。全5エピソードを収録。"
+    },
+    "/run/jill-of-the-jungle/": {
+      "title": "Jill of the Jungle",
+      "desc": "Epic MegaGames による 1992年のアクションゲーム。シェアウェア版の第1エピソードです。"
+    },
+    "/run/wacky-wheels/": {
+      "title": "Wacky Wheels",
+      "desc": "Apogee の動物カートレース。シェアウェア版です。"
+    },
+    "/run/skyroads/": {
+      "title": "SkyRoads",
+      "desc": "1993年の宇宙ロードレース。すぐに遊べます。"
+    },
+    "/run/liero/": {
+      "title": "Liero",
+      "desc": "リアルタイムで戦う2人用のミミズ対戦ゲーム。フリーウェアです。"
+    },
+    "/run/commander-keen/": {
+      "title": "Commander Keen",
+      "desc": "「Marooned on Mars」。id Software の出発点となったシェアウェア版エピソードです。"
+    },
+    "/run/cosmo/": {
+      "title": "Cosmo's Cosmic Adventure",
+      "desc": "吸盤の手で壁に張り付く Apogee のアクションゲーム。シェアウェア版エピソードです。"
+    },
+    "/run/epic-pinball/": {
+      "title": "Epic Pinball",
+      "desc": "Epic による 1993年の DOS ピンボール。シェアウェア版の「Android」テーブルです。"
+    },
+    "/run/cyberdogs/": {
+      "title": "Cyberdogs",
+      "desc": "1994年の見下ろし型ミッションシューティング。1人または2人用のフリーウェアです。"
+    },
+    "/run/death-rally/": {
+      "title": "Death Rally",
+      "desc": "Remedy による 1996年の見下ろし型コンバットレース。シェアウェア版です。"
+    },
+    "/run/stargunner/": {
+      "title": "Stargunner",
+      "desc": "Apogee による 1996年の横スクロールシューティング。シェアウェア版エピソードです。"
+    },
+    "/run/major-stryker/": {
+      "title": "Major Stryker",
+      "desc": "Apogee による 1993年の縦スクロールシューティング。フリーウェアで全3エピソードを収録。"
+    },
+    "/run/duke-nukem/": {
+      "title": "Duke Nukem",
+      "desc": "1991年の横スクロールアクション。シェアウェア版エピソードです。"
+    },
+    "/run/dark-ages/": {
+      "title": "Dark Ages",
+      "desc": "Apogee による 1991年のファンタジーアクション。フリーウェアで全3巻を収録。"
+    },
+    "/run/mystic-towers/": {
+      "title": "Mystic Towers",
+      "desc": "Apogee による 1994年のクォータービューの魔法使いアドベンチャー。シェアウェア版です。"
+    },
+    "/run/keen4/": {
+      "title": "Commander Keen 4",
+      "desc": "「Secret of the Oracle」。シェアウェア版エピソードです。"
+    },
+    "/run/realms-of-chaos/": {
+      "title": "Realms of Chaos",
+      "desc": "Apogee による 1995年のファンタジーアクション。シェアウェア版エピソードです。"
+    },
+    "/run/paganitzu/": {
+      "title": "Paganitzu",
+      "desc": "Apogee による 1991年の神殿パズルゲーム。シェアウェア版の第1部です。"
+    },
+    "/run/traffic-department-2192/": {
+      "title": "Traffic Department 2192",
+      "desc": "長い物語が付いた 1994年の見下ろし型ホバースキッドシューティング。第1エピソードです。"
+    },
+    "/run/blockdrop-open/": {
+      "title": "Block Drop",
+      "desc": "落ちものブロックパズル。当サイト独自のオープンなビルドです。"
+    },
+    "/run/sudoku/": {
+      "title": "数独",
+      "desc": "自動生成で無限に遊べるパズル。難易度は5段階。"
+    },
+    "/run/2048/": {
+      "title": "2048",
+      "desc": "オリジナルの 2048。作者自身のオープンソースのコードです。"
+    },
+    "/run/boppin/": {
+      "title": "Boppin'",
+      "desc": "1994年のブロック投げパズルゲーム。シェアウェア版エピソードです。"
+    },
+    "/run/secret-agent/": {
+      "title": "Secret Agent",
+      "desc": "Apogee による 1992年のスパイアクション。シェアウェア版エピソードです。"
+    },
+    "/run/word-rescue/": {
+      "title": "Word Rescue",
+      "desc": "Apogee による 1992年の読み方学習アクション。シェアウェア版エピソードです。"
+    },
+    "/run/number-munchers/": {
+      "title": "Number Munchers",
+      "desc": "教室でおなじみだった算数ゲームの名作。"
+    },
+    "/run/math-rescue/": {
+      "title": "Math Rescue",
+      "desc": "Apogee による 1992年の算数アクション。シェアウェア版エピソードです。"
+    },
+    "/run/hextris/": {
+      "title": "Hextris",
+      "desc": "六角形でブロックの色をそろえるスピードパズル。オープンソースです。"
+    },
+    "/run/chess/": {
+      "title": "コンピューターとチェス",
+      "desc": "Stockfish と8段階のレベルで対局。登録不要です。"
+    },
+    "/run/zork-2/": {
+      "title": "Zork II",
+      "desc": "Infocom による 1981年のテキストアドベンチャー。2025年からオープンソースです。"
+    },
+    "/run/zork-3/": {
+      "title": "Zork III",
+      "desc": "Infocom による 1982年のテキストアドベンチャー。2025年からオープンソースです。"
+    },
+    "/run/nethack/": {
+      "title": "NetHack",
+      "desc": "ローグライクの古典。セーブはブラウザ内に保存されます。"
+    },
+    "/run/zork-1/": {
+      "title": "Zork I",
+      "desc": "Infocom による 1980年のテキストアドベンチャー。2025年からオープンソースです。"
     }
   },
   "_controls": {
@@ -82,7 +291,84 @@
     "Weapons 1–4": "武器 1〜4",
     "Weapons 1–7": "武器 1〜7",
     "hold Shift": "<kbd>Shift</kbd> を押しながら",
-    "number keys": "数字キー"
+    "number keys": "数字キー",
+    "Ctrl": "<kbd>Ctrl</kbd>",
+    "Open / use": "開く / 使う",
+    "Space": "<kbd>Space</kbd>",
+    "Jump": "ジャンプ",
+    "A": "<kbd>A</kbd>",
+    "Crouch": "しゃがむ",
+    "Z": "<kbd>Z</kbd>",
+    "Weapons 1–0": "武器 1〜0",
+    "Map": "マップ",
+    "Tab": "<kbd>Tab</kbd>",
+    "Esc": "<kbd>Esc</kbd>",
+    "Turn / pitch": "旋回 / 機首の上げ下げ",
+    "Thrust forward / back": "前進 / 後退",
+    "A / Z": "<kbd>A</kbd> / <kbd>Z</kbd>",
+    "Fire lasers": "レーザー発射",
+    "Fire missiles": "ミサイル発射",
+    "Slide": "スライド移動",
+    "Left flipper": "左フリッパー",
+    "Left Shift": "左 <kbd>Shift</kbd>",
+    "Right flipper": "右フリッパー",
+    "Right Shift": "右 <kbd>Shift</kbd>",
+    "Launch the ball": "ボールを発射",
+    "hold and release the down arrow": "<kbd>下矢印キー</kbd> を押し続けて離す",
+    "Nudge the table": "台を揺らす",
+    "Steer": "ハンドル操作",
+    "Accelerate / brake": "アクセル / ブレーキ",
+    "Up / Down arrows": "<kbd>上矢印キー</kbd> / <kbd>下矢印キー</kbd>",
+    "Turbo, guns and mines": "ターボ・機銃・地雷",
+    "set in the game's options": "ゲーム内のオプションで設定",
+    "Move": "移動",
+    "Shift": "<kbd>Shift</kbd>",
+    "Throw knife": "ナイフを投げる",
+    "Alt": "<kbd>Alt</kbd>",
+    "Enter a level": "ステージに入る",
+    "Up arrow": "<kbd>上矢印キー</kbd>",
+    "Fire, afterburner, weapons": "攻撃・アフターバーナー・武器",
+    "listed on the game's F1 help screen": "ゲーム内の <kbd>F1</kbd> ヘルプ画面に一覧があります",
+    "Player 1 and player 2 keys": "プレイヤー1とプレイヤー2のキー",
+    "shown and changed in the game's options": "ゲーム内のオプションで確認・変更できます",
+    "Menus": "メニュー",
+    "Arrow keys and Enter": "<kbd>矢印キー</kbd> と <kbd>Enter</kbd>",
+    "Fire and other keys": "攻撃などのキー",
+    "shown in the game's instructions": "ゲーム内の説明に表示されます",
+    "Attack": "攻撃",
+    "Swap character": "キャラクター交代",
+    "Walk": "歩く",
+    "Jump, cast and pick up": "ジャンプ・呪文・拾う",
+    "listed on the game's help screen": "ゲーム内のヘルプ画面に一覧があります",
+    "Setup menu": "セットアップメニュー",
+    "Move and attack": "移動と攻撃",
+    "Throw and other keys": "投げるなどのキー",
+    "Restart room and other keys": "部屋のやり直しなどのキー",
+    "Jump and fire": "ジャンプと攻撃",
+    "Slide the tiles": "タイルを動かす",
+    "Arrow keys (W A S D also work)": "<kbd>矢印キー</kbd>（<kbd>W A S D</kbd> も使えます）",
+    "Swipe on a touch screen": "タッチ画面ではスワイプ",
+    "Start a new game": "新しいゲームを始める",
+    "R": "<kbd>R</kbd>",
+    "New Game button": "New Game ボタン",
+    "Rotate the hexagon": "六角形を回転",
+    "Left / Right arrows": "<kbd>左矢印キー</kbd> / <kbd>右矢印キー</kbd>",
+    "Tap the left or right side of the screen": "画面の左側または右側をタップ",
+    "Speed the blocks up": "ブロックを加速",
+    "Down arrow": "<kbd>下矢印キー</kbd>",
+    "Pause": "一時停止",
+    "P": "<kbd>P</kbd>",
+    "Pause button": "一時停止ボタン",
+    "Start / restart": "スタート / リスタート",
+    "Enter": "<kbd>Enter</kbd>",
+    "Click the hexagon": "六角形をクリック",
+    "Give a command": "コマンドを入力",
+    "Type it and press Enter": "入力して <kbd>Enter</kbd> を押す",
+    "n, s, e, w, u, d (north, south, east, west, up, down)": "n, s, e, w, u, d（北・南・東・西・上・下）",
+    "Check what you carry": "持ち物を確認",
+    "i": "<kbd>i</kbd>",
+    "Save / load": "セーブ / ロード",
+    "save / restore": "save / restore"
   },
   "doom": {
     "title": "DOOM をブラウザで無料プレイ — ダウンロード不要 — ExeBrowser",
@@ -249,5 +535,1193 @@
     "licenseNote": "<p class=\"muted small\">Tyrian 2000 は権利者によってフリーウェアとして公開されているため、このページで直接遊べます。ゲームはブラウザのタブ内の WebAssembly 版 DOSBox で動作し、アップロードするものはありません。<a href=\"https://www.gog.com/game/tyrian_2000\" target=\"_blank\" rel=\"noopener\">GOG</a> から無料で入手することも、ネイティブのソースポートで遊ぶこともできます（下記参照）。</p>",
     "licenseReason": "Tyrian 2000 の完全版データは、権利者である Jason Emery によって 2004年にフリーウェアとして公開され、グラフィックはのちにオープンコンテンツのライセンスに置かれました。そのためデータを自由に再配布できます。",
     "fullyFree": "権利者 Jason Emery が 2004年にフリーウェアと宣言したもので、エピソードの一部ではなくゲーム全体です。"
+  },
+  "shadow-warrior": {
+    "title": "Shadow Warrior をブラウザで無料プレイ — 1997年のシェアウェア版",
+    "description": "Shadow Warrior（1997年）をブラウザで無料プレイ。3D Realms の Build エンジン製シューティングの公式シェアウェア版エピソード。ダウンロード不要、DOSBox + WebAssembly で動作します。",
+    "keywords": "shadow warrior 無料, shadow warrior ブラウザ, shadow warrior オンライン, shadow warrior ダウンロード不要, shadow warrior 1997 シェアウェア, build エンジン fps ブラウザ",
+    "ogTitle": "Shadow Warrior をブラウザで無料プレイ — 1997年のシェアウェア版",
+    "ogDescription": "3D Realms による 1997年のシューティング。刀、手裏剣、粘着爆弾を、ブラウザのタブの中で。",
+    "crumb": "Shadow Warrior をプレイ",
+    "h1": "Shadow Warrior をオンラインでプレイ — 1997年のシェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Shadow Warrior</strong> は、3D Realms が 1997年に発表した一人称視点シューティングです。Duke Nukem 3D と同じ Build エンジンを使い、部屋の上に重なる部屋、運転できる乗り物、刀、粘着爆弾と、その技術をさらに押し進めました。公式の<strong>シェアウェア版エピソード</strong>（バージョン 1.2、全4面）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 13&nbsp;MB あるので、初回の読み込みには数秒かかります。2回目以降はブラウザが保持します。Sound Blaster の効果音と音楽は設定済みです。</p><p>Shadow Warrior は、このサイトにある Build エンジンのゲームのなかでもっとも重い作品です。最近のノートパソコンやデスクトップなら、本来の解像度 320×200 でなめらかに動きます。古い Chromebook やスマートフォンでは、広い屋外エリアでコマ落ちします。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>キー配置は Duke Nukem 3D でおなじみの Build エンジン式です。矢印キーで移動と旋回、<kbd>Ctrl</kbd> で攻撃、<kbd>Space</kbd> で扉を開けたりスイッチを操作したり、<kbd>A</kbd> でジャンプ、<kbd>Z</kbd> でしゃがみます。数字キーで武器を選びます。<kbd>1</kbd> の刀は弾切れがありません。すべてのキーはゲーム内メニューの Options で変更できます。</p><p>1997年当時のパッケージにも書かれていた注意をひとつ。これは暴力的なゲームで、下品なユーモアや当時ならではのステレオタイプ表現を含みます。小さなお子さま向けではありません。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>ここで動いているのは、3D Realms が無償配布用に公開したシェアウェア版エピソードで、パッケージに同梱の LICENSE.TXT に基づいています。このライセンスが対象とするのはこのエピソードだけです。残りの面を含む製品版は、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Shadow Warrior を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版エピソードで、3D Realms がパッケージに同梱の LICENSE.TXT で無償配布を許諾しています。製品版は配信していません。"
+      },
+      {
+        "q": "ゲームのどこまでが含まれていますか？",
+        "a": "シェアウェア版エピソードです。全4面で、刀、手裏剣、ライアットガン、Uzi、粘着爆弾が使えます。完全版の第2エピソードはシェアウェア版には含まれません。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。ゲーム内メニューから行ったセーブはこのブラウザに保持され、次回の訪問時に復元されます。サイトのデータを消去すると失われます。"
+      },
+      {
+        "q": "学校の Chromebook でも動きますか？",
+        "a": "何もインストールせずに読み込めます。管理された端末ではたいていこの点が重要です。速度は機種次第で、最近の Chromebook なら対応できますが、低スペックの機種ではカクつきます。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Shadow Warrior の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">Steam で Shadow Warrior を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Shadow Warrior のシェアウェア版は、パッケージに同梱されている LICENSE.TXT に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/shadow-warrior/NOTICE.md\">/apps/shadow-warrior/NOTICE.md</a></p>",
+    "licenseReason": "Shadow Warrior のシェアウェア版は、パッケージに同梱されている LICENSE.TXT に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動・旋回 ／ FIRE：攻撃 ／ OPEN：扉・スイッチ ／ MENU：Esc"
+  },
+  "descent": {
+    "title": "Descent をブラウザで無料プレイ — 1995年のシェアウェア版",
+    "description": "Descent（1995年）をブラウザで無料プレイ。Parallax による6自由度シューティングの公式シェアウェア版で、鉱山ステージ全7面を収録。ダウンロードは不要です。",
+    "keywords": "descent 無料, descent ブラウザ, descent オンライン, descent ダウンロード不要, descent 1995 シェアウェア, 6自由度 シューティング",
+    "ogTitle": "Descent をブラウザで無料プレイ — 1995年のシェアウェア版",
+    "ogDescription": "鉱山のトンネルを、機体であらゆる方向へ飛び回る。Parallax による 1995年の名作のシェアウェア版です。",
+    "crumb": "Descent をプレイ",
+    "h1": "Descent をオンラインでプレイ — 1995年のシェアウェア版",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Descent</strong> は、Parallax Software による 1995年のシューティングです。鉱山の中で機体に乗り込み、上、下、横、さらには逆さまと、あらゆる方向へ飛べるようにした作品です。公式の<strong>シェアウェア版</strong>（1.4、最初の7面）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは 3&nbsp;MB 未満で、数秒で起動します。最初にパイロット名を聞かれるので、好きな名前を入力して <kbd>Enter</kbd> を押してください。</p><p>Descent は 1995年当時、高い性能を要求するゲームでした。いまでも 2D のゲームに比べるとエミュレーターへの負荷は大きめです。ここ数年のノートパソコンやデスクトップならなめらかに遊べます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>機体は6つの軸で動くので、慣れるまで数分かかります。初期設定のキーボード配置では、<kbd>A</kbd> と <kbd>Z</kbd> で前進と後退、矢印キーで旋回と機首の上げ下げ、<kbd>Ctrl</kbd> でレーザー、<kbd>Space</kbd> でミサイルを発射します。<kbd>Tab</kbd> で 3D の自動マップが開きます。これは必ず必要になります。どの面も終わり方は同じで、リアクターを破壊し、鉱山が爆発する前に出口を見つけます。</p><p>すべてのキーは Options → Customize で割り当て直せます。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>ゲーム付属の README がいちばん端的に述べています。「This game may be freely distributed.」（このゲームは自由に配布してかまいません）。これは全7面を収録したこのシェアウェア版に当てはまります。製品版は全30面で、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Descent を遊ぶのは合法ですか？",
+        "a": "はい。これはシェアウェア版で、README に自由に配布してよいと明記されています。全30面の製品版は配信していません。"
+      },
+      {
+        "q": "何面まで収録されていますか？",
+        "a": "7面です。シェアウェア版（バージョン 1.4）の全内容です。"
+      },
+      {
+        "q": "マウスやジョイスティックは使えますか？",
+        "a": "キーボードはそのまま使えます。シェアウェア版では多くの人がキーボードで遊んでいました。マウス操作はゲーム内の Options メニューで有効にできますが、ブラウザのタブからジョイスティックを DOS に渡すことはできません。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。パイロットとセーブデータはこのブラウザに保持され、次回の訪問時に復元されます。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Descent の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Descent\" target=\"_blank\" rel=\"noopener\">Steam で Descent を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Descent\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Descent のシェアウェア版は、パッケージに同梱されている README.TXT に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/descent/NOTICE.md\">/apps/descent/NOTICE.md</a></p>",
+    "licenseReason": "Descent のシェアウェア版は、パッケージに同梱されている README.TXT に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：旋回・機首の上げ下げ ／ FWD / BACK：前進・後退 ／ FIRE：レーザー ／ MISSILE：副武装"
+  },
+  "epic-pinball": {
+    "title": "Epic Pinball をブラウザで無料プレイ — 1993年のシェアウェア版テーブル",
+    "description": "Epic Pinball（1993年）をブラウザで無料プレイ。「Android」テーブルを収録した公式シェアウェア版です。軽快な DOS のピンボールで、ダウンロード不要、学校のノートパソコンでも動きます。",
+    "keywords": "epic pinball 無料, epic pinball ブラウザ, epic pinball オンライン, epic pinball ダウンロード不要, ピンボール ブラウザ 無料, dos ピンボール",
+    "ogTitle": "Epic Pinball をブラウザで無料プレイ — 1993年のシェアウェア版テーブル",
+    "ogDescription": "Epic MegaGames による 1993年の DOS ピンボールのヒット作。シェアウェア版の「Android」テーブルをブラウザで。",
+    "crumb": "Epic Pinball をプレイ",
+    "h1": "Epic Pinball をオンラインでプレイ — シェアウェア版テーブル",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版のテーブルがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Epic Pinball</strong> は、James Schmalz が開発し Epic MegaGames が発売した 1993年のピンボールゲームです。なめらかにスクロールするテーブル、デジタル音源の音楽、そしてちゃんと重さを感じるボールが特徴です。「Android」テーブルを収録した公式の<strong>シェアウェア版</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版パッケージを、WebAssembly 版の DOSBox の中で動かしています。1&nbsp;MB を大きく下回るサイズなので、ほぼ一瞬で読み込まれます。最初に Epic のイントロとメニューが表示されるので、<kbd>Enter</kbd> を押してテーブルへ進んでください。</p><p>Epic Pinball は 386 向けにアセンブリ言語で書かれており、Chromebook を含め、ほとんどどんな端末のブラウザでもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>左右の <kbd>Shift</kbd> キーがフリッパーです。下矢印キーを押し続けるとプランジャーが引かれ、離すと発射します。<kbd>Space</kbd> で台を揺らせますが、やりすぎるとティルトになります。ゲーム内のヘルプ画面にすべてのキーが載っています。</p><p>「Android」テーブルでまず覚えたいのは、ロボットのパーツをひとつずつ完成させていくランプショットです。アンドロイドを完成させると、大きな得点が動きはじめます。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは Epic MegaGames が無償配布用に出したシェアウェア版で、VENDOR.DOC と LICENSE.DOC が同梱されています。製品版のパックではテーブルが追加されましたが、それらは商用製品のため、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここの Epic Pinball は無料で遊べますか？",
+        "a": "はい。これは公式のシェアウェア版で、Epic MegaGames が無償配布用に公開したものです。製品版のテーブルパックは配信していません。"
+      },
+      {
+        "q": "どのテーブルが収録されていますか？",
+        "a": "シェアウェア版のテーブル「Android」です。ほかのテーブルは製品版のパックで販売されていました。"
+      },
+      {
+        "q": "操作方法は？",
+        "a": "左右の Shift がフリッパー、下矢印キーでプランジャーを引き、Space で台を揺らします。"
+      },
+      {
+        "q": "これは Windows に付いていたピンボールですか？",
+        "a": "いいえ。Windows に付属していたピンボールは 3D Pinball: Space Cadet です。このサイトには、そのエンジン向けのオープンなテーブルが別のページにあります。Epic Pinball はそれより前に別のスタジオが作った DOS ゲームです。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Epic Pinball の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Epic%20Pinball\" target=\"_blank\" rel=\"noopener\">Steam で Epic Pinball を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Epic%20Pinball\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Epic Pinball のシェアウェア版は、パッケージに同梱されている LICENSE.DOC と VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/epic-pinball/NOTICE.md\">/apps/epic-pinball/NOTICE.md</a></p>",
+    "licenseReason": "Epic Pinball のシェアウェア版は、パッケージに同梱されている LICENSE.DOC と VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "L / R：フリッパー ／ ▼：プランジャーを引いて離す ／ TILT：台を揺らす"
+  },
+  "death-rally": {
+    "title": "Death Rally をブラウザで無料プレイ — 1996年のシェアウェア版",
+    "description": "Death Rally（1996年）をブラウザで無料プレイ。Remedy による見下ろし型コンバットレースの公式シェアウェア版です。機銃、地雷、アップグレード。ダウンロードは不要です。",
+    "keywords": "death rally 無料, death rally ブラウザ, death rally オンライン, death rally ダウンロード不要, death rally 1996 シェアウェア, 見下ろし型 レースゲーム ブラウザ",
+    "ogTitle": "Death Rally をブラウザで無料プレイ — 1996年のシェアウェア版",
+    "ogDescription": "Remedy の最初のゲーム。マシンガンと地雷、そして怪しげなアップグレードショップが登場する見下ろし型レースです。",
+    "crumb": "Death Rally をプレイ",
+    "h1": "Death Rally をオンラインでプレイ — 1996年のシェアウェア版",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Death Rally</strong> は、Remedy Entertainment の最初のゲームとなった 1996年の見下ろし型コンバットレースで、Apogee から発売されました。ぼろぼろの Vagabond から始めて賞金を稼ぎ、エンジン、タイヤ、装甲、そしてあまりスポーツマンらしくない品々につぎ込みます。公式の<strong>シェアウェア版</strong>（1.1）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 7&nbsp;MB です。高解像度 VGA のメインメニューで始まるので、Start Racing を選んでドライバーを決めてください。</p><p>レースは普通のノートパソコンでなめらかに動きます。メニューは 640×480 なので、当時のたいていの DOS ゲームよりくっきり見えます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで操縦します。上で加速、下でブレーキです。残りのキー（ターボ、マシンガン、地雷）は、メインメニューの Configure で確認と変更ができます。序盤は easy のレースに出て3位以内に入り、賞金は何よりもまずエンジンに回しましょう。</p><p>レースの合間にはショップで修理とアップグレードが買えます。高利貸しと妨害工作屋は近道を持ちかけてきますが、最初に思うよりも高くつきます。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは Apogee がパッケージ内の LICENSE.DOC に基づいて公開したシェアウェア版で、無償で配ることが認められています。コースと車の数は絞られています。製品版はここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Death Rally を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版で、Apogee が LICENSE.DOC で無償配布を許諾しています。製品版は配信していません。"
+      },
+      {
+        "q": "完全版と比べて何が足りませんか？",
+        "a": "シェアウェア版は製品版よりコースと車が少なくなっています。レース、武器、ショップ、ランキングを勝ち上がるキャリアモードはすべて動きます。"
+      },
+      {
+        "q": "キャリアは保存されますか？",
+        "a": "はい、可能な範囲で保存されます。ゲームがレースの合間にドライバーを保存し、このページがそのファイルを次回の訪問のためにブラウザ内に保持します。"
+      },
+      {
+        "q": "2人で遊べますか？",
+        "a": "メニューにあるマルチプレイは DOS のネットワークを必要とし、ブラウザのタブでは提供できません。ここで動くのはシングルプレイです。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Death Rally の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Death%20Rally\" target=\"_blank\" rel=\"noopener\">Steam で Death Rally を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Death%20Rally\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Death Rally のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/death-rally/NOTICE.md\">/apps/death-rally/NOTICE.md</a></p>",
+    "licenseReason": "Death Rally のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：ハンドル・アクセル・ブレーキ ／ CTRL / ALT / SPACE：ゲームのアクションキー"
+  },
+  "jill-of-the-jungle": {
+    "title": "Jill of the Jungle をブラウザで無料プレイ — エピソード1",
+    "description": "Jill of the Jungle（1992年）をブラウザで無料プレイ。Tim Sweeney が Epic MegaGames で作ったアクションゲームの、公式シェアウェア版第1エピソードです。ダウンロードは不要です。",
+    "keywords": "jill of the jungle 無料, jill of the jungle ブラウザ, jill of the jungle オンライン, jill of the jungle ダウンロード不要, jill of the jungle シェアウェア, dos アクションゲーム ブラウザ",
+    "ogTitle": "Jill of the Jungle をブラウザで無料プレイ — エピソード1",
+    "ogDescription": "Epic MegaGames の名を世に知らしめた 1992年のアクションゲーム。第1エピソードをブラウザで。",
+    "crumb": "Jill of the Jungle をプレイ",
+    "h1": "Jill of the Jungle をオンラインでプレイ — シェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Jill of the Jungle</strong> は、Tim Sweeney がプログラムした 1992年のアクションゲームで、Epic MegaGames が Commander Keen に対抗して送り出した作品です。256色 VGA、Sound Blaster の音楽、そして鳥や魚やカエルに変身するヒロインが特徴です。公式の<strong>シェアウェア版第1エピソード</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。約 300&nbsp;KB で、ほぼ一瞬で起動します。最初の画面にはサウンドとグラフィックの設定が表示されるので、<kbd>Enter</kbd> を押してそのまま確定してください。</p><p>スマートフォンや Chromebook を含め、どんな端末でもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで移動、<kbd>Shift</kbd> でジャンプ、ナイフを見つけたあとは <kbd>Alt</kbd> で投げられます。ナイフはブーメランのように戻ってきます。このエピソードは拠点となるマップを中心に作られていて、各ステージの入口まで歩いて上を押すと中に入れます。鍵は対応する扉を開け、リンゴは体力を回復します。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは全3エピソードのうちの第1エピソードで、Epic MegaGames がシェアウェアとして公開したものです。同梱の VENDOR.DOC は、シェアウェアであることを明示するかぎり配布してよいと許可しています。残りの2エピソードはここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここの Jill of the Jungle は無料で遊べますか？",
+        "a": "はい。これはシェアウェア版の第1エピソードで、Epic MegaGames がパッケージに同梱の VENDOR.DOC で配布を許可しています。"
+      },
+      {
+        "q": "エピソードはいくつ収録されていますか？",
+        "a": "全3エピソードのうち1つです。第2エピソード（Jill Goes Underground）と第3エピソード（Jill Saves the Prince）は製品版の部分でした。"
+      },
+      {
+        "q": "誰が作ったのですか？",
+        "a": "Tim Sweeney が、自身の会社 Epic MegaGames のためにプログラムしました。この会社はのちに Epic Games になりました。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。Jill のゲーム内メニューからセーブしたデータは、このブラウザに保持されます。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Jill of the Jungle の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Jill%20of%20the%20Jungle\" target=\"_blank\" rel=\"noopener\">Steam で Jill of the Jungle を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Jill%20of%20the%20Jungle\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Jill of the Jungle のシェアウェア版は、パッケージに同梱されている VENDOR.DOC と LICENSE.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/jill-of-the-jungle/NOTICE.md\">/apps/jill-of-the-jungle/NOTICE.md</a></p>",
+    "licenseReason": "Jill of the Jungle のシェアウェア版は、パッケージに同梱されている VENDOR.DOC と LICENSE.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動 ／ JUMP：Shift ／ KNIFE：Alt ／ ENTER/ESC：メニュー"
+  },
+  "terminal-velocity": {
+    "title": "Terminal Velocity をブラウザで無料プレイ — 1995年のシェアウェア版",
+    "description": "Terminal Velocity（1995年）をブラウザで無料プレイ。Terminal Reality と 3D Realms によるスピード感あふれる 3D フライトシューティングの、公式シェアウェア版エピソードです。",
+    "keywords": "terminal velocity 無料, terminal velocity ブラウザ, terminal velocity オンライン, terminal velocity ダウンロード不要, terminal velocity 1995 シェアウェア, dos フライトシューティング",
+    "ogTitle": "Terminal Velocity をブラウザで無料プレイ — 1995年のシェアウェア版",
+    "ogDescription": "テクスチャ付きの 3D の惑星の上を、アーケード感覚で高速飛行。1995年のシェアウェア版エピソードをブラウザで。",
+    "crumb": "Terminal Velocity をプレイ",
+    "h1": "Terminal Velocity をオンラインでプレイ — シェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Terminal Velocity</strong> は、Terminal Reality が開発し 3D Realms が発売した 1995年のフライトシューティングです。フライトシムのようなチェックリストはなく、あるのは速い機体と、開けた 3D の惑星と、飛び込めるトンネルだけです。公式の<strong>シェアウェア版エピソード</strong>（バージョン 1.2）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは 4&nbsp;MB 未満で、Sound Blaster のサウンドは設定済みです。</p><p>1995年当時は高速な PC の性能を見せつけるための作品だったので、このサイトの DOS ゲームのなかでは負荷が高い部類に入ります。最近のノートパソコンやデスクトップなら快適に遊べます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで機体を操縦します。攻撃、アフターバーナー、武器の選択もキーボードで行います。ゲーム内のヘルプ画面（<kbd>F1</kbd>）に一覧があり、オプションで変更もできます。各惑星でマークされた標的を撃ち、それからトンネルの入口を探してください。ボスがいるのはトンネルの中です。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは「episode one」と表示されるシェアウェア版で、3D Realms がパッケージに同梱の LICENSE.TXT で無償配布を許諾しています。このライセンスは、ほかのエピソードは対象外であるとはっきり述べています。製品版はここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Terminal Velocity を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版エピソードで、3D Realms が無償配布を許諾しています。製品版は配信していません。"
+      },
+      {
+        "q": "どこまで収録されていますか？",
+        "a": "ゲームの第1エピソードです。その惑星と、それぞれのトンネル区間が含まれます。"
+      },
+      {
+        "q": "マウスで操縦できますか？",
+        "a": "キーボードはそのまま使えます。マウスでの操縦はゲーム内のオプションで有効にできますが、ブラウザのタブではキーボードのほうが楽です。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Terminal Velocity の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Terminal%20Velocity\" target=\"_blank\" rel=\"noopener\">Steam で Terminal Velocity を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Terminal%20Velocity\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Terminal Velocity のシェアウェア版は、パッケージに同梱されている LICENSE.TXT に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/terminal-velocity/NOTICE.md\">/apps/terminal-velocity/NOTICE.md</a></p>",
+    "licenseReason": "Terminal Velocity のシェアウェア版は、パッケージに同梱されている LICENSE.TXT に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：操縦 ／ FIRE：Ctrl ／ ALT / SPACE：ゲームのその他のキー ／ ESC：メニュー"
+  },
+  "liero": {
+    "title": "Liero をブラウザで無料プレイ — リアルタイムのミミズ対戦ゲーム",
+    "description": "Liero 1.33 をブラウザで無料プレイ。フリーウェアのリアルタイムミミズ対戦ゲームで、1台のキーボードで2人対戦、またはコンピューター相手に1人でも遊べます。ダウンロード不要です。",
+    "keywords": "liero 無料, liero ブラウザ, liero オンライン, liero ダウンロード不要, liero 1.33, 2人対戦 キーボード ゲーム",
+    "ogTitle": "Liero をブラウザで無料プレイ — リアルタイムのミミズ対戦ゲーム",
+    "ogDescription": "2匹のミミズ、40種の武器、1台のキーボード。フリーウェアの名作 Liero をブラウザで。",
+    "crumb": "Liero をプレイ",
+    "h1": "Liero をオンラインでプレイ — フリーウェアのミミズ対戦",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — フリーウェアの完全版がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Liero</strong> は、Joosa Riekkinen による 1998年のフリーウェアで、よく「リアルタイム版 Worms」と評されます。2匹のミミズが破壊可能な土を掘り進み、ニンジャロープと約40種の武器で撃ち合います。ターンも待ち時間もありません。<strong>完全版であるバージョン 1.33</strong> をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS ゲームを、WebAssembly 版の DOSBox の中で動かしています。400&nbsp;KB 未満で、1〜2秒で起動します。読み込み中のテキストが出たら、何かキーを押すとメニューに進みます。</p><p>Liero はとても軽く、どんな端末でもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>Liero は2人が1台のキーボードを分け合って遊ぶように作られており、ここでもそのまま遊べます。オプションで2匹目のミミズをコンピューター操作にすることもできます。各プレイヤーは対戦前に武器を5つ選びます。オプションメニューには各プレイヤーのキーが表示され、変更もできます。ノートパソコンのキーボード1台に2人分の手を置くには工夫がいるので、まずここを設定しましょう。</p><p>腕の差が出るのはニンジャロープです。撃ち出して、振り子のように揺れて、離す。これが基本です。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>Liero はフリーウェアです。付属のドキュメントにはっきりそう書かれています。内容を変更しないかぎり、誰に対しても、どんな方法でも配布してかまいません。ここにあるファイルは、改変していない 1.33 です。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Liero は本当に無料ですか？",
+        "a": "はい。作者がフリーウェアとして公開しており、付属のドキュメントが無改変での配布を認めています。これは体験版ではなく完全版です。"
+      },
+      {
+        "q": "1人でも遊べますか？",
+        "a": "はい。オプションメニューで、2匹のミミズのどちらかをコンピューター操作に設定してください。"
+      },
+      {
+        "q": "1台のキーボードで2人が遊ぶには？",
+        "a": "プレイヤーごとに専用のキーが割り当てられています。オプションメニューで確認でき、変更もできます。小さなノートパソコンのキーボードより、フルサイズのキーボードのほうが快適です。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Liero はフリーウェアです。付属のドキュメントに、内容を変更しないかぎり誰に対してもどんな方法でも配布してよいと明記されています。出所：<a href=\"/apps/liero/NOTICE.md\">/apps/liero/NOTICE.md</a></p>",
+    "licenseReason": "Liero はフリーウェアです。付属のドキュメントに、内容を変更しないかぎり誰に対してもどんな方法でも配布してよいと明記されています。",
+    "fullyFree": "作者の Joosa Riekkinen がフリーウェアとして公開したもので、ゲーム全体です。",
+    "mobileHint": "十字キー：移動 ／ CTRL / ALT / SPACE：ゲームのアクションキー ／ ENTER：決定"
+  },
+  "major-stryker": {
+    "title": "Major Stryker をブラウザで無料プレイ — 完全版をオンラインで",
+    "description": "Major Stryker（1993年）をブラウザで無料プレイ。Apogee の縦スクロールシューティングで、2006年にフリーウェアとして公開されました。全3エピソード収録、ダウンロード不要です。",
+    "keywords": "major stryker 無料, major stryker ブラウザ, major stryker オンライン, major stryker ダウンロード不要, major stryker フリーウェア, dos 縦スクロールシューティング",
+    "ogTitle": "Major Stryker をブラウザで無料プレイ — 完全版をオンラインで",
+    "ogDescription": "Apogee による 1993年の縦スクロールシューティング。2006年からフリーウェアで、全3エピソードをブラウザで遊べます。",
+    "crumb": "Major Stryker をプレイ",
+    "h1": "Major Stryker をオンラインでプレイ — フリーウェアの完全版",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — フリーウェアの完全版がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Major Stryker</strong> は、Apogee による 1993年の縦スクロールシューティングです。3つの惑星（溶岩、極寒、砂漠）、三重スクロールの EGA 画面、進むにつれて強力な武器を手に入れていく自機が特徴です。Apogee が 2006年に<strong>フリーウェア</strong>として公開したので、ゲーム全体をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>Apogee 自身によるフリーウェア版パッケージを、WebAssembly 版の DOSBox の中で動かしています。サイズは 1&nbsp;MB を少し超える程度です。16色 EGA 時代のゲームで、どんな端末でもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで自機を動かします。攻撃キーなどはゲーム内の説明に表示され、メニューから変更できます。救出した科学者や破壊した標的が残す武器ポッドを拾い、なるべく被弾しないようにしましょう。被弾すると、残機より先に強化した武器を失います。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>Apogee Software は 2006年3月14日に Major Stryker をフリーウェアとして公開しました。ここにあるパッケージは <code>strykerfw.zip</code> で、Apogee 自身のダウンロードサーバーにあったフリーウェア版です。全3エピソードを収録しています。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Major Stryker は本当に無料ですか？",
+        "a": "はい。Apogee が 2006年3月14日にゲーム全体をフリーウェアとして公開しました。ここにあるのはその公開版で、Apogee 自身のダウンロードサーバーのアーカイブされたコピーから取得したものです。"
+      },
+      {
+        "q": "エピソードはいくつ収録されていますか？",
+        "a": "3つすべてです。Lava Planet、Arctic Planet、Desert Planet です。"
+      },
+      {
+        "q": "ハイスコアは保存されますか？",
+        "a": "はい、可能な範囲で保存されます。ゲームのセーブファイルは、次回の訪問までこのブラウザに保持されます。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Apogee Software は 2006年3月14日に Major Stryker をフリーウェアとして公開しました。これは Apogee 自身のダウンロードサーバーにあったフリーウェア版パッケージです。出所：<a href=\"/apps/major-stryker/NOTICE.md\">/apps/major-stryker/NOTICE.md</a></p>",
+    "licenseReason": "Apogee Software は 2006年3月14日に Major Stryker をフリーウェアとして公開しました。これは Apogee 自身のダウンロードサーバーにあったフリーウェア版パッケージです。",
+    "fullyFree": "Apogee Software が 2006年3月14日にフリーウェアとして公開したもので、全3エピソードを含むゲーム全体です。",
+    "mobileHint": "十字キー：操縦 ／ FIRE：Ctrl ／ ALT / SPACE：ゲームのその他のキー ／ ESC：メニュー"
+  },
+  "stargunner": {
+    "title": "Stargunner をブラウザで無料プレイ — 1996年のシェアウェア版",
+    "description": "Stargunner（1996年）をブラウザで無料プレイ。Apogee による横スクロールの宇宙シューティングの公式シェアウェア版エピソードで、ステージの合間には機体のショップもあります。",
+    "keywords": "stargunner 無料, stargunner ブラウザ, stargunner オンライン, stargunner ダウンロード不要, stargunner シェアウェア, dos 横スクロールシューティング",
+    "ogTitle": "Stargunner をブラウザで無料プレイ — 1996年のシェアウェア版",
+    "ogDescription": "Apogee 最後の DOS シューティング。レンダリングされたスプライト、武器ショップ、そして大量の弾。",
+    "crumb": "Stargunner をプレイ",
+    "h1": "Stargunner をオンラインでプレイ — シェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Stargunner</strong> は 1996年の横スクロールシューティングで、Apogee の名義で発売された最後期のゲームのひとつです。プリレンダリングの機体、高速スクロール、そしてクレジットで武器やエンジンやサテライトを買えるショップが特徴です。公式の<strong>シェアウェア版エピソード</strong>（バージョン 1.1）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 5&nbsp;MB です。普通のノートパソコンでなめらかに動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで自機を動かします。攻撃キーはゲーム内の操作オプションに表示され、そこで変更もできます。敵が落とすクレジットを集めましょう。各ステージのあとで、前方・上方・下方の武器や、より速いエンジンに使えます。巨大な武器ひとつに頼るより、バランスよく強化した機体のほうがうまくいきます。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これはシェアウェア版エピソードで、パッケージ内の LICENSE.DOC に基づいて配布されています。Apogee はのちに完全版を Windows 用インストーラーの形でフリーウェアとして公開しましたが、ここで配信しているのは DOS 用のシェアウェア版エピソードです。こちらは、ライセンスが人に渡すことを明確に認めている版です。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Stargunner を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版エピソードで、Apogee が LICENSE.DOC で無償配布を許諾しています。"
+      },
+      {
+        "q": "どこまで収録されていますか？",
+        "a": "ゲームの第1エピソードです。ステージの合間のショップも含まれます。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。セーブデータは、次回の訪問までこのブラウザに保持されます。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Stargunner の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Stargunner\" target=\"_blank\" rel=\"noopener\">Steam で Stargunner を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Stargunner\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Stargunner のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/stargunner/NOTICE.md\">/apps/stargunner/NOTICE.md</a></p>",
+    "licenseReason": "Stargunner のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：操縦 ／ FIRE：Ctrl ／ ALT / SPACE：ゲームのその他のキー ／ ESC：メニュー"
+  },
+  "secret-agent": {
+    "title": "Secret Agent をブラウザで無料プレイ — Apogee の1992年のアクション",
+    "description": "Secret Agent（1992年）をブラウザで無料プレイ。Apogee のスパイアクションの公式シェアウェア版エピソード「The Hunt for Red Rock Rover」です。ダウンロードは不要です。",
+    "keywords": "secret agent apogee 無料, secret agent dos ブラウザ, secret agent オンライン, secret agent ダウンロード不要, secret agent 1992 シェアウェア, apogee アクションゲーム",
+    "ogTitle": "Secret Agent をブラウザで無料プレイ — Apogee の1992年のアクション",
+    "ogDescription": "エージェント 006½ 対 Diabolical Villain Society。Apogee による 1992年のアクションゲーム、第1エピソードです。",
+    "crumb": "Secret Agent をプレイ",
+    "h1": "Secret Agent をオンラインでプレイ — シェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Secret Agent</strong> は、Apogee による 1992年のアクションゲームで、Crystal Caves の流れをくむ作品です。あなたはエージェント 006½ として、敵の基地が点在する島にパラシュートで降り立ちます。基地はどれも画面1枚分の幅の迷路で、警備兵、レーザー、鍵のかかった扉が待ち受けています。公式の<strong>シェアウェア版エピソード</strong>「The Hunt for Red Rock Rover」をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。200&nbsp;KB 未満で、一瞬で読み込まれます。16色 EGA のゲームで、どんな端末でもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで移動、<kbd>Ctrl</kbd> でジャンプ、<kbd>Alt</kbd> で攻撃します。弾には限りがあるので、何にでも撃つのはやめましょう。各基地では、フロッピーディスクを見つけてコンピューターまで運び、レーザーを停止させてから、出口の扉にダイナマイトを使います。メガネのアイテムを取ると、隠れた足場が見えるようになります。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは全3エピソードのうちの第1エピソードで、シェアウェア版です。パッケージに同梱されている Apogee の VENDOR.DOC は、無償で人に渡すことを奨励しています。第2・第3エピソードは製品版にあたり、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Secret Agent を遊ぶのは合法ですか？",
+        "a": "はい。これはシェアウェア版エピソードで、Apogee の VENDOR.DOC が、誰でも無償でコピーして人に渡すことを認めています。"
+      },
+      {
+        "q": "エピソードはいくつ収録されていますか？",
+        "a": "全3エピソードのうち1つ、The Hunt for Red Rock Rover です。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。ゲームが島のマップ上の現在位置を保存し、このページがそのファイルをブラウザ内に保持します。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Secret Agent の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Secret%20Agent\" target=\"_blank\" rel=\"noopener\">Steam で Secret Agent を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Secret%20Agent\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Secret Agent のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/secret-agent/NOTICE.md\">/apps/secret-agent/NOTICE.md</a></p>",
+    "licenseReason": "Secret Agent のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動 ／ JUMP：Ctrl ／ FIRE：Alt ／ ENTER/ESC：メニュー"
+  },
+  "realms-of-chaos": {
+    "title": "Realms of Chaos をブラウザで無料プレイ — 1995年のシェアウェア版",
+    "description": "Realms of Chaos（1995年）をブラウザで無料プレイ。Apogee のファンタジーアクションの公式シェアウェア版エピソードです。戦士と女魔術師を切り替えながら進みます。",
+    "keywords": "realms of chaos 無料, realms of chaos ブラウザ, realms of chaos オンライン, realms of chaos ダウンロード不要, realms of chaos シェアウェア, apogee アクションゲーム",
+    "ogTitle": "Realms of Chaos をブラウザで無料プレイ — 1995年のシェアウェア版",
+    "ogDescription": "戦士か女魔術師か、キーひとつで交代。Apogee による 1995年の VGA アクションゲーム、第1エピソードです。",
+    "crumb": "Realms of Chaos をプレイ",
+    "h1": "Realms of Chaos をオンラインでプレイ — シェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Realms of Chaos</strong> は、Apogee による 1995年のファンタジーアクションゲームです。2人のキャラクターを操作し、いつでも切り替えられます。戦士の Endrick は剣による強烈な一撃が持ち味で、女魔術師の Elandra はより高く跳び、離れた場所から攻撃します。公式の<strong>シェアウェア版エピソード</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。Sound Blaster の音楽と効果音は設定済みです。パッケージは 2&nbsp;MB を少し超える程度です。普通のノートパソコンや Chromebook でなめらかに動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで移動、<kbd>Ctrl</kbd> でジャンプ、<kbd>Alt</kbd> で攻撃します。<kbd>Space</kbd> で Endrick と Elandra を交代します。2人は体力ゲージを共有しているので、交代は残機が増えるという意味ではなく、その場面に合った手段を選ぶためのものです。キーはゲーム内のオプションで変更できます。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは全3エピソードのうちの第1エピソードで、パッケージ内の VENDOR.DOC に基づきシェアウェアとして公開されたものです。残りの2エピソードは製品版にあたり、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Realms of Chaos を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版エピソードで、Apogee の VENDOR.DOC が無償で人に渡すことを認めています。"
+      },
+      {
+        "q": "エピソードはいくつ収録されていますか？",
+        "a": "全3エピソードのうち1つです。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。セーブデータは、次回の訪問までこのブラウザに保持されます。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Realms of Chaos の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Realms%20of%20Chaos\" target=\"_blank\" rel=\"noopener\">Steam で Realms of Chaos を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Realms%20of%20Chaos\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Realms of Chaos のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/realms-of-chaos/NOTICE.md\">/apps/realms-of-chaos/NOTICE.md</a></p>",
+    "licenseReason": "Realms of Chaos のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動 ／ JUMP：Ctrl ／ ATTACK：Alt ／ ENTER/ESC：メニュー"
+  },
+  "mystic-towers": {
+    "title": "Mystic Towers をブラウザで無料プレイ — 1994年のシェアウェア版",
+    "description": "Mystic Towers（1994年）をブラウザで無料プレイ。魔法使い Baron Baldric が主人公の、Apogee によるクォータービューのパズルアドベンチャー。その公式シェアウェア版です。",
+    "keywords": "mystic towers 無料, mystic towers ブラウザ, mystic towers オンライン, mystic towers ダウンロード不要, mystic towers シェアウェア, クォータービュー dos ゲーム",
+    "ogTitle": "Mystic Towers をブラウザで無料プレイ — 1994年のシェアウェア版",
+    "ogDescription": "年老いた魔法使い、12の塔、そして大量のモンスター。Apogee のクォータービューアドベンチャーのシェアウェア版です。",
+    "crumb": "Mystic Towers をプレイ",
+    "h1": "Mystic Towers をオンラインでプレイ — シェアウェア版",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Mystic Towers</strong> は、オーストラリアのスタジオ Animation F/X が開発し、Apogee が発売した 1994年のクォータービューのアクションパズルです。腰を痛めた年老いた魔法使い Baron Baldric が、呪文を唱え、食事と水分補給も忘れずに、塔のモンスターを部屋ごとに一掃していきます。公式の<strong>シェアウェア版</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 1&nbsp;MB です。冒頭のテキスト画面で <kbd>Enter</kbd> を押すとゲームに進みます。最近の端末ならどれでもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで、クォータービューの各部屋の中を Baldric が歩きます。ジャンプ、呪文、物を拾う操作もキーボードで行い、キーはゲーム内のヘルプ画面に載っています。各塔では、すべてのモンスターを倒し、モンスター発生装置を破壊し、出口の鍵を見つけなければなりません。食べ物と飲み物のメーターにも気を配りましょう。昼食を忘れる冒険者は長くはもちません。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これはシェアウェア版で、パッケージに同梱されている Apogee の VENDOR.DOC に基づいて配布されています。収録されているのは最初のほうの塔で、残りは製品版にあり、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Mystic Towers を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版で、Apogee の VENDOR.DOC が無償で人に渡すことを認めています。"
+      },
+      {
+        "q": "どこまで収録されていますか？",
+        "a": "シェアウェア版の塔です。残りの塔は製品版で追加されます。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。セーブデータは、次回の訪問までこのブラウザに保持されます。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Mystic Towers の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Mystic%20Towers\" target=\"_blank\" rel=\"noopener\">Steam で Mystic Towers を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Mystic%20Towers\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Mystic Towers のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/mystic-towers/NOTICE.md\">/apps/mystic-towers/NOTICE.md</a></p>",
+    "licenseReason": "Mystic Towers のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動 ／ CTRL / ALT / SPACE：ゲームのアクションキー ／ ENTER：決定"
+  },
+  "traffic-department-2192": {
+    "title": "Traffic Department 2192 をブラウザで無料プレイ — エピソード1",
+    "description": "Traffic Department 2192（1994年）をブラウザで無料プレイ。Safari Software が発売した、物語重視の見下ろし型シューティングのシェアウェア版第1エピソードです。",
+    "keywords": "traffic department 2192 無料, traffic department 2192 ブラウザ, traffic department 2192 オンライン, td2192, traffic department 2192 シェアウェア, 見下ろし型 dos シューティング",
+    "ogTitle": "Traffic Department 2192 をブラウザで無料プレイ — エピソード1",
+    "ogDescription": "ミッションの数と同じくらい台本も長い見下ろし型シューティング。第1エピソードをブラウザで。",
+    "crumb": "Traffic Department 2192 をプレイ",
+    "h1": "Traffic Department 2192 をオンラインでプレイ — エピソード1",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Traffic Department 2192</strong> は、P-Squared Productions が開発し、Epic の Safari Software レーベルから発売された 1994年の見下ろし型シューティングです。あなたは Velasquez 中尉として、植民都市の街路の上をホバースキッドで飛び回ります。ミッションの合間には、異例なほど長く、辛辣な口調の物語が語られます。<strong>シェアウェア版第1エピソード</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは 1&nbsp;MB を少し超える程度です。普通のノートパソコンや Chromebook でフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで、街のマップ上のホバースキッドを操縦します。攻撃キーなどはゲーム内の説明に表示されます。ミッションは護衛、迎撃、破壊とさまざまです。ブリーフィングは読みましょう。ミッションの合間の会話がこのゲームの半分を占めていて、登場人物たちはお互いに礼儀正しくはありません。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは全3エピソードのうちの第1エピソードで、パッケージ内の LICENSE.DOC に基づいて配布されています。その中で Safari Software は、ファイルを改変したり取り除いたりしないかぎり、オンラインでの配布を認め、奨励しています。ここにあるファイルは完全かつ無改変です。以降のエピソードはここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Traffic Department 2192 を遊ぶのは合法ですか？",
+        "a": "はい。これはシェアウェア版エピソードです。LICENSE.DOC は、ファイルを改変したり取り除いたりしないことを条件にオンラインでの配布を認めており、ここでは何も改変も削除もしていません。"
+      },
+      {
+        "q": "エピソードはいくつ収録されていますか？",
+        "a": "全3エピソードのうち1つです。"
+      },
+      {
+        "q": "子ども向けですか？",
+        "a": "1994年のシェアウェアとしては言葉づかいがきつく、筋書きにも暗い部分があります。年齢が上のプレイヤーに向いています。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Traffic Department 2192 の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Traffic%20Department%202192\" target=\"_blank\" rel=\"noopener\">Steam で Traffic Department 2192 を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Traffic%20Department%202192\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Traffic Department 2192 のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/traffic-department-2192/NOTICE.md\">/apps/traffic-department-2192/NOTICE.md</a></p>",
+    "licenseReason": "Traffic Department 2192 のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：操縦 ／ FIRE：Ctrl ／ ALT / SPACE：ゲームのその他のキー ／ ESC：メニュー"
+  },
+  "cyberdogs": {
+    "title": "Cyberdogs をブラウザで無料プレイ — 1994年のフリーウェアシューティング",
+    "description": "Cyberdogs（1994年）をブラウザで無料プレイ。Ronny Wester によるフリーウェアの見下ろし型シューティングで、1人でも、1台のキーボードで2人でも遊べます。銃を買い、ミッションをクリアしましょう。",
+    "keywords": "cyberdogs 無料, cyberdogs ブラウザ, cyberdogs オンライン, cyberdogs ダウンロード不要, cyberdogs フリーウェア, 2人プレイ dos シューティング",
+    "ogTitle": "Cyberdogs をブラウザで無料プレイ — 1994年のフリーウェアシューティング",
+    "ogDescription": "見下ろし型のミッション、銃のショップ、1台のキーボードでの2人協力プレイ。フリーウェアの Cyberdogs です。",
+    "crumb": "Cyberdogs をプレイ",
+    "h1": "Cyberdogs をオンラインでプレイ — フリーウェアのシューティング",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — フリーウェアの完全版がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Cyberdogs</strong> は、Ronny Wester による 1994年のフリーウェアの見下ろし型シューティングで、のちに C-Dogs へと発展した作品です。1人、または同じキーボードで2人のプレイヤーが武器を買い、回収や破壊の目標があるミッションを戦い抜きます。<strong>ゲーム全体</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS ゲームを、WebAssembly 版の DOSBox の中で動かしています。約 260&nbsp;KB で、2秒ほどで起動します。どんな端末でもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>メニューで1人か2人かを選び、ショップで最初の所持金を使いましょう。2つ目の武器と多少のアーマーがあるとずいぶん違います。各ミッションでは、開始時に表示される目標を達成してから出口へ向かいます。両プレイヤーのキーは、ゲーム内のオプションで確認と変更ができます。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>Cyberdogs はフリーウェアです。作者の README にはこうあります。「This game is freeware, feel free to spread it around.」（このゲームはフリーウェアです。自由に広めてください）。ここにあるファイルは無改変の公開版です。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Cyberdogs は本当に無料ですか？",
+        "a": "はい。作者の Ronny Wester がフリーウェアとして公開し、広めてほしいと呼びかけています。これはゲーム全体です。"
+      },
+      {
+        "q": "2人で一緒に遊べますか？",
+        "a": "はい。1台のキーボードで、協力プレイができます。各プレイヤーのキーはオプションメニューで設定します。"
+      },
+      {
+        "q": "C-Dogs とはどういう関係ですか？",
+        "a": "Cyberdogs のほうが先です。Wester による続編 C-Dogs が 1997年に登場し、現在はオープンソースの C-Dogs SDL プロジェクトがそれを引き継いでいます。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Cyberdogs はフリーウェアです。README に「This game is freeware, feel free to spread it around.」と明記されています。出所：<a href=\"/apps/cyberdogs/NOTICE.md\">/apps/cyberdogs/NOTICE.md</a></p>",
+    "licenseReason": "Cyberdogs はフリーウェアです。README に「This game is freeware, feel free to spread it around.」と明記されています。",
+    "fullyFree": "作者の Ronny Wester がフリーウェアとして公開したもので、ゲーム全体です。",
+    "mobileHint": "十字キー：移動 ／ CTRL / ALT / SPACE：ゲームのアクションキー ／ ENTER：決定"
+  },
+  "xenophage": {
+    "title": "Xenophage をブラウザで無料プレイ — Alien Bloodsport シェアウェア版",
+    "description": "Xenophage: Alien Bloodsport（1995年）をブラウザで無料プレイ。巨大なエイリアンのファイターが戦う、Apogee の1対1対戦格闘ゲームのシェアウェア版です。",
+    "keywords": "xenophage 無料, xenophage ブラウザ, xenophage オンライン, xenophage ダウンロード不要, xenophage alien bloodsport シェアウェア, dos 格闘ゲーム",
+    "ogTitle": "Xenophage をブラウザで無料プレイ — Alien Bloodsport シェアウェア版",
+    "ogDescription": "画面いっぱいのエイリアン同士が殴り合う。Apogee による 1995年の格闘ゲームのシェアウェア版です。",
+    "crumb": "Xenophage: Alien Bloodsport をプレイ",
+    "h1": "Xenophage: Alien Bloodsport をオンラインでプレイ — シェアウェア版",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Xenophage: Alien Bloodsport</strong> は、Argo Games が開発し Apogee が発売した 1995年の1対1対戦格闘ゲームです。ファイターはエイリアンで、しかも巨大です。両者が離れると、どちらも画面に収まるようにカメラがズームアウトします。公式の<strong>シェアウェア版</strong>（1.1）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 6&nbsp;MB です。最近のノートパソコンやデスクトップなら快適に遊べます。負荷が高いのはズーム処理です。</p><p>タイトルが示すとおり、戦いには流血表現があります。小さなお子さま向けのゲームではありません。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>ゲームは専用のセットアップメニューから始まります。音楽を鳴らしたい場合は先にミュージックカードを選び（ここでは AdLib が使えます）、それから Start XenoPhage を選びます。そのあとファイターとモードを選択します。移動と攻撃はキーボードで行います。ゲーム内のオプションで各プレイヤーのキーを確認でき、変更もできます。2人で1台のキーボードを使って対戦することもできます。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これはシェアウェア版で、パッケージ内の LICENSE.DOC に基づいて配布されており、使えるファイターの数は絞られています。Apogee はのちに完全版を Windows 用インストーラーの形でフリーウェアとして公開しましたが、ここで配信しているのは DOS 用のシェアウェア版です。こちらは、ライセンスが人に渡すことを明確に認めている版です。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Xenophage を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版で、Apogee が LICENSE.DOC で無償配布を許諾しています。"
+      },
+      {
+        "q": "ファイターは何体収録されていますか？",
+        "a": "シェアウェア版では使えるファイターが絞られています。製品版には全員が収録されています。"
+      },
+      {
+        "q": "なぜセットアップ画面から始まるのですか？",
+        "a": "ゲーム自身のサウンド設定画面です。音楽を鳴らしたい場合は Choose Music Card で AdLib を選び、それから Start XenoPhage を選んでください。"
+      },
+      {
+        "q": "2人で遊べますか？",
+        "a": "はい。1台のキーボードで遊べます。各プレイヤーのキーはゲーム内のオプションで設定します。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Xenophage: Alien Bloodsport の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Xenophage\" target=\"_blank\" rel=\"noopener\">Steam で Xenophage を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Xenophage\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Xenophage: Alien Bloodsport のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/xenophage/NOTICE.md\">/apps/xenophage/NOTICE.md</a></p>",
+    "licenseReason": "Xenophage: Alien Bloodsport のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動とジャンプ ／ CTRL / ALT / SPACE：攻撃"
+  },
+  "boppin": {
+    "title": "Boppin' をブラウザで無料プレイ — 1994年のパズルゲーム（シェアウェア版）",
+    "description": "Boppin'（1994年）をブラウザで無料プレイ。Accursed Toys と Apogee による、ブロックの模様を合わせて消すパズルゲームの公式シェアウェア版エピソードです。ダウンロード不要です。",
+    "keywords": "boppin 無料, boppin ブラウザ, boppin オンライン, boppin ダウンロード不要, boppin シェアウェア, dos パズルゲーム",
+    "ogTitle": "Boppin' をブラウザで無料プレイ — 1994年のパズルゲーム（シェアウェア版）",
+    "ogDescription": "ブロックを投げ、模様を合わせ、悪役たちを救出する。Apogee が発売したなかでいちばん風変わりなパズルゲームです。",
+    "crumb": "Boppin' をプレイ",
+    "h1": "Boppin' をオンラインでプレイ — シェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Boppin'</strong> は、Accursed Toys が開発し Apogee が発売した 1994年のパズルゲームです。主人公の Yeet と Boik は、同じ模様のブロックにブロックを投げ当てて各部屋をクリアしていきます。届きにくい場所には、斜めの面で跳ね返らせて当てます。彼らの使命は、ビデオゲームの悪役たちを救い出すこと。悪者のいないゲームの世界なんて面白くないからです。公式の<strong>シェアウェア版エピソード</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは 1&nbsp;MB を少し超える程度です。普通のノートパソコンや Chromebook でフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーでキャラクターを動かします。投げるキーなどはゲーム内の説明に表示されます。供給元からブロックを取り、同じ模様のブロックに接するように投げてください。すべてのブロックを消せばその部屋はクリアです。大きな形を作るとボーナス点が入り、投げられるブロックがなくなるとライフを1つ失います。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは第1エピソードで、パッケージ内の VENDOR.DOC に基づきシェアウェアとして公開されたものです。残りのエピソードは製品版にあたり、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Boppin' を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版エピソードで、Apogee の VENDOR.DOC が無償で人に渡すことを認めています。"
+      },
+      {
+        "q": "どこまで収録されていますか？",
+        "a": "第1エピソードのパズルの部屋です。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。ゲームのセーブファイルは、次回の訪問までこのブラウザに保持されます。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Boppin' の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Boppin\" target=\"_blank\" rel=\"noopener\">Steam で Boppin を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Boppin\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Boppin' のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/boppin/NOTICE.md\">/apps/boppin/NOTICE.md</a></p>",
+    "licenseReason": "Boppin' のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動 ／ CTRL / ALT / SPACE：ゲームのアクションキー ／ ENTER：決定"
+  },
+  "paganitzu": {
+    "title": "Paganitzu をブラウザで無料プレイ — 1991年のパズルゲーム",
+    "description": "Paganitzu（1991年）をブラウザで無料プレイ。岩を押して進む Apogee の神殿パズルゲームの、シェアウェア版第1部「Romancing the Rose」です。ダウンロードは不要です。",
+    "keywords": "paganitzu 無料, paganitzu ブラウザ, paganitzu オンライン, paganitzu ダウンロード不要, paganitzu シェアウェア, dos パズルゲーム",
+    "ogTitle": "Paganitzu をブラウザで無料プレイ — 1991年のパズルゲーム",
+    "ogDescription": "岩を押し、ヘビをかわし、鍵を集める。Alabama Smith が挑む 1991年の神殿パズル、第1部です。",
+    "crumb": "Paganitzu をプレイ",
+    "h1": "Paganitzu をオンラインでプレイ — 第1部（シェアウェア版）",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版の第1部がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Paganitzu</strong> は、Keith Schuler による 1991年のパズルゲームで、Apogee から発売されました。探検家 Alabama Smith が、アステカのピラミッドを1画面の部屋ひとつずつ攻略していきます。岩を押し、鍵を集め、どのヘビが毒を吐いてくるのかを見極めます。<strong>シェアウェア版の第1部</strong>「Romancing the Rose」をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。約 260&nbsp;KB で、一瞬で読み込まれます。冒頭の画面では <kbd>Enter</kbd> を押してください。16色 EGA のゲームで、どんな端末でもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>ゲームは最初に設定の質問を3つ（グラフィック、コントローラー、サウンド）してきます。それぞれ <kbd>1</kbd> を押してください。そのあとは矢印キーで Alabama を1マスずつ動かします。部屋の鍵をすべて集めると出口が開きます。岩は押せますが引けないので、角に押し込む前によく考えましょう。身動きが取れなくなったときのために、部屋をやり直すキーが用意されています。ゲーム内の説明に載っています。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは全3部のうちの第1部で、パッケージ内の VENDOR.DOC に基づきシェアウェアとして公開されたものです。第2部と第3部は製品版にあたり、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Paganitzu を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版の部分で、Apogee の VENDOR.DOC が無償で人に渡すことを認めています。"
+      },
+      {
+        "q": "何面まで収録されていますか？",
+        "a": "第1部「Romancing the Rose」の20部屋です。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。ゲームのセーブファイルは、次回の訪問までこのブラウザに保持されます。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Paganitzu の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Paganitzu\" target=\"_blank\" rel=\"noopener\">Steam で Paganitzu を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Paganitzu\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Paganitzu のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/paganitzu/NOTICE.md\">/apps/paganitzu/NOTICE.md</a></p>",
+    "licenseReason": "Paganitzu のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動 ／ CTRL / ALT / SPACE：ゲームのアクションキー ／ ENTER：決定"
+  },
+  "dark-ages": {
+    "title": "Dark Ages をブラウザで無料プレイ — Apogee の1991年のアクション",
+    "description": "Dark Ages（1991年）をブラウザで無料プレイ。Apogee のファンタジーアクションで、2009年にフリーウェアとして公開されました。全3巻を収録、ダウンロード不要です。",
+    "keywords": "dark ages apogee 無料, dark ages dos ブラウザ, dark ages オンライン, dark ages ダウンロード不要, dark ages 1991 フリーウェア, apogee アクションゲーム",
+    "ogTitle": "Dark Ages をブラウザで無料プレイ — Apogee の1991年のアクション",
+    "ogDescription": "王子、奪われた王座、そして AdLib の音楽。Apogee による 1991年のアクションゲームを、フリーウェアで全編。",
+    "crumb": "Dark Ages をプレイ",
+    "h1": "Dark Ages をオンラインでプレイ — フリーウェアの完全版",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — フリーウェアの完全版がブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Dark Ages</strong> は、農民として育てられた王子が王座を取り戻すために戦う、Apogee による 1991年のアクションゲームです。AdLib の音楽を備えた最初期のシェアウェアゲームのひとつとして記憶されています。Apogee が 2009年に<strong>フリーウェア</strong>として公開したので、全3巻をここで配信しています。プレイを押せば、第1巻がブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>Apogee 自身によるフリーウェア版パッケージを、WebAssembly 版の DOSBox の中で動かしています。400&nbsp;KB 未満で、一瞬で読み込まれます。16色 EGA のゲームで、どんな端末でもフルスピードで動きます。</p><p>このページでは第1巻が起動します。第2巻と第3巻も同じパッケージに入っています。ゲームを終了して DOS プロンプトに戻り、<code>DA2</code> または <code>DA3</code> と入力してください。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで王子を動かします。ジャンプと攻撃のキーはゲーム内の説明に表示されます。武器は強化アイテムを見つけるたびに強くなり、シールドは決まった回数だけ攻撃を防いでくれます。各ステージにいる賢者に話しかけましょう。求められたものと引き換えに、ヒントやアイテムをくれます。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>Apogee Software は 2009年3月に Dark Ages をフリーウェアとして公開しました。ここにあるパッケージは <code>da_freew.zip</code> で、Apogee 自身のダウンロードサーバーにあったフリーウェア版です。全3巻を収録しています。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Dark Ages は本当に無料ですか？",
+        "a": "はい。Apogee が 2009年3月にゲーム全体をフリーウェアとして公開しました。ここにあるのはその公開版で、Apogee 自身のダウンロードサーバーのアーカイブされたコピーから取得したものです。"
+      },
+      {
+        "q": "第2巻と第3巻はどうやって遊ぶのですか？",
+        "a": "第1巻を終了して DOS プロンプトに戻り、DA2 または DA3 と入力して Enter を押してください。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい、可能な範囲で保存されます。ゲームのセーブファイルは、次回の訪問までこのブラウザに保持されます。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Apogee Software は 2009年3月に Dark Ages をフリーウェアとして公開しました。これは Apogee 自身のダウンロードサーバーにあったフリーウェア版パッケージです。出所：<a href=\"/apps/dark-ages/NOTICE.md\">/apps/dark-ages/NOTICE.md</a></p>",
+    "licenseReason": "Apogee Software は 2009年3月に Dark Ages をフリーウェアとして公開しました。これは Apogee 自身のダウンロードサーバーにあったフリーウェア版パッケージです。",
+    "fullyFree": "Apogee Software が 2009年3月にフリーウェアとして公開したもので、全3巻を含むゲーム全体です。",
+    "mobileHint": "十字キー：移動 ／ JUMP：Ctrl ／ FIRE：Alt ／ ENTER/ESC：メニュー"
+  },
+  "math-rescue": {
+    "title": "Math Rescue をブラウザで無料プレイ — 1992年の算数ゲーム",
+    "description": "Math Rescue（1992年）をブラウザで無料プレイ。計算問題を解いて盗まれた数字を取り戻す、学習アクションゲームのシェアウェア版エピソードです。",
+    "keywords": "math rescue 無料, math rescue ブラウザ, math rescue オンライン, math rescue ダウンロード不要, 算数 学習ゲーム dos, 算数 アクションゲーム",
+    "ogTitle": "Math Rescue をブラウザで無料プレイ — 1992年の算数ゲーム",
+    "ogDescription": "Gruzzles が数字を盗んでいきました。計算問題を解いて取り戻しましょう。1992年の教室向けアクションゲームです。",
+    "crumb": "Math Rescue をプレイ",
+    "h1": "Math Rescue をオンラインでプレイ — シェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Math Rescue</strong> は、Karen Crowther の Redwood Games が開発し Apogee が発売した 1992年の学習アクションゲームです。Gruzzles という生き物が世界中の数字を盗んでしまったので、算数の問題を解いて取り戻します。行く手をふさぐものには、頼もしい蝶がスライムを落としてくれます。公式の<strong>シェアウェア版エピソード</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。400&nbsp;KB 未満で、一瞬で読み込まれます。学校の Chromebook を含め、どんな端末でもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>男の子か女の子か、そして難易度を選びます。難易度によって、簡単な足し算から掛け算・割り算、文章題まで、出題される問題の種類が決まります。矢印キーで移動、<kbd>Ctrl</kbd> でジャンプです。数字に触れると問題が出るので、答えて、その答えを集めると出口が開きます。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは第1エピソードで、パッケージ内の VENDOR.DOC に基づきシェアウェアとして公開されたものです。ほかのエピソードは製品版にあたり、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Math Rescue を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版エピソードで、Apogee の VENDOR.DOC が無償で人に渡すことを認めています。"
+      },
+      {
+        "q": "対象年齢は？",
+        "a": "小学生向けに作られています。難易度の設定によって、簡単な計算から掛け算、割り算、文章題まで内容が変わります。"
+      },
+      {
+        "q": "学校の Chromebook でも動きますか？",
+        "a": "はい。インストールするものは何もなく、どの Chromebook でも動くほど軽いゲームです。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Math Rescue の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Math%20Rescue\" target=\"_blank\" rel=\"noopener\">Steam で Math Rescue を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Math%20Rescue\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Math Rescue のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/math-rescue/NOTICE.md\">/apps/math-rescue/NOTICE.md</a></p>",
+    "licenseReason": "Math Rescue のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動 ／ JUMP：Ctrl ／ SLIME：Alt ／ ENTER/ESC：メニュー"
+  },
+  "word-rescue": {
+    "title": "Word Rescue をブラウザで無料プレイ — 1992年の英単語ゲーム",
+    "description": "Word Rescue（1992年）をブラウザで無料プレイ。単語と絵を組み合わせて Gruzzles をやっつける、読み方を学ぶ学習アクションゲームのシェアウェア版エピソードです。",
+    "keywords": "word rescue 無料, word rescue ブラウザ, word rescue オンライン, word rescue ダウンロード不要, 英単語 学習ゲーム dos, 子供向け 読み方 ゲーム",
+    "ogTitle": "Word Rescue をブラウザで無料プレイ — 1992年の英単語ゲーム",
+    "ogDescription": "Gruzzles が言葉を盗んでいきました。単語をひとつずつ絵と組み合わせましょう。1992年の教室向けアクションゲームです。",
+    "crumb": "Word Rescue をプレイ",
+    "h1": "Word Rescue をオンラインでプレイ — シェアウェア版エピソード",
+    "verdict": {
+      "kind": "good",
+      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
+    },
+    "intro": "<p><strong>Word Rescue</strong> は、Karen Crowther の Redwood Games が開発し Apogee が発売した 1992年の学習アクションゲームです。Gruzzles は字が読めないので、すべての言葉を盗んでしまいました。単語をひとつずつ絵と組み合わせて取り戻しましょう。近づきすぎた Gruzzle には、Benny Bookworm がスライムを浴びせてくれます。公式の<strong>シェアウェア版エピソード</strong>をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
+    "sections": [
+      {
+        "h": "動作の仕組みと動作の目安",
+        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。300&nbsp;KB を少し超える程度で、一瞬で読み込まれます。学校の Chromebook を含め、どんな端末でもフルスピードで動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>男の子か女の子か、そして難易度を選びます。難易度によって単語の難しさが決まります。矢印キーで移動、<kbd>Ctrl</kbd> でジャンプです。はてなマークの箱に触れると単語が表示されるので、その単語が表す絵を探してください。すべての単語を組み合わせたら、鍵を取って扉から出ます。</p>"
+      },
+      {
+        "h": "シェアウェア版と製品版について",
+        "html": "<p>これは第1エピソードで、パッケージ内の VENDOR.DOC に基づきシェアウェアとして公開されたものです。ほかのエピソードは製品版にあたり、ここでは配信していません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "ここで Word Rescue を遊ぶのは合法ですか？",
+        "a": "はい。これは公式のシェアウェア版エピソードで、Apogee の VENDOR.DOC が無償で人に渡すことを認めています。"
+      },
+      {
+        "q": "対象年齢は？",
+        "a": "字の読み方を習っている子ども向けに作られています。難易度の設定によって語彙が変わります。"
+      },
+      {
+        "q": "学校の Chromebook でも動きますか？",
+        "a": "はい。インストールするものは何もなく、どの Chromebook でも動くほど軽いゲームです。"
+      }
+    ],
+    "download": {
+      "heading": "製品版を入手する",
+      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Word Rescue の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Word%20Rescue\" target=\"_blank\" rel=\"noopener\">Steam で Word Rescue を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Word%20Rescue\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
+    },
+    "licenseNote": "<p class=\"muted small\">Word Rescue のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/word-rescue/NOTICE.md\">/apps/word-rescue/NOTICE.md</a></p>",
+    "licenseReason": "Word Rescue のシェアウェア版は、パッケージに同梱されている VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
+    "mobileHint": "十字キー：移動 ／ JUMP：Ctrl ／ SLIME：Alt ／ ENTER/ESC：メニュー"
+  },
+  "hextris": {
+    "title": "Hextris をブラウザで無料プレイ — 六角形パズルをオンラインで",
+    "description": "Hextris をブラウザで無料プレイ。オープンソースの六角形パズルゲームです。六角形を回して同じ色を3つそろえ、加速していく展開を生き延びましょう。ダウンロード不要です。",
+    "keywords": "hextris 無料, hextris ブラウザ, hextris オンライン, hextris ダウンロード不要, 六角形 パズルゲーム, hextris ゲーム",
+    "ogTitle": "Hextris をブラウザで無料プレイ — 六角形パズルをオンラインで",
+    "ogDescription": "六角形を回し、色をそろえ、速くなっていく展開についていく。オープンソースの Hextris です。",
+    "crumb": "Hextris をプレイ",
+    "h1": "Hextris をオンラインでプレイ — 六角形パズルゲーム",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 今すぐプレイ — このブラウザ上でそのまま動きます"
+    },
+    "intro": "<p><strong>Hextris</strong> は、六角形を中心にしたスピード感のあるパズルゲームです。色付きのブロックが6つの辺すべてに向かって落ちてくるので、六角形を回転させて狙った場所に着地させます。同じ色を3つ以上つなげると消えます。4人の学生が 2014年に作って<strong>オープンソース</strong>として公開したもので、このページでそのまま動きます。</p>",
+    "sections": [
+      {
+        "h": "遊び方",
+        "html": "<p>左右の矢印キーを押して六角形を回転させるか、画面の左側・右側をタップします。下矢印キーを押し続けるとブロックが加速します。同じ色のブロックが3つ以上接すると消え、続けて複数のグループを消すとコンボになります。いずれかの辺の積み上がりが外側の灰色の六角形を越えると、ゲーム終了です。</p>"
+      },
+      {
+        "h": "長く生き残るには",
+        "html": "<p>1辺ずつ片付けるのではなく、6つの山の高さをそろえておきましょう。ゲームを終わらせるのは高く積み上がった山です。回転させる前に次のブロックの色を見て、2つのブロックが同時に落ちてきているときは、近いほうから先に対処します。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>Hextris は GNU General Public License バージョン3で公開されており、誰でもコピーして配信することが認められています。ここにあるコピーは広告とアクセス解析のコードを取り除いてあるため、ゲームがほかのサイトへリクエストを送ることはありません。変更点は notice ファイルに記載しています。ハイスコアはお使いのブラウザ内に保存されます。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Hextris は無料ですか？",
+        "a": "はい。GPL バージョン3のオープンソースソフトウェアです。これはゲーム全体です。"
+      },
+      {
+        "q": "ここの Hextris は学校や職場でもブロックされませんか？",
+        "a": "ゲームはこのサイトから配信される数個の小さなファイルだけでできており、インストールするものはなく、ゲーム自体がほかのサイトに接続することもありません。特定の学校や職場のネットワークがこのサイトを許可しているかどうかは、そのネットワーク次第です。"
+      },
+      {
+        "q": "ハイスコアは保存されますか？",
+        "a": "はい。ハイスコアはブラウザのローカルストレージに保存されます。"
+      },
+      {
+        "q": "スマートフォンでも遊べますか？",
+        "a": "はい。画面の左側または右側をタップすると六角形が回転します。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Hextris は <a href=\"https://github.com/Hextris/hextris\" target=\"_blank\" rel=\"noopener\">Logan Engstrom、Garrett Finucane、Noah Moroze、Michael Yang</a> の作品で、<a href=\"/apps/hextris/LICENSE.md\">GNU GPL v3</a> に基づいて利用しています。広告とアクセス解析のコードは取り除いてあり、変更点は <a href=\"/apps/hextris/NOTICE.md\">NOTICE.md</a> に記載しています。</p>",
+    "licenseReason": "Hextris は作者たちによって GNU General Public License v3 で公開されており、商用利用を含む再配布が認められています。ここで配信している変更済みのソースは NOTICE.md に記載しています。",
+    "fullyFree": "GNU GPL バージョン3のオープンソースで、ゲーム全体です。"
+  },
+  "zork-1": {
+    "title": "Zork I をブラウザで無料プレイ — The Great Underground Empire",
+    "description": "Zork I: The Great Underground Empire（1980年）をブラウザで無料プレイ。Infocom のテキストアドベンチャーで、2025年から MIT ライセンスのオープンソースとして公開されています。",
+    "keywords": "zork 1 無料, zork 1 ブラウザ, zork 1 オンライン, zork ダウンロード不要, infocom テキストアドベンチャー, インタラクティブフィクション ブラウザ",
+    "ogTitle": "Zork I をブラウザで無料プレイ — The Great Underground Empire",
+    "ogDescription": "あなたは白い家の西に広がる野原に立っていて、玄関の扉は板で打ち付けられています。その家の地下には広大な地下帝国の遺跡が眠っており、財宝に満ち、盗賊とトロルと暗闇がそれを守っています。",
+    "crumb": "Zork I をプレイ",
+    "h1": "Zork I: The Great Underground Empire をオンラインでプレイ",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 今すぐプレイ — このブラウザ上でそのまま動きます"
+    },
+    "intro": "<p><strong>Zork I: The Great Underground Empire</strong> は、Infocom による 1980年のテキストアドベンチャーです。あなたは白い家の西に広がる野原に立っていて、玄関の扉は板で打ち付けられています。その家の地下には広大な地下帝国の遺跡が眠っており、財宝に満ち、盗賊とトロルと暗闇がそれを守っています。2025年11月、Microsoft が Zork 三部作を<strong>オープンソース</strong>として公開し、このページでそのまま遊べるようになりました。コマンドを入力して <kbd>Enter</kbd> を押してください。</p>",
+    "sections": [
+      {
+        "h": "遊び方",
+        "html": "<p>グラフィックはありません。ゲームがいまいる場所を文章で説明し、あなたはやりたいことを英語で入力します。たとえば <code>open mailbox</code>、<code>go north</code>（または単に <code>n</code>）、<code>take lamp</code>、<code>inventory</code>（または <code>i</code>）、<code>look</code> などです。パーサーは <code>put the sword in the case</code> のような完全な文も理解します。地下に降りる前に明かりを見つけておきましょう。暗闇の中では grue に食べられてしまうおそれがあります。</p><p>進みながら地図を描きましょう。1980年当時からの助言で、いまも変わりません。</p>"
+      },
+      {
+        "h": "ゲームのセーブ",
+        "html": "<p><code>save</code> と入力すると現在の状況が保存され、<code>restore</code> でそこに戻れます。セーブデータはこのブラウザに保持されるので、サイトのデータを消去しないかぎり、次回の訪問時にも残っています。インタープリターは自動セーブも行うため、タブを閉じても進行状況は失われません。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>2025年11月20日、Activision を通じて Infocom の作品群を保有する Microsoft が、Zork I、II、III を MIT ライセンスで公開しました。ここにあるストーリーファイルは、その公開版に含まれるコンパイル済みのゲームを改変せずに使ったもので、オープンソースのインタープリター Parchment（こちらも MIT）の上で動いています。「Zork」は引き続きその権利者の商標です。このサイトは Microsoft および Activision とは関係がありません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork I はいま本当に無料なのですか？",
+        "a": "はい。Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。このページは、その公開版のゲームファイルを動かしています。"
+      },
+      {
+        "q": "これはオリジナルのゲームですか、リメイクですか？",
+        "a": "オリジナルです。Infocom 自身によるコンパイル済みのストーリーファイルを、現代の Z-machine インタープリターがブラウザ内で実行しています。"
+      },
+      {
+        "q": "セーブするにはどうすればいいですか？",
+        "a": "save と入力してください。セーブデータはこのブラウザに保存されます。読み込むには restore と入力します。"
+      },
+      {
+        "q": "三部作は順番に遊ぶ必要がありますか？",
+        "a": "始めるなら Zork I からです。どの作品も単独で楽しめますが、3作でゆるやかにつながったひとつの物語を語っています。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork I は © Microsoft で、<a href=\"/apps/zork/LICENSE-zork.txt\">MIT ライセンス</a>で公開されています（<a href=\"https://github.com/historicalsource/zork1\" target=\"_blank\" rel=\"noopener\">ソース</a>）。インタープリター：<a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a>（<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>）。詳しくは <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a> をご覧ください。</p>",
+    "licenseReason": "Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。ストーリーファイルはその公開版のもので、MIT ライセンスのインタープリター Parchment の上で動いています。",
+    "fullyFree": "オープンソース：Microsoft が 2025年11月に MIT ライセンスで公開しました。ゲーム全体です。"
+  },
+  "zork-2": {
+    "title": "Zork II をブラウザで無料プレイ — The Wizard of Frobozz",
+    "description": "Zork II: The Wizard of Frobozz（1981年）をブラウザで無料プレイ。Infocom のテキストアドベンチャーで、2025年から MIT ライセンスのオープンソースとして公開されています。",
+    "keywords": "zork 2 無料, zork 2 ブラウザ, zork 2 オンライン, zork ダウンロード不要, infocom テキストアドベンチャー, インタラクティブフィクション ブラウザ",
+    "ogTitle": "Zork II をブラウザで無料プレイ — The Wizard of Frobozz",
+    "ogDescription": "前作が終わったところから始まり、Great Underground Empire のさらに奥深くへ進みます。そこでは、もうろくしてはいても危険な魔法使いが気まぐれに現れ、あなたに呪文をかけてきます。",
+    "crumb": "Zork II をプレイ",
+    "h1": "Zork II: The Wizard of Frobozz をオンラインでプレイ",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 今すぐプレイ — このブラウザ上でそのまま動きます"
+    },
+    "intro": "<p><strong>Zork II: The Wizard of Frobozz</strong> は、Infocom による 1981年のテキストアドベンチャーです。前作が終わったところから始まり、Great Underground Empire のさらに奥深くへ進みます。そこでは、もうろくしてはいても危険な魔法使いが気まぐれに現れ、あなたに呪文をかけてきます。2025年11月、Microsoft が Zork 三部作を<strong>オープンソース</strong>として公開し、このページでそのまま遊べるようになりました。コマンドを入力して <kbd>Enter</kbd> を押してください。</p>",
+    "sections": [
+      {
+        "h": "遊び方",
+        "html": "<p>グラフィックはありません。ゲームがいまいる場所を文章で説明し、あなたはやりたいことを英語で入力します。たとえば <code>open mailbox</code>、<code>go north</code>（または単に <code>n</code>）、<code>take lamp</code>、<code>inventory</code>（または <code>i</code>）、<code>look</code> などです。パーサーは <code>put the sword in the case</code> のような完全な文も理解します。前作のランプと剣を持った状態で始まります。魔法使いの呪文はいずれ効果が切れます。待つのが正解という場面もあります。</p><p>進みながら地図を描きましょう。1980年当時からの助言で、いまも変わりません。</p>"
+      },
+      {
+        "h": "ゲームのセーブ",
+        "html": "<p><code>save</code> と入力すると現在の状況が保存され、<code>restore</code> でそこに戻れます。セーブデータはこのブラウザに保持されるので、サイトのデータを消去しないかぎり、次回の訪問時にも残っています。インタープリターは自動セーブも行うため、タブを閉じても進行状況は失われません。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>2025年11月20日、Activision を通じて Infocom の作品群を保有する Microsoft が、Zork I、II、III を MIT ライセンスで公開しました。ここにあるストーリーファイルは、その公開版に含まれるコンパイル済みのゲームを改変せずに使ったもので、オープンソースのインタープリター Parchment（こちらも MIT）の上で動いています。「Zork」は引き続きその権利者の商標です。このサイトは Microsoft および Activision とは関係がありません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork II はいま本当に無料なのですか？",
+        "a": "はい。Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。このページは、その公開版のゲームファイルを動かしています。"
+      },
+      {
+        "q": "これはオリジナルのゲームですか、リメイクですか？",
+        "a": "オリジナルです。Infocom 自身によるコンパイル済みのストーリーファイルを、現代の Z-machine インタープリターがブラウザ内で実行しています。"
+      },
+      {
+        "q": "セーブするにはどうすればいいですか？",
+        "a": "save と入力してください。セーブデータはこのブラウザに保存されます。読み込むには restore と入力します。"
+      },
+      {
+        "q": "三部作は順番に遊ぶ必要がありますか？",
+        "a": "どの作品も単独で楽しめますが、シリーズとして書かれているので、Zork I から始めるのがいちばんです。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork II は © Microsoft で、<a href=\"/apps/zork/LICENSE-zork.txt\">MIT ライセンス</a>で公開されています（<a href=\"https://github.com/historicalsource/zork2\" target=\"_blank\" rel=\"noopener\">ソース</a>）。インタープリター：<a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a>（<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>）。詳しくは <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a> をご覧ください。</p>",
+    "licenseReason": "Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。ストーリーファイルはその公開版のもので、MIT ライセンスのインタープリター Parchment の上で動いています。",
+    "fullyFree": "オープンソース：Microsoft が 2025年11月に MIT ライセンスで公開しました。ゲーム全体です。"
+  },
+  "zork-3": {
+    "title": "Zork III をブラウザで無料プレイ — The Dungeon Master",
+    "description": "Zork III: The Dungeon Master（1982年）をブラウザで無料プレイ。Infocom のテキストアドベンチャーで、2025年から MIT ライセンスのオープンソースとして公開されています。",
+    "keywords": "zork 3 無料, zork 3 ブラウザ, zork 3 オンライン, zork ダウンロード不要, infocom テキストアドベンチャー, インタラクティブフィクション ブラウザ",
+    "ogTitle": "Zork III をブラウザで無料プレイ — The Dungeon Master",
+    "ogDescription": "三部作の最後を飾る本作は、前2作よりも静かで風変わりです。財宝は少なく、行動の結果が重くのしかかり、スコアは集めたものではなく、あなたが何を選んで行うかに応じて与えられます。",
+    "crumb": "Zork III をプレイ",
+    "h1": "Zork III: The Dungeon Master をオンラインでプレイ",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 今すぐプレイ — このブラウザ上でそのまま動きます"
+    },
+    "intro": "<p><strong>Zork III: The Dungeon Master</strong> は、Infocom による 1982年のテキストアドベンチャーです。三部作の最後を飾る本作は、前2作よりも静かで風変わりです。財宝は少なく、行動の結果が重くのしかかり、スコアは集めたものではなく、あなたが何を選んで行うかに応じて与えられます。2025年11月、Microsoft が Zork 三部作を<strong>オープンソース</strong>として公開し、このページでそのまま遊べるようになりました。コマンドを入力して <kbd>Enter</kbd> を押してください。</p>",
+    "sections": [
+      {
+        "h": "遊び方",
+        "html": "<p>グラフィックはありません。ゲームがいまいる場所を文章で説明し、あなたはやりたいことを英語で入力します。たとえば <code>open mailbox</code>、<code>go north</code>（または単に <code>n</code>）、<code>take lamp</code>、<code>inventory</code>（または <code>i</code>）、<code>look</code> などです。パーサーは <code>put the sword in the case</code> のような完全な文も理解します。本作ではスコアの仕組みが違います。何かを拾ったときではなく、意味のある行動をしたときに上がります。</p><p>進みながら地図を描きましょう。1980年当時からの助言で、いまも変わりません。</p>"
+      },
+      {
+        "h": "ゲームのセーブ",
+        "html": "<p><code>save</code> と入力すると現在の状況が保存され、<code>restore</code> でそこに戻れます。セーブデータはこのブラウザに保持されるので、サイトのデータを消去しないかぎり、次回の訪問時にも残っています。インタープリターは自動セーブも行うため、タブを閉じても進行状況は失われません。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>2025年11月20日、Activision を通じて Infocom の作品群を保有する Microsoft が、Zork I、II、III を MIT ライセンスで公開しました。ここにあるストーリーファイルは、その公開版に含まれるコンパイル済みのゲームを改変せずに使ったもので、オープンソースのインタープリター Parchment（こちらも MIT）の上で動いています。「Zork」は引き続きその権利者の商標です。このサイトは Microsoft および Activision とは関係がありません。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Zork III はいま本当に無料なのですか？",
+        "a": "はい。Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。このページは、その公開版のゲームファイルを動かしています。"
+      },
+      {
+        "q": "これはオリジナルのゲームですか、リメイクですか？",
+        "a": "オリジナルです。Infocom 自身によるコンパイル済みのストーリーファイルを、現代の Z-machine インタープリターがブラウザ内で実行しています。"
+      },
+      {
+        "q": "セーブするにはどうすればいいですか？",
+        "a": "save と入力してください。セーブデータはこのブラウザに保存されます。読み込むには restore と入力します。"
+      },
+      {
+        "q": "三部作は順番に遊ぶ必要がありますか？",
+        "a": "どの作品も単独で楽しめますが、シリーズとして書かれているので、Zork I から始めるのがいちばんです。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Zork III は © Microsoft で、<a href=\"/apps/zork/LICENSE-zork.txt\">MIT ライセンス</a>で公開されています（<a href=\"https://github.com/historicalsource/zork3\" target=\"_blank\" rel=\"noopener\">ソース</a>）。インタープリター：<a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a>（<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>）。詳しくは <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a> をご覧ください。</p>",
+    "licenseReason": "Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。ストーリーファイルはその公開版のもので、MIT ライセンスのインタープリター Parchment の上で動いています。",
+    "fullyFree": "オープンソース：Microsoft が 2025年11月に MIT ライセンスで公開しました。ゲーム全体です。"
   }
 }

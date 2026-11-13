@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jogar 2048 Online Grátis — O Jogo Original</title>
+<meta name="description" content="Jogue 2048 grátis no navegador: o jogo original de código aberto de Gabriele Cirulli, não uma cópia. Sem anúncios no jogo, sem baixar, funciona em redes de escola." />
+<meta name="keywords" content="jogar 2048 online, 2048 grátis, 2048 no navegador, 2048 original, 2048 desbloqueado, 2048 sem anúncios" />
+<link rel="canonical" href="https://exebrowser.com/pt-BR/run/2048/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/2048/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/2048/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/2048/" />
+<link rel="alternate" hreflang="de" href="https://exebrowser.com/de/run/2048/" />
+<link rel="alternate" hreflang="ja" href="https://exebrowser.com/ja/run/2048/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/2048/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/2048/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/2048/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/pt-BR/run/2048/" />
+<meta property="og:title" content="Jogar 2048 Online Grátis — O Jogo Original" />
+<meta property="og:description" content="O 2048 original de Gabriele Cirulli — deslize, junte e chegue à peça 2048." />
+<meta property="og:image" content="https://exebrowser.com/run/2048/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://exebrowser.com/pt-BR/" },
+    { "@type": "ListItem", "position": 2, "name": "Guias de programas", "item": "https://exebrowser.com/pt-BR/run/" },
+    { "@type": "ListItem", "position": 3, "name": "Jogar 2048", "item": "https://exebrowser.com/pt-BR/run/2048/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "2048",
+  "url": "https://exebrowser.com/pt-BR/run/2048/",
+  "image": "https://exebrowser.com/run/2048/screenshot.png",
+  "description": "Jogue 2048 grátis no navegador: o jogo original de código aberto de Gabriele Cirulli, não uma cópia. Sem anúncios no jogo, sem baixar, funciona em redes de escola.",
+  "applicationCategory": "Game",
+  "genre": ["Puzzle"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "Gabriele Cirulli" },
+  "dateModified": "2026-11-13",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Este é o 2048 de verdade?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. É o jogo original de Gabriele Cirulli, rodando o código aberto dele sem modificações, não um clone nem uma reescrita." }
+    },
+    {
+      "@type": "Question",
+      "name": "O 2048 é desbloqueado aqui?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O jogo são alguns arquivos pequenos servidos por este site, sem nada para instalar, e o jogo em si não acessa nenhum outro site. Se uma determinada rede de escola ou de escritório permite este site, isso depende dessa rede." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ele salva minha melhor pontuação?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Sua melhor pontuação e a partida em andamento ficam no armazenamento local do seu navegador." }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para jogar no celular?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dá. Deslize o dedo na direção em que você quer que as peças se movam." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">Rode arquivos <code>.exe</code> do Windows no seu navegador. Sem instalar. Sem enviar nada. Só WebAssembly + Wine.</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/pt-BR/">Início</a>
+    <a href="/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guia</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="Idioma"><a href="/run/2048/" hreflang="en">English</a> · <a href="/es/run/2048/" hreflang="es">Español</a> · <span class="lang-current" aria-current="true">Português (BR)</span> · <a href="/de/run/2048/" hreflang="de">Deutsch</a> · <a href="/ja/run/2048/" hreflang="ja">日本語</a> · <a href="/fr/run/2048/" hreflang="fr">Français</a> · <a href="/zh-CN/run/2048/" hreflang="zh-Hans">简体中文</a></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/pt-BR/">Início</a> › <a href="/pt-BR/run/">Guias de programas</a> › Jogar 2048</nav>
+
+  <section class="card">
+    <h2>Jogue 2048 online — o jogo original <span class="verdict good">▶ Jogue agora — roda aqui mesmo no seu navegador</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">Guia atualizado em novembro de 2026 · Roda com WebAssembly (native port)</p>
+    <p><strong>2048</strong> é o quebra-cabeça de peças deslizantes que Gabriele Cirulli escreveu num fim de semana de março de 2014 e lançou como código aberto. Este é <strong>o jogo original, rodando o código do próprio autor</strong> — deslize as peças, junte os números iguais e tente montar a peça 2048.</p>
+
+    <div class="iframe-embed-wrap" style="position:relative;width:100%;height:min(820px, calc(100vw + 300px));background:#faf8ef;border-radius:4px;overflow:hidden;">
+      <iframe src="/apps/2048/"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allowfullscreen
+              loading="lazy"
+              title="2048"></iframe>
+    </div>
+    <details class="controls-panel" open>
+      <summary><strong>Controles</strong> — o que cada tecla faz</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">Ação</th><th scope="col">Teclado</th><th scope="col">Mouse / toque</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">Deslizar as peças</th><td><kbd>Setas</kbd> (<kbd>W A S D</kbd> também funcionam)</td><td>Deslize o dedo na tela de toque</td></tr>
+        <tr><th scope="row">Começar um novo jogo</th><td><kbd>R</kbd></td><td>Botão New Game</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p class="next-up"><span class="next-up-label">Jogue agora:</span>
+      <a href="/pt-BR/run/traffic-department-2192/">Traffic Department 2192</a>
+      <a href="/run/sixteen-puzzle/">Sliding row puzzle (Sixteen)</a>
+      <a href="/run/temple-of-kroz/">Temple of Kroz</a>
+      <a href="/run/xargon/">Xargon</a>
+      <a class="next-up-all" href="/pt-BR/run/">todos os 171 jogos →</a>
+    </p>
+    <p class="free-note"><span class="badge-free">GRÁTIS</span> <strong>Este é o jogo completo, de graça.</strong> Código aberto sob a licença MIT: o jogo original completo.</p>
+    <figure class="app-shot">
+      <img src="/run/2048/screenshot.png" width="560" height="760" loading="lazy" alt="2048 rodando em uma aba do navegador via ExeBrowser" />
+      <figcaption>2048 rodando no navegador — sem instalar nada, sem enviar arquivos.</figcaption>
+    </figure>
+    
+    <div class="warn-box">
+      <p class="muted small">2048 é de <a href="https://github.com/gabrielecirulli/2048" target="_blank" rel="noopener">Gabriele Cirulli</a>, usado sob a <a href="/apps/2048/LICENSE.txt">licença MIT</a>. Os arquivos não foram modificados; veja <a href="/apps/2048/NOTICE.md">NOTICE.md</a>.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Como jogar</h2>
+    <p>Use as setas do teclado ou deslize o dedo numa tela de toque. Cada jogada desliza todas as peças o máximo possível naquela direção. Quando duas peças com o mesmo número se encontram, elas se juntam numa só peça com a soma das duas. Depois de cada jogada, um novo 2 ou 4 aparece numa casa vazia. Você vence ao formar uma peça 2048 e pode continuar jogando depois disso; o jogo termina quando o tabuleiro está cheio e nenhuma jogada é possível.</p>
+    <h3>Como passar do 512</h3>
+    <p>Escolha um canto e mantenha sua maior peça ali. Preencha a fileira dessa peça em ordem decrescente e evite a única direção que tiraria a peça grande do canto, a menos que não haja outra jogada. A maioria das partidas se perde por um único deslize descuidado, não por azar.</p>
+    <h3>Por que é grátis</h3>
+    <p>Cirulli publicou o 2048 sob a licença MIT, que permite a qualquer pessoa copiá-lo e hospedá-lo. Os arquivos aqui são os dele, sem modificações, e o jogo em si não faz requisições a nenhum outro site. Sua melhor pontuação fica guardada no seu próprio navegador.</p>
+  </section>
+  <section class="card">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>Este é o 2048 de verdade?</summary>
+      <p>Sim. É o jogo original de Gabriele Cirulli, rodando o código aberto dele sem modificações, não um clone nem uma reescrita.</p>
+    </details>
+    <details>
+      <summary>O 2048 é desbloqueado aqui?</summary>
+      <p>O jogo são alguns arquivos pequenos servidos por este site, sem nada para instalar, e o jogo em si não acessa nenhum outro site. Se uma determinada rede de escola ou de escritório permite este site, isso depende dessa rede.</p>
+    </details>
+    <details>
+      <summary>Ele salva minha melhor pontuação?</summary>
+      <p>Sim. Sua melhor pontuação e a partida em andamento ficam no armazenamento local do seu navegador.</p>
+    </details>
+    <details>
+      <summary>Dá para jogar no celular?</summary>
+      <p>Dá. Deslize o dedo na direção em que você quer que as peças se movam.</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>Mais coisas para jogar no navegador</h2>
+    <ul class="poster-grid">
+        <li class="pc-item"><a class="poster-card" href="/pt-BR/run/space-cadet-open/">
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="3D Pinball Space Cadet rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/pt-BR/run/doom/">
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="DOOM rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/pt-BR/run/duke-nukem-3d/">
+          <img class="pc-shot" src="/run/duke-nukem-3d/screenshot.png" width="320" height="240" loading="lazy" alt="Duke Nukem 3D rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Duke Nukem 3D</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/librequake/">
+          <img class="pc-shot" src="/run/librequake/screenshot.png" width="320" height="240" loading="lazy" alt="LibreQuake rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">LibreQuake</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/wacky-wheels/">
+          <img class="pc-shot" src="/run/wacky-wheels/screenshot.png" width="320" height="240" loading="lazy" alt="Wacky Wheels rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Wacky Wheels</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/nonogram/">
+          <img class="pc-shot" src="/run/nonogram/screenshot.png" width="320" height="240" loading="lazy" alt="Nonogram (Pattern) rodando no navegador" />
+          <span class="pc-body"><span class="pc-title">Nonogram (Pattern)</span><span class="pc-play">▶ Jogar grátis</span></span>
+        </a></li>
+    </ul>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/pt-BR/run/">Ver todos os 171 títulos jogáveis aqui →</a></p>
+  </section>
+  <section class="card">
+    <h2>Guias relacionados</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/pt-BR/run/hextris/"><span class="lc-title">Hextris</span><span class="lc-desc">O veloz jogo hexagonal de combinar blocos, de código aberto.</span></a></li>
+      <li><a class="link-card" href="/run/sudoku/"><span class="lc-title">Sudoku</span><span class="lc-desc">Quebra-cabeças gerados sem fim, cinco níveis de dificuldade.</span></a></li>
+      <li><a class="link-card" href="/run/blockdrop-open/"><span class="lc-title">Block Drop</span><span class="lc-desc">Blocos que caem, na nossa própria versão aberta.</span></a></li>
+      <li><a class="link-card" href="/run/chess/"><span class="lc-title">Xadrez contra o computador</span><span class="lc-desc">Stockfish em oito níveis, sem cadastro.</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">Jogos que não precisam de instalação</span><span class="lc-desc">A lista completa de títulos que rodam numa rede bloqueada de escola ou trabalho (páginas em inglês).</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Feito com <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a> · <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> · WebAssembly. Wine é marca registrada da CodeWeavers. O ExeBrowser não é afiliado à WineHQ, à CodeWeavers nem à Microsoft. Site irmão: <a href="https://macemu.com/" target="_blank" rel="noopener">macemu.com</a>, jogos clássicos de Mac no seu navegador.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/pt-BR/">Início</a>
+    <a href="/load-exe/">Rode seu EXE</a>
+    <a href="/pt-BR/run/">Guias de programas</a>
+    <a href="/blog/">Blog</a>
+    <a href="/guide/">Guia de compatibilidade</a>
+    <a href="/about/">Sobre</a>
+    <a href="/contact/">Contato</a>
+    <a href="/saves/">Jogos salvos</a>
+    <a href="/privacy/">Política de privacidade</a>
+    <a href="/terms/">Termos de uso</a>
+  </nav>
+  <p>© 2026 ExeBrowser. Conteúdo sob licença aberta; runtime sob GPL-2.0 / LGPL-2.1.</p>
+</footer>
+
+
+<script>window.__I18N={"play":"▶ Jogar {name}","resume":"▶ Continuar {name}","loading":"Carregando…","startOver":"Começar de novo","savedAgo":"Salvo {when}.","filesRestored":"Seus jogos salvos são carregados junto — abra-os pelo menu do próprio jogo.","snapshotResume":"Você volta exatamente de onde parou, no meio do jogo.","progressSaved":"Progresso salvo neste navegador","resumedExactly":"Você voltou exatamente de onde parou","snapshotOff":"Não foi possível salvar um ponto de retomada: seus saves do jogo continuam funcionando","confirmDelete":"Apagar seu progresso salvo em {name}?","justNow":"agora mesmo","minutesAgo":"há {n} minutos","anHourAgo":"há uma hora","hoursAgo":"há {n} horas","yesterday":"ontem","daysAgo":"há {n} dias","saveHint":"Salve dentro do jogo e o arquivo fica neste navegador","resetSaves":"apagar o progresso salvo","savesCleared":"Progresso salvo apagado — recarregue para começar de novo","restoredFiles":"{n} arquivo(s) salvo(s) restaurado(s) — abra pelo menu do jogo","overlayNote":"Roda no seu navegador com DOSBox + WebAssembly.<br>Nada é enviado. O runtime (~1,4 MB) fica em cache depois da primeira vez.","mouseHint":"Clique na tela do jogo para dar o teclado a ele.","starting":"Iniciando…","cachedNote":"Fica em cache depois da primeira carga, então da próxima vez é instantâneo.","loadingGame":"Carregando {name}…","fullscreen":"Tela cheia","soundOn":"Som ligado","soundOff":"Som desligado","remapKeys":"Teclado — remapeie qualquer tecla","remapHint":"Clique em uma tecla abaixo e depois pressione a que você prefere usar. Fica salvo neste navegador, por jogo.","resetDefaults":"Restaurar o padrão","consoleOutput":"Saída do console","wineLoadYours":"Carregue sua cópia de {name}","wineEmptyHosted":"Aperte play para iniciar {name} no seu navegador.","wineEmptyOwn":"{name} não está hospedado aqui — carregue sua própria cópia abaixo e ele roda nesta mesma página.","wineHintHosted":"Roda inteiramente na sua aba com WebAssembly + Wine. Nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineHintOwn":"Não podemos redistribuir {name}, então nada fica hospedado aqui. Sua própria cópia roda inteiramente na sua aba com WebAssembly + Wine — nada é enviado. O primeiro início baixa o motor (~30–60&nbsp;MB), que depois fica em cache.","wineEngine":"Motor do Wine:","wineVariantDefault":"Wine 1.7.55 · Win32 — quase tudo de 1995–2008","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — programas que pedem o Internet Explorer","wineVariant16":"Wine 3.1 · Windows 3.x de 16 bits — programas de 1990–1994","wineVariantR18":"Boxedwine 18R2 — motor mais antigo; às vezes roda o que o padrão não roda","wineVariantX64":"wine64 · experimental — programas de 64 bits, abre em página própria","wineIdle":"Ocioso.","wineDownloadFiles":"Baixar os arquivos que este programa gravou","wineFilesKept":"Os arquivos que este programa salvar ficam guardados neste navegador e são restaurados na próxima vez que você abrir a página. Use o botão de download para ficar com uma cópia.","wineCaptures":"Captura os saves e o conteúdo que o programa gravou na unidade C:\\ em memória.","wineLoadOwnCopy":"Carregue sua própria cópia","wineHaveFiles":"Tem os arquivos no seu aparelho? Solte aqui a pasta do programa ou um zip: o <code>.exe</code> principal mais os arquivos de dados ao lado dele.","wineDropFiles":"Solte os arquivos aqui, ou escolha:","winePickExe":"um único EXE","winePickFolder":"uma pasta","winePickZip":"um zip","wineEntryExe":"EXE principal:","wineRun":"Executar no Wine","wineLoadingRuntime":"Carregando o motor Boxedwine…","wineConfiguring":"Configurando a inicialização do Wine…","wineStartingEmulator":"Iniciando o emulador…","wineRunning":"Executando {name}…","wineBootFailed":"A inicialização falhou. Veja o console.","winePickThenRun":"Escolha um EXE e clique em Executar.","wineReadyLoad":"Wine pronto — carregue um EXE","wineInstallPrompt":"Instalar para voltar com um toque","wineEntry":"Principal: {path}","wineExesAvailable":"{n} EXEs disponíveis","wineX64Pending":"Escolha seu arquivo abaixo — ele continua na página experimental de 64 bits.","wineFetchedSoFar":"Baixados {amount} dos arquivos do motor até agora…","wineStillStarting":"Ainda iniciando…","wineStillWaiting":"Ainda esperando uma imagem — normal em alguns programas mais antigos. Veja a saída do console abaixo se isso continuar.","wineHandoffArrived":"Trazido do player de DOS — pronto para executar.","pfX64":"Programa de 64 bits","pfX64Body":"O motor daqui executa programas Windows de 32 bits, então este provavelmente não vai iniciar. Se a página de download oferecer uma versão de 32 bits (x86) da mesma versão, essa costuma funcionar.","pfWin16":"Programa Windows de 16 bits — motor trocado","pfWin16Body":"Ele foi feito para o Windows 3.x. O motor agora é o Wine 3.1 (16 bits), o que consegue executá-lo.","pfWin32":"Programa de 32 bits — motor restaurado","pfWin32Body":"O motor de 16 bits não executa este, então o motor voltou para o Wine 1.7.55 (Win32).","pfDos":"Um programa DOS, não Windows","pfDosBody":"O Wine executa programas Windows, então não vai iniciar este — mas o player de DOS deste site vai, e seus arquivos vão junto.","pfNotExe":"Isto não é um programa Windows","pfNotExeBody":"Ele não começa com a marca MZ que todo .exe tem. Pode ser um arquivo compactado ou documento renomeado, ou um download que não terminou.","pfDamaged":"Este arquivo está incompleto ou danificado","pfDamagedBody":"Os cabeçalhos descrevem mais dados do que o arquivo contém, o que geralmente significa que o download parou antes do fim. Baixe de novo.","pfCpu":"Feito para outro processador","pfCpuBody":"O emulador daqui executa apenas código x86, então este arquivo não consegue iniciar.","pfDriver":"Um driver, não um aplicativo","pfDriverBody":"Ele é carregado no kernel do Windows ou roda antes do Windows. Aqui não há onde carregá-lo.","pfDotnet":"Um programa .NET","pfDotnetBody":"Ele precisa do .NET Framework, que é posterior a esta versão do Wine, então provavelmente vai parar na inicialização.","pfDll":"Isto é uma DLL, não um programa","pfDllBody":"Uma DLL é uma biblioteca que os programas carregam. Carregue a pasta inteira do programa e escolha o .exe dele.","pfInstaller":"Isto é um instalador","pfInstallerBody":"Executá-lo descompacta o programa em vez de iniciá-lo. Pode funcionar — deixe terminar. Extrair os arquivos pode ser mais rápido, mas só funciona com instaladores baseados em ZIP/7z; não ajuda com um InstallShield, MSI ou empacotado com NSIS.","pfCrt":"Ele precisa das DLLs que vieram junto","pfCrtBody":"Este programa usa {dll}, um runtime do Visual C++ que não faz parte do Windows. Carregue a pasta inteira em vez do .exe sozinho, para que essas DLLs venham junto.","pfOpen64":"Experimente o motor experimental de 64 bits — seu arquivo vai junto →","pfDosLink":"Abrir no player de DOS →","pfExtract":"Extrair os arquivos em vez disso →","pfPickFolder":"Escolher a pasta em vez disso","pfRunAnyway":"Você ainda pode clicar em Executar — isto é lido dos cabeçalhos do arquivo, e às vezes eles estão errados.","pfCapGfx":"ele desenha com Direct3D ou OpenGL, e aqui não há passagem direta de GPU","pfCapNet":"ele espera uma rede, e a aba não oferece nenhuma","pfCapNote":"Vale saber: {notes}."};</script><script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+    <script src="/pwa.js?v=3"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+</body>
+</html>
