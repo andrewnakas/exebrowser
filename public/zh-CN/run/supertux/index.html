@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SuperTux 在线玩 — 完整版游戏网页版，免费免安装</title>
+<meta name="description" content="在浏览器里免费玩 SuperTux：这款开源企鹅平台跳跃游戏的官方 WebAssembly 版本。完整游戏，无需安装。首次加载 250 MB。" />
+<meta name="keywords" content="supertux 在线玩, supertux 网页版, supertux 免费, supertux 免下载, 企鹅 平台跳跃游戏, 开源 平台游戏 在线" />
+<link rel="canonical" href="https://exebrowser.com/zh-CN/run/supertux/" />
+<link rel="alternate" hreflang="en" href="https://exebrowser.com/run/supertux/" />
+<link rel="alternate" hreflang="es" href="https://exebrowser.com/es/run/supertux/" />
+<link rel="alternate" hreflang="pt-BR" href="https://exebrowser.com/pt-BR/run/supertux/" />
+<link rel="alternate" hreflang="de" href="https://exebrowser.com/de/run/supertux/" />
+<link rel="alternate" hreflang="ja" href="https://exebrowser.com/ja/run/supertux/" />
+<link rel="alternate" hreflang="fr" href="https://exebrowser.com/fr/run/supertux/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://exebrowser.com/zh-CN/run/supertux/" />
+<link rel="alternate" hreflang="x-default" href="https://exebrowser.com/run/supertux/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://exebrowser.com/zh-CN/run/supertux/" />
+<meta property="og:title" content="SuperTux 在线玩 — 完整版游戏网页版，免费免安装" />
+<meta property="og:description" content="企鹅 Tux 的横版卷轴平台跳跃游戏——这款开源游戏完整版的官方网页版。" />
+<meta property="og:image" content="https://exebrowser.com/run/supertux/screenshot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0e0d0b" />
+<link rel="alternate" type="application/rss+xml" title="ExeBrowser — new games and posts" href="/feed.xml" />
+<link rel="stylesheet" href="/style.css?v=44" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8C4TZC5F1" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Headless automation (our own boot-test harness, crawlers driving Chrome) was
+  // showing up in GA as 0%-engaged sessions with 50+ events. Don't report it.
+  if (!navigator.webdriver) gtag('config', 'G-C8C4TZC5F1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://exebrowser.com/zh-CN/" },
+    { "@type": "ListItem", "position": 2, "name": "程序列表", "item": "https://exebrowser.com/zh-CN/run/" },
+    { "@type": "ListItem", "position": 3, "name": "玩 SuperTux", "item": "https://exebrowser.com/zh-CN/run/supertux/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "SuperTux",
+  "url": "https://exebrowser.com/zh-CN/run/supertux/",
+  "image": "https://exebrowser.com/run/supertux/screenshot.png",
+  "description": "在浏览器里免费玩 SuperTux：这款开源企鹅平台跳跃游戏的官方 WebAssembly 版本。完整游戏，无需安装。首次加载 250 MB。",
+  "applicationCategory": "Game",
+  "genre": ["Platformer"],
+  "gamePlatform": ["Web browser", "Windows"],
+  "operatingSystem": "Web Browser",
+  "publisher": { "@type": "Organization", "name": "SuperTux Devel Team" },
+  "dateModified": "2026-11-13",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "这是完整版的 SuperTux 吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "是的。这是 SuperTux 项目发布的 0.6.3 官方网页版，包含 Story Mode、奖励关卡和关卡编辑器。" }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么第一次加载这么慢？",
+      "acceptedAnswer": { "@type": "Answer", "text": "游戏数据约有 250 MB。它只需下载一次，之后由浏览器保留，所以以后再来启动会快得多。" }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么它要在单独的页面里打开？",
+      "acceptedAnswer": { "@type": "Answer", "text": "SuperTux 会同时使用多个线程，而浏览器只允许与其他网站隔离的页面这样做。嵌在本页里的游戏无法被隔离，所以启动器会把它单独打开。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我的进度会保存吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "会。SuperTux 把你的存档保存在这个浏览器里。清除本站数据会把存档删掉。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo" aria-hidden="true">▶_</span>
+    <h1>ExeBrowser</h1>
+  </div>
+  <p class="tagline">在浏览器里直接运行 Windows 的 <code>.exe</code> 程序。无需安装，无需上传，只用 WebAssembly 和 Wine。</p>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/zh-CN/">首页</a>
+    <a href="/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/blog/">博客</a>
+    <a href="/guide/">指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+  </nav>
+  <nav class="lang-switcher" aria-label="语言"><a href="/run/supertux/" hreflang="en">English</a> · <a href="/es/run/supertux/" hreflang="es">Español</a> · <a href="/pt-BR/run/supertux/" hreflang="pt-BR">Português (BR)</a> · <a href="/de/run/supertux/" hreflang="de">Deutsch</a> · <a href="/ja/run/supertux/" hreflang="ja">日本語</a> · <a href="/fr/run/supertux/" hreflang="fr">Français</a> · <span class="lang-current" aria-current="true">简体中文</span></nav>
+</header>
+
+<main class="prose">
+  <p class="resume-bar" id="resume-bar" hidden></p>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/zh-CN/">首页</a> › <a href="/zh-CN/run/">程序列表</a> › 玩 SuperTux</nav>
+
+  <section class="card">
+    <h2>在线玩 SuperTux——完整游戏，免费 <span class="verdict good">▶ 立即开始——官方网页版，以整页方式打开</span></h2>
+    <p class="muted small" style="margin-top:0.25rem;">更新于 2026年11月 · 运行环境 WebAssembly (native port)</p>
+    <p><strong>SuperTux</strong> 是一款免费、开源的横版卷轴平台跳跃游戏，主角是企鹅 Tux：奔跑、跳跃、踩扁雪球、收集金币，一路穿过冰雪岛（Icy Island）和森林（Forest）。这里是 SuperTux 项目自己发布的<strong>0.6.3 版官方网页版</strong>——完整的游戏。点击启动器，它就会在当前标签页里打开。</p>
+
+    <div class="iframe-embed-wrap" style="position:relative;width:100%;padding-bottom:62.5%;background:#000;border-radius:4px;overflow:hidden;">
+      <iframe src="/apps/supertux/launch.html"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allowfullscreen
+              loading="lazy"
+              title="SuperTux"></iframe>
+    </div>
+    <details class="controls-panel" open>
+      <summary><strong>操作说明</strong> — 按键对照</summary>
+      <div class="table-wrap">
+        <table class="controls-table">
+          <thead><tr><th scope="col">操作</th><th scope="col">键盘</th></tr></thead>
+          <tbody>
+        <tr><th scope="row">移动</th><td><kbd>方向键</kbd></td></tr>
+        <tr><th scope="row">跳跃</th><td><kbd>Space</kbd></td></tr>
+        <tr><th scope="row">奔跑 / 扔火球</th><td><kbd>Ctrl</kbd></td></tr>
+        <tr><th scope="row">蹲下</th><td><kbd>下方向键</kbd></td></tr>
+        <tr><th scope="row">菜单 / 返回</th><td><kbd>Esc</kbd></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p class="next-up"><span class="next-up-label">接着玩:</span>
+      <a href="/run/prince-of-persia-2/">Prince of Persia 2</a>
+      <a href="/run/jetpack/">Jetpack</a>
+      <a href="/run/same-game/">Same Game</a>
+      <a href="/run/simfarm/">SimFarm</a>
+      <a class="next-up-all" href="/zh-CN/run/">全部 173 款 →</a>
+    </p>
+    <p class="free-note"><span class="badge-free">免费</span> <strong>这是完整版游戏，完全免费。</strong> 自由软件：代码采用 GNU GPL 第 3 版，数据大部分采用 CC BY-SA。完整的游戏。</p>
+    <figure class="app-shot">
+      <img src="/run/supertux/screenshot.png" width="1000" height="700" loading="lazy" alt="通过 ExeBrowser 在浏览器标签页中运行的SuperTux" />
+      <figcaption>在浏览器中运行的SuperTux——无需安装，也不必上传文件。</figcaption>
+    </figure>
+    
+    <div class="warn-box">
+      <p class="muted small">SuperTux 的作者是 <a href="https://www.supertux.org/" target="_blank" rel="noopener">SuperTux Devel Team</a>，依据 <a href="/apps/supertux/COPYING">GNU GPL v3</a> 使用。官方 0.6.3 网页版；改动内容列在 <a href="/apps/supertux/NOTICE.md">NOTICE.md</a> 里。</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>运行方式与注意事项</h2>
+    <p>这个游戏是 SuperTux 团队的官方 WebAssembly 版本，原样托管在这里。它体积很大：第一次玩时要下载约 250&nbsp;MB 的关卡、图像和音乐，所以请在 Wi-Fi 下启动，并给它一两分钟。之后浏览器会把它保留下来。</p><p>SuperTux 会作为一个独立的页面打开，而不是嵌在本页里。它使用多个线程运行，而浏览器只允许与其他网站隔离的页面这样做——嵌在另一个页面里的游戏做不到这一点。用浏览器的“后退”按钮就能回到这里。</p><p>它需要 WebGL 和一台比较新的电脑，不太适合手机或内存较小的 Chromebook。</p>
+    <h3>怎么玩</h3>
+    <p>用方向键移动，<kbd>Space</kbd> 跳跃，<kbd>Ctrl</kbd> 奔跑，拿到火焰花之后还能用它扔火球；下方向键是蹲下。所有按键都可以在 Options → Setup Keyboard 里修改。选择 Start Game → Story Mode，从 Icy Island 开始；主菜单里的 Level Editor 在浏览器里同样可用。</p>
+    <h3>为什么免费</h3>
+    <p>SuperTux 是自由软件。它的代码采用 GNU 通用公共许可证第 3 版或更高版本，大部分美术、关卡和音乐采用 Creative Commons Attribution-ShareAlike（署名-相同方式共享）。这里的内容不是试玩版，也不是只有第一章：它就是项目发布的完整游戏。</p>
+  </section>
+  <section class="card">
+    <h2>常见问题</h2>
+    <details>
+      <summary>这是完整版的 SuperTux 吗？</summary>
+      <p>是的。这是 SuperTux 项目发布的 0.6.3 官方网页版，包含 Story Mode、奖励关卡和关卡编辑器。</p>
+    </details>
+    <details>
+      <summary>为什么第一次加载这么慢？</summary>
+      <p>游戏数据约有 250 MB。它只需下载一次，之后由浏览器保留，所以以后再来启动会快得多。</p>
+    </details>
+    <details>
+      <summary>为什么它要在单独的页面里打开？</summary>
+      <p>SuperTux 会同时使用多个线程，而浏览器只允许与其他网站隔离的页面这样做。嵌在本页里的游戏无法被隔离，所以启动器会把它单独打开。</p>
+    </details>
+    <details>
+      <summary>我的进度会保存吗？</summary>
+      <p>会。SuperTux 把你的存档保存在这个浏览器里。清除本站数据会把存档删掉。</p>
+    </details>
+  </section>
+  <section class="card">
+    <h2>还能在浏览器里玩的游戏</h2>
+    <ul class="poster-grid">
+        <li class="pc-item"><a class="poster-card" href="/zh-CN/run/space-cadet-open/">
+          <img class="pc-shot" src="/run/space-cadet-open/screenshot.png" width="320" height="240" loading="lazy" alt="在浏览器中运行的3D Pinball Space Cadet" />
+          <span class="pc-body"><span class="pc-title">3D Pinball Space Cadet</span><span class="pc-play">▶ 免费游玩</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/zh-CN/run/doom/">
+          <img class="pc-shot" src="/run/doom/screenshot.png" width="320" height="240" loading="lazy" alt="在浏览器中运行的DOOM" />
+          <span class="pc-body"><span class="pc-title">DOOM</span><span class="pc-play">▶ 免费游玩</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/zh-CN/run/duke-nukem-3d/">
+          <img class="pc-shot" src="/run/duke-nukem-3d/screenshot.png" width="320" height="240" loading="lazy" alt="在浏览器中运行的Duke Nukem 3D" />
+          <span class="pc-body"><span class="pc-title">Duke Nukem 3D</span><span class="pc-play">▶ 免费游玩</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/librequake/">
+          <img class="pc-shot" src="/run/librequake/screenshot.png" width="320" height="240" loading="lazy" alt="在浏览器中运行的LibreQuake" />
+          <span class="pc-body"><span class="pc-title">LibreQuake</span><span class="pc-play">▶ 免费游玩</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/run/tyrian/">
+          <img class="pc-shot" src="/run/tyrian/screenshot.png" width="320" height="240" loading="lazy" alt="在浏览器中运行的Tyrian 2000" />
+          <span class="pc-body"><span class="pc-title">Tyrian 2000</span><span class="pc-play">▶ 免费游玩</span></span>
+        </a></li>
+        <li class="pc-item"><a class="poster-card" href="/zh-CN/run/death-rally/">
+          <img class="pc-shot" src="/run/death-rally/screenshot.png" width="320" height="240" loading="lazy" alt="在浏览器中运行的Death Rally" />
+          <span class="pc-body"><span class="pc-title">Death Rally</span><span class="pc-play">▶ 免费游玩</span></span>
+        </a></li>
+    </ul>
+    <p class="muted small" style="margin:.75rem 0 0;"><a href="/zh-CN/run/">查看这里可玩的全部 173 款 →</a></p>
+  </section>
+  <section class="card">
+    <h2>相关指南</h2>
+    <ul class="card-grid">
+      <li><a class="link-card" href="/run/commander-keen/"><span class="lc-title">Commander Keen</span><span class="lc-desc">《Marooned on Mars》：成就了 id Software 的共享软件章节。</span></a></li>
+      <li><a class="link-card" href="/zh-CN/run/jill-of-the-jungle/"><span class="lc-title">Jill of the Jungle</span><span class="lc-desc">Epic MegaGames 1992 年的平台跳跃游戏，共享软件版第一章。</span></a></li>
+      <li><a class="link-card" href="/zh-CN/run/neverball/"><span class="lc-title">Neverball</span><span class="lc-desc">倾斜地面，滚动小球：开源的 3D 经典。</span></a></li>
+      <li><a class="link-card" href="/run/bio-menace/"><span class="lc-title">Bio Menace</span><span class="lc-desc">Apogee 的横版射击闯关游戏——免费软件，内容完整。</span></a></li>
+      <li><a class="link-card" href="/unblocked/"><span class="lc-title">无需安装任何东西的游戏</span><span class="lc-desc">能在受限的学校或公司网络上运行的完整游戏列表（英文页面）。</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>基于 <a href="https://github.com/danoon2/Boxedwine" target="_blank" rel="noopener">Boxedwine</a>、<a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> 和 WebAssembly 构建。Wine 是 CodeWeavers 的商标。ExeBrowser 与 WineHQ、CodeWeavers 和微软均无关联。姊妹网站：<a href="https://macemu.com/" target="_blank" rel="noopener">macemu.com</a>——在浏览器中玩经典 Mac 游戏。</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="/zh-CN/">首页</a>
+    <a href="/load-exe/">运行你的 EXE</a>
+    <a href="/zh-CN/run/">程序列表</a>
+    <a href="/blog/">博客</a>
+    <a href="/guide/">兼容性指南</a>
+    <a href="/about/">关于</a>
+    <a href="/contact/">联系</a>
+    <a href="/saves/">游戏存档</a>
+    <a href="/privacy/">隐私政策</a>
+    <a href="/terms/">使用条款</a>
+  </nav>
+  <p>© 2026 ExeBrowser。内容采用开放许可，运行时基于 GPL-2.0 / LGPL-2.1。</p>
+</footer>
+
+
+<script>window.__I18N={"play":"▶ 开始玩 {name}","resume":"▶ 继续玩 {name}","loading":"加载中…","startOver":"重新开始","savedAgo":"保存于{when}。","filesRestored":"你的存档也一并载入了，请在游戏自带的菜单里读取。","snapshotResume":"可以从你上次中断的地方继续，进度不会丢。","progressSaved":"进度已保存在这个浏览器里","resumedExactly":"已从上次中断的地方继续","snapshotOff":"无法保存恢复点 - 游戏内存档仍然有效","confirmDelete":"确定要删除 {name} 的存档吗？","justNow":"刚刚","minutesAgo":"{n} 分钟前","anHourAgo":"1 小时前","hoursAgo":"{n} 小时前","yesterday":"昨天","daysAgo":"{n} 天前","saveHint":"在游戏里存档，存档会保留在这个浏览器中","resetSaves":"清除存档","savesCleared":"存档已清除，刷新页面即可重新开始","restoredFiles":"已恢复 {n} 个存档，请在游戏菜单中读取","overlayNote":"通过 DOSBox 和 WebAssembly 在浏览器中运行。<br>不会上传任何文件。运行时约 1.4 MB，首次加载后会被缓存。","mouseHint":"点击游戏画面，键盘操作即可生效。","starting":"正在启动…","cachedNote":"首次加载后会被缓存，下次打开就很快了。","loadingGame":"正在加载 {name}…","fullscreen":"全屏","soundOn":"声音已开","soundOff":"声音已关","remapKeys":"键盘——重新映射任意按键","remapHint":"先点击下方的按键，再按下你想改用的那个键。设置按游戏分别保存在本浏览器中。","resetDefaults":"恢复默认设置","consoleOutput":"控制台输出","wineLoadYours":"载入你自己的 {name}","wineEmptyHosted":"点击播放即可在浏览器中启动 {name}。","wineEmptyOwn":"本站没有托管 {name}，请在下方载入你自己的副本，它会直接在本页运行。","wineHintHosted":"完全在你的浏览器标签页中运行，使用 WebAssembly + Wine。不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineHintOwn":"我们无权转发 {name}，因此本站没有托管任何内容。你自己的副本完全在浏览器标签页中运行，使用 WebAssembly + Wine，不会上传任何内容。首次启动会下载运行时（约 30–60&nbsp;MB），之后会被缓存。","wineEngine":"Wine 引擎：","wineVariantDefault":"Wine 1.7.55 · Win32 — 1995–2008 年的绝大多数程序","wineVariantGecko":"Wine 1.7.55 · Win32 + Gecko — 需要 Internet Explorer 的程序","wineVariant16":"Wine 3.1 · 16 位 Windows 3.x — 1990–1994 年的程序","wineVariantR18":"Boxedwine 18R2 — 较旧的引擎，有时能运行默认引擎跑不动的程序","wineVariantX64":"wine64 · 实验性 — 适用于 64 位程序，会打开独立页面","wineIdle":"空闲。","wineDownloadFiles":"下载该程序写入的文件","wineFilesKept":"该程序保存的文件会留在这个浏览器里，下次打开本页时自动恢复。若要留存一份，请使用下载按钮。","wineCaptures":"抓取程序写入内存中 C:\\ 盘的存档和生成内容。","wineLoadOwnCopy":"载入你自己的副本","wineHaveFiles":"文件就在你的设备上？把程序所在的文件夹或一个 zip 拖到这里——入口 <code>.exe</code> 以及旁边的数据文件。","wineDropFiles":"把文件拖到这里，或选择：","winePickExe":"单个 EXE","winePickFolder":"一个文件夹","winePickZip":"一个 zip","wineEntryExe":"入口 EXE：","wineRun":"在 Wine 中运行","wineLoadingRuntime":"正在载入 Boxedwine 运行时…","wineConfiguring":"正在配置 Wine 启动…","wineStartingEmulator":"正在启动模拟器…","wineRunning":"正在运行 {name}…","wineBootFailed":"启动失败，请查看控制台。","winePickThenRun":"先选择一个 EXE，再点击运行。","wineReadyLoad":"Wine 已就绪 — 请载入一个 EXE","wineInstallPrompt":"安装后一键回来","wineEntry":"入口：{path}","wineExesAvailable":"可用 EXE 共 {n} 个","wineX64Pending":"请在下方选择文件——会继续在实验性的 64 位页面中打开。","wineFetchedSoFar":"已获取 {amount} 运行时文件…","wineStillStarting":"仍在启动…","wineStillWaiting":"仍在等待画面出现——对一些较旧的软件来说是正常的。如果持续如此，请查看下方的控制台输出。","wineHandoffArrived":"已从 DOS 播放器带过来 — 可以运行了。","pfX64":"64 位程序","pfX64Body":"这里的引擎运行的是 32 位 Windows 程序，所以这个程序很可能无法启动。如果下载页面提供同一版本的 32 位（x86）版本，那个版本通常可以运行。","pfWin16":"16 位 Windows 程序——已切换引擎","pfWin16Body":"它是为 Windows 3.x 制作的。引擎已切换为能运行它的 Wine 3.1（16 位）。","pfWin32":"32 位程序——已切回引擎","pfWin32Body":"16 位引擎无法运行这个程序，所以引擎已切回 Wine 1.7.55（Win32）。","pfDos":"这是 DOS 程序，不是 Windows 程序","pfDosBody":"Wine 运行的是 Windows 程序，所以不会启动它——但本站的 DOS 播放器可以，而且你的文件会一起带过去。","pfNotExe":"这不是 Windows 程序","pfNotExeBody":"它不是以每个 .exe 都有的 MZ 标记开头。它可能是改了名的压缩包或文档，或者是没下载完的文件。","pfDamaged":"这个文件不完整或已损坏","pfDamagedBody":"它的文件头描述的数据比文件实际包含的多，这通常意味着下载中途停止了。请重新下载。","pfCpu":"为其他处理器编译","pfCpuBody":"这里的模拟器只能运行 x86 代码，所以这个文件无法启动。","pfDriver":"这是驱动程序，不是应用程序","pfDriverBody":"它会加载到 Windows 内核中，或在 Windows 之前运行。这里没有可以加载它的地方。","pfDotnet":".NET 程序","pfDotnetBody":"它需要 .NET Framework，而这个 Wine 版本比它更早，所以很可能在启动时停止。","pfDll":"这是 DLL，不是程序","pfDllBody":"DLL 是供程序加载的库。请加载该程序的整个文件夹，然后选择它的 .exe。","pfInstaller":"这是安装程序","pfInstallerBody":"运行它会解压程序，而不是启动程序。这样可能行得通（请让它完成）。直接提取文件可能更快，但只适用于基于 ZIP/7z 的安装程序；对 InstallShield、MSI 或 NSIS 打包的安装程序没有帮助。","pfCrt":"它需要随附的 DLL","pfCrtBody":"这个程序使用的 {dll} 是不属于 Windows 的 Visual C++ 运行库。请加载整个文件夹而不是单独的 .exe，这样这些 DLL 也会一起加载。","pfOpen64":"试试实验性的 64 位引擎——你的文件会一起带过去 →","pfDosLink":"在 DOS 播放器中打开 →","pfExtract":"改为提取文件 →","pfPickFolder":"改为选择文件夹","pfRunAnyway":"你仍然可以点击运行——这些信息读取自文件头，而文件头偶尔会出错。","pfCapGfx":"它使用 Direct3D 或 OpenGL 绘图，而这里没有 GPU 直通","pfCapNet":"它需要联网，而这个标签页无法提供","pfCapNote":"值得了解：{notes}。"};</script><script src="/save-core.js?v=6"></script>
+<script src="/recent.js?v=8"></script>
+    <script src="/pwa.js?v=3"></script>
+<script>window.renderResumeBar && renderResumeBar("resume-bar");</script>
+</body>
+</html>

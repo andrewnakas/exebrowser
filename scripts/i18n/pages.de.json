@@ -265,6 +265,14 @@
     "/run/zork-1/": {
       "title": "Zork I",
       "desc": "Infocoms Textadventure von 1980, Open Source seit 2025."
+    },
+    "/run/neverball/": {
+      "title": "Neverball",
+      "desc": "Boden kippen, Kugel rollen: der quelloffene 3D-Klassiker."
+    },
+    "/run/supertux/": {
+      "title": "SuperTux",
+      "desc": "Das quelloffene Pinguin-Jump-'n'-Run, offizieller Web-Build."
     }
   },
   "_controls": {
@@ -368,7 +376,13 @@
     "Check what you carry": "Inventar ansehen",
     "i": "<kbd>i</kbd>",
     "Save / load": "Speichern / laden",
-    "save / restore": "<kbd>save</kbd> / <kbd>restore</kbd>"
+    "save / restore": "<kbd>save</kbd> / <kbd>restore</kbd>",
+    "Run / throw fireballs": "Rennen / Feuerbälle werfen",
+    "Duck": "Ducken",
+    "Tilt the floor": "Boden kippen",
+    "Move the mouse, or swipe on a touch screen": "Maus bewegen oder auf dem Touchscreen wischen",
+    "Rotate the camera": "Kamera drehen",
+    "Left-click / right-click": "Linksklick / Rechtsklick"
   },
   "doom": {
     "title": "DOOM online spielen — kostenlos, im Browser, ohne Download — ExeBrowser",
@@ -1778,5 +1792,103 @@
     "licenseNote": "<p class=\"muted small\">Zork III ist © Microsoft, veröffentlicht unter der <a href=\"/apps/zork/LICENSE-zork.txt\">MIT-Lizenz</a> (<a href=\"https://github.com/historicalsource/zork3\" target=\"_blank\" rel=\"noopener\">Quellcode</a>). Interpreter: <a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a> (<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>). Details in <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>.</p>",
     "licenseReason": "Microsoft hat Zork I, II und III am 20. November 2025 unter der MIT-Lizenz veröffentlicht; die Story-Datei stammt aus dieser Veröffentlichung und läuft im MIT-lizenzierten Interpreter Parchment.",
     "fullyFree": "Open Source: Microsoft hat das Spiel im November 2025 unter der MIT-Lizenz veröffentlicht. Das vollständige Spiel."
+  },
+  "supertux": {
+    "title": "SuperTux online spielen — das ganze Spiel, kostenlos im Browser",
+    "description": "Spiele SuperTux gratis im Browser: der offizielle WebAssembly-Build des quelloffenen Pinguin-Jump-'n'-Runs. Das ganze Spiel, ohne Installation. Erster Start: 250 MB.",
+    "keywords": "supertux online spielen, supertux kostenlos, supertux im browser, supertux ohne download, supertux web, open source jump and run online",
+    "ogTitle": "SuperTux online spielen — das ganze Spiel, kostenlos im Browser",
+    "ogDescription": "Das Sidescroller-Jump-'n'-Run mit Tux dem Pinguin — der offizielle Web-Build des vollständigen Open-Source-Spiels.",
+    "crumb": "SuperTux spielen",
+    "h1": "SuperTux online spielen — das ganze Spiel, kostenlos",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Jetzt spielen — offizieller Web-Build, öffnet sich als ganze Seite"
+    },
+    "intro": "<p><strong>SuperTux</strong> ist das freie, quelloffene Sidescroller-Jump-'n'-Run mit Tux dem Pinguin: Renne, springe, zerstampfe Schneebälle und sammle Münzen auf der Eisinsel (Icy Island) und im Wald (Forest). Das hier ist der <strong>offizielle Web-Build der Version 0.6.3</strong> vom SuperTux-Projekt selbst — das vollständige Spiel. Klick auf den Starter, und es öffnet sich in diesem Tab.</p>",
+    "sections": [
+      {
+        "h": "So funktioniert es und was dich erwartet",
+        "html": "<p>Das Spiel ist die offizielle WebAssembly-Version des SuperTux-Teams und wird hier unverändert gehostet. Es ist groß: Beim ersten Spielen werden etwa 250&nbsp;MB an Leveln, Grafik und Musik heruntergeladen, also starte es im WLAN und gib ihm ein, zwei Minuten. Danach behält dein Browser die Daten.</p><p>SuperTux öffnet sich als eigene Seite, nicht innerhalb dieser hier. Es läuft in mehreren Threads, und Browser erlauben das nur auf einer Seite, die von anderen Websites isoliert ist — was ein Spiel, das in eine andere Seite eingebettet ist, nicht sein kann. Mit der Zurück-Schaltfläche deines Browsers kommst du wieder hierher.</p><p>Es braucht WebGL und einen einigermaßen aktuellen Computer. Für Handys und für Chromebooks mit wenig Arbeitsspeicher eignet es sich nicht gut.</p>"
+      },
+      {
+        "h": "So wird gespielt",
+        "html": "<p>Mit den Pfeiltasten bewegst du dich, mit der <kbd>Leertaste</kbd> springst du, und mit <kbd>Strg</kbd> rennst du oder wirfst Feuerbälle, sobald du eine Feuerblume hast; mit dem Pfeil nach unten duckst du dich. Jede Taste lässt sich unter Options → Setup Keyboard ändern. Wähle Start Game → Story Mode, um auf Icy Island zu beginnen; der Level Editor im Hauptmenü funktioniert auch im Browser.</p>"
+      },
+      {
+        "h": "Warum es kostenlos ist",
+        "html": "<p>SuperTux ist freie Software. Der Code steht unter der GNU General Public License, Version 3 oder später, und der Großteil der Grafiken, Level und Musik unter Creative Commons Attribution-ShareAlike. Nichts hier ist eine Demo oder eine erste Episode: Es ist das ganze Spiel, so wie das Projekt es veröffentlicht hat.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Ist das das vollständige SuperTux?",
+        "a": "Ja. Es ist der offizielle Web-Build 0.6.3, den das SuperTux-Projekt veröffentlicht hat, mit Story Mode, den Bonusleveln und dem Level-Editor."
+      },
+      {
+        "q": "Warum dauert das Laden beim ersten Mal so lange?",
+        "a": "Die Spieldaten sind etwa 250 MB groß. Sie werden einmal heruntergeladen und danach von deinem Browser behalten, sodass spätere Besuche viel schneller starten."
+      },
+      {
+        "q": "Warum öffnet es sich als eigene Seite?",
+        "a": "SuperTux nutzt mehrere Threads gleichzeitig, und Browser erlauben das nur auf einer Seite, die von anderen Websites isoliert ist. Ein in diese Seite eingebettetes Spiel ließe sich nicht isolieren, deshalb öffnet der Starter es für sich allein."
+      },
+      {
+        "q": "Wird mein Fortschritt gespeichert?",
+        "a": "Ja. SuperTux legt deine Spielstände in diesem Browser ab. Wenn du die Daten der Website löschst, sind sie weg."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">SuperTux stammt vom <a href=\"https://www.supertux.org/\" target=\"_blank\" rel=\"noopener\">SuperTux Devel Team</a> und wird unter der <a href=\"/apps/supertux/COPYING\">GNU GPL v3</a> verwendet. Offizieller Web-Build 0.6.3; was geändert wurde, ist in <a href=\"/apps/supertux/NOTICE.md\">NOTICE.md</a> aufgeführt.</p>",
+    "licenseReason": "SuperTux ist freie Software unter der GNU GPL v3 oder später, die Daten stehen größtenteils unter CC BY-SA; dies ist die offizielle WebAssembly-Version des Projekts, abgesehen vom Seitenrahmen unverändert gehostet.",
+    "fullyFree": "Freie Software: Code unter der GNU GPL Version 3, Daten größtenteils unter CC BY-SA. Das vollständige Spiel."
+  },
+  "neverball": {
+    "title": "Neverball online spielen — kostenlos im Browser",
+    "description": "Spiele Neverball kostenlos im Browser: Kippe den Boden und lass eine Kugel durch 3D-Hindernisparcours rollen. Der offizielle Open-Source-Web-Build, ohne Installation.",
+    "keywords": "neverball online spielen, neverball kostenlos, neverball im browser, neverball ohne download, kugelspiel online, open source kugelspiel",
+    "ogTitle": "Neverball online spielen — kostenlos im Browser",
+    "ogDescription": "Boden kippen, Münzen einsammeln und das Ziel erreichen, bevor die Zeit abläuft.",
+    "crumb": "Neverball spielen",
+    "h1": "Neverball online spielen — kostenlos, in deinem Browser",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Jetzt spielen — offizieller Web-Build, läuft direkt hier"
+    },
+    "intro": "<p><strong>Neverball</strong> ist das Open-Source-Spiel, bei dem du nicht die Kugel bewegst — du kippst den Boden unter ihr. Rolle durch jeden 3D-Parcours, sammle genug Münzen, um das Ziel zu öffnen, und komm dort an, bevor die Zeit abläuft. Das hier ist der <strong>offizielle Web-Build</strong> vom Neverball-Projekt selbst. Drück im Starter unten auf Play Now.</p>",
+    "sections": [
+      {
+        "h": "So funktioniert es und was dich erwartet",
+        "html": "<p>Das Spiel ist der offizielle Build „Neverball in the browser“, nach WebAssembly kompiliert. Beim ersten Mal werden etwa 28&nbsp;MB Spieldaten heruntergeladen, dann wird die Schaltfläche Play Now aktiv. Es braucht WebGL, das jeder aktuelle Browser hat, und läuft gut auf einem gewöhnlichen Laptop oder einem neueren Chromebook.</p>"
+      },
+      {
+        "h": "So wird gespielt",
+        "html": "<p>Bewege die Maus oder nimm die Pfeiltasten, um den Boden zu kippen. Linksklick und Rechtsklick drehen die Kamera. Auf einem Touchscreen wischst du zum Kippen und steuerst die Kamera mit dem zweiten Daumen; ein Gamepad funktioniert auch. Jedes Level zeigt an, wie viele Münzen das Ziel braucht; sammle so viele, und das Ziel öffnet sich. Wenn du über den Rand fällst, kostet dich das eine Kugel.</p><p>Fang mit dem Set Easy an. Die späteren Sets sind viel schwerer, als sie zunächst aussehen.</p>"
+      },
+      {
+        "h": "Warum es kostenlos ist",
+        "html": "<p>Neverball ist freie Software unter der GNU General Public License, Version 2 oder später, und wird seit 2003 offen entwickelt. Das hier ist das vollständige Spiel. Der vollständige Quellcode dieses Builds ist auf dieser Website erhältlich; die Hinweisdatei erklärt, wo.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Ist Neverball kostenlos?",
+        "a": "Ja. Es ist freie Software unter der GNU GPL, und das ist das vollständige Spiel, keine Demo."
+      },
+      {
+        "q": "Läuft Neverball hier auch im Schul- oder Firmennetz?",
+        "a": "Es wird nichts installiert: Das Spiel besteht aus Dateien, die von dieser Website kommen. Ob ein bestimmtes Schul- oder Firmennetz diese Website zulässt, entscheidet das jeweilige Netz. Das Addons-Menü des Spiels fragt die offizielle Neverball-Website nach der Liste der Add-ons; das Spiel läuft auch ohne sie."
+      },
+      {
+        "q": "Wird mein Fortschritt gespeichert?",
+        "a": "Ja. Punktestände, freigeschaltete Level und Wiederholungen werden in diesem Browser gespeichert."
+      },
+      {
+        "q": "Kann ich auf dem Handy spielen?",
+        "a": "Ja. Wische, um den Boden zu kippen. Ein größerer Bildschirm ist bequemer."
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Neverball stammt von <a href=\"https://neverball.org/\" target=\"_blank\" rel=\"noopener\">Robert Kooima und den Neverball-Autoren</a> und wird unter der <a href=\"/apps/neverball/COPYING.GPL-2\">GNU GPL v2 oder später</a> verwendet. Web-Build von Jānis Rūcis. Quellcode und Liste der Änderungen: <a href=\"/apps/neverball/NOTICE.md\">NOTICE.md</a>.</p>",
+    "licenseReason": "Neverball ist freie Software unter der GNU GPL v2 oder später; dies ist der offizielle Web-Build des Projekts, dessen Quellcode aus demselben Verzeichnis angeboten wird.",
+    "fullyFree": "Freie Software unter der GNU GPL Version 2 oder später: das vollständige Spiel."
   }
 }

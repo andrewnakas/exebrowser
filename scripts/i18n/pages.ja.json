@@ -265,6 +265,14 @@
     "/run/zork-1/": {
       "title": "Zork I",
       "desc": "Infocom による 1980年のテキストアドベンチャー。2025年からオープンソースです。"
+    },
+    "/run/neverball/": {
+      "title": "Neverball",
+      "desc": "床を傾けてボールを転がす、オープンソースの 3D クラシック。"
+    },
+    "/run/supertux/": {
+      "title": "SuperTux",
+      "desc": "オープンソースのペンギンアクション、公式ウェブビルド。"
     }
   },
   "_controls": {
@@ -368,7 +376,13 @@
     "Check what you carry": "持ち物を確認",
     "i": "<kbd>i</kbd>",
     "Save / load": "セーブ / ロード",
-    "save / restore": "save / restore"
+    "save / restore": "save / restore",
+    "Run / throw fireballs": "ダッシュ / 火の玉を投げる",
+    "Duck": "しゃがむ",
+    "Tilt the floor": "床を傾ける",
+    "Move the mouse, or swipe on a touch screen": "マウスを動かす、またはタッチ画面でスワイプ",
+    "Rotate the camera": "カメラを回転",
+    "Left-click / right-click": "左クリック / 右クリック"
   },
   "doom": {
     "title": "DOOM をブラウザで無料プレイ — ダウンロード不要 — ExeBrowser",
@@ -1723,5 +1737,103 @@
     "licenseNote": "<p class=\"muted small\">Zork III は © Microsoft で、<a href=\"/apps/zork/LICENSE-zork.txt\">MIT ライセンス</a>で公開されています（<a href=\"https://github.com/historicalsource/zork3\" target=\"_blank\" rel=\"noopener\">ソース</a>）。インタープリター：<a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a>（<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>）。詳しくは <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a> をご覧ください。</p>",
     "licenseReason": "Microsoft が 2025年11月20日に Zork I、II、III を MIT ライセンスで公開しました。ストーリーファイルはその公開版のもので、MIT ライセンスのインタープリター Parchment の上で動いています。",
     "fullyFree": "オープンソース：Microsoft が 2025年11月に MIT ライセンスで公開しました。ゲーム全体です。"
+  },
+  "supertux": {
+    "title": "SuperTux をブラウザで無料プレイ — ゲーム全編をオンラインで",
+    "description": "SuperTux をブラウザで無料プレイ。オープンソースのペンギン横スクロールアクションの公式 WebAssembly ビルドです。ゲーム全編、インストール不要。初回の読み込みは 250 MB です。",
+    "keywords": "supertux 無料, supertux ブラウザ, supertux オンライン, supertux ダウンロード不要, supertux web版, オープンソース アクションゲーム ブラウザ",
+    "ogTitle": "SuperTux をブラウザで無料プレイ — ゲーム全編をオンラインで",
+    "ogDescription": "ペンギンの Tux が主役の横スクロールアクション。オープンソースのゲーム全編を収めた公式ウェブビルドです。",
+    "crumb": "SuperTux をプレイ",
+    "h1": "SuperTux をオンラインでプレイ — ゲーム全編を無料で",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 今すぐプレイ — 公式ウェブビルド、ページ全体で開きます"
+    },
+    "intro": "<p><strong>SuperTux</strong> は、ペンギンの Tux が主役の、無料でオープンソースの横スクロールアクションゲームです。走って、跳んで、雪玉を踏みつけ、コインを集めながら、氷の島（Icy Island）と森（Forest）を進みます。ここにあるのは、SuperTux プロジェクト自身による<strong>バージョン 0.6.3 の公式ウェブビルド</strong>で、ゲームの全編です。ランチャーをクリックすると、このタブで開きます。</p>",
+    "sections": [
+      {
+        "h": "仕組みと知っておきたいこと",
+        "html": "<p>このゲームは SuperTux チームによる公式の WebAssembly 版で、改変せずにここで配信しています。サイズは大きめです。初めて遊ぶときにステージ、グラフィック、音楽など約 250&nbsp;MB をダウンロードするので、Wi-Fi 環境で起動し、1〜2分ほどお待ちください。そのあとはブラウザがデータを保持します。</p><p>SuperTux はこのページの中ではなく、独立したページとして開きます。ゲームは複数のスレッドで動作しますが、ブラウザがそれを許可するのは、ほかのサイトから分離されたページだけです。別のページの中に埋め込まれたゲームは、その条件を満たせません。ここへ戻るには、ブラウザの「戻る」ボタンを使ってください。</p><p>WebGL と、ある程度新しいパソコンが必要です。スマートフォンやメモリの少ない Chromebook には向いていません。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>矢印キーで移動、<kbd>Space</kbd> でジャンプ、<kbd>Ctrl</kbd> でダッシュします。ファイアフラワーを取ったあとは、同じキーで火の玉も投げられます。下矢印キーでしゃがみます。キーはすべて Options → Setup Keyboard で変更できます。Start Game → Story Mode を選ぶと Icy Island から始まります。メインメニューの Level Editor もブラウザで動きます。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>SuperTux は自由ソフトウェアです。コードは GNU General Public License バージョン3またはそれ以降、アートワーク、ステージ、音楽の大部分は Creative Commons Attribution-ShareAlike で公開されています。ここにあるのは体験版でも第1エピソードだけでもありません。プロジェクトが公開したとおりのゲーム全編です。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "これは SuperTux の完全版ですか？",
+        "a": "はい。SuperTux プロジェクトが公開している公式の 0.6.3 ウェブビルドで、Story Mode、ボーナスステージ、レベルエディタが含まれています。"
+      },
+      {
+        "q": "初回の読み込みにこれほど時間がかかるのはなぜですか？",
+        "a": "ゲームのデータが約 250 MB あるためです。ダウンロードは一度だけで、そのあとはブラウザが保持するので、次回以降はずっと速く起動します。"
+      },
+      {
+        "q": "なぜ別のページとして開くのですか？",
+        "a": "SuperTux は複数のスレッドを同時に使いますが、ブラウザがそれを許可するのは、ほかのサイトから分離されたページだけです。このページの中に埋め込んだゲームは分離できないため、ランチャーは単独のページとして開きます。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい。SuperTux はセーブデータをこのブラウザに保存します。サイトのデータを消去すると、セーブデータも消えます。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">SuperTux は <a href=\"https://www.supertux.org/\" target=\"_blank\" rel=\"noopener\">SuperTux Devel Team</a> の作品で、<a href=\"/apps/supertux/COPYING\">GNU GPL v3</a> に基づいて利用しています。公式の 0.6.3 ウェブビルドで、変更点は <a href=\"/apps/supertux/NOTICE.md\">NOTICE.md</a> に記載しています。</p>",
+    "licenseReason": "SuperTux は GNU GPL v3 またはそれ以降の自由ソフトウェアで、データの大部分は CC BY-SA です。これはプロジェクト公式の WebAssembly 版で、ページの外枠を除いて改変せずに配信しています。",
+    "fullyFree": "自由ソフトウェアです。コードは GNU GPL バージョン3、データの大部分は CC BY-SA。ゲーム全編です。"
+  },
+  "neverball": {
+    "title": "Neverball をブラウザで無料プレイ — オンラインですぐ遊べる",
+    "description": "Neverball をブラウザで無料プレイ。床を傾けてボールを転がし、3D の障害物コースを進みます。オープンソースの公式ウェブビルドで、インストールは不要です。",
+    "keywords": "neverball 無料, neverball ブラウザ, neverball オンライン, neverball ダウンロード不要, 玉転がし ゲーム ブラウザ, オープンソース ボールゲーム",
+    "ogTitle": "Neverball をブラウザで無料プレイ — オンラインですぐ遊べる",
+    "ogDescription": "床を傾け、コインを集め、時間切れになる前にゴールを目指しましょう。",
+    "crumb": "Neverball をプレイ",
+    "h1": "Neverball をオンラインでプレイ — ブラウザで無料",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 今すぐプレイ — 公式ウェブビルド、このページでそのまま動きます"
+    },
+    "intro": "<p><strong>Neverball</strong> は、ボールを動かすのではなく、その下の床を傾けて遊ぶオープンソースのゲームです。3D のコースを転がって進み、ゴールを開くのに必要な数のコインを集めて、時間切れになる前にたどり着きましょう。ここにあるのは、Neverball プロジェクト自身による<strong>公式ウェブビルド</strong>です。下のランチャーで Play Now を押してください。</p>",
+    "sections": [
+      {
+        "h": "仕組みと知っておきたいこと",
+        "html": "<p>このゲームは、WebAssembly にコンパイルされた公式の「Neverball in the browser」ビルドです。初回に約 28&nbsp;MB のゲームデータをダウンロードし、それが終わると Play Now ボタンが押せるようになります。WebGL が必要ですが、現在のブラウザならどれも対応しています。一般的なノートパソコンや最近の Chromebook で快適に動きます。</p>"
+      },
+      {
+        "h": "遊び方",
+        "html": "<p>マウスを動かすか、矢印キーを使って床を傾けます。左クリックと右クリックでカメラが回転します。タッチ画面ではスワイプで傾け、もう一方の親指でカメラを操作します。ゲームパッドも使えます。各ステージには、ゴールに必要なコインの枚数が表示されます。その枚数を集めるとゴールが開きます。端から落ちるとボールを1個失います。</p><p>まずは Easy セットから始めましょう。あとのセットは、最初の見た目よりずっと難しくなっています。</p>"
+      },
+      {
+        "h": "無料で遊べる理由",
+        "html": "<p>Neverball は GNU General Public License バージョン2またはそれ以降の自由ソフトウェアで、2003年からオープンに開発されてきました。これはゲーム全体です。このビルドの完全なソースコードはこのサイトから入手できます。場所は告知ファイルに記載しています。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Neverball は無料ですか？",
+        "a": "はい。GNU GPL の自由ソフトウェアで、これは体験版ではなくゲーム全体です。"
+      },
+      {
+        "q": "ここの Neverball は学校や職場のネットワークでも遊べますか？",
+        "a": "インストールするものは何もありません。ゲームはこのサイトから配信されるファイルです。特定の学校や職場のネットワークがこのサイトを許可しているかどうかは、そのネットワーク次第です。ゲーム内の Addons メニューは、公式の Neverball サイトにアドオンの一覧を問い合わせますが、それがなくてもゲームは遊べます。"
+      },
+      {
+        "q": "進行状況は保存されますか？",
+        "a": "はい。スコア、アンロックしたステージ、リプレイはこのブラウザに保存されます。"
+      },
+      {
+        "q": "スマートフォンでも遊べますか？",
+        "a": "はい。スワイプで床を傾けます。画面が大きいほうが快適です。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Neverball は <a href=\"https://neverball.org/\" target=\"_blank\" rel=\"noopener\">Robert Kooima と Neverball の作者たち</a>の作品で、<a href=\"/apps/neverball/COPYING.GPL-2\">GNU GPL v2 またはそれ以降</a>に基づいて利用しています。ウェブビルドは Jānis Rūcis によるものです。ソースコードと変更点の一覧は <a href=\"/apps/neverball/NOTICE.md\">NOTICE.md</a> にあります。</p>",
+    "licenseReason": "Neverball は GNU GPL v2 またはそれ以降の自由ソフトウェアです。これはプロジェクト公式のウェブビルドで、ソースコードは同じディレクトリから提供しています。",
+    "fullyFree": "GNU GPL バージョン2またはそれ以降の自由ソフトウェアで、ゲーム全体です。"
   }
 }

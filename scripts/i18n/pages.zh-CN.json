@@ -269,6 +269,14 @@
     "/run/zork-1/": {
       "title": "Zork I",
       "desc": "Infocom 1980 年的文字冒险游戏，2025 年起开源。"
+    },
+    "/run/neverball/": {
+      "title": "Neverball",
+      "desc": "倾斜地面，滚动小球：开源的 3D 经典。"
+    },
+    "/run/supertux/": {
+      "title": "SuperTux",
+      "desc": "开源的企鹅平台跳跃游戏，官方网页版。"
     }
   },
   "_controls": {
@@ -372,7 +380,13 @@
     "Check what you carry": "查看随身物品",
     "i": "<code>i</code>",
     "Save / load": "存档 / 读档",
-    "save / restore": "<code>save</code> / <code>restore</code>"
+    "save / restore": "<code>save</code> / <code>restore</code>",
+    "Run / throw fireballs": "奔跑 / 扔火球",
+    "Duck": "蹲下",
+    "Tilt the floor": "倾斜地面",
+    "Move the mouse, or swipe on a touch screen": "移动鼠标，或在触屏上滑动",
+    "Rotate the camera": "旋转镜头",
+    "Left-click / right-click": "左键点击 / 右键点击"
   },
   "doom": {
     "title": "在浏览器里免费玩 DOOM（1993）— 无需下载 — ExeBrowser",
@@ -1846,5 +1860,103 @@
     "licenseNote": "<p class=\"muted small\">Zork III © Microsoft，以 <a href=\"/apps/zork/LICENSE-zork.txt\">MIT 许可证</a>发布（<a href=\"https://github.com/historicalsource/zork3\" target=\"_blank\" rel=\"noopener\">源代码</a>）。解释器：<a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a>（<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>）。详情见 <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>。</p>",
     "licenseReason": "Microsoft 于 2025 年 11 月 20 日以 MIT 许可证发布了 Zork I、II 和 III；故事文件来自那次发布，运行在采用 MIT 许可证的 Parchment 解释器里。",
     "fullyFree": "开源：Microsoft 于 2025 年 11 月以 MIT 许可证发布了这款游戏。完整的游戏。"
+  },
+  "supertux": {
+    "title": "SuperTux 在线玩 — 完整版游戏网页版，免费免安装",
+    "description": "在浏览器里免费玩 SuperTux：这款开源企鹅平台跳跃游戏的官方 WebAssembly 版本。完整游戏，无需安装。首次加载 250 MB。",
+    "keywords": "supertux 在线玩, supertux 网页版, supertux 免费, supertux 免下载, 企鹅 平台跳跃游戏, 开源 平台游戏 在线",
+    "ogTitle": "SuperTux 在线玩 — 完整版游戏网页版，免费免安装",
+    "ogDescription": "企鹅 Tux 的横版卷轴平台跳跃游戏——这款开源游戏完整版的官方网页版。",
+    "crumb": "玩 SuperTux",
+    "h1": "在线玩 SuperTux——完整游戏，免费",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 立即开始——官方网页版，以整页方式打开"
+    },
+    "intro": "<p><strong>SuperTux</strong> 是一款免费、开源的横版卷轴平台跳跃游戏，主角是企鹅 Tux：奔跑、跳跃、踩扁雪球、收集金币，一路穿过冰雪岛（Icy Island）和森林（Forest）。这里是 SuperTux 项目自己发布的<strong>0.6.3 版官方网页版</strong>——完整的游戏。点击启动器，它就会在当前标签页里打开。</p>",
+    "sections": [
+      {
+        "h": "运行方式与注意事项",
+        "html": "<p>这个游戏是 SuperTux 团队的官方 WebAssembly 版本，原样托管在这里。它体积很大：第一次玩时要下载约 250&nbsp;MB 的关卡、图像和音乐，所以请在 Wi-Fi 下启动，并给它一两分钟。之后浏览器会把它保留下来。</p><p>SuperTux 会作为一个独立的页面打开，而不是嵌在本页里。它使用多个线程运行，而浏览器只允许与其他网站隔离的页面这样做——嵌在另一个页面里的游戏做不到这一点。用浏览器的“后退”按钮就能回到这里。</p><p>它需要 WebGL 和一台比较新的电脑，不太适合手机或内存较小的 Chromebook。</p>"
+      },
+      {
+        "h": "怎么玩",
+        "html": "<p>用方向键移动，<kbd>Space</kbd> 跳跃，<kbd>Ctrl</kbd> 奔跑，拿到火焰花之后还能用它扔火球；下方向键是蹲下。所有按键都可以在 Options → Setup Keyboard 里修改。选择 Start Game → Story Mode，从 Icy Island 开始；主菜单里的 Level Editor 在浏览器里同样可用。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>SuperTux 是自由软件。它的代码采用 GNU 通用公共许可证第 3 版或更高版本，大部分美术、关卡和音乐采用 Creative Commons Attribution-ShareAlike（署名-相同方式共享）。这里的内容不是试玩版，也不是只有第一章：它就是项目发布的完整游戏。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "这是完整版的 SuperTux 吗？",
+        "a": "是的。这是 SuperTux 项目发布的 0.6.3 官方网页版，包含 Story Mode、奖励关卡和关卡编辑器。"
+      },
+      {
+        "q": "为什么第一次加载这么慢？",
+        "a": "游戏数据约有 250 MB。它只需下载一次，之后由浏览器保留，所以以后再来启动会快得多。"
+      },
+      {
+        "q": "为什么它要在单独的页面里打开？",
+        "a": "SuperTux 会同时使用多个线程，而浏览器只允许与其他网站隔离的页面这样做。嵌在本页里的游戏无法被隔离，所以启动器会把它单独打开。"
+      },
+      {
+        "q": "我的进度会保存吗？",
+        "a": "会。SuperTux 把你的存档保存在这个浏览器里。清除本站数据会把存档删掉。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">SuperTux 的作者是 <a href=\"https://www.supertux.org/\" target=\"_blank\" rel=\"noopener\">SuperTux Devel Team</a>，依据 <a href=\"/apps/supertux/COPYING\">GNU GPL v3</a> 使用。官方 0.6.3 网页版；改动内容列在 <a href=\"/apps/supertux/NOTICE.md\">NOTICE.md</a> 里。</p>",
+    "licenseReason": "SuperTux 是采用 GNU GPL v3 或更高版本的自由软件，数据大部分采用 CC BY-SA；这是该项目的官方 WebAssembly 版本，除页面外壳外原样托管。",
+    "fullyFree": "自由软件：代码采用 GNU GPL 第 3 版，数据大部分采用 CC BY-SA。完整的游戏。"
+  },
+  "neverball": {
+    "title": "Neverball 在线玩 — 免费网页版，浏览器直接玩",
+    "description": "在浏览器里免费玩 Neverball：倾斜地面，让小球滚过一条条 3D 障碍赛道。这是开源游戏的官方网页版，无需安装即可游玩。",
+    "keywords": "neverball 在线玩, neverball 网页版, neverball 免费, neverball 免下载, 滚球游戏 在线, 开源 滚球游戏",
+    "ogTitle": "Neverball 在线玩 — 免费网页版，浏览器直接玩",
+    "ogDescription": "倾斜地面，收集金币，赶在时间耗尽前到达终点。",
+    "crumb": "玩 Neverball",
+    "h1": "在线玩 Neverball——免费，就在你的浏览器里",
+    "verdict": {
+      "kind": "good",
+      "text": "▶ 立即开始——官方网页版，直接在这里运行"
+    },
+    "intro": "<p><strong>Neverball</strong> 是一款开源游戏：你不是移动小球，而是倾斜它脚下的地面。滚过每一条 3D 赛道，收集足够的金币来打开终点，并赶在时间耗尽前到达。这里是 Neverball 项目自己的<strong>官方网页版</strong>。在下方的启动器里按 Play Now 即可。</p>",
+    "sections": [
+      {
+        "h": "运行方式与注意事项",
+        "html": "<p>这个游戏是官方的“Neverball in the browser”版本，编译成了 WebAssembly。第一次要下载约 28&nbsp;MB 的游戏数据，之后 Play Now 按钮才会变为可用。它需要 WebGL，目前的浏览器都支持；在普通笔记本电脑或较新的 Chromebook 上都能流畅运行。</p>"
+      },
+      {
+        "h": "怎么玩",
+        "html": "<p>移动鼠标或使用方向键来倾斜地面。左键点击和右键点击可以旋转镜头。在触屏上，滑动来倾斜地面，再用另一只拇指控制镜头；也可以用手柄。每一关都会显示打开终点需要多少金币；收集够了，终点就会打开。从边缘掉下去会损失一个球。</p><p>先从 Easy 关卡组开始。后面的关卡组比乍看上去要难得多。</p>"
+      },
+      {
+        "h": "为什么免费",
+        "html": "<p>Neverball 是采用 GNU 通用公共许可证第 2 版或更高版本的自由软件，自 2003 年起一直公开开发。这是完整的游戏。这个版本的完整源代码可以从本站获取；声明文件里说明了具体位置。</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Neverball 免费吗？",
+        "a": "免费。它是采用 GNU GPL 的自由软件，而且这是完整的游戏，不是试玩版。"
+      },
+      {
+        "q": "在学校或公司网络上能玩 Neverball 吗？",
+        "a": "不需要安装任何东西：游戏就是由本站提供的文件。至于某个学校或公司的网络是否允许访问本站，则取决于那个网络。游戏里的 Addons 菜单会向 Neverball 官方网站请求附加内容列表；没有它游戏也能正常玩。"
+      },
+      {
+        "q": "我的进度会保存吗？",
+        "a": "会。分数、已解锁的关卡和回放都保存在这个浏览器里。"
+      },
+      {
+        "q": "手机上能玩吗？",
+        "a": "能。滑动屏幕来倾斜地面。屏幕大一些玩起来更舒服。"
+      }
+    ],
+    "licenseNote": "<p class=\"muted small\">Neverball 的作者是 <a href=\"https://neverball.org/\" target=\"_blank\" rel=\"noopener\">Robert Kooima 和 Neverball 的各位作者</a>，依据 <a href=\"/apps/neverball/COPYING.GPL-2\">GNU GPL v2 或更高版本</a>使用。网页版由 Jānis Rūcis 制作。源代码和改动列表见 <a href=\"/apps/neverball/NOTICE.md\">NOTICE.md</a>。</p>",
+    "licenseReason": "Neverball 是采用 GNU GPL v2 或更高版本的自由软件；这是该项目的官方网页版，其源代码在同一目录下提供。",
+    "fullyFree": "采用 GNU GPL 第 2 版或更高版本的自由软件：完整的游戏。"
   }
 }
