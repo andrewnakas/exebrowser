@@ -4,7 +4,7 @@
 > install, no account, nothing uploaded. Games run client-side via DOSBox or
 > Wine compiled to WebAssembly, and DOS save games persist in the browser.
 
-171 titles are hosted and playable instantly. Everything hosted here is
+173 titles are hosted and playable instantly. Everything hosted here is
 open-source, freeware, or shareware whose licence permits free redistribution;
 commercial titles are compatibility guides only, where you supply your own copy.
 
@@ -181,6 +181,8 @@ commercial titles are compatibility guides only, where you supply your own copy.
 - [Zork I](https://exebrowser.com/run/zork-1/): You are standing in an open field west of a white house, with a boarded front door — and under that house lie the ruins of a vast underground empire, full of treasure and guarded by a thief, a troll and the dark.
 - [Zork II](https://exebrowser.com/run/zork-2/): It picks up where the first game ends, deeper in the Great Underground Empire, where a senile but dangerous wizard appears at random to cast spells on you.
 - [Zork III](https://exebrowser.com/run/zork-3/): The last of the trilogy is quieter and stranger than the first two: fewer treasures, more consequences, and a score that rewards what you choose to do rather than what you collect.
+- [SuperTux](https://exebrowser.com/run/supertux/): Tux the penguin's side-scrolling platformer — the official web build of the full open-source game.
+- [Neverball](https://exebrowser.com/run/neverball/): Tilt the floor, collect the coins, reach the goal before the clock runs out.
 
 ## Compatibility guides (bring your own copy)
 

@@ -1,0 +1,79 @@
+{
+  "release": "0.6.3",
+  "total": 245929603,
+  "sha256": "bb0b48c62eeb357457c0dbcd869ef559795e5d55691c04d46d51dde60f1d0f2e",
+  "parts": [
+    {
+      "name": "supertux2.data.part0",
+      "url": "supertux2.data.part0?v=627b02906c3a",
+      "offset": 0,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part1",
+      "url": "supertux2.data.part1?v=ed3f0b3df651",
+      "offset": 20971520,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part2",
+      "url": "supertux2.data.part2?v=ede59f747daf",
+      "offset": 41943040,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part3",
+      "url": "supertux2.data.part3?v=cc574a4c441a",
+      "offset": 62914560,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part4",
+      "url": "supertux2.data.part4?v=be620a69092b",
+      "offset": 83886080,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part5",
+      "url": "supertux2.data.part5?v=3dd54677f3ac",
+      "offset": 104857600,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part6",
+      "url": "supertux2.data.part6?v=d327ae7a22b9",
+      "offset": 125829120,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part7",
+      "url": "supertux2.data.part7?v=8e05c5afd858",
+      "offset": 146800640,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part8",
+      "url": "supertux2.data.part8?v=3d4b8ede9db0",
+      "offset": 167772160,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part9",
+      "url": "supertux2.data.part9?v=b2e86115c7a3",
+      "offset": 188743680,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part10",
+      "url": "supertux2.data.part10?v=4bf05c9601e7",
+      "offset": 209715200,
+      "size": 20971520
+    },
+    {
+      "name": "supertux2.data.part11",
+      "url": "supertux2.data.part11?v=fd849eeb0318",
+      "offset": 230686720,
+      "size": 15242883
+    }
+  ]
+}

@@ -27856,5 +27856,244 @@
     "licenseNote": "<p class=\"muted small\">Zork III is © Microsoft, released under the <a href=\"/apps/zork/LICENSE-zork.txt\">MIT licence</a> (<a href=\"https://github.com/historicalsource/zork3\" target=\"_blank\" rel=\"noopener\">source</a>). Interpreter: <a href=\"https://github.com/curiousdannii/parchment\" target=\"_blank\" rel=\"noopener\">Parchment</a> (<a href=\"/apps/zork/LICENSE-parchment.txt\">MIT</a>). Details in <a href=\"/apps/zork/NOTICE.md\">NOTICE.md</a>.</p>",
     "screenshot": true,
     "licenseReason": "Microsoft released Zork I, II and III under the MIT licence on 20 November 2025; the story file is from that release and runs in the MIT-licensed Parchment interpreter."
+  },
+  {
+    "slug": "supertux",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "SuperTux Unblocked — Play the Full Game Online Free",
+    "description": "Play SuperTux free in your browser: the official WebAssembly build of the open-source penguin platformer. The whole game, no install. 250 MB first load.",
+    "keywords": "supertux unblocked, supertux online, play supertux in browser, supertux web, supertux no download, open source platformer online",
+    "ogTitle": "SuperTux Unblocked — Play the Full Game Online Free",
+    "ogDescription": "Tux the penguin's side-scrolling platformer — the official web build of the full open-source game.",
+    "crumb": "Play SuperTux",
+    "h1": "Play SuperTux online — the full game, free",
+    "appName": "SuperTux",
+    "appType": "game",
+    "author": "SuperTux Devel Team",
+    "genre": [
+      "Platformer"
+    ],
+    "categories": [
+      "Platformers"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/supertux/launch.html",
+    "iframeBg": "#0b2a4a",
+    "heavy": true,
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — official web build, opens full page"
+    },
+    "intro": "<p><strong>SuperTux</strong> is the free, open-source side-scrolling platformer starring Tux the penguin: run, jump, stomp snowballs and collect coins across Icy Island and the Forest. This is the SuperTux project's own <strong>official web build of version 0.6.3</strong> — the complete game. Click the launcher and it opens in this tab.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The game is the SuperTux team's official WebAssembly release, hosted here unchanged. It is big: about 250&nbsp;MB of levels, graphics and music are downloaded the first time you play, so start it on Wi-Fi and give it a minute or two. After that your browser keeps it.</p><p>SuperTux opens as a page of its own, not inside this one. It runs on several threads, and browsers only allow that on a page that is isolated from other sites — which a game framed inside another page cannot be. Use your browser's Back button to return here.</p><p>It needs WebGL and a reasonably recent computer. It is not a good fit for phones or for low-memory Chromebooks.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Use the arrow keys to move, <kbd>Space</kbd> to jump and <kbd>Ctrl</kbd> to run or throw fireballs once you have a fire flower; the down arrow ducks. Every key can be changed under Options → Setup Keyboard. Choose Start Game → Story Mode to begin on Icy Island; the Level Editor on the main menu works in the browser too.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>SuperTux is free software. Its code is under the GNU General Public License, version 3 or later, and most of its artwork, levels and music are under Creative Commons Attribution-ShareAlike. Nothing here is a demo or a first episode: it is the whole game, as the project released it.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is this the full SuperTux?",
+        "a": "Yes. It is the official 0.6.3 web build published by the SuperTux project, with Story Mode, the bonus levels and the level editor."
+      },
+      {
+        "q": "Why does it take so long to load the first time?",
+        "a": "The game's data is about 250 MB. It is downloaded once and then kept by your browser, so later visits start much faster."
+      },
+      {
+        "q": "Why does it open as a separate page?",
+        "a": "SuperTux uses several threads at once, and browsers only allow that on a page isolated from other sites. A game framed inside this page could not be isolated, so the launcher opens it on its own."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes. SuperTux stores your save games in this browser. Clearing the site's data removes them."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/commander-keen/",
+        "title": "Commander Keen",
+        "desc": "Marooned on Mars: the shareware episode that made id Software."
+      },
+      {
+        "href": "/run/jill-of-the-jungle/",
+        "title": "Jill of the Jungle",
+        "desc": "Epic MegaGames' 1992 platformer, the shareware first episode."
+      },
+      {
+        "href": "/run/neverball/",
+        "title": "Neverball",
+        "desc": "Tilt the floor, roll the ball: the open-source 3D classic."
+      },
+      {
+        "href": "/run/bio-menace/",
+        "title": "Bio Menace",
+        "desc": "Apogee's action platformer: freeware, the complete game."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 3.8,
+    "controls": [
+      {
+        "action": "Move",
+        "keyboard": "Arrow keys",
+        "mouse": "—"
+      },
+      {
+        "action": "Jump",
+        "keyboard": "Space",
+        "mouse": "—"
+      },
+      {
+        "action": "Run / throw fireballs",
+        "keyboard": "Ctrl",
+        "mouse": "—"
+      },
+      {
+        "action": "Duck",
+        "keyboard": "Down arrow",
+        "mouse": "—"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      }
+    ],
+    "fullyFree": "Free software: code under the GNU GPL version 3, data mostly under CC BY-SA. The complete game.",
+    "licenseNote": "<p class=\"muted small\">SuperTux is by the <a href=\"https://www.supertux.org/\" target=\"_blank\" rel=\"noopener\">SuperTux Devel Team</a>, used under the <a href=\"/apps/supertux/COPYING\">GNU GPL v3</a>. Official 0.6.3 web build; what was changed is listed in <a href=\"/apps/supertux/NOTICE.md\">NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "SuperTux is free software under the GNU GPL v3 or later, with data mostly under CC BY-SA; this is the project's official WebAssembly release, hosted unchanged apart from the page shell."
+  },
+  {
+    "slug": "neverball",
+    "provenance": "open",
+    "adsOk": true,
+    "title": "Neverball Unblocked — Play Online Free in Your Browser",
+    "description": "Play Neverball free in your browser: tilt the floor to roll a ball through 3D obstacle courses. The official open-source web build, no install needed.",
+    "keywords": "neverball unblocked, neverball online, play neverball in browser, neverball web, rolling ball game online, open source ball game",
+    "ogTitle": "Neverball Unblocked — Play Online Free in Your Browser",
+    "ogDescription": "Tilt the floor, collect the coins, reach the goal before the clock runs out.",
+    "crumb": "Play Neverball",
+    "h1": "Play Neverball online — free, in your browser",
+    "appName": "Neverball",
+    "appType": "game",
+    "author": "Robert Kooima and the Neverball authors (web build by Jānis Rūcis)",
+    "genre": [
+      "Puzzle",
+      "Action"
+    ],
+    "categories": [
+      "Action",
+      "Puzzle & strategy"
+    ],
+    "hostable": true,
+    "iframeUrl": "/apps/neverball/",
+    "iframeHeight": "min(760px, calc(75vw + 300px))",
+    "iframeBg": "#1a6cb4",
+    "heavy": true,
+    "verdict": {
+      "kind": "good",
+      "text": "▶ Play now — official web build, runs right here"
+    },
+    "intro": "<p><strong>Neverball</strong> is the open-source game where you do not move the ball — you tilt the floor under it. Roll through each 3D course, collect enough coins to open the goal, and get there before time runs out. This is the Neverball project's own <strong>official web build</strong>. Press Play Now in the launcher below.</p>",
+    "sections": [
+      {
+        "h": "How it works & what to expect",
+        "html": "<p>The game is the official “Neverball in the browser” build, compiled to WebAssembly. About 28&nbsp;MB of game data downloads the first time, then the Play Now button becomes active. It needs WebGL, which every current browser has, and runs well on an ordinary laptop or a recent Chromebook.</p>"
+      },
+      {
+        "h": "Playing it",
+        "html": "<p>Move the mouse, or use the arrow keys, to tilt the floor. Left-click and right-click rotate the camera. On a touch screen, swipe to tilt and use a second thumb for the camera; a gamepad works too. Each level shows how many coins the goal needs; collect that many and the goal opens. Falling off the edge costs you a ball.</p><p>Start with the Easy set. The later sets are much harder than they first look.</p>"
+      },
+      {
+        "h": "Why it is free",
+        "html": "<p>Neverball is free software under the GNU General Public License, version 2 or later, and has been developed in the open since 2003. This is the complete game. The full source code for this build is available from this site; the notice file explains where.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Neverball free?",
+        "a": "Yes. It is free software under the GNU GPL, and this is the complete game, not a demo."
+      },
+      {
+        "q": "Is Neverball unblocked here?",
+        "a": "Nothing is installed: the game is files served from this site. Whether a particular school or office network allows this site is up to that network. The game's Addons menu asks the official Neverball site for its add-on list; the game plays without it."
+      },
+      {
+        "q": "Does my progress save?",
+        "a": "Yes. Scores, unlocked levels and replays are stored in this browser."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "Yes. Swipe to tilt the floor. A larger screen is more comfortable."
+      }
+    ],
+    "related": [
+      {
+        "href": "/run/supertux/",
+        "title": "SuperTux",
+        "desc": "The open-source penguin platformer, official web build."
+      },
+      {
+        "href": "/run/space-cadet-open/",
+        "title": "Space Cadet pinball",
+        "desc": "An open table for the classic Windows pinball engine."
+      },
+      {
+        "href": "/run/hextris/",
+        "title": "Hextris",
+        "desc": "The fast hexagonal block-matching game, open source."
+      },
+      {
+        "href": "/run/2048/",
+        "title": "2048",
+        "desc": "The original 2048, the author's own open-source code."
+      },
+      {
+        "href": "/unblocked/",
+        "title": "Games that need nothing installed",
+        "desc": "The full list of titles that run on a locked-down school or work network."
+      }
+    ],
+    "updated": "2026-11-13",
+    "addedDate": "2026-11-13",
+    "rank": 12.6,
+    "controls": [
+      {
+        "action": "Tilt the floor",
+        "keyboard": "Arrow keys",
+        "mouse": "Move the mouse, or swipe on a touch screen"
+      },
+      {
+        "action": "Rotate the camera",
+        "keyboard": "—",
+        "mouse": "Left-click / right-click"
+      },
+      {
+        "action": "Menu / back",
+        "keyboard": "Esc",
+        "mouse": "—"
+      }
+    ],
+    "fullyFree": "Free software under the GNU GPL version 2 or later: the complete game.",
+    "licenseNote": "<p class=\"muted small\">Neverball is by <a href=\"https://neverball.org/\" target=\"_blank\" rel=\"noopener\">Robert Kooima and the Neverball authors</a>, used under the <a href=\"/apps/neverball/COPYING.GPL-2\">GNU GPL v2 or later</a>. Web build by Jānis Rūcis. Source code and the list of changes: <a href=\"/apps/neverball/NOTICE.md\">NOTICE.md</a>.</p>",
+    "screenshot": true,
+    "licenseReason": "Neverball is free software under the GNU GPL v2 or later; this is the project's official web build, with its source code offered from the same directory."
   }
 ]

@@ -1,0 +1,43 @@
+{
+  "fetched": "2026-11-13",
+  "total": 27618983,
+  "sha256": "3703b711b9d88976708017f1985008110fab753d22120f0de1fc0ec63e6e8e08",
+  "parts": [
+    {
+      "name": "neverball.data.part0",
+      "url": "neverball.data.part0?v=81d930207556",
+      "offset": 0,
+      "size": 20971520
+    },
+    {
+      "name": "neverball.data.part1",
+      "url": "neverball.data.part1?v=7e1a5665845d",
+      "offset": 20971520,
+      "size": 6647463
+    }
+  ],
+  "source": {
+    "total": 43556867,
+    "sha256": "47191a04f0645570ac8c0bcd1c2162a571849ee0949dc8c5e75892312affc0c2",
+    "parts": [
+      {
+        "name": "neverball-source.zip.part0",
+        "url": "neverball-source.zip.part0?v=45872fc44379",
+        "offset": 0,
+        "size": 20971520
+      },
+      {
+        "name": "neverball-source.zip.part1",
+        "url": "neverball-source.zip.part1?v=dc55c687eada",
+        "offset": 20971520,
+        "size": 20971520
+      },
+      {
+        "name": "neverball-source.zip.part2",
+        "url": "neverball-source.zip.part2?v=2f668d67db6e",
+        "offset": 41943040,
+        "size": 1613827
+      }
+    ]
+  }
+}

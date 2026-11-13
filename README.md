@@ -78,6 +78,8 @@ before `wrangler pages deploy`**, or the deploy ships a page whose game 404s:
 ```bash
 node scripts/build-librequake-data.mjs   # public/apps/librequake/id1/ (~79 MB)
 node scripts/build-warzone2100-data.mjs  # public/apps/warzone2100/ parts, wasm, music (~87 MB)
+node scripts/build-supertux-data.mjs     # public/apps/supertux/ wasm + 12 data parts (~252 MB)
+node scripts/build-neverball-data.mjs    # public/apps/neverball/ wasm, data and source parts (~74 MB)
 ```
 
 ### Hand-translated game pages

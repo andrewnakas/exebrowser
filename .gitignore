@@ -28,3 +28,16 @@ public/apps/librequake/id1/
 public/apps/warzone2100/warzone2100.wasm
 public/apps/warzone2100/warzone2100.data.part[0-9]*
 public/apps/warzone2100/pkg/*/*.data
+
+# SuperTux 0.6.3 official WebAssembly release (~252 MB). Not committed: rebuild
+# with node scripts/build-supertux-data.mjs (pinned release + sha256). The glue,
+# worker, parts manifest, artwork, index.html, launch.html, NOTICE.md and COPYING
+# ARE committed.
+public/apps/supertux/supertux2.wasm
+public/apps/supertux/supertux2.data.part[0-9]*
+
+# Neverball web build (~74 MB). Not committed: rebuild with
+# node scripts/build-neverball-data.mjs (every file pinned by sha256).
+public/apps/neverball/neverball.wasm
+public/apps/neverball/neverball.data.part[0-9]*
+public/apps/neverball/neverball-source.zip.part[0-9]*
