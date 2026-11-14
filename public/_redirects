@@ -3,14 +3,66 @@
 # Games that were staged then withdrawn before launch. Cloudflare Pages keeps
 # files from previous deploys, so these URLs would otherwise linger as orphans
 # serving stale "boot test pending" pages. Point them at the hub instead.
-# epic-pinball / jazz-jackrabbit: never booted (no frame ever delivered);
+# jazz-jackrabbit: never booted (no frame ever delivered);
 # major-stryker: its own startup screen says it is not redistributable.
-/run/epic-pinball/* /run/ 301
+# (epic-pinball was on this list for not booting; it boots now and is live
+# again since 2026-11-14.)
 /run/jazz-jackrabbit/* /run/ 301
 /run/major-stryker/* /run/ 301
-/apps/epic-pinball/* /run/ 301
 /apps/jazz-jackrabbit/* /run/ 301
 /apps/major-stryker/* /run/ 301
+
+# Published 2026-11-14 and withdrawn the same day: their own licence files do
+# not grant distribution by a website. Shadow Warrior, Stargunner, Death Rally
+# and Xenophage license only individuals passing copies on; Descent allows
+# only its unmodified archive. All were considered and rejected once before
+# (commit 42a0f1d0). Do not re-add without the rights holder's permission.
+/run/shadow-warrior/* /run/ 301
+/run/stargunner/* /run/ 301
+/run/death-rally/* /run/ 301
+/run/xenophage/* /run/ 301
+/run/descent/* /run/ 301
+/apps/shadow-warrior/* /run/ 301
+/apps/stargunner/* /run/ 301
+/apps/death-rally/* /run/ 301
+/apps/xenophage/* /run/ 301
+/apps/descent/* /run/ 301
+/es/run/shadow-warrior/* /es/ 301
+/es/run/stargunner/* /es/ 301
+/es/run/death-rally/* /es/ 301
+/es/run/xenophage/* /es/ 301
+/es/run/descent/* /es/ 301
+/es/run/major-stryker/* /es/ 301
+/pt-BR/run/shadow-warrior/* /pt-BR/ 301
+/pt-BR/run/stargunner/* /pt-BR/ 301
+/pt-BR/run/death-rally/* /pt-BR/ 301
+/pt-BR/run/xenophage/* /pt-BR/ 301
+/pt-BR/run/descent/* /pt-BR/ 301
+/pt-BR/run/major-stryker/* /pt-BR/ 301
+/de/run/shadow-warrior/* /de/ 301
+/de/run/stargunner/* /de/ 301
+/de/run/death-rally/* /de/ 301
+/de/run/xenophage/* /de/ 301
+/de/run/descent/* /de/ 301
+/de/run/major-stryker/* /de/ 301
+/ja/run/shadow-warrior/* /ja/ 301
+/ja/run/stargunner/* /ja/ 301
+/ja/run/death-rally/* /ja/ 301
+/ja/run/xenophage/* /ja/ 301
+/ja/run/descent/* /ja/ 301
+/ja/run/major-stryker/* /ja/ 301
+/fr/run/shadow-warrior/* /fr/ 301
+/fr/run/stargunner/* /fr/ 301
+/fr/run/death-rally/* /fr/ 301
+/fr/run/xenophage/* /fr/ 301
+/fr/run/descent/* /fr/ 301
+/fr/run/major-stryker/* /fr/ 301
+/zh-CN/run/shadow-warrior/* /zh-CN/ 301
+/zh-CN/run/stargunner/* /zh-CN/ 301
+/zh-CN/run/death-rally/* /zh-CN/ 301
+/zh-CN/run/xenophage/* /zh-CN/ 301
+/zh-CN/run/descent/* /zh-CN/ 301
+/zh-CN/run/major-stryker/* /zh-CN/ 301
 
 # freeciv is played through an external iframe; its 24 MB local payload was
 # never referenced and has been removed. Pages keeps prior-deploy files, so

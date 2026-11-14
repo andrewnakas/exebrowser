@@ -130,17 +130,9 @@
       "title": "Duke Nukem 3D",
       "desc": "Apogee 的射击游戏，共享软件章节。"
     },
-    "/run/descent/": {
-      "title": "Descent",
-      "desc": "1995 年的六自由度射击游戏，共享软件版关卡。"
-    },
     "/run/terminal-velocity/": {
       "title": "Terminal Velocity",
       "desc": "3D Realms 1995 年的街机式飞行射击游戏，共享软件版。"
-    },
-    "/run/shadow-warrior/": {
-      "title": "Shadow Warrior",
-      "desc": "3D Realms 1997 年的 Build 引擎射击游戏，共享软件章节。"
     },
     "/run/tyrian/": {
       "title": "Tyrian 2000",
@@ -177,18 +169,6 @@
     "/run/cyberdogs/": {
       "title": "Cyberdogs",
       "desc": "1994 年的俯视角任务射击游戏，支持单人或双人，免费软件。"
-    },
-    "/run/death-rally/": {
-      "title": "Death Rally",
-      "desc": "Remedy 1996 年的俯视角战斗赛车游戏，共享软件版。"
-    },
-    "/run/stargunner/": {
-      "title": "Stargunner",
-      "desc": "Apogee 1996 年的横版射击游戏，共享软件章节。"
-    },
-    "/run/major-stryker/": {
-      "title": "Major Stryker",
-      "desc": "Apogee 1993 年的纵版射击游戏：免费软件，三章齐全。"
     },
     "/run/dark-ages/": {
       "title": "Dark Ages",
@@ -673,112 +653,6 @@
     "mobileHint": "在手机上，请使用球台下方的挡板 / 发射按钮。",
     "fullyFree": "引擎采用 MIT 许可证，美术、音效和球台数据均为完全原创，并以 CC0 公有领域发布。"
   },
-  "shadow-warrior": {
-    "title": "Shadow Warrior 在线玩 — 1997 年共享软件版，浏览器免费畅玩",
-    "description": "在浏览器里免费玩 Shadow Warrior（1997）：3D Realms 出品的 Build 引擎射击游戏的官方共享软件章节。无需下载，通过 DOSBox + WebAssembly 运行。",
-    "keywords": "shadow warrior 在线玩, shadow warrior 网页版, 影子武士 1997 免费, shadow warrior 共享软件, build 引擎 射击游戏 在线, shadow warrior 免下载",
-    "ogTitle": "Shadow Warrior 在线玩 — 1997 年共享软件版",
-    "ogDescription": "3D Realms 1997 年的射击游戏——武士刀、手里剑和粘性炸弹——就在浏览器标签页里。",
-    "crumb": "玩 Shadow Warrior",
-    "h1": "在线玩 Shadow Warrior——1997 年的共享软件章节",
-    "verdict": {
-      "kind": "good",
-      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
-    },
-    "intro": "<p><strong>Shadow Warrior</strong>（影子武士）是 3D Realms 在 1997 年推出的第一人称射击游戏，和 Duke Nukem 3D 用的是同一个 Build 引擎，而且走得更远：房间上面叠房间、可以驾驶的载具、一把武士刀，还有粘性炸弹。官方的<strong>共享软件章节</strong>（1.2 版，共四关）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
-    "sections": [
-      {
-        "h": "运行原理与性能表现",
-        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 13&nbsp;MB，首次加载需要等几秒；之后浏览器会把它保留下来。Sound Blaster 音效和音乐已经配置好。</p><p>Shadow Warrior 是本站最吃性能的 Build 引擎游戏。较新的笔记本或台式机能以原生的 320×200 分辨率流畅运行；较旧的 Chromebook 和手机在较大的室外场景里会掉帧。</p>"
-      },
-      {
-        "h": "玩法与操作",
-        "html": "<p>按键就是你可能在 Duke Nukem 3D 里熟悉的那套 Build 引擎键位：方向键移动和转向，<kbd>Ctrl</kbd> 开火，<kbd>Space</kbd> 开门和使用开关，<kbd>A</kbd> 跳跃，<kbd>Z</kbd> 蹲下。数字键选择武器；<kbd>1</kbd> 上的武士刀永远用不完。所有按键都可以在游戏菜单的 Options 里修改。</p><p>有句提醒在 1997 年的包装盒上就有：这是一款暴力游戏，带有那个年代的粗俗幽默和刻板印象，不适合年幼的玩家。</p>"
-      },
-      {
-        "h": "共享软件版与完整版",
-        "html": "<p>这里运行的是 3D Realms 发布、允许免费分发的共享软件章节，依据的是游戏包内附带的 LICENSE.TXT。该许可只涵盖这一章；包含其余关卡的注册版不在这里托管。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "在这里玩 Shadow Warrior 合法吗？",
-        "a": "合法。这是官方的共享软件章节，3D Realms 在游戏包内附带的 LICENSE.TXT 里授权它可以免费分发。注册版不在这里托管。"
-      },
-      {
-        "q": "包含游戏的多少内容？",
-        "a": "共享软件章节：四个关卡，有武士刀、手里剑、防暴枪、Uzi 冲锋枪和粘性炸弹。完整版的第二章不属于共享软件版。"
-      },
-      {
-        "q": "游戏进度会保存吗？",
-        "a": "会，尽量保留。通过游戏自带菜单保存的存档会留在这个浏览器里，下次访问时恢复。清除网站数据会把它们删掉。"
-      },
-      {
-        "q": "学校的 Chromebook 上能运行吗？",
-        "a": "它不需要安装任何东西就能加载，在受管理的设备上这通常是最关键的。速度取决于机器：较新的 Chromebook 应付得来，低端机型会卡顿。"
-      }
-    ],
-    "download": {
-      "heading": "获取完整版游戏",
-      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Shadow Warrior 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Shadow Warrior →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Shadow Warrior 共享软件版可依据游戏包内附带的 LICENSE.TXT 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/shadow-warrior/NOTICE.md\">/apps/shadow-warrior/NOTICE.md</a>。</p>",
-    "licenseReason": "Shadow Warrior 的共享软件版可依据游戏包内附带的 LICENSE.TXT 自由分发；注册版不在这里托管。",
-    "mobileHint": "方向键：移动／转向 · FIRE：开火 · OPEN：开门／开关 · MENU：Esc"
-  },
-  "descent": {
-    "title": "Descent 在线玩 — 1995 年共享软件版，浏览器免费畅玩",
-    "description": "在浏览器里免费玩 Descent（1995）：Parallax 出品的六自由度射击游戏的官方共享软件版，共七个矿井关卡。无需下载。",
-    "keywords": "descent 在线玩, descent 网页版, 天旋地转 游戏 免费, descent 1995 共享软件, descent dos 游戏 在线, 六自由度 射击游戏",
-    "ogTitle": "Descent 在线玩 — 1995 年共享软件版，免费",
-    "ogDescription": "驾驶飞船在矿井隧道里朝任意方向飞行：Parallax 1995 年的经典，共享软件版。",
-    "crumb": "玩 Descent",
-    "h1": "在线玩 Descent——1995 年的共享软件版",
-    "verdict": {
-      "kind": "good",
-      "text": "可以运行——共享软件版通过 DOSBox 在浏览器里运行"
-    },
-    "intro": "<p><strong>Descent</strong>（天旋地转）是 Parallax Software 在 1995 年推出的射击游戏，它把你放进矿井里的一艘飞船，让你朝任何方向飞：向上、向下、侧移，甚至倒过来飞。官方的<strong>共享软件版</strong>（1.4 版，前七关）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
-    "sections": [
-      {
-        "h": "运行原理与性能表现",
-        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包不到 3&nbsp;MB，几秒钟就能启动。游戏一开始会让你输入飞行员名字；随便输入点什么，再按 <kbd>Enter</kbd> 即可。</p><p>Descent 在 1995 年就是一款很吃配置的游戏，现在它对模拟器的要求也仍然比 2D 游戏高。近几年的笔记本或台式机都能流畅运行。</p>"
-      },
-      {
-        "h": "玩法与操作",
-        "html": "<p>你的飞船可以沿六个轴运动，需要花几分钟适应。在默认键位下，<kbd>A</kbd> 和 <kbd>Z</kbd> 前进和后退，方向键控制转向和俯仰，<kbd>Ctrl</kbd> 发射激光，<kbd>Space</kbd> 发射导弹。<kbd>Tab</kbd> 打开 3D 自动地图，你肯定用得上。每一关的结局都一样：摧毁反应堆，然后在矿井爆炸前找到出口。</p><p>所有按键都可以在 Options → Customize 里重新设置。</p>"
-      },
-      {
-        "h": "共享软件版与完整版",
-        "html": "<p>游戏自带的 README 说得最清楚：“This game may be freely distributed.”（本游戏可以自由分发。）这指的是这个包含七个关卡的共享软件版。注册版有 30 个关卡，不在这里托管。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "在这里玩 Descent 合法吗？",
-        "a": "合法。这是共享软件版，它的 README 写明可以自由分发。30 关的注册版不在这里托管。"
-      },
-      {
-        "q": "包含多少个关卡？",
-        "a": "七个：完整的共享软件版，1.4 版。"
-      },
-      {
-        "q": "可以用鼠标或摇杆吗？",
-        "a": "键盘开箱即用，当年大多数人也是用键盘玩共享软件版的。鼠标操作可以在游戏的 Options 菜单里打开，但浏览器标签页无法把摇杆传给 DOS。"
-      },
-      {
-        "q": "游戏进度会保存吗？",
-        "a": "会，尽量保留。你的飞行员档案和存档会留在这个浏览器里，下次访问时恢复。"
-      }
-    ],
-    "download": {
-      "heading": "获取完整版游戏",
-      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Descent 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Descent\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Descent →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Descent\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Descent 共享软件版可依据游戏包内附带的 README.TXT 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/descent/NOTICE.md\">/apps/descent/NOTICE.md</a>。</p>",
-    "licenseReason": "Descent 的共享软件版可依据游戏包内附带的 README.TXT 自由分发；注册版不在这里托管。",
-    "mobileHint": "方向键：转向／俯仰 · FWD / BACK：前进／后退 · FIRE：激光 · MISSILE：副武器"
-  },
   "epic-pinball": {
     "title": "Epic Pinball 在线玩 — 1993 年共享软件弹球桌，免费网页版",
     "description": "在浏览器里免费玩 Epic Pinball（1993）：官方共享软件版，带 Android 球台。节奏飞快的 DOS 弹球游戏，无需下载，学校的笔记本上也能玩。",
@@ -831,59 +705,6 @@
     "licenseNote": "<p class=\"muted small\">Epic Pinball 共享软件版可依据游戏包内附带的 LICENSE.DOC 和 VENDOR.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/epic-pinball/NOTICE.md\">/apps/epic-pinball/NOTICE.md</a>。</p>",
     "licenseReason": "Epic Pinball 的共享软件版可依据游戏包内附带的 LICENSE.DOC 和 VENDOR.DOC 自由分发；注册版不在这里托管。",
     "mobileHint": "L / R：挡板 · ▼：拉动并松开弹簧杆 · TILT：摇晃球台"
-  },
-  "death-rally": {
-    "title": "Death Rally 在线玩 — 1996 年共享软件版，浏览器免费畅玩",
-    "description": "在浏览器里免费玩 Death Rally（1996）：Remedy 出品的俯视角战斗赛车游戏的官方共享软件版。机枪、地雷、改装升级。无需下载。",
-    "keywords": "death rally 在线玩, death rally 网页版, 死亡拉力 免费, death rally 1996 共享软件, 俯视角 赛车游戏 在线, remedy death rally dos",
-    "ogTitle": "Death Rally 在线玩 — 1996 年共享软件版，免费",
-    "ogDescription": "Remedy 的第一款游戏：俯视角赛车，配上机枪、地雷和一家不太正经的改装店。",
-    "crumb": "玩 Death Rally",
-    "h1": "在线玩 Death Rally——1996 年的共享软件版",
-    "verdict": {
-      "kind": "good",
-      "text": "可以运行——共享软件版通过 DOSBox 在浏览器里运行"
-    },
-    "intro": "<p><strong>Death Rally</strong>（死亡拉力）是 1996 年的俯视角战斗赛车游戏，也是 Remedy Entertainment 的第一款作品，由 Apogee 发行。你从一辆破旧的 Vagabond 起步，靠比赛赢奖金，再把钱花在引擎、轮胎、装甲以及一些不那么光彩的东西上。官方的<strong>共享软件版</strong>（1.1 版）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
-    "sections": [
-      {
-        "h": "运行原理与性能表现",
-        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 7&nbsp;MB。启动后是高分辨率 VGA 的主菜单；选择 Start Racing，再挑一名车手。</p><p>比赛在普通笔记本上就能流畅运行。菜单是 640×480 的，所以看起来比当年大多数 DOS 游戏都清晰。</p>"
-      },
-      {
-        "h": "玩法与操作",
-        "html": "<p>用方向键驾驶：上加速，下刹车。其余按键——涡轮加速、机枪、地雷——可以在主菜单的 Configure 里查看和修改。刚开始时，先参加简单级别的比赛，跑进前三名，然后优先把钱投到引擎上。</p><p>两场比赛之间，商店出售维修和升级，而放高利贷的和搞破坏的人会给你提供捷径，只是代价比乍看起来要高。</p>"
-      },
-      {
-        "h": "共享软件版与完整版",
-        "html": "<p>这是 Apogee 依据游戏包内的 LICENSE.DOC 发布的共享软件版，该许可允许免费分享。它的赛道和车辆数量有所削减。注册版不在这里托管。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "在这里玩 Death Rally 合法吗？",
-        "a": "合法。这是官方的共享软件版，Apogee 在它的 LICENSE.DOC 里授权免费分发。注册版不在这里托管。"
-      },
-      {
-        "q": "和完整版相比少了什么？",
-        "a": "共享软件版的赛道和车辆比注册版少。比赛、武器、商店和生涯晋级都可以正常玩。"
-      },
-      {
-        "q": "我的生涯进度会保存吗？",
-        "a": "会，尽量保留。游戏会在两场比赛之间保存你的车手，本页面会把这些文件留在你的浏览器里，供下次访问使用。"
-      },
-      {
-        "q": "可以两个人一起玩吗？",
-        "a": "菜单里的多人选项需要 DOS 网络，浏览器标签页提供不了。这里能玩的是单人模式。"
-      }
-    ],
-    "download": {
-      "heading": "获取完整版游戏",
-      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Death Rally 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Death%20Rally\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Death Rally →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Death%20Rally\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Death Rally 共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/death-rally/NOTICE.md\">/apps/death-rally/NOTICE.md</a>。</p>",
-    "licenseReason": "Death Rally 的共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发；注册版不在这里托管。",
-    "mobileHint": "方向键：转向、加速、刹车 · CTRL / ALT / SPACE：游戏的动作键"
   },
   "jill-of-the-jungle": {
     "title": "Jill of the Jungle 在线玩 — 第一章免费，浏览器直接玩",
@@ -1032,101 +853,6 @@
     "licenseReason": "Liero 是免费软件：它的文档写明，只要内容不被改动，就可以用任何方式分发给任何人。",
     "fullyFree": "由作者 Joosa Riekkinen 作为免费软件发布：完整的游戏。",
     "mobileHint": "方向键：移动 · CTRL / ALT / SPACE：游戏的动作键 · ENTER：确认"
-  },
-  "major-stryker": {
-    "title": "Major Stryker 在线玩 — 完整版免费，浏览器直接玩",
-    "description": "在浏览器里免费玩 Major Stryker（1993）：Apogee 出品的纵版射击游戏，2006 年作为免费软件发布。三章全部收录，无需下载。",
-    "keywords": "major stryker 在线玩, major stryker 网页版, major stryker 免费, apogee 射击游戏, dos 纵版射击游戏 在线, major stryker 免费软件",
-    "ogTitle": "Major Stryker 在线玩 — 完整版免费",
-    "ogDescription": "Apogee 1993 年的纵版射击游戏，2006 年起成为免费软件——三章全部在你的浏览器里。",
-    "crumb": "玩 Major Stryker",
-    "h1": "在线玩 Major Stryker——完整的免费软件版",
-    "verdict": {
-      "kind": "good",
-      "text": "可以运行——完整的免费软件版通过 DOSBox 在浏览器里运行"
-    },
-    "intro": "<p><strong>Major Stryker</strong> 是 Apogee 在 1993 年推出的纵版射击游戏：三颗星球（熔岩、极地和沙漠）、三层视差卷动的 EGA 画面，还有一艘一路捡到更强火力的飞船。Apogee 在 2006 年把它作为<strong>免费软件</strong>发布，所以这里托管的是完整的游戏——点击开始，它就会在浏览器里启动。</p>",
-    "sections": [
-      {
-        "h": "运行原理与性能表现",
-        "html": "<p>这里运行的是 Apogee 自己的免费软件包，放在编译成 WebAssembly 的 DOSBox 里。它 1&nbsp;MB 出头。游戏出自 16 色 EGA 时代，在任何设备上都能全速运行。</p>"
-      },
-      {
-        "h": "玩法与操作",
-        "html": "<p>方向键移动飞船。开火键和其他按键见游戏内的说明，也可以在游戏菜单里修改。获救的科学家和被摧毁的目标会留下武器舱，记得捡起来，并且尽量别中弹：中弹先丢的是升级过的武器，然后才是一条命。</p>"
-      },
-      {
-        "h": "为什么免费",
-        "html": "<p>Apogee Software 于 2006 年 3 月 14 日把 Major Stryker 作为免费软件发布。这里的游戏包是 <code>strykerfw.zip</code>，即来自 Apogee 自家下载服务器的免费软件版，三章齐全。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "Major Stryker 真的免费吗？",
-        "a": "是的。Apogee 于 2006 年 3 月 14 日把完整版游戏作为免费软件发布。这里就是那个版本，取自 Apogee 自家下载服务器的存档副本。"
-      },
-      {
-        "q": "包含几章？",
-        "a": "三章全部包含：Lava Planet、Arctic Planet 和 Desert Planet。"
-      },
-      {
-        "q": "我的最高分会保存吗？",
-        "a": "会，尽量保留。游戏的存档文件会留在这个浏览器里，下次访问还在。"
-      }
-    ],
-    "licenseNote": "<p class=\"muted small\">Apogee Software 于 2006 年 3 月 14 日把 Major Stryker 作为免费软件发布；这里是来自 Apogee 自家下载服务器的免费软件包。来源说明：<a href=\"/apps/major-stryker/NOTICE.md\">/apps/major-stryker/NOTICE.md</a>。</p>",
-    "licenseReason": "Apogee Software 于 2006 年 3 月 14 日把 Major Stryker 作为免费软件发布；这里是来自 Apogee 自家下载服务器的免费软件包。",
-    "fullyFree": "由 Apogee Software 于 2006 年 3 月 14 日作为免费软件发布：完整的游戏，三章齐全。",
-    "mobileHint": "方向键：飞行 · FIRE：Ctrl · ALT / SPACE：游戏的其他按键 · ESC：菜单"
-  },
-  "stargunner": {
-    "title": "Stargunner 在线玩 — 1996 年共享软件版，浏览器免费畅玩",
-    "description": "在浏览器里免费玩 Stargunner（1996）：Apogee 出品的横版太空射击游戏的官方共享软件章节，关卡之间还有飞船商店。",
-    "keywords": "stargunner 在线玩, stargunner 网页版, stargunner 免费, apogee stargunner 共享软件, dos 横版射击游戏 在线, 清版射击 网页版",
-    "ogTitle": "Stargunner 在线玩 — 1996 年共享软件版，免费",
-    "ogDescription": "Apogee 最后一款 DOS 清版射击游戏：预渲染的精灵图、武器商店，还有铺天盖地的子弹。",
-    "crumb": "玩 Stargunner",
-    "h1": "在线玩 Stargunner——共享软件章节",
-    "verdict": {
-      "kind": "good",
-      "text": "可以运行——共享软件章节通过 DOSBox 在浏览器里运行"
-    },
-    "intro": "<p><strong>Stargunner</strong> 是 1996 年的横版清版射击游戏，也是以 Apogee 名义发行的最后几款游戏之一：预渲染的飞船、高速卷动的画面，还有一家可以用点数购买武器、引擎和僚机卫星的商店。官方的<strong>共享软件章节</strong>（1.1 版）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
-    "sections": [
-      {
-        "h": "运行原理与性能表现",
-        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 5&nbsp;MB。在普通笔记本上就能流畅运行。</p>"
-      },
-      {
-        "h": "玩法与操作",
-        "html": "<p>方向键移动飞船。开火键可以在游戏的操作选项里查看，也可以在那里修改。记得收集敌人掉落的点数：每关结束后，可以用它们购买前置、上方和下方武器，以及更快的引擎。一艘配置均衡的飞船比只装一门巨炮的表现更好。</p>"
-      },
-      {
-        "h": "共享软件版与完整版",
-        "html": "<p>这是共享软件章节，依据游戏包内的 LICENSE.DOC 分发。Apogee 后来以 Windows 安装包的形式把完整版作为免费软件发布；这里托管的是 DOS 共享软件章节，也就是它的许可明确允许转发的那个版本。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "在这里玩 Stargunner 合法吗？",
-        "a": "合法。这是官方的共享软件章节，Apogee 在它的 LICENSE.DOC 里授权免费分发。"
-      },
-      {
-        "q": "包含多少内容？",
-        "a": "游戏的第一章，包括关卡之间的商店。"
-      },
-      {
-        "q": "游戏进度会保存吗？",
-        "a": "会，尽量保留。存档会留在这个浏览器里，下次访问还在。"
-      }
-    ],
-    "download": {
-      "heading": "获取完整版游戏",
-      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Stargunner 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Stargunner\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Stargunner →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Stargunner\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Stargunner 共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/stargunner/NOTICE.md\">/apps/stargunner/NOTICE.md</a>。</p>",
-    "licenseReason": "Stargunner 的共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发；注册版不在这里托管。",
-    "mobileHint": "方向键：飞行 · FIRE：Ctrl · ALT / SPACE：游戏的其他按键 · ESC：菜单"
   },
   "secret-agent": {
     "title": "Secret Agent 在线玩 — Apogee 1992 年平台游戏，免费网页版",
@@ -1369,59 +1095,6 @@
     "licenseReason": "Cyberdogs 是免费软件：它的 README 写明“This game is freeware, feel free to spread it around.”（本游戏是免费软件，欢迎随意传播。）",
     "fullyFree": "由作者 Ronny Wester 作为免费软件发布：完整的游戏。",
     "mobileHint": "方向键：移动 · CTRL / ALT / SPACE：游戏的动作键 · ENTER：确认"
-  },
-  "xenophage": {
-    "title": "Xenophage 在线玩 — Alien Bloodsport 共享软件版，免费网页版",
-    "description": "在浏览器里免费玩 Xenophage: Alien Bloodsport（1995）：Apogee 发行的一对一格斗游戏的共享软件版，登场的是体型巨大的外星格斗家。",
-    "keywords": "xenophage 在线玩, xenophage alien bloodsport, xenophage 网页版, apogee 格斗游戏, dos 格斗游戏 在线, xenophage 共享软件",
-    "ogTitle": "Xenophage 在线玩 — Alien Bloodsport 共享软件版",
-    "ogDescription": "占满屏幕的外星人你来我往：Apogee 1995 年的格斗游戏，共享软件版。",
-    "crumb": "玩 Xenophage: Alien Bloodsport",
-    "h1": "在线玩 Xenophage: Alien Bloodsport——共享软件版",
-    "verdict": {
-      "kind": "good",
-      "text": "可以运行——共享软件版通过 DOSBox 在浏览器里运行"
-    },
-    "intro": "<p><strong>Xenophage: Alien Bloodsport</strong> 是 Argo Games 开发、Apogee 在 1995 年发行的一对一格斗游戏。它的格斗家都是外星人，而且个头巨大：双方拉开距离时镜头会随之拉远，好让两者都留在画面里。官方的<strong>共享软件版</strong>（1.1）就托管在这里——点击开始，它就会在浏览器里启动。</p>",
-    "sections": [
-      {
-        "h": "运行原理与性能表现",
-        "html": "<p>这里运行的是 DOS 原版共享软件包，放在编译成 WebAssembly 的 DOSBox 里。游戏包约 6&nbsp;MB。在较新的笔记本或台式机上运行良好；镜头缩放是最吃性能的部分。</p><p>正如标题所暗示的，战斗场面相当血腥。这不是给年幼玩家玩的游戏。</p>"
-      },
-      {
-        "h": "玩法与操作",
-        "html": "<p>游戏一启动就是它自带的设置菜单。想听音乐的话，先选一种音乐卡（AdLib 在这里可用），然后选择 Start XenoPhage。之后再挑选格斗家和模式。移动和攻击都在键盘上；游戏选项会显示每位玩家的按键，并允许修改。两名玩家可以共用一个键盘进行对战。</p>"
-      },
-      {
-        "h": "共享软件版与完整版",
-        "html": "<p>这是共享软件版，依据游戏包内的 LICENSE.DOC 分发，可选的格斗家数量有所削减。Apogee 后来以 Windows 安装包的形式把完整版作为免费软件发布；这里托管的是 DOS 共享软件版，它的许可明确允许转发。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "在这里玩 Xenophage 合法吗？",
-        "a": "合法。这是官方的共享软件版，Apogee 在它的 LICENSE.DOC 里授权免费分发。"
-      },
-      {
-        "q": "包含多少名格斗家？",
-        "a": "共享软件版的阵容有所削减。注册版包含全部格斗家。"
-      },
-      {
-        "q": "为什么一开始是设置画面？",
-        "a": "那是游戏自带的声音设置。想听音乐的话，在 Choose Music Card 里选 AdLib，然后选择 Start XenoPhage。"
-      },
-      {
-        "q": "可以两个人玩吗？",
-        "a": "可以，共用一个键盘。每位玩家的按键在游戏选项里设置。"
-      }
-    ],
-    "download": {
-      "heading": "获取完整版游戏",
-      "html": "<div class=\"download-box\"><p><strong>共享软件版在这里免费玩。</strong> Xenophage: Alien Bloodsport 的其余部分属于注册版，是商业发行的。可以看看现在是否有商店在售：</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Xenophage\" target=\"_blank\" rel=\"noopener\">在 Steam 上查找 Xenophage →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Xenophage\" target=\"_blank\" rel=\"noopener\">在 GOG 上查找 →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Xenophage: Alien Bloodsport 共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发。注册版属于商业产品，不在这里托管。来源说明：<a href=\"/apps/xenophage/NOTICE.md\">/apps/xenophage/NOTICE.md</a>。</p>",
-    "licenseReason": "Xenophage: Alien Bloodsport 的共享软件版可依据游戏包内附带的 LICENSE.DOC 自由分发；注册版不在这里托管。",
-    "mobileHint": "方向键：移动和跳跃 · CTRL / ALT / SPACE：攻击"
   },
   "boppin": {
     "title": "Boppin' 在线玩 — 1994 年益智游戏共享软件版，免费网页版",

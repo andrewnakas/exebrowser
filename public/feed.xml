@@ -8,31 +8,10 @@
     <lastBuildDate>Fri, 13 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://exebrowser.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>New game: Shadow Warrior</title>
-      <link>https://exebrowser.com/run/shadow-warrior/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/shadow-warrior/</guid>
-      <description>3D Realms&apos; 1997 shooter — katana, shurikens and sticky bombs — in a browser tab.</description>
-      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Descent</title>
-      <link>https://exebrowser.com/run/descent/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/descent/</guid>
-      <description>Fly a ship through mine tunnels in any direction: Parallax&apos;s 1995 classic, shareware version.</description>
-      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>New game: Epic Pinball</title>
       <link>https://exebrowser.com/run/epic-pinball/</link>
       <guid isPermaLink="true">https://exebrowser.com/run/epic-pinball/</guid>
       <description>The 1993 DOS pinball hit from Epic MegaGames — the shareware Android table, in your browser.</description>
-      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Death Rally</title>
-      <link>https://exebrowser.com/run/death-rally/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/death-rally/</guid>
-      <description>Remedy&apos;s first game: top-down racing with machine guns, mines and a shady upgrade shop.</description>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -54,20 +33,6 @@
       <link>https://exebrowser.com/run/liero/</link>
       <guid isPermaLink="true">https://exebrowser.com/run/liero/</guid>
       <description>Two worms, forty weapons, one keyboard: the freeware classic Liero, in your browser.</description>
-      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Major Stryker</title>
-      <link>https://exebrowser.com/run/major-stryker/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/major-stryker/</guid>
-      <description>Apogee&apos;s 1993 vertical shooter, freeware since 2006 — all three episodes in your browser.</description>
-      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New game: Stargunner</title>
-      <link>https://exebrowser.com/run/stargunner/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/stargunner/</guid>
-      <description>Apogee&apos;s last DOS shoot &apos;em up: rendered sprites, a weapon shop and a lot of bullets.</description>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -106,17 +71,52 @@
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>New game: Xenophage: Alien Bloodsport</title>
-      <link>https://exebrowser.com/run/xenophage/</link>
-      <guid isPermaLink="true">https://exebrowser.com/run/xenophage/</guid>
-      <description>Screen-filling aliens trading blows: Apogee&apos;s 1995 fighting game, shareware version.</description>
-      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>New game: Boppin&apos;</title>
       <link>https://exebrowser.com/run/boppin/</link>
       <guid isPermaLink="true">https://exebrowser.com/run/boppin/</guid>
       <description>Throw blocks, match patterns, rescue the villains: the oddest puzzle game Apogee published.</description>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Paganitzu</title>
+      <link>https://exebrowser.com/run/paganitzu/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/paganitzu/</guid>
+      <description>Push boulders, dodge snakes, collect keys: Alabama Smith&apos;s 1991 temple puzzler, part one.</description>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Dark Ages</title>
+      <link>https://exebrowser.com/run/dark-ages/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/dark-ages/</guid>
+      <description>A prince, a stolen throne and AdLib music: Apogee&apos;s 1991 platformer, freeware in full.</description>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Math Rescue</title>
+      <link>https://exebrowser.com/run/math-rescue/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/math-rescue/</guid>
+      <description>The Gruzzles stole the numbers. Solve sums to get them back — the 1992 classroom platformer.</description>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Word Rescue</title>
+      <link>https://exebrowser.com/run/word-rescue/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/word-rescue/</guid>
+      <description>The Gruzzles stole the words. Match each one to its picture — the 1992 classroom platformer.</description>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: 2048</title>
+      <link>https://exebrowser.com/run/2048/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/2048/</guid>
+      <description>The original 2048 by Gabriele Cirulli — slide, merge, reach the 2048 tile.</description>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New game: Hextris</title>
+      <link>https://exebrowser.com/run/hextris/</link>
+      <guid isPermaLink="true">https://exebrowser.com/run/hextris/</guid>
+      <description>Rotate the hexagon, match the colours, keep up as it gets faster: the open-source Hextris.</description>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>

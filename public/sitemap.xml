@@ -931,25 +931,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://exebrowser.com/run/shadow-warrior/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/run/descent/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://exebrowser.com/run/epic-pinball/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/run/death-rally/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -968,18 +950,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/run/liero/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/run/major-stryker/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/run/stargunner/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1010,12 +980,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/run/cyberdogs/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/run/xenophage/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1201,25 +1165,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://exebrowser.com/es/run/shadow-warrior/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/es/run/descent/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://exebrowser.com/es/run/epic-pinball/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/es/run/death-rally/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1238,18 +1184,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/es/run/liero/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/es/run/major-stryker/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/es/run/stargunner/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1280,12 +1214,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/es/run/cyberdogs/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/es/run/xenophage/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1405,25 +1333,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://exebrowser.com/pt-BR/run/shadow-warrior/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/pt-BR/run/descent/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://exebrowser.com/pt-BR/run/epic-pinball/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/pt-BR/run/death-rally/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1442,18 +1352,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/pt-BR/run/liero/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/pt-BR/run/major-stryker/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/pt-BR/run/stargunner/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1484,12 +1382,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/pt-BR/run/cyberdogs/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/pt-BR/run/xenophage/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1585,25 +1477,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://exebrowser.com/de/run/shadow-warrior/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/de/run/descent/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://exebrowser.com/de/run/epic-pinball/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/de/run/death-rally/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1622,18 +1496,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/de/run/liero/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/de/run/major-stryker/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/de/run/stargunner/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1664,12 +1526,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/de/run/cyberdogs/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/de/run/xenophage/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1765,25 +1621,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://exebrowser.com/ja/run/shadow-warrior/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/ja/run/descent/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://exebrowser.com/ja/run/epic-pinball/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/ja/run/death-rally/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1802,18 +1640,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/ja/run/liero/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/ja/run/major-stryker/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/ja/run/stargunner/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1844,12 +1670,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/ja/run/cyberdogs/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/ja/run/xenophage/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1957,25 +1777,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://exebrowser.com/fr/run/shadow-warrior/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/fr/run/descent/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://exebrowser.com/fr/run/epic-pinball/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/fr/run/death-rally/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1994,18 +1796,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/fr/run/liero/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/fr/run/major-stryker/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/fr/run/stargunner/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2036,12 +1826,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/fr/run/cyberdogs/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/fr/run/xenophage/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2149,25 +1933,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://exebrowser.com/zh-CN/run/shadow-warrior/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/zh-CN/run/descent/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://exebrowser.com/zh-CN/run/epic-pinball/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/zh-CN/run/death-rally/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2186,18 +1952,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/zh-CN/run/liero/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/zh-CN/run/major-stryker/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/zh-CN/run/stargunner/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2228,12 +1982,6 @@
   </url>
   <url>
     <loc>https://exebrowser.com/zh-CN/run/cyberdogs/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://exebrowser.com/zh-CN/run/xenophage/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

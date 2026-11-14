@@ -146,7 +146,7 @@ archive that holds only the publisher's INSTALL.EXE: the bundler runs it inside
 our own DOSBox (`scripts/unpack-dos-installer.mjs`, which needs Chrome and
 playwright-core like the boot test) and bundles what it installs; its `keys`
 and `after` lists also drive a game's sound-setup program when the game will
-not start without one (see `shadow-warrior` and `realms-of-chaos`). `member`
+not start without one (see `terminal-velocity` and `realms-of-chaos`). `member`
 names a zip inside a tarball `url`, used for the archived ftp.3drealms.com
 mirror that most Apogee shareware comes from. `keepAll` skips the default
 strip list, for shareware whose licence requires every original file.

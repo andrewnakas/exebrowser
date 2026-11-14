@@ -114,10 +114,6 @@
       "title": "Rise of the Triad",
       "desc": "Apogee による 1994年のシューティング「The HUNT Begins」。シェアウェア版です。"
     },
-    "/run/descent/": {
-      "title": "Descent",
-      "desc": "1995年の6自由度シューティング。シェアウェア版のステージを収録。"
-    },
     "/dos-emulator/": {
       "title": "手持ちの DOS ゲームを動かす",
       "desc": "製品版やほかの DOS ゲームをお持ちですか？ DOS プレイヤーにドロップしてください。"
@@ -129,10 +125,6 @@
     "/run/terminal-velocity/": {
       "title": "Terminal Velocity",
       "desc": "3D Realms による 1995年のアーケード風フライトシューティング。シェアウェア版です。"
-    },
-    "/run/shadow-warrior/": {
-      "title": "Shadow Warrior",
-      "desc": "3D Realms による 1997年の Build エンジン製シューティング。シェアウェア版エピソードです。"
     },
     "/run/tyrian/": {
       "title": "Tyrian 2000",
@@ -169,18 +161,6 @@
     "/run/cyberdogs/": {
       "title": "Cyberdogs",
       "desc": "1994年の見下ろし型ミッションシューティング。1人または2人用のフリーウェアです。"
-    },
-    "/run/death-rally/": {
-      "title": "Death Rally",
-      "desc": "Remedy による 1996年の見下ろし型コンバットレース。シェアウェア版です。"
-    },
-    "/run/stargunner/": {
-      "title": "Stargunner",
-      "desc": "Apogee による 1996年の横スクロールシューティング。シェアウェア版エピソードです。"
-    },
-    "/run/major-stryker/": {
-      "title": "Major Stryker",
-      "desc": "Apogee による 1993年の縦スクロールシューティング。フリーウェアで全3エピソードを収録。"
     },
     "/run/duke-nukem/": {
       "title": "Duke Nukem",
@@ -550,112 +530,6 @@
     "licenseReason": "Tyrian 2000 の完全版データは、権利者である Jason Emery によって 2004年にフリーウェアとして公開され、グラフィックはのちにオープンコンテンツのライセンスに置かれました。そのためデータを自由に再配布できます。",
     "fullyFree": "権利者 Jason Emery が 2004年にフリーウェアと宣言したもので、エピソードの一部ではなくゲーム全体です。"
   },
-  "shadow-warrior": {
-    "title": "Shadow Warrior をブラウザで無料プレイ — 1997年のシェアウェア版",
-    "description": "Shadow Warrior（1997年）をブラウザで無料プレイ。3D Realms の Build エンジン製シューティングの公式シェアウェア版エピソード。ダウンロード不要、DOSBox + WebAssembly で動作します。",
-    "keywords": "shadow warrior 無料, shadow warrior ブラウザ, shadow warrior オンライン, shadow warrior ダウンロード不要, shadow warrior 1997 シェアウェア, build エンジン fps ブラウザ",
-    "ogTitle": "Shadow Warrior をブラウザで無料プレイ — 1997年のシェアウェア版",
-    "ogDescription": "3D Realms による 1997年のシューティング。刀、手裏剣、粘着爆弾を、ブラウザのタブの中で。",
-    "crumb": "Shadow Warrior をプレイ",
-    "h1": "Shadow Warrior をオンラインでプレイ — 1997年のシェアウェア版エピソード",
-    "verdict": {
-      "kind": "good",
-      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
-    },
-    "intro": "<p><strong>Shadow Warrior</strong> は、3D Realms が 1997年に発表した一人称視点シューティングです。Duke Nukem 3D と同じ Build エンジンを使い、部屋の上に重なる部屋、運転できる乗り物、刀、粘着爆弾と、その技術をさらに押し進めました。公式の<strong>シェアウェア版エピソード</strong>（バージョン 1.2、全4面）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
-    "sections": [
-      {
-        "h": "動作の仕組みと動作の目安",
-        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 13&nbsp;MB あるので、初回の読み込みには数秒かかります。2回目以降はブラウザが保持します。Sound Blaster の効果音と音楽は設定済みです。</p><p>Shadow Warrior は、このサイトにある Build エンジンのゲームのなかでもっとも重い作品です。最近のノートパソコンやデスクトップなら、本来の解像度 320×200 でなめらかに動きます。古い Chromebook やスマートフォンでは、広い屋外エリアでコマ落ちします。</p>"
-      },
-      {
-        "h": "遊び方",
-        "html": "<p>キー配置は Duke Nukem 3D でおなじみの Build エンジン式です。矢印キーで移動と旋回、<kbd>Ctrl</kbd> で攻撃、<kbd>Space</kbd> で扉を開けたりスイッチを操作したり、<kbd>A</kbd> でジャンプ、<kbd>Z</kbd> でしゃがみます。数字キーで武器を選びます。<kbd>1</kbd> の刀は弾切れがありません。すべてのキーはゲーム内メニューの Options で変更できます。</p><p>1997年当時のパッケージにも書かれていた注意をひとつ。これは暴力的なゲームで、下品なユーモアや当時ならではのステレオタイプ表現を含みます。小さなお子さま向けではありません。</p>"
-      },
-      {
-        "h": "シェアウェア版と製品版について",
-        "html": "<p>ここで動いているのは、3D Realms が無償配布用に公開したシェアウェア版エピソードで、パッケージに同梱の LICENSE.TXT に基づいています。このライセンスが対象とするのはこのエピソードだけです。残りの面を含む製品版は、ここでは配信していません。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "ここで Shadow Warrior を遊ぶのは合法ですか？",
-        "a": "はい。これは公式のシェアウェア版エピソードで、3D Realms がパッケージに同梱の LICENSE.TXT で無償配布を許諾しています。製品版は配信していません。"
-      },
-      {
-        "q": "ゲームのどこまでが含まれていますか？",
-        "a": "シェアウェア版エピソードです。全4面で、刀、手裏剣、ライアットガン、Uzi、粘着爆弾が使えます。完全版の第2エピソードはシェアウェア版には含まれません。"
-      },
-      {
-        "q": "進行状況は保存されますか？",
-        "a": "はい、可能な範囲で保存されます。ゲーム内メニューから行ったセーブはこのブラウザに保持され、次回の訪問時に復元されます。サイトのデータを消去すると失われます。"
-      },
-      {
-        "q": "学校の Chromebook でも動きますか？",
-        "a": "何もインストールせずに読み込めます。管理された端末ではたいていこの点が重要です。速度は機種次第で、最近の Chromebook なら対応できますが、低スペックの機種ではカクつきます。"
-      }
-    ],
-    "download": {
-      "heading": "製品版を入手する",
-      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Shadow Warrior の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">Steam で Shadow Warrior を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Shadow Warrior のシェアウェア版は、パッケージに同梱されている LICENSE.TXT に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/shadow-warrior/NOTICE.md\">/apps/shadow-warrior/NOTICE.md</a></p>",
-    "licenseReason": "Shadow Warrior のシェアウェア版は、パッケージに同梱されている LICENSE.TXT に基づき、自由に再配布できます。製品版は配信していません。",
-    "mobileHint": "十字キー：移動・旋回 ／ FIRE：攻撃 ／ OPEN：扉・スイッチ ／ MENU：Esc"
-  },
-  "descent": {
-    "title": "Descent をブラウザで無料プレイ — 1995年のシェアウェア版",
-    "description": "Descent（1995年）をブラウザで無料プレイ。Parallax による6自由度シューティングの公式シェアウェア版で、鉱山ステージ全7面を収録。ダウンロードは不要です。",
-    "keywords": "descent 無料, descent ブラウザ, descent オンライン, descent ダウンロード不要, descent 1995 シェアウェア, 6自由度 シューティング",
-    "ogTitle": "Descent をブラウザで無料プレイ — 1995年のシェアウェア版",
-    "ogDescription": "鉱山のトンネルを、機体であらゆる方向へ飛び回る。Parallax による 1995年の名作のシェアウェア版です。",
-    "crumb": "Descent をプレイ",
-    "h1": "Descent をオンラインでプレイ — 1995年のシェアウェア版",
-    "verdict": {
-      "kind": "good",
-      "text": "動作します — シェアウェア版がブラウザ内の DOSBox で動きます"
-    },
-    "intro": "<p><strong>Descent</strong> は、Parallax Software による 1995年のシューティングです。鉱山の中で機体に乗り込み、上、下、横、さらには逆さまと、あらゆる方向へ飛べるようにした作品です。公式の<strong>シェアウェア版</strong>（1.4、最初の7面）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
-    "sections": [
-      {
-        "h": "動作の仕組みと動作の目安",
-        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは 3&nbsp;MB 未満で、数秒で起動します。最初にパイロット名を聞かれるので、好きな名前を入力して <kbd>Enter</kbd> を押してください。</p><p>Descent は 1995年当時、高い性能を要求するゲームでした。いまでも 2D のゲームに比べるとエミュレーターへの負荷は大きめです。ここ数年のノートパソコンやデスクトップならなめらかに遊べます。</p>"
-      },
-      {
-        "h": "遊び方",
-        "html": "<p>機体は6つの軸で動くので、慣れるまで数分かかります。初期設定のキーボード配置では、<kbd>A</kbd> と <kbd>Z</kbd> で前進と後退、矢印キーで旋回と機首の上げ下げ、<kbd>Ctrl</kbd> でレーザー、<kbd>Space</kbd> でミサイルを発射します。<kbd>Tab</kbd> で 3D の自動マップが開きます。これは必ず必要になります。どの面も終わり方は同じで、リアクターを破壊し、鉱山が爆発する前に出口を見つけます。</p><p>すべてのキーは Options → Customize で割り当て直せます。</p>"
-      },
-      {
-        "h": "シェアウェア版と製品版について",
-        "html": "<p>ゲーム付属の README がいちばん端的に述べています。「This game may be freely distributed.」（このゲームは自由に配布してかまいません）。これは全7面を収録したこのシェアウェア版に当てはまります。製品版は全30面で、ここでは配信していません。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "ここで Descent を遊ぶのは合法ですか？",
-        "a": "はい。これはシェアウェア版で、README に自由に配布してよいと明記されています。全30面の製品版は配信していません。"
-      },
-      {
-        "q": "何面まで収録されていますか？",
-        "a": "7面です。シェアウェア版（バージョン 1.4）の全内容です。"
-      },
-      {
-        "q": "マウスやジョイスティックは使えますか？",
-        "a": "キーボードはそのまま使えます。シェアウェア版では多くの人がキーボードで遊んでいました。マウス操作はゲーム内の Options メニューで有効にできますが、ブラウザのタブからジョイスティックを DOS に渡すことはできません。"
-      },
-      {
-        "q": "進行状況は保存されますか？",
-        "a": "はい、可能な範囲で保存されます。パイロットとセーブデータはこのブラウザに保持され、次回の訪問時に復元されます。"
-      }
-    ],
-    "download": {
-      "heading": "製品版を入手する",
-      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Descent の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Descent\" target=\"_blank\" rel=\"noopener\">Steam で Descent を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Descent\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Descent のシェアウェア版は、パッケージに同梱されている README.TXT に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/descent/NOTICE.md\">/apps/descent/NOTICE.md</a></p>",
-    "licenseReason": "Descent のシェアウェア版は、パッケージに同梱されている README.TXT に基づき、自由に再配布できます。製品版は配信していません。",
-    "mobileHint": "十字キー：旋回・機首の上げ下げ ／ FWD / BACK：前進・後退 ／ FIRE：レーザー ／ MISSILE：副武装"
-  },
   "epic-pinball": {
     "title": "Epic Pinball をブラウザで無料プレイ — 1993年のシェアウェア版テーブル",
     "description": "Epic Pinball（1993年）をブラウザで無料プレイ。「Android」テーブルを収録した公式シェアウェア版です。軽快な DOS のピンボールで、ダウンロード不要、学校のノートパソコンでも動きます。",
@@ -708,59 +582,6 @@
     "licenseNote": "<p class=\"muted small\">Epic Pinball のシェアウェア版は、パッケージに同梱されている LICENSE.DOC と VENDOR.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/epic-pinball/NOTICE.md\">/apps/epic-pinball/NOTICE.md</a></p>",
     "licenseReason": "Epic Pinball のシェアウェア版は、パッケージに同梱されている LICENSE.DOC と VENDOR.DOC に基づき、自由に再配布できます。製品版は配信していません。",
     "mobileHint": "L / R：フリッパー ／ ▼：プランジャーを引いて離す ／ TILT：台を揺らす"
-  },
-  "death-rally": {
-    "title": "Death Rally をブラウザで無料プレイ — 1996年のシェアウェア版",
-    "description": "Death Rally（1996年）をブラウザで無料プレイ。Remedy による見下ろし型コンバットレースの公式シェアウェア版です。機銃、地雷、アップグレード。ダウンロードは不要です。",
-    "keywords": "death rally 無料, death rally ブラウザ, death rally オンライン, death rally ダウンロード不要, death rally 1996 シェアウェア, 見下ろし型 レースゲーム ブラウザ",
-    "ogTitle": "Death Rally をブラウザで無料プレイ — 1996年のシェアウェア版",
-    "ogDescription": "Remedy の最初のゲーム。マシンガンと地雷、そして怪しげなアップグレードショップが登場する見下ろし型レースです。",
-    "crumb": "Death Rally をプレイ",
-    "h1": "Death Rally をオンラインでプレイ — 1996年のシェアウェア版",
-    "verdict": {
-      "kind": "good",
-      "text": "動作します — シェアウェア版がブラウザ内の DOSBox で動きます"
-    },
-    "intro": "<p><strong>Death Rally</strong> は、Remedy Entertainment の最初のゲームとなった 1996年の見下ろし型コンバットレースで、Apogee から発売されました。ぼろぼろの Vagabond から始めて賞金を稼ぎ、エンジン、タイヤ、装甲、そしてあまりスポーツマンらしくない品々につぎ込みます。公式の<strong>シェアウェア版</strong>（1.1）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
-    "sections": [
-      {
-        "h": "動作の仕組みと動作の目安",
-        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 7&nbsp;MB です。高解像度 VGA のメインメニューで始まるので、Start Racing を選んでドライバーを決めてください。</p><p>レースは普通のノートパソコンでなめらかに動きます。メニューは 640×480 なので、当時のたいていの DOS ゲームよりくっきり見えます。</p>"
-      },
-      {
-        "h": "遊び方",
-        "html": "<p>矢印キーで操縦します。上で加速、下でブレーキです。残りのキー（ターボ、マシンガン、地雷）は、メインメニューの Configure で確認と変更ができます。序盤は easy のレースに出て3位以内に入り、賞金は何よりもまずエンジンに回しましょう。</p><p>レースの合間にはショップで修理とアップグレードが買えます。高利貸しと妨害工作屋は近道を持ちかけてきますが、最初に思うよりも高くつきます。</p>"
-      },
-      {
-        "h": "シェアウェア版と製品版について",
-        "html": "<p>これは Apogee がパッケージ内の LICENSE.DOC に基づいて公開したシェアウェア版で、無償で配ることが認められています。コースと車の数は絞られています。製品版はここでは配信していません。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "ここで Death Rally を遊ぶのは合法ですか？",
-        "a": "はい。これは公式のシェアウェア版で、Apogee が LICENSE.DOC で無償配布を許諾しています。製品版は配信していません。"
-      },
-      {
-        "q": "完全版と比べて何が足りませんか？",
-        "a": "シェアウェア版は製品版よりコースと車が少なくなっています。レース、武器、ショップ、ランキングを勝ち上がるキャリアモードはすべて動きます。"
-      },
-      {
-        "q": "キャリアは保存されますか？",
-        "a": "はい、可能な範囲で保存されます。ゲームがレースの合間にドライバーを保存し、このページがそのファイルを次回の訪問のためにブラウザ内に保持します。"
-      },
-      {
-        "q": "2人で遊べますか？",
-        "a": "メニューにあるマルチプレイは DOS のネットワークを必要とし、ブラウザのタブでは提供できません。ここで動くのはシングルプレイです。"
-      }
-    ],
-    "download": {
-      "heading": "製品版を入手する",
-      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Death Rally の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Death%20Rally\" target=\"_blank\" rel=\"noopener\">Steam で Death Rally を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Death%20Rally\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Death Rally のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/death-rally/NOTICE.md\">/apps/death-rally/NOTICE.md</a></p>",
-    "licenseReason": "Death Rally のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は配信していません。",
-    "mobileHint": "十字キー：ハンドル・アクセル・ブレーキ ／ CTRL / ALT / SPACE：ゲームのアクションキー"
   },
   "jill-of-the-jungle": {
     "title": "Jill of the Jungle をブラウザで無料プレイ — エピソード1",
@@ -909,101 +730,6 @@
     "licenseReason": "Liero はフリーウェアです。付属のドキュメントに、内容を変更しないかぎり誰に対してもどんな方法でも配布してよいと明記されています。",
     "fullyFree": "作者の Joosa Riekkinen がフリーウェアとして公開したもので、ゲーム全体です。",
     "mobileHint": "十字キー：移動 ／ CTRL / ALT / SPACE：ゲームのアクションキー ／ ENTER：決定"
-  },
-  "major-stryker": {
-    "title": "Major Stryker をブラウザで無料プレイ — 完全版をオンラインで",
-    "description": "Major Stryker（1993年）をブラウザで無料プレイ。Apogee の縦スクロールシューティングで、2006年にフリーウェアとして公開されました。全3エピソード収録、ダウンロード不要です。",
-    "keywords": "major stryker 無料, major stryker ブラウザ, major stryker オンライン, major stryker ダウンロード不要, major stryker フリーウェア, dos 縦スクロールシューティング",
-    "ogTitle": "Major Stryker をブラウザで無料プレイ — 完全版をオンラインで",
-    "ogDescription": "Apogee による 1993年の縦スクロールシューティング。2006年からフリーウェアで、全3エピソードをブラウザで遊べます。",
-    "crumb": "Major Stryker をプレイ",
-    "h1": "Major Stryker をオンラインでプレイ — フリーウェアの完全版",
-    "verdict": {
-      "kind": "good",
-      "text": "動作します — フリーウェアの完全版がブラウザ内の DOSBox で動きます"
-    },
-    "intro": "<p><strong>Major Stryker</strong> は、Apogee による 1993年の縦スクロールシューティングです。3つの惑星（溶岩、極寒、砂漠）、三重スクロールの EGA 画面、進むにつれて強力な武器を手に入れていく自機が特徴です。Apogee が 2006年に<strong>フリーウェア</strong>として公開したので、ゲーム全体をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
-    "sections": [
-      {
-        "h": "動作の仕組みと動作の目安",
-        "html": "<p>Apogee 自身によるフリーウェア版パッケージを、WebAssembly 版の DOSBox の中で動かしています。サイズは 1&nbsp;MB を少し超える程度です。16色 EGA 時代のゲームで、どんな端末でもフルスピードで動きます。</p>"
-      },
-      {
-        "h": "遊び方",
-        "html": "<p>矢印キーで自機を動かします。攻撃キーなどはゲーム内の説明に表示され、メニューから変更できます。救出した科学者や破壊した標的が残す武器ポッドを拾い、なるべく被弾しないようにしましょう。被弾すると、残機より先に強化した武器を失います。</p>"
-      },
-      {
-        "h": "無料で遊べる理由",
-        "html": "<p>Apogee Software は 2006年3月14日に Major Stryker をフリーウェアとして公開しました。ここにあるパッケージは <code>strykerfw.zip</code> で、Apogee 自身のダウンロードサーバーにあったフリーウェア版です。全3エピソードを収録しています。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "Major Stryker は本当に無料ですか？",
-        "a": "はい。Apogee が 2006年3月14日にゲーム全体をフリーウェアとして公開しました。ここにあるのはその公開版で、Apogee 自身のダウンロードサーバーのアーカイブされたコピーから取得したものです。"
-      },
-      {
-        "q": "エピソードはいくつ収録されていますか？",
-        "a": "3つすべてです。Lava Planet、Arctic Planet、Desert Planet です。"
-      },
-      {
-        "q": "ハイスコアは保存されますか？",
-        "a": "はい、可能な範囲で保存されます。ゲームのセーブファイルは、次回の訪問までこのブラウザに保持されます。"
-      }
-    ],
-    "licenseNote": "<p class=\"muted small\">Apogee Software は 2006年3月14日に Major Stryker をフリーウェアとして公開しました。これは Apogee 自身のダウンロードサーバーにあったフリーウェア版パッケージです。出所：<a href=\"/apps/major-stryker/NOTICE.md\">/apps/major-stryker/NOTICE.md</a></p>",
-    "licenseReason": "Apogee Software は 2006年3月14日に Major Stryker をフリーウェアとして公開しました。これは Apogee 自身のダウンロードサーバーにあったフリーウェア版パッケージです。",
-    "fullyFree": "Apogee Software が 2006年3月14日にフリーウェアとして公開したもので、全3エピソードを含むゲーム全体です。",
-    "mobileHint": "十字キー：操縦 ／ FIRE：Ctrl ／ ALT / SPACE：ゲームのその他のキー ／ ESC：メニュー"
-  },
-  "stargunner": {
-    "title": "Stargunner をブラウザで無料プレイ — 1996年のシェアウェア版",
-    "description": "Stargunner（1996年）をブラウザで無料プレイ。Apogee による横スクロールの宇宙シューティングの公式シェアウェア版エピソードで、ステージの合間には機体のショップもあります。",
-    "keywords": "stargunner 無料, stargunner ブラウザ, stargunner オンライン, stargunner ダウンロード不要, stargunner シェアウェア, dos 横スクロールシューティング",
-    "ogTitle": "Stargunner をブラウザで無料プレイ — 1996年のシェアウェア版",
-    "ogDescription": "Apogee 最後の DOS シューティング。レンダリングされたスプライト、武器ショップ、そして大量の弾。",
-    "crumb": "Stargunner をプレイ",
-    "h1": "Stargunner をオンラインでプレイ — シェアウェア版エピソード",
-    "verdict": {
-      "kind": "good",
-      "text": "動作します — シェアウェア版エピソードがブラウザ内の DOSBox で動きます"
-    },
-    "intro": "<p><strong>Stargunner</strong> は 1996年の横スクロールシューティングで、Apogee の名義で発売された最後期のゲームのひとつです。プリレンダリングの機体、高速スクロール、そしてクレジットで武器やエンジンやサテライトを買えるショップが特徴です。公式の<strong>シェアウェア版エピソード</strong>（バージョン 1.1）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
-    "sections": [
-      {
-        "h": "動作の仕組みと動作の目安",
-        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 5&nbsp;MB です。普通のノートパソコンでなめらかに動きます。</p>"
-      },
-      {
-        "h": "遊び方",
-        "html": "<p>矢印キーで自機を動かします。攻撃キーはゲーム内の操作オプションに表示され、そこで変更もできます。敵が落とすクレジットを集めましょう。各ステージのあとで、前方・上方・下方の武器や、より速いエンジンに使えます。巨大な武器ひとつに頼るより、バランスよく強化した機体のほうがうまくいきます。</p>"
-      },
-      {
-        "h": "シェアウェア版と製品版について",
-        "html": "<p>これはシェアウェア版エピソードで、パッケージ内の LICENSE.DOC に基づいて配布されています。Apogee はのちに完全版を Windows 用インストーラーの形でフリーウェアとして公開しましたが、ここで配信しているのは DOS 用のシェアウェア版エピソードです。こちらは、ライセンスが人に渡すことを明確に認めている版です。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "ここで Stargunner を遊ぶのは合法ですか？",
-        "a": "はい。これは公式のシェアウェア版エピソードで、Apogee が LICENSE.DOC で無償配布を許諾しています。"
-      },
-      {
-        "q": "どこまで収録されていますか？",
-        "a": "ゲームの第1エピソードです。ステージの合間のショップも含まれます。"
-      },
-      {
-        "q": "進行状況は保存されますか？",
-        "a": "はい、可能な範囲で保存されます。セーブデータは、次回の訪問までこのブラウザに保持されます。"
-      }
-    ],
-    "download": {
-      "heading": "製品版を入手する",
-      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Stargunner の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Stargunner\" target=\"_blank\" rel=\"noopener\">Steam で Stargunner を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Stargunner\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Stargunner のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/stargunner/NOTICE.md\">/apps/stargunner/NOTICE.md</a></p>",
-    "licenseReason": "Stargunner のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は配信していません。",
-    "mobileHint": "十字キー：操縦 ／ FIRE：Ctrl ／ ALT / SPACE：ゲームのその他のキー ／ ESC：メニュー"
   },
   "secret-agent": {
     "title": "Secret Agent をブラウザで無料プレイ — Apogee の1992年のアクション",
@@ -1246,59 +972,6 @@
     "licenseReason": "Cyberdogs はフリーウェアです。README に「This game is freeware, feel free to spread it around.」と明記されています。",
     "fullyFree": "作者の Ronny Wester がフリーウェアとして公開したもので、ゲーム全体です。",
     "mobileHint": "十字キー：移動 ／ CTRL / ALT / SPACE：ゲームのアクションキー ／ ENTER：決定"
-  },
-  "xenophage": {
-    "title": "Xenophage をブラウザで無料プレイ — Alien Bloodsport シェアウェア版",
-    "description": "Xenophage: Alien Bloodsport（1995年）をブラウザで無料プレイ。巨大なエイリアンのファイターが戦う、Apogee の1対1対戦格闘ゲームのシェアウェア版です。",
-    "keywords": "xenophage 無料, xenophage ブラウザ, xenophage オンライン, xenophage ダウンロード不要, xenophage alien bloodsport シェアウェア, dos 格闘ゲーム",
-    "ogTitle": "Xenophage をブラウザで無料プレイ — Alien Bloodsport シェアウェア版",
-    "ogDescription": "画面いっぱいのエイリアン同士が殴り合う。Apogee による 1995年の格闘ゲームのシェアウェア版です。",
-    "crumb": "Xenophage: Alien Bloodsport をプレイ",
-    "h1": "Xenophage: Alien Bloodsport をオンラインでプレイ — シェアウェア版",
-    "verdict": {
-      "kind": "good",
-      "text": "動作します — シェアウェア版がブラウザ内の DOSBox で動きます"
-    },
-    "intro": "<p><strong>Xenophage: Alien Bloodsport</strong> は、Argo Games が開発し Apogee が発売した 1995年の1対1対戦格闘ゲームです。ファイターはエイリアンで、しかも巨大です。両者が離れると、どちらも画面に収まるようにカメラがズームアウトします。公式の<strong>シェアウェア版</strong>（1.1）をここで配信しています。プレイを押せば、ブラウザの中で起動します。</p>",
-    "sections": [
-      {
-        "h": "動作の仕組みと動作の目安",
-        "html": "<p>オリジナルの DOS 用シェアウェア版を、WebAssembly 版の DOSBox の中で動かしています。パッケージは約 6&nbsp;MB です。最近のノートパソコンやデスクトップなら快適に遊べます。負荷が高いのはズーム処理です。</p><p>タイトルが示すとおり、戦いには流血表現があります。小さなお子さま向けのゲームではありません。</p>"
-      },
-      {
-        "h": "遊び方",
-        "html": "<p>ゲームは専用のセットアップメニューから始まります。音楽を鳴らしたい場合は先にミュージックカードを選び（ここでは AdLib が使えます）、それから Start XenoPhage を選びます。そのあとファイターとモードを選択します。移動と攻撃はキーボードで行います。ゲーム内のオプションで各プレイヤーのキーを確認でき、変更もできます。2人で1台のキーボードを使って対戦することもできます。</p>"
-      },
-      {
-        "h": "シェアウェア版と製品版について",
-        "html": "<p>これはシェアウェア版で、パッケージ内の LICENSE.DOC に基づいて配布されており、使えるファイターの数は絞られています。Apogee はのちに完全版を Windows 用インストーラーの形でフリーウェアとして公開しましたが、ここで配信しているのは DOS 用のシェアウェア版です。こちらは、ライセンスが人に渡すことを明確に認めている版です。</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "ここで Xenophage を遊ぶのは合法ですか？",
-        "a": "はい。これは公式のシェアウェア版で、Apogee が LICENSE.DOC で無償配布を許諾しています。"
-      },
-      {
-        "q": "ファイターは何体収録されていますか？",
-        "a": "シェアウェア版では使えるファイターが絞られています。製品版には全員が収録されています。"
-      },
-      {
-        "q": "なぜセットアップ画面から始まるのですか？",
-        "a": "ゲーム自身のサウンド設定画面です。音楽を鳴らしたい場合は Choose Music Card で AdLib を選び、それから Start XenoPhage を選んでください。"
-      },
-      {
-        "q": "2人で遊べますか？",
-        "a": "はい。1台のキーボードで遊べます。各プレイヤーのキーはゲーム内のオプションで設定します。"
-      }
-    ],
-    "download": {
-      "heading": "製品版を入手する",
-      "html": "<div class=\"download-box\"><p><strong>シェアウェア版はここで無料で遊べます。</strong>Xenophage: Alien Bloodsport の残りの部分は、登録ユーザー向けの商用製品版として販売されていました。現在取り扱っているストアがあるか確認してみてください。</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Xenophage\" target=\"_blank\" rel=\"noopener\">Steam で Xenophage を探す →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Xenophage\" target=\"_blank\" rel=\"noopener\">GOG で探す →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Xenophage: Alien Bloodsport のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は商用製品のため、ここでは配信していません。出所：<a href=\"/apps/xenophage/NOTICE.md\">/apps/xenophage/NOTICE.md</a></p>",
-    "licenseReason": "Xenophage: Alien Bloodsport のシェアウェア版は、パッケージに同梱されている LICENSE.DOC に基づき、自由に再配布できます。製品版は配信していません。",
-    "mobileHint": "十字キー：移動とジャンプ ／ CTRL / ALT / SPACE：攻撃"
   },
   "boppin": {
     "title": "Boppin' をブラウザで無料プレイ — 1994年のパズルゲーム（シェアウェア版）",

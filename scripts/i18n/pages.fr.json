@@ -130,17 +130,9 @@
       "title": "Duke Nukem 3D",
       "desc": "Le jeu de tir d'Apogee, épisode shareware."
     },
-    "/run/descent/": {
-      "title": "Descent",
-      "desc": "Le jeu de tir à six degrés de liberté de 1995, niveaux shareware."
-    },
     "/run/terminal-velocity/": {
       "title": "Terminal Velocity",
       "desc": "Le jeu de tir aérien arcade de 3D Realms (1995), shareware."
-    },
-    "/run/shadow-warrior/": {
-      "title": "Shadow Warrior",
-      "desc": "Le jeu de tir de 3D Realms sur moteur Build (1997), épisode shareware."
     },
     "/run/tyrian/": {
       "title": "Tyrian 2000",
@@ -177,18 +169,6 @@
     "/run/cyberdogs/": {
       "title": "Cyberdogs",
       "desc": "Le jeu de tir à missions en vue de dessus de 1994, pour un ou deux joueurs, freeware."
-    },
-    "/run/death-rally/": {
-      "title": "Death Rally",
-      "desc": "Le jeu de course armé en vue de dessus de Remedy (1996), version shareware."
-    },
-    "/run/stargunner/": {
-      "title": "Stargunner",
-      "desc": "Le shoot'em up à défilement horizontal d'Apogee (1996), épisode shareware."
-    },
-    "/run/major-stryker/": {
-      "title": "Major Stryker",
-      "desc": "Le shoot'em up vertical d'Apogee (1993) : freeware, les trois épisodes."
     },
     "/run/dark-ages/": {
       "title": "Dark Ages",
@@ -673,112 +653,6 @@
     "mobileHint": "Sur mobile, utilisez les boutons FLIP / LANCER sous la table.",
     "fullyFree": "Moteur sous licence MIT ; graphismes, sons et données de la table entièrement originaux, dans le domaine public (CC0)."
   },
-  "shadow-warrior": {
-    "title": "Jouer à Shadow Warrior en ligne — le shareware de 1997, gratuit",
-    "description": "Jouez à Shadow Warrior (1997) gratuitement en ligne : l'épisode shareware officiel du jeu de tir Build de 3D Realms. Sans téléchargement, via DOSBox + WebAssembly.",
-    "keywords": "jouer à shadow warrior en ligne, shadow warrior gratuit, shadow warrior navigateur, shadow warrior 1997 shareware, jeu de tir moteur build en ligne, shadow warrior dos",
-    "ogTitle": "Jouer à Shadow Warrior en ligne — le shareware de 1997, gratuit",
-    "ogDescription": "Le jeu de tir de 3D Realms (1997) — katana, shurikens et bombes collantes — dans un onglet de navigateur.",
-    "crumb": "Jouer à Shadow Warrior",
-    "h1": "Jouer à Shadow Warrior en ligne — l'épisode shareware de 1997",
-    "verdict": {
-      "kind": "good",
-      "text": "Fonctionne — l'épisode shareware tourne via DOSBox dans votre navigateur"
-    },
-    "intro": "<p><strong>Shadow Warrior</strong> est le jeu de tir à la première personne de 3D Realms sorti en 1997, bâti sur le même moteur Build que Duke Nukem 3D et poussé plus loin : des salles superposées, des véhicules à conduire, un katana et des bombes collantes. L'<strong>épisode shareware</strong> officiel (version 1.2, quatre niveaux) est hébergé ici — cliquez sur jouer et il démarre dans votre navigateur.</p>",
-    "sections": [
-      {
-        "h": "Comment ça fonctionne et à quoi s'attendre",
-        "html": "<p>C'est la version shareware DOS d'origine qui tourne dans une compilation WebAssembly de DOSBox. Le paquet pèse environ 13&nbsp;Mo : comptez donc quelques secondes au premier chargement ; ensuite, votre navigateur le conserve. Le son et la musique Sound Blaster sont déjà configurés.</p><p>Shadow Warrior est le jeu sur moteur Build le plus lourd de ce site. Un ordinateur portable ou de bureau récent le fait tourner de façon fluide dans sa résolution native de 320×200 ; les Chromebooks et téléphones plus anciens perdront des images dans les grandes zones extérieures.</p>"
-      },
-      {
-        "h": "Comment y jouer",
-        "html": "<p>Les touches sont celles du moteur Build, que vous connaissez peut-être de Duke Nukem 3D : les flèches pour se déplacer et pivoter, <kbd>Ctrl</kbd> pour tirer, <kbd>Espace</kbd> pour ouvrir les portes et actionner les interrupteurs, <kbd>A</kbd> pour sauter et <kbd>Z</kbd> pour s'accroupir. Les touches numériques choisissent l'arme ; le katana, sur <kbd>1</kbd>, ne s'épuise jamais. Chaque touche peut être modifiée dans Options, dans le menu du jeu.</p><p>Un avertissement qui figurait déjà sur la boîte en 1997 : c'est un jeu violent, à l'humour grossier et aux stéréotypes de son époque. Il n'est pas destiné aux jeunes joueurs.</p>"
-      },
-      {
-        "h": "La version shareware — et le jeu complet",
-        "html": "<p>Ce qui tourne ici est l'épisode shareware que 3D Realms a publié pour une diffusion gratuite, en vertu du fichier LICENSE.TXT inclus dans le paquet. Cette licence ne couvre que cet épisode ; le jeu enregistré, avec ses niveaux restants, n'est pas hébergé ici.</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "Est-ce légal de jouer à Shadow Warrior ici ?",
-        "a": "Oui. Il s'agit de l'épisode shareware officiel, dont 3D Realms a autorisé la diffusion gratuite dans le fichier LICENSE.TXT fourni dans le paquet. Le jeu enregistré n'est pas hébergé."
-      },
-      {
-        "q": "Quelle partie du jeu est incluse ?",
-        "a": "L'épisode shareware : quatre niveaux, avec le katana, les shurikens, le fusil anti-émeute, les Uzi et les bombes collantes. Le second épisode du jeu complet ne fait pas partie de la version shareware."
-      },
-      {
-        "q": "Ma progression est-elle sauvegardée ?",
-        "a": "Oui, dans la mesure du possible. Les sauvegardes effectuées depuis le menu du jeu sont conservées dans ce navigateur et restaurées à votre prochaine visite. Effacer les données du site les supprime."
-      },
-      {
-        "q": "Est-ce que ça tourne sur un Chromebook scolaire ?",
-        "a": "Le jeu se charge sans rien installer, ce qui est généralement l'essentiel sur un appareil géré. La vitesse dépend de la machine : les Chromebooks récents s'en sortent, les modèles d'entrée de gamme seront saccadés."
-      }
-    ],
-    "download": {
-      "heading": "Obtenir le jeu complet",
-      "html": "<div class=\"download-box\"><p><strong>La version shareware se joue gratuitement ici.</strong> Le reste de Shadow Warrior constituait la version enregistrée, commerciale. Vérifiez si une boutique le propose aujourd'hui :</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">Trouver Shadow Warrior sur Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Shadow%20Warrior\" target=\"_blank\" rel=\"noopener\">Le trouver sur GOG →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Le shareware de Shadow Warrior est librement redistribuable en vertu du fichier LICENSE.TXT inclus dans le paquet. Le jeu enregistré est commercial et n'est pas hébergé ici. Provenance : <a href=\"/apps/shadow-warrior/NOTICE.md\">/apps/shadow-warrior/NOTICE.md</a>.</p>",
-    "licenseReason": "La version shareware de Shadow Warrior est librement redistribuable en vertu du fichier LICENSE.TXT inclus dans le paquet ; le jeu enregistré n'est pas hébergé.",
-    "mobileHint": "Croix directionnelle : se déplacer/pivoter · FIRE : tirer · OPEN : portes/interrupteurs · MENU : Échap"
-  },
-  "descent": {
-    "title": "Jouer à Descent en ligne gratuitement — le shareware de 1995",
-    "description": "Jouez gratuitement à Descent (1995) dans votre navigateur : la version shareware officielle du jeu de tir à six degrés de liberté de Parallax, sept niveaux de mine.",
-    "keywords": "jouer à descent en ligne, descent gratuit, descent navigateur, descent 1995 shareware, descent jeu dos en ligne, jeu de tir six degrés de liberté",
-    "ogTitle": "Jouer à Descent en ligne gratuitement — le shareware de 1995",
-    "ogDescription": "Pilotez un vaisseau dans des galeries de mine, dans toutes les directions : le classique de Parallax (1995), version shareware.",
-    "crumb": "Jouer à Descent",
-    "h1": "Jouer à Descent en ligne — la version shareware de 1995",
-    "verdict": {
-      "kind": "good",
-      "text": "Fonctionne — la version shareware tourne via DOSBox dans votre navigateur"
-    },
-    "intro": "<p><strong>Descent</strong> est le jeu de tir de Parallax Software sorti en 1995, celui qui vous installait dans un vaisseau au fond d'une mine et vous laissait voler dans toutes les directions : vers le haut, vers le bas, de côté et la tête en bas. La <strong>version shareware</strong> officielle (1.4, les sept premiers niveaux) est hébergée ici — cliquez sur jouer et elle démarre dans votre navigateur.</p>",
-    "sections": [
-      {
-        "h": "Comment ça fonctionne et à quoi s'attendre",
-        "html": "<p>La version shareware DOS d'origine tourne dans une compilation WebAssembly de DOSBox. Le paquet pèse moins de 3&nbsp;Mo et démarre en quelques secondes. Le jeu demande d'abord un nom de pilote ; tapez n'importe quoi et appuyez sur <kbd>Entrée</kbd>.</p><p>Descent était un jeu exigeant en 1995, et il en demande encore davantage à l'émulateur qu'un titre en 2D. Un ordinateur portable ou de bureau de ces dernières années le fait tourner de façon fluide.</p>"
-      },
-      {
-        "h": "Comment y jouer",
-        "html": "<p>Votre vaisseau se déplace sur six axes, ce qui demande quelques minutes d'adaptation. Avec la configuration clavier par défaut, <kbd>A</kbd> et <kbd>Z</kbd> donnent la poussée avant et arrière, les flèches font pivoter et incliner le vaisseau, <kbd>Ctrl</kbd> tire les lasers et <kbd>Espace</kbd> les missiles. <kbd>Tab</kbd> ouvre la carte automatique en 3D, dont vous aurez besoin. Chaque niveau se termine de la même façon : détruisez le réacteur, puis trouvez la sortie avant que la mine n'explose.</p><p>Toutes les touches peuvent être réattribuées dans Options → Customize.</p>"
-      },
-      {
-        "h": "La version shareware — et le jeu complet",
-        "html": "<p>Le README du jeu le dit mieux que personne : “This game may be freely distributed.” (« Ce jeu peut être librement distribué. ») Cela vaut pour cette version shareware et ses sept niveaux. Le jeu enregistré compte 30 niveaux et n'est pas hébergé ici.</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "Est-ce légal de jouer à Descent ici ?",
-        "a": "Oui. Il s'agit de la version shareware, dont le README précise qu'elle peut être librement distribuée. Le jeu enregistré de 30 niveaux n'est pas hébergé."
-      },
-      {
-        "q": "Combien de niveaux sont inclus ?",
-        "a": "Sept : la version shareware complète, version 1.4."
-      },
-      {
-        "q": "Puis-je utiliser une souris ou un joystick ?",
-        "a": "Le clavier fonctionne d'emblée, et c'est ainsi que la plupart des gens jouaient au shareware. Le contrôle à la souris peut être activé dans le menu Options du jeu, mais un onglet de navigateur ne transmet pas de joystick à DOS."
-      },
-      {
-        "q": "Ma progression est-elle sauvegardée ?",
-        "a": "Oui, dans la mesure du possible. Votre pilote et vos parties sauvegardées sont conservés dans ce navigateur et restaurés à la prochaine visite."
-      }
-    ],
-    "download": {
-      "heading": "Obtenir le jeu complet",
-      "html": "<div class=\"download-box\"><p><strong>La version shareware se joue gratuitement ici.</strong> Le reste de Descent constituait la version enregistrée, commerciale. Vérifiez si une boutique le propose aujourd'hui :</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Descent\" target=\"_blank\" rel=\"noopener\">Trouver Descent sur Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Descent\" target=\"_blank\" rel=\"noopener\">Le trouver sur GOG →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Le shareware de Descent est librement redistribuable en vertu du fichier README.TXT inclus dans le paquet. Le jeu enregistré est commercial et n'est pas hébergé ici. Provenance : <a href=\"/apps/descent/NOTICE.md\">/apps/descent/NOTICE.md</a>.</p>",
-    "licenseReason": "La version shareware de Descent est librement redistribuable en vertu du fichier README.TXT inclus dans le paquet ; le jeu enregistré n'est pas hébergé.",
-    "mobileHint": "Croix directionnelle : pivoter/incliner · FWD / BACK : poussée · FIRE : lasers · MISSILE : arme secondaire"
-  },
   "epic-pinball": {
     "title": "Jouer à Epic Pinball en ligne — la table shareware de 1993, gratuit",
     "description": "Jouez gratuitement à Epic Pinball (1993) dans votre navigateur : la version shareware officielle avec la table Android. Flipper DOS rapide, sans téléchargement.",
@@ -831,59 +705,6 @@
     "licenseNote": "<p class=\"muted small\">Le shareware d'Epic Pinball est librement redistribuable en vertu des fichiers LICENSE.DOC et VENDOR.DOC inclus dans le paquet. Le jeu enregistré est commercial et n'est pas hébergé ici. Provenance : <a href=\"/apps/epic-pinball/NOTICE.md\">/apps/epic-pinball/NOTICE.md</a>.</p>",
     "licenseReason": "La version shareware d'Epic Pinball est librement redistribuable en vertu des fichiers LICENSE.DOC et VENDOR.DOC inclus dans le paquet ; le jeu enregistré n'est pas hébergé.",
     "mobileHint": "L / R : flippers · ▼ : tirer puis relâcher le lance-bille · TILT : secouer la table"
-  },
-  "death-rally": {
-    "title": "Jouer à Death Rally en ligne — le shareware de 1996, gratuit",
-    "description": "Jouez gratuitement à Death Rally (1996) dans votre navigateur : la version shareware officielle du jeu de course armé de Remedy, en vue de dessus. Sans téléchargement.",
-    "keywords": "jouer à death rally en ligne, death rally gratuit, death rally navigateur, death rally 1996 shareware, jeu de course vue de dessus en ligne, remedy death rally dos",
-    "ogTitle": "Jouer à Death Rally en ligne — le shareware de 1996, gratuit",
-    "ogDescription": "Le premier jeu de Remedy : de la course en vue de dessus avec mitrailleuses, mines et une boutique d'améliorations louche.",
-    "crumb": "Jouer à Death Rally",
-    "h1": "Jouer à Death Rally en ligne — la version shareware de 1996",
-    "verdict": {
-      "kind": "good",
-      "text": "Fonctionne — la version shareware tourne via DOSBox dans votre navigateur"
-    },
-    "intro": "<p><strong>Death Rally</strong> est le jeu de course armé en vue de dessus de 1996, premier jeu de Remedy Entertainment, édité par Apogee. Vous débutez avec une Vagabond cabossée, vous courez pour les primes et vous les dépensez en moteurs, pneus, blindage et autres choses moins sportives. La <strong>version shareware</strong> officielle (1.1) est hébergée ici — cliquez sur jouer et elle démarre dans votre navigateur.</p>",
-    "sections": [
-      {
-        "h": "Comment ça fonctionne et à quoi s'attendre",
-        "html": "<p>La version shareware DOS d'origine tourne dans une compilation WebAssembly de DOSBox. Le paquet pèse environ 7&nbsp;Mo. Le jeu s'ouvre sur le menu principal en VGA haute résolution ; choisissez Start Racing et sélectionnez un pilote.</p><p>Les courses sont fluides sur un ordinateur portable ordinaire. Les menus sont en 640×480 : ils paraissent donc plus nets que ceux de la plupart des jeux DOS de l'époque.</p>"
-      },
-      {
-        "h": "Comment y jouer",
-        "html": "<p>Dirigez la voiture avec les touches fléchées : haut accélère, bas freine. Les autres touches — turbo, mitrailleuse, mines — sont affichées et modifiables dans Configure, dans le menu principal. Au début, inscrivez-vous à la course facile, terminez dans les trois premiers et investissez l'argent dans le moteur avant toute autre chose.</p><p>Entre les courses, la boutique vend réparations et améliorations, et l'usurier comme le saboteur proposent des raccourcis qui coûtent plus cher qu'il n'y paraît d'abord.</p>"
-      },
-      {
-        "h": "La version shareware — et le jeu complet",
-        "html": "<p>Il s'agit de la version shareware qu'Apogee a publiée en vertu du fichier LICENSE.DOC du paquet, qui autorise à la partager gratuitement. Elle propose un ensemble réduit de circuits et de voitures. Le jeu enregistré n'est pas hébergé ici.</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "Est-ce légal de jouer à Death Rally ici ?",
-        "a": "Oui. Il s'agit de la version shareware officielle, dont Apogee autorise la diffusion gratuite dans son fichier LICENSE.DOC. Le jeu enregistré n'est pas hébergé."
-      },
-      {
-        "q": "Que manque-t-il par rapport au jeu complet ?",
-        "a": "Le shareware compte moins de circuits et de voitures que le jeu enregistré. La course, les armes, la boutique et le classement de carrière fonctionnent tous."
-      },
-      {
-        "q": "Ma carrière est-elle sauvegardée ?",
-        "a": "Oui, dans la mesure du possible. Le jeu enregistre votre pilote entre les courses, et cette page conserve ces fichiers dans votre navigateur pour votre prochaine visite."
-      },
-      {
-        "q": "Peut-on jouer à deux ?",
-        "a": "L'option multijoueur du menu nécessite un réseau DOS, qu'un onglet de navigateur ne peut pas fournir. Le mode solo est celui qui fonctionne ici."
-      }
-    ],
-    "download": {
-      "heading": "Obtenir le jeu complet",
-      "html": "<div class=\"download-box\"><p><strong>La version shareware se joue gratuitement ici.</strong> Le reste de Death Rally constituait la version enregistrée, commerciale. Vérifiez si une boutique le propose aujourd'hui :</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Death%20Rally\" target=\"_blank\" rel=\"noopener\">Trouver Death Rally sur Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Death%20Rally\" target=\"_blank\" rel=\"noopener\">Le trouver sur GOG →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Le shareware de Death Rally est librement redistribuable en vertu du fichier LICENSE.DOC inclus dans le paquet. Le jeu enregistré est commercial et n'est pas hébergé ici. Provenance : <a href=\"/apps/death-rally/NOTICE.md\">/apps/death-rally/NOTICE.md</a>.</p>",
-    "licenseReason": "La version shareware de Death Rally est librement redistribuable en vertu du fichier LICENSE.DOC inclus dans le paquet ; le jeu enregistré n'est pas hébergé.",
-    "mobileHint": "Croix directionnelle : diriger, accélérer, freiner · CTRL / ALT / SPACE : les touches d'action du jeu"
   },
   "jill-of-the-jungle": {
     "title": "Jouer à Jill of the Jungle en ligne — l'épisode 1 gratuit",
@@ -1032,101 +853,6 @@
     "licenseReason": "Liero est un freeware : sa documentation indique qu'il peut être distribué à n'importe qui et de n'importe quelle manière, à condition que son contenu ne soit pas modifié.",
     "fullyFree": "Publié en freeware par son auteur, Joosa Riekkinen : le jeu complet.",
     "mobileHint": "Croix directionnelle : se déplacer · CTRL / ALT / SPACE : les touches d'action du jeu · ENTER : valider"
-  },
-  "major-stryker": {
-    "title": "Jouer à Major Stryker en ligne — le jeu complet, gratuit",
-    "description": "Jouez gratuitement à Major Stryker (1993) dans votre navigateur : le shoot'em up vertical d'Apogee, passé en freeware en 2006. Les trois épisodes, sans téléchargement.",
-    "keywords": "jouer à major stryker en ligne, major stryker gratuit, major stryker navigateur, shoot em up apogee, shoot em up vertical dos en ligne, major stryker freeware",
-    "ogTitle": "Jouer à Major Stryker en ligne — le jeu complet, gratuit",
-    "ogDescription": "Le shoot'em up vertical d'Apogee (1993), freeware depuis 2006 — les trois épisodes dans votre navigateur.",
-    "crumb": "Jouer à Major Stryker",
-    "h1": "Jouer à Major Stryker en ligne — le jeu freeware complet",
-    "verdict": {
-      "kind": "good",
-      "text": "Fonctionne — le jeu freeware complet tourne via DOSBox dans votre navigateur"
-    },
-    "intro": "<p><strong>Major Stryker</strong> est le shoot'em up vertical d'Apogee sorti en 1993 : trois planètes (lave, glace et désert), un défilement EGA à triple parallaxe et un vaisseau qui récupère des canons de plus en plus gros au fil du jeu. Apogee l'a publié en <strong>freeware</strong> en 2006 : le jeu complet est donc hébergé ici — cliquez sur jouer et il démarre dans votre navigateur.</p>",
-    "sections": [
-      {
-        "h": "Comment ça fonctionne et à quoi s'attendre",
-        "html": "<p>Le paquet freeware d'Apogee lui-même tourne dans une compilation WebAssembly de DOSBox. Il pèse un peu plus de 1&nbsp;Mo. Le jeu date de l'époque de l'EGA 16 couleurs et tourne à pleine vitesse sur n'importe quel appareil.</p>"
-      },
-      {
-        "h": "Comment y jouer",
-        "html": "<p>Les touches fléchées déplacent votre vaisseau. La touche de tir et les autres sont indiquées dans les instructions du jeu et peuvent être modifiées depuis son menu. Ramassez les modules d'armement que laissent derrière eux les scientifiques libérés et les cibles détruites, et tâchez de ne pas vous faire toucher : un impact vous coûte votre canon amélioré avant de vous coûter une vie.</p>"
-      },
-      {
-        "h": "Pourquoi c'est gratuit",
-        "html": "<p>Apogee Software a publié Major Stryker en freeware le 14 mars 2006. Le paquet proposé ici est <code>strykerfw.zip</code>, la version freeware issue du serveur de téléchargement d'Apogee, avec les trois épisodes.</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "Major Stryker est-il vraiment gratuit ?",
-        "a": "Oui. Apogee a publié le jeu complet en freeware le 14 mars 2006. C'est cette version, tirée d'une copie archivée du serveur de téléchargement d'Apogee."
-      },
-      {
-        "q": "Combien d'épisodes sont inclus ?",
-        "a": "Les trois : Lava Planet, Arctic Planet et Desert Planet."
-      },
-      {
-        "q": "Mon meilleur score est-il sauvegardé ?",
-        "a": "Oui, dans la mesure du possible. Les fichiers de sauvegarde du jeu sont conservés dans ce navigateur d'une visite à l'autre."
-      }
-    ],
-    "licenseNote": "<p class=\"muted small\">Apogee Software a publié Major Stryker en freeware le 14 mars 2006 ; il s'agit du paquet freeware issu du serveur de téléchargement d'Apogee. Provenance : <a href=\"/apps/major-stryker/NOTICE.md\">/apps/major-stryker/NOTICE.md</a>.</p>",
-    "licenseReason": "Apogee Software a publié Major Stryker en freeware le 14 mars 2006 ; il s'agit du paquet freeware issu du serveur de téléchargement d'Apogee.",
-    "fullyFree": "Publié en freeware par Apogee Software le 14 mars 2006 : le jeu complet, les trois épisodes.",
-    "mobileHint": "Croix directionnelle : piloter · FIRE : Ctrl · ALT / SPACE : les autres touches du jeu · ESC : menu"
-  },
-  "stargunner": {
-    "title": "Jouer à Stargunner en ligne — le shareware de 1996, gratuit",
-    "description": "Jouez à Stargunner (1996) gratuitement en ligne : l'épisode shareware officiel du shoot'em up spatial à défilement horizontal d'Apogee, avec boutique entre les niveaux.",
-    "keywords": "jouer à stargunner en ligne, stargunner gratuit, stargunner navigateur, apogee stargunner shareware, shoot em up horizontal dos en ligne, shoot em up navigateur",
-    "ogTitle": "Jouer à Stargunner en ligne — le shareware de 1996, gratuit",
-    "ogDescription": "Le dernier shoot'em up DOS d'Apogee : des sprites précalculés, une boutique d'armes et beaucoup de projectiles.",
-    "crumb": "Jouer à Stargunner",
-    "h1": "Jouer à Stargunner en ligne — l'épisode shareware",
-    "verdict": {
-      "kind": "good",
-      "text": "Fonctionne — l'épisode shareware tourne via DOSBox dans votre navigateur"
-    },
-    "intro": "<p><strong>Stargunner</strong> est le shoot'em up à défilement horizontal de 1996 qui fut l'un des derniers jeux publiés sous le nom d'Apogee : des vaisseaux précalculés, un défilement rapide et une boutique où les crédits achètent armes, moteurs et satellites. L'<strong>épisode shareware</strong> officiel (version 1.1) est hébergé ici — cliquez sur jouer et il démarre dans votre navigateur.</p>",
-    "sections": [
-      {
-        "h": "Comment ça fonctionne et à quoi s'attendre",
-        "html": "<p>La version shareware DOS d'origine tourne dans une compilation WebAssembly de DOSBox. Le paquet pèse environ 5&nbsp;Mo. Le jeu est fluide sur un ordinateur portable ordinaire.</p>"
-      },
-      {
-        "h": "Comment y jouer",
-        "html": "<p>Les touches fléchées déplacent le vaisseau. Les touches de tir sont indiquées dans les options de commandes du jeu, où elles peuvent être modifiées. Ramassez les crédits que lâchent les ennemis : après chaque niveau, vous pouvez les dépenser en armes avant, supérieures et inférieures, et en un moteur plus rapide. Un vaisseau équilibré s'en sort mieux qu'un seul canon énorme.</p>"
-      },
-      {
-        "h": "La version shareware — et le jeu complet",
-        "html": "<p>Il s'agit de l'épisode shareware, distribué en vertu du fichier LICENSE.DOC du paquet. Apogee a par la suite publié le jeu complet en freeware, sous la forme d'un installeur Windows ; la version hébergée ici est l'épisode shareware DOS, celui dont la licence autorise clairement la rediffusion.</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "Est-ce légal de jouer à Stargunner ici ?",
-        "a": "Oui. Il s'agit de l'épisode shareware officiel, dont Apogee autorise la diffusion gratuite dans son fichier LICENSE.DOC."
-      },
-      {
-        "q": "Quelle partie du jeu est incluse ?",
-        "a": "Le premier épisode du jeu, y compris la boutique entre les niveaux."
-      },
-      {
-        "q": "Ma progression est-elle sauvegardée ?",
-        "a": "Oui, dans la mesure du possible. Les parties sauvegardées sont conservées dans ce navigateur d'une visite à l'autre."
-      }
-    ],
-    "download": {
-      "heading": "Obtenir le jeu complet",
-      "html": "<div class=\"download-box\"><p><strong>La version shareware se joue gratuitement ici.</strong> Le reste de Stargunner constituait la version enregistrée, commerciale. Vérifiez si une boutique le propose aujourd'hui :</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Stargunner\" target=\"_blank\" rel=\"noopener\">Trouver Stargunner sur Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Stargunner\" target=\"_blank\" rel=\"noopener\">Le trouver sur GOG →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Le shareware de Stargunner est librement redistribuable en vertu du fichier LICENSE.DOC inclus dans le paquet. Le jeu enregistré est commercial et n'est pas hébergé ici. Provenance : <a href=\"/apps/stargunner/NOTICE.md\">/apps/stargunner/NOTICE.md</a>.</p>",
-    "licenseReason": "La version shareware de Stargunner est librement redistribuable en vertu du fichier LICENSE.DOC inclus dans le paquet ; le jeu enregistré n'est pas hébergé.",
-    "mobileHint": "Croix directionnelle : piloter · FIRE : Ctrl · ALT / SPACE : les autres touches du jeu · ESC : menu"
   },
   "secret-agent": {
     "title": "Jouer à Secret Agent en ligne — le jeu de plateforme d'Apogee (1992)",
@@ -1369,59 +1095,6 @@
     "licenseReason": "Cyberdogs est un freeware : son README indique “This game is freeware, feel free to spread it around.” (« Ce jeu est un freeware, n'hésitez pas à le diffuser. »)",
     "fullyFree": "Publié en freeware par son auteur, Ronny Wester : le jeu complet.",
     "mobileHint": "Croix directionnelle : se déplacer · CTRL / ALT / SPACE : les touches d'action du jeu · ENTER : valider"
-  },
-  "xenophage": {
-    "title": "Jouer à Xenophage en ligne — le shareware Alien Bloodsport, gratuit",
-    "description": "Jouez à Xenophage: Alien Bloodsport (1995) gratuitement en ligne : la version shareware du jeu de combat en un contre un d'Apogee, aux immenses combattants aliens.",
-    "keywords": "jouer à xenophage en ligne, xenophage alien bloodsport, xenophage navigateur, jeu de combat apogee, jeu de combat dos en ligne, xenophage shareware",
-    "ogTitle": "Jouer à Xenophage en ligne — le shareware Alien Bloodsport, gratuit",
-    "ogDescription": "Des aliens qui remplissent l'écran et échangent des coups : le jeu de combat d'Apogee (1995), version shareware.",
-    "crumb": "Jouer à Xenophage: Alien Bloodsport",
-    "h1": "Jouer à Xenophage: Alien Bloodsport en ligne — shareware",
-    "verdict": {
-      "kind": "good",
-      "text": "Fonctionne — la version shareware tourne via DOSBox dans votre navigateur"
-    },
-    "intro": "<p><strong>Xenophage: Alien Bloodsport</strong> est le jeu de combat en un contre un de 1995 signé Argo Games et édité par Apogee. Ses combattants sont des aliens, et ils sont énormes : la caméra recule à mesure qu'ils s'éloignent l'un de l'autre afin que tous deux restent à l'écran. La <strong>version shareware</strong> officielle (1.1) est hébergée ici — cliquez sur jouer et elle démarre dans votre navigateur.</p>",
-    "sections": [
-      {
-        "h": "Comment ça fonctionne et à quoi s'attendre",
-        "html": "<p>La version shareware DOS d'origine tourne dans une compilation WebAssembly de DOSBox. Le paquet pèse environ 6&nbsp;Mo. Le jeu tourne bien sur un ordinateur portable ou de bureau récent ; c'est le zoom qui est gourmand.</p><p>Comme le titre le laisse entendre, les combats sont sanglants. Ce n'est pas un jeu pour les jeunes joueurs.</p>"
-      },
-      {
-        "h": "Comment y jouer",
-        "html": "<p>Le jeu s'ouvre sur son propre menu de configuration. Choisissez d'abord une carte musicale si vous voulez de la musique (AdLib fonctionne ici), puis sélectionnez Start XenoPhage. Ensuite, choisissez un combattant et un mode. Les déplacements et les attaques se font au clavier ; les options du jeu affichent les touches de chaque joueur et permettent de les modifier. Deux joueurs peuvent partager un clavier pour s'affronter.</p>"
-      },
-      {
-        "h": "La version shareware — et le jeu complet",
-        "html": "<p>Il s'agit de la version shareware, distribuée en vertu du fichier LICENSE.DOC du paquet, avec un nombre réduit de combattants. Apogee a par la suite publié le jeu complet en freeware, sous la forme d'un installeur Windows ; la version hébergée ici est le shareware DOS, dont la licence autorise clairement la rediffusion.</p>"
-      }
-    ],
-    "faq": [
-      {
-        "q": "Est-ce légal de jouer à Xenophage ici ?",
-        "a": "Oui. Il s'agit de la version shareware officielle, dont Apogee autorise la diffusion gratuite dans son fichier LICENSE.DOC."
-      },
-      {
-        "q": "Combien de combattants sont inclus ?",
-        "a": "La version shareware propose un effectif réduit. Le jeu enregistré les contient tous."
-      },
-      {
-        "q": "Pourquoi le jeu démarre-t-il sur un écran de configuration ?",
-        "a": "C'est la configuration sonore propre au jeu. Choisissez AdLib sous Choose Music Card si vous voulez de la musique, puis sélectionnez Start XenoPhage."
-      },
-      {
-        "q": "Peut-on jouer à deux ?",
-        "a": "Oui, sur un seul clavier. Les touches de chaque joueur se règlent dans les options du jeu."
-      }
-    ],
-    "download": {
-      "heading": "Obtenir le jeu complet",
-      "html": "<div class=\"download-box\"><p><strong>La version shareware se joue gratuitement ici.</strong> Le reste de Xenophage: Alien Bloodsport constituait la version enregistrée, commerciale. Vérifiez si une boutique le propose aujourd'hui :</p><p><a class=\"button\" href=\"https://store.steampowered.com/search/?term=Xenophage\" target=\"_blank\" rel=\"noopener\">Trouver Xenophage sur Steam →</a> <a class=\"button\" href=\"https://www.gog.com/en/games?query=Xenophage\" target=\"_blank\" rel=\"noopener\">Le trouver sur GOG →</a></p></div>"
-    },
-    "licenseNote": "<p class=\"muted small\">Le shareware de Xenophage: Alien Bloodsport est librement redistribuable en vertu du fichier LICENSE.DOC inclus dans le paquet. Le jeu enregistré est commercial et n'est pas hébergé ici. Provenance : <a href=\"/apps/xenophage/NOTICE.md\">/apps/xenophage/NOTICE.md</a>.</p>",
-    "licenseReason": "La version shareware de Xenophage: Alien Bloodsport est librement redistribuable en vertu du fichier LICENSE.DOC inclus dans le paquet ; le jeu enregistré n'est pas hébergé.",
-    "mobileHint": "Croix directionnelle : se déplacer et sauter · CTRL / ALT / SPACE : attaques"
   },
   "boppin": {
     "title": "Jouer à Boppin' en ligne — le puzzle shareware de 1994, gratuit",
