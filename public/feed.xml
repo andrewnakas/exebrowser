@@ -120,17 +120,24 @@
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>How to Check if an .exe Is Safe: 8 Checks Before You Run It</title>
+      <link>https://exebrowser.com/blog/check-if-an-exe-is-safe/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/check-if-an-exe-is-safe/</guid>
+      <description>Check an .exe before you run it: its source, digital signature, imports, packing, a VirusTotal hash lookup and a sandbox, and what each check proves.</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>What Is an .exe File? Meaning, How to Open It, Is It Safe?</title>
+      <link>https://exebrowser.com/blog/what-is-an-exe-file/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/what-is-an-exe-file/</guid>
+      <description>An .exe file is a Windows program in Microsoft&apos;s PE format. What&apos;s inside one, how to open it on a Mac, Android or Chromebook, and when it&apos;s safe to run.</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>How to Open an EXE File on Android: 4 Ways That Work</title>
       <link>https://exebrowser.com/blog/open-exe-file-on-android/</link>
       <guid isPermaLink="true">https://exebrowser.com/blog/open-exe-file-on-android/</guid>
       <description>Four ways to open or run a Windows .exe on an Android phone in 2026: a browser tab with nothing to install, Winlator, unpacking the file, or remote desktop. What each one can and cannot do.</description>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How to Check if an .exe Is Safe Before You Run It</title>
-      <link>https://exebrowser.com/blog/check-if-an-exe-is-safe/</link>
-      <guid isPermaLink="true">https://exebrowser.com/blog/check-if-an-exe-is-safe/</guid>
-      <description>What you can learn about a Windows executable without running it — signature, publisher, imports, packing, entropy — what each thing is actually worth, and the limits of every method including scanners.</description>
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -148,13 +155,6 @@
       <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Is an EXE File? What&apos;s Inside One, and Is It Safe?</title>
-      <link>https://exebrowser.com/blog/what-is-an-exe-file/</link>
-      <guid isPermaLink="true">https://exebrowser.com/blog/what-is-an-exe-file/</guid>
-      <description>What a Windows .exe actually contains, how to open one on Windows, Mac, Linux, Chromebook and phones, how to look inside without running it, and when not to run it at all.</description>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Why Won&apos;t My Old Program Run on Windows 11?</title>
       <link>https://exebrowser.com/blog/why-old-programs-wont-run-on-windows-11/</link>
       <guid isPermaLink="true">https://exebrowser.com/blog/why-old-programs-wont-run-on-windows-11/</guid>
@@ -162,17 +162,17 @@
       <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Extract Files From setup.exe or .msi Without Installing</title>
+      <link>https://exebrowser.com/blog/extract-files-from-an-old-installer/</link>
+      <guid isPermaLink="true">https://exebrowser.com/blog/extract-files-from-an-old-installer/</guid>
+      <description>Unpack an installer without running it: 7-Zip opens most setup.exe files, and innoextract, cabextract and msiextract handle Inno Setup, .cab and .msi.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Open Cadet: Space Cadet Pinball, Fully Open Source</title>
       <link>https://exebrowser.com/blog/open-cadet-open-source-space-cadet/</link>
       <guid isPermaLink="true">https://exebrowser.com/blog/open-cadet-open-source-space-cadet/</guid>
       <description>3D Pinball Space Cadet needs a proprietary PINBALL.DAT to run. I rebuilt that data file from scratch — original art, 47 synthesized sounds, CC0 public domain — so the open-source engine finally runs with zero Microsoft files. Here&apos;s how.</description>
-      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How to Extract Files From an Installer, Without Installing</title>
-      <link>https://exebrowser.com/blog/extract-files-from-an-old-installer/</link>
-      <guid isPermaLink="true">https://exebrowser.com/blog/extract-files-from-an-old-installer/</guid>
-      <description>Old setup.exe won&apos;t run, but you just need the files inside? Here&apos;s how to unpack a legacy Windows installer — with 7-Zip, innoextract, cabextract, msiextract, or a browser sandbox — without a full install.</description>
       <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>

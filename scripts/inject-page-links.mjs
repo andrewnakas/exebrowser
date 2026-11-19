@@ -325,6 +325,13 @@ for (const { abs, label } of htmlFiles(ROOT)) {
       html = html.replace(/<meta name="description" content="[^"]*"\s*\/?>/, newDesc);
       metaSynced.add(slug);
     }
+    // og:title follows <title>, as it does on generated pages. Left alone it
+    // kept each page's first title long after the real one was rewritten.
+    const newOg = `<meta property="og:title" content="${t}" />`;
+    if (!html.includes(newOg)) {
+      html = html.replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, newOg);
+      metaSynced.add(slug);
+    }
   }
 
   // ── 5. EMBED OFFER on the games we wrote ourselves ──────────────────────

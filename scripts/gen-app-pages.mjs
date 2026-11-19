@@ -21,7 +21,11 @@
 //   title        <title> — lead with the transactional query ("Play X Online…")
 //   description  meta description (110–160 chars, keyword-rich)
 //   keywords     comma list (legacy, low weight, kept for parity)
-//   ogTitle, ogDescription   social card text
+//   ogDescription  social card text
+//   ogTitle      NOT RENDERED. og:title is the <title>, always: the two drifted
+//                on 131 of 205 pages, and social cards and AI answers that
+//                quote og:title were showing pre-rewrite text. Kept in the
+//                data only so old entries and translations still validate.
 //   crumb        breadcrumb + last-segment label (e.g. "Play DOOM")
 //   appName      short label the Play button uses (e.g. "DOOM")
 //   appType      "game" → VideoGame schema | "app" → SoftwareApplication schema
@@ -799,7 +803,7 @@ const render = (p, L = EN) => `<!DOCTYPE html>
 <link rel="canonical" href="${SITE}${L.prefix}/run/${p.slug}/" />${hreflangHtml(`/run/${p.slug}/`, p.slug)}
 <meta property="og:type" content="article" />
 <meta property="og:url" content="${SITE}${L.prefix}/run/${p.slug}/" />
-<meta property="og:title" content="${esc(p.ogTitle)}" />
+<meta property="og:title" content="${esc(p.title)}" />
 <meta property="og:description" content="${esc(p.ogDescription)}" />
 <meta property="og:image" content="${ogImage(p)}" />
 <meta name="twitter:card" content="summary_large_image" />

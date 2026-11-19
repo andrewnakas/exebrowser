@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>How to Extract Files From an Installer, Without Installing</title>
-<meta name="description" content="Old setup.exe won't run, but you just need the files inside? Here's how to unpack a legacy Windows installer — with 7-Zip, innoextract, cabextract, msiextract, or a browser sandbox — without a full install." />
+<title>Extract Files From setup.exe or .msi Without Installing</title>
+<meta name="description" content="Unpack an installer without running it: 7-Zip opens most setup.exe files, and innoextract, cabextract and msiextract handle Inno Setup, .cab and .msi." />
 <meta name="keywords" content="extract files from installer, unpack setup.exe, extract exe without installing, innoextract, cabextract, msiextract, open installer with 7-zip" />
 <link rel="canonical" href="https://exebrowser.com/blog/extract-files-from-an-old-installer/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/blog/extract-files-from-an-old-installer/" />
-<meta property="og:title" content="How to Extract Files From an Old Installer (Without Installing It)" />
+<meta property="og:title" content="Extract Files From setup.exe or .msi Without Installing" />
 <meta property="og:description" content="Unpack a legacy Windows installer with 7-Zip, innoextract, cabextract, msiextract, or a browser sandbox — no full install required." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -33,14 +33,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How to Extract Files From an Old Installer (Without Installing It)",
+  "headline": "Extract Files From setup.exe or .msi Without Installing",
   "description": "Practical ways to unpack a legacy Windows installer — 7-Zip, innoextract, cabextract, msiextract, and a browser sandbox — when the setup program won't run but you only need the files inside.",
   "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" },
   "publisher": { "@type": "Organization", "name": "ExeBrowser" },
   "mainEntityOfPage": "https://exebrowser.com/blog/extract-files-from-an-old-installer/",
   "image": "https://exebrowser.com/og.png",
   "datePublished": "2026-07-01",
-  "dateModified": "2026-07-01"
+  "dateModified": "2026-11-19"
 }
 </script>
 <script type="application/ld+json">
@@ -78,13 +78,14 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Extract files from an old installer</nav>
   <section class="card">
     <h2>How to extract files from an old installer (without installing it)</h2>
-    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published July 1, 2026 · Updated July 1, 2026 · ~9 minute read</p>
+    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published July 1, 2026 · Updated November 19, 2026 · ~9 minute read</p>
 
     <figure class="app-shot">
       <img src="/run/7-zip/screenshot.png" width="798" height="599" loading="lazy" alt="The 7-Zip File Manager running in a browser tab, ready to open an installer as an archive" />
       <figcaption>7-Zip's File Manager — the fastest way to peek inside an old installer. It runs right here in the browser.</figcaption>
     </figure>
 
+    <p><strong>The short answer:</strong> an installer is almost always an archive with a small program wrapped around it, so you can get the files out without installing anything. Open the <code>setup.exe</code> in 7-Zip first (right-click, 7-Zip → Open archive). If 7-Zip only shows a stub, use the tool for that format: innoextract for Inno Setup installers, cabextract for <code>.cab</code> files, and msiextract or lessmsi for <code>.msi</code> packages. When none of those work, run the installer in a browser sandbox and take the files it writes.</p>
     <p>You've got an old <code>setup.exe</code> — a driver, a font pack, a decade-old utility — and you don't actually want to <em>install</em> it. You want the files that live inside it: a DLL, an icon, a handful of data files, or just the real program so you can run it without the setup wizard. On a modern machine the installer may refuse to run at all, or demand admin rights, or target a Windows version you no longer have. Good news: an installer is almost always just an archive with a wrapper around it, and there are several ways to reach inside without letting it install anything.</p>
     <p>This guide walks through the options roughly in order of "try this first," and ends with the one that's actually running on this site: a browser sandbox that runs the installer, then hands you back the files it produced.</p>
 
