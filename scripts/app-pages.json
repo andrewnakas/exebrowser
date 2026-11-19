@@ -1926,8 +1926,8 @@
   },
   {
     "slug": "spider-solitaire",
-    "title": "Spider Solitaire in Your Browser — Load Your Own Copy",
-    "description": "The XP-era spider.exe runs at full speed on Wine + WebAssembly — but you supply the copy from your own Windows install; we don't host Microsoft's game files.",
+    "title": "Run spider.exe Online: Your Own Spider Solitaire Copy",
+    "description": "Load spider.exe from your own Windows install and it runs in a browser tab on Wine + WebAssembly. No copy? Play our free Spider Solitaire instantly.",
     "keywords": "play spider solitaire online, spider solitaire in browser, windows spider solitaire, run spider.exe browser, classic spider solitaire no download, spider solitaire wine",
     "ogTitle": "Spider Solitaire in Your Browser — Load Your Own Copy (Wine Guide)",
     "ogDescription": "The XP-era Spider Solitaire deals at full speed in a browser tab on Wine + WebAssembly. It's Microsoft software, so you copy spider.exe and cards.dll from your own install and load them here.",
@@ -1951,7 +1951,7 @@
     "appUrl": "",
     "licenseReason": "Spider Solitaire is proprietary Microsoft software bundled with Windows, so it is not free to redistribute — users must supply a copy from a Windows install they own.",
     "licenseNote": "<div class=\"warn-box\"><h3 style=\"margin-top:0;\">Bring your own copy</h3><p>Spider Solitaire is <strong>proprietary Microsoft software</strong> that shipped bundled with Windows (from the Plus! pack for Windows 98 through Windows 7). It is <strong>not</strong> free to redistribute, so ExeBrowser does not host the game files. To play it here you need a copy you already own.</p><p>If you have a Windows XP, Me, or 98 PC (or a virtual machine), the classic build lives at <code>C:\\WINDOWS\\system32\\spider.exe</code> alongside <code>cards.dll</code>. Copy those out of your own licensed install and load the folder above. Please don't download cracked or \"abandonware\" copies from unofficial sites — that's a Microsoft license, not ours to give away.</p></div>",
-    "intro": "<p><strong>Spider Solitaire</strong> — the eight-suit patience game that ate untold hours of office life from Windows XP onward — runs cleanly in a browser tab, with one condition: it's Microsoft's software, not free to redistribute, so we can't hand you the game files — you load your own copy below. It's a tiny, classic Win32 program, which makes it a great fit for ExeBrowser: the XP-era <code>spider.exe</code> draws its cards with plain Windows GDI, with no DirectX, no .NET, and no 3D, so it boots in seconds and deals at full speed on Wine + WebAssembly.</p>",
+    "intro": "<p><strong>Yes, you can run Microsoft's <code>spider.exe</code> online:</strong> copy it, with <code>cards.dll</code>, from a Windows XP-era install you own, load both below, and the original Spider Solitaire runs in a browser tab on Wine + WebAssembly, on your own device. It's Microsoft's software, not free to redistribute, so we can't hand you the game files. No copy? <a href=\"/run/spider-open/\">Play our free Spider Solitaire</a> instantly instead. The XP-era <code>spider.exe</code> is a tiny Win32 program that draws its cards with plain Windows GDI, with no DirectX, no .NET and no 3D, so it boots in seconds and deals at full speed.</p>",
     "sections": [
       {
         "h": "How it works & what to expect",
@@ -2040,7 +2040,7 @@
         "desc": "What runs in the browser and what doesn't."
       }
     ],
-    "updated": "2026-07-28",
+    "updated": "2026-11-19",
     "download": {
       "heading": "Where to find spider.exe",
       "html": "<div class=\"download-box\"><p><strong>On a Windows PC:</strong> Windows XP ships <code>C:\\Windows\\System32\\spider.exe</code>; Windows 7 uses <code>C:\\Program Files\\Microsoft Games\\Spider Solitaire\\SpiderSolitaire.exe</code>. Copy <code>cards.dll</code> from <code>System32</code> as well for the card graphics.</p><p><strong>On Windows 8 or later:</strong> removed from Windows.</p><p><strong>Prefer something free and instant?</strong> <a href=\"/run/hearts-open/\">Hearts</a> needs no files at all.</p></div>"
@@ -2073,7 +2073,7 @@
     "provenance": "clean",
     "appName": "Spider Solitaire",
     "title": "Play Spider Solitaire Online Free — Like Windows spider.exe",
-    "description": "Spider Solitaire in one, two or four suits. Start at one suit — four is genuinely hard. Free, instant, no download, and it remembers your game.",
+    "description": "Free Spider Solitaire with the Windows spider.exe rules: 1, 2 or 4 suits, two decks, unlimited undo. Plays instantly in your browser and saves your game.",
     "keywords": "play spider solitaire online, spider solitaire free, spider solitaire no download, spider solitaire 1 suit, spider solitaire 2 suits, windows spider solitaire",
     "ogTitle": "Play Spider Solitaire Online Free — 1, 2 or 4 Suits",
     "ogDescription": "The Spider Solitaire you remember — pick your difficulty, two decks, unlimited undo.",
@@ -8130,8 +8130,8 @@
     "slug": "hearts-open",
     "provenance": "clean",
     "skipGenerate": true,
-    "title": "Play Hearts Like Windows mshearts — Free Online, No Download",
-    "description": "The classic Windows Hearts game (mshearts) rules — passing rotation, queen of spades, shooting the moon — against three opponents. Free, instant, no download.",
+    "title": "MSHEARTS-Style Hearts: Play Free Online, No Download",
+    "description": "A free Hearts game with the Windows mshearts rules: pass three cards, dodge the queen of spades, shoot the moon. Instant in your browser, no sign-up.",
     "keywords": "play hearts online, hearts card game free, hearts online no download, microsoft hearts alternative, hearts game browser",
     "ogTitle": "Play Hearts Online Free — No Download, No Sign-up",
     "ogDescription": "The classic trick-taking card game in your browser — three computer opponents, full rules, instant play.",
@@ -8189,7 +8189,7 @@
         "desc": "The full list of titles that run on a locked-down school or work network."
       }
     ],
-    "updated": "2026-07-28",
+    "updated": "2026-11-19",
     "addedDate": "2026-07-28",
     "controls": [
       {
@@ -9607,8 +9607,8 @@
     "appType": "game",
     "appName": "Micropolis",
     "author": "Graeme McCutcheon (micropolisJS), from the Micropolis GPL release",
-    "title": "Play Micropolis Online — the Open-Source SimCity, Free",
-    "description": "Micropolis is SimCity — the city builder Maxis shipped, open-sourced under the GPL. Play it free online: a hand-written port that loads like a web page and works on a phone.",
+    "title": "Micropolis: Play the Open-Source SimCity Free Online",
+    "description": "Micropolis is the original 1989 SimCity, open-sourced by EA in 2008. Play it free in your browser: no download, no sign-up, and it works on a phone.",
     "keywords": "micropolis, city builder online, city simulator browser, open source city building game, play micropolis",
     "ogTitle": "Play Micropolis online — free city builder, no download",
     "ogDescription": "The open-source city simulator, running natively in your browser. Zone, build, tax and watch a city grow.",
@@ -9625,7 +9625,7 @@
     "appUrl": "/apps/micropolis/",
     "hostable": true,
     "screenshot": true,
-    "updated": "2026-08-16",
+    "updated": "2026-11-19",
     "addedDate": "2026-08-16",
     "verdict": {
       "kind": "good",

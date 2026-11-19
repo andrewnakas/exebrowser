@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cómo abrir un archivo EXE en Windows, Mac o Chromebook</title>
-<meta name="description" content="Qué es un archivo .exe, por qué no se abre y cómo ejecutar uno en Windows, Mac, Chromebook o Linux, incluida la opción de ejecutarlo en una pestaña del navegador sin instalar nada." />
+<title>Cómo abrir un archivo EXE en Mac, Android, Chromebook o PC</title>
+<meta name="description" content="Un .exe solo funciona de forma nativa en Windows. En Mac, Linux, Chromebook o Android, usa Wine, una VM o Winlator, o ejecútalo en una pestaña aquí." />
 <meta name="keywords" content="abrir archivo exe, cómo abrir un exe, abrir exe en mac, abrir exe en chromebook, ejecutar exe online, qué es un archivo exe, programa para abrir exe" />
 <link rel="canonical" href="https://exebrowser.com/es/open-exe-file/" />
 <link rel="alternate" hreflang="en" href="https://exebrowser.com/open-exe-file/" />
@@ -15,7 +15,7 @@
 <link rel="alternate" hreflang="x-default" href="https://exebrowser.com/open-exe-file/" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://exebrowser.com/es/open-exe-file/" />
-<meta property="og:title" content="Cómo abrir un archivo EXE: Windows, Mac, Chromebook y Linux" />
+<meta property="og:title" content="Cómo abrir un archivo EXE en Mac, Android, Chromebook o PC" />
 <meta property="og:description" content="Qué es realmente un .exe, por qué no arranca y todas las formas de ejecutarlo, incluida una pestaña del navegador sin instalar nada." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -112,12 +112,15 @@
 
   <section class="card">
     <h2>Cómo abrir un archivo EXE</h2>
-    <p>Un archivo <code>.exe</code> es un programa de Windows, así que abrirlo significa ejecutarlo. Lo que hace falta depende del equipo en el que estés:</p>
+    <p><strong>La respuesta corta:</strong> un archivo <code>.exe</code> es un programa de Windows, así que abrirlo significa ejecutarlo, y solo funciona de forma nativa en Windows. En cualquier otro sistema necesitas algo que haga las veces de Windows:</p>
     <ul>
       <li><strong>En Windows:</strong> haz doble clic. Si no arranca, el mensaje de error suele indicar la causa; las más comunes están más abajo.</li>
-      <li><strong>En un Mac o en Linux:</strong> usa Wine o CrossOver, una máquina virtual con Windows, o ejecútalo en una pestaña del navegador.</li>
+      <li><strong>En un Mac:</strong> usa Wine o CrossOver, una máquina virtual con Windows, o ejecútalo en una pestaña del navegador.</li>
+      <li><strong>En Linux:</strong> instala Wine y ejecuta <code>wine tuprograma.exe</code>, o ejecútalo en una pestaña del navegador.</li>
       <li><strong>En un Chromebook, o en un equipo donde no puedes instalar nada:</strong> ejecútalo en una pestaña del navegador. No hay nada que instalar y el archivo nunca sale de tu equipo.</li>
+      <li><strong>En un móvil Android:</strong> ejecútalo en una pestaña del navegador, o instala Winlator, una app gratuita, para programas y juegos más pesados.</li>
     </ul>
+    <p>La pestaña del navegador es lo que hace este sitio: <a href="/es/load-exe/">elige el archivo</a> y Wine lo ejecuta dentro de la página, en tu propio dispositivo, sin subir nada. Funciona mejor con software de Windows de 32 bits de 1995 a 2008, aproximadamente.</p>
     <p class="cta-row"><a class="cta-btn" href="/es/load-exe/">Abrir un .exe en el navegador</a></p>
   </section>
 
@@ -140,6 +143,9 @@
     <h3>En un Chromebook</h3>
     <p>ChromeOS no puede instalar software de Windows en absoluto, y eso es una decisión de diseño, no un descuido. No hay Wine que instalar, no hay Archivos de programa, no hay ningún sitio donde un instalador pueda colocarse.</p>
     <p>Quedan dos caminos: ejecutarlo en el navegador, que es lo que hace este sitio, o el contenedor de Linux si tu Chromebook lo tiene activado y te ves capaz de instalar Wine dentro. Hay <a href="/blog/run-windows-software-on-a-chromebook/">un artículo más largo sobre los cuatro enfoques</a>, ordenados según lo engorroso que resulta cada uno.</p>
+
+    <h3>En Android</h3>
+    <p>Android ejecuta código ARM sobre Linux, y un <code>.exe</code> es código x86 para Windows: por eso tocarlo no hace nada y ninguna app de la tienda lo «abre» sin más. Funcionan dos caminos: ejecutarlo aquí en una pestaña del navegador, que no requiere instalar nada y sirve para programas pequeños y antiguos de 32 bits, o instalar Winlator, una app gratuita que combina Wine con una capa de traducción x86 y puede con software más pesado, incluidos juegos 3D. <a href="/blog/open-exe-file-on-android/">La guía para Android</a> (en inglés) explica ambos y hasta dónde llega cada uno.</p>
 
     <h3>En Linux</h3>
     <p>Instala Wine desde el gestor de paquetes de tu distribución y después <code>wine tuprograma.exe</code>. Wine está maduro y muchísimo software funciona al primer intento. Cuando falla, suele fallar de forma ruidosa, nombrando la DLL o la API que no ha podido proporcionar, lo que al menos te da algo que buscar.</p>

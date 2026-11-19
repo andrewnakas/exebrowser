@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>How to Check if an .exe Is Safe Before You Run It</title>
-<meta name="description" content="What you can learn about a Windows executable without running it — signature, publisher, imports, packing, entropy — what each thing is actually worth, and the limits of every method including scanners." />
+<title>How to Check if an .exe Is Safe: 8 Checks Before You Run It</title>
+<meta name="description" content="Check an .exe before you run it: its source, digital signature, imports, packing, a VirusTotal hash lookup and a sandbox, and what each check proves." />
 <meta name="keywords" content="is this exe safe, check exe file safe, how to check exe before running, is exe a virus, verify exe file, exe file scanner" />
 <link rel="canonical" href="https://exebrowser.com/blog/check-if-an-exe-is-safe/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://exebrowser.com/blog/check-if-an-exe-is-safe/" />
-<meta property="og:title" content="How to Check if an .exe Is Safe Before You Run It" />
+<meta property="og:title" content="How to Check if an .exe Is Safe: 8 Checks Before You Run It" />
 <meta property="og:description" content="What a file tells you about itself before it runs — and what none of it proves." />
 <meta property="og:image" content="https://exebrowser.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -31,14 +31,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How to Check if an .exe Is Safe Before You Run It",
+  "headline": "How to Check if an .exe Is Safe: 8 Checks Before You Run It",
   "description": "A practical guide to inspecting a Windows executable before running it: code signatures, version strings, the import table, packers and entropy, scanners and sandboxes — and what each method genuinely proves.",
   "author": { "@type": "Person", "name": "Andrew Nakas", "url": "https://exebrowser.com/about/" },
   "publisher": { "@type": "Organization", "name": "ExeBrowser" },
   "mainEntityOfPage": "https://exebrowser.com/blog/check-if-an-exe-is-safe/",
   "image": "https://exebrowser.com/og.png",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22"
+  "dateModified": "2026-11-19"
 }
 </script>
 <script type="application/ld+json">
@@ -76,8 +76,9 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Is this .exe safe?</nav>
   <section class="card">
     <h2>How to check if an .exe is safe before you run it</h2>
-    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published September 22, 2026 · ~9 minute read</p>
+    <p class="updated">By <a href="/about/">Andrew Nakas</a> · Published September 22, 2026 · Updated November 19, 2026 · ~9 minute read</p>
 
+<p><strong>The short answer:</strong> no single check proves an <code>.exe</code> is safe; each one narrows the risk. Get it from the vendor's own site, confirm it carries a valid digital signature from the publisher you expect, and look its SHA-256 hash up on VirusTotal. If you still want to see what it does, run it somewhere that does not matter: a virtual machine, Windows Sandbox, or a browser tab. The eight checks below say what each one is worth as evidence.</p>
 <p>You have downloaded something ending in <code>.exe</code> and you are not certain about it. Perhaps the site looked improvised, perhaps a colleague sent it, perhaps you searched for a tool and the first three results all offered a different installer with the same name.</p>
     <p>Most advice at this point is "scan it", which is not wrong but is a small part of the answer. A Windows executable declares a great deal about itself before it runs a single instruction, and reading those declarations costs nothing. What follows is what you can learn, in rough order of usefulness, and — the part usually left out — what each thing is actually worth as evidence.</p>
 
