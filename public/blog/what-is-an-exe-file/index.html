@@ -122,6 +122,7 @@
       <li><strong>Boot Camp.</strong> Intel Macs only. Gone on Apple Silicon.</li>
     </ul>
     <p>If the goal is "open this one old program once", the browser route is usually the proportionate one. If the goal is "run Windows software regularly on this Mac", a VM is what you actually want.</p>
+    <p>One case looks similar and isn't: old <em>Mac</em> software — a <code>.sit</code> archive, a classic Mac disk image, a System 7 game. That needs a Mac emulator rather than Wine, and <a href="https://macemu.com/" target="_blank" rel="noopener">macemu</a> runs classic Mac OS in a browser tab.</p>
 
     <h3>On a Chromebook</h3>
     <p>Same situation as macOS, with one extra wrinkle: managed school and work Chromebooks often forbid installing anything, including the Linux container. The no-install browser route is frequently the only one that isn't blocked, and it works on ARM Chromebooks too, because the CPU is emulated regardless. We wrote this one up separately — <a href="/blog/run-windows-software-on-a-chromebook/">four ways to run Windows software on a Chromebook</a>.</p>
@@ -140,6 +141,7 @@
       <li><strong>To inspect the executable itself</strong> — what it imports, what resources it carries, whether it's 32- or 64-bit — you want a PE viewer rather than a file opener. That answers "what is this thing" without ever running it.</li>
     </ul>
     <p>This route is also the safe one. Reading a file is not the same as executing it.</p>
+    <p>And if the file isn't an <code>.exe</code> at all but some other relic — a Lotus 1-2-3 spreadsheet, a dBASE <code>.dbf</code>, a Windows Write document — <a href="https://openoldfile.com/" target="_blank" rel="noopener">OpenOldFile</a> opens those old formats in the browser without uploading them.</p>
 
     <h3>Before you open one: is it safe?</h3>
     <p>An <code>.exe</code> can do anything your user account can do. Most guides bury this; it deserves to be the loudest paragraph here.</p>
@@ -192,6 +194,7 @@
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
+  <p class="footer-related">Related projects: <a href="https://macemu.com/">macemu</a> · <a href="https://openoldfile.com/">OpenOldFile</a> · <a href="https://decompgames.com/">Decomp Games</a></p>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 <script src="/pwa.js?v=3"></script>

@@ -109,6 +109,7 @@ let unblockedAdded = 0;
 let embedFooterAdded = 0;
 let inspectorFooterAdded = 0;
 let dosFooterAdded = 0;
+let relatedFooterAdded = 0;
 let embedAdded = 0;
 let embedPointerAdded = 0;
 let ogAdded = 0;
@@ -304,6 +305,26 @@ for (const { abs, label } of htmlFiles(ROOT)) {
     }
   }
 
+  // ── 3f. Sister projects in the footer of the English pages ─────────────
+  // One plain line naming the three related sites by brand: macemu (classic
+  // Mac software, the question this site gets that it can't answer), OpenOldFile
+  // (old documents rather than programs) and Decomp Games. Anchored on the
+  // copyright line, which every English footer ends with, and guarded on the
+  // class so a second run adds nothing. English only, like 3c and 3e: the
+  // localised footers are generated from ui.json.
+  if (!/^(es|pt-BR|de|ja|fr|zh-CN)\//.test(label) && !html.includes('class="footer-related"')) {
+    // The year is matched loosely so the anchor survives the copyright bump.
+    const anchor = /\n( *)<p>© \d{4} ExeBrowser\./;
+    if (anchor.test(html)) {
+      html = html.replace(anchor, (m, ind) =>
+        `\n${ind}<p class="footer-related">Related projects: ` +
+        '<a href="https://macemu.com/">macemu</a> · ' +
+        '<a href="https://openoldfile.com/">OpenOldFile</a> · ' +
+        '<a href="https://decompgames.com/">Decomp Games</a></p>' + m);
+      relatedFooterAdded++;
+    }
+  }
+
   // ── 4. SYNC METADATA onto the hand-maintained game pages ────────────────
   // app-pages.json is meant to be the single source of truth, but skipGenerate
   // pages never pass through render(), so editing a title or description there
@@ -451,7 +472,7 @@ for (const { abs, label } of htmlFiles(ROOT)) {
 console.log(
   `injected: feed link into ${feedAdded} page(s) (${feedSkipped} already had it), ` +
   `manifest into ${manifestAdded}, pwa.js into ${pwaAdded}, ` +
-  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), EXE viewer footer link onto ${inspectorFooterAdded} page(s), DOS emulator footer link onto ${dosFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
+  `hreflang into ${hreflangAdded} page(s), /unblocked/ card onto ${unblockedAdded} page(s), /embed/ footer link onto ${embedFooterAdded} page(s), EXE viewer footer link onto ${inspectorFooterAdded} page(s), DOS emulator footer link onto ${dosFooterAdded} page(s), related-projects footer line onto ${relatedFooterAdded} page(s), play-events into ${playAdded} page(s), ` +
   `metadata synced onto ${metaSynced.size} hand-maintained page(s), ` +
   `embed offer on ${embedAdded} page(s), embed pointer on ${embedPointerAdded} page(s), og:image onto ${ogAdded} page(s)`
 );
