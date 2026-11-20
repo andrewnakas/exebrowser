@@ -144,6 +144,7 @@
     <h3>On a Mac</h3>
     <p>macOS cannot run <code>.exe</code> files natively — different operating system, and since Apple Silicon a different processor architecture too. Double-clicking gets you an error, and no amount of "open with" changes that.</p>
     <p>The real options are a compatibility layer such as <a href="https://www.winehq.org/" target="_blank" rel="noopener">Wine</a> or CrossOver, which translates Windows API calls rather than emulating a PC; a virtual machine running an actual licensed copy of Windows; or, for small old programs, running it in a browser tab here. The browser route needs nothing installed, which is often the deciding factor.</p>
+    <p>If what you have is old <em>Mac</em> software rather than Windows software — a <code>.sit</code> archive, a classic Mac disk image, a System 7 game — this site is the wrong emulator. <a href="https://macemu.com/" target="_blank" rel="noopener">macemu</a> runs classic Mac OS in a browser tab in the same way, with nothing to install.</p>
 
     <h3>On a Chromebook</h3>
     <p>ChromeOS cannot install Windows software at all, and that is by design rather than an oversight. There is no Wine to install, no Program Files, nowhere for an installer to go.</p>
@@ -172,6 +173,7 @@
     <p>Our <a href="/run/extract-archive/">archive extractor</a> opens self-extracting <code>.exe</code> files along with 7z, ZIP, RAR and the rest, entirely in the browser with nothing uploaded. <a href="/blog/extract-files-from-an-old-installer/">The full walkthrough</a> covers the cases it cannot handle and what to use instead.</p>
     <p>If you only want to know what the file <em>is</em>, the <a href="/exe-inspector/">EXE viewer</a> reads its headers and shows you the processor it was built for, the system libraries it loads, its icon and whether it is signed — without running any of it.</p>
     <p>And if you are weighing up whether to run it at all, <a href="/blog/check-if-an-exe-is-safe/">is this .exe safe?</a> goes through every check worth doing and what each one actually proves.</p>
+    <p>And if the file is not an <code>.exe</code> at all but an old document — a Lotus 1-2-3 spreadsheet, a dBASE table, a Windows Write file, a <code>.chm</code> help file — <a href="https://openoldfile.com/" target="_blank" rel="noopener">OpenOldFile</a> opens those formats in the browser, also without uploading anything.</p>
   </section>
 
   <section class="card">
@@ -212,6 +214,7 @@
     <a href="/privacy/">Privacy Policy</a>
     <a href="/terms/">Terms of Use</a>
   </nav>
+  <p class="footer-related">Related projects: <a href="https://macemu.com/">macemu</a> · <a href="https://openoldfile.com/">OpenOldFile</a> · <a href="https://decompgames.com/">Decomp Games</a></p>
   <p>© 2026 ExeBrowser. Content licensed openly; runtime under GPL-2.0 / LGPL-2.1.</p>
 </footer>
 <script src="/pwa.js?v=3"></script>
